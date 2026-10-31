@@ -6,16 +6,34 @@ NULL
 #' @rdname load_nba_pbp
 #' @description helper that loads multiple seasons from the data repo either into memory
 #' or writes it into a db using some forwarded arguments in the dots
-#' @param seasons A vector of 4-digit years associated with given NBA seasons. (Min: 2002)
+#' @param seasons A vector of 4-digit years associated with given NBA seasons, or
+#'   `TRUE` for every published season. Each loader accepts only the seasons its
+#'   release tag publishes (any other season is an error):
+#'   * `load_nba_team_box()`, `load_nba_player_box()`, `load_nba_schedule()`,
+#'     `load_nba_player_stats()`, `load_nba_player_core()`: 1994 onward.
+#'   * `load_nba_pbp()`, `load_nba_shots()`, `load_nba_team_stats()`,
+#'     `load_nba_standings()`, `load_nba_game_rosters()`, `load_nba_officials()`: 2002 onward.
+#'   * `load_nba_draft()`: 2003 onward.
+#'   * `load_nba_rosters()`: 2025 onward.
+#'
+#'   The upper bound is [most_recent_nba_season()].
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
 #' @param tablename The name of the play by play data table within the database
+#' @details
+#' The play `id` is returned as character, matching [espn_nba_pbp()].
+#' `load_nba_pbp()` reads the `.parquet` release asset (exact 64-bit ids) when the
+#' \pkg{arrow} package is installed and the `.rds` asset otherwise.
+#'
+#' ESPN join ids are integer in every loader, as they are in the box scores and
+#' schedules: `load_nba_game_rosters()` casts `game_id`, and `load_nba_rosters()`
+#' casts `athlete_id`, both of which the release publishes as character.
 #' @return Returns a tibble
 #'
 #'    \if{html}{\tabular{lll}{
 #'       col_name \tab types \tab description \cr
-#'       id \tab numeric \tab Id. \cr
+#'       id \tab character \tab ESPN play id (see Details). \cr
 #'       sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
 #'       type_id \tab integer \tab Type identifier (numeric). \cr
 #'       type_text \tab character \tab Display text for the type field. \cr
@@ -89,20 +107,13 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(), ...,
                          dbConnection = NULL, tablename = NULL) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-
-  loader <- rds_from_url
+  loader <- function(url) pbp_from_url(url, "ESPN NBA pbp from hoopR data repository")
 
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
+  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_pbp")
 
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_nba_season()
-  )
-
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_pbp/play_by_play_", seasons, ".rds")
+  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_pbp/play_by_play_", seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -144,13 +155,7 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_nba_season()
-  )
+  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_team_box")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_boxscores/team_box_", seasons, ".rds")
 
@@ -194,13 +199,7 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_nba_season()
-  )
+  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_player_box")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_boxscores/player_box_", seasons, ".rds")
 
@@ -314,13 +313,7 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_nba_season()
-  )
+  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_schedule")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_schedules/nba_schedule_", seasons, ".rds")
 
@@ -538,13 +531,7 @@ load_nba_standings <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_nba_season()
-  )
+  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_standings")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_standings/standings_", seasons, ".rds")
 
@@ -578,16 +565,10 @@ load_nba_game_rosters <- function(seasons = most_recent_nba_season(), ...,
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  loader <- rds_from_url
+  loader <- function(url) .ids_as_integer(rds_from_url(url), c("game_id", "team_id", "athlete_id"))
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_nba_season()
-  )
+  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_game_rosters")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_game_rosters/game_rosters_", seasons, ".rds")
 
@@ -624,13 +605,7 @@ load_nba_officials <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_nba_season()
-  )
+  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_officials")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_officials/officials_", seasons, ".rds")
 
@@ -667,13 +642,7 @@ load_nba_draft <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2003:most_recent_nba_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2003,
-    seasons <= most_recent_nba_season()
-  )
+  seasons <- .loader_seasons(seasons, 2003, most_recent_nba_season(), fn = "load_nba_draft")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_draft/draft_", seasons, ".rds")
 
@@ -710,13 +679,7 @@ load_nba_player_stats <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_nba_season()
-  )
+  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_player_stats")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_season_stats/player_season_stats_", seasons, ".rds")
 
@@ -753,13 +716,7 @@ load_nba_team_stats <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_nba_season()
-  )
+  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_team_stats")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_season_stats/team_season_stats_", seasons, ".rds")
 
@@ -794,16 +751,10 @@ load_nba_rosters <- function(seasons = most_recent_nba_season(), ...,
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  loader <- rds_from_url
+  loader <- function(url) .ids_as_integer(rds_from_url(url), c("team_id", "athlete_id"))
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_nba_season()
-  )
+  seasons <- .loader_seasons(seasons, 2025, most_recent_nba_season(), fn = "load_nba_rosters")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_rosters/rosters_", seasons, ".rds")
 
@@ -855,13 +806,7 @@ load_nba_player_core <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_nba_season()
-  )
+  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_player_core")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_core/player_core_", seasons, ".rds")
 
@@ -930,13 +875,7 @@ load_nba_shots <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_nba_season()
-  )
+  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_shots")
 
   urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_shots/shots_", seasons, ".rds")
 

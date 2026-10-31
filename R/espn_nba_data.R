@@ -2510,7 +2510,7 @@ espn_nba_player_stats <- function(
 #' @export
 helper_espn_nba_pbp <- function(resp) {
   game_json <- resp %>%
-    jsonlite::fromJSON()
+    jsonlite::fromJSON(bigint_as_char = TRUE)
 
   pbp_source <- game_json[["header"]][["competitions"]][["playByPlaySource"]]
 
@@ -2741,7 +2741,7 @@ helper_espn_nba_pbp <- function(resp) {
       homeTeamLogo <- game_json[["header"]][["competitions"]][["competitors"]][[
         1
       ]][["team"]][["logos"]][[2]][["href"]] %>%
-        purrr::pluck(2, .default = NA_character_)
+        purrr::pluck(1, .default = NA_character_)
       homeTeamLogoDark <- game_json[["header"]][["competitions"]][[
         "competitors"
       ]][[1]][["team"]][["logos"]][[2]][["href"]] %>%
@@ -2929,6 +2929,8 @@ helper_espn_nba_pbp <- function(resp) {
         )),
         ~ as.integer(.x)
       ))
+
+    plays$id <- .play_id_chr(plays$id)
 
     plays <- .repair_running_score(plays, homeTeamId, awayTeamId, homeTeamScore, awayTeamScore)
 

@@ -1,17 +1,18 @@
 #' @keywords internal
-.load_nba_crosswalk <- function(seasons, tag, prefix) {
+.load_nba_crosswalk <- function(seasons, tag, prefix, first = 2002, last = most_recent_nba_season()) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  loader <- rds_from_url
+  # ESPN ids match every other hoopR dataset (integer); the assets publish
+  # espn_game_id / espn_athlete_id as character.
+  loader <- function(url) {
+    .ids_as_integer(rds_from_url(url), c(
+      "espn_game_id", "espn_athlete_id", "espn_team_id",
+      "home_espn_team_id", "away_espn_team_id"
+    ))
+  }
 
-  if (isTRUE(seasons)) seasons <- 2002:most_recent_nba_season()
-
-  stopifnot(
-    is.numeric(seasons),
-    seasons >= 2002,
-    seasons <= most_recent_nba_season()
-  )
+  seasons <- .loader_seasons(seasons, first, last, fn = paste0("load_", prefix))
 
   urls <- paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/",
@@ -60,8 +61,13 @@ NULL
 #' team identifiers to NBA.com identifiers and canonical abbreviations. The
 #' files are versioned `.rds` snapshots stored in the `nba_crosswalk` release
 #' of the sportsdataverse-data repository.
-#' @param seasons A vector of 4-digit years associated with given NBA seasons.
-#'   (Min: 2002; default: \code{most_recent_nba_season()})
+#' @param seasons A vector of 4-digit seasons, or `TRUE` for every published
+#'   season. Accepted seasons are the ones the release publishes: 2002 onward for
+#'   the NBA crosswalks and `load_mbb_team_crosswalk()`, 2008 onward for
+#'   `load_mbb_schedule_crosswalk()`, 2025 onward for `load_mbb_player_crosswalk()`;
+#'   the upper bound is [most_recent_nba_season()] / [most_recent_mbb_season()].
+#'   ESPN ids (`espn_game_id`, `espn_athlete_id`, `espn_team_id`) are returned as
+#'   integer, matching the ESPN box score, schedule and roster loaders.
 #' @return Returns a tibble of class \code{hoopR_data} with one row per
 #'   NBA team per season. Columns include at minimum \code{season},
 #'   \code{espn_team_id}, and \code{nba_team_id}.
@@ -135,7 +141,7 @@ load_nba_player_crosswalk <- function(seasons = most_recent_nba_season()) {
 #' load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 #' }
 load_mbb_team_crosswalk <- function(seasons = most_recent_mbb_season()) {
-  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_team_crosswalk")
+  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_team_crosswalk", last = most_recent_mbb_season())
 }
 
 
@@ -156,7 +162,7 @@ load_mbb_team_crosswalk <- function(seasons = most_recent_mbb_season()) {
 #' load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 #' }
 load_mbb_schedule_crosswalk <- function(seasons = most_recent_mbb_season()) {
-  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_schedule_crosswalk")
+  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_schedule_crosswalk", first = 2008, last = most_recent_mbb_season())
 }
 
 
@@ -177,5 +183,5 @@ load_mbb_schedule_crosswalk <- function(seasons = most_recent_mbb_season()) {
 #' load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #' }
 load_mbb_player_crosswalk <- function(seasons = most_recent_mbb_season()) {
-  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_player_crosswalk")
+  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_player_crosswalk", first = 2025, last = most_recent_mbb_season())
 }
