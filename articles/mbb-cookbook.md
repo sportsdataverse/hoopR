@@ -649,10 +649,12 @@ where the data lived, you named the league, you named the thing from
 general to specific, and you let the singular/plural rule and the shared
 stems carry you the rest of the way.
 
-The women’s game runs on `wehoop`, a sibling package with the exact same
-grammar. `espn_mbb_team_roster` has a mirror image in
+The women’s game runs on
+[`wehoop`](https://wehoop.sportsdataverse.org/), a sibling package with
+the exact same grammar. `espn_mbb_team_roster` has a mirror image in
 `espn_wbb_team_roster`; everything you just learned crosses straight
-over. That’s the WBB cookbook.
+over. That’s the [WBB
+cookbook](https://wehoop.sportsdataverse.org/articles/wbb-cookbook.html).
 
 ## **Our Authors**
 
@@ -665,9 +667,7 @@ over. That’s the WBB cookbook.
 - [Jason Lee](https://x.com/theFirmAISports)
   [![@theFirmAISports](https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge)](https://x.com/theFirmAISports)
   [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
-- [Billy Fryer](https://x.com/BillyFryer42)
-  [![@BillyFryer42](https://img.shields.io/twitter/follow/BillyFryer42?color=blue&label=%40BillyFryer42&logo=x&style=for-the-badge)](https://x.com/BillyFryer42)
-  [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
+- Billy Fryer
 - [Ross Drucker](https://x.com/rossdrucker9)
   [![@rossdrucker9](https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge)](https://x.com/rossdrucker9)
   [![@rossdrucker](https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge)](https://github.com/rossdrucker)

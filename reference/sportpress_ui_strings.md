@@ -15,8 +15,8 @@ sportpress_ui_strings()
 
 A `hoopR_data` tibble: UI string tables of the site in English, French
 and Dutch (one row per language and key). An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order (sdv-py
-`sportpress_ui_strings`):
+`hoopR_no_data`; the columns are always these, in this order
+(sportsdataverse-py `sportpress_ui_strings`):
 
 |  |  |  |
 |----|----|----|
@@ -33,8 +33,7 @@ and Dutch (one row per language and key). An empty valid answer raises
   `bnxt_runtime` reads it from the bundle at run time, falls back to a
   documented value when the bundle cannot be read, and never prints or
   logs it. A 401 raises AssetFetchError (`key rotated?`). robots.txt
-  allows everything; requests are spaced at least 1 s apart. Payloads
-  are not redistributed as release assets.
+  allows everything; requests are spaced at least 1 s apart.
 
 - Season key: the END year (`season=2026` is 2025-26), the API's own key
   on the season routes. Every other route is keyed by the competition id

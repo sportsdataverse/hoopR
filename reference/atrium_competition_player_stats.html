@@ -144,29 +144,7 @@ competitions.</p></dd>
     <p>A <code>hoopR_data</code> tibble, one row per <code>(table_key, person_name, stat_key)</code>:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>website_id</td><td>integer</td><td>Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self.</td></tr><tr><td>season_id</td><td>character</td><td>Season UUID of the table; null for the competition-scoped routes (their bodies carry none).</td></tr><tr><td>table_key</td><td>character</td><td>Statistics table the row is from: averages, shootingstatistics, totals, ... (the set is per site).</td></tr><tr><td>table_label</td><td>character</td><td>The table's heading in the site's language (e.g. Moyennes).</td></tr><tr><td>person_id</td><td>character</td><td>Player UUID decoded from the widget link beside the name (the tables carry names only); null when the link is missing or undecodable, and always null in team and competition bodies.</td></tr><tr><td>person_name</td><td>character</td><td>Player name as the site prints it; null in team tables.</td></tr><tr><td>entity_id</td><td>character</td><td>Team UUID decoded from the widget link (team tables only; player tables name the team but carry no id).</td></tr><tr><td>entity_name</td><td>character</td><td>Team name as the site prints it; for player rows of a stat table it is the player's team.</td></tr><tr><td>stat_key</td><td>character</td><td>Statistic key as the API names it (pointsPerGame, fieldGoalsMade, ...), unchanged from header key.</td></tr><tr><td>stat_name</td><td>character</td><td>Short column heading the site shows for the statistic (PTS, REB), in the site's language.</td></tr><tr><td>stat_label</td><td>character</td><td>Longer statistic label the site shows (code in the API), in the site's language.</td></tr><tr><td>value</td><td>double</td><td>Numeric value of the statistic; null when the API sends a duration or text (see value_text).</td></tr><tr><td>value_text</td><td>character</td><td>Non-numeric statistic value, e.g. an ISO 8601 duration such as PT12M2S for minutes per game.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p><strong>Unofficial.</strong> This is the public endpoint the Sportradar Atrium / Synergy
-"Connect" widget calls from every visitor's browser (keyless; the host has no
-robots.txt). The data is Sportradar's and the leagues'. The wrappers read it on the
-caller's behalf, one request at least 1 s after the last to the host, and it is not
-republished as release assets. Keep crawls small and incremental.</p>
-<p><strong>Sites and seasons.</strong> <code>website_id</code> picks the league site; one site carries many
-competitions. Seasons are END years (<code>season = 2026</code>): the site's own year is the
-START year on LNB and the calendar year elsewhere, and a year can hold several
-competitions, so pair <code>season</code> with <code>competition_id</code> (see <code><a href="atrium_seasons.html">atrium_seasons()</a></code>) or
-pass <code>season_id</code>. <code><a href="atrium_end_year.html">atrium_end_year()</a></code> maps a site's own year to that END year, and
-<code><a href="atrium_season_id.html">atrium_season_id()</a></code> finds the season UUID.</p>
-<p><strong>Columns</strong> are configured per site: a statistic one site omits is <code>NA</code>. A key the
-documented columns do not list is appended with an inferred type. Player and team
-ids (UUIDs, character) are shared across sites; the player stat tables carry names
-only, so <code>person_id</code> there is decoded from the widget link beside each name.</p>
-<p><strong>Errors</strong> (classed conditions, all inheriting <code>hoopR_error</code>): <code>hoopR_no_data</code> when
-the site has nothing for the request (HTTP 404, no such season, an empty fixture
-list, a game with no play-by-play yet, or a fixture id the site does not serve: an
-unknown id or a game of another site, which the API answers alike with an empty
-fixture); <code>hoopR_bad_request</code> for HTTP 400 / 422 or an argument that cannot be
-mapped (an ambiguous END year, <code>season</code> with <code>season_id</code>); <code>hoopR_asset_fetch</code> for
-any other failed fetch, an error / stub body, or a body that belongs to another
-site, type, season, game, player or team than the one asked for.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="atrium_fixtures.html">atrium_fixtures()</a></code>.</p>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/atrium_competition_player_stats.html">atrium_competition_player_stats</a></span><span class="op">(</span></span>
 <span>   website_id <span class="op">=</span> <span class="fl">12</span>, competition_id <span class="op">=</span> <span class="st">"3f4064bb-51ad-11f0-aaaf-2923c944b404"</span></span>
 <span> <span class="op">)</span></span></code></pre><p></p></div>

@@ -126,31 +126,11 @@ Endpoint: GET https://www.legabasket.it/api/teams/get-teams (items=50&amp;amp;ye
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Teams of a season, one row per team-season with the stable club id. The columns are always
-these, in this order (sdv-py <code>lba_teams</code>); a column the site adds later is appended after them:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2027 = 2026-27): the row's START year + 1.</td></tr><tr><td>team_id</td><td>integer</td><td>Team id (one team-season).</td></tr><tr><td>name</td><td>character</td><td>Team name of that season (sponsor name).</td></tr><tr><td>year</td><td>integer</td><td>Season START year (2026 = 2026-27); sdv END year = year + 1.</td></tr><tr><td>club_id</td><td>integer</td><td>Club id: the cross-season join key for team ids (only here and in the <code>team</code> headers); stability across seasons is unverified.</td></tr><tr><td>club_code</td><td>character</td><td>Club code (<code>TVB</code>, <code>TS</code>); whether it is stable across seasons is unverified.</td></tr><tr><td>updated_at</td><td>character</td><td>Timestamp, ISO-8601 with the Italian offset.</td></tr><tr><td>logo_key</td><td>character</td><td>Image key: the image is <code>{cdn_url}/{key}</code>, resized copies <code>{cdn_url}/variants/{key}/thumb</code> or <code>/large</code> (the site's getApiImageUrl).</td></tr></table></div>
+these, in this order (sportsdataverse-py <code>lba_teams</code>); a column the site adds later is appended after them:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2027 = 2026-27): the row's START year + 1.</td></tr><tr><td>team_id</td><td>integer</td><td>Team id (one team-season).</td></tr><tr><td>name</td><td>character</td><td>Team name of that season (sponsor name).</td></tr><tr><td>year</td><td>integer</td><td>Season START year (2026 = 2026-27); sdv END year = year + 1.</td></tr><tr><td>club_id</td><td>integer</td><td>Club id: the cross-season join key for team ids (only here and in the <code>team</code> headers); stability across seasons is unverified.</td></tr><tr><td>club_code</td><td>character</td><td>Club code (<code>TVB</code>, <code>TS</code>); whether it is stable across seasons is unverified.</td></tr><tr><td>updated_at</td><td>character</td><td>Timestamp, ISO-8601 with the Italian offset.</td></tr><tr><td>logo_key</td><td>character</td><td>Image key: the image is <code>{cdn_url}/{key}</code>, resized copies <code>{cdn_url}/variants/{key}/thumb</code> or <code>/large</code> (the site's getApiImageUrl).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial and unsupported: these wrappers read the JSON API that the Next.js site www.legabasket.it itself
-calls. Legal notice: the site's terms say "Non e' consentito copiare ... dati e informazioni senza
-autorizzazione scritta" (copying data and information without written authorisation is not allowed), except for
-personal, non-commercial use. The owner accepted the restriction for this intake on 2026-10-12. Payloads are
-not redistributed as release assets, and any published data release of this source needs separate sign-off.</p></li>
-<li><p>robots.txt allows /api and sets Crawl-delay: 2. The runtime waits 2 s before every request, retries included.
-Crawl incrementally: fetch a final game once (keyed by game_id), find new games with one lba_calendar call per
-round, and do not backfill a history in a burst.</p></li>
-<li><p>Seasons are END years (2027 = 2026-27); the site sends START years and the runtime maps them (season - 1 on the
-wire). Game and player ids are global; team ids are re-issued every season (join lba_teams for the stable
-club_id); a championship id is one season AND one phase (Regular Season and Play Off differ).</p></li>
-<li><p>Play-by-play starts in 2017-18 and changes shape in 2019-20 (pixel frame to court percent) and 2021-22; see
-lba_pbp. Box scores reach back to 1995-96, where the period scores were not recorded (0 means missing).</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, or a body with no rows:
-an unknown season, a play-by-play before 2017-18, standings of a finished championship without a round),
-<code>hoopR_bad_request</code> (a season that is not an END year, a bad choice, HTTP 400 / 422) and <code>hoopR_asset_fetch</code>
-(any other non-2xx, a connection failure after retries, an empty / non-JSON / error-shaped 200, a game that is
-not final on the box score, play-by-play and shot routes, a truncated page, or a body for another season,
-championship, game, team, player, round or category than the one asked for). An unknown id is HTTP 500, which
-is not retried. A body the parser finds no rows in gives a zero-row tibble with these columns.</p></li>
-</ul></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="lba_championships.html">lba_championships()</a></code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other LBA Functions:
@@ -179,7 +159,7 @@ is not retried. A body the parser finds no rows in gives a zero-row tibble with 
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lba_teams</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── LBA Teams from legabasket.it ───────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:19:12 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:31:47 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 16 × 8</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season team_id name                year club_id club_code updated_at logo_key</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>

@@ -130,7 +130,7 @@ One row per team (tno 1 and 2; the feed has no team id). Percentages are numeric
 <dt id="arg-return-parsed">return_parsed<a class="anchor" aria-label="anchor" href="#arg-return-parsed"></a></dt>
 <dd><p>Parse into a tibble (default <code>TRUE</code>); <code>FALSE</code> returns the parsed body or
 page record (a list): <code>data.json</code> as served plus <code>_request</code> (the ids asked for), or the
-sdv-internal-refs capture shape of a page.</p></dd>
+record parsed from an HTML page.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -145,7 +145,7 @@ datacenter IPs on the LiveStats and hosted hosts: from a server set
 proxy URL (never printed or logged). Requests are spaced at least one second apart
 per host; keep crawls slow and incremental. Some league sites (the NZ NBL) forbid AI
 crawlers in their own robots.txt, which does not cover these hosts. Unofficial use of a
-public source: payloads are not redistributed as release assets.</p>
+public source.</p>
 <p><strong>Org and season.</strong> Every competition is an ORG code plus a competition id
 (<code>comp_id</code>): <code><a href="genius_competitions.html">genius_competitions()</a></code> lists an org's competitions with the sdv END-year
 <code>season</code> (a START-year org lists 2025-26 as season 2026), <code><a href="genius_match_competition.html">genius_match_competition()</a></code>

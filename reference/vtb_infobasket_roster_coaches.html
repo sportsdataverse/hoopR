@@ -142,50 +142,12 @@ The season table is read for this tag.</p></dd>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: A club's coaches in one season (no birth data). The columns are always these, in this order
-(sdv-py <code>vtb_infobasket_roster_coaches</code>); an empty valid answer raises <code>hoopR_no_data</code>, a valid body with no rows
+(sportsdataverse-py <code>vtb_infobasket_roster_coaches</code>); an empty valid answer raises <code>hoopR_no_data</code>, a valid body with no rows
 for this frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>team_id</td><td>integer</td><td>Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id.</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime.</td></tr><tr><td>person_id</td><td>integer</td><td>Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/{personId} (players) and /Widget/CoachPage/{personId} (coaches).</td></tr><tr><td>coach_number</td><td>integer</td><td>Coach order on the team sheet (1 = head coach).</td></tr><tr><td>display_number</td><td>character</td><td>Shirt number as displayed ('0' and '00' differ).</td></tr><tr><td>post_id</td><td>integer</td><td>Unobserved: null in every sample, so its type and meaning are unconfirmed.</td></tr><tr><td>post</td><td>character</td><td>Coaching post ('Head Coach', 'Assistant Coach').</td></tr><tr><td>country_code_ioc</td><td>character</td><td>Nationality code: ISO 3166 alpha-2 in most rows ('RU', 'US'), IOC alpha-3 in some ('BLR').</td></tr><tr><td>country_name</td><td>character</td><td>Nationality, English country name.</td></tr><tr><td>rank</td><td>integer</td><td>Unobserved: the roster sends an empty string for every player and coach (null here); the field belongs to the leader lists (best_players), so its meaning on the roster is unconfirmed.</td></tr><tr><td>is_active</td><td>logical</td><td>True while the person is on the current roster.</td></tr><tr><td>active_status</td><td>character</td><td>Roster status text ('Accepted'), empty otherwise.</td></tr><tr><td>person_last_name_ru</td><td>character</td><td>Last name, Russian.</td></tr><tr><td>person_last_name_en</td><td>character</td><td>Last name, English.</td></tr><tr><td>person_first_name_ru</td><td>character</td><td>First name, Russian.</td></tr><tr><td>person_first_name_en</td><td>character</td><td>First name, English.</td></tr><tr><td>person_full_name_ru</td><td>character</td><td>Full name, 'Last First', Russian.</td></tr><tr><td>person_full_name_en</td><td>character</td><td>Full name, 'Last First', English.</td></tr><tr><td>person_gender</td><td>integer</td><td>Person gender: 1 on every sampled (male) person.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Owner flag (sdv-internal-refs/vtb/README.md): the VTB United League is run from Russia and several clubs are owned
-or sponsored by sanctioned state companies (the KHL precedent); Infobasket is the Russian basketball federation's
-stats platform. Fetching on your own machine is fine. The owner has approved published data releases (2026-10-17),
-though none is scheduled yet. No accounts or payments are involved.</p></li>
-<li><p>Unofficial and unsupported: both hosts are keyless public JSON backends of vtb-league.com. No terms of use are
-published; robots.txt is a 404 on api.vtb-league.com and org.infobasket.su (no rules; vtb-league.com disallows
-only /wp/wp-admin/). The runtime waits at least 1 s before every request, retries included, and honours
-Retry-After on 429 / 503. No key, cookie or proxy is used (live-verified direct from the droplet 2026-10-12).</p></li>
-<li><p>Seasons are END years (2026 = 2025-26) on both backends. Infobasket keys everything by competition id:
-vtb_infobasket_seasons maps the END year to the season-level CompID, and the season-keyed wrappers do that mapping
-for you. CompID means three things: a season (50714), a stage below it (50720 regular season, 54281 playoff;
-stage-level wrappers take the stage id from vtb_infobasket_comp_issue) and, in the player season stats, an END
-year.</p></li>
-<li><p>Ids: the v2 matchId is the Infobasket GameID, the v2 teamId the Infobasket TeamID and the v2 venueId the
-Infobasket ArenaId. team_id is the key on every team route; comp_team_id (a registration in one stage) and the
-club-record id of the team page are other key spaces. person_id is one person across clubs and seasons.</p></li>
-<li><p>Errors are HTTP 200: an unknown id answers {MessageType, Message}, an unknown game the string 'BadRequest'; both
-are <code>hoopR_asset_fetch</code> (a failed fetch), never an empty frame. A body for another game, person, team, competition
-or season than the one asked for is <code>hoopR_asset_fetch</code> too, as is a game that is not final (box score, plays and
-header need GameStatus 1) and a partial GetTeamStats page. An empty list is <code>hoopR_no_data</code>.</p></li>
-<li><p>Coverage: calendars and box scores from 2009-10; play-by-play and shot x/y from 2022-23 only (earlier games give
-an empty pbp frame), officials in the line-ups from 2022-23. Shot x/y are decimetres from the basket centre
-(orientation unverified). Counting statistics are null instead of 0 on the wire (the parsers fill 0), percentages
-and averages are comma-decimal strings (the parsers return floats), the paint statistics are broken and dropped,
-and dates come in three encodings (the parsers return ISO strings; .NET instants as Moscow time with its +03:00
-offset).</p></li>
-<li><p>Personal data: the runtime removes licence numbers, contact and operator-account fields for everyone and the birth
-dates, birth years and ages of coaches, referees and other officials from every body. Players' public bio (birth
-date, height, weight, nationality) is kept.</p></li>
-<li><p>Other tags (vtbyouth, wbc, wpremier, rfb) answer through the tag argument; only vtb was captured. The team routes
-key on the END-year season (sdv-py also lets a caller pass a stage CompID through params; the R wrappers do not).</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, or the host has nothing
-for the request: an empty list, a v2 season with no rows, a season without team totals), <code>hoopR_bad_request</code> (a
-malformed id or league slug, a lang other than en or ru, or a season the competition tag does not have) and
-<code>hoopR_asset_fetch</code> (any other non-2xx, an empty or non-JSON body, an error envelope or string, a game that is not
-final or a stub, a partial or possibly truncated page, or a body for another game, person, team, competition,
-league or season). HTTP 500 is retried (neither host answers 500 for an unknown id). Wrappers raise; they never
-warn and return empty.</p></li>
-</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/vtb_infobasket_roster_coaches.html">vtb_infobasket_roster_coaches</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, team_id <span class="op">=</span> <span class="fl">2650</span><span class="op">)</span></span></code></pre><p></p></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="vtb_infobasket_seasons.html">vtb_infobasket_seasons()</a></code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/vtb_infobasket_roster_coaches.html">vtb_infobasket_roster_coaches</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, team_id <span class="op">=</span> <span class="fl">2650</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

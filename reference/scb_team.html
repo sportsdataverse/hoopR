@@ -135,33 +135,11 @@ api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (le
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Club profile: names, code, home page, ticket shop, year joined and honours. An empty
-valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sdv-py <code>scb_team</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League the row belongs to: <code>bbl</code> (men) or <code>dbbl</code> (women); BBL and DBBL game ids overlap, so a game is (league, game_id).</td></tr><tr><td>team_id</td><td>character</td><td>Club id, a string; equal to <code>season_team_id</code> in every sample. Joins to <code>scb_team</code> and <code>scb_season_teams</code>.</td></tr><tr><td>tlc</td><td>character</td><td>Three-letter club code.</td></tr><tr><td>name_full</td><td>character</td><td>Full club name as the API lists it today.</td></tr><tr><td>name_short</td><td>character</td><td>Short name (often the city); null on DBBL.</td></tr><tr><td>mascot</td><td>character</td><td>Club mascot name (null when none).</td></tr><tr><td>homepage_url</td><td>character</td><td>Club website address as sent (it can lack the scheme).</td></tr><tr><td>ticket_url</td><td>character</td><td>Ticket shop URL.</td></tr><tr><td>year_joined_bbl</td><td>integer</td><td>Year the club joined the league.</td></tr><tr><td>order_id</td><td>integer</td><td>Display order of the club on the site; null on some clubs.</td></tr><tr><td>best_achievements</td><td>character</td><td>Honours, German free text (Deutscher Meister = German champion, Pokalsieger = cup winner, Vizepokalsieger = cup runner-up).</td></tr></table></div>
+valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py <code>scb_team</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League the row belongs to: <code>bbl</code> (men) or <code>dbbl</code> (women); BBL and DBBL game ids overlap, so a game is (league, game_id).</td></tr><tr><td>team_id</td><td>character</td><td>Club id, a string; equal to <code>season_team_id</code> in every sample. Joins to <code>scb_team</code> and <code>scb_season_teams</code>.</td></tr><tr><td>tlc</td><td>character</td><td>Three-letter club code.</td></tr><tr><td>name_full</td><td>character</td><td>Full club name as the API lists it today.</td></tr><tr><td>name_short</td><td>character</td><td>Short name (often the city); null on DBBL.</td></tr><tr><td>mascot</td><td>character</td><td>Club mascot name (null when none).</td></tr><tr><td>homepage_url</td><td>character</td><td>Club website address as sent (it can lack the scheme).</td></tr><tr><td>ticket_url</td><td>character</td><td>Ticket shop URL.</td></tr><tr><td>year_joined_bbl</td><td>integer</td><td>Year the club joined the league.</td></tr><tr><td>order_id</td><td>integer</td><td>Display order of the club on the site; null on some clubs.</td></tr><tr><td>best_achievements</td><td>character</td><td>Honours, German free text (Deutscher Meister = German champion, Pokalsieger = cup winner, Vizepokalsieger = cup runner-up).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial use of a public source: these wrappers read the front-end API of the German Bundesliga sites
-(easycredit-bbl.de, toyota-dbbl.de), run by SCB; payloads are not redistributed as release assets.</p></li>
-<li><p>Legal notice: the BBL Impressum forbids storing BBL content (<code>Inhalte</code>) in an information system without
-BBL's written permission. That is a copyright term, not a robots rule (the API host has no robots.txt).
-The owner reviewed it and accepted the intake (2026-10-12 ruling); keep requests slow (the runtime waits
-at least 1 s per host) and raise any published data release with the owner. The DBBL host is the same
-operator and API; its site notice was not separately reviewed.</p></li>
-<li><p>Both hosts need two headers: a constant <code>x-api-key</code> and an <code>x-api-secret</code> that rotates. The runtime
-derives the secret on first use from the key embedded in an easycredit-bbl.de page (reversed, <code>:</code> turned
-into <code>-</code>) and never logs or returns it. The derivation was reverse-engineered from observed requests and
-responses and has not been checked against the site's own front-end code; if the site changes how it
-signs requests, every call fails with <code>hoopR_asset_fetch</code>.</p></li>
-<li><p>Id key spaces: seasonId is the START year (2025 = 2025-26), so a wrapper's END-year <code>season</code> is sent as
-<code>season - 1</code>. Teams are keyed by teamId (seasonTeamId equals it in every sample). seasonPlayerId is per
-player per season and per club (a player traded mid-season has two); realPlayerId is the person. playerId
-is ambiguous (the seasonPlayerId in box scores, records and /season-players; the person in /transfers).
-Game ids are strings.</p></li>
-<li><p>Errors are classed conditions: <code>hoopR_no_data</code> (404, 204, a 400 "not a valid" id, no rows, a box score of
-a game not yet started), <code>hoopR_bad_request</code> (a bad argument, another 400 / 422) and <code>hoopR_asset_fetch</code>
-(a refused secret after one re-derive, any other non-2xx, an HTML / non-JSON / error-shaped body, a
-truncated page, a body for another game, season, club or league, a box score still in play), all
-inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty frame.</p></li>
-</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/scb_team.html">scb_team</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="st">"413"</span><span class="op">)</span></span></code></pre><p></p></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="scb_seasons.html">scb_seasons()</a></code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/scb_team.html">scb_team</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="st">"413"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

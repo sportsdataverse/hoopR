@@ -42,12 +42,12 @@ A `hoopR_data` tibble with one row per round:
 ## Details
 
 Unofficial, keyless API, not supported by Euroleague Basketball; hoopR
-only wraps it (wrap-only: payloads are not redistributed as release
-assets). This function mirrors its sdv-py twin of the same name: same
-arguments, defaults and snake_case columns, one row per sdv-py row.
+only wraps it. This function mirrors its sportsdataverse-py twin of the
+same name: same arguments, defaults and snake_case columns, one row per
+sportsdataverse-py row.
 
 A failed request raises a classed condition instead of returning an
-empty frame, mirroring sdv-py's error vocabulary: a 404 is
+empty frame, mirroring sportsdataverse-py's error vocabulary: a 404 is
 `hoopR_no_data`, a 400 / 422 is `hoopR_invalid_request`, any other
 failure (another status, a transport error, a non-JSON body) is
 `hoopR_fetch_error`; all three inherit `hoopR_error`.
@@ -78,7 +78,7 @@ Other Euroleague:
     euroleague_rounds(competition_code = "E", season_code = "E2025")
   })
 #> ── EuroLeague rounds from api-live.euroleague.net ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:12:49 UTC
+#> ℹ Data updated: 2026-10-31 21:29:48 UTC
 #> # A tibble: 47 × 8
 #>    season_code phase_type_code round index name      min_game_start_date
 #>    <chr>       <chr>           <int> <int> <chr>     <chr>              

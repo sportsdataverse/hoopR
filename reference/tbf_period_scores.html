@@ -128,13 +128,13 @@ sequence across leagues and seasons. Only a finished game is served.</p></dd>
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble. One row per side and period (home first).
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises <code>hoopR_no_data</code>, as in sdv-py.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>match_id</td><td>integer</td><td>TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for.</td></tr><tr><td>side</td><td>character</td><td>Side of the score: home (homeTeamScore) or away (awayTeamScore).</td></tr><tr><td>period</td><td>integer</td><td>Period number (quarter): 1-4 regulation; overtime numbering is unverified.</td></tr><tr><td>period_type</td><td>integer</td><td>Period type code: 1 = regulation, 2 = overtime (from the app code; no overtime game in the samples).</td></tr><tr><td>points</td><td>integer</td><td>Points the side scored IN the period (not cumulative).</td></tr></table></div>
+with nothing in it raises <code>hoopR_no_data</code>, as in sportsdataverse-py.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>match_id</td><td>integer</td><td>TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for.</td></tr><tr><td>side</td><td>character</td><td>Side of the score: home (homeTeamScore) or away (awayTeamScore).</td></tr><tr><td>period</td><td>integer</td><td>Period number (quarter): 1-4 regulation; overtime numbering is unverified.</td></tr><tr><td>period_type</td><td>integer</td><td>Period type code: 1 = regulation, 2 = overtime (from the app code; no overtime game in the samples).</td></tr><tr><td>points</td><td>integer</td><td>Points the side scored IN the period (not cumulative).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's
 mobile app (miniappapi.tbf.org.tr), which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
-robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. SportsDataverse has
-not ruled on TBF's terms, so payloads are not redistributed as release assets. The vendor's origin hosts
+robots.txt answers 404 on the host, and the runtime spaces requests at least 1 s apart. TBF's
+terms were not reviewed; check them before you republish the data. The vendor's origin hosts
 (nikayazilim.com) serve the same data without Cloudflare but are deliberately not used, redirects are never
 followed, and www.tbf.org.tr's interactive Turnstile is neither used nor automated.</p>
 <p>Coverage: season and competition are parameters (<code>bsl</code> Basketbol Super Ligi, back to 1966-67 in the league
@@ -192,7 +192,7 @@ Timestamps are Turkey local time (<code>Europe/Istanbul</code>).</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">tbf_period_scores</span><span class="op">(</span>match_id <span class="op">=</span> <span class="fl">346279</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── TBF Period Scores ──────────────────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:37:07 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:34:51 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 8 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   match_id side  period period_type points</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>

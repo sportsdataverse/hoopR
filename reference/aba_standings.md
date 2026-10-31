@@ -38,7 +38,7 @@ per loss. `points_for` / `points_against` are the two sides of the
 page's `Overall` column; Top 8 and Play-out tables carry points over
 from the regular season. Every column below is always present (a
 zero-row tibble keeps them and their types); an answer with nothing in
-it raises `hoopR_no_data`, as in sdv-py.
+it raises `hoopR_no_data`, as in sportsdataverse-py.
 
 |  |  |  |
 |----|----|----|
@@ -64,10 +64,10 @@ it raises `hoopR_no_data`, as in sdv-py.
 
 Unofficial use of a public source: these wrappers read the leagues' own
 PHP sites (www.aba-liga.com, druga.aba-liga.com), keyless, with no bot
-wall; payloads are not redistributed as release assets.
-www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing
-disallowed, no Crawl-delay) and druga has no robots.txt; no terms page
-was found. The runtime waits at least 1 s per host before every request.
+wall. www.aba-liga.com/robots.txt is the single line `User-agent: *`
+(nothing disallowed, no Crawl-delay) and druga has no robots.txt; no
+terms page was found. The runtime waits at least 1 s per host before
+every request.
 
 Coverage: box scores from 2001-02; play-by-play, the starter and
 on-court markers, the shot chart and the minute-by-minute score from
@@ -121,7 +121,7 @@ Other ABA Functions:
 # \donttest{
   try(aba_standings(season = 2026))
 #> ── ABA League Standings ───────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:09:33 UTC
+#> ℹ Data updated: 2026-10-31 21:26:23 UTC
 #> # A tibble: 36 × 16
 #>    season league_id league season_label   table    group  rank team_id team_name
 #>     <int>     <int> <chr>  <chr>          <chr>    <chr> <int>   <int> <chr>    

@@ -118,7 +118,7 @@ Endpoint: GET https://bnxt.sportpress.info/api/v1/server-config"><meta property=
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: UI string tables of the site in English, French and Dutch (one row per language and key). An
-empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sdv-py
+empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py
 <code>sportpress_ui_strings</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>language</td><td>character</td><td>ISO 639-1 code of the UI language: en, fr (French) or nl (Dutch).</td></tr><tr><td>key</td><td>character</td><td>Dotted UI string key such as 'statistics.individual.points'; 302 keys per language.</td></tr><tr><td>text</td><td>character</td><td>The UI text in that language; 11 keys label statistics columns, the rest are menus and buttons.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -127,7 +127,7 @@ empty valid answer raises <code>hoopR_no_data</code>; the columns are always the
 API. Every route needs a header key; it is public (hard-coded in the site bundle), <code>bnxt_runtime</code> reads it from
 the bundle at run time, falls back to a documented value when the bundle cannot be read, and never prints or logs
 it. A 401 raises AssetFetchError (<code>key rotated?</code>). robots.txt allows everything; requests are spaced at least 1 s
-apart. Payloads are not redistributed as release assets.</p></li>
+apart.</p></li>
 <li><p>Season key: the END year (<code>season=2026</code> is 2025-26), the API's own key on the season routes. Every other route is
 keyed by the competition id (one per season: 1 = 2021-22, 2 = 2020-21, 3 = 2022-23, 12 = 2023-24, 22 = 2024-25,
 24 = 2025-26, 25 = 2026-27), the competition-team id (new every season; <code>uu_team_id</code> is the stable club), the

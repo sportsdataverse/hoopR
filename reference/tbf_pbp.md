@@ -26,7 +26,7 @@ tbf_pbp(match_id)
 A `hoopR_data` tibble. One row per event. Games before 2025-26 raise
 `hoopR_no_data`. The feed has no player id. Every column below is always
 present (a zero-row tibble keeps them and their types); an answer with
-nothing in it raises `hoopR_no_data`, as in sdv-py.
+nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
 
 |  |  |  |
 |----|----|----|
@@ -51,11 +51,11 @@ Official TBF app API, unofficial for SportsDataverse: the backend of the
 Turkish Basketball Federation's mobile app (miniappapi.tbf.org.tr),
 which serves BSL, TBL, KBSL and the other TBF leagues. It needs no key;
 robots.txt answers 404 on the host, and the runtime spaces requests at
-least 1 s apart. SportsDataverse has not ruled on TBF's terms, so
-payloads are not redistributed as release assets. The vendor's origin
-hosts (nikayazilim.com) serve the same data without Cloudflare but are
-deliberately not used, redirects are never followed, and
-www.tbf.org.tr's interactive Turnstile is neither used nor automated.
+least 1 s apart. TBF's terms were not reviewed; check them before you
+republish the data. The vendor's origin hosts (nikayazilim.com) serve
+the same data without Cloudflare but are deliberately not used,
+redirects are never followed, and www.tbf.org.tr's interactive Turnstile
+is neither used nor automated.
 
 Coverage: season and competition are parameters (`bsl` Basketbol Super
 Ligi, back to 1966-67 in the league list; `tbl` second tier; `kbsl`
@@ -120,7 +120,7 @@ Other TBF Functions:
 # \donttest{
   try(tbf_pbp(match_id = 346279))
 #> ── TBF Play-by-Play ───────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:37:07 UTC
+#> ℹ Data updated: 2026-10-31 21:34:50 UTC
 #> # A tibble: 639 × 13
 #>    match_id action_number period period_type clock seconds_remaining home_score
 #>       <int>         <int>  <int>       <int> <chr>             <int>      <int>

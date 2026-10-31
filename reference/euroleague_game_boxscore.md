@@ -84,9 +84,9 @@ A `hoopR_data` tibble with one row per player plus two per side:
 ## Details
 
 Unofficial, keyless API, not supported by Euroleague Basketball; hoopR
-only wraps it (wrap-only: payloads are not redistributed as release
-assets). This function mirrors its sdv-py twin of the same name: same
-arguments, defaults and snake_case columns, one row per sdv-py row.
+only wraps it. This function mirrors its sportsdataverse-py twin of the
+same name: same arguments, defaults and snake_case columns, one row per
+sportsdataverse-py row.
 
 The live API's codes are space-padded fixed-width strings
 (`TEAM = "IST "`); every string cell is stripped. Its "no such game"
@@ -122,7 +122,7 @@ Other Euroleague:
     box[box$row_type == "player", c("team", "player", "minutes", "points", "valuation")]
   })
 #> ── EuroLeague game box score from live.euroleague.net ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:12:45 UTC
+#> ℹ Data updated: 2026-10-31 21:29:43 UTC
 #> # A tibble: 24 × 5
 #>    team  player                minutes points valuation
 #>    <chr> <chr>                 <chr>    <int>     <int>

@@ -49,7 +49,7 @@ the site's string (null when the shooter was not recorded, id 0); join
 on it, not on the name. The chart can differ from the box score by one
 attempt per shooter. Every column below is always present (a zero-row
 tibble keeps them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sdv-py.
+`hoopR_no_data`, as in sportsdataverse-py.
 
 |  |  |  |
 |----|----|----|
@@ -69,10 +69,10 @@ tibble keeps them and their types); an answer with nothing in it raises
 
 Unofficial use of a public source: these wrappers read the leagues' own
 PHP sites (www.aba-liga.com, druga.aba-liga.com), keyless, with no bot
-wall; payloads are not redistributed as release assets.
-www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing
-disallowed, no Crawl-delay) and druga has no robots.txt; no terms page
-was found. The runtime waits at least 1 s per host before every request.
+wall. www.aba-liga.com/robots.txt is the single line `User-agent: *`
+(nothing disallowed, no Crawl-delay) and druga has no robots.txt; no
+terms page was found. The runtime waits at least 1 s per host before
+every request.
 
 Coverage: box scores from 2001-02; play-by-play, the starter and
 on-court markers, the shot chart and the minute-by-minute score from

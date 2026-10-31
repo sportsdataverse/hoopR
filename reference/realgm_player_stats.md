@@ -1,7 +1,7 @@
 # **RealGM NBA Player Stats**
 
-**Get season player statistics leaders from
-[RealGM](https://basketball.realgm.com).**
+**Get season player statistics leaders from RealGM
+(basketball.realgm.com).**
 
 Returns the qualified-player leaderboard for a season, statistic family
 and season segment. RealGM exposes basic box-score averages as well as

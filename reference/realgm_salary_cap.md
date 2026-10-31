@@ -1,7 +1,7 @@
 # **RealGM NBA Salary Cap History**
 
-**Get the NBA salary-cap history (and projections) from
-[RealGM](https://basketball.realgm.com).**
+**Get the NBA salary-cap history (and projections) from RealGM
+(basketball.realgm.com).**
 
 One row per season with the cap, luxury-tax line, both aprons, bi-annual
 exception and the mid-level exception tiers. Dollar figures are returned

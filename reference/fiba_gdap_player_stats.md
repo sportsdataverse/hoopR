@@ -105,38 +105,9 @@ with the following columns:
 
 ## Details
 
-FIBA's terms restrict this source. The GDAP developer-portal terms limit
-API use to 'Authorized Users' (federations, organisers, FIBA partners)
-and say any broader use 'is not authorised'; the fiba.basketball terms
-say no portion of the site may be duplicated, redistributed or
-manipulated. The package owner reviewed both clauses on 2026-10-12,
-accepted them and approved the full intake, published data releases
-included. Users who are not themselves authorised by FIBA should check
-the terms before using the wrappers.
-
-The GDAP subscription key is public (fiba.basketball ships it in every
-page); the runtime reads it from the live page at run time and never
-logs it. Officials' contact details and coaches' and officials' dates of
-birth are dropped from every body.
-
-Id key spaces: competition_id is one per edition (2023 World Cup =
-208182) and game_id is global across competitions (the `<gameId>` of a
-game-page URL). team_id is per team per competition (Germany is 279569
-at the 2023 World Cup and 281545 at Paris 2024), while organisation_id
-is the stable federation or club (64 = Germany, every year); the game
-page's T\_`<id>` and the play-by-play oId are organisation ids, not team
-ids.
-
-Errors are classed conditions (all inherit `hoopR_error`):
-`hoopR_no_data` when FIBA has nothing (HTTP 404, or GDAP answers
-[`{}`](https://rdrr.io/r/base/Paren.html) / `[]` for an unknown id);
-`hoopR_bad_request` for HTTP 400 / 422 or a malformed id, season or
-date; `hoopR_asset_fetch` for any other failed fetch or an answer that
-is not about the request (an error envelope, HTTP 401 after a key
-refresh, HTTP 500, a body for another game, competition, team, player,
-federation, family or season). Seasons are FIBA's own key, which equals
-the sdv key: the END year for club competitions, the event year for
-national-team events, the target tournament year for qualifiers.
+Source, terms of use, request pacing, seasons, ids, coverage and error
+classes of this family: see the notes in
+[`fiba_gdap_awards()`](https://hoopR.sportsdataverse.org/reference/fiba_gdap_awards.md).
 
 ## See also
 
@@ -184,7 +155,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_player_stats(player_id = 211501, comp = 208182))
 #> ── FIBA gdap_player_stats from fiba.basketball ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:13:14 UTC
+#> ℹ Data updated: 2026-10-31 21:30:13 UTC
 #> # A tibble: 1 × 64
 #>   player_id competition_id points_per_game rebounds_per_game
 #>       <int>          <int>           <dbl>             <dbl>

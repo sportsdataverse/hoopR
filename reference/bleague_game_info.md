@@ -152,9 +152,9 @@ A `hoopR_data` tibble with these columns:
 ## Details
 
 The B.LEAGUE (Japan Professional Basketball League: B1, B2, B3) wrappers
-mirror sdv-py's `sportsdataverse.basketball.bleague` wrappers of the
-same names: same arguments, the same snake_case columns and types, one
-row per sdv-py row.
+mirror sportsdataverse-py's `sportsdataverse.basketball.bleague`
+wrappers of the same names: same arguments, the same snake_case columns
+and types, one row per sportsdataverse-py row.
 
 **Unofficial and unsupported.** The game contexts are JSON objects in
 B.LEAGUE's own public S3 bucket (`b-league.s3.amazonaws.com`, the store
@@ -162,9 +162,9 @@ its game pages read), and the schedule, standings and game_detail pages
 of `www.bleague.jp` are parsed here. Neither host publishes terms for
 this use (the site's /terms/ answers 404; robots.txt sets a Crawl-delay
 only for msnbot and bingbot). Requests are spaced at least one second
-apart per host; 429 and 5xx answers are retried (three attempts).
-SportsDataverse has not ruled on the site's terms, so the data is not
-redistributed as release assets.
+apart per host; 429 and 5xx answers are retried (three attempts). The
+site's terms were not reviewed; check them before you republish the
+data.
 
 **Seasons** are END years (`season = 2026` is 2025-26); the site's own
 `Year` / `year=` is the START year, so the request sends
@@ -216,7 +216,7 @@ Other B.LEAGUE Functions:
 # \donttest{
   try(bleague_game_info(schedule_key = 504734))
 #> ── B.LEAGUE game info from b-league.s3.amazonaws.com ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:10:15 UTC
+#> ℹ Data updated: 2026-10-31 21:27:18 UTC
 #> # A tibble: 1 × 103
 #>   schedule_key season feed   year  code event convention_key convention_class
 #>          <int>  <int> <chr> <int> <int> <int> <chr>                     <int>

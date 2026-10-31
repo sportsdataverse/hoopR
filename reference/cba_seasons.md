@@ -16,7 +16,7 @@ cba_seasons()
 
 A `hoopR_data` tibble: One row per season: label, START year, default
 flag. An empty valid answer is a zero-row tibble with these columns, in
-this order (sdv-py `cba_seasons`):
+this order (sportsdataverse-py `cba_seasons`):
 
 |  |  |  |
 |----|----|----|
@@ -28,10 +28,9 @@ this order (sdv-py `cba_seasons`):
 ## Details
 
 - Unofficial and unsupported: these wrappers read the routes that
-  cbaleague.com's own data site (a Vue single-page app) calls.
-  SportsDataverse has not ruled on the site's terms, so payloads are not
-  redistributed as release assets. Requests are spaced at least 1 s
-  apart per host; keep use small.
+  cbaleague.com's own data site (a Vue single-page app) calls. The
+  site's terms were not reviewed; check them before you republish the
+  data. Requests are spaced at least 1 s apart per host; keep use small.
 
 - Access: every response body is AES-128-ECB encrypted with a public key
   shipped in the site's front-end bundle; the runtime decrypts it with
@@ -89,9 +88,8 @@ this order (sdv-py `cba_seasons`):
   keep the FIRST row per `player_id`.
 
 - Text fields are Chinese (names, play-by-play sentences, position and
-  nationality labels). The column descriptions here are ASCII; sdv-py's
-  `tools/codegen/notes/cba_glossary.yaml` holds the full English
-  glossaries.
+  nationality labels). The column descriptions here are ASCII;
+  sportsdataverse-py keeps the full English glossaries of the codes.
 
 - Personal data: the operator ids (`createdBy` / `lastModifiedBy`, one
   holds a mobile number) and any bare mobile-number string are removed
@@ -152,7 +150,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_seasons())
 #> ── CBA Seasons from data-server.cbaleague.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:10:57 UTC
+#> ℹ Data updated: 2026-10-31 21:27:47 UTC
 #> # A tibble: 32 × 3
 #>    is_default key       value
 #>         <int> <chr>     <chr>

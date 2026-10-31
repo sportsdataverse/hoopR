@@ -132,38 +132,7 @@ another competition is refused (<code>hoopR_asset_fetch</code>).</p>
     <p>A <code>hoopR_data</code> tibble with these columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>comp_id</td><td>integer</td><td>Competition id (constant across seasons): 115 Primera FEB (LEB Oro), 118 Segunda FEB, 210 Liga Femenina Endesa, 214 LF Challenge, 218 LF-2, 111 Tercera FEB. Not the site's menu group.</td></tr><tr><td>comp_code</td><td>integer</td><td>Season-specific competition edition code (e.g. 23473 = Primera FEB 2026-27).</td></tr><tr><td>competition</td><td>character</td><td>Competition name as printed that season, uppercase ('PRIMERA FEB'; 2020-21 'LIGA LEB ORO').</td></tr><tr><td>game_id</td><td>integer</td><td>FEB game id (one global sequence): the {gameId} of every LiveStats route.</td></tr><tr><td>round_id</td><td>integer</td><td>Round id; 0 in every sample (the route does not fill it).</td></tr><tr><td>stage</td><td>character</td><td>Stage code as a string; '0' in every sample (meaning unverified).</td></tr><tr><td>venue</td><td>character</td><td>Name of the venue (pabellon) where the game is played.</td></tr><tr><td>start_time</td><td>POSIXct</td><td>Tip-off in Spanish local time (POSIXct, tz Europe/Madrid; the source has no offset).</td></tr><tr><td>start_time_utc</td><td>POSIXct</td><td>Tip-off in UTC (POSIXct, tz UTC).</td></tr><tr><td>period</td><td>integer</td><td>Current or last period (4 when finished).</td></tr><tr><td>clock</td><td>character</td><td>'FINAL' once finished, else the game clock ('00:00' before tip-off).</td></tr><tr><td>status</td><td>integer</td><td>Game state code: 3 = finished, 1 = scheduled (seen 2026-10-12); the live codes are unverified.</td></tr><tr><td>home_team_id</td><td>integer</td><td>Home team-season id (new every season; joins the schedule pages).</td></tr><tr><td>home_team</td><td>character</td><td>Home team name for the season.</td></tr><tr><td>home_team_code</td><td>character</td><td>Home federation team code, 8 digits as a string.</td></tr><tr><td>home_club_code</td><td>character</td><td>Home federation club code, 6 digits as a string.</td></tr><tr><td>home_abbreviation</td><td>character</td><td>Home team three-letter abbreviation ('PAL').</td></tr><tr><td>home_score</td><td>integer</td><td>Home points (0 before tip-off).</td></tr><tr><td>away_team_id</td><td>integer</td><td>Away team-season id (new every season; joins the schedule pages).</td></tr><tr><td>away_team</td><td>character</td><td>Away team name for the season.</td></tr><tr><td>away_team_code</td><td>character</td><td>Away federation team code, 8 digits as a string.</td></tr><tr><td>away_club_code</td><td>character</td><td>Away federation club code, 6 digits as a string.</td></tr><tr><td>away_abbreviation</td><td>character</td><td>Away team three-letter abbreviation.</td></tr><tr><td>away_score</td><td>integer</td><td>Away points (0 before tip-off).</td></tr><tr><td>period_scores</td><td>character</td><td>Points per period as 'home-away' pairs joined by ';' ('16-16;19-16;10-21;14-14'); null before tip-off.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>The Spanish Basketball Federation (FEB) wrappers cover Primera FEB, Segunda
-FEB and Liga Femenina Endesa (plus the federation's other groups on the same
-routes). They mirror sdv-py's <code>sportsdataverse.basketball.feb</code> wrappers of
-the same names: same arguments, the same snake_case columns and types, one
-row per sdv-py row.</p>
-<p><strong>Legal notice.</strong> The FEB's aviso legal (legal notice) asserts
-intellectual-property rights over the site's content and its databases (the
-EU database right). It has no explicit scraping clause, and robots.txt
-answers 404 on both hosts. Fetching for your own use on your own machine is
-how these wrappers are meant to be used; check the notice before you
-republish the data.</p>
-<p><strong>Unofficial and unsupported.</strong> The LiveStats API
-(<code>intrafeb.feb.es</code>) is the federation's own widget backend, not a documented
-public API. It needs a bearer token, which is public: it is read from the
-home page of <code>baloncestoenvivo.feb.es</code> at run time, kept in memory for the R
-session (24 h validity, renewed once on an HTTP 401) and never printed,
-logged or written. Requests are spaced at least one second apart per host;
-429 and 5xx answers are retried (three attempts).</p>
-<p><strong>Coverage.</strong> The game routes answer from 2020-21 (Liga Femenina Endesa from
-its first game; Primera FEB from 2021-03-12, so its earlier 2020-21 games
-and every earlier season answer 404). 2020-21 play-by-play is text only. The
-schedule pages go back to 1996-97 (<code>season = 1997</code>).</p>
-<p><strong>Seasons</strong> are END years (<code>season = 2027</code> is 2026-27); the site's own <code>t</code>
-key is the START year, so the request sends <code>t = season - 1</code>.</p>
-<p><strong>Errors</strong> are classed conditions, never a warning plus an empty frame:
-<code>hoopR_no_data</code> (HTTP 404, an unknown group, a schedule page with no games,
-an empty overview window), <code>hoopR_bad_request</code> (HTTP 400 / 422, or a
-<code>game_id</code>, <code>group</code> or <code>season</code> that is not a non-negative integer) and
-<code>hoopR_asset_fetch</code> (any other failure: another status, a transport error,
-a token the API still rejects after one renewal, a non-JSON or non-HTML
-body, an error or changed envelope, a play-by-play of another game, a page
-for another group or season, or layout drift). All inherit <code>hoopR_error</code>.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="feb_game_info.html">feb_game_info()</a></code>.</p>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/feb_overview.html">feb_overview</a></span><span class="op">(</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">

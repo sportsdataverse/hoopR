@@ -27,7 +27,7 @@ pleague_box_players(gid)
 A `hoopR_data` tibble: Player box score of one finished game: minutes,
 points, shooting splits, rebounds, assists, plus/minus, and the ratings
 from 2022-23; did-not-play rows included. An empty valid answer is a
-zero-row tibble with these columns, in this order (sdv-py
+zero-row tibble with these columns, in this order (sportsdataverse-py
 `pleague_box_players`):
 
 |  |  |  |
@@ -83,56 +83,9 @@ zero-row tibble with these columns, in this order (sdv-py
 
 ## Details
 
-- Unofficial use of a public source: these wrappers read
-  pleagueofficial.com (P. LEAGUE+, Taiwan's men's league), keyless. The
-  site's /user-policy (members' terms, section 11) reserves all content
-  on the site to the service and its rights holders and forbids use,
-  copying, adaptation or distribution without authorisation (it says
-  nothing about automated access); robots.txt holds only Cloudflare
-  content-signal comment lines with no Allow, Disallow or Crawl-delay
-  rule. Use for reference only; payloads are not redistributed as
-  release assets, and a data release needs owner sign-off. Requests are
-  spaced at least 1 s apart per host, retries included.
-
-- Access: the site sits behind Cloudflare. sdv-py fetches it with
-  curl_cffi (Chrome TLS); this R port sends a browser User-Agent through
-  libcurl, which was served on a live check (2026-10-18); Cloudflare may
-  still answer a request with an HTTP 403 challenge page
-  (`hoopR_asset_fetch`). Redirects are not followed: the site answers an
-  unknown `gid` or a season before 2020-21 with a 302 to the home page
-  (`hoopR_no_data`).
-
-- Coverage: schedules, standings and player tables from 2020-21
-  (`season = 2021`); box scores for every finished game from 2020-21;
-  play-by-play (with shot x / y) from 2022-23 (gid 191 on). 2020-21 and
-  2021-22 pages embed an empty game uuid, so they have no play-by-play
-  and no Preciser data (`hoopR_no_data`). A game is keyed by `gid`: ONE
-  global integer sequence over every stage and season. Only finished
-  games are served: an unplayed game, or a box or play-by-play that does
-  not match its game page (the routes echo no id, so the game page is
-  fetched first, cached for the session, and the body's scores, quarters
-  and points are checked against it), raises `hoopR_asset_fetch`.
-
-- Seasons are END years (2025 = the site's slug '2024-25'). Text is
-  Traditional Chinese as printed (names, venues, play-by-play phrases);
-  the column descriptions gloss it in English. Ids: `team_id` (1-8) is
-  stable across renames; the box `player_id` is the player-team
-  membership. The box `random_id` is UNRELIABLE before 2022-23 (gid 13
-  gives one player another player's page id): join box rows on
-  `player_id`, and box rows to Preciser shots on `person_id`, never on
-  `random_id`. The date of birth is dropped from the player frame;
-  officials appear by name only.
-
-- Errors are classed conditions, all inheriting `hoopR_error`:
-  `hoopR_no_data` (HTTP 404, a redirect, a stage the season does not
-  have, a game with no play-by-play, a season before 2020-21),
-  `hoopR_bad_request` (an invalid argument, HTTP 400 / 422) and
-  `hoopR_asset_fetch` (any other non-200, a dead connection, an empty or
-  unreadable body, a page for another game, season, stage or player, an
-  unfinished game, layout drift, a play-by-play phrase outside the
-  observed vocabulary). HTTP 429 / 502 / 503 / 504 are retried, up to
-  three attempts; HTTP 500 is NOT retried (the site answers 500 for an
-  unknown id). Wrappers raise; they never warn and return empty.
+Source, terms of use, request pacing, seasons, ids, coverage and error
+classes of this family: see the notes in
+[`pleague_schedule()`](https://hoopR.sportsdataverse.org/reference/pleague_schedule.md).
 
 ## See also
 
@@ -162,7 +115,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   try(pleague_box_players(gid = 197))
 #> ── P. LEAGUE+ Player Box from pleagueofficial.com ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:35:39 UTC
+#> ℹ Data updated: 2026-10-31 21:33:20 UTC
 #> # A tibble: 26 × 47
 #>      gid side  player_id person_id       random_id name_zh jersey starter played
 #>    <int> <chr>     <int> <chr>           <chr>     <chr>   <chr>  <lgl>   <lgl> 

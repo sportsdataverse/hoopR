@@ -24,7 +24,7 @@ sportality_pbp(game_uuid)
 
 A `hoopR_data` tibble: Play-by-play events with shot coordinates and the
 Genius ids (2023/24 on). An empty valid answer raises `hoopR_no_data`;
-the documented columns come first, in this order (sdv-py
+the documented columns come first, in this order (sportsdataverse-py
 `sportality_pbp`), then any column the API added later:
 
 |  |  |  |
@@ -59,7 +59,7 @@ the documented columns come first, in this order (sdv-py
 | game_type | character | Game type of the game (” on every line seen). |
 | round | integer | Round number (0). |
 | start_date_and_time | character | Start of the game (” on every line seen). |
-| sub_type | character | Refinement of `type` (the shot type, rebound kind, foul kind, ...); null on types that have none. Values: `1of1` = free throw 1 of 1; `1of2` = free throw 1 of 2; `1of3` = free throw 1 of 3; `24sec` = shot-clock violation; `2of2` = free throw 2 of 2; `2of3` = free throw 2 of 3; `3of3` = free throw 3 of 3; `3sec` = three-second violation; `5sec` = five-second violation; `8sec` = eight-second violation; `adjustment` = clock adjustment; `alleyoop` = alley-oop shot; `alleyoopdunk` = alley-oop dunk; `backcourt` = backcourt violation; `badpass` = bad pass; `ballhandling` = ball-handling error; `benchTechnical` = technical foul on the bench; `coachTechnical` = technical foul on the coach; `defensive` = defensive rebound; `disqualifying` = disqualifying foul; `disruptive` = disruptive foul (unverified); `doubledribble` = double dribble; `drivinglayup` = driving layup; `dunk` = dunk; `end` = end of the period or game; `eurostep` = euro-step layup; `fadeaway` = fadeaway jump shot; `flagrant` = flagrant foul; `floatingjumpshot` = floating jump shot; `full` = full timeout; `heldball` = held ball; `hookshot` = hook shot; `in` = player enters; `jumpshot` = jump shot; `layup` = layup; `lodgedball` = lodged ball; `lost` = lost the jump ball; `offensive` = offensive rebound or offensive foul; `offensivegoaltending` = offensive goaltending; `officials` = official timeout; `other` = other; `out` = player leaves; `outofbounds` = out of bounds; `outofboundsrebound` = rebound off an out-of-bounds ball (unverified); `personal` = personal foul; `pullupjumpshot` = pull-up jump shot; `reverselayup` = reverse layup; `start` = start of the period or game, or clock start; `startperiod` = start of a period (jump ball line); `stepbackjumpshot` = step-back jump shot; `stop` = clock stop; `technical` = technical foul; `throwIn` = throw-in violation (unverified); `tipindunk` = tip-in dunk; `tipinlayup` = tip-in layup; `travel` = traveling; `turnaroundjumpshot` = turnaround jump shot; `unsportsmanlike` = unsportsmanlike foul; `won` = won the jump ball. |
+| sub_type | character | Refinement of `type` (the shot type, rebound kind, foul kind, ...); null on types that have none. Values are listed under "Sub-type codes" below. |
 | qualifiers | character | Event qualifiers joined by ';' (a list in recent games, a ';'-joined string or null in older ones). |
 | is_successful | integer | 1 when the action succeeded (a made shot or free throw, a recorded rebound ...). ABSENT, not 0, for a missed shot, so count misses as rows without it. |
 | instance_id | character | Site instance id of the club or league (platform key space, `<code><n>_<code>` such as hol2_hol; the league itself is dbl1_dbl). |
@@ -82,47 +82,131 @@ the documented columns come first, in this order (sdv-py
 
 ## Details
 
-- Unofficial: the JSON API behind www.basketligaen.dk, the Danish men's
-  basketball league (Basketligaen, series code DBL). The site runs on
-  the Sportality platform (the vendor behind the SHL and
-  HockeyAllsvenskan wrappers). The terms page was not read; payloads are
-  not redistributed as release assets.
+Source, terms of use, request pacing, seasons, ids, coverage and error
+classes of this family: see the notes in
+[`sportality_schedule()`](https://hoopR.sportsdataverse.org/reference/sportality_schedule.md).
 
-- Stats provider: genius-basketball, a relay of Genius Sports LiveStats.
-  The Genius match, team and person ids in play-by-play, box scores and
-  stats tables (game_id, team_id, player_id, all Int64) join the genius
-  family; the platform uuids (game, team, athlete, ssgt) are not Genius
-  ids and exist only on this site. The Genius ORG code of Denmark is not
-  exposed.
+## Sub-type codes
 
-- Season = the END year (2026 = 2025/26) everywhere; the runtime maps
-  it, with game_type ('regular' or 'finals', the playoffs), to the
-  site's ssgt (season + series + game type) through layout-info.
-  Schedules, standings and season tables start in 2002/03; game-level
-  data (play-by-play with shot x/y, box scores, team stats) starts in
-  2023/24.
+The values of `sub_type`:
 
-- Source defects the runtime refuses (`hoopR_asset_fetch`): an
-  unfinished game or a truncated play-by-play feed, a box score or feed
-  that names another game, a cut stats table. The 2002/03 regular-season
-  schedule lists 109 finished games where its own standings count 110: a
-  source gap.
+- `1of1`: free throw 1 of 1
 
-- Personal data is removed from every body: birth dates, e-mail
-  addresses, phone numbers, addresses and contact blocks.
+- `1of2`: free throw 1 of 2
 
-- No women's league: Dameligaen has its own domain (dameligaen.dk),
-  which answers 401 to anonymous requests.
+- `1of3`: free throw 1 of 3
 
-- Errors are classed conditions: `hoopR_no_data` (404, an empty gameday
-  body, [`{}`](https://rdrr.io/r/base/Paren.html) / `[]`, a table with
-  no rows, a season or game type layout-info does not list),
-  `hoopR_bad_request` (a bad argument, a 400 / 422) and
-  `hoopR_asset_fetch` (an error envelope or non-JSON 200, a body for
-  another game / team / athlete / ssgt, an unfinished game or truncated
-  play-by-play, a cut stats table, any other non-2xx; a 500 is the
-  site's answer for an unknown uuid and is not retried), all inheriting
-  `hoopR_error`. Wrappers raise; they never return an empty frame.
+- `24sec`: shot-clock violation
+
+- `2of2`: free throw 2 of 2
+
+- `2of3`: free throw 2 of 3
+
+- `3of3`: free throw 3 of 3
+
+- `3sec`: three-second violation
+
+- `5sec`: five-second violation
+
+- `8sec`: eight-second violation
+
+- `adjustment`: clock adjustment
+
+- `alleyoop`: alley-oop shot
+
+- `alleyoopdunk`: alley-oop dunk
+
+- `backcourt`: backcourt violation
+
+- `badpass`: bad pass
+
+- `ballhandling`: ball-handling error
+
+- `benchTechnical`: technical foul on the bench
+
+- `coachTechnical`: technical foul on the coach
+
+- `defensive`: defensive rebound
+
+- `disqualifying`: disqualifying foul
+
+- `disruptive`: disruptive foul (unverified)
+
+- `doubledribble`: double dribble
+
+- `drivinglayup`: driving layup
+
+- `dunk`: dunk
+
+- `end`: end of the period or game
+
+- `eurostep`: euro-step layup
+
+- `fadeaway`: fadeaway jump shot
+
+- `flagrant`: flagrant foul
+
+- `floatingjumpshot`: floating jump shot
+
+- `full`: full timeout
+
+- `heldball`: held ball
+
+- `hookshot`: hook shot
+
+- `in`: player enters
+
+- `jumpshot`: jump shot
+
+- `layup`: layup
+
+- `lodgedball`: lodged ball
+
+- `lost`: lost the jump ball
+
+- `offensive`: offensive rebound or offensive foul
+
+- `offensivegoaltending`: offensive goaltending
+
+- `officials`: official timeout
+
+- `other`: other
+
+- `out`: player leaves
+
+- `outofbounds`: out of bounds
+
+- `outofboundsrebound`: rebound off an out-of-bounds ball (unverified)
+
+- `personal`: personal foul
+
+- `pullupjumpshot`: pull-up jump shot
+
+- `reverselayup`: reverse layup
+
+- `start`: start of the period or game, or clock start
+
+- `startperiod`: start of a period (jump ball line)
+
+- `stepbackjumpshot`: step-back jump shot
+
+- `stop`: clock stop
+
+- `technical`: technical foul
+
+- `throwIn`: throw-in violation (unverified)
+
+- `tipindunk`: tip-in dunk
+
+- `tipinlayup`: tip-in layup
+
+- `travel`: traveling
+
+- `turnaroundjumpshot`: turnaround jump shot
+
+- `unsportsmanlike`: unsportsmanlike foul
+
+- `won`: won the jump ball
 
 ## See also
 
@@ -160,7 +244,7 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_pbp(game_uuid = "c4hh5nig6t"))
 #> ── Basketligaen Play-by-Play from basketligaen.dk ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:36:15 UTC
+#> ℹ Data updated: 2026-10-31 21:33:59 UTC
 #> # A tibble: 804 × 49
 #>    game_source_id game_id event_id type     event_uuid  period period_type time 
 #>             <int>   <int>    <int> <chr>    <chr>        <int> <chr>       <chr>

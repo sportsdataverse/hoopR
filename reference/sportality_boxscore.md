@@ -23,7 +23,7 @@ sportality_boxscore(game_uuid)
 
 A `hoopR_data` tibble: Player box score and team rows of both sides
 (2023/24 on). An empty valid answer raises `hoopR_no_data`; the
-documented columns come first, in this order (sdv-py
+documented columns come first, in this order (sportsdataverse-py
 `sportality_boxscore`), then any column the API added later:
 
 |  |  |  |
@@ -64,47 +64,9 @@ documented columns come first, in this order (sdv-py
 
 ## Details
 
-- Unofficial: the JSON API behind www.basketligaen.dk, the Danish men's
-  basketball league (Basketligaen, series code DBL). The site runs on
-  the Sportality platform (the vendor behind the SHL and
-  HockeyAllsvenskan wrappers). The terms page was not read; payloads are
-  not redistributed as release assets.
-
-- Stats provider: genius-basketball, a relay of Genius Sports LiveStats.
-  The Genius match, team and person ids in play-by-play, box scores and
-  stats tables (game_id, team_id, player_id, all Int64) join the genius
-  family; the platform uuids (game, team, athlete, ssgt) are not Genius
-  ids and exist only on this site. The Genius ORG code of Denmark is not
-  exposed.
-
-- Season = the END year (2026 = 2025/26) everywhere; the runtime maps
-  it, with game_type ('regular' or 'finals', the playoffs), to the
-  site's ssgt (season + series + game type) through layout-info.
-  Schedules, standings and season tables start in 2002/03; game-level
-  data (play-by-play with shot x/y, box scores, team stats) starts in
-  2023/24.
-
-- Source defects the runtime refuses (`hoopR_asset_fetch`): an
-  unfinished game or a truncated play-by-play feed, a box score or feed
-  that names another game, a cut stats table. The 2002/03 regular-season
-  schedule lists 109 finished games where its own standings count 110: a
-  source gap.
-
-- Personal data is removed from every body: birth dates, e-mail
-  addresses, phone numbers, addresses and contact blocks.
-
-- No women's league: Dameligaen has its own domain (dameligaen.dk),
-  which answers 401 to anonymous requests.
-
-- Errors are classed conditions: `hoopR_no_data` (404, an empty gameday
-  body, [`{}`](https://rdrr.io/r/base/Paren.html) / `[]`, a table with
-  no rows, a season or game type layout-info does not list),
-  `hoopR_bad_request` (a bad argument, a 400 / 422) and
-  `hoopR_asset_fetch` (an error envelope or non-JSON 200, a body for
-  another game / team / athlete / ssgt, an unfinished game or truncated
-  play-by-play, a cut stats table, any other non-2xx; a 500 is the
-  site's answer for an unknown uuid and is not retried), all inheriting
-  `hoopR_error`. Wrappers raise; they never return an empty frame.
+Source, terms of use, request pacing, seasons, ids, coverage and error
+classes of this family: see the notes in
+[`sportality_schedule()`](https://hoopR.sportsdataverse.org/reference/sportality_schedule.md).
 
 ## See also
 
@@ -142,7 +104,7 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_boxscore(game_uuid = "c4hh5nig6t"))
 #> ── Basketligaen Box Score from basketligaen.dk ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:36:09 UTC
+#> ℹ Data updated: 2026-10-31 21:33:53 UTC
 #> # A tibble: 28 × 32
 #>    team_side row_type player_id team_id team_name    period full_name first_name
 #>    <chr>     <chr>        <int>   <int> <chr>         <int> <chr>     <chr>     

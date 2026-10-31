@@ -175,29 +175,7 @@ sent; with neither <code>season</code> nor <code>season_id</code> the API filter
     <p>A <code>hoopR_data</code> tibble, one row per <code>(person_id, season_name, team_id)</code>:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>website_id</td><td>integer</td><td>Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self.</td></tr><tr><td>person_id</td><td>character</td><td>Player UUID (person), shared across seasons and sites.</td></tr><tr><td>season_name</td><td>character</td><td>Competition-season the line is for, in the site's language (Betclic ELITE - Playoffs 2025).</td></tr><tr><td>season_year</td><td>integer</td><td>The site's own year of that season (START year on LNB).</td></tr><tr><td>season_end_year</td><td>integer</td><td>Season END year of that season (sdv key); null when the site is unmapped.</td></tr><tr><td>team_id</td><td>character</td><td>Team UUID the player played for in that season.</td></tr><tr><td>team_name</td><td>character</td><td>Name of the team the player played for in that season.</td></tr><tr><td>minutes_per_game</td><td>character</td><td>Minutes per game as an ISO 8601 duration (player, that competition-season).</td></tr><tr><td>points_per_game</td><td>double</td><td>Points per game (player, that competition-season).</td></tr><tr><td>rebounds_per_game</td><td>double</td><td>Rebounds per game (player, that competition-season).</td></tr><tr><td>rebounds_offensive_per_game</td><td>double</td><td>Offensive rebounds per game (player, that competition-season).</td></tr><tr><td>rebounds_defensive_per_game</td><td>double</td><td>Defensive rebounds per game (player, that competition-season).</td></tr><tr><td>assists_per_game</td><td>double</td><td>Assists per game (player, that competition-season).</td></tr><tr><td>steals_per_game</td><td>double</td><td>Steals per game (player, that competition-season).</td></tr><tr><td>blocks_per_game</td><td>double</td><td>Blocks per game (player, that competition-season).</td></tr><tr><td>turnovers_per_game</td><td>double</td><td>Turnovers per game (player, that competition-season).</td></tr><tr><td>fouls_personal_per_game</td><td>double</td><td>Personal fouls per game (player, that competition-season).</td></tr><tr><td>dunks_per_game</td><td>double</td><td>Dunks per game (player, that competition-season).</td></tr><tr><td>efficiency</td><td>integer</td><td>Efficiency rating, from the site's own formula (player, that competition-season).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p><strong>Unofficial.</strong> This is the public endpoint the Sportradar Atrium / Synergy
-"Connect" widget calls from every visitor's browser (keyless; the host has no
-robots.txt). The data is Sportradar's and the leagues'. The wrappers read it on the
-caller's behalf, one request at least 1 s after the last to the host, and it is not
-republished as release assets. Keep crawls small and incremental.</p>
-<p><strong>Sites and seasons.</strong> <code>website_id</code> picks the league site; one site carries many
-competitions. Seasons are END years (<code>season = 2026</code>): the site's own year is the
-START year on LNB and the calendar year elsewhere, and a year can hold several
-competitions, so pair <code>season</code> with <code>competition_id</code> (see <code><a href="atrium_seasons.html">atrium_seasons()</a></code>) or
-pass <code>season_id</code>. <code><a href="atrium_end_year.html">atrium_end_year()</a></code> maps a site's own year to that END year, and
-<code><a href="atrium_season_id.html">atrium_season_id()</a></code> finds the season UUID.</p>
-<p><strong>Columns</strong> are configured per site: a statistic one site omits is <code>NA</code>. A key the
-documented columns do not list is appended with an inferred type. Player and team
-ids (UUIDs, character) are shared across sites; the player stat tables carry names
-only, so <code>person_id</code> there is decoded from the widget link beside each name.</p>
-<p><strong>Errors</strong> (classed conditions, all inheriting <code>hoopR_error</code>): <code>hoopR_no_data</code> when
-the site has nothing for the request (HTTP 404, no such season, an empty fixture
-list, a game with no play-by-play yet, or a fixture id the site does not serve: an
-unknown id or a game of another site, which the API answers alike with an empty
-fixture); <code>hoopR_bad_request</code> for HTTP 400 / 422 or an argument that cannot be
-mapped (an ambiguous END year, <code>season</code> with <code>season_id</code>); <code>hoopR_asset_fetch</code> for
-any other failed fetch, an error / stub body, or a body that belongs to another
-site, type, season, game, player or team than the one asked for.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="atrium_fixtures.html">atrium_fixtures()</a></code>.</p>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/atrium_player_seasons.html">atrium_player_seasons</a></span><span class="op">(</span>website_id <span class="op">=</span> <span class="fl">12</span>, person_id <span class="op">=</span> <span class="st">"4458f165-f865-11f0-8ebf-539c931c1654"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">

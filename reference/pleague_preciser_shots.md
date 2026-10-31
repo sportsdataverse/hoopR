@@ -31,8 +31,8 @@ pleague_preciser_shots(uuid, gid = NULL)
 
 A `hoopR_data` tibble: Every field-goal attempt of one finished game
 with court x / y (vendor frame), zone, style and result. An empty valid
-answer is a zero-row tibble with these columns, in this order (sdv-py
-`pleague_preciser_shots`):
+answer is a zero-row tibble with these columns, in this order
+(sportsdataverse-py `pleague_preciser_shots`):
 
 |  |  |  |
 |----|----|----|
@@ -64,10 +64,9 @@ answer is a zero-row tibble with these columns, in this order (sdv-py
   vendor behind the P. LEAGUE+ game page, not the league's own API. It
   is keyless, CORS-open, has no robots.txt (404) and no terms were
   found; it serves the data the league's own game page displays. The
-  league's /user-policy reserves its content, so payloads are not
-  redistributed as release assets and a data release needs owner
-  sign-off. Requests are spaced at least 1 s apart per host, retries
-  included.
+  league's /user-policy reserves its content, so check it before you
+  republish the data. Requests are spaced at least 1 s apart per host,
+  retries included.
 
 - Wrappers take the Preciser game uuid (the `uuid` column of
   [`pleague_game()`](https://hoopR.sportsdataverse.org/reference/pleague_game.md);
@@ -130,7 +129,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   try(pleague_preciser_shots(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
 #> ── P. LEAGUE+ Shots from api.preciser.io ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:35:44 UTC
+#> ℹ Data updated: 2026-10-31 21:33:26 UTC
 #> # A tibble: 168 × 20
 #>    game_uuid      shot_no period period_label clock seconds_left side  team_uuid
 #>    <chr>            <int>  <int> <chr>        <chr>        <int> <chr> <chr>    

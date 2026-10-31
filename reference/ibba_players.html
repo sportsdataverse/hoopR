@@ -140,36 +140,7 @@ unchanged.</p></dd>
     <p>A <code>hoopR_data</code> tibble with these columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>player_id</td><td>integer</td><td>Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows.</td></tr><tr><td>jersey</td><td>character</td><td>Jersey number as a zero-padded string ('02'); a box score also uses '_TEAM' and 'TOTAL' for its two non-player lines.</td></tr><tr><td>season</td><td>integer</td><td>Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping.</td></tr><tr><td>team_id</td><td>integer</td><td>Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids.</td></tr><tr><td>player_name_he</td><td>character</td><td>Player name in Hebrew, HTML-unescaped.</td></tr><tr><td>player_name</td><td>character</td><td>Player name in English, HTML-unescaped.</td></tr><tr><td>is_replaced</td><td>logical</td><td>True when the person was replaced during the season (left the roster or staff).</td></tr><tr><td>is_local</td><td>logical</td><td>True for an Israeli (local) player; the isr_ leader categories count only these.</td></tr><tr><td>photo_path</td><td>character</td><td>Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il.</td></tr><tr><td>height_m</td><td>double</td><td>Height in metres (1.93).</td></tr><tr><td>position_he</td><td>character</td><td>Position in Hebrew.</td></tr><tr><td>position</td><td>character</td><td>Position code: PG, G, G-F, F, F-C or C.</td></tr><tr><td>birth_date</td><td>Date</td><td>Date of birth (public player bio); null when not published.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>The IBBA wrappers read the Israel Basketball Association's ASP.NET web service at
-<code>basket.co.il/ws/ws.asmx</code> (the ops its own site calls): seasons, boards, teams, rosters,
-coaches, schedules and results, box scores from 2004-05, season stats and leaders of the
-Winner League (Israeli Premier League). They mirror sdv-py's
-<code>sportsdataverse.basketball.ibba</code> wrappers of the same names: same arguments, the same
-snake_case columns and types, one row per sdv-py row. The live box score, play-by-play and
-shot coordinates of a game are in the <code><a href="ibba_segev_game_info.html">ibba_segev_game_info()</a></code> family (Segev Stats).</p>
-<p><strong>Unofficial and unsupported.</strong> The web service is keyless, unofficial and reverse
-engineered. Requests are spaced at least one second apart per host (429 / 502 / 503 / 504
-are retried three times; an HTTP 500 is the host's deterministic error page, a stack
-trace, and is not retried); keep crawls slow and incremental. Contact details (e-mail,
-phone, fax) and coaches' dates of birth are dropped.</p>
-<p><strong>Seasons and ids.</strong> <code>season</code> is the END year and the host's own <code>cYear</code> (2026 = 2025-26):
-it is sent unchanged. <code>team_id</code> and <code>player_id</code> are per-SEASON registrations (Maccabi Tel
-Aviv = team 1109 in 2025-26, 2111 in 2026-27); the host has no cross-season person id (the
-stable player key is the Segev player id of the <code>ibba_segev_*()</code> family). <code>team_uid</code> is the
-stable club id (Maccabi = 10). A <code>0</code> means "all" where an argument says so; every parameter
-of an op is always sent.</p>
-<p><strong>Coverage.</strong> League box scores from 2004-05 (<code>season = 2005</code>). <code>external_id</code> and
-<code>segev_game_id</code> exist only from 2025-26 (earlier games carry no Segev id, so
-<code>segev_game_id</code> is <code>NA</code>). The women's league and Liga Leumit are NOT on this host. Every
-value on the wire is a string and Hebrew text is HTML-entity encoded: ids, counts and dates
-are cast and text is unescaped.</p>
-<p><strong>Errors</strong> are classed conditions, never a warning plus an empty frame: <code>hoopR_no_data</code>
-(HTTP 404, an empty body, which is what an unknown id answers, or an empty row list),
-<code>hoopR_bad_request</code> (HTTP 400 / 422, or an argument that is not a non-negative integer,
-a boolean or a non-empty string as the op needs) and <code>hoopR_asset_fetch</code> (any other
-failure: another status, a transport error, a body that is not JSON, an error or changed
-envelope, a row for another season, team, player, board or game, or a box score of a game
-that is not final). All inherit <code>hoopR_error</code>.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="ibba_configuration.html">ibba_configuration()</a></code>.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -197,7 +168,7 @@ that is not final). All inherit <code>hoopR_error</code>.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">ibba_players</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, team_id <span class="op">=</span> <span class="fl">1109</span>, team_uid <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── IBBA players ───────────────────────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:13:42 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:30:48 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 20 × 13</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    player_id jersey season team_id player_name_he        player_name is_replaced</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>      </span>

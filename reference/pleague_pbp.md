@@ -25,8 +25,8 @@ pleague_pbp(gid)
 
 A `hoopR_data` tibble: Play-by-play of one finished game (2022-23 on) in
 game order, with shot x / y and the clip references. An empty valid
-answer is a zero-row tibble with these columns, in this order (sdv-py
-`pleague_pbp`):
+answer is a zero-row tibble with these columns, in this order
+(sportsdataverse-py `pleague_pbp`):
 
 |  |  |  |
 |----|----|----|
@@ -40,7 +40,7 @@ answer is a zero-row tibble with these columns, in this order (sdv-py
 | side | character | Side of the acting team: away or home (the fragment places the play in the away or home column). |
 | jersey | character | Shirt number of the acting player as printed; null on team rows and where the name is printed without a number. |
 | player_zh | character | Acting player's name as printed; null on team rows (a team rebound, timeout or shot-clock violation). The page prints no player ids: join to the box on side, jersey and name_zh. |
-| action | character | Action code from the vocabulary observed on 258,183 plays of 404 finished 2022-23..2025-26 games (82 phrases plus the blank row; an unseen phrase is refused as layout drift). The code = meaning \[Traditional Chinese phrase, events\]: ast = assist \[17,020\]; blk = block \[3,181\]; fg2_alley_oop_made = 2-point alley-oop, made \[205\]; fg2_alley_oop_missed = 2-point alley-oop, missed \[81\]; fg2_driving_layup_made = 2-point driving layup, made \[4,281\]; fg2_driving_layup_missed = 2-point driving layup, missed \[3,961\]; fg2_dunk_made = 2-point dunk, made \[1,316\]; fg2_dunk_missed = 2-point dunk, missed \[162\]; fg2_fadeaway_jumper_made = 2-point fadeaway jumper, made \[583\]; fg2_fadeaway_jumper_missed = 2-point fadeaway jumper, missed \[1,121\]; fg2_floater_made = 2-point floater, made \[1,920\]; fg2_floater_missed = 2-point floater, missed \[3,052\]; fg2_hook_shot_made = 2-point hook shot, made \[610\]; fg2_hook_shot_missed = 2-point hook shot, missed \[773\]; fg2_jump_shot_made = 2-point jump shot, made \[1,657\]; fg2_jump_shot_missed = 2-point jump shot, missed \[3,606\]; fg2_layup_made = 2-point layup, made \[4,428\]; fg2_layup_missed = 2-point layup, missed \[3,403\]; fg2_pull_up_jumper_made = 2-point pull-up jumper, made \[1,004\]; fg2_pull_up_jumper_missed = 2-point pull-up jumper, missed \[1,564\]; fg2_putback_made = 2-point putback / tip-in, made \[2,138\]; fg2_putback_missed = 2-point putback / tip-in, missed \[1,539\]; fg2_step_back_shot_made = 2-point step-back shot, made \[243\]; fg2_step_back_shot_missed = 2-point step-back shot, missed \[410\]; fg2_turnaround_jumper_made = 2-point turnaround jumper, made \[672\]; fg2_turnaround_jumper_missed = 2-point turnaround jumper, missed \[1,158\]; fg3_fadeaway_jumper_made = 3-point fadeaway jumper, made \[48\]; fg3_fadeaway_jumper_missed = 3-point fadeaway jumper, missed \[92\]; fg3_made = 3-point shot, style not recorded, made \[7,817\]; fg3_missed = 3-point shot, style not recorded, missed \[17,046\]; fg3_pull_up_jumper_made = 3-point pull-up jumper, made \[480\]; fg3_pull_up_jumper_missed = 3-point pull-up jumper, missed \[922\]; fg3_step_back_shot_made = 3-point step-back shot, made \[245\]; fg3_step_back_shot_missed = 3-point step-back shot, missed \[559\]; fg3_turnaround_jumper_made = 3-point turnaround jumper, made \[10\]; fg3_turnaround_jumper_missed = 3-point turnaround jumper, missed \[23\]; fg_made = field goal made, shot type and distance not recorded \[158\]; fg_missed = field goal missed, shot type and distance not recorded \[168\]; foul = foul, kind not recorded (team row) \[18\]; foul_bench_technical = technical foul on the bench \[35\]; foul_coach_technical = technical foul on the coach \[75\]; foul_disqualifying = disqualifying foul \[2\]; foul_drawn = foul drawn (the opponent's foul on this player) \[17,035\]; foul_offensive = offensive foul committed \[1,024\]; foul_personal = personal foul committed \[15,745\]; foul_technical = technical foul \[210\]; foul_unsportsmanlike = unsportsmanlike foul \[261\]; ft_made = free throw 1 of 1 awarded, made \[1,326\]; ft_made = free throw 1 of 3 awarded, made \[128\]; ft_made = free throw 1 of 2 awarded, made \[5,187\]; ft_made = free throw 3, made \[149\]; ft_made = free throw 2, made \[5,798\]; ft_missed = free throw 1 of 1 awarded, missed \[669\]; ft_missed = free throw 1 of 3 awarded, missed \[67\]; ft_missed = free throw 1 of 2 awarded, missed \[2,736\]; ft_missed = free throw 3, missed \[46\]; ft_missed = free throw 2, missed \[2,319\]; jump_ball_lost = jump ball lost \[404\]; jump_ball_won = jump ball won \[708\]; reb_def = defensive rebound (a team rebound has no player) \[29,537\]; reb_off = offensive rebound (a team rebound has no player) \[12,379\]; review_coach_challenge = video review: coach's challenge (2025-26 onward; the printed text ends with a bare comma) \[videoReview, coachChallenge,, 82\]; review_instant_replay = video review: instant-replay system, started by the officials (2025-26 onward) \[videoReview, instantReplaySystem,, 67\]; review_instant_replay_1 = video review: instant-replay system, variant printed with a trailing '1' (meaning unexplained; the row also prints the running score and the points tag '+videoReview') \[videoReview, instantReplaySystem, 1, 6\]; stl = steal \[7,361\]; sub_in = substitution: enters the game \[25,505\]; sub_out = substitution: leaves the game \[25,532\]; timeout = timeout (a team row) \[2,854\]; tov_3sec = turnover: 3-second violation \[249\]; tov_5sec = turnover: 5-second violation \[40\]; tov_8sec = turnover: 8-second violation \[26\]; tov_backcourt = turnover: backcourt violation \[96\]; tov_bad_pass = turnover: bad pass \[6,325\]; tov_ball_handling = turnover: ball-handling \[3,547\]; tov_carrying = turnover: carrying the ball \[47\]; tov_double_dribble = turnover: double dribble \[53\]; tov_offensive = turnover: offensive (kind not recorded) \[1,007\]; tov_offensive_goaltending = turnover: offensive goaltending \[4\]; tov_other = turnover: other \[51\]; tov_out_of_bounds = turnover: ball out of bounds \[441\]; tov_shot_clock = turnover: shot-clock violation \[489\]; tov_travel = turnover: travelling \[718\]; unlabelled = row has a player but no action text; in the corpus a shot with x/y followed by a rebound, i.e. a missed shot (inferred) \[(blank), 169\]. |
+| action | character | Action code (one of the codes listed under "Action codes" below; an unseen phrase is refused as layout drift). |
 | action_zh | character | The action phrase as printed, Traditional Chinese ((Chinese text) = dunk, made; '#35 (Chinese text)' = '#35 {player} dunk, made'); blank on an unlabelled row. Each of the 82 observed phrases maps to one action code (see `action`). |
 | action_en | character | English meaning of the play's phrase (see action), so a free throw reads its own trip, e.g. 'free throw 2, made'; null for a code outside the observed table. |
 | text_zh | character | The whole printed text of the play, e.g. '#35 (Chinese text)' = '#35 {player} dunk, made'. |
@@ -60,56 +60,196 @@ answer is a zero-row tibble with these columns, in this order (sdv-py
 
 ## Details
 
-- Unofficial use of a public source: these wrappers read
-  pleagueofficial.com (P. LEAGUE+, Taiwan's men's league), keyless. The
-  site's /user-policy (members' terms, section 11) reserves all content
-  on the site to the service and its rights holders and forbids use,
-  copying, adaptation or distribution without authorisation (it says
-  nothing about automated access); robots.txt holds only Cloudflare
-  content-signal comment lines with no Allow, Disallow or Crawl-delay
-  rule. Use for reference only; payloads are not redistributed as
-  release assets, and a data release needs owner sign-off. Requests are
-  spaced at least 1 s apart per host, retries included.
+Source, terms of use, request pacing, seasons, ids, coverage and error
+classes of this family: see the notes in
+[`pleague_schedule()`](https://hoopR.sportsdataverse.org/reference/pleague_schedule.md).
 
-- Access: the site sits behind Cloudflare. sdv-py fetches it with
-  curl_cffi (Chrome TLS); this R port sends a browser User-Agent through
-  libcurl, which was served on a live check (2026-10-18); Cloudflare may
-  still answer a request with an HTTP 403 challenge page
-  (`hoopR_asset_fetch`). Redirects are not followed: the site answers an
-  unknown `gid` or a season before 2020-21 with a 302 to the home page
-  (`hoopR_no_data`).
+## Action codes
 
-- Coverage: schedules, standings and player tables from 2020-21
-  (`season = 2021`); box scores for every finished game from 2020-21;
-  play-by-play (with shot x / y) from 2022-23 (gid 191 on). 2020-21 and
-  2021-22 pages embed an empty game uuid, so they have no play-by-play
-  and no Preciser data (`hoopR_no_data`). A game is keyed by `gid`: ONE
-  global integer sequence over every stage and season. Only finished
-  games are served: an unplayed game, or a box or play-by-play that does
-  not match its game page (the routes echo no id, so the game page is
-  fetched first, cached for the session, and the body's scores, quarters
-  and points are checked against it), raises `hoopR_asset_fetch`.
+Each code of `action`, its meaning and \[the number of plays\] in
+258,183 plays of 404 finished 2022-23..2025-26 games (82 printed phrases
+plus the blank row):
 
-- Seasons are END years (2025 = the site's slug '2024-25'). Text is
-  Traditional Chinese as printed (names, venues, play-by-play phrases);
-  the column descriptions gloss it in English. Ids: `team_id` (1-8) is
-  stable across renames; the box `player_id` is the player-team
-  membership. The box `random_id` is UNRELIABLE before 2022-23 (gid 13
-  gives one player another player's page id): join box rows on
-  `player_id`, and box rows to Preciser shots on `person_id`, never on
-  `random_id`. The date of birth is dropped from the player frame;
-  officials appear by name only.
+- `ast`: assist \[17,020\]
 
-- Errors are classed conditions, all inheriting `hoopR_error`:
-  `hoopR_no_data` (HTTP 404, a redirect, a stage the season does not
-  have, a game with no play-by-play, a season before 2020-21),
-  `hoopR_bad_request` (an invalid argument, HTTP 400 / 422) and
-  `hoopR_asset_fetch` (any other non-200, a dead connection, an empty or
-  unreadable body, a page for another game, season, stage or player, an
-  unfinished game, layout drift, a play-by-play phrase outside the
-  observed vocabulary). HTTP 429 / 502 / 503 / 504 are retried, up to
-  three attempts; HTTP 500 is NOT retried (the site answers 500 for an
-  unknown id). Wrappers raise; they never warn and return empty.
+- `blk`: block \[3,181\]
+
+- `fg2_alley_oop_made`: 2-point alley-oop, made \[205\]
+
+- `fg2_alley_oop_missed`: 2-point alley-oop, missed \[81\]
+
+- `fg2_driving_layup_made`: 2-point driving layup, made \[4,281\]
+
+- `fg2_driving_layup_missed`: 2-point driving layup, missed \[3,961\]
+
+- `fg2_dunk_made`: 2-point dunk, made \[1,316\]
+
+- `fg2_dunk_missed`: 2-point dunk, missed \[162\]
+
+- `fg2_fadeaway_jumper_made`: 2-point fadeaway jumper, made \[583\]
+
+- `fg2_fadeaway_jumper_missed`: 2-point fadeaway jumper, missed
+  \[1,121\]
+
+- `fg2_floater_made`: 2-point floater, made \[1,920\]
+
+- `fg2_floater_missed`: 2-point floater, missed \[3,052\]
+
+- `fg2_hook_shot_made`: 2-point hook shot, made \[610\]
+
+- `fg2_hook_shot_missed`: 2-point hook shot, missed \[773\]
+
+- `fg2_jump_shot_made`: 2-point jump shot, made \[1,657\]
+
+- `fg2_jump_shot_missed`: 2-point jump shot, missed \[3,606\]
+
+- `fg2_layup_made`: 2-point layup, made \[4,428\]
+
+- `fg2_layup_missed`: 2-point layup, missed \[3,403\]
+
+- `fg2_pull_up_jumper_made`: 2-point pull-up jumper, made \[1,004\]
+
+- `fg2_pull_up_jumper_missed`: 2-point pull-up jumper, missed \[1,564\]
+
+- `fg2_putback_made`: 2-point putback / tip-in, made \[2,138\]
+
+- `fg2_putback_missed`: 2-point putback / tip-in, missed \[1,539\]
+
+- `fg2_step_back_shot_made`: 2-point step-back shot, made \[243\]
+
+- `fg2_step_back_shot_missed`: 2-point step-back shot, missed \[410\]
+
+- `fg2_turnaround_jumper_made`: 2-point turnaround jumper, made \[672\]
+
+- `fg2_turnaround_jumper_missed`: 2-point turnaround jumper, missed
+  \[1,158\]
+
+- `fg3_fadeaway_jumper_made`: 3-point fadeaway jumper, made \[48\]
+
+- `fg3_fadeaway_jumper_missed`: 3-point fadeaway jumper, missed \[92\]
+
+- `fg3_made`: 3-point shot, style not recorded, made \[7,817\]
+
+- `fg3_missed`: 3-point shot, style not recorded, missed \[17,046\]
+
+- `fg3_pull_up_jumper_made`: 3-point pull-up jumper, made \[480\]
+
+- `fg3_pull_up_jumper_missed`: 3-point pull-up jumper, missed \[922\]
+
+- `fg3_step_back_shot_made`: 3-point step-back shot, made \[245\]
+
+- `fg3_step_back_shot_missed`: 3-point step-back shot, missed \[559\]
+
+- `fg3_turnaround_jumper_made`: 3-point turnaround jumper, made \[10\]
+
+- `fg3_turnaround_jumper_missed`: 3-point turnaround jumper, missed
+  \[23\]
+
+- `fg_made`: field goal made, shot type and distance not recorded
+  \[158\]
+
+- `fg_missed`: field goal missed, shot type and distance not recorded
+  \[168\]
+
+- `foul`: foul, kind not recorded (team row) \[18\]
+
+- `foul_bench_technical`: technical foul on the bench \[35\]
+
+- `foul_coach_technical`: technical foul on the coach \[75\]
+
+- `foul_disqualifying`: disqualifying foul \[2\]
+
+- `foul_drawn`: foul drawn (the opponent's foul on this player)
+  \[17,035\]
+
+- `foul_offensive`: offensive foul committed \[1,024\]
+
+- `foul_personal`: personal foul committed \[15,745\]
+
+- `foul_technical`: technical foul \[210\]
+
+- `foul_unsportsmanlike`: unsportsmanlike foul \[261\]
+
+- `ft_made`: free throw 1 of 1 awarded, made \[1,326\]
+
+- `ft_made`: free throw 1 of 3 awarded, made \[128\]
+
+- `ft_made`: free throw 1 of 2 awarded, made \[5,187\]
+
+- `ft_made`: free throw 3, made \[149\]
+
+- `ft_made`: free throw 2, made \[5,798\]
+
+- `ft_missed`: free throw 1 of 1 awarded, missed \[669\]
+
+- `ft_missed`: free throw 1 of 3 awarded, missed \[67\]
+
+- `ft_missed`: free throw 1 of 2 awarded, missed \[2,736\]
+
+- `ft_missed`: free throw 3, missed \[46\]
+
+- `ft_missed`: free throw 2, missed \[2,319\]
+
+- `jump_ball_lost`: jump ball lost \[404\]
+
+- `jump_ball_won`: jump ball won \[708\]
+
+- `reb_def`: defensive rebound (a team rebound has no player) \[29,537\]
+
+- `reb_off`: offensive rebound (a team rebound has no player) \[12,379\]
+
+- `review_coach_challenge`: video review: coach's challenge (2025-26
+  onward; the printed text ends with a bare comma) \[videoReview,
+  coachChallenge,, 82\]
+
+- `review_instant_replay`: video review: instant-replay system, started
+  by the officials (2025-26 onward) \[videoReview, instantReplaySystem,,
+  67\]
+
+- `review_instant_replay_1`: video review: instant-replay system,
+  variant printed with a trailing '1' (meaning unexplained; the row also
+  prints the running score and the points tag '+videoReview')
+  \[videoReview, instantReplaySystem, 1, 6\]
+
+- `stl`: steal \[7,361\]
+
+- `sub_in`: substitution: enters the game \[25,505\]
+
+- `sub_out`: substitution: leaves the game \[25,532\]
+
+- `timeout`: timeout (a team row) \[2,854\]
+
+- `tov_3sec`: turnover: 3-second violation \[249\]
+
+- `tov_5sec`: turnover: 5-second violation \[40\]
+
+- `tov_8sec`: turnover: 8-second violation \[26\]
+
+- `tov_backcourt`: turnover: backcourt violation \[96\]
+
+- `tov_bad_pass`: turnover: bad pass \[6,325\]
+
+- `tov_ball_handling`: turnover: ball-handling \[3,547\]
+
+- `tov_carrying`: turnover: carrying the ball \[47\]
+
+- `tov_double_dribble`: turnover: double dribble \[53\]
+
+- `tov_offensive`: turnover: offensive (kind not recorded) \[1,007\]
+
+- `tov_offensive_goaltending`: turnover: offensive goaltending \[4\]
+
+- `tov_other`: turnover: other \[51\]
+
+- `tov_out_of_bounds`: turnover: ball out of bounds \[441\]
+
+- `tov_shot_clock`: turnover: shot-clock violation \[489\]
+
+- `tov_travel`: turnover: travelling \[718\]
+
+- `unlabelled`: row has a player but no action text; in the corpus a
+  shot with x/y followed by a rebound, i.e. a missed shot (inferred)
+  \[(blank), 169\]
 
 ## See also
 
@@ -139,7 +279,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   try(pleague_pbp(gid = 197))
 #> ── P. LEAGUE+ Play-by-Play from pleagueofficial.com ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:35:42 UTC
+#> ℹ Data updated: 2026-10-31 21:33:23 UTC
 #> # A tibble: 630 × 26
 #>      gid   seq period period_no clock seconds_left side  jersey player_zh action
 #>    <int> <int> <chr>      <int> <chr>        <int> <chr> <chr>  <chr>     <chr> 

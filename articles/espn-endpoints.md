@@ -528,7 +528,7 @@ nba_s2025 <- espn_nba_season_info(season = 2025)
 
 The post-3.0.0 release adds another ~73 ESPN core-v2 wrappers to
 `espn_nba_*` + `espn_mbb_*`, bringing the total ESPN basketball surface
-in `hoopR` to **199 functions**. Everything here is shimmed over an
+in `hoopR` to **200 functions**. Everything here is shimmed over an
 internal `.espn_basketball_*` helper so NBA and MBB share parsing logic
 and bug fixes propagate to both leagues at once.
 
@@ -881,11 +881,11 @@ espn_mbb_coach_record(coach_id = 32116, record_type = 2)
 #> # A tibble: 5 × 12
 #>   league          coach_id record_type_id record_name record_type record_summary
 #>   <chr>           <chr>             <int> <chr>       <chr>       <chr>         
-#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
-#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       
+#> 1 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 2 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 3 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 4 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
+#> 5 mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         
 #> # ℹ 6 more variables: record_display <chr>, stat_name <chr>, stat_abbrev <chr>,
 #> #   stat_display <chr>, value <dbl>, stat_display_value <chr>
 ```
@@ -1219,9 +1219,7 @@ unevenness honestly rather than papering over it.
 - [Jason Lee](https://x.com/theFirmAISports)
   [![@theFirmAISports](https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge)](https://x.com/theFirmAISports)
   [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
-- [Billy Fryer](https://x.com/BillyFryer42)
-  [![@BillyFryer42](https://img.shields.io/twitter/follow/BillyFryer42?color=blue&label=%40BillyFryer42&logo=x&style=for-the-badge)](https://x.com/BillyFryer42)
-  [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
+- Billy Fryer
 - [Ross Drucker](https://x.com/rossdrucker9)
   [![@rossdrucker9](https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge)](https://x.com/rossdrucker9)
   [![@rossdrucker](https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge)](https://github.com/rossdrucker)

@@ -46,60 +46,45 @@ if (!requireNamespace('pak', quietly = TRUE)){
 }
 pak::pak("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
 
-pak::pak(c("dplyr", "zoo", "ggimage", "gt"))
+pak::pak("dplyr")
 library(dplyr)
-library(zoo)
-library(ggimage)
-library(gt)
 ```
 
 #### **The Data**
 
-There are generally speaking **six** men’s basketball data sources
-accessed from this package:
+`hoopR` version 3.2.0 exports 1316 functions. The function name tells
+you the data source:
 
-- [`hoopR-data` repo](https://github.com/sportsdataverse/hoopR-data)
-  [![X
-  Follow](https://img.shields.io/twitter/follow/sportsdataverse?color=blue&label=%40sportsdataverse&logo=x&style=for-the-badge)](https://x.com/sportsdataverse)
-- [NBA Stats and Data API](https://stats.nba.com)
-- [NBA G-League Stats and Data API](https://stats.nba.com)
-- ESPN
-- [KenPom](https://kenpom.com) (Requires subscription access)
-- [NCAA](https://ncaa.com)
+- `load_*()` and `update_*()` functions read the pre-built play-by-play,
+  box score, schedule and model data that the SportsDataverse publishes
+  on the [`sportsdataverse-data`
+  releases](https://github.com/sportsdataverse/sportsdataverse-data/releases)
+  (73 loaders, including `load_nba_stats_*()` for the NBA Stats API data
+  and `load_ncaa_mbb_*()` for the NCAA data).
 
-##### **Function names indicate the data source**
+- `nba_*()` functions use the NBA Stats API and other NBA.com sources
+  (199 functions).
 
-- Functions that use the [`hoopR-data`
-  repository](https://github.com/sportsdataverse/hoopR-data) will
-  contain `load_` or `update_` in the function name and would be
-  considered loading functions for the play-by-play data, team box
-  scores, and player box scores.
+- `nbagl_*()` functions cover the NBA G League (6 functions).
 
-- Functions that use the NBA Stats API start with `nba_` by convention
-  and should be assumed as `get` functions. As of `hoopR` version 3.2.0,
-  the package exports 127 functions covering the NBA Stats API
+- `espn_*()` functions use ESPN’s APIs for live and historical game
+  data: 94 for men’s college basketball and 105 for the NBA.
 
-- Functions that use the NBA G-League Stats API start with `nbagl_` by
-  convention and should be assumed as `get` functions. As of `hoopR`
-  version 3.2.0, the package exports 4 functions covering the NBA
-  G-League Stats API
+- `kp_*()` functions read Ken Pomeroy’s college basketball website,
+  [KenPom.com](https://kenpom.com), for users with an active
+  subscription (36 functions).
 
-- Functions that use one of ESPN’s APIs start with `espn_` by convention
-  and should be assumed as `get` functions. These functions allow for
-  live access to game data for both men’s college basketball and the
-  NBA. As of `hoopR` version 3.2.0, the package exports 10 functions
-  covering the men’s college basketball endpoints and 10 for the NBA.
+- `cbbd_*()`, `torvik_*()` and `ncaa_mbb_*()` functions cover
+  CollegeBasketballData, Bart Torvik and the NCAA (41, 6 and 2
+  functions); `bref_*()`, `realgm_*()` and `fox_*()` cover
+  Basketball-Reference, RealGM and Fox Sports.
 
-- Functions that use Ken Pomeroy’s college basketball website start with
-  `kp_` by convention and should be assumed as `get` functions. These
-  functions allow users with an active subscription to get access to the
-  data in a tidy format. As of `hoopR` version 3.2.0, the package
-  exports 36 functions covering the [KenPom.com](https://kenpom.com).
-
-- Functions that use the NCAA website start with `ncaa_` by convention
-  and should be assumed as `get` functions. As of `hoopR` version 3.2.0,
-  the package exports 1 function(s) covering the NCAA website, namely
-  the function to access current NET rankings.
+- `euroleague_*()` functions cover the EuroLeague and EuroCup, and
+  families such as `fiba_*()`, `acb_*()`, `lba_*()`, `vtb_*()`,
+  `bleague_*()`, `nbl_rosetta_*()`, `kbl_*()` and `cba_*()` cover about
+  two dozen international leagues and competitions. The [function
+  reference](https://hoopR.sportsdataverse.org/reference/) lists every
+  family.
 
 ### **Quick Start**
 
@@ -118,7 +103,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 23.156 sec elapsed
+    ## 25.016 sec elapsed
 
 ``` r
 
@@ -215,7 +200,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 2.51 sec elapsed
+    ## 3.148 sec elapsed
 
 ``` r
 
@@ -302,7 +287,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 4.717 sec elapsed
+    ## 4.496 sec elapsed
 
 ``` r
 
@@ -387,7 +372,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 65.146 sec elapsed
+    ## 74.724 sec elapsed
 
 ``` r
 
@@ -490,7 +475,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.097 sec elapsed
+    ## 3.919 sec elapsed
 
 ``` r
 
@@ -577,7 +562,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 11.186 sec elapsed
+    ## 37.794 sec elapsed
 
 ``` r
 
@@ -660,9 +645,7 @@ dplyr::glimpse(mbb_player_box)
 - [Jason Lee](https://x.com/theFirmAISports)
   [![@theFirmAISports](https://img.shields.io/twitter/follow/theFirmAISports?color=blue&label=%40theFirmAISports&logo=x&style=for-the-badge)](https://x.com/theFirmAISports)
   [![@papagorgio23](https://img.shields.io/github/followers/papagorgio23?color=eee&logo=Github&style=for-the-badge)](https://github.com/papagorgio23)
-- [Billy Fryer](https://x.com/BillyFryer42)
-  [![@BillyFryer42](https://img.shields.io/twitter/follow/BillyFryer42?color=blue&label=%40BillyFryer42&logo=x&style=for-the-badge)](https://x.com/BillyFryer42)
-  [![@billyfryer](https://img.shields.io/github/followers/billyfryer?color=eee&logo=Github&style=for-the-badge)](https://github.com/billyfryer)
+- Billy Fryer
 - [Ross Drucker](https://x.com/rossdrucker9)
   [![@rossdrucker9](https://img.shields.io/twitter/follow/rossdrucker9?color=blue&label=%40rossdrucker9&logo=x&style=for-the-badge)](https://x.com/rossdrucker9)
   [![@rossdrucker](https://img.shields.io/github/followers/rossdrucker?color=eee&logo=Github&style=for-the-badge)](https://github.com/rossdrucker)
@@ -680,7 +663,8 @@ BibTeX Citation
 ``` bibtex
 @misc{hoopr,
   author = {Saiem Gilani},
-  title = {hoopR: Access Men’s Basketball Play by Play Data.},
+  title = {hoopR: Access Men's Basketball Play by Play Data},
+  doi = {10.32614/CRAN.package.hoopR},
   url = {https://hoopR.sportsdataverse.org/},
   year = {2026}
 }
@@ -696,6 +680,16 @@ BibTeX Citation
 - [**fastRhockey**](https://fastRhockey.sportsdataverse.org/) - hockey
 - [**oddsapiR**](https://oddsapiR.sportsdataverse.org/) - betting odds
 - [**sportyR**](https://sportyR.sportsdataverse.org/) - playing surfaces
+  (2.4.5 on CRAN: NBA, NCAA and FIBA courts for plotting shot locations)
+- [**sdvplotR**](https://sdvplotR.sportsdataverse.org/) - team logos and
+  colours for `ggplot2`, and shot charts from the `hoopR` shot loaders
+  (0.3.0, `pak::pak("sportsdataverse/sdvplotR")`; see its
+  [NBA](https://sdvplotR.sportsdataverse.org/articles/nba-viz.html),
+  [men’s
+  college](https://sdvplotR.sportsdataverse.org/articles/mbb-viz.html)
+  and [shot
+  chart](https://sdvplotR.sportsdataverse.org/articles/cookbook-surfaces-shot-charts.html)
+  articles)
 - [**sportsdataverse-py**](https://py.sportsdataverse.org/) - the Python
   package
 - [**sportsdataverse-R**](https://r.sportsdataverse.org/) - the R

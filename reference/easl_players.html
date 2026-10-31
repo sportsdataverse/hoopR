@@ -133,47 +133,12 @@ does not list. Needs season for a roster (jersey number and position). Default <
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Every EASL player of all seasons; with season and team_id a roster that adds jersey number
-and position. An empty answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sdv-py
+and position. An empty answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py
 <code>easl_players</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year of the filter, from the request; null when no season was passed.</td></tr><tr><td>season_id</td><td>character</td><td>DataCore season UUID v1 of the filter; null when no season was passed.</td></tr><tr><td>player_row_id</td><td>integer</td><td>The sync server's own integer row id of the player (not a DataCore id).</td></tr><tr><td>player_id</td><td>character</td><td>playerId: DataCore person UUID v1 (key space: EASL persons, the same id as the box score's <code>personId</code>; joins /players, leaders and play-by-play players). Not a team id.</td></tr><tr><td>name</td><td>character</td><td>Player display name in 'FAMILY Given' form with the family name upper-cased (OSAKABE Taiki), in Latin script.</td></tr><tr><td>name_latin</td><td>character</td><td>Alternative name: equal to nameFullLocal for 257 of 552 players, otherwise null; never non-Latin in the observed data.</td></tr><tr><td>name_abbreviated</td><td>character</td><td>Abbreviated name; null for 551 of 552 players (one empty string).</td></tr><tr><td>nationality</td><td>character</td><td>ISO 3166-1 alpha-3 code of the player's nationality; 36 codes occur, KOR 119, USA 102, JPN 81, PHL 80, TWN 61, CHN 22, MNG 16, HKG 15, MAC 13 ('PHI' also appears once, a non-ISO spelling of PHL).</td></tr><tr><td>gender</td><td>character</td><td>MALE on all 552 rows.</td></tr><tr><td>dob</td><td>Date</td><td>Date of birth, 'YYYY-MM-DD' (a public biography field; 1980-10-05 to 2023-10-16 in the data, so the latest values are implausible); 5 players have none. Null on some rows.</td></tr><tr><td>height_cm</td><td>integer</td><td>Height in centimetres; 43 of 552 players have none. Null on some rows.</td></tr><tr><td>height_feet</td><td>character</td><td>Height in feet and inches as a string (6'9); null for most players.</td></tr><tr><td>weight_kg</td><td>integer</td><td>Weight in kilograms; many players have none. Null on some rows.</td></tr><tr><td>weight_lbs</td><td>integer</td><td>Weight in pounds; null for many players.</td></tr><tr><td>status</td><td>character</td><td>Registration state of the player in the database: ACTIVE, INACTIVE or UNREGISTERED.</td></tr><tr><td>jersey_number</td><td>character</td><td>Jersey number as a string. Present ONLY in the roster variant of /players (seasonId + teamId) and on <code>/players/{playerId}</code>; missing from the unfiltered list. Absent on some rows.</td></tr><tr><td>position</td><td>character</td><td>Playing position (G, F, C, PG, SG, SF, PF, GF). Present ONLY in the roster variant of /players (seasonId + teamId) and on <code>/players/{playerId}</code>; missing from the unfiltered list. Absent on some rows.</td></tr><tr><td>organization_id</td><td>character</td><td>DataCore organisation id: b1e0z (EASL).</td></tr><tr><td>created_at</td><td>character</td><td>When the sync server inserted the row, 'YYYY-MM-DD HH:MM:SS' (a different format from updatedAt; zone unstated, UTC assumed).</td></tr><tr><td>updated_at</td><td>character</td><td>When the sync server last synced the row, ISO 8601 with milliseconds and Z (UTC).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>WARNING: UNOFFICIAL THIRD-PARTY INTERMEDIARY. These wrappers read easl.joshricha.com/api/v1, an Express server
-run by an individual. It is not EASL's and not Sportradar's: it mirrors Sportradar DataCore (organisation b1e0z)
-into SQLite and serves it keyless, and it can change or vanish without notice. Its routes, field names (steak,
-facebook_username) and sync freshness are the proxy author's. A first-party DataCore feed needs credentials this
-package does not have. The host serves no robots.txt (404) and states no terms; the runtime waits at least 1 s
-before every request, retries included, and honours Retry-After. Payloads are not redistributed as release
-assets.</p></li>
-<li><p>Seasons are END years (2026 = EASL 25-26). The server's season key is the START year; the runtime reads the
-season list, maps the END year to the DataCore seasonId and defaults to the ACTIVE season. Four editions exist
-(2023-24 to 2026-27). The server defaults to the active season on /matches, /standings and /leaders; the runtime
-always sends the resolved seasonId. A season is two calendar years: group by season_id, not by the year of the
-tip-off.</p></li>
-<li><p>Finished games only: the game routes first read the fixture and refuse (<code>hoopR_asset_fetch</code>) one that is not
-CONFIRMED with two scores, a box score whose player points do not add up to the score (the server serves
-one-team, four-row boxes for some games), a play-by-play that does not end on the final score in its highest
-period (4 or more, and the last period of the period table), and team totals that disagree with the score. For
-the ACTIVE season's fixture lists the runtime reads /health: a server clock more than a day from yours, or a
-game still SCHEDULED more than a day after its tip-off, means the mirror has stalled (<code>hoopR_asset_fetch</code>). That
-proves the mirror kept up with the games played, not that a game is final upstream.</p></li>
-<li><p>Ids: every DataCore id is a UUID v1 string. team_id = entityId, player_id = personId; fixture_number (YYSSNNN)
-is null on every 2023-24 fixture; <code>*_row_id</code> columns are the sync server's own integers, not DataCore ids. The
-fixture's competitors come in arbitrary order: read <code>home_*</code> / <code>away_*</code>, which the parsers take from isHome.</p></li>
-<li><p>No shot x/y, no game clock and no lineups exist on this server. The play-by-play text always says 'missed' for
-field goals and 'Free throw K of M made' for free throws, made or not: use points_scored (the change of the
-event team's running score), which lags on a minority of events. 301 of 2,444 sampled box rows are players who
-did not play (null minutes and counting stats; points are 0); player_box.played tells them apart.
-easl_player_stats ignores a season filter: it is the career line over every season. Names: nameFullLocal is the
-English display name and nameFullLatin the native-script name, so the columns are name and name_native.</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, an empty list or leaders
-object, a team or player without games), <code>hoopR_bad_request</code> (a malformed id, or a season that is not one of the
-server's END years, raised before the request that would use it) and <code>hoopR_asset_fetch</code> (any other failure: any
-non-2xx, including the server's HTTP 400 / 422 and the HTTP 500 it answers for an unknown fixture, which is not
-retried; an error envelope; a game that is not finished or whose box score or play-by-play is incomplete; a
-stalled sync on the active season; a body for another game, season, team or player than the one asked for).
-Wrappers raise; they never warn and return an empty frame.</p></li>
-</ul></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="easl_health.html">easl_health()</a></code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other EASL Functions:
@@ -201,7 +166,7 @@ Wrappers raise; they never warn and return an empty frame.</p></li>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">easl_players</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, team_id <span class="op">=</span> <span class="st">"865489e8-b0f5-11ed-8b3f-c199a9dea184"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── EASL Players from easl.joshricha.com ───────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:11:27 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:28:18 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 17 × 20</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season season_id    player_row_id player_id name  name_latin name_abbreviated</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           </span>

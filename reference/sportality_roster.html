@@ -127,35 +127,12 @@ space: platform team uuids (not the numeric Genius team id).</p></dd>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Current roster of a team, grouped by position. An empty valid answer raises
-<code>hoopR_no_data</code>; the documented columns come first, in this order (sdv-py <code>sportality_roster</code>), then any
+<code>hoopR_no_data</code>; the documented columns come first, in this order (sportsdataverse-py <code>sportality_roster</code>), then any
 column the API added later:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>position</td><td>character</td><td>Playing position.</td></tr><tr><td>position_code</td><td>character</td><td>Position code (G, F, C, or a finer code such as SG on the profile route). Values: <code>C</code> = center; <code>F</code> = forward; <code>G</code> = guard.</td></tr><tr><td>player_type</td><td>character</td><td>Record type (athlete). Values: <code>athlete</code> = a player.</td></tr><tr><td>gender</td><td>character</td><td>Gender of the person as recorded by the site (male in every row seen).</td></tr><tr><td>uuid</td><td>character</td><td>Athlete uuid (platform key space).</td></tr><tr><td>first_name</td><td>character</td><td>Given (first) name(s) of the player.</td></tr><tr><td>last_name</td><td>character</td><td>Family name (surname) of the player.</td></tr><tr><td>full_name</td><td>character</td><td>Full display name of the player.</td></tr><tr><td>nationality</td><td>character</td><td>ISO 3166-1 alpha-2 country code.</td></tr><tr><td>jersey_number</td><td>integer</td><td>Jersey (shirt) number of the player.</td></tr><tr><td>portrait_url</td><td>character</td><td>URL of the player's latest rendered portrait.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial: the JSON API behind www.basketligaen.dk, the Danish men's basketball league (Basketligaen,
-series code DBL). The site runs on the Sportality platform (the vendor behind the SHL and HockeyAllsvenskan
-wrappers). The terms page was not read; payloads are not redistributed as release assets.</p></li>
-<li><p>Stats provider: genius-basketball, a relay of Genius Sports LiveStats. The Genius match, team and person ids
-in play-by-play, box scores and stats tables (game_id, team_id, player_id, all Int64) join the genius
-family; the platform uuids (game, team, athlete, ssgt) are not Genius ids and exist only on this site. The
-Genius ORG code of Denmark is not exposed.</p></li>
-<li><p>Season = the END year (2026 = 2025/26) everywhere; the runtime maps it, with game_type ('regular' or
-'finals', the playoffs), to the site's ssgt (season + series + game type) through layout-info. Schedules,
-standings and season tables start in 2002/03; game-level data (play-by-play with shot x/y, box scores, team
-stats) starts in 2023/24.</p></li>
-<li><p>Source defects the runtime refuses (<code>hoopR_asset_fetch</code>): an unfinished game or a truncated play-by-play
-feed, a box score or feed that names another game, a cut stats table. The 2002/03 regular-season schedule
-lists 109 finished games where its own standings count 110: a source gap.</p></li>
-<li><p>Personal data is removed from every body: birth dates, e-mail addresses, phone numbers, addresses and
-contact blocks.</p></li>
-<li><p>No women's league: Dameligaen has its own domain (dameligaen.dk), which answers 401 to anonymous requests.</p></li>
-<li><p>Errors are classed conditions: <code>hoopR_no_data</code> (404, an empty gameday body, <code><a href="https://rdrr.io/r/base/Paren.html" class="external-link">{}</a></code> / <code>[]</code>, a table with
-no rows, a season or game type layout-info does not list), <code>hoopR_bad_request</code> (a bad argument, a 400 /
-422) and <code>hoopR_asset_fetch</code> (an error envelope or non-JSON 200, a body for another game / team / athlete /
-ssgt, an unfinished game or truncated play-by-play, a cut stats table, any other non-2xx; a 500 is the
-site's answer for an unknown uuid and is not retried), all inheriting <code>hoopR_error</code>. Wrappers raise; they
-never return an empty frame.</p></li>
-</ul></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="sportality_schedule.html">sportality_schedule()</a></code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other Basketligaen Functions:
@@ -192,7 +169,7 @@ never return an empty frame.</p></li>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportality_roster</span><span class="op">(</span>team_uuid <span class="op">=</span> <span class="st">"rfo82vr830"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── Basketligaen Team Roster from basketligaen.dk ──────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:36:17 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:34:01 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 14 × 13</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    position position_code player_type gender uuid       first_name    last_name </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>

@@ -128,46 +128,12 @@ season_code, game_code and game_no of kbl_schedule. Only final games are served;
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Lead tracker and score chart of a final game: home margin and both scores at eight
-checkpoints per period. The columns are always these, in this order (sdv-py <code>kbl_score_track</code>); an empty valid
+checkpoints per period. The columns are always these, in this order (sportsdataverse-py <code>kbl_score_track</code>); an empty valid
 answer raises <code>hoopR_no_data</code>, a valid body with no rows for this frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>gmkey</td><td>character</td><td>Game key <code>S{seasonCode}G{gameCode}N{gameNo}</code> (e.g. S47G01N49): the id of every game route and game frame.</td></tr><tr><td>season_code</td><td>integer</td><td>KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League).</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS).</td></tr><tr><td>game_code</td><td>character</td><td>Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day.</td></tr><tr><td>game_no</td><td>integer</td><td>Game number inside the competition (glkey): the N part of the gmkey.</td></tr><tr><td>period</td><td>integer</td><td>Period number: 1-4 for the quarters, 5, 6, ... for the overtimes (the wire says X1 in the play-by-play, EQ1 in the match chart).</td></tr><tr><td>period_label</td><td>character</td><td>Period label: Q1-Q4, then OT1, OT2, ... (normalised from the wire's X1 / EQ1 / eq1).</td></tr><tr><td>checkpoint</td><td>integer</td><td>1-based checkpoint inside the period: eight per period, evenly spaced is assumed (every 75 s of a quarter; unverified), the last at the period's end.</td></tr><tr><td>home_margin</td><td>integer</td><td>Home margin (home minus away points) at the checkpoint.</td></tr><tr><td>home_score</td><td>integer</td><td>Home team points: cumulative at the checkpoint on the score track, the final total (all periods summed) on a game row, the full-time score in the schedule.</td></tr><tr><td>away_score</td><td>integer</td><td>Away team points: cumulative at the checkpoint on the score track, the final total (all periods summed) on a game row, the full-time score in the schedule.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial and unsupported: these wrappers read api.kbl.or.kr, the data API behind the www.kbl.or.kr React site
-(stats vendor sports2i). No key, cookie or proxy is needed, but two request headers must be present (Channel and
-TeamCode; the runtime sends WEB and XX). www.kbl.or.kr/robots.txt returns the SPA's HTML and
-api.kbl.or.kr/robots.txt a 500 error envelope, so no policy or Crawl-delay is published (checked 2026-10-12); the
-site's terms (/terms/list) were not reviewed for data reuse. The runtime waits at least 1 s before every request,
-retries included. Payloads are not redistributed as release assets.</p></li>
-<li><p>Not wrapped: the site's /record/* and <code>/player/player/{pcode}</code> pages are rendered by the sports2i widget from two
-other hosts (kbl-api.sports2i.com and api-stats.kbl.or.kr: team four factors, clutch, hustle, shot dashboards,
-all-time leaders) and need their own intake. WKBL (the women's league) is out of scope by owner ruling.</p></li>
-<li><p>Seasons are END years (2026 = 2025-26). KBL numbers seasons AND D-League (reserve league) editions with one
-sequential seasonCode; division picks 'kbl' or 'd_league' and game_code the competition inside the season, and
-the wrapper sends the API's glkey. The playoff routes take the REGULAR-SEASON key; the old route serves
-seasonCode below 45 and the new one 45 on, and the wrapper picks it.</p></li>
-<li><p>Ids: gmkey <code>S{seasonCode}G{gameCode}N{gameNo}</code> (a string, an object only inside the new playoff bracket),
-team_code (two-digit string with a leading zero, not stable across ownership changes) and pcode (six-digit
-string, the same on every route). The play-by-play carries no pcode: join its player_name to the game's box score
-on name and team_code. isEnded is unreliable (0 on every finished game through 2005-06), so a game is final when
-isEnded is 1 or when it is dated before today (KST), both teams scored and its play-by-play reached the game-end
-row; anything else raises <code>hoopR_asset_fetch</code>. The first game call also fetches the header (and, for such a game,
-the play-by-play) once; the answer is cached for the process.</p></li>
-<li><p>Coverage: box scores and play-by-play from the first season (1997); shot x/y from 2006-07 (an earlier game's shot
-chart is empty: a zero-row tibble); advanced rates are filled from 1997-98 on (the vendor computes them from the
-box); screen assists and deflections are 0 before the recent seasons. fg is TWO-point field goals made (dunks
-included), fgt all field goals, and a made dunk is its own row in the play-by-play. Shot x/y are pixels on the
-site's 726 x 412 full-court image; basket names the target end and teams switch at half-time, so normalise with
-basket before stacking shots.</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, or the API has nothing
-for the request: an empty list, a final game with no box score, no playoff bracket, no rounds, no schedule rows
-in the window), <code>hoopR_bad_request</code> (a malformed gmkey, a season that is not an END year between 1997 and 2027,
-an unknown division or game_code, or bad schedule dates, raised before any request) and <code>hoopR_asset_fetch</code> (any
-other non-2xx including the unknown-id HTTP 500 and the HTTP 400 the API answers without its two headers, the KBL
-error envelope, an empty or non-JSON body, a game that is not final, or a body for another game, season or window
-than the one asked for). HTTP 500 is the API's deterministic answer to an unknown id and is not retried. Wrappers
-raise; they never warn and return empty.</p></li>
-</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/kbl_score_track.html">kbl_score_track</a></span><span class="op">(</span>gmkey <span class="op">=</span> <span class="st">"S47G01N49"</span><span class="op">)</span></span></code></pre><p></p></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="kbl_seasons.html">kbl_seasons()</a></code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/kbl_score_track.html">kbl_score_track</a></span><span class="op">(</span>gmkey <span class="op">=</span> <span class="st">"S47G01N49"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

@@ -1,7 +1,7 @@
 # **RealGM NBA Best Individual Games**
 
-**Get the all-time best individual NBA games leaderboard from
-[RealGM](https://basketball.realgm.com).**
+**Get the all-time best individual NBA games leaderboard from RealGM
+(basketball.realgm.com).**
 
 **Requires a headless browser** (see
 [`realgm_players()`](https://hoopR.sportsdataverse.org/reference/realgm_players.md)).

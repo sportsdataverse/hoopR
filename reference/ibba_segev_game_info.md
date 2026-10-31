@@ -48,9 +48,10 @@ The `ibba_segev_*()` wrappers read Segev Stats, the live-stats vendor
 behind basket.co.il's game pages
 (`stats.segevstats.com/realtimestat_heb/api/`, a JSON-RPC API served as
 text/html): the game header, rosters, box score, period scores and
-play-by-play with shot coordinates, from 2025-26. They mirror sdv-py's
-`ibba_segev_*` wrappers of the same names: same arguments, the same
-snake_case columns and types, one row per sdv-py row.
+play-by-play with shot coordinates, from 2025-26. They mirror
+sportsdataverse-py's `ibba_segev_*` wrappers of the same names: same
+arguments, the same snake_case columns and types, one row per
+sportsdataverse-py row.
 
 **Unofficial and unsupported.** The API is keyless, unofficial and not
 documented for outside use. Requests are spaced at least one second
@@ -101,7 +102,7 @@ Other IBBA Segev Functions:
 # \donttest{
   try(ibba_segev_game_info(game_id = 50))
 #> ── IBBA Segev game info ───────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:13:43 UTC
+#> ℹ Data updated: 2026-10-31 21:30:49 UTC
 #> # A tibble: 1 × 15
 #>   game_id start_time          competition home_team_id home_team home_team_local
 #>     <int> <dttm>              <chr>              <int> <chr>     <chr>          

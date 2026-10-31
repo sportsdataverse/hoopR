@@ -133,33 +133,11 @@ the uuid must be the game page's. Without it only the checks the body allows by 
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Scoring log of one finished game (scoring events only, with the running score). An empty
-valid answer is a zero-row tibble with these columns, in this order (sdv-py <code>pleague_preciser_score_log</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_uuid</td><td>character</td><td>Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; <code>uuid</code> of pleague_game.</td></tr><tr><td>seq</td><td>integer</td><td>1-based position of the scoring event in game order.</td></tr><tr><td>period</td><td>character</td><td>Period label: Q1-Q4, then OT1, OT2 (the vendor sends it in lower case).</td></tr><tr><td>period_no</td><td>integer</td><td>1-based position of the period: 1-4 for Q1-Q4, 5 for OT1, 6 for OT2.</td></tr><tr><td>clock</td><td>character</td><td>Game clock REMAINING in the period 'mm:ss' (counts down).</td></tr><tr><td>seconds_left</td><td>integer</td><td>The clock as whole seconds remaining in the period (08:34 = 514), derived by the parser.</td></tr><tr><td>home_score</td><td>integer</td><td>Home score after the event.</td></tr><tr><td>away_score</td><td>integer</td><td>Away score after the event.</td></tr></table></div>
+valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py <code>pleague_preciser_score_log</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_uuid</td><td>character</td><td>Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; <code>uuid</code> of pleague_game.</td></tr><tr><td>seq</td><td>integer</td><td>1-based position of the scoring event in game order.</td></tr><tr><td>period</td><td>character</td><td>Period label: Q1-Q4, then OT1, OT2 (the vendor sends it in lower case).</td></tr><tr><td>period_no</td><td>integer</td><td>1-based position of the period: 1-4 for Q1-Q4, 5 for OT1, 6 for OT2.</td></tr><tr><td>clock</td><td>character</td><td>Game clock REMAINING in the period 'mm:ss' (counts down).</td></tr><tr><td>seconds_left</td><td>integer</td><td>The clock as whole seconds remaining in the period (08:34 = 514), derived by the parser.</td></tr><tr><td>home_score</td><td>integer</td><td>Home score after the event.</td></tr><tr><td>away_score</td><td>integer</td><td>Away score after the event.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial use of a THIRD-PARTY host: api.preciser.io is the analytics vendor behind the P. LEAGUE+ game page,
-not the league's own API. It is keyless, CORS-open, has no robots.txt (404) and no terms were found; it serves
-the data the league's own game page displays. The league's /user-policy reserves its content, so payloads are
-not redistributed as release assets and a data release needs owner sign-off. Requests are spaced at least 1 s
-apart per host, retries included.</p></li>
-<li><p>Wrappers take the Preciser game uuid (the <code>uuid</code> column of <code><a href="pleague_game.html">pleague_game()</a></code>; empty before 2022-23, which have
-no vendor data). Pass the optional <code>gid</code> to verify the body against the site's game page and box: the shot
-list and the rotation echo nothing about the game, so only then are the uuid, the final score, the made-shot
-counts, the roster and the court time (rotation minutes within 30 s of the box) checked. An unknown uuid
-answers 200 <code>[]</code> (<code>hoopR_no_data</code>) or HTTP 500 (<code>hoopR_asset_fetch</code>, not retried).</p></li>
-<li><p>Id key spaces: the vendor names teams by uuid (<code>team_uuid</code> / <code>home_team_uuid</code> / <code>away_team_uuid</code>) and persons
-by <code>person_id</code> (the same value as the site box row's <code>person_id</code>); the site's <code>team_id</code> (1-8) joins to a team
-uuid through <code><a href="pleague_team_crosswalk.html">pleague_team_crosswalk()</a></code> (the standings logo file name).</p></li>
-<li><p>Shot x / y are in the VENDOR frame (percent of the court, the home team always attacks x = 95) while the
-site's play-by-play x / y are in the physical court frame (teams swap ends at half-time): x_vendor = 100 -
-x_pbp and y_vendor = 100 - y_pbp in the halves where the home team attacks x &lt; 50. The court is 28.75 x 15.25
-m. Clip urls carry a vendor access key (?key=): it is scrubbed from every body, a body that still holds one is
-refused, and no frame keeps a url.</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, a body of <code>[]</code>, empty
-rotation lists), <code>hoopR_bad_request</code> (a uuid that is not a uuid, a <code>gid</code> that is not an integer, HTTP 400 /
-422) and <code>hoopR_asset_fetch</code> (any other failed or wrong answer, including a <code>gid</code> whose game has another uuid
-and a redirect off the vendor host). HTTP 429 / 502 / 503 / 504 are retried, up to three attempts.</p></li>
-</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/pleague_preciser_score_log.html">pleague_preciser_score_log</a></span><span class="op">(</span>uuid <span class="op">=</span> <span class="st">"e6f98675-3e5b-11ed-949e-5d17350689cf"</span><span class="op">)</span></span></code></pre><p></p></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="pleague_preciser_shots.html">pleague_preciser_shots()</a></code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/pleague_preciser_score_log.html">pleague_preciser_score_log</a></span><span class="op">(</span>uuid <span class="op">=</span> <span class="st">"e6f98675-3e5b-11ed-949e-5d17350689cf"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

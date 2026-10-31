@@ -126,31 +126,11 @@ Endpoint: GET https://www.legabasket.it/api/championships/get-championships-matc
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: The play-by-play qualifier code table (59 codes) with its Italian labels. The columns are
-always these, in this order (sdv-py <code>lba_pbp_legend</code>); a column the site adds later is appended after them:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>code</td><td>integer</td><td>Qualifier code, the value of action_1_qualifier_code / action_2_qualifier_code on the actions.</td></tr><tr><td>label</td><td>character</td><td>Italian label of the qualifier code, as sent (translated in sdv-internal-refs legabasket-returns.md).</td></tr></table></div>
+always these, in this order (sportsdataverse-py <code>lba_pbp_legend</code>); a column the site adds later is appended after them:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>code</td><td>integer</td><td>Qualifier code, the value of action_1_qualifier_code / action_2_qualifier_code on the actions.</td></tr><tr><td>label</td><td>character</td><td>Italian label of the qualifier code, as sent.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial and unsupported: these wrappers read the JSON API that the Next.js site www.legabasket.it itself
-calls. Legal notice: the site's terms say "Non e' consentito copiare ... dati e informazioni senza
-autorizzazione scritta" (copying data and information without written authorisation is not allowed), except for
-personal, non-commercial use. The owner accepted the restriction for this intake on 2026-10-12. Payloads are
-not redistributed as release assets, and any published data release of this source needs separate sign-off.</p></li>
-<li><p>robots.txt allows /api and sets Crawl-delay: 2. The runtime waits 2 s before every request, retries included.
-Crawl incrementally: fetch a final game once (keyed by game_id), find new games with one lba_calendar call per
-round, and do not backfill a history in a burst.</p></li>
-<li><p>Seasons are END years (2027 = 2026-27); the site sends START years and the runtime maps them (season - 1 on the
-wire). Game and player ids are global; team ids are re-issued every season (join lba_teams for the stable
-club_id); a championship id is one season AND one phase (Regular Season and Play Off differ).</p></li>
-<li><p>Play-by-play starts in 2017-18 and changes shape in 2019-20 (pixel frame to court percent) and 2021-22; see
-lba_pbp. Box scores reach back to 1995-96, where the period scores were not recorded (0 means missing).</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, or a body with no rows:
-an unknown season, a play-by-play before 2017-18, standings of a finished championship without a round),
-<code>hoopR_bad_request</code> (a season that is not an END year, a bad choice, HTTP 400 / 422) and <code>hoopR_asset_fetch</code>
-(any other non-2xx, a connection failure after retries, an empty / non-JSON / error-shaped 200, a game that is
-not final on the box score, play-by-play and shot routes, a truncated page, or a body for another season,
-championship, game, team, player, round or category than the one asked for). An unknown id is HTTP 500, which
-is not retried. A body the parser finds no rows in gives a zero-row tibble with these columns.</p></li>
-</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lba_pbp_legend.html">lba_pbp_legend</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">25602</span><span class="op">)</span></span></code></pre><p></p></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="lba_championships.html">lba_championships()</a></code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lba_pbp_legend.html">lba_pbp_legend</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">25602</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

@@ -136,34 +136,12 @@ api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (le
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Single-game records: the season's and the all-time ones, one row per record. An
-empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sdv-py
+empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py
 <code>scb_records_per_game</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League the row belongs to: <code>bbl</code> (men) or <code>dbbl</code> (women); BBL and DBBL game ids overlap, so a game is (league, game_id).</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26), the sdv key; the API's <code>season_id</code> plus one.</td></tr><tr><td>season_id</td><td>integer</td><td>The API's own season key, the START year (2025 = 2025-26); <code>season</code> minus one.</td></tr><tr><td>scope</td><td>character</td><td><code>season</code> for the requested season's records, <code>all_time</code> for the all-time list.</td></tr><tr><td>stat</td><td>character</td><td>The record's stat: points, rebounds, assists, steals, blocks, turnovers, efficiency, free_throws_made, three_point_shots_made or free_throws_success_percentage.</td></tr><tr><td>place</td><td>integer</td><td>Rank within the list (1 = best); 0 on some rows.</td></tr><tr><td>all_time_place</td><td>integer</td><td>Rank on the all-time list; null when not on it.</td></tr><tr><td>order_id</td><td>integer</td><td>Sort order within the list.</td></tr><tr><td>all_time_order_id</td><td>integer</td><td>Sort order on the all-time list; null when not on it.</td></tr><tr><td>value</td><td>double</td><td>The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages.</td></tr><tr><td>ratio</td><td>double</td><td>[made, attempted] as strings, on percentage records only; null otherwise.</td></tr><tr><td>season_player_id</td><td>character</td><td>Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score <code>seasonPlayer.id</code>, action <code>seasonPlayerId</code> and <code>/season-players/{seasonPlayerId}</code>.</td></tr><tr><td>real_player_id</td><td>integer</td><td>Global person id: the same across clubs and seasons. Joins to <code>realPlayerId</code> everywhere.</td></tr><tr><td>first_name</td><td>character</td><td>Player's given name.</td></tr><tr><td>last_name</td><td>character</td><td>Player's family name.</td></tr><tr><td>team_name</td><td>character</td><td>Team name as listed that season (sponsor names included).</td></tr><tr><td>team_tlc</td><td>character</td><td>The player's team code.</td></tr><tr><td>home_tlc</td><td>character</td><td>Three-letter code of the home team of the record game.</td></tr><tr><td>guest_tlc</td><td>character</td><td>Three-letter code of the guest team of the record game.</td></tr><tr><td>game_id</td><td>character</td><td>Game id, a string. Joins to <code>/games/{gameId}</code>.</td></tr><tr><td>scheduled_time</td><td>character</td><td>Scheduled tip-off, ISO 8601 UTC.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial use of a public source: these wrappers read the front-end API of the German Bundesliga sites
-(easycredit-bbl.de, toyota-dbbl.de), run by SCB; payloads are not redistributed as release assets.</p></li>
-<li><p>Legal notice: the BBL Impressum forbids storing BBL content (<code>Inhalte</code>) in an information system without
-BBL's written permission. That is a copyright term, not a robots rule (the API host has no robots.txt).
-The owner reviewed it and accepted the intake (2026-10-12 ruling); keep requests slow (the runtime waits
-at least 1 s per host) and raise any published data release with the owner. The DBBL host is the same
-operator and API; its site notice was not separately reviewed.</p></li>
-<li><p>Both hosts need two headers: a constant <code>x-api-key</code> and an <code>x-api-secret</code> that rotates. The runtime
-derives the secret on first use from the key embedded in an easycredit-bbl.de page (reversed, <code>:</code> turned
-into <code>-</code>) and never logs or returns it. The derivation was reverse-engineered from observed requests and
-responses and has not been checked against the site's own front-end code; if the site changes how it
-signs requests, every call fails with <code>hoopR_asset_fetch</code>.</p></li>
-<li><p>Id key spaces: seasonId is the START year (2025 = 2025-26), so a wrapper's END-year <code>season</code> is sent as
-<code>season - 1</code>. Teams are keyed by teamId (seasonTeamId equals it in every sample). seasonPlayerId is per
-player per season and per club (a player traded mid-season has two); realPlayerId is the person. playerId
-is ambiguous (the seasonPlayerId in box scores, records and /season-players; the person in /transfers).
-Game ids are strings.</p></li>
-<li><p>Errors are classed conditions: <code>hoopR_no_data</code> (404, 204, a 400 "not a valid" id, no rows, a box score of
-a game not yet started), <code>hoopR_bad_request</code> (a bad argument, another 400 / 422) and <code>hoopR_asset_fetch</code>
-(a refused secret after one re-derive, any other non-2xx, an HTML / non-JSON / error-shaped body, a
-truncated page, a body for another game, season, club or league, a box score still in play), all
-inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty frame.</p></li>
-</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/scb_records_per_game.html">scb_records_per_game</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span></span></code></pre><p></p></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="scb_seasons.html">scb_seasons()</a></code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/scb_records_per_game.html">scb_records_per_game</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

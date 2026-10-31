@@ -14,12 +14,104 @@
   empty: `hoopR_no_data`, `hoopR_asset_fetch` (with a `transient` field)
   and `hoopR_bad_request`, all inheriting `hoopR_error`. In all, 667 new
   exports (23 families plus 148 per-competition aliases). Every route is
-  tested at parity with sdv-py on the same fixtures (column names,
-  types, every cell and the request sent). Python-only arguments
+  tested at parity with sportsdataverse-py on the same fixtures (column
+  names, types, every cell and the request sent). Python-only arguments
   (`return_parsed`, `return_as_pandas`) are not ported, and a
-  whole-number double is accepted wherever sdv-py takes an integer. Live
-  tests run only with `HOOPR_INTL_LIVE_TESTS=1`; Genius needs
-  `GENIUS_PROXY` and CBA `CBA_PROXY`.
+  whole-number double is accepted wherever sportsdataverse-py takes an
+  integer. Live tests run only with `HOOPR_INTL_LIVE_TESTS=1`; Genius
+  needs `GENIUS_PROXY` and CBA `CBA_PROXY`.
+
+#### **EuroLeague and EuroCup (`euroleague_*`)**
+
+- New EuroLeague / EuroCup family, `euroleague_*()` (15 functions),
+  wrapping the keyless, unofficial Competition Engine
+  (`api-live.euroleague.net` v2 + v3) and live
+  (`live.euroleague.net/api`) APIs:
+  [`euroleague_competitions()`](https://hoopR.sportsdataverse.org/reference/euroleague_competitions.md),
+  [`euroleague_seasons()`](https://hoopR.sportsdataverse.org/reference/euroleague_seasons.md),
+  [`euroleague_rounds()`](https://hoopR.sportsdataverse.org/reference/euroleague_rounds.md),
+  [`euroleague_clubs()`](https://hoopR.sportsdataverse.org/reference/euroleague_clubs.md),
+  [`euroleague_people()`](https://hoopR.sportsdataverse.org/reference/euroleague_people.md),
+  [`euroleague_games()`](https://hoopR.sportsdataverse.org/reference/euroleague_games.md),
+  [`euroleague_game_stats()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_stats.md),
+  [`euroleague_game_report()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_report.md),
+  `euroleague_standings(kind =)`, `euroleague_player_stats(mode =)`,
+  `euroleague_team_stats(mode =)`,
+  [`euroleague_game_points()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_points.md)
+  (the shot chart, in centimeters from the hoop),
+  [`euroleague_game_pbp()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_pbp.md),
+  [`euroleague_game_boxscore()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_boxscore.md)
+  and
+  [`euroleague_game_header()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_header.md).
+  They mirror sportsdataverse-py’s `euroleague_*` wrappers (same
+  arguments, defaults and snake_case columns) and raise the classed
+  `hoopR_no_data` / `hoopR_invalid_request` / `hoopR_fetch_error`
+  conditions on a failed request; the live API’s empty “no such game”
+  answer is a zero-row tibble with the documented columns. Wrap-only:
+  payloads are not redistributed as release assets.
+
+#### **Behavior changes**
+
+- The NBA Stats wrappers now default `season` to the previous season. 97
+  season arguments defaulted to the current one,
+  `year_to_season(most_recent_nba_season() - 1)`, which stats.nba.com
+  answers with empty tables until that season’s games begin. On
+  2026-10-05 the current season, 2026-27, left
+  [`nba_leaguedashplayerstats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md),
+  [`nba_leaguegamelog()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md)
+  and
+  [`nba_teamgamelogs()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.md)
+  empty; the previous season returns 582, 2,460 and 82 rows. They now
+  default to `year_to_season(most_recent_nba_season() - 2)`. Pass
+  `season` for the current season.
+  [`most_recent_nba_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.md)
+  rolls over in October, so from July to September the default is two
+  seasons back from the one just finished. Unchanged:
+  - the schedule functions
+    ([`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md),
+    [`nba_scheduleleaguev2int()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md),
+    [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md)),
+    because a schedule is published before its season starts;
+  - the draft and draft-combine functions, whose default
+    (`most_recent_nba_season() - 1`) is already the latest completed
+    draft;
+  - [`nba_teams()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.md),
+    which reads the current season’s standings (they list all 30 teams
+    before the season starts);
+  - fixed defaults such as `"2020-21"` and `"22022"`.
+
+  wehoop’s WNBA Stats wrappers use the same previous-season rule, as
+  does sportsdataverse-py. The examples and live tests pass the previous
+  season too. The
+  [`nba_playoffpicture()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md)
+  error hint now names `season_id`, the argument it takes, and the
+  [`nba_drafthistory()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinestats.md)
+  live test passes `season` rather than an unknown `season_year`, which
+  was silently ignored.
+
+#### **New data loaders**
+
+- Eight new loaders read the `mbb_groups` and `nba_groups` releases on
+  sportsdataverse-data, which record conference and division membership
+  as it was each season rather than back-applying today’s alignment:
+  [`load_mbb_groups()`](https://hoopR.sportsdataverse.org/reference/load_mbb_groups.md)
+  /
+  [`load_nba_groups()`](https://hoopR.sportsdataverse.org/reference/load_mbb_groups.md)
+  (one row per lineage, with one `group_id` kept across renames),
+  [`load_mbb_group_seasons()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_seasons.md)
+  /
+  [`load_nba_group_seasons()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_seasons.md)
+  (names, parent group and member count as of each season),
+  [`load_mbb_group_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_aliases.md)
+  /
+  [`load_nba_group_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_aliases.md)
+  (the names and ids ESPN, NCAA, KenPom and NBA Stats use for each
+  group) and `load_mbb_team_group_seasons(seasons)` (2002 onward) /
+  `load_nba_team_group_seasons(seasons)` (1971 onward), one row per team
+  per season. Seasons are ending years. The loaders read parquet, not
+  the tags’ csv copies, so `team_id` stays character.
+
+#### **ESPN**
 
 - [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
   [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
@@ -68,9 +160,7 @@
   share the helper. Seasons already published by
   [`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
   (hoopR-mbb-data) keep “MadeFreeThrow” `coordinate_x` at +/-41.75 until
-  they are republished (sportsdataverse-py REPROCESS run
-  [\#3](https://github.com/sportsdataverse/hoopR/issues/3)); new
-  processing gives +/-28.
+  they are republished; new processing gives +/-28.
 
 - [`espn_mbb_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md)
   /
@@ -88,97 +178,7 @@
   [`nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_player_crosswalk.md).
   Mirrors sportsdataverse/sportsdataverse-py#782.
 
-- `mbb_schedule_crosswalk(include_kenpom = TRUE)` no longer aborts on
-  KenPom’s numeric `game_date` (`20201128`): the date now parses as
-  `YYYYMMDD`, and each team’s KenPom schedule is fetched inside its own
-  error handler.
-
-- New EuroLeague / EuroCup family, `euroleague_*()` (15 functions),
-  wrapping the keyless, unofficial Competition Engine
-  (`api-live.euroleague.net` v2 + v3) and live
-  (`live.euroleague.net/api`) APIs:
-  [`euroleague_competitions()`](https://hoopR.sportsdataverse.org/reference/euroleague_competitions.md),
-  [`euroleague_seasons()`](https://hoopR.sportsdataverse.org/reference/euroleague_seasons.md),
-  [`euroleague_rounds()`](https://hoopR.sportsdataverse.org/reference/euroleague_rounds.md),
-  [`euroleague_clubs()`](https://hoopR.sportsdataverse.org/reference/euroleague_clubs.md),
-  [`euroleague_people()`](https://hoopR.sportsdataverse.org/reference/euroleague_people.md),
-  [`euroleague_games()`](https://hoopR.sportsdataverse.org/reference/euroleague_games.md),
-  [`euroleague_game_stats()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_stats.md),
-  [`euroleague_game_report()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_report.md),
-  `euroleague_standings(kind =)`, `euroleague_player_stats(mode =)`,
-  `euroleague_team_stats(mode =)`,
-  [`euroleague_game_points()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_points.md)
-  (the shot chart, in centimeters from the hoop),
-  [`euroleague_game_pbp()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_pbp.md),
-  [`euroleague_game_boxscore()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_boxscore.md)
-  and
-  [`euroleague_game_header()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_header.md).
-  They mirror sdv-py’s `euroleague_*` wrappers (same arguments, defaults
-  and snake_case columns) and raise the classed `hoopR_no_data` /
-  `hoopR_invalid_request` / `hoopR_fetch_error` conditions on a failed
-  request; the live API’s empty “no such game” answer is a zero-row
-  tibble with the documented columns. Wrap-only: payloads are not
-  redistributed as release assets.
-
-- The NBA Stats wrappers now default `season` to the previous season. 97
-  season arguments defaulted to the current one,
-  `year_to_season(most_recent_nba_season() - 1)`, which stats.nba.com
-  answers with empty tables until that season’s games begin. On
-  2026-10-05 the current season, 2026-27, left
-  [`nba_leaguedashplayerstats()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md),
-  [`nba_leaguegamelog()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md)
-  and
-  [`nba_teamgamelogs()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.md)
-  empty; the previous season returns 582, 2,460 and 82 rows. They now
-  default to `year_to_season(most_recent_nba_season() - 2)`. Pass
-  `season` for the current season.
-  [`most_recent_nba_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.md)
-  rolls over in October, so from July to September the default is two
-  seasons back from the one just finished. Unchanged:
-
-  - the schedule functions
-    ([`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md),
-    [`nba_scheduleleaguev2int()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md),
-    [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md)),
-    because a schedule is published before its season starts;
-  - the draft and draft-combine functions, whose default
-    (`most_recent_nba_season() - 1`) is already the latest completed
-    draft;
-  - [`nba_teams()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.md),
-    which reads the current season’s standings (they list all 30 teams
-    before the season starts);
-  - fixed defaults such as `"2020-21"` and `"22022"`.
-
-  wehoop’s WNBA Stats wrappers use the same previous-season rule, as
-  does sportsdataverse-py. The examples and live tests pass the previous
-  season too. The
-  [`nba_playoffpicture()`](https://hoopR.sportsdataverse.org/reference/nba_iststandings.md)
-  error hint now names `season_id`, the argument it takes, and the
-  [`nba_drafthistory()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinestats.md)
-  live test passes `season` rather than an unknown `season_year`, which
-  was silently ignored.
-
-- Added
-  [`cbbd_teams_directory()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams_directory.md)
-  (CBD `/teams/directory`, upstream v1.29.0): the season’s full team
-  directory, as a named list of `teams` and `conferences`.
-
-- Added
-  [`cbbd_teams_season_overview()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams_season_overview.md)
-  (CBD `/teams/{teamId}/season/{season}/overview`, upstream v1.29.0): a
-  stored full-season team overview, as a named list of `team`, `record`,
-  `ratings`, `efficiency`, `shooting`, `players`, `schedule` and
-  `sources` tibbles.
-
-- [`ncaa_mbb_NET_rankings()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_NET_rankings.md)
-  failed on every call with “invalid first argument” and returned an
-  empty tibble: it recorded its arguments with
-  `mget(setdiff(names(formals()), "..."))`, and for a function with no
-  arguments current R returns `NULL` from that
-  [`setdiff()`](https://generics.r-lib.org/reference/setops.html), which
-  [`mget()`](https://rdrr.io/r/base/get.html) rejects. It records none
-  now. A new offline test runs the parser on a two-row NET table built
-  inline; the live test stays skipped.
+#### **NBA Stats, CDN and G League**
 
 - [`nbagl_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_pbp.md)
   and
@@ -235,25 +235,51 @@
   parse at the first warning. The warning now reaches the caller along
   with the data.
 
-- Eight new loaders read the `mbb_groups` and `nba_groups` releases on
-  sportsdataverse-data, which record conference and division membership
-  as it was each season rather than back-applying today’s alignment:
-  [`load_mbb_groups()`](https://hoopR.sportsdataverse.org/reference/load_mbb_groups.md)
-  /
-  [`load_nba_groups()`](https://hoopR.sportsdataverse.org/reference/load_mbb_groups.md)
-  (one row per lineage, with one `group_id` kept across renames),
-  [`load_mbb_group_seasons()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_seasons.md)
-  /
-  [`load_nba_group_seasons()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_seasons.md)
-  (names, parent group and member count as of each season),
-  [`load_mbb_group_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_aliases.md)
-  /
-  [`load_nba_group_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_aliases.md)
-  (the names and ids ESPN, NCAA, KenPom and NBA Stats use for each
-  group) and `load_mbb_team_group_seasons(seasons)` (2002 onward) /
-  `load_nba_team_group_seasons(seasons)` (1971 onward), one row per team
-  per season. Seasons are ending years. The loaders read parquet, not
-  the tags’ csv copies, so `team_id` stays character.
+- [`nba_videoeventsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md)
+  is no longer deprecated: the endpoint serves clips for a real
+  `game_event_id` (the default `0` matches no play), and the video
+  envelope is now parsed into its `Meta` and `playlist` tables instead
+  of two empty frames.
+
+- [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
+  works again: stats.nba.com rejected its parameter order and a
+  duplicated `Accept-Encoding` header
+  ([\#190](https://github.com/sportsdataverse/hoopR/issues/190)).
+
+- `nba_pbp(version = "v2")` no longer errors when a player is
+  substituted on and off at the same clock time; the on-court columns
+  read the right event column
+  ([\#186](https://github.com/sportsdataverse/hoopR/issues/186),
+  [\#210](https://github.com/sportsdataverse/hoopR/issues/210)).
+
+#### **College basketball (CBD, NCAA, Torvik, crosswalks)**
+
+- `mbb_schedule_crosswalk(include_kenpom = TRUE)` no longer aborts on
+  KenPom’s numeric `game_date` (`20201128`): the date now parses as
+  `YYYYMMDD`, and each team’s KenPom schedule is fetched inside its own
+  error handler.
+
+- Added
+  [`cbbd_teams_directory()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams_directory.md)
+  (CBD `/teams/directory`, upstream v1.29.0): the season’s full team
+  directory, as a named list of `teams` and `conferences`.
+
+- Added
+  [`cbbd_teams_season_overview()`](https://hoopR.sportsdataverse.org/reference/cbbd_teams_season_overview.md)
+  (CBD `/teams/{teamId}/season/{season}/overview`, upstream v1.29.0): a
+  stored full-season team overview, as a named list of `team`, `record`,
+  `ratings`, `efficiency`, `shooting`, `players`, `schedule` and
+  `sources` tibbles.
+
+- [`ncaa_mbb_NET_rankings()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_NET_rankings.md)
+  failed on every call with “invalid first argument” and returned an
+  empty tibble: it recorded its arguments with
+  `mget(setdiff(names(formals()), "..."))`, and for a function with no
+  arguments current R returns `NULL` from that
+  [`setdiff()`](https://generics.r-lib.org/reference/setops.html), which
+  [`mget()`](https://rdrr.io/r/base/get.html) rejects. It records none
+  now. A new offline test runs the parser on a two-row NET table built
+  inline; the live test stays skipped.
 
 - [`mbb_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_team_crosswalk.md)
   now reads every source as of the requested season, matching the
@@ -286,11 +312,27 @@
   files quote one header, `fread()` warns while fixing it, and the
   warning discarded the season. That warning is no longer fatal.
 
+- The KenPom team-page functions
+  ([`kp_team_schedule()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md),
+  [`kp_gameplan()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md),
+  [`kp_opptracker()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md),
+  [`kp_team_players()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md),
+  [`kp_minutes_matrix()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md),
+  [`kp_team_player_stats()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md),
+  [`kp_team_depth_chart()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md),
+  [`kp_team_lineups()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md))
+  and
+  [`kp_team_history()`](https://hoopR.sportsdataverse.org/reference/kp_team_history.md)
+  returned nothing for seasons after the last one in `teams_links`
+  (2026). They now build the KenPom page link from the team name, so the
+  current season works. The `teams_links` documentation now describes
+  its 8,679 team-season rows.
+
 #### **NBA officiating (`nba_l2m`, `nba_l2m_games`, `nba_referee_assignments`)**
 
 New scrapers for official.nba.com officiating data, parity-tested
-against sdv-py’s `sportsdataverse.nba.nba_officiating` on the same
-captured fixtures:
+against sportsdataverse-py’s `sportsdataverse.nba.nba_officiating` on
+the same captured fixtures:
 [`nba_l2m()`](https://hoopR.sportsdataverse.org/reference/nba_l2m.md)
 (Last Two Minute report calls/game/stats),
 [`nba_l2m_games()`](https://hoopR.sportsdataverse.org/reference/nba_l2m_games.md)
@@ -308,7 +350,8 @@ across calls (e.g. looping dates) always works; id columns
 failures (a 404, a blocked fetch, a 200 whose body is not the expected
 report) raise classed conditions (`hoopR_no_data` / `hoopR_fetch_error`,
 both inheriting `hoopR_error`) instead of returning an empty result,
-mirroring sdv-py’s `NoDataError`/`AssetFetchError` vocabulary.
+mirroring sportsdataverse-py’s `NoDataError`/`AssetFetchError`
+vocabulary.
 
 #### **Release loaders: season floors, play ids, join ids**
 
@@ -386,21 +429,35 @@ mirroring sdv-py’s `NoDataError`/`AssetFetchError` vocabulary.
   now need it; the cached `load_*_crosswalk()` loaders do not. magrittr
   and lubridate are no longer dependencies (`%>%` still comes from
   dplyr; date parsing now uses base R with the same results).
+- Rcpp and RcppParallel are no longer dependencies (hoopR has no
+  compiled code), and the unused Suggests furrr, future, ggrepel,
+  rmarkdown and yaml are gone.
+- withr is a new import, and xml2 moved from Suggests to Imports
+  (several parsers call it directly). digest is a new Suggests, needed
+  only by the CBA wrappers.
+- Minimum versions raised: cli (\>= 3.0.0), httr2 (\>= 1.0.4), rlang
+  (\>= 1.0.0) and, for the tests, testthat (\>= 3.1.9).
+
+#### **Documentation**
+
+- The package now ships its `CITATION` file, so `citation("hoopR")`
+  gives the curated entry with the CRAN DOI.
+- Examples that call stats.nba.com, Basketball-Reference or KenPom run
+  only in interactive sessions; those hosts refuse requests from most
+  servers.
 
 ## **hoopR 3.1.0**
 
 CRAN release: 2026-08-25
 
-Development release on top of the CRAN-shipped 3.0.0 (commit
-[b76100b3](https://github.com/sportsdataverse/hoopR/commit/b76100b36467b8ec12045f1ca0871028aa06714b)).
-Headline change is a **58-wrapper ESPN endpoint expansion** that brings
-hoopR’s ESPN coverage to parity with wehoop — athlete coverage, team
-detail, event detail, league catalog, news, calendar, injuries, plus
-draft / freeagents / transactions for the NBA. Also includes bug fixes
-for endpoint behavior that drifted after CRAN submission, the
-package-wide `@return` documentation upgrade, and a proxy-support
-restoration that addresses a regression introduced by the 3.0.0 `httr` →
-`httr2` migration.
+Released to CRAN on 2026-08-25, on top of 3.0.0. Headline change is a
+**58-wrapper ESPN endpoint expansion** that brings hoopR’s ESPN coverage
+to parity with wehoop — athlete coverage, team detail, event detail,
+league catalog, news, calendar, injuries, plus draft / freeagents /
+transactions for the NBA. Also includes bug fixes for endpoint behavior
+that drifted after CRAN submission, the package-wide `@return`
+documentation upgrade, and a proxy-support restoration that addresses a
+regression introduced by the 3.0.0 `httr` → `httr2` migration.
 
 #### **NBA cross-source crosswalks (`nba_*_crosswalk` + `load_nba_*_crosswalk`)**
 
@@ -451,9 +508,7 @@ Fox’s layout-oriented JSON (sections → tables → rows → cells) into tidy
 `hoopR_data` tibbles: `fox_<lg>_pbp` (period-based play-by-play),
 `_boxscore`, `_odds`, `_team_roster`, `_team_stats`, `_team_gamelog`,
 `_standings`, `_league_leaders`. A shared internal layer backs both
-leagues. Verified live; reverse-engineering notes + an OpenAPI 3.1 spec
-live in the `sdv-internal-refs` repo. Parallels the cfbfastR /
-sportsdataverse-py `fox_*` families.
+leagues. Parallels the cfbfastR / sportsdataverse-py `fox_*` families.
 
 #### **CollegeBasketballData API (`cbbd_*`)**
 
@@ -642,14 +697,14 @@ remains the most complete source.
 
 #### **RealGM (`realgm_*`) — Cloudflare-challenge bypass via headless Chrome**
 
-[RealGM](https://basketball.realgm.com) sits behind a Cloudflare
-JavaScript challenge (`cf-mitigated: challenge`) that returns **HTTP
-403** to every libcurl-based client (`httr2`, `httr`, `rvest`)
-regardless of headers — Cloudflare fingerprints the TLS handshake (JA3)
-*and* demands a JavaScript proof-of-work to mint the `cf_clearance`
-cookie. An earlier source audit recorded RealGM as **dead** on that
-basis. It is **not** dead — it is reachable with a real browser engine,
-and 17 `realgm_*()` wrappers now cover the NBA endpoint surface:
+RealGM (basketball.realgm.com) sits behind a Cloudflare JavaScript
+challenge (`cf-mitigated: challenge`) that returns **HTTP 403** to every
+libcurl-based client (`httr2`, `httr`, `rvest`) regardless of headers —
+Cloudflare fingerprints the TLS handshake (JA3) *and* demands a
+JavaScript proof-of-work to mint the `cf_clearance` cookie. An earlier
+source audit recorded RealGM as **dead** on that basis. It is **not**
+dead — it is reachable with a real browser engine, and 17 `realgm_*()`
+wrappers now cover the NBA endpoint surface:
 
 *Players & personnel*
 
@@ -1845,17 +1900,13 @@ CRAN release: 2022-06-17
   function added, courtesy of
   [@papagorgio23](https://github.com/papagorgio23).
 - [`nbagl_players()`](https://hoopR.sportsdataverse.org/reference/nbagl_players.md)
-  function added, courtesy of
-  [@billyfryer](https://github.com/billyfryer).
+  function added, courtesy of Billy Fryer.
 - [`nbagl_schedule()`](https://hoopR.sportsdataverse.org/reference/nbagl_schedule.md)
-  function added, courtesy of
-  [@billyfryer](https://github.com/billyfryer).
+  function added, courtesy of Billy Fryer.
 - [`nbagl_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_pbp.md)
-  function added, courtesy of
-  [@billyfryer](https://github.com/billyfryer).
+  function added, courtesy of Billy Fryer.
 - [`nbagl_standings()`](https://hoopR.sportsdataverse.org/reference/nbagl_standings.md)
-  function added, courtesy of
-  [@billyfryer](https://github.com/billyfryer).
+  function added, courtesy of Billy Fryer.
 - [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
   function added.
 
@@ -2112,7 +2163,7 @@ and KenPom package, but also an NBA package.
 #### **Clean names and team returns**
 
 - All functions have now been given the
-  [`janitor::clean_names()`](https://rdrr.io/cran/janitor/man/clean_names.html)
+  [`janitor::clean_names()`](https://sfirke.github.io/janitor/reference/clean_names.html)
   treatment
 - [`hoopR::espn_mbb_teams()`](https://hoopr.sportsdataverse.org/reference/espn_mbb_teams.html)
   has updated the returns to be more identity information related only

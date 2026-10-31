@@ -146,38 +146,12 @@ categories.</p></dd>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Qualified-player per-game leaders in nine categories (one row per player and category). An
-empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sdv-py
+empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py
 <code>sportpress_player_rankings</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>competition_id</td><td>integer</td><td>Competition id (key space: sportpress competitions): ONE season of the league (24 = 2025-26, 25 = 2026-27). Not the season number. The key of the standings, ranking, slider and box routes.</td></tr><tr><td>category</td><td>character</td><td>Ranking category: efficiency, points, total_rebound, block, assist, steal, two_point_percent, three_point_percent or free_throw_percent.</td></tr><tr><td>rank</td><td>integer</td><td>Place in the category list, 1 = the leader (the list is sorted best first).</td></tr><tr><td>roster_id</td><td>integer</td><td>Roster id (key space: sportpress roster entries): one player on one competition team in one season, so a player has a new roster_id for every team and season. player_id is the person.</td></tr><tr><td>player_id</td><td>integer</td><td>Player id (key space: sportpress persons): stable across seasons and teams, distinct from roster_id. Not a Genius or FIBA person id.</td></tr><tr><td>first_name</td><td>character</td><td>Given name of the player as entered in the CMS.</td></tr><tr><td>last_name</td><td>character</td><td>Family name of the player as entered in the CMS.</td></tr><tr><td>nationality_code</td><td>character</td><td>Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining.</td></tr><tr><td>birth_date</td><td>Date</td><td>Date of birth as shown on the public player page; null when unknown.</td></tr><tr><td>competition_team_id</td><td>integer</td><td>Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key.</td></tr><tr><td>team</td><td>character</td><td>Team display name including the sponsor; varies with language and playoff suffixes: never join on it.</td></tr><tr><td>team_short_name</td><td>character</td><td>Three-letter club code (ANT, MON, ...), stable across seasons in the samples.</td></tr><tr><td>value</td><td>double</td><td>The player's per-game mean (or percentage 0-100) in the row's category.</td></tr><tr><td>throw_made</td><td>double</td><td>Field goals made per game; filled in the three percentage categories only.</td></tr><tr><td>throw_attempted</td><td>double</td><td>Field goals attempted per game; filled in the three percentage categories only.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial and unsupported: the Sportpress API is the JSON backend of bnxtleague.com, not a documented public
-API. Every route needs a header key; it is public (hard-coded in the site bundle), <code>bnxt_runtime</code> reads it from
-the bundle at run time, falls back to a documented value when the bundle cannot be read, and never prints or logs
-it. A 401 raises AssetFetchError (<code>key rotated?</code>). robots.txt allows everything; requests are spaced at least 1 s
-apart. Payloads are not redistributed as release assets.</p></li>
-<li><p>Season key: the END year (<code>season=2026</code> is 2025-26), the API's own key on the season routes. Every other route is
-keyed by the competition id (one per season: 1 = 2021-22, 2 = 2020-21, 3 = 2022-23, 12 = 2023-24, 22 = 2024-25,
-24 = 2025-26, 25 = 2026-27), the competition-team id (new every season; <code>uu_team_id</code> is the stable club), the
-roster id (player x team x season) or the game id (unique across seasons). <code>sportpress_phases(season)</code> maps a
-season to its competition id.</p></li>
-<li><p>Coverage: schedule and rosters from 2021-22 (2020-21 is empty); box scores for 2021-22, 2024-25, 2025-26 and
-2026-27 (2022-23 and 2023-24 answer empty); standings and averages for 2021-22 and 2024-25 on; play-by-play
-('film', with court x/y) for 2021-22 and 2026-27 only: for 2022-23 to 2025-26 use Genius play-by-play through
-<code>genius_id</code> (<code><a href="sportpress_game_slider.html">sportpress_game_slider()</a></code>, organisation BNXT). The game routes (box score, film, overview) refuse a
-game that is not finished (AssetFetchError).</p></li>
-<li><p>Data notes: a team's box total can differ from the schedule final score on about 18 of 1,246 sampled team boxes
-(mostly 2024-25, by 2-21 points); the frames report what the API serves. <code>nationality_code</code> is dirty (lower case,
-<code>USA/BEL</code> pairs, empty, <code>HOL</code>). Names differ by language and sponsor: join on ids. Contact and social fields are
-dropped; only a player's public birth date is kept. The sibling tenants sopron.sportpress.info and
-beac.sportpress.info are not wrapped.</p></li>
-<li><p>Errors are classed conditions: <code>hoopR_no_data</code> (HTTP 404, an empty <code>data</code> list: an unknown id or a season without
-data, an empty ranking), <code>hoopR_bad_request</code> (an id or season that is not an integer, HTTP 400 / 422) and
-<code>hoopR_asset_fetch</code> (a rejected key after one renewal, any other non-200, a non-JSON or empty body, an error or
-changed envelope, a game that is not finished, a body for another season, competition, team or game), all
-inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty frame for a failed request. Whole doubles
-(<code>24</code>) are accepted for integer arguments.</p></li>
-</ul></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="sportpress_ui_strings.html">sportpress_ui_strings()</a></code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other BNXT League Functions:
@@ -215,7 +189,7 @@ inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty 
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportpress_player_rankings</span><span class="op">(</span>competition_id <span class="op">=</span> <span class="fl">24</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── BNXT League Player Rankings from Sportpress ────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:36:53 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:34:36 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,414 × 15</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    competition_id category    rank roster_id player_id first_name last_name    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>

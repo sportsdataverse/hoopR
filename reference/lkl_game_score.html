@@ -130,13 +130,13 @@ before 2018-19. Only a finished game is served.</p></dd>
 game keeps <code>'1 KELINYS - 10:00'</code> after the final, and a finished overtime game reads <code>'1 pratesimas - 00:00'</code>. A
 body without scores gives a zero-row tibble.
 Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises <code>hoopR_no_data</code>, as in sdv-py.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>lkl.lt game id (key space: LKL games; the <code>{gameId}</code> of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under <code>_request</code>).</td></tr><tr><td>home_score</td><td>integer</td><td>Home team points on the score line.</td></tr><tr><td>away_score</td><td>integer</td><td>Away team points on the score line.</td></tr><tr><td>clock</td><td>character</td><td>Clock text, NOT a state flag: an old game keeps '1 KELINYS - 10:00' after the final; a finished overtime game reads '1 pratesimas - 00:00'.</td></tr></table></div>
+with nothing in it raises <code>hoopR_no_data</code>, as in sportsdataverse-py.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>lkl.lt game id (key space: LKL games; the <code>{gameId}</code> of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under <code>_request</code>).</td></tr><tr><td>home_score</td><td>integer</td><td>Home team points on the score line.</td></tr><tr><td>away_score</td><td>integer</td><td>Away team points on the score line.</td></tr><tr><td>clock</td><td>character</td><td>Clock text, NOT a state flag: an old game keeps '1 KELINYS - 10:00' after the final; a finished overtime game reads '1 pratesimas - 00:00'.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and
 its server-rendered pages. The site's robots.txt allows everything and sets no crawl-delay; the runtime still spaces
-requests at least 1 s apart. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-release assets.</p>
+requests at least 1 s apart. The site's terms were not reviewed; check them before you
+republish the data.</p>
 <p>Coverage: game wrappers serve FINISHED games only (an unfinished game raises <code>hoopR_asset_fetch</code>). The box score,
 summary, score line, statistics and leaders answer for every season from 1993-94 (before 2024-25 the scoring splits
 and lead statistics are 0). Play-by-play and shots exist from 2024-25 only; an earlier finished game raises

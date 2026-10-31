@@ -15,8 +15,8 @@ easl_health()
 
 A `hoopR_data` tibble: Liveness probe of the unofficial sync server:
 status, message and the server's own timestamp. An empty answer raises
-`hoopR_no_data`; the columns are always these, in this order (sdv-py
-`easl_health`):
+`hoopR_no_data`; the columns are always these, in this order
+(sportsdataverse-py `easl_health`):
 
 |  |  |  |
 |----|----|----|

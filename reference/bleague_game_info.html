@@ -164,16 +164,16 @@ belong to; a context whose <code>Year</code> differs raises <code>hoopR_asset_fe
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>The B.LEAGUE (Japan Professional Basketball League: B1, B2, B3) wrappers mirror
-sdv-py's <code>sportsdataverse.basketball.bleague</code> wrappers of the same names: same
-arguments, the same snake_case columns and types, one row per sdv-py row.</p>
+sportsdataverse-py's <code>sportsdataverse.basketball.bleague</code> wrappers of the same names: same
+arguments, the same snake_case columns and types, one row per sportsdataverse-py row.</p>
 <p><strong>Unofficial and unsupported.</strong> The game contexts are JSON objects in
 B.LEAGUE's own public S3 bucket (<code>b-league.s3.amazonaws.com</code>, the store its game
 pages read), and the schedule, standings and game_detail pages of
 <code>www.bleague.jp</code> are parsed here. Neither host publishes terms for this use
 (the site's /terms/ answers 404; robots.txt sets a Crawl-delay only for msnbot
 and bingbot). Requests are spaced at least one second apart per host; 429 and
-5xx answers are retried (three attempts). SportsDataverse has not ruled on the
-site's terms, so the data is not redistributed as release assets.</p>
+5xx answers are retried (three attempts). The site's terms were
+not reviewed; check them before you republish the data.</p>
 <p><strong>Seasons</strong> are END years (<code>season = 2026</code> is 2025-26); the site's own <code>Year</code> /
 <code>year=</code> is the START year, so the request sends <code>year = season - 1</code>. Game
 wrappers take the global <code>schedule_key</code> (one integer sequence across B1, B2, B3
@@ -220,7 +220,7 @@ schedule list, or layout drift). All inherit <code>hoopR_error</code>.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">bleague_game_info</span><span class="op">(</span>schedule_key <span class="op">=</span> <span class="fl">504734</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── B.LEAGUE game info from b-league.s3.amazonaws.com ──────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:10:15 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:27:18 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 103</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   schedule_key season feed   year  code event convention_key convention_class</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>

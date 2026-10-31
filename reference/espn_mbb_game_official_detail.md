@@ -197,7 +197,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_official_detail(event_id = 401256760, order = 1)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Official Detail ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:11:55 UTC
+#> ℹ Data updated: 2026-10-31 21:28:48 UTC
 #> # A tibble: 1 × 10
 #>   league        event_id official_id first_name last_name full_name display_name
 #>   <chr>         <chr>    <chr>       <chr>      <chr>     <chr>     <chr>       
@@ -207,7 +207,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_official_detail(event_id = 401283399, order = 1)
 #> ── ESPN NBA Event Official Detail ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:11:55 UTC
+#> ℹ Data updated: 2026-10-31 21:28:49 UTC
 #> # A tibble: 1 × 10
 #>   league event_id  official_id first_name last_name full_name  display_name
 #>   <chr>  <chr>     <chr>       <chr>      <chr>     <chr>      <chr>       

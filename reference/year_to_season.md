@@ -13,3 +13,7 @@ year_to_season(year)
 - year:
 
   Four digit year (XXXX)
+
+## Value
+
+The season label, a character vector such as `"2024-25"`.

@@ -15,7 +15,8 @@ pleague_team_crosswalk()
 
 ## Value
 
-A `hoopR_data` tibble of eight rows (sdv-py `pleague_team_crosswalk`):
+A `hoopR_data` tibble of eight rows (sportsdataverse-py
+`pleague_team_crosswalk`):
 
 |  |  |  |
 |----|----|----|
@@ -51,7 +52,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   pleague_team_crosswalk()
 #> ── P. LEAGUE+ Team Crosswalk ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:35:48 UTC
+#> ℹ Data updated: 2026-10-31 21:33:30 UTC
 #> # A tibble: 8 × 2
 #>   team_id team_uuid                           
 #>     <int> <chr>                               

@@ -22,7 +22,7 @@ vtb_infobasket_seasons(tag = "vtb")
 
 A `hoopR_data` tibble: Season END year -\> season-level CompID for a
 competition tag (the table every season-keyed wrapper maps with). The
-columns are always these, in this order (sdv-py
+columns are always these, in this order (sportsdataverse-py
 `vtb_infobasket_seasons`); an empty valid answer raises `hoopR_no_data`,
 a valid body with no rows for this frame is a zero-row tibble:
 
@@ -38,20 +38,16 @@ a valid body with no rows for this frame is a zero-row tibble:
 
 ## Details
 
-- Owner flag (sdv-internal-refs/vtb/README.md): the VTB United League is
-  run from Russia and several clubs are owned or sponsored by sanctioned
-  state companies (the KHL precedent); Infobasket is the Russian
-  basketball federation's stats platform. Fetching on your own machine
-  is fine. The owner has approved published data releases (2026-10-17),
-  though none is scheduled yet. No accounts or payments are involved.
+- Source: the VTB United League (vtb-league.com) and Infobasket, the
+  Russian basketball federation's stats platform (org.infobasket.su). No
+  account, key or payment is needed.
 
 - Unofficial and unsupported: both hosts are keyless public JSON
   backends of vtb-league.com. No terms of use are published; robots.txt
   is a 404 on api.vtb-league.com and org.infobasket.su (no rules;
   vtb-league.com disallows only /wp/wp-admin/). The runtime waits at
   least 1 s before every request, retries included, and honours
-  Retry-After on 429 / 503. No key, cookie or proxy is used
-  (live-verified direct from the droplet 2026-10-12).
+  Retry-After on 429 / 503. No key, cookie or proxy is used.
 
 - Seasons are END years (2026 = 2025-26) on both backends. Infobasket
   keys everything by competition id: vtb_infobasket_seasons maps the END
@@ -92,8 +88,8 @@ a valid body with no rows for this frame is a zero-row tibble:
 
 - Other tags (vtbyouth, wbc, wpremier, rfb) answer through the tag
   argument; only vtb was captured. The team routes key on the END-year
-  season (sdv-py also lets a caller pass a stage CompID through params;
-  the R wrappers do not).
+  season (sportsdataverse-py also lets a caller pass a stage CompID
+  through params; the R wrappers do not).
 
 - Errors are classed conditions, all inheriting `hoopR_error`:
   `hoopR_no_data` (HTTP 404, or the host has nothing for the request: an
@@ -154,7 +150,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_infobasket_seasons())
 #> ── VTB Infobasket Seasons from org.infobasket.su ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:37:45 UTC
+#> ℹ Data updated: 2026-10-31 21:35:28 UTC
 #> # A tibble: 18 × 6
 #>    season comp_id name_ru         name_en          db    tag  
 #>     <int>   <int> <chr>           <chr>            <chr> <chr>

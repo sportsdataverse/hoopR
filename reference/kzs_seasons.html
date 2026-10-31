@@ -118,14 +118,14 @@ Endpoint: GET https://api.kzs.si/api/v1/public/seasons/"><meta property="og:imag
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Every season (39: 1991/1992 to 2029/2030) with its opaque id and the sdv END year. An empty
-valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sdv-py <code>kzs_seasons</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season_id</td><td>integer</td><td>Season id: OPAQUE, not a year (1 = 2000/2001 ... 27 = 2026/2027, 31 = 1991/1992). The season <code>name</code> is 'START/END'; the sdv season is the END year (the second half of <code>name</code>).</td></tr><tr><td>name</td><td>character</td><td>Season, 'START/END' (2025/2026); the sdv season is the END year.</td></tr><tr><td>is_active</td><td>logical</td><td>True for the current season only (2026/2027 on 2026-10-12).</td></tr><tr><td>active</td><td>logical</td><td>Same as <code>isActive</code>.</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026/2027 = 2027), from the row's own season name or id, else from the request.</td></tr></table></div>
+valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py <code>kzs_seasons</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season_id</td><td>integer</td><td>Season id: OPAQUE, not a year (1 = 2000/2001 ... 27 = 2026/2027, 31 = 1991/1992). The season <code>name</code> is 'START/END'; the sdv season is the END year (the second half of <code>name</code>).</td></tr><tr><td>name</td><td>character</td><td>Season, 'START/END' (2025/2026); the sdv season is the END year.</td></tr><tr><td>is_active</td><td>logical</td><td>True for the current season only (2026/2027 on 2026-10-12).</td></tr><tr><td>active</td><td>logical</td><td>Same as <code>isActive</code>.</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026/2027 = 2027), from the row's own season name or id, else from the request.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
 
 <ul><li><p>Unofficial and unsupported: these wrappers read the public read API (Java/Spring, built by OnixWeb) that the
 kzs.si site itself calls. No terms of use were located (unverified), api.kzs.si/robots.txt answers 401 and
 www.kzs.si/robots.txt 404, so no policy or Crawl-delay is published. The runtime waits at least 1 s before every
-request, retries included. Payloads are not redistributed as release assets.</p></li>
+request, retries included.</p></li>
 <li><p>Personal data: the API serves officials' and coaches' emails, phones and home towns, and clubs' bank accounts and
 addresses, publicly. The parsers never output them (officials appear by name only; club addresses, personnel and
 the commissioner report are dropped). Do not add them back.</p></li>
@@ -181,7 +181,7 @@ before any request). HTTP 500 is retried. Wrappers raise; they never return an e
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kzs_seasons</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── KZS Seasons from api.kzs.si ────────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:18:49 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:31:24 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 39 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season_id name      is_active active season</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>

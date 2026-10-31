@@ -1,7 +1,7 @@
 # **RealGM NBA Draft Early Entrants**
 
 **Get the current NBA draft early-entrant and withdrawal list from
-[RealGM](https://basketball.realgm.com).**
+RealGM (basketball.realgm.com).**
 
 Stacks RealGM's early-entry candidate tables (college and international
 entrants and withdrawals) into one tibble.

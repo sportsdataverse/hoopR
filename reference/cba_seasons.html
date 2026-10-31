@@ -118,13 +118,13 @@ Endpoint: GET https://data-server.cbaleague.com/api/com-code-tables/getSeason"><
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: One row per season: label, START year, default flag. An empty valid answer is a zero-row
-tibble with these columns, in this order (sdv-py <code>cba_seasons</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>is_default</td><td>integer</td><td>Default-selection flag: 1 = the site's default season (exactly one row: the season in progress or next), 2 = not the default.</td></tr><tr><td>key</td><td>character</td><td>Season label 'YYYY-YYYY' (START year - END year), e.g. '2025-2026'; the sdv season key is the second year. The list runs from the upcoming season (2026-2027, 32 rows) down to 1995-1996 with no gap.</td></tr><tr><td>value</td><td>character</td><td>Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. String of digits ('2025'); the value every season parameter takes.</td></tr></table></div>
+tibble with these columns, in this order (sportsdataverse-py <code>cba_seasons</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>is_default</td><td>integer</td><td>Default-selection flag: 1 = the site's default season (exactly one row: the season in progress or next), 2 = not the default.</td></tr><tr><td>key</td><td>character</td><td>Season label 'YYYY-YYYY' (START year - END year), e.g. '2025-2026'; the sdv season key is the second year. The list runs from the upcoming season (2026-2027, 32 rows) down to 1995-1996 with no gap.</td></tr><tr><td>value</td><td>character</td><td>Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. String of digits ('2025'); the value every season parameter takes.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
 
 <ul><li><p>Unofficial and unsupported: these wrappers read the routes that cbaleague.com's own data site (a Vue
-single-page app) calls. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-release assets. Requests are spaced at least 1 s apart per host; keep use small.</p></li>
+single-page app) calls. The site's terms were not reviewed; check them before you
+republish the data. Requests are spaced at least 1 s apart per host; keep use small.</p></li>
 <li><p>Access: every response body is AES-128-ECB encrypted with a public key shipped in the site's front-end bundle;
 the runtime decrypts it with <code><a href="https://eddelbuettel.github.io/digest/man/AES.html" class="external-link">digest::AES()</a></code> (digest is a suggested package: install it to use these wrappers)
 and refuses anything that does not decrypt. The host blocks
@@ -152,8 +152,7 @@ API, so their scope is unchecked.</p></li>
 (26 rows for 12 players), and the repeats are not always copies. <code><a href="cba_player_advanced.html">cba_player_advanced()</a></code> and
 <code><a href="cba_player_extras.html">cba_player_extras()</a></code> keep the FIRST row per <code>player_id</code>.</p></li>
 <li><p>Text fields are Chinese (names, play-by-play sentences, position and nationality labels). The column
-descriptions here are ASCII; sdv-py's <code>tools/codegen/notes/cba_glossary.yaml</code> holds the full English
-glossaries.</p></li>
+descriptions here are ASCII; sportsdataverse-py keeps the full English glossaries of the codes.</p></li>
 <li><p>Personal data: the operator ids (<code>createdBy</code> / <code>lastModifiedBy</code>, one holds a mobile number) and any bare
 mobile-number string are removed from every body. Players' public bio fields (birth date, height, weight) are
 kept.</p></li>
@@ -203,7 +202,7 @@ body; an unfinished game; a body for another game, team, season or day), all inh
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cba_seasons</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── CBA Seasons from data-server.cbaleague.com ─────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:10:57 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:27:47 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 32 × 3</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    is_default key       value</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>

@@ -136,34 +136,12 @@ api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (le
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Play-by-play of a finished game with shot x/y (BBL 2008-09 on, DBBL 2024-25 on). An
-empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sdv-py
+empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py
 <code>scb_game_actions</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League the row belongs to: <code>bbl</code> (men) or <code>dbbl</code> (women); BBL and DBBL game ids overlap, so a game is (league, game_id).</td></tr><tr><td>game_id</td><td>character</td><td>Game id, a string; unique within a league only (BBL and DBBL overlap), and not chronological.</td></tr><tr><td>action_id</td><td>integer</td><td>Action id, an integer unique across games of a league.</td></tr><tr><td>order_id</td><td>integer</td><td>Chronological sequence of the action within the game.</td></tr><tr><td>action_identifier</td><td>character</td><td>Provider action key <code>&lt;n&gt;:&lt;seq&gt;</code> (opaque; the first part is not the period).</td></tr><tr><td>period</td><td>integer</td><td>Period: 1-4 quarters, 5+ overtimes.</td></tr><tr><td>game_time</td><td>character</td><td>Game clock as HH:MM:SS: in an action, the time LEFT in the period (00:10:00 at the start of a 10-minute quarter); in a game header, 00:00:00 in every sample.</td></tr><tr><td>seconds_left</td><td>integer</td><td>Seconds left in the period at the action: <code>game_time</code> as seconds.</td></tr><tr><td>real_time</td><td>character</td><td>Wall-clock time of the action, ISO 8601 UTC. Pre-2011 games carry a placeholder: local midnight of the game day (23:00 UTC the day before) on every row.</td></tr><tr><td>type</td><td>character</td><td>Action type; see the action-type table. Records and videos use their own <code>type</code> (see those routes).</td></tr><tr><td>qualifiers</td><td>character</td><td>Action qualifiers (shot kind, rebound side, foul kind, turnover kind); see the qualifier table.</td></tr><tr><td>is_successful</td><td>logical</td><td>Made / successful (shots, free throws); for other types see the action-type table.</td></tr><tr><td>season_team_id</td><td>character</td><td>Season-team id; equal to the club <code>teamId</code> in every sample (BBL 2005-2026, DBBL 2024-2026).</td></tr><tr><td>side</td><td>character</td><td><code>home</code> or <code>guest</code> (the away side), for the team the row belongs to.</td></tr><tr><td>season_player_id</td><td>character</td><td>Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score <code>seasonPlayer.id</code>, action <code>seasonPlayerId</code> and <code>/season-players/{seasonPlayerId}</code>. Null on team and period rows.</td></tr><tr><td>assisting_season_player_id</td><td>character</td><td>Season-player id of the assisting player; only on assisted made shots. Joins to box-score <code>seasonPlayer.id</code> and action <code>seasonPlayerId</code>.</td></tr><tr><td>shot_x</td><td>integer</td><td>Shot x on the site's half-court chart (0-280 across, 140 through the rim); null without a location. Scale and orientation unverified.</td></tr><tr><td>shot_y</td><td>integer</td><td>Shot y along the court from behind the baseline (rim near 45, arc top near 147); null without a location. Scale and orientation unverified.</td></tr><tr><td>home_team_points</td><td>integer</td><td>Home score after this action; only on scoring actions.</td></tr><tr><td>guest_team_points</td><td>integer</td><td>Guest score after this action; only on scoring actions.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial use of a public source: these wrappers read the front-end API of the German Bundesliga sites
-(easycredit-bbl.de, toyota-dbbl.de), run by SCB; payloads are not redistributed as release assets.</p></li>
-<li><p>Legal notice: the BBL Impressum forbids storing BBL content (<code>Inhalte</code>) in an information system without
-BBL's written permission. That is a copyright term, not a robots rule (the API host has no robots.txt).
-The owner reviewed it and accepted the intake (2026-10-12 ruling); keep requests slow (the runtime waits
-at least 1 s per host) and raise any published data release with the owner. The DBBL host is the same
-operator and API; its site notice was not separately reviewed.</p></li>
-<li><p>Both hosts need two headers: a constant <code>x-api-key</code> and an <code>x-api-secret</code> that rotates. The runtime
-derives the secret on first use from the key embedded in an easycredit-bbl.de page (reversed, <code>:</code> turned
-into <code>-</code>) and never logs or returns it. The derivation was reverse-engineered from observed requests and
-responses and has not been checked against the site's own front-end code; if the site changes how it
-signs requests, every call fails with <code>hoopR_asset_fetch</code>.</p></li>
-<li><p>Id key spaces: seasonId is the START year (2025 = 2025-26), so a wrapper's END-year <code>season</code> is sent as
-<code>season - 1</code>. Teams are keyed by teamId (seasonTeamId equals it in every sample). seasonPlayerId is per
-player per season and per club (a player traded mid-season has two); realPlayerId is the person. playerId
-is ambiguous (the seasonPlayerId in box scores, records and /season-players; the person in /transfers).
-Game ids are strings.</p></li>
-<li><p>Errors are classed conditions: <code>hoopR_no_data</code> (404, 204, a 400 "not a valid" id, no rows, a box score of
-a game not yet started), <code>hoopR_bad_request</code> (a bad argument, another 400 / 422) and <code>hoopR_asset_fetch</code>
-(a refused secret after one re-derive, any other non-2xx, an HTML / non-JSON / error-shaped body, a
-truncated page, a body for another game, season, club or league, a box score still in play), all
-inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty frame.</p></li>
-</ul></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="scb_seasons.html">scb_seasons()</a></code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other SCB Functions:
@@ -196,7 +174,7 @@ inheriting <code>hoopR_error</code>. Wrappers raise; they never return an empty 
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">scb_game_actions</span><span class="op">(</span>game_id <span class="op">=</span> <span class="st">"2006920"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── BBL/DBBL Game Play-by-Play from the SCB API ────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:35:56 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:33:39 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 516 × 20</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    league game_id action_id order_id action_identifier period game_time</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>

@@ -127,55 +127,11 @@ Endpoint: GET https://data-server.cbaleague.com/api/team-match-datas/getMatchDat
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: One row per side and category. An empty valid answer is a zero-row tibble with these
-columns, in this order (sdv-py <code>cba_best_stats</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>schedule_id</td><td>integer</td><td>CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the <code>{scheduleId}</code> of every game route). Stamped by the runtime from the request; null on a body parsed without it.</td></tr><tr><td>side</td><td>character</td><td>Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block).</td></tr><tr><td>ctype</td><td>character</td><td>Statistic the row leads: points, assists, steals, rebounds, blocked (five rows per side in every sample). See the code table.</td></tr><tr><td>cvalue</td><td>character</td><td>The leader's value of ctype, as a STRING ('16').</td></tr><tr><td>player_id</td><td>integer</td><td>playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. A STRING here ('100005271'), an integer on every box route.</td></tr><tr><td>player_name</td><td>character</td><td>Player name (Chinese). Null on rows whose name the report does not repeat (the same player's earlier row carries it).</td></tr><tr><td>player_no</td><td>character</td><td>Jersey number as a string. Null where playerName is null.</td></tr><tr><td>seconds</td><td>integer</td><td>The leader's time on court in SECONDS.</td></tr><tr><td>team_id</td><td>integer</td><td>Unobserved: null in every sample (the side is the enclosing list).</td></tr><tr><td>type</td><td>integer</td><td>Side flag: 0 on home rows, 2 on visiting rows (differs from advance-count, where the visiting side is 1).</td></tr></table></div>
+columns, in this order (sportsdataverse-py <code>cba_best_stats</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>schedule_id</td><td>integer</td><td>CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the <code>{scheduleId}</code> of every game route). Stamped by the runtime from the request; null on a body parsed without it.</td></tr><tr><td>side</td><td>character</td><td>Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block).</td></tr><tr><td>ctype</td><td>character</td><td>Statistic the row leads: points, assists, steals, rebounds, blocked (five rows per side in every sample). See the code table.</td></tr><tr><td>cvalue</td><td>character</td><td>The leader's value of ctype, as a STRING ('16').</td></tr><tr><td>player_id</td><td>integer</td><td>playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. A STRING here ('100005271'), an integer on every box route.</td></tr><tr><td>player_name</td><td>character</td><td>Player name (Chinese). Null on rows whose name the report does not repeat (the same player's earlier row carries it).</td></tr><tr><td>player_no</td><td>character</td><td>Jersey number as a string. Null where playerName is null.</td></tr><tr><td>seconds</td><td>integer</td><td>The leader's time on court in SECONDS.</td></tr><tr><td>team_id</td><td>integer</td><td>Unobserved: null in every sample (the side is the enclosing list).</td></tr><tr><td>type</td><td>integer</td><td>Side flag: 0 on home rows, 2 on visiting rows (differs from advance-count, where the visiting side is 1).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial and unsupported: these wrappers read the routes that cbaleague.com's own data site (a Vue
-single-page app) calls. SportsDataverse has not ruled on the site's terms, so payloads are not redistributed as
-release assets. Requests are spaced at least 1 s apart per host; keep use small.</p></li>
-<li><p>Access: every response body is AES-128-ECB encrypted with a public key shipped in the site's front-end bundle;
-the runtime decrypts it with <code><a href="https://eddelbuettel.github.io/digest/man/AES.html" class="external-link">digest::AES()</a></code> (digest is a suggested package: install it to use these wrappers)
-and refuses anything that does not decrypt. The host blocks
-datacenter IPs at TCP: set the environment variable <code>CBA_PROXY</code> (or <code>options(hoopR.proxy = ...)</code>) to a
-residential proxy URL; it is never printed or put in a condition. Without a proxy the request goes direct and,
-from a datacenter, fails within seconds (a 5 s connect timeout, no retry of a refused or timed-out connect).
-Where direct access works (a residential IP), set <code>CBA_DIRECT=1</code> for the full 60 s timeout and retries.</p></li>
-<li><p>Seasons: the API's season is the START year; every <code>season</code> argument here is the END year (2026 = 2025-26) and
-is sent as <code>season - 1</code>. Columns named <code>season</code> keep the wire value (the START year, so the sdv END year is
-<code>season + 1</code>). The season list reaches 1995-96; box data before 2009-10 is unverified.</p></li>
-<li><p>Coverage: game wrappers serve FINISHED games only. Each first reads the game report header (cached per
-session), and an unfinished game raises <code>hoopR_asset_fetch</code>. Box, period, roster and best-player bodies are
-checked against that header (points sum to the score, team ids match, advanced rows are box players).
-Play-by-play is served one period per request: every period is fetched, and a partial set, an unordered clock
-or a final score the plays do not reach is refused. Play-by-play is verified on 2017-18 and 2025-26 only and is
-absent for 2009-10 (<code>hoopR_no_data</code>). There are NO shot x/y coordinates in this API (shot location exists only
-as team and player zone splits), and play-by-play has no player or team ids (Chinese sentence text plus
-surnames). Box data has 12-minute quarters in 2009-10 and 2017-18 and 10-minute quarters in 2025-26. The
-women's CBA is not covered (no official source).</p></li>
-<li><p>Not game data: <code><a href="cba_game_team_shots.html">cba_game_team_shots()</a></code> and <code><a href="cba_game_team_four.html">cba_game_team_four()</a></code> answer the two teams' SEASON tables (the shot
-zones are the teams' current profile; the four factors are the previous season), whichever game is asked for.
-The reference lists (<code><a href="cba_team_options.html">cba_team_options()</a></code>, <code><a href="cba_team_counts.html">cba_team_counts()</a></code>) and <code><a href="cba_report_status.html">cba_report_status()</a></code> are not echoed by the
-API, so their scope is unchecked.</p></li>
-<li><p>Duplicate rows: in some games (2025-26 game 100105799) the advanced-box and extras routes repeat player rows
-(26 rows for 12 players), and the repeats are not always copies. <code><a href="cba_player_advanced.html">cba_player_advanced()</a></code> and
-<code><a href="cba_player_extras.html">cba_player_extras()</a></code> keep the FIRST row per <code>player_id</code>.</p></li>
-<li><p>Text fields are Chinese (names, play-by-play sentences, position and nationality labels). The column
-descriptions here are ASCII; sdv-py's <code>tools/codegen/notes/cba_glossary.yaml</code> holds the full English
-glossaries.</p></li>
-<li><p>Personal data: the operator ids (<code>createdBy</code> / <code>lastModifiedBy</code>, one holds a mobile number) and any bare
-mobile-number string are removed from every body. Players' public bio fields (birth date, height, weight) are
-kept.</p></li>
-<li><p>Ids: <code>schedule_id</code> (games, one global 9-digit sequence 100xxxxxx), <code>team_id</code> (clubs, stable across sponsor
-renames), <code>player_id</code> (persons) and <code>match_type_id</code> are integers. The roster registration <code>id</code> of
-<code><a href="cba_rosters.html">cba_rosters()</a></code> is a 19-digit integer that an R integer or double cannot hold exactly, so it is kept as its
-exact digits (character).</p></li>
-<li><p>Errors are classed conditions: <code>hoopR_no_data</code> (HTTP 404, a game without play-by-play), <code>hoopR_bad_request</code> (a
-non-integer id or season, HTTP 400 / 422) and <code>hoopR_asset_fetch</code> (any other non-200, including HTTP 500, which
-this API answers for a body it dislikes and which is not retried; a dead connection; an empty or undecryptable
-body; an unfinished game; a body for another game, team, season or day), all inheriting <code>hoopR_error</code>. HTTP 429
-/ 502 / 503 / 504 are retried, up to three attempts. Wrappers raise; they never warn and return empty.</p></li>
-</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/cba_best_stats.html">cba_best_stats</a></span><span class="op">(</span>schedule_id <span class="op">=</span> <span class="fl">100105799</span><span class="op">)</span></span></code></pre><p></p></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="cba_seasons.html">cba_seasons()</a></code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/cba_best_stats.html">cba_best_stats</a></span><span class="op">(</span>schedule_id <span class="op">=</span> <span class="fl">100105799</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

@@ -157,9 +157,9 @@ the <code>game_code</code> column of <code><a href="euroleague_games.html">eurol
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
-wraps it (wrap-only: payloads are not redistributed as release assets). This
-function mirrors its sdv-py twin of the same name: same arguments, defaults
-and snake_case columns, one row per sdv-py row.</p>
+wraps it. This
+function mirrors its sportsdataverse-py twin of the same name: same arguments, defaults
+and snake_case columns, one row per sportsdataverse-py row.</p>
 <p>The live API's codes are space-padded fixed-width strings
 (<code>TEAM = "IST       "</code>); every string cell is stripped. Its "no such game"
 answer is an <strong>empty 200 body</strong>, returned as a zero-row tibble with the

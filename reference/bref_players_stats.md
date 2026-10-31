@@ -70,29 +70,9 @@ Other Basketball-Reference Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
   try(bref_players_stats(season = 2024, table = "per_game"))
-#> ── Player season stats from basketball-reference.com ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:10:38 UTC
-#> # A tibble: 736 × 32
-#>    ranker player         age team  pos       g    gs mp_per_g fg_per_g fga_per_g
-#>     <dbl> <chr>        <dbl> <chr> <chr> <dbl> <dbl>    <dbl>    <dbl>     <dbl>
-#>  1      1 Joel Embiid     29 PHI   C        39    39     33.6     11.5      21.8
-#>  2      2 Luka Dončić     24 DAL   PG       70    70     37.5     11.5      23.6
-#>  3      3 Giannis Ant…    29 MIL   PF       73    73     35.2     11.5      18.8
-#>  4      4 Shai Gilgeo…    25 OKC   PG       75    75     34       10.6      19.8
-#>  5      5 Jalen Bruns…    27 NYK   PG       77    77     35.4     10.3      21.4
-#>  6      6 Devin Booker    27 PHO   PG       68    68     36        9.4      19.2
-#>  7      7 Kevin Durant    35 PHO   PF       75    75     37.2     10        19.1
-#>  8      8 Jayson Tatum    25 BOS   PF       74    74     35.7      9.1      19.3
-#>  9      9 De'Aaron Fox    26 SAC   PG       74    74     35.9      9.7      20.9
-#> 10     10 Donovan Mit…    27 CLE   SG       55    55     35.3      9.1      19.8
-#> # ℹ 726 more rows
-#> # ℹ 22 more variables: fg_pct <dbl>, fg3_per_g <dbl>, fg3a_per_g <dbl>,
-#> #   fg3_pct <dbl>, fg2_per_g <dbl>, fg2a_per_g <dbl>, fg2_pct <dbl>,
-#> #   efg_pct <dbl>, ft_per_g <dbl>, fta_per_g <dbl>, ft_pct <dbl>,
-#> #   orb_per_g <dbl>, drb_per_g <dbl>, trb_per_g <dbl>, ast_per_g <dbl>,
-#> #   stl_per_g <dbl>, blk_per_g <dbl>, tov_per_g <dbl>, pf_per_g <dbl>,
-#> #   pts_per_g <dbl>, awards <chr>, season <int>
 # }
+}
 ```

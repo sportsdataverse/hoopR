@@ -97,41 +97,9 @@ A `hoopR_data` tibble, one row per `(season_id, group, entity_id)`:
 
 ## Details
 
-**Unofficial.** This is the public endpoint the Sportradar Atrium /
-Synergy "Connect" widget calls from every visitor's browser (keyless;
-the host has no robots.txt). The data is Sportradar's and the leagues'.
-The wrappers read it on the caller's behalf, one request at least 1 s
-after the last to the host, and it is not republished as release assets.
-Keep crawls small and incremental.
-
-**Sites and seasons.** `website_id` picks the league site; one site
-carries many competitions. Seasons are END years (`season = 2026`): the
-site's own year is the START year on LNB and the calendar year
-elsewhere, and a year can hold several competitions, so pair `season`
-with `competition_id` (see
-[`atrium_seasons()`](https://hoopR.sportsdataverse.org/reference/atrium_seasons.md))
-or pass `season_id`.
-[`atrium_end_year()`](https://hoopR.sportsdataverse.org/reference/atrium_end_year.md)
-maps a site's own year to that END year, and
-[`atrium_season_id()`](https://hoopR.sportsdataverse.org/reference/atrium_season_id.md)
-finds the season UUID.
-
-**Columns** are configured per site: a statistic one site omits is `NA`.
-A key the documented columns do not list is appended with an inferred
-type. Player and team ids (UUIDs, character) are shared across sites;
-the player stat tables carry names only, so `person_id` there is decoded
-from the widget link beside each name.
-
-**Errors** (classed conditions, all inheriting `hoopR_error`):
-`hoopR_no_data` when the site has nothing for the request (HTTP 404, no
-such season, an empty fixture list, a game with no play-by-play yet, or
-a fixture id the site does not serve: an unknown id or a game of another
-site, which the API answers alike with an empty fixture);
-`hoopR_bad_request` for HTTP 400 / 422 or an argument that cannot be
-mapped (an ambiguous END year, `season` with `season_id`);
-`hoopR_asset_fetch` for any other failed fetch, an error / stub body, or
-a body that belongs to another site, type, season, game, player or team
-than the one asked for.
+Source, terms of use, request pacing, seasons, ids, coverage and error
+classes of this family: see the notes in
+[`atrium_fixtures()`](https://hoopR.sportsdataverse.org/reference/atrium_fixtures.md).
 
      atrium_standings_summary(website_id = 12, season = 2026,
                               competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404")

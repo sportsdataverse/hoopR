@@ -1,7 +1,7 @@
 # **RealGM NBA Teams Index**
 
-**Get the NBA team index, with division and conference, from
-[RealGM](https://basketball.realgm.com).**
+**Get the NBA team index, with division and conference, from RealGM
+(basketball.realgm.com).**
 
 **Requires a headless browser** (see
 [`realgm_players()`](https://hoopR.sportsdataverse.org/reference/realgm_players.md)).

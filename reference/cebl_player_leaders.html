@@ -154,38 +154,12 @@ echo it.</p></dd>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Top five players per requested statistic (long frame, one row per statistic and leader).
-An empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sdv-py
+An empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py
 <code>cebl_player_leaders</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>statistic</td><td>character</td><td>Statistic this leader row ranks, the body's key for the list: POINTS, REBOUNDS, ASSISTS, TARGET_SCORES and the other names the request asked for.</td></tr><tr><td>ranking</td><td>integer</td><td>Rank in this statistic, 1 = best; ties share a rank and skip the next (1, 1, 1, 4). The list is the top 5 rows, no more.</td></tr><tr><td>season</td><td>integer</td><td>Season: the calendar year it is played in (May to August) = the sdv END year (2025). Taken from the request (the body does not echo it); null for the all-time table and for a bare body.</td></tr><tr><td>mode</td><td>character</td><td>Table mode of the request: TOTALS (sums over the selected games) or PER_GAME (per-game averages); the body does not echo it.</td></tr><tr><td>competition</td><td>character</td><td>Competition filter of the request: REGULAR or FINALS; null when both were asked. The body does not echo it.</td></tr><tr><td>player_id</td><td>integer</td><td>CEBL player id (its own key space). Joins /players/{player_id}/ and <code>id</code> in the other player rows. Genius LiveStats <code>data.json</code> carries no person id, so the join to Genius play-by-play is by name, team and jersey number (unverified).</td></tr><tr><td>full_name</td><td>character</td><td>Player's full name.</td></tr><tr><td>team_id</td><td>integer</td><td>CEBL team id (its own key space; not a Genius id). Joins /teams/ <code>id</code>, the games' <code>home_team_id</code> / <code>away_team_id</code>, <code>team_id</code> in player rows and the <code>team_id</code> / <code>vs_team_id</code> params. A relocated or renamed franchise has a second id: the Stats Hub groups 15+56 (Saskatchewan Rattlers, Saskatoon Mamba), 17+53 (Calgary Surge, Guelph Nighthawks), 19+55 (Brampton, Hamilton Honey Badgers) and 16+54 (Vancouver, Fraser Valley Bandits).</td></tr><tr><td>team_name_en</td><td>character</td><td>Full English name of the player's team.</td></tr><tr><td>team_short_name_en</td><td>character</td><td>Short English name (city) of the player's team.</td></tr><tr><td>team_name_fr</td><td>character</td><td>Full French name of the player's team.</td></tr><tr><td>team_short_name_fr</td><td>character</td><td>Short French name (city) of the player's team.</td></tr><tr><td>team_abbreviated_name</td><td>character</td><td>Three-letter code of the player's team ('OTT', 'VAN').</td></tr><tr><td>team_logo_url</td><td>character</td><td>Logo URL (icon with the name) of the player's team.</td></tr><tr><td>value</td><td>double</td><td>The player's figure for the statistic this list is keyed by, in the requested mode (TOTALS sum or PER_GAME average; percentages 0-100). A decimal string ('25.9').</td></tr><tr><td>photo_url</td><td>character</td><td>Player headshot URL on the Genius Sports image CDN (images.statsengine.playbyplay.api.geniussports.com).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>CEBL own API, owner-approved gray area: these wrappers read the league's own FastAPI service (api.data.cebl.ca,
-the backend of the CEBL Stats Hub) with the X-Api-Key that the hub's own page bundle ships to every browser.
-The key is not issued to third parties and no developer terms were found; cebl.ca's terms of use were not
-reviewed. The runtime reads the key from the bundle at run time, falls back to a documented constant, never
-prints it, and raises <code>hoopR_asset_fetch</code> with a 'key rotated?' hint on a persistent 401.
-www.cebl.ca/robots.txt disallows nothing. Payloads are not redistributed as release assets; requests are spaced
-at least 1 s apart.</p></li>
-<li><p>Season is the calendar year (May to August) = the sdv END year: no mapping. The first season is 2019. An
-unknown season, team or player answers an empty list, which the runtime raises as <code>hoopR_no_data</code>. Ids are
-CEBL's own; a relocated franchise has two team ids (cebl_teams lists all 15).</p></li>
-<li><p>This API has no box-score, play-by-play or shot route. They live in Genius LiveStats (organisation CEBL, see
-the genius family): cebl_games and cebl_player_gamelog carry the Genius match id as genius_match_id, parsed
-from the stats URLs (derived, not fetched; the match of a cancelled game may have no data). home_team_id is
-Genius team 1 and away_team_id team 2 (checked on match 2600563).</p></li>
-<li><p>Some completed schedule rows have null scores (2026), and a cancelled game has status CANELLED (the API's
-spelling) with null or zero scores. The schedule lists unplayed games too, so no wrapper refuses an unfinished
-game. Aggregates are decimal strings upstream and double here. Players' names, nationality and birth date are
-the public bio; no contact data is served.</p></li>
-<li><p>Errors are classed conditions: <code>hoopR_no_data</code> (HTTP 404, an empty list, an all-null profile: an unknown
-season, team or player), <code>hoopR_bad_request</code> (a bad argument, HTTP 400 / 422) and <code>hoopR_asset_fetch</code> (a key
-the API still refuses after one re-read, any other non-200, a non-JSON body, an error envelope, a body for
-another season, team or player), all inheriting <code>hoopR_error</code>. HTTP 500 is the API's answer to a bad id and is
-not retried. Wrappers raise; they never return an empty frame.</p></li>
-<li><p>Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact
-JSON here (<code>{"name":"TSN"}</code>), where sdv-py's String cast writes Python's <code>str(dict)</code> repr (<code>{'name': 'TSN'}</code>).
-No string column of the committed fixtures carries an object.</p></li>
-</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/cebl_player_leaders.html">cebl_player_leaders</a></span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"PER_GAME"</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></code></pre><p></p></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="cebl_seasons.html">cebl_seasons()</a></code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/cebl_player_leaders.html">cebl_player_leaders</a></span><span class="op">(</span>mode <span class="op">=</span> <span class="st">"PER_GAME"</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

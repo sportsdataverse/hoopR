@@ -71,47 +71,9 @@ A `hoopR_data` tibble with these columns:
 
 ## Details
 
-The B.LEAGUE (Japan Professional Basketball League: B1, B2, B3) wrappers
-mirror sdv-py's `sportsdataverse.basketball.bleague` wrappers of the
-same names: same arguments, the same snake_case columns and types, one
-row per sdv-py row.
-
-**Unofficial and unsupported.** The game contexts are JSON objects in
-B.LEAGUE's own public S3 bucket (`b-league.s3.amazonaws.com`, the store
-its game pages read), and the schedule, standings and game_detail pages
-of `www.bleague.jp` are parsed here. Neither host publishes terms for
-this use (the site's /terms/ answers 404; robots.txt sets a Crawl-delay
-only for msnbot and bingbot). Requests are spaced at least one second
-apart per host; 429 and 5xx answers are retried (three attempts).
-SportsDataverse has not ruled on the site's terms, so the data is not
-redistributed as release assets.
-
-**Seasons** are END years (`season = 2026` is 2025-26); the site's own
-`Year` / `year=` is the START year, so the request sends
-`year = season - 1`. Game wrappers take the global `schedule_key` (one
-integer sequence across B1, B2, B3 and every season: 1 = the 2016-17
-opener, 5856 in 2020-21, 500017 in 2022-23, 504734 / 505508 B1 / B2 and
-10693 B3 in 2025-26); list a day's keys with
-[`bleague_schedule()`](https://hoopR.sportsdataverse.org/reference/bleague_schedule.md).
-
-**Feeds.** A game is read from the v2 feed (B1/B2 from 2020-21), else
-the v1 feed (B3 and B1/B2 2018-2020), else the game page's embedded copy
-(the only source of 2016-17 and 2017-18), decided at run time. v2 ids
-are strings, v1 ids integers: both become text here. v1 adds leaders and
-the score track; the team-rebound codes 18 / 19 are swapped between the
-feeds and a v1 substitution is one row where v2 has two. Player and team
-names are Japanese (English names only on the box score and header).
-Game wrappers serve FINISHED games only. Each game wrapper fetches the
-context itself (two requests): fetch once per game per wrapper you need.
-
-**Errors** are classed conditions, never a warning plus an empty frame:
-`hoopR_no_data` (no source holds the game, a schedule day without games,
-HTTP 404), `hoopR_bad_request` (a non-integer or out-of-range argument,
-HTTP 400 / 422) and `hoopR_asset_fetch` (any other failure: another
-status, a transport error, a non-JSON or non-HTML body, an error or
-changed body, an unfinished game, a context or page for another game,
-season, tab or day, a truncated schedule list, or layout drift). All
-inherit `hoopR_error`.
+Source, terms of use, request pacing, seasons, ids, coverage and error
+classes of this family: see the notes in
+[`bleague_game_info()`](https://hoopR.sportsdataverse.org/reference/bleague_game_info.md).
 
 ## See also
 
@@ -136,7 +98,7 @@ Other B.LEAGUE Functions:
 # \donttest{
   try(bleague_shots(schedule_key = 504734))
 #> ── B.LEAGUE shots from b-league.s3.amazonaws.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:10:23 UTC
+#> ℹ Data updated: 2026-10-31 21:27:26 UTC
 #> # A tibble: 134 × 23
 #>    schedule_key season feed  period event_no team_side team_id player_id 
 #>           <int>  <int> <chr>  <int>    <int> <chr>     <chr>   <chr>     

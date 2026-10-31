@@ -15,8 +15,8 @@ kzs_seasons()
 
 A `hoopR_data` tibble: Every season (39: 1991/1992 to 2029/2030) with
 its opaque id and the sdv END year. An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order (sdv-py
-`kzs_seasons`):
+`hoopR_no_data`; the columns are always these, in this order
+(sportsdataverse-py `kzs_seasons`):
 
 |  |  |  |
 |----|----|----|
@@ -34,7 +34,7 @@ its opaque id and the sdv END year. An empty valid answer raises
   terms of use were located (unverified), api.kzs.si/robots.txt answers
   401 and www.kzs.si/robots.txt 404, so no policy or Crawl-delay is
   published. The runtime waits at least 1 s before every request,
-  retries included. Payloads are not redistributed as release assets.
+  retries included.
 
 - Personal data: the API serves officials' and coaches' emails, phones
   and home towns, and clubs' bank accounts and addresses, publicly. The
@@ -109,7 +109,7 @@ Other KZS Functions:
 # \donttest{
   try(kzs_seasons())
 #> ── KZS Seasons from api.kzs.si ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:18:49 UTC
+#> ℹ Data updated: 2026-10-31 21:31:24 UTC
 #> # A tibble: 39 × 5
 #>    season_id name      is_active active season
 #>        <int> <chr>     <lgl>     <lgl>   <int>

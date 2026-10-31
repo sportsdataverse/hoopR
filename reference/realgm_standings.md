@@ -1,7 +1,7 @@
 # **RealGM NBA Standings**
 
-**Get the current NBA standings (both conferences) from
-[RealGM](https://basketball.realgm.com).**
+**Get the current NBA standings (both conferences) from RealGM
+(basketball.realgm.com).**
 
 One row per team with record, win pct, games back, streak, last-ten,
 scoring margin and home/away/division/conference splits. The Eastern and

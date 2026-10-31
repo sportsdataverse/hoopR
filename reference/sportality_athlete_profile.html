@@ -130,35 +130,12 @@ Endpoint: GET https://www.basketligaen.dk/api/statistics-v2/athlete/profile-page
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Player profile: age, height, position, season and career totals. An empty valid
-answer raises <code>hoopR_no_data</code>; the documented columns come first, in this order (sdv-py
+answer raises <code>hoopR_no_data</code>; the documented columns come first, in this order (sportsdataverse-py
 <code>sportality_athlete_profile</code>), then any column the API added later:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>uuid</td><td>character</td><td>Platform uuid of this record (10-character lowercase key space of its record type; joins the route that serves it).</td></tr><tr><td>full_name</td><td>character</td><td>Full display name of the player.</td></tr><tr><td>first_name</td><td>character</td><td>Given (first) name(s) of the player.</td></tr><tr><td>last_name</td><td>character</td><td>Family name (surname) of the player.</td></tr><tr><td>nationality</td><td>character</td><td>ISO 3166-1 alpha-2 country code.</td></tr><tr><td>gender</td><td>character</td><td>Gender of the team or player: male or female (every record on this host is male).</td></tr><tr><td>age_value</td><td>integer</td><td>Age in whole years.</td></tr><tr><td>age_format</td><td>character</td><td>Unit of the value (years). Values: <code>years</code> = years.</td></tr><tr><td>weight_value</td><td>integer</td><td>Weight of the player in kilograms.</td></tr><tr><td>weight_format</td><td>character</td><td>Unit of the value (kg). Values: <code>kg</code> = kilograms.</td></tr><tr><td>height_value</td><td>integer</td><td>Height of the player in centimetres.</td></tr><tr><td>height_format</td><td>character</td><td>Unit of the value (cm). Values: <code>cm</code> = centimetres.</td></tr><tr><td>jersey_number</td><td>integer</td><td>Jersey (shirt) number of the player.</td></tr><tr><td>position</td><td>character</td><td>Playing position.</td></tr><tr><td>position_code</td><td>character</td><td>Position code (G, F, C, or a finer code such as SG on the profile route). Values: <code>G</code> = guard.</td></tr><tr><td>shoots</td><td>character</td><td>Shooting hand (empty or null for every player seen).</td></tr><tr><td>team_uuid</td><td>character</td><td>Platform team uuid.</td></tr><tr><td>team_instance_id</td><td>character</td><td>Site instance id of the club (platform key space).</td></tr><tr><td>team_name</td><td>character</td><td>Name of the team.</td></tr><tr><td>team_code</td><td>character</td><td>Platform team code (HOL, RAN).</td></tr><tr><td>team_media</td><td>character</td><td>URL of the team logo image.</td></tr><tr><td>season_stats</td><td>character</td><td>The player's current-season totals as field/value pairs (GP, PAvg, ...).</td></tr><tr><td>career_stats</td><td>character</td><td>The player's career totals as field/value pairs.</td></tr><tr><td>statistics_provider</td><td>character</td><td>Stats provider of the data (genius-basketball = Genius Sports LiveStats).</td></tr><tr><td>is_in_squad</td><td>logical</td><td>Whether the player is in the team's current squad.</td></tr><tr><td>media_url</td><td>character</td><td>Portrait image URL (imgix CDN).</td></tr><tr><td>media_alt</td><td>character</td><td>Image alt text (”).</td></tr><tr><td>media_srcset</td><td>character</td><td>Responsive image set (imgix CDN URLs with widths).</td></tr><tr><td>media_url_img_original_proportion</td><td>character</td><td>Portrait URL at its original proportions.</td></tr><tr><td>media_url_placeholder_image</td><td>character</td><td>Placeholder image URL (”).</td></tr><tr><td>media_videourl</td><td>character</td><td>Video URL (”).</td></tr><tr><td>media_photographer</td><td>character</td><td>Photographer credit (”).</td></tr><tr><td>media_focal_point</td><td>character</td><td>Focal point record (empty).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial: the JSON API behind www.basketligaen.dk, the Danish men's basketball league (Basketligaen,
-series code DBL). The site runs on the Sportality platform (the vendor behind the SHL and HockeyAllsvenskan
-wrappers). The terms page was not read; payloads are not redistributed as release assets.</p></li>
-<li><p>Stats provider: genius-basketball, a relay of Genius Sports LiveStats. The Genius match, team and person ids
-in play-by-play, box scores and stats tables (game_id, team_id, player_id, all Int64) join the genius
-family; the platform uuids (game, team, athlete, ssgt) are not Genius ids and exist only on this site. The
-Genius ORG code of Denmark is not exposed.</p></li>
-<li><p>Season = the END year (2026 = 2025/26) everywhere; the runtime maps it, with game_type ('regular' or
-'finals', the playoffs), to the site's ssgt (season + series + game type) through layout-info. Schedules,
-standings and season tables start in 2002/03; game-level data (play-by-play with shot x/y, box scores, team
-stats) starts in 2023/24.</p></li>
-<li><p>Source defects the runtime refuses (<code>hoopR_asset_fetch</code>): an unfinished game or a truncated play-by-play
-feed, a box score or feed that names another game, a cut stats table. The 2002/03 regular-season schedule
-lists 109 finished games where its own standings count 110: a source gap.</p></li>
-<li><p>Personal data is removed from every body: birth dates, e-mail addresses, phone numbers, addresses and
-contact blocks.</p></li>
-<li><p>No women's league: Dameligaen has its own domain (dameligaen.dk), which answers 401 to anonymous requests.</p></li>
-<li><p>Errors are classed conditions: <code>hoopR_no_data</code> (404, an empty gameday body, <code><a href="https://rdrr.io/r/base/Paren.html" class="external-link">{}</a></code> / <code>[]</code>, a table with
-no rows, a season or game type layout-info does not list), <code>hoopR_bad_request</code> (a bad argument, a 400 /
-422) and <code>hoopR_asset_fetch</code> (an error envelope or non-JSON 200, a body for another game / team / athlete /
-ssgt, an unfinished game or truncated play-by-play, a cut stats table, any other non-2xx; a 500 is the
-site's answer for an unknown uuid and is not retried), all inheriting <code>hoopR_error</code>. Wrappers raise; they
-never return an empty frame.</p></li>
-</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/sportality_athlete_profile.html">sportality_athlete_profile</a></span><span class="op">(</span>athlete_uuid <span class="op">=</span> <span class="st">"dpu0901c0t"</span>, master_site_instance_id <span class="op">=</span> <span class="st">"dbl1_dbl"</span><span class="op">)</span></span></code></pre><p></p></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="sportality_schedule.html">sportality_schedule()</a></code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/sportality_athlete_profile.html">sportality_athlete_profile</a></span><span class="op">(</span>athlete_uuid <span class="op">=</span> <span class="st">"dpu0901c0t"</span>, master_site_instance_id <span class="op">=</span> <span class="st">"dbl1_dbl"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

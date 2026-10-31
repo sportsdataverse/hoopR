@@ -15,7 +15,8 @@ tpbl_seasons()
 
 A `hoopR_data` tibble: Every TPBL season with its TPBL and GoHoops ids,
 label, status and date window. An empty answer raises `hoopR_no_data`;
-the columns are always these, in this order (sdv-py `tpbl_seasons`):
+the columns are always these, in this order (sportsdataverse-py
+`tpbl_seasons`):
 
 |  |  |  |
 |----|----|----|
@@ -34,8 +35,7 @@ the columns are always these, in this order (sdv-py `tpbl_seasons`):
   site's own front end calls on api.tpbl.basketball (read from its
   JavaScript bundle). The API is keyless and needs no headers;
   tpbl.basketball/robots.txt answers 200 with an empty body. The runtime
-  waits at least 1 s before every request, retries included. Payloads
-  are not redistributed as release assets.
+  waits at least 1 s before every request, retries included.
 
 - Coverage: three seasons so far (2024-25 = season 2025 to 2026-27 =
   season 2027). There is NO play-by-play route; the two shot lists carry
@@ -105,7 +105,7 @@ Other TPBL Functions:
 # \donttest{
   try(tpbl_seasons())
 #> ── TPBL Seasons from api.tpbl.basketball ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:37:28 UTC
+#> ℹ Data updated: 2026-10-31 21:35:10 UTC
 #> # A tibble: 3 × 7
 #>   season season_id gohoops_season_id name           status   started_at ended_at
 #>    <int>     <int>             <int> <chr>          <chr>    <chr>      <chr>   

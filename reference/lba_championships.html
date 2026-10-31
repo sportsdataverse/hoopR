@@ -126,7 +126,7 @@ Endpoint: GET https://www.legabasket.it/api/championships/get-championships (cs_
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Championships of a season, one per phase (Regular Season, Play Off); every season when
-none is given. The columns are always these, in this order (sdv-py <code>lba_championships</code>); a column the site adds
+none is given. The columns are always these, in this order (sportsdataverse-py <code>lba_championships</code>); a column the site adds
 later is appended after them:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2027 = 2026-27): the row's START year + 1.</td></tr><tr><td>championship_id</td><td>integer</td><td>Championship id (one season and phase).</td></tr><tr><td>year</td><td>integer</td><td>Season START year (2026 = 2026-27); sdv END year = year + 1.</td></tr><tr><td>name</td><td>character</td><td>Championship name, e.g. <code>Regular Season A</code>, <code>Play Off A1</code>.</td></tr><tr><td>status</td><td>integer</td><td>Championship status: 1 = in progress, 2 = finished (inferred from the 2026-27 and past samples).</td></tr><tr><td>championship_type_id</td><td>integer</td><td>Phase type id: 4 = Regular Season, 2 = Play Off.</td></tr><tr><td>championship_series_id</td><td>integer</td><td>Series id, 1 = Serie A.</td></tr><tr><td>full_name</td><td>character</td><td>Name with the season, e.g. <code>Regular Season A 2017</code>.</td></tr><tr><td>focus_on</td><td>logical</td><td>Highlighted on the site.</td></tr><tr><td>ctype_code</td><td>character</td><td>Phase type code: <code>RS</code> / <code>PO</code>.</td></tr><tr><td>ctype_name</td><td>character</td><td>Phase type name, as sent in English: <code>Regular Season</code>, <code>Play Off</code>.</td></tr><tr><td>cserie_code</td><td>character</td><td>Series code, <code>A1</code> = Serie A.</td></tr><tr><td>cserie_name</td><td>character</td><td>Name of the championship series, e.g. Serie A.</td></tr><tr><td>logo_key</td><td>character</td><td>Image key: the image is <code>{cdn_url}/{key}</code>, resized copies <code>{cdn_url}/variants/{key}/thumb</code> or <code>/large</code> (the site's getApiImageUrl).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
@@ -134,8 +134,7 @@ later is appended after them:</p><table class="table table"><tr><td>col_name</td
 <ul><li><p>Unofficial and unsupported: these wrappers read the JSON API that the Next.js site www.legabasket.it itself
 calls. Legal notice: the site's terms say "Non e' consentito copiare ... dati e informazioni senza
 autorizzazione scritta" (copying data and information without written authorisation is not allowed), except for
-personal, non-commercial use. The owner accepted the restriction for this intake on 2026-10-12. Payloads are
-not redistributed as release assets, and any published data release of this source needs separate sign-off.</p></li>
+personal, non-commercial use. Use the data accordingly, and check the terms before you republish it.</p></li>
 <li><p>robots.txt allows /api and sets Crawl-delay: 2. The runtime waits 2 s before every request, retries included.
 Crawl incrementally: fetch a final game once (keyed by game_id), find new games with one lba_calendar call per
 round, and do not backfill a history in a burst.</p></li>
@@ -180,7 +179,7 @@ is not retried. A body the parser finds no rows in gives a zero-row tibble with 
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lba_championships</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── LBA Championships from legabasket.it ───────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:18:59 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:31:33 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 14</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   season championship_id  year name                  status championship_type_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>

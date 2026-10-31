@@ -1,7 +1,7 @@
 # **RealGM NBA Transactions Log**
 
-**Get the NBA league transactions log from
-[RealGM](https://basketball.realgm.com).**
+**Get the NBA league transactions log from RealGM
+(basketball.realgm.com).**
 
 One row per transaction (signings, waivers, two-way conversions,
 G-League assignments/recalls, trades), each tagged with its date. RealGM

@@ -41,7 +41,7 @@ with the following columns:
 | competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
 | competition_end_date | character | Last day of the competition, YYYY-MM-DD. |
 | award_date | character | Date awarded, YYYY-MM-DD. |
-| competition_season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the sdv season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029), whose sdv mapping is an open Phase B decision. |
+| competition_season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the package season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029). |
 | competition_official_name | character | Official name of the competition edition the award was given in. |
 | award_name | character | Award name (All-Star 5, MVP...). |
 | award_code | character | Award code (ALLSTAR, MVP...). |
@@ -61,10 +61,8 @@ FIBA's terms restrict this source. The GDAP developer-portal terms limit
 API use to 'Authorized Users' (federations, organisers, FIBA partners)
 and say any broader use 'is not authorised'; the fiba.basketball terms
 say no portion of the site may be duplicated, redistributed or
-manipulated. The package owner reviewed both clauses on 2026-10-12,
-accepted them and approved the full intake, published data releases
-included. Users who are not themselves authorised by FIBA should check
-the terms before using the wrappers.
+manipulated. Users who are not themselves authorised by FIBA should
+check the terms before using the wrappers.
 
 The GDAP subscription key is public (fiba.basketball ships it in every
 page); the runtime reads it from the live page at run time and never

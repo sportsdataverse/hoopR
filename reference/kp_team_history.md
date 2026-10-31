@@ -92,27 +92,9 @@ Other KenPom Historical Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
   # \donttest{
     try(kp_team_history(team = 'Florida St.'))
-#> # A tibble: 31 × 57
-#>     year team_rk team      coach conf  adj_t adj_o adj_d off_e_fg_pct off_to_pct
-#>    <dbl>   <dbl> <chr>     <chr> <chr> <dbl> <dbl> <dbl>        <dbl>      <dbl>
-#>  1  2027      NA Florida … Luke… ACC    73.6  113.  99.7          0        100  
-#>  2  2026      NA Florida … Luke… ACC    70.5  118. 105.          52.3       15.2
-#>  3  2025      NA Florida … Leon… ACC    69.7  109. 101.          50.7       17.5
-#>  4  2024      NA Florida … Leon… ACC    71.1  111. 101.          50.3       16.4
-#>  5  2023      NA Florida … Leon… ACC    68.6  105. 108.          49.3       17.6
-#>  6  2022      NA Florida … Leon… ACC    67.8  105.  99.1         49         18.1
-#>  7  2021      NA Florida … Leon… ACC    69.9  115.  92.8         54         20.4
-#>  8  2020      NA Florida … Leon… ACC    69.9  112.  91.5         51.9       18.9
-#>  9  2019      NA Florida … Leon… ACC    68.6  113.  90.4         50.5       18.9
-#> 10  2018      NA Florida … Leon… ACC    71.2  114.  96.5         53.2       17.8
-#> # ℹ 21 more rows
-#> # ℹ 47 more variables: off_or_pct <dbl>, off_ft_rate <dbl>, off_fg_2_pct <dbl>,
-#> #   off_fg_3_pct <dbl>, off_ft_pct <dbl>, off_fg_3a_pct <dbl>, off_a_pct <dbl>,
-#> #   off_apl <dbl>, def_e_fg_pct <dbl>, def_to_pct <dbl>, def_or_pct <dbl>,
-#> #   def_ft_rate <dbl>, def_fg_2_pct <dbl>, def_fg_3_pct <dbl>,
-#> #   def_blk_pct <dbl>, def_fg_3a_pct <dbl>, def_a_pct <dbl>, def_apl <dbl>,
-#> #   foul2partic_pct <dbl>, wl <chr>, wl_conf <chr>, adj_t_rk <dbl>, …
   # }
+}
 ```

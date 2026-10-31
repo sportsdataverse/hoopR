@@ -127,42 +127,12 @@ two digits of season). The first season is 2020-21 (<code>season=2021</code>); e
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Regular-season standings of one season: record, scoring averages, home / away and recent
-form. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+form. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 <code>pleague_standings</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2025 = the site's slug '2024-25'): the first year of the slug plus one.</td></tr><tr><td>season_slug</td><td>character</td><td>The site's season slug as printed: the START year, then the END year's last two digits ('2024-25').</td></tr><tr><td>rank</td><td>integer</td><td>Rank on the page (1 = best); ties are not shared.</td></tr><tr><td>team_id</td><td>integer</td><td>P. LEAGUE+ club id on the site (stable across seasons AND renames): 1 = Taipei Fubon Braves, 2 = Taoyuan Pauian Pilots, 3 = Hsinchu Jko / Toplus Lioneers, 4 = Formosa Taishin Dreamers, 5 = Kaohsiung 17LIVE Steelers, 6 = New Taipei Kings, 7 = TSG Ghosthawks, 8 = Yankey Ark. NOT a Preciser team uuid (that joins through the standings team_uuid).</td></tr><tr><td>team_zh</td><td>character</td><td>Team short name in Traditional Chinese.</td></tr><tr><td>team_uuid</td><td>character</td><td>Preciser team uuid cut from the logo url (photonew.preciser.io/plg/teams/{uuid}.png): the join between the site team_id and the vendor's home_id / away_id / team_id. Clubs: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark).</td></tr><tr><td>team_logo</td><td>character</td><td>Team logo url (photonew.preciser.io/plg/teams/{team uuid}.png).</td></tr><tr><td>games_played</td><td>integer</td><td>Games played ((Chinese text) GP).</td></tr><tr><td>wins</td><td>integer</td><td>Games won so far this season ((Chinese text) W).</td></tr><tr><td>losses</td><td>integer</td><td>Games lost so far this season ((Chinese text) L).</td></tr><tr><td>win_pct</td><td>double</td><td>Win percentage 0-100 as a whole percent ('68 percent' -&gt; 68.0; (Chinese text) PCT).</td></tr><tr><td>games_behind</td><td>double</td><td>Games behind the leader ((Chinese text)).</td></tr><tr><td>points_for_avg</td><td>double</td><td>Points scored per game ((Chinese text)).</td></tr><tr><td>points_against_avg</td><td>double</td><td>Points allowed per game ((Chinese text)).</td></tr><tr><td>point_diff_avg</td><td>double</td><td>Average point margin ((Chinese text)).</td></tr><tr><td>home_record</td><td>character</td><td>Home record 'W-L' ((Chinese text)).</td></tr><tr><td>away_record</td><td>character</td><td>Away record 'W-L' ((Chinese text)).</td></tr><tr><td>streak</td><td>character</td><td>Current streak: W{n} wins or L{n} losses ((Chinese text)).</td></tr><tr><td>last_n</td><td>integer</td><td>Games in the 'last games' column ((Chinese text)10(Chinese text) = the last 10), read from the header.</td></tr><tr><td>last_n_record</td><td>character</td><td>Record 'W-L' over the last last_n games ((Chinese text)N(Chinese text)).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial use of a public source: these wrappers read pleagueofficial.com (P. LEAGUE+, Taiwan's men's
-league), keyless. The site's /user-policy (members' terms, section 11) reserves all content on the site to the
-service and its rights holders and forbids use, copying, adaptation or distribution without authorisation (it
-says nothing about automated access); robots.txt holds only Cloudflare content-signal comment lines with no
-Allow, Disallow or Crawl-delay rule. Use for reference only; payloads are not redistributed as release assets,
-and a data release needs owner sign-off. Requests are spaced at least 1 s apart per host, retries included.</p></li>
-<li><p>Access: the site sits behind Cloudflare. sdv-py fetches it with curl_cffi (Chrome TLS); this R port sends a
-browser User-Agent through libcurl, which was served on a live check (2026-10-18); Cloudflare may still answer
-a request with an HTTP 403 challenge page (<code>hoopR_asset_fetch</code>). Redirects are not followed: the site answers
-an unknown <code>gid</code> or a season before 2020-21 with a 302 to the home page (<code>hoopR_no_data</code>).</p></li>
-<li><p>Coverage: schedules, standings and player tables from 2020-21 (<code>season = 2021</code>); box scores for every finished
-game from 2020-21; play-by-play (with shot x / y) from 2022-23 (gid 191 on). 2020-21 and 2021-22 pages embed
-an empty game uuid, so they have no play-by-play and no Preciser data (<code>hoopR_no_data</code>). A game is keyed by
-<code>gid</code>: ONE global integer sequence over every stage and season. Only finished games are served: an unplayed
-game, or a box or play-by-play that does not match its game page (the routes echo no id, so the game page is
-fetched first, cached for the session, and the body's scores, quarters and points are checked against it),
-raises <code>hoopR_asset_fetch</code>.</p></li>
-<li><p>Seasons are END years (2025 = the site's slug '2024-25'). Text is Traditional Chinese as printed (names,
-venues, play-by-play phrases); the column descriptions gloss it in English. Ids: <code>team_id</code> (1-8) is stable
-across renames; the box <code>player_id</code> is the player-team membership. The box <code>random_id</code> is UNRELIABLE before
-2022-23 (gid 13 gives one player another player's page id): join box rows on <code>player_id</code>, and box rows to
-Preciser shots on <code>person_id</code>, never on <code>random_id</code>. The date of birth is dropped from the player frame;
-officials appear by name only.</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, a redirect, a stage
-the season does not have, a game with no play-by-play, a season before 2020-21), <code>hoopR_bad_request</code> (an
-invalid argument, HTTP 400 / 422) and <code>hoopR_asset_fetch</code> (any other non-200, a dead connection, an empty or
-unreadable body, a page for another game, season, stage or player, an unfinished game, layout drift, a
-play-by-play phrase outside the observed vocabulary). HTTP 429 / 502 / 503 / 504 are retried, up to three
-attempts; HTTP 500 is NOT retried (the site answers 500 for an unknown id). Wrappers raise; they never warn
-and return empty.</p></li>
-</ul></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="pleague_schedule.html">pleague_schedule()</a></code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other P. LEAGUE+ Functions:

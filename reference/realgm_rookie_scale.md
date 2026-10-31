@@ -1,7 +1,7 @@
 # **RealGM NBA Rookie Scale**
 
-**Get the current NBA rookie-scale salary table from
-[RealGM](https://basketball.realgm.com).**
+**Get the current NBA rookie-scale salary table from RealGM
+(basketball.realgm.com).**
 
 One row per first-round pick with the four contract-year amounts and the
 qualifying-offer percentage. Dollar figures are the formatted strings

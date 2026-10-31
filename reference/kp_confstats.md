@@ -70,15 +70,9 @@ Other KenPom Historical Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
   try(kp_confstats(year=most_recent_mbb_season()))
-#>  [1] conf         eff          eff_rk       tempo        tempo_rk    
-#>  [6] e_fg_pct     e_fg_pct_rk  to_pct       to_pct_rk    or_pct      
-#> [11] or_pct_rk    ft_rate      ft_rate_rk   blk_pct      blk_pct_rk  
-#> [16] stl_pct      stl_pct_rk   fg_2_pct     fg_2_pct_rk  fg_3_pct    
-#> [21] fg_3_pct_rk  ft_pct       ft_pct_rk    fg_3a_pct    fg_3a_pct_rk
-#> [26] a_pct        a_pct_rk     home_w_l     home_w_l_pct home_w_l_rk 
-#> [31] close        close_rk     blowouts     blowouts_rk  year        
-#> <0 rows> (or 0-length row.names)
 # }
+}
 ```

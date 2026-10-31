@@ -9,7 +9,7 @@ Endpoint:
 Scores are integers (the API sends strings); `start_time_utc` is a UTC
 `POSIXct`; `start_time_local` is the venue's wall-clock time as the API
 sends it (character: its zone, `timezone`, varies per row, so no single
-`POSIXct` zone fits). sdv-py keeps both naive.
+`POSIXct` zone fits). sportsdataverse-py keeps both naive.
 
 ## Usage
 
@@ -133,8 +133,7 @@ A `hoopR_data` tibble, one row per `fixture_id`:
 Synergy "Connect" widget calls from every visitor's browser (keyless;
 the host has no robots.txt). The data is Sportradar's and the leagues'.
 The wrappers read it on the caller's behalf, one request at least 1 s
-after the last to the host, and it is not republished as release assets.
-Keep crawls small and incremental.
+after the last to the host. Keep crawls small and incremental.
 
 **Sites and seasons.** `website_id` picks the league site; one site
 carries many competitions. Seasons are END years (`season = 2026`): the
@@ -203,7 +202,7 @@ Other Atrium Functions:
 # \donttest{
   try(atrium_fixtures(website_id = 14))
 #> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:09:59 UTC
+#> ℹ Data updated: 2026-10-31 21:26:58 UTC
 #> # A tibble: 4 × 40
 #>   website_id season_id           competition_id competition_name season_end_year
 #>        <int> <chr>               <chr>          <chr>                      <int>

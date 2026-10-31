@@ -38,7 +38,7 @@ scb_standings(league = "bbl", season = NULL, competition = NULL)
 A `hoopR_data` tibble: League table of a season: record, home / away
 split, streaks and tie-break detail (2005-06 on). An empty valid answer
 raises `hoopR_no_data`; the columns are always these, in this order
-(sdv-py `scb_standings`):
+(sportsdataverse-py `scb_standings`):
 
 |  |  |  |
 |----|----|----|
@@ -101,45 +101,9 @@ raises `hoopR_no_data`; the columns are always these, in this order
 
 ## Details
 
-- Unofficial use of a public source: these wrappers read the front-end
-  API of the German Bundesliga sites (easycredit-bbl.de,
-  toyota-dbbl.de), run by SCB; payloads are not redistributed as release
-  assets.
-
-- Legal notice: the BBL Impressum forbids storing BBL content
-  (`Inhalte`) in an information system without BBL's written permission.
-  That is a copyright term, not a robots rule (the API host has no
-  robots.txt). The owner reviewed it and accepted the intake (2026-10-12
-  ruling); keep requests slow (the runtime waits at least 1 s per host)
-  and raise any published data release with the owner. The DBBL host is
-  the same operator and API; its site notice was not separately
-  reviewed.
-
-- Both hosts need two headers: a constant `x-api-key` and an
-  `x-api-secret` that rotates. The runtime derives the secret on first
-  use from the key embedded in an easycredit-bbl.de page (reversed, `:`
-  turned into `-`) and never logs or returns it. The derivation was
-  reverse-engineered from observed requests and responses and has not
-  been checked against the site's own front-end code; if the site
-  changes how it signs requests, every call fails with
-  `hoopR_asset_fetch`.
-
-- Id key spaces: seasonId is the START year (2025 = 2025-26), so a
-  wrapper's END-year `season` is sent as `season - 1`. Teams are keyed
-  by teamId (seasonTeamId equals it in every sample). seasonPlayerId is
-  per player per season and per club (a player traded mid-season has
-  two); realPlayerId is the person. playerId is ambiguous (the
-  seasonPlayerId in box scores, records and /season-players; the person
-  in /transfers). Game ids are strings.
-
-- Errors are classed conditions: `hoopR_no_data` (404, 204, a 400 "not a
-  valid" id, no rows, a box score of a game not yet started),
-  `hoopR_bad_request` (a bad argument, another 400 / 422) and
-  `hoopR_asset_fetch` (a refused secret after one re-derive, any other
-  non-2xx, an HTML / non-JSON / error-shaped body, a truncated page, a
-  body for another game, season, club or league, a box score still in
-  play), all inheriting `hoopR_error`. Wrappers raise; they never return
-  an empty frame.
+Source, terms of use, request pacing, seasons, ids, coverage and error
+classes of this family: see the notes in
+[`scb_seasons()`](https://hoopR.sportsdataverse.org/reference/scb_seasons.md).
 
 ## See also
 
@@ -173,7 +137,7 @@ Other SCB Functions:
 # \donttest{
   try(scb_standings())
 #> ── BBL/DBBL Standings from the SCB API ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:36:07 UTC
+#> ℹ Data updated: 2026-10-31 21:33:51 UTC
 #> # A tibble: 18 × 55
 #>    league season standing_id season_team_id team_id team_name           team_tlc
 #>    <chr>   <int> <chr>       <chr>          <chr>   <chr>               <chr>   
@@ -192,9 +156,9 @@ Other SCB Functions:
 #> 13 bbl      2027 74715       430            430     EWE Baskets Oldenb… OLD     
 #> 14 bbl      2027 74717       483            483     Science City Jena   JEN     
 #> 15 bbl      2027 74721       541            541     RASTA Vechta        VEC     
-#> 16 bbl      2027 74785       473            473     Phoenix Hagen       HAG     
-#> 17 bbl      2027 74723       554            554     Veolia Towers Hamb… HAM     
-#> 18 bbl      2027 74718       485            485     NINERS Chemnitz     CHE     
+#> 16 bbl      2027 74718       485            485     NINERS Chemnitz     CHE     
+#> 17 bbl      2027 74785       473            473     Phoenix Hagen       HAG     
+#> 18 bbl      2027 74723       554            554     Veolia Towers Hamb… HAM     
 #> # ℹ 48 more variables: team_name_short <chr>, has_reached_playoffs <lgl>,
 #> #   has_reached_playins <lgl>, is_relegation_certain <lgl>, season_id <int>,
 #> #   competition <chr>, stage <chr>, rank <int>, streak <chr>,

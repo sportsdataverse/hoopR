@@ -172,29 +172,7 @@ sent; with neither <code>season</code> nor <code>season_id</code> the API filter
     <p>A <code>hoopR_data</code> tibble, one row for the player:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>website_id</td><td>integer</td><td>Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self.</td></tr><tr><td>person_id</td><td>character</td><td>Player UUID (person), shared across seasons and sites.</td></tr><tr><td>name</td><td>character</td><td>Player name as the site prints it.</td></tr><tr><td>bib</td><td>character</td><td>Jersey number on the card; null when none.</td></tr><tr><td>team_id</td><td>character</td><td>Team UUID of the player's current team on the card.</td></tr><tr><td>team_name</td><td>character</td><td>Name of the player's current team on the card.</td></tr><tr><td>image_url</td><td>character</td><td>URL of the Sportradar-hosted image (400 px).</td></tr><tr><td>date_of_birth</td><td>Date</td><td>Player's date of birth, from the card's info items.</td></tr><tr><td>age</td><td>integer</td><td>Player's age in years, from the card's info items.</td></tr><tr><td>nationality</td><td>character</td><td>Player's nationality in the site's language, from the card's info items.</td></tr><tr><td>points_per_game</td><td>double</td><td>Points per game over the season shown on the card.</td></tr><tr><td>rebounds_offensive_per_game</td><td>double</td><td>Offensive rebounds per game over the season shown on the card.</td></tr><tr><td>rebounds_defensive_per_game</td><td>double</td><td>Defensive rebounds per game over the season shown on the card.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p><strong>Unofficial.</strong> This is the public endpoint the Sportradar Atrium / Synergy
-"Connect" widget calls from every visitor's browser (keyless; the host has no
-robots.txt). The data is Sportradar's and the leagues'. The wrappers read it on the
-caller's behalf, one request at least 1 s after the last to the host, and it is not
-republished as release assets. Keep crawls small and incremental.</p>
-<p><strong>Sites and seasons.</strong> <code>website_id</code> picks the league site; one site carries many
-competitions. Seasons are END years (<code>season = 2026</code>): the site's own year is the
-START year on LNB and the calendar year elsewhere, and a year can hold several
-competitions, so pair <code>season</code> with <code>competition_id</code> (see <code><a href="atrium_seasons.html">atrium_seasons()</a></code>) or
-pass <code>season_id</code>. <code><a href="atrium_end_year.html">atrium_end_year()</a></code> maps a site's own year to that END year, and
-<code><a href="atrium_season_id.html">atrium_season_id()</a></code> finds the season UUID.</p>
-<p><strong>Columns</strong> are configured per site: a statistic one site omits is <code>NA</code>. A key the
-documented columns do not list is appended with an inferred type. Player and team
-ids (UUIDs, character) are shared across sites; the player stat tables carry names
-only, so <code>person_id</code> there is decoded from the widget link beside each name.</p>
-<p><strong>Errors</strong> (classed conditions, all inheriting <code>hoopR_error</code>): <code>hoopR_no_data</code> when
-the site has nothing for the request (HTTP 404, no such season, an empty fixture
-list, a game with no play-by-play yet, or a fixture id the site does not serve: an
-unknown id or a game of another site, which the API answers alike with an empty
-fixture); <code>hoopR_bad_request</code> for HTTP 400 / 422 or an argument that cannot be
-mapped (an ambiguous END year, <code>season</code> with <code>season_id</code>); <code>hoopR_asset_fetch</code> for
-any other failed fetch, an error / stub body, or a body that belongs to another
-site, type, season, game, player or team than the one asked for.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="atrium_fixtures.html">atrium_fixtures()</a></code>.</p>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/atrium_player.html">atrium_player</a></span><span class="op">(</span>website_id <span class="op">=</span> <span class="fl">12</span>, person_id <span class="op">=</span> <span class="st">"4458f165-f865-11f0-8ebf-539c931c1654"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">

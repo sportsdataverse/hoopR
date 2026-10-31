@@ -1,7 +1,6 @@
 # **RealGM NBA Player Index**
 
-**Get the active NBA player index from
-[RealGM](https://basketball.realgm.com).**
+**Get the active NBA player index from RealGM (basketball.realgm.com).**
 
 Returns RealGM's roster of active NBA players, including position,
 listed height/weight, age, current team, years of service and pre-draft

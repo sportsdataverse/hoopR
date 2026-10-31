@@ -210,68 +210,44 @@ and follow the directions for installation.</li>
 <span><span class="op">}</span></span>
 <span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"sportsdataverse/hoopR"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span>, update <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"dplyr"</span>, <span class="st">"zoo"</span>, <span class="st">"ggimage"</span>, <span class="st">"gt"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://zeileis.codeberg.page/zoo/" class="external-link">zoo</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/YuLab-SMU/ggimage" class="external-link">ggimage</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com" class="external-link">gt</a></span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"dplyr"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level4">
 <h4 id="the-data">
 <strong>The Data</strong><a class="anchor" aria-label="anchor" href="#the-data"></a>
 </h4>
-<p>There are generally speaking <strong>six</strong> men’s basketball
-data sources accessed from this package:</p>
+<p><code>hoopR</code> version 3.2.0 exports 1316 functions. The function
+name tells you the data source:</p>
 <ul>
-<li>
-<a href="https://github.com/sportsdataverse/hoopR-data" class="external-link"><code>hoopR-data</code>
-repo</a> <a href="https://x.com/sportsdataverse" class="external-link"><img src="https://img.shields.io/twitter/follow/sportsdataverse?color=blue&amp;label=%40sportsdataverse&amp;logo=x&amp;style=for-the-badge" alt="X Follow"></a>
-</li>
-<li><a href="https://stats.nba.com" class="external-link">NBA Stats and Data API</a></li>
-<li><a href="https://stats.nba.com" class="external-link">NBA G-League Stats and Data
-API</a></li>
-<li>ESPN</li>
-<li>
-<a href="https://kenpom.com" class="external-link">KenPom</a> (Requires subscription
-access)</li>
-<li><a href="https://ncaa.com" class="external-link">NCAA</a></li>
-</ul>
-<div class="section level5">
-<h5 id="function-names-indicate-the-data-source">
-<strong>Function names indicate the data source</strong><a class="anchor" aria-label="anchor" href="#function-names-indicate-the-data-source"></a>
-</h5>
-<ul>
-<li><p>Functions that use the <a href="https://github.com/sportsdataverse/hoopR-data" class="external-link"><code>hoopR-data</code>
-repository</a> will contain <code>load_</code> or <code>update_</code>
-in the function name and would be considered loading functions for the
-play-by-play data, team box scores, and player box scores.</p></li>
-<li><p>Functions that use the NBA Stats API start with <code>nba_</code>
-by convention and should be assumed as <code>get</code> functions. As of
-<code>hoopR</code> version 3.2.0, the package exports 127 functions
-covering the NBA Stats API</p></li>
-<li><p>Functions that use the NBA G-League Stats API start with
-<code>nbagl_</code> by convention and should be assumed as
-<code>get</code> functions. As of <code>hoopR</code> version 3.2.0, the
-package exports 4 functions covering the NBA G-League Stats API</p></li>
-<li><p>Functions that use one of ESPN’s APIs start with
-<code>espn_</code> by convention and should be assumed as
-<code>get</code> functions. These functions allow for live access to
-game data for both men’s college basketball and the NBA. As of
-<code>hoopR</code> version 3.2.0, the package exports 10 functions
-covering the men’s college basketball endpoints and 10 for the
+<li><p><code>load_*()</code> and <code>update_*()</code> functions read
+the pre-built play-by-play, box score, schedule and model data that the
+SportsDataverse publishes on the <a href="https://github.com/sportsdataverse/sportsdataverse-data/releases" class="external-link"><code>sportsdataverse-data</code>
+releases</a> (73 loaders, including <code>load_nba_stats_*()</code> for
+the NBA Stats API data and <code>load_ncaa_mbb_*()</code> for the NCAA
+data).</p></li>
+<li><p><code>nba_*()</code> functions use the NBA Stats API and other
+NBA.com sources (199 functions).</p></li>
+<li><p><code>nbagl_*()</code> functions cover the NBA G League (6
+functions).</p></li>
+<li><p><code>espn_*()</code> functions use ESPN’s APIs for live and
+historical game data: 94 for men’s college basketball and 105 for the
 NBA.</p></li>
-<li><p>Functions that use Ken Pomeroy’s college basketball website start
-with <code>kp_</code> by convention and should be assumed as
-<code>get</code> functions. These functions allow users with an active
-subscription to get access to the data in a tidy format. As of
-<code>hoopR</code> version 3.2.0, the package exports 36 functions
-covering the <a href="https://kenpom.com" class="external-link">KenPom.com</a>.</p></li>
-<li><p>Functions that use the NCAA website start with <code>ncaa_</code>
-by convention and should be assumed as <code>get</code> functions. As of
-<code>hoopR</code> version 3.2.0, the package exports 1 function(s)
-covering the NCAA website, namely the function to access current NET
-rankings.</p></li>
+<li><p><code>kp_*()</code> functions read Ken Pomeroy’s college
+basketball website, <a href="https://kenpom.com" class="external-link">KenPom.com</a>, for
+users with an active subscription (36 functions).</p></li>
+<li><p><code>cbbd_*()</code>, <code>torvik_*()</code> and
+<code>ncaa_mbb_*()</code> functions cover CollegeBasketballData, Bart
+Torvik and the NCAA (41, 6 and 2 functions); <code>bref_*()</code>,
+<code>realgm_*()</code> and <code>fox_*()</code> cover
+Basketball-Reference, RealGM and Fox Sports.</p></li>
+<li><p><code>euroleague_*()</code> functions cover the EuroLeague and
+EuroCup, and families such as <code>fiba_*()</code>,
+<code>acb_*()</code>, <code>lba_*()</code>, <code>vtb_*()</code>,
+<code>bleague_*()</code>, <code>nbl_rosetta_*()</code>,
+<code>kbl_*()</code> and <code>cba_*()</code> cover about two dozen
+international leagues and competitions. The <a href="https://hoopR.sportsdataverse.org/reference/">function
+reference</a> lists every family.</p></li>
 </ul>
-</div>
 </div>
 </div>
 <div class="section level3">
@@ -291,7 +267,7 @@ back to.</p>
 <span>  <span class="va">nba_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_pbp</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 23.156 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 25.016 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 3707359 rows of nba play-by-play data from 7867 games.</span></span></code></pre>
@@ -379,7 +355,7 @@ back to.</p>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 2.51 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 3.148 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 15724 rows of NBA team boxscore data from 7862 games.</span></span></code></pre>
@@ -458,7 +434,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#nba-player-box-scor
 <span>  <span class="va">nba_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_nba_pbp.html">load_nba_player_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 4.717 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 4.496 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 206914 rows of NBA player boxscore data from 7868 games.</span></span></code></pre>
@@ -535,7 +511,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_pbp</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_pbp</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 65.146 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 74.724 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 12225017 rows of men's college basketball play-by-play data from 34523 games.</span></span></code></pre>
@@ -630,7 +606,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_team_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_team_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 3.097 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 3.919 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 70586 rows of men's college basketball team boxscore data from 35293 games.</span></span></code></pre>
@@ -709,7 +685,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <span>  <span class="va">mbb_player_box</span> <span class="op">&lt;-</span> <span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/load_mbb_pbp.html">load_mbb_player_box</a></span><span class="op">(</span><span class="fl">2021</span><span class="op">:</span><span class="fu">hoopR</span><span class="fu">::</span><span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span><span class="fu">tictoc</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tictoc/man/tic.html" class="external-link">toc</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## 11.186 sec elapsed</span></span></code></pre>
+<pre><code><span><span class="co">## 37.794 sec elapsed</span></span></code></pre>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glue</span><span class="fu">::</span><span class="fu"><a href="https://glue.tidyverse.org/reference/glue.html" class="external-link">glue</a></span><span class="op">(</span><span class="st">"{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games."</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## 1126124 rows of men's college basketball player boxscore data from 35302 games.</span></span></code></pre>
@@ -795,11 +771,7 @@ seconds</strong><a class="anchor" aria-label="anchor" href="#mens-college-basket
 <a href="https://x.com/theFirmAISports" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/theFirmAISports?color=blue&amp;label=%40theFirmAISports&amp;logo=x&amp;style=for-the-badge" alt="@theFirmAISports"></a>
 <a href="https://github.com/papagorgio23" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/papagorgio23?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@papagorgio23"></a>
 </li>
-<li>
-<a href="https://x.com/BillyFryer42" class="external-link">Billy Fryer</a>
-<a href="https://x.com/BillyFryer42" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/BillyFryer42?color=blue&amp;label=%40BillyFryer42&amp;logo=x&amp;style=for-the-badge" alt="@BillyFryer42"></a>
-<a href="https://github.com/billyfryer" target="blank" class="external-link"><img src="https://img.shields.io/github/followers/billyfryer?color=eee&amp;logo=Github&amp;style=for-the-badge" alt="@billyfryer"></a>
-</li>
+<li>Billy Fryer</li>
 <li>
 <a href="https://x.com/rossdrucker9" class="external-link">Ross Drucker</a>
 <a href="https://x.com/rossdrucker9" target="blank" class="external-link"><img src="https://img.shields.io/twitter/follow/rossdrucker9?color=blue&amp;label=%40rossdrucker9&amp;logo=x&amp;style=for-the-badge" alt="@rossdrucker9"></a>
@@ -821,10 +793,11 @@ R package in publications, use:</p>
 <p>BibTeX Citation</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="va">@misc</span>{<span class="ot">hoopr</span>,</span>
 <span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a>  <span class="dt">author</span> = {Saiem Gilani},</span>
-<span id="cb38-3"><a href="#cb38-3" tabindex="-1"></a>  <span class="dt">title</span> = {hoopR: Access Men’s Basketball Play by Play Data.},</span>
-<span id="cb38-4"><a href="#cb38-4" tabindex="-1"></a>  <span class="dt">url</span> = {https://hoopR.sportsdataverse.org/},</span>
-<span id="cb38-5"><a href="#cb38-5" tabindex="-1"></a>  <span class="dt">year</span> = {2026}</span>
-<span id="cb38-6"><a href="#cb38-6" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb38-3"><a href="#cb38-3" tabindex="-1"></a>  <span class="dt">title</span> = {hoopR: Access Men's Basketball Play by Play Data},</span>
+<span id="cb38-4"><a href="#cb38-4" tabindex="-1"></a>  <span class="dt">doi</span> = {10.32614/CRAN.package.hoopR},</span>
+<span id="cb38-5"><a href="#cb38-5" tabindex="-1"></a>  <span class="dt">url</span> = {https://hoopR.sportsdataverse.org/},</span>
+<span id="cb38-6"><a href="#cb38-6" tabindex="-1"></a>  <span class="dt">year</span> = {2026}</span>
+<span id="cb38-7"><a href="#cb38-7" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="related-sportsdataverse-packages">
@@ -851,7 +824,16 @@ women’s basketball</li>
 - betting odds</li>
 <li>
 <a href="https://sportyR.sportsdataverse.org/" class="external-link"><strong>sportyR</strong></a>
-- playing surfaces</li>
+- playing surfaces (2.4.5 on CRAN: NBA, NCAA and FIBA courts for
+plotting shot locations)</li>
+<li>
+<a href="https://sdvplotR.sportsdataverse.org/" class="external-link"><strong>sdvplotR</strong></a>
+- team logos and colours for <code>ggplot2</code>, and shot charts from
+the <code>hoopR</code> shot loaders (0.3.0,
+<code>pak::pak("sportsdataverse/sdvplotR")</code>; see its <a href="https://sdvplotR.sportsdataverse.org/articles/nba-viz.html" class="external-link">NBA</a>,
+<a href="https://sdvplotR.sportsdataverse.org/articles/mbb-viz.html" class="external-link">men’s
+college</a> and <a href="https://sdvplotR.sportsdataverse.org/articles/cookbook-surfaces-shot-charts.html" class="external-link">shot
+chart</a> articles)</li>
 <li>
 <a href="https://py.sportsdataverse.org/" class="external-link"><strong>sportsdataverse-py</strong></a>
 - the Python package</li>

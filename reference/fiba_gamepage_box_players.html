@@ -142,9 +142,8 @@ game-page objects <code>game</code>, <code>playByPlay</code>, <code>gameDetails<
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>FIBA's terms restrict this source. The GDAP developer-portal terms limit API use to 'Authorized Users'
 (federations, organisers, FIBA partners) and say any broader use 'is not authorised'; the fiba.basketball
-terms say no portion of the site may be duplicated, redistributed or manipulated. The package owner reviewed
-both clauses on 2026-10-12, accepted them and approved the full intake, published data releases included.
-Users who are not themselves authorised by FIBA should check the terms before using the wrappers.</p>
+terms say no portion of the site may be duplicated, redistributed or manipulated. Users who are not
+themselves authorised by FIBA should check the terms before using the wrappers.</p>
 <p>The GDAP subscription key is public (fiba.basketball ships it in every page); the runtime reads it from the
 live page at run time and never logs it. Officials' contact details and coaches' and officials' dates of
 birth are dropped from every body.</p>
@@ -158,7 +157,7 @@ with an event page is tried at its event URL when the archive URL answers the no
 Champions League host last).</p>
 <p>Box scores start about 2006; play-by-play with shot x/y about 2012 (OVR events) and 2017-18 (FLS club
 competitions). A game with no box score raises <code>hoopR_no_data</code>; a game still live raises <code>hoopR_asset_fetch</code>.
-The page request sends a browser User-Agent (sdv-py answers fiba.basketball's HTTP 403 to plain clients with
+The page request sends a browser User-Agent (sportsdataverse-py answers fiba.basketball's HTTP 403 to plain clients with
 Chrome TLS; libcurl with a browser User-Agent was served on 2026-10-18).
 Shot x/y are image pixels with an unverified scale.</p>
 <p>Errors are classed conditions (all inherit <code>hoopR_error</code>): <code>hoopR_no_data</code> when FIBA has nothing (HTTP 404,
@@ -216,7 +215,7 @@ national-team events, the target tournament year for qualifiers.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">fiba_gamepage_box_players</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">100720</span>, comp <span class="op">=</span> <span class="fl">208182</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── FIBA gamepage_box_players from fiba.basketball ─────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:13:03 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:30:02 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 24 × 43</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    game_id competition_id team_side organisation_id player_id first_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>

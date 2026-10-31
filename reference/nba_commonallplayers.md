@@ -235,7 +235,7 @@ Returns a named list of data frames: TeamYears
 
 ## Details
 
-[All Players](https://www.nba.com/players)
+All Players (www.nba.com/players)
 
       nba_commonallplayers(league_id = '00', season = year_to_season(most_recent_nba_season() - 2))
 

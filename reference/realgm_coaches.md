@@ -1,7 +1,7 @@
 # **RealGM NBA Head Coaches**
 
-**Get the current NBA head coaches from
-[RealGM](https://basketball.realgm.com).**
+**Get the current NBA head coaches from RealGM
+(basketball.realgm.com).**
 
 **Requires a headless browser** (see
 [`realgm_players()`](https://hoopR.sportsdataverse.org/reference/realgm_players.md)).

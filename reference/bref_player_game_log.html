@@ -158,31 +158,11 @@ names are Basketball-Reference <code>data-stat</code> keys):</p>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># interactive()</span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">bref_player_game_log</span><span class="op">(</span>player_id <span class="op">=</span> <span class="st">"jokicni01"</span>, season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Player game log from basketball-reference.com ──────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:10:30 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 82 × 36</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ranker player_game_num_career team_game_num_season date  team  location opp  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>      1                    597                    1 2023… DEN   <span style="color: #949494;">""</span>       LAL  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>      2                    598                    2 2023… DEN   <span style="color: #949494;">"</span>@<span style="color: #949494;">"</span>      MEM  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>      3                    599                    3 2023… DEN   <span style="color: #949494;">"</span>@<span style="color: #949494;">"</span>      OKC  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>      4                    600                    4 2023… DEN   <span style="color: #949494;">""</span>       UTA  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>      5                    601                    5 2023… DEN   <span style="color: #949494;">"</span>@<span style="color: #949494;">"</span>      MIN  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>      6                    602                    6 2023… DEN   <span style="color: #949494;">""</span>       DAL  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>      7                    603                    7 2023… DEN   <span style="color: #949494;">""</span>       CHI  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>      8                    604                    8 2023… DEN   <span style="color: #949494;">""</span>       NOP  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>      9                    605                    9 2023… DEN   <span style="color: #949494;">""</span>       GSW  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     10                    606                   10 2023… DEN   <span style="color: #949494;">"</span>@<span style="color: #949494;">"</span>      HOU  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 72 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 29 more variables: result &lt;chr&gt;, is_starter &lt;chr&gt;, mp &lt;chr&gt;, fg &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fga &lt;dbl&gt;, fg_pct &lt;dbl&gt;, fg3 &lt;dbl&gt;, fg3a &lt;dbl&gt;, fg3_pct &lt;dbl&gt;, fg2 &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fg2a &lt;dbl&gt;, fg2_pct &lt;dbl&gt;, efg_pct &lt;dbl&gt;, ft &lt;dbl&gt;, fta &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ft_pct &lt;dbl&gt;, orb &lt;dbl&gt;, drb &lt;dbl&gt;, trb &lt;dbl&gt;, ast &lt;dbl&gt;, stl &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   blk &lt;dbl&gt;, tov &lt;dbl&gt;, pf &lt;dbl&gt;, pts &lt;dbl&gt;, game_score &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   plus_minus &lt;dbl&gt;, player_id &lt;chr&gt;, season &lt;int&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

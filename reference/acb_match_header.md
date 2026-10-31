@@ -32,7 +32,7 @@ acb_match_header(match_id)
 ## Value
 
 A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sdv-py `acb_match_header`):
+are always these, in this order (sportsdataverse-py `acb_match_header`):
 
 |  |  |  |
 |----|----|----|
@@ -66,15 +66,14 @@ are always these, in this order (sdv-py `acb_match_header`):
 
 ## Details
 
-- Legal notice (sdv-internal-refs/acb/README.md, aviso legal of acb.com
-  read 2026-10-12): ACEB, S.A.U. claims intellectual property in the
-  site's databases (the EU sui generis database right) among its other
-  content. It authorises viewing and private copies for personal or
-  journalistic use with the source credited, and requires prior express
-  consent for distribution, reproduction or public communication. These
-  wrappers fetch on the user's behalf; a published data release or a
-  hosted mirror needs the owner's decision first. robots.txt allows the
-  paths.
+- Legal notice (the aviso legal of acb.com): ACEB, S.A.U. claims
+  intellectual property in the site's databases (the EU sui generis
+  database right) among its other content. It authorises viewing and
+  private copies for personal or journalistic use with the source
+  credited, and requires prior express consent for distribution,
+  reproduction or public communication. These wrappers fetch on your
+  behalf for your own use; check the notice before you republish the
+  data. robots.txt allows the paths.
 
 - Unofficial and unsupported: api2.acb.com is the .NET API behind
   acb.com and live.acb.com, not a documented public API. It needs the
@@ -164,7 +163,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_match_header(match_id = 105401))
 #> ── ACB Match Header from api2.acb.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:09:41 UTC
+#> ℹ Data updated: 2026-10-31 21:26:31 UTC
 #> # A tibble: 1 × 26
 #>   match_id competition_id start               status   is_on_half_time time_left
 #>      <int>          <int> <dttm>              <chr>    <lgl>           <chr>    

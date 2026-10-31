@@ -27,8 +27,8 @@ sportality_schedule(season, game_type = "regular")
 
 A `hoopR_data` tibble: Schedule and results of one season + series +
 game type. An empty valid answer raises `hoopR_no_data`; the documented
-columns come first, in this order (sdv-py `sportality_schedule`), then
-any column the API added later:
+columns come first, in this order (sportsdataverse-py
+`sportality_schedule`), then any column the API added later:
 
 |  |  |  |
 |----|----|----|
@@ -81,8 +81,8 @@ any column the API added later:
 - Unofficial: the JSON API behind www.basketligaen.dk, the Danish men's
   basketball league (Basketligaen, series code DBL). The site runs on
   the Sportality platform (the vendor behind the SHL and
-  HockeyAllsvenskan wrappers). The terms page was not read; payloads are
-  not redistributed as release assets.
+  HockeyAllsvenskan wrappers). The terms page was not read; check it
+  before you republish the data.
 
 - Stats provider: genius-basketball, a relay of Genius Sports LiveStats.
   The Genius match, team and person ids in play-by-play, box scores and

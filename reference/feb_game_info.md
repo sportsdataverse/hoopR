@@ -60,10 +60,10 @@ A `hoopR_data` tibble with these columns:
 
 The Spanish Basketball Federation (FEB) wrappers cover Primera FEB,
 Segunda FEB and Liga Femenina Endesa (plus the federation's other groups
-on the same routes). They mirror sdv-py's
+on the same routes). They mirror sportsdataverse-py's
 `sportsdataverse.basketball.feb` wrappers of the same names: same
-arguments, the same snake_case columns and types, one row per sdv-py
-row.
+arguments, the same snake_case columns and types, one row per
+sportsdataverse-py row.
 
 **Legal notice.** The FEB's aviso legal (legal notice) asserts
 intellectual-property rights over the site's content and its databases
@@ -118,7 +118,7 @@ Other FEB Functions:
 # \donttest{
   try(feb_game_info(game_id = 2535725))
 #> ── FEB game info from intrafeb.feb.es ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:12:52 UTC
+#> ℹ Data updated: 2026-10-31 21:29:51 UTC
 #> # A tibble: 1 × 24
 #>   game_id comp_id competition group_label period clock start_time          venue
 #>     <int>   <int> <chr>       <chr>        <int> <chr> <dttm>              <chr>

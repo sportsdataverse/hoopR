@@ -1,7 +1,6 @@
 # **RealGM NBA Team Stats**
 
-**Get season team statistics from
-[RealGM](https://basketball.realgm.com).**
+**Get season team statistics from RealGM (basketball.realgm.com).**
 
 **Requires a headless browser** (see
 [`realgm_players()`](https://hoopR.sportsdataverse.org/reference/realgm_players.md)).

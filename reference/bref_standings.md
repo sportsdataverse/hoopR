@@ -55,24 +55,9 @@ Other Basketball-Reference Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
   try(bref_standings(season = 2024))
-#> ── Standings from basketball-reference.com ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:10:39 UTC
-#> # A tibble: 30 × 11
-#>    team             wins losses win_loss_pct gb    pts_per_g opp_pts_per_g   srs
-#>    <chr>           <dbl>  <dbl>        <dbl> <chr>     <dbl>         <dbl> <dbl>
-#>  1 Boston Celtics     64     18        0.78  —          121.          109. 10.8 
-#>  2 New York Knicks    50     32        0.61  14.0       113.          108.  4.36
-#>  3 Milwaukee Bucks    49     33        0.598 15.0       119           116.  2.44
-#>  4 Cleveland Cava…    48     34        0.585 16.0       113.          110.  1.98
-#>  5 Orlando Magic      47     35        0.573 17.0       110.          108.  1.48
-#>  6 Indiana Pacers     47     35        0.573 17.0       123.          120.  2.75
-#>  7 Philadelphia 7…    47     35        0.573 17.0       115.          112.  2.51
-#>  8 Miami Heat         46     36        0.561 18.0       110.          108.  1.1 
-#>  9 Chicago Bulls      39     43        0.476 25.0       112.          114. -1.77
-#> 10 Atlanta Hawks      36     46        0.439 28.0       118.          120. -2.38
-#> # ℹ 20 more rows
-#> # ℹ 3 more variables: conference <chr>, playoffs <lgl>, season <int>
 # }
+}
 ```

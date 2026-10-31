@@ -70,29 +70,9 @@ Other Basketball-Reference Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
   try(bref_player_game_log(player_id = "jokicni01", season = 2024))
-#> ── Player game log from basketball-reference.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:10:30 UTC
-#> # A tibble: 82 × 36
-#>    ranker player_game_num_career team_game_num_season date  team  location opp  
-#>     <dbl>                  <dbl>                <dbl> <chr> <chr> <chr>    <chr>
-#>  1      1                    597                    1 2023… DEN   ""       LAL  
-#>  2      2                    598                    2 2023… DEN   "@"      MEM  
-#>  3      3                    599                    3 2023… DEN   "@"      OKC  
-#>  4      4                    600                    4 2023… DEN   ""       UTA  
-#>  5      5                    601                    5 2023… DEN   "@"      MIN  
-#>  6      6                    602                    6 2023… DEN   ""       DAL  
-#>  7      7                    603                    7 2023… DEN   ""       CHI  
-#>  8      8                    604                    8 2023… DEN   ""       NOP  
-#>  9      9                    605                    9 2023… DEN   ""       GSW  
-#> 10     10                    606                   10 2023… DEN   "@"      HOU  
-#> # ℹ 72 more rows
-#> # ℹ 29 more variables: result <chr>, is_starter <chr>, mp <chr>, fg <dbl>,
-#> #   fga <dbl>, fg_pct <dbl>, fg3 <dbl>, fg3a <dbl>, fg3_pct <dbl>, fg2 <dbl>,
-#> #   fg2a <dbl>, fg2_pct <dbl>, efg_pct <dbl>, ft <dbl>, fta <dbl>,
-#> #   ft_pct <dbl>, orb <dbl>, drb <dbl>, trb <dbl>, ast <dbl>, stl <dbl>,
-#> #   blk <dbl>, tov <dbl>, pf <dbl>, pts <dbl>, game_score <dbl>,
-#> #   plus_minus <dbl>, player_id <chr>, season <int>
 # }
+}
 ```

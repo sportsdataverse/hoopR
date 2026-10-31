@@ -129,41 +129,11 @@ lacks raises <code>hoopR_no_data</code>.</p></dd>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: The teams of one season (bracket placeholders flagged). An empty answer raises
-<code>hoopR_no_data</code>; the columns are always these, in this order (sdv-py <code>tpbl_teams</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = the 2025-26 season), the year asked for. Null when the body was parsed without the request stamp.</td></tr><tr><td>season_id</td><td>integer</td><td>TPBL season id (key space: TPBL seasons on api.tpbl.basketball; 1 = 2024-25, 2 = 2025-26, 3 = 2026-27): the <code>{season_id}</code> of the season game list and, equal to it, the <code>{event_id}</code> of <code>/events/{event_id}/*</code>. Not the GoHoops season id. Null when the body was parsed without the request stamp.</td></tr><tr><td>team_id</td><td>integer</td><td>TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the <code>{team_id}</code> of the division team routes. Not the GoHoops franchise id and not the squad id.</td></tr><tr><td>gohoops_team_id</td><td>integer</td><td>GoHoops franchise id (key space: GoHoops franchises, 940-946; stable across seasons; = the TPBL team id + 938).</td></tr><tr><td>name</td><td>character</td><td>Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars).</td></tr><tr><td>is_real_team</td><td>logical</td><td>True for a real club; false for a bracket placeholder (67 higher-seed team, 68 lower-seed team in 2025-26).</td></tr><tr><td>status</td><td>character</td><td>Team status. 'ACTIVE' is the only value seen in every sampled route; the full set of statuses is unknown.</td></tr></table></div>
+<code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py <code>tpbl_teams</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = the 2025-26 season), the year asked for. Null when the body was parsed without the request stamp.</td></tr><tr><td>season_id</td><td>integer</td><td>TPBL season id (key space: TPBL seasons on api.tpbl.basketball; 1 = 2024-25, 2 = 2025-26, 3 = 2026-27): the <code>{season_id}</code> of the season game list and, equal to it, the <code>{event_id}</code> of <code>/events/{event_id}/*</code>. Not the GoHoops season id. Null when the body was parsed without the request stamp.</td></tr><tr><td>team_id</td><td>integer</td><td>TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the <code>{team_id}</code> of the division team routes. Not the GoHoops franchise id and not the squad id.</td></tr><tr><td>gohoops_team_id</td><td>integer</td><td>GoHoops franchise id (key space: GoHoops franchises, 940-946; stable across seasons; = the TPBL team id + 938).</td></tr><tr><td>name</td><td>character</td><td>Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars).</td></tr><tr><td>is_real_team</td><td>logical</td><td>True for a real club; false for a bracket placeholder (67 higher-seed team, 68 lower-seed team in 2025-26).</td></tr><tr><td>status</td><td>character</td><td>Team status. 'ACTIVE' is the only value seen in every sampled route; the full set of statuses is unknown.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial and unsupported: these are the routes the tpbl.basketball site's own front end calls on
-api.tpbl.basketball (read from its JavaScript bundle). The API is keyless and needs no headers;
-tpbl.basketball/robots.txt answers 200 with an empty body. The runtime waits at least 1 s before every request,
-retries included. Payloads are not redistributed as release assets.</p></li>
-<li><p>Coverage: three seasons so far (2024-25 = season 2025 to 2026-27 = season 2027). There is NO play-by-play
-route; the two shot lists carry court coordinates only, with no shooter, game, quarter or time. Names (teams
-with their sponsor, venues, players, referees) are Traditional Chinese; the column descriptions translate the
-codes.</p></li>
-<li><p>Seasons are END years (2026 = 2025-26). The API keys a season by its own small integer (1, 2, 3 = 2024-25,
-2025-26, 2026-27); the runtime reads tpbl_seasons once per session and sends that id. A year the list lacks is
-<code>hoopR_no_data</code>.</p></li>
-<li><p>Ids: every route takes TPBL's own ids (season, division, team, game, player); the <code>gohoops_*</code> ids belong to
-GoHoops, the stats platform behind the league, and are echoed beside them. The box score keys its players by
-gohoops_roster_id (a person registered with one squad in one season), not by the TPBL player id: join
-tpbl_box_players to tpbl_roster on gohoops_roster_id. Every id is an integer. tipoff is a POSIXct in
-Asia/Taipei (the API sends naive Taiwan-local times).</p></li>
-<li><p>Finished games only: the game wrappers first read the game detail (cached per session) and refuse
-(<code>hoopR_asset_fetch</code>) a game that is not COMPLETED or still live; the box-score wrappers also refuse a stats
-body whose teams (in home / away order), final scores, quarter count or player points disagree with it. The
-season game list, the roster and the player game log are checked against the object asked for; the two shot
-lists name no team, player or division in the body, so only their shape and court bounds are checked.
-tpbl_games(verify = TRUE) also checks every division's completed games against its standings (falling back to
-the team-filtered lists for a division whose standings answer empty, as the 2024-25 playoffs do).</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, a season the API does
-not list, an empty list such as the standings of a playoff division), <code>hoopR_bad_request</code> (a non-integer id or
-season, HTTP 400 / 422, an invalid verify or rounds, raised before the request where it can be) and
-<code>hoopR_asset_fetch</code> (any other failure: a non-2xx after retries, a non-JSON body, an error envelope, an
-unfinished game, a body that disagrees with the object asked for). HTTP 500 is retried on every route except
-the player game log, where an unknown division_id answers 500 deterministically: it fails after one request.
-Wrappers raise; they never warn and return an empty frame.</p></li>
-</ul></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="tpbl_seasons.html">tpbl_seasons()</a></code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other TPBL Functions:
@@ -189,7 +159,7 @@ Wrappers raise; they never warn and return an empty frame.</p></li>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">tpbl_teams</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── TPBL Teams from api.tpbl.basketball ────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:37:30 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:35:12 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 9 × 7</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   season season_id team_id gohoops_team_id name             is_real_team status</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>

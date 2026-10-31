@@ -155,34 +155,11 @@ No API key is required. Basketball-Reference rate-limits aggressive scraping
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># interactive()</span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">bref_team_roster</span><span class="op">(</span>team <span class="op">=</span> <span class="st">"BOS"</span>, season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── Team roster from basketball-reference.com ──────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:10:39 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 19 × 11</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    number player   pos   height weight birth_date flag  years_experience college</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     45 Dalano … PG    6-8       203 November … ca CA 2                <span style="color: #949494;">"</span>Nebra…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     12 Oshae B… SF    6-7       210 June 20, … ca CA 4                <span style="color: #949494;">"</span>Syrac…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>      7 Jaylen … SF    6-6       223 October 2… us US 7                <span style="color: #949494;">"</span>Calif…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     20 JD Davi… SG    6-1       195 October 3… us US 1                <span style="color: #949494;">"</span>Alaba…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     30 Sam Hau… SF    6-7       217 December … us US 2                <span style="color: #949494;">"</span>Marqu…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>      4 Jrue Ho… PG    6-4       220 June 12, … us US 14               <span style="color: #949494;">"</span>UCLA<span style="color: #949494;">"</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     42 Al Horf… C     6-8       258 June 3, 1… do DO 16               <span style="color: #949494;">"</span>Flori…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     40 Luke Ko… C     7-1       250 July 15, … us US 6                <span style="color: #949494;">"</span>Vande…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     50 Svi Myk… SF    6-7       205 June 10, … ua UA 5                <span style="color: #949494;">"</span>Kansa…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     13 Drew Pe… PF    6-8       205 November … us US R                <span style="color: #949494;">"</span>Rice …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>      8 Kristap… C     7-2       240 August 2,… lv LV 7                <span style="color: #949494;">""</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>     11 Payton … PG    6-1       195 January 2… us US 3                <span style="color: #949494;">"</span>Orego…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>     88 Neemias… C     7-0       248 July 13, … pt PT 2                <span style="color: #949494;">"</span>Utah …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>     44 Jaden S… SG    6-4       202 September… us US 2                <span style="color: #949494;">"</span>Tenne…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>     77 Lamar S… PF    6-7       230 July 9, 1… us US 3                <span style="color: #949494;">"</span>Penn …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>      0 Jayson … PF    6-8       210 March 3, … us US 6                <span style="color: #949494;">"</span>Duke<span style="color: #949494;">"</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span>     26 Xavier … PF    6-8       245 January 1… us US 3                <span style="color: #949494;">"</span>Michi…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span>     27 Jordan … SF    6-6       205 March 3, … us US R                <span style="color: #949494;">"</span>Arkan…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span>      9 Derrick… SG    6-4       190 July 2, 1… us US 6                <span style="color: #949494;">"</span>Color…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: team &lt;chr&gt;, season &lt;int&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

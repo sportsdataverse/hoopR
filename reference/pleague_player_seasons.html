@@ -127,42 +127,12 @@ Endpoint: GET https://pleagueofficial.com/player/{player_page_id}"><meta propert
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: One player's season totals and per-game averages, league and East Asia Super League, with
-a career row. An empty valid answer is a zero-row tibble with these columns, in this order (sdv-py
+a career row. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
 <code>pleague_player_seasons</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>player_page_id</td><td>character</td><td>The 8-character page id of /player/{id} (e.g. '1JbPozLB'). The box random_id on 2022-23+ rows; NOT the box player_id.</td></tr><tr><td>competition</td><td>character</td><td>Table block: plg (the league's tables) or easl (the East Asia Super League block, present only for players with games there).</td></tr><tr><td>table</td><td>character</td><td>totals (the (Chinese text) table: season totals) or averages (the (Chinese text) table: per game).</td></tr><tr><td>season</td><td>integer</td><td>Season END year of the slug; null on the career row.</td></tr><tr><td>season_slug</td><td>character</td><td>Season slug as printed ('2025-26'), or 'career' for the final totals / averages row.</td></tr><tr><td>games</td><td>integer</td><td>Games played ((Chinese text)).</td></tr><tr><td>minutes</td><td>character</td><td>Minutes 'mm:ss' (a season total in the totals table, a per-game average in the averages table).</td></tr><tr><td>points</td><td>double</td><td>Points (total in the totals table, per game in the averages table; (Chinese text)).</td></tr><tr><td>reb</td><td>double</td><td>Rebounds (total / per game; (Chinese text)).</td></tr><tr><td>ast</td><td>double</td><td>Assists (total / per game; (Chinese text)).</td></tr><tr><td>stl</td><td>double</td><td>Steals (total / per game; (Chinese text)).</td></tr><tr><td>blk</td><td>double</td><td>Blocks (total / per game; (Chinese text)).</td></tr><tr><td>tov</td><td>double</td><td>Turnovers (total / per game; (Chinese text)).</td></tr><tr><td>pf</td><td>double</td><td>Personal fouls (total / per game; (Chinese text)).</td></tr><tr><td>fg2_made</td><td>double</td><td>2-point makes: the first number of the page's '56 - 103' cell (total / per game).</td></tr><tr><td>fg2_att</td><td>double</td><td>2-point attempts: the second number of the cell.</td></tr><tr><td>fg2_pct</td><td>double</td><td>2-point percentage 0-100 ('54.4 percent' -&gt; 54.4).</td></tr><tr><td>fg3_made</td><td>double</td><td>3-point makes (total / per game).</td></tr><tr><td>fg3_att</td><td>double</td><td>3-point attempts (total / per game).</td></tr><tr><td>fg3_pct</td><td>double</td><td>3-point percentage 0-100.</td></tr><tr><td>ft_made</td><td>double</td><td>Free-throw makes (total / per game).</td></tr><tr><td>ft_att</td><td>double</td><td>Free-throw attempts (total / per game).</td></tr><tr><td>ft_pct</td><td>double</td><td>Free-throw percentage 0-100.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial use of a public source: these wrappers read pleagueofficial.com (P. LEAGUE+, Taiwan's men's
-league), keyless. The site's /user-policy (members' terms, section 11) reserves all content on the site to the
-service and its rights holders and forbids use, copying, adaptation or distribution without authorisation (it
-says nothing about automated access); robots.txt holds only Cloudflare content-signal comment lines with no
-Allow, Disallow or Crawl-delay rule. Use for reference only; payloads are not redistributed as release assets,
-and a data release needs owner sign-off. Requests are spaced at least 1 s apart per host, retries included.</p></li>
-<li><p>Access: the site sits behind Cloudflare. sdv-py fetches it with curl_cffi (Chrome TLS); this R port sends a
-browser User-Agent through libcurl, which was served on a live check (2026-10-18); Cloudflare may still answer
-a request with an HTTP 403 challenge page (<code>hoopR_asset_fetch</code>). Redirects are not followed: the site answers
-an unknown <code>gid</code> or a season before 2020-21 with a 302 to the home page (<code>hoopR_no_data</code>).</p></li>
-<li><p>Coverage: schedules, standings and player tables from 2020-21 (<code>season = 2021</code>); box scores for every finished
-game from 2020-21; play-by-play (with shot x / y) from 2022-23 (gid 191 on). 2020-21 and 2021-22 pages embed
-an empty game uuid, so they have no play-by-play and no Preciser data (<code>hoopR_no_data</code>). A game is keyed by
-<code>gid</code>: ONE global integer sequence over every stage and season. Only finished games are served: an unplayed
-game, or a box or play-by-play that does not match its game page (the routes echo no id, so the game page is
-fetched first, cached for the session, and the body's scores, quarters and points are checked against it),
-raises <code>hoopR_asset_fetch</code>.</p></li>
-<li><p>Seasons are END years (2025 = the site's slug '2024-25'). Text is Traditional Chinese as printed (names,
-venues, play-by-play phrases); the column descriptions gloss it in English. Ids: <code>team_id</code> (1-8) is stable
-across renames; the box <code>player_id</code> is the player-team membership. The box <code>random_id</code> is UNRELIABLE before
-2022-23 (gid 13 gives one player another player's page id): join box rows on <code>player_id</code>, and box rows to
-Preciser shots on <code>person_id</code>, never on <code>random_id</code>. The date of birth is dropped from the player frame;
-officials appear by name only.</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, a redirect, a stage
-the season does not have, a game with no play-by-play, a season before 2020-21), <code>hoopR_bad_request</code> (an
-invalid argument, HTTP 400 / 422) and <code>hoopR_asset_fetch</code> (any other non-200, a dead connection, an empty or
-unreadable body, a page for another game, season, stage or player, an unfinished game, layout drift, a
-play-by-play phrase outside the observed vocabulary). HTTP 429 / 502 / 503 / 504 are retried, up to three
-attempts; HTTP 500 is NOT retried (the site answers 500 for an unknown id). Wrappers raise; they never warn
-and return empty.</p></li>
-</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/pleague_player_seasons.html">pleague_player_seasons</a></span><span class="op">(</span>player_page_id <span class="op">=</span> <span class="st">"1JbPozLB"</span><span class="op">)</span></span></code></pre><p></p></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="pleague_schedule.html">pleague_schedule()</a></code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/pleague_player_seasons.html">pleague_player_seasons</a></span><span class="op">(</span>player_page_id <span class="op">=</span> <span class="st">"1JbPozLB"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

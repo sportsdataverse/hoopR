@@ -45,7 +45,7 @@ none (2008-09). `plus_minus` is 0 on every row of the 2008-09 sample
 (not tracked then). Percentages are 0-100. Join on `player_id` (global),
 not on the printed name. Every column below is always present (a
 zero-row tibble keeps them and their types); an answer with nothing in
-it raises `hoopR_no_data`, as in sdv-py.
+it raises `hoopR_no_data`, as in sportsdataverse-py.
 
 |  |  |  |
 |----|----|----|
@@ -94,10 +94,10 @@ it raises `hoopR_no_data`, as in sdv-py.
 
 Unofficial use of a public source: these wrappers read the leagues' own
 PHP sites (www.aba-liga.com, druga.aba-liga.com), keyless, with no bot
-wall; payloads are not redistributed as release assets.
-www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing
-disallowed, no Crawl-delay) and druga has no robots.txt; no terms page
-was found. The runtime waits at least 1 s per host before every request.
+wall. www.aba-liga.com/robots.txt is the single line `User-agent: *`
+(nothing disallowed, no Crawl-delay) and druga has no robots.txt; no
+terms page was found. The runtime waits at least 1 s per host before
+every request.
 
 Coverage: box scores from 2001-02; play-by-play, the starter and
 on-court markers, the shot chart and the minute-by-minute score from
@@ -151,7 +151,7 @@ Other ABA Functions:
 # \donttest{
   try(aba_box_players(game_no = 6, season = 2026))
 #> ── ABA League Player Box ──────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:09:26 UTC
+#> ℹ Data updated: 2026-10-31 21:26:15 UTC
 #> # A tibble: 24 × 39
 #>    game_no season league_id league side  team_id jersey player_id player_name  
 #>      <int>  <int>     <int> <chr>  <chr>   <int>  <int>     <int> <chr>        

@@ -59,26 +59,9 @@ Other Basketball-Reference Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
   try(bref_teams_stats(season = 2024, table = "per_game"))
-#> ── Team season stats from basketball-reference.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:10:40 UTC
-#> # A tibble: 30 × 26
-#>    ranker team        g    mp    fg   fga fg_pct   fg3  fg3a fg3_pct   fg2  fg2a
-#>     <dbl> <chr>   <dbl> <dbl> <dbl> <dbl>  <dbl> <dbl> <dbl>   <dbl> <dbl> <dbl>
-#>  1      1 Indian…    82  240.  47    92.7  0.507  13.2  35.3   0.374  33.8  57.4
-#>  2      2 Boston…    82  242.  43.9  90.2  0.487  16.5  42.5   0.388  27.4  47.7
-#>  3      3 Oklaho…    82  242.  44.5  89.3  0.499  13.3  34.2   0.389  31.3  55.1
-#>  4      4 Milwau…    82  242.  43.1  88.5  0.487  14.2  38.1   0.373  29    50.4
-#>  5      5 Atlant…    82  242.  43    92.5  0.465  13.7  37.7   0.364  29.3  54.8
-#>  6      6 Los An…    82  242.  43.7  87.5  0.499  11.8  31.4   0.377  31.8  56.2
-#>  7      7 Dallas…    82  240.  43.1  89.7  0.481  14.6  39.5   0.369  28.5  50.1
-#>  8      8 Golden…    82  242.  43.7  91.6  0.477  14.8  38.9   0.38   28.9  52.7
-#>  9      9 Sacram…    82  242.  43.3  90.9  0.477  14.4  39.3   0.366  29    51.7
-#> 10     10 Phoeni…    82  241.  42.5  86.1  0.493  12.4  32.6   0.382  30    53.6
-#> # ℹ 20 more rows
-#> # ℹ 14 more variables: fg2_pct <dbl>, ft <dbl>, fta <dbl>, ft_pct <dbl>,
-#> #   orb <dbl>, drb <dbl>, trb <dbl>, ast <dbl>, stl <dbl>, blk <dbl>,
-#> #   tov <dbl>, pf <dbl>, pts <dbl>, season <int>
 # }
+}
 ```

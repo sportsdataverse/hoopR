@@ -130,36 +130,11 @@ the API's default competition. One or more whole numbers (a vector repeats <code
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble, one row per record described above; the columns are always these, in this order
-(sdv-py <code>acb_competition_current</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>competition_id</td><td>integer</td><td>Competition the site opens by default.</td></tr><tr><td>edition_id</td><td>integer</td><td>Edition (season) the site opens by default.</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take.</td></tr><tr><td>week_id</td><td>integer</td><td>Week the site opens by default.</td></tr><tr><td>round_id</td><td>integer</td><td>Round the site opens by default.</td></tr><tr><td>match_grouping</td><td>character</td><td>round or week (current pointers)</td></tr><tr><td>match_id</td><td>integer</td><td>The current match (the featured game).</td></tr><tr><td>status</td><td>character</td><td>State of the current match.</td></tr><tr><td>start</td><td>POSIXct</td><td>Tip-off instant (UTC) of the current match.</td></tr><tr><td>home_team_id</td><td>integer</td><td>Home season-team entry id of the current match.</td></tr><tr><td>home_club_id</td><td>integer</td><td>Home stable club id of the current match.</td></tr><tr><td>home_team</td><td>character</td><td>Home team name of the current match.</td></tr><tr><td>home_team_abbr</td><td>character</td><td>Home team abbreviation of the current match.</td></tr><tr><td>away_team_id</td><td>integer</td><td>Away season-team entry id of the current match.</td></tr><tr><td>away_club_id</td><td>integer</td><td>Away stable club id of the current match.</td></tr><tr><td>away_team</td><td>character</td><td>Away team name of the current match.</td></tr><tr><td>away_team_abbr</td><td>character</td><td>Away team abbreviation of the current match.</td></tr></table></div>
+(sportsdataverse-py <code>acb_competition_current</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>competition_id</td><td>integer</td><td>Competition the site opens by default.</td></tr><tr><td>edition_id</td><td>integer</td><td>Edition (season) the site opens by default.</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take.</td></tr><tr><td>week_id</td><td>integer</td><td>Week the site opens by default.</td></tr><tr><td>round_id</td><td>integer</td><td>Round the site opens by default.</td></tr><tr><td>match_grouping</td><td>character</td><td>round or week (current pointers)</td></tr><tr><td>match_id</td><td>integer</td><td>The current match (the featured game).</td></tr><tr><td>status</td><td>character</td><td>State of the current match.</td></tr><tr><td>start</td><td>POSIXct</td><td>Tip-off instant (UTC) of the current match.</td></tr><tr><td>home_team_id</td><td>integer</td><td>Home season-team entry id of the current match.</td></tr><tr><td>home_club_id</td><td>integer</td><td>Home stable club id of the current match.</td></tr><tr><td>home_team</td><td>character</td><td>Home team name of the current match.</td></tr><tr><td>home_team_abbr</td><td>character</td><td>Home team abbreviation of the current match.</td></tr><tr><td>away_team_id</td><td>integer</td><td>Away season-team entry id of the current match.</td></tr><tr><td>away_club_id</td><td>integer</td><td>Away stable club id of the current match.</td></tr><tr><td>away_team</td><td>character</td><td>Away team name of the current match.</td></tr><tr><td>away_team_abbr</td><td>character</td><td>Away team abbreviation of the current match.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Legal notice (sdv-internal-refs/acb/README.md, aviso legal of acb.com read 2026-10-12): ACEB, S.A.U.
-claims intellectual property in the site's databases (the EU sui generis database right) among its other
-content. It authorises viewing and private copies for personal or journalistic use with the source credited,
-and requires prior express consent for distribution, reproduction or public communication. These wrappers
-fetch on the user's behalf; a published data release or a hosted mirror needs the owner's decision first.
-robots.txt allows the paths.</p></li>
-<li><p>Unofficial and unsupported: api2.acb.com is the .NET API behind acb.com and live.acb.com, not a documented
-public API. It needs the header <code>X-APIKEY</code>, a public key shipped in acb.com's bundle: the runtime sends the
-documented value (<code>$ACB_API_KEY</code> overrides it), re-reads the live bundle once on a 401, and never prints the
-key.</p></li>
-<li><p>Seasons: the API keys a season by <code>editionId</code> = season START year - 1935 (91 = 2026-27, 48 = 1983-84, the
-first). The wrappers take <code>season</code>, the END year (2027 = 2026-27), and the runtime sends <code>editionId = season - 1936</code>. A route that omits <code>season</code> serves the current edition. <code>team_id</code> is a season-team entry (new every
-season); <code>club_id</code> is the stable club.</p></li>
-<li><p>Coverage: box scores from 1983-84 (old seasons carry only the whole-game period, quarter 0); play-by-play
-and shots from 2016-17 (earlier games answer empty lists, which raise <code>hoopR_no_data</code>). Shot coordinates
-come in two systems, split by match id: millimetres from the attacked basket from 2020-21 (<code>coord_system</code>
-mm), a 0-100 full-court percent grid before (grid). A game that is not finished (<code>matchFinished</code> false)
-raises <code>hoopR_asset_fetch</code> for the routes that report it.</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404 / 204, a route
-whose rows are empty: an unknown id, a game outside a playoff series, play-by-play or shots before 2016-17,
-a club with no games that season), <code>hoopR_bad_request</code> (a missing, unknown or non-integer argument or a
-season before 1984, raised before any request; HTTP 400 / 422) and <code>hoopR_asset_fetch</code> (a key the API still
-rejects after one re-read of the bundle, any other non-200 after three attempts, a non-JSON or
-<code>problem+json</code> body, an error envelope or empty stub, a body for another season, round, club, player or
-match, a game that is not finished). Wrappers raise; they never warn and return empty.</p></li>
-</ul></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="acb_match_header.html">acb_match_header()</a></code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other ACB Functions:

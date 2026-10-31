@@ -104,8 +104,8 @@ College Basketball Data
 
 ### NCAA Men’s College Basketball Play-by-Play Engine Data Loaders
 
-Functions exported by hoopR to access the sdv-py `ncaa_mbb` engine’s
-published output on sportsdataverse-data
+Functions exported by hoopR to access the sportsdataverse-py `ncaa_mbb`
+engine’s published output on sportsdataverse-data
 
 - [`load_ncaa_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
   [`load_ncaa_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
@@ -2273,7 +2273,8 @@ Functions exported by hoopR to scrape basketball-reference.com
 
 EuroLeague / EuroCup wrappers over the keyless, unofficial Competition
 Engine (api-live.euroleague.net v2 + v3) and live (live.euroleague.net)
-APIs, mirroring sdv-py’s `euroleague_*` functions column for column.
+APIs, mirroring sportsdataverse-py’s `euroleague_*` functions column for
+column.
 
 - [`euroleague_competitions()`](https://hoopR.sportsdataverse.org/reference/euroleague_competitions.md)
   :
@@ -5411,8 +5412,11 @@ Data included within the package
 - [`teams_links`](https://hoopR.sportsdataverse.org/reference/teams_links.md)
   :
 
-  **Men's College Basketball KenPom Teams Dictionary** Team link KenPom
-  reference lookup for the package
+  **Men's College Basketball KenPom Teams Dictionary** KenPom team and
+  conference names with their KenPom page links, one row per
+  team-season. The KenPom team functions validate `team` against `Team`;
+  they build the page link from the name itself, so they also work for
+  seasons this table does not list yet.
 
 ### hoopR Helper Functions
 

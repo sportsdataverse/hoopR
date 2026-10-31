@@ -137,7 +137,7 @@ or advanced (eFG%, TS%, four-factor style rates), one row per team.</strong></p>
 
 <dt id="arg-mode">mode<a class="anchor" aria-label="anchor" href="#arg-mode"></a></dt>
 <dd><p>(<em>character</em> default <code>"traditional"</code>): <code>"traditional"</code> or
-<code>"advanced"</code>, matched exactly (no prefixes, as in sdv-py); the columns
+<code>"advanced"</code>, matched exactly (no prefixes, as in sportsdataverse-py); the columns
 depend on it (see Returns).</p></dd>
 
 
@@ -174,11 +174,11 @@ captured (other values unverified).</p></dd>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
-wraps it (wrap-only: payloads are not redistributed as release assets). This
-function mirrors its sdv-py twin of the same name: same arguments, defaults
-and snake_case columns, one row per sdv-py row.</p>
+wraps it. This
+function mirrors its sportsdataverse-py twin of the same name: same arguments, defaults
+and snake_case columns, one row per sportsdataverse-py row.</p>
 <p>A failed request raises a classed condition instead of returning an empty
-frame, mirroring sdv-py's error vocabulary: a 404 is <code>hoopR_no_data</code>, a
+frame, mirroring sportsdataverse-py's error vocabulary: a 404 is <code>hoopR_no_data</code>, a
 400 / 422 is <code>hoopR_invalid_request</code>, any other failure (another status, a
 transport error, a non-JSON body) is <code>hoopR_fetch_error</code>; all three inherit
 <code>hoopR_error</code>.</p>
@@ -210,7 +210,7 @@ transport error, a non-JSON body) is <code>hoopR_fetch_error</code>; all three i
 <span class="r-in"><span>    <span class="fu">euroleague_team_stats</span><span class="op">(</span>competition_code <span class="op">=</span> <span class="st">"E"</span>, season_code <span class="op">=</span> <span class="st">"E2025"</span>, mode <span class="op">=</span> <span class="st">"advanced"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">}</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── EuroLeague advanced team stats from api-live.euroleague.net ── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:12:50 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:29:50 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 20 × 20</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    team_ranking games_played effective_field_goal_perce…¹ true_shooting_percen…²</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 </span>

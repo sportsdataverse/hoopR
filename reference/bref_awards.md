@@ -57,24 +57,9 @@ Other Basketball-Reference Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
   try(bref_awards(season = 2024))
-#> ── Award voting from basketball-reference.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:10:27 UTC
-#> # A tibble: 80 × 10
-#>    rank  player    age team  votes_first points_won points_max award_share award
-#>    <chr> <chr>   <dbl> <chr>       <dbl>      <dbl>      <dbl>       <dbl> <chr>
-#>  1 1     Nikola…    28 DEN            79        926        990       0.935 mvp  
-#>  2 2     Shai G…    25 OKC            15        640        990       0.646 mvp  
-#>  3 3     Luka D…    24 DAL             4        566        990       0.572 mvp  
-#>  4 4     Gianni…    29 MIL             1        192        990       0.194 mvp  
-#>  5 5     Jalen …    27 NYK             0        142        990       0.143 mvp  
-#>  6 6     Jayson…    25 BOS             0         86        990       0.087 mvp  
-#>  7 7     Anthon…    22 MIN             0         18        990       0.018 mvp  
-#>  8 8     Domant…    27 SAC             0          3        990       0.003 mvp  
-#>  9 9     Kevin …    35 PHO             0          1        990       0.001 mvp  
-#> 10 1     Victor…    20 SAS            99        495        495       1     roy  
-#> # ℹ 70 more rows
-#> # ℹ 1 more variable: season <int>
 # }
+}
 ```

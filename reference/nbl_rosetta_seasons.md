@@ -44,14 +44,14 @@ A `hoopR_data` tibble (one row per season):
 | competition_division | character | NBL1 divisions (conference x gender); empty for NBL and WNBL. |
 | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 
-Columns the body adds beyond these follow, in body order (sdv-py keeps
-them too).
+Columns the body adds beyond these follow, in body order
+(sportsdataverse-py keeps them too).
 
 ## Details
 
 - Unofficial: the JSON proxy behind nbl.com.au (not an API the NBL
-  documents or supports). The terms of use were not reviewed; payloads
-  are not redistributed as release assets.
+  documents or supports). The terms of use were not reviewed; check them
+  before you republish the data.
 
 - Gated by a referer, not a key: every request carries Origin / Referer
   set to nbl.com.au (the runtime sends them); without them the host
@@ -120,7 +120,7 @@ Other NBL Rosetta Functions:
 # \donttest{
   try(nbl_rosetta_seasons(org = "nbl"))
 #> ── NBL Rosetta seasons from prod.rosetta.nbl.com.au ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:35:32 UTC
+#> ℹ Data updated: 2026-10-31 21:33:14 UTC
 #> # A tibble: 75 × 11
 #>    org   season_id    rosetta_season_id name  season_year season_type start_date
 #>    <chr> <chr>        <chr>             <chr>       <int> <chr>       <chr>     

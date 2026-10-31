@@ -15,9 +15,9 @@ kbl_seasons()
 
 A `hoopR_data` tibble: Every KBL regular season (1997 to the next one)
 with its competition key and date range, newest first. The columns are
-always these, in this order (sdv-py `kbl_seasons`); an empty valid
-answer raises `hoopR_no_data`, a valid body with no rows for this frame
-is a zero-row tibble:
+always these, in this order (sportsdataverse-py `kbl_seasons`); an empty
+valid answer raises `hoopR_no_data`, a valid body with no rows for this
+frame is a zero-row tibble:
 
 |  |  |  |
 |----|----|----|
@@ -43,14 +43,13 @@ is a zero-row tibble:
   api.kbl.or.kr/robots.txt a 500 error envelope, so no policy or
   Crawl-delay is published (checked 2026-10-12); the site's terms
   (/terms/list) were not reviewed for data reuse. The runtime waits at
-  least 1 s before every request, retries included. Payloads are not
-  redistributed as release assets.
+  least 1 s before every request, retries included.
 
 - Not wrapped: the site's /record/\* and `/player/player/{pcode}` pages
   are rendered by the sports2i widget from two other hosts
   (kbl-api.sports2i.com and api-stats.kbl.or.kr: team four factors,
-  clutch, hustle, shot dashboards, all-time leaders) and need their own
-  intake. WKBL (the women's league) is out of scope by owner ruling.
+  clutch, hustle, shot dashboards, all-time leaders). WKBL (the women's
+  league) is not covered.
 
 - Seasons are END years (2026 = 2025-26). KBL numbers seasons AND
   D-League (reserve league) editions with one sequential seasonCode;
@@ -126,7 +125,7 @@ Other KBL Functions:
 # \donttest{
   try(kbl_seasons())
 #> ── KBL Seasons from api.kbl.or.kr ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:13:59 UTC
+#> ℹ Data updated: 2026-10-31 21:31:03 UTC
 #> # A tibble: 31 × 10
 #>    season season_code glkey  season_name season_name_full season_grade
 #>     <int>       <int> <chr>  <chr>       <chr>                   <int>

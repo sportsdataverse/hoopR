@@ -30,7 +30,7 @@ lists them (up to 4 a side). `player_slug` is the site's key and
 on a body without the stamp). A body without leaders gives a zero-row
 tibble. Every column below is always present (a zero-row tibble keeps
 them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sdv-py.
+`hoopR_no_data`, as in sportsdataverse-py.
 
 |  |  |  |
 |----|----|----|
@@ -51,9 +51,8 @@ them and their types); an answer with nothing in it raises
 Unofficial and unsupported: these are the routes lkl.lt's own game page
 calls (found in its front-end bundle) and its server-rendered pages. The
 site's robots.txt allows everything and sets no crawl-delay; the runtime
-still spaces requests at least 1 s apart. SportsDataverse has not ruled
-on the site's terms, so payloads are not redistributed as release
-assets.
+still spaces requests at least 1 s apart. The site's terms were not
+reviewed; check them before you republish the data.
 
 Coverage: game wrappers serve FINISHED games only (an unfinished game
 raises `hoopR_asset_fetch`). The box score, summary, score line,

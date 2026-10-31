@@ -127,47 +127,12 @@ easl_seasons and maps it to the DataCore seasonId. Default <code>NULL</code>: th
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Group-stage standings of one season: rank within the pool, record, splits, points and the
-last five results. An empty answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sdv-py
+last five results. An empty answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py
 <code>easl_standings</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = EASL 25-26), from the request.</td></tr><tr><td>season_id</td><td>character</td><td>DataCore season UUID v1, from the request (the standings rows carry none).</td></tr><tr><td>standing_id</td><td>character</td><td>Standings row id: a DataCore UUID v1 for the (season, pool, team) row (joins nothing else).</td></tr><tr><td>position</td><td>integer</td><td>Rank within the pool, 1-4.</td></tr><tr><td>team_id</td><td>character</td><td>teamId: DataCore team (entity) UUID v1 (key space: EASL teams, the same id as <code>entityId</code>; joins /teams, /standings team.id, fixture competitors, box and play-by-play teams). Not a player id.</td></tr><tr><td>team_name</td><td>character</td><td>Display name. Despite the field name this is the English / Latin-script name used on the league site.</td></tr><tr><td>team_code</td><td>character</td><td>Three-letter club code; null for some clubs.</td></tr><tr><td>pool_id</td><td>character</td><td>Pool id: a 30-character hex string (equals a fixture's poolCode).</td></tr><tr><td>pool_name</td><td>character</td><td>Pool name: 'Group A', 'Group B' or 'Group C'.</td></tr><tr><td>pool_abb</td><td>character</td><td>Pool abbreviation: A, B or C. Null on some rows.</td></tr><tr><td>live</td><td>logical</td><td>True while the standing is recomputed live during games (false on all six snapshots checked).</td></tr><tr><td>latest</td><td>logical</td><td>True on the newest standings snapshot (false on all six snapshots checked, including the active season's).</td></tr><tr><td>game_played</td><td>integer</td><td>Games played (group stage only: playoff games are not counted, although lastFiveMatches includes them).</td></tr><tr><td>game_played_home</td><td>integer</td><td>Games played at home.</td></tr><tr><td>game_played_away</td><td>integer</td><td>Games played away.</td></tr><tr><td>wins</td><td>integer</td><td>Wins: all group-stage games on the standings route, all games on the season statistics routes.</td></tr><tr><td>wins_home</td><td>integer</td><td>Wins in the team's home games.</td></tr><tr><td>wins_away</td><td>integer</td><td>Wins in the team's away games.</td></tr><tr><td>losses</td><td>integer</td><td>Losses: all group-stage games on the standings route, all games on the season statistics routes.</td></tr><tr><td>losses_home</td><td>integer</td><td>Losses in the team's home games.</td></tr><tr><td>losses_away</td><td>integer</td><td>Losses in the team's away games.</td></tr><tr><td>draws</td><td>integer</td><td>Draws (0: basketball has none).</td></tr><tr><td>draws_home</td><td>integer</td><td>Home draws (0).</td></tr><tr><td>draws_away</td><td>integer</td><td>Away draws (0).</td></tr><tr><td>win_percentage</td><td>double</td><td>Winning share as a 0-1 ratio rounded to 2 decimals (0.83 = 5-1), NOT a percentage.</td></tr><tr><td>win_percentage_home</td><td>double</td><td>Home winning share, 0-1 ratio.</td></tr><tr><td>win_percentage_away</td><td>double</td><td>Away winning share, 0-1 ratio.</td></tr><tr><td>points_for</td><td>integer</td><td>Points the team scored over its group-stage games (points_against is the points it conceded).</td></tr><tr><td>points_against</td><td>integer</td><td>Points allowed.</td></tr><tr><td>point_difference</td><td>integer</td><td>Points for minus points against.</td></tr><tr><td>point_difference_home</td><td>integer</td><td>Point difference in home games.</td></tr><tr><td>point_difference_away</td><td>integer</td><td>Point difference in away games.</td></tr><tr><td>steak</td><td>integer</td><td>Current winning streak in games (the key is misspelled 'steak'); 0 after a loss. Never negative: losing streaks are not tracked.</td></tr><tr><td>streak_home</td><td>integer</td><td>Current winning streak in home games; 0 after a loss.</td></tr><tr><td>streak_away</td><td>integer</td><td>Current winning streak in away games; 0 after a loss.</td></tr><tr><td>last_five</td><td>character</td><td>Results of the team's last five games as a comma-separated string, most recent first (W win, L loss).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>WARNING: UNOFFICIAL THIRD-PARTY INTERMEDIARY. These wrappers read easl.joshricha.com/api/v1, an Express server
-run by an individual. It is not EASL's and not Sportradar's: it mirrors Sportradar DataCore (organisation b1e0z)
-into SQLite and serves it keyless, and it can change or vanish without notice. Its routes, field names (steak,
-facebook_username) and sync freshness are the proxy author's. A first-party DataCore feed needs credentials this
-package does not have. The host serves no robots.txt (404) and states no terms; the runtime waits at least 1 s
-before every request, retries included, and honours Retry-After. Payloads are not redistributed as release
-assets.</p></li>
-<li><p>Seasons are END years (2026 = EASL 25-26). The server's season key is the START year; the runtime reads the
-season list, maps the END year to the DataCore seasonId and defaults to the ACTIVE season. Four editions exist
-(2023-24 to 2026-27). The server defaults to the active season on /matches, /standings and /leaders; the runtime
-always sends the resolved seasonId. A season is two calendar years: group by season_id, not by the year of the
-tip-off.</p></li>
-<li><p>Finished games only: the game routes first read the fixture and refuse (<code>hoopR_asset_fetch</code>) one that is not
-CONFIRMED with two scores, a box score whose player points do not add up to the score (the server serves
-one-team, four-row boxes for some games), a play-by-play that does not end on the final score in its highest
-period (4 or more, and the last period of the period table), and team totals that disagree with the score. For
-the ACTIVE season's fixture lists the runtime reads /health: a server clock more than a day from yours, or a
-game still SCHEDULED more than a day after its tip-off, means the mirror has stalled (<code>hoopR_asset_fetch</code>). That
-proves the mirror kept up with the games played, not that a game is final upstream.</p></li>
-<li><p>Ids: every DataCore id is a UUID v1 string. team_id = entityId, player_id = personId; fixture_number (YYSSNNN)
-is null on every 2023-24 fixture; <code>*_row_id</code> columns are the sync server's own integers, not DataCore ids. The
-fixture's competitors come in arbitrary order: read <code>home_*</code> / <code>away_*</code>, which the parsers take from isHome.</p></li>
-<li><p>No shot x/y, no game clock and no lineups exist on this server. The play-by-play text always says 'missed' for
-field goals and 'Free throw K of M made' for free throws, made or not: use points_scored (the change of the
-event team's running score), which lags on a minority of events. 301 of 2,444 sampled box rows are players who
-did not play (null minutes and counting stats; points are 0); player_box.played tells them apart.
-easl_player_stats ignores a season filter: it is the career line over every season. Names: nameFullLocal is the
-English display name and nameFullLatin the native-script name, so the columns are name and name_native.</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, an empty list or leaders
-object, a team or player without games), <code>hoopR_bad_request</code> (a malformed id, or a season that is not one of the
-server's END years, raised before the request that would use it) and <code>hoopR_asset_fetch</code> (any other failure: any
-non-2xx, including the server's HTTP 400 / 422 and the HTTP 500 it answers for an unknown fixture, which is not
-retried; an error envelope; a game that is not finished or whose box score or play-by-play is incomplete; a
-stalled sync on the active season; a body for another game, season, team or player than the one asked for).
-Wrappers raise; they never warn and return an empty frame.</p></li>
-</ul></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="easl_health.html">easl_health()</a></code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other EASL Functions:
@@ -195,7 +160,7 @@ Wrappers raise; they never warn and return an empty frame.</p></li>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">easl_standings</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── EASL Standings from easl.joshricha.com ─────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:11:30 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:28:21 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 12 × 36</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season season_id     standing_id position team_id team_name team_code pool_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>

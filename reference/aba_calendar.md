@@ -39,7 +39,7 @@ split from it (null for `TBA` or a date window). `time_zone` is `CET`
 League 2). `group` is the group letter, null after the groups and absent
 on seasons without a Group column. Every column below is always present
 (a zero-row tibble keeps them and their types); an answer with nothing
-in it raises `hoopR_no_data`, as in sdv-py.
+in it raises `hoopR_no_data`, as in sportsdataverse-py.
 
 |  |  |  |
 |----|----|----|
@@ -69,10 +69,10 @@ in it raises `hoopR_no_data`, as in sdv-py.
 
 Unofficial use of a public source: these wrappers read the leagues' own
 PHP sites (www.aba-liga.com, druga.aba-liga.com), keyless, with no bot
-wall; payloads are not redistributed as release assets.
-www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing
-disallowed, no Crawl-delay) and druga has no robots.txt; no terms page
-was found. The runtime waits at least 1 s per host before every request.
+wall. www.aba-liga.com/robots.txt is the single line `User-agent: *`
+(nothing disallowed, no Crawl-delay) and druga has no robots.txt; no
+terms page was found. The runtime waits at least 1 s per host before
+every request.
 
 Coverage: box scores from 2001-02; play-by-play, the starter and
 on-court markers, the shot chart and the minute-by-minute score from
@@ -126,7 +126,7 @@ Other ABA Functions:
 # \donttest{
   try(aba_calendar(season = 2026))
 #> ── ABA League Calendar ────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:09:29 UTC
+#> ℹ Data updated: 2026-10-31 21:26:18 UTC
 #> # A tibble: 248 × 20
 #>    game_no season league_id league season_label  round group home_team away_team
 #>      <int>  <int>     <int> <chr>  <chr>         <chr> <chr> <chr>     <chr>    

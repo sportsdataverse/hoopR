@@ -1,7 +1,7 @@
 # **RealGM NBA Draft Results**
 
-**Get the results of a past NBA draft from
-[RealGM](https://basketball.realgm.com).**
+**Get the results of a past NBA draft from RealGM
+(basketball.realgm.com).**
 
 One row per selection (rounds 1 and 2, labelled by `round`) plus the
 listed undrafted players (`round = NA`), including pre-draft team /

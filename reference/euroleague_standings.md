@@ -46,8 +46,8 @@ euroleague_standings(
 
   (*character* default `"basicstandings"`): Standings table, one of
   `"basicstandings"`, `"calendarstandings"`, `"streaks"` or
-  `"aheadbehind"`, matched exactly (no prefixes, as in sdv-py); the
-  columns depend on it (see Returns).
+  `"aheadbehind"`, matched exactly (no prefixes, as in
+  sportsdataverse-py); the columns depend on it (see Returns).
 
 ## Value
 
@@ -85,8 +85,8 @@ A `hoopR_data` tibble with one row per team. The columns depend on
 | club_images_crest | character | Club: URL of the club crest image. |
 
 **`kind = "calendarstandings"`** (the `streaks` cell is JSON text:
-semantically equal to sdv-py's, not byte-equal – separators and unicode
-escaping differ)
+semantically equal to sportsdataverse-py's, not byte-equal – separators
+and unicode escaping differ)
 
 |  |  |  |
 |----|----|----|
@@ -169,12 +169,12 @@ escaping differ)
 ## Details
 
 Unofficial, keyless API, not supported by Euroleague Basketball; hoopR
-only wraps it (wrap-only: payloads are not redistributed as release
-assets). This function mirrors its sdv-py twin of the same name: same
-arguments, defaults and snake_case columns, one row per sdv-py row.
+only wraps it. This function mirrors its sportsdataverse-py twin of the
+same name: same arguments, defaults and snake_case columns, one row per
+sportsdataverse-py row.
 
 A failed request raises a classed condition instead of returning an
-empty frame, mirroring sdv-py's error vocabulary: a 404 is
+empty frame, mirroring sportsdataverse-py's error vocabulary: a 404 is
 `hoopR_no_data`, a 400 / 422 is `hoopR_invalid_request`, any other
 failure (another status, a transport error, a non-JSON body) is
 `hoopR_fetch_error`; all three inherit `hoopR_error`.
@@ -206,7 +206,7 @@ Other Euroleague:
     euroleague_standings(competition_code = "E", season_code = "E2025", round = 1, kind = "streaks")
   })
 #> ── EuroLeague standings streaks from api-live.euroleague.net ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:12:50 UTC
+#> ℹ Data updated: 2026-10-31 21:29:49 UTC
 #> # A tibble: 20 × 23
 #>    position position_change games_played games_won games_lost qualified
 #>       <int> <chr>                  <int>     <int>      <int> <lgl>    

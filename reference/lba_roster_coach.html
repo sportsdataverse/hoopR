@@ -126,32 +126,12 @@ season.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Head coach of one team-season. The columns are always these, in this order (sdv-py
+    <p>A <code>hoopR_data</code> tibble: Head coach of one team-season. The columns are always these, in this order (sportsdataverse-py
 <code>lba_roster_coach</code>); a column the site adds later is appended after them:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>team_id</td><td>integer</td><td>Team-season id (re-issued every season); join lba_teams for the stable club_id.</td></tr><tr><td>club_id</td><td>integer</td><td>Club id: the cross-season join key for team ids (only here and in the <code>team</code> headers); stability across seasons is unverified.</td></tr><tr><td>club_code</td><td>character</td><td>Club code (<code>TVB</code>, <code>TS</code>); whether it is stable across seasons is unverified.</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2027 = 2026-27): the row's START year + 1.</td></tr><tr><td>coach_id</td><td>integer</td><td>Coach id (global coach key space; joins the game header <code>home_coach_id</code> / <code>visitor_coach_id</code>).</td></tr><tr><td>name</td><td>character</td><td>Coach's given name.</td></tr><tr><td>surname</td><td>character</td><td>Coach's family name.</td></tr><tr><td>birth_date</td><td>character</td><td>Birth date, Date <code>YYYY-MM-DD</code>.</td></tr><tr><td>place_of_birth</td><td>character</td><td>Birthplace (Italian spelling, e.g. <code>Londra</code>).</td></tr><tr><td>coach_type_id</td><td>integer</td><td>Coach role id (1 = head coach).</td></tr><tr><td>coach_type_description</td><td>character</td><td>Coach role, Italian: <code>Allenatore</code> = head coach.</td></tr><tr><td>coach_type_code</td><td>character</td><td>Coach role code, number sent as a string.</td></tr><tr><td>team_name</td><td>character</td><td>Team, short name.</td></tr><tr><td>coach_picture_key</td><td>character</td><td>Image key: the image is <code>{cdn_url}/{key}</code>, resized copies <code>{cdn_url}/variants/{key}/thumb</code> or <code>/large</code> (the site's getApiImageUrl).</td></tr><tr><td>team_logo_key</td><td>character</td><td>Image key: the image is <code>{cdn_url}/{key}</code>, resized copies <code>{cdn_url}/variants/{key}/thumb</code> or <code>/large</code> (the site's getApiImageUrl).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial and unsupported: these wrappers read the JSON API that the Next.js site www.legabasket.it itself
-calls. Legal notice: the site's terms say "Non e' consentito copiare ... dati e informazioni senza
-autorizzazione scritta" (copying data and information without written authorisation is not allowed), except for
-personal, non-commercial use. The owner accepted the restriction for this intake on 2026-10-12. Payloads are
-not redistributed as release assets, and any published data release of this source needs separate sign-off.</p></li>
-<li><p>robots.txt allows /api and sets Crawl-delay: 2. The runtime waits 2 s before every request, retries included.
-Crawl incrementally: fetch a final game once (keyed by game_id), find new games with one lba_calendar call per
-round, and do not backfill a history in a burst.</p></li>
-<li><p>Seasons are END years (2027 = 2026-27); the site sends START years and the runtime maps them (season - 1 on the
-wire). Game and player ids are global; team ids are re-issued every season (join lba_teams for the stable
-club_id); a championship id is one season AND one phase (Regular Season and Play Off differ).</p></li>
-<li><p>Play-by-play starts in 2017-18 and changes shape in 2019-20 (pixel frame to court percent) and 2021-22; see
-lba_pbp. Box scores reach back to 1995-96, where the period scores were not recorded (0 means missing).</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, or a body with no rows:
-an unknown season, a play-by-play before 2017-18, standings of a finished championship without a round),
-<code>hoopR_bad_request</code> (a season that is not an END year, a bad choice, HTTP 400 / 422) and <code>hoopR_asset_fetch</code>
-(any other non-2xx, a connection failure after retries, an empty / non-JSON / error-shaped 200, a game that is
-not final on the box score, play-by-play and shot routes, a truncated page, or a body for another season,
-championship, game, team, player, round or category than the one asked for). An unknown id is HTTP 500, which
-is not retried. A body the parser finds no rows in gives a zero-row tibble with these columns.</p></li>
-</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lba_roster_coach.html">lba_roster_coach</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">1764</span><span class="op">)</span></span></code></pre><p></p></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="lba_championships.html">lba_championships()</a></code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lba_roster_coach.html">lba_roster_coach</a></span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">1764</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

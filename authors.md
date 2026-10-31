@@ -7,7 +7,7 @@
 
 - **[Jason Lee](https://x.com/theFirmAISports)**. Contributor.
 
-- **[Billy Fryer](https://x.com/BillyFryer42)**. Contributor.
+- **Billy Fryer**. Contributor.
 
 - **[Ross Drucker](https://x.com/rossdrucker9)**. Contributor.
 
@@ -18,15 +18,13 @@
 Source:
 [`inst/CITATION`](https://github.com/sportsdataverse/hoopR/blob/main/inst/CITATION)
 
-Saiem Gilani. hoopR: Access Men’s Basketball Play by Play Data.
-Retrieved from https://doi.org/10.32614/CRAN.package.hoopR
+Saiem Gilani (2026). hoopR: Access Men's Basketball Play by Play Data. R
+package version 3.2.0. https://doi.org/10.32614/CRAN.package.hoopR
 
     @Misc{,
       author = {Saiem Gilani},
-      title = {hoopR: Access Men’s Basketball Play by Play Data.},
-      url = {https://doi.org/10.32614/CRAN.package.hoopR},
+      title = {hoopR: Access Men's Basketball Play by Play Data},
       doi = {10.32614/CRAN.package.hoopR},
-      journal = {CRAN: Contributed Packages},
       publisher = {The R Foundation},
       year = {2026},
       note = {R package version 3.2.0},

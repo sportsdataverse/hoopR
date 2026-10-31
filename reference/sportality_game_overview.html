@@ -127,35 +127,12 @@ platform game uuids; the Genius match id is <code>extId</code> / <code>gameSourc
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Score, state, clock and the Genius ids of one game (2023/24 on). An empty valid
-answer raises <code>hoopR_no_data</code>; the documented columns come first, in this order (sdv-py
+answer raises <code>hoopR_no_data</code>; the documented columns come first, in this order (sportsdataverse-py
 <code>sportality_game_overview</code>), then any column the API added later:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_uuid</td><td>character</td><td>Platform game uuid (c4hh5nig6t); every gameday route takes it.</td></tr><tr><td>home_team_game_source_id</td><td>integer</td><td>Genius match id (Genius key space; integer here).</td></tr><tr><td>home_team_game_id</td><td>integer</td><td>Genius match id (Genius key space; the same number as gameSourceId).</td></tr><tr><td>home_team_team_id</td><td>integer</td><td>Genius team id of the home team (Genius key space; Int64).</td></tr><tr><td>home_team_team_name</td><td>character</td><td>Name of the home team.</td></tr><tr><td>home_team_team_code</td><td>character</td><td>Home team code as Genius spells it (mixed case, 'Hol').</td></tr><tr><td>home_team_team_number</td><td>integer</td><td>Team number in the game; home is 1.</td></tr><tr><td>home_team_place</td><td>character</td><td>home. Values: <code>home</code> = home team.</td></tr><tr><td>home_team_instance_id</td><td>character</td><td>Site instance id of the home club (platform key space).</td></tr><tr><td>home_team_source</td><td>character</td><td>Feed that produced the row (genius-basketball-stream-reader).</td></tr><tr><td>home_team_game_uuid</td><td>character</td><td>Game uuid (platform key space).</td></tr><tr><td>away_team_game_source_id</td><td>integer</td><td>Genius match id (Genius key space; integer here).</td></tr><tr><td>away_team_game_id</td><td>integer</td><td>Genius match id (Genius key space; the same number as gameSourceId).</td></tr><tr><td>away_team_team_id</td><td>integer</td><td>Genius team id of the away team (Genius key space; Int64).</td></tr><tr><td>away_team_team_name</td><td>character</td><td>Name of the away team.</td></tr><tr><td>away_team_team_code</td><td>character</td><td>Away team code as Genius spells it.</td></tr><tr><td>away_team_team_number</td><td>integer</td><td>Team number in the game; away is 2.</td></tr><tr><td>away_team_place</td><td>character</td><td>away. Values: <code>away</code> = away team.</td></tr><tr><td>away_team_instance_id</td><td>character</td><td>Site instance id of the away club (platform key space).</td></tr><tr><td>away_team_source</td><td>character</td><td>Feed that produced the row (genius-basketball-stream-reader).</td></tr><tr><td>away_team_game_uuid</td><td>character</td><td>Game uuid (platform key space).</td></tr><tr><td>home_goals</td><td>integer</td><td>Points scored by the home team.</td></tr><tr><td>away_goals</td><td>integer</td><td>Points scored by the away team.</td></tr><tr><td>state</td><td>character</td><td>Game state. Schedule and day views: pre-game or post-game (hyphen). sports-v2 game-info: post_game (underscore). Gameday overview: GameEnded. Values: <code>GameEnded</code> = played (gameday overview).</td></tr><tr><td>time_game_id</td><td>integer</td><td>Genius match id (Genius key space).</td></tr><tr><td>time_period</td><td>integer</td><td>Period number the clock stands in (1-4 regulation, 5+ overtime).</td></tr><tr><td>time_period_time</td><td>character</td><td>Clock remaining in the period, 'hh:mm:ss' ('00:00:00' once the period or game is over).</td></tr><tr><td>time_instance_id</td><td>character</td><td>Site instance that owns the feed (platform key space; dbl1_dbl).</td></tr><tr><td>time_source</td><td>character</td><td>Feed that produced the row (genius-basketball-stream-reader).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial: the JSON API behind www.basketligaen.dk, the Danish men's basketball league (Basketligaen,
-series code DBL). The site runs on the Sportality platform (the vendor behind the SHL and HockeyAllsvenskan
-wrappers). The terms page was not read; payloads are not redistributed as release assets.</p></li>
-<li><p>Stats provider: genius-basketball, a relay of Genius Sports LiveStats. The Genius match, team and person ids
-in play-by-play, box scores and stats tables (game_id, team_id, player_id, all Int64) join the genius
-family; the platform uuids (game, team, athlete, ssgt) are not Genius ids and exist only on this site. The
-Genius ORG code of Denmark is not exposed.</p></li>
-<li><p>Season = the END year (2026 = 2025/26) everywhere; the runtime maps it, with game_type ('regular' or
-'finals', the playoffs), to the site's ssgt (season + series + game type) through layout-info. Schedules,
-standings and season tables start in 2002/03; game-level data (play-by-play with shot x/y, box scores, team
-stats) starts in 2023/24.</p></li>
-<li><p>Source defects the runtime refuses (<code>hoopR_asset_fetch</code>): an unfinished game or a truncated play-by-play
-feed, a box score or feed that names another game, a cut stats table. The 2002/03 regular-season schedule
-lists 109 finished games where its own standings count 110: a source gap.</p></li>
-<li><p>Personal data is removed from every body: birth dates, e-mail addresses, phone numbers, addresses and
-contact blocks.</p></li>
-<li><p>No women's league: Dameligaen has its own domain (dameligaen.dk), which answers 401 to anonymous requests.</p></li>
-<li><p>Errors are classed conditions: <code>hoopR_no_data</code> (404, an empty gameday body, <code><a href="https://rdrr.io/r/base/Paren.html" class="external-link">{}</a></code> / <code>[]</code>, a table with
-no rows, a season or game type layout-info does not list), <code>hoopR_bad_request</code> (a bad argument, a 400 /
-422) and <code>hoopR_asset_fetch</code> (an error envelope or non-JSON 200, a body for another game / team / athlete /
-ssgt, an unfinished game or truncated play-by-play, a cut stats table, any other non-2xx; a 500 is the
-site's answer for an unknown uuid and is not retried), all inheriting <code>hoopR_error</code>. Wrappers raise; they
-never return an empty frame.</p></li>
-</ul></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="sportality_schedule.html">sportality_schedule()</a></code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other Basketligaen Functions:
@@ -192,7 +169,7 @@ never return an empty frame.</p></li>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportality_game_overview</span><span class="op">(</span>game_uuid <span class="op">=</span> <span class="st">"c4hh5nig6t"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── Basketligaen Game Overview from basketligaen.dk ────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:36:11 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:33:55 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 29</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   game_uuid  home_team_game_source_id home_team_game_id home_team_team_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>

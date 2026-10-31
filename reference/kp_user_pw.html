@@ -137,6 +137,12 @@ Uses httr2 for HTTP requests and cookie management.</p>
 
 </dl></div>
     <div class="section level2">
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    <p><code>login()</code>: the path to the httr2 cookie jar holding the KenPom session.
+<code>kp_user_email()</code> / <code>kp_password()</code>: the <code>KP_USER</code> / <code>KP_PW</code> environment variable, or
+<code>NA_character_</code> when it is unset. <code>has_kp_user_and_pw()</code>: <code>TRUE</code> when both are set.</p>
+    </div>
+    <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><strong>Using your KenPom subscription with the package:</strong> <br></p>
 <p>Run <a href="https://usethis.r-lib.org/reference/edit.html" class="external-link"><strong><code>usethis::edit_r_environ()</code></strong></a> and THEN paste the following in the new script that pops up (with<strong>out</strong> quotations)<br></p>

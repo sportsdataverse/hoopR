@@ -118,21 +118,21 @@ A `hoopR_data` tibble with one row per transfer. The `origin` and
 ``` r
 # \donttest{
   try(cbbd_recruiting_players(year = 2024))
-#> ✖ 2026-10-31 20:11:02.676643: Invalid arguments or no recruiting players available!
+#> ✖ 2026-10-31 21:27:52.57445: Invalid arguments or no recruiting players available!
 #> ✖ Args: year = 2024, team = NULL, conference = NULL, position = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_recruiting_teams(year = 2024))
-#> ✖ 2026-10-31 20:11:02.687037: Invalid arguments or no team recruiting rankings available!
+#> ✖ 2026-10-31 21:27:52.58619: Invalid arguments or no team recruiting rankings available!
 #> ✖ Args: year = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_recruiting_portal(year = 2024))
-#> ✖ 2026-10-31 20:11:02.697358: Invalid arguments or no transfer portal data available!
+#> ✖ 2026-10-31 21:27:52.597417: Invalid arguments or no transfer portal data available!
 #> ✖ Args: year = 2024, source_team = NULL, destination_team = NULL, source_conference = NULL, destination_conference = NULL, position = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

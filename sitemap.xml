@@ -1,11 +1,9 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://hoopR.sportsdataverse.org/404.html</loc></url>
-<url><loc>https://hoopR.sportsdataverse.org/CLAUDE.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/CODE_OF_CONDUCT.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/CONTRIBUTING.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/LICENSE-text.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/LICENSE.html</loc></url>
-<url><loc>https://hoopR.sportsdataverse.org/PULL_REQUEST_TEMPLATE.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/articles/cbbd-college-basketball-data.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/articles/espn-endpoints.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/articles/getting-started-hoopR.html</loc></url>
@@ -14,7 +12,6 @@
 <url><loc>https://hoopR.sportsdataverse.org/articles/mbb-cookbook.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/articles/nba-cookbook.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/authors.html</loc></url>
-<url><loc>https://hoopR.sportsdataverse.org/copilot-instructions.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/index.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/news/index.html</loc></url>
 <url><loc>https://hoopR.sportsdataverse.org/reference/aba_box_players.html</loc></url>

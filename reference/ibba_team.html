@@ -140,36 +140,7 @@ unchanged.</p></dd>
     <p>A <code>hoopR_data</code> tibble with these columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>team_uid</td><td>integer</td><td>IBBA CLUB id, stable across seasons (Maccabi Tel Aviv = 10): the team_uid parameter of the roster routes. Not the per-season team_id.</td></tr><tr><td>team_id</td><td>integer</td><td>Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids.</td></tr><tr><td>season</td><td>integer</td><td>Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping.</td></tr><tr><td>team_name_he</td><td>character</td><td>Team name in Hebrew, HTML-unescaped.</td></tr><tr><td>team_short_name_he</td><td>character</td><td>Short team name in Hebrew, HTML-unescaped.</td></tr><tr><td>team_name</td><td>character</td><td>Team name in English as registered for the season.</td></tr><tr><td>team_short_name</td><td>character</td><td>Short team name in English.</td></tr><tr><td>wins</td><td>integer</td><td>Games won in the season so far (standings line).</td></tr><tr><td>losses</td><td>integer</td><td>Games lost in the season so far (standings line).</td></tr><tr><td>points_for</td><td>integer</td><td>Points scored over the games played.</td></tr><tr><td>points_against</td><td>integer</td><td>Points conceded over the games played.</td></tr><tr><td>table_points</td><td>integer</td><td>Standings points (2 per win, 1 per loss in the league table).</td></tr><tr><td>place</td><td>integer</td><td>Rank in the standings of the board (1 = first).</td></tr><tr><td>website_url</td><td>character</td><td>Club website URL.</td></tr><tr><td>photo_path</td><td>character</td><td>Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il.</td></tr><tr><td>icon_path</td><td>character</td><td>Site-relative path of the small team icon.</td></tr><tr><td>logo_url</td><td>character</td><td>Absolute URL of the team logo.</td></tr><tr><td>icon3_path</td><td>character</td><td>Site-relative path of the third team icon variant.</td></tr><tr><td>arena_id</td><td>integer</td><td>Home arena id in the IBBA site's own arena table (no arena route is modelled).</td></tr><tr><td>address_he</td><td>character</td><td>Club address in Hebrew, HTML-unescaped.</td></tr><tr><td>address</td><td>character</td><td>Club address in English, HTML-unescaped.</td></tr><tr><td>colors_he</td><td>character</td><td>Team colours in Hebrew.</td></tr><tr><td>colors</td><td>character</td><td>Team colours in English.</td></tr><tr><td>sponsors_he</td><td>character</td><td>Club sponsors in Hebrew, comma-separated.</td></tr><tr><td>sponsors</td><td>character</td><td>Club sponsors in English, comma-separated.</td></tr><tr><td>about_he</td><td>character</td><td>Club profile in Hebrew as HTML markup (honours, history); not stripped.</td></tr><tr><td>about</td><td>character</td><td>Club profile in English as HTML markup; null when the club has none.</td></tr><tr><td>facebook_url</td><td>character</td><td>Club Facebook page URL; null when none.</td></tr><tr><td>twitter_url</td><td>character</td><td>Club Twitter / X profile URL; null when none.</td></tr><tr><td>instagram_url</td><td>character</td><td>Club Instagram profile URL; null when none.</td></tr><tr><td>youtube_url</td><td>character</td><td>Club YouTube channel URL; null when none.</td></tr><tr><td>subscribe_url</td><td>character</td><td>Season-ticket subscription URL; null when none.</td></tr><tr><td>diary_url</td><td>character</td><td>Calendar-subscription (add-to-diary) URL of the club's fixtures.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>The IBBA wrappers read the Israel Basketball Association's ASP.NET web service at
-<code>basket.co.il/ws/ws.asmx</code> (the ops its own site calls): seasons, boards, teams, rosters,
-coaches, schedules and results, box scores from 2004-05, season stats and leaders of the
-Winner League (Israeli Premier League). They mirror sdv-py's
-<code>sportsdataverse.basketball.ibba</code> wrappers of the same names: same arguments, the same
-snake_case columns and types, one row per sdv-py row. The live box score, play-by-play and
-shot coordinates of a game are in the <code><a href="ibba_segev_game_info.html">ibba_segev_game_info()</a></code> family (Segev Stats).</p>
-<p><strong>Unofficial and unsupported.</strong> The web service is keyless, unofficial and reverse
-engineered. Requests are spaced at least one second apart per host (429 / 502 / 503 / 504
-are retried three times; an HTTP 500 is the host's deterministic error page, a stack
-trace, and is not retried); keep crawls slow and incremental. Contact details (e-mail,
-phone, fax) and coaches' dates of birth are dropped.</p>
-<p><strong>Seasons and ids.</strong> <code>season</code> is the END year and the host's own <code>cYear</code> (2026 = 2025-26):
-it is sent unchanged. <code>team_id</code> and <code>player_id</code> are per-SEASON registrations (Maccabi Tel
-Aviv = team 1109 in 2025-26, 2111 in 2026-27); the host has no cross-season person id (the
-stable player key is the Segev player id of the <code>ibba_segev_*()</code> family). <code>team_uid</code> is the
-stable club id (Maccabi = 10). A <code>0</code> means "all" where an argument says so; every parameter
-of an op is always sent.</p>
-<p><strong>Coverage.</strong> League box scores from 2004-05 (<code>season = 2005</code>). <code>external_id</code> and
-<code>segev_game_id</code> exist only from 2025-26 (earlier games carry no Segev id, so
-<code>segev_game_id</code> is <code>NA</code>). The women's league and Liga Leumit are NOT on this host. Every
-value on the wire is a string and Hebrew text is HTML-entity encoded: ids, counts and dates
-are cast and text is unescaped.</p>
-<p><strong>Errors</strong> are classed conditions, never a warning plus an empty frame: <code>hoopR_no_data</code>
-(HTTP 404, an empty body, which is what an unknown id answers, or an empty row list),
-<code>hoopR_bad_request</code> (HTTP 400 / 422, or an argument that is not a non-negative integer,
-a boolean or a non-empty string as the op needs) and <code>hoopR_asset_fetch</code> (any other
-failure: another status, a transport error, a body that is not JSON, an error or changed
-envelope, a row for another season, team, player, board or game, or a box score of a game
-that is not final). All inherit <code>hoopR_error</code>.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="ibba_configuration.html">ibba_configuration()</a></code>.</p>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/ibba_team.html">ibba_team</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, team_id <span class="op">=</span> <span class="fl">1109</span>, team_uid <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">

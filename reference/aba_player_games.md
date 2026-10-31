@@ -42,7 +42,8 @@ count) and `game` the short `Home-Away` pairing label. The stat columns
 are the box-score stats (`minutes` is `mm:ss`); the three `pts_*`
 columns are null here (the game log has no such columns). Every column
 below is always present (a zero-row tibble keeps them and their types);
-an answer with nothing in it raises `hoopR_no_data`, as in sdv-py.
+an answer with nothing in it raises `hoopR_no_data`, as in
+sportsdataverse-py.
 
 |  |  |  |
 |----|----|----|
@@ -86,10 +87,10 @@ an answer with nothing in it raises `hoopR_no_data`, as in sdv-py.
 
 Unofficial use of a public source: these wrappers read the leagues' own
 PHP sites (www.aba-liga.com, druga.aba-liga.com), keyless, with no bot
-wall; payloads are not redistributed as release assets.
-www.aba-liga.com/robots.txt is the single line `User-agent: *` (nothing
-disallowed, no Crawl-delay) and druga has no robots.txt; no terms page
-was found. The runtime waits at least 1 s per host before every request.
+wall. www.aba-liga.com/robots.txt is the single line `User-agent: *`
+(nothing disallowed, no Crawl-delay) and druga has no robots.txt; no
+terms page was found. The runtime waits at least 1 s per host before
+every request.
 
 Coverage: box scores from 2001-02; play-by-play, the starter and
 on-court markers, the shot chart and the minute-by-minute score from

@@ -156,29 +156,7 @@ competitions.</p></dd>
     <p>A <code>hoopR_data</code> tibble, one row per shot (<code>event_id</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>website_id</td><td>integer</td><td>Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self.</td></tr><tr><td>fixture_id</td><td>character</td><td>Game UUID (fixture); the key of every game frame and of the fixture_detail routes.</td></tr><tr><td>season_id</td><td>character</td><td>Season UUID of the game.</td></tr><tr><td>sequence</td><td>integer</td><td>1-based position of the shot among the shots of the game (not the pbp sequence).</td></tr><tr><td>event_id</td><td>character</td><td>Event UUID of the shot; the same event in atrium_pbp.</td></tr><tr><td>period_id</td><td>integer</td><td>Period number: 1-4 regulation, 11, 12, ... overtimes (not 5).</td></tr><tr><td>clock</td><td>character</td><td>Time REMAINING in the period as an ISO 8601 duration (PT10M0S at the start).</td></tr><tr><td>clock_seconds</td><td>integer</td><td>Seconds remaining in the period, parsed from clock.</td></tr><tr><td>entity_id</td><td>character</td><td>Team UUID the event is credited to.</td></tr><tr><td>side</td><td>character</td><td>Side of the game the row belongs to: home or away (from the fixture's isHome flag).</td></tr><tr><td>person_id</td><td>character</td><td>Player UUID of the shooter.</td></tr><tr><td>person_name</td><td>character</td><td>Name of the shooter.</td></tr><tr><td>bib</td><td>character</td><td>Jersey number of the player, as text; null for team events.</td></tr><tr><td>event_type</td><td>character</td><td>Event type: 2pt, 3pt, freeThrow, rebound, assist, steal, block, turnover, foul, substitution, timeOut, jumpBall, ... (language-independent).</td></tr><tr><td>event_sub_type</td><td>character</td><td>Event detail: jumpShot, layup, offensive, defensive, in, out, 1Of2, personal, ...; null when none.</td></tr><tr><td>description</td><td>character</td><td>The event's text in the site's language (e.g. Entre-deux remporte).</td></tr><tr><td>success</td><td>logical</td><td>True when the shot was made, false when missed.</td></tr><tr><td>success_label</td><td>character</td><td>The made / missed label in the site's language; sent on shot events only.</td></tr><tr><td>x</td><td>double</td><td>Shot location along the 28 m court length as percent of the court (0-100, origin at a corner); the home team attacks the low-x basket all game; LNBP and NBL1 clamp rim attempts to 5 / 95.</td></tr><tr><td>y</td><td>double</td><td>Shot location across the 15 m width as percent of the court (0-100); which sideline is 0 is unverified.</td></tr><tr><td>home_score</td><td>integer</td><td>Home team's running score after the event.</td></tr><tr><td>away_score</td><td>integer</td><td>Away team's running score after the event.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p><strong>Unofficial.</strong> This is the public endpoint the Sportradar Atrium / Synergy
-"Connect" widget calls from every visitor's browser (keyless; the host has no
-robots.txt). The data is Sportradar's and the leagues'. The wrappers read it on the
-caller's behalf, one request at least 1 s after the last to the host, and it is not
-republished as release assets. Keep crawls small and incremental.</p>
-<p><strong>Sites and seasons.</strong> <code>website_id</code> picks the league site; one site carries many
-competitions. Seasons are END years (<code>season = 2026</code>): the site's own year is the
-START year on LNB and the calendar year elsewhere, and a year can hold several
-competitions, so pair <code>season</code> with <code>competition_id</code> (see <code><a href="atrium_seasons.html">atrium_seasons()</a></code>) or
-pass <code>season_id</code>. <code><a href="atrium_end_year.html">atrium_end_year()</a></code> maps a site's own year to that END year, and
-<code><a href="atrium_season_id.html">atrium_season_id()</a></code> finds the season UUID.</p>
-<p><strong>Columns</strong> are configured per site: a statistic one site omits is <code>NA</code>. A key the
-documented columns do not list is appended with an inferred type. Player and team
-ids (UUIDs, character) are shared across sites; the player stat tables carry names
-only, so <code>person_id</code> there is decoded from the widget link beside each name.</p>
-<p><strong>Errors</strong> (classed conditions, all inheriting <code>hoopR_error</code>): <code>hoopR_no_data</code> when
-the site has nothing for the request (HTTP 404, no such season, an empty fixture
-list, a game with no play-by-play yet, or a fixture id the site does not serve: an
-unknown id or a game of another site, which the API answers alike with an empty
-fixture); <code>hoopR_bad_request</code> for HTTP 400 / 422 or an argument that cannot be
-mapped (an ambiguous END year, <code>season</code> with <code>season_id</code>); <code>hoopR_asset_fetch</code> for
-any other failed fetch, an error / stub body, or a body that belongs to another
-site, type, season, game, player or team than the one asked for.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="atrium_fixtures.html">atrium_fixtures()</a></code>.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -218,7 +196,7 @@ site, type, season, game, player or team than the one asked for.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">atrium_shots</span><span class="op">(</span>website_id <span class="op">=</span> <span class="fl">14</span>, fixture_id <span class="op">=</span> <span class="st">"0dc631bd-c34c-11f1-8d16-4d5a21afb79d"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── Atrium shots from embed-api.eui.connect.sportradar.com ─────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:10:09 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:27:11 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 129 × 22</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    website_id fixture_id             season_id sequence event_id period_id clock</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>

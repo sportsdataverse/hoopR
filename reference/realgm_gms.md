@@ -1,7 +1,7 @@
 # **RealGM NBA General Managers**
 
-**Get the current NBA general managers from
-[RealGM](https://basketball.realgm.com).**
+**Get the current NBA general managers from RealGM
+(basketball.realgm.com).**
 
 **Requires a headless browser** (see
 [`realgm_players()`](https://hoopR.sportsdataverse.org/reference/realgm_players.md)).

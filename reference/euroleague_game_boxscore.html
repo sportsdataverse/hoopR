@@ -163,9 +163,9 @@ the <code>game_code</code> column of <code><a href="euroleague_games.html">eurol
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
-wraps it (wrap-only: payloads are not redistributed as release assets). This
-function mirrors its sdv-py twin of the same name: same arguments, defaults
-and snake_case columns, one row per sdv-py row.</p>
+wraps it. This
+function mirrors its sportsdataverse-py twin of the same name: same arguments, defaults
+and snake_case columns, one row per sportsdataverse-py row.</p>
 <p>The live API's codes are space-padded fixed-width strings
 (<code>TEAM = "IST       "</code>); every string cell is stripped. Its "no such game"
 answer is an <strong>empty 200 body</strong>, returned as a zero-row tibble with the
@@ -200,7 +200,7 @@ documented columns (not an error). A 404 raises <code>hoopR_no_data</code>, a 40
 <span class="r-in"><span>    <span class="va">box</span><span class="op">[</span><span class="va">box</span><span class="op">$</span><span class="va">row_type</span> <span class="op">==</span> <span class="st">"player"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"team"</span>, <span class="st">"player"</span>, <span class="st">"minutes"</span>, <span class="st">"points"</span>, <span class="st">"valuation"</span><span class="op">)</span><span class="op">]</span></span></span>
 <span class="r-in"><span>  <span class="op">}</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── EuroLeague game box score from live.euroleague.net ─────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:12:45 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:29:43 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 24 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    team  player                minutes points valuation</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>

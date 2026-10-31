@@ -23,17 +23,20 @@ help you get started.
 1.  **Fork and clone** the repository
 2.  **Install dependencies**: Open the project in RStudio and run
     `devtools::install_deps(dependencies = TRUE)`
-3.  **Create a feature branch** from `devel`:
-    `git checkout -b feat/your-feature devel`
+3.  **Create a feature branch** from `main`:
+    `git checkout -b feat/your-feature main`
 
 ## Workflow
 
 ### Making Changes
 
 1.  Edit source code in `R/`
-2.  Regenerate docs: `devtools::document()`
-3.  Run tests: `devtools::test()`
-4.  Check the package: `devtools::check()`
+2.  Regenerate docs:
+    [`devtools::document()`](https://devtools.r-lib.org/reference/document.html)
+3.  Run tests:
+    [`devtools::test()`](https://devtools.r-lib.org/reference/test.html)
+4.  Check the package:
+    [`devtools::check()`](https://devtools.r-lib.org/reference/check.html)
 
 ### Adding a New NBA Stats API Endpoint
 
@@ -53,7 +56,9 @@ help you get started.
 3.  **Create a test** in `tests/testthat/` with `skip_on_cran()`,
     `skip_on_ci()`, `skip_nba_stats_test()` guards
 4.  **Update NEWS.md** with a description of the new function
-5.  Run `devtools::document()` to update NAMESPACE
+5.  Run
+    [`devtools::document()`](https://devtools.r-lib.org/reference/document.html)
+    to update NAMESPACE
 
 ## Naming Conventions
 
@@ -199,11 +204,11 @@ committing**:
 
 - **`NEWS.md`** — authoritative changelog for downstream users; rendered
   into the pkgdown changelog. **All new bullets go under the most recent
-  unreleased version heading** (currently `# **hoopR 3.0.0**`). Do NOT
+  unreleased version heading** (currently `# **hoopR 3.2.0**`). Do NOT
   create a new version section ahead of release. Add to or extend an
   existing subsection (`### Bug Fixes`, `### Deprecations`,
   `### Stability and Test Robustness`, etc.) instead of starting a new
-  one when the change is incremental. Once `3.0.0` ships to CRAN, the
+  one when the change is incremental. Once `3.2.0` ships to CRAN, the
   development version gets its own heading and the rule rolls forward.
 
 - **`cran-comments.md`** — what gets submitted to CRAN. Every behavioral
@@ -245,9 +250,12 @@ Use [Conventional Commits](https://www.conventionalcommits.org/):
 
 ## Pull Requests
 
-- Target the `devel` branch for development work
+- Target the `main` branch (the default branch; there is no separate
+  development branch)
 - Include a clear description of what changed and why
-- Ensure `devtools::check()` passes with no errors or warnings
+- Ensure
+  [`devtools::check()`](https://devtools.r-lib.org/reference/check.html)
+  passes with no errors or warnings
 - Add tests for new functions
 - Update NEWS.md
 

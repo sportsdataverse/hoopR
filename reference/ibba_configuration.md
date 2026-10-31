@@ -38,11 +38,11 @@ The IBBA wrappers read the Israel Basketball Association's ASP.NET web
 service at `basket.co.il/ws/ws.asmx` (the ops its own site calls):
 seasons, boards, teams, rosters, coaches, schedules and results, box
 scores from 2004-05, season stats and leaders of the Winner League
-(Israeli Premier League). They mirror sdv-py's
+(Israeli Premier League). They mirror sportsdataverse-py's
 `sportsdataverse.basketball.ibba` wrappers of the same names: same
-arguments, the same snake_case columns and types, one row per sdv-py
-row. The live box score, play-by-play and shot coordinates of a game are
-in the
+arguments, the same snake_case columns and types, one row per
+sportsdataverse-py row. The live box score, play-by-play and shot
+coordinates of a game are in the
 [`ibba_segev_game_info()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_game_info.md)
 family (Segev Stats).
 

@@ -62,9 +62,9 @@ A `hoopR_data` tibble with one row per shot:
 ## Details
 
 Unofficial, keyless API, not supported by Euroleague Basketball; hoopR
-only wraps it (wrap-only: payloads are not redistributed as release
-assets). This function mirrors sdv-py's `euroleague_game_points()`: same
-arguments, defaults and snake_case columns, one row per sdv-py row.
+only wraps it. This function mirrors sportsdataverse-py's
+`euroleague_game_points()`: same arguments, defaults and snake_case
+columns, one row per sportsdataverse-py row.
 
 **Coordinate frame**, as measured in the reference capture (E2025 game
 1, 158 rows; U2025 game 1, 176 rows):
@@ -125,7 +125,7 @@ Other Euroleague:
     shots[shots$id_action != "FTM", c("team", "id_action", "coord_x", "coord_y", "zone")]
   })
 #> ── EuroLeague game points (shot chart) from live.euroleague.net ────────────────
-#> ℹ Data updated: 2026-10-31 20:12:46 UTC
+#> ℹ Data updated: 2026-10-31 21:29:45 UTC
 #> # A tibble: 131 × 5
 #>    team  id_action coord_x coord_y zone 
 #>    <chr> <chr>       <int>   <int> <chr>

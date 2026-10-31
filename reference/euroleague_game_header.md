@@ -85,9 +85,9 @@ A `hoopR_data` tibble with one row (the game):
 ## Details
 
 Unofficial, keyless API, not supported by Euroleague Basketball; hoopR
-only wraps it (wrap-only: payloads are not redistributed as release
-assets). This function mirrors its sdv-py twin of the same name: same
-arguments, defaults and snake_case columns, one row per sdv-py row.
+only wraps it. This function mirrors its sportsdataverse-py twin of the
+same name: same arguments, defaults and snake_case columns, one row per
+sportsdataverse-py row.
 
 The live API's codes are space-padded fixed-width strings
 (`TEAM = "IST "`); every string cell is stripped. Its "no such game"
@@ -122,7 +122,7 @@ Other Euroleague:
     euroleague_game_header(game_code = 1, season_code = "E2025")
   })
 #> ── EuroLeague game header from live.euroleague.net ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:12:45 UTC
+#> ℹ Data updated: 2026-10-31 21:29:44 UTC
 #> # A tibble: 1 × 44
 #>   live  round date    hour  stadium capacity team_a team_b code_team_a tv_code_a
 #>   <lgl> <chr> <chr>   <chr> <chr>   <chr>    <chr>  <chr>  <chr>       <chr>    

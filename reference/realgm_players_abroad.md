@@ -1,7 +1,7 @@
 # **RealGM NBA Players Abroad**
 
 **Get the list of NBA-affiliated players currently playing overseas from
-[RealGM](https://basketball.realgm.com).**
+RealGM (basketball.realgm.com).**
 
 RealGM tracks NBA draft picks, two-way and free-agent players who are on
 international rosters – a view no first-party NBA/ESPN endpoint

@@ -134,24 +134,7 @@ World Cup, 112 = BCL tier 1, 211 = EuroLeague Women.</p></dd>
     <p>A <code>hoopR_data</code> tibble (the raw JSON list when <code>return_parsed = FALSE</code>) with the following columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>team_name</td><td>character</td><td>Team name (country or club).</td></tr><tr><td>organisation_id</td><td>integer</td><td>Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_<code>&lt;id&gt;</code>.</td></tr><tr><td>fiba_code</td><td>character</td><td>FIBA three-letter country code (GER, USA; historic URS, YUG).</td></tr><tr><td>team_zone_code</td><td>character</td><td>Zone code of the team (E Europe, NAM Americas north...).</td></tr><tr><td>rank</td><td>integer</td><td>Rank (1 = first).</td></tr><tr><td>total_first_rank</td><td>integer</td><td>Gold medals (first places).</td></tr><tr><td>total_second_rank</td><td>integer</td><td>Number of silver medals the federation has won in the competition family.</td></tr><tr><td>total_third_rank</td><td>integer</td><td>Number of bronze medals the federation has won in the competition family.</td></tr><tr><td>total_participations</td><td>integer</td><td>Editions played.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>FIBA's terms restrict this source. The GDAP developer-portal terms limit API use to 'Authorized Users'
-(federations, organisers, FIBA partners) and say any broader use 'is not authorised'; the fiba.basketball
-terms say no portion of the site may be duplicated, redistributed or manipulated. The package owner reviewed
-both clauses on 2026-10-12, accepted them and approved the full intake, published data releases included.
-Users who are not themselves authorised by FIBA should check the terms before using the wrappers.</p>
-<p>The GDAP subscription key is public (fiba.basketball ships it in every page); the runtime reads it from the
-live page at run time and never logs it. Officials' contact details and coaches' and officials' dates of
-birth are dropped from every body.</p>
-<p>Id key spaces: competition_id is one per edition (2023 World Cup = 208182) and game_id is global across
-competitions (the <code>&lt;gameId&gt;</code> of a game-page URL). team_id is per team per competition (Germany is 279569 at
-the 2023 World Cup and 281545 at Paris 2024), while organisation_id is the stable federation or club (64 =
-Germany, every year); the game page's T_<code>&lt;id&gt;</code> and the play-by-play oId are organisation ids, not team ids.</p>
-<p>Errors are classed conditions (all inherit <code>hoopR_error</code>): <code>hoopR_no_data</code> when FIBA has nothing (HTTP 404,
-or GDAP answers <code><a href="https://rdrr.io/r/base/Paren.html" class="external-link">{}</a></code> / <code>[]</code> for an unknown id); <code>hoopR_bad_request</code> for HTTP 400 / 422 or a malformed id,
-season or date; <code>hoopR_asset_fetch</code> for any other failed fetch or an answer that is not about the request (an
-error envelope, HTTP 401 after a key refresh, HTTP 500, a body for another game, competition, team, player,
-federation, family or season). Seasons are FIBA's own key, which equals the sdv key: the END year for club
-competitions, the event year for national-team events, the target tournament year for qualifiers.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="fiba_gdap_awards.html">fiba_gdap_awards()</a></code>.</p>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/fiba_gdap_medal_count.html">fiba_gdap_medal_count</a></span><span class="op">(</span>family_id <span class="op">=</span> <span class="fl">201</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">

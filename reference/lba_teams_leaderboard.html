@@ -131,32 +131,12 @@ Endpoint: GET https://www.legabasket.it/api/statistics/get-teams-statistics-by-t
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Season team leaderboards, offensive or defensive, one row per team and category. The
-columns are always these, in this order (sdv-py <code>lba_teams_leaderboard</code>); a column the site adds later is
+columns are always these, in this order (sportsdataverse-py <code>lba_teams_leaderboard</code>); a column the site adds later is
 appended after them:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2027 = 2026-27): the row's START year + 1.</td></tr><tr><td>category</td><td>character</td><td>Category of this row (the <code>cat</code> param, e.g. <code>points</code>).</td></tr><tr><td>name</td><td>character</td><td>Given name (players) / team name (teams).</td></tr><tr><td>sponsor_name</td><td>character</td><td>Sponsor name (empty or null in the samples).</td></tr><tr><td>short_name</td><td>character</td><td>Short name of the team, e.g. BC Roma.</td></tr><tr><td>tv_name</td><td>character</td><td>Short team name for TV graphics.</td></tr><tr><td>year</td><td>integer</td><td>Season START year (2026 = 2026-27); sdv END year = year + 1.</td></tr><tr><td>logo_key</td><td>character</td><td>Image key: the image is <code>{cdn_url}/{key}</code>, resized copies <code>{cdn_url}/variants/{key}/thumb</code> or <code>/large</code> (the site's getApiImageUrl).</td></tr><tr><td>attempts</td><td>integer</td><td>Shots attempted in the zone, parsed from num.</td></tr><tr><td>total_played_matches</td><td>integer</td><td>Games the team has played, counted for the leaderboard.</td></tr><tr><td>total_points</td><td>integer</td><td>Points scored (offensive) or allowed (defensive) in the season.</td></tr><tr><td>minutes</td><td>integer</td><td>Minutes per game (players: decimal string <code>28.67</code>) / total minutes (teams: integer).</td></tr><tr><td>score_40_min</td><td>double</td><td>Value per 40 minutes.</td></tr><tr><td>score</td><td>double</td><td>Value in the category under the <code>ob</code> order (default <code>avg</code> = per game); players send a decimal string, teams a number.</td></tr><tr><td>team_id</td><td>integer</td><td>Team id (team-season).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial and unsupported: these wrappers read the JSON API that the Next.js site www.legabasket.it itself
-calls. Legal notice: the site's terms say "Non e' consentito copiare ... dati e informazioni senza
-autorizzazione scritta" (copying data and information without written authorisation is not allowed), except for
-personal, non-commercial use. The owner accepted the restriction for this intake on 2026-10-12. Payloads are
-not redistributed as release assets, and any published data release of this source needs separate sign-off.</p></li>
-<li><p>robots.txt allows /api and sets Crawl-delay: 2. The runtime waits 2 s before every request, retries included.
-Crawl incrementally: fetch a final game once (keyed by game_id), find new games with one lba_calendar call per
-round, and do not backfill a history in a burst.</p></li>
-<li><p>Seasons are END years (2027 = 2026-27); the site sends START years and the runtime maps them (season - 1 on the
-wire). Game and player ids are global; team ids are re-issued every season (join lba_teams for the stable
-club_id); a championship id is one season AND one phase (Regular Season and Play Off differ).</p></li>
-<li><p>Play-by-play starts in 2017-18 and changes shape in 2019-20 (pixel frame to court percent) and 2021-22; see
-lba_pbp. Box scores reach back to 1995-96, where the period scores were not recorded (0 means missing).</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, or a body with no rows:
-an unknown season, a play-by-play before 2017-18, standings of a finished championship without a round),
-<code>hoopR_bad_request</code> (a season that is not an END year, a bad choice, HTTP 400 / 422) and <code>hoopR_asset_fetch</code>
-(any other non-2xx, a connection failure after retries, an empty / non-JSON / error-shaped 200, a game that is
-not final on the box score, play-by-play and shot routes, a truncated page, or a body for another season,
-championship, game, team, player, round or category than the one asked for). An unknown id is HTTP 500, which
-is not retried. A body the parser finds no rows in gives a zero-row tibble with these columns.</p></li>
-</ul><p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lba_teams_leaderboard.html">lba_teams_leaderboard</a></span><span class="op">(</span>board <span class="op">=</span> <span class="st">"teams_offensive"</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span></span></code></pre><p></p></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="lba_championships.html">lba_championships()</a></code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/lba_teams_leaderboard.html">lba_teams_leaderboard</a></span><span class="op">(</span>board <span class="op">=</span> <span class="st">"teams_offensive"</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

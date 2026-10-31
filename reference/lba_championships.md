@@ -24,8 +24,8 @@ lba_championships(season = NULL)
 
 A `hoopR_data` tibble: Championships of a season, one per phase (Regular
 Season, Play Off); every season when none is given. The columns are
-always these, in this order (sdv-py `lba_championships`); a column the
-site adds later is appended after them:
+always these, in this order (sportsdataverse-py `lba_championships`); a
+column the site adds later is appended after them:
 
 |  |  |  |
 |----|----|----|
@@ -52,9 +52,8 @@ site adds later is appended after them:
   terms say "Non e' consentito copiare ... dati e informazioni senza
   autorizzazione scritta" (copying data and information without written
   authorisation is not allowed), except for personal, non-commercial
-  use. The owner accepted the restriction for this intake on 2026-10-12.
-  Payloads are not redistributed as release assets, and any published
-  data release of this source needs separate sign-off.
+  use. Use the data accordingly, and check the terms before you
+  republish it.
 
 - robots.txt allows /api and sets Crawl-delay: 2. The runtime waits 2 s
   before every request, retries included. Crawl incrementally: fetch a
@@ -113,7 +112,7 @@ Other LBA Functions:
 # \donttest{
   try(lba_championships(season = 2027))
 #> ── LBA Championships from legabasket.it ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:18:59 UTC
+#> ℹ Data updated: 2026-10-31 21:31:33 UTC
 #> # A tibble: 1 × 14
 #>   season championship_id  year name                  status championship_type_id
 #>    <int>           <int> <int> <chr>                  <int>                <int>

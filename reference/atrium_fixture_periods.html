@@ -150,29 +150,7 @@ competitions.</p></dd>
     <p>A <code>hoopR_data</code> tibble, one row per <code>(fixture_id, period_id)</code>:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>website_id</td><td>integer</td><td>Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self.</td></tr><tr><td>fixture_id</td><td>character</td><td>Game UUID (fixture); the key of every game frame and of the fixture_detail routes.</td></tr><tr><td>season_id</td><td>character</td><td>Season UUID of the game.</td></tr><tr><td>period_id</td><td>integer</td><td>Period number: 1-4 regulation, 11, 12, ... overtimes (not 5).</td></tr><tr><td>label</td><td>character</td><td>Short period label in the site's language (Q1, P1), as sent.</td></tr><tr><td>is_overtime</td><td>logical</td><td>True for an overtime period.</td></tr><tr><td>is_shootout</td><td>logical</td><td>True for a shootout period.</td></tr><tr><td>started</td><td>logical</td><td>True once the period has started.</td></tr><tr><td>ended</td><td>logical</td><td>True once the period has ended.</td></tr><tr><td>duration_minutes</td><td>integer</td><td>Length of the period in minutes.</td></tr><tr><td>elapsed_minutes_before_period</td><td>integer</td><td>Minutes of game time played before the period starts (40 for the first overtime).</td></tr><tr><td>home_entity_id</td><td>character</td><td>Team UUID of the home team, from the fixture's isHome flag.</td></tr><tr><td>away_entity_id</td><td>character</td><td>Team UUID of the away team, from the fixture's isHome flag.</td></tr><tr><td>home_points</td><td>integer</td><td>Points the home team scored in this period (not the running score).</td></tr><tr><td>away_points</td><td>integer</td><td>Points the away team scored in this period (not the running score).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p><strong>Unofficial.</strong> This is the public endpoint the Sportradar Atrium / Synergy
-"Connect" widget calls from every visitor's browser (keyless; the host has no
-robots.txt). The data is Sportradar's and the leagues'. The wrappers read it on the
-caller's behalf, one request at least 1 s after the last to the host, and it is not
-republished as release assets. Keep crawls small and incremental.</p>
-<p><strong>Sites and seasons.</strong> <code>website_id</code> picks the league site; one site carries many
-competitions. Seasons are END years (<code>season = 2026</code>): the site's own year is the
-START year on LNB and the calendar year elsewhere, and a year can hold several
-competitions, so pair <code>season</code> with <code>competition_id</code> (see <code><a href="atrium_seasons.html">atrium_seasons()</a></code>) or
-pass <code>season_id</code>. <code><a href="atrium_end_year.html">atrium_end_year()</a></code> maps a site's own year to that END year, and
-<code><a href="atrium_season_id.html">atrium_season_id()</a></code> finds the season UUID.</p>
-<p><strong>Columns</strong> are configured per site: a statistic one site omits is <code>NA</code>. A key the
-documented columns do not list is appended with an inferred type. Player and team
-ids (UUIDs, character) are shared across sites; the player stat tables carry names
-only, so <code>person_id</code> there is decoded from the widget link beside each name.</p>
-<p><strong>Errors</strong> (classed conditions, all inheriting <code>hoopR_error</code>): <code>hoopR_no_data</code> when
-the site has nothing for the request (HTTP 404, no such season, an empty fixture
-list, a game with no play-by-play yet, or a fixture id the site does not serve: an
-unknown id or a game of another site, which the API answers alike with an empty
-fixture); <code>hoopR_bad_request</code> for HTTP 400 / 422 or an argument that cannot be
-mapped (an ambiguous END year, <code>season</code> with <code>season_id</code>); <code>hoopR_asset_fetch</code> for
-any other failed fetch, an error / stub body, or a body that belongs to another
-site, type, season, game, player or team than the one asked for.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="atrium_fixtures.html">atrium_fixtures()</a></code>.</p>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/atrium_fixture_periods.html">atrium_fixture_periods</a></span><span class="op">(</span>website_id <span class="op">=</span> <span class="fl">14</span>, fixture_id <span class="op">=</span> <span class="st">"0dc631bd-c34c-11f1-8d16-4d5a21afb79d"</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">

@@ -129,7 +129,7 @@ One row per competition-season. year is the Genius year (START year for a two-ye
 <dt id="arg-return-parsed">return_parsed<a class="anchor" aria-label="anchor" href="#arg-return-parsed"></a></dt>
 <dd><p>Parse into a tibble (default <code>TRUE</code>); <code>FALSE</code> returns the parsed body or
 page record (a list): <code>data.json</code> as served plus <code>_request</code> (the ids asked for), or the
-sdv-internal-refs capture shape of a page.</p></dd>
+record parsed from an HTML page.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -144,7 +144,7 @@ datacenter IPs on the LiveStats and hosted hosts: from a server set
 proxy URL (never printed or logged). Requests are spaced at least one second apart
 per host; keep crawls slow and incremental. Some league sites (the NZ NBL) forbid AI
 crawlers in their own robots.txt, which does not cover these hosts. Unofficial use of a
-public source: payloads are not redistributed as release assets.</p>
+public source.</p>
 <p><strong>Org and season.</strong> Every competition is an ORG code plus a competition id
 (<code>comp_id</code>): <code>genius_competitions()</code> lists an org's competitions with the sdv END-year
 <code>season</code> (a START-year org lists 2025-26 as season 2026), <code><a href="genius_match_competition.html">genius_match_competition()</a></code>
@@ -191,7 +191,7 @@ or ORG.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">genius_competitions</span><span class="op">(</span>org <span class="op">=</span> <span class="st">"ESAKE"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── Genius LiveStats competitions ──────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:13:32 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:30:36 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 47 × 8</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    org   comp_id label               league_id  year season season_rule selected</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   </span>

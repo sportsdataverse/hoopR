@@ -167,39 +167,7 @@ Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs,
     <p>A <code>hoopR_data</code> tibble with these columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26), the feed's Year (the START year) plus one.</td></tr><tr><td>tab</td><td>integer</td><td>Division tab: 1 = B1, 2 = B2, 3 = B3.</td></tr><tr><td>event</td><td>integer</td><td>Competition type of the page: 2 B1 league, 3 B1 Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs, 11 B1-B2 promotion/relegation, 15 B3 league, 32 B3 playoffs.</td></tr><tr><td>schedule_key</td><td>integer</td><td>B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The {schedule_key} every game wrapper takes and the schedule page's list-item id.</td></tr><tr><td>date</td><td>Date</td><td>Local game date, derived from the requested month and day (September to June; months 7-12 fall in the season's START year).</td></tr><tr><td>round_label</td><td>character</td><td>Round label as printed in Japanese, 'dai N setsu' (round N); playoffs print other labels.</td></tr><tr><td>round</td><td>integer</td><td>Round number parsed from round_label; null when the label is not 'dai N setsu' (round N).</td></tr><tr><td>home_team_id</td><td>character</td><td>Home club TeamID as text, mapped from the page's club filter. B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id.</td></tr><tr><td>home_team</td><td>character</td><td>Home club short name in Japanese as the page prints it (e.g. Osaka).</td></tr><tr><td>home_score</td><td>integer</td><td>Home final score; null for a game without one.</td></tr><tr><td>away_team_id</td><td>character</td><td>Away club TeamID as text, mapped from the page's club filter. B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id.</td></tr><tr><td>away_team</td><td>character</td><td>Away club short name in Japanese as the page prints it (e.g. San-en).</td></tr><tr><td>away_score</td><td>integer</td><td>Away final score; null for a game without one.</td></tr><tr><td>prefecture</td><td>character</td><td>Prefecture of the venue in Japanese (e.g. Osaka Prefecture); null when the page gives none.</td></tr><tr><td>venue</td><td>character</td><td>Venue name in Japanese, abbreviated by the page (e.g. Ookini for Osaka Edion Arena).</td></tr><tr><td>tip_time</td><td>character</td><td>Tip-off time 'HH:MM' in JST (no offset on the page); null when absent.</td></tr><tr><td>state</td><td>character</td><td>Score-state label on the page (FINAL for a finished game); null when absent.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>The B.LEAGUE (Japan Professional Basketball League: B1, B2, B3) wrappers mirror
-sdv-py's <code>sportsdataverse.basketball.bleague</code> wrappers of the same names: same
-arguments, the same snake_case columns and types, one row per sdv-py row.</p>
-<p><strong>Unofficial and unsupported.</strong> The game contexts are JSON objects in
-B.LEAGUE's own public S3 bucket (<code>b-league.s3.amazonaws.com</code>, the store its game
-pages read), and the schedule, standings and game_detail pages of
-<code>www.bleague.jp</code> are parsed here. Neither host publishes terms for this use
-(the site's /terms/ answers 404; robots.txt sets a Crawl-delay only for msnbot
-and bingbot). Requests are spaced at least one second apart per host; 429 and
-5xx answers are retried (three attempts). SportsDataverse has not ruled on the
-site's terms, so the data is not redistributed as release assets.</p>
-<p><strong>Seasons</strong> are END years (<code>season = 2026</code> is 2025-26); the site's own <code>Year</code> /
-<code>year=</code> is the START year, so the request sends <code>year = season - 1</code>. Game
-wrappers take the global <code>schedule_key</code> (one integer sequence across B1, B2, B3
-and every season: 1 = the 2016-17 opener, 5856 in 2020-21, 500017 in 2022-23,
-504734 / 505508 B1 / B2 and 10693 B3 in 2025-26); list a day's keys with
-<code>bleague_schedule()</code>.</p>
-<p><strong>Feeds.</strong> A game is read from the v2 feed (B1/B2 from 2020-21), else the v1
-feed (B3 and B1/B2 2018-2020), else the game page's embedded copy (the only
-source of 2016-17 and 2017-18), decided at run time. v2 ids are strings, v1 ids
-integers: both become text here. v1 adds leaders and the score track; the
-team-rebound codes 18 / 19 are swapped between the feeds and a v1 substitution
-is one row where v2 has two. Player and team names are Japanese (English names
-only on the box score and header). Game wrappers serve FINISHED games only.
-Each game wrapper fetches the context itself (two requests): fetch once per
-game per wrapper you need.</p>
-<p><strong>Errors</strong> are classed conditions, never a warning plus an empty frame:
-<code>hoopR_no_data</code> (no source holds the game, a schedule day without games, HTTP
-404), <code>hoopR_bad_request</code> (a non-integer or out-of-range argument, HTTP 400 /
-422) and <code>hoopR_asset_fetch</code> (any other failure: another status, a transport
-error, a non-JSON or non-HTML body, an error or changed body, an unfinished
-game, a context or page for another game, season, tab or day, a truncated
-schedule list, or layout drift). All inherit <code>hoopR_error</code>.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="bleague_game_info.html">bleague_game_info()</a></code>.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -224,7 +192,7 @@ schedule list, or layout drift). All inherit <code>hoopR_error</code>.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">bleague_schedule</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2026</span>, tab <span class="op">=</span> <span class="fl">1</span>, month <span class="op">=</span> <span class="fl">10</span>, day <span class="op">=</span> <span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── B.LEAGUE schedule from www.bleague.jp ──────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:10:20 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:27:23 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 12 × 17</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season   tab event schedule_key date       round_label round home_team_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>

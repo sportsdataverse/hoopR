@@ -4,24 +4,24 @@ Loads season-level NBA player-impact ratings – one row per
 player-team-season, combining regularized adjusted plus-minus (RAPM),
 statistical plus-minus (SPM), box plus-minus (BPM), wins above
 replacement (WAR), and a DARKO-style skill/projection pair. Produced by
-the sdv-py NBA/WNBA possession-engine model program; published to the
-`nba_player_impact` release tag as csv/parquet/rds.
+the sportsdataverse-py NBA/WNBA possession-engine model program;
+published to the `nba_player_impact` release tag as csv/parquet/rds.
 
 Loads season-level NCAA men's college basketball player-value ratings –
 one row per player-team-season, with a box-score-derived
 offensive/defensive/net box plus-minus (BPM). Coverage starts at 2006
 (the earliest season with published box-score inputs of sufficient
 quality for the model); this tag is parquet-only, with no csv/rds
-sibling assets. Produced by the sdv-py NCAA MBB model program; published
-to the `mbb_player_value` release tag.
+sibling assets. Produced by the sportsdataverse-py NCAA MBB model
+program; published to the `mbb_player_value` release tag.
 
 Loads season-level NCAA men's college basketball team ratings – one row
 per team-season, with adjusted (opponent-strength-normalized)
 offensive/defensive efficiency, adjusted tempo, raw efficiency, and a
 national rank. A KenPom-style adjusted-efficiency-margin rating. This
 tag is parquet-only, with no csv/rds sibling assets. Produced by the
-sdv-py NCAA MBB model program; published to the `mbb_ratings` release
-tag.
+sportsdataverse-py NCAA MBB model program; published to the
+`mbb_ratings` release tag.
 
 ## Usage
 

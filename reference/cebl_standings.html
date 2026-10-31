@@ -127,38 +127,12 @@ Endpoint: GET https://api.data.cebl.ca/teams/{season}/"><meta property="og:image
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Standings of one season, one row per team: record, home/away splits, games behind, streak.
-An empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sdv-py
+An empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py
 <code>cebl_standings</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season: the calendar year it is played in (May to August) = the sdv END year (2025). Taken from the request (the body does not echo it); null for the all-time table and for a bare body.</td></tr><tr><td>team_id</td><td>integer</td><td>CEBL team id (its own key space; not a Genius id). Joins /teams/ <code>id</code>, the games' <code>home_team_id</code> / <code>away_team_id</code>, <code>team_id</code> in player rows and the <code>team_id</code> / <code>vs_team_id</code> params. A relocated or renamed franchise has a second id: the Stats Hub groups 15+56 (Saskatchewan Rattlers, Saskatoon Mamba), 17+53 (Calgary Surge, Guelph Nighthawks), 19+55 (Brampton, Hamilton Honey Badgers) and 16+54 (Vancouver, Fraser Valley Bandits).</td></tr><tr><td>name_en</td><td>character</td><td>Team full name in English ('Niagara River Lions').</td></tr><tr><td>short_name_en</td><td>character</td><td>Team short name in English, usually the city ('Niagara').</td></tr><tr><td>name_fr</td><td>character</td><td>Team full name in French ('River Lions de Niagara').</td></tr><tr><td>short_name_fr</td><td>character</td><td>Team short name in French, usually the city.</td></tr><tr><td>conference</td><td>character</td><td>Conference: EAST or WEST.</td></tr><tr><td>position</td><td>integer</td><td>Rank in the team's conference standings (1 = first), not a playing position.</td></tr><tr><td>played</td><td>integer</td><td>Regular-season games played (24 a team in 2025).</td></tr><tr><td>wins</td><td>integer</td><td>Regular-season games won.</td></tr><tr><td>win_percentage</td><td>double</td><td>Win fraction, 0-1 (0.583), not a percentage; the API sends a decimal string.</td></tr><tr><td>home_wins</td><td>integer</td><td>Regular-season home games won.</td></tr><tr><td>away_wins</td><td>integer</td><td>Regular-season away games won.</td></tr><tr><td>losses</td><td>integer</td><td>Regular-season games lost.</td></tr><tr><td>home_losses</td><td>integer</td><td>Regular-season home games lost.</td></tr><tr><td>away_losses</td><td>integer</td><td>Regular-season away games lost.</td></tr><tr><td>games_behind</td><td>double</td><td>Games behind the conference leader; the API sends a decimal string ('0.0').</td></tr><tr><td>points_difference</td><td>integer</td><td>Points scored minus points allowed over the season. An integer.</td></tr><tr><td>last_five</td><td>character</td><td>Record in the last 5 games, 'W-L' ('4-1').</td></tr><tr><td>streak</td><td>character</td><td>Current streak: W or L and its length ('W4', 'L1').</td></tr><tr><td>logo_url</td><td>character</td><td>Team logo URL (icon with the team name) on Google Cloud Storage.</td></tr><tr><td>icon_url</td><td>character</td><td>Team icon URL (without the team name) on Google Cloud Storage.</td></tr><tr><td>tickets_url_en</td><td>character</td><td>Ticket-sales page for the team's home games (English).</td></tr><tr><td>tickets_url_fr</td><td>character</td><td>Ticket-sales page for the team's home games (French).</td></tr><tr><td>website_url_en</td><td>character</td><td>The team's own website (English).</td></tr><tr><td>website_url_fr</td><td>character</td><td>The team's own website (French).</td></tr><tr><td>shop_url_en</td><td>character</td><td>The team's merchandise shop (English).</td></tr><tr><td>shop_url_fr</td><td>character</td><td>The team's merchandise shop (French).</td></tr><tr><td>stats_url_en</td><td>character</td><td>The team's stats page on cebl.ca (<code>https://cebl.ca/stats/{slug}</code>).</td></tr><tr><td>stats_url_fr</td><td>character</td><td>The team's stats page on the French cebl.ca (<code>https://cebl.ca/fr-ca/stats/{slug}</code>).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>CEBL own API, owner-approved gray area: these wrappers read the league's own FastAPI service (api.data.cebl.ca,
-the backend of the CEBL Stats Hub) with the X-Api-Key that the hub's own page bundle ships to every browser.
-The key is not issued to third parties and no developer terms were found; cebl.ca's terms of use were not
-reviewed. The runtime reads the key from the bundle at run time, falls back to a documented constant, never
-prints it, and raises <code>hoopR_asset_fetch</code> with a 'key rotated?' hint on a persistent 401.
-www.cebl.ca/robots.txt disallows nothing. Payloads are not redistributed as release assets; requests are spaced
-at least 1 s apart.</p></li>
-<li><p>Season is the calendar year (May to August) = the sdv END year: no mapping. The first season is 2019. An
-unknown season, team or player answers an empty list, which the runtime raises as <code>hoopR_no_data</code>. Ids are
-CEBL's own; a relocated franchise has two team ids (cebl_teams lists all 15).</p></li>
-<li><p>This API has no box-score, play-by-play or shot route. They live in Genius LiveStats (organisation CEBL, see
-the genius family): cebl_games and cebl_player_gamelog carry the Genius match id as genius_match_id, parsed
-from the stats URLs (derived, not fetched; the match of a cancelled game may have no data). home_team_id is
-Genius team 1 and away_team_id team 2 (checked on match 2600563).</p></li>
-<li><p>Some completed schedule rows have null scores (2026), and a cancelled game has status CANELLED (the API's
-spelling) with null or zero scores. The schedule lists unplayed games too, so no wrapper refuses an unfinished
-game. Aggregates are decimal strings upstream and double here. Players' names, nationality and birth date are
-the public bio; no contact data is served.</p></li>
-<li><p>Errors are classed conditions: <code>hoopR_no_data</code> (HTTP 404, an empty list, an all-null profile: an unknown
-season, team or player), <code>hoopR_bad_request</code> (a bad argument, HTTP 400 / 422) and <code>hoopR_asset_fetch</code> (a key
-the API still refuses after one re-read, any other non-200, a non-JSON body, an error envelope, a body for
-another season, team or player), all inheriting <code>hoopR_error</code>. HTTP 500 is the API's answer to a bad id and is
-not retried. Wrappers raise; they never return an empty frame.</p></li>
-<li><p>Deliberate divergence: a string column that the API sends as an object, or a list of objects, carries compact
-JSON here (<code>{"name":"TSN"}</code>), where sdv-py's String cast writes Python's <code>str(dict)</code> repr (<code>{'name': 'TSN'}</code>).
-No string column of the committed fixtures carries an object.</p></li>
-</ul></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="cebl_seasons.html">cebl_seasons()</a></code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other CEBL Functions:
@@ -180,7 +154,7 @@ No string column of the committed fixtures carries an object.</p></li>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cebl_standings</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── CEBL Standings from the CEBL Stats API ─────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:11:10 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:28:00 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 30</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season team_id name_en         short_name_en name_fr short_name_fr conference</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>

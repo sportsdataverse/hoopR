@@ -130,31 +130,11 @@ Endpoint: GET https://www.legabasket.it/api/players/get-players (items=50&amp;am
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Players of a season, 50 per page (walk the pages with page). The columns are always these,
-in this order (sdv-py <code>lba_players</code>); a column the site adds later is appended after them:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2027 = 2026-27): the row's START year + 1.</td></tr><tr><td>player_id</td><td>integer</td><td>Player id (global).</td></tr><tr><td>name</td><td>character</td><td>Player's given name.</td></tr><tr><td>surname</td><td>character</td><td>Player's family name.</td></tr><tr><td>code</td><td>character</td><td>Player code <code>SURNAME3-NAME3-YY</code>.</td></tr><tr><td>team_name</td><td>character</td><td>Team name in that season, with its sponsor (<code>Nutribullet Treviso Basket</code>); changes with the sponsor.</td></tr><tr><td>year</td><td>integer</td><td>Season START year (2026 = 2026-27); sdv END year = year + 1. The season of the team the row places the player on.</td></tr><tr><td>player_picture_key</td><td>character</td><td>Image key: the image is <code>{cdn_url}/{key}</code>, resized copies <code>{cdn_url}/variants/{key}/thumb</code> or <code>/large</code> (the site's getApiImageUrl).</td></tr></table></div>
+in this order (sportsdataverse-py <code>lba_players</code>); a column the site adds later is appended after them:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2027 = 2026-27): the row's START year + 1.</td></tr><tr><td>player_id</td><td>integer</td><td>Player id (global).</td></tr><tr><td>name</td><td>character</td><td>Player's given name.</td></tr><tr><td>surname</td><td>character</td><td>Player's family name.</td></tr><tr><td>code</td><td>character</td><td>Player code <code>SURNAME3-NAME3-YY</code>.</td></tr><tr><td>team_name</td><td>character</td><td>Team name in that season, with its sponsor (<code>Nutribullet Treviso Basket</code>); changes with the sponsor.</td></tr><tr><td>year</td><td>integer</td><td>Season START year (2026 = 2026-27); sdv END year = year + 1. The season of the team the row places the player on.</td></tr><tr><td>player_picture_key</td><td>character</td><td>Image key: the image is <code>{cdn_url}/{key}</code>, resized copies <code>{cdn_url}/variants/{key}/thumb</code> or <code>/large</code> (the site's getApiImageUrl).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial and unsupported: these wrappers read the JSON API that the Next.js site www.legabasket.it itself
-calls. Legal notice: the site's terms say "Non e' consentito copiare ... dati e informazioni senza
-autorizzazione scritta" (copying data and information without written authorisation is not allowed), except for
-personal, non-commercial use. The owner accepted the restriction for this intake on 2026-10-12. Payloads are
-not redistributed as release assets, and any published data release of this source needs separate sign-off.</p></li>
-<li><p>robots.txt allows /api and sets Crawl-delay: 2. The runtime waits 2 s before every request, retries included.
-Crawl incrementally: fetch a final game once (keyed by game_id), find new games with one lba_calendar call per
-round, and do not backfill a history in a burst.</p></li>
-<li><p>Seasons are END years (2027 = 2026-27); the site sends START years and the runtime maps them (season - 1 on the
-wire). Game and player ids are global; team ids are re-issued every season (join lba_teams for the stable
-club_id); a championship id is one season AND one phase (Regular Season and Play Off differ).</p></li>
-<li><p>Play-by-play starts in 2017-18 and changes shape in 2019-20 (pixel frame to court percent) and 2021-22; see
-lba_pbp. Box scores reach back to 1995-96, where the period scores were not recorded (0 means missing).</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, or a body with no rows:
-an unknown season, a play-by-play before 2017-18, standings of a finished championship without a round),
-<code>hoopR_bad_request</code> (a season that is not an END year, a bad choice, HTTP 400 / 422) and <code>hoopR_asset_fetch</code>
-(any other non-2xx, a connection failure after retries, an empty / non-JSON / error-shaped 200, a game that is
-not final on the box score, play-by-play and shot routes, a truncated page, or a body for another season,
-championship, game, team, player, round or category than the one asked for). An unknown id is HTTP 500, which
-is not retried. A body the parser finds no rows in gives a zero-row tibble with these columns.</p></li>
-</ul></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="lba_championships.html">lba_championships()</a></code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other LBA Functions:
@@ -183,7 +163,7 @@ is not retried. A body the parser finds no rows in gives a zero-row tibble with 
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">lba_players</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── LBA Players from legabasket.it ─────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:19:04 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:31:40 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 50 × 8</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season player_id name     surname    code  team_name  year player_picture_key</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span>

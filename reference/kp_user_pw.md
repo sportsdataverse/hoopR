@@ -28,6 +28,13 @@ has_kp_user_and_pw()
 
   User subscription password
 
+## Value
+
+`login()`: the path to the httr2 cookie jar holding the KenPom session.
+`kp_user_email()` / `kp_password()`: the `KP_USER` / `KP_PW` environment
+variable, or `NA_character_` when it is unset. `has_kp_user_and_pw()`:
+`TRUE` when both are set.
+
 ## Details
 
 **Using your KenPom subscription with the package:**  

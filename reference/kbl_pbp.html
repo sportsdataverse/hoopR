@@ -128,46 +128,12 @@ season_code, game_code and game_no of kbl_schedule. Only final games are served;
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble: Play-by-play (the site's text cast) of a final game, one row per event, from 1997-98 on. The
-columns are always these, in this order (sdv-py <code>kbl_pbp</code>); an empty valid answer raises <code>hoopR_no_data</code>, a valid
+columns are always these, in this order (sportsdataverse-py <code>kbl_pbp</code>); an empty valid answer raises <code>hoopR_no_data</code>, a valid
 body with no rows for this frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>gmkey</td><td>character</td><td>Game key <code>S{seasonCode}G{gameCode}N{gameNo}</code> (e.g. S47G01N49): the id of every game route and game frame.</td></tr><tr><td>season_code</td><td>integer</td><td>KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League).</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS).</td></tr><tr><td>game_code</td><td>character</td><td>Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day.</td></tr><tr><td>game_no</td><td>integer</td><td>Game number inside the competition (glkey): the N part of the gmkey.</td></tr><tr><td>action_number</td><td>integer</td><td>1-based position of the event in the feed, which is in game order (the wire's n is 0 on every row of some games).</td></tr><tr><td>event_number</td><td>integer</td><td>Sequence number of the event in the game (1-based); 0 on every row of some games (e.g. S45G01N95), so order by array position.</td></tr><tr><td>period</td><td>integer</td><td>Period number: 1-4 for the quarters, 5, 6, ... for the overtimes (the wire says X1 in the play-by-play, EQ1 in the match chart).</td></tr><tr><td>period_label</td><td>character</td><td>Period label: Q1-Q4, then OT1, OT2, ... (normalised from the wire's X1 / EQ1 / eq1).</td></tr><tr><td>minutes_left</td><td>integer</td><td>Minutes remaining in the period (10-minute quarters, 5-minute overtimes).</td></tr><tr><td>seconds_left</td><td>integer</td><td>Seconds part of the time remaining (0-59).</td></tr><tr><td>clock_seconds_left</td><td>integer</td><td>Seconds left in the period (minutes_left * 60 + seconds_left); quarters are 10 minutes, overtimes 5.</td></tr><tr><td>team_code</td><td>character</td><td>Team code of the acting team (the KBL team code, as <code>tcodeH</code>/<code>tcodeA</code>); ” (or ' ' in 1997-98) on game events such as period start/end.</td></tr><tr><td>player_name</td><td>character</td><td>Player name in Korean; absent on team and game events.</td></tr><tr><td>player_name_en</td><td>character</td><td>Player name in English / romanized; absent on team and game events.</td></tr><tr><td>action_code</td><td>character</td><td>Action code (string, e.g. '201'); table in the returns md.</td></tr><tr><td>action</td><td>character</td><td>English meaning of action_code (kbl_codes.ACTIONS), translated from the site's Korean label; null for an unknown code.</td></tr><tr><td>action_ko</td><td>character</td><td>The site's own Korean label of action_code (Hangul, e.g. the label for two-point field goal made).</td></tr><tr><td>points</td><td>integer</td><td>Points the event scored: 2 for a made two-point shot or dunk (201, 207), 3 for a made three (205), 1 for a made free throw (203); null otherwise.</td></tr><tr><td>substitution_code</td><td>character</td><td>Substitution sub-type code on substitution-out (102) rows (e.g. '101_0'); table in the returns md.</td></tr><tr><td>substitution</td><td>character</td><td>English meaning of substitution_code on substitution-out rows (e.g. 106_1 = fouled out, five fouls); null otherwise.</td></tr><tr><td>foul_code</td><td>character</td><td>Foul type code (the site reads an f field; no sampled row carries it): PNF personal, TCF technical, FRF unsportsmanlike, FTF fighting, PCF punching, EBF elbow.</td></tr><tr><td>foul</td><td>character</td><td>English meaning of foul_code (e.g. TCF = technical foul). No sampled row carries a foul code, so this is unverified.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-
-<ul><li><p>Unofficial and unsupported: these wrappers read api.kbl.or.kr, the data API behind the www.kbl.or.kr React site
-(stats vendor sports2i). No key, cookie or proxy is needed, but two request headers must be present (Channel and
-TeamCode; the runtime sends WEB and XX). www.kbl.or.kr/robots.txt returns the SPA's HTML and
-api.kbl.or.kr/robots.txt a 500 error envelope, so no policy or Crawl-delay is published (checked 2026-10-12); the
-site's terms (/terms/list) were not reviewed for data reuse. The runtime waits at least 1 s before every request,
-retries included. Payloads are not redistributed as release assets.</p></li>
-<li><p>Not wrapped: the site's /record/* and <code>/player/player/{pcode}</code> pages are rendered by the sports2i widget from two
-other hosts (kbl-api.sports2i.com and api-stats.kbl.or.kr: team four factors, clutch, hustle, shot dashboards,
-all-time leaders) and need their own intake. WKBL (the women's league) is out of scope by owner ruling.</p></li>
-<li><p>Seasons are END years (2026 = 2025-26). KBL numbers seasons AND D-League (reserve league) editions with one
-sequential seasonCode; division picks 'kbl' or 'd_league' and game_code the competition inside the season, and
-the wrapper sends the API's glkey. The playoff routes take the REGULAR-SEASON key; the old route serves
-seasonCode below 45 and the new one 45 on, and the wrapper picks it.</p></li>
-<li><p>Ids: gmkey <code>S{seasonCode}G{gameCode}N{gameNo}</code> (a string, an object only inside the new playoff bracket),
-team_code (two-digit string with a leading zero, not stable across ownership changes) and pcode (six-digit
-string, the same on every route). The play-by-play carries no pcode: join its player_name to the game's box score
-on name and team_code. isEnded is unreliable (0 on every finished game through 2005-06), so a game is final when
-isEnded is 1 or when it is dated before today (KST), both teams scored and its play-by-play reached the game-end
-row; anything else raises <code>hoopR_asset_fetch</code>. The first game call also fetches the header (and, for such a game,
-the play-by-play) once; the answer is cached for the process.</p></li>
-<li><p>Coverage: box scores and play-by-play from the first season (1997); shot x/y from 2006-07 (an earlier game's shot
-chart is empty: a zero-row tibble); advanced rates are filled from 1997-98 on (the vendor computes them from the
-box); screen assists and deflections are 0 before the recent seasons. fg is TWO-point field goals made (dunks
-included), fgt all field goals, and a made dunk is its own row in the play-by-play. Shot x/y are pixels on the
-site's 726 x 412 full-court image; basket names the target end and teams switch at half-time, so normalise with
-basket before stacking shots.</p></li>
-<li><p>Errors are classed conditions, all inheriting <code>hoopR_error</code>: <code>hoopR_no_data</code> (HTTP 404, or the API has nothing
-for the request: an empty list, a final game with no box score, no playoff bracket, no rounds, no schedule rows
-in the window), <code>hoopR_bad_request</code> (a malformed gmkey, a season that is not an END year between 1997 and 2027,
-an unknown division or game_code, or bad schedule dates, raised before any request) and <code>hoopR_asset_fetch</code> (any
-other non-2xx including the unknown-id HTTP 500 and the HTTP 400 the API answers without its two headers, the KBL
-error envelope, an empty or non-JSON body, a game that is not final, or a body for another game, season or window
-than the one asked for). HTTP 500 is the API's deterministic answer to an unknown id and is not retried. Wrappers
-raise; they never warn and return empty.</p></li>
-</ul></div>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="kbl_seasons.html">kbl_seasons()</a></code>.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other KBL Functions:
@@ -199,7 +165,7 @@ raise; they never warn and return empty.</p></li>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">kbl_pbp</span><span class="op">(</span>gmkey <span class="op">=</span> <span class="st">"S47G01N49"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── KBL Play-by-Play from api.kbl.or.kr ────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:13:50 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:30:55 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 603 × 23</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    gmkey  season_code season game_code game_no action_number event_number period</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>

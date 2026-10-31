@@ -134,24 +134,7 @@ competition.competitionId of any game row (208182 = World Cup 2023, 208722 = Par
     <p>A <code>hoopR_data</code> tibble (the raw JSON list when <code>return_parsed = FALSE</code>) with the following columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>team_id</td><td>integer</td><td>FIBA team id (Int64), one per team per competition; the team the coach is registered with.</td></tr><tr><td>team_name</td><td>character</td><td>Team name the coach is registered with.</td></tr><tr><td>team_code</td><td>character</td><td>Team code (GER, USA...) the coach is registered with.</td></tr><tr><td>person_id</td><td>integer</td><td>FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P_<code>&lt;id&gt;</code> = gdapPlayerId.</td></tr><tr><td>first_name</td><td>character</td><td>Given name(s) as registered with FIBA.</td></tr><tr><td>last_name</td><td>character</td><td>Last name (officials: upper case).</td></tr><tr><td>gender</td><td>character</td><td>Sex of the person: M or F (Male/Female on getgdapcompetitionnominationsbyid).</td></tr><tr><td>function</td><td>character</td><td>Role: Head Coach, Coach, Assistant Coach.</td></tr><tr><td>is_head_coach</td><td>integer</td><td>1 for the head coach, 0 otherwise (an integer flag, not a boolean).</td></tr><tr><td>is_assistant_coach</td><td>integer</td><td>1 for an assistant coach, else null (integer flag).</td></tr><tr><td>is_accompanying_coach</td><td>logical</td><td>Accompanying-coach flag; always null in the samples, values unverified.</td></tr><tr><td>coach_display_order</td><td>integer</td><td>Display order; null when unset.</td></tr><tr><td>is_on_final_roster</td><td>logical</td><td>True when on the final (12-player) roster.</td></tr><tr><td>nationalities</td><td>character</td><td>Nationalities (FIBA codes on player info; country objects on rosters and officials). Stored as a JSON string.</td></tr><tr><td>coach_license_organisation_name</td><td>character</td><td>Federation that issued the coaching licence.</td></tr><tr><td>coach_license_country_code</td><td>character</td><td>FIBA code of the licensing federation's country.</td></tr><tr><td>final_roster_member_status_code</td><td>character</td><td>Roster entry status; always null in the samples, values unverified.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>FIBA's terms restrict this source. The GDAP developer-portal terms limit API use to 'Authorized Users'
-(federations, organisers, FIBA partners) and say any broader use 'is not authorised'; the fiba.basketball
-terms say no portion of the site may be duplicated, redistributed or manipulated. The package owner reviewed
-both clauses on 2026-10-12, accepted them and approved the full intake, published data releases included.
-Users who are not themselves authorised by FIBA should check the terms before using the wrappers.</p>
-<p>The GDAP subscription key is public (fiba.basketball ships it in every page); the runtime reads it from the
-live page at run time and never logs it. Officials' contact details and coaches' and officials' dates of
-birth are dropped from every body.</p>
-<p>Id key spaces: competition_id is one per edition (2023 World Cup = 208182) and game_id is global across
-competitions (the <code>&lt;gameId&gt;</code> of a game-page URL). team_id is per team per competition (Germany is 279569 at
-the 2023 World Cup and 281545 at Paris 2024), while organisation_id is the stable federation or club (64 =
-Germany, every year); the game page's T_<code>&lt;id&gt;</code> and the play-by-play oId are organisation ids, not team ids.</p>
-<p>Errors are classed conditions (all inherit <code>hoopR_error</code>): <code>hoopR_no_data</code> when FIBA has nothing (HTTP 404,
-or GDAP answers <code><a href="https://rdrr.io/r/base/Paren.html" class="external-link">{}</a></code> / <code>[]</code> for an unknown id); <code>hoopR_bad_request</code> for HTTP 400 / 422 or a malformed id,
-season or date; <code>hoopR_asset_fetch</code> for any other failed fetch or an answer that is not about the request (an
-error envelope, HTTP 401 after a key refresh, HTTP 500, a body for another game, competition, team, player,
-federation, family or season). Seasons are FIBA's own key, which equals the sdv key: the END year for club
-competitions, the event year for national-team events, the target tournament year for qualifiers.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="fiba_gdap_awards.html">fiba_gdap_awards()</a></code>.</p>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/fiba_gdap_team_staff.html">fiba_gdap_team_staff</a></span><span class="op">(</span>comp <span class="op">=</span> <span class="fl">208182</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">

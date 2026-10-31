@@ -31,8 +31,8 @@ euroleague_team_stats(
 - mode:
 
   (*character* default `"traditional"`): `"traditional"` or
-  `"advanced"`, matched exactly (no prefixes, as in sdv-py); the columns
-  depend on it (see Returns).
+  `"advanced"`, matched exactly (no prefixes, as in sportsdataverse-py);
+  the columns depend on it (see Returns).
 
 - season_mode:
 
@@ -125,12 +125,12 @@ A `hoopR_data` tibble with one row per team. The columns depend on
 ## Details
 
 Unofficial, keyless API, not supported by Euroleague Basketball; hoopR
-only wraps it (wrap-only: payloads are not redistributed as release
-assets). This function mirrors its sdv-py twin of the same name: same
-arguments, defaults and snake_case columns, one row per sdv-py row.
+only wraps it. This function mirrors its sportsdataverse-py twin of the
+same name: same arguments, defaults and snake_case columns, one row per
+sportsdataverse-py row.
 
 A failed request raises a classed condition instead of returning an
-empty frame, mirroring sdv-py's error vocabulary: a 404 is
+empty frame, mirroring sportsdataverse-py's error vocabulary: a 404 is
 `hoopR_no_data`, a 400 / 422 is `hoopR_invalid_request`, any other
 failure (another status, a transport error, a non-JSON body) is
 `hoopR_fetch_error`; all three inherit `hoopR_error`.
@@ -162,7 +162,7 @@ Other Euroleague:
     euroleague_team_stats(competition_code = "E", season_code = "E2025", mode = "advanced")
   })
 #> ── EuroLeague advanced team stats from api-live.euroleague.net ── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:12:50 UTC
+#> ℹ Data updated: 2026-10-31 21:29:50 UTC
 #> # A tibble: 20 × 20
 #>    team_ranking games_played effective_field_goal_perce…¹ true_shooting_percen…²
 #>           <int>        <dbl> <chr>                        <chr>                 

@@ -48,48 +48,9 @@ A `hoopR_data` tibble with these columns:
 
 ## Details
 
-The IBBA wrappers read the Israel Basketball Association's ASP.NET web
-service at `basket.co.il/ws/ws.asmx` (the ops its own site calls):
-seasons, boards, teams, rosters, coaches, schedules and results, box
-scores from 2004-05, season stats and leaders of the Winner League
-(Israeli Premier League). They mirror sdv-py's
-`sportsdataverse.basketball.ibba` wrappers of the same names: same
-arguments, the same snake_case columns and types, one row per sdv-py
-row. The live box score, play-by-play and shot coordinates of a game are
-in the
-[`ibba_segev_game_info()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_game_info.md)
-family (Segev Stats).
-
-**Unofficial and unsupported.** The web service is keyless, unofficial
-and reverse engineered. Requests are spaced at least one second apart
-per host (429 / 502 / 503 / 504 are retried three times; an HTTP 500 is
-the host's deterministic error page, a stack trace, and is not retried);
-keep crawls slow and incremental. Contact details (e-mail, phone, fax)
-and coaches' dates of birth are dropped.
-
-**Seasons and ids.** `season` is the END year and the host's own `cYear`
-(2026 = 2025-26): it is sent unchanged. `team_id` and `player_id` are
-per-SEASON registrations (Maccabi Tel Aviv = team 1109 in 2025-26, 2111
-in 2026-27); the host has no cross-season person id (the stable player
-key is the Segev player id of the `ibba_segev_*()` family). `team_uid`
-is the stable club id (Maccabi = 10). A `0` means "all" where an
-argument says so; every parameter of an op is always sent.
-
-**Coverage.** League box scores from 2004-05 (`season = 2005`).
-`external_id` and `segev_game_id` exist only from 2025-26 (earlier games
-carry no Segev id, so `segev_game_id` is `NA`). The women's league and
-Liga Leumit are NOT on this host. Every value on the wire is a string
-and Hebrew text is HTML-entity encoded: ids, counts and dates are cast
-and text is unescaped.
-
-**Errors** are classed conditions, never a warning plus an empty frame:
-`hoopR_no_data` (HTTP 404, an empty body, which is what an unknown id
-answers, or an empty row list), `hoopR_bad_request` (HTTP 400 / 422, or
-an argument that is not a non-negative integer, a boolean or a non-empty
-string as the op needs) and `hoopR_asset_fetch` (any other failure:
-another status, a transport error, a body that is not JSON, an error or
-changed envelope, a row for another season, team, player, board or game,
-or a box score of a game that is not final). All inherit `hoopR_error`.
+Source, terms of use, request pacing, seasons, ids, coverage and error
+classes of this family: see the notes in
+[`ibba_configuration()`](https://hoopR.sportsdataverse.org/reference/ibba_configuration.md).
 
 ## See also
 

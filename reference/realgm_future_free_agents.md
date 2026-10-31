@@ -1,7 +1,7 @@
 # **RealGM Future NBA Free Agents**
 
-**Get RealGM's projected future NBA free-agent class from
-[RealGM](https://basketball.realgm.com).**
+**Get RealGM's projected future NBA free-agent class from RealGM
+(basketball.realgm.com).**
 
 One row per upcoming free agent, including the free-agency season, the
 player's Bird/veteran free-agent status, recent production and –

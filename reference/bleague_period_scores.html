@@ -148,39 +148,7 @@ belong to; a context whose <code>Year</code> differs raises <code>hoopR_asset_fe
     <p>A <code>hoopR_data</code> tibble with these columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>schedule_key</td><td>integer</td><td>B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The {schedule_key} every game wrapper takes and the schedule page's list-item id.</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26), the feed's Year (the START year) plus one.</td></tr><tr><td>feed</td><td>character</td><td>Source feed of the row: v2 (v2_genius_contexts, B1/B2 from 2020-21) or v1 (v1_contexts: B3, B1/B2 2018-2020, and the 2016-17 / 2017-18 game-page embed). The feeds differ in id types, dates and some codes.</td></tr><tr><td>period</td><td>integer</td><td>Period number: 1-4 regulation; overtime numbering is unverified (no overtime sample).</td></tr><tr><td>team_side</td><td>character</td><td>Side of the game the row belongs to: home or away.</td></tr><tr><td>team_id</td><td>character</td><td>B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id.</td></tr><tr><td>points</td><td>integer</td><td>Points the team scored IN this period (not cumulative); from the header's score slots.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>The B.LEAGUE (Japan Professional Basketball League: B1, B2, B3) wrappers mirror
-sdv-py's <code>sportsdataverse.basketball.bleague</code> wrappers of the same names: same
-arguments, the same snake_case columns and types, one row per sdv-py row.</p>
-<p><strong>Unofficial and unsupported.</strong> The game contexts are JSON objects in
-B.LEAGUE's own public S3 bucket (<code>b-league.s3.amazonaws.com</code>, the store its game
-pages read), and the schedule, standings and game_detail pages of
-<code>www.bleague.jp</code> are parsed here. Neither host publishes terms for this use
-(the site's /terms/ answers 404; robots.txt sets a Crawl-delay only for msnbot
-and bingbot). Requests are spaced at least one second apart per host; 429 and
-5xx answers are retried (three attempts). SportsDataverse has not ruled on the
-site's terms, so the data is not redistributed as release assets.</p>
-<p><strong>Seasons</strong> are END years (<code>season = 2026</code> is 2025-26); the site's own <code>Year</code> /
-<code>year=</code> is the START year, so the request sends <code>year = season - 1</code>. Game
-wrappers take the global <code>schedule_key</code> (one integer sequence across B1, B2, B3
-and every season: 1 = the 2016-17 opener, 5856 in 2020-21, 500017 in 2022-23,
-504734 / 505508 B1 / B2 and 10693 B3 in 2025-26); list a day's keys with
-<code><a href="bleague_schedule.html">bleague_schedule()</a></code>.</p>
-<p><strong>Feeds.</strong> A game is read from the v2 feed (B1/B2 from 2020-21), else the v1
-feed (B3 and B1/B2 2018-2020), else the game page's embedded copy (the only
-source of 2016-17 and 2017-18), decided at run time. v2 ids are strings, v1 ids
-integers: both become text here. v1 adds leaders and the score track; the
-team-rebound codes 18 / 19 are swapped between the feeds and a v1 substitution
-is one row where v2 has two. Player and team names are Japanese (English names
-only on the box score and header). Game wrappers serve FINISHED games only.
-Each game wrapper fetches the context itself (two requests): fetch once per
-game per wrapper you need.</p>
-<p><strong>Errors</strong> are classed conditions, never a warning plus an empty frame:
-<code>hoopR_no_data</code> (no source holds the game, a schedule day without games, HTTP
-404), <code>hoopR_bad_request</code> (a non-integer or out-of-range argument, HTTP 400 /
-422) and <code>hoopR_asset_fetch</code> (any other failure: another status, a transport
-error, a non-JSON or non-HTML body, an error or changed body, an unfinished
-game, a context or page for another game, season, tab or day, a truncated
-schedule list, or layout drift). All inherit <code>hoopR_error</code>.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="bleague_game_info.html">bleague_game_info()</a></code>.</p>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/bleague_period_scores.html">bleague_period_scores</a></span><span class="op">(</span>schedule_key <span class="op">=</span> <span class="fl">504734</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">

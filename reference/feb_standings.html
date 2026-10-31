@@ -151,38 +151,7 @@ sent to the site as its START-year key <code>t = season - 1</code>.</p></dd>
     <p>A <code>hoopR_data</code> tibble with these columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>group</td><td>integer</td><td>The site's menu group (1 Primera FEB, 2 Segunda FEB, 4 Liga Femenina Endesa); not a competition id.</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2027 = 2026-27), the site's START-year key plus one.</td></tr><tr><td>competition</td><td>character</td><td>Competition name on the page header ('PRIMERA FEB').</td></tr><tr><td>comp_id</td><td>integer</td><td>Competition id (CompID) read from the page; ties the site group to the API (group 1 -&gt; 115, 2 -&gt; 118, 4 -&gt; 210).</td></tr><tr><td>table</td><td>character</td><td>live = the in-season league table; final = the final classification once the season is over.</td></tr><tr><td>position</td><td>integer</td><td>Rank in the table (Po).</td></tr><tr><td>team_id</td><td>integer</td><td>Team-season id (new every season; joins the schedule and game wrappers).</td></tr><tr><td>team</td><td>character</td><td>Team name as printed in the table (sponsor name, uppercase).</td></tr><tr><td>played</td><td>integer</td><td>Games played (PJ); null in the final classification.</td></tr><tr><td>won</td><td>integer</td><td>Games won (PG); null in the final classification.</td></tr><tr><td>lost</td><td>integer</td><td>Games lost (PP); null in the final classification.</td></tr><tr><td>points_for</td><td>integer</td><td>Points scored (PF); null in the final classification.</td></tr><tr><td>points_against</td><td>integer</td><td>Points conceded (PC); null in the final classification.</td></tr><tr><td>point_diff</td><td>integer</td><td>Point difference (DIF), signed; null in the final classification.</td></tr><tr><td>win_pct</td><td>double</td><td>Win percentage, 0-100 (the page's '100,0%', decimal comma converted).</td></tr><tr><td>streak</td><td>integer</td><td>Current streak as a signed integer: +3 = three wins in a row, -2 = two losses.</td></tr><tr><td>streak_text</td><td>character</td><td>The streak cell verbatim ('+3').</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>The Spanish Basketball Federation (FEB) wrappers cover Primera FEB, Segunda
-FEB and Liga Femenina Endesa (plus the federation's other groups on the same
-routes). They mirror sdv-py's <code>sportsdataverse.basketball.feb</code> wrappers of
-the same names: same arguments, the same snake_case columns and types, one
-row per sdv-py row.</p>
-<p><strong>Legal notice.</strong> The FEB's aviso legal (legal notice) asserts
-intellectual-property rights over the site's content and its databases (the
-EU database right). It has no explicit scraping clause, and robots.txt
-answers 404 on both hosts. Fetching for your own use on your own machine is
-how these wrappers are meant to be used; check the notice before you
-republish the data.</p>
-<p><strong>Unofficial and unsupported.</strong> The LiveStats API
-(<code>intrafeb.feb.es</code>) is the federation's own widget backend, not a documented
-public API. It needs a bearer token, which is public: it is read from the
-home page of <code>baloncestoenvivo.feb.es</code> at run time, kept in memory for the R
-session (24 h validity, renewed once on an HTTP 401) and never printed,
-logged or written. Requests are spaced at least one second apart per host;
-429 and 5xx answers are retried (three attempts).</p>
-<p><strong>Coverage.</strong> The game routes answer from 2020-21 (Liga Femenina Endesa from
-its first game; Primera FEB from 2021-03-12, so its earlier 2020-21 games
-and every earlier season answer 404). 2020-21 play-by-play is text only. The
-schedule pages go back to 1996-97 (<code>season = 1997</code>).</p>
-<p><strong>Seasons</strong> are END years (<code>season = 2027</code> is 2026-27); the site's own <code>t</code>
-key is the START year, so the request sends <code>t = season - 1</code>.</p>
-<p><strong>Errors</strong> are classed conditions, never a warning plus an empty frame:
-<code>hoopR_no_data</code> (HTTP 404, an unknown group, a schedule page with no games,
-an empty overview window), <code>hoopR_bad_request</code> (HTTP 400 / 422, or a
-<code>game_id</code>, <code>group</code> or <code>season</code> that is not a non-negative integer) and
-<code>hoopR_asset_fetch</code> (any other failure: another status, a transport error,
-a token the API still rejects after one renewal, a non-JSON or non-HTML
-body, an error or changed envelope, a play-by-play of another game, a page
-for another group or season, or layout drift). All inherit <code>hoopR_error</code>.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="feb_game_info.html">feb_game_info()</a></code>.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
@@ -204,28 +173,28 @@ for another group or season, or layout drift). All inherit <code>hoopR_error</co
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">feb_standings</span><span class="op">(</span>group <span class="op">=</span> <span class="fl">1</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── FEB standings from baloncestoenvivo.feb.es ─────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 20:12:57 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:29:57 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 18 × 17</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    group season competition comp_id table position team_id team     played   won</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         1 1<span style="text-decoration: underline;">008</span>687 HLA ALI…      6     6</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         2 1<span style="text-decoration: underline;">010</span>493 MOVISTA…      5     5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         3 1<span style="text-decoration: underline;">008</span>797 CAJASIE…      5     4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         4 1<span style="text-decoration: underline;">010</span>207 IBEROLE…      5     4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         5 1<span style="text-decoration: underline;">009</span>584 GRUPO A…      5     4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         3 1<span style="text-decoration: underline;">010</span>207 IBEROLE…      6     5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         4 1<span style="text-decoration: underline;">008</span>797 CAJASIE…      5     4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         5 1<span style="text-decoration: underline;">009</span>584 GRUPO A…      6     4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         6 1<span style="text-decoration: underline;">009</span>109 COVIRAN…      6     4</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         7 1<span style="text-decoration: underline;">009</span>713 PALMER …      5     3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         8 1<span style="text-decoration: underline;">009</span>716 BUENO A…      5     3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         9 1<span style="text-decoration: underline;">009</span>837 ALIMERK…      5     3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        10 1<span style="text-decoration: underline;">009</span>095 CLUB OU…      5     2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        11 1<span style="text-decoration: underline;">010</span>324 INSOLAC…      5     2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         8 1<span style="text-decoration: underline;">009</span>837 ALIMERK…      5     3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live         9 1<span style="text-decoration: underline;">009</span>095 CLUB OU…      6     3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        10 1<span style="text-decoration: underline;">010</span>324 INSOLAC…      6     3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        11 1<span style="text-decoration: underline;">009</span>716 BUENO A…      6     3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        12 1<span style="text-decoration: underline;">009</span>110 CAJASOL…      5     2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        13 1<span style="text-decoration: underline;">008</span>900 CAJA RU…      5     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        14 1<span style="text-decoration: underline;">009</span>072 FIBWI M…      5     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        15 1<span style="text-decoration: underline;">008</span>378 INVEREA…      5     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        16 1<span style="text-decoration: underline;">010</span>494 PARTIZÁ…      6     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        17 1<span style="text-decoration: underline;">008</span>400 GRUPO U…      6     1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        18 1<span style="text-decoration: underline;">009</span>929 BÀSQUET…      5     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        13 1<span style="text-decoration: underline;">008</span>900 CAJA RU…      6     2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        14 1<span style="text-decoration: underline;">008</span>378 INVEREA…      5     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        15 1<span style="text-decoration: underline;">010</span>494 PARTIZÁ…      6     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        16 1<span style="text-decoration: underline;">008</span>400 GRUPO U…      6     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        17 1<span style="text-decoration: underline;">009</span>072 FIBWI M…      6     1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span>     1   <span style="text-decoration: underline;">2</span>027 PRIMERA FEB     115 live        18 1<span style="text-decoration: underline;">009</span>929 BÀSQUET…      6     0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 7 more variables: lost &lt;int&gt;, points_for &lt;int&gt;, points_against &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   point_diff &lt;int&gt;, win_pct &lt;dbl&gt;, streak &lt;int&gt;, streak_text &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>

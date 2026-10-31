@@ -138,38 +138,7 @@ order the feed lists them).</p>
     <p>A <code>hoopR_data</code> tibble with these columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>FEB game id (one global sequence): the {gameId} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request.</td></tr><tr><td>team_side</td><td>character</td><td>Side of the game the row belongs to: home or away (the feed's TEAM[0] / TEAM[1], or its 1/2 and 0/1 side codes, normalised).</td></tr><tr><td>team_id</td><td>integer</td><td>Team-season id (key space: FEB team registrations; a NEW id every season, e.g. HLA Alicante = 979989 in 2025-26 and 1008687 in 2026-27). Joins the schedule's home_team_id / away_team_id; not a club or player id.</td></tr><tr><td>team</td><td>character</td><td>Team name as registered for the season (sponsor name, uppercase: 'HLA ALICANTE').</td></tr><tr><td>category</td><td>character</td><td>Leader category: points, rebounds, assists or fouls (the feed's Puntos, Rebotes, Asistencias, Faltas).</td></tr><tr><td>rank</td><td>integer</td><td>Place in the team's category list, 1 = the leader, in the order the feed lists them.</td></tr><tr><td>player_id</td><td>integer</td><td>FEB person id: stable across seasons and clubs (A. Jorda Rodriguez = 1676991 in 2025-26 and 2026-27). Joins the box score, play-by-play, shots and leaders; not the per-season licence_id.</td></tr><tr><td>shirt_number</td><td>character</td><td>Shirt number (dorsal) as a string, so '00' and '0' stay distinct. The shot feed names the shooter by this number.</td></tr><tr><td>player</td><td>character</td><td>Player name as 'I. SURNAME(S)', uppercase ('V. AGUILAR HERNANDEZ').</td></tr><tr><td>starter</td><td>logical</td><td>True when the player was in the starting five (the page's I column), false when on the bench.</td></tr><tr><td>captain</td><td>logical</td><td>True for the team captain. Null on 2020-21 games, where the feed does not send it.</td></tr><tr><td>value</td><td>integer</td><td>The player's count in the row's category (points, rebounds, assists or personal fouls).</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>The Spanish Basketball Federation (FEB) wrappers cover Primera FEB, Segunda
-FEB and Liga Femenina Endesa (plus the federation's other groups on the same
-routes). They mirror sdv-py's <code>sportsdataverse.basketball.feb</code> wrappers of
-the same names: same arguments, the same snake_case columns and types, one
-row per sdv-py row.</p>
-<p><strong>Legal notice.</strong> The FEB's aviso legal (legal notice) asserts
-intellectual-property rights over the site's content and its databases (the
-EU database right). It has no explicit scraping clause, and robots.txt
-answers 404 on both hosts. Fetching for your own use on your own machine is
-how these wrappers are meant to be used; check the notice before you
-republish the data.</p>
-<p><strong>Unofficial and unsupported.</strong> The LiveStats API
-(<code>intrafeb.feb.es</code>) is the federation's own widget backend, not a documented
-public API. It needs a bearer token, which is public: it is read from the
-home page of <code>baloncestoenvivo.feb.es</code> at run time, kept in memory for the R
-session (24 h validity, renewed once on an HTTP 401) and never printed,
-logged or written. Requests are spaced at least one second apart per host;
-429 and 5xx answers are retried (three attempts).</p>
-<p><strong>Coverage.</strong> The game routes answer from 2020-21 (Liga Femenina Endesa from
-its first game; Primera FEB from 2021-03-12, so its earlier 2020-21 games
-and every earlier season answer 404). 2020-21 play-by-play is text only. The
-schedule pages go back to 1996-97 (<code>season = 1997</code>).</p>
-<p><strong>Seasons</strong> are END years (<code>season = 2027</code> is 2026-27); the site's own <code>t</code>
-key is the START year, so the request sends <code>t = season - 1</code>.</p>
-<p><strong>Errors</strong> are classed conditions, never a warning plus an empty frame:
-<code>hoopR_no_data</code> (HTTP 404, an unknown group, a schedule page with no games,
-an empty overview window), <code>hoopR_bad_request</code> (HTTP 400 / 422, or a
-<code>game_id</code>, <code>group</code> or <code>season</code> that is not a non-negative integer) and
-<code>hoopR_asset_fetch</code> (any other failure: another status, a transport error,
-a token the API still rejects after one renewal, a non-JSON or non-HTML
-body, an error or changed envelope, a play-by-play of another game, a page
-for another group or season, or layout drift). All inherit <code>hoopR_error</code>.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="feb_game_info.html">feb_game_info()</a></code>.</p>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/feb_leaders.html">feb_leaders</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">2535725</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">

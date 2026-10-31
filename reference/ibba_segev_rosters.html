@@ -129,32 +129,7 @@ Aviv, 2025-26 round 1): <code>segev_game_id</code> in ibba_games.</p></dd>
     <p>A <code>hoopR_data</code> tibble with these columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>Segev game id (key space: one flat sequence across seasons and competitions); equals the IBBA ibba_games segev_game_id from 2025-26. Not an IBBA game id.</td></tr><tr><td>team_side</td><td>character</td><td>Side of the game: home or away (the feed's homeTeam / awayTeam; an action's parameters.team 1 = home, 2 = away).</td></tr><tr><td>team_id</td><td>integer</td><td>Segev team id of the roster's side (stable across seasons).</td></tr><tr><td>player_id</td><td>integer</td><td>Segev player id (key space: Segev players, stable across seasons: Jaylen Hoard = 1000 in games 50 and 419); null on team lines and on actions without a player. Not an IBBA player-season id.</td></tr><tr><td>jersey_number</td><td>integer</td><td>Jersey number as an integer.</td></tr><tr><td>first_name</td><td>character</td><td>First name in English, upper case.</td></tr><tr><td>last_name</td><td>character</td><td>Last name in English, upper case.</td></tr><tr><td>first_name_local</td><td>character</td><td>First name in Hebrew.</td></tr><tr><td>last_name_local</td><td>character</td><td>Last name in Hebrew.</td></tr><tr><td>in_roster</td><td>integer</td><td>Roster flag, 0 or 2 in the samples; meaning unverified.</td></tr><tr><td>api_id</td><td>integer</td><td>External player id as an integer: null or equal to the Segev player_id (both occur within one game); its source is unverified.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>The <code>ibba_segev_*()</code> wrappers read Segev Stats, the live-stats vendor behind basket.co.il's
-game pages (<code>stats.segevstats.com/realtimestat_heb/api/</code>, a JSON-RPC API served as
-text/html): the game header, rosters, box score, period scores and play-by-play with shot
-coordinates, from 2025-26. They mirror sdv-py's <code>ibba_segev_*</code> wrappers of the same names:
-same arguments, the same snake_case columns and types, one row per sdv-py row.</p>
-<p><strong>Unofficial and unsupported.</strong> The API is keyless, unofficial and not documented for
-outside use. Requests are spaced at least one second apart per host (429 / 502 / 503 / 504
-are retried three times, a 500 is not); only finished games are read.</p>
-<p><strong>Games and ids.</strong> <code>game_id</code> is one flat Segev id space across seasons AND competitions
-(men's Winner League, Winner Cup, women's, Leumit, youth, school and pre-season games), so
-read <code>competition</code> from <code><a href="ibba_segev_game_info.html">ibba_segev_game_info()</a></code>. There is no game list: league game ids
-come from <code><a href="ibba_games.html">ibba_games()</a></code> <code>segev_game_id</code> (2025-26 on; see <code><a href="ibba_segev_game_crosswalk.html">ibba_segev_game_crosswalk()</a></code>).
-Segev team and player ids are stable across seasons (Jaylen Hoard = player 1000 in games 50
-and 419), unlike the IBBA season registrations, and are not IBBA ids.</p>
-<p><strong>Play-by-play.</strong> Actions name the player by Segev id and by JERSEY number, <code>score</code> reads
-away-home, and shot <code>x</code> / <code>y</code> are one half-court frame (x 0-1470 across, basket near 735;
-y out from the baseline, rim near 112-140); which sideline is x = 0 and the metric scale
-are unverified. Segev renamed its team game stats between 2025-26 and 2026-27; the frames
-unify them. <code>start_time</code> is the scheduled tip-off in Israel local time (POSIXct, tz
-Asia/Jerusalem; the feed carries no offset).</p>
-<p><strong>Errors</strong> are classed conditions, never a warning plus an empty frame: <code>hoopR_no_data</code>
-(HTTP 404, "game not found", a finished game with no actions), <code>hoopR_bad_request</code> (HTTP
-400 / 422, or a <code>game_id</code> that is not a positive integer) and <code>hoopR_asset_fetch</code> (any
-other failure: another status, a transport error, an empty or non-JSON body, an error or
-changed envelope, a body for another game, a game that is not final). All inherit
-<code>hoopR_error</code>.</p>
+    <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="ibba_segev_game_info.html">ibba_segev_game_info()</a></code>.</p>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/ibba_segev_rosters.html">ibba_segev_rosters</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div class="section level2">

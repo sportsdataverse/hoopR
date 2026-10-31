@@ -14,7 +14,7 @@ cebl_seasons()
 
 A `hoopR_data` tibble: Every CEBL season (2019 on), with the active and
 live flags. An empty valid answer raises `hoopR_no_data`; the columns
-are always these, in this order (sdv-py `cebl_seasons`):
+are always these, in this order (sportsdataverse-py `cebl_seasons`):
 
 |  |  |  |
 |----|----|----|
@@ -26,16 +26,15 @@ are always these, in this order (sdv-py `cebl_seasons`):
 
 ## Details
 
-- CEBL own API, owner-approved gray area: these wrappers read the
-  league's own FastAPI service (api.data.cebl.ca, the backend of the
-  CEBL Stats Hub) with the X-Api-Key that the hub's own page bundle
-  ships to every browser. The key is not issued to third parties and no
-  developer terms were found; cebl.ca's terms of use were not reviewed.
-  The runtime reads the key from the bundle at run time, falls back to a
-  documented constant, never prints it, and raises `hoopR_asset_fetch`
-  with a 'key rotated?' hint on a persistent 401. www.cebl.ca/robots.txt
-  disallows nothing. Payloads are not redistributed as release assets;
-  requests are spaced at least 1 s apart.
+- Unofficial use of the CEBL's own API: these wrappers read the league's
+  own FastAPI service (api.data.cebl.ca, the backend of the CEBL Stats
+  Hub) with the X-Api-Key that the hub's own page bundle ships to every
+  browser. The key is not issued to third parties and no developer terms
+  were found; cebl.ca's terms of use were not reviewed. The runtime
+  reads the key from the bundle at run time, falls back to a documented
+  constant, never prints it, and raises `hoopR_asset_fetch` with a 'key
+  rotated?' hint on a persistent 401. www.cebl.ca/robots.txt disallows
+  nothing. Requests are spaced at least 1 s apart.
 
 - Season is the calendar year (May to August) = the sdv END year: no
   mapping. The first season is 2019. An unknown season, team or player
@@ -68,8 +67,8 @@ are always these, in this order (sdv-py `cebl_seasons`):
 
 - Deliberate divergence: a string column that the API sends as an
   object, or a list of objects, carries compact JSON here
-  (`{"name":"TSN"}`), where sdv-py's String cast writes Python's
-  `str(dict)` repr (`{'name': 'TSN'}`). No string column of the
+  (`{"name":"TSN"}`), where sportsdataverse-py's String cast writes
+  Python's `str(dict)` repr (`{'name': 'TSN'}`). No string column of the
   committed fixtures carries an object.
 
 ## See also
@@ -93,7 +92,7 @@ Other CEBL Functions:
 # \donttest{
   try(cebl_seasons())
 #> ── CEBL Seasons from the CEBL Stats API ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:11:09 UTC
+#> ℹ Data updated: 2026-10-31 21:27:59 UTC
 #> # A tibble: 8 × 4
 #>   season_id season is_active is_live
 #>       <int>  <int> <lgl>     <lgl>  

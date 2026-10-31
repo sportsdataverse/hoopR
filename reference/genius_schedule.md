@@ -41,7 +41,7 @@ genius_schedule(org, comp_id, round_number = -1, return_parsed = TRUE)
 
   Parse into a tibble (default `TRUE`); `FALSE` returns the parsed body
   or page record (a list): `data.json` as served plus `_request` (the
-  ids asked for), or the sdv-internal-refs capture shape of a page.
+  ids asked for), or the record parsed from an HTML page.
 
 ## Value
 
@@ -78,7 +78,7 @@ environment variable to an http(s) proxy URL (never printed or logged).
 Requests are spaced at least one second apart per host; keep crawls slow
 and incremental. Some league sites (the NZ NBL) forbid AI crawlers in
 their own robots.txt, which does not cover these hosts. Unofficial use
-of a public source: payloads are not redistributed as release assets.
+of a public source.
 
 **Org and season.** Every competition is an ORG code plus a competition
 id (`comp_id`):
@@ -132,7 +132,7 @@ Other Genius Functions:
 # \donttest{
   try(genius_schedule(org = "CEBL", comp_id = 47852))
 #> ── Genius LiveStats schedule ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:13:35 UTC
+#> ℹ Data updated: 2026-10-31 21:30:40 UTC
 #> # A tibble: 130 × 16
 #>    match_id link_match_id comp_id org   status     date_time venue_id venue_name
 #>       <int>         <int>   <int> <chr> <chr>      <chr>        <int> <chr>     

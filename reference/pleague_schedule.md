@@ -32,7 +32,7 @@ pleague_schedule(season, stage = "regular-season")
 A `hoopR_data` tibble: Schedule and results of one season and stage
 (pre-season, regular season, playoffs or finals): one row per game, away
 team first. An empty valid answer is a zero-row tibble with these
-columns, in this order (sdv-py `pleague_schedule`):
+columns, in this order (sportsdataverse-py `pleague_schedule`):
 
 |  |  |  |
 |----|----|----|
@@ -70,14 +70,14 @@ columns, in this order (sdv-py `pleague_schedule`):
   copying, adaptation or distribution without authorisation (it says
   nothing about automated access); robots.txt holds only Cloudflare
   content-signal comment lines with no Allow, Disallow or Crawl-delay
-  rule. Use for reference only; payloads are not redistributed as
-  release assets, and a data release needs owner sign-off. Requests are
-  spaced at least 1 s apart per host, retries included.
+  rule. Use for reference only, and check the terms before you republish
+  the data. Requests are spaced at least 1 s apart per host, retries
+  included.
 
-- Access: the site sits behind Cloudflare. sdv-py fetches it with
-  curl_cffi (Chrome TLS); this R port sends a browser User-Agent through
-  libcurl, which was served on a live check (2026-10-18); Cloudflare may
-  still answer a request with an HTTP 403 challenge page
+- Access: the site sits behind Cloudflare. sportsdataverse-py fetches it
+  with curl_cffi (Chrome TLS); this R port sends a browser User-Agent
+  through libcurl, which was served on a live check (2026-10-18);
+  Cloudflare may still answer a request with an HTTP 403 challenge page
   (`hoopR_asset_fetch`). Redirects are not followed: the site answers an
   unknown `gid` or a season before 2020-21 with a 302 to the home page
   (`hoopR_no_data`).
@@ -142,7 +142,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   try(pleague_schedule(season = 2025))
 #> ── P. LEAGUE+ Schedule from pleagueofficial.com ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 20:35:45 UTC
+#> ℹ Data updated: 2026-10-31 21:33:27 UTC
 #> # A tibble: 48 × 23
 #>    season season_slug stage   gid date       weekday_zh time  starred game_label
 #>     <int> <chr>       <chr> <int> <date>     <chr>      <chr> <lgl>   <chr>     

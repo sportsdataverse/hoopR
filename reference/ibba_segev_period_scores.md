@@ -34,47 +34,9 @@ A `hoopR_data` tibble with these columns:
 
 ## Details
 
-The `ibba_segev_*()` wrappers read Segev Stats, the live-stats vendor
-behind basket.co.il's game pages
-(`stats.segevstats.com/realtimestat_heb/api/`, a JSON-RPC API served as
-text/html): the game header, rosters, box score, period scores and
-play-by-play with shot coordinates, from 2025-26. They mirror sdv-py's
-`ibba_segev_*` wrappers of the same names: same arguments, the same
-snake_case columns and types, one row per sdv-py row.
-
-**Unofficial and unsupported.** The API is keyless, unofficial and not
-documented for outside use. Requests are spaced at least one second
-apart per host (429 / 502 / 503 / 504 are retried three times, a 500 is
-not); only finished games are read.
-
-**Games and ids.** `game_id` is one flat Segev id space across seasons
-AND competitions (men's Winner League, Winner Cup, women's, Leumit,
-youth, school and pre-season games), so read `competition` from
+Source, terms of use, request pacing, seasons, ids, coverage and error
+classes of this family: see the notes in
 [`ibba_segev_game_info()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_game_info.md).
-There is no game list: league game ids come from
-[`ibba_games()`](https://hoopR.sportsdataverse.org/reference/ibba_games.md)
-`segev_game_id` (2025-26 on; see
-[`ibba_segev_game_crosswalk()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_game_crosswalk.md)).
-Segev team and player ids are stable across seasons (Jaylen Hoard =
-player 1000 in games 50 and 419), unlike the IBBA season registrations,
-and are not IBBA ids.
-
-**Play-by-play.** Actions name the player by Segev id and by JERSEY
-number, `score` reads away-home, and shot `x` / `y` are one half-court
-frame (x 0-1470 across, basket near 735; y out from the baseline, rim
-near 112-140); which sideline is x = 0 and the metric scale are
-unverified. Segev renamed its team game stats between 2025-26 and
-2026-27; the frames unify them. `start_time` is the scheduled tip-off in
-Israel local time (POSIXct, tz Asia/Jerusalem; the feed carries no
-offset).
-
-**Errors** are classed conditions, never a warning plus an empty frame:
-`hoopR_no_data` (HTTP 404, "game not found", a finished game with no
-actions), `hoopR_bad_request` (HTTP 400 / 422, or a `game_id` that is
-not a positive integer) and `hoopR_asset_fetch` (any other failure:
-another status, a transport error, an empty or non-JSON body, an error
-or changed envelope, a body for another game, a game that is not final).
-All inherit `hoopR_error`.
 
      ibba_segev_period_scores(game_id = 50)
 
