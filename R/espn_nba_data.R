@@ -2930,6 +2930,12 @@ helper_espn_nba_pbp <- function(resp) {
         ~ as.integer(.x)
       ))
 
+    plays <- .espn_pbp_features(
+      plays, "nba", homeTeamId, awayTeamId,
+      c(homeTeamAbbrev, homeTeamName, homeTeamMascot, sub("Stat(.+)", "St", homeTeamName)),
+      c(awayTeamAbbrev, awayTeamName, awayTeamMascot, sub("Stat(.+)", "St", awayTeamName))
+    )
+
     plays$id <- .play_id_chr(plays$id)
 
     plays <- .repair_running_score(plays, homeTeamId, awayTeamId, homeTeamScore, awayTeamScore)

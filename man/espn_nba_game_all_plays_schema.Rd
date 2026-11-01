@@ -61,6 +61,26 @@ Columns shared verbatim across: espn_nba_game_all, espn_nba_pbp.
    season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
    game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
    game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
+   game_play_number \tab integer \tab 1-based position of the play in the game's play array. \cr
+   home_timeout_called \tab logical \tab TRUE on a team timeout the home team called (the play's team_id; a play without one, a home team name as a whole word in the text). \cr
+   away_timeout_called \tab logical \tab TRUE on a team timeout the away team called (the play's team_id; a play without one, an away team name as a whole word in the text). \cr
+   qtr \tab integer \tab Quarter (the period number; 5+ is overtime). \cr
+   time \tab character \tab Game clock as MM:SS (a bare sub-minute clock such as '23.4' reads 0:23.4). \cr
+   clock_minutes \tab integer \tab Minutes on the game clock. \cr
+   clock_seconds \tab numeric \tab Seconds on the game clock, tenths included. \cr
+   half \tab integer \tab Half: 1 for quarters 1-2, 2 after. \cr
+   game_half \tab integer \tab Same as half. \cr
+   lag_qtr \tab integer \tab Previous play's quarter. \cr
+   lead_qtr \tab integer \tab Next play's quarter. \cr
+   lag_half \tab integer \tab Previous play's half. \cr
+   lead_half \tab integer \tab Next play's half. \cr
+   start_quarter_seconds_remaining \tab numeric \tab Seconds left in the quarter at the start of the play. \cr
+   start_half_seconds_remaining \tab numeric \tab Seconds left in the half at the start of the play (overtime: in the period). \cr
+   start_game_seconds_remaining \tab numeric \tab Seconds left in regulation at the start of the play (overtime: in the period). \cr
+   end_quarter_seconds_remaining \tab numeric \tab Seconds left in the quarter at the end of the play (the next play's start; 0 on a quarter's last play, NA on the game's last). \cr
+   end_half_seconds_remaining \tab numeric \tab Seconds left in the half at the end of the play (the next play's start: Q1's last play ends at 720, Q2's at 0; NA on the game's last). \cr
+   end_game_seconds_remaining \tab numeric \tab Seconds left in regulation at the end of the play (NA on the game's last). \cr
+   period \tab integer \tab Same as qtr. \cr
    score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). \cr
 }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}

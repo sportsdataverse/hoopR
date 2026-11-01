@@ -3007,6 +3007,12 @@ helper_espn_mbb_pbp <- function(resp) {
         "team_id"
       )), ~ as.integer(.x)))
 
+    plays <- .espn_pbp_features(
+      plays, "mbb", homeTeamId, awayTeamId,
+      c(homeTeamAbbrev, homeTeamName, homeTeamMascot, sub("Stat(.+)", "St", homeTeamName)),
+      c(awayTeamAbbrev, awayTeamName, awayTeamMascot, sub("Stat(.+)", "St", awayTeamName))
+    )
+
     plays$id <- .play_id_chr(plays$id)
 
     plays <- .repair_running_score(plays, homeTeamId, awayTeamId, homeTeamScore, awayTeamScore)
