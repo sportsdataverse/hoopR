@@ -24,6 +24,10 @@ full list of changes is in NEWS.md. The main additions:
 * New dataset `parameter_descriptions` (10 KB): the query parameters the NBA
   Stats wrappers send, with their accepted values and the functions that take
   them.
+* New dataset `mbb_team_names` (6 KB): NCAA, ESPN play-by-play, Warren Nolan,
+  247Sports and Sports-Reference team names keyed on the ESPN team id.
+  `mbb_team_crosswalk()` adds them as six new columns, and its Torvik and
+  KenPom name matching now covers more renamed schools.
 
 ## Examples
 
