@@ -1,0 +1,9 @@
+# urlchecker (>= 2.0.0) skips URLs matching these globs; see .github/workflows/url-check.yaml.
+# These hosts block or throttle automated clients, and a check from CI must not hit them.
+*stats.nba.com*
+# stats.nba.com redirects here; this glob also covers www.wnba.com/stats.
+*nba.com/stats*
+*stats.wnba.com*
+*stats.ncaa.org*
+*basketball-reference.com*
+*sports-reference.com*

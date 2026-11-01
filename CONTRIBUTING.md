@@ -237,15 +237,28 @@ The NBA Stats API has a rate limit of approximately 590 requests per 10 minutes.
 
 ## CI / GitHub Actions
 
-The repository uses GitHub Actions for R CMD check and pkgdown site deployment. The following secrets should be configured at the repository or organization level:
+Workflows in `.github/workflows/`:
+
+| Workflow | Triggers | Purpose |
+|---|---|---|
+| `R-CMD-check.yaml` | push / PR to `main`, weekly cron, manual | `R CMD check` on macOS, Windows and Ubuntu (release), Ubuntu r-devel (fails on NOTEs) and Ubuntu oldrel-1 |
+| `test-coverage.yaml` | push / PR to `main`, manual | covr coverage of the offline suite (no live toggles or credentials), uploaded to Codecov; upload failures don't fail the job |
+| `url-check.yaml` | push / PR to `main`, weekly cron, manual | `urlchecker` over DESCRIPTION, man/, README and NEWS; fails on 404/410, permanent redirects and non-canonical CRAN URLs. Hosts in `tools/.urlignore` (NBA/WNBA/NCAA stats, Sports Reference) are never requested |
+| `intl-parity.yaml` | push / PR to `main`, manual | intl parity tests from the git checkout |
+| `pkgdown.yaml` | push to `main`, manual | Build and deploy the pkgdown site |
+| `rhub.yaml` | manual | R-hub v2 checks |
+| `api-sync.yaml` | daily cron, push to `main` touching `R/`, manual | Diff the CBBD OpenAPI spec against the `cbbd_*` wrappers |
+
+The following secrets should be configured at the repository or organization level:
 
 | Secret | Used By | Description |
 |---|---|---|
 | `GITHUB_TOKEN` | All workflows | Auto-provided by GitHub |
 | `KP_USER` | R-CMD-check | KenPom email (for KP tests, if enabled) |
 | `KP_PW` | R-CMD-check | KenPom password (for KP tests, if enabled) |
+| `CODECOV_TOKEN` | test-coverage | Codecov upload token (optional; the upload is non-fatal) |
 
-**Note**: NBA Stats API, ESPN, and G-League tests are currently skipped on CI via `skip_on_ci()`. If you want to enable them in CI, you would need to add the corresponding environment variables as secrets and remove the `skip_on_ci()` guard.
+The live-test toggles (`ESPN_TESTS`, `NBA_STATS_TESTS`, `NBAGL_STATS_TESTS`, `NCAA_MBB_TESTS`, each `"1"` or `"0"`) are repository **variables**, not secrets: a secret's value is masked in every log line, and a value of `"1"` masks every digit 1. `R-CMD-check.yaml` and `rhub.yaml` read `vars.X` and fall back to the old `secrets.X` while the variables don't exist. Tests that also call `skip_on_ci()` skip on CI whatever the toggle says.
 
 ## Reporting Issues
 

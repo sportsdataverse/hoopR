@@ -55,11 +55,11 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       KP_USER: ${{ secrets.KP_USER }}
       KP_PW: ${{ secrets.KP_PW }}
-      # Optional live API toggles (tests short-circuit on skip_on_ci() unless set):
-      NBA_STATS_TESTS: ${{ secrets.NBA_STATS_TESTS }}
-      NBAGL_STATS_TESTS: ${{ secrets.NBAGL_STATS_TESTS }}
-      ESPN_TESTS: ${{ secrets.ESPN_TESTS }}
-      NCAA_MBB_TESTS: ${{ secrets.NCAA_MBB_TESTS }}
+      # Optional live API toggles: repository variables (secrets.* is the fallback until they exist):
+      NBA_STATS_TESTS: ${{ vars.NBA_STATS_TESTS || secrets.NBA_STATS_TESTS }}
+      NBAGL_STATS_TESTS: ${{ vars.NBAGL_STATS_TESTS || secrets.NBAGL_STATS_TESTS }}
+      ESPN_TESTS: ${{ vars.ESPN_TESTS || secrets.ESPN_TESTS }}
+      NCAA_MBB_TESTS: ${{ vars.NCAA_MBB_TESTS || secrets.NCAA_MBB_TESTS }}
 
     steps:
       - uses: r-hub/actions/checkout@v1
@@ -90,11 +90,11 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       KP_USER: ${{ secrets.KP_USER }}
       KP_PW: ${{ secrets.KP_PW }}
-      # Optional live API toggles (tests short-circuit on skip_on_ci() unless set):
-      NBA_STATS_TESTS: ${{ secrets.NBA_STATS_TESTS }}
-      NBAGL_STATS_TESTS: ${{ secrets.NBAGL_STATS_TESTS }}
-      ESPN_TESTS: ${{ secrets.ESPN_TESTS }}
-      NCAA_MBB_TESTS: ${{ secrets.NCAA_MBB_TESTS }}
+      # Optional live API toggles: repository variables (secrets.* is the fallback until they exist):
+      NBA_STATS_TESTS: ${{ vars.NBA_STATS_TESTS || secrets.NBA_STATS_TESTS }}
+      NBAGL_STATS_TESTS: ${{ vars.NBAGL_STATS_TESTS || secrets.NBAGL_STATS_TESTS }}
+      ESPN_TESTS: ${{ vars.ESPN_TESTS || secrets.ESPN_TESTS }}
+      NCAA_MBB_TESTS: ${{ vars.NCAA_MBB_TESTS || secrets.NCAA_MBB_TESTS }}
 
     steps:
       - uses: r-hub/actions/checkout@v1

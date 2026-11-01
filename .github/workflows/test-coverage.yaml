@@ -1,0 +1,81 @@
+# Coverage with covr, following r-lib/actions' test-coverage example.
+#
+# Offline by design: no live-test toggles (ESPN_TESTS, NBA_STATS_TESTS, ...),
+# no KenPom / CBBD credentials, and GitHub sets CI=true so every skip_on_ci()
+# test skips. NOT_CRAN=true (as R-CMD-check sets it) lets the offline fixture
+# tests that carry skip_on_cran() run. The number therefore measures the
+# offline suite, not the live wrappers.
+#
+# The Codecov upload is non-fatal (continue-on-error on the step): it needs a
+# CODECOV_TOKEN secret and codecov.io being up, neither of which says anything
+# about the package. The "Test coverage" step always prints the summary.
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+name: test-coverage
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-coverage-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      NOT_CRAN: true
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::covr, any::xml2
+          needs: coverage
+
+      - name: Test coverage
+        run: |
+          cov <- covr::package_coverage(
+            quiet = FALSE,
+            clean = FALSE,
+            install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
+          )
+          print(cov)
+          covr::to_cobertura(cov)
+        shell: Rscript {0}
+
+      - uses: codecov/codecov-action@v7
+        continue-on-error: true
+        with:
+          fail_ci_if_error: true
+          files: ./cobertura.xml
+          plugins: noop
+          disable_search: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Show testthat output
+        if: always()
+        run: |
+          find '${{ runner.temp }}/package' -name 'testthat.Rout*' -exec cat '{}' \; || true
+        shell: bash
+
+      - name: Upload test results
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: coverage-test-failures
+          path: ${{ runner.temp }}/package
