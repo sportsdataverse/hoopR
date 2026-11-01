@@ -67,6 +67,13 @@ jobs:
           disable_search: true
           token: ${{ secrets.CODECOV_TOKEN }}
 
+      - name: Upload coverage report
+        if: always() && hashFiles('cobertura.xml') != ''
+        uses: actions/upload-artifact@v7
+        with:
+          name: coverage-report
+          path: cobertura.xml
+
       - name: Show testthat output
         if: always()
         run: |
