@@ -226,6 +226,9 @@ test_that("mbb_team_names has one row per ESPN team", {
   for (col in names(nm)[-1]) expect_type(nm[[col]], "character")
   # NA, never an empty string.
   expect_false(any(vapply(nm[-1], function(x) any(x == "", na.rm = TRUE), logical(1))))
+  # The dict's 247 name for UT Rio Grande Valley is another school's ("UTSA").
+  expect_true(is.na(nm$team_247[nm$espn_team_id == 292L]))
+  expect_equal(nm$team_247[nm$espn_team_id == 2636L], "Texas-San Antonio")
 })
 
 test_that("assembler adds the name columns after kp_conf, as character", {

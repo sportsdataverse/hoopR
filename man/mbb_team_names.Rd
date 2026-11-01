@@ -5,16 +5,16 @@
 \alias{mbb_team_names}
 \title{\strong{Men's College Basketball Team Names by Source}}
 \format{
-A data frame with 368 rows (one per team) and 8 variables:\tabular{ll}{
-   col_name \tab description \cr
-   \code{espn_team_id} \tab integer. ESPN team id (unique). \cr
-   \code{kp_team} \tab character. Current KenPom team name (the dict's 2022-23 name for Hartford and St. Francis NY, which left Division I). \cr
-   \code{ncaa_team} \tab character. NCAA (stats.ncaa.org) team name. \cr
-   \code{espn_pbp_name} \tab character. Team name as ESPN play-by-play prints it. \cr
-   \code{warren_nolan_team} \tab character. Warren Nolan team name. \cr
-   \code{team_247} \tab character. 247Sports team name. \cr
-   \code{sref_slug} \tab character. Sports-Reference school URL slug (\verb{/cbb/schools/<slug>/}). \cr
-   \code{sref_team} \tab character. Sports-Reference school name. \cr
+A data frame with 368 rows (one per team) and 8 variables:\tabular{lll}{
+   col_name \tab type \tab description \cr
+   \code{espn_team_id} \tab integer \tab ESPN team id (unique). \cr
+   \code{kp_team} \tab character \tab Current KenPom team name (the dict's 2023 name for Hartford and St. Francis NY, which left Division I). \cr
+   \code{ncaa_team} \tab character \tab NCAA (stats.ncaa.org) team name. \cr
+   \code{espn_pbp_name} \tab character \tab Team name as ESPN play-by-play prints it. \cr
+   \code{warren_nolan_team} \tab character \tab Warren Nolan team name. \cr
+   \code{team_247} \tab character \tab 247Sports team name. \cr
+   \code{sref_slug} \tab character \tab Sports-Reference school URL slug (\verb{/cbb/schools/<slug>/}). \cr
+   \code{sref_team} \tab character \tab Sports-Reference school name. \cr
 }
 }
 \usage{
@@ -25,9 +25,12 @@ Team names from sources the crosswalk does not fetch (NCAA, ESPN
 play-by-play, Warren Nolan, 247Sports and Sports-Reference), one row per
 ESPN team. \code{\link[=mbb_team_crosswalk]{mbb_team_crosswalk()}} joins it on \code{espn_team_id} and applies it
 to every season. Built by \code{data-raw/mbb_team_names.R} from
-\code{data-raw/dict_hoopR.csv} (names as of 2022-23), re-keyed to ESPN ids through
-the crosswalk's KenPom matching; teams that joined Division I later carry
-only the names that could be checked. A name that is not known is \code{NA}.
+\code{data-raw/dict_hoopR.csv}, re-keyed to ESPN ids through the crosswalk's
+KenPom matching. The names are as that 2023 source recorded them, so some
+predate a rename (Utah Tech's Warren Nolan and 247Sports names are
+\verb{Dixie St.}, Purdue Fort Wayne's are \code{IPFW}). Teams that joined Division I
+later carry only the names that could be checked. A name that is not known
+is \code{NA}.
 }
 \examples{
 head(mbb_team_names)

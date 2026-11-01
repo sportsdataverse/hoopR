@@ -390,8 +390,8 @@ NULL
 #' The NCAA, ESPN play-by-play, Warren Nolan, 247Sports and Sports-Reference
 #' names (`ncaa_team` through `sref_team`) come from [mbb_team_names], joined
 #' on `espn_team_id`. They are **not** read as of `season`: each team has one
-#' set of names (mostly as of 2022-23), applied to every season. A name that
-#' is not known is NA, never a guess.
+#' set of names (as the 2023 source recorded them, so some predate a rename),
+#' applied to every season. A name that is not known is NA, never a guess.
 #'
 #' A source that fails raises an error instead of returning a crosswalk
 #' whose columns are silently all NA. Torvik answering with no teams

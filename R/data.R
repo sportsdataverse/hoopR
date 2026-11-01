@@ -48,21 +48,24 @@
 #' play-by-play, Warren Nolan, 247Sports and Sports-Reference), one row per
 #' ESPN team. [mbb_team_crosswalk()] joins it on `espn_team_id` and applies it
 #' to every season. Built by `data-raw/mbb_team_names.R` from
-#' `data-raw/dict_hoopR.csv` (names as of 2022-23), re-keyed to ESPN ids through
-#' the crosswalk's KenPom matching; teams that joined Division I later carry
-#' only the names that could be checked. A name that is not known is `NA`.
+#' `data-raw/dict_hoopR.csv`, re-keyed to ESPN ids through the crosswalk's
+#' KenPom matching. The names are as that 2023 source recorded them, so some
+#' predate a rename (Utah Tech's Warren Nolan and 247Sports names are
+#' `Dixie St.`, Purdue Fort Wayne's are `IPFW`). Teams that joined Division I
+#' later carry only the names that could be checked. A name that is not known
+#' is `NA`.
 #' @format A data frame with 368 rows (one per team) and 8 variables:
 #'
-#' | col_name | description |
-#' |---|---|
-#' | `espn_team_id` | integer. ESPN team id (unique). |
-#' | `kp_team` | character. Current KenPom team name (the dict's 2022-23 name for Hartford and St. Francis NY, which left Division I). |
-#' | `ncaa_team` | character. NCAA (stats.ncaa.org) team name. |
-#' | `espn_pbp_name` | character. Team name as ESPN play-by-play prints it. |
-#' | `warren_nolan_team` | character. Warren Nolan team name. |
-#' | `team_247` | character. 247Sports team name. |
-#' | `sref_slug` | character. Sports-Reference school URL slug (`/cbb/schools/<slug>/`). |
-#' | `sref_team` | character. Sports-Reference school name. |
+#' | col_name | type | description |
+#' |---|---|---|
+#' | `espn_team_id` | integer | ESPN team id (unique). |
+#' | `kp_team` | character | Current KenPom team name (the dict's 2023 name for Hartford and St. Francis NY, which left Division I). |
+#' | `ncaa_team` | character | NCAA (stats.ncaa.org) team name. |
+#' | `espn_pbp_name` | character | Team name as ESPN play-by-play prints it. |
+#' | `warren_nolan_team` | character | Warren Nolan team name. |
+#' | `team_247` | character | 247Sports team name. |
+#' | `sref_slug` | character | Sports-Reference school URL slug (`/cbb/schools/<slug>/`). |
+#' | `sref_team` | character | Sports-Reference school name. |
 #'
 #' @examples
 #' head(mbb_team_names)

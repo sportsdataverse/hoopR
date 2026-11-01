@@ -11,7 +11,10 @@
 # Inputs
 #   * data-raw/dict_hoopR.csv: 367 rows, all 2023, keyed by the KenPom team
 #     name with no ids. It is the source of truth for every name column; this
-#     script only re-keys it and never edits a value.
+#     script re-keys it and edits one value it knows is wrong (`wrong_values`).
+#     Names stay as the dict recorded them, so some predate a rename (Utah
+#     Tech's Warren Nolan and 247 names are "Dixie St.", Purdue Fort Wayne's
+#     are "IPFW").
 #   * hoopR::teams_links: the current KenPom names (2026 and 2027).
 #   * ESPN's current team directory (.bb_espn_team_directory()).
 # Outputs
@@ -161,6 +164,16 @@ mbb_team_names <- cbind(
   data.frame(espn_team_id = as.integer(unname(ids[mbb_team_names$kp_team]))),
   mbb_team_names
 )
+# Known-wrong dict values, set to NA. dict row 329 (UT Rio Grande Valley,
+# ESPN 292) gives the 247Sports name "UTSA", which is another school (UTSA has
+# its own row); the right 247 name is not in the repository.
+wrong_values <- data.frame(espn_team_id = 292L, column = "team_247", was = "UTSA")
+for (i in seq_len(nrow(wrong_values))) {
+  hit <- mbb_team_names$espn_team_id == wrong_values$espn_team_id[i]
+  stopifnot(sum(hit) == 1L, mbb_team_names[[wrong_values$column[i]]][hit] == wrong_values$was[i])
+  mbb_team_names[[wrong_values$column[i]]][hit] <- NA_character_
+}
+
 mbb_team_names <- mbb_team_names[order(mbb_team_names$kp_team), ]
 rownames(mbb_team_names) <- NULL
 
