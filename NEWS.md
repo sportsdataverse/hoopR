@@ -144,6 +144,16 @@
   `load_mbb_pbp()` (hoopR-mbb-data) keep "MadeFreeThrow" `coordinate_x` at +/-41.75 until they are
   republished; new processing gives +/-28.
 
+* `espn_mbb_pbp()` / `espn_nba_pbp()`, the `Plays` frame of `espn_{mbb,nba}_game_all()` and
+  `helper_espn_{mbb,nba}_pbp()` add the clock, period and timeout columns the `load_{mbb,nba}_pbp()`
+  releases carry: `game_play_number`, `time`, `clock_minutes` / `clock_seconds`,
+  `home_timeout_called` / `away_timeout_called`, `half` (and NBA `qtr`, `game_half`, `period`),
+  the `lag_` / `lead_` period and half columns, and `start_` / `end_` seconds remaining in the
+  period (NBA: quarter and half) and game, a period's last play ending at 0:00. Values equal
+  sportsdataverse-py's row for row on seven real games. The pickcenter line columns
+  (`game_spread`, `home_favorite`, ...), `*_team_name_alt` and `athlete_name_1..3` stay
+  release-only.
+
 * `espn_mbb_team_roster()` / `espn_nba_team_roster()` for a past season now
   build the roster from that season's published player box scores
   (`load_mbb_player_box()` / `load_nba_player_box()`), and error when none are

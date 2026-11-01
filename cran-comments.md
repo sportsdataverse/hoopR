@@ -16,6 +16,8 @@ full list of changes is in NEWS.md. The main additions:
   League feeds, `ncaa_mbb_NET_rankings()`, `torvik_ratings()`, the KenPom
   team-page functions for the current season, `nba_gamerotation()` and
   `nba_pbp()` on-court players.
+* ESPN play-by-play now carries the clock, period and timeout columns of the
+  published play-by-play data.
 * The NBA Stats wrappers now default `season` to the previous season.
 * Dependencies: Rcpp and RcppParallel (unused; the package has no compiled
   code), magrittr and lubridate are no longer imported; glmnet, Matrix and
