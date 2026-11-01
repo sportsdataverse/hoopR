@@ -34,6 +34,12 @@ A \code{hoopR_data} tibble, one row per ESPN team:
      bart_conf \tab character \tab Torvik conference abbreviation (NA if unmatched). \cr
      kp_team \tab character \tab KenPom team name (NA if unmatched). \cr
      kp_conf \tab character \tab KenPom conference abbreviation (NA if unmatched). \cr
+     ncaa_team \tab character \tab NCAA (stats.ncaa.org) team name; same for every season (NA if unknown). \cr
+     espn_pbp_name \tab character \tab Team name as ESPN play-by-play prints it; same for every season (NA if unknown). \cr
+     warren_nolan_team \tab character \tab Warren Nolan team name; same for every season (NA if unknown). \cr
+     team_247 \tab character \tab 247Sports team name; same for every season (NA if unknown). \cr
+     sref_slug \tab character \tab Sports-Reference school URL slug (`/cbb/schools/<slug>/`); same for every season (NA if unknown). \cr
+     sref_team \tab character \tab Sports-Reference school name; same for every season (NA if unknown). \cr
      yahoo_team_id \tab character \tab Yahoo team id (NA placeholder). \cr
      yahoo_team_name \tab character \tab Yahoo team name (NA placeholder). \cr
      fox_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
@@ -75,9 +81,15 @@ the NEXT season, so \code{fox_section} is set to NA where it disagrees with
 agreeing teams that stay put the next season. \code{fox_team_id} is kept.
 \item \verb{bart_*} comes from Torvik's \verb{\{season\}_team_results.csv} (2008 on;
 earlier seasons get NA \verb{bart_*}).
-\item \verb{kp_*} comes from \code{teams_links} for that season (2002-2026); a season it
+\item \verb{kp_*} comes from \code{teams_links} for that season (2002-2027); a season it
 does not carry gets NA \verb{kp_*}.
 }
+
+The NCAA, ESPN play-by-play, Warren Nolan, 247Sports and Sports-Reference
+names (\code{ncaa_team} through \code{sref_team}) come from \link{mbb_team_names}, joined
+on \code{espn_team_id}. They are \strong{not} read as of \code{season}: each team has one
+set of names (as the 2023 source recorded them, so some predate a rename),
+applied to every season. A name that is not known is NA, never a guess.
 
 A source that fails raises an error instead of returning a crosswalk
 whose columns are silently all NA. Torvik answering with no teams

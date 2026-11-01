@@ -210,6 +210,85 @@ test_that("assembler stamps the season column correctly", {
 })
 
 # ---------------------------------------------------------------------------
+# Offline: name columns from mbb_team_names
+# ---------------------------------------------------------------------------
+
+test_that("mbb_team_names has one row per ESPN team", {
+  nm <- hoopR::mbb_team_names
+  expect_identical(
+    names(nm),
+    c("espn_team_id", "kp_team", "ncaa_team", "espn_pbp_name",
+      "warren_nolan_team", "team_247", "sref_slug", "sref_team")
+  )
+  expect_type(nm$espn_team_id, "integer")
+  expect_false(anyNA(nm$espn_team_id))
+  expect_false(anyDuplicated(nm$espn_team_id) > 0)
+  for (col in names(nm)[-1]) expect_type(nm[[col]], "character")
+  # NA, never an empty string.
+  expect_false(any(vapply(nm[-1], function(x) any(x == "", na.rm = TRUE), logical(1))))
+  # The dict's 247 name for UT Rio Grande Valley is another school's ("UTSA").
+  expect_true(is.na(nm$team_247[nm$espn_team_id == 292L]))
+  expect_equal(nm$team_247[nm$espn_team_id == 2636L], "Texas-San Antonio")
+})
+
+test_that("assembler adds the name columns after kp_conf, as character", {
+  espn <- .make_espn(
+    ids           = c(2000L, 2029L, 85L, 2330L, 2697L, 999999L),
+    display_names = c("Abilene Christian Wildcats", "Arkansas-Pine Bluff Golden Lions",
+                      "IU Indianapolis Jaguars", "Le Moyne Dolphins",
+                      "West Florida Argonauts", "Nowhere Nobodies"),
+    locations     = c("Abilene Christian", "Arkansas-Pine Bluff", "IU Indianapolis",
+                      "Le Moyne", "West Florida", "Nowhere"),
+    mascots       = c("Wildcats", "Golden Lions", "Jaguars", "Dolphins", "Argonauts", "Nobodies"),
+    confs         = "X"
+  )
+  out <- .bb_assemble_team_crosswalk_mbb(espn = espn, fox = NULL, bart = NULL, kp = NULL, season = 2026L)
+  cols <- names(out)
+  expect_identical(
+    cols[match("kp_conf", cols) + 1:6],
+    c("ncaa_team", "espn_pbp_name", "warren_nolan_team", "team_247", "sref_slug", "sref_team")
+  )
+  for (col in .mbb_name_columns) expect_type(out[[col]], "character")
+  row <- function(id) out[out$espn_team_id == id, ]
+
+  expect_equal(row(2000L)$sref_slug, "abilene-christian")
+  expect_equal(row(2000L)$ncaa_team, "Abilene Christian")
+  expect_equal(row(2029L)$ncaa_team, "Ark.-Pine Bluff")
+  expect_equal(row(2029L)$sref_slug, "arkansas-pine-bluff")
+  expect_equal(row(2029L)$warren_nolan_team, "Arkansas-Pine Bluff")
+  # Renamed since the dict (IUPUI -> IU Indy): the dict's names are kept.
+  expect_equal(row(85L)$ncaa_team, "IUPUI")
+  expect_equal(row(85L)$sref_slug, "iupui")
+  # Joined Division I after the dict: NCAA name only, the rest NA.
+  expect_equal(row(2330L)$ncaa_team, "Le Moyne")
+  expect_true(all(is.na(unlist(row(2330L)[c("espn_pbp_name", "warren_nolan_team", "team_247", "sref_slug", "sref_team")]))))
+  # West Florida (Division I from 2026-27) and an unknown id: all NA.
+  expect_true(all(is.na(unlist(row(2697L)[.mbb_name_columns]))))
+  expect_true(all(is.na(unlist(row(999999L)[.mbb_name_columns]))))
+})
+
+test_that("dict-derived aliases join Torvik and KenPom names ESPN renamed", {
+  espn <- .make_espn(
+    ids           = c(2900L, 2443L, 85L, 3101L),
+    display_names = c("St. Thomas Tommies", "LSU New Orleans Privateers",
+                      "IU Indianapolis Jaguars", "Utah Tech Trailblazers"),
+    locations     = c("St. Thomas", "LSU New Orleans", "IU Indianapolis", "Utah Tech"),
+    mascots       = c("Tommies", "Privateers", "Jaguars", "Trailblazers"),
+    confs         = "X"
+  )
+  out <- .bb_assemble_team_crosswalk_mbb(
+    espn = espn,
+    fox  = .make_fox(573L, "St. Thomas Tommies", "Summit League"),
+    bart = .make_bart(c("St. Thomas", "New Orleans", "IUPUI", "Dixie St."), "X"),
+    kp   = .make_kp(c("St. Thomas", "New Orleans", "IUPUI"), "X"),
+    season = 2023L
+  )
+  expect_equal(out$bart_team, c("St. Thomas", "New Orleans", "IUPUI", "Dixie St."))
+  expect_equal(out$kp_team, c("St. Thomas", "New Orleans", "IUPUI", NA))
+  expect_equal(out$fox_team_id, c("573", NA, NA, NA))
+})
+
+# ---------------------------------------------------------------------------
 # Live gate: Fox / Torvik / KenPom match rates >= 90 %
 # ---------------------------------------------------------------------------
 
