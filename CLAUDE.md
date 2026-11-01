@@ -412,7 +412,7 @@ GitHub Actions workflows should have these configured:
 | `KP_USER` | KenPom username/email |
 | `KP_PW` | KenPom password |
 
-The live-test toggles (`NBA_STATS_TESTS`, `NBAGL_STATS_TESTS`, `ESPN_TESTS`, `NCAA_MBB_TESTS`) are repository variables (`vars.X`, falling back to the old `secrets.X`), so their values are not masked in the logs (while a toggle still falls back to its legacy secret, that value is masked). They only affect tests without a `skip_on_ci()` gate. `test-coverage.yaml` sets none of them; `url-check.yaml` never requests the hosts in `tools/.urlignore`.
+The live-test toggles (`NBA_STATS_TESTS`, `NBAGL_STATS_TESTS`, `ESPN_TESTS`, `NCAA_MBB_TESTS`) are repository variables (`vars.X`, falling back to the old `secrets.X`), so their values are not masked in the logs. Until the legacy secrets are deleted they are still sent and masked (every `1`, and every `0`), even once the variables exist; after deleting them, drop the `|| secrets.X` fallback. Fork PRs force every toggle to `"0"` in `R-CMD-check.yaml`. They only affect tests without a `skip_on_ci()` gate. `test-coverage.yaml` sets none of them; `url-check.yaml` never requests the hosts in `tools/.urlignore`.
 
 ### Rate Limiting
 

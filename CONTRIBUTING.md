@@ -258,7 +258,7 @@ The following secrets should be configured at the repository or organization lev
 | `KP_PW` | R-CMD-check | KenPom password (for KP tests, if enabled) |
 | `CODECOV_TOKEN` | test-coverage | Codecov upload token (optional; the upload is non-fatal) |
 
-The live-test toggles (`ESPN_TESTS`, `NBA_STATS_TESTS`, `NBAGL_STATS_TESTS`, `NCAA_MBB_TESTS`, each `"1"` or `"0"`) are repository **variables**, not secrets: a secret's value is masked in every log line, and a value of `"1"` masks every digit 1. `R-CMD-check.yaml` and `rhub.yaml` read `vars.X` and fall back to the old `secrets.X` while the variables don't exist. Tests that also call `skip_on_ci()` skip on CI whatever the toggle says.
+The live-test toggles (`ESPN_TESTS`, `NBA_STATS_TESTS`, `NBAGL_STATS_TESTS`, `NCAA_MBB_TESTS`, each `"1"` or `"0"`) are repository **variables**, not secrets: a secret's value is masked in every log line, so a `"1"` or `"0"` secret masks every digit 1 or 0. `R-CMD-check.yaml` and `rhub.yaml` read `vars.X` and fall back to the old `secrets.X`. Because the fallback still references the secrets, the masking stops only once the legacy secrets are **deleted**; the `|| secrets.X` fallback can then be removed. Fork pull requests receive variables (but not secrets), so `R-CMD-check.yaml` forces every toggle to `"0"` on a fork PR. `rhub.yaml` is manual-dispatch only. Tests that also call `skip_on_ci()` skip on CI whatever the toggle says.
 
 ## Reporting Issues
 
