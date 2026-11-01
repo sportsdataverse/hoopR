@@ -255,8 +255,14 @@
   `kp_team_player_stats()`, `kp_team_depth_chart()`, `kp_team_lineups()`) and
   `kp_team_history()` returned nothing for seasons after the last one in
   `teams_links` (2026). They now build the KenPom page link from the team name, so
-  the current season works. The `teams_links` documentation now describes its 8,679
+  the current season works. The `teams_links` documentation now describes its
   team-season rows.
+
+* `teams_links` adds the 2026-27 season (`Year` 2027): 365 teams in 32
+  conferences, with that season's realignment (for example the rebuilt Pac-12
+  and the WAC teams in the UAC). It now covers 2002-2027, 9,044 rows.
+  `data-raw/pull_team_links.R` now adds only the missing seasons (or rebuilds a
+  range you pass it) and logs in with the current httr2 `login()`.
 
 ### **NBA officiating (`nba_l2m`, `nba_l2m_games`, `nba_referee_assignments`)**
 

@@ -3,7 +3,7 @@
 #' team-season. The KenPom team functions validate `team` against `Team`; they
 #' build the page link from the name itself, so they also work for seasons this
 #' table does not list yet.
-#' @format A data frame with 8,679 rows (one per team-season, 2002-2026) and 7 variables:
+#' @format A data frame with 9,044 rows (one per team-season, 2002-2027) and 7 variables:
 #'
 #' | col_name | description |
 #' |---|---|

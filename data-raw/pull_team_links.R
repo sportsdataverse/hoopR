@@ -1,98 +1,69 @@
-suppressPackageStartupMessages(suppressMessages(library(rvest)))
-suppressPackageStartupMessages(suppressMessages(library(dplyr)))
-suppressPackageStartupMessages(suppressMessages(library(tidyr)))
-suppressPackageStartupMessages(suppressMessages(library(stringr)))
-suppressPackageStartupMessages(suppressMessages(library(magrittr)))
-suppressPackageStartupMessages(suppressMessages(library(jsonlite)))
-suppressPackageStartupMessages(suppressMessages(library(purrr)))
-suppressPackageStartupMessages(suppressMessages(library(progressr)))
-suppressPackageStartupMessages(suppressMessages(library(data.table)))
-suppressPackageStartupMessages(suppressMessages(library(arrow)))
-suppressPackageStartupMessages(suppressMessages(library(glue)))
-suppressPackageStartupMessages(suppressMessages(library(optparse)))
-years <- hoopR::most_recent_mbb_season():2002
+# Build hoopR::teams_links: one row per KenPom team-season, with the team and
+# conference page links.
+#
+# Run from the repo root with a KenPom subscription in KP_USER / KP_PW:
+#   Rscript data-raw/pull_team_links.R            # add the seasons the table is missing
+#   Rscript data-raw/pull_team_links.R 2002 2027  # rebuild that range of seasons
+#
+# Seasons are END years (2027 = 2026-27). Existing rows for the scraped seasons are
+# replaced; every other season is kept as it is, so a refresh does not re-scrape
+# 25 years of pages.
 
-browser <- hoopR::login()
+suppressPackageStartupMessages({
+  library(dplyr)
+  library(rvest)
+})
+pkgload::load_all(".", quiet = TRUE)
 
-all_teams_links <- data.frame()
-for (year in years) {
-  url <- paste0("https://kenpom.com/index.php?y=", year)
-  page <- rvest::session_jump_to(browser, url)
-  q <- (page %>%
-          xml2::read_html() %>%
-          rvest::html_elements("table > tbody > tr > td"))
-
-
-  texts <- as.list(rvest::html_text(rvest::html_elements(q, "a")))
-  y <- dplyr::bind_rows(lapply(xml2::xml_attrs(rvest::html_elements(q, "a")), function(x) data.frame(as.list(x), stringsAsFactors = FALSE)))
-
-  y <- y %>%
-    dplyr::mutate(ind = rep(c(1, 2), length.out = n())) %>%
-    dplyr::group_by(ind) %>%
-    dplyr::mutate(id = row_number()) %>%
-    tidyr::spread("ind", "href") %>%
-    dplyr::select(-"id") %>%
-    dplyr::rename("Team.link" = 1,
-                  "Conf.link" = 2) %>%
-    dplyr::mutate(Team.link = stringr::str_remove(.data$Team.link, "&y(.+)"),
-                  Conf.link = stringr::str_remove(.data$Conf.link, "&y(.+)"))
-  z <- data.frame()
-  z <- data.frame(texts = sapply(texts, unlist))
-
-  z <- z %>%
-    dplyr::mutate(ind = rep(c(1, 2), length.out = n())) %>%
-    dplyr::group_by(ind) %>%
-    dplyr::mutate(id = row_number()) %>%
-    tidyr::spread("ind", "texts") %>%
-    dplyr::select(-"id") %>%
-    dplyr::rename(
-      "Team" = 1,
-      "Conf" = 2
-    )
-
-  team_links <- dplyr::bind_cols(z, y)
-  team_links <- team_links %>%
-    dplyr::arrange(.data$Team)
-
-  nrow(team_links)
-
-  team_links <- team_links %>%
-    dplyr::mutate(
-      team.link.ref = stringr::str_remove(stringr::str_extract(string = .data$Team.link,"=(.+)"),"=|&y(.+)"),
-      conf.link.ref = stringr::str_remove(stringr::str_extract(string = .data$Conf.link,"=(.+)"),"=|&y(.+)")) %>%
-    dplyr::select(
-      "Team",
-      "Team.link",
-      "team.link.ref",
-      "Conf",
-      "Conf.link",
-      "conf.link.ref") %>%
-    dplyr::mutate(Year = year)
-  all_teams_links <- dplyr::bind_rows(all_teams_links,team_links)
-  Sys.sleep(5)
+args <- as.integer(commandArgs(trailingOnly = TRUE))
+existing <- teams_links
+years <- if (length(args) == 2) {
+  seq(args[1], args[2])
+} else {
+  setdiff(2002:most_recent_mbb_season(), unique(existing$Year))
 }
-all_teams <- collapse::funique.data.frame(all_teams_links)
+if (!length(years)) {
+  message("teams_links already covers 2002-", most_recent_mbb_season())
+  quit(save = "no")
+}
 
-write.csv(all_teams, "data-raw/kp_team_info_2026.csv", row.names = FALSE)
-# remotes::install_github("lbenz730/ncaahoopR")
-all_teams_joined <- all_teams %>%
-  dplyr::left_join(ncaahoopR::dict, by = c("Team" = "Trank"), keep = TRUE) %>%
-  dplyr::filter(!is.na(.data$Trank))
+# One season's ratings table: each row links the team (team.php?team=...) and its
+# conference (conf.php?c=...).
+scrape_year <- function(jar, year) {
+  page <- .kp_get_page(jar, paste0("https://kenpom.com/index.php?y=", year))
+  links <- rvest::html_elements(page, "table > tbody > tr > td > a")
+  href <- sub("&y=.*$", "", rvest::html_attr(links, "href"))
+  text <- rvest::html_text(links)
+  team <- grepl("^team\\.php", href)
+  conf <- grepl("^conf\\.php", href)
+  stopifnot(sum(team) == sum(conf), sum(team) > 300)
+  data.frame(
+    Team = text[team],
+    Team.link = href[team],
+    team.link.ref = sub("^team\\.php\\?team=", "", href[team]),
+    Conf = text[conf],
+    Conf.link = href[conf],
+    conf.link.ref = sub("^conf\\.php\\?c=", "", href[conf]),
+    Year = as.integer(year),
+    stringsAsFactors = FALSE
+  ) |>
+    dplyr::arrange(.data$Team)
+}
 
-anti_joined_all_teams <- all_teams %>%
-  dplyr::anti_join(ncaahoopR::dict, by = c("Team" = "Trank"))
+jar <- login()
+scraped <- lapply(years, function(year) {
+  out <- scrape_year(jar, year)
+  message(year, ": ", nrow(out), " teams")
+  Sys.sleep(5)
+  out
+})
 
-dict_hoopR <- data.table::fread("data-raw/dict_hoopR.csv")
-espn_teams <- espn_mbb_teams()
-ncaa_teams <- ncaa_mbb_teams(year = hoopR::most_recent_mbb_season(), division = 1)
+teams_links <- existing |>
+  dplyr::filter(!.data$Year %in% years) |>
+  dplyr::bind_rows(scraped) |>
+  dplyr::distinct() |>
+  dplyr::arrange(dplyr::desc(.data$Year), .data$Team)
+stopifnot(!anyDuplicated(teams_links[c("Team", "Year")]))
 
-dict_hoopR_joined <- dict_hoopR %>%
-  dplyr::left_join(espn_teams, by = c("ESPN" = "team"), keep = TRUE) %>%
-  dplyr::left_join(espn_teams, by = c("ESPN_PBP" = "team"))
-
-teams_links <- all_teams
-usethis::use_data(teams_links, overwrite = TRUE)
-#
-# teamlist <- data.frame(hoopR::teams_links)
-#
-# teamlist
+write.csv(teams_links, sprintf("data-raw/kp_team_info_%d.csv", max(teams_links$Year)), row.names = FALSE)
+usethis::use_data(teams_links, overwrite = TRUE, compress = "xz")

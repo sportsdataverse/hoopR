@@ -9,7 +9,7 @@ team-season. The KenPom team functions validate \code{team} against \code{Team};
 build the page link from the name itself, so they also work for seasons this
 table does not list yet.}
 \format{
-A data frame with 8,679 rows (one per team-season, 2002-2026) and 7 variables:\tabular{ll}{
+A data frame with 9,044 rows (one per team-season, 2002-2027) and 7 variables:\tabular{ll}{
    col_name \tab description \cr
    \code{Team} \tab character. Team name as KenPom prints it (the \code{team} argument of the KenPom team functions). \cr
    \code{Team.link} \tab character. Relative KenPom team page link, \verb{team.php?team=<team.link.ref>}. \cr
