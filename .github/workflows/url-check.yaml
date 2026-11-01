@@ -1,0 +1,71 @@
+# CRAN's incoming check tests every URL in DESCRIPTION, man/, README.md,
+# NEWS.md and inst/CITATION. This runs the same check (urlchecker wraps
+# tools' url_db) so a dead link shows up here before it shows up there.
+#
+# Hosts that block or throttle automated clients (stats.nba.com,
+# stats.wnba.com, stats.ncaa.org, basketball-reference.com,
+# sports-reference.com) are never requested: tools/.urlignore drops them
+# from the URL db before the check, and urlchecker >= 2.0.0 is required
+# because older versions ignore that file.
+#
+# Failure policy: the job fails only on deterministic problems CRAN would
+# flag -- 404/410, permanent redirects (urlchecker's `New` column, which
+# urlchecker::url_update() can fix in place) and CRAN URLs not in canonical
+# form (the `CRAN` column). Everything else (403/429/5xx, timeouts, TLS
+# errors) is reported as a warning annotation and does not fail the job.
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  schedule:
+    - cron: '0 13 * * Mon'
+  workflow_dispatch:
+
+name: url-check
+
+permissions:
+  contents: read
+
+jobs:
+  url-check:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      # urlchecker drops 403/429 by default; report them (as warnings, below).
+      _R_CHECK_URLS_HTTP_STATUS_IGNORE_REGEXP_: '^$'
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      # urlchecker renders README.md / NEWS.md with pandoc to extract their links.
+      - uses: r-lib/actions/setup-pandoc@v2
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: any::urlchecker
+
+      - name: Check URLs
+        run: |
+          stopifnot(packageVersion("urlchecker") >= "2.0.0", file.exists("tools/.urlignore"))
+          res <- urlchecker::url_check(".", progress = FALSE, fail = FALSE)
+          print(res)
+          if (nrow(res) == 0) quit(status = 0)
+          hard <- res$Status %in% c("404", "410") | nzchar(res$New) | nzchar(res$CRAN)
+          for (i in which(!hard)) {
+            cat(sprintf("::warning::%s: %s %s\n", res$URL[i], res$Status[i], res$Message[i]))
+          }
+          for (i in which(hard)) {
+            cat(sprintf("::error::%s: %s %s%s\n", res$URL[i], res$Status[i], res$Message[i],
+                        if (nzchar(res$New[i])) paste0(" (moved to ", res$New[i], ")")
+                        else if (nzchar(res$CRAN[i])) " (CRAN URL not in canonical form; use https://CRAN.R-project.org/package=<pkg>)"
+                        else ""))
+          }
+          if (any(hard)) stop(sum(hard), " URL issue(s); see above")
+        shell: Rscript {0}

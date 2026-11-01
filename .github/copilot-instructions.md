@@ -147,7 +147,7 @@ Current CI workflows rely on:
 | `KP_USER`      | KenPom username/email for credentialed tests |
 | `KP_PW`        | KenPom password for credentialed tests       |
 
-Optional env-var secrets (`NBA_STATS_TESTS`, `NBAGL_STATS_TESTS`, `ESPN_TESTS`, `NCAA_MBB_TESTS`) only have effect if corresponding `skip_on_ci()` guards are intentionally adjusted.
+The live-test toggles (`NBA_STATS_TESTS`, `NBAGL_STATS_TESTS`, `ESPN_TESTS`, `NCAA_MBB_TESTS`) are repository variables (`vars.X`, falling back to the old `secrets.X`); they only affect tests without a `skip_on_ci()` guard.
 
 ## Conventional Commits
 
