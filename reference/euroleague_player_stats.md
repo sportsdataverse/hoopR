@@ -170,7 +170,7 @@ Other Euroleague:
     euroleague_player_stats(competition_code = "E", season_code = "E2025", mode = "advanced")
   })
 #> ── EuroLeague advanced player stats from api-live.euroleague.net ───────────────
-#> ℹ Data updated: 2026-11-01 20:44:59 UTC
+#> ℹ Data updated: 2026-11-01 21:47:24 UTC
 #> # A tibble: 100 × 23
 #>    player_ranking games_played minutes_played effective_field_goal_percentage
 #>             <int>        <dbl>          <dbl> <chr>                          

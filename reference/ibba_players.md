@@ -83,7 +83,7 @@ Other IBBA Functions:
 # \donttest{
   try(ibba_players(season = 2026, team_id = 1109, team_uid = 10))
 #> ── IBBA players ───────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:45:57 UTC
+#> ℹ Data updated: 2026-11-01 21:48:12 UTC
 #> # A tibble: 20 × 13
 #>    player_id jersey season team_id player_name_he        player_name is_replaced
 #>        <int> <chr>   <int>   <int> <chr>                 <chr>       <lgl>      

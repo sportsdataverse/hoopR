@@ -107,7 +107,7 @@ Other EASL Functions:
 # \donttest{
   try(easl_schedule(season = 2026))
 #> ── EASL Schedule from easl.joshricha.com ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:43:17 UTC
+#> ℹ Data updated: 2026-11-01 21:46:08 UTC
 #> # A tibble: 42 × 44
 #>    season season_id   fixture_id fixture_number fixture_type status fixture_name
 #>     <int> <chr>       <chr>               <int> <chr>        <chr>  <chr>       

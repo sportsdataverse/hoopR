@@ -115,7 +115,7 @@ Other EASL Functions:
 # \donttest{
   try(easl_pbp(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
 #> ── EASL Play-by-Play from easl.joshricha.com ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:43:11 UTC
+#> ℹ Data updated: 2026-11-01 21:46:03 UTC
 #> # A tibble: 495 × 20
 #>    fixture_id            event_number sequence period_id period_label event_time
 #>    <chr>                        <int>    <int>     <int> <chr>        <chr>     

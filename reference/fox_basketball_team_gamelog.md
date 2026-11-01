@@ -46,7 +46,7 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_gamelog("1"))
 #> ── Fox Sports NBA gamelog ─────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:45:37 UTC
+#> ℹ Data updated: 2026-11-01 21:47:58 UTC
 #> # A tibble: 165 × 8
 #>    team_id season_type    category game_id game_date opponent stat         value
 #>    <chr>   <chr>          <chr>    <chr>   <chr>     <chr>    <chr>        <chr>

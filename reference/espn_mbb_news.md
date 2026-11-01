@@ -203,20 +203,20 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:43:58 UTC
+#> ℹ Data updated: 2026-11-01 21:46:37 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.02e7 Story Early t… "After a s… 2026-11-… FALSE   Paul … https:/… 41       
-#> 2  5.03e7 Head… Notre D… "Notre Dam… 2026-11-… FALSE   NA     https:/… 41       
-#> 3  5.03e7 Recap Notre D… "— Brady K… 2026-11-… FALSE   NA     http://… 41       
-#> 4  5.00e7 Story How top… "How these… 2026-11-… FALSE   Jeff … https:/… 41       
-#> 5  5.03e7 Prev… Marquet… "Mercyhurs… 2026-11-… FALSE   NA     http://… 41       
+#> 1  5.04e7 Head… Illinoi… "David Mir… 2026-11-… FALSE   Myron… https:/… 41       
+#> 2  5.02e7 Story Early t… "After a s… 2026-11-… FALSE   Paul … https:/… 41       
+#> 3  5.03e7 Head… Notre D… "Notre Dam… 2026-11-… FALSE   NA     https:/… 41       
+#> 4  5.03e7 Recap Notre D… "— Brady K… 2026-11-… FALSE   NA     http://… 41       
+#> 5  5.00e7 Story How top… "How these… 2026-11-… FALSE   Jeff … https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:43:58 UTC
+#> ℹ Data updated: 2026-11-01 21:46:38 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    

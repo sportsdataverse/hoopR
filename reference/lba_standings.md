@@ -126,7 +126,7 @@ Other LBA Functions:
 # \donttest{
   try(lba_standings(championship_id = 602, round = 3))
 #> ── LBA Standings from legabasket.it ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:46:53 UTC
+#> ℹ Data updated: 2026-11-01 21:49:04 UTC
 #> # A tibble: 16 × 57
 #>    season standing_id championships_day_id team_id position  wins defeats
 #>     <int>       <int>                <int>   <int>    <int> <int>   <int>

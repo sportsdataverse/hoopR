@@ -138,7 +138,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_matchlist(match_id = 105401))
 #> ── ACB Match List from api2.acb.com ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:41:40 UTC
+#> ℹ Data updated: 2026-11-01 21:44:39 UTC
 #> # A tibble: 9 × 31
 #>   match_id round_type round_id round_number group_id subphase_id subphase_number
 #>      <int> <chr>         <int>        <int>    <int>       <int>           <int>

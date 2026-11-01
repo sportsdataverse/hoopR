@@ -151,7 +151,7 @@ Other ABA Functions:
 # \donttest{
   try(aba_box_players(game_no = 6, season = 2026))
 #> ── ABA League Player Box ──────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:41:23 UTC
+#> ℹ Data updated: 2026-11-01 21:44:25 UTC
 #> # A tibble: 24 × 39
 #>    game_no season league_id league side  team_id jersey player_id player_name  
 #>      <int>  <int>     <int> <chr>  <chr>   <int>  <int>     <int> <chr>        

@@ -87,7 +87,7 @@ Other IBBA Segev Functions:
 # \donttest{
   try(ibba_segev_player_box(game_id = 50))
 #> ── IBBA Segev player box ──────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:46:00 UTC
+#> ℹ Data updated: 2026-11-01 21:48:15 UTC
 #> # A tibble: 26 × 39
 #>    game_id team_side team_id row_type player_id jersey_number starter on_court
 #>      <int> <chr>       <int> <chr>        <int>         <int> <lgl>   <lgl>   

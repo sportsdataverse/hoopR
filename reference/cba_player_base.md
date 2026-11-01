@@ -150,7 +150,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_player_base(season = 2026, team_id = 29128))
 #> ── CBA Player Base from data-server.cbaleague.com ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:42:37 UTC
+#> ℹ Data updated: 2026-11-01 21:45:33 UTC
 #> # A tibble: 20 × 44
 #>      age assists birth_date  blocked cn_alias field_goals field_goals_at_rim_a…¹
 #>    <int>   <dbl> <chr>         <dbl> <chr>          <dbl>                  <dbl>

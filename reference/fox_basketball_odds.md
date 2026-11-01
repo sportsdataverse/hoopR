@@ -46,7 +46,7 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_odds("106422"))
 #> ── Fox Sports NBA odds ────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:45:35 UTC
+#> ℹ Data updated: 2026-11-01 21:47:57 UTC
 #> # A tibble: 0 × 0
 # }
 ```

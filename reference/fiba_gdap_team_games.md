@@ -163,7 +163,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_team_games(team_id = 279569))
 #> ── FIBA gdap_team_games from fiba.basketball ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:45:30 UTC
+#> ℹ Data updated: 2026-11-01 21:47:52 UTC
 #> # A tibble: 8 × 78
 #>   game_id round_name     game_number status    status_code game_day team_a_from 
 #>     <int> <chr>          <chr>       <chr>     <chr>          <int> <chr>       

@@ -14,7 +14,7 @@ teams_links
 
 ## Format
 
-A data frame with 8,679 rows (one per team-season, 2002-2026) and 7
+A data frame with 9,044 rows (one per team-season, 2002-2027) and 7
 variables:
 
 |  |  |

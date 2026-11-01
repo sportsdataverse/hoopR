@@ -151,7 +151,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_league_matches(league_slug = "vtb", season = 2026))
 #> ── VTB League Matches from api.vtb-league.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 20:50:50 UTC
+#> ℹ Data updated: 2026-11-01 21:52:33 UTC
 #> # A tibble: 273 × 57
 #>    match_id league season competition  phase_id phase_name_en  phase_name_ru    
 #>       <int> <chr>   <int> <chr>           <int> <chr>          <chr>            
