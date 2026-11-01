@@ -24,7 +24,10 @@ each row is an R argument that at least one wrapper sends to the API, with the
 query parameter it becomes (`api_name`), the values the API accepts and the
 function default. The `functions` column lists the `nba_*()` calls that accept
 the parameter, so you can filter it to see every function that takes, say,
-`per_mode`. The same table ships with the package as `hoopR::parameter_descriptions`.
+`per_mode`. `valid_values` is the union across those functions' endpoints, so
+spellings that only some endpoints accept (`Pre Season` and `Preseason`, for
+example) both appear; an empty value list means none is known. The same table
+ships with the package as `hoopR::parameter_descriptions`.
 
 ```{r eval = with_dt}
 DT::datatable(hoopR::parameter_descriptions, options = list(scrollX = TRUE, pageLength = 25), filter = "top", rownames = FALSE)

@@ -21,6 +21,9 @@ full list of changes is in NEWS.md. The main additions:
   code), magrittr and lubridate are no longer imported; glmnet, Matrix and
   stringdist moved to Suggests; withr and xml2 are now imported.
 * The package now ships its `inst/CITATION` file (a `bibentry()`).
+* New dataset `parameter_descriptions` (10 KB): the query parameters the NBA
+  Stats wrappers send, with their accepted values and the functions that take
+  them.
 
 ## Examples
 
