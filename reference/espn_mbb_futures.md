@@ -220,7 +220,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_futures(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Futures ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:46:21 UTC
+#> ℹ Data updated: 2026-11-01 23:39:33 UTC
 #> # A tibble: 1,793 × 11
 #>    season league    market_id market_name market_type market_display provider_id
 #>     <int> <chr>         <int> <chr>       <chr>       <chr>          <chr>      
@@ -241,7 +241,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_futures(season = 2025)
 #> ── ESPN NBA Season Futures ────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:46:21 UTC
+#> ℹ Data updated: 2026-11-01 23:39:33 UTC
 #> # A tibble: 572 × 11
 #>    season league market_id market_name  market_type market_display   provider_id
 #>     <int> <chr>      <int> <chr>        <chr>       <chr>            <chr>      

@@ -203,7 +203,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:46:37 UTC
+#> ℹ Data updated: 2026-11-01 23:39:49 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -216,14 +216,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:46:38 UTC
+#> ℹ Data updated: 2026-11-01 23:39:49 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.03e7 Story Jalen B… The supers… 2026-11-… FALSE   J.J. … https:/… 46       
-#> 2  5.03e7 Story Sunday'… Jim McCorm… 2026-11-… FALSE   Jim M… https:/… 22000    
-#> 3  5.03e7 Media Here's … Check out … 2026-11-… FALSE   NA     https:/… 59       
-#> 4  5.03e7 Prev… Maveric… Sacramento… 2026-11-… FALSE   NA     http://… 46       
-#> 5  5.03e7 Prev… Chicago… Chicago Bu… 2026-11-… FALSE   NA     http://… 46       
+#> 1  5.04e7 Recap Jayson … — Jayson T… 2026-11-… FALSE   NA     http://… 46       
+#> 2  5.04e7 Media Boston … Boston Cel… 2026-11-… FALSE   NA     https:/… 46       
+#> 3  5.03e7 Story Jalen B… The supers… 2026-11-… FALSE   J.J. … https:/… 46       
+#> 4  5.03e7 Story Sunday'… Jim McCorm… 2026-11-… FALSE   Jim M… https:/… 22000    
+#> 5  5.03e7 Media Here's … Check out … 2026-11-… FALSE   NA     https:/… 59       
 # }
 ```

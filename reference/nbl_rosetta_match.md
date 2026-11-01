@@ -120,7 +120,7 @@ Other NBL Rosetta Functions:
 # \donttest{
   try(nbl_rosetta_match(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #> ── NBL Rosetta match from prod.rosetta.nbl.com.au ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:50:10 UTC
+#> ℹ Data updated: 2026-11-01 23:43:34 UTC
 #> # A tibble: 1 × 52
 #>   org   match_id    match_status start_time_datetime match_type attendance clock
 #>   <chr> <chr>       <chr>        <chr>               <chr>           <int> <chr>

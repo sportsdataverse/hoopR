@@ -135,7 +135,7 @@ Other TBF Functions:
 # \donttest{
   try(tbf_team_roster(season = 2027, team_process_id = 265995))
 #> ── TBF Team Roster ────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:51:56 UTC
+#> ℹ Data updated: 2026-11-01 23:45:26 UTC
 #> # A tibble: 17 × 13
 #>    season competition team_process_id person_id first_name last_name nationality
 #>     <int> <chr>                 <int>     <int> <chr>      <chr>     <chr>      

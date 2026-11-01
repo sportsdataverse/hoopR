@@ -115,7 +115,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   try(pleague_box_players(gid = 197))
 #> ── P. LEAGUE+ Player Box from pleagueofficial.com ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:50:27 UTC
+#> ℹ Data updated: 2026-11-01 23:43:52 UTC
 #> # A tibble: 26 × 47
 #>      gid side  player_id person_id       random_id name_zh jersey starter played
 #>    <int> <chr>     <int> <chr>           <chr>     <chr>   <chr>  <lgl>   <lgl> 

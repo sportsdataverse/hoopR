@@ -86,7 +86,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_game_leaders(game_id = 11295))
 #> ── BNXT League Game Leaders from Sportpress ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:51:17 UTC
+#> ℹ Data updated: 2026-11-01 23:44:45 UTC
 #> # A tibble: 56 × 12
 #>    game_id team_side competition_team_id team    team_short_name stat  player_id
 #>      <int> <chr>                   <int> <chr>   <chr>           <chr>     <int>

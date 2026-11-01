@@ -206,7 +206,7 @@ Other Euroleague:
     euroleague_standings(competition_code = "E", season_code = "E2025", round = 1, kind = "streaks")
   })
 #> ── EuroLeague standings streaks from api-live.euroleague.net ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:47:25 UTC
+#> ℹ Data updated: 2026-11-01 23:40:40 UTC
 #> # A tibble: 20 × 23
 #>    position position_change games_played games_won games_lost qualified
 #>       <int> <chr>                  <int>     <int>      <int> <lgl>    

@@ -112,7 +112,7 @@ Other TBF Functions:
 # \donttest{
   try(tbf_period_scores(match_id = 346279))
 #> ── TBF Period Scores ──────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:51:48 UTC
+#> ℹ Data updated: 2026-11-01 23:45:18 UTC
 #> # A tibble: 8 × 5
 #>   match_id side  period period_type points
 #>      <int> <chr>  <int>       <int>  <int>

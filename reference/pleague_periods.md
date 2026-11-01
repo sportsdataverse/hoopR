@@ -70,7 +70,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   try(pleague_periods(gid = 197))
 #> ── P. LEAGUE+ Periods from pleagueofficial.com ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:50:29 UTC
+#> ℹ Data updated: 2026-11-01 23:43:55 UTC
 #> # A tibble: 4 × 5
 #>     gid period period_no home_points away_points
 #>   <int> <chr>      <int>       <int>       <int>

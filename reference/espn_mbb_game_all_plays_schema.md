@@ -58,4 +58,19 @@ Columns shared verbatim across: espn_mbb_game_all, espn_mbb_pbp.
 | season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
 | game_date | Date | Game date (YYYY-MM-DD). |
 | game_date_time | POSIXct | Game start date/time (ISO 8601). |
+| game_play_number | integer | 1-based position of the play in the game's play array. |
+| home_timeout_called | logical | TRUE on a team timeout the home team called (the play's team_id; a play without one, a home team name as a whole word in the text). |
+| away_timeout_called | logical | TRUE on a team timeout the away team called (the play's team_id; a play without one, an away team name as a whole word in the text). |
+| half | integer | Half (the period number; 3+ is overtime). |
+| time | character | Game clock display string, as ESPN ships it. |
+| clock_minutes | integer | Minutes on the game clock. |
+| clock_seconds | integer | Whole seconds on the game clock. |
+| lag_period | integer | Previous play's period number. |
+| lead_period | integer | Next play's period number. |
+| lag_half | integer | Previous play's half. |
+| lead_half | integer | Next play's half. |
+| start_period_seconds_remaining | integer | Seconds left in the period at the start of the play. |
+| start_game_seconds_remaining | integer | Seconds left in regulation at the start of the play (overtime: in the period). |
+| end_period_seconds_remaining | integer | Seconds left in the period at the end of the play (the next play's start; 0 on a period's last play, NA on the game's last). |
+| end_game_seconds_remaining | integer | Seconds left in regulation at the end of the play (the next play's start; NA on the game's last). |
 | score_source | character | Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). |

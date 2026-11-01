@@ -162,6 +162,21 @@
   (hoopR-mbb-data) keep “MadeFreeThrow” `coordinate_x` at +/-41.75 until
   they are republished; new processing gives +/-28.
 
+- [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+  /
+  [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
+  the `Plays` frame of `espn_{mbb,nba}_game_all()` and
+  `helper_espn_{mbb,nba}_pbp()` add the clock, period and timeout
+  columns the `load_{mbb,nba}_pbp()` releases carry: `game_play_number`,
+  `time`, `clock_minutes` / `clock_seconds`, `home_timeout_called` /
+  `away_timeout_called`, `half` (and NBA `qtr`, `game_half`, `period`),
+  the `lag_` / `lead_` period and half columns, and `start_` / `end_`
+  seconds remaining in the period (NBA: quarter and half) and game, a
+  period’s last play ending at 0:00. Values equal sportsdataverse-py’s
+  row for row on seven real games. The pickcenter line columns
+  (`game_spread`, `home_favorite`, …), `*_team_name_alt` and
+  `athlete_name_1..3` stay release-only.
+
 - [`espn_mbb_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md)
   /
   [`espn_nba_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team.md)
@@ -334,6 +349,26 @@
   rows. `data-raw/pull_team_links.R` now adds only the missing seasons
   (or rebuilds a range you pass it) and logs in with the current httr2
   [`login()`](https://hoopR.sportsdataverse.org/reference/kp_user_pw.md).
+
+- [`mbb_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_team_crosswalk.md)
+  adds six name columns from sources it does not fetch: `ncaa_team`,
+  `espn_pbp_name`, `warren_nolan_team`, `team_247`, `sref_slug` (the
+  Sports-Reference URL slug) and `sref_team`. They come from the new
+  bundled table `mbb_team_names` (368 teams, keyed on `espn_team_id`),
+  which `data-raw/mbb_team_names.R` builds from
+  `data-raw/dict_hoopR.csv`. The names are as the 2023 source recorded
+  them (some predate a rename) and are the same for every season; an
+  unknown name is `NA`. The duplicate `data-raw/dict_test.csv` is gone.
+
+- The crosswalk’s Torvik and KenPom alias tables add 11 older names from
+  the dict (for example `IUPUI`, `Houston Baptist`, `Dixie St.`,
+  `New Orleans`; KenPom also gets its `Texas A&M Commerce` spelling) and
+  drop `St. Thomas` -\> `St. Thomas-Minnesota`, which matched nothing
+  since ESPN renamed the team; the Fox alias with the same stale target
+  is gone too. Against the 2026 ESPN directory, 361 of 362 teams now
+  join Torvik and KenPom (359 before); only West Florida, new to
+  Division I in 2026-27, does not. Older KenPom seasons gain 2 to 8
+  teams each.
 
 #### **NBA officiating (`nba_l2m`, `nba_l2m_games`, `nba_referee_assignments`)**
 

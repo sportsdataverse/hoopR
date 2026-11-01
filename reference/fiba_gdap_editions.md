@@ -133,7 +133,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_editions(family_id = 201, season = 2023))
 #> ── FIBA gdap_editions from fiba.basketball ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:47:42 UTC
+#> ℹ Data updated: 2026-11-01 23:40:56 UTC
 #> # A tibble: 1 × 29
 #>   hosts  competition_id competition_code season official_name start end   status
 #>   <chr>           <int> <chr>             <int> <chr>         <chr> <chr> <chr> 

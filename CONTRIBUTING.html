@@ -384,8 +384,35 @@ ci: update GitHub Actions workflow versions</code></pre>
 </div>
 <div class="section level2">
 <h2 id="ci--github-actions">CI / GitHub Actions<a class="anchor" aria-label="anchor" href="#ci--github-actions"></a></h2>
-<p>The repository uses GitHub Actions for R CMD check and pkgdown site deployment. The following secrets should be configured at the repository or organization level:</p>
-<table class="table"><thead><tr><th>Secret</th>
+<p>Workflows in <code>.github/workflows/</code>:</p>
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Workflow</th>
+<th>Triggers</th>
+<th>Purpose</th>
+</tr></thead><tbody><tr><td><code>R-CMD-check.yaml</code></td>
+<td>push / PR to <code>main</code>, weekly cron, manual</td>
+<td>
+<code>R CMD check</code> on macOS, Windows and Ubuntu (release), Ubuntu r-devel (fails on NOTEs) and Ubuntu oldrel-1</td>
+</tr><tr><td><code>test-coverage.yaml</code></td>
+<td>push / PR to <code>main</code>, manual</td>
+<td>covr coverage of the offline suite (no live-test toggles or source API credentials), uploaded to Codecov; upload failures don’t fail the job</td>
+</tr><tr><td><code>url-check.yaml</code></td>
+<td>push / PR to <code>main</code>, weekly cron, manual</td>
+<td>
+<code>urlchecker</code> over DESCRIPTION, man/, README and NEWS; fails on 404/410, permanent redirects and non-canonical CRAN URLs. Hosts in <code>tools/.urlignore</code> (NBA/WNBA/NCAA stats, Sports Reference) are never requested</td>
+</tr><tr><td><code>intl-parity.yaml</code></td>
+<td>push / PR to <code>main</code>, manual</td>
+<td>intl parity tests from the git checkout</td>
+</tr><tr><td><code>pkgdown.yaml</code></td>
+<td>push to <code>main</code>, manual</td>
+<td>Build and deploy the pkgdown site</td>
+</tr><tr><td><code>rhub.yaml</code></td>
+<td>manual</td>
+<td>R-hub v2 checks</td>
+</tr><tr><td><code>api-sync.yaml</code></td>
+<td>daily cron, push to <code>main</code> touching <code>R/</code>, manual</td>
+<td>Diff the CBBD OpenAPI spec against the <code>cbbd_*</code> wrappers</td>
+</tr></tbody></table><p>The following secrets should be configured at the repository or organization level:</p>
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Secret</th>
 <th>Used By</th>
 <th>Description</th>
 </tr></thead><tbody><tr><td><code>GITHUB_TOKEN</code></td>
@@ -397,7 +424,10 @@ ci: update GitHub Actions workflow versions</code></pre>
 </tr><tr><td><code>KP_PW</code></td>
 <td>R-CMD-check</td>
 <td>KenPom password (for KP tests, if enabled)</td>
-</tr></tbody></table><p><strong>Note</strong>: NBA Stats API, ESPN, and G-League tests are currently skipped on CI via <code>skip_on_ci()</code>. If you want to enable them in CI, you would need to add the corresponding environment variables as secrets and remove the <code>skip_on_ci()</code> guard.</p>
+</tr><tr><td><code>CODECOV_TOKEN</code></td>
+<td>test-coverage</td>
+<td>Codecov upload token (optional; the upload is non-fatal)</td>
+</tr></tbody></table><p>The live-test toggles (<code>ESPN_TESTS</code>, <code>NBA_STATS_TESTS</code>, <code>NBAGL_STATS_TESTS</code>, <code>NCAA_MBB_TESTS</code>, each <code>"1"</code> or <code>"0"</code>) are repository <strong>variables</strong>, not secrets: a secret’s value is masked in every log line, so a <code>"1"</code> or <code>"0"</code> secret masks every digit 1 or 0. <code>R-CMD-check.yaml</code> and <code>rhub.yaml</code> read <code>vars.X</code> and fall back to the old <code>secrets.X</code>. Because the fallback still references the secrets, the masking stops only once the legacy secrets are <strong>deleted</strong>; the <code>|| secrets.X</code> fallback can then be removed. Fork pull requests receive variables (but not secrets), so <code>R-CMD-check.yaml</code> forces every toggle to <code>"0"</code> on a fork PR. <code>rhub.yaml</code> is manual-dispatch only. Tests that also call <code>skip_on_ci()</code> skip on CI whatever the toggle says.</p>
 </div>
 <div class="section level2">
 <h2 id="reporting-issues">Reporting Issues<a class="anchor" aria-label="anchor" href="#reporting-issues"></a></h2>

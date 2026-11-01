@@ -36,8 +36,16 @@ Every source is read **as of `season`**:
 - `bart_*` comes from Torvik's `{season}_team_results.csv` (2008 on;
   earlier seasons get NA `bart_*`).
 
-- `kp_*` comes from `teams_links` for that season (2002-2026); a season
+- `kp_*` comes from `teams_links` for that season (2002-2027); a season
   it does not carry gets NA `kp_*`.
+
+The NCAA, ESPN play-by-play, Warren Nolan, 247Sports and
+Sports-Reference names (`ncaa_team` through `sref_team`) come from
+[mbb_team_names](https://hoopR.sportsdataverse.org/reference/mbb_team_names.md),
+joined on `espn_team_id`. They are **not** read as of `season`: each
+team has one set of names (as the 2023 source recorded them, so some
+predate a rename), applied to every season. A name that is not known is
+NA, never a guess.
 
 A source that fails raises an error instead of returning a crosswalk
 whose columns are silently all NA. Torvik answering with no teams
@@ -87,6 +95,12 @@ A `hoopR_data` tibble, one row per ESPN team:
 | bart_conf | character | Torvik conference abbreviation (NA if unmatched). |
 | kp_team | character | KenPom team name (NA if unmatched). |
 | kp_conf | character | KenPom conference abbreviation (NA if unmatched). |
+| ncaa_team | character | NCAA (stats.ncaa.org) team name; same for every season (NA if unknown). |
+| espn_pbp_name | character | Team name as ESPN play-by-play prints it; same for every season (NA if unknown). |
+| warren_nolan_team | character | Warren Nolan team name; same for every season (NA if unknown). |
+| team_247 | character | 247Sports team name; same for every season (NA if unknown). |
+| sref_slug | character | Sports-Reference school URL slug (\`/cbb/schools/\<slug\>/\`); same for every season (NA if unknown). |
+| sref_team | character | Sports-Reference school name; same for every season (NA if unknown). |
 | yahoo_team_id | character | Yahoo team id (NA placeholder). |
 | yahoo_team_name | character | Yahoo team name (NA placeholder). |
 | fox_match_confidence | numeric | 1 for matched, NA for unmatched. |

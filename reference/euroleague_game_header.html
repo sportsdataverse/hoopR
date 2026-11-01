@@ -188,18 +188,18 @@ documented columns (not an error). A 404 raises <code>hoopR_no_data</code>, a 40
 <span class="r-in"><span>    <span class="fu">euroleague_game_header</span><span class="op">(</span>game_code <span class="op">=</span> <span class="fl">1</span>, season_code <span class="op">=</span> <span class="st">"E2025"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">}</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── EuroLeague game header from live.euroleague.net ────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-01 21:47:21 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-01 23:40:35 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 44</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   live  round date    hour  stadium capacity team_a team_b code_team_a tv_code_a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> FALSE 1     30/09/… 19:45 MORACA  2110     ANADO… MACCA… IST         EFS      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 34 more variables: code_team_b &lt;chr&gt;, tv_code_b &lt;chr&gt;, im_a &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   im_b &lt;chr&gt;, score_a &lt;chr&gt;, score_b &lt;chr&gt;, coach_a &lt;chr&gt;, coach_b &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   game_time &lt;chr&gt;, remaining_partial_time &lt;chr&gt;, wid &lt;chr&gt;, quarter &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   foults_a &lt;chr&gt;, foults_b &lt;chr&gt;, timeouts_a &lt;chr&gt;, timeouts_b &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   score_quarter1_a &lt;int&gt;, score_quarter2_a &lt;int&gt;, score_quarter3_a &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   score_quarter4_a &lt;int&gt;, score_extra_time_a &lt;int&gt;, score_quarter1_b &lt;int&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   score_quarter2_b &lt;int&gt;, score_quarter3_b &lt;int&gt;, score_quarter4_b &lt;int&gt;, …</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   score_quarter1_a score_quarter1_b score_quarter2_a score_quarter2_b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>               21               19               40               44</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 40 more variables: score_quarter3_a &lt;int&gt;, score_quarter3_b &lt;int&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   score_quarter4_a &lt;int&gt;, score_quarter4_b &lt;int&gt;, live &lt;lgl&gt;, round &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   date &lt;chr&gt;, hour &lt;chr&gt;, stadium &lt;chr&gt;, capacity &lt;chr&gt;, team_a &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   team_b &lt;chr&gt;, code_team_a &lt;chr&gt;, tv_code_a &lt;chr&gt;, code_team_b &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   tv_code_b &lt;chr&gt;, im_a &lt;chr&gt;, im_b &lt;chr&gt;, score_a &lt;chr&gt;, score_b &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   coach_a &lt;chr&gt;, coach_b &lt;chr&gt;, game_time &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   remaining_partial_time &lt;chr&gt;, wid &lt;chr&gt;, quarter &lt;chr&gt;, foults_a &lt;chr&gt;, …</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

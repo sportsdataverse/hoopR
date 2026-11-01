@@ -131,7 +131,7 @@ Other Atrium Functions:
 # \donttest{
   try(atrium_fixture(website_id = 14, fixture_id = "0dc631bd-c34c-11f1-8d16-4d5a21afb79d"))
 #> ── Atrium fixture from embed-api.eui.connect.sportradar.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:44:55 UTC
+#> ℹ Data updated: 2026-11-01 23:37:53 UTC
 #> # A tibble: 1 × 42
 #>   website_id fixture_id  season_id competition_name name  fixture_type age_group
 #>        <int> <chr>       <chr>     <chr>            <chr> <chr>        <chr>    

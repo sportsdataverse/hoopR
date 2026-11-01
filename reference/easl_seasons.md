@@ -75,7 +75,7 @@ Other EASL Functions:
 # \donttest{
   try(easl_seasons())
 #> ── EASL Seasons from easl.joshricha.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:46:08 UTC
+#> ℹ Data updated: 2026-11-01 23:39:18 UTC
 #> # A tibble: 4 × 20
 #>   season season_id        season_row_id  year name  name_latin status start_date
 #>    <int> <chr>                    <int> <int> <chr> <chr>      <chr>  <date>    

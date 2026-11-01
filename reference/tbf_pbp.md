@@ -120,7 +120,7 @@ Other TBF Functions:
 # \donttest{
   try(tbf_pbp(match_id = 346279))
 #> ── TBF Play-by-Play ───────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:51:48 UTC
+#> ℹ Data updated: 2026-11-01 23:45:17 UTC
 #> # A tibble: 639 × 13
 #>    match_id action_number period period_type clock seconds_remaining home_score
 #>       <int>         <int>  <int>       <int> <chr>             <int>      <int>

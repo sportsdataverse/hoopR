@@ -107,7 +107,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_game_overview(game_id = 11295))
 #> ── BNXT League Game Overview from Sportpress ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:51:18 UTC
+#> ℹ Data updated: 2026-11-01 23:44:46 UTC
 #> # A tibble: 2 × 35
 #>   game_id team_side competition_team_id team  team_short_name score minute  foul
 #>     <int> <chr>                   <int> <chr> <chr>           <int>  <int> <int>

@@ -5635,6 +5635,11 @@ Data included within the package
   they build the page link from the name itself, so they also work for
   seasons this table does not list yet.
 
+- [`mbb_team_names`](https://hoopR.sportsdataverse.org/reference/mbb_team_names.md)
+  :
+
+  **Men's College Basketball Team Names by Source**
+
 - [`parameter_descriptions`](https://hoopR.sportsdataverse.org/reference/parameter_descriptions.md)
   :
 

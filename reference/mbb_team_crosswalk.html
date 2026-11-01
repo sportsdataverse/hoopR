@@ -24,10 +24,15 @@ espn_conference, and for any Fox conference with fewer than two
 agreeing teams that stay put the next season. fox_team_id is kept.
 bart_* comes from Torvik's {season}_team_results.csv (2008 on;
 earlier seasons get NA bart_*).
-kp_* comes from teams_links for that season (2002-2026); a season it
+kp_* comes from teams_links for that season (2002-2027); a season it
 does not carry gets NA kp_*.
 
 
+The NCAA, ESPN play-by-play, Warren Nolan, 247Sports and Sports-Reference
+names (ncaa_team through sref_team) come from mbb_team_names, joined
+on espn_team_id. They are not read as of season: each team has one
+set of names (as the 2023 source recorded them, so some predate a rename),
+applied to every season. A name that is not known is NA, never a guess.
 A source that fails raises an error instead of returning a crosswalk
 whose columns are silently all NA. Torvik answering with no teams
 (blocked or empty) for a season it covers, Fox returning no standings for
@@ -57,10 +62,15 @@ espn_conference, and for any Fox conference with fewer than two
 agreeing teams that stay put the next season. fox_team_id is kept.
 bart_* comes from Torvik's {season}_team_results.csv (2008 on;
 earlier seasons get NA bart_*).
-kp_* comes from teams_links for that season (2002-2026); a season it
+kp_* comes from teams_links for that season (2002-2027); a season it
 does not carry gets NA kp_*.
 
 
+The NCAA, ESPN play-by-play, Warren Nolan, 247Sports and Sports-Reference
+names (ncaa_team through sref_team) come from mbb_team_names, joined
+on espn_team_id. They are not read as of season: each team has one
+set of names (as the 2023 source recorded them, so some predate a rename),
+applied to every season. A name that is not known is NA, never a guess.
 A source that fails raises an error instead of returning a crosswalk
 whose columns are silently all NA. Torvik answering with no teams
 (blocked or empty) for a season it covers, Fox returning no standings for
@@ -195,9 +205,14 @@ the NEXT season, so <code>fox_section</code> is set to NA where it disagrees wit
 agreeing teams that stay put the next season. <code>fox_team_id</code> is kept.</p></li>
 <li><p><code>bart_*</code> comes from Torvik's <code>{season}_team_results.csv</code> (2008 on;
 earlier seasons get NA <code>bart_*</code>).</p></li>
-<li><p><code>kp_*</code> comes from <code>teams_links</code> for that season (2002-2026); a season it
+<li><p><code>kp_*</code> comes from <code>teams_links</code> for that season (2002-2027); a season it
 does not carry gets NA <code>kp_*</code>.</p></li>
-</ul><p>A source that fails raises an error instead of returning a crosswalk
+</ul><p>The NCAA, ESPN play-by-play, Warren Nolan, 247Sports and Sports-Reference
+names (<code>ncaa_team</code> through <code>sref_team</code>) come from <a href="mbb_team_names.html">mbb_team_names</a>, joined
+on <code>espn_team_id</code>. They are <strong>not</strong> read as of <code>season</code>: each team has one
+set of names (as the 2023 source recorded them, so some predate a rename),
+applied to every season. A name that is not known is NA, never a guess.</p>
+<p>A source that fails raises an error instead of returning a crosswalk
 whose columns are silently all NA. Torvik answering with no teams
 (blocked or empty) for a season it covers, Fox returning no standings for
 the season, and a missing conference reference raise an error of class
@@ -227,7 +242,7 @@ standings live. Pass an empty <code><a href="https://rdrr.io/r/base/data.frame.h
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A <code>hoopR_data</code> tibble, one row per ESPN team:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>espn_team_id</td><td>integer</td><td>ESPN team id (canonical key).</td></tr><tr><td>espn_abbreviation</td><td>character</td><td>ESPN abbreviation.</td></tr><tr><td>espn_display_name</td><td>character</td><td>ESPN display name (school + mascot).</td></tr><tr><td>espn_short_name</td><td>character</td><td>ESPN short name.</td></tr><tr><td>espn_location</td><td>character</td><td>ESPN school/location only.</td></tr><tr><td>espn_mascot</td><td>character</td><td>ESPN mascot/nickname.</td></tr><tr><td>espn_conference</td><td>character</td><td>Conference that season, under that season's name (NA if not in a Division I conference).</td></tr><tr><td>fox_team_id</td><td>character</td><td>Fox Bifrost team id (NA if unmatched).</td></tr><tr><td>fox_team_name</td><td>character</td><td>Fox team name (NA if unmatched).</td></tr><tr><td>fox_section</td><td>character</td><td>Fox conference that season (NA if unmatched or unconfirmed).</td></tr><tr><td>bart_team</td><td>character</td><td>Torvik team name (NA if unmatched).</td></tr><tr><td>bart_conf</td><td>character</td><td>Torvik conference abbreviation (NA if unmatched).</td></tr><tr><td>kp_team</td><td>character</td><td>KenPom team name (NA if unmatched).</td></tr><tr><td>kp_conf</td><td>character</td><td>KenPom conference abbreviation (NA if unmatched).</td></tr><tr><td>yahoo_team_id</td><td>character</td><td>Yahoo team id (NA placeholder).</td></tr><tr><td>yahoo_team_name</td><td>character</td><td>Yahoo team name (NA placeholder).</td></tr><tr><td>fox_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>bart_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>kp_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>match_method</td><td>character</td><td>Combination of matched sources, e.g.</td></tr><tr><td></td><td></td><td>"fox+bart+kp" / "fox+bart" / "bart+kp" /</td></tr><tr><td></td><td></td><td>"fox_only" / "bart_only" / "kp_only" /</td></tr><tr><td></td><td></td><td>"espn_only".</td></tr></table></div>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>espn_team_id</td><td>integer</td><td>ESPN team id (canonical key).</td></tr><tr><td>espn_abbreviation</td><td>character</td><td>ESPN abbreviation.</td></tr><tr><td>espn_display_name</td><td>character</td><td>ESPN display name (school + mascot).</td></tr><tr><td>espn_short_name</td><td>character</td><td>ESPN short name.</td></tr><tr><td>espn_location</td><td>character</td><td>ESPN school/location only.</td></tr><tr><td>espn_mascot</td><td>character</td><td>ESPN mascot/nickname.</td></tr><tr><td>espn_conference</td><td>character</td><td>Conference that season, under that season's name (NA if not in a Division I conference).</td></tr><tr><td>fox_team_id</td><td>character</td><td>Fox Bifrost team id (NA if unmatched).</td></tr><tr><td>fox_team_name</td><td>character</td><td>Fox team name (NA if unmatched).</td></tr><tr><td>fox_section</td><td>character</td><td>Fox conference that season (NA if unmatched or unconfirmed).</td></tr><tr><td>bart_team</td><td>character</td><td>Torvik team name (NA if unmatched).</td></tr><tr><td>bart_conf</td><td>character</td><td>Torvik conference abbreviation (NA if unmatched).</td></tr><tr><td>kp_team</td><td>character</td><td>KenPom team name (NA if unmatched).</td></tr><tr><td>kp_conf</td><td>character</td><td>KenPom conference abbreviation (NA if unmatched).</td></tr><tr><td>ncaa_team</td><td>character</td><td>NCAA (stats.ncaa.org) team name; same for every season (NA if unknown).</td></tr><tr><td>espn_pbp_name</td><td>character</td><td>Team name as ESPN play-by-play prints it; same for every season (NA if unknown).</td></tr><tr><td>warren_nolan_team</td><td>character</td><td>Warren Nolan team name; same for every season (NA if unknown).</td></tr><tr><td>team_247</td><td>character</td><td>247Sports team name; same for every season (NA if unknown).</td></tr><tr><td>sref_slug</td><td>character</td><td>Sports-Reference school URL slug (`/cbb/schools/&lt;slug&gt;/`); same for every season (NA if unknown).</td></tr><tr><td>sref_team</td><td>character</td><td>Sports-Reference school name; same for every season (NA if unknown).</td></tr><tr><td>yahoo_team_id</td><td>character</td><td>Yahoo team id (NA placeholder).</td></tr><tr><td>yahoo_team_name</td><td>character</td><td>Yahoo team name (NA placeholder).</td></tr><tr><td>fox_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>bart_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>kp_match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr><tr><td>match_method</td><td>character</td><td>Combination of matched sources, e.g.</td></tr><tr><td></td><td></td><td>"fox+bart+kp" / "fox+bart" / "bart+kp" /</td></tr><tr><td></td><td></td><td>"fox_only" / "bart_only" / "kp_only" /</td></tr><tr><td></td><td></td><td>"espn_only".</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other MBB Crosswalk Functions:

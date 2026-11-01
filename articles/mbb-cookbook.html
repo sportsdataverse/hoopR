@@ -415,7 +415,7 @@ league-agnostic:</p>
 <span></span>
 <span><span class="fu"><a href="../reference/espn_mbb_game_all.html">espn_mbb_game_all</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span>      <span class="co"># everything, as a named list</span></span>
 <span><span class="co">#&gt; $Plays</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 353 × 49</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 353 × 64</span></span></span>
 <span><span class="co">#&gt;    id       sequence_number text  away_score home_score scoring_play score_value</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 4012567… 101805901       M.J.…          0          0 FALSE                  3</span></span>
@@ -429,7 +429,7 @@ league-agnostic:</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 4012567… 101818201       RaiQ…          3          2 FALSE                  0</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 4012567… 101818202       Tre …          3          2 FALSE                  0</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 343 more rows</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 42 more variables: shooting_play &lt;lgl&gt;, points_attempted &lt;int&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 57 more variables: shooting_play &lt;lgl&gt;, points_attempted &lt;int&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   short_description &lt;chr&gt;, type_id &lt;int&gt;, type_text &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   period_number &lt;int&gt;, period_display_value &lt;chr&gt;, clock_display_value &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   team_id &lt;int&gt;, play_id &lt;chr&gt;, athlete_id_1 &lt;int&gt;, athlete_id_2 &lt;int&gt;,</span></span></span>
@@ -506,7 +506,7 @@ league-agnostic:</p>
 <span><span class="co">#&gt; <span style="color: #949494;">#   three_point_field_goals_attempted &lt;int&gt;, free_throws_made &lt;int&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   free_throws_attempted &lt;int&gt;, offensive_rebounds &lt;int&gt;, …</span></span></span>
 <span><span class="fu"><a href="../reference/espn_mbb_game_all.html">espn_mbb_pbp</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="va">game_id</span><span class="op">)</span>           <span class="co"># play-by-play</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 353 × 49</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 353 × 64</span></span></span>
 <span><span class="co">#&gt;    id       sequence_number text  away_score home_score scoring_play score_value</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 4012567… 101805901       M.J.…          0          0 FALSE                  3</span></span>
@@ -520,7 +520,7 @@ league-agnostic:</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 4012567… 101818201       RaiQ…          3          2 FALSE                  0</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 4012567… 101818202       Tre …          3          2 FALSE                  0</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 343 more rows</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 42 more variables: shooting_play &lt;lgl&gt;, points_attempted &lt;int&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 57 more variables: shooting_play &lt;lgl&gt;, points_attempted &lt;int&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   short_description &lt;chr&gt;, type_id &lt;int&gt;, type_text &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   period_number &lt;int&gt;, period_display_value &lt;chr&gt;, clock_display_value &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   team_id &lt;int&gt;, play_id &lt;chr&gt;, athlete_id_1 &lt;int&gt;, athlete_id_2 &lt;int&gt;,</span></span></span>

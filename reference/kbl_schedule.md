@@ -112,7 +112,7 @@ Other KBL Functions:
 # \donttest{
   try(kbl_schedule(from_date = "20251101", to_date = "20251102"))
 #> ── KBL Schedule from api.kbl.or.kr ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:48:27 UTC
+#> ℹ Data updated: 2026-11-01 23:41:51 UTC
 #> # A tibble: 6 × 33
 #>   gmkey     glkey  season season_code season_name season_grade game_code game_no
 #>   <chr>     <chr>   <int>       <int> <chr>              <int> <chr>       <int>

@@ -77,7 +77,7 @@ Other EASL Functions:
 # \donttest{
   try(easl_teams())
 #> ── EASL Teams from easl.joshricha.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:46:11 UTC
+#> ℹ Data updated: 2026-11-01 23:39:22 UTC
 #> # A tibble: 12 × 22
 #>    team_row_id team_id          name  name_native code_latin code_local standard
 #>          <int> <chr>            <chr> <chr>       <chr>      <chr>      <chr>   

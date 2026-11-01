@@ -44,14 +44,14 @@ A `hoopR_data` tibble with one row per injured player:
 # \donttest{
   try(rotowire_injuries())
 #> ── NBA injury report from rotowire.com ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:50:39 UTC
+#> ℹ Data updated: 2026-11-01 23:44:06 UTC
 #> # A tibble: 5 × 10
 #>   player_id player first_name last_name team  position injury status return_date
 #>   <chr>     <chr>  <chr>      <chr>     <chr> <chr>    <chr>  <chr>  <chr>      
 #> 1 3445      Steve… Steven     Adams     HOU   C        Calf   Out    NA         
 #> 2 5428      Santi… Santi      Aldama    DAL   F        Knee   Doubt… NA         
 #> 3 6291      Trey … Trey       Alexander UTA   G        Knee   Out    NA         
-#> 4 5424      Jose … Jose       Alvarado  NYK   G        Ankle  Out    NA         
+#> 4 5424      Jose … Jose       Alvarado  NYK   G        Ankle  Quest… NA         
 #> 5 7008      Tobe … Tobe       Awaka     CHI   C        Ankle  Proba… NA         
 #> # ℹ 1 more variable: url <chr>
 # }

@@ -46,20 +46,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_gamelog("1"))
 #> ── Fox Sports NBA gamelog ─────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:47:58 UTC
+#> ℹ Data updated: 2026-11-01 23:41:14 UTC
 #> # A tibble: 165 × 8
 #>    team_id season_type    category game_id game_date opponent stat         value
 #>    <chr>   <chr>          <chr>    <chr>   <chr>     <chr>    <chr>        <chr>
-#>  1 1       REGULAR SEASON scoring  106606  10/30     CHI      fgm          42   
-#>  2 1       REGULAR SEASON scoring  106606  10/30     CHI      fga          82   
-#>  3 1       REGULAR SEASON scoring  106606  10/30     CHI      fg_percent   51.2 
-#>  4 1       REGULAR SEASON scoring  106606  10/30     CHI      ftm          31   
-#>  5 1       REGULAR SEASON scoring  106606  10/30     CHI      fta          40   
-#>  6 1       REGULAR SEASON scoring  106606  10/30     CHI      ft_percent   77.5 
-#>  7 1       REGULAR SEASON scoring  106606  10/30     CHI      x3fgm        10   
-#>  8 1       REGULAR SEASON scoring  106606  10/30     CHI      x3fga        32   
-#>  9 1       REGULAR SEASON scoring  106606  10/30     CHI      x3fg_percent 31.3 
-#> 10 1       REGULAR SEASON scoring  106606  10/30     CHI      pts          125  
+#>  1 1       REGULAR SEASON scoring  106620  11/1      @ORL     fgm          37   
+#>  2 1       REGULAR SEASON scoring  106620  11/1      @ORL     fga          84   
+#>  3 1       REGULAR SEASON scoring  106620  11/1      @ORL     fg_percent   44.0 
+#>  4 1       REGULAR SEASON scoring  106620  11/1      @ORL     ftm          22   
+#>  5 1       REGULAR SEASON scoring  106620  11/1      @ORL     fta          26   
+#>  6 1       REGULAR SEASON scoring  106620  11/1      @ORL     ft_percent   84.6 
+#>  7 1       REGULAR SEASON scoring  106620  11/1      @ORL     x3fgm        12   
+#>  8 1       REGULAR SEASON scoring  106620  11/1      @ORL     x3fga        44   
+#>  9 1       REGULAR SEASON scoring  106620  11/1      @ORL     x3fg_percent 27.3 
+#> 10 1       REGULAR SEASON scoring  106620  11/1      @ORL     pts          108  
 #> # ℹ 155 more rows
 # }
 ```

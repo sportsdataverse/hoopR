@@ -223,7 +223,7 @@ Saiem Gilani
   espn_mbb_athletes_index(season = 2025, limit = 50)
 #> Fetching page 1 of 1 for mens-college-basketball athletes (season=2025)...
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athletes Index from ESPN.com ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:46:13 UTC
+#> ℹ Data updated: 2026-11-01 23:39:23 UTC
 #> # A tibble: 50 × 9
 #>    athlete_id full_name jersey position team_id headshot status link     ref_url
 #>    <chr>      <chr>     <chr>  <chr>    <chr>   <chr>    <chr>  <chr>    <chr>  
@@ -243,7 +243,7 @@ Saiem Gilani
   espn_nba_athletes_index(season = 2025, limit = 50)
 #> Fetching page 1 of 1 for nba athletes (season=2025)...
 #> ── ESPN NBA Athletes Index from ESPN.com ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 21:46:13 UTC
+#> ℹ Data updated: 2026-11-01 23:39:23 UTC
 #> # A tibble: 50 × 9
 #>    athlete_id full_name jersey position team_id headshot status link     ref_url
 #>    <chr>      <chr>     <chr>  <chr>    <chr>   <chr>    <chr>  <chr>    <chr>  
