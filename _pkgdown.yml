@@ -637,6 +637,7 @@ reference:
     desc: Data included within the package
     contents:
       - '`teams_links`'
+      - '`parameter_descriptions`'
   - subtitle: hoopR Helper Functions
     desc: Internal functions used by hoopR
     contents:
