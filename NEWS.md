@@ -276,7 +276,7 @@
   dict (for example `IUPUI`, `Houston Baptist`, `Dixie St.`, `New Orleans`;
   KenPom also gets its `Texas A&M Commerce` spelling) and
   drop `St. Thomas` -> `St. Thomas-Minnesota`, which matched nothing since
-  ESPN renamed the team. Against the 2026 ESPN directory, 361 of 362 teams now
+  ESPN renamed the team; the Fox alias with the same stale target is gone too. Against the 2026 ESPN directory, 361 of 362 teams now
   join Torvik and KenPom (359 before); only West Florida, new to Division I in
   2026-27, does not. Older KenPom seasons gain 2 to 8 teams each.
 

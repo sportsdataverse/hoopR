@@ -277,13 +277,15 @@ test_that("dict-derived aliases join Torvik and KenPom names ESPN renamed", {
     confs         = "X"
   )
   out <- .bb_assemble_team_crosswalk_mbb(
-    espn = espn, fox = NULL,
+    espn = espn,
+    fox  = .make_fox(573L, "St. Thomas Tommies", "Summit League"),
     bart = .make_bart(c("St. Thomas", "New Orleans", "IUPUI", "Dixie St."), "X"),
     kp   = .make_kp(c("St. Thomas", "New Orleans", "IUPUI"), "X"),
     season = 2023L
   )
   expect_equal(out$bart_team, c("St. Thomas", "New Orleans", "IUPUI", "Dixie St."))
   expect_equal(out$kp_team, c("St. Thomas", "New Orleans", "IUPUI", NA))
+  expect_equal(out$fox_team_id, c("573", NA, NA, NA))
 })
 
 # ---------------------------------------------------------------------------

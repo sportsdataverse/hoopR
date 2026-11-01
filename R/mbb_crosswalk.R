@@ -111,7 +111,8 @@
 # Fox display_name -> ESPN display_name alias table
 # The join uses .bb_normalize_team() on both sides; these entries map Fox
 # fox_team_name normalized values to ESPN display_name normalized values
-# where the strings diverge.
+# where the strings diverge. No "st thomas tommies" entry: Fox's "St. Thomas
+# Tommies" already matches ESPN's current "St. Thomas Tommies".
 # ---------------------------------------------------------------------------
 .mbb_fox_display_alias <- c(
   # Fox drops "University", uses shortened or alternative forms
@@ -133,7 +134,6 @@
   "southern indiana screaming eagles"      = "southern indiana screaming eagles",
   "southern university jaguars"            = "southern jaguars",
   "st francis pa red flash"               = "saint francis red flash",
-  "st thomas tommies"                      = "st thomas minnesota tommies",
   "tennessee martin skyhawks"              = "ut martin skyhawks",
   "uconn huskies"                          = "uconn huskies",
   "uic flames"                             = "uic flames",
