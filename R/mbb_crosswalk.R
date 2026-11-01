@@ -7,49 +7,15 @@
 # ---------------------------------------------------------------------------
 # Torvik -> ESPN location alias table
 # Maps a Torvik `team` name to the matching ESPN `team` (location/school).
-# Applied BEFORE normalizing so the resulting keys align.
+# Applied BEFORE normalizing so the resulting keys align. There is no
+# "St. Thomas" entry: ESPN now lists team 2900 as plain "St. Thomas", the name
+# Torvik and KenPom already use (the old "St. Thomas-Minnesota" target matched
+# nothing).
 # ---------------------------------------------------------------------------
 .mbb_bart_alias <- c(
   "Mississippi"            = "Ole Miss",
   "Connecticut"            = "UConn",
   "McNeese St."            = "McNeese",
-  "St. Thomas"             = "St. Thomas-Minnesota",
-  "N.C. State"             = "NC State",
-  "Nebraska Omaha"         = "Omaha",
-  "Texas A&M Corpus Chris" = "Texas A&M-Corpus Christi",
-  "Seattle"                = "Seattle U",
-  "Nicholls St."           = "Nicholls",
-  "Sam Houston St."        = "Sam Houston",
-  "Cal Baptist"            = "California Baptist",
-  "Appalachian St."        = "App State",
-  "Miami FL"               = "Miami",
-  "Illinois Chicago"       = "UIC",
-  "Southeastern Louisiana" = "SE Louisiana",
-  "UMKC"                   = "Kansas City",
-  "Hawaii"                 = "Hawai'i",
-  "FIU"                    = "Florida International",
-  "Albany"                 = "UAlbany",
-  "LIU"                    = "Long Island University",
-  "Tennessee Martin"       = "UT Martin",
-  "Penn"                   = "Pennsylvania",
-  "IU Indy"                = "IU Indianapolis",
-  "Loyola MD"              = "Loyola Maryland",
-  "Grambling St."          = "Grambling",
-  "USC Upstate"            = "South Carolina Upstate",
-  "Louisiana Monroe"       = "UL Monroe"
-)
-
-# ---------------------------------------------------------------------------
-# KenPom -> ESPN location alias table
-# Most Torvik aliases also apply to KenPom (same terse style). Extra entries
-# handle KenPom-specific divergences.
-# ---------------------------------------------------------------------------
-.mbb_kp_alias <- c(
-  # shared with Torvik
-  "Mississippi"            = "Ole Miss",
-  "Connecticut"            = "UConn",
-  "McNeese St."            = "McNeese",
-  "St. Thomas"             = "St. Thomas-Minnesota",
   "N.C. State"             = "NC State",
   "Nebraska Omaha"         = "Omaha",
   "Texas A&M Corpus Chris" = "Texas A&M-Corpus Christi",
@@ -73,10 +39,72 @@
   "Grambling St."          = "Grambling",
   "USC Upstate"            = "South Carolina Upstate",
   "Louisiana Monroe"       = "UL Monroe",
+  # From data-raw/dict_hoopR.csv: names its Trank (and older KenPom) column
+  # uses for teams ESPN now lists under another location.
+  "College of Charleston"  = "Charleston",
+  "Detroit"                = "Detroit Mercy",
+  "Houston Baptist"        = "Houston Christian",
+  "IUPUI"                  = "IU Indianapolis",
+  "LIU Brooklyn"           = "Long Island University",
+  "Louisiana Lafayette"    = "Louisiana",
+  "North Carolina St."     = "NC State",
+  "Fort Wayne"             = "Purdue Fort Wayne",
+  "Texas A&M-Commerce"     = "East Texas A&M",
+  "Dixie St."              = "Utah Tech",
+  "New Orleans"            = "LSU New Orleans"
+)
+
+# ---------------------------------------------------------------------------
+# KenPom -> ESPN location alias table
+# Most Torvik aliases also apply to KenPom (same terse style). Extra entries
+# handle KenPom-specific divergences.
+# ---------------------------------------------------------------------------
+.mbb_kp_alias <- c(
+  # shared with Torvik
+  "Mississippi"            = "Ole Miss",
+  "Connecticut"            = "UConn",
+  "McNeese St."            = "McNeese",
+  "N.C. State"             = "NC State",
+  "Nebraska Omaha"         = "Omaha",
+  "Texas A&M Corpus Chris" = "Texas A&M-Corpus Christi",
+  "Seattle"                = "Seattle U",
+  "Nicholls St."           = "Nicholls",
+  "Sam Houston St."        = "Sam Houston",
+  "Cal Baptist"            = "California Baptist",
+  "Appalachian St."        = "App State",
+  "Miami FL"               = "Miami",
+  "Illinois Chicago"       = "UIC",
+  "Southeastern Louisiana" = "SE Louisiana",
+  "UMKC"                   = "Kansas City",
+  "Hawaii"                 = "Hawai'i",
+  "FIU"                    = "Florida International",
+  "Albany"                 = "UAlbany",
+  "LIU"                    = "Long Island University",
+  "Tennessee Martin"       = "UT Martin",
+  "Penn"                   = "Pennsylvania",
+  "IU Indy"                = "IU Indianapolis",
+  "Loyola MD"              = "Loyola Maryland",
+  "Grambling St."          = "Grambling",
+  "USC Upstate"            = "South Carolina Upstate",
+  "Louisiana Monroe"       = "UL Monroe",
+  # From data-raw/dict_hoopR.csv: names its Trank (and older KenPom) column
+  # uses for teams ESPN now lists under another location.
+  "College of Charleston"  = "Charleston",
+  "Detroit"                = "Detroit Mercy",
+  "Houston Baptist"        = "Houston Christian",
+  "IUPUI"                  = "IU Indianapolis",
+  "LIU Brooklyn"           = "Long Island University",
+  "Louisiana Lafayette"    = "Louisiana",
+  "North Carolina St."     = "NC State",
+  "Fort Wayne"             = "Purdue Fort Wayne",
+  "Texas A&M-Commerce"     = "East Texas A&M",
+  "Dixie St."              = "Utah Tech",
+  "New Orleans"            = "LSU New Orleans",
   # KenPom-specific
   "CSUN"                   = "Cal State Northridge",
   "SIUE"                   = "SIU Edwardsville",
-  "Southeast Missouri"     = "Southeast Missouri State"
+  "Southeast Missouri"     = "Southeast Missouri State",
+  "Texas A&M Commerce"     = "East Texas A&M"
 )
 
 # ---------------------------------------------------------------------------
@@ -115,6 +143,12 @@
   "usc upstate spartans"                   = "south carolina upstate spartans",
   "utah runnin utes"                       = "utah utes",
   "lindenwood lions"                       = "lindenwood lions"
+)
+
+# Name columns joined from `mbb_team_names` (data-raw/mbb_team_names.R).
+.mbb_name_columns <- c(
+  "ncaa_team", "espn_pbp_name", "warren_nolan_team",
+  "team_247", "sref_slug", "sref_team"
 )
 
 # Internal helpers --------------------------------------------------------
@@ -242,10 +276,15 @@
   espn2$.ct_key_bart <- espn2$.ct_key
   espn2$.ct_key_kp   <- espn2$.ct_key
 
+  # -- Other name sources (season-agnostic, keyed on espn_team_id) ---------
+  names2 <- hoopR::mbb_team_names[, c("espn_team_id", .mbb_name_columns)]
+  stopifnot(is.integer(names2$espn_team_id), is.integer(espn2$espn_team_id))
+
   out <- espn2 |>
     dplyr::left_join(fox2,  by = ".fox_key") |>
     dplyr::left_join(bart2, by = ".ct_key_bart") |>
     dplyr::left_join(kp2,   by = ".ct_key_kp") |>
+    dplyr::left_join(names2, by = "espn_team_id") |>
     dplyr::mutate(
       season                = as.integer(season),
       yahoo_team_id         = NA_character_,
@@ -277,6 +316,7 @@
       "fox_team_id", "fox_team_name", "fox_section",
       "bart_team", "bart_conf",
       "kp_team", "kp_conf",
+      dplyr::all_of(.mbb_name_columns),
       "yahoo_team_id", "yahoo_team_name",
       "fox_match_confidence", "bart_match_confidence", "kp_match_confidence",
       "match_method"
@@ -344,8 +384,14 @@ NULL
 #'   agreeing teams that stay put the next season. `fox_team_id` is kept.
 #' * `bart_*` comes from Torvik's `{season}_team_results.csv` (2008 on;
 #'   earlier seasons get NA `bart_*`).
-#' * `kp_*` comes from `teams_links` for that season (2002-2026); a season it
+#' * `kp_*` comes from `teams_links` for that season (2002-2027); a season it
 #'   does not carry gets NA `kp_*`.
+#'
+#' The NCAA, ESPN play-by-play, Warren Nolan, 247Sports and Sports-Reference
+#' names (`ncaa_team` through `sref_team`) come from [mbb_team_names], joined
+#' on `espn_team_id`. They are **not** read as of `season`: each team has one
+#' set of names (mostly as of 2022-23), applied to every season. A name that
+#' is not known is NA, never a guess.
 #'
 #' A source that fails raises an error instead of returning a crosswalk
 #' whose columns are silently all NA. Torvik answering with no teams
@@ -377,6 +423,12 @@ NULL
 #'      bart_conf \tab character \tab Torvik conference abbreviation (NA if unmatched). \cr
 #'      kp_team \tab character \tab KenPom team name (NA if unmatched). \cr
 #'      kp_conf \tab character \tab KenPom conference abbreviation (NA if unmatched). \cr
+#'      ncaa_team \tab character \tab NCAA (stats.ncaa.org) team name; same for every season (NA if unknown). \cr
+#'      espn_pbp_name \tab character \tab Team name as ESPN play-by-play prints it; same for every season (NA if unknown). \cr
+#'      warren_nolan_team \tab character \tab Warren Nolan team name; same for every season (NA if unknown). \cr
+#'      team_247 \tab character \tab 247Sports team name; same for every season (NA if unknown). \cr
+#'      sref_slug \tab character \tab Sports-Reference school URL slug (`/cbb/schools/<slug>/`); same for every season (NA if unknown). \cr
+#'      sref_team \tab character \tab Sports-Reference school name; same for every season (NA if unknown). \cr
 #'      yahoo_team_id \tab character \tab Yahoo team id (NA placeholder). \cr
 #'      yahoo_team_name \tab character \tab Yahoo team name (NA placeholder). \cr
 #'      fox_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr

@@ -264,6 +264,21 @@
   `data-raw/pull_team_links.R` now adds only the missing seasons (or rebuilds a
   range you pass it) and logs in with the current httr2 `login()`.
 
+* `mbb_team_crosswalk()` adds six name columns from sources it does not fetch:
+  `ncaa_team`, `espn_pbp_name`, `warren_nolan_team`, `team_247`, `sref_slug`
+  (the Sports-Reference URL slug) and `sref_team`. They come from the new
+  bundled table `mbb_team_names` (368 teams, keyed on `espn_team_id`), which
+  `data-raw/mbb_team_names.R` builds from `data-raw/dict_hoopR.csv`. The names
+  are mostly as of 2022-23 and are the same for every season; an unknown name
+  is `NA`. The duplicate `data-raw/dict_test.csv` is gone.
+* The crosswalk's Torvik and KenPom alias tables add 11 older names from the
+  dict (for example `IUPUI`, `Houston Baptist`, `Dixie St.`, `New Orleans`;
+  KenPom also gets its `Texas A&M Commerce` spelling) and
+  drop `St. Thomas` -> `St. Thomas-Minnesota`, which matched nothing since
+  ESPN renamed the team. Against the 2026 ESPN directory, 361 of 362 teams now
+  join Torvik and KenPom (359 before); only West Florida, new to Division I in
+  2026-27, does not. Older KenPom seasons gain 4 to 7 teams each.
+
 ### **NBA officiating (`nba_l2m`, `nba_l2m_games`, `nba_referee_assignments`)**
 
 New scrapers for official.nba.com officiating data, parity-tested against
