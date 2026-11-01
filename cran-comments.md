@@ -69,7 +69,9 @@ since 3.1.0.
   PDF and HTML manuals build. With `--run-donttest` the examples pass in
   18 minutes.
 * GitHub Actions (R release on Ubuntu, macOS and Windows): OK.
-* win-builder and R-hub: to be run before submission.
+* R-hub v2 (R-devel; linux, windows, macos, macos-arm64), 2026-11-01: linux, windows and
+  macos Status OK; macos-arm64 completed successfully.
+* win-builder: to be run before submission.
 
 ## revdepcheck results
 
