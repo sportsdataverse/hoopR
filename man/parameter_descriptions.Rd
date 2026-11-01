@@ -3,21 +3,15 @@
 \docType{data}
 \name{parameter_descriptions}
 \alias{parameter_descriptions}
-\title{\strong{NBA Stats API Parameter Descriptions}
-Reference table of the query parameters that hoopR's NBA Stats API
-(\code{stats.nba.com}) wrappers send: one row per R argument, with the API
-parameter it maps to, what it does, the values the API accepts and the
-\verb{nba_*()} functions that take it. Built by \code{data-raw/parameter_descriptions.R}
-from the wrappers' own bodies, formals and \verb{@param} text, the stats.nba.com
-parameter values (cross-checked against nba_api) and wehoop's WNBA table.}
+\title{\strong{NBA Stats API Parameter Descriptions}}
 \format{
 A data frame with 300 rows (one per parameter) and 7 variables:\tabular{ll}{
    col_name \tab description \cr
    \code{parameter} \tab character. R argument name (snake_case). \cr
    \code{api_name} \tab character. NBA Stats API query parameter (CamelCase) the argument is sent as; comma-separated, most common first, when functions send it under different names. \cr
    \code{description} \tab character. What the parameter does. \cr
-   \code{valid_values} \tab character. Comma-separated values the API accepts; empty string for free-form parameters. \cr
-   \code{default} \tab character. Most common default in the function signatures, as R prints it; for an argument with no default, the endpoint's own default. \cr
+   \code{valid_values} \tab character. Comma-separated values the API accepts: the union across the endpoints of the listed functions, so one endpoint may accept only some of them (\code{data-raw/nba_stats_parameter_values.csv} in the source repository has the per-endpoint sets). An empty string means no list of values is known, not that any value works; a format may still be given in \code{description}. \cr
+   \code{default} \tab character. Most common default in the function signatures, as R prints it; for an argument with no default, the endpoint's own default. Suffixed \verb{(varies by function)} when the listed functions' defaults differ. \cr
    \code{functions} \tab character. Comma-separated \verb{nba_*()} functions that send the parameter. \cr
    \code{n_functions} \tab integer. Number of functions in \code{functions}. \cr
 }
@@ -29,7 +23,6 @@ A data frame with 300 rows (one per parameter) and 7 variables:\tabular{ll}{
 parameter_descriptions
 }
 \description{
-\strong{NBA Stats API Parameter Descriptions}
 Reference table of the query parameters that hoopR's NBA Stats API
 (\code{stats.nba.com}) wrappers send: one row per R argument, with the API
 parameter it maps to, what it does, the values the API accepts and the
