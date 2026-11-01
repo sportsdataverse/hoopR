@@ -41,6 +41,7 @@ jobs:
             any::pkgdown
             any::animation
             any::cfbfastR
+            any::DT
             any::fastRhockey
             any::ggimage
             any::knitr

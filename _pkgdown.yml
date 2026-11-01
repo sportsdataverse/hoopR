@@ -110,6 +110,8 @@ navbar:
           href: articles/mbb-cookbook.html
         - text: "NBA Cookbook"
           href: articles/nba-cookbook.html
+        - text: "NBA Stats API Parameter Descriptions"
+          href: articles/parameter-descriptions.html
     news:
       icon: "fas fa-newspaper"
       text: " News"
