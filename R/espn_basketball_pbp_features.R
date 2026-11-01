@@ -18,12 +18,17 @@
   names <- unique(setdiff(as.character(names), c("", NA)))
   by_name <- if (length(names) && "text" %in% names(plays)) {
     alternation <- paste(gsub("([][{}()+*^$|\\\\?.])", "\\\\\\1", sort(names)), collapse = "|")
-    grepl(paste0("(?i)(?:^|\\W)(?:", alternation, ")(?:\\W|$)"), plays$text, perl = TRUE) &
+    # (*UCP): \W is Unicode-aware, as in the Rust regex sportsdataverse-py uses
+    grepl(paste0("(*UCP)(?i)(?:^|\\W)(?:", alternation, ")(?:\\W|$)"), plays$text, perl = TRUE) &
       !is.na(plays$text)
   } else {
     rep(FALSE, nrow(plays))
   }
-  play_team <- if ("team_id" %in% names(plays)) suppressWarnings(as.integer(plays$team_id)) else NA_integer_
+  play_team <- if ("team_id" %in% names(plays)) {
+    suppressWarnings(as.integer(plays$team_id))
+  } else {
+    rep(NA_integer_, nrow(plays))
+  }
   by_team <- ifelse(is.na(play_team), by_name, play_team %in% as.integer(team_id))
   (plays$type_text %in% .team_timeout_types) & by_team
 }
@@ -32,7 +37,8 @@
 # 0:00 on its period clock instead (its next row's clock starts over), the game's last row NA.
 .end_seconds <- function(plays, period_scope, scopes) {
   nxt <- dplyr::lead(plays$period_number)
-  ends_period <- !is.na(nxt) & plays$period_number != nxt
+  # an NA comparison is not a period end (a null polars condition is false)
+  ends_period <- (plays$period_number != nxt) %in% TRUE
   left <- plays[[paste0("start_", period_scope, "_seconds_remaining")]]
   for (s in c(period_scope, scopes)) {
     start <- plays[[paste0("start_", s, "_seconds_remaining")]]
@@ -50,9 +56,8 @@
   # a bare sub-minute clock ("23.4") reads as 0:23.4
   mmss <- ifelse(grepl(":", clock, fixed = TRUE), clock, paste0("0:", clock))
   mmss[is.na(clock)] <- NA_character_
-  part <- function(i) vapply(strsplit(mmss, ":", fixed = TRUE), function(x) x[i], character(1))
-  minutes <- as.integer(suppressWarnings(as.numeric(part(1L))))
-  seconds <- suppressWarnings(as.numeric(part(2L)))
+  minutes <- as.integer(suppressWarnings(as.numeric(sub(":.*", "", mmss))))
+  seconds <- suppressWarnings(as.numeric(sub(".*:", "", mmss)))
   left <- 60L * minutes + seconds
 
   plays$game_play_number <- seq_len(nrow(plays))
@@ -88,7 +93,10 @@
     plays$lead_half <- dplyr::lead(half)
     plays$start_quarter_seconds_remaining <- left
     plays$start_half_seconds_remaining <- ifelse(period %in% c(1L, 3L), 720 + left, left)
-    plays$start_game_seconds_remaining <- left + ifelse(period %in% 1L, 2160, ifelse(period %in% 2L, 1440, ifelse(period %in% 3L, 720, 0)))
+    # regulation seconds after this quarter: 2160 / 1440 / 720, none in Q4 and overtime
+    after <- c(2160, 1440, 720)[match(period, 1:3)]
+    after[is.na(after)] <- 0
+    plays$start_game_seconds_remaining <- left + after
     plays <- .end_seconds(plays, "quarter", c("half", "game"))
     plays$period <- period
   }

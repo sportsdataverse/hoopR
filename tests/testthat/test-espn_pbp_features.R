@@ -49,4 +49,27 @@ test_that("a period's last row ends at 0:00 on its own clock (MBB 401830342, 2OT
   flagged <- got$home_timeout_called | got$away_timeout_called
   expect_gt(sum(flagged), 0L)
   expect_false(any(got$home_timeout_called & got$away_timeout_called))
+  expect_true(all(got$type_text[flagged] %in% .team_timeout_types))
+})
+
+test_that(".timeout_called() falls back to a whole-word name match per row", {
+  # hand-built frame: no committed game has a timeout without a team_id
+  plays <- data.frame(
+    type_text = c("ShortTimeOut", "ShortTimeOut", "Jumpshot", "ShortTimeOut"),
+    text = c("Duke timeout", "UNC timeout", "Duke jumper", "San Jos\u00e9 St timeout")
+  )
+  expect_identical(.timeout_called(plays, 150L, "Duke"), c(TRUE, FALSE, FALSE, FALSE))
+  # \W is Unicode-aware, as in sportsdataverse-py: "Jos" is not a word inside "Jos\u00e9"
+  expect_identical(.timeout_called(plays, 23L, "Jos"), c(FALSE, FALSE, FALSE, FALSE))
+  expect_identical(.timeout_called(plays, 23L, "san jos\u00e9 st"), c(FALSE, FALSE, FALSE, TRUE))
+  # a play's own team_id wins over the text
+  plays$team_id <- c(2L, NA, NA, NA)
+  expect_identical(.timeout_called(plays, 150L, "Duke"), c(FALSE, FALSE, FALSE, FALSE))
+})
+
+test_that("a NA period never ends a period (sportsdataverse-py reads a null condition as false)", {
+  plays <- data.frame(period_number = c(NA, 1L, 1L), start_period_seconds_remaining = c(5L, 3L, 1L))
+  plays$start_game_seconds_remaining <- plays$start_period_seconds_remaining
+  got <- .end_seconds(plays, "period", "game")
+  expect_identical(got$end_period_seconds_remaining, c(3L, 1L, NA))
 })
