@@ -180,8 +180,8 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_team_current_roster(team_id = 150))
 #> ── ESPN MBB Team Current Roster Information from ESPN.com ─────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:29:25 UTC
-#> # A tibble: 15 × 46
+#> ℹ Data updated: 2026-11-01 20:44:33 UTC
+#> # A tibble: 15 × 47
 #>    team_abbreviation team_alternate_color team_color team_display_name team_id
 #>    <chr>             <chr>                <chr>      <chr>               <int>
 #>  1 DUKE              ffffff               00539b     Duke Blue Devils      150
@@ -199,18 +199,18 @@ try(espn_mbb_team_current_roster(team_id = 150))
 #> 13 DUKE              ffffff               00539b     Duke Blue Devils      150
 #> 14 DUKE              ffffff               00539b     Duke Blue Devils      150
 #> 15 DUKE              ffffff               00539b     Duke Blue Devils      150
-#> # ℹ 41 more variables: team_is_active <lgl>, team_location <chr>,
+#> # ℹ 42 more variables: team_is_active <lgl>, team_location <chr>,
 #> #   team_name <chr>, team_nickname <chr>, team_short_name <chr>,
-#> #   team_slug <chr>, team_uid <chr>, logo <chr>, logo_dark <chr>,
-#> #   group_id <int>, group_is_conference <lgl>, parent_group_id <int>,
-#> #   conference_id <int>, athlete_active <lgl>, athlete_display_height <chr>,
-#> #   athlete_display_name <chr>, athlete_display_weight <chr>,
-#> #   athlete_first_name <chr>, athlete_full_name <chr>, athlete_guid <chr>, …
+#> #   team_slug <chr>, standingSummary <chr>, team_uid <chr>, logo <chr>,
+#> #   logo_dark <chr>, group_id <int>, group_is_conference <lgl>,
+#> #   parent_group_id <int>, conference_id <int>, athlete_active <lgl>,
+#> #   athlete_display_height <chr>, athlete_display_name <chr>,
+#> #   athlete_display_weight <chr>, athlete_first_name <chr>, …
 # }
 # \donttest{
 try(espn_nba_team_current_roster(team_id = 13))
 #> ── ESPN NBA Team Current Roster Information from ESPN.com ─────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:29:25 UTC
+#> ℹ Data updated: 2026-11-01 20:44:33 UTC
 #> # A tibble: 0 × 0
 # }
 ```

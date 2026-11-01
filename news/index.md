@@ -445,6 +445,11 @@ vocabulary.
 - Examples that call stats.nba.com, Basketball-Reference or KenPom run
   only in interactive sessions; those hosts refuse requests from most
   servers.
+- New article, “NBA Stats API Parameter Descriptions”, and dataset
+  `parameter_descriptions`: each query parameter the `nba_*()`
+  stats.nba.com wrappers send, with its API name, description, accepted
+  values, default and the functions that take it
+  ([\#248](https://github.com/sportsdataverse/hoopR/issues/248)).
 
 ## **hoopR 3.1.0**
 

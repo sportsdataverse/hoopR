@@ -106,7 +106,7 @@ Other NBL Rosetta Functions:
 # \donttest{
   try(nbl_rosetta_standings(org = "nbl", season = 2026))
 #> ── NBL Rosetta standings from prod.rosetta.nbl.com.au ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:33:15 UTC
+#> ℹ Data updated: 2026-11-01 20:48:24 UTC
 #> # A tibble: 10 × 24
 #>    org   rosetta_standing_id       position   won  lost played points_percentage
 #>    <chr> <chr>                        <int> <int> <int>  <int>             <dbl>

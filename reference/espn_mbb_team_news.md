@@ -208,20 +208,20 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-10-31 21:29:27 UTC
+#> ℹ Data updated: 2026-11-01 20:44:35 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.03e7 Story Men's c… Which team… 2026-10-… FALSE   Mark … https:/… 41       
-#> 2  4.87e7 Story Transfe… The season… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 3  5.03e7 Story How Asa… Ranked No.… 2026-10-… FALSE   Jason… https:/… 41       
-#> 4  5.03e7 Story Predict… The past f… 2026-10-… FALSE   Myron… https:/… NA       
-#> 5  5.03e7 Head… Asa Mon… Asa Montgo… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 1  5.02e7 Story Early t… After a sl… 2026-11-… FALSE   Paul … https:/… 41       
+#> 2  5.03e7 Prev… No. 2 D… Army Black… 2026-11-… FALSE   NA     http://… 41       
+#> 3  5.03e7 Story Men's c… Which team… 2026-10-… FALSE   Mark … https:/… 41       
+#> 4  4.87e7 Story Transfe… The season… 2026-10-… FALSE   Jeff … https:/… 41       
+#> 5  5.03e7 Story How Asa… Ranked No.… 2026-10-… FALSE   Jason… https:/… 41       
 # }
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:29:27 UTC
+#> ℹ Data updated: 2026-11-01 20:44:35 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    

@@ -126,8 +126,8 @@ Other ACB Functions:
 # \donttest{
   try(acb_current_roster(club_id = 2, season = 2027))
 #> ── ACB Current Roster from api2.acb.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:26:30 UTC
-#> # A tibble: 19 × 17
+#> ℹ Data updated: 2026-11-01 20:41:38 UTC
+#> # A tibble: 20 × 17
 #>    club_id role   person_id person_name        first_name last_name shirt_number
 #>      <int> <chr>      <int> <chr>              <chr>      <chr>     <chr>       
 #>  1       2 player  30003361 Kevin Punter       Kevin      Punter    0           
@@ -143,12 +143,13 @@ Other ACB Functions:
 #> 11       2 player  20212243 Olek Balcerowski   Aleksander Balcerow… 22          
 #> 12       2 player  30005476 Justin Minaya      Justin     Minaya    24          
 #> 13       2 player  30005356 Josh Nebo          Joshua     Nebo      32          
-#> 14       2 player  30004606 J. Siftar          Jakob      Siftar    42          
-#> 15       2 player  20212265 Joel Parra         Joel       Parra     44          
-#> 16       2 player  30005447 Yoan Makoundou     Yoan       Makoundou 55          
-#> 17       2 staff   30005390 Aleksander Sekulic Aleksander Sekulic   1           
-#> 18       2 staff   30005459 Jurica Zuza        Jurica     Zuza      2           
-#> 19       2 staff   30005460 Jernej Valentincic Jernej     Valentin… 3           
+#> 14       2 player  30004602 A. Kone            Abdrahama… Kone      34          
+#> 15       2 player  30004606 J. Siftar          Jakob      Siftar    42          
+#> 16       2 player  20212265 Joel Parra         Joel       Parra     44          
+#> 17       2 player  30005447 Yoan Makoundou     Yoan       Makoundou 55          
+#> 18       2 staff   30005390 Aleksander Sekulic Aleksander Sekulic   1           
+#> 19       2 staff   30005459 Jurica Zuza        Jurica     Zuza      2           
+#> 20       2 staff   30005460 Jernej Valentincic Jernej     Valentin… 3           
 #> # ℹ 10 more variables: game_role <chr>, licensing <chr>, age <int>,
 #> #   nationality <chr>, nationality_iso <chr>, height_cm <int>,
 #> #   is_license_active <lgl>, edition_id <int>, season <int>,

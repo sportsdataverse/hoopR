@@ -146,7 +146,7 @@ Other Atrium Functions:
     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
   ))
 #> ── Atrium standings from embed-api.eui.connect.sportradar.com ─── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:27:12 UTC
+#> ℹ Data updated: 2026-11-01 20:42:09 UTC
 #> # A tibble: 16 × 28
 #>    website_id season_id       season_end_year group position entity_id team_name
 #>         <int> <chr>                     <int> <chr>    <int> <chr>     <chr>    

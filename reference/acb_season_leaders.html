@@ -39,6 +39,7 @@ Endpoint: GET https://api2.acb.com/api/matchdata/Preview/season-leaders"><meta p
     <li><a class="dropdown-item" href="../articles/cbbd-college-basketball-data.html">CollegeBasketballData (CBD) Endpoints</a></li>
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
+    <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html"><span class="fa fas fa-newspaper"></span>  News</a></li>
 <li class="nav-item dropdown">
@@ -194,7 +195,7 @@ accepted.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">acb_season_leaders</span><span class="op">(</span>match_id <span class="op">=</span> <span class="fl">105401</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ACB Season Leaders from api2.acb.com ───────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:26:40 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-01 20:41:48 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 40 × 17</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    match_id edition_id season team_side team_id club_id team  team_abbr metric</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>

@@ -81,24 +81,24 @@ Other FEB Functions:
 # \donttest{
   try(feb_standings(group = 1, season = 2027))
 #> ── FEB standings from baloncestoenvivo.feb.es ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:29:57 UTC
+#> ℹ Data updated: 2026-11-01 20:45:09 UTC
 #> # A tibble: 18 × 17
 #>    group season competition comp_id table position team_id team     played   won
 #>    <int>  <int> <chr>         <int> <chr>    <int>   <int> <chr>     <int> <int>
-#>  1     1   2027 PRIMERA FEB     115 live         1 1008687 HLA ALI…      6     6
-#>  2     1   2027 PRIMERA FEB     115 live         2 1010493 MOVISTA…      5     5
+#>  1     1   2027 PRIMERA FEB     115 live         1 1010493 MOVISTA…      6     6
+#>  2     1   2027 PRIMERA FEB     115 live         2 1008687 HLA ALI…      6     6
 #>  3     1   2027 PRIMERA FEB     115 live         3 1010207 IBEROLE…      6     5
-#>  4     1   2027 PRIMERA FEB     115 live         4 1008797 CAJASIE…      5     4
+#>  4     1   2027 PRIMERA FEB     115 live         4 1008797 CAJASIE…      6     4
 #>  5     1   2027 PRIMERA FEB     115 live         5 1009584 GRUPO A…      6     4
-#>  6     1   2027 PRIMERA FEB     115 live         6 1009109 COVIRAN…      6     4
-#>  7     1   2027 PRIMERA FEB     115 live         7 1009713 PALMER …      5     3
-#>  8     1   2027 PRIMERA FEB     115 live         8 1009837 ALIMERK…      5     3
-#>  9     1   2027 PRIMERA FEB     115 live         9 1009095 CLUB OU…      6     3
-#> 10     1   2027 PRIMERA FEB     115 live        10 1010324 INSOLAC…      6     3
-#> 11     1   2027 PRIMERA FEB     115 live        11 1009716 BUENO A…      6     3
-#> 12     1   2027 PRIMERA FEB     115 live        12 1009110 CAJASOL…      5     2
-#> 13     1   2027 PRIMERA FEB     115 live        13 1008900 CAJA RU…      6     2
-#> 14     1   2027 PRIMERA FEB     115 live        14 1008378 INVEREA…      5     1
+#>  6     1   2027 PRIMERA FEB     115 live         6 1009713 PALMER …      6     4
+#>  7     1   2027 PRIMERA FEB     115 live         7 1009109 COVIRAN…      6     4
+#>  8     1   2027 PRIMERA FEB     115 live         8 1009095 CLUB OU…      6     3
+#>  9     1   2027 PRIMERA FEB     115 live         9 1010324 INSOLAC…      6     3
+#> 10     1   2027 PRIMERA FEB     115 live        10 1009716 BUENO A…      6     3
+#> 11     1   2027 PRIMERA FEB     115 live        11 1009837 ALIMERK…      6     3
+#> 12     1   2027 PRIMERA FEB     115 live        12 1008900 CAJA RU…      6     2
+#> 13     1   2027 PRIMERA FEB     115 live        13 1009110 CAJASOL…      6     2
+#> 14     1   2027 PRIMERA FEB     115 live        14 1008378 INVEREA…      6     2
 #> 15     1   2027 PRIMERA FEB     115 live        15 1010494 PARTIZÁ…      6     1
 #> 16     1   2027 PRIMERA FEB     115 live        16 1008400 GRUPO U…      6     1
 #> 17     1   2027 PRIMERA FEB     115 live        17 1009072 FIBWI M…      6     1

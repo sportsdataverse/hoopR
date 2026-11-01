@@ -103,7 +103,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_schedule(season = 2026))
 #> ── BNXT League Schedule from Sportpress ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:34:38 UTC
+#> ℹ Data updated: 2026-11-01 20:49:49 UTC
 #> # A tibble: 347 × 19
 #>    game_id game_time           status  competition_id season phase_id phase_name
 #>      <int> <dttm>              <chr>            <int>  <int>    <int> <chr>     

@@ -193,7 +193,7 @@ Other SCB Functions:
 # \donttest{
   try(scb_games())
 #> ── BBL/DBBL Games from the SCB API ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:33:43 UTC
+#> ℹ Data updated: 2026-11-01 20:48:56 UTC
 #> # A tibble: 325 × 89
 #>    league season season_id game_id competition stage       status scheduled_time
 #>    <chr>   <int>     <int> <chr>   <chr>       <chr>       <chr>  <chr>         

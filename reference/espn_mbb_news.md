@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:28:54 UTC
+#> ℹ Data updated: 2026-11-01 20:43:58 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.03e7 Head… LSU lan… Five-star … 2026-10-… FALSE   Jeff … https:/… 41       
-#> 2  5.03e7 Head… Zion Gr… Five-star … 2026-10-… FALSE   Jeff … https:/… 41       
-#> 3  5.03e7 Prev… Norther… Grambling … 2026-10-… FALSE   NA     http://… 41       
-#> 4  5.03e7 Prev… Liberty… High Point… 2026-10-… FALSE   NA     http://… 41       
-#> 5  5.03e7 Prev… Notre D… Villanova … 2026-10-… FALSE   NA     http://… 41       
+#> 1  5.02e7 Story Early t… "After a s… 2026-11-… FALSE   Paul … https:/… 41       
+#> 2  5.03e7 Head… Notre D… "Notre Dam… 2026-11-… FALSE   NA     https:/… 41       
+#> 3  5.03e7 Recap Notre D… "— Brady K… 2026-11-… FALSE   NA     http://… 41       
+#> 4  5.00e7 Story How top… "How these… 2026-11-… FALSE   Jeff … https:/… 41       
+#> 5  5.03e7 Prev… Marquet… "Mercyhurs… 2026-11-… FALSE   NA     http://… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:28:54 UTC
+#> ℹ Data updated: 2026-11-01 20:43:58 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.03e7 Head… LeBron … LeBron Jam… 2026-10-… FALSE   Kris … https:/… 46       
-#> 2  5.03e7 Head… Lakers'… Jeanie Bus… 2026-10-… FALSE   Baxte… https:/… 46       
-#> 3  5.03e7 Head… Sources… The Thunde… 2026-10-… FALSE   Tim M… https:/… 46       
-#> 4  5.03e7 Story Saturda… Jim McCorm… 2026-10-… FALSE   Jim M… https:/… 22000    
-#> 5  5.03e7 Prev… Los Ang… Los Angele… 2026-10-… FALSE   NA     http://… 46       
+#> 1  5.03e7 Story Jalen B… The supers… 2026-11-… FALSE   J.J. … https:/… 46       
+#> 2  5.03e7 Story Sunday'… Jim McCorm… 2026-11-… FALSE   Jim M… https:/… 22000    
+#> 3  5.03e7 Media Here's … Check out … 2026-11-… FALSE   NA     https:/… 59       
+#> 4  5.03e7 Prev… Maveric… Sacramento… 2026-11-… FALSE   NA     http://… 46       
+#> 5  5.03e7 Prev… Chicago… Chicago Bu… 2026-11-… FALSE   NA     http://… 46       
 # }
 ```

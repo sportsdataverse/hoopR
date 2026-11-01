@@ -111,7 +111,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_player_rankings(competition_id = 24))
 #> ── BNXT League Player Rankings from Sportpress ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:34:36 UTC
+#> ℹ Data updated: 2026-11-01 20:49:47 UTC
 #> # A tibble: 1,414 × 15
 #>    competition_id category    rank roster_id player_id first_name last_name    
 #>             <int> <chr>      <int>     <int>     <int> <chr>      <chr>        

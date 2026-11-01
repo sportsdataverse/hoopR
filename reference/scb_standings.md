@@ -137,20 +137,20 @@ Other SCB Functions:
 # \donttest{
   try(scb_standings())
 #> ── BBL/DBBL Standings from the SCB API ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:33:51 UTC
+#> ℹ Data updated: 2026-11-01 20:49:03 UTC
 #> # A tibble: 18 × 55
 #>    league season standing_id season_team_id team_id team_name           team_tlc
 #>    <chr>   <int> <chr>       <chr>          <chr>   <chr>               <chr>   
 #>  1 bbl      2027 74719       486            486     FC Bayern München … FCB     
 #>  2 bbl      2027 74708       414            414     VET-CONCEPT Gladia… TRI     
-#>  3 bbl      2027 74713       426            426     SKYLINERS           FRS     
-#>  4 bbl      2027 74714       428            428     SYNTAINICS MBC      MBC     
+#>  3 bbl      2027 74714       428            428     SYNTAINICS MBC      MBC     
+#>  4 bbl      2027 74713       426            426     SKYLINERS           FRS     
 #>  5 bbl      2027 74720       540            540     Fitness First Würz… WUE     
 #>  6 bbl      2027 74716       433            433     MHP RIESEN Ludwigs… LUD     
-#>  7 bbl      2027 74711       420            420     BMA365 Bamberg Bas… BAM     
-#>  8 bbl      2027 74712       422            422     Basketball Löwen B… BRA     
+#>  7 bbl      2027 74722       551            551     ROSTOCK SEAWOLVES   HRO     
+#>  8 bbl      2027 74711       420            420     BMA365 Bamberg Bas… BAM     
 #>  9 bbl      2027 74709       415            415     Telekom Baskets Bo… BON     
-#> 10 bbl      2027 74722       551            551     ROSTOCK SEAWOLVES   HRO     
+#> 10 bbl      2027 74712       422            422     Basketball Löwen B… BRA     
 #> 11 bbl      2027 74707       413            413     ALBA BERLIN         BER     
 #> 12 bbl      2027 74710       418            418     ratiopharm ulm      ULM     
 #> 13 bbl      2027 74715       430            430     EWE Baskets Oldenb… OLD     

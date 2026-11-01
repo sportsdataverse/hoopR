@@ -41,6 +41,7 @@ Endpoint: GET https://api2.acb.com/api/seasondata/PlayerProfile/matches"><meta p
     <li><a class="dropdown-item" href="../articles/cbbd-college-basketball-data.html">CollegeBasketballData (CBD) Endpoints</a></li>
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
+    <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html"><span class="fa fas fa-newspaper"></span>  News</a></li>
 <li class="nav-item dropdown">
@@ -202,8 +203,8 @@ whole double is accepted.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">acb_player_matches</span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">20209407</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ACB Player Matches from api2.acb.com ───────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-10-31 21:26:37 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 42</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-01 20:41:45 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 42</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   player_id match_id round_type round_number date                home_team_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  20<span style="text-decoration: underline;">209</span>407   <span style="text-decoration: underline;">105</span>383 LR                    1 2026-09-27 <span style="color: #949494;">17:00:00</span>         <span style="text-decoration: underline;">4</span>476</span>
@@ -211,6 +212,7 @@ whole double is accepted.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>  20<span style="text-decoration: underline;">209</span>407   <span style="text-decoration: underline;">105</span>397 LR                    3 2026-10-11 <span style="color: #949494;">10:00:00</span>         <span style="text-decoration: underline;">4</span>476</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>  20<span style="text-decoration: underline;">209</span>407   <span style="text-decoration: underline;">105</span>407 LR                    4 2026-10-18 <span style="color: #949494;">10:30:00</span>         <span style="text-decoration: underline;">4</span>476</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>  20<span style="text-decoration: underline;">209</span>407   <span style="text-decoration: underline;">105</span>419 LR                    5 2026-10-25 <span style="color: #949494;">18:00:00</span>         <span style="text-decoration: underline;">4</span>465</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>  20<span style="text-decoration: underline;">209</span>407   <span style="text-decoration: underline;">105</span>425 LR                    6 2026-11-01 <span style="color: #949494;">11:30:00</span>         <span style="text-decoration: underline;">4</span>476</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 36 more variables: home_club_id &lt;int&gt;, home_team &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_abbr &lt;chr&gt;, away_team_id &lt;int&gt;, away_club_id &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team &lt;chr&gt;, away_team_abbr &lt;chr&gt;, edition_id &lt;int&gt;, season &lt;int&gt;,</span></span>

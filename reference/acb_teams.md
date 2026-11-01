@@ -107,7 +107,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_teams(season = 2027))
 #> ── ACB Teams from api2.acb.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:26:46 UTC
+#> ℹ Data updated: 2026-11-01 20:41:54 UTC
 #> # A tibble: 18 × 9
 #>    team_id club_id team               team_abbr competition_id edition_id season
 #>      <int>   <int> <chr>              <chr>              <int>      <int>  <int>

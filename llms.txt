@@ -5635,6 +5635,11 @@ Data included within the package
   they build the page link from the name itself, so they also work for
   seasons this table does not list yet.
 
+- [`parameter_descriptions`](https://hoopR.sportsdataverse.org/reference/parameter_descriptions.md)
+  :
+
+  **NBA Stats API Parameter Descriptions**
+
 ### hoopR Helper Functions
 
 Internal functions used by hoopR
@@ -5789,3 +5794,10 @@ Internal functions used by hoopR
   from a single box score to a full season, with an eye on how the
   package’s function names are built so you can guess the next one
   before you look it up.
+
+- [NBA Stats API Parameter
+  Descriptions](https://hoopR.sportsdataverse.org/articles/parameter-descriptions.md):
+
+  A searchable reference table of every query parameter used by the NBA
+  Stats API endpoints wrapped in `hoopR` – parameter name, description,
+  accepted values, and which functions accept it.

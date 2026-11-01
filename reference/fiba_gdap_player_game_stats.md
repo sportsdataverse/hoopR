@@ -130,7 +130,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_player_game_stats(player_id = 211501, comp = 208182))
 #> ── FIBA gdap_player_game_stats from fiba.basketball ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:30:12 UTC
+#> ℹ Data updated: 2026-11-01 20:45:24 UTC
 #> # A tibble: 8 × 39
 #>   player_id competition_id game_id game_day round_id round_code round_name    
 #>       <int>          <int>   <int>    <int>    <int> <chr>      <chr>         

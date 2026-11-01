@@ -148,7 +148,7 @@ Saiem Gilani
 # \donttest{
   try(load_nba_player_impact(seasons = most_recent_nba_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 423 × 28
+#> # A tibble: 430 × 28
 #>    player_id player_name       team_id team_abbreviation team_name  teams season
 #>        <int> <chr>               <int> <chr>             <chr>      <chr>  <int>
 #>  1      2544 LeBron James   1610612755 PHI               Philadelp… PHI     2027
@@ -161,7 +161,7 @@ Saiem Gilani
 #>  8    201939 Stephen Curry  1610612744 GSW               Golden St… GSW     2027
 #>  9    201942 DeMar DeRozan  1610612743 DEN               Denver Nu… DEN     2027
 #> 10    201950 Jrue Holiday   1610612757 POR               Portland … POR     2027
-#> # ℹ 413 more rows
+#> # ℹ 420 more rows
 #> # ℹ 21 more variables: season_type <chr>, o_rapm <dbl>, d_rapm <dbl>,
 #> #   rapm <dbl>, off_poss <int>, def_poss <int>, o_adj_rapm <dbl>,
 #> #   d_adj_rapm <dbl>, adj_rapm <dbl>, ospm <dbl>, dspm <dbl>, spm <dbl>,

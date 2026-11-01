@@ -163,7 +163,7 @@ Other NBL Rosetta Functions:
 # \donttest{
   try(nbl_rosetta_player_stats(org = "nbl", player_id = "7619d3ea-410d-11f0-9235-2902fc2f936f"))
 #> ── NBL Rosetta player_stats from prod.rosetta.nbl.com.au ──────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:33:08 UTC
+#> ℹ Data updated: 2026-11-01 20:48:18 UTC
 #> # A tibble: 3 × 91
 #>   org   assists_average blocks_average field_goals_attempted field_goals_made
 #>   <chr>           <dbl>          <dbl>                 <int>            <int>

@@ -5418,6 +5418,11 @@ Data included within the package
   they build the page link from the name itself, so they also work for
   seasons this table does not list yet.
 
+- [`parameter_descriptions`](https://hoopR.sportsdataverse.org/reference/parameter_descriptions.md)
+  :
+
+  **NBA Stats API Parameter Descriptions**
+
 ### hoopR Helper Functions
 
 Internal functions used by hoopR

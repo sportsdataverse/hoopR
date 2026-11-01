@@ -84,7 +84,7 @@ Other KZS Functions:
 # \donttest{
   try(kzs_teams(competition_id = 579))
 #> ── KZS Teams from api.kzs.si ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:31:28 UTC
+#> ℹ Data updated: 2026-11-01 20:46:37 UTC
 #> # A tibble: 11 × 19
 #>    competition_id team_id team_application_id club_id club_member
 #>             <int>   <int>               <int>   <int> <lgl>      

@@ -933,9 +933,20 @@ Saiem Gilani
 # }
 # \donttest{
   try(load_ncaa_mbb_team_ids(seasons = most_recent_mbb_season()))
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_team_ids/ncaa_mbb_team_ids_2027.rds': HTTP status was '404 Not Found'
-#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/ncaa_mbb_team_ids/ncaa_mbb_team_ids_2027.rds>
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 0 × 0
+#> # A tibble: 365 × 4
+#>    team               conference id     season
+#>    <chr>              <chr>      <chr>   <int>
+#>  1 A&M-Corpus Christi Southland  627267   2027
+#>  2 Abilene Christian  WAC        627272   2027
+#>  3 Air Force          MWC        627332   2027
+#>  4 Akron              MAC        627413   2027
+#>  5 Alabama            SEC        627275   2027
+#>  6 Alabama A&M        SWAC       627273   2027
+#>  7 Alabama St.        SWAC       627274   2027
+#>  8 Alcorn             SWAC       627277   2027
+#>  9 American           Patriot    627278   2027
+#> 10 App State          Sun Belt   627279   2027
+#> # ℹ 355 more rows
 # }
 ```

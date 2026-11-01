@@ -62,6 +62,7 @@
     <li><a class="dropdown-item" href="../articles/cbbd-college-basketball-data.html">CollegeBasketballData (CBD) Endpoints</a></li>
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
+    <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html"><span class="fa fas fa-newspaper"></span>  News</a></li>
@@ -636,12 +637,12 @@ feed and the calendar.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 2</span></span></span>
 <span><span class="co">#&gt;   headline                                                             published</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> LSU lands 5-star center Xavier Young for class of 2027               2026-10-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Zion Green commits to Alabama hoops as Crimson Tide's second top-25… 2026-10-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Northern Illinois plays Grambling in Rock Hill, South Carolina       2026-10-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Liberty faces High Point in Rock Hill, South Carolina                2026-10-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Notre Dame Fighting Irish square off against the Villanova Wildcats  2026-10-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> How top 2027 men's basketball recruits fit with their new programs   2026-10-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Early top-10 men's basketball recruiting class rankings              2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Notre Dame rallies to beat Villanova in Rome season opener           2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Notre Dame beats Villanova 74-72 in men's college basketball season… 2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> How top 2027 men's basketball recruits fit with their new programs   2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Marquette hosts Mercyhurst in season opener                          2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Washington Huskies open season at home against the Colgate Raiders   2026-11-…</span></span>
 <span></span>
 <span><span class="co"># 2025 MBB season calendar</span></span>
 <span><span class="va">mbb_cal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_calendar.html">espn_mbb_calendar</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
@@ -1630,11 +1631,11 @@ season-by-season indexes, and a richer event log.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 12</span></span></span>
 <span><span class="co">#&gt;   league          coach_id record_type_id record_name record_type record_summary</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 6 more variables: record_display &lt;chr&gt;, stat_name &lt;chr&gt;, stat_abbrev &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   stat_display &lt;chr&gt;, value &lt;dbl&gt;, stat_display_value &lt;chr&gt;</span></span></span></code></pre></div>
 </div>

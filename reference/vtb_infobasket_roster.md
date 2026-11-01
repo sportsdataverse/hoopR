@@ -122,7 +122,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_infobasket_roster(season = 2026, team_id = 2650))
 #> ── VTB Infobasket Roster from org.infobasket.su ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:35:27 UTC
+#> ℹ Data updated: 2026-11-01 20:50:39 UTC
 #> # A tibble: 19 × 25
 #>    team_id season person_id player_number display_number is_captain birth_date
 #>      <int>  <int>     <int>         <int> <chr>          <lgl>      <chr>     

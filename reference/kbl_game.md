@@ -109,7 +109,7 @@ Other KBL Functions:
 # \donttest{
   try(kbl_game(gmkey = "S47G01N49"))
 #> ── KBL Game Header from api.kbl.or.kr ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:30:54 UTC
+#> ℹ Data updated: 2026-11-01 20:46:04 UTC
 #> # A tibble: 1 × 40
 #>   gmkey     glkey  season season_code season_name season_grade game_code game_no
 #>   <chr>     <chr>   <int>       <int> <chr>              <int> <chr>       <int>

@@ -375,14 +375,14 @@ espn_nba_leaders(season = most_recent_nba_season())
 #>     <int>       <int> <chr>         <chr>        <chr>      <chr>        <chr>  
 #>  1   2027           2 pointsPerGame PTS          3945274    NA           13     
 #>  2   2027           2 pointsPerGame PTS          4594268    NA           16     
-#>  3   2027           2 pointsPerGame PTS          3975       NA           9      
-#>  4   2027           2 pointsPerGame PTS          3032977    NA           14     
-#>  5   2027           2 pointsPerGame PTS          4431678    NA           20     
-#>  6   2027           2 pointsPerGame PTS          4065648    NA           2      
-#>  7   2027           2 pointsPerGame PTS          5041939    NA           6      
-#>  8   2027           2 pointsPerGame PTS          3064440    NA           23     
-#>  9   2027           2 pointsPerGame PTS          4278073    NA           25     
-#> 10   2027           2 pointsPerGame PTS          3936299    NA           7      
+#>  3   2027           2 pointsPerGame PTS          4431678    NA           20     
+#>  4   2027           2 pointsPerGame PTS          3975       NA           9      
+#>  5   2027           2 pointsPerGame PTS          3032977    NA           14     
+#>  6   2027           2 pointsPerGame PTS          5104157    NA           24     
+#>  7   2027           2 pointsPerGame PTS          4065648    NA           2      
+#>  8   2027           2 pointsPerGame PTS          5041939    NA           6      
+#>  9   2027           2 pointsPerGame PTS          5142620    NA           23     
+#> 10   2027           2 pointsPerGame PTS          4278073    NA           25     
 #> # ℹ 390 more rows
 #> # ℹ 4 more variables: team_abbrev <chr>, value <dbl>, rank <int>,
 #> #   display_value <chr>

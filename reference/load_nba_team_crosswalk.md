@@ -104,7 +104,7 @@ Other MBB Crosswalk Functions:
 # \donttest{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 15:30:15 UTC
+#> ℹ Data updated: 2026-11-01 16:31:22 UTC
 #> # A tibble: 30 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name
 #>     <int>        <int> <chr>             <chr>                 <chr>          
@@ -129,7 +129,7 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 15:30:38 UTC
+#> ℹ Data updated: 2026-11-01 16:32:07 UTC
 #> # A tibble: 1,207 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
 #>     <int> <chr>       <date>                 <int>             <int>
@@ -152,8 +152,8 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 15:30:56 UTC
-#> # A tibble: 460 × 21
+#> ℹ Data updated: 2026-11-01 16:32:29 UTC
+#> # A tibble: 461 × 21
 #>    season espn_team_id team_abbreviation player_name         espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                         <int>
 #>  1   2027            1 ATL               aaron wiggins               4397183
@@ -166,7 +166,7 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #>  8   2027            1 ATL               jock landale                3146557
 #>  9   2027            1 ATL               kingston flemings           5149077
 #> 10   2027            1 ATL               luguentz dort               4397020
-#> # ℹ 450 more rows
+#> # ℹ 451 more rows
 #> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, nba_player_id <chr>, nba_player_name <chr>,
 #> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,

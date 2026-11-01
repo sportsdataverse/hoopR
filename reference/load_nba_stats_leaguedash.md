@@ -91,20 +91,20 @@ Other NBA Stats loader functions:
   try(load_nba_stats_leaguedash(seasons = most_recent_nba_stats_season(),
                                 table = "player_bio"))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 432 × 27
+#> # A tibble: 441 × 27
 #>    player_id player_name      team_id team_abbreviation   age player_height
 #>        <int> <chr>              <int> <chr>             <dbl> <chr>        
 #>  1   1643407 AJ Dybantsa   1610612764 WAS                  19 6-9          
 #>  2   1631260 AJ Green      1610612749 MIL                  27 6-4          
-#>  3    203932 Aaron Gordon  1610612743 DEN                  31 6-8          
-#>  4   1630174 Aaron Nesmith 1610612754 IND                  27 6-5          
-#>  5   1630598 Aaron Wiggins 1610612737 ATL                  27 6-5          
-#>  6   1642846 Ace Bailey    1610612762 UTA                  20 6-9          
-#>  7   1643530 Aday Mara     1610612760 OKC                  21 7-3          
-#>  8   1641737 Adem Bona     1610612755 PHI                  23 6-10         
-#>  9   1642349 Ajay Mitchell 1610612760 OKC                  24 6-4          
-#> 10    201143 Al Horford    1610612744 GSW                  40 6-8          
-#> # ℹ 422 more rows
+#>  3   1642358 AJ Johnson    1610612740 NOP                  21 6-6          
+#>  4    203932 Aaron Gordon  1610612743 DEN                  31 6-8          
+#>  5   1630174 Aaron Nesmith 1610612754 IND                  27 6-5          
+#>  6   1630598 Aaron Wiggins 1610612737 ATL                  27 6-5          
+#>  7   1642846 Ace Bailey    1610612762 UTA                  20 6-9          
+#>  8   1643530 Aday Mara     1610612760 OKC                  21 7-3          
+#>  9   1641737 Adem Bona     1610612755 PHI                  23 6-10         
+#> 10   1642349 Ajay Mitchell 1610612760 OKC                  24 6-4          
+#> # ℹ 431 more rows
 #> # ℹ 21 more variables: player_height_inches <int>, player_weight <chr>,
 #> #   college <chr>, country <chr>, draft_year <chr>, draft_round <chr>,
 #> #   draft_number <chr>, gp <int>, pts <int>, reb <int>, ast <int>,

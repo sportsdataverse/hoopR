@@ -120,7 +120,7 @@ Other NBL Rosetta Functions:
 # \donttest{
   try(nbl_rosetta_seasons(org = "nbl"))
 #> ── NBL Rosetta seasons from prod.rosetta.nbl.com.au ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:33:14 UTC
+#> ℹ Data updated: 2026-11-01 20:48:22 UTC
 #> # A tibble: 75 × 11
 #>    org   season_id    rosetta_season_id name  season_year season_type start_date
 #>    <chr> <chr>        <chr>             <chr>       <int> <chr>       <chr>     

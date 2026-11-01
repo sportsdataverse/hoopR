@@ -103,21 +103,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 25.016 sec elapsed
+    ## 25.026 sec elapsed
 
 ``` r
 
 glue::glue("{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games.")
 ```
 
-    ## 3707359 rows of nba play-by-play data from 7867 games.
+    ## 3710786 rows of nba play-by-play data from 7874 games.
 
 ``` r
 
 dplyr::glimpse(nba_pbp)
 ```
 
-    ## Rows: 3,707,359
+    ## Rows: 3,710,786
     ## Columns: 68
     ## $ game_play_number                <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,…
     ## $ id                              <chr> "4013441404", "4013441407", "401344140…
@@ -200,21 +200,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.148 sec elapsed
+    ## 3.435 sec elapsed
 
 ``` r
 
 glue::glue("{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games.")
 ```
 
-    ## 15724 rows of NBA team boxscore data from 7862 games.
+    ## 15738 rows of NBA team boxscore data from 7869 games.
 
 ``` r
 
 dplyr::glimpse(nba_team_box)
 ```
 
-    ## Rows: 15,724
+    ## Rows: 15,738
     ## Columns: 59
     ## $ game_id                           <int> 401344140, 401344140, 401344139, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -287,21 +287,21 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 4.496 sec elapsed
+    ## 4.432 sec elapsed
 
 ``` r
 
 glue::glue("{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games.")
 ```
 
-    ## 206914 rows of NBA player boxscore data from 7868 games.
+    ## 207096 rows of NBA player boxscore data from 7875 games.
 
 ``` r
 
 dplyr::glimpse(nba_player_box)
 ```
 
-    ## Rows: 206,914
+    ## Rows: 207,096
     ## Columns: 57
     ## $ game_id                           <int> 401344140, 401344140, 401344140, 401…
     ## $ season                            <int> 2021, 2021, 2021, 2021, 2021, 2021, …
@@ -372,7 +372,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 74.724 sec elapsed
+    ## 65.407 sec elapsed
 
 ``` r
 
@@ -475,7 +475,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 3.919 sec elapsed
+    ## 4.113 sec elapsed
 
 ``` r
 
@@ -562,7 +562,7 @@ progressr::with_progress({
 tictoc::toc()
 ```
 
-    ## 37.794 sec elapsed
+    ## 12.483 sec elapsed
 
 ``` r
 

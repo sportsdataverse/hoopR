@@ -45,3 +45,10 @@
   from a single box score to a full season, with an eye on how the
   package’s function names are built so you can guess the next one
   before you look it up.
+
+- [NBA Stats API Parameter
+  Descriptions](https://hoopR.sportsdataverse.org/articles/parameter-descriptions.md):
+
+  A searchable reference table of every query parameter used by the NBA
+  Stats API endpoints wrapped in `hoopR` – parameter name, description,
+  accepted values, and which functions accept it.

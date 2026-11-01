@@ -142,7 +142,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   try(pleague_schedule(season = 2025))
 #> ── P. LEAGUE+ Schedule from pleagueofficial.com ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:33:27 UTC
+#> ℹ Data updated: 2026-11-01 20:48:39 UTC
 #> # A tibble: 48 × 23
 #>    season season_slug stage   gid date       weekday_zh time  starred game_label
 #>     <int> <chr>       <chr> <int> <date>     <chr>      <chr> <lgl>   <chr>     

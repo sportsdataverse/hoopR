@@ -121,7 +121,7 @@ Other SCB Functions:
 # \donttest{
   try(scb_game_players(game_id = "2006920"))
 #> ── BBL/DBBL Game Player Box Score from the SCB API ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-10-31 21:33:40 UTC
+#> ℹ Data updated: 2026-11-01 20:48:54 UTC
 #> # A tibble: 23 × 45
 #>    league game_id season side  team_id season_player_id real_player_id
 #>    <chr>  <chr>    <int> <chr> <chr>   <chr>                     <int>
