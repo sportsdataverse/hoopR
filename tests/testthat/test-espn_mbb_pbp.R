@@ -62,6 +62,7 @@ test_that("ESPN - Get MBB play by play only (no coordinate data)", {
 
 test_that("ESPN - Get MBB play by play only (with coordinate data)", {
   skip_on_cran()
+  skip_espn_test()
   x <- espn_mbb_pbp(game_id = 401479672)
 
 
