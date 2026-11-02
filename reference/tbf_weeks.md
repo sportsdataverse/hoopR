@@ -120,7 +120,7 @@ Other TBF Functions:
 # \donttest{
   try(tbf_weeks(competition = "bsl", season = 2027))
 #> ── TBF Weeks ──────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:45:27 UTC
+#> ℹ Data updated: 2026-11-02 01:57:31 UTC
 #> # A tibble: 30 × 8
 #>    activity_id season competition week  phase phase_name label    is_current
 #>          <int>  <int> <chr>       <chr> <int> <chr>      <chr>    <lgl>     

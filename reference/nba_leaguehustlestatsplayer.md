@@ -174,7 +174,8 @@ nba_leaguehustlestatsteamleaders(
 
 - last_n_games:
 
-  last_n_games
+  Deprecated and ignored. The hustle endpoints take no `LastNGames`
+  filter, so this argument was never sent; passing it now warns.
 
 - league_id:
 

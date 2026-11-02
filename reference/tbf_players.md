@@ -124,7 +124,7 @@ Other TBF Functions:
 # \donttest{
   try(tbf_players(competition = "bsl", season = 2027))
 #> ── TBF Players ────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:45:20 UTC
+#> ℹ Data updated: 2026-11-02 01:57:23 UTC
 #> # A tibble: 260 × 11
 #>    season competition person_id player_name nationality nationality_code club_id
 #>     <int> <chr>           <int> <chr>       <chr>       <chr>              <int>

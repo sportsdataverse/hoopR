@@ -24,7 +24,7 @@ Saiem Gilani
 # \donttest{
 try(ncaa_mbb_NET_rankings())
 #> ── NCAA MBB NET Rankings Information from NCAA.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:43:49 UTC
+#> ℹ Data updated: 2026-11-02 01:55:56 UTC
 #> # A tibble: 365 × 13
 #>     rank school  record conference road  neutral home  non_div_i previous quad_1
 #>    <int> <chr>   <chr>  <chr>      <chr> <chr>   <chr> <chr>        <int> <chr> 

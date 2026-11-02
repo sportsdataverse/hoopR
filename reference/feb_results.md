@@ -81,7 +81,7 @@ Other FEB Functions:
 # \donttest{
   try(feb_results(group = 1, season = 2027))
 #> ── FEB results from baloncestoenvivo.feb.es ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:40:45 UTC
+#> ℹ Data updated: 2026-11-02 01:52:49 UTC
 #> # A tibble: 18 × 17
 #>    group season competition comp_id section    round_title  game_id home_team_id
 #>    <int>  <int> <chr>         <int> <chr>      <chr>          <int>        <int>

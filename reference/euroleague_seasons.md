@@ -81,7 +81,7 @@ Other Euroleague:
     euroleague_seasons(competition_code = "E")
   })
 #> ── EuroLeague seasons from api-live.euroleague.net ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:40:39 UTC
+#> ℹ Data updated: 2026-11-02 01:52:43 UTC
 #> # A tibble: 27 × 16
 #>    name   code  alias competition_code  year start_date activation_date end_date
 #>    <chr>  <chr> <chr> <chr>            <int> <chr>      <chr>           <chr>   

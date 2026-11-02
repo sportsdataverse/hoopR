@@ -112,7 +112,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gamepage_shots(game_id = 100720, comp = 208182))
 #> ── FIBA gamepage_shots from fiba.basketball ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:40:55 UTC
+#> ℹ Data updated: 2026-11-02 01:53:00 UTC
 #> # A tibble: 161 × 19
 #>    game_id competition_id statistic_system period period_number action_id order
 #>      <int>          <int> <chr>            <chr>          <int> <chr>     <int>

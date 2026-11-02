@@ -250,6 +250,20 @@
   parse at the first warning. The warning now reaches the caller along
   with the data.
 
+- [`nba_leaguedashplayerptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md)
+  and
+  [`nba_leaguedashteamptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md)
+  now send `shot_dist_range` as `ShotDistRange`; the argument was
+  accepted but never sent, so every call returned unfiltered shots. The
+  four hustle wrappers
+  ([`nba_leaguehustlestatsplayer()`](https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsplayer.md),
+  [`nba_leaguehustlestatsplayerleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsplayer.md),
+  [`nba_leaguehustlestatsteam()`](https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsplayer.md),
+  [`nba_leaguehustlestatsteamleaders()`](https://hoopR.sportsdataverse.org/reference/nba_leaguehustlestatsplayer.md))
+  never sent `last_n_games` either, and those stats.nba.com endpoints
+  have no `LastNGames` filter, so the argument is now deprecated and
+  warns when supplied.
+
 - [`nba_videoeventsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md)
   is no longer deprecated: the endpoint serves clips for a real
   `game_event_id` (the default `0` matches no play), and the video

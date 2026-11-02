@@ -92,7 +92,7 @@ Other KBL Functions:
 # \donttest{
   try(kbl_pbp(gmkey = "S47G01N49"))
 #> ── KBL Play-by-Play from api.kbl.or.kr ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:41:44 UTC
+#> ℹ Data updated: 2026-11-02 01:53:45 UTC
 #> # A tibble: 603 × 23
 #>    gmkey  season_code season game_code game_no action_number event_number period
 #>    <chr>        <int>  <int> <chr>       <int>         <int>        <int>  <int>

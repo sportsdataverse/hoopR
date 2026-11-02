@@ -81,7 +81,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_competition_teams(competition_id = 24))
 #> ── BNXT League Competition Teams from Sportpress ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:44:41 UTC
+#> ℹ Data updated: 2026-11-02 01:56:47 UTC
 #> # A tibble: 18 × 8
 #>    competition_id season uu_team_id competition_team_id team     team_short_name
 #>             <int>  <int>      <int>               <int> <chr>    <chr>          

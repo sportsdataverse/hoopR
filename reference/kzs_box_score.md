@@ -129,7 +129,7 @@ Other KZS Functions:
 # \donttest{
   try(kzs_box_score(match_id = 101839))
 #> ── KZS Player Box Score from api.kzs.si ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:42:02 UTC
+#> ℹ Data updated: 2026-11-02 01:54:01 UTC
 #> # A tibble: 23 × 61
 #>    match_id team_side team_id team_name         minutes two_pm two_pa two_p_perc
 #>       <int> <chr>       <int> <chr>               <dbl>  <int>  <int>      <dbl>

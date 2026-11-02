@@ -122,17 +122,17 @@ Other Euroleague:
     euroleague_game_header(game_code = 1, season_code = "E2025")
   })
 #> ── EuroLeague game header from live.euroleague.net ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:40:35 UTC
+#> ℹ Data updated: 2026-11-02 01:52:39 UTC
 #> # A tibble: 1 × 44
-#>   score_quarter1_a score_quarter1_b score_quarter2_a score_quarter2_b
-#>              <int>            <int>            <int>            <int>
-#> 1               21               19               40               44
-#> # ℹ 40 more variables: score_quarter3_a <int>, score_quarter3_b <int>,
-#> #   score_quarter4_a <int>, score_quarter4_b <int>, live <lgl>, round <chr>,
-#> #   date <chr>, hour <chr>, stadium <chr>, capacity <chr>, team_a <chr>,
-#> #   team_b <chr>, code_team_a <chr>, tv_code_a <chr>, code_team_b <chr>,
-#> #   tv_code_b <chr>, im_a <chr>, im_b <chr>, score_a <chr>, score_b <chr>,
-#> #   coach_a <chr>, coach_b <chr>, game_time <chr>,
-#> #   remaining_partial_time <chr>, wid <chr>, quarter <chr>, foults_a <chr>, …
+#>   live  round date    hour  stadium capacity team_a team_b code_team_a tv_code_a
+#>   <lgl> <chr> <chr>   <chr> <chr>   <chr>    <chr>  <chr>  <chr>       <chr>    
+#> 1 FALSE 1     30/09/… 19:45 MORACA  2110     ANADO… MACCA… IST         EFS      
+#> # ℹ 34 more variables: code_team_b <chr>, tv_code_b <chr>, im_a <chr>,
+#> #   im_b <chr>, score_a <chr>, score_b <chr>, coach_a <chr>, coach_b <chr>,
+#> #   game_time <chr>, remaining_partial_time <chr>, wid <chr>, quarter <chr>,
+#> #   foults_a <chr>, foults_b <chr>, timeouts_a <chr>, timeouts_b <chr>,
+#> #   score_quarter1_a <int>, score_quarter2_a <int>, score_quarter3_a <int>,
+#> #   score_quarter4_a <int>, score_extra_time_a <int>, score_quarter1_b <int>,
+#> #   score_quarter2_b <int>, score_quarter3_b <int>, score_quarter4_b <int>, …
 # }
 ```

@@ -132,7 +132,7 @@ Other Atrium Functions:
 # \donttest{
   try(atrium_box_score(website_id = 14, fixture_id = "0dc631bd-c34c-11f1-8d16-4d5a21afb79d"))
 #> ── Atrium box score from embed-api.eui.connect.sportradar.com ─── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:37:52 UTC
+#> ℹ Data updated: 2026-11-02 01:50:07 UTC
 #> # A tibble: 24 × 41
 #>    website_id fixture_id   season_id entity_id side  person_id person_name bib  
 #>         <int> <chr>        <chr>     <chr>     <chr> <chr>     <chr>       <chr>

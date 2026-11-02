@@ -66,7 +66,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_club_seasons())
 #> ── BNXT League Club Seasons from Sportpress ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:44:40 UTC
+#> ℹ Data updated: 2026-11-02 01:56:46 UTC
 #> # A tibble: 6 × 1
 #>   season
 #>    <int>

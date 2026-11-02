@@ -128,7 +128,7 @@ Other Atrium Functions:
     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
   ))
 #> ── Atrium player stats from embed-api.eui.connect.sportradar.com ───────────────
-#> ℹ Data updated: 2026-11-01 23:38:05 UTC
+#> ℹ Data updated: 2026-11-02 01:50:15 UTC
 #> # A tibble: 10,212 × 13
 #>    website_id season_id    table_key table_label person_id person_name entity_id
 #>         <int> <chr>        <chr>     <chr>       <chr>     <chr>       <chr>    

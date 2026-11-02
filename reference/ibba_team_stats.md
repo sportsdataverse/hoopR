@@ -100,7 +100,7 @@ Other IBBA Functions:
 # \donttest{
   try(ibba_team_stats(season = 2026, team_id = 1109))
 #> ── IBBA team stats ────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:41:41 UTC
+#> ℹ Data updated: 2026-11-02 01:53:42 UTC
 #> # A tibble: 1 × 27
 #>   season team_id games minutes   pts  fg2m  fg2a fg2_pct  fg3m  fg3a fg3_pct
 #>    <int>   <int> <int>   <dbl> <dbl> <dbl> <dbl>   <dbl> <dbl> <dbl>   <dbl>

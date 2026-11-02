@@ -135,7 +135,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_infobasket_calendar(season = 2026))
 #> ── VTB Infobasket Calendar from org.infobasket.su ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 23:45:46 UTC
+#> ℹ Data updated: 2026-11-02 01:57:48 UTC
 #> # A tibble: 254 × 46
 #>    season comp_id game_id game_number game_date has_time game_time game_time_msk
 #>     <int>   <int>   <int> <chr>       <chr>     <lgl>    <chr>     <chr>        

@@ -114,7 +114,7 @@ Other Atrium Functions:
 # \donttest{
   try(atrium_pbp(website_id = 14, fixture_id = "0dc631bd-c34c-11f1-8d16-4d5a21afb79d"))
 #> ── Atrium play-by-play from embed-api.eui.connect.sportradar.com ───────────────
-#> ℹ Data updated: 2026-11-01 23:37:57 UTC
+#> ℹ Data updated: 2026-11-02 01:50:11 UTC
 #> # A tibble: 497 × 22
 #>    website_id fixture_id             season_id sequence event_id period_id clock
 #>         <int> <chr>                  <chr>        <int> <chr>        <int> <chr>
