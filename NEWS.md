@@ -101,6 +101,31 @@
   argument it takes, and the `nba_drafthistory()` live test passes `season`
   rather than an unknown `season_year`, which was silently ignored.
 
+* `nba_rapm()` now fits the same model as sportsdataverse-py (a ridge with an
+  intercept, on unstandardized player indicators; glmnet and sklearn scale and
+  choose the penalty differently), so its values and player order change:
+  * It fits an intercept. Without one, the league-average points per
+    possession leaked into the player coefficients: on the 2025-26 regular
+    season the possession-weighted mean O-RAPM was +11.4 and D-RAPM -11.1.
+    The average O-RAPM and D-RAPM over players are now 0 (the data do not
+    fix each block's level; the penalty does). Possession-weighted means are
+    not fixed by the model; on 2025-26 they were +0.30 and +0.07.
+  * It no longer standardizes the indicators (`standardize = FALSE`).
+    glmnet's default rescaled each player column, which shrank low-minute
+    players less and, with the intercept, made cross-validation choose a
+    penalty five times heavier.
+
+  On the 2025-26 regular season, for players with 1,000+ offensive
+  possessions, the correlation of `rapm` with sportsdataverse-py's fit rises
+  from 0.960 to 0.989, and with `load_nba_player_impact()` RAPM from 0.955 to
+  0.986. The player order is not the same as before (Spearman 0.94 for those
+  players, 0.83 for everyone), so earlier `nba_rapm()` output is not
+  comparable. Constant `points` (including a single possession) now returns
+  all-zero player values instead of an error, possessions with missing
+  `points` are dropped like those with a missing lineup slot, and a failed
+  cross-validation on tiny inputs falls back to a fixed `lambda` with a
+  warning.
+
 ### **New data loaders**
 
 * Eight new loaders read the `mbb_groups` and `nba_groups` releases on

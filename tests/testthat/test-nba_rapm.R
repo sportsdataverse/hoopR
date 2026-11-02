@@ -141,6 +141,15 @@ test_that(".build_rapm_design drops possessions with NA lineup cells (never-rais
   # Points of the surviving possession = 0 (the second row)
   expect_equal(des$y, 0)
 
+  # NA points are dropped too (the intercept fit cannot take them)
+  df_na_pts <- df
+  df_na_pts$off_player_1 <- 1L
+  df_na_pts$points <- c(NA_real_, 0)
+  expect_equal(.build_rapm_design(df_na_pts)$y, 0)
+
+  # A missing points column is a caller error, not an empty result
+  expect_error(.build_rapm_design(df[, names(df) != "points"]), "points")
+
   # All-NA rows → empty result (never-raise)
   df_all_na <- data.frame(
     off_player_1 = NA_integer_, off_player_2 = NA_integer_,
@@ -206,6 +215,32 @@ test_that("nba_rapm returns correct schema on a tiny hand frame", {
               label = "all players have 2 offensive possessions")
   expect_true(all(out$def_poss == poss_per_player),
               label = "all players have 2 defensive possessions")
+})
+
+test_that("nba_rapm warns and uses a fixed lambda when cross-validation fails", {
+  skip_if_not_installed("glmnet")
+  skip_on_cran()
+  local_mocked_bindings(cv.glmnet = function(...) stop("bad {lambda} path"), .package = "glmnet")
+  rows <- list(
+    list(off = c(1L, 2L, 3L, 7L, 8L), def = c(4L, 5L, 6L, 9L, 10L), pts = 0),
+    list(off = c(1L, 2L, 3L, 7L, 8L), def = c(4L, 5L, 6L, 9L, 10L), pts = 2),
+    list(off = c(4L, 5L, 6L, 9L, 10L), def = c(1L, 2L, 3L, 7L, 8L), pts = 1)
+  )
+  expect_warning(out <- nba_rapm(.poss_df(rows)), "bad \\{lambda\\} path")
+  expect_equal(nrow(out), 10L)
+  expect_true(all(is.finite(out$rapm)))
+})
+
+test_that("nba_rapm returns all-average players on constant points (never-raise)", {
+  skip_if_not_installed("glmnet")
+  skip_on_cran()
+  # glmnet refuses a constant response once an intercept is fitted.
+  same <- list(off = c(1L, 2L, 3L, 7L, 8L), def = c(4L, 5L, 6L, 9L, 10L), pts = 1)
+  for (rows in list(rep(list(same), 30L), list(same))) {
+    out <- nba_rapm(.poss_df(rows))
+    expect_equal(nrow(out), 10L)
+    expect_true(all(out$o_rapm == 0 & out$d_rapm == 0 & out$rapm == 0))
+  }
 })
 
 # ---------------------------------------------------------------------------
@@ -291,6 +326,16 @@ test_that("nba_rapm recovers planted player effects (synthetic recovery)", {
   expect_gt(corr_off, 0.7)
   expect_gt(corr_def, 0.7)
 
+  # Centred: the intercept absorbs the ~1.05 pts/poss mean, so the
+  # possession-weighted means sit near 0 while the spread stays non-trivial.
+  expect_gt(sd(out$o_rapm), 1)
+  expect_lt(abs(stats::weighted.mean(out$o_rapm, out$off_poss)), 0.5)
+  expect_lt(abs(stats::weighted.mean(out$d_rapm, out$def_poss)), 0.5)
+  # Identified invariant (intercept + equal penalty): each block sums to 0,
+  # up to glmnet's convergence tolerance.
+  expect_lt(abs(mean(out$o_rapm)), 0.01 * sd(out$o_rapm))
+  expect_lt(abs(mean(out$d_rapm)), 0.01 * sd(out$d_rapm))
+
   # Determinism: second call on same data gives identical rapm
   out2 <- nba_rapm(df)
   out2 <- out2[order(out2$player_id), ]
@@ -327,6 +372,32 @@ test_that("nba_rapm runs end-to-end on a real game (offline smoke)", {
     out[order(out$player_id), ]$rapm,
     out2[order(out2$player_id), ]$rapm
   )
+})
+
+test_that("nba_rapm O/D values are centred on a real game (intercept fitted)", {
+  skip_if_not_installed("glmnet")
+  skip_on_cran()
+  pbp  <- readRDS(test_path("fixtures", "nba_engine", "pbp_0022200001.rds"))
+  poss <- .attach_possession_lineups(.build_possessions(pbp), pbp)
+  out  <- nba_rapm(poss)
+
+  # Without an intercept the mean points per possession leaked into the
+  # coefficients: weighted mean O-RAPM was ~ +10, D-RAPM ~ -10.
+  expect_gt(sd(out$o_rapm), 0)
+  expect_lt(abs(stats::weighted.mean(out$o_rapm, out$off_poss)), 0.5)
+  expect_lt(abs(stats::weighted.mean(out$d_rapm, out$def_poss)), 0.5)
+  # Identified invariant (intercept + equal penalty): each block sums to 0,
+  # up to glmnet's convergence tolerance.
+  expect_lt(abs(mean(out$o_rapm)), 0.01 * sd(out$o_rapm))
+  expect_lt(abs(mean(out$d_rapm)), 0.01 * sd(out$d_rapm))
+
+  # Adding a constant to every possession's points moves only the intercept,
+  # never a player's rating. Fails without an intercept.
+  poss_shift <- poss
+  poss_shift$points <- poss_shift$points + 3
+  out_shift <- nba_rapm(poss_shift)
+  expect_equal(out_shift$o_rapm, out$o_rapm, tolerance = 1e-8)
+  expect_equal(out_shift$d_rapm, out$d_rapm, tolerance = 1e-8)
 })
 
 # ===========================================================================

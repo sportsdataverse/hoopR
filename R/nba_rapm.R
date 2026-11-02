@@ -57,6 +57,18 @@ NULL
 #'   estimates. Results from a single game (~150–250 possessions) are highly
 #'   unstable and are provided here for pipeline illustration only.
 #'
+#'   Values are relative to average: an unpenalized intercept absorbs the mean
+#'   points per possession, and the ridge penalty applies equally to the raw
+#'   player indicators (no standardization), the same model as
+#'   sportsdataverse-py. glmnet and sklearn scale and choose the penalty
+#'   differently, so the two agree closely but not exactly. The data do not fix
+#'   the overall level of the offensive or defensive block (nor, therefore, of
+#'   \code{rapm}); the equal penalty sets it so that the plain average of
+#'   \code{o_rapm} over players, and of \code{d_rapm}, is 0. Possession-weighted
+#'   means are not fixed by the model: if playing time is correlated with
+#'   player quality they can be well away from 0. On the 2025-26 NBA regular
+#'   season they were +0.30 (O-RAPM) and +0.07 (D-RAPM).
+#'
 #'   Results are **deterministic**: the cross-validation uses fixed,
 #'   construction-based folds (not random), so repeated calls on the same
 #'   possessions return identical output with no need to set a seed.
@@ -89,7 +101,20 @@ nba_rapm <- function(possessions, ...) {
   off_poss <- as.integer(cs[seq_len(P)])
   def_poss <- as.integer(cs[seq(P + 1L, 2L * P)])
 
-  # Ridge regression: alpha = 0, no intercept, CV selects lambda.min.
+  # Ridge regression, the same model as sportsdataverse-py (sklearn Ridge
+  # with fit_intercept=True on the raw indicators; glmnet's lambda scale and
+  # CV differ from sklearn's alpha grid): alpha = 0, CV selects lambda.min.
+  #   * intercept: unpenalized, absorbs league-average points per possession;
+  #     without it the ridge pushes that mean into the player coefficients
+  #     (O shifted up ~+11, D down ~-11 per 100).
+  #   * standardize = FALSE: penalize the raw 0/1 coefficients equally. glmnet's
+  #     default rescales each column by its sd, which shrinks low-minute
+  #     players less per raw unit and lets CV pick a much heavier lambda.
+  # The O and D block levels are not identified by the data (each block's
+  # columns sum to 5x the intercept column). With an unpenalized intercept and
+  # an equal penalty the KKT conditions force each block's coefficients to sum
+  # to 0, so the unweighted player means are 0; possession-weighted means are
+  # not constrained.
   # Deterministic CV folds (no RNG dependence): assign every k-th possession
   # to a different fold so consecutive possessions are spread across folds.
   # This makes nba_rapm() reproducible by construction — identical output on
@@ -97,22 +122,42 @@ nba_rapm <- function(possessions, ...) {
   n  <- nrow(X)
   nf <- min(10L, n)                       # 10-fold, or fewer if tiny n
 
-  # Guard: cv.glmnet requires at least 3 unique folds.  For degenerate
-  # small inputs (n < 3) fall back to a plain glmnet at a fixed lambda
-  # so the function never errors.
-  if (n < 3L) {
-    fit0 <- glmnet::glmnet(X, y, alpha = 0, intercept = FALSE, lambda = 0.1)
-    cf   <- as.numeric(stats::coef(fit0))
-    coef <- cf[-1L]
+  fit_fixed <- function() {
+    stats::coef(glmnet::glmnet(X, y, alpha = 0, standardize = FALSE, lambda = 0.1))
+  }
+  if (all(y == y[1L])) {
+    # Constant points (incl. a single possession): the intercept explains
+    # everything and glmnet refuses a constant response, so every player is
+    # exactly average.
+    coef <- numeric(2L * P)
   } else {
-    foldid <- ((seq_len(n) - 1L) %% nf) + 1L
-    fit    <- glmnet::cv.glmnet(X, y, alpha = 0, intercept = FALSE, foldid = foldid)
-
-    # Extract coefficient vector at lambda.min (length 1 + 2P from glmnet;
-    # position 1 is the intercept placeholder even with intercept=FALSE).
-    # Use stats::coef S3 dispatch — glmnet registers coef.cv.glmnet internally.
-    cf   <- as.numeric(stats::coef(fit, s = "lambda.min"))
-    coef <- cf[-1L]  # drop intercept slot → length 2P
+    # Guard: cv.glmnet needs at least 3 folds, and on a handful of
+    # possessions a fold can be left with no usable lambda path. For those
+    # degenerate inputs fall back to a fixed-lambda fit, with a warning, so
+    # the function never errors.
+    if (n < 3L) {
+      cf <- fit_fixed()
+    } else {
+      foldid <- ((seq_len(n) - 1L) %% nf) + 1L
+      # Coefficients at lambda.min. Use stats::coef S3 dispatch — glmnet
+      # registers coef.cv.glmnet internally.
+      cf <- tryCatch(
+        stats::coef(
+          glmnet::cv.glmnet(X, y, alpha = 0, standardize = FALSE, foldid = foldid),
+          s = "lambda.min"
+        ),
+        error = function(e) {
+          msg <- conditionMessage(e)
+          cli::cli_warn(c(
+            "!" = "{.fn nba_rapm}: cross-validation failed on {n} possession{?s}; using a fixed {.code lambda = 0.1}.",
+            "i" = "{msg}"
+          ))
+          fit_fixed()
+        }
+      )
+    }
+    # Length 1 + 2P from glmnet; position 1 is the intercept → drop it.
+    coef <- as.numeric(cf)[-1L]
   }
 
   # Sign conventions (matches Python nba_rapm):
@@ -151,8 +196,8 @@ nba_rapm <- function(possessions, ...) {
 #'   * cols 1..P   — offense indicator: 1 when player_ids\[i\] was on offense.
 #'   * cols P+1..2P — defense indicator: 1 when player_ids\[i\] was on defense.
 #'
-#' Possessions with any NA in the 10 lineup cells are silently dropped
-#' (never-raise; a partial lineup is unreliable for RAPM).
+#' Possessions with any NA in the 10 lineup cells, or with non-finite points,
+#' are silently dropped (never-raise; a partial lineup is unreliable for RAPM).
 #'
 #' @param possessions data.frame with columns off_player_1..5,
 #'   def_player_1..5 (integer player ids) and points (numeric).
@@ -173,9 +218,14 @@ nba_rapm <- function(possessions, ...) {
   }
 
   # Drop possessions with any NA in the 10 lineup cells (never inject a
-  # phantom id — mirrors Python possessions.drop_nulls(subset=_OFF + _DEF))
+  # phantom id — mirrors Python possessions.drop_nulls(subset=_OFF + _DEF)),
+  # and possessions with non-finite points (glmnet cannot fit them).
+  if (!"points" %in% names(possessions)) {
+    cli::cli_abort("{.arg possessions} must have a {.field points} column.")
+  }
   lineup_mat <- as.matrix(possessions[, .RAPM_LINEUP_COLS])
-  complete   <- rowSums(is.na(lineup_mat)) == 0L
+  complete   <- rowSums(is.na(lineup_mat)) == 0L &
+    is.finite(as.numeric(possessions[["points"]]))
   possessions <- possessions[complete, , drop = FALSE]
 
   if (nrow(possessions) == 0L) {
