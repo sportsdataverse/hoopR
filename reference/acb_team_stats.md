@@ -204,7 +204,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_team_stats(club_id = 2, season = 2027))
 #> ── ACB Team Stats from api2.acb.com ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 06:27:13 UTC
+#> ℹ Data updated: 2026-11-02 13:19:22 UTC
 #> # A tibble: 15 × 97
 #>    club_id team_id edition_id season player_id player_name  first_name last_name
 #>      <int>   <int>      <int>  <int>     <int> <chr>        <chr>      <chr>    
@@ -212,7 +212,7 @@ Other ACB Functions:
 #>  2       2    4467         91   2027  30003361 Kevin Punter Kevin      Punter   
 #>  3       2    4467         91   2027  30005377 Tosan Evbuo… Torisesan  Evbuomwan
 #>  4       2    4467         91   2027  30005356 Josh Nebo    Joshua     Nebo     
-#>  5       2    4467         91   2027  30004602 A. Kone      Abdrahama… Kone     
+#>  5       2    4467         91   2027  30004602 Abdu Kone    Abdrahama… Kone     
 #>  6       2    4467         91   2027  20212243 Olek Balcer… Aleksander Balcerow…
 #>  7       2    4467         91   2027  30005378 Tyrese Mart… Tyrese     Martin   
 #>  8       2    4467         91   2027  30001332 Agustín Ubal Agustín    Ubal     

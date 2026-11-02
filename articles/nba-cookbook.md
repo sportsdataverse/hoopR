@@ -377,9 +377,9 @@ espn_nba_leaders(season = most_recent_nba_season())
 #>  2   2027           2 pointsPerGame PTS          4594268    NA           16     
 #>  3   2027           2 pointsPerGame PTS          4431678    NA           20     
 #>  4   2027           2 pointsPerGame PTS          3975       NA           9      
-#>  5   2027           2 pointsPerGame PTS          3032977    NA           14     
-#>  6   2027           2 pointsPerGame PTS          5104157    NA           24     
-#>  7   2027           2 pointsPerGame PTS          4065648    NA           2      
+#>  5   2027           2 pointsPerGame PTS          4065648    NA           2      
+#>  6   2027           2 pointsPerGame PTS          3032977    NA           14     
+#>  7   2027           2 pointsPerGame PTS          5104157    NA           24     
 #>  8   2027           2 pointsPerGame PTS          5041939    NA           6      
 #>  9   2027           2 pointsPerGame PTS          5142620    NA           23     
 #> 10   2027           2 pointsPerGame PTS          4278073    NA           25     

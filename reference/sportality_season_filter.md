@@ -69,7 +69,7 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_season_filter())
 #> ── Basketligaen Season Filter from basketligaen.dk ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 06:32:47 UTC
+#> ℹ Data updated: 2026-11-02 13:26:39 UTC
 #> # A tibble: 27 × 5
 #>    kind   code  name         uuid       deleted
 #>    <chr>  <chr> <chr>        <chr>      <lgl>  

@@ -47,6 +47,18 @@ meaningful estimates. Results from a single game (~150–250 possessions)
 are highly unstable and are provided here for pipeline illustration
 only.
 
+Values are relative to average: an unpenalized intercept absorbs the
+mean points per possession, and the ridge penalty applies equally to the
+raw player indicators (no standardization), the same model as
+sportsdataverse-py. glmnet and sklearn scale and choose the penalty
+differently, so the two agree closely but not exactly. The data do not
+fix the overall level of the offensive or defensive block (nor,
+therefore, of `rapm`); the equal penalty sets it so that the plain
+average of `o_rapm` over players, and of `d_rapm`, is 0.
+Possession-weighted means are not fixed by the model: if playing time is
+correlated with player quality they can be well away from 0. On the
+2025-26 NBA regular season they were +0.30 (O-RAPM) and +0.07 (D-RAPM).
+
 Results are **deterministic**: the cross-validation uses fixed,
 construction-based folds (not random), so repeated calls on the same
 possessions return identical output with no need to set a seed.

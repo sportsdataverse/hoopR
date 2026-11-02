@@ -273,8 +273,9 @@ design, read directly from the code:
 - **Design matrix:** for P players, 2P sparse indicator columns. Column
   *j* is 1 when player *j* is on offense; column P + *j* is 1 when he is
   on defense. Possessions with any missing lineup slot are dropped.
-- **Model:** ridge regression (`glmnet`, `alpha = 0`) with **no
-  intercept**. The penalty is chosen by 10-fold cross-validation at
+- **Model:** ridge regression (`glmnet`, `alpha = 0`) with an
+  unpenalized intercept, which absorbs the league-average points per
+  possession. The penalty is chosen by 10-fold cross-validation at
   `lambda.min`, with deterministic folds (every tenth possession), so
   results are reproducible without a seed.
 - **Output:** `o_rapm` is the offensive coefficient times 100, `d_rapm`
@@ -300,30 +301,38 @@ c(possessions = nrow(nba_poss), games = n_distinct(nba_poss$game_id))
 
 fit_time <- system.time(my_rapm <- nba_rapm(nba_poss))
 round(fit_time[["elapsed"]], 1)
-#> [1] 12
+#> [1] 10.9
 
 my_rapm |>
-  summarise(players = n(), mean_o_rapm = mean(o_rapm), mean_d_rapm = mean(d_rapm),
-            mean_rapm = mean(rapm)) |>
+  summarise(players = n(),
+            wmean_o_rapm = weighted.mean(o_rapm, off_poss),
+            wmean_d_rapm = weighted.mean(d_rapm, def_poss)) |>
   mutate(across(-players, \(x) round(x, 2)))
-#> # A tibble: 1 × 4
-#>   players mean_o_rapm mean_d_rapm mean_rapm
-#>     <int>       <dbl>       <dbl>     <dbl>
-#> 1     582        10.1       -11.7     -1.58
+#> # A tibble: 1 × 3
+#>   players wmean_o_rapm wmean_d_rapm
+#>     <int>        <dbl>        <dbl>
+#> 1     582          0.3         0.07
 ```
 
 Two properties of this design show up immediately:
 
-1.  **No intercept, so the league average lives in the players.** About
-    one point per possession has to come from somewhere, and with no
-    intercept it is split across the ten player coefficients on every
-    possession. That is why mean `o_rapm` is well above zero and mean
-    `d_rapm` well below. The sum `rapm` is roughly centered, but compare
-    `o_rapm` and `d_rapm` only after centering them.
-2.  **Cross-validated lambda is light.** `lambda.min` is chosen for
-    predicting possession outcomes, and it regularizes far less than the
-    college model’s lambda = 1000. Players with a few dozen possessions
-    get extreme values. Use a possession floor.
+1.  **Values are relative to average.** The intercept carries the
+    roughly one point per possession that every possession scores, and
+    on this season the possession-weighted means of `o_rapm` and
+    `d_rapm` are within a few tenths of zero. The data cannot tell
+    either block’s overall level from the intercept, so the penalty
+    settles it: the plain average over players is exactly zero. The
+    possession-weighted average is not guaranteed to be. (Before hoopR
+    3.2.0
+    [`nba_rapm()`](https://hoopR.sportsdataverse.org/reference/nba_rapm.md)
+    had no intercept, and that average leaked into the players: `o_rapm`
+    sat about 10 points above zero and `d_rapm` about 10 below.)
+2.  **Low-minute players are shrunk toward zero.** The ridge penalizes
+    every player’s raw coefficient equally (no standardization, as in
+    sportsdataverse-py), and `lambda.min` is chosen for predicting
+    possession outcomes. A player with a few dozen possessions has
+    little data to move the estimate off zero, so the value says little
+    either way. Use a possession floor when ranking.
 
 Compare with the published suite’s RAPM for the same season:
 
@@ -334,9 +343,7 @@ published <- load_nba_player_impact(seasons = 2026) |>
   select(player_id, player_name, rapm_published = rapm)
 
 compare <- my_rapm |>
-  inner_join(published, by = "player_id") |>
-  mutate(o_centered = o_rapm - weighted.mean(o_rapm, off_poss),
-         d_centered = d_rapm - weighted.mean(d_rapm, def_poss))
+  inner_join(published, by = "player_id")
 
 compare |>
   mutate(floor = if_else(off_poss >= 1000, "1,000+ possessions", "under 1,000")) |>
@@ -345,8 +352,8 @@ compare |>
 #> # A tibble: 2 × 3
 #>   floor              players r_with_published
 #>   <chr>                <int>            <dbl>
-#> 1 1,000+ possessions     384            0.955
-#> 2 under 1,000            198            0.452
+#> 1 1,000+ possessions     384            0.986
+#> 2 under 1,000            198            0.992
 ```
 
 ``` r
@@ -370,11 +377,10 @@ published NBA player impact RAPM for players with at least 1,000
 offensive possessions in
 2025-26.](college-basketball-rapm-model_files/figure-html/compare_plot-1.png)
 
-For regulars the two agree closely in ordering; the scale differs
-because the published suite regularizes more heavily and centers its
-components. To control the penalty yourself, build the design and call
+The two agree closely for regulars. To control the penalty yourself,
+build the design and call
 [`glmnet::glmnet()`](https://glmnet.stanford.edu/reference/glmnet.html)
-with your own `lambda`, or add an intercept.
+with your own `lambda`.
 
 For a single game you can build the possession frame from live NBA Stats
 play-by-play with

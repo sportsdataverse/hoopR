@@ -133,7 +133,7 @@ Other ABA Functions:
 # \donttest{
   try(aba_pbp(game_no = 6, season = 2026))
 #> ── ABA League Play-by-Play ────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 06:26:50 UTC
+#> ℹ Data updated: 2026-11-02 13:18:58 UTC
 #> # A tibble: 659 × 18
 #>    game_no season league_id league   seq period clock seconds_left home_score
 #>      <int>  <int>     <int> <chr>  <int>  <int> <chr>        <int>      <int>

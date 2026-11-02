@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 06:28:49 UTC
-#> # A tibble: 5 × 9
-#>        id type  headline description published premium byline link_web league_id
-#>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Head… Illinoi… "David Mir… 2026-11-… FALSE   Myron… https:/… 41       
-#> 2  5.02e7 Story Early t… "After a s… 2026-11-… FALSE   Paul … https:/… 41       
-#> 3  5.03e7 Head… Notre D… "Notre Dam… 2026-11-… FALSE   NA     https:/… 41       
-#> 4  5.03e7 Recap Notre D… "— Brady K… 2026-11-… FALSE   NA     http://… 41       
-#> 5  5.00e7 Story How top… "How these… 2026-11-… FALSE   Jeff … https:/… 41       
+#> ℹ Data updated: 2026-11-02 13:21:23 UTC
+#> # A tibble: 5 × 8
+#>         id type    headline     description published premium link_web league_id
+#>      <int> <chr>   <chr>        <chr>       <chr>     <lgl>   <chr>    <chr>    
+#> 1 50356887 Preview No. 9 Virgi… Drexel Dra… 2026-11-… FALSE   http://… 41       
+#> 2 50356856 Preview Kansas Stat… South Dako… 2026-11-… FALSE   http://… 41       
+#> 3 50356855 Preview Mississippi… Tennessee … 2026-11-… FALSE   http://… 41       
+#> 4 50356852 Preview LSU hosts N… New Orlean… 2026-11-… FALSE   http://… 41       
+#> 5 50356848 Preview Georgia Tec… Hampton Pi… 2026-11-… FALSE   http://… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 06:28:49 UTC
+#> ℹ Data updated: 2026-11-02 13:21:23 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Head… Yaxel L… Yaxel Lend… 2026-11-… FALSE   Antho… https:/… 46       
-#> 2  5.04e7 Recap Luka Do… — Luka Don… 2026-11-… FALSE   NA     http://… 46       
-#> 3  5.04e7 Media Luka sh… Luka shine… 2026-11-… FALSE   NA     https:/… 46       
-#> 4  5.04e7 Media LA Clip… LA Clipper… 2026-11-… FALSE   NA     https:/… 46       
-#> 5  5.04e7 Recap Rookie … — Rookie Y… 2026-11-… FALSE   NA     http://… 46       
+#> 1  5.03e7 Story How NBA… The NBA se… 2026-11-… FALSE   Zach … https:/… 46       
+#> 2  5.04e7 Prev… Orlando… Washington… 2026-11-… FALSE   NA     http://… 46       
+#> 3  5.04e7 Prev… Clipper… Toronto Ra… 2026-11-… FALSE   NA     http://… 46       
+#> 4  5.04e7 Prev… Houston… Boston Cel… 2026-11-… FALSE   NA     http://… 46       
+#> 5  5.04e7 Prev… Golden … Phoenix Su… 2026-11-… FALSE   NA     http://… 46       
 # }
 ```
