@@ -16,6 +16,10 @@ full list of changes is in NEWS.md. The main additions:
   League feeds, `ncaa_mbb_NET_rankings()`, `torvik_ratings()`, the KenPom
   team-page functions for the current season, `nba_gamerotation()` and
   `nba_pbp()` on-court players.
+* `nba_leaguedashplayerptshot()` and `nba_leaguedashteamptshot()` now send
+  `shot_dist_range`, which they accepted but never sent. The four hustle
+  wrappers deprecate `last_n_games`: stats.nba.com has no such filter, so it
+  is ignored and warns when supplied.
 * ESPN play-by-play now carries the clock, period and timeout columns of the
   published play-by-play data.
 * The NBA Stats wrappers now default `season` to the previous season.
