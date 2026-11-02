@@ -365,6 +365,14 @@ test_that("nba_rapm O/D values are centred on a real game (intercept fitted)", {
   expect_gt(sd(out$o_rapm), 0)
   expect_lt(abs(stats::weighted.mean(out$o_rapm, out$off_poss)), 0.5)
   expect_lt(abs(stats::weighted.mean(out$d_rapm, out$def_poss)), 0.5)
+
+  # Adding a constant to every possession's points moves only the intercept,
+  # never a player's rating. Fails without an intercept.
+  poss_shift <- poss
+  poss_shift$points <- poss_shift$points + 3
+  out_shift <- nba_rapm(poss_shift)
+  expect_equal(out_shift$o_rapm, out$o_rapm, tolerance = 1e-8)
+  expect_equal(out_shift$d_rapm, out$d_rapm, tolerance = 1e-8)
 })
 
 # ===========================================================================
