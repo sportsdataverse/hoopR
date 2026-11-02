@@ -107,9 +107,9 @@
   * It fits an intercept. Without one, the league-average points per
     possession leaked into the player coefficients: on the 2025-26 regular
     season the possession-weighted mean O-RAPM was +11.4 and D-RAPM -11.1.
-    The average O-RAPM and D-RAPM over players are now 0, and the
-    possession-weighted means are within a few tenths of 0 (the data do not
-    fix each block's level; the penalty does).
+    The average O-RAPM and D-RAPM over players are now 0 (the data do not
+    fix each block's level; the penalty does). Possession-weighted means are
+    not fixed by the model; on 2025-26 they were +0.30 and +0.07.
   * It no longer standardizes the indicators (`standardize = FALSE`).
     glmnet's default rescaled each player column, which shrank low-minute
     players less and, with the intercept, made cross-validation choose a

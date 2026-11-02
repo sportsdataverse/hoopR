@@ -45,8 +45,9 @@ differently, so the two agree closely but not exactly. The data do not fix
 the overall level of the offensive or defensive block (nor, therefore, of
 \code{rapm}); the equal penalty sets it so that the plain average of
 \code{o_rapm} over players, and of \code{d_rapm}, is 0. Possession-weighted
-means are near 0 (a few tenths of a point per 100 on a full season) but not
-exactly 0.
+means are not fixed by the model: if playing time is correlated with
+player quality they can be well away from 0. On the 2025-26 NBA regular
+season they were +0.30 (O-RAPM) and +0.07 (D-RAPM).
 
 Results are \strong{deterministic}: the cross-validation uses fixed,
 construction-based folds (not random), so repeated calls on the same

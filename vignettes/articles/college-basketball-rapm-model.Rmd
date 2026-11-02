@@ -195,7 +195,7 @@ my_rapm |>
 
 Two properties of this design show up immediately:
 
-1. **Values are relative to average.** The intercept carries the roughly one point per possession that every possession scores, so the possession-weighted means of `o_rapm` and `d_rapm` are within a few tenths of zero. The data cannot tell either block's overall level from the intercept, so the penalty settles it: the plain average over players is exactly zero, and the possession-weighted average is close to it. (Before hoopR 3.2.0 `nba_rapm()` had no intercept, and that average leaked into the players: `o_rapm` sat about 10 points above zero and `d_rapm` about 10 below.)
+1. **Values are relative to average.** The intercept carries the roughly one point per possession that every possession scores, and on this season the possession-weighted means of `o_rapm` and `d_rapm` are within a few tenths of zero. The data cannot tell either block's overall level from the intercept, so the penalty settles it: the plain average over players is exactly zero. The possession-weighted average is not guaranteed to be. (Before hoopR 3.2.0 `nba_rapm()` had no intercept, and that average leaked into the players: `o_rapm` sat about 10 points above zero and `d_rapm` about 10 below.)
 2. **Low-minute players are shrunk toward zero.** The ridge penalizes every player's raw coefficient equally (no standardization, as in sportsdataverse-py), and `lambda.min` is chosen for predicting possession outcomes. A player with a few dozen possessions has little data to move the estimate off zero, so the value says little either way. Use a possession floor when ranking.
 
 Compare with the published suite's RAPM for the same season:

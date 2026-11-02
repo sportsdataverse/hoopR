@@ -65,8 +65,9 @@ NULL
 #'   the overall level of the offensive or defensive block (nor, therefore, of
 #'   \code{rapm}); the equal penalty sets it so that the plain average of
 #'   \code{o_rapm} over players, and of \code{d_rapm}, is 0. Possession-weighted
-#'   means are near 0 (a few tenths of a point per 100 on a full season) but not
-#'   exactly 0.
+#'   means are not fixed by the model: if playing time is correlated with
+#'   player quality they can be well away from 0. On the 2025-26 NBA regular
+#'   season they were +0.30 (O-RAPM) and +0.07 (D-RAPM).
 #'
 #'   Results are **deterministic**: the cross-validation uses fixed,
 #'   construction-based folds (not random), so repeated calls on the same
@@ -113,7 +114,7 @@ nba_rapm <- function(possessions, ...) {
   # columns sum to 5x the intercept column). With an unpenalized intercept and
   # an equal penalty the KKT conditions force each block's coefficients to sum
   # to 0, so the unweighted player means are 0; possession-weighted means are
-  # only near 0.
+  # not constrained.
   # Deterministic CV folds (no RNG dependence): assign every k-th possession
   # to a different fold so consecutive possessions are spread across folds.
   # This makes nba_rapm() reproducible by construction — identical output on
