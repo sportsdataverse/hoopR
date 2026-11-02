@@ -146,9 +146,10 @@ nba_rapm <- function(possessions, ...) {
           s = "lambda.min"
         ),
         error = function(e) {
+          msg <- conditionMessage(e)
           cli::cli_warn(c(
             "!" = "{.fn nba_rapm}: cross-validation failed on {n} possession{?s}; using a fixed {.code lambda = 0.1}.",
-            "i" = conditionMessage(e)
+            "i" = "{msg}"
           ))
           fit_fixed()
         }
@@ -218,6 +219,9 @@ nba_rapm <- function(possessions, ...) {
   # Drop possessions with any NA in the 10 lineup cells (never inject a
   # phantom id — mirrors Python possessions.drop_nulls(subset=_OFF + _DEF)),
   # and possessions with non-finite points (glmnet cannot fit them).
+  if (!"points" %in% names(possessions)) {
+    cli::cli_abort("{.arg possessions} must have a {.field points} column.")
+  }
   lineup_mat <- as.matrix(possessions[, .RAPM_LINEUP_COLS])
   complete   <- rowSums(is.na(lineup_mat)) == 0L &
     is.finite(as.numeric(possessions[["points"]]))

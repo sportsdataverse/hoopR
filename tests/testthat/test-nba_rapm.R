@@ -147,6 +147,9 @@ test_that(".build_rapm_design drops possessions with NA lineup cells (never-rais
   df_na_pts$points <- c(NA_real_, 0)
   expect_equal(.build_rapm_design(df_na_pts)$y, 0)
 
+  # A missing points column is a caller error, not an empty result
+  expect_error(.build_rapm_design(df[, names(df) != "points"]), "points")
+
   # All-NA rows → empty result (never-raise)
   df_all_na <- data.frame(
     off_player_1 = NA_integer_, off_player_2 = NA_integer_,
@@ -212,6 +215,20 @@ test_that("nba_rapm returns correct schema on a tiny hand frame", {
               label = "all players have 2 offensive possessions")
   expect_true(all(out$def_poss == poss_per_player),
               label = "all players have 2 defensive possessions")
+})
+
+test_that("nba_rapm warns and uses a fixed lambda when cross-validation fails", {
+  skip_if_not_installed("glmnet")
+  skip_on_cran()
+  local_mocked_bindings(cv.glmnet = function(...) stop("bad {lambda} path"), .package = "glmnet")
+  rows <- list(
+    list(off = c(1L, 2L, 3L, 7L, 8L), def = c(4L, 5L, 6L, 9L, 10L), pts = 0),
+    list(off = c(1L, 2L, 3L, 7L, 8L), def = c(4L, 5L, 6L, 9L, 10L), pts = 2),
+    list(off = c(4L, 5L, 6L, 9L, 10L), def = c(1L, 2L, 3L, 7L, 8L), pts = 1)
+  )
+  expect_warning(out <- nba_rapm(.poss_df(rows)), "bad \\{lambda\\} path")
+  expect_equal(nrow(out), 10L)
+  expect_true(all(is.finite(out$rapm)))
 })
 
 test_that("nba_rapm returns all-average players on constant points (never-raise)", {
