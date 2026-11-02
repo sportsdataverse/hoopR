@@ -76,13 +76,15 @@ test_that(".bb_assemble_player_crosswalk_nba matches ESPN/Stats within team bloc
 })
 
 # ---------------------------------------------------------------------------
-# Live tests — require ESPN_TESTS=1; always skipped on CRAN and CI.
+# Live tests — call ESPN and stats.nba.com, so they need ESPN_TESTS=1 and
+# NBA_STATS_TESTS=1; always skipped on CRAN and CI.
 # ---------------------------------------------------------------------------
 
 test_that("nba_team_crosswalk() returns a live hoopR_data tibble", {
   skip_on_cran()
   skip_on_ci()
   if (Sys.getenv("ESPN_TESTS") != "1") skip("ESPN_TESTS not set")
+  skip_nba_stats_test()  # nba_teams() etc. call stats.nba.com
   out <- nba_team_crosswalk()
   skip_if(nrow(out) == 0, "nba_team_crosswalk() returned 0 rows at test time")
   expect_s3_class(out, "hoopR_data")
@@ -94,6 +96,7 @@ test_that("nba_schedule_crosswalk() returns a live hoopR_data tibble", {
   skip_on_cran()
   skip_on_ci()
   if (Sys.getenv("ESPN_TESTS") != "1") skip("ESPN_TESTS not set")
+  skip_nba_stats_test()  # nba_teams() etc. call stats.nba.com
   out <- nba_schedule_crosswalk()
   skip_if(nrow(out) == 0, "nba_schedule_crosswalk() returned 0 rows at test time")
   expect_s3_class(out, "hoopR_data")
@@ -105,6 +108,7 @@ test_that("nba_player_crosswalk() returns a live hoopR_data tibble", {
   skip_on_cran()
   skip_on_ci()
   if (Sys.getenv("ESPN_TESTS") != "1") skip("ESPN_TESTS not set")
+  skip_nba_stats_test()  # nba_teams() etc. call stats.nba.com
   out <- nba_player_crosswalk()
   skip_if(
     nrow(out) == 0,
