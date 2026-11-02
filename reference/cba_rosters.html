@@ -36,6 +36,18 @@ Endpoint: GET https://data-server.cbaleague.com/api/schedules/getPlayersBySchedu
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
+    <li><a class="dropdown-item" href="../articles/nba-college-basketball-shot-charts.html">Shot Charts and Court Plots</a></li>
+    <li><a class="dropdown-item" href="../articles/basketball-advanced-metrics.html">Basketball Advanced Metrics</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><h6 class="dropdown-header" data-toc-skip>Models</h6></li>
+    <li><a class="dropdown-item" href="../articles/nba-player-impact-model.html">NBA Player Impact Model</a></li>
+    <li><a class="dropdown-item" href="../articles/college-basketball-rapm-model.html">College Basketball RAPM Model</a></li>
+    <li><a class="dropdown-item" href="../articles/college-basketball-team-ratings-model.html">College Basketball Team Ratings Model</a></li>
+    <li><a class="dropdown-item" href="../articles/college-basketball-player-value-model.html">College Basketball Player Value Model</a></li>
+    <li><a class="dropdown-item" href="../articles/college-basketball-win-probability-model.html">College Basketball Win Probability Model</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html"><span class="fa fas fa-newspaper"></span>  News</a></li>
 <li class="nav-item dropdown">
@@ -169,7 +181,7 @@ answer is a zero-row tibble with these columns, in this order (sportsdataverse-p
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cba_rosters</span><span class="op">(</span>schedule_id <span class="op">=</span> <span class="fl">100105799</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── CBA Rosters from data-server.cbaleague.com ─────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-02 01:50:49 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-02 06:27:54 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 32 × 38</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    schedule_id side    age birth_date body_data   cn_alias cn_alias_show cn_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
@@ -202,7 +214,7 @@ answer is a zero-row tibble with these columns, in this order (sportsdataverse-p
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.9000.</p>
 </div>
 
     </footer></div>

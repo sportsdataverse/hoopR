@@ -172,7 +172,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gdap_schedule(comp = 208182))
 #> ── FIBA gdap_schedule from fiba.basketball ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 01:53:11 UTC
+#> ℹ Data updated: 2026-11-02 06:29:53 UTC
 #> # A tibble: 92 × 86
 #>    game_id game_name game_number status_code team_a_team_id
 #>      <int> <chr>     <chr>       <chr>                <int>

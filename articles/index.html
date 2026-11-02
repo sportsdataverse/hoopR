@@ -34,6 +34,18 @@
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
+    <li><a class="dropdown-item" href="../articles/nba-college-basketball-shot-charts.html">Shot Charts and Court Plots</a></li>
+    <li><a class="dropdown-item" href="../articles/basketball-advanced-metrics.html">Basketball Advanced Metrics</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><h6 class="dropdown-header" data-toc-skip>Models</h6></li>
+    <li><a class="dropdown-item" href="../articles/nba-player-impact-model.html">NBA Player Impact Model</a></li>
+    <li><a class="dropdown-item" href="../articles/college-basketball-rapm-model.html">College Basketball RAPM Model</a></li>
+    <li><a class="dropdown-item" href="../articles/college-basketball-team-ratings-model.html">College Basketball Team Ratings Model</a></li>
+    <li><a class="dropdown-item" href="../articles/college-basketball-player-value-model.html">College Basketball Player Value Model</a></li>
+    <li><a class="dropdown-item" href="../articles/college-basketball-win-probability-model.html">College Basketball Win Probability Model</a></li>
   </ul></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html"><span class="fa fas fa-newspaper"></span>  News</a></li>
 <li class="nav-item dropdown">
@@ -106,18 +118,34 @@
       <h3>All vignettes</h3>
       <div class="section-desc"></div>
 
-      <dl><dt><a href="cbbd-college-basketball-data.html">CollegeBasketballData (CBD) Endpoints</a></dt>
+      <dl><dt><a href="basketball-advanced-metrics.html">Basketball Advanced Metrics in R: Possessions, Pace, Ratings and the Four Factors</a></dt>
+        <dd><p>Compute possessions, pace, offensive, defensive and net rating, the four factors, eFG%, true shooting, usage and per-100 stats for NBA and college teams with hoopR.</p>
+        </dd><dt><a href="cbbd-college-basketball-data.html">CollegeBasketballData (CBD) Endpoints</a></dt>
         <dd><p>A tour of the <code>cbbd_*</code> functions, which wrap the CollegeBasketballData API (api.collegebasketballdata.com) for men’s college basketball games, plays, stats, ratings, recruiting and more.</p>
+        </dd><dt><a href="college-basketball-player-value-model.html">College Basketball Player Value Model: Box Plus-Minus for NCAA Men's Players</a></dt>
+        <dd><p>How the box plus-minus (BPM) ratings behind hoopR’s load_mbb_player_value() are built from box-score rates, how reliable they are, and how to use the qualified flag.</p>
+        </dd><dt><a href="college-basketball-rapm-model.html">College Basketball RAPM Model: Regularized Adjusted Plus-Minus for NCAA Men's Players</a></dt>
+        <dd><p>How the league-wide and within-team NCAA men’s basketball RAPM ratings in hoopR are built from possessions and stints, how they validate, and how to fit RAPM yourself in R.</p>
+        </dd><dt><a href="college-basketball-team-ratings-model.html">College Basketball Team Ratings Model: Opponent-Adjusted Efficiency for NCAA Men's Teams</a></dt>
+        <dd><p>How the opponent-adjusted offensive, defensive and tempo ratings behind hoopR’s load_mbb_ratings() are computed, checked and used, with reproducible R examples.</p>
+        </dd><dt><a href="college-basketball-win-probability-model.html">College Basketball Win Probability Model: In-Game Win Probability in hoopR Play-by-Play</a></dt>
+        <dd><p>How the home_win_prob and pregame_home_prob columns in hoopR’s men’s college basketball play-by-play are produced, how well they are calibrated, and how to plot a win probability chart.</p>
         </dd><dt><a href="espn-endpoints.html">ESPN basketball endpoints -- NBA &amp; MBB</a></dt>
         <dd><p>A tour of the 199 ESPN basketball endpoint wrappers in <code>hoopR</code>, grouped by use case: game data, team detail, athlete coverage, per-event enrichments, league-wide catalogs, NBA draft/transactions/free-agency endpoints, and the post-3.0.0 core-v2 deep expansion (athlete career, team-season stats, per-game player box, play personnel, typed-detail companions).</p>
-        </dd><dt><a href="getting-started-hoopR.html">Getting Started with hoopR</a></dt>
-        <dd><p>Getting started with using <code>hoopR</code> and men’s basketball data.</p>
+        </dd><dt><a href="getting-started-hoopR.html">Getting Started with hoopR: NBA and College Basketball Data in R</a></dt>
+        <dd><p>Install hoopR and load NBA and men’s college basketball play-by-play, box scores, shots and model data in R, with a worked example, a glossary and next steps.</p>
+        </dd><dt><a href="international-basketball-leagues.html">International Basketball Data in R: EuroLeague, FIBA and 40+ Leagues with hoopR</a></dt>
+        <dd><p>A guide to hoopR’s international basketball functions: EuroLeague, EuroCup, FIBA, ACB, NBL, B.League, KBL, LBA, CBA and more, with the data each league offers.</p>
         </dd><dt><a href="kenpom-example-functions.html">KenPom Example Functions</a></dt>
         <dd><p>Some examples to get started with using <code>hoopR</code> and KenPom’s men’s college basketball website.</p>
         </dd><dt><a href="mbb-cookbook.html">Men's College Basketball Cookbook</a></dt>
         <dd><p>A storytelling tour of men’s college basketball analysis with <code>hoopR</code> – recipes from a single game to a full bracket, plus KenPom efficiency, and a running commentary on how to read the package’s function names.</p>
+        </dd><dt><a href="nba-college-basketball-shot-charts.html">NBA and College Basketball Shot Charts in R with hoopR, sportyR and sdvplotR</a></dt>
+        <dd><p>Draw NBA and men’s college basketball shot charts in R: make/miss plots, hexbin and density maps, shot zones and FG% by zone from hoopR shot data on sportyR courts.</p>
         </dd><dt><a href="nba-cookbook.html">NBA Cookbook</a></dt>
         <dd><p>A storytelling tour of NBA analysis with <code>hoopR</code> – recipes that move from a single box score to a full season, with an eye on how the package’s function names are built so you can guess the next one before you look it up.</p>
+        </dd><dt><a href="nba-player-impact-model.html">NBA Player Impact Model: RAPM, SPM, BPM, DARKO-Style Projections and WAR</a></dt>
+        <dd><p>How the SportsDataverse NBA player impact suite behind load_nba_player_impact() works: six engines from RAPM to WAR, how they are fit, how well they validate, and their limits.</p>
         </dd><dt><a href="parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></dt>
         <dd><p>A searchable reference table of every query parameter used by the NBA Stats API endpoints wrapped in <code>hoopR</code> – parameter name, description, accepted values, and which functions accept it.</p>
       </dd></dl></div>
@@ -129,7 +157,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.9000.</p>
 </div>
 
     </footer></div>

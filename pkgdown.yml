@@ -1,15 +1,23 @@
 pandoc: 3.8.3
-pkgdown: 2.2.1
-pkgdown_sha: ~
+pkgdown: 2.2.1.9000
+pkgdown_sha: f69b62a7e74b58b42170284b6f3f56c674e7a3f8
 articles:
+  articles/basketball-advanced-metrics: basketball-advanced-metrics.html
   cbbd-college-basketball-data: cbbd-college-basketball-data.html
+  articles/college-basketball-player-value-model: college-basketball-player-value-model.html
+  articles/college-basketball-rapm-model: college-basketball-rapm-model.html
+  articles/college-basketball-team-ratings-model: college-basketball-team-ratings-model.html
+  articles/college-basketball-win-probability-model: college-basketball-win-probability-model.html
   espn-endpoints: espn-endpoints.html
   getting-started-hoopR: getting-started-hoopR.html
+  articles/international-basketball-leagues: international-basketball-leagues.html
   kenpom-example-functions: kenpom-example-functions.html
   mbb-cookbook: mbb-cookbook.html
+  articles/nba-college-basketball-shot-charts: nba-college-basketball-shot-charts.html
   nba-cookbook: nba-cookbook.html
+  articles/nba-player-impact-model: nba-player-impact-model.html
   parameter-descriptions: parameter-descriptions.html
-last_built: 2026-11-02T01:49Z
+last_built: 2026-11-02T06:26Z
 urls:
   reference: https://hoopR.sportsdataverse.org/reference
   article: https://hoopR.sportsdataverse.org/articles
