@@ -187,7 +187,7 @@ Other Euroleague:
     euroleague_game_stats(competition_code = "E", season_code = "E2025", game_code = 1)
   })
 #> ── EuroLeague game stats from api-live.euroleague.net ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 13:22:20 UTC
+#> ℹ Data updated: 2026-11-02 15:05:34 UTC
 #> # A tibble: 1 × 102
 #>   local_coach_code local_coach_name local_players         local_team_time_played
 #>   <chr>            <chr>            <chr>                                  <dbl>

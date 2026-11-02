@@ -203,7 +203,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 13:21:23 UTC
+#> ℹ Data updated: 2026-11-02 15:04:48 UTC
 #> # A tibble: 5 × 8
 #>         id type    headline     description published premium link_web league_id
 #>      <int> <chr>   <chr>        <chr>       <chr>     <lgl>   <chr>    <chr>    
@@ -216,7 +216,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 13:21:23 UTC
+#> ℹ Data updated: 2026-11-02 15:04:48 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    

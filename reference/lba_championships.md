@@ -112,7 +112,7 @@ Other LBA Functions:
 # \donttest{
   try(lba_championships(season = 2027))
 #> ── LBA Championships from legabasket.it ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 13:24:04 UTC
+#> ℹ Data updated: 2026-11-02 15:07:06 UTC
 #> # A tibble: 1 × 14
 #>   season championship_id  year name                  status championship_type_id
 #>    <int>           <int> <int> <chr>                  <int>                <int>
