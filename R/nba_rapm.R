@@ -58,11 +58,15 @@ NULL
 #'   unstable and are provided here for pipeline illustration only.
 #'
 #'   Values are relative to average: an unpenalized intercept absorbs the mean
-#'   points per possession, and the ridge penalty applies to the raw player
-#'   indicators (no standardization), as in sportsdataverse-py. The data do
-#'   not fix the overall level of the offensive or defensive block, so the
-#'   possession-weighted mean O-RAPM and D-RAPM are close to 0 (within a few
-#'   tenths of a point per 100 on a full season) but not exactly 0.
+#'   points per possession, and the ridge penalty applies equally to the raw
+#'   player indicators (no standardization), the same model as
+#'   sportsdataverse-py. glmnet and sklearn scale and choose the penalty
+#'   differently, so the two agree closely but not exactly. The data do not fix
+#'   the overall level of the offensive or defensive block (nor, therefore, of
+#'   \code{rapm}); the equal penalty sets it so that the plain average of
+#'   \code{o_rapm} over players, and of \code{d_rapm}, is 0. Possession-weighted
+#'   means are near 0 (a few tenths of a point per 100 on a full season) but not
+#'   exactly 0.
 #'
 #'   Results are **deterministic**: the cross-validation uses fixed,
 #'   construction-based folds (not random), so repeated calls on the same
@@ -96,9 +100,9 @@ nba_rapm <- function(possessions, ...) {
   off_poss <- as.integer(cs[seq_len(P)])
   def_poss <- as.integer(cs[seq(P + 1L, 2L * P)])
 
-  # Ridge regression (matches sportsdataverse-py: sklearn Ridge with
-  # fit_intercept=True on the raw indicators): alpha = 0, CV selects
-  # lambda.min.
+  # Ridge regression, the same model as sportsdataverse-py (sklearn Ridge
+  # with fit_intercept=True on the raw indicators; glmnet's lambda scale and
+  # CV differ from sklearn's alpha grid): alpha = 0, CV selects lambda.min.
   #   * intercept: unpenalized, absorbs league-average points per possession;
   #     without it the ridge pushes that mean into the player coefficients
   #     (O shifted up ~+11, D down ~-11 per 100).
@@ -106,8 +110,10 @@ nba_rapm <- function(possessions, ...) {
   #     default rescales each column by its sd, which shrinks low-minute
   #     players less per raw unit and lets CV pick a much heavier lambda.
   # The O and D block levels are not identified by the data (each block's
-  # columns sum to 5x the intercept column); the penalty pins them, so the
-  # possession-weighted means are near 0 but not exactly 0.
+  # columns sum to 5x the intercept column). With an unpenalized intercept and
+  # an equal penalty the KKT conditions force each block's coefficients to sum
+  # to 0, so the unweighted player means are 0; possession-weighted means are
+  # only near 0.
   # Deterministic CV folds (no RNG dependence): assign every k-th possession
   # to a different fold so consecutive possessions are spread across folds.
   # This makes nba_rapm() reproducible by construction — identical output on

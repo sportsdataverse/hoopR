@@ -314,6 +314,10 @@ test_that("nba_rapm recovers planted player effects (synthetic recovery)", {
   expect_gt(sd(out$o_rapm), 1)
   expect_lt(abs(stats::weighted.mean(out$o_rapm, out$off_poss)), 0.5)
   expect_lt(abs(stats::weighted.mean(out$d_rapm, out$def_poss)), 0.5)
+  # Identified invariant (intercept + equal penalty): each block sums to 0,
+  # up to glmnet's convergence tolerance.
+  expect_lt(abs(mean(out$o_rapm)), 0.01 * sd(out$o_rapm))
+  expect_lt(abs(mean(out$d_rapm)), 0.01 * sd(out$d_rapm))
 
   # Determinism: second call on same data gives identical rapm
   out2 <- nba_rapm(df)
@@ -365,6 +369,10 @@ test_that("nba_rapm O/D values are centred on a real game (intercept fitted)", {
   expect_gt(sd(out$o_rapm), 0)
   expect_lt(abs(stats::weighted.mean(out$o_rapm, out$off_poss)), 0.5)
   expect_lt(abs(stats::weighted.mean(out$d_rapm, out$def_poss)), 0.5)
+  # Identified invariant (intercept + equal penalty): each block sums to 0,
+  # up to glmnet's convergence tolerance.
+  expect_lt(abs(mean(out$o_rapm)), 0.01 * sd(out$o_rapm))
+  expect_lt(abs(mean(out$d_rapm)), 0.01 * sd(out$d_rapm))
 
   # Adding a constant to every possession's points moves only the intercept,
   # never a player's rating. Fails without an intercept.
