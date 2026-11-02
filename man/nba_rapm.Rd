@@ -37,6 +37,10 @@ of possessions (~5,000–8,000) is needed for statistically meaningful
 estimates. Results from a single game (~150–250 possessions) are highly
 unstable and are provided here for pipeline illustration only.
 
+Values are relative to average: an unpenalized intercept absorbs the mean
+points per possession, so possession-weighted mean O-RAPM and D-RAPM are
+both close to 0.
+
 Results are \strong{deterministic}: the cross-validation uses fixed,
 construction-based folds (not random), so repeated calls on the same
 possessions return identical output with no need to set a seed.

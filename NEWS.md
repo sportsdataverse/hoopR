@@ -101,6 +101,16 @@
   argument it takes, and the `nba_drafthistory()` live test passes `season`
   rather than an unknown `season_year`, which was silently ignored.
 
+* `nba_rapm()` now fits an intercept, so its values change. The ridge used to
+  be fitted with no intercept, which pushed the league-average points per
+  possession into the player coefficients: O-RAPM was shifted up and D-RAPM
+  down by about 10 points per 100 possessions (on game 0022200001 the
+  possession-weighted means were +11.0 and -10.9). The intercept now absorbs
+  that average, so both means are close to 0. It is a level shift: on a
+  simulated 8,000-possession sample the player order within O-RAPM, D-RAPM and
+  `rapm` is unchanged, but `o_rapm` and `d_rapm` values are not comparable with
+  earlier output.
+
 ### **New data loaders**
 
 * Eight new loaders read the `mbb_groups` and `nba_groups` releases on

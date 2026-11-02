@@ -291,6 +291,12 @@ test_that("nba_rapm recovers planted player effects (synthetic recovery)", {
   expect_gt(corr_off, 0.7)
   expect_gt(corr_def, 0.7)
 
+  # Centred: the intercept absorbs the ~1.05 pts/poss mean, so the
+  # possession-weighted means sit near 0 while the spread stays non-trivial.
+  expect_gt(sd(out$o_rapm), 1)
+  expect_lt(abs(stats::weighted.mean(out$o_rapm, out$off_poss)), 0.5)
+  expect_lt(abs(stats::weighted.mean(out$d_rapm, out$def_poss)), 0.5)
+
   # Determinism: second call on same data gives identical rapm
   out2 <- nba_rapm(df)
   out2 <- out2[order(out2$player_id), ]
@@ -327,6 +333,20 @@ test_that("nba_rapm runs end-to-end on a real game (offline smoke)", {
     out[order(out$player_id), ]$rapm,
     out2[order(out2$player_id), ]$rapm
   )
+})
+
+test_that("nba_rapm O/D values are centred on a real game (intercept fitted)", {
+  skip_if_not_installed("glmnet")
+  skip_on_cran()
+  pbp  <- readRDS(test_path("fixtures", "nba_engine", "pbp_0022200001.rds"))
+  poss <- .attach_possession_lineups(.build_possessions(pbp), pbp)
+  out  <- nba_rapm(poss)
+
+  # Without an intercept the mean points per possession leaked into the
+  # coefficients: weighted mean O-RAPM was ~ +10, D-RAPM ~ -10.
+  expect_gt(sd(out$o_rapm), 0)
+  expect_lt(abs(stats::weighted.mean(out$o_rapm, out$off_poss)), 0.5)
+  expect_lt(abs(stats::weighted.mean(out$d_rapm, out$def_poss)), 0.5)
 })
 
 # ===========================================================================
