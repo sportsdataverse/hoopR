@@ -204,6 +204,14 @@
   their `tryCatch()` abandoned the parse at the first warning. The warning
   now reaches the caller along with the data.
 
+* `nba_leaguedashplayerptshot()` and `nba_leaguedashteamptshot()` now send
+  `shot_dist_range` as `ShotDistRange`; the argument was accepted but never sent, so
+  every call returned unfiltered shots. The four hustle wrappers
+  (`nba_leaguehustlestatsplayer()`, `nba_leaguehustlestatsplayerleaders()`,
+  `nba_leaguehustlestatsteam()`, `nba_leaguehustlestatsteamleaders()`) never sent
+  `last_n_games` either, and those stats.nba.com endpoints have no `LastNGames`
+  filter, so the argument is now deprecated and warns when supplied.
+
 * `nba_videoeventsasset()` is no longer deprecated: the endpoint serves clips for a real
   `game_event_id` (the default `0` matches no play), and the video envelope is now parsed
   into its `Meta` and `playlist` tables instead of two empty frames.

@@ -146,7 +146,8 @@ nba_leaguehustlestatsteamleaders(
 
 \item{height}{height}
 
-\item{last_n_games}{last_n_games}
+\item{last_n_games}{Deprecated and ignored. The hustle endpoints take no \code{LastNGames}
+filter, so this argument was never sent; passing it now warns.}
 
 \item{league_id}{league_id}
 
