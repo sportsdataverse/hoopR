@@ -14,7 +14,8 @@ NULL
 #' @param draft_pick draft_pick
 #' @param draft_year draft_year
 #' @param height height
-#' @param last_n_games last_n_games
+#' @param last_n_games Deprecated and ignored. The hustle endpoints take no `LastNGames`
+#'   filter, so this argument was never sent; passing it now warns.
 #' @param league_id league_id
 #' @param location location
 #' @param month month
@@ -114,6 +115,12 @@ nba_leaguehustlestatsplayer <- function(
 
   #intentional
   # season_type <- gsub(' ','+',season_type)
+  if (!missing(last_n_games)) {
+    lifecycle::deprecate_warn(
+      "3.2.0", "nba_leaguehustlestatsplayer(last_n_games)",
+      details = "stats.nba.com's leaguehustlestatsplayer endpoint has no LastNGames filter; the argument is ignored."
+    )
+  }
   version <- "leaguehustlestatsplayer"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -182,7 +189,8 @@ nba_leaguehustlestatsplayer <- function(
 #' @param draft_pick draft_pick
 #' @param draft_year draft_year
 #' @param height height
-#' @param last_n_games last_n_games
+#' @param last_n_games Deprecated and ignored. The hustle endpoints take no `LastNGames`
+#'   filter, so this argument was never sent; passing it now warns.
 #' @param league_id league_id
 #' @param location location
 #' @param month month
@@ -335,6 +343,12 @@ nba_leaguehustlestatsplayerleaders <- function(
   .args <- mget(setdiff(names(formals()), "..."))
 
   # season_type <- gsub(' ','+',season_type)
+  if (!missing(last_n_games)) {
+    lifecycle::deprecate_warn(
+      "3.2.0", "nba_leaguehustlestatsplayerleaders(last_n_games)",
+      details = "stats.nba.com's leaguehustlestatsplayerleaders endpoint has no LastNGames filter; the argument is ignored."
+    )
+  }
   version <- "leaguehustlestatsplayerleaders"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -403,7 +417,8 @@ nba_leaguehustlestatsplayerleaders <- function(
 #' @param draft_pick draft_pick
 #' @param draft_year draft_year
 #' @param height height
-#' @param last_n_games last_n_games
+#' @param last_n_games Deprecated and ignored. The hustle endpoints take no `LastNGames`
+#'   filter, so this argument was never sent; passing it now warns.
 #' @param league_id league_id
 #' @param location location
 #' @param month month
@@ -493,6 +508,12 @@ nba_leaguehustlestatsteam <- function(
 
   # intentional
   # season_type <- gsub(' ','+',season_type)
+  if (!missing(last_n_games)) {
+    lifecycle::deprecate_warn(
+      "3.2.0", "nba_leaguehustlestatsteam(last_n_games)",
+      details = "stats.nba.com's leaguehustlestatsteam endpoint has no LastNGames filter; the argument is ignored."
+    )
+  }
   version <- "leaguehustlestatsteam"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -560,7 +581,8 @@ nba_leaguehustlestatsteam <- function(
 #' @param draft_pick draft_pick
 #' @param draft_year draft_year
 #' @param height height
-#' @param last_n_games last_n_games
+#' @param last_n_games Deprecated and ignored. The hustle endpoints take no `LastNGames`
+#'   filter, so this argument was never sent; passing it now warns.
 #' @param league_id league_id
 #' @param location location
 #' @param month month
@@ -705,6 +727,12 @@ nba_leaguehustlestatsteamleaders <- function(
 
   # intentional
   # season_type <- gsub(' ','+',season_type)
+  if (!missing(last_n_games)) {
+    lifecycle::deprecate_warn(
+      "3.2.0", "nba_leaguehustlestatsteamleaders(last_n_games)",
+      details = "stats.nba.com's leaguehustlestatsteamleaders endpoint has no LastNGames filter; the argument is ignored."
+    )
+  }
   version <- "leaguehustlestatsteamleaders"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
