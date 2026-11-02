@@ -38,8 +38,11 @@ estimates. Results from a single game (~150–250 possessions) are highly
 unstable and are provided here for pipeline illustration only.
 
 Values are relative to average: an unpenalized intercept absorbs the mean
-points per possession, so possession-weighted mean O-RAPM and D-RAPM are
-both close to 0.
+points per possession, and the ridge penalty applies to the raw player
+indicators (no standardization), as in sportsdataverse-py. The data do
+not fix the overall level of the offensive or defensive block, so the
+possession-weighted mean O-RAPM and D-RAPM are close to 0 (within a few
+tenths of a point per 100 on a full season) but not exactly 0.
 
 Results are \strong{deterministic}: the cross-validation uses fixed,
 construction-based folds (not random), so repeated calls on the same

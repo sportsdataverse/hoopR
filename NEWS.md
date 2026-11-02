@@ -101,15 +101,29 @@
   argument it takes, and the `nba_drafthistory()` live test passes `season`
   rather than an unknown `season_year`, which was silently ignored.
 
-* `nba_rapm()` now fits an intercept, so its values change. The ridge used to
-  be fitted with no intercept, which pushed the league-average points per
-  possession into the player coefficients: O-RAPM was shifted up and D-RAPM
-  down by about 10 points per 100 possessions (on game 0022200001 the
-  possession-weighted means were +11.0 and -10.9). The intercept now absorbs
-  that average, so both means are close to 0. It is a level shift: on a
-  simulated 8,000-possession sample the player order within O-RAPM, D-RAPM and
-  `rapm` is unchanged, but `o_rapm` and `d_rapm` values are not comparable with
-  earlier output.
+* `nba_rapm()` now fits the same ridge as sportsdataverse-py (sklearn `Ridge`
+  with an intercept, on unstandardized player indicators), so its values and
+  player order change:
+  * It fits an intercept. Without one, the league-average points per
+    possession leaked into the player coefficients: on the 2025-26 regular
+    season the possession-weighted mean O-RAPM was +11.4 and D-RAPM -11.1.
+    Both are now within a few tenths of 0 (the data do not fix each block's
+    level, so they are not exactly 0).
+  * It no longer standardizes the indicators (`standardize = FALSE`).
+    glmnet's default rescaled each player column, which shrank low-minute
+    players less and, with the intercept, made cross-validation choose a
+    penalty five times heavier.
+
+  On the 2025-26 regular season, for players with 1,000+ offensive
+  possessions, the correlation of `rapm` with sportsdataverse-py's fit rises
+  from 0.960 to 0.989, and with `load_nba_player_impact()` RAPM from 0.955 to
+  0.986. The player order is not the same as before (Spearman 0.94 for those
+  players, 0.83 for everyone), so earlier `nba_rapm()` output is not
+  comparable. Constant `points` (including a single possession) now returns
+  all-zero player values instead of an error, possessions with missing
+  `points` are dropped like those with a missing lineup slot, and a failed
+  cross-validation on tiny inputs falls back to a fixed `lambda` with a
+  warning.
 
 ### **New data loaders**
 

@@ -195,8 +195,8 @@ my_rapm |>
 
 Two properties of this design show up immediately:
 
-1. **Values are relative to average.** The intercept carries the roughly one point per possession that every possession scores, so the possession-weighted means of `o_rapm` and `d_rapm` are close to zero. (Before hoopR 3.2.0 `nba_rapm()` had no intercept, and that average leaked into the players: `o_rapm` sat about 10 points above zero and `d_rapm` about 10 below.)
-2. **Cross-validated lambda is light.** `lambda.min` is chosen for predicting possession outcomes, and it regularizes far less than the college model's lambda = 1000. Players with a few dozen possessions get extreme values. Use a possession floor.
+1. **Values are relative to average.** The intercept carries the roughly one point per possession that every possession scores, so the possession-weighted means of `o_rapm` and `d_rapm` are within a few tenths of zero. They are not exactly zero: the data cannot tell the offensive block's overall level from the intercept, so the penalty settles it. (Before hoopR 3.2.0 `nba_rapm()` had no intercept, and that average leaked into the players: `o_rapm` sat about 10 points above zero and `d_rapm` about 10 below.)
+2. **Low-minute players are shrunk toward zero.** The ridge penalizes every player's raw coefficient equally (no standardization, as in sportsdataverse-py), and `lambda.min` is chosen for predicting possession outcomes. A player with a few dozen possessions has little data to move the estimate off zero, so the value says little either way. Use a possession floor when ranking.
 
 Compare with the published suite's RAPM for the same season:
 
@@ -229,7 +229,7 @@ compare |>
   theme_minimal()
 ```
 
-For regulars the two agree closely in ordering; the scale differs because the published suite regularizes more heavily. To control the penalty yourself, build the design and call `glmnet::glmnet()` with your own `lambda`.
+The two agree closely for regulars. To control the penalty yourself, build the design and call `glmnet::glmnet()` with your own `lambda`.
 
 For a single game you can build the possession frame from live NBA Stats play-by-play with `nba_possession_lineups()`. It calls stats.nba.com, so it is not run here, and one game (about 200 possessions) is far too few for a meaningful RAPM:
 

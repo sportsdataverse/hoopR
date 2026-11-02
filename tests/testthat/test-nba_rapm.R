@@ -141,6 +141,12 @@ test_that(".build_rapm_design drops possessions with NA lineup cells (never-rais
   # Points of the surviving possession = 0 (the second row)
   expect_equal(des$y, 0)
 
+  # NA points are dropped too (the intercept fit cannot take them)
+  df_na_pts <- df
+  df_na_pts$off_player_1 <- 1L
+  df_na_pts$points <- c(NA_real_, 0)
+  expect_equal(.build_rapm_design(df_na_pts)$y, 0)
+
   # All-NA rows → empty result (never-raise)
   df_all_na <- data.frame(
     off_player_1 = NA_integer_, off_player_2 = NA_integer_,
@@ -206,6 +212,18 @@ test_that("nba_rapm returns correct schema on a tiny hand frame", {
               label = "all players have 2 offensive possessions")
   expect_true(all(out$def_poss == poss_per_player),
               label = "all players have 2 defensive possessions")
+})
+
+test_that("nba_rapm returns all-average players on constant points (never-raise)", {
+  skip_if_not_installed("glmnet")
+  skip_on_cran()
+  # glmnet refuses a constant response once an intercept is fitted.
+  same <- list(off = c(1L, 2L, 3L, 7L, 8L), def = c(4L, 5L, 6L, 9L, 10L), pts = 1)
+  for (rows in list(rep(list(same), 30L), list(same))) {
+    out <- nba_rapm(.poss_df(rows))
+    expect_equal(nrow(out), 10L)
+    expect_true(all(out$o_rapm == 0 & out$d_rapm == 0 & out$rapm == 0))
+  }
 })
 
 # ---------------------------------------------------------------------------
