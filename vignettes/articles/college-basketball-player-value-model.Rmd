@@ -1,0 +1,173 @@
+---
+title: "College Basketball Player Value Model: Box Plus-Minus for NCAA Men's Players"
+description: "How the box plus-minus (BPM) ratings behind hoopR's load_mbb_player_value() are built from box-score rates, how reliable they are, and how to use the qualified flag."
+author: "Saiem Gilani"
+opengraph:
+  image:
+    src: "https://github.com/sportsdataverse/hoopR-data/blob/main/themes/hoopR_gh.png?raw=true"
+  twitter:
+    card: summary_large_image
+    creator: "@saiemgilani"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, comment = "#>", message = FALSE, warning = FALSE,
+  fig.width = 8, fig.height = 6, dpi = 96
+)
+card_url <- "https://github.com/sportsdataverse/hoopR-mbb-data/blob/main/docs/models/player_value.md"
+# the player value release is parquet-only, so the loader needs arrow
+has_arrow <- requireNamespace("arrow", quietly = TRUE)
+```
+
+**Box plus-minus (BPM) estimates how many points per 100 possessions a player adds over an average player, using only what appears in the box score.** It cannot see a great screen or a help rotation, but it is stable in small samples, which on/off measures are not. `load_mbb_player_value()` returns offensive, defensive and total box plus-minus for every men's college player-season. This article explains the model, how reliable it is, and how to filter it sensibly.
+
+The official model card is [player_value.md](`r card_url`) in the `hoopR-mbb-data` repository. Numbers below are computed here from the published release unless labeled "as reported in the model card".
+
+## What does the dataset contain?
+
+| Column | Meaning |
+|---|---|
+| `box_obpm` | Offensive box plus-minus: points per 100 possessions added on offense. |
+| `box_dbpm` | Defensive box plus-minus. |
+| `box_bpm` | `box_obpm + box_dbpm`. |
+| `min` | Minutes played. |
+| `qualified` | `TRUE` when `min >= 300`, the floor at which the spread of BPM stops shrinking (see below). |
+| `player_id`, `player`, `team_id`, `season` | Identifiers; `team_id` is the ESPN team id. |
+
+## How is BPM computed?
+
+As described in the model card:
+
+1. **Per-100 box features.** For each player, sixteen rates from the box score: usage, true shooting and effective FG%, assist, turnover, offensive and defensive rebound, block and steal percentages, free-throw rate, shot shares at the rim, mid-range and three, and points, rebounds and assists per 100 possessions.
+2. **Standardize and score.** Each feature is standardized (z-scores clipped at 4) and scored through ridge-regression coefficients fit at the team level, separately for offense and defense.
+3. **Team constraint.** A uniform adjustment per team makes the minutes-weighted sum of its players' scores equal the team's adjusted efficiency margin, so BPM adds up to team strength. (The team ratings are the subject of the [team ratings article](college-basketball-team-ratings-model.html).)
+
+The model is compute-on-demand: every publish recomputes BPM from the current season data, and the fitted coefficients ship beside the release as `mbb_player_value_coefficients.json`.
+
+```{r coefficients}
+coef_url <- paste0(
+  "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/",
+  "mbb_player_value/mbb_player_value_coefficients.json"
+)
+co <- tryCatch(jsonlite::fromJSON(coef_url), error = function(e) NULL)
+
+if (!is.null(co)) {
+  cat("method:", co$method, "| train seasons:", paste(co$train_seasons, collapse = ", "),
+      "| ridge lambda offense/defense:", co$lambda_o, "/", co$lambda_d,
+      "| z clip:", co$z_clip, "| fit floor (minutes):", co$min_minutes, "\n")
+  # coefficient vectors are [intercept, slopes...] over feature_cols
+  tibble::tibble(
+    feature = co$feature_cols,
+    obpm_slope = co$obpm_coef[-1],
+    dbpm_slope = co$dbpm_coef[-1]
+  ) |>
+    dplyr::arrange(dplyr::desc(abs(obpm_slope) + abs(dbpm_slope))) |>
+    dplyr::mutate(dplyr::across(-feature, \(x) round(x, 3)))
+}
+```
+
+Each slope is the change in BPM for a one-standard-deviation change in that feature, so slopes are directly comparable. Usage and efficiency carry opposite signs on offense: volume is penalized until it is efficient. Intercepts are absorbed by the team adjustment.
+
+## Loading the ratings
+
+```{r load, eval = has_arrow}
+library(hoopR)
+library(dplyr)
+library(ggplot2)
+
+pv <- load_mbb_player_value(seasons = 2020:2026)
+
+pv |>
+  group_by(season) |>
+  summarise(players = n(), total_minutes = round(sum(min)),
+            qualified_players = sum(qualified, na.rm = TRUE))
+```
+
+## Why the 300-minute qualified flag?
+
+The file keeps every player, including those with a few minutes. The most extreme BPM values belong to players with tiny samples. The spread of BPM by minutes played shows where it settles:
+
+```{r funnel_table, eval = has_arrow}
+pv |>
+  mutate(minutes_bin = cut(min, c(0, 50, 100, 200, 300, 400, 600, 800, 1000, Inf),
+                           right = FALSE, dig.lab = 4)) |>
+  group_by(minutes_bin) |>
+  summarise(players = n(), sd_box_bpm = round(sd(box_bpm), 2),
+            abs_bpm_p99 = round(quantile(abs(box_bpm), 0.99), 2))
+```
+
+```{r funnel_plot, eval = has_arrow, fig.alt = "Scatter plot of box plus-minus against minutes played for 2025-26 men's college basketball players, showing a funnel that narrows as minutes increase, with a vertical line at 300 minutes."}
+pv |>
+  filter(season == 2026) |>
+  ggplot(aes(min, box_bpm)) +
+  geom_point(alpha = 0.15, size = 0.7, colour = "#2C3D50") +
+  geom_vline(xintercept = 300, colour = "#B2182B", linetype = "dashed") +
+  labs(
+    title = "Small samples produce the extreme BPMs",
+    subtitle = "2025-26; dashed line at the 300-minute qualified floor",
+    x = "Minutes played", y = "Box plus-minus (points per 100 possessions)",
+    caption = "Data: hoopR::load_mbb_player_value()"
+  ) +
+  theme_minimal()
+```
+
+As reported in the model card, the floor was set where the standard deviation of BPM first comes within 10% of its plateau at 600 to 800 minutes, using the published 2014-2026 seasons. Filter with `qualified` instead of re-deriving a threshold. (The model's own 150-minute fit floor only governs the team-sum weights; the two floors answer different questions.)
+
+## How reliable is it?
+
+A box-score model's main virtue is persistence: a returning player's BPM should carry over from season to season even with college basketball's roster churn.
+
+```{r reliability, eval = has_arrow}
+q <- pv |> filter(qualified) |> distinct(player_id, season, .keep_all = TRUE)
+
+yoy <- q |>
+  select(player_id, season, box_bpm) |>
+  inner_join(q |> transmute(player_id, season = season - 1, box_bpm_next = box_bpm),
+             by = c("player_id", "season"))
+
+q26 <- filter(q, season == 2026)
+
+c(
+  yoy_pairs = nrow(yoy),
+  yoy_r = round(cor(yoy$box_bpm, yoy$box_bpm_next), 3),
+  qualified_2026 = nrow(q26),
+  cor_obpm_dbpm_2026 = round(cor(q26$box_obpm, q26$box_dbpm), 3)
+)
+```
+
+Year-over-year correlation for qualified players is high (the model card reports 0.767 over all published seasons), and the offensive and defensive components are only weakly correlated, so they carry different information.
+
+## Who rated highest in 2025-26?
+
+```{r leaders, eval = has_arrow}
+team_names <- load_mbb_team_box(seasons = 2026) |>
+  distinct(team_id = as.character(team_id), team = team_display_name)
+
+q26 |>
+  mutate(team_id = as.character(team_id)) |>
+  left_join(team_names, by = "team_id") |>
+  arrange(desc(box_bpm)) |>
+  select(player, team, min, box_obpm, box_dbpm, box_bpm) |>
+  mutate(min = round(min), across(starts_with("box"), \(x) round(x, 2))) |>
+  head(15)
+```
+
+## BPM versus RAPM
+
+Box plus-minus and on/off RAPM ([college RAPM model](college-basketball-rapm-model.html)) deliberately measure different things. BPM sees only the box score, so it is stable in small samples but blind to screening, defensive attention and spacing. RAPM sees everything that changes the score but is noisy for low-minute players. Use them as cross-references. The natural hybrid, a RAPM that shrinks toward a box-score prior, is what the [NBA player impact suite](nba-player-impact-model.html) does with its adj-RAPM column.
+
+## Limitations
+
+- **Box-score blind spots**, as above; defense is especially hard to see in a box score.
+- **Context.** Rates depend on role and teammates; a high-usage scorer on a weak team and a role player on a strong one are scored on the same coefficients.
+- **Team constraint.** Because players sum to the team's adjusted margin, a player on a strong team inherits some of that strength.
+- **Low-minute rows.** They are published, flagged `qualified = FALSE`. Filter them before ranking.
+
+## Where to go next
+
+- [College basketball RAPM model](college-basketball-rapm-model.html) and [team ratings model](college-basketball-team-ratings-model.html).
+- [NBA player impact model](nba-player-impact-model.html) for SPM, BPM and adj-RAPM in the NBA.
+- [Basketball advanced metrics](basketball-advanced-metrics.html) for the rates (usage, TS%, eFG%) BPM is built from.
+- Reference: `load_mbb_player_value()` in the [Model Dataset Loaders](../reference/index.html#model-dataset-loaders) section.

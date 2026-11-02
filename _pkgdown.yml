@@ -112,6 +112,26 @@ navbar:
           href: articles/nba-cookbook.html
         - text: "NBA Stats API Parameter Descriptions"
           href: articles/parameter-descriptions.html
+        - text: "International Basketball Leagues"
+          href: articles/international-basketball-leagues.html
+        - text: --------------------------------
+        - text: "Guides"
+        - text: "Shot Charts and Court Plots"
+          href: articles/nba-college-basketball-shot-charts.html
+        - text: "Basketball Advanced Metrics"
+          href: articles/basketball-advanced-metrics.html
+        - text: --------------------------------
+        - text: "Models"
+        - text: "NBA Player Impact Model"
+          href: articles/nba-player-impact-model.html
+        - text: "College Basketball RAPM Model"
+          href: articles/college-basketball-rapm-model.html
+        - text: "College Basketball Team Ratings Model"
+          href: articles/college-basketball-team-ratings-model.html
+        - text: "College Basketball Player Value Model"
+          href: articles/college-basketball-player-value-model.html
+        - text: "College Basketball Win Probability Model"
+          href: articles/college-basketball-win-probability-model.html
     news:
       icon: "fas fa-newspaper"
       text: " News"

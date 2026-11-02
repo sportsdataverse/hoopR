@@ -1,0 +1,451 @@
+---
+title: "Basketball Advanced Metrics in R: Possessions, Pace, Ratings and the Four Factors"
+description: "Compute possessions, pace, offensive, defensive and net rating, the four factors, eFG%, true shooting, usage and per-100 stats for NBA and college teams with hoopR."
+author: "Saiem Gilani"
+opengraph:
+  image:
+    src: "https://github.com/sportsdataverse/hoopR-data/blob/main/themes/hoopR_gh.png?raw=true"
+  twitter:
+    card: summary_large_image
+    creator: "@saiemgilani"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, comment = "#>", message = FALSE, warning = FALSE,
+  fig.width = 8, fig.height = 6, dpi = 96
+)
+```
+
+**Points per game tells you how much a team scored. Points per possession tells you how well it scored.** This article walks through the standard efficiency metrics of basketball analytics, shows the formula for each, computes it with `hoopR`'s helpers on a full NBA season, and checks the helper against a hand calculation. Everything here runs offline on the SportsDataverse release files, so it is fast and reproducible.
+
+If you are new to `hoopR`, start with [Getting Started with hoopR](getting-started-hoopR.html). The helpers used here live in the [Basketball Analytics Utilities](../reference/index.html#basketball-analytics-utilities) section of the reference.
+
+## What you need
+
+```{r packages}
+library(hoopR)
+library(dplyr)
+library(ggplot2)
+
+season <- 2026 # the 2025-26 season
+```
+
+We use three release loaders: `load_nba_team_box()` (one row per team per game), `load_nba_player_box()` (one row per player per game) and `load_nba_pbp()` (to count overtime periods). Team box scores carry ESPN's column names, so we rename them once to the short names the helpers expect.
+
+```{r load_team_box}
+team_box <- load_nba_team_box(seasons = season) |>
+  filter(season_type == 2) |>                       # regular season
+  add_count(team_id, name = "team_games") |>
+  filter(team_games >= 41) |>                       # drop All-Star exhibition teams
+  transmute(
+    game_id, team_id, team = team_abbreviation, opp_id = opponent_team_id,
+    pts = team_score, fgm = field_goals_made, fga = field_goals_attempted,
+    fg3m = three_point_field_goals_made, fg3a = three_point_field_goals_attempted,
+    ftm = free_throws_made, fta = free_throws_attempted,
+    oreb = offensive_rebounds, dreb = defensive_rebounds,
+    ast = assists, tov = total_turnovers
+  )
+
+# minutes played: 48 per regulation game plus 5 per overtime period
+game_minutes <- load_nba_pbp(seasons = season) |>
+  group_by(game_id) |>
+  summarise(periods = max(period_number), .groups = "drop") |>
+  mutate(game_min = 48 + 5 * pmax(periods - 4, 0))
+
+# attach each team's opponent totals to its own row
+games <- team_box |>
+  inner_join(
+    team_box |> select(game_id, opp_id = team_id, opp_pts = pts, opp_fgm = fgm,
+                       opp_fga = fga, opp_fg3m = fg3m, opp_ftm = ftm, opp_fta = fta,
+                       opp_oreb = oreb, opp_dreb = dreb, opp_tov = tov),
+    by = c("game_id", "opp_id")
+  ) |>
+  inner_join(game_minutes, by = "game_id")
+
+# a few box scores have missing team totals; drop those team-games
+n_before <- nrow(games)
+games <- filter(games, if_all(everything(), \(x) !is.na(x)))
+c(team_games = nrow(games), dropped_incomplete = n_before - nrow(games))
+```
+
+## How many possessions did a team have?
+
+A **possession** is one team's turn with the ball. It ends with a made field goal (or last free throw), a defensive rebound, a turnover, or the end of a period. An offensive rebound extends a possession rather than starting a new one. Box scores do not record possessions, so we estimate them:
+
+`possessions = FGA + 0.44 * FTA - OREB + TOV`
+
+`nba_possessions()` computes exactly that. The 0.44 is the average share of a possession a free-throw attempt ends: two-shot fouls use two attempts for one possession, three-shot fouls three, and and-ones and technicals add attempts that end nothing.
+
+Both teams in a game have (almost) the same number of possessions, so a common refinement averages the two estimates. We use that game-level average for every rating below.
+
+```{r possessions}
+games <- games |>
+  mutate(
+    poss_own = nba_possessions(fga, fta, oreb, tov),
+    poss_opp = nba_possessions(opp_fga, opp_fta, opp_oreb, opp_tov),
+    poss = (poss_own + poss_opp) / 2
+  )
+
+# hand check on the first row
+g <- games[1, ]
+hand <- g$fga + 0.44 * g$fta - g$oreb + g$tov
+c(helper = g$poss_own, hand = hand, equal = isTRUE(all.equal(g$poss_own, hand)))
+
+summary(games$poss)
+```
+
+```{r poss_gap, include = FALSE}
+poss_gap <- median(abs(games$poss_own - games$poss_opp))
+```
+
+The two teams' single-side estimates differ by a median of `r round(poss_gap, 1)` possessions per game, which is why the average is preferred.
+
+## What is pace?
+
+**Pace** is possessions per 48 minutes. `nba_pace()` takes the possession count and the team's total *player*-minutes (240 for a regulation game, five players times 48 minutes) and returns
+
+`pace = 48 * possessions / (minutes / 5)`
+
+so overtime games are not mistaken for fast ones.
+
+```{r pace}
+games <- games |>
+  mutate(team_min = 5 * game_min, pace = nba_pace(poss, team_min))
+
+c(helper = games$pace[1], hand = 48 * games$poss[1] / (games$team_min[1] / 5))
+```
+
+## Offensive, defensive and net rating
+
+- **Offensive rating (ORtg)**: points scored per 100 possessions, `100 * PTS / poss`, from `nba_offensive_rating()`.
+- **Defensive rating (DRtg)**: points allowed per 100 possessions, `100 * opponent PTS / poss`, from `nba_defensive_rating()`. Lower is better.
+- **Net rating**: `ORtg - DRtg`, from `nba_net_rating()`. A net rating of +5 means outscoring opponents by five points every 100 possessions.
+
+Ratings for a season are computed from season totals (sum the points, sum the possessions, then divide), not by averaging game ratings, so long games count for more.
+
+```{r ratings}
+team_season <- games |>
+  group_by(team) |>
+  summarise(
+    gp = n(), pts = sum(pts), opp_pts = sum(opp_pts),
+    poss = sum(poss), team_min = sum(team_min),
+    .groups = "drop"
+  ) |>
+  mutate(
+    pace = nba_pace(poss, team_min),
+    ortg = nba_offensive_rating(pts, poss),
+    drtg = nba_defensive_rating(opp_pts, poss),
+    net  = nba_net_rating(ortg, drtg)
+  ) |>
+  arrange(desc(net))
+
+team_season |>
+  select(team, gp, pace, ortg, drtg, net) |>
+  mutate(across(pace:net, \(x) round(x, 1))) |>
+  head(10)
+```
+
+```{r league_avg, include = FALSE}
+lg_ortg <- with(team_season, nba_offensive_rating(sum(pts), sum(poss)))
+lg_pace <- with(team_season, nba_pace(sum(poss), sum(team_min)))
+```
+
+Across the league, teams scored `r round(lg_ortg, 1)` points per 100 possessions at a pace of `r round(lg_pace, 1)` possessions per 48 minutes. Net rating tracks winning closely, which is why it is the headline team metric:
+
+```{r net_vs_points, fig.alt = "Scatter plot of NBA team net rating against point differential per game for the 2025-26 regular season, showing a near-linear relationship."}
+team_season |>
+  mutate(margin_pg = (pts - opp_pts) / gp) |>
+  ggplot(aes(margin_pg, net, label = team)) +
+  geom_abline(slope = 100 / lg_pace, intercept = 0, colour = "grey70", linetype = "dashed") +
+  geom_point(colour = "#2C3D50", size = 2.5) +
+  geom_text(nudge_y = 0.6, size = 3) +
+  labs(
+    title = "Net rating is point differential, rescaled to 100 possessions",
+    subtitle = "Dashed line: 100 / league pace",
+    x = "Point differential per game", y = "Net rating (points per 100 possessions)",
+    caption = "Data: hoopR::load_nba_team_box()"
+  ) +
+  theme_minimal()
+```
+
+## The four factors
+
+Dean Oliver identified four things a team must do well to win, on both offense and defense:
+
+| Factor | Formula | Helper |
+|---|---|---|
+| Shooting: effective FG% | `(FGM + 0.5 * 3PM) / FGA` | `nba_effective_fg_pct()` |
+| Turnovers: turnover % | `100 * TOV / (FGA + 0.44 * FTA + TOV)` | `nba_turnover_pct()` |
+| Rebounding: offensive rebound % | `100 * OREB / (OREB + opponent DREB)` | `nba_oreb_pct()` |
+| Free throws: free-throw rate | `FTM / FGA` | inside `nba_four_factors()` |
+
+**Effective field-goal percentage (eFG%)** credits a made three with 1.5 field goals, because it is worth 1.5 times a two. **Turnover percentage (TOV%)** is turnovers per 100 plays. **Offensive rebound percentage (OREB%)** is the share of a team's own misses it rebounded. The **free-throw rate** in the four factors is free throws *made* per field-goal attempt; the standalone `nba_ft_rate()` returns the more common attempts-based version, `FTA / FGA`. Mind which one you report.
+
+`nba_four_factors()` returns all four as a tibble. The defensive four factors are simply the opponent's offensive four factors.
+
+```{r four_factors}
+ff <- games |>
+  group_by(team) |>
+  summarise(across(c(fgm, fg3m, fga, fta, ftm, oreb, tov, dreb,
+                     opp_fgm, opp_fg3m, opp_fga, opp_fta, opp_ftm, opp_oreb, opp_tov, opp_dreb),
+                   sum), .groups = "drop")
+
+off_ff <- with(ff, nba_four_factors(fgm, fg3m, fga, fta, ftm, oreb, tov, opp_dreb))
+def_ff <- with(ff, nba_four_factors(opp_fgm, opp_fg3m, opp_fga, opp_fta, opp_ftm, opp_oreb, opp_tov, dreb))
+names(def_ff) <- paste0("opp_", names(def_ff))
+
+four_factors <- bind_cols(team = ff$team, off_ff, def_ff) |>
+  left_join(select(team_season, team, net), by = "team")
+
+four_factors |>
+  arrange(desc(net)) |>
+  mutate(across(where(is.numeric), \(x) round(x, 3))) |>
+  head(8)
+```
+
+A hand check of the first team's offensive eFG% and OREB%:
+
+```{r ff_hand}
+t1 <- ff[1, ]
+c(
+  efg_helper = off_ff$efg_pct[1],
+  efg_hand = (t1$fgm + 0.5 * t1$fg3m) / t1$fga,
+  oreb_helper = off_ff$oreb_pct[1],
+  oreb_hand = 100 * t1$oreb / (t1$oreb + t1$opp_dreb)
+)
+```
+
+How much does each factor matter? Here is the correlation of each offensive and defensive factor with net rating across the 30 teams:
+
+```{r ff_cor}
+four_factors |>
+  summarise(across(c(efg_pct, tov_pct, oreb_pct, ft_rate,
+                     opp_efg_pct, opp_tov_pct, opp_oreb_pct, opp_ft_rate),
+                   \(x) cor(x, net))) |>
+  tidyr::pivot_longer(everything(), names_to = "factor", values_to = "cor_with_net") |>
+  arrange(desc(abs(cor_with_net))) |>
+  mutate(cor_with_net = round(cor_with_net, 2))
+```
+
+```{r ff_fit, include = FALSE}
+fit <- lm(net ~ efg_pct + tov_pct + oreb_pct + ft_rate +
+            opp_efg_pct + opp_tov_pct + opp_oreb_pct + opp_ft_rate, data = four_factors)
+r2 <- summary(fit)$r.squared
+cors <- sapply(four_factors[c("efg_pct", "tov_pct", "oreb_pct", "ft_rate",
+                              "opp_efg_pct", "opp_tov_pct", "opp_oreb_pct", "opp_ft_rate")],
+               \(x) cor(x, four_factors$net))
+top_factor <- names(which.max(abs(cors)))
+```
+
+This season the factor most strongly correlated with net rating is `r top_factor` (r = `r round(cors[[top_factor]], 2)`); Oliver's own weighting ranked shooting first, then turnovers, rebounding and free throws. A linear model of net rating on all eight factors explains `r round(100 * r2, 1)`% of the variance across teams this season (an in-sample fit on 30 teams, so treat it as descriptive).
+
+## Player shooting efficiency: eFG% and true shooting
+
+**True shooting percentage (TS%)** extends eFG% to free throws: points per shooting possession,
+
+`TS% = PTS / (2 * (FGA + 0.44 * FTA))`
+
+computed by `nba_true_shooting_pct()`. It is the best single number for scoring efficiency because it counts every way of scoring.
+
+```{r player_box}
+player_box <- load_nba_player_box(seasons = season) |>
+  filter(season_type == 2, !did_not_play, minutes > 0) |>
+  semi_join(team_box, by = c("game_id", "team_id"))
+
+players <- player_box |>
+  group_by(athlete_id, athlete_display_name, team_abbreviation) |>
+  summarise(
+    gp = n(), min = sum(minutes), pts = sum(points),
+    fgm = sum(field_goals_made), fga = sum(field_goals_attempted),
+    fg3m = sum(three_point_field_goals_made),
+    ftm = sum(free_throws_made), fta = sum(free_throws_attempted),
+    tov = sum(turnovers), ast = sum(assists),
+    .groups = "drop"
+  ) |>
+  mutate(
+    ts_pct  = nba_true_shooting_pct(pts, fga, fta),
+    efg_pct = nba_effective_fg_pct(fgm, fg3m, fga),
+    ft_rate = nba_ft_rate(fta, fga)
+  )
+
+players |>
+  filter(fga >= 800) |>
+  arrange(desc(ts_pct)) |>
+  select(athlete_display_name, team_abbreviation, pts, fga, fta, ts_pct, efg_pct, ft_rate) |>
+  mutate(across(ts_pct:ft_rate, \(x) round(x, 3))) |>
+  head(10)
+```
+
+(A player traded mid-season appears once per team here.)
+
+## Usage rate: who finishes the plays?
+
+**Usage rate** estimates the share of team plays a player "used" (ended with a shot, free throws or a turnover) while on the floor:
+
+`USG% = 100 * (FGA + 0.44 * FTA + TOV) * (team minutes / 5) / (minutes * (team FGA + 0.44 * team FTA + team TOV))`
+
+`nba_usage_rate()` needs the team's totals for the games the player played, so we join team totals to each player game and sum.
+
+```{r usage}
+team_game_totals <- player_box |>
+  group_by(game_id, team_id) |>
+  summarise(team_fga = sum(field_goals_attempted), team_fta = sum(free_throws_attempted),
+            team_tov = sum(turnovers), .groups = "drop") |>
+  inner_join(games |> select(game_id, team_id, team_min), by = c("game_id", "team_id"))
+
+usage <- player_box |>
+  inner_join(team_game_totals, by = c("game_id", "team_id")) |>
+  group_by(athlete_id, athlete_display_name, team_abbreviation) |>
+  summarise(
+    min = sum(minutes), fga = sum(field_goals_attempted), fta = sum(free_throws_attempted),
+    tov = sum(turnovers), team_fga = sum(team_fga), team_fta = sum(team_fta),
+    team_tov = sum(team_tov), team_min = sum(team_min), pts = sum(points),
+    .groups = "drop"
+  ) |>
+  mutate(
+    usg = nba_usage_rate(fga, fta, tov, min, team_fga, team_fta, team_tov, team_min),
+    ts_pct = nba_true_shooting_pct(pts, fga, fta)
+  ) |>
+  filter(min >= 1500)
+
+usage |>
+  arrange(desc(usg)) |>
+  select(athlete_display_name, team_abbreviation, min, usg, ts_pct) |>
+  mutate(usg = round(usg, 1), ts_pct = round(ts_pct, 3)) |>
+  head(10)
+```
+
+Team turnovers that are not credited to a player (shot-clock violations, for example) are left out of the team total here, because no player used them. Usage and efficiency trade off: the more plays a player finishes, the harder it is to keep a high TS%.
+
+```{r usage_plot, fig.alt = "Scatter plot of usage rate against true shooting percentage for NBA players with at least 1,500 minutes in the 2025-26 regular season."}
+ggplot(usage, aes(usg, ts_pct)) +
+  geom_point(alpha = 0.6, colour = "#2C3D50") +
+  geom_smooth(method = "lm", se = FALSE, colour = "#A7C6E6") +
+  labs(
+    title = "Usage rate vs true shooting, 2025-26 (1,500+ minutes)",
+    x = "Usage rate (%)", y = "True shooting %",
+    caption = "Data: hoopR::load_nba_player_box()"
+  ) +
+  theme_minimal()
+```
+
+## Per-minute and per-possession stats
+
+Counting stats depend on playing time. `nba_per_minutes()` rescales chosen columns to a per-36-minute basis and `nba_per_possessions()` to per 100 possessions; both add new `{col}_per_{n}` columns and leave the originals alone.
+
+```{r per_scaling}
+players |>
+  filter(min >= 1500) |>
+  nba_per_minutes(cols = c("pts", "ast", "tov"), minutes = "min", per = 36) |>
+  arrange(desc(pts_per_36)) |>
+  select(athlete_display_name, min, pts, pts_per_36, ast_per_36, tov_per_36) |>
+  mutate(across(ends_with("_36"), \(x) round(x, 1))) |>
+  head(5)
+
+team_season |>
+  left_join(ff |> select(team, tov, oreb), by = "team") |>
+  nba_per_possessions(cols = c("pts", "tov", "oreb"), possessions = "poss", per = 100) |>
+  select(team, pts_per_100, tov_per_100, oreb_per_100) |>
+  mutate(across(-team, \(x) round(x, 1))) |>
+  head(5)
+```
+
+`pts_per_100` is exactly offensive rating.
+
+## Adding several metrics at once
+
+`nba_add_advanced_metrics()` scans a box score for familiar column names (`pts`, `fgm`, `fga`, `fg3m`, `ftm`, `fta`, `oreb`, `dreb`, `ast`, `stl`, `blk`, `pf`, `tov` and common aliases) and appends TS%, eFG%, FT rate, TOV%, assist-to-turnover ratio and Hollinger's Game Score. ESPN's long names are not among the aliases, so rename first:
+
+```{r add_advanced}
+player_box |>
+  transmute(
+    athlete_display_name, game_id, pts = points, fgm = field_goals_made,
+    fga = field_goals_attempted, fg3m = three_point_field_goals_made,
+    ftm = free_throws_made, fta = free_throws_attempted,
+    oreb = offensive_rebounds, dreb = defensive_rebounds, ast = assists,
+    stl = steals, blk = blocks, pf = fouls, tov = turnovers
+  ) |>
+  nba_add_advanced_metrics() |>
+  arrange(desc(game_score)) |>
+  select(athlete_display_name, pts, ts_pct, efg_pct, game_score) |>
+  head(5)
+```
+
+**Game Score** (`nba_game_score()`) is John Hollinger's single-game rating, scaled like points: `PTS + 0.4 FGM - 0.7 FGA - 0.4 (FTA - FTM) + 0.7 OREB + 0.3 DREB + STL + 0.7 AST + 0.7 BLK - 0.4 PF - TOV`.
+
+## The same metrics for men's college basketball
+
+The helpers are league-agnostic. College games are 40 minutes (two 20-minute halves, five-minute overtimes), so quote pace per 40 minutes: `40 * possessions / (minutes / 5)`. The ESPN college player box records whole minutes, so we round each team's summed minutes to the nearest regulation-plus-overtime total.
+
+```{r mbb}
+mbb_team <- load_mbb_team_box(seasons = season) |>
+  filter(season_type == 2) |>
+  transmute(game_id, team_id, team = team_display_name, opp_id = opponent_team_id,
+            pts = team_score, fga = field_goals_attempted, fta = free_throws_attempted,
+            oreb = offensive_rebounds, tov = total_turnovers)
+
+mbb_minutes <- load_mbb_player_box(seasons = season) |>
+  filter(season_type == 2) |>
+  group_by(game_id, team_id) |>
+  summarise(min = sum(minutes, na.rm = TRUE), .groups = "drop") |>
+  mutate(team_min = 200 + 25 * pmax(round((min - 200) / 25), 0))
+
+mbb_games <- mbb_team |>
+  inner_join(mbb_team |> select(game_id, opp_id = team_id, opp_pts = pts, opp_fga = fga,
+                                opp_fta = fta, opp_oreb = oreb, opp_tov = tov),
+             by = c("game_id", "opp_id")) |>
+  inner_join(mbb_minutes, by = c("game_id", "team_id")) |>
+  mutate(poss = (nba_possessions(fga, fta, oreb, tov) +
+                   nba_possessions(opp_fga, opp_fta, opp_oreb, opp_tov)) / 2)
+
+mbb_season <- mbb_games |>
+  group_by(team_id, team) |>
+  summarise(gp = n(), pts = sum(pts), opp_pts = sum(opp_pts), poss = sum(poss),
+            team_min = sum(team_min), .groups = "drop") |>
+  filter(gp >= 20) |>
+  mutate(
+    tempo = 40 * poss / (team_min / 5),
+    ortg = nba_offensive_rating(pts, poss),
+    drtg = nba_defensive_rating(opp_pts, poss),
+    net = nba_net_rating(ortg, drtg)
+  )
+
+mbb_season |>
+  arrange(desc(net)) |>
+  select(team, gp, tempo, ortg, drtg, net) |>
+  mutate(across(tempo:net, \(x) round(x, 1))) |>
+  head(10)
+```
+
+These are **raw** ratings: they do not know who a team played. A mid-major that beats weak opponents by 20 looks as good as a power-conference team that beats strong ones by 20. Opponent-adjusted ratings fix that; the SportsDataverse publishes them as `load_mbb_ratings()`, and the [team ratings model article](college-basketball-team-ratings-model.html) explains how they are built. Our raw numbers should line up with that file's unadjusted `raw_o` / `raw_d` columns:
+
+```{r mbb_vs_ratings}
+ratings <- load_mbb_ratings(seasons = season)
+
+if (nrow(ratings) > 0) {
+  check <- mbb_season |>
+    mutate(team_id = as.character(team_id)) |>
+    inner_join(ratings |> mutate(team_id = as.character(team_id)) |>
+                 select(team_id, raw_o, raw_d, adj_em),
+               by = "team_id")
+  c(
+    teams = nrow(check),
+    cor_ortg_raw_o = round(cor(check$ortg, check$raw_o), 3),
+    cor_drtg_raw_d = round(cor(check$drtg, check$raw_d), 3),
+    cor_net_adj_em = round(cor(check$net, check$adj_em), 3)
+  )
+}
+```
+
+The ratings file reads a parquet asset, so it needs the `arrow` package; without it the loader returns an empty table and the check is skipped.
+
+## Where to go next
+
+- Put efficiency on the court: [shot charts and court plots](nba-college-basketball-shot-charts.html).
+- From team efficiency to player impact: the [NBA player impact model](nba-player-impact-model.html) and the [college RAPM model](college-basketball-rapm-model.html), which credit each player for possession outcomes while controlling for teammates and opponents.
+- Opponent adjustment: the [college team ratings model](college-basketball-team-ratings-model.html).
+- Recipes for common questions: the [NBA cookbook](nba-cookbook.html) and [men's college basketball cookbook](mbb-cookbook.html).
+- Live, single-game box scores: the [ESPN endpoints](espn-endpoints.html) article.
+- Every helper: [Basketball Analytics Utilities](../reference/index.html#basketball-analytics-utilities) in the reference.

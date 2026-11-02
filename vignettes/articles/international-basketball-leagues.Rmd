@@ -1,0 +1,218 @@
+---
+title: "International Basketball Data in R: EuroLeague, FIBA and 40+ Leagues with hoopR"
+description: "A guide to hoopR's international basketball functions: EuroLeague, EuroCup, FIBA, ACB, NBL, B.League, KBL, LBA, CBA and more, with the data each league offers."
+author: "Saiem Gilani"
+opengraph:
+  image:
+    src: "https://github.com/sportsdataverse/hoopR-data/blob/main/themes/hoopR_gh.png?raw=true"
+  twitter:
+    card: summary_large_image
+    creator: "@saiemgilani"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", message = FALSE, warning = FALSE)
+```
+
+```{r counts, include = FALSE}
+exports <- getNamespaceExports("hoopR")
+n_fn <- function(prefix) sum(startsWith(exports, prefix))
+intl_prefixes <- c(
+  "euroleague_", "fiba_", "genius_", "slb_", "bal_", "nznbl_", "esake_", "lnbm_", "lub_",
+  "atrium_", "lnb_", "lnbp_", "nbl1_", "lmb_", "lpb_", "nbl_rosetta_", "scb_", "feb_",
+  "tbf_", "aba_", "acb_", "bleague_", "sportpress_", "cba_", "cebl_", "sportality_",
+  "easl_", "ibba_", "kbl_", "kzs_", "lba_", "lkl_", "pleague_", "tpbl_", "vtb_"
+)
+n_intl <- sum(vapply(intl_prefixes, n_fn, integer(1)))
+```
+
+**`hoopR` is not only the NBA and college basketball.** It also reads the public data feeds of the EuroLeague, FIBA's national-team and club competitions and dozens of domestic leagues on six continents: `r n_intl` functions in `r length(intl_prefixes)` function families in this version. This guide maps each league to its function prefix, says what data it offers, and shows the call pattern so you can go from "I want Spanish league play-by-play" to a data frame quickly.
+
+The code below is not run when this site is built: these functions call live league websites, which can be slow, rate-limited or blocked from the cloud servers that build documentation. Run the examples on your own machine. New to `hoopR`? Start with [Getting Started with hoopR](getting-started-hoopR.html).
+
+## How are the international functions organized?
+
+Three patterns cover almost everything:
+
+1. **League families** named after the league or its data provider: `acb_*()` for Spain's Liga Endesa, `kbl_*()` for Korea, `lba_*()` for Italy, and so on. Each family has its own identifiers (match ids, game keys, round ids), so you usually start from a schedule function and pass its ids to the game functions.
+2. **Platform families** for data providers that power many leagues: `genius_*()` (Genius Sports, pick the league with `org`), `atrium_*()` (Sportradar Atrium, pick the site with `website_id`), `nbl_rosetta_*()` (the Australian NBL's stats API, pick `org`) and `fiba_gdap_*()` (FIBA's data platform, pick the competition with `comp`).
+3. **Competition shortcuts** that wrap a platform for one league with a common set of verbs, typically `*_schedule()`, `*_pbp()`, `*_shots()`, `*_player_box()` and `*_team_box()`: `fiba_wc_*()` for the World Cup, `slb_*()` for the UK's Super League Basketball, `lnb_*()` for France, and more. They take an END-year `season` (2026 = 2025-26), like the rest of `hoopR`.
+
+Every family is listed in the [International Basketball](../reference/index.html#international-basketball) and [Euroleague Data](../reference/index.html#euroleague-data) sections of the reference, with a return-column table on each function page.
+
+## Which leagues are covered?
+
+"pbp" is play-by-play, "shots" is shot locations, "box" is player and team box scores.
+
+| League / competition | Country or region | Prefix | Schedule | pbp | Shots | Box | Key functions |
+|---|---|---|---|---|---|---|---|
+| EuroLeague, EuroCup | Europe | `euroleague_` | yes | yes | yes | yes | `euroleague_games()`, `euroleague_game_pbp()`, `euroleague_game_points()`, `euroleague_game_boxscore()`, `euroleague_standings()` |
+| FIBA national-team and club events (GDAP) | Worldwide | `fiba_gdap_`, `fiba_gamepage_` | yes | yes | yes | yes | `fiba_gdap_schedule()`, `fiba_gdap_editions()`, `fiba_gamepage_pbp()`, `fiba_gamepage_shots()`, `fiba_gamepage_box_players()` |
+| FIBA World Cup | Worldwide | `fiba_wc_` | yes | yes | yes | yes | `fiba_wc_schedule()`, `fiba_wc_pbp()`, `fiba_wc_shots()`, `fiba_wc_player_box()` |
+| Olympic basketball | Worldwide | `fiba_oly_` | yes | yes | yes | yes | `fiba_oly_schedule()`, `fiba_oly_pbp()` |
+| EuroBasket, AmeriCup, Asia Cup, AfroBasket | Continental | `fiba_eurobasket_`, `fiba_americup_`, `fiba_asiacup_`, `fiba_afrobasket_` | yes | yes | yes | yes | `fiba_eurobasket_schedule()` and the same verbs |
+| Basketball Champions League, BCL Americas, Intercontinental Cup | FIBA club competitions | `fiba_bcl_`, `fiba_bcla_`, `fiba_icup_` | yes | yes | yes | yes | `fiba_bcl_schedule()`, `fiba_bcl_shots()` |
+| Genius Sports leagues (any `org`) | Many | `genius_` | yes | yes | yes | yes | `genius_competitions()`, `genius_schedule()`, `genius_pbp()`, `genius_shots()` |
+| Super League Basketball | United Kingdom | `slb_` | yes | yes | yes | yes | `slb_schedule()`, `slb_pbp()` |
+| Basketball Africa League (BAL) | Africa | `bal_` | yes | yes | yes | yes | `bal_schedule()`, `bal_pbp()` |
+| NZNBL | New Zealand | `nznbl_` | yes | yes | yes | yes | `nznbl_schedule()`, `nznbl_pbp()` |
+| Greek Basket League (ESAKE) | Greece | `esake_` | yes | yes | yes | yes | `esake_schedule()`, `esake_pbp()` |
+| Liga Nationala de Baschet Masculin | Romania | `lnbm_` | yes | yes | yes | yes | `lnbm_schedule()` |
+| Liga Uruguaya de Basquetbol | Uruguay | `lub_` | yes | yes | yes | yes | `lub_schedule()` |
+| Sportradar Atrium sites (any `website_id`) | Many, incl. Austria and Montenegro | `atrium_` | yes | yes | yes | yes | `atrium_fixtures()`, `atrium_pbp()`, `atrium_shots()`, `atrium_box_score()` |
+| LNB (Betclic Elite) | France | `lnb_` | yes | yes | yes | yes | `lnb_schedule()`, `lnb_pbp()`, `lnb_shots()` |
+| LNBP (and Copa, LNBP Femenil) | Mexico | `lnbp_` | yes | yes | yes | yes | `lnbp_schedule()` |
+| NBL1 (Atrium) | Australia | `nbl1_` | yes | yes | yes | yes | `nbl1_schedule()` |
+| Liga Mayor de Baloncesto | El Salvador | `lmb_` | yes | yes | yes | yes | `lmb_schedule()` |
+| LPB / LPBF | Panama | `lpb_` | yes | yes | yes | yes | `lpb_schedule()` |
+| NBL, WNBL, NBL1 (Rosetta API) | Australia | `nbl_rosetta_` | yes | yes | no | yes | `nbl_rosetta_matches()`, `nbl_rosetta_match_pbp()`, `nbl_rosetta_match_player_box()` |
+| BBL, DBBL | Germany | `scb_` | yes | yes | no | yes | `scb_games()`, `scb_game_actions()`, `scb_game_players()` |
+| Primera FEB, Segunda FEB, Liga Femenina | Spain | `feb_` | yes | yes | yes | yes | `feb_schedule()`, `feb_pbp()`, `feb_shots()`, `feb_player_box()` |
+| Liga Endesa (ACB), Copa del Rey, Supercopa | Spain | `acb_` | yes | yes | yes | yes | `acb_matchlist()`, `acb_pbp()`, `acb_shots()`, `acb_player_box()` |
+| BSL, KBSL (TBF) | Turkey | `tbf_` | yes | yes | yes | yes | `tbf_schedule()`, `tbf_pbp()`, `tbf_shots()` |
+| ABA League, ABA League 2 | Adriatic region | `aba_` | yes | yes | yes | yes | `aba_calendar()`, `aba_pbp()`, `aba_shots()`, `aba_box_players()` |
+| B.LEAGUE (B1, B2, B3) | Japan | `bleague_` | yes | yes | yes | yes | `bleague_schedule()`, `bleague_pbp()`, `bleague_shots()` |
+| BNXT League (SportPress) | Belgium, Netherlands | `sportpress_` | yes | see reference | no | yes | `sportpress_schedule()`, `sportpress_game_box()` |
+| Chinese Basketball Association | China | `cba_` | yes | yes | yes | yes | `cba_schedule_month()`, `cba_pbp()`, `cba_player_box()`, `cba_game_team_shots()` |
+| Canadian Elite Basketball League | Canada | `cebl_` (also `genius_` with `org = "CEBL"`) | yes | via Genius | via Genius | yes | `cebl_games()`, `cebl_player_stats()` |
+| Basketligaen (Sportality) | Denmark | `sportality_` | yes | yes | no | yes | `sportality_schedule()`, `sportality_pbp()`, `sportality_player_box()` |
+| East Asia Super League | East Asia | `easl_` | yes | yes | no | yes | `easl_schedule()`, `easl_pbp()`, `easl_player_box()` |
+| Israeli Premier League (IBBA) | Israel | `ibba_` | yes | yes | no | yes | `ibba_games()`, `ibba_segev_pbp()`, `ibba_box_score()` |
+| Korean Basketball League | South Korea | `kbl_` | yes | yes | yes | yes | `kbl_schedule()`, `kbl_pbp()`, `kbl_shots()` |
+| KZS leagues | Slovenia | `kzs_` | yes | yes | no | yes | `kzs_matches()`, `kzs_pbp()`, `kzs_box_score()` |
+| Lega Basket Serie A | Italy | `lba_` | yes | yes | yes | yes | `lba_calendar()`, `lba_pbp()`, `lba_shots()`, `lba_box_score()` |
+| Lietuvos krepsinio lyga | Lithuania | `lkl_` | yes | yes | yes | yes | `lkl_results()`, `lkl_pbp()`, `lkl_shots()` |
+| P. LEAGUE+ | Taiwan | `pleague_` | yes | yes | yes | yes | `pleague_schedule()`, `pleague_pbp()`, `pleague_preciser_shots()` |
+| Taipei Professional Basketball League | Taiwan | `tpbl_` | yes | no | yes | yes | `tpbl_games()`, `tpbl_box_players()`, `tpbl_player_shots()` |
+| VTB United League | Russia | `vtb_` | yes | yes | no | yes | `vtb_league_matches()`, `vtb_infobasket_calendar()`, `vtb_infobasket_pbp()` |
+
+"no" means `hoopR` has no dedicated function for that data type in the family, not that the league never publishes it. Coverage by season varies by league and provider; check each function's reference page.
+
+## How do I get EuroLeague data?
+
+The EuroLeague family wraps the keyless Competition Engine and live APIs. `competition_code` is `"E"` for the EuroLeague and `"U"` for the EuroCup, and `season_code` is the competition code plus the season's **start** year: `"E2025"` is the 2025-26 EuroLeague.
+
+```{r euroleague, eval = FALSE}
+library(hoopR)
+library(dplyr)
+
+games <- euroleague_games(competition_code = "E", season_code = "E2025")
+
+# game_code comes from the schedule
+pbp   <- euroleague_game_pbp(game_code = 1, season_code = "E2025")
+box   <- euroleague_game_boxscore(game_code = 1, season_code = "E2025")
+shots <- euroleague_game_points(game_code = 1, season_code = "E2025")
+
+# points by team from the play-by-play
+pbp |>
+  filter(playtype %in% c("2FGM", "3FGM", "FTM")) |>
+  count(codeteam, playtype)
+```
+
+EuroLeague shot locations (`coord_x`, `coord_y`) are centimeters with the hoop at the origin. `sdvplotR::sdv_court_coords(shots, "coord_x", "coord_y", provider = "euroleague")` converts them to meters on the FIBA court that `sdvplotR::sdv_surface("fiba")` and `sportyR::geom_basketball("fiba")` draw; see the [shot chart article](nba-college-basketball-shot-charts.html) for plotting.
+
+## How do I get FIBA World Cup, Olympic and EuroBasket data?
+
+FIBA's data platform (GDAP) identifies each **edition** of a competition with a `comp` id: 208182 is the 2023 World Cup, for example. The competition shortcuts look the id up for you from an END-year `season` (for one-year events, the event year).
+
+```{r fiba, eval = FALSE}
+# Every World Cup edition the shortcut knows about
+fiba_wc_editions()
+
+wc     <- fiba_wc_schedule(season = 2023)
+wc_pbp <- fiba_wc_pbp(game_id = wc$game_id[1], season = 2023)
+
+# The same verbs for other competitions
+fiba_oly_schedule(season = 2024)
+fiba_bcl_schedule(season = 2025)
+
+# Or go through GDAP directly with a comp id
+fiba_gdap_schedule(comp = 208182)
+fiba_gamepage_shots(game_id = 100720, comp = 208182)
+```
+
+## How do I use the Genius Sports and Atrium platform families?
+
+Many leagues publish through the same provider, so one family serves them all. Genius Sports leagues are chosen with `org`; list competitions first to find the `comp_id` of a season.
+
+```{r genius, eval = FALSE}
+genius_competitions(org = "ESAKE")
+genius_schedule(org = "CEBL", comp_id = 47852)
+
+# Shortcuts resolve the competition for you
+slb_schedule(season = 2026)        # Super League Basketball (UK)
+bal_schedule(season = 2025)        # Basketball Africa League
+```
+
+Sportradar Atrium sites are chosen with `website_id` (12 is LNB France, 14 LNBP Mexico, 3 NBL1 Australia, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro):
+
+```{r atrium, eval = FALSE}
+atrium_fixtures(website_id = 12)
+
+# Shortcuts
+lnb_schedule(season = 2026)
+fixtures <- lnb_schedule(season = 2026)
+lnb_pbp(fixture_id = fixtures$fixture_id[1])
+```
+
+Use `args()` on any shortcut to see its exact arguments; the identifiers each game function needs are columns of the matching schedule function.
+
+## Domestic league examples
+
+Each family follows its source's identifiers. A few starting points, taken from the reference examples:
+
+```{r domestic, eval = FALSE}
+# Spain: Liga Endesa (ACB)
+acb_matchlist(match_id = 105401)
+acb_pbp(match_id = 105401)
+acb_shots(match_id = 105401)
+
+# Australia: NBL on the Rosetta API
+nbl_rosetta_matches(org = "nbl", season = 2026, season_type = "regular")
+
+# Japan, Korea, China
+bleague_schedule(season = 2026, tab = 1, month = 10, day = 4)
+kbl_schedule(from_date = "20251101", to_date = "20251102")
+cba_schedule_month(month = 12, year = 2025)
+
+# Italy, Lithuania, Adriatic, Turkey
+lba_calendar(championship_id = 602, round = 1)
+lkl_results(season = 2026)
+aba_calendar(season = 2026)
+tbf_schedule(competition = "bsl", season = 2027, week = 1)
+
+# Germany, Spain (FEB), Denmark, Belgium / Netherlands
+scb_games(league = "bbl")
+feb_schedule(group = 1, season = 2027)
+sportality_schedule(season = 2026)
+sportpress_schedule(season = 2026)
+
+# Russia, Israel, Slovenia
+vtb_league_matches(league_slug = "vtb", season = 2026)
+ibba_games(board_id = 5, board_round = 1, season = 2026)
+kzs_matches(competition_id = 579,
+            date_from = "2025-10-01T00:00:00.000Z", date_to = "2025-10-31T23:59:59.000Z")
+
+# Canada, East Asia, Taiwan
+cebl_games(season = 2025)
+easl_schedule(season = 2026)
+pleague_schedule(season = 2025)
+tpbl_games(season = 2026)
+```
+
+## Tips for working with international feeds
+
+- **Start from the schedule.** Game functions need the provider's own game id (`match_id`, `game_code`, `gmkey`, `fixture_id`, `schedule_key`, ...), which the schedule returns.
+- **Check the season convention.** `hoopR`'s shortcuts use END-year seasons, but some source arguments are the source's own codes (EuroLeague `season_code = "E2025"` is the season starting in 2025). The returned `season` column tells you which season you got.
+- **Be polite.** Loop over games slowly and cache results with `saveRDS()`; these are live websites, and several block bursts of requests or requests from cloud servers.
+- **Some hosts are unofficial.** EASL and P. LEAGUE+ are read through third-party hosts, as the reference notes, and can disappear without notice.
+- **Box-score metrics still apply.** International box scores work with the league-agnostic helpers (`nba_possessions()`, `nba_true_shooting_pct()`, `nba_four_factors()`) once you rename columns; FIBA games are 40 minutes, so quote pace per 40. See the [advanced metrics article](basketball-advanced-metrics.html).
+
+## Where to go next
+
+- The reference index: [International Basketball](../reference/index.html#international-basketball) (FIBA, Genius, Atrium and every league family) and [Euroleague Data](../reference/index.html#euroleague-data).
+- [Shot charts and court plots](nba-college-basketball-shot-charts.html), including the FIBA court.
+- [Basketball advanced metrics](basketball-advanced-metrics.html) for possessions, ratings and the four factors.
+- The NBA and college guides: [Getting Started with hoopR](getting-started-hoopR.html), the [NBA cookbook](nba-cookbook.html) and the [men's college basketball cookbook](mbb-cookbook.html).
+- The Python package [sportsdataverse-py](https://py.sportsdataverse.org/) mirrors many of these families, column for column for EuroLeague.

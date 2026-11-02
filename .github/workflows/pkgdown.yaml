@@ -58,6 +58,7 @@ jobs:
             any::tictoc
             any::wehoop
             any::zoo
+            github::sportsdataverse/sdvplotR
             local::.
           needs: website
       - name: Install system dependencies

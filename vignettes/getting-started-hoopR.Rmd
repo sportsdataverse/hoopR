@@ -1,6 +1,6 @@
 ---
-title: "Getting Started with hoopR"
-description: "Getting started with using <code>hoopR</code> and men's basketball data."
+title: "Getting Started with hoopR: NBA and College Basketball Data in R"
+description: "Install hoopR and load NBA and men's college basketball play-by-play, box scores, shots and model data in R, with a worked example, a glossary and next steps."
 author: "Saiem Gilani <br><a href='https://x.com/saiemgilani' target='blank'><img src='https://img.shields.io/twitter/follow/saiemgilani?color=blue&amp;label=%40saiemgilani&amp;logo=x&amp;style=for-the-badge' alt='@saiemgilani'/></a> <a href='https://github.com/saiemgilani' target='blank'><img src='https://img.shields.io/github/followers/saiemgilani?color=eee&amp;logo=Github&amp;style=for-the-badge' alt='@saiemgilani'/></a>"
 opengraph:
   image:
@@ -12,15 +12,27 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(
+  echo = TRUE, message = FALSE, warning = FALSE,
+  fig.width = 8, fig.height = 6, dpi = 96
+)
 old <- options(rmarkdown.html_vignette.check_title = FALSE)
 ```
 
 Welcome folks,
 
-I'm Saiem Gilani, one of the [authors](https://hoopR.sportsdataverse.org/authors.html "Authors and contributors to hoopR") of [`hoopR`](https://hoopR.sportsdataverse.org), and I hope to give the community a high-quality resource for accessing men's basketball data for statistical analysis, basketball research, and more. I am excited to show you some of what you can do with this edition of the package.
+I'm Saiem Gilani, one of the [authors](https://hoopR.sportsdataverse.org/authors.html "Authors and contributors to hoopR") of [`hoopR`](https://hoopR.sportsdataverse.org), and I hope to give the community a high-quality resource for accessing men's basketball data for statistical analysis, basketball research, and more. This guide is written for students and newcomers: it assumes no prior R or basketball-analytics experience, and it ends with your first chart.
 
-### **Installing R and RStudio**
+## What you'll learn
+
+- How to install R, RStudio and the `hoopR` package.
+- How `hoopR` is organized: what each function prefix (`load_nba_*`, `espn_mbb_*`, `nba_*`, `kp_*`, ...) means and where its data comes from.
+- How seasons are counted, and why that matters when you load data.
+- How to load one season of NBA team box scores and play-by-play, compute possessions and efficiency ratings, and draw a first `ggplot2` chart.
+- The basketball-analytics vocabulary you will meet in the rest of the documentation (possessions, pace, offensive rating, four factors, RAPM, ...).
+- Where to find every function and article.
+
+## How do I install R and RStudio?
 
 1.  Head to <https://cran.r-project.org>
 2.  Select the appropriate link for your operating system (Windows, Mac OS X, or Linux)
@@ -29,123 +41,287 @@ I'm Saiem Gilani, one of the [authors](https://hoopR.sportsdataverse.org/authors
 -   **Mac OS X** - Select Latest Release, but check to make sure your OS is the correct version. Look through Binaries for Legacy OS X Systems if you are on an older release
 -   **Linux** - Select the appropriate distro and follow the installation instructions
 
-3.  Head to [RStudio.com](https://posit.co/download/rstudio-desktop/#download "Download the appropriate version of RStudio (Free) for your operating system to use with R")
+3.  Head to [posit.co](https://posit.co/download/rstudio-desktop/#download "Download the appropriate version of RStudio (Free) for your operating system to use with R")
 4.  Follow the associated download and installation instructions for RStudio.
 5.  Start peering over the [RStudio IDE Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf). *An IDE is an integrated development environment.*
-6.  For **Windows** users: I recommend you install [Rtools](https://cran.r-project.org/bin/windows/Rtools/). This is not an R package! It is “a collection of resources for building packages for R under Microsoft Windows, or for building R itself”. Go to [https://cran.r-project.org/bin/windows/Rtools/](https://cran.r-project.org/bin/windows/Rtools/) and follow the directions for installation.
+6.  For **Windows** users: I recommend you install [Rtools](https://cran.r-project.org/bin/windows/Rtools/). This is not an R package! It is "a collection of resources for building packages for R under Microsoft Windows, or for building R itself". Go to <https://cran.r-project.org/bin/windows/Rtools/> and follow the directions for installation.
 
-## **Install** [**`hoopR`**](https://hoopr.sportsdataverse.org/)
-```{r install_hoopR_gs, message=FALSE,eval=FALSE}
-# You can install using the pak package using the following code:
-if (!requireNamespace('pak', quietly = TRUE)){
-  install.packages('pak')
+## How do I install hoopR?
+
+`hoopR` is on CRAN, and the development version lives on GitHub. Either works for this guide.
+
+```{r install_hoopR_gs, eval = FALSE}
+# The released version from CRAN
+install.packages("hoopR")
+
+# Or the development version from GitHub, using the pak package
+if (!requireNamespace("pak", quietly = TRUE)) {
+  install.packages("pak")
 }
 pak::pak("sportsdataverse/hoopR", dependencies = TRUE, update = TRUE)
 
-pak::pak("dplyr")
-library(dplyr)
+# The examples in this guide also use dplyr and ggplot2
+install.packages(c("dplyr", "ggplot2"))
 ```
 
-### **The Data**
+Then load the packages at the top of every script:
+
+```{r libraries}
+library(hoopR)
+library(dplyr)
+library(ggplot2)
+```
+
+## How is hoopR organized? Function prefixes and data sources
 
 ```{r export_counts, include = FALSE}
 exports <- getNamespaceExports("hoopR")
 n_fn <- function(prefix) sum(startsWith(exports, prefix))
 ```
 
-`hoopR` version `r packageVersion("hoopR")` exports `r length(exports)` functions. The function name tells you the data source:
+`hoopR` version `r packageVersion("hoopR")` exports `r length(exports)` functions. That sounds like a lot, but the **prefix** of a function name tells you where its data comes from, so you only need to learn a dozen patterns.
 
--   `load_*()` and `update_*()` functions read the pre-built play-by-play, box score, schedule and model data that the SportsDataverse publishes on the [`sportsdataverse-data` releases](https://github.com/sportsdataverse/sportsdataverse-data/releases) (`r n_fn("load_")` loaders, including `load_nba_stats_*()` for the NBA Stats API data and `load_ncaa_mbb_*()` for the NCAA data).
+| Prefix | Source | What you get | Notes |
+|---|---|---|---|
+| `load_nba_*()`, `load_mbb_*()` | SportsDataverse data releases built from ESPN | Season files: play-by-play, team and player box scores, schedules, shots, rosters, standings | Fast, no rate limits. NBA from 2002, men's college from 2003/2006. |
+| `load_nba_stats_*()` | Data releases built from the NBA Stats API | Possessions with lineups, shots in the NBA Stats frame, lineups, game logs, season stats | Takes the season **start** year (see below). |
+| `load_ncaa_mbb_*()` | Data releases built from stats.ncaa.org | NCAA play-by-play, shots, lineups, 10-man stints, possessions, RAPM | Uses stats.ncaa.org ids. |
+| `load_nba_player_impact()`, `load_mbb_ratings()`, `load_mbb_player_value()` | Model datasets published by the SportsDataverse | Player impact (RAPM, BPM, WAR), team ratings, player box plus-minus | See the model articles below. |
+| `espn_nba_*()`, `espn_mbb_*()` | ESPN's live APIs | Scoreboards, game summaries, play-by-play, rankings, standings, team and player stats | `r n_fn("espn_nba_")` NBA and `r n_fn("espn_mbb_")` college functions. |
+| `nba_*()` | The NBA Stats API (stats.nba.com) and other NBA.com sources | Every NBA Stats endpoint: box scores, tracking, shot charts, lineups, draft, play-by-play | `r n_fn("nba_")` functions; slow and sometimes blocked from cloud servers. |
+| `nbagl_*()` | NBA G League Stats API | G League schedules and stats | `r n_fn("nbagl_")` functions. |
+| `kp_*()` | [KenPom.com](https://kenpom.com) | Efficiency ratings, four factors, team and player pages | Requires a paid KenPom subscription. |
+| `cbbd_*()` | [CollegeBasketballData.com](https://collegebasketballdata.com) | Games, lines, ratings, plays, lineups | Free API key, stored in the `CBBD_API_KEY` environment variable ([how to register](../reference/register_cbbd.html)). |
+| `torvik_*()` | [Bart Torvik (T-Rank)](https://barttorvik.com) | T-Rank ratings, game and player data | `r n_fn("torvik_")` functions. |
+| `ncaa_mbb_*()` | stats.ncaa.org (live) | Team and player stats, play-by-play | Use the `load_ncaa_mbb_*()` releases when you can. |
+| `bref_*()`, `fox_*()`, `realgm_*()` | Basketball-Reference, Fox Sports, RealGM | Historical tables, odds, rosters | `realgm_*()` needs the chromote package and Chrome. |
+| `euroleague_*()`, `fiba_*()`, `acb_*()`, `nbl_rosetta_*()`, ... | EuroLeague, FIBA and about forty other leagues and competitions | Schedules, play-by-play, box scores, shots | See the [international leagues guide](international-basketball-leagues.html). |
+| `nba_true_shooting_pct()`, `nba_possessions()`, `nba_four_factors()`, ... | Your own data (no network) | Efficiency formulas and box-score helpers | Work on NBA and college box scores alike. |
 
--   `nba_*()` functions use the NBA Stats API and other NBA.com sources (`r n_fn("nba_")` functions).
+### Release data or live APIs: which should I use?
 
--   `nbagl_*()` functions cover the NBA G League (`r n_fn("nbagl_")` functions).
+The `load_*()` functions download files that the SportsDataverse rebuilds and publishes on its [`sportsdataverse-data` releases](https://github.com/sportsdataverse/sportsdataverse-data/releases). They are the fastest and most reliable way to get a full season, and they are what every evaluated example on this site uses. The live functions (`espn_*()`, `nba_*()`, `kp_*()`, ...) call the source website directly: use them for today's games, for endpoints that have no release file, or for a single game you need right now. Live sources can change, rate-limit you or block cloud servers, so keep live calls small and cache what you download.
 
--   `espn_*()` functions use ESPN's APIs for live and historical game data: `r n_fn("espn_mbb_")` for men's college basketball and `r n_fn("espn_nba_")` for the NBA.
+### How does hoopR count seasons?
 
--   `kp_*()` functions read Ken Pomeroy's college basketball website, [KenPom.com](https://kenpom.com), for users with an active subscription (`r n_fn("kp_")` functions).
+A basketball season spans two calendar years. `hoopR` names a season by the year it **ends**: the 2025-26 NBA season is `2026`. The helpers `most_recent_nba_season()` and `most_recent_mbb_season()` return the current season's end year (this guide was built when they returned `r most_recent_nba_season()` and `r most_recent_mbb_season()`).
 
--   `cbbd_*()`, `torvik_*()` and `ncaa_mbb_*()` functions cover CollegeBasketballData, Bart Torvik and the NCAA (`r n_fn("cbbd_")`, `r n_fn("torvik_")` and `r n_fn("ncaa_mbb_")` functions); `bref_*()`, `realgm_*()` and `fox_*()` cover Basketball-Reference, RealGM and Fox Sports.
+The one exception is the `load_nba_stats_*()` family, which follows the NBA Stats API and takes the season's **start** year: `load_nba_stats_possessions(2025)` returns the 2025-26 season. Its helper is `most_recent_nba_stats_season()`. When in doubt, look at the `season` column of what came back.
 
--   `euroleague_*()` functions cover the EuroLeague and EuroCup, and families such as `fiba_*()`, `acb_*()`, `lba_*()`, `vtb_*()`, `bleague_*()`, `nbl_rosetta_*()`, `kbl_*()` and `cba_*()` cover about two dozen international leagues and competitions. The [function reference](https://hoopR.sportsdataverse.org/reference/) lists every family.
+## Worked example: which NBA teams were most efficient in 2025-26?
 
-## **Quick Start**
+This is the whole workflow in miniature: load a season, clean it, compute a metric, and plot it.
 
-For the sake of your R session, we will only look at the previous 3 years of data, but I have indicated the years to which the data goes back to.
+### Step 1: load one season of team box scores
 
-### **NBA play-by-plays (2002-`r hoopR::most_recent_nba_season()`) ~ 60-120 seconds**
-```{r load_nba_pbp_gs, warning = FALSE}
-tictoc::tic()
-progressr::with_progress({
-  nba_pbp <- hoopR::load_nba_pbp(2021:hoopR::most_recent_nba_season())
-})
-tictoc::toc()
-glue::glue("{nrow(nba_pbp)} rows of nba play-by-play data from {length(unique(nba_pbp$game_id))} games.")
-dplyr::glimpse(nba_pbp)
+`load_nba_team_box()` returns one row per team per game.
+
+```{r load_team_box}
+season <- 2026
+nba_team_box <- load_nba_team_box(seasons = season)
+dim(nba_team_box)
 ```
 
-### **NBA team box scores (2002-`r hoopR::most_recent_nba_season()`) ~ 5-30 seconds**
-```{r load_nba_team_gs, warning = FALSE}
-tictoc::tic()
-progressr::with_progress({
-  nba_team_box <- hoopR::load_nba_team_box(2021:hoopR::most_recent_nba_season())
-})
-
-tictoc::toc()
-
-glue::glue("{nrow(nba_team_box)} rows of NBA team boxscore data from {length(unique(nba_team_box$game_id))} games.")
-dplyr::glimpse(nba_team_box)
+```{r glimpse_team_box}
+nba_team_box |>
+  select(game_id, game_date, season_type, team_abbreviation, team_score,
+         field_goals_attempted, free_throws_attempted, offensive_rebounds,
+         total_turnovers, opponent_team_abbreviation, opponent_team_score) |>
+  head()
 ```
 
-### **NBA player box scores (2002-`r hoopR::most_recent_nba_season()`) ~ 5-30 seconds**
-```{r load_nba_player_gs, warning = FALSE}
-tictoc::tic()
-progressr::with_progress({
-  nba_player_box <- hoopR::load_nba_player_box(2021:hoopR::most_recent_nba_season())
-})
-tictoc::toc()
+`season_type` is ESPN's code: `2` is the regular season and `3` the playoffs. We keep the regular season so teams are compared over a similar schedule. Always check what you filtered: ESPN's regular-season file also holds the All-Star exhibition games, played by teams that are not NBA franchises.
 
-glue::glue("{nrow(nba_player_box)} rows of NBA player boxscore data from {length(unique(nba_player_box$game_id))} games.")
-dplyr::glimpse(nba_player_box)
+```{r regular_season_check}
+nba_team_box |>
+  filter(season_type == 2) |>
+  count(team_display_name, name = "games") |>
+  arrange(games) |>
+  head(5)
 ```
 
+Keeping teams with at least 41 games (half a season) leaves the 30 franchises:
 
-### **Men's college basketball play-by-plays (2006-`r hoopR::most_recent_mbb_season()`) ~ 120-180 seconds**
+```{r regular_season}
+regular <- nba_team_box |>
+  filter(season_type == 2) |>
+  add_count(team_id, name = "team_games") |>
+  filter(team_games >= 41)
 
-```{r load_mbb_pbp_gs, warning = FALSE}
-tictoc::tic()
-progressr::with_progress({
-  mbb_pbp <- hoopR::load_mbb_pbp(2021:hoopR::most_recent_mbb_season())
-})
-tictoc::toc()
-glue::glue("{nrow(mbb_pbp)} rows of men's college basketball play-by-play data from {length(unique(mbb_pbp$game_id))} games.")
-dplyr::glimpse(mbb_pbp)
+n_distinct(regular$team_id)
 ```
 
-### **Men's college basketball team box scores (2003-`r hoopR::most_recent_mbb_season()`) ~ 5-30 seconds**
+### Step 2: estimate possessions and efficiency
 
-```{r load_mbb_team_gs, warning = FALSE}
-tictoc::tic()
-progressr::with_progress({
-  mbb_team_box <- hoopR::load_mbb_team_box(2021:hoopR::most_recent_mbb_season())
-})
-tictoc::toc()
-glue::glue("{nrow(mbb_team_box)} rows of men's college basketball team boxscore data from {length(unique(mbb_team_box$game_id))} games.")
-dplyr::glimpse(mbb_team_box)
+Raw points per game reward teams that play fast. Analysts compare teams **per possession** instead. A *possession* is one team's turn with the ball; it ends with a made basket, a defensive rebound, a turnover or the end of a period. Box scores do not count possessions directly, so we estimate them with `nba_possessions()`:
+
+`possessions = FGA + 0.44 * FTA - OREB + TOV`
+
+The 0.44 converts free-throw attempts into the share of possessions they end (two-shot fouls, and-ones and technicals make this less than 0.5). *Offensive rating* (ORtg) is points scored per 100 possessions, *defensive rating* (DRtg) is points allowed per 100 possessions, and *net rating* is the difference.
+
+```{r efficiency}
+team_ratings <- regular |>
+  mutate(
+    poss = nba_possessions(
+      fga = field_goals_attempted, fta = free_throws_attempted,
+      oreb = offensive_rebounds, tov = total_turnovers
+    )
+  ) |>
+  group_by(team_abbreviation, team_display_name) |>
+  summarise(
+    games = n(),
+    poss = sum(poss),
+    pts = sum(team_score),
+    opp_pts = sum(opponent_team_score),
+    .groups = "drop"
+  ) |>
+  mutate(
+    ortg = nba_offensive_rating(pts, poss),
+    drtg = nba_defensive_rating(opp_pts, poss),
+    net = nba_net_rating(ortg, drtg)
+  ) |>
+  arrange(desc(net))
+
+team_ratings |>
+  select(team_display_name, games, ortg, drtg, net) |>
+  mutate(across(c(ortg, drtg, net), \(x) round(x, 1))) |>
+  head(10)
 ```
 
-### **Men's college basketball player box scores (2003-`r hoopR::most_recent_mbb_season()`) ~ 5-30 seconds**
-
-```{r load_mbb_player_gs, warning = FALSE}
-tictoc::tic()
-progressr::with_progress({
-  mbb_player_box <- hoopR::load_mbb_player_box(2021:hoopR::most_recent_mbb_season())
-})
-tictoc::toc()
-
-glue::glue("{nrow(mbb_player_box)} rows of men's college basketball player boxscore data from {length(unique(mbb_player_box$game_id))} games.")
-dplyr::glimpse(mbb_player_box)
+```{r top_team, include = FALSE}
+top <- team_ratings[1, ]
 ```
+
+The `r top$team_display_name` led the league with a net rating of `r sprintf("%+.1f", top$net)` points per 100 possessions. (We used each team's own possession estimate for both ratings; the [advanced metrics article](basketball-advanced-metrics.html) shows the two-team version.)
+
+### Step 3: your first ggplot2 chart
+
+Plot offense against defense. The defensive axis is reversed so the best teams land in the top-right corner.
+
+```{r first_plot, fig.alt = "Scatter plot of NBA teams' offensive rating against defensive rating for the 2025-26 regular season, with team abbreviations as labels and the defensive axis reversed so better teams appear toward the top right."}
+ggplot(team_ratings, aes(x = ortg, y = drtg)) +
+  geom_hline(yintercept = mean(team_ratings$drtg), linetype = "dashed", colour = "grey60") +
+  geom_vline(xintercept = mean(team_ratings$ortg), linetype = "dashed", colour = "grey60") +
+  geom_point(aes(colour = net), size = 3) +
+  geom_text(aes(label = team_abbreviation), nudge_y = 0.45, size = 3) +
+  scale_y_reverse() +
+  scale_colour_gradient2(low = "#B2182B", mid = "grey70", high = "#2166AC", name = "Net rating") +
+  labs(
+    title = "NBA offensive vs defensive rating, 2025-26 regular season",
+    subtitle = "Points per 100 estimated possessions; better defense is higher",
+    x = "Offensive rating (points scored per 100 possessions)",
+    y = "Defensive rating (points allowed per 100 possessions)",
+    caption = "Data: hoopR::load_nba_team_box()"
+  ) +
+  theme_minimal()
+```
+
+### Step 4: go one level deeper with play-by-play
+
+Box scores summarize a game; play-by-play (pbp) lists every event. `load_nba_pbp()` returns one row per play with the score, clock, players involved and, for shots, court coordinates.
+
+```{r load_pbp}
+nba_pbp <- load_nba_pbp(seasons = season)
+dim(nba_pbp)
+```
+
+```{r pbp_summary}
+nba_pbp |>
+  filter(season_type == 2) |>
+  count(type_text, sort = TRUE) |>
+  head(10)
+```
+
+For example, the share of field-goal attempts that were three-pointers in each quarter of regulation:
+
+```{r pbp_threes}
+nba_pbp |>
+  filter(season_type == 2, shooting_play, period_number <= 4,
+         !grepl("Free Throw", type_text)) |>
+  group_by(period_number) |>
+  summarise(fga = n(), three_share = mean(points_attempted == 3)) |>
+  mutate(three_share = round(three_share, 3))
+```
+
+The same calls work for college basketball: swap in `load_mbb_team_box()`, `load_mbb_player_box()` and `load_mbb_pbp()`. A college game is 40 minutes, so college pace is usually quoted per 40 minutes rather than per 48.
+
+## Basketball analytics glossary
+
+Terms used across the `hoopR` documentation, with the helper that computes each one where there is one.
+
+| Term | Meaning |
+|---|---|
+| **Box score** | Per-game totals for each team or player: points, field goals, rebounds, assists, turnovers, fouls, minutes. |
+| **Play-by-play (pbp)** | One row per game event (shot, rebound, foul, substitution, timeout) with clock and score. |
+| **FGA, FGM, 3PA, FTA, OREB, DREB, TOV** | Field-goal attempts and makes, three-point attempts, free-throw attempts, offensive and defensive rebounds, turnovers. |
+| **Possession** | One team's turn with the ball, ending with a made shot, defensive rebound, turnover or end of period. Estimated by `nba_possessions()`: `FGA + 0.44 * FTA - OREB + TOV`. |
+| **Pace** | Possessions per 48 minutes (NBA) or per 40 minutes (college). `nba_pace()` uses 48. |
+| **Offensive rating (ORtg)** | Points scored per 100 possessions: `nba_offensive_rating()`. |
+| **Defensive rating (DRtg)** | Points allowed per 100 possessions: `nba_defensive_rating()`. Lower is better. |
+| **Net rating** | ORtg minus DRtg: `nba_net_rating()`. |
+| **Adjusted efficiency** | Ratings corrected for opponent strength, as in KenPom or `load_mbb_ratings()` (`adj_o`, `adj_d`, `adj_em`). |
+| **eFG%** | Effective field-goal percentage, `(FGM + 0.5 * 3PM) / FGA`, crediting threes for their extra point: `nba_effective_fg_pct()`. |
+| **TS%** | True shooting percentage, points per shooting possession, `PTS / (2 * (FGA + 0.44 * FTA))`: `nba_true_shooting_pct()`. |
+| **FT rate** | Free throws relative to field-goal attempts: `nba_ft_rate()` uses `FTA / FGA`; the four-factors version uses `FTM / FGA`. |
+| **TOV%** | Turnovers per 100 plays, `100 * TOV / (FGA + 0.44 * FTA + TOV)`: `nba_turnover_pct()`. |
+| **OREB%** | Share of available offensive rebounds a team grabbed, `100 * OREB / (OREB + opponent DREB)`: `nba_oreb_pct()`. |
+| **Four factors** | Dean Oliver's four drivers of winning: shooting (eFG%), turnovers (TOV%), rebounding (OREB%) and free throws (FT rate). `nba_four_factors()` returns all four. |
+| **Usage rate** | Share of team plays a player used while on the floor: `nba_usage_rate()`. |
+| **Per-36 / per-100** | Counting stats scaled to 36 minutes or 100 possessions so players with different playing time compare fairly: `nba_per_minutes()`, `nba_per_possessions()`. |
+| **Plus/minus** | Point differential while a player was on the court (`plus_minus` in the NBA player box). Heavily influenced by teammates and opponents. |
+| **Stint** | A stretch of play during which the same ten players are on the court. `load_ncaa_mbb_matchup_stints()` returns college stints. |
+| **Lineup** | A specific group of five teammates on the court together. |
+| **Garbage time** | Late minutes of a lopsided game, when results are decided and benches play; often filtered out of analyses (`is_garbage_time` in `load_ncaa_mbb_possessions()`). |
+| **APM / RAPM** | Adjusted plus-minus: a regression that credits each player for possession outcomes while controlling for the other nine players on the court. *Regularized* APM (RAPM) adds a ridge penalty that shrinks noisy estimates toward zero. See the [RAPM model article](college-basketball-rapm-model.html). |
+| **BPM / SPM** | Box (or statistical) plus-minus: a regression that estimates a player's impact from box-score statistics alone. |
+| **WAR** | Wins above replacement: a player's value in wins relative to a freely available replacement player. |
+| **Win probability (WP)** | The chance a team wins given the current game state (score, time, possession): `home_win_prob` in `load_mbb_pbp()`. |
+
+## Where are the functions? The reference index by section
+
+The [function reference](../reference/index.html) groups every exported function by source. Jump straight to a section:
+
+- [hoopR Data](../reference/index.html#hoopr-data): every `load_*()` release loader, including the [NBA Stats API loaders](../reference/index.html#nba-stats-api-data-loaders), the [NCAA engine loaders](../reference/index.html#ncaa-men-s-college-basketball-play-by-play-engine-data-loaders) and the [model dataset loaders](../reference/index.html#model-dataset-loaders).
+- [Cross-Source Crosswalks](../reference/index.html#cross-source-crosswalks): join ESPN, NBA Stats, KenPom, Torvik and Fox ids.
+- [ESPN Data](../reference/index.html#espn-data): `espn_mbb_*()`, `espn_nba_*()` and `fox_*()`.
+- [NBA Data](../reference/index.html#nba-data): the [NBA Stats API](../reference/index.html#nba-stats-api), the [G League](../reference/index.html#nba-g-league-stats-api) and the [basketball analytics utilities](../reference/index.html#basketball-analytics-utilities).
+- [NCAA Data](../reference/index.html#ncaa-data), [KenPom Data](../reference/index.html#kenpom-data), [CollegeBasketballData (CBD)](../reference/index.html#collegebasketballdata-cbd-) and [Bart Torvik (T-Rank)](../reference/index.html#bart-torvik-t-rank-).
+- [Injury Reports](../reference/index.html#injury-reports), [Officiating](../reference/index.html#officiating) and [Basketball-Reference](../reference/index.html#basketball-reference).
+- [Euroleague Data](../reference/index.html#euroleague-data) and [International Basketball](../reference/index.html#international-basketball).
+- [Salary & Mock Draft Sources](../reference/index.html#salary-mock-draft-sources), [RealGM](../reference/index.html#realgm) and [Helper Functions and Data](../reference/index.html#helper-functions-and-data).
+
+Good first function pages (each name links to its reference page): `load_nba_pbp()`, `load_mbb_pbp()`, `load_nba_team_box()`, `load_nba_shots()`, `espn_mbb_scoreboard()` and `nba_four_factors()`.
+
+## Articles and guides
+
+Data guides:
+
+- [ESPN endpoints](espn-endpoints.html): live ESPN scoreboards, game summaries and play-by-play for the NBA and college.
+- [NBA cookbook](nba-cookbook.html) and [men's college basketball cookbook](mbb-cookbook.html): short recipes for common questions.
+- [NBA Stats API parameter descriptions](parameter-descriptions.html): what each `nba_*()` argument means.
+- [KenPom example functions](kenpom-example-functions.html) and [CollegeBasketballData (CBD) endpoints](cbbd-college-basketball-data.html).
+- [International basketball leagues](international-basketball-leagues.html): EuroLeague, FIBA and about forty more leagues and competitions.
+
+Analysis guides:
+
+- [Shot charts and court plots](nba-college-basketball-shot-charts.html) with sportyR and sdvplotR.
+- [Basketball advanced metrics](basketball-advanced-metrics.html): possessions, pace, ratings, four factors, usage and true shooting.
+
+Model write-ups:
+
+- [NBA player impact model](nba-player-impact-model.html): RAPM, SPM, BPM, DARKO-style projections and WAR.
+- [College basketball RAPM model](college-basketball-rapm-model.html), including fitting your own RAPM with `nba_rapm()`.
+- [College basketball team ratings model](college-basketball-team-ratings-model.html).
+- [College basketball player value model](college-basketball-player-value-model.html).
+- [College basketball win probability model](college-basketball-win-probability-model.html).
+
+## Where to go next
+
+1. Repeat the worked example for college: `load_mbb_team_box(2026)` and the same `nba_possessions()` code.
+2. Read the [advanced metrics article](basketball-advanced-metrics.html) to compute the four factors, usage and true shooting for every team and player.
+3. Draw a [shot chart](nba-college-basketball-shot-charts.html) for your favorite player.
+4. Explore player value with [`load_nba_player_impact()`](nba-player-impact-model.html) or college [RAPM](college-basketball-rapm-model.html).
+5. Ask questions and share what you build: open an issue on [GitHub](https://github.com/sportsdataverse/hoopR/issues).
 
 # **Our Authors**
 -   [Saiem Gilani](https://x.com/saiemgilani)
@@ -192,3 +368,7 @@ BibTeX Citation
 -   [**sdvplotR**](https://sdvplotR.sportsdataverse.org/) - team logos and colours for `ggplot2`, and shot charts from the `hoopR` shot loaders (0.3.0, `pak::pak("sportsdataverse/sdvplotR")`; see its [NBA](https://sdvplotR.sportsdataverse.org/articles/nba-viz.html), [men's college](https://sdvplotR.sportsdataverse.org/articles/mbb-viz.html) and [shot chart](https://sdvplotR.sportsdataverse.org/articles/cookbook-surfaces-shot-charts.html) articles)
 -   [**sportsdataverse-py**](https://py.sportsdataverse.org/) - the Python package
 -   [**sportsdataverse-R**](https://r.sportsdataverse.org/) - the R meta-package
+
+```{r restore_options, include = FALSE}
+options(old)
+```
