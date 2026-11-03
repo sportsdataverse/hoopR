@@ -195,6 +195,13 @@ rds_from_url <- function(url) {
 #' @return a dataframe as created by [`arrow::read_parquet()`]
 #' @importFrom data.table data.table setDT
 parquet_from_url <- function(url) {
+  if (!is_installed("arrow")) {
+    cli::cli_warn(c(
+      "Reading {.url {url}} needs the {.pkg arrow} package; returning an empty table.",
+      "i" = "Install it with {.code install.packages(\"arrow\")}."
+    ))
+    return(data.table::data.table())
+  }
   tmp <- tempfile(fileext = ".parquet")
   on.exit(unlink(tmp), add = TRUE)
   dl <- try(utils::download.file(url, tmp, mode = "wb", quiet = TRUE), silent = TRUE)
