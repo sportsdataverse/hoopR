@@ -90,8 +90,9 @@ since 3.1.0.
   build. `--as-cran` also runs the `\donttest{}` examples; they pass in
   12 minutes.
 * GitHub Actions (R release on Ubuntu, macOS and Windows): OK.
-* R-hub v2 (R-devel; linux, windows, macos, macos-arm64), 2026-11-01: linux,
-  windows and macos Status OK; macos-arm64 completed successfully.
+* R-hub v2, 2026-11-03, on this commit: linux (R-devel), windows (R-devel),
+  macos (R-devel), macos-arm64 (R-devel) and nosuggests (Suggests not
+  installed): Status OK on all five.
 * win-builder: not run for this version.
 
 ## revdepcheck results
