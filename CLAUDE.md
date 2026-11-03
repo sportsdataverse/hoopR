@@ -175,7 +175,7 @@ raw_data %>%
   make_hoopR_data("Description from NBA.com", Sys.time())
 ```
 
-`make_hoopR_data()` sets the class to `c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")` and attaches `hoopR_timestamp` and `hoopR_type` attributes.
+`make_hoopR_data()` sets the class to `c("hoopR_data", "tbl_df", "tbl", "data.frame")` and attaches `hoopR_timestamp` and `hoopR_type` attributes.
 
 ### V2 vs V3 API Differences
 

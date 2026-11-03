@@ -814,6 +814,6 @@ rbindlist_with_attrs <- function(dflist) {
   out <- data.table::rbindlist(dflist, use.names = TRUE, fill = TRUE)
   attr(out, "hoopR_timestamp") <- hoopR_timestamp
   attr(out, "hoopR_type") <- hoopR_type
-  # class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.table", "data.frame")
+  # class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
   out
 }

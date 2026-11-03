@@ -46,3 +46,22 @@ test_that("production crosswalk bind path emits a tail()-safe class vector", {
   expect_equal(nrow(tail_out), 6L)
   expect_equal(tail_out$a, c(5, 11, 12, 13, 14, 15))
 })
+
+test_that("every exported load_*() result supports head()/tail() (offline)", {
+  fake <- function(...) data.table::data.table(a = 1:10, b = letters[1:10])
+  local_mocked_bindings(
+    rds_from_url = fake, parquet_from_url = fake,
+    csv_from_url = fake, pbp_from_url = fake
+  )
+  args <- list(load_nba_stats_leaguedash = list(table = nba_stats_leaguedash_tables[[1]]))
+
+  loaders <- grep("^load_", getNamespaceExports("hoopR"), value = TRUE)
+  expect_gt(length(loaders), 70)
+  for (f in loaders) {
+    x <- do.call(getExportedValue("hoopR", f), if (is.null(args[[f]])) list() else args[[f]])
+    expect_s3_class(x, "hoopR_data")
+    expect_false(inherits(x, "data.table"), label = f)
+    expect_equal(nrow(tail(x)), 6L, label = f)
+    expect_equal(nrow(head(x, 3)), 3L, label = f)
+  }
+})
