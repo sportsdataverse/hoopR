@@ -18,7 +18,8 @@ the data into a database.}
 \item{tablename}{The name of the data table within the database}
 }
 \value{
-Returns a \code{hoopR_data} tibble with one row per player alias.
+Returns a \code{hoopR_data} tibble with one row per player alias, or \code{NULL} after
+appending the rows to \code{tablename} when \code{dbConnection} and \code{tablename} are both given.
 
 \if{html}{\tabular{lll}{
       col_name \tab types \tab description \cr
