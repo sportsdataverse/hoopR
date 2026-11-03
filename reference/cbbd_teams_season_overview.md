@@ -291,7 +291,7 @@ Other CBD Teams Functions:
 ``` r
 # \donttest{
   try(cbbd_teams_season_overview(team_id = 72, season = 2025))
-#> ✖ 2026-11-02 15:03:50.631877: Invalid arguments or no team season overview data available!
+#> ✖ 2026-11-03 09:52:44.007992: Invalid arguments or no team season overview data available!
 #> ✖ Args: team_id = 72, season = 2025
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> list()

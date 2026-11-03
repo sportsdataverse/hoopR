@@ -150,7 +150,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_seasons())
 #> ── CBA Seasons from data-server.cbaleague.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 15:03:45 UTC
+#> ℹ Data updated: 2026-11-03 09:52:38 UTC
 #> # A tibble: 32 × 3
 #>    is_default key       value
 #>         <int> <chr>     <chr>

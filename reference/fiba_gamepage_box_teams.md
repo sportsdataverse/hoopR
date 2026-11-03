@@ -149,7 +149,7 @@ Other FIBA Functions:
 # \donttest{
   try(fiba_gamepage_box_teams(game_id = 100720, comp = 208182))
 #> ── FIBA gamepage_box_teams from fiba.basketball ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 15:05:49 UTC
+#> ℹ Data updated: 2026-11-03 09:54:38 UTC
 #> # A tibble: 2 × 57
 #>   game_id competition_id statistic_system team_side organisation_id score points
 #>     <int>          <int> <chr>            <chr>               <int> <int>  <int>

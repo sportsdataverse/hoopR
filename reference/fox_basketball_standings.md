@@ -46,20 +46,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_standings("1"))
 #> ── Fox Sports NBA standings ───────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 15:06:08 UTC
+#> ℹ Data updated: 2026-11-03 09:54:57 UTC
 #> # A tibble: 90 × 23
 #>    team_id section  eastern_conference v2    w_l   pct   gb    pf    pa    home 
 #>    <chr>   <chr>    <chr>              <chr> <chr> <chr> <chr> <chr> <chr> <chr>
-#>  1 1       CONFERE… 1                  76ers 6-1   .857  -     108.7 104.9 3-1  
-#>  2 1       CONFERE… 2                  Pist… 5-1   .833  0.5   109.8 101.8 2-0  
-#>  3 1       CONFERE… 3                  Celt… 5-1   .833  0.5   118.7 109.2 4-0  
-#>  4 1       CONFERE… 4                  Cava… 4-2   .667  1.5   121.0 116.0 3-0  
-#>  5 1       CONFERE… 5                  Rapt… 3-3   .500  2.5   118.2 110.3 2-1  
-#>  6 1       CONFERE… 6                  Wiza… 3-3   .500  2.5   110.5 109.7 2-1  
-#>  7 1       CONFERE… 7                  Hawks 3-4   .429  3.0   116.3 115.4 1-2  
-#>  8 1       CONFERE… 8                  Horn… 3-4   .429  3.0   98.3  106.4 2-2  
-#>  9 1       CONFERE… 9                  Magic 2-4   .333  3.5   107.7 116.7 0-3  
-#> 10 1       CONFERE… 10                 Heat  2-4   .333  3.5   118.3 121.5 1-3  
+#>  1 1       CONFERE… 1                  76ers 7-1   .875  -     110.9 105.1 4-1  
+#>  2 1       CONFERE… 2                  Pist… 6-1   .857  0.5   111.9 100.3 2-0  
+#>  3 1       CONFERE… 3                  Celt… 5-2   .714  1.5   115.0 109.1 4-0  
+#>  4 1       CONFERE… 4                  Wiza… 4-3   .571  2.5   109.4 107.4 2-1  
+#>  5 1       CONFERE… 5                  Rapt… 4-3   .571  2.5   119.1 111.4 2-1  
+#>  6 1       CONFERE… 6                  Cava… 4-3   .571  2.5   119.7 116.1 3-1  
+#>  7 1       CONFERE… 7                  Hawks 4-4   .500  3.0   115.2 114.0 1-2  
+#>  8 1       CONFERE… 8                  Knic… 3-4   .429  3.5   106.4 105.1 2-2  
+#>  9 1       CONFERE… 9                  Horn… 3-5   .375  4.0   97.4  108.6 2-3  
+#> 10 1       CONFERE… 10                 Heat  2-5   .286  4.5   118.1 123.9 1-3  
 #> # ℹ 80 more rows
 #> # ℹ 13 more variables: away <chr>, conf <chr>, div <chr>, l10 <chr>,
 #> #   strk <chr>, entity_id <chr>, western_conference <chr>, atlantic <chr>,

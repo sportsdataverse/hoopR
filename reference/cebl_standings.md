@@ -87,7 +87,7 @@ Other CEBL Functions:
 # \donttest{
   try(cebl_standings(season = 2025))
 #> ── CEBL Standings from the CEBL Stats API ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 15:03:56 UTC
+#> ℹ Data updated: 2026-11-03 09:52:49 UTC
 #> # A tibble: 10 × 30
 #>    season team_id name_en         short_name_en name_fr short_name_fr conference
 #>     <int>   <int> <chr>           <chr>         <chr>   <chr>         <chr>     

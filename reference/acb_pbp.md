@@ -140,7 +140,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_pbp(match_id = 105401))
 #> ── ACB Play-by-Play from api2.acb.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 15:02:25 UTC
+#> ℹ Data updated: 2026-11-03 09:51:42 UTC
 #> # A tibble: 735 × 38
 #>    match_id edition_id season play_index order quarter minute second
 #>       <int>      <int>  <int>      <int> <int>   <int>  <int>  <int>

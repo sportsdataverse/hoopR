@@ -52,6 +52,16 @@
 
 #### **Behavior changes**
 
+- [`update_mbb_db()`](https://hoopR.sportsdataverse.org/reference/update_mbb_db.md),
+  [`update_nba_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_db.md)
+  and
+  [`update_nba_stats_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_stats_db.md)
+  no longer write to the working directory by default. `dbdir` now
+  defaults to the per-user data directory
+  `tools::R_user_dir("hoopR", "data")` (created on first use, with a
+  message naming it). To keep using a database in the working directory,
+  pass `dbdir = "."`.
+
 - The NBA Stats wrappers now default `season` to the previous season. 97
   season arguments defaulted to the current one,
   `year_to_season(most_recent_nba_season() - 1)`, which stats.nba.com
@@ -525,6 +535,12 @@ vocabulary.
   only by the CBA wrappers.
 - Minimum versions raised: cli (\>= 3.0.0), httr2 (\>= 1.0.4), rlang
   (\>= 1.0.0) and, for the tests, testthat (\>= 3.1.9).
+- tibble and glue moved from Suggests to Imports: the ESPN parsers and
+  the NBA schedule code call them on normal code paths (both already
+  arrive with dplyr, so nothing new is installed). arrow stays in
+  Suggests; the parquet loaders now warn that arrow is needed and return
+  an empty table when it is missing, instead of a misleading “Failed to
+  read_parquet”.
 
 #### **Documentation**
 

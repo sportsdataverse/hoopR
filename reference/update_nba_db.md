@@ -7,7 +7,7 @@ play data of all completed and available games since 2002.
 
 ``` r
 update_nba_db(
-  dbdir = ".",
+  dbdir = tools::R_user_dir("hoopR", "data"),
   dbname = "hoopR_db",
   tblname = "hoopR_nba_pbp",
   force_rebuild = FALSE,
@@ -19,7 +19,10 @@ update_nba_db(
 
 - dbdir:
 
-  Directory in which the database is or shall be located
+  Directory in which the database is or shall be located. Defaults to
+  the per-user data directory `tools::R_user_dir("hoopR", "data")`, so
+  nothing is written to the working directory unless you ask for it
+  (`dbdir = "."`).
 
 - dbname:
 

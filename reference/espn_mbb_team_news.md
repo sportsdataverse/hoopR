@@ -208,27 +208,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-11-02 15:05:16 UTC
+#> ℹ Data updated: 2026-11-03 09:54:05 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.02e7 Story Early t… After a sl… 2026-11-… FALSE   Paul … https:/… 41       
-#> 2  5.03e7 Prev… No. 2 D… Army Black… 2026-11-… FALSE   NA     http://… 41       
-#> 3  5.03e7 Story Men's c… Which team… 2026-10-… FALSE   Mark … https:/… 41       
-#> 4  4.87e7 Story Transfe… The season… 2026-10-… FALSE   Jeff … https:/… 41       
-#> 5  5.03e7 Story How Asa… Ranked No.… 2026-10-… FALSE   Jason… https:/… 41       
+#> 1  5.04e7 Recap Dame Sa… — Dame Sar… 2026-11-… FALSE   NA     http://… 41       
+#> 2  5.04e7 Media Army Bl… Army Black… 2026-11-… FALSE   NA     https:/… 41       
+#> 3  5.02e7 Story Early t… After a sl… 2026-11-… FALSE   Paul … https:/… 41       
+#> 4  5.03e7 Prev… No. 2 D… Army Black… 2026-11-… FALSE   NA     http://… 41       
+#> 5  5.03e7 Story Men's c… Which team… 2026-10-… FALSE   Mark … https:/… 41       
 # }
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 15:05:17 UTC
+#> ℹ Data updated: 2026-11-03 09:54:05 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Prev… Miami v… Miami Heat… 2026-11-… FALSE   NA     http://… 46       
-#> 2  5.04e7 Head… Luka Do… Luka Donci… 2026-11-… FALSE   Dave … https:/… 46       
-#> 3  5.04e7 Recap Luka Do… — Luka Don… 2026-11-… FALSE   NA     http://… 46       
-#> 4  4.16e7 Story Which N… In 2024, B… 2026-11-… FALSE   Keith… https:/… NA       
-#> 5  5.04e7 Media Luka sh… Luka shine… 2026-11-… FALSE   NA     https:/… 46       
+#> 1  5.04e7 Head… Luka sc… "Luka Donc… 2026-11-… FALSE   Dave … https:/… 46       
+#> 2  5.04e7 Prev… Sacrame… "Los Angel… 2026-11-… FALSE   NA     http://… 46       
+#> 3  5.04e7 Media Miami H… "Miami Hea… 2026-11-… FALSE   NA     https:/… 46       
+#> 4  5.04e7 Recap Luka Do… "— Luka Do… 2026-11-… FALSE   NA     http://… 46       
+#> 5  5.04e7 Prev… Miami v… "Miami Hea… 2026-11-… FALSE   NA     http://… 46       
 # }
 ```

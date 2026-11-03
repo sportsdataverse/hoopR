@@ -148,7 +148,7 @@ Saiem Gilani
 # \donttest{
   try(load_nba_player_impact(seasons = most_recent_nba_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 440 × 28
+#> # A tibble: 441 × 28
 #>    player_id player_name       team_id team_abbreviation team_name  teams season
 #>        <int> <chr>               <int> <chr>             <chr>      <chr>  <int>
 #>  1      2544 LeBron James   1610612755 PHI               Philadelp… PHI     2027
@@ -161,7 +161,7 @@ Saiem Gilani
 #>  8    201939 Stephen Curry  1610612744 GSW               Golden St… GSW     2027
 #>  9    201942 DeMar DeRozan  1610612743 DEN               Denver Nu… DEN     2027
 #> 10    201950 Jrue Holiday   1610612757 POR               Portland … POR     2027
-#> # ℹ 430 more rows
+#> # ℹ 431 more rows
 #> # ℹ 21 more variables: season_type <chr>, o_rapm <dbl>, d_rapm <dbl>,
 #> #   rapm <dbl>, off_poss <int>, def_poss <int>, o_adj_rapm <dbl>,
 #> #   d_adj_rapm <dbl>, adj_rapm <dbl>, ospm <dbl>, dspm <dbl>, spm <dbl>,
@@ -171,16 +171,33 @@ Saiem Gilani
 # }
 # \donttest{
   try(load_mbb_player_value(seasons = most_recent_mbb_season()))
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_player_value/mbb_player_value_2027.parquet': HTTP status was '404 Not Found'
-#> Warning: Failed to download parquet from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_player_value/mbb_player_value_2027.parquet>
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 0 × 0
+#> # A tibble: 59 × 9
+#>    player_id player     season team_id   min box_obpm box_dbpm box_bpm qualified
+#>    <chr>     <chr>       <int> <chr>   <dbl>    <dbl>    <dbl>   <dbl> <lgl>    
+#>  1 5254335   Drew Grim…   2027 2335        3     9.97    1.28    11.2  FALSE    
+#>  2 5187515   Nino Cart…   2027 2459       18    18.8    -7.83    11.0  FALSE    
+#>  3 5174957   Conrad Ma…   2027 2272       19    12.0    -2.10     9.95 FALSE    
+#>  4 5121428   Isaiah Mi…   2027 2755       22     9.58    0.333    9.91 FALSE    
+#>  5 5462535   Antoine S…   2027 2755       29     7.85    2.02     9.87 FALSE    
+#>  6 5459258   Trevor Po…   2027 2459       31    12.2    -2.32     9.83 FALSE    
+#>  7 5459259   Keller Ha…   2027 2459       11    11.4    -2.28     9.10 FALSE    
+#>  8 5459261   Brayden G…   2027 2459       18    12.8    -4.54     8.26 FALSE    
+#>  9 5312256   Brady Koe…   2027 87         25     8.71   -2.27     6.44 FALSE    
+#> 10 5314748   Mekhi Fit…   2027 2755       15    11.9    -5.84     6.09 FALSE    
+#> # ℹ 49 more rows
 # }
 # \donttest{
   try(load_mbb_ratings(seasons = most_recent_mbb_season()))
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_ratings/mbb_ratings_2027.parquet': HTTP status was '404 Not Found'
-#> Warning: Failed to download parquet from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_ratings/mbb_ratings_2027.parquet>
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 0 × 0
+#> # A tibble: 6 × 11
+#>   season team_id adj_o adj_d adj_em adj_tempo raw_o raw_d games  rank adj_em_z
+#>    <int> <chr>   <dbl> <dbl>  <dbl>     <dbl> <dbl> <dbl> <int> <int>    <dbl>
+#> 1   2027 2272    110.   87.1  22.9       65.4 110.   87.1     1     1    1.56 
+#> 2   2027 2755    132.  129.    2.98      67.2 132.  129.      1     2    0.202
+#> 3   2027 87      106.  103.    2.86      70.0 106.  103.      1     3    0.194
+#> 4   2027 222     103.  106.   -2.86      70.0 103.  106.      1     4   -0.194
+#> 5   2027 2459    129.  132.   -2.98      67.2 129.  132.      1     5   -0.202
+#> 6   2027 2335     87.1 110.  -22.9       65.4  87.1 110.      1     6   -1.56 
 # }
 ```

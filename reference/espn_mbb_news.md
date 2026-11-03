@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 15:04:48 UTC
+#> ℹ Data updated: 2026-11-03 09:53:38 UTC
 #> # A tibble: 5 × 8
 #>         id type    headline     description published premium link_web league_id
 #>      <int> <chr>   <chr>        <chr>       <chr>     <lgl>   <chr>    <chr>    
-#> 1 50356887 Preview No. 9 Virgi… Drexel Dra… 2026-11-… FALSE   http://… 41       
-#> 2 50356856 Preview Kansas Stat… South Dako… 2026-11-… FALSE   http://… 41       
-#> 3 50356855 Preview Mississippi… Tennessee … 2026-11-… FALSE   http://… 41       
-#> 4 50356852 Preview LSU hosts N… New Orlean… 2026-11-… FALSE   http://… 41       
-#> 5 50356848 Preview Georgia Tec… Hampton Pi… 2026-11-… FALSE   http://… 41       
+#> 1 50367227 Preview Butler and … Fairleigh … 2026-11-… FALSE   http://… 41       
+#> 2 50367225 Preview Cooper lead… Radford Hi… 2026-11-… FALSE   http://… 41       
+#> 3 50367224 Preview Foster lead… Northern K… 2026-11-… FALSE   http://… 41       
+#> 4 50367223 Preview North Dakot… North Dako… 2026-11-… FALSE   http://… 41       
+#> 5 50367222 Preview Watford lea… Queens Roy… 2026-11-… FALSE   http://… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 15:04:48 UTC
+#> ℹ Data updated: 2026-11-03 09:53:39 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.03e7 Story How NBA… The NBA se… 2026-11-… FALSE   Zach … https:/… 46       
-#> 2  5.04e7 Prev… Orlando… Washington… 2026-11-… FALSE   NA     http://… 46       
-#> 3  5.04e7 Prev… Clipper… Toronto Ra… 2026-11-… FALSE   NA     http://… 46       
-#> 4  5.04e7 Prev… Houston… Boston Cel… 2026-11-… FALSE   NA     http://… 46       
-#> 5  5.04e7 Prev… Golden … Phoenix Su… 2026-11-… FALSE   NA     http://… 46       
+#> 1  5.04e7 Prev… Clipper… "Miami Hea… 2026-11-… FALSE   NA     http://… 46       
+#> 2  5.04e7 Prev… Portlan… "Portland … 2026-11-… FALSE   NA     http://… 46       
+#> 3  5.04e7 Head… Luka sc… "Luka Donc… 2026-11-… FALSE   Dave … https:/… 46       
+#> 4  5.04e7 Prev… Sacrame… "Los Angel… 2026-11-… FALSE   NA     http://… 46       
+#> 5  5.04e7 Prev… Gilgeou… "Cleveland… 2026-11-… FALSE   NA     http://… 46       
 # }
 ```

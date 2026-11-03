@@ -70,7 +70,7 @@ Other Genius Functions:
   standings <- data.frame(team_uuid = c("a1", "b2"), team_id = c(101L, 102L))
   genius_team_crosswalk(standings, "sportality_standings")
 #> ── Genius LiveStats team crosswalk ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 15:06:18 UTC
+#> ℹ Data updated: 2026-11-03 09:55:10 UTC
 #> # A tibble: 2 × 2
 #>   team_uuid genius_team_id
 #>   <chr>              <int>

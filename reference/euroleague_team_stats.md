@@ -162,15 +162,15 @@ Other Euroleague:
     euroleague_team_stats(competition_code = "E", season_code = "E2025", mode = "advanced")
   })
 #> ── EuroLeague advanced team stats from api-live.euroleague.net ── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 15:05:37 UTC
+#> ℹ Data updated: 2026-11-03 09:54:27 UTC
 #> # A tibble: 20 × 20
 #>    team_ranking games_played effective_field_goal_perce…¹ true_shooting_percen…²
 #>           <int>        <dbl> <chr>                        <chr>                 
 #>  1            1           38 50.7%                        54.6%                 
 #>  2            2           38 53.9%                        57.9%                 
 #>  3            3           38 54.1%                        57.5%                 
-#>  4            4           38 53%                          56.9%                 
-#>  5            5           43 54.2%                        58.4%                 
+#>  4            4           43 54.2%                        58.4%                 
+#>  5            5           38 53%                          56.9%                 
 #>  6            6           38 54.4%                        58.5%                 
 #>  7            7           38 53.8%                        57.6%                 
 #>  8            8           40 55.4%                        58.8%                 
