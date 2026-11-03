@@ -44,20 +44,29 @@ full list of changes is in NEWS.md. The main additions:
 * The RealGM examples are in `\dontrun{}`: RealGM serves its pages behind a
   Cloudflare JavaScript challenge, so the functions read them through
   headless Chrome (`chromote`, in Suggests), which CRAN machines do not have.
-* All other networked examples are in `\donttest{}` and wrapped in `try()`,
-  so they fail gracefully without network access.
+* All other networked examples are in `\donttest{}`. Without network access
+  the ESPN, `load_*()`, CollegeBasketballData, Torvik, G League and Fox
+  functions return an empty data frame with a warning (checked with every
+  request routed to a dead proxy). The international families raise classed
+  conditions (`hoopR_fetch_error`, `hoopR_asset_fetch`) that name the URL;
+  their examples are wrapped in `try()`.
+* `update_mbb_db()`, `update_nba_db()` and `update_nba_stats_db()` no longer
+  default to the working directory: `dbdir` now defaults to
+  `tools::R_user_dir("hoopR", "data")`. No example runs them.
 
 ## Tests
 
-Every test that needs the network is skipped on CRAN (`skip_on_cran()` plus
-an opt-in environment variable per source). The tests that run on CRAN read
-committed fixtures and mock the HTTP layer.
+Every test that needs the network is off on CRAN. Each source has an opt-in
+environment variable (`ESPN_TESTS`, `NBA_STATS_TESTS`, ...) that CRAN does not
+set; most of those tests also call `skip_on_cran()`, and a few rely on the
+environment variable alone. The tests that run on CRAN read committed
+fixtures and mock the HTTP layer.
 
 ## Size
 
-The package grew with the international families: the tarball is about
-4.0 MB and the installed size about 11.4 MB, most of it help pages (6.7 MB)
-and R code (4.2 MB) for more than 1,300 documented functions. We cut the
+The package grew with the international families: the tarball is 4.1 MB
+and the installed size 11.6 MB, most of it help pages (6.9 MB) and R code
+(4.2 MB) for more than 1,300 documented functions. We cut the
 help by 17% for this release by printing each family's shared source notes
 once and linking to it from the other pages.
 
@@ -73,15 +82,17 @@ since 3.1.0.
 
 0 errors | 0 warnings | 0 notes
 
-* Local Windows 10, R 4.6.1, `R CMD check --as-cran` on the built tarball
-  (NOT_CRAN unset, so every networked test skips): 0 errors, 0 warnings, 0 notes
-  (installed size reported as INFO: 11.4 MB, R 4.2 MB, help 6.7 MB). The
-  PDF and HTML manuals build. With `--run-donttest` the examples pass in
-  18 minutes.
+* Local Windows 10, R 4.6.0 (ucrt), `R CMD check --as-cran` on the built
+  tarball, 2026-11-03 (NOT_CRAN and every live-test variable unset, so every
+  networked test skips): Status OK, 0 errors, 0 warnings, 0 notes. Installed
+  size is reported as INFO (11.6 MB: R 4.2 MB, help 6.9 MB). Tests:
+  0 failures, 617 skips, 15,749 passes in 181 s. The PDF and HTML manuals
+  build. `--as-cran` also runs the `\donttest{}` examples; they pass in
+  12 minutes.
 * GitHub Actions (R release on Ubuntu, macOS and Windows): OK.
-* R-hub v2 (R-devel; linux, windows, macos, macos-arm64), 2026-11-01: linux, windows and
-  macos Status OK; macos-arm64 completed successfully.
-* win-builder: to be run before submission.
+* R-hub v2 (R-devel; linux, windows, macos, macos-arm64), 2026-11-01: linux,
+  windows and macos Status OK; macos-arm64 completed successfully.
+* win-builder: not run for this version.
 
 ## revdepcheck results
 
