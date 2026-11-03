@@ -166,7 +166,7 @@ Other SCB Functions:
 # \donttest{
   try(scb_games_recent())
 #> ── BBL/DBBL Recent Games from the SCB API ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 19:55:59 UTC
+#> ℹ Data updated: 2026-11-03 23:41:16 UTC
 #> # A tibble: 27 × 91
 #>    league season season_id game_id competition stage status bucket game_progress
 #>    <chr>   <int>     <int> <chr>   <chr>       <chr> <chr>  <chr>  <chr>        
@@ -179,7 +179,7 @@ Other SCB Functions:
 #>  7 bbl      2027      2026 2006908 BBL         MAIN… OFFIC… past   E            
 #>  8 bbl      2027      2026 2006898 BBL         MAIN… OFFIC… past   E            
 #>  9 bbl      2027      2026 2006899 BBL         MAIN… OFFIC… past   E            
-#> 10 bbl      2027      2026 2007035 BBL         MAIN… LIVE   prese… Q2_BREAK     
+#> 10 bbl      2027      2026 2007035 BBL         MAIN… OFFIC… prese… E            
 #> # ℹ 17 more rows
 #> # ℹ 82 more variables: scheduled_time <chr>, match_day <int>, is_tbd <lgl>,
 #> #   is_hidden <lgl>, home_team_id <chr>, home_season_team_id <chr>,

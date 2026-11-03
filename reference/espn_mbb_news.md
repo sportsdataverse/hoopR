@@ -203,7 +203,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 19:51:40 UTC
+#> ℹ Data updated: 2026-11-03 23:36:23 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -216,14 +216,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 19:51:40 UTC
+#> ℹ Data updated: 2026-11-03 23:36:23 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Story Karabel… Eric Karab… 2026-11-… FALSE   Eric … https:/… 3090     
-#> 2  5.04e7 Media Shams t… Shams to M… 2026-11-… FALSE   NA     https:/… 46       
-#> 3  5.04e7 Head… NBA def… NBA deputy… 2026-11-… FALSE   Mark … https:/… 46       
-#> 4  5.00e7 Story Fantasy… Updated fa… 2026-11-… FALSE   Andre… https:/… 3090     
-#> 5  5.04e7 Media Will Dr… Will Draym… 2026-11-… FALSE   NA     https:/… 46       
+#> 1  5.04e7 Head… Dumonts… Sivan and … 2026-11-… FALSE   Tim M… https:/… 46       
+#> 2  5.04e7 Story Karabel… Eric Karab… 2026-11-… FALSE   Eric … https:/… 3090     
+#> 3  5.04e7 Media Shams t… Shams to M… 2026-11-… FALSE   NA     https:/… 46       
+#> 4  5.04e7 Head… NBA def… NBA deputy… 2026-11-… FALSE   Mark … https:/… 46       
+#> 5  5.00e7 Story Fantasy… Updated fa… 2026-11-… FALSE   Andre… https:/… 3090     
 # }
 ```

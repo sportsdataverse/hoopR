@@ -137,7 +137,7 @@ Other SCB Functions:
 # \donttest{
   try(scb_standings())
 #> ── BBL/DBBL Standings from the SCB API ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 19:56:05 UTC
+#> ℹ Data updated: 2026-11-03 23:41:22 UTC
 #> # A tibble: 18 × 55
 #>    league season standing_id season_team_id team_id team_name           team_tlc
 #>    <chr>   <int> <chr>       <chr>          <chr>   <chr>               <chr>   
@@ -150,9 +150,9 @@ Other SCB Functions:
 #>  7 bbl      2027 74722       551            551     ROSTOCK SEAWOLVES   HRO     
 #>  8 bbl      2027 74711       420            420     BMA365 Bamberg Bas… BAM     
 #>  9 bbl      2027 74709       415            415     Telekom Baskets Bo… BON     
-#> 10 bbl      2027 74712       422            422     Basketball Löwen B… BRA     
-#> 11 bbl      2027 74707       413            413     ALBA BERLIN         BER     
-#> 12 bbl      2027 74710       418            418     ratiopharm ulm      ULM     
+#> 10 bbl      2027 74707       413            413     ALBA BERLIN         BER     
+#> 11 bbl      2027 74710       418            418     ratiopharm ulm      ULM     
+#> 12 bbl      2027 74712       422            422     Basketball Löwen B… BRA     
 #> 13 bbl      2027 74715       430            430     EWE Baskets Oldenb… OLD     
 #> 14 bbl      2027 74717       483            483     Science City Jena   JEN     
 #> 15 bbl      2027 74721       541            541     RASTA Vechta        VEC     

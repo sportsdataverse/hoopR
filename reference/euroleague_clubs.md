@@ -90,7 +90,7 @@ Other Euroleague:
     euroleague_clubs(competition_code = "E", season_code = "E2025")
   })
 #> ── EuroLeague clubs from api-live.euroleague.net ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 19:52:21 UTC
+#> ℹ Data updated: 2026-11-03 23:37:17 UTC
 #> # A tibble: 20 × 20
 #>    code  name         abbreviated_name editorial_name tv_code is_virtual sponsor
 #>    <chr> <chr>        <chr>            <chr>          <chr>   <lgl>      <chr>  

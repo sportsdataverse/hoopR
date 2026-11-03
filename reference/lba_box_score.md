@@ -104,7 +104,7 @@ Other LBA Functions:
 # \donttest{
   try(lba_box_score(game_id = 25602))
 #> ── LBA Box Score from legabasket.it ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 19:54:03 UTC
+#> ℹ Data updated: 2026-11-03 23:39:03 UTC
 #> # A tibble: 24 × 39
 #>    game_id season side  team_id player_id player_num player_surname player_name
 #>      <int>  <int> <chr>   <int>     <int>      <int> <chr>          <chr>      

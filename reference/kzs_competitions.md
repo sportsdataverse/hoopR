@@ -78,7 +78,7 @@ Other KZS Functions:
 # \donttest{
   try(kzs_competitions(season = 2026))
 #> ── KZS Competitions from api.kzs.si ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 19:53:51 UTC
+#> ℹ Data updated: 2026-11-03 23:38:50 UTC
 #> # A tibble: 44 × 11
 #>    competition_id name               gender category rank  season_id season_name
 #>             <int> <chr>              <chr>  <chr>    <chr>     <int> <chr>      

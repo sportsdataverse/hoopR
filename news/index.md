@@ -524,6 +524,17 @@ vocabulary.
   [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
   put the light logo in `home_team_logo` when ESPN lists the away team
   first; they used to put the dark one there.
+- [`tail()`](https://rdrr.io/r/utils/head.html) works on the result of
+  every loader. The group, model, NBA Stats and NCAA MBB loaders and
+  [`load_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  /
+  [`load_nba_shots()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
+  still gave their tibble a `data.table` class, so
+  [`tail()`](https://rdrr.io/r/utils/head.html) failed with “Can’t
+  subset columns past the end”
+  ([\#88](https://github.com/sportsdataverse/hoopR/issues/88)). They now
+  return the same `hoopR_data` / `tbl_df` / `data.frame` class as the
+  other loaders.
 
 #### **Dependencies**
 
