@@ -317,10 +317,14 @@ reference:
       - '`load_mbb_group_seasons`'
       - '`load_mbb_group_aliases`'
       - '`load_mbb_team_group_seasons`'
+      - '`load_mbb_team_aliases`'
+      - '`load_mbb_player_aliases`'
       - '`load_nba_groups`'
       - '`load_nba_group_seasons`'
       - '`load_nba_group_aliases`'
       - '`load_nba_team_group_seasons`'
+      - '`load_nba_team_aliases`'
+      - '`load_nba_player_aliases`'
   - title: Cross-Source Crosswalks
   - subtitle: NBA Crosswalk Functions
     desc: Cross-source team/schedule/player crosswalks linking ESPN, NBA Stats, and Fox identities (keyed on espn_team_id), plus cached loaders
