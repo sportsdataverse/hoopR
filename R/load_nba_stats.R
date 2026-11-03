@@ -1503,7 +1503,9 @@ NULL
 #' `"player_season_stats"`, `"possessions"`, `"rosters"`, `"schedule"`,
 #' `"shots"`, `"standings"`, `"team_boxscores"`, `"team_season_stats"`.
 #'
-#' @param dbdir Directory in which the database is or shall be located.
+#' @param dbdir Directory in which the database is or shall be located. Defaults to
+#'   the per-user data directory `tools::R_user_dir("hoopR", "data")`, so nothing is
+#'   written to the working directory unless you ask for it (`dbdir = "."`).
 #' @param dbname File name of an existing or desired SQLite database within
 #'   `dbdir`.
 #' @param datasets Character vector of dataset shortnames (see Details).
@@ -1513,7 +1515,7 @@ NULL
 #'   `dbname` are ignored.
 #' @return Invisibly returns `TRUE` on success.
 #' @export
-update_nba_stats_db <- function(dbdir = ".",
+update_nba_stats_db <- function(dbdir = tools::R_user_dir("hoopR", "data"),
                                 dbname = "hoopR_db",
                                 datasets = NULL,
                                 seasons = TRUE,
@@ -1548,8 +1550,8 @@ update_nba_stats_db <- function(dbdir = ".",
   }
 
   if (!dir.exists(dbdir) & is.null(db_connection)) {
-    user_message(paste0("Directory '", dbdir, "' doesn't exist yet. Try creating..."), "oops")
-    dir.create(dbdir)
+    user_message(paste0("Creating database directory '", dbdir, "'"), "info")
+    dir.create(dbdir, recursive = TRUE)
   }
 
   if (is.null(db_connection)) {

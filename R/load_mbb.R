@@ -465,7 +465,9 @@ NULL
 #' is provided but the argument `tblname` will still be used to write the
 #' data table into the database.
 #'
-#' @param dbdir Directory in which the database is or shall be located
+#' @param dbdir Directory in which the database is or shall be located. Defaults to
+#'   the per-user data directory `tools::R_user_dir("hoopR", "data")`, so nothing is
+#'   written to the working directory unless you ask for it (`dbdir = "."`).
 #' @param dbname File name of an existing or desired SQLite database within `dbdir`
 #' @param tblname The name of the play by play data table within the database
 #' @param force_rebuild Hybrid parameter (logical or numeric) to rebuild parts
@@ -476,7 +478,7 @@ NULL
 #' @export
 #' @family hoopR Database Functions
 update_mbb_db <- function(
-    dbdir = ".",
+    dbdir = tools::R_user_dir("hoopR", "data"),
     dbname = "hoopR_db",
     tblname = "hoopR_mbb_pbp",
     force_rebuild = FALSE,
@@ -508,10 +510,10 @@ update_mbb_db <- function(
   }
 
   if (!dir.exists(dbdir) & is.null(db_connection)) {
-    cli::cli_alert_danger(
-      "{my_time()} | Directory {.file {dbdir}} doesn't exist yet. Try creating..."
+    cli::cli_alert_info(
+      "{my_time()} | Creating database directory {.file {dbdir}}"
     )
-    dir.create(dbdir)
+    dir.create(dbdir, recursive = TRUE)
   }
 
   if (is.null(db_connection)) {

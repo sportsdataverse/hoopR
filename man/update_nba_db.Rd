@@ -5,7 +5,7 @@
 \title{\strong{Update or create a hoopR NBA play-by-play database}}
 \usage{
 update_nba_db(
-  dbdir = ".",
+  dbdir = tools::R_user_dir("hoopR", "data"),
   dbname = "hoopR_db",
   tblname = "hoopR_nba_pbp",
   force_rebuild = FALSE,
@@ -13,7 +13,9 @@ update_nba_db(
 )
 }
 \arguments{
-\item{dbdir}{Directory in which the database is or shall be located}
+\item{dbdir}{Directory in which the database is or shall be located. Defaults to
+the per-user data directory \code{tools::R_user_dir("hoopR", "data")}, so nothing is
+written to the working directory unless you ask for it (\code{dbdir = "."}).}
 
 \item{dbname}{File name of an existing or desired SQLite database within \code{dbdir}}
 
