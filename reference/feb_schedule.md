@@ -85,7 +85,7 @@ Other FEB Functions:
 # \donttest{
   try(feb_schedule(group = 1, season = 2027))
 #> ── FEB schedule from baloncestoenvivo.feb.es ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 10:55:19 UTC
+#> ℹ Data updated: 2026-11-03 19:52:36 UTC
 #> # A tibble: 306 × 18
 #>    group season competition round round_label    round_date game_id home_team_id
 #>    <int>  <int> <chr>       <int> <chr>          <date>       <int>        <int>

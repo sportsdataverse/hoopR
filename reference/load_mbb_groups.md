@@ -58,6 +58,8 @@ Returns a `hoopR_data` tibble with one row per group lineage.
 Other Conference and Division Group loader functions:
 [`load_mbb_group_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_aliases.md),
 [`load_mbb_group_seasons()`](https://hoopR.sportsdataverse.org/reference/load_mbb_group_seasons.md),
+[`load_mbb_player_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_aliases.md),
+[`load_mbb_team_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_aliases.md),
 [`load_mbb_team_group_seasons()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_group_seasons.md)
 
 ## Author

@@ -129,7 +129,7 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 16:31:45 UTC
+#> ℹ Data updated: 2026-11-03 16:30:37 UTC
 #> # A tibble: 1,207 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
 #>     <int> <chr>       <date>                 <int>             <int>
@@ -152,8 +152,8 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-02 16:32:24 UTC
-#> # A tibble: 463 × 21
+#> ℹ Data updated: 2026-11-03 16:31:07 UTC
+#> # A tibble: 470 × 21
 #>    season espn_team_id team_abbreviation player_name         espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                         <int>
 #>  1   2027            1 ATL               aaron wiggins               4397183
@@ -166,7 +166,7 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #>  8   2027            1 ATL               jock landale                3146557
 #>  9   2027            1 ATL               kingston flemings           5149077
 #> 10   2027            1 ATL               luguentz dort               4397020
-#> # ℹ 453 more rows
+#> # ℹ 460 more rows
 #> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, nba_player_id <chr>, nba_player_name <chr>,
 #> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,
@@ -176,10 +176,28 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 # }
 # \donttest{
 load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_team_crosswalk_2027.rds': HTTP status was '404 Not Found'
-#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_team_crosswalk_2027.rds>
-#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 0 × 0
+#> ── MBB team crosswalk (ESPN / Fox / Torvik / KenPom) ──────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-03 11:12:37 UTC
+#> # A tibble: 362 × 21
+#>    season espn_team_id espn_abbreviation espn_display_name       espn_short_name
+#>     <int>        <int> <chr>             <chr>                   <chr>          
+#>  1   2027         2000 ACU               Abilene Christian Wild… Abilene Chrstn 
+#>  2   2027         2005 AF                Air Force Falcons       Air Force      
+#>  3   2027         2006 AKR               Akron Zips              Akron          
+#>  4   2027         2010 AAMU              Alabama A&M Bulldogs    Alabama A&M    
+#>  5   2027          333 ALA               Alabama Crimson Tide    Alabama        
+#>  6   2027         2011 ALST              Alabama State Hornets   Alabama St     
+#>  7   2027         2016 ALCN              Alcorn State Braves     Alcorn St      
+#>  8   2027           44 AMER              American University Ea… American       
+#>  9   2027         2026 APP               App State Mountaineers  App State      
+#> 10   2027            9 ASU               Arizona State Sun Devi… Arizona St     
+#> # ℹ 352 more rows
+#> # ℹ 16 more variables: espn_location <chr>, espn_mascot <chr>,
+#> #   espn_conference <chr>, fox_team_id <chr>, fox_team_name <chr>,
+#> #   fox_section <chr>, bart_team <chr>, bart_conf <chr>, kp_team <chr>,
+#> #   kp_conf <chr>, yahoo_team_id <chr>, yahoo_team_name <chr>,
+#> #   fox_match_confidence <dbl>, bart_match_confidence <dbl>,
+#> #   kp_match_confidence <dbl>, match_method <chr>
 # }
 # \donttest{
 load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())

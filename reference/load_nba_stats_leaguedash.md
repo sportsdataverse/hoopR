@@ -91,7 +91,7 @@ Other NBA Stats loader functions:
   try(load_nba_stats_leaguedash(seasons = most_recent_nba_stats_season(),
                                 table = "player_bio"))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 442 × 27
+#> # A tibble: 448 × 27
 #>    player_id player_name      team_id team_abbreviation   age player_height
 #>        <int> <chr>              <int> <chr>             <dbl> <chr>        
 #>  1   1643407 AJ Dybantsa   1610612764 WAS                  19 6-9          
@@ -104,7 +104,7 @@ Other NBA Stats loader functions:
 #>  8   1643530 Aday Mara     1610612760 OKC                  21 7-3          
 #>  9   1641737 Adem Bona     1610612755 PHI                  23 6-10         
 #> 10   1642349 Ajay Mitchell 1610612760 OKC                  24 6-4          
-#> # ℹ 432 more rows
+#> # ℹ 438 more rows
 #> # ℹ 21 more variables: player_height_inches <int>, player_weight <chr>,
 #> #   college <chr>, country <chr>, draft_year <chr>, draft_round <chr>,
 #> #   draft_number <chr>, gp <int>, pts <int>, reb <int>, ast <int>,

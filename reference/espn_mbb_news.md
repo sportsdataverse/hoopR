@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 10:54:08 UTC
-#> # A tibble: 5 × 8
-#>         id type    headline     description published premium link_web league_id
-#>      <int> <chr>   <chr>        <chr>       <chr>     <lgl>   <chr>    <chr>    
-#> 1 50367227 Preview Butler and … Fairleigh … 2026-11-… FALSE   http://… 41       
-#> 2 50367225 Preview Cooper lead… Radford Hi… 2026-11-… FALSE   http://… 41       
-#> 3 50367224 Preview Foster lead… Northern K… 2026-11-… FALSE   http://… 41       
-#> 4 50367223 Preview North Dakot… North Dako… 2026-11-… FALSE   http://… 41       
-#> 5 50367222 Preview Watford lea… Queens Roy… 2026-11-… FALSE   http://… 41       
+#> ℹ Data updated: 2026-11-03 19:51:40 UTC
+#> # A tibble: 5 × 9
+#>        id type  headline description published premium byline link_web league_id
+#>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
+#> 1  5.04e7 Head… Top-25 … Top-25 sen… 2026-11-… FALSE   Jeff … https:/… 41       
+#> 2  5.04e7 Story Asking … You have q… 2026-11-… FALSE   Joe L… https:/… 41       
+#> 3  5.04e7 Story How Wil… The story … 2026-11-… FALSE   Myron… https:/… 41       
+#> 4  5.04e7 Prev… Butler … Fairleigh … 2026-11-… FALSE   NA     http://… 41       
+#> 5  5.04e7 Prev… Cooper … Radford Hi… 2026-11-… FALSE   NA     http://… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 10:54:08 UTC
+#> ℹ Data updated: 2026-11-03 19:51:40 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Prev… Clipper… "Miami Hea… 2026-11-… FALSE   NA     http://… 46       
-#> 2  5.04e7 Prev… Portlan… "Portland … 2026-11-… FALSE   NA     http://… 46       
-#> 3  5.04e7 Head… Luka sc… "Luka Donc… 2026-11-… FALSE   Dave … https:/… 46       
-#> 4  5.04e7 Prev… Sacrame… "Los Angel… 2026-11-… FALSE   NA     http://… 46       
-#> 5  5.04e7 Prev… Gilgeou… "Cleveland… 2026-11-… FALSE   NA     http://… 46       
+#> 1  5.04e7 Story Karabel… Eric Karab… 2026-11-… FALSE   Eric … https:/… 3090     
+#> 2  5.04e7 Media Shams t… Shams to M… 2026-11-… FALSE   NA     https:/… 46       
+#> 3  5.04e7 Head… NBA def… NBA deputy… 2026-11-… FALSE   Mark … https:/… 46       
+#> 4  5.00e7 Story Fantasy… Updated fa… 2026-11-… FALSE   Andre… https:/… 3090     
+#> 5  5.04e7 Media Will Dr… Will Draym… 2026-11-… FALSE   NA     https:/… 46       
 # }
 ```

@@ -171,6 +171,19 @@ team membership published to sportsdataverse-data
   **Load team conference membership by season (MBB / NBA) from the data
   repo**
 
+- [`load_mbb_team_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_aliases.md)
+  [`load_nba_team_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_team_aliases.md)
+  :
+
+  **Load provider team id and name aliases (MBB / NBA) from the data
+  repo**
+
+- [`load_mbb_player_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_aliases.md)
+  [`load_nba_player_aliases()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_aliases.md)
+  :
+
+  **Load provider player id aliases (MBB / NBA) from the data repo**
+
 ## Cross-Source Crosswalks
 
 ### NBA Crosswalk Functions

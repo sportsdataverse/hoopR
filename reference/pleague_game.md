@@ -82,7 +82,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   try(pleague_game(gid = 197))
 #> ── P. LEAGUE+ Game from pleagueofficial.com ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 10:59:13 UTC
+#> ℹ Data updated: 2026-11-03 19:55:40 UTC
 #> # A tibble: 1 × 17
 #>     gid uuid          status_zh finished date       time  venue_zh game_label_zh
 #>   <int> <chr>         <chr>     <lgl>    <date>     <chr> <chr>    <chr>        
