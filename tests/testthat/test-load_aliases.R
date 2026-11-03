@@ -7,7 +7,10 @@ test_that("alias loaders read the mbb_groups / nba_groups release assets (offlin
 
   for (f in c(load_mbb_team_aliases, load_mbb_player_aliases,
               load_nba_team_aliases, load_nba_player_aliases)) {
-    expect_s3_class(f(), "hoopR_data")
+    x <- f()
+    expect_s3_class(x, "hoopR_data")
+    # a data.table class on a tibble breaks tail() (#88)
+    expect_false(inherits(x, "data.table"))
   }
 
   base <- "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/"

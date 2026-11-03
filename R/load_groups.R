@@ -424,7 +424,7 @@ load_mbb_team_aliases <- function(..., dbConnection = NULL, tablename = NULL) {
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+    class(out) <- c("hoopR_data","tbl_df","tbl","data.frame")
   }
   out
 }
@@ -448,7 +448,7 @@ load_nba_team_aliases <- function(..., dbConnection = NULL, tablename = NULL) {
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+    class(out) <- c("hoopR_data","tbl_df","tbl","data.frame")
   }
   out
 }
@@ -511,7 +511,7 @@ load_mbb_player_aliases <- function(..., dbConnection = NULL, tablename = NULL) 
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+    class(out) <- c("hoopR_data","tbl_df","tbl","data.frame")
   }
   out
 }
@@ -535,7 +535,7 @@ load_nba_player_aliases <- function(..., dbConnection = NULL, tablename = NULL) 
     DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
     out <- NULL
   } else {
-    class(out) <- c("hoopR_data","tbl_df","tbl","data.table","data.frame")
+    class(out) <- c("hoopR_data","tbl_df","tbl","data.frame")
   }
   out
 }
