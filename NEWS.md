@@ -379,6 +379,12 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   were character, so joins to the box scores and schedules failed.
 * `espn_mbb_pbp()` / `espn_nba_pbp()` put the light logo in `home_team_logo` when ESPN
   lists the away team first; they used to put the dark one there.
+* `tail()` works on the result of every loader. The group, model, NBA Stats and
+  NCAA MBB loaders and `load_mbb_shots()` / `load_nba_shots()` still gave their
+  tibble a `data.table` class, so `tail()` failed with "Can't subset columns
+  past the end" ([#88](https://github.com/sportsdataverse/hoopR/issues/88)).
+  They now return the same `hoopR_data` / `tbl_df` / `data.frame` class as the
+  other loaders.
 
 ### **Dependencies**
 
