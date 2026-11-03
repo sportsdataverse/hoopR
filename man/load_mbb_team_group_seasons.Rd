@@ -71,7 +71,9 @@ release tag and \code{load_nba_team_group_seasons()} the \code{nba_groups} tag.
 Other Conference and Division Group loader functions:
 \code{\link[=load_mbb_group_aliases]{load_mbb_group_aliases()}},
 \code{\link[=load_mbb_group_seasons]{load_mbb_group_seasons()}},
-\code{\link[=load_mbb_groups]{load_mbb_groups()}}
+\code{\link[=load_mbb_groups]{load_mbb_groups()}},
+\code{\link[=load_mbb_player_aliases]{load_mbb_player_aliases()}},
+\code{\link[=load_mbb_team_aliases]{load_mbb_team_aliases()}}
 }
 \author{
 Saiem Gilani

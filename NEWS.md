@@ -144,6 +144,13 @@
   `load_nba_team_group_seasons(seasons)` (1971 onward), one row per team per
   season. Seasons are ending years. The loaders read parquet, not the tags'
   csv copies, so `team_id` stays character.
+* Four more loaders read the provider alias tables in the same releases:
+  `load_mbb_team_aliases()` / `load_nba_team_aliases()` map a Fox, Yahoo,
+  CBS, 247Sports, On3, KenPom, Torvik, NCAA or NBA Stats team id or name to
+  the ESPN `team_id`, and `load_mbb_player_aliases()` /
+  `load_nba_player_aliases()` map an NCAA, Fox, Yahoo, KenPom or NBA Stats
+  player id to the ESPN `athlete_id`. Each row carries the seasons it holds
+  (`valid_from` / `valid_to`), how it was matched and where it came from.
 
 ### **ESPN**
 

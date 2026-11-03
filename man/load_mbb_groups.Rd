@@ -55,6 +55,8 @@ See \code{\link[=load_mbb_group_seasons]{load_mbb_group_seasons()}} for per-seas
 Other Conference and Division Group loader functions:
 \code{\link[=load_mbb_group_aliases]{load_mbb_group_aliases()}},
 \code{\link[=load_mbb_group_seasons]{load_mbb_group_seasons()}},
+\code{\link[=load_mbb_player_aliases]{load_mbb_player_aliases()}},
+\code{\link[=load_mbb_team_aliases]{load_mbb_team_aliases()}},
 \code{\link[=load_mbb_team_group_seasons]{load_mbb_team_group_seasons()}}
 }
 \author{
