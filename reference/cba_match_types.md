@@ -68,7 +68,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_match_types())
 #> ── CBA Match Types from data-server.cbaleague.com ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 09:52:26 UTC
+#> ℹ Data updated: 2026-11-03 10:52:40 UTC
 #> # A tibble: 5 × 3
 #>   is_default key    value
 #>        <int> <chr>  <chr>

@@ -76,7 +76,7 @@ Other LBA Functions:
 # \donttest{
   try(lba_shots(game_id = 25602))
 #> ── LBA Shots from legabasket.it ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 09:56:06 UTC
+#> ℹ Data updated: 2026-11-03 10:57:02 UTC
 #> # A tibble: 20 × 11
 #>    game_id season side    team_id  zone  made attempts  perc precision num  
 #>      <int>  <int> <chr>     <int> <int> <int>    <int> <dbl>     <int> <chr>

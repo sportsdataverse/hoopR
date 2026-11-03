@@ -301,7 +301,7 @@ c(possessions = nrow(nba_poss), games = n_distinct(nba_poss$game_id))
 
 fit_time <- system.time(my_rapm <- nba_rapm(nba_poss))
 round(fit_time[["elapsed"]], 1)
-#> [1] 7.2
+#> [1] 11.8
 
 my_rapm |>
   summarise(players = n(),

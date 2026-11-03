@@ -48,7 +48,7 @@ Other Salary & Draft Functions:
 # \donttest{
   try(nbadraft_mock_draft())
 #> ── Mock draft from nbadraft.net ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 09:57:12 UTC
+#> ℹ Data updated: 2026-11-03 10:58:53 UTC
 #> # A tibble: 60 × 9
 #>     pick team        player            height weight position school class round
 #>    <int> <chr>       <chr>             <chr>   <int> <chr>    <chr>  <chr> <int>
