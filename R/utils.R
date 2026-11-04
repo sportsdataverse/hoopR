@@ -255,8 +255,9 @@ parquet_from_url <- function(url) {
 
 .download_url <- function(url, dest) {
   status <- utils::download.file(url, dest, mode = "wb", quiet = TRUE)
-  if (status != 0L) stop("Download failed with status ", status, ".", call. = FALSE)
-  if (!file.exists(dest) || file.size(dest) == 0) stop("Downloaded an empty file.", call. = FALSE)
+  if (status != 0L || !file.exists(dest) || file.size(dest) == 0) {
+    stop("Download failed (status ", status, ") or the file is empty.", call. = FALSE)
+  }
   invisible(dest)
 }
 

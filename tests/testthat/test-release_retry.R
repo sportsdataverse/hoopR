@@ -89,3 +89,38 @@ test_that("parquet_from_url retries a download that does not parse", {
   expect_equal(out$x, 1:2)
   expect_equal(calls, 2L)
 })
+
+test_that("the low-level readers read a local file and reject an empty one", {
+  file_url <- function(path) {
+    path <- normalizePath(path, winslash = "/")
+    paste0("file://", if (!startsWith(path, "/")) "/", path)
+  }
+  src <- withr::local_tempfile(fileext = ".rds")
+  saveRDS(data.frame(x = 1:2), src, compress = FALSE)
+  expect_equal(.read_rds_url(file_url(src)), data.frame(x = 1:2))
+  expect_equal(rds_from_url(file_url(src))$x, 1:2)
+
+  dest <- withr::local_tempfile()
+  .download_url(file_url(src), dest)
+  expect_equal(readRDS(dest), data.frame(x = 1:2))
+
+  empty <- withr::local_tempfile()
+  file.create(empty)
+  expect_error(.download_url(file_url(empty), withr::local_tempfile()), "empty")
+})
+
+test_that("warnings from a read that succeeds are passed on", {
+  read <- function(url) {
+    warning("a note from the reader")
+    1
+  }
+  expect_warning(out <- .read_release_asset("https://x/a_2024.rds", read), "a note from the reader")
+  expect_equal(out, 1)
+})
+
+test_that("parquet_from_url returns an empty table when the download keeps failing", {
+  skip_if_not_installed("arrow")
+  local_mocked_bindings(.download_url = function(url, dest) stop("Timeout of 150 seconds was reached"))
+  expect_warning(out <- parquet_from_url("https://x/b_2024.parquet"), "b_2024.parquet", fixed = TRUE)
+  expect_equal(nrow(out), 0L)
+})
