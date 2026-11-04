@@ -22,8 +22,9 @@ NULL
 #'   The upper bound is [most_recent_mbb_season()]. When `seasons` is left at
 #'   its default and that season's file is not published yet, the loader reads
 #'   the newest published season instead, with a message. An explicit request
-#'   for an unpublished season is kept as asked: the read warns and returns an
-#'   empty frame.
+#'   for that not-yet-published season is kept as asked: the read warns and
+#'   returns an empty frame. A season outside the published range, or in a
+#'   known gap, is an error.
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by

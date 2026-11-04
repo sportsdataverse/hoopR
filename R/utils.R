@@ -356,14 +356,14 @@ rds_or_parquet_from_url <- function(url) {
   force(default)
   last <- as.integer(last)
   avail <- setdiff(first:last, gaps)
+  published <- function(s) {
+    .release_asset_exists(url_for(s)) ||
+      (parquet && .release_asset_exists(sub("\\.rds$", ".parquet", url_for(s))))
+  }
   newest_missing <- local({
     ans <- NULL
     function() {
-      if (is.null(ans)) {
-        ans <<- !is.null(url_for) && last %in% avail &&
-          !.release_asset_exists(url_for(last)) &&
-          !(parquet && .release_asset_exists(sub("\\.rds$", ".parquet", url_for(last))))
-      }
+      if (is.null(ans)) ans <<- !is.null(url_for) && last %in% avail && !published(last)
       ans
     }
   })
@@ -386,9 +386,16 @@ rds_or_parquet_from_url <- function(url) {
     ))
   }
   if (isTRUE(default) && length(seasons) == 1 && seasons == last && newest_missing()) {
-    prev <- avail[avail < last]
-    if (length(prev) > 0) {
-      prev <- max(prev)
+    # Walk back to the newest season that is published: when two tags lag, the
+    # season before the default can be missing too. One HEAD per season tried.
+    prev <- NULL
+    for (s in rev(avail[avail < last])) {
+      if (published(s)) {
+        prev <- s
+        break
+      }
+    }
+    if (!is.null(prev)) {
       cli::cli_inform(c("i" = "{.fn {fn}}: season {last} is not published yet; loading {prev} instead."))
       seasons <- prev
     }

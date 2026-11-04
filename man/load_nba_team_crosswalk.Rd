@@ -29,8 +29,9 @@ the NBA crosswalks and \code{load_mbb_team_crosswalk()}, 2008 onward for
 the upper bound is \code{\link[=most_recent_nba_season]{most_recent_nba_season()}} / \code{\link[=most_recent_mbb_season]{most_recent_mbb_season()}}. When \code{seasons} is left at
 its default and that season's file is not published yet, the loader reads
 the newest published season instead, with a message. An explicit request
-for an unpublished season is kept as asked: the read warns and returns an
-empty frame.
+for that not-yet-published season is kept as asked: the read warns and
+returns an empty frame. A season outside the published range, or in a
+known gap, is an error.
 ESPN ids (\code{espn_game_id}, \code{espn_athlete_id}, \code{espn_team_id}) are returned as
 integer, matching the ESPN box score, schedule and roster loaders.}
 }

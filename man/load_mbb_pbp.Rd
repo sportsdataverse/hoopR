@@ -118,8 +118,9 @@ are published as \code{.parquet} only and need the \pkg{arrow} package.
 The upper bound is \code{\link[=most_recent_mbb_season]{most_recent_mbb_season()}}. When \code{seasons} is left at
 its default and that season's file is not published yet, the loader reads
 the newest published season instead, with a message. An explicit request
-for an unpublished season is kept as asked: the read warns and returns an
-empty frame.}
+for that not-yet-published season is kept as asked: the read warns and
+returns an empty frame. A season outside the published range, or in a
+known gap, is an error.}
 
 \item{...}{Additional arguments passed to an underlying function that writes
 the season data into a database (used by \code{update_mbb_db()}).}

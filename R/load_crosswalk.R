@@ -71,8 +71,9 @@ NULL
 #'   the upper bound is [most_recent_nba_season()] / [most_recent_mbb_season()]. When `seasons` is left at
 #'   its default and that season's file is not published yet, the loader reads
 #'   the newest published season instead, with a message. An explicit request
-#'   for an unpublished season is kept as asked: the read warns and returns an
-#'   empty frame.
+#'   for that not-yet-published season is kept as asked: the read warns and
+#'   returns an empty frame. A season outside the published range, or in a
+#'   known gap, is an error.
 #'   ESPN ids (`espn_game_id`, `espn_athlete_id`, `espn_team_id`) are returned as
 #'   integer, matching the ESPN box score, schedule and roster loaders.
 #' @return Returns a tibble of class \code{hoopR_data} with one row per

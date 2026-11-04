@@ -41,6 +41,15 @@ test_that(".loader_seasons falls back past a gap", {
   expect_equal(out, 2024)
 })
 
+test_that(".loader_seasons walks back past more than one unpublished season", {
+  local_mocked_bindings(.release_asset_exists = mock_assets(url_for(2026:2027)))
+  expect_message(
+    out <- .loader_seasons(2027, 2004, 2027, fn = "load_x", url_for = url_for, default = TRUE),
+    "loading 2025"
+  )
+  expect_equal(out, 2025)
+})
+
 test_that(".loader_seasons accepts a .parquet sibling when parquet = TRUE", {
   local_mocked_bindings(.release_asset_exists = mock_assets(url_for(2027)))
   expect_no_message(
