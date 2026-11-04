@@ -92,7 +92,7 @@ Other CEBL Functions:
 # \donttest{
   try(cebl_seasons())
 #> ── CEBL Seasons from the CEBL Stats API ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 23:35:24 UTC
+#> ℹ Data updated: 2026-11-04 03:41:33 UTC
 #> # A tibble: 8 × 4
 #>   season_id season is_active is_live
 #>       <int>  <int> <lgl>     <lgl>  

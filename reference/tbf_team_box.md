@@ -140,7 +140,7 @@ Other TBF Functions:
 # \donttest{
   try(tbf_team_box(match_id = 346279))
 #> ── TBF Team Box Score ─────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 23:42:27 UTC
+#> ℹ Data updated: 2026-11-04 03:48:00 UTC
 #> # A tibble: 2 × 33
 #>   match_id side  team_process_id seconds_played points fg_made fg_attempted
 #>      <int> <chr>           <int>          <int>  <int>   <int>        <int>

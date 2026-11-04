@@ -74,7 +74,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_team_options(season = 2026))
 #> ── CBA Team Options from data-server.cbaleague.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 23:35:15 UTC
+#> ℹ Data updated: 2026-11-04 03:41:23 UTC
 #> # A tibble: 20 × 3
 #>    is_default key          value    
 #>         <int> <chr>        <chr>    

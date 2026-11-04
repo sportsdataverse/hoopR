@@ -107,7 +107,7 @@ Other SCB Functions:
 # \donttest{
   try(scb_seasons())
 #> ── BBL/DBBL Seasons from the SCB API ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 23:41:21 UTC
+#> ℹ Data updated: 2026-11-04 03:46:57 UTC
 #> # A tibble: 61 × 4
 #>    league season season_id is_active
 #>    <chr>   <int>     <int> <lgl>    

@@ -208,7 +208,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-11-03 23:36:58 UTC
+#> ℹ Data updated: 2026-11-04 03:42:58 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -221,14 +221,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 23:36:58 UTC
+#> ℹ Data updated: 2026-11-04 03:42:58 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Media Shams t… "Shams to … 2026-11-… FALSE   NA     https:/… 46       
-#> 2  5.04e7 Head… Luka sc… "Luka Donc… 2026-11-… FALSE   Dave … https:/… 46       
-#> 3  5.04e7 Prev… Sacrame… "Los Angel… 2026-11-… FALSE   NA     http://… 46       
-#> 4  5.04e7 Media Miami H… "Miami Hea… 2026-11-… FALSE   NA     https:/… 46       
-#> 5  5.04e7 Recap Luka Do… "— Luka Do… 2026-11-… FALSE   NA     http://… 46       
+#> 1  5.04e7 Head… Lakers'… "The techn… 2026-11-… FALSE   Dave … https:/… 46       
+#> 2  5.04e7 Media Shams t… "Shams to … 2026-11-… FALSE   NA     https:/… 46       
+#> 3  5.04e7 Head… Luka sc… "Luka Donc… 2026-11-… FALSE   Dave … https:/… 46       
+#> 4  5.04e7 Prev… Sacrame… "Los Angel… 2026-11-… FALSE   NA     http://… 46       
+#> 5  5.04e7 Media Miami H… "Miami Hea… 2026-11-… FALSE   NA     https:/… 46       
 # }
 ```

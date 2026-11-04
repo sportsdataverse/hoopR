@@ -101,7 +101,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_infobasket_pbp(game_id = 921391))
 #> ── VTB Infobasket Play-by-Play from org.infobasket.su ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 23:42:51 UTC
+#> ℹ Data updated: 2026-11-04 03:48:24 UTC
 #> # A tibble: 1,152 × 18
 #>    game_id play_id parent_play_id play_type_id play_type play_period play_second
 #>      <int>   <int>          <int>        <int> <chr>           <int>       <int>

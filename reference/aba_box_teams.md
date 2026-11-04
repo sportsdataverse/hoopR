@@ -142,7 +142,7 @@ Other ABA Functions:
 # \donttest{
   try(aba_box_teams(game_no = 6, season = 2026))
 #> ── ABA League Team Box ────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 23:33:55 UTC
+#> ℹ Data updated: 2026-11-04 03:40:08 UTC
 #> # A tibble: 2 × 34
 #>   game_no season league_id league side  team_id team_name  minutes points fg_pct
 #>     <int>  <int>     <int> <chr>  <chr>   <int> <chr>      <chr>    <int>  <dbl>

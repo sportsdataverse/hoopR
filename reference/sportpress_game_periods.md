@@ -79,7 +79,7 @@ Other BNXT League Functions:
 # \donttest{
   try(sportpress_game_periods(game_id = 11295))
 #> ── BNXT League Game Periods from Sportpress ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 23:41:51 UTC
+#> ℹ Data updated: 2026-11-04 03:47:25 UTC
 #> # A tibble: 12 × 5
 #>    game_id team_side competition_team_id period score
 #>      <int> <chr>                   <int>  <int> <int>

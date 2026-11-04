@@ -60,7 +60,7 @@ Other Euroleague:
     euroleague_competitions()
   })
 #> ── EuroLeague competitions from api-live.euroleague.net ───────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 23:37:17 UTC
+#> ℹ Data updated: 2026-11-04 03:43:14 UTC
 #> # A tibble: 43 × 2
 #>    name                   code 
 #>    <chr>                  <chr>

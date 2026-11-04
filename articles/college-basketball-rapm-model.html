@@ -496,7 +496,7 @@ starting with <code>002</code> are regular-season games.)
 <span></span>
 <span><span class="va">fit_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.time.html" class="external-link">system.time</a></span><span class="op">(</span><span class="va">my_rapm</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/nba_rapm.html">nba_rapm</a></span><span class="op">(</span><span class="va">nba_poss</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">fit_time</span><span class="op">[[</span><span class="st">"elapsed"</span><span class="op">]</span><span class="op">]</span>, <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 10.6</span></span>
+<span><span class="co">#&gt; [1] 10.8</span></span>
 <span></span>
 <span><span class="va">my_rapm</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span>players <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span>,</span>

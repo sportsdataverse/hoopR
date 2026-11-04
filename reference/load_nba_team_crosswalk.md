@@ -201,15 +201,29 @@ load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 # }
 # \donttest{
 load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_schedule_crosswalk_2027.rds': HTTP status was '404 Not Found'
-#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_schedule_crosswalk_2027.rds>
+#> Warning: Failed to read
+#> <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_schedule_crosswalk_2027.rds>
+#> after 1 attempt.
+#> ! The result is incomplete: it is missing this file.
+#> ✖ cannot open the connection to
+#>   'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_schedule_crosswalk_2027.rds';
+#>   cannot open URL
+#>   'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_schedule_crosswalk_2027.rds':
+#>   HTTP status was '404 Not Found'
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
 # \donttest{
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
-#> Warning: cannot open URL 'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2027.rds': HTTP status was '404 Not Found'
-#> Warning: Failed to readRDS from <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2027.rds>
+#> Warning: Failed to read
+#> <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2027.rds>
+#> after 1 attempt.
+#> ! The result is incomplete: it is missing this file.
+#> ✖ cannot open the connection to
+#>   'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2027.rds';
+#>   cannot open URL
+#>   'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2027.rds':
+#>   HTTP status was '404 Not Found'
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
