@@ -315,17 +315,68 @@ pbp_from_url <- function(url, type) {
   df
 }
 
+# Read a release `.rds` asset, or its `.parquet` sibling when the season was
+# published as parquet only (MBB officials and game rosters 2003-2024; needs
+# arrow, whose absence parquet_from_url() reports).
+rds_or_parquet_from_url <- function(url) {
+  out <- suppressWarnings(rds_from_url(url))
+  if (ncol(out) == 0) out <- parquet_from_url(sub("\\.rds$", ".parquet", url))
+  out
+}
+
+# TRUE unless the release asset answers 404 (a network failure counts as TRUE,
+# so the loader goes on and reports the failed read as before).
+.release_asset_exists <- function(url) {
+  status <- tryCatch(
+    httr2::request(url) |>
+      httr2::req_method("HEAD") |>
+      httr2::req_timeout(15) |>
+      httr2::req_error(is_error = function(resp) FALSE) |>
+      httr2::req_perform() |>
+      httr2::resp_status(),
+    error = function(e) NA_integer_
+  )
+  !identical(as.integer(status), 404L)
+}
+
 # Validate `seasons` for a release loader against the seasons its release tag
 # publishes (`first`..`last` minus `gaps`, read off the release assets);
 # `seasons = TRUE` expands to every published season.
-.loader_seasons <- function(seasons, first, last, gaps = NULL, fn) {
+#
+# The newest season's file appears only once the release producer has run for
+# it (standings, crosswalks and the NCAA RAPM tags lag the season rollover).
+# When the loader was called with its default season (`default =
+# missing(seasons)`) and `url_for(last)` answers 404 (and, with `parquet =
+# TRUE`, so does its `.parquet` sibling), the loader falls back to the newest
+# published season with a message, as wehoop and fastRhockey do. An explicit
+# request for that season is kept as asked, so the read warns and returns an
+# empty frame.
+.loader_seasons <- function(seasons, first, last, gaps = NULL, fn, url_for = NULL,
+                            default = FALSE, parquet = FALSE) {
+  force(default)
+  last <- as.integer(last)
   avail <- setdiff(first:last, gaps)
-  if (isTRUE(seasons)) return(avail)
+  published <- function(s) {
+    .release_asset_exists(url_for(s)) ||
+      (parquet && .release_asset_exists(sub("\\.rds$", ".parquet", url_for(s))))
+  }
+  newest_missing <- local({
+    ans <- NULL
+    function() {
+      if (is.null(ans)) ans <<- !is.null(url_for) && last %in% avail && !published(last)
+      ans
+    }
+  })
+  if (isTRUE(seasons)) {
+    if (newest_missing()) avail <- setdiff(avail, last)
+    return(avail)
+  }
   if (!is.numeric(seasons) || length(seasons) == 0 || anyNA(seasons) || !all(seasons %in% avail)) {
-    brk <- c(0, which(diff(avail) != 1), length(avail))
+    shown <- if (newest_missing()) setdiff(avail, last) else avail
+    brk <- c(0, which(diff(shown) != 1), length(shown))
     ranges <- vapply(seq_len(length(brk) - 1), function(i) {
-      a <- avail[brk[i] + 1]
-      b <- avail[brk[i + 1]]
+      a <- shown[brk[i] + 1]
+      b <- shown[brk[i + 1]]
       if (a == b) as.character(a) else paste0(a, "-", b)
     }, character(1))
     cli::cli_abort(c(
@@ -333,6 +384,21 @@ pbp_from_url <- function(url, type) {
       "i" = "Published seasons: {paste(ranges, collapse = ', ')}.",
       "x" = "You requested: {paste(seasons, collapse = ', ')}."
     ))
+  }
+  if (isTRUE(default) && length(seasons) == 1 && seasons == last && newest_missing()) {
+    # Walk back to the newest season that is published: when two tags lag, the
+    # season before the default can be missing too. One HEAD per season tried.
+    prev <- NULL
+    for (s in rev(avail[avail < last])) {
+      if (published(s)) {
+        prev <- s
+        break
+      }
+    }
+    if (!is.null(prev)) {
+      cli::cli_inform(c("i" = "{.fn {fn}}: season {last} is not published yet; loading {prev} instead."))
+      seasons <- prev
+    }
   }
   seasons
 }

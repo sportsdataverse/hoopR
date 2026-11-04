@@ -108,11 +108,19 @@ only the seasons its release tag publishes (any other season is an error):
 \item \code{load_mbb_team_box()}, \code{load_mbb_player_box()}, \code{load_mbb_team_stats()},
 \code{load_mbb_standings()}, \code{load_mbb_player_core()}: 2003 onward.
 \item \code{load_mbb_schedule()}: 2002 onward.
-\item \code{load_mbb_game_rosters()}: 2002 and 2025 onward.
-\item \code{load_mbb_rosters()}, \code{load_mbb_player_stats()}, \code{load_mbb_officials()}: 2025 onward.
+\item \code{load_mbb_game_rosters()}: 2002 onward.
+\item \code{load_mbb_officials()}: 2003 onward, except 2010.
+\item \code{load_mbb_rosters()}, \code{load_mbb_player_stats()}: 2025 onward.
 }
 
-The upper bound is \code{\link[=most_recent_mbb_season]{most_recent_mbb_season()}}.}
+\code{load_mbb_game_rosters()} 2003-2024 and \code{load_mbb_officials()} 2003-2024
+are published as \code{.parquet} only and need the \pkg{arrow} package.
+The upper bound is \code{\link[=most_recent_mbb_season]{most_recent_mbb_season()}}. When \code{seasons} is left at
+its default and that season's file is not published yet, the loader reads
+the newest published season instead, with a message. An explicit request
+for that not-yet-published season is kept as asked: the read warns and
+returns an empty frame. A season outside the published range, or in a
+known gap, is an error.}
 
 \item{...}{Additional arguments passed to an underlying function that writes
 the season data into a database (used by \code{update_mbb_db()}).}

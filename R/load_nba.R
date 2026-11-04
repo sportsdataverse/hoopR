@@ -16,7 +16,12 @@ NULL
 #'   * `load_nba_draft()`: 2003 onward.
 #'   * `load_nba_rosters()`: 2025 onward.
 #'
-#'   The upper bound is [most_recent_nba_season()].
+#'   The upper bound is [most_recent_nba_season()]. When `seasons` is left at
+#'   its default and that season's file is not published yet, the loader reads
+#'   the newest published season instead, with a message. An explicit request
+#'   for that not-yet-published season is kept as asked: the read warns and
+#'   returns an empty frame. A season outside the published range, or in a
+#'   known gap, is an error.
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
@@ -111,9 +116,11 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(), ...,
 
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_pbp")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_pbp/play_by_play_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_pbp", url_for = url_for, default = missing(seasons), parquet = TRUE)
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_pbp/play_by_play_", seasons)
+  # pbp_from_url() appends .parquet or .rds itself
+  urls <- sub("\\.rds$", "", url_for(seasons))
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -155,9 +162,10 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_team_box")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_boxscores/team_box_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_team_box", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_boxscores/team_box_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -199,9 +207,10 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_player_box")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_boxscores/player_box_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_player_box", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_boxscores/player_box_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -313,9 +322,10 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_schedule")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_schedules/nba_schedule_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_schedule", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_schedules/nba_schedule_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -533,9 +543,10 @@ load_nba_standings <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_standings")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_standings/standings_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_standings", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_standings/standings_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -570,9 +581,10 @@ load_nba_game_rosters <- function(seasons = most_recent_nba_season(), ...,
   loader <- function(url) .ids_as_integer(rds_from_url(url), c("game_id", "team_id", "athlete_id"))
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_game_rosters")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_game_rosters/game_rosters_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_game_rosters", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_game_rosters/game_rosters_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -607,9 +619,10 @@ load_nba_officials <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_officials")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_officials/officials_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_officials", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_officials/officials_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -644,9 +657,10 @@ load_nba_draft <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2003, most_recent_nba_season(), fn = "load_nba_draft")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_draft/draft_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2003, most_recent_nba_season(), fn = "load_nba_draft", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_draft/draft_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -681,9 +695,10 @@ load_nba_player_stats <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_player_stats")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_season_stats/player_season_stats_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_player_stats", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_season_stats/player_season_stats_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -718,9 +733,10 @@ load_nba_team_stats <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_team_stats")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_season_stats/team_season_stats_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_team_stats", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_season_stats/team_season_stats_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -756,9 +772,10 @@ load_nba_rosters <- function(seasons = most_recent_nba_season(), ...,
   loader <- function(url) .ids_as_integer(rds_from_url(url), c("team_id", "athlete_id"))
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2025, most_recent_nba_season(), fn = "load_nba_rosters")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_rosters/rosters_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2025, most_recent_nba_season(), fn = "load_nba_rosters", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_rosters/rosters_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -808,9 +825,10 @@ load_nba_player_core <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_player_core")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_core/player_core_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_player_core", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_player_core/player_core_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -877,9 +895,10 @@ load_nba_shots <- function(seasons = most_recent_nba_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_shots")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_shots/shots_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_shots", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_shots/shots_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)

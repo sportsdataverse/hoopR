@@ -1,5 +1,6 @@
 #' @keywords internal
-.load_nba_crosswalk <- function(seasons, tag, prefix, first = 2002, last = most_recent_nba_season()) {
+.load_nba_crosswalk <- function(seasons, tag, prefix, first = 2002, last = most_recent_nba_season(),
+                                default = FALSE) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
@@ -12,12 +13,14 @@
     ))
   }
 
-  seasons <- .loader_seasons(seasons, first, last, fn = paste0("load_", prefix))
-
-  urls <- paste0(
+  url_for <- function(seasons) paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/",
     tag, "/", prefix, "_", seasons, ".rds"
   )
+  seasons <- .loader_seasons(seasons, first, last, fn = paste0("load_", prefix),
+                             url_for = url_for, default = default)
+
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -65,7 +68,12 @@ NULL
 #'   season. Accepted seasons are the ones the release publishes: 2002 onward for
 #'   the NBA crosswalks and `load_mbb_team_crosswalk()`, 2008 onward for
 #'   `load_mbb_schedule_crosswalk()`, 2025 onward for `load_mbb_player_crosswalk()`;
-#'   the upper bound is [most_recent_nba_season()] / [most_recent_mbb_season()].
+#'   the upper bound is [most_recent_nba_season()] / [most_recent_mbb_season()]. When `seasons` is left at
+#'   its default and that season's file is not published yet, the loader reads
+#'   the newest published season instead, with a message. An explicit request
+#'   for that not-yet-published season is kept as asked: the read warns and
+#'   returns an empty frame. A season outside the published range, or in a
+#'   known gap, is an error.
 #'   ESPN ids (`espn_game_id`, `espn_athlete_id`, `espn_team_id`) are returned as
 #'   integer, matching the ESPN box score, schedule and roster loaders.
 #' @return Returns a tibble of class \code{hoopR_data} with one row per
@@ -78,7 +86,7 @@ NULL
 #' load_nba_team_crosswalk(seasons = most_recent_nba_season())
 #' }
 load_nba_team_crosswalk <- function(seasons = most_recent_nba_season()) {
-  .load_nba_crosswalk(seasons, tag = "nba_crosswalk", prefix = "nba_team_crosswalk")
+  .load_nba_crosswalk(seasons, tag = "nba_crosswalk", prefix = "nba_team_crosswalk", default = missing(seasons))
 }
 
 
@@ -99,7 +107,7 @@ load_nba_team_crosswalk <- function(seasons = most_recent_nba_season()) {
 #' load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #' }
 load_nba_schedule_crosswalk <- function(seasons = most_recent_nba_season()) {
-  .load_nba_crosswalk(seasons, tag = "nba_crosswalk", prefix = "nba_schedule_crosswalk")
+  .load_nba_crosswalk(seasons, tag = "nba_crosswalk", prefix = "nba_schedule_crosswalk", default = missing(seasons))
 }
 
 
@@ -120,7 +128,7 @@ load_nba_schedule_crosswalk <- function(seasons = most_recent_nba_season()) {
 #' load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #' }
 load_nba_player_crosswalk <- function(seasons = most_recent_nba_season()) {
-  .load_nba_crosswalk(seasons, tag = "nba_crosswalk", prefix = "nba_player_crosswalk")
+  .load_nba_crosswalk(seasons, tag = "nba_crosswalk", prefix = "nba_player_crosswalk", default = missing(seasons))
 }
 
 
@@ -141,7 +149,7 @@ load_nba_player_crosswalk <- function(seasons = most_recent_nba_season()) {
 #' load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 #' }
 load_mbb_team_crosswalk <- function(seasons = most_recent_mbb_season()) {
-  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_team_crosswalk", last = most_recent_mbb_season())
+  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_team_crosswalk", last = most_recent_mbb_season(), default = missing(seasons))
 }
 
 
@@ -162,7 +170,7 @@ load_mbb_team_crosswalk <- function(seasons = most_recent_mbb_season()) {
 #' load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 #' }
 load_mbb_schedule_crosswalk <- function(seasons = most_recent_mbb_season()) {
-  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_schedule_crosswalk", first = 2008, last = most_recent_mbb_season())
+  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_schedule_crosswalk", first = 2008, last = most_recent_mbb_season(), default = missing(seasons))
 }
 
 
@@ -183,5 +191,5 @@ load_mbb_schedule_crosswalk <- function(seasons = most_recent_mbb_season()) {
 #' load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #' }
 load_mbb_player_crosswalk <- function(seasons = most_recent_mbb_season()) {
-  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_player_crosswalk", first = 2025, last = most_recent_mbb_season())
+  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_player_crosswalk", first = 2025, last = most_recent_mbb_season(), default = missing(seasons))
 }
