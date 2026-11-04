@@ -75,6 +75,20 @@
 
 ### **Behavior changes**
 
+* The ESPN release loaders, the NBA and MBB crosswalk loaders and
+  `load_ncaa_mbb_rapm()` / `load_ncaa_mbb_rapm_within_team()` no longer return an
+  empty table when called with their default season before that season is
+  published. The default, `most_recent_*_season()`, rolls over before every
+  release tag has its file (on 2026-11-04 the standings, MBB crosswalk and NCAA
+  RAPM tags stopped at 2026); the loader now checks that the file exists and,
+  if not, reads the newest published season with a message, as wehoop and
+  fastRhockey do. An explicit request for an unpublished season is kept as
+  asked (#261).
+* `load_mbb_officials()` accepts 2003-2024 (except 2010) and
+  `load_mbb_game_rosters()` 2003-2024: those seasons are published, as
+  `.parquet` only, and were refused by the loader floors. They need the
+  `arrow` package. The NBA crosswalk floors were already 2002, as
+  published (#261, mirroring sportsdataverse-py#1091).
 * `update_mbb_db()`, `update_nba_db()` and `update_nba_stats_db()` no longer write to the
   working directory by default. `dbdir` now defaults to the per-user data directory
   `tools::R_user_dir("hoopR", "data")` (created on first use, with a message naming it).

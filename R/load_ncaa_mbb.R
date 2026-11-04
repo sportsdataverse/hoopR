@@ -622,7 +622,8 @@ load_ncaa_mbb_possessions <- function(seasons = most_recent_mbb_season(),
 #'   sportsdataverse-py `ncaa_mbb` engine's RAPM model on top of the reconstructed
 #'   lineup/possession data; backed by the `ncaa-mbb-hoops-data` pipeline,
 #'   published to the `ncaa_mbb_rapm_within_team` release tag as
-#'   csv.gz/parquet/rds.
+#'   csv.gz/parquet/rds. The default season falls back to the newest published
+#'   one, with a message, until its file is published.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
@@ -661,16 +662,14 @@ load_ncaa_mbb_rapm_within_team <- function(seasons = most_recent_mbb_season(),
   loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
-
-  stopifnot(is.numeric(seasons),
-            all(seasons >= 2010),
-            all(seasons <= most_recent_mbb_season()))
-
-  urls <- paste0(
+  url_for <- function(seasons) paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/",
     "ncaa_mbb_rapm_within_team/ncaa_mbb_rapm_within_team_", seasons, ".rds"
   )
+  seasons <- .loader_seasons(seasons, 2010, most_recent_mbb_season(),
+                             fn = "load_ncaa_mbb_rapm_within_team", url_for = url_for,
+                             default = missing(seasons))
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -702,7 +701,8 @@ load_ncaa_mbb_rapm_within_team <- function(seasons = most_recent_mbb_season(),
 #' @details League-wide regularized adjusted plus-minus -- a single ridge
 #'   fit over all Division I stints per season, distinct from
 #'   [load_ncaa_mbb_rapm_within_team()]'s within-team fit. Published
-#'   coverage runs seasons 2011 through 2026.
+#'   coverage runs seasons 2011 through 2026. The default season falls back to
+#'   the newest published one, with a message, until its file is published.
 #' @param ... Additional arguments passed to an underlying function that writes
 #'   the season data into a database.
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
@@ -741,16 +741,14 @@ load_ncaa_mbb_rapm <- function(seasons = most_recent_mbb_season(),
   loader <- .ncaa_mbb_rds
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  if (isTRUE(seasons)) seasons <- 2011:most_recent_mbb_season()
-
-  stopifnot(is.numeric(seasons),
-            all(seasons >= 2011),
-            all(seasons <= most_recent_mbb_season()))
-
-  urls <- paste0(
+  url_for <- function(seasons) paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/",
     "ncaa_mbb_rapm/ncaa_mbb_rapm_", seasons, ".rds"
   )
+  seasons <- .loader_seasons(seasons, 2011, most_recent_mbb_season(),
+                             fn = "load_ncaa_mbb_rapm", url_for = url_for,
+                             default = missing(seasons))
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)

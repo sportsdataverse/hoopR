@@ -19,6 +19,12 @@
 test_that("loader floors match the first season each release publishes", {
   env <- new.env()
   local_mocked_bindings(rds_from_url = .mock_rds(env))
+  # every season up to most_recent_*_season() counts as published here
+  local_mocked_bindings(.release_asset_exists = function(url) TRUE)
+  local_mocked_bindings(parquet_from_url = function(url) {
+    env$parquet <- c(env$parquet, url)
+    data.table::data.table()
+  })
   local_mocked_bindings(pbp_from_url = function(url, type) {
     env$urls <- c(env$urls, url)
     data.table::data.table()
@@ -30,14 +36,23 @@ test_that("loader floors match the first season each release publishes", {
   # 2004-2005 MBB pbp/shots were never published
   expect_error(load_mbb_pbp(seasons = 2004), "Published seasons: 2003, 2006-")
   expect_error(load_mbb_shots(seasons = 2005), "Published seasons: 2003, 2006-")
-  # rosters / officials / player season stats only exist from 2025
+  # rosters / player season stats only exist from 2025; officials from 2003 (no
+  # 2010) and game rosters from 2002, as .parquet before 2025
   expect_error(load_mbb_rosters(seasons = 2024), "Published seasons: 2025-")
-  expect_error(load_mbb_officials(seasons = 2002), "Published seasons: 2025-")
+  expect_error(load_mbb_officials(seasons = 2002), "Published seasons: 2003-2009, 2011-")
+  expect_error(load_mbb_officials(seasons = 2010), "Published seasons: 2003-2009, 2011-")
   expect_error(load_mbb_player_stats(seasons = 2010), "Published seasons: 2025-")
   expect_error(load_nba_rosters(seasons = 2024), "Published seasons: 2025-")
   expect_error(load_mbb_team_stats(seasons = 2002), "Published seasons: 2003-")
   expect_error(load_mbb_standings(seasons = 2002), "Published seasons: 2003-")
-  expect_error(load_mbb_game_rosters(seasons = 2010), "Published seasons: 2002, 2025-")
+  env$urls <- NULL
+  env$parquet <- NULL
+  expect_no_error(load_mbb_game_rosters(seasons = 2010))
+  expect_no_error(load_mbb_officials(seasons = 2003))
+  expect_match(env$urls, "(game_rosters_2010|officials_2003)[.]rds$")
+  # the 2003-2024 seasons are parquet-only: the .rds miss reads the sibling
+  expect_match(env$parquet, "(game_rosters_2010|officials_2003)[.]parquet$")
+  expect_error(load_mbb_game_rosters(seasons = 2001), "Published seasons: 2002-")
   expect_error(load_mbb_schedule_crosswalk(seasons = 2007), "Published seasons: 2008-")
   expect_error(load_mbb_player_crosswalk(seasons = 2024), "Published seasons: 2025-")
   expect_error(load_mbb_pbp(seasons = "2025"))
@@ -55,7 +70,7 @@ test_that("loader floors match the first season each release publishes", {
   load_mbb_officials(seasons = TRUE)
   expect_identical(
     sub(".*officials_([0-9]+)[.]rds$", "\\1", env$urls),
-    as.character(2025:most_recent_mbb_season())
+    as.character(setdiff(2003:most_recent_mbb_season(), 2010))
   )
   env$urls <- NULL
   load_mbb_pbp(seasons = TRUE)

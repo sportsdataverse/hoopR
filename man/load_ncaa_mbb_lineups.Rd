@@ -792,7 +792,8 @@ team's own possessions (not a cross-team national RAPM). Produced by the
 sportsdataverse-py \code{ncaa_mbb} engine's RAPM model on top of the reconstructed
 lineup/possession data; backed by the \code{ncaa-mbb-hoops-data} pipeline,
 published to the \code{ncaa_mbb_rapm_within_team} release tag as
-csv.gz/parquet/rds.
+csv.gz/parquet/rds. The default season falls back to the newest published
+one, with a message, until its file is published.
 
 Loads league-wide regularized adjusted plus-minus (RAPM)
 ratings for NCAA men's college basketball -- one row per
@@ -852,7 +853,8 @@ published to the \code{ncaa_mbb_team_ids} release tag as csv.gz/parquet/rds.
 League-wide regularized adjusted plus-minus -- a single ridge
 fit over all Division I stints per season, distinct from
 \code{\link[=load_ncaa_mbb_rapm_within_team]{load_ncaa_mbb_rapm_within_team()}}'s within-team fit. Published
-coverage runs seasons 2011 through 2026.
+coverage runs seasons 2011 through 2026. The default season falls back to
+the newest published one, with a message, until its file is published.
 }
 \examples{
 \donttest{

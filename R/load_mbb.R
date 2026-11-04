@@ -13,10 +13,17 @@ NULL
 #'   * `load_mbb_team_box()`, `load_mbb_player_box()`, `load_mbb_team_stats()`,
 #'     `load_mbb_standings()`, `load_mbb_player_core()`: 2003 onward.
 #'   * `load_mbb_schedule()`: 2002 onward.
-#'   * `load_mbb_game_rosters()`: 2002 and 2025 onward.
-#'   * `load_mbb_rosters()`, `load_mbb_player_stats()`, `load_mbb_officials()`: 2025 onward.
+#'   * `load_mbb_game_rosters()`: 2002 onward.
+#'   * `load_mbb_officials()`: 2003 onward, except 2010.
+#'   * `load_mbb_rosters()`, `load_mbb_player_stats()`: 2025 onward.
 #'
-#'   The upper bound is [most_recent_mbb_season()].
+#'   `load_mbb_game_rosters()` 2003-2024 and `load_mbb_officials()` 2003-2024
+#'   are published as `.parquet` only and need the \pkg{arrow} package.
+#'   The upper bound is [most_recent_mbb_season()]. When `seasons` is left at
+#'   its default and that season's file is not published yet, the loader reads
+#'   the newest published season instead, with a message. An explicit request
+#'   for an unpublished season is kept as asked: the read warns and returns an
+#'   empty frame.
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @param dbConnection A `DBIConnection` object, as returned by
@@ -114,12 +121,14 @@ load_mbb_pbp <- function(
     in_db <- FALSE
   }
 
-  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), gaps = 2004:2005, fn = "load_mbb_pbp")
-
-  urls <- paste0(
+  url_for <- function(seasons) paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_pbp/play_by_play_",
-    seasons
+    seasons, ".rds"
   )
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), gaps = 2004:2005, fn = "load_mbb_pbp", url_for = url_for, default = missing(seasons), parquet = TRUE)
+
+  # pbp_from_url() appends .parquet or .rds itself
+  urls <- sub("\\.rds$", "", url_for(seasons))
 
   p <- NULL
   if (is_installed("progressr")) {
@@ -210,13 +219,14 @@ load_mbb_team_box <- function(
   } else {
     in_db <- FALSE
   }
-  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_team_box")
-
-  urls <- paste0(
+  url_for <- function(seasons) paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_team_boxscores/team_box_",
     seasons,
     ".rds"
   )
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_team_box", url_for = url_for, default = missing(seasons))
+
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) {
@@ -265,13 +275,14 @@ load_mbb_player_box <- function(
   } else {
     in_db <- FALSE
   }
-  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_player_box")
-
-  urls <- paste0(
+  url_for <- function(seasons) paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_boxscores/player_box_",
     seasons,
     ".rds"
   )
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_player_box", url_for = url_for, default = missing(seasons))
+
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) {
@@ -397,13 +408,14 @@ load_mbb_schedule <- function(
   } else {
     in_db <- FALSE
   }
-  seasons <- .loader_seasons(seasons, 2002, most_recent_mbb_season(), fn = "load_mbb_schedule")
-
-  urls <- paste0(
+  url_for <- function(seasons) paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_schedules/mbb_schedule_",
     seasons,
     ".rds"
   )
+  seasons <- .loader_seasons(seasons, 2002, most_recent_mbb_season(), fn = "load_mbb_schedule", url_for = url_for, default = missing(seasons))
+
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) {
@@ -678,9 +690,10 @@ load_mbb_rosters <- function(seasons = most_recent_mbb_season(), ...,
   loader <- function(url) .ids_as_integer(rds_from_url(url), c("team_id", "athlete_id"))
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2025, most_recent_mbb_season(), fn = "load_mbb_rosters")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_rosters/rosters_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2025, most_recent_mbb_season(), fn = "load_mbb_rosters", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_rosters/rosters_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -714,9 +727,10 @@ load_mbb_player_stats <- function(seasons = most_recent_mbb_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2025, most_recent_mbb_season(), fn = "load_mbb_player_stats")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_season_stats/player_season_stats_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2025, most_recent_mbb_season(), fn = "load_mbb_player_stats", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_season_stats/player_season_stats_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -750,9 +764,10 @@ load_mbb_team_stats <- function(seasons = most_recent_mbb_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_team_stats")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_team_season_stats/team_season_stats_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_team_stats", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_team_season_stats/team_season_stats_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -786,9 +801,10 @@ load_mbb_standings <- function(seasons = most_recent_mbb_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_standings")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_standings/standings_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_standings", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_standings/standings_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -819,12 +835,13 @@ load_mbb_game_rosters <- function(seasons = most_recent_mbb_season(), ...,
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  loader <- function(url) .ids_as_integer(rds_from_url(url), c("game_id", "team_id", "athlete_id"))
+  loader <- function(url) .ids_as_integer(rds_or_parquet_from_url(url), c("game_id", "team_id", "athlete_id"))
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2002, most_recent_mbb_season(), gaps = 2003:2024, fn = "load_mbb_game_rosters")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_game_rosters/game_rosters_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2002, most_recent_mbb_season(), fn = "load_mbb_game_rosters", url_for = url_for, default = missing(seasons), parquet = TRUE)
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_game_rosters/game_rosters_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -855,12 +872,13 @@ load_mbb_officials <- function(seasons = most_recent_mbb_season(), ...,
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  loader <- rds_from_url
+  loader <- rds_or_parquet_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2025, most_recent_mbb_season(), fn = "load_mbb_officials")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_officials/officials_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), gaps = 2010, fn = "load_mbb_officials", url_for = url_for, default = missing(seasons), parquet = TRUE)
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_officials/officials_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -910,9 +928,10 @@ load_mbb_player_core <- function(seasons = most_recent_mbb_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_player_core")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_core/player_core_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_player_core", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_core/player_core_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
@@ -982,9 +1001,10 @@ load_mbb_shots <- function(seasons = most_recent_mbb_season(), ...,
   loader <- rds_from_url
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
-  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), gaps = 2004:2005, fn = "load_mbb_shots")
+  url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_shots/shots_", seasons, ".rds")
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), gaps = 2004:2005, fn = "load_mbb_shots", url_for = url_for, default = missing(seasons))
 
-  urls <- paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_shots/shots_", seasons, ".rds")
+  urls <- url_for(seasons)
 
   p <- NULL
   if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
