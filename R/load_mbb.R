@@ -424,7 +424,7 @@ load_mbb_schedule <- function(
 # load games file
 load_mbb_games <- function() {
   .url <- "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/mbb/mbb_games_in_data_repo.csv"
-  dat <- hoopR::csv_from_url(.url)
+  dat <- .release_csv_from_url(.url)
   # close(con)
   return(dat)
 }

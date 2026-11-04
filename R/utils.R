@@ -164,6 +164,18 @@ csv_from_url <- function(...) {
 
 
 
+# Read a sportsdataverse release / data-repo csv through `.read_release_asset()`
+# (raised timeout, retries). Live third-party csv endpoints keep calling
+# `csv_from_url()` directly. These are single files (games index, manifests),
+# so when every try fails the last error is raised, as before, after the
+# warning that names the url.
+.release_csv_from_url <- function(url, ...) {
+  # `file =` so fread() never takes a url with spaces for a shell command.
+  load <- .read_release_asset(url, function(u) csv_from_url(file = u, ...))
+  if (inherits(load, "try-error")) stop(attr(load, "condition"))
+  load
+}
+
 #' @title
 #' **Load .rds file from a remote connection**
 #' @param url a character url

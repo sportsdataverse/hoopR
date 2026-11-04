@@ -334,7 +334,7 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
 # load games file
 load_nba_games <- function() {
   .url <- "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/nba/nba_games_in_data_repo.csv"
-  dat <- csv_from_url(.url)
+  dat <- .release_csv_from_url(.url)
   return(dat)
 }
 
