@@ -198,14 +198,12 @@ parquet_from_url <- function(url) {
   }
   tmp <- tempfile(fileext = ".parquet")
   on.exit(unlink(tmp), add = TRUE)
-  dl <- .read_release_asset(url, function(u) .download_url(u, tmp))
-  if (inherits(dl, "try-error")) return(data.table::data.table())
-
-  load <- try(arrow::read_parquet(tmp), silent = TRUE)
-  if (inherits(load, "try-error")) {
-    warning(paste0("Failed to read_parquet from <", url, ">"), call. = FALSE)
-    return(data.table::data.table())
-  }
+  # The parquet read is inside the retry: a truncated download fails to parse.
+  load <- .read_release_asset(url, function(u) {
+    .download_url(u, tmp)
+    arrow::read_parquet(tmp)
+  })
+  if (inherits(load, "try-error")) return(data.table::data.table())
 
   data.table::setDT(load)
   return(load)
@@ -256,7 +254,8 @@ parquet_from_url <- function(url) {
 }
 
 .download_url <- function(url, dest) {
-  utils::download.file(url, dest, mode = "wb", quiet = TRUE)
+  status <- utils::download.file(url, dest, mode = "wb", quiet = TRUE)
+  if (status != 0L) stop("Download failed with status ", status, ".", call. = FALSE)
   if (!file.exists(dest) || file.size(dest) == 0) stop("Downloaded an empty file.", call. = FALSE)
   invisible(dest)
 }

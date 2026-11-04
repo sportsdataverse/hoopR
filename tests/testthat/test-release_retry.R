@@ -75,14 +75,14 @@ test_that("a loader keeps the seasons that load and names the one that failed", 
   expect_equal(getOption("timeout"), 60)
 })
 
-test_that("parquet_from_url retries a failed download", {
+test_that("parquet_from_url retries a download that does not parse", {
   skip_if_not_installed("arrow")
   src <- withr::local_tempfile(fileext = ".parquet")
   arrow::write_parquet(data.frame(x = 1:2), src)
   calls <- 0L
   local_mocked_bindings(.download_url = function(url, dest) {
     calls <<- calls + 1L
-    if (calls == 1L) stop("Timeout of 60 seconds was reached")
+    if (calls == 1L) return(writeBin(charToRaw("truncated"), dest))
     file.copy(src, dest, overwrite = TRUE)
   })
   expect_no_warning(out <- parquet_from_url("https://x/a.parquet"))
