@@ -304,6 +304,12 @@
   2021: those files quote one header, `fread()` warns while fixing it, and
   the warning discarded the season. That warning is no longer fatal.
 
+* `torvik_player_stats()` returned columns named `v1`, `v2`, ... instead of
+  `player_name`, `team`, `o_rtg` and the rest. barttorvik's player csv now
+  has 78 fields: 11 undocumented ones follow the 67 that hoopR names. The 67
+  keep their names, and the new fields come back as `v68` to `v78`. The live
+  Torvik tests now run only with `TORVIK_TESTS=1`.
+
 * The KenPom team-page functions (`kp_team_schedule()`, `kp_gameplan()`,
   `kp_opptracker()`, `kp_team_players()`, `kp_minutes_matrix()`,
   `kp_team_player_stats()`, `kp_team_depth_chart()`, `kp_team_lineups()`) and
@@ -392,6 +398,8 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   twice. A 404 is not retried. If a file still fails, the warning names its
   URL and says the result is incomplete; the seasons that loaded are still
   returned.
+  The games-index csv files behind `update_mbb_db()` and `update_nba_db()`
+  are now read the same way.
 
 ### **Dependencies**
 
