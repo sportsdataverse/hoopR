@@ -13,6 +13,9 @@
 #' Since November 2026 the file has 78 fields: barttorvik appended 11
 #' undocumented fields after the original 67. Those 67 keep their names; any
 #' field after them is returned under its position, `v68` to `v78`.
+#' A file with fewer than 67 fields (2008 and 2009 skip the play-by-play
+#' fields) keeps positional names for every column (`v1`, `v2`, ...), since
+#' the documented names cannot be placed reliably.
 #' @param year (*integer* required): Season, in 4-digit ending-year format
 #'   (e.g. `2024`). Defaults to `most_recent_mbb_season()`.
 #' @return A `hoopR_data` tibble with one row per player (key columns shown):

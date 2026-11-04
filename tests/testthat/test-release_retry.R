@@ -129,11 +129,11 @@ test_that("parquet_from_url returns an empty table when the download keeps faili
 test_that("a release csv read is retried and passes its arguments on", {
   withr::local_options(timeout = 60)
   calls <- 0L
-  local_mocked_bindings(csv_from_url = function(url, ...) {
+  local_mocked_bindings(csv_from_url = function(file, ...) {
     calls <<- calls + 1L
     expect_equal(getOption("timeout"), 150)
     if (calls == 1L) stop("Timeout of 60 seconds was reached")
-    data.table::data.table(url = url, ...)
+    data.table::data.table(url = file, ...)
   })
   expect_no_warning(out <- load_nba_games())
   expect_equal(calls, 2L)
@@ -144,7 +144,7 @@ test_that("a release csv read is retried and passes its arguments on", {
 
 test_that("a release csv that keeps failing warns with the url, then raises", {
   calls <- 0L
-  local_mocked_bindings(csv_from_url = function(url, ...) {
+  local_mocked_bindings(csv_from_url = function(file, ...) {
     calls <<- calls + 1L
     stop("Timeout of 150 seconds was reached")
   })

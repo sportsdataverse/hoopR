@@ -68,6 +68,9 @@ from Bart Torvik's standard player advanced-stats layout (consistent from
 Since November 2026 the file has 78 fields: barttorvik appended 11
 undocumented fields after the original 67. Those 67 keep their names; any
 field after them is returned under its position, \code{v68} to \code{v78}.
+A file with fewer than 67 fields (2008 and 2009 skip the play-by-play
+fields) keeps positional names for every column (\code{v1}, \code{v2}, ...), since
+the documented names cannot be placed reliably.
 }
 \examples{
 \donttest{

@@ -170,7 +170,8 @@ csv_from_url <- function(...) {
 # so when every try fails the last error is raised, as before, after the
 # warning that names the url.
 .release_csv_from_url <- function(url, ...) {
-  load <- .read_release_asset(url, function(u) csv_from_url(u, ...))
+  # `file =` so fread() never takes a url with spaces for a shell command.
+  load <- .read_release_asset(url, function(u) csv_from_url(file = u, ...))
   if (inherits(load, "try-error")) stop(attr(load, "condition"))
   load
 }
