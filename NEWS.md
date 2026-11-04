@@ -403,6 +403,8 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
 
 ### **Dependencies**
 
+* data.table must now be 1.15.0 or later (was 1.14.0): the release csv reads pass
+  the url as `fread(file =)`, which downloads urls only from 1.15.0 on.
 * Imports trimmed so `R CMD check` no longer notes too many non-default packages.
   glmnet and Matrix moved to Suggests: `nba_rapm()` now needs them installed (it says so
   with an install prompt if they are missing). stringdist moved to Suggests: the live
