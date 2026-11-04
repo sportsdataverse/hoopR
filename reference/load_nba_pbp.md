@@ -190,6 +190,11 @@ load_nba_shots(
 
   The upper bound is
   [`most_recent_nba_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.md).
+  When `seasons` is left at its default and that season's file is not
+  published yet, the loader reads the newest published season instead,
+  with a message. An explicit request for that not-yet-published season
+  is kept as asked: the read warns and returns an empty frame. A season
+  outside the published range, or in a known gap, is an error.
 
 - ...:
 

@@ -213,7 +213,12 @@ sportsdataverse-data repository.</p>
 season. Accepted seasons are the ones the release publishes: 2002 onward for
 the NBA crosswalks and <code>load_mbb_team_crosswalk()</code>, 2008 onward for
 <code>load_mbb_schedule_crosswalk()</code>, 2025 onward for <code>load_mbb_player_crosswalk()</code>;
-the upper bound is <code><a href="most_recent_nba_season.html">most_recent_nba_season()</a></code> / <code><a href="most_recent_mbb_season.html">most_recent_mbb_season()</a></code>.
+the upper bound is <code><a href="most_recent_nba_season.html">most_recent_nba_season()</a></code> / <code><a href="most_recent_mbb_season.html">most_recent_mbb_season()</a></code>. When <code>seasons</code> is left at
+its default and that season's file is not published yet, the loader reads
+the newest published season instead, with a message. An explicit request
+for that not-yet-published season is kept as asked: the read warns and
+returns an empty frame. A season outside the published range, or in a
+known gap, is an error.
 ESPN ids (<code>espn_game_id</code>, <code>espn_athlete_id</code>, <code>espn_team_id</code>) are returned as
 integer, matching the ESPN box score, schedule and roster loaders.</p></dd>
 

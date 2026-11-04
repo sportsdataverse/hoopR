@@ -126,7 +126,7 @@ Other ABA Functions:
 # \donttest{
   try(aba_calendar(season = 2026))
 #> ── ABA League Calendar ────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 07:31:08 UTC
+#> ℹ Data updated: 2026-11-04 10:10:21 UTC
 #> # A tibble: 248 × 20
 #>    game_no season league_id league season_label  round group home_team away_team
 #>      <int>  <int>     <int> <chr>  <chr>         <chr> <chr> <chr>     <chr>    

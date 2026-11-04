@@ -358,9 +358,17 @@ only the seasons its release tag publishes (any other season is an error):</p><u
 <li><p><code>load_mbb_team_box()</code>, <code>load_mbb_player_box()</code>, <code>load_mbb_team_stats()</code>,
 <code>load_mbb_standings()</code>, <code>load_mbb_player_core()</code>: 2003 onward.</p></li>
 <li><p><code>load_mbb_schedule()</code>: 2002 onward.</p></li>
-<li><p><code>load_mbb_game_rosters()</code>: 2002 and 2025 onward.</p></li>
-<li><p><code>load_mbb_rosters()</code>, <code>load_mbb_player_stats()</code>, <code>load_mbb_officials()</code>: 2025 onward.</p></li>
-</ul><p>The upper bound is <code><a href="most_recent_mbb_season.html">most_recent_mbb_season()</a></code>.</p></dd>
+<li><p><code>load_mbb_game_rosters()</code>: 2002 onward.</p></li>
+<li><p><code>load_mbb_officials()</code>: 2003 onward, except 2010.</p></li>
+<li><p><code>load_mbb_rosters()</code>, <code>load_mbb_player_stats()</code>: 2025 onward.</p></li>
+</ul><p><code>load_mbb_game_rosters()</code> 2003-2024 and <code>load_mbb_officials()</code> 2003-2024
+are published as <code>.parquet</code> only and need the <span class="pkg">arrow</span> package.
+The upper bound is <code><a href="most_recent_mbb_season.html">most_recent_mbb_season()</a></code>. When <code>seasons</code> is left at
+its default and that season's file is not published yet, the loader reads
+the newest published season instead, with a message. An explicit request
+for that not-yet-published season is kept as asked: the read warns and
+returns an empty frame. A season outside the published range, or in a
+known gap, is an error.</p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>

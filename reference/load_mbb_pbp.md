@@ -174,13 +174,21 @@ load_mbb_shots(
 
   - `load_mbb_schedule()`: 2002 onward.
 
-  - `load_mbb_game_rosters()`: 2002 and 2025 onward.
+  - `load_mbb_game_rosters()`: 2002 onward.
 
-  - `load_mbb_rosters()`, `load_mbb_player_stats()`,
-    `load_mbb_officials()`: 2025 onward.
+  - `load_mbb_officials()`: 2003 onward, except 2010.
 
+  - `load_mbb_rosters()`, `load_mbb_player_stats()`: 2025 onward.
+
+  `load_mbb_game_rosters()` 2003-2024 and `load_mbb_officials()`
+  2003-2024 are published as `.parquet` only and need the arrow package.
   The upper bound is
   [`most_recent_mbb_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_mbb_season.md).
+  When `seasons` is left at its default and that season's file is not
+  published yet, the loader reads the newest published season instead,
+  with a message. An explicit request for that not-yet-published season
+  is kept as asked: the read warns and returns an empty frame. A season
+  outside the published range, or in a known gap, is an error.
 
 - ...:
 

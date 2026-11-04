@@ -122,7 +122,7 @@ Other Euroleague:
     box[box$row_type == "player", c("team", "player", "minutes", "points", "valuation")]
   })
 #> ── EuroLeague game box score from live.euroleague.net ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 07:34:14 UTC
+#> ℹ Data updated: 2026-11-04 10:13:47 UTC
 #> # A tibble: 24 × 5
 #>    team  player                minutes points valuation
 #>    <chr> <chr>                 <chr>    <int>     <int>

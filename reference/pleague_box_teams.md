@@ -89,7 +89,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   try(pleague_box_teams(gid = 197))
 #> ── P. LEAGUE+ Team Box from pleagueofficial.com ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 07:37:50 UTC
+#> ℹ Data updated: 2026-11-04 10:17:26 UTC
 #> # A tibble: 2 × 23
 #>     gid side  minutes seconds points fg2_made fg2_att fg2_pct fg3_made fg3_att
 #>   <int> <chr> <chr>     <int>  <int>    <int>   <int>   <dbl>    <int>   <int>

@@ -109,7 +109,7 @@ Other KZS Functions:
 # \donttest{
   try(kzs_seasons())
 #> ── KZS Seasons from api.kzs.si ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 07:35:55 UTC
+#> ℹ Data updated: 2026-11-04 10:15:29 UTC
 #> # A tibble: 39 × 5
 #>    season_id name      is_active active season
 #>        <int> <chr>     <lgl>     <lgl>   <int>

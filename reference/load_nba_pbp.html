@@ -382,7 +382,12 @@ release tag publishes (any other season is an error):</p><ul><li><p><code>load_n
 <code>load_nba_standings()</code>, <code>load_nba_game_rosters()</code>, <code>load_nba_officials()</code>: 2002 onward.</p></li>
 <li><p><code>load_nba_draft()</code>: 2003 onward.</p></li>
 <li><p><code>load_nba_rosters()</code>: 2025 onward.</p></li>
-</ul><p>The upper bound is <code><a href="most_recent_nba_season.html">most_recent_nba_season()</a></code>.</p></dd>
+</ul><p>The upper bound is <code><a href="most_recent_nba_season.html">most_recent_nba_season()</a></code>. When <code>seasons</code> is left at
+its default and that season's file is not published yet, the loader reads
+the newest published season instead, with a message. An explicit request
+for that not-yet-published season is kept as asked: the read warns and
+returns an empty frame. A season outside the published range, or in a
+known gap, is an error.</p></dd>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>

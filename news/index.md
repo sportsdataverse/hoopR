@@ -52,6 +52,29 @@
 
 #### **Behavior changes**
 
+- The ESPN release loaders, the NBA and MBB crosswalk loaders and
+  [`load_ncaa_mbb_rapm()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  /
+  [`load_ncaa_mbb_rapm_within_team()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
+  no longer return an empty table when called with their default season
+  before that season is published. The default,
+  `most_recent_*_season()`, rolls over before every release tag has its
+  file (on 2026-11-04 the standings, MBB crosswalk and NCAA RAPM tags
+  stopped at 2026); the loader now checks that the file exists and, if
+  not, reads the newest published season with a message, as wehoop and
+  fastRhockey do. An explicit request for an unpublished season is kept
+  as asked
+  ([\#261](https://github.com/sportsdataverse/hoopR/issues/261)).
+
+- [`load_mbb_officials()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  accepts 2003-2024 (except 2010) and
+  [`load_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  2003-2024: those seasons are published, as `.parquet` only, and were
+  refused by the loader floors. They need the `arrow` package. The NBA
+  crosswalk floors were already 2002, as published
+  ([\#261](https://github.com/sportsdataverse/hoopR/issues/261),
+  mirroring sportsdataverse-py#1091).
+
 - [`update_mbb_db()`](https://hoopR.sportsdataverse.org/reference/update_mbb_db.md),
   [`update_nba_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_db.md)
   and

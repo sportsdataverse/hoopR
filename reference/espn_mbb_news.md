@@ -203,20 +203,20 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 07:33:27 UTC
+#> ℹ Data updated: 2026-11-04 10:12:53 UTC
 #> # A tibble: 5 × 8
-#>         id type        headline description published premium link_web league_id
-#>      <int> <chr>       <chr>    <chr>       <chr>     <lgl>   <chr>    <chr>    
-#> 1 50376371 Recap       Bennett… "— Khaden … 2026-11-… FALSE   http://… 41       
-#> 2 50376357 Recap       Davis s… "— Latrell… 2026-11-… FALSE   http://… 41       
-#> 3 50376279 Recap       Mack sc… "— Sebasti… 2026-11-… FALSE   http://… 41       
-#> 4 50376086 HeadlineNe… Will Wa… "Will Wade… 2026-11-… FALSE   https:/… 41       
-#> 5 50376076 Recap       Missour… "— Andrej … 2026-11-… FALSE   http://… 41       
+#>         id type    headline     description published premium link_web league_id
+#>      <int> <chr>   <chr>        <chr>       <chr>     <lgl>   <chr>    <chr>    
+#> 1 50377172 Preview Bethune-Coo… Bethune-Co… 2026-11-… FALSE   http://… 41       
+#> 2 50377164 Preview Meyer leads… Georgia St… 2026-11-… FALSE   http://… 41       
+#> 3 50377162 Preview Notre Dame … Mercyhurst… 2026-11-… FALSE   http://… 41       
+#> 4 50377160 Preview Mercer take… Mercer Bea… 2026-11-… FALSE   http://… 41       
+#> 5 50377159 Preview Bryant visi… Bryant Bul… 2026-11-… FALSE   http://… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 07:33:27 UTC
+#> ℹ Data updated: 2026-11-04 10:12:53 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
