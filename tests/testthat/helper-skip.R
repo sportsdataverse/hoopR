@@ -103,3 +103,11 @@ skip_euroleague_test <- function(){
     invisible()
   }
 }
+
+skip_torvik_test <- function(){
+  if(Sys.getenv("TORVIK_TESTS") != "1"){
+    skip("User can't run Bart Torvik live tests (TORVIK_TESTS not set; barttorvik.com 403s datacenter IPs)")
+  } else {
+    invisible()
+  }
+}

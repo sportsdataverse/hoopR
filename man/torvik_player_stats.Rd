@@ -52,7 +52,8 @@ A \code{hoopR_data} tibble with one row per player (key columns shown):
 Additional made/attempt splits (\code{ftm}/\code{fta}, \code{two_pm}/\code{two_pa},
 \code{three_pm}/\code{three_pa}), rim/mid/dunk shooting splits, defensive ratings
 (\code{drtg}, \code{adrtg}, \code{stops}), and game-box averages (\code{oreb}, \code{dreb}, \code{ast},
-\code{stl}, \code{blk}) are also returned.
+\code{stl}, \code{blk}) are also returned, followed by any undocumented trailing
+fields as \code{v68}, \code{v69}, and so on.
 }
 \description{
 \strong{Get player advanced season statistics from
@@ -63,6 +64,10 @@ Pulls every player's advanced season stat line for a year (the
 publish column headers for this file, so the column names below are mapped
 from Bart Torvik's standard player advanced-stats layout (consistent from
 2010 onward). Data is available from 2008 to present.
+
+Since November 2026 the file has 78 fields: barttorvik appended 11
+undocumented fields after the original 67. Those 67 keep their names; any
+field after them is returned under its position, \code{v68} to \code{v78}.
 }
 \examples{
 \donttest{

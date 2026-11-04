@@ -1,6 +1,7 @@
 test_that("Torvik - T-Rank Ratings", {
   skip_on_cran()
   skip_on_ci()
+  skip_torvik_test()
 
   x <- torvik_ratings(year = 2024)
   if (!is.data.frame(x) || nrow(x) == 0) skip("No T-Rank ratings returned at test time")
@@ -15,6 +16,7 @@ test_that("Torvik - T-Rank Ratings", {
 test_that("Torvik - Team Four Factors", {
   skip_on_cran()
   skip_on_ci()
+  skip_torvik_test()
 
   x <- torvik_team_factors(year = 2024)
   if (!is.data.frame(x) || nrow(x) == 0) skip("No team four factors returned at test time")

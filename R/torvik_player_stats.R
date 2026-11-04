@@ -9,6 +9,10 @@
 #' publish column headers for this file, so the column names below are mapped
 #' from Bart Torvik's standard player advanced-stats layout (consistent from
 #' 2010 onward). Data is available from 2008 to present.
+#'
+#' Since November 2026 the file has 78 fields: barttorvik appended 11
+#' undocumented fields after the original 67. Those 67 keep their names; any
+#' field after them is returned under its position, `v68` to `v78`.
 #' @param year (*integer* required): Season, in 4-digit ending-year format
 #'   (e.g. `2024`). Defaults to `most_recent_mbb_season()`.
 #' @return A `hoopR_data` tibble with one row per player (key columns shown):
@@ -52,7 +56,8 @@
 #'   Additional made/attempt splits (`ftm`/`fta`, `two_pm`/`two_pa`,
 #'   `three_pm`/`three_pa`), rim/mid/dunk shooting splits, defensive ratings
 #'   (`drtg`, `adrtg`, `stops`), and game-box averages (`oreb`, `dreb`, `ast`,
-#'   `stl`, `blk`) are also returned.
+#'   `stl`, `blk`) are also returned, followed by any undocumented trailing
+#'   fields as `v68`, `v69`, and so on.
 #'
 #' @keywords Torvik
 #' @importFrom data.table fread
@@ -67,8 +72,9 @@
 torvik_player_stats <- function(year = most_recent_mbb_season()) {
   .args <- .capture_args()
 
-  # barttorvik's getadvstats.php CSV is headerless; these are its 67 positional
-  # fields in Bart Torvik's standard player advanced-stats order.
+  # barttorvik's getadvstats.php CSV is headerless; these are its first 67
+  # positional fields in Bart Torvik's standard player advanced-stats order.
+  # Undocumented fields appended after them keep positional names (v68, ...).
   player_cols <- c(
     "player_name", "team", "conf", "games", "min_pct", "o_rtg", "usage", "e_fg",
     "ts_pct", "orb_pct", "drb_pct", "ast_pct", "to_pct", "ftm", "fta", "ft_pct",
@@ -87,7 +93,10 @@ torvik_player_stats <- function(year = most_recent_mbb_season()) {
     expr = {
       txt <- .torvik_text(paste0("/getadvstats.php?year=", year, "&csv=1"))
       df <- data.table::fread(text = txt, header = FALSE, fill = TRUE, showProgress = FALSE)
-      if (ncol(df) == length(player_cols)) names(df) <- player_cols
+      # A shorter file (2008-2009 drop the play-by-play fields) keeps V1, V2, ...
+      if (ncol(df) >= length(player_cols)) {
+        names(df)[seq_along(player_cols)] <- player_cols
+      }
       df <- dplyr::as_tibble(janitor::clean_names(as.data.frame(df)))
       df <- make_hoopR_data(df, "Bart Torvik player season stats from barttorvik.com", Sys.time())
     },

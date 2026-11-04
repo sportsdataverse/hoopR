@@ -1,6 +1,7 @@
 test_that("Torvik - Season Schedule", {
   skip_on_cran()
   skip_on_ci()
+  skip_torvik_test()
 
   x <- torvik_game_schedule(year = 2024)
   if (!is.data.frame(x) || nrow(x) == 0) skip("No Torvik schedule returned at test time")
