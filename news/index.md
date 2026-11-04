@@ -395,6 +395,13 @@
   files quote one header, `fread()` warns while fixing it, and the
   warning discarded the season. That warning is no longer fatal.
 
+- [`torvik_player_stats()`](https://hoopR.sportsdataverse.org/reference/torvik_player_stats.md)
+  returned columns named `v1`, `v2`, … instead of `player_name`, `team`,
+  `o_rtg` and the rest. barttorvik’s player csv now has 78 fields: 11
+  undocumented ones follow the 67 that hoopR names. The 67 keep their
+  names, and the new fields come back as `v68` to `v78`. The live Torvik
+  tests now run only with `TORVIK_TESTS=1`.
+
 - The KenPom team-page functions
   ([`kp_team_schedule()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md),
   [`kp_gameplan()`](https://hoopR.sportsdataverse.org/reference/kp_team_schedule.md),
@@ -541,10 +548,18 @@ vocabulary.
   (a larger `options(timeout)` is kept, and the option is restored
   afterwards) and retry a failed download twice. A 404 is not retried.
   If a file still fails, the warning names its URL and says the result
-  is incomplete; the seasons that loaded are still returned.
+  is incomplete; the seasons that loaded are still returned. The
+  games-index csv files behind
+  [`update_mbb_db()`](https://hoopR.sportsdataverse.org/reference/update_mbb_db.md)
+  and
+  [`update_nba_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_db.md)
+  are now read the same way.
 
 #### **Dependencies**
 
+- data.table must now be 1.15.0 or later (was 1.14.0): the release csv
+  reads pass the url as `fread(file =)`, which downloads urls only from
+  1.15.0 on.
 - Imports trimmed so `R CMD check` no longer notes too many non-default
   packages. glmnet and Matrix moved to Suggests:
   [`nba_rapm()`](https://hoopR.sportsdataverse.org/reference/nba_rapm.md)

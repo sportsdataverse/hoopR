@@ -101,7 +101,7 @@ Other TPBL Functions:
 # \donttest{
   try(tpbl_box_teams(game_id = 6))
 #> ── TPBL Team Box Score from api.tpbl.basketball ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 03:48:08 UTC
+#> ℹ Data updated: 2026-11-04 07:39:27 UTC
 #> # A tibble: 2 × 40
 #>   game_id side  team_id team  gohoops_squad_id opponent_team_id field_goals_made
 #>     <int> <chr>   <int> <chr>            <int>            <int>            <int>

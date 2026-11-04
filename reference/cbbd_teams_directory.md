@@ -57,7 +57,7 @@ Other CBD Teams Functions:
 ``` r
 # \donttest{
   try(cbbd_teams_directory(season = 2025))
-#> ✖ 2026-11-04 03:41:27.929053: Invalid arguments or no team directory data available!
+#> ✖ 2026-11-04 07:32:29.442214: Invalid arguments or no team directory data available!
 #> ✖ Args: season = 2025
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> list()

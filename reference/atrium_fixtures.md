@@ -202,18 +202,26 @@ Other Atrium Functions:
 # \donttest{
   try(atrium_fixtures(website_id = 14))
 #> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 03:40:40 UTC
-#> # A tibble: 2 × 40
-#>   website_id season_id           competition_id competition_name season_end_year
-#>        <int> <chr>               <chr>          <chr>                      <int>
-#> 1         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            2026
-#> 2         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            2026
+#> ℹ Data updated: 2026-11-04 07:31:39 UTC
+#> # A tibble: 228 × 40
+#>    website_id season_id          competition_id competition_name season_end_year
+#>         <int> <chr>              <chr>          <chr>                      <int>
+#>  1         14 cc7d79f3-43ee-11f… 16be8396-24fb… LIGA CALIENTE.M…            2026
+#>  2         14 cc7d79f3-43ee-11f… 16be8396-24fb… LIGA CALIENTE.M…            2026
+#>  3         14 cc7d79f3-43ee-11f… 16be8396-24fb… LIGA CALIENTE.M…            2026
+#>  4         14 cc7d79f3-43ee-11f… 16be8396-24fb… LIGA CALIENTE.M…            2026
+#>  5         14 cc7d79f3-43ee-11f… 16be8396-24fb… LIGA CALIENTE.M…            2026
+#>  6         14 cc7d79f3-43ee-11f… 16be8396-24fb… LIGA CALIENTE.M…            2026
+#>  7         14 cc7d79f3-43ee-11f… 16be8396-24fb… LIGA CALIENTE.M…            2026
+#>  8         14 cc7d79f3-43ee-11f… 16be8396-24fb… LIGA CALIENTE.M…            2026
+#>  9         14 cc7d79f3-43ee-11f… 16be8396-24fb… LIGA CALIENTE.M…            2026
+#> 10         14 cc7d79f3-43ee-11f… 16be8396-24fb… LIGA CALIENTE.M…            2026
+#> # ℹ 218 more rows
 #> # ℹ 35 more variables: fixture_id <chr>, fixture_type <chr>, name <chr>,
 #> #   round <chr>, round_code <chr>, pool <chr>, series <chr>, stage_code <chr>,
 #> #   status <chr>, status_label <chr>, start_time_utc <dttm>,
 #> #   start_time_local <chr>, timezone <chr>, times_unconfirmed <lgl>,
 #> #   venue <chr>, venue_id <chr>, attendance <int>, home_entity_id <chr>,
-#> #   home_code <chr>, home_name <chr>, home_score <int>,
-#> #   home_result_place <int>, home_result_status <chr>, home_draw <lgl>, …
+#> #   home_code <chr>, home_name <chr>, home_score <int>, …
 # }
 ```

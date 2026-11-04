@@ -77,22 +77,22 @@ Other EASL Functions:
 # \donttest{
   try(easl_teams())
 #> ── EASL Teams from easl.joshricha.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 03:41:57 UTC
+#> ℹ Data updated: 2026-11-04 07:32:58 UTC
 #> # A tibble: 12 × 22
 #>    team_row_id team_id          name  name_native code_latin code_local standard
 #>          <int> <chr>            <chr> <chr>       <chr>      <chr>      <chr>   
 #>  1           1 0548e9a7-99e0-1… Alva… NA           NA        NA         ELITE   
 #>  2           2 27492b3f-5ada-1… Hong… Hong Kong … "HKE"      HKE        ELITE   
-#>  3          21 6c173781-a6bf-1… Maca… Macau Hou … "MHC"      MHC        ELITE   
-#>  4           4 71f8b351-5acf-1… Busa… Busan KCC … "KCC"      KCC        ELITE   
-#>  5           7 86515908-b0f5-1… Taip… NA          "TFB"      富邦勇士   ELITE   
-#>  6          10 865db37a-b0f5-1… Ryuk… 琉球ゴールデンキング… ""         RGK        ELITE   
-#>  7          22 992dc7e4-a6c0-1… TSG … TSG Ghosth… "TSG"      TSG        ELITE   
-#>  8          23 9f419ff5-a6be-1… Abra… Abra Weave… "ABR"      ABR        ELITE   
-#>  9          24 a6c6b0a0-a6c0-1… Naga… Nagasaki V… "NAG"      NAG        ELITE   
-#> 10          25 b9a6e682-a6bf-1… Goya… Goyang Son… "SON"      SON        ELITE   
-#> 11          17 cbf7cf59-99df-1… Sout… NA           NA        BRO        ELITE   
-#> 12          20 f170040e-5ad9-1… Taoy… Taoyuan Pa… ""         TPP        ELITE   
+#>  3           4 6c173781-a6bf-1… Maca… Macau Hou … "MHC"      MHC        ELITE   
+#>  4           5 71f8b351-5acf-1… Busa… Busan KCC … "KCC"      KCC        ELITE   
+#>  5           8 86515908-b0f5-1… Taip… NA          "TFB"      富邦勇士   ELITE   
+#>  6          11 865db37a-b0f5-1… Ryuk… 琉球ゴールデンキング… ""         RGK        ELITE   
+#>  7          14 992dc7e4-a6c0-1… TSG … TSG Ghosth… "TSG"      TSG        ELITE   
+#>  8          16 9f419ff5-a6be-1… Abra… Abra Weave… "ABR"      ABR        ELITE   
+#>  9          18 a6c6b0a0-a6c0-1… Naga… Nagasaki V… "NAG"      NAG        ELITE   
+#> 10          20 b9a6e682-a6bf-1… Goya… Goyang Son… "SON"      SON        ELITE   
+#> 11          22 cbf7cf59-99df-1… Sout… NA           NA        BRO        ELITE   
+#> 12          25 f170040e-5ad9-1… Taoy… Taoyuan Pa… ""         TPP        ELITE   
 #> # ℹ 15 more variables: age_group <chr>, gender <chr>, status <chr>,
 #> #   primary_color <chr>, secondary_color <chr>, tertiary_color <chr>,
 #> #   logo <chr>, website <chr>, facebook_username <chr>, twitter_username <chr>,

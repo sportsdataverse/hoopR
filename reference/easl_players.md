@@ -91,27 +91,27 @@ Other EASL Functions:
 # \donttest{
   try(easl_players(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
 #> ── EASL Players from easl.joshricha.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 03:41:51 UTC
+#> ℹ Data updated: 2026-11-04 07:32:52 UTC
 #> # A tibble: 17 × 20
 #>    season season_id    player_row_id player_id name  name_latin name_abbreviated
 #>     <int> <chr>                <int> <chr>     <chr> <chr>      <chr>           
-#>  1   2026 77441bb3-97…            51 2c03440a… Just… Justin HA… NA              
-#>  2   2026 77441bb3-97…            55 2e016dfa… ISHI… ISHIKAWA … NA              
-#>  3   2026 77441bb3-97…           105 57598895… HOSH… HOSHIKAWA… NA              
-#>  4   2026 77441bb3-97…           164 85c99dab… D.J.… D.J. NEWB… NA              
-#>  5   2026 77441bb3-97…           216 897d9aab… TABU… TABUSE Yu… NA              
-#>  6   2026 77441bb3-97…           217 8983317f… HIEJ… HIEJIMA M… NA              
-#>  7   2026 77441bb3-97…           218 8984fe11… OGAW… OGAWA Ats… NA              
-#>  8   2026 77441bb3-97…           219 8986bf47… ENDO… ENDO Yusu… NA              
-#>  9   2026 77441bb3-97…           220 89889819… TAKE… TAKEUCHI … NA              
-#> 10   2026 77441bb3-97…           221 8a4180f3… TAKA… TAKASHIMA… NA              
-#> 11   2026 77441bb3-97…           222 8a44d984… WATA… WATANABE … NA              
-#> 12   2026 77441bb3-97…           223 8a4b82f4… IKAR… IKARUGA S… NA              
-#> 13   2026 77441bb3-97…           224 8a4f5e97… Gran… Grant JER… NA              
-#> 14   2026 77441bb3-97…           225 8a530bfe… Isaa… Isaac FOTU NA              
-#> 15   2026 77441bb3-97…           388 e670b5bc… Gavi… Gavin EDW… NA              
-#> 16   2026 77441bb3-97…           409 f8a930cf… Blak… Blake AOKI NA              
-#> 17   2026 77441bb3-97…           424 177cdc17… MATS… NA         NA              
+#>  1   2026 77441bb3-97…            42 177cdc17… MATS… NA         NA              
+#>  2   2026 77441bb3-97…            81 2c03440a… Just… Justin HA… NA              
+#>  3   2026 77441bb3-97…            87 2e016dfa… ISHI… ISHIKAWA … NA              
+#>  4   2026 77441bb3-97…           159 57598895… HOSH… HOSHIKAWA… NA              
+#>  5   2026 77441bb3-97…           233 85c99dab… D.J.… D.J. NEWB… NA              
+#>  6   2026 77441bb3-97…           287 897d9aab… TABU… TABUSE Yu… NA              
+#>  7   2026 77441bb3-97…           288 8983317f… HIEJ… HIEJIMA M… NA              
+#>  8   2026 77441bb3-97…           289 8984fe11… OGAW… OGAWA Ats… NA              
+#>  9   2026 77441bb3-97…           290 8986bf47… ENDO… ENDO Yusu… NA              
+#> 10   2026 77441bb3-97…           291 89889819… TAKE… TAKEUCHI … NA              
+#> 11   2026 77441bb3-97…           292 8a4180f3… TAKA… TAKASHIMA… NA              
+#> 12   2026 77441bb3-97…           293 8a44d984… WATA… WATANABE … NA              
+#> 13   2026 77441bb3-97…           294 8a4b82f4… IKAR… IKARUGA S… NA              
+#> 14   2026 77441bb3-97…           295 8a4f5e97… Gran… Grant JER… NA              
+#> 15   2026 77441bb3-97…           296 8a530bfe… Isaa… Isaac FOTU NA              
+#> 16   2026 77441bb3-97…           508 e670b5bc… Gavi… Gavin EDW… NA              
+#> 17   2026 77441bb3-97…           537 f8a930cf… Blak… Blake AOKI NA              
 #> # ℹ 13 more variables: nationality <chr>, gender <chr>, dob <date>,
 #> #   height_cm <int>, height_feet <chr>, weight_kg <int>, weight_lbs <int>,
 #> #   status <chr>, jersey_number <chr>, position <chr>, organization_id <chr>,
