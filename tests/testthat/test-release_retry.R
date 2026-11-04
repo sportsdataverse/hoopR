@@ -91,6 +91,7 @@ test_that("parquet_from_url retries a download that does not parse", {
 })
 
 test_that("the low-level readers read a local file and reject an empty one", {
+  withr::local_options(download.file.method = "auto")
   file_url <- function(path) {
     path <- normalizePath(path, winslash = "/")
     paste0("file://", if (!startsWith(path, "/")) "/", path)
