@@ -47,9 +47,11 @@ placeholders. KenPom and Torvik have no per-player data for MBB, so neither
 source is joined.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(mbb_player_crosswalk(season = 2025))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other MBB Crosswalk Functions:

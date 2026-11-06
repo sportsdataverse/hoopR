@@ -123,10 +123,10 @@ A \code{hoopR_data} tibble with one row per play type:
   try(cbbd_plays_team(season = 2024, team = "Duke"))
 }
 \donttest{
-  try(cbbd_plays_date(date = "2024-02-01T00:00:00.000Z"))
+  try(cbbd_plays_date(date = "2024-04-09T00:00:00.000Z"))
 }
 \donttest{
-  try(cbbd_plays_tournament(tournament = "NCAA", season = 2024))
+  try(cbbd_plays_tournament(tournament = "CIT", season = 2024))
 }
 \donttest{
   try(cbbd_play_types())
