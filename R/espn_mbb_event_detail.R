@@ -172,7 +172,7 @@ espn_mbb_game_situation <- function(event_id, ...) {
 #' @author Saiem Gilani
 #' @description
 #' Returns pre-game predictor statistics for one MBB event in long
-#' format: one row per (team × statistic). Typical stats include
+#' format: one row per (team x statistic). Typical stats include
 #' matchup quality, predicted score, win probability, and team
 #' strength metrics. Returns empty for events without predictor data
 #' (often the case for already-played games).
@@ -200,7 +200,7 @@ espn_mbb_game_predictor <- function(event_id, ...) {
 #' @author Saiem Gilani
 #' @description
 #' Returns the per-team power-index `$ref` URLs for one MBB event.
-#' Coverage is sparse — many events return zero items.
+#' Coverage is sparse - many events return zero items.
 #'
 #' @return A tibble with one row per team-game power-index entry.
 #' @export
@@ -225,7 +225,7 @@ espn_mbb_game_powerindex <- function(event_id, ...) {
 #' @author Saiem Gilani
 #' @description
 #' Returns prop-bet markets for one MBB event + provider in long format:
-#' one row per (athlete × prop type). Each row has american / decimal /
+#' one row per (athlete x prop type). Each row has american / decimal /
 #' fraction odds plus the current target (e.g. over/under line). Hits the
 #' core-v2 `competitions/{id}/odds/{provider_id}/propBets` endpoint and
 #' auto-paginates.
@@ -234,7 +234,7 @@ espn_mbb_game_powerindex <- function(event_id, ...) {
 #' @param provider_id Sportsbook provider id (e.g. 58 = ESPN BET,
 #'   100 = Caesars). Look up via [espn_mbb_game_odds()].
 #' @param ... Additional arguments; currently unused.
-#' @return A long tibble with one row per (athlete × prop type).
+#' @return A long tibble with one row per (athlete x prop type).
 #' @export
 #' @family ESPN MBB Functions
 #' @examples
@@ -317,7 +317,7 @@ espn_mbb_game_team_leaders <- function(event_id, team_id, ...) {
 #' @author Saiem Gilani
 #' @description
 #' Returns the game-day roster index for one team in one MBB event.
-#' Each row carries the athlete id and the core-v2 `$ref` URL — use
+#' Each row carries the athlete id and the core-v2 `$ref` URL - use
 #' the ref to dereference athlete-game splits or biographical data.
 #'
 #' @param event_id ESPN event identifier.
@@ -520,7 +520,7 @@ NULL
 #' @description
 #' Returns the players on court at a specific MBB play in long format
 #' (one row per athlete entry across both competitors). Foundation for
-#' lineup analysis. ESPN coverage is sparse — many plays return zero
+#' lineup analysis. ESPN coverage is sparse - many plays return zero
 #' rows; the wrapper returns a typed empty tibble in that case.
 #'
 #' @param event_id ESPN event identifier.
@@ -550,7 +550,7 @@ espn_mbb_game_play_personnel <- function(event_id, play_id, ...) {
 #' @description
 #' Returns a one-row tibble with one team's final score for one MBB event:
 #' numeric `value`, display string, `winner` flag, and source metadata.
-#' Quick-lookup wrapper — use [espn_mbb_game_team_linescores()] for
+#' Quick-lookup wrapper - use [espn_mbb_game_team_linescores()] for
 #' per-period detail.
 #'
 #' @param event_id ESPN event identifier.

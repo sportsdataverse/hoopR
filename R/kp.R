@@ -5,7 +5,7 @@
 #' Authenticated scrapers for [kenpom.com](https://kenpom.com) men's
 #' college-basketball pages. Authentication uses an `httr2` cookie jar
 #' via `login()`; pages are pulled with `.kp_get_page(jar, url)` and
-#' parsed with `rvest`. CSS selectors for tables are fragile — KenPom
+#' parsed with `rvest`. CSS selectors for tables are fragile - KenPom
 #' changes the HTML occasionally and selectors may need updating.
 #'
 #' Credentials are read from `KP_USER` / `KP_PW` env vars (or function

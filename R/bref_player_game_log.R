@@ -2,12 +2,12 @@
 #' **Basketball-Reference Player Game Log**
 #' @description
 #' **Get a player's game-by-game log for a season from
-#' [Basketball-Reference](https://www.basketball-reference.com).**
+#' Basketball-Reference.**
 #'
 #' No API key is required. Basketball-Reference rate-limits aggressive scraping
 #' (~20 requests/minute) -- space repeated calls with `Sys.sleep()`.
 #' @param player_id (*character* required): Basketball-Reference player id slug
-#'   (e.g. `jokicni01` for Nikola Jokić, `jamesle01` for LeBron James). This is
+#'   (e.g. `jokicni01` for Nikola \enc{Jokić}{Jokic}, `jamesle01` for LeBron James). This is
 #'   the id in the player's BREF URL (`/players/j/jokicni01.html`).
 #' @param season (*integer* required): Season, in 4-digit ending-year format
 #'   (e.g. `2024`). Defaults to `most_recent_nba_season()`.

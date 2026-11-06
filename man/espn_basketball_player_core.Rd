@@ -12,7 +12,7 @@ as returned by \code{jsonlite::fromJSON(..., simplifyVector = FALSE)}. An empty
 or non-list value yields a zero-row tibble rather than an error.}
 
 \item{athlete_id}{numeric or character. The ESPN athlete id. \strong{Required and
-never inferred from the payload} — callers pass the id from the file path,
+never inferred from the payload} - callers pass the id from the file path,
 so a payload missing its own \code{id} still produces a joinable row.}
 }
 \value{
@@ -64,7 +64,7 @@ Turns one ESPN core-v2 \verb{/athletes/\{id\}} payload into the single
 tidy row released as the \code{player_core} dataset.
 
 This is a \strong{pure projection}: it takes an already-fetched payload and
-never performs I/O. That is deliberate — the compile stages in
+never performs I/O. That is deliberate - the compile stages in
 \code{hoopR-nba-data} / \code{hoopR-mbb-data} read the payload from the sibling
 \code{-raw} tree, and re-fetching here would both break the one-way
 raw -> data boundary and mean the R and Python pipelines read different
@@ -75,7 +75,7 @@ URLs (\verb{/colleges/\{id\}}, \verb{/teams/\{id\}}). The \verb{$ref} is \strong
 }
 \details{
 \strong{What the row means.} \code{current_team_id} is the athlete's team
-\emph{today}, not their team in any past season — the season a released row is
+\emph{today}, not their team in any past season - the season a released row is
 filed under is \emph{participation} (who appeared that year, taken from
 \code{player_box}), not the vintage of the bio. Height, weight and jersey are
 likewise a current snapshot: ESPN overwrites them in place, so era-correct
@@ -86,7 +86,7 @@ bio is not obtainable from this endpoint.
 held to byte-parity by \code{tests/testthat/test-espn_basketball_player_core.R}
 against a golden fixture captured from that function; see
 \code{tests/testthat/fixtures/player_core/README.md} for provenance. Neither
-implementation is authoritative — a divergence is a review item.
+implementation is authoritative - a divergence is a review item.
 }
 \section{Twin}{
 

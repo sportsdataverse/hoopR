@@ -180,7 +180,7 @@ cbbd_plays_team <- function(season = most_recent_mbb_season(), team, shooting_pl
 #' @export
 #' @examples
 #' \donttest{
-#'   try(cbbd_plays_date(date = "2024-02-01T00:00:00.000Z"))
+#'   try(cbbd_plays_date(date = "2024-04-09T00:00:00.000Z"))
 #' }
 cbbd_plays_date <- function(date, shooting_plays_only = FALSE, utc_offset = NULL) {
   .args <- .capture_args()
@@ -226,7 +226,7 @@ cbbd_plays_date <- function(date, shooting_plays_only = FALSE, utc_offset = NULL
 #' @export
 #' @examples
 #' \donttest{
-#'   try(cbbd_plays_tournament(tournament = "NCAA", season = 2024))
+#'   try(cbbd_plays_tournament(tournament = "CIT", season = 2024))
 #' }
 cbbd_plays_tournament <- function(tournament, season = most_recent_mbb_season(), shooting_plays_only = FALSE) {
   .args <- .capture_args()

@@ -53,8 +53,8 @@ NULL
 #'   possessions have NA lineup cells (never-raise).
 #'
 #'   **Note:** RAPM is expressed in per-100-possession units. A **full season**
-#'   of possessions (~5,000–8,000) is needed for statistically meaningful
-#'   estimates. Results from a single game (~150–250 possessions) are highly
+#'   of possessions (~5,000-8,000) is needed for statistically meaningful
+#'   estimates. Results from a single game (~150-250 possessions) are highly
 #'   unstable and are provided here for pipeline illustration only.
 #'
 #'   Values are relative to average: an unpenalized intercept absorbs the mean
@@ -193,8 +193,8 @@ nba_rapm <- function(possessions, ...) {
 #' Build a sparse RAPM design matrix from a possession data frame.
 #'
 #' Internal helper.  Column layout:
-#'   * cols 1..P   — offense indicator: 1 when player_ids\[i\] was on offense.
-#'   * cols P+1..2P — defense indicator: 1 when player_ids\[i\] was on defense.
+#'   * cols 1..P   - offense indicator: 1 when player_ids\[i\] was on offense.
+#'   * cols P+1..2P - defense indicator: 1 when player_ids\[i\] was on defense.
 #'
 #' Possessions with any NA in the 10 lineup cells, or with non-finite points,
 #' are silently dropped (never-raise; a partial lineup is unreliable for RAPM).
@@ -202,9 +202,9 @@ nba_rapm <- function(possessions, ...) {
 #' @param possessions data.frame with columns off_player_1..5,
 #'   def_player_1..5 (integer player ids) and points (numeric).
 #' @return A named list with:
-#'   * `X` — `Matrix::dgCMatrix` of shape (n_poss, 2P).
-#'   * `y` — numeric vector of length n_poss (possession points).
-#'   * `player_ids` — integer vector of length P: sorted distinct player ids.
+#'   * `X` - `Matrix::dgCMatrix` of shape (n_poss, 2P).
+#'   * `y` - numeric vector of length n_poss (possession points).
+#'   * `player_ids` - integer vector of length P: sorted distinct player ids.
 #' @noRd
 .build_rapm_design <- function(possessions) {
   # Empty frame → return 0×0 sparse matrix + empty vectors (never-raise)

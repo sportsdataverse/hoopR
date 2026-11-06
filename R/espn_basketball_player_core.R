@@ -8,7 +8,7 @@ NULL
 #'   tidy row released as the `player_core` dataset.
 #'
 #'   This is a **pure projection**: it takes an already-fetched payload and
-#'   never performs I/O. That is deliberate — the compile stages in
+#'   never performs I/O. That is deliberate - the compile stages in
 #'   `hoopR-nba-data` / `hoopR-mbb-data` read the payload from the sibling
 #'   `-raw` tree, and re-fetching here would both break the one-way
 #'   raw -> data boundary and mean the R and Python pipelines read different
@@ -18,7 +18,7 @@ NULL
 #'   URLs (`/colleges/{id}`, `/teams/{id}`). The `$ref` is **never** followed.
 #'
 #' @details **What the row means.** `current_team_id` is the athlete's team
-#'   *today*, not their team in any past season — the season a released row is
+#'   *today*, not their team in any past season - the season a released row is
 #'   filed under is *participation* (who appeared that year, taken from
 #'   `player_box`), not the vintage of the bio. Height, weight and jersey are
 #'   likewise a current snapshot: ESPN overwrites them in place, so era-correct
@@ -29,13 +29,13 @@ NULL
 #'   held to byte-parity by `tests/testthat/test-espn_basketball_player_core.R`
 #'   against a golden fixture captured from that function; see
 #'   `tests/testthat/fixtures/player_core/README.md` for provenance. Neither
-#'   implementation is authoritative — a divergence is a review item.
+#'   implementation is authoritative - a divergence is a review item.
 #'
 #' @param payload list. One athlete's core-v2 `/athletes/{athlete_id}` payload,
 #'   as returned by `jsonlite::fromJSON(..., simplifyVector = FALSE)`. An empty
 #'   or non-list value yields a zero-row tibble rather than an error.
 #' @param athlete_id numeric or character. The ESPN athlete id. **Required and
-#'   never inferred from the payload** — callers pass the id from the file path,
+#'   never inferred from the payload** - callers pass the id from the file path,
 #'   so a payload missing its own `id` still produces a joinable row.
 #'
 #' @return A one-row tibble carrying the full 35-column set (absent fields are

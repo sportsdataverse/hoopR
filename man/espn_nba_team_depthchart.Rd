@@ -33,7 +33,7 @@ A long tibble with one row per athlete depth entry.
 }
 \description{
 Returns the team's depth chart in long format, one row per
-(position × rank × athlete). NBA-only at ESPN's core-v2.
+(position x rank x athlete). NBA-only at ESPN's core-v2.
 }
 \details{
 \strong{Get ESPN NBA Team Depth Chart (Long Format)}

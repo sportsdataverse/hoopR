@@ -25,12 +25,12 @@ A long tibble with one row per on-court athlete.
 \description{
 Returns the players on court at a specific MBB play in long format
 (one row per athlete entry across both competitors). Foundation for
-lineup analysis. ESPN coverage is sparse — many plays return zero
+lineup analysis. ESPN coverage is sparse - many plays return zero
 rows; the wrapper returns a typed empty tibble in that case.
 
 Returns the players on court at a specific NBA play in long format
 (one row per athlete entry across both competitors). Foundation for
-lineup analysis. ESPN coverage is sparse — many plays return zero
+lineup analysis. ESPN coverage is sparse - many plays return zero
 rows; the wrapper returns a typed empty tibble in that case.
 }
 \examples{

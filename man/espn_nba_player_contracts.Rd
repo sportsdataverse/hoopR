@@ -61,7 +61,7 @@ A single-row tibble.
 \description{
 Returns the index of contract seasons recorded for an NBA athlete from
 \code{sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/{athlete_id}/contracts}.
-Each row is one contract year — pass the season to
+Each row is one contract year - pass the season to
 \code{\link[=espn_nba_player_contract]{espn_nba_player_contract()}} for the full contract record.
 
 Returns the full contract record for one NBA athlete in one season,
@@ -71,7 +71,7 @@ protections. Backed by
 }
 \examples{
 \donttest{
-  # LeBron James — athlete id 1966
+  # LeBron James - athlete id 1966
   espn_nba_player_contracts(athlete_id = 1966)
 }
 \donttest{

@@ -15,17 +15,17 @@ NULL
 #' @author Saiem Gilani
 #' @description
 #' Returns the long-format odds-records breakdown for a team in one
-#' season. Each row is one (category × stat) — typical categories include
+#' season. Each row is one (category x stat) - typical categories include
 #' Money Line Overall, Money Line Home, Money Line Road, Against The
 #' Spread Overall, Over/Under, etc. ESPN's coverage of this endpoint is
-#' sparse; many (team × season-type) combinations return 404, in which
+#' sparse; many (team x season-type) combinations return 404, in which
 #' case the wrapper returns an empty tibble.
 #'
 #' @param team_id ESPN team identifier.
 #' @param season_type Season-type id. ESPN populates odds-records mostly
 #'   under `season_type = 0` (all-types aggregate), so that is the default.
 #' @param ... Additional arguments; currently unused.
-#' @return A long tibble with one row per (category × stat).
+#' @return A long tibble with one row per (category x stat).
 #'
 #'    Columns as documented in the shared [espn_mbb_team_odds_records_schema] table.
 #'
@@ -57,7 +57,7 @@ espn_nba_team_odds_records <- function(team_id,
 #' @author Saiem Gilani
 #' @description
 #' Returns the team's depth chart in long format, one row per
-#' (position × rank × athlete). NBA-only at ESPN's core-v2.
+#' (position x rank x athlete). NBA-only at ESPN's core-v2.
 #'
 #' @param team_id ESPN team identifier.
 #' @param season Season year. Defaults to most recent NBA season.
@@ -145,7 +145,7 @@ espn_nba_team_season_roster <- function(team_id,
 #' @description
 #' Per-season coach detail (name, birth info, `$ref`s to team/college/
 #' person). ESPN's coverage of this endpoint is sparse; many
-#' (coach × season) combinations return 404.
+#' (coach x season) combinations return 404.
 #'
 #' @param coach_id ESPN coach identifier.
 #' @param ... Additional arguments; currently unused.

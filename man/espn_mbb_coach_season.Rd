@@ -28,11 +28,11 @@ Columns as documented in the shared \link{espn_mbb_coach_season_schema} table.
 \description{
 Per-season coach detail (name, birth info, \verb{$ref}s to team/college/
 person). ESPN's coverage of this endpoint is sparse; many
-(coach × season) combinations return 404.
+(coach x season) combinations return 404.
 
 Per-season coach detail (name, birth info, \verb{$ref}s to team/college/
 person). ESPN's coverage of this endpoint is sparse; many
-(coach × season) combinations return 404.
+(coach x season) combinations return 404.
 }
 \details{
 \strong{Get ESPN MBB Coach-in-Season Detail}

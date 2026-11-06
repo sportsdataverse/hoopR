@@ -19,19 +19,19 @@ espn_nba_game_propbets(event_id, provider_id, ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A long tibble with one row per (athlete × prop type).
+A long tibble with one row per (athlete x prop type).
 
-A long tibble with one row per (athlete × prop type).
+A long tibble with one row per (athlete x prop type).
 }
 \description{
 Returns prop-bet markets for one MBB event + provider in long format:
-one row per (athlete × prop type). Each row has american / decimal /
+one row per (athlete x prop type). Each row has american / decimal /
 fraction odds plus the current target (e.g. over/under line). Hits the
 core-v2 \code{competitions/{id}/odds/{provider_id}/propBets} endpoint and
 auto-paginates.
 
 Returns prop-bet markets for one NBA event + provider in long format:
-one row per (athlete × prop type). Each row has american / decimal /
+one row per (athlete x prop type). Each row has american / decimal /
 fraction odds plus the current target (e.g. over/under line). Hits the
 core-v2 \code{competitions/{id}/odds/{provider_id}/propBets} endpoint and
 auto-paginates.

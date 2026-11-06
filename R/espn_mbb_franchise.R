@@ -15,7 +15,7 @@ NULL
 #' @description
 #' Returns the full MBB franchises index from
 #' `sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises`.
-#' Each row is one franchise with its ID and the canonical `$ref` URL —
+#' Each row is one franchise with its ID and the canonical `$ref` URL -
 #' pass an ID to [espn_mbb_franchise()] for full franchise detail.
 #'
 #' @param ... Additional arguments; currently unused.

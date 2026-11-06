@@ -8,7 +8,7 @@ bref_player_game_log(player_id, season = most_recent_nba_season())
 }
 \arguments{
 \item{player_id}{(\emph{character} required): Basketball-Reference player id slug
-(e.g. \code{jokicni01} for Nikola Jokić, \code{jamesle01} for LeBron James). This is
+(e.g. \code{jokicni01} for Nikola \enc{Jokić}{Jokic}, \code{jamesle01} for LeBron James). This is
 the id in the player's BREF URL (\verb{/players/j/jokicni01.html}).}
 
 \item{season}{(\emph{integer} required): Season, in 4-digit ending-year format
@@ -44,7 +44,7 @@ Full shooting / box columns (\code{fg}, \code{fga}, \code{fg_pct}, \code{fg3}, \
 }
 \description{
 \strong{Get a player's game-by-game log for a season from
-\href{https://www.basketball-reference.com}{Basketball-Reference}.}
+Basketball-Reference.}
 
 No API key is required. Basketball-Reference rate-limits aggressive scraping
 (~20 requests/minute) -- space repeated calls with \code{Sys.sleep()}.

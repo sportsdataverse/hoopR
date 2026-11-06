@@ -19,12 +19,12 @@ A tibble with one row per position.
 }
 \description{
 Returns the MBB position dictionary index. One row per position with
-its id and the canonical \verb{$ref} URL — pass an id to
+its id and the canonical \verb{$ref} URL - pass an id to
 \code{\link[=espn_mbb_position]{espn_mbb_position()}} for full details (display name, abbreviation,
 leaf flag, parent link).
 
 Returns the NBA position dictionary index. One row per position with
-its id and the canonical \verb{$ref} URL — pass an id to
+its id and the canonical \verb{$ref} URL - pass an id to
 \code{\link[=espn_nba_position]{espn_nba_position()}} for full details (display name, abbreviation,
 leaf flag, parent link).
 }

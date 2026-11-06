@@ -358,7 +358,7 @@
 #' Internal: ESPN basketball per-game player box score (long format)
 #'
 #' Wraps `events/{eid}/competitions/{cid}/competitors/{tid}/roster/{aid}/statistics/{type}`.
-#' One row per (category x stat) — same shape as `event_competitor_statistics`
+#' One row per (category x stat) - same shape as `event_competitor_statistics`
 #' but scoped to a single athlete-in-event instead of the full team.
 #'
 #' @noRd

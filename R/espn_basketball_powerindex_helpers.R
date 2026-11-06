@@ -12,7 +12,7 @@
 #' iterating through pages until all teams' BPI-and-related metrics are
 #' collected. The endpoint returns all season types in a single paginated
 #' response; filtering happens client-side. `season_type` accepts a scalar
-#' or vector — default `c(2L, 3L)` keeps regular season + postseason rows.
+#' or vector - default `c(2L, 3L)` keeps regular season + postseason rows.
 #'
 #' @noRd
 .espn_basketball_powerindex <- function(league, season,

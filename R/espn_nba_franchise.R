@@ -16,7 +16,7 @@ NULL
 #' @description
 #' Returns the full NBA franchises index from
 #' `sports.core.api.espn.com/v2/sports/basketball/leagues/nba/franchises`.
-#' Each row is one franchise with its ID and the canonical `$ref` URL —
+#' Each row is one franchise with its ID and the canonical `$ref` URL -
 #' pass an ID to [espn_nba_franchise()] for full franchise detail.
 #'
 #' @param ... Additional arguments; currently unused.
@@ -56,7 +56,7 @@ NULL
 #' @author Saiem Gilani
 #' @description
 #' Returns franchise-level metadata for an NBA franchise. Franchise IDs are
-#' stable across relocations and rebrands — useful for tracking franchise
+#' stable across relocations and rebrands - useful for tracking franchise
 #' history independent of current team identity.
 #'
 #' @param franchise_id ESPN franchise identifier (character or numeric).

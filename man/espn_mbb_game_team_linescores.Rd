@@ -83,7 +83,7 @@ format: one row per (category x athlete rank). Categories typically
 include points, rebounds, assists, and rating.
 
 Returns the game-day roster index for one team in one MBB event.
-Each row carries the athlete id and the core-v2 \verb{$ref} URL — use
+Each row carries the athlete id and the core-v2 \verb{$ref} URL - use
 the ref to dereference athlete-game splits or biographical data.
 
 Returns full team-game statistics for one team in one MBB event in
@@ -97,7 +97,7 @@ per record type.
 
 Returns a one-row tibble with one team's final score for one MBB event:
 numeric \code{value}, display string, \code{winner} flag, and source metadata.
-Quick-lookup wrapper — use \code{\link[=espn_mbb_game_team_linescores]{espn_mbb_game_team_linescores()}} for
+Quick-lookup wrapper - use \code{\link[=espn_mbb_game_team_linescores]{espn_mbb_game_team_linescores()}} for
 per-period detail.
 
 Returns the per-quarter scoring breakdown for one team in one NBA
@@ -109,7 +109,7 @@ format: one row per (category x athlete rank). Categories typically
 include points, rebounds, assists, and rating.
 
 Returns the game-day roster index for one team in one NBA event.
-Each row carries the athlete id and the core-v2 \verb{$ref} URL — use
+Each row carries the athlete id and the core-v2 \verb{$ref} URL - use
 the ref to dereference athlete-game splits or biographical data.
 
 Returns full team-game statistics for one team in one NBA event in
@@ -123,7 +123,7 @@ per record type.
 
 Returns a one-row tibble with one team's final score for one NBA event:
 numeric \code{value}, display string, \code{winner} flag, and source metadata.
-Quick-lookup wrapper — use \code{\link[=espn_nba_game_team_linescores]{espn_nba_game_team_linescores()}} for
+Quick-lookup wrapper - use \code{\link[=espn_nba_game_team_linescores]{espn_nba_game_team_linescores()}} for
 per-period detail.
 }
 \examples{

@@ -41,6 +41,14 @@ full list of changes is in NEWS.md. The main additions:
   run only in interactive sessions (`@examplesIf interactive()`): those
   hosts refuse or stall requests from data-centre machines, and the KenPom
   functions need a paid subscription.
+* The `mbb_schedule_crosswalk()` and `mbb_player_crosswalk()` examples also
+  run only in interactive sessions: each builds a whole season from several
+  sources (the player crosswalk fetches every team's roster) and took 95 to
+  150 s under `--run-donttest`.
+* The CollegeBasketballData play examples (`?cbbd_plays_game`) now ask for one
+  championship-game date and an eight-game tournament. Run on their own with
+  an API key they take 12 s (41 s before); without a key, as on CRAN, each
+  stops at once with a message inside `try()`.
 * The RealGM examples are in `\dontrun{}`: RealGM serves its pages behind a
   Cloudflare JavaScript challenge, so the functions read them through
   headless Chrome (`chromote`, in Suggests), which CRAN machines do not have.
@@ -65,35 +73,36 @@ fixtures and mock the HTTP layer.
 ## Size
 
 The package grew with the international families: the tarball is 4.1 MB
-and the installed size 11.6 MB, most of it help pages (6.9 MB) and R code
+and the installed size 11.5 MB, most of it help pages (6.7 MB) and R code
 (4.2 MB) for more than 1,300 documented functions. We cut the
 help by 17% for this release by printing each family's shared source notes
-once and linking to it from the other pages.
+once and linking to it from the other pages. Five test-fixture folders whose
+tests skip when the folder is absent are left out of the tarball.
 
 ## URLs
 
 kenpom.com and the www.nba.com stats pages answer HTTP
 403 to non-browser clients (bot protection); the links work in a browser
-and were present in 3.1.0. The basketball-reference.com link was not
-checked automatically (the host blocks automated requests); it is unchanged
-since 3.1.0.
+and were present in 3.1.0. The help pages name Basketball-Reference without
+linking to it: the site answers automated requests (such as the incoming URL
+check) with HTTP 503.
 
 ## R CMD check results
 
 0 errors | 0 warnings | 0 notes
 
-* Local Windows 10, R 4.6.0 (ucrt), `R CMD check --as-cran` on the built
-  tarball, 2026-11-03 (NOT_CRAN and every live-test variable unset, so every
-  networked test skips): Status OK, 0 errors, 0 warnings, 0 notes. Installed
-  size is reported as INFO (11.6 MB: R 4.2 MB, help 6.9 MB). Tests:
-  0 failures, 617 skips, 15,749 passes in 181 s. The PDF and HTML manuals
-  build. `--as-cran` also runs the `\donttest{}` examples; they pass in
-  12 minutes.
-* GitHub Actions (R release on Ubuntu, macOS and Windows): OK.
-* R-hub v2, 2026-11-03, on this commit: linux (R-devel), windows (R-devel),
-  macos (R-devel), macos-arm64 (R-devel) and nosuggests (Suggests not
-  installed): Status OK on all five.
-* win-builder: not run for this version.
+* Local Windows 10, R 4.6.0 (ucrt), `R CMD check --as-cran --timings` on
+  the tarball built from this commit, 2026-11-06, with an empty user
+  `.Renviron` (no API keys; NOT_CRAN and every live-test variable unset, so
+  every networked test skips). The `\donttest{}` examples were not run in
+  this pass (`_R_CHECK_DONTTEST_EXAMPLES_=false`); the examples changed for
+  this submission were timed on their own (see Examples).
+  Status: OK. Installed size is
+  reported as INFO (11.5 MB: R 4.2 MB, help 6.7 MB). Tests: 0 failures,
+  618 skips, 16,155 passes in 192 s. The PDF and HTML manuals build.
+* GitHub Actions (R release on Ubuntu, macOS and Windows, R-devel and
+  R oldrel-1 on Ubuntu) runs on every pull request.
+* win-builder (devel and release): to be run before submission.
 
 ## revdepcheck results
 

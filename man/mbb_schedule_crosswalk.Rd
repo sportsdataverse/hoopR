@@ -59,9 +59,11 @@ silently dropped so the function always returns a complete crosswalk even
 when partial KenPom data is unavailable.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   try(mbb_schedule_crosswalk(season = 2025))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other MBB Crosswalk Functions:

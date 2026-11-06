@@ -40,12 +40,12 @@ A tibble with one row per award.
 \description{
 Returns the list of award IDs given out in an MBB season from
 \code{sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/{season}/awards}.
-The index only contains IDs and \verb{$ref} URLs — pass an ID to
+The index only contains IDs and \verb{$ref} URLs - pass an ID to
 \code{\link[=espn_mbb_award]{espn_mbb_award()}} for the award name, description, and winners.
 
 Returns the list of award IDs given out in an NBA season from
 \code{sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/{season}/awards}.
-The index only contains IDs and \verb{$ref} URLs — pass an ID to
+The index only contains IDs and \verb{$ref} URLs - pass an ID to
 \code{\link[=espn_nba_award]{espn_nba_award()}} for the award name, description, and winners.
 }
 \examples{

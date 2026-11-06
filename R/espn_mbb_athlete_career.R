@@ -53,7 +53,7 @@ espn_mbb_player_seasons <- function(athlete_id, ...) {
 #' and bind them via a `stat_type_id` column; variants that 404 for that
 #' athlete are silently skipped. Stat types: 0 = regular season (default
 #' endpoint), 1 = postseason, 2 = career aggregate. Coverage of types 1
-#' and 2 is sparse — many athletes only have type 0 populated.
+#' and 2 is sparse - many athletes only have type 0 populated.
 #'
 #' @param athlete_id ESPN athlete identifier.
 #' @param stat_type Integer or integer vector of stat-type codes.
@@ -61,7 +61,7 @@ espn_mbb_player_seasons <- function(athlete_id, ...) {
 #'   Pass a vector like `c(0L, 1L, 2L)` to bind multiple types via a
 #'   `stat_type_id` column; non-existent variants are silently skipped.
 #' @param ... Additional arguments; currently unused.
-#' @return A long tibble (one row per stat_type × split × category × stat).
+#' @return A long tibble (one row per stat_type x split x category x stat).
 #'
 #'    Columns as documented in the shared [espn_mbb_player_career_stats_schema] table.
 #'
@@ -71,7 +71,7 @@ espn_mbb_player_seasons <- function(athlete_id, ...) {
 #' @family ESPN MBB Functions
 #' @examples
 #' \donttest{
-#'   # LeBron James — regular + postseason combined
+#'   # LeBron James - regular + postseason combined
 #'   espn_mbb_player_career_stats(athlete_id = 4593919)
 #'   # Just career aggregate
 #'   espn_mbb_player_career_stats(athlete_id = 4593919, stat_type = 2L)

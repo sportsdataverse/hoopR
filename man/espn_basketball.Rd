@@ -9,8 +9,8 @@
 Wrappers around ESPN's basketball endpoints. Two parallel families
 share a common set of internal helpers in \code{R/espn_basketball_*.R}:
 \itemize{
-\item \verb{espn_nba_*()} — ESPN NBA wrappers
-\item \verb{espn_mbb_*()} — ESPN men's college basketball wrappers
+\item \verb{espn_nba_*()} - ESPN NBA wrappers
+\item \verb{espn_mbb_*()} - ESPN men's college basketball wrappers
 }
 
 Each public wrapper is a thin shim over an internal helper that takes

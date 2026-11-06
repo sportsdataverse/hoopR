@@ -16,7 +16,7 @@ NULL
 #' @description
 #' Returns the list of award IDs given out in an NBA season from
 #' `sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/{season}/awards`.
-#' The index only contains IDs and `$ref` URLs — pass an ID to
+#' The index only contains IDs and `$ref` URLs - pass an ID to
 #' [espn_nba_award()] for the award name, description, and winners.
 #'
 #' @param ... Additional arguments; currently unused.

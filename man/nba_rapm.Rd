@@ -33,8 +33,8 @@ Returns a 0-row frame with the same schema when input is empty or all
 possessions have NA lineup cells (never-raise).
 
 \strong{Note:} RAPM is expressed in per-100-possession units. A \strong{full season}
-of possessions (~5,000–8,000) is needed for statistically meaningful
-estimates. Results from a single game (~150–250 possessions) are highly
+of possessions (~5,000-8,000) is needed for statistically meaningful
+estimates. Results from a single game (~150-250 possessions) are highly
 unstable and are provided here for pipeline illustration only.
 
 Values are relative to average: an unpenalized intercept absorbs the mean

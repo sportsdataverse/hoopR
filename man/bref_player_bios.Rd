@@ -30,7 +30,7 @@ A \code{hoopR_data} tibble with one row per player:
 }
 \description{
 \strong{Get the Basketball-Reference player index for a starting letter, with bios,
-from \href{https://www.basketball-reference.com}{Basketball-Reference}.}
+from Basketball-Reference.}
 
 Returns every player whose last name begins with \code{letter}, with career span,
 position, listed height/weight, birth date, college(s) and the player's

@@ -15,7 +15,7 @@ NULL
 #' @description
 #' Returns the list of award IDs given out in an MBB season from
 #' `sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/{season}/awards`.
-#' The index only contains IDs and `$ref` URLs — pass an ID to
+#' The index only contains IDs and `$ref` URLs - pass an ID to
 #' [espn_mbb_award()] for the award name, description, and winners.
 #'
 #' @param season Season year (numeric). Defaults to the most recent MBB season.

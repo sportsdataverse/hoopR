@@ -31,7 +31,7 @@ A \code{hoopR_data} tibble with one row per team:
 }
 \description{
 \strong{Get end-of-season conference standings from
-\href{https://www.basketball-reference.com}{Basketball-Reference}.}
+Basketball-Reference.}
 
 No API key is required. Basketball-Reference rate-limits aggressive scraping
 (~20 requests/minute) -- space repeated calls with \code{Sys.sleep()}.

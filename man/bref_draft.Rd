@@ -35,7 +35,7 @@ shown -- column names are Basketball-Reference \code{data-stat} keys):
 }
 \description{
 \strong{Get NBA draft results with career stats from
-\href{https://www.basketball-reference.com}{Basketball-Reference}.}
+Basketball-Reference.}
 
 Returns every pick of a draft, paired with the player's career totals and
 advanced metrics. No API key is required. Basketball-Reference rate-limits
