@@ -445,6 +445,18 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
 * New article, "NBA Stats API Parameter Descriptions", and dataset `parameter_descriptions`:
   each query parameter the `nba_*()` stats.nba.com wrappers send, with its API name,
   description, accepted values, default and the functions that take it (#248).
+* The `mbb_schedule_crosswalk()` and `mbb_player_crosswalk()` examples run only in
+  interactive sessions: each builds a whole season from several sources (the player
+  crosswalk fetches every team's roster) and took 1.5 to 2.5 minutes. The
+  `cbbd_plays_date()` and `cbbd_plays_tournament()` examples now ask for one
+  championship-game date and the eight-game 2024 CIT instead of a full slate and the
+  NCAA tournament.
+* The DESCRIPTION explains NBA, ESPN, NCAA, FIBA, ACB, VTB, NBL, KBL and CBA on first use,
+  and the help pages use ASCII punctuation (`-`, `x`) in place of em dashes, en dashes and
+  multiplication signs.
+* Five test-fixture folders whose tests are all skipped on CRAN (`crosswalk_basketball`,
+  `nba_engine`, `nba_tracking`, `pbp_features`, `player_core`) are no longer shipped in
+  the source package.
 
 # **hoopR 3.1.0**
 
