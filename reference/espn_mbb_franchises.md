@@ -2,14 +2,14 @@
 
 Returns the full MBB franchises index from
 `sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises`.
-Each row is one franchise with its ID and the canonical `$ref` URL —
+Each row is one franchise with its ID and the canonical `$ref` URL -
 pass an ID to
 [`espn_mbb_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md)
 for full franchise detail.
 
 Returns the full NBA franchises index from
 `sports.core.api.espn.com/v2/sports/basketball/leagues/nba/franchises`.
-Each row is one franchise with its ID and the canonical `$ref` URL —
+Each row is one franchise with its ID and the canonical `$ref` URL -
 pass an ID to
 [`espn_nba_franchise()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_franchise.md)
 for full franchise detail.
@@ -204,7 +204,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_franchises()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Franchises Index ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:12:30 UTC
+#> ℹ Data updated: 2026-11-06 07:19:01 UTC
 #> # A tibble: 200 × 3
 #>    franchise_id ref                                                       league
 #>    <chr>        <chr>                                                     <chr> 
@@ -223,7 +223,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_franchises()
 #> ── ESPN NBA Franchises Index ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:12:30 UTC
+#> ℹ Data updated: 2026-11-06 07:19:01 UTC
 #> # A tibble: 30 × 3
 #>    franchise_id ref                                                       league
 #>    <chr>        <chr>                                                     <chr> 

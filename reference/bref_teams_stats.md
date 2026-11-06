@@ -1,7 +1,6 @@
 # **Basketball-Reference Team Season Stats**
 
-**Get team season statistics from
-[Basketball-Reference](https://www.basketball-reference.com).**
+**Get team season statistics from Basketball-Reference.**
 
 Scrapes a team stat table from the league season page. No API key is
 required. Basketball-Reference rate-limits aggressive scraping (~20

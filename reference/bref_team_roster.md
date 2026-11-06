@@ -1,7 +1,6 @@
 # **Basketball-Reference Team Roster**
 
-**Get a team's season roster from
-[Basketball-Reference](https://www.basketball-reference.com).**
+**Get a team's season roster from Basketball-Reference.**
 
 No API key is required. Basketball-Reference rate-limits aggressive
 scraping (~20 requests/minute) – space repeated calls with

@@ -135,7 +135,7 @@ Other ACB Functions:
 # \donttest{
   try(acb_player_box(match_id = 105401))
 #> ── ACB Player Box from api2.acb.com ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:10:38 UTC
+#> ℹ Data updated: 2026-11-06 07:16:45 UTC
 #> # A tibble: 120 × 39
 #>    match_id edition_id season team_side team_id club_id team  team_abbr quarter
 #>       <int>      <int>  <int> <chr>       <int>   <int> <chr> <chr>       <int>

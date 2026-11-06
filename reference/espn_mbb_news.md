@@ -203,27 +203,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:12:53 UTC
+#> ℹ Data updated: 2026-11-06 07:19:21 UTC
 #> # A tibble: 5 × 8
-#>         id type    headline     description published premium link_web league_id
-#>      <int> <chr>   <chr>        <chr>       <chr>     <lgl>   <chr>    <chr>    
-#> 1 50377172 Preview Bethune-Coo… Bethune-Co… 2026-11-… FALSE   http://… 41       
-#> 2 50377164 Preview Meyer leads… Georgia St… 2026-11-… FALSE   http://… 41       
-#> 3 50377162 Preview Notre Dame … Mercyhurst… 2026-11-… FALSE   http://… 41       
-#> 4 50377160 Preview Mercer take… Mercer Bea… 2026-11-… FALSE   http://… 41       
-#> 5 50377159 Preview Bryant visi… Bryant Bul… 2026-11-… FALSE   http://… 41       
+#>         id type  headline       description published premium link_web league_id
+#>      <int> <chr> <chr>          <chr>       <chr>     <lgl>   <chr>    <chr>    
+#> 1 50397225 Recap Krivas scores… — Motiejus… 2026-11-… FALSE   http://… 41       
+#> 2 50397206 Recap Lawal scores … — Jaylen L… 2026-11-… FALSE   http://… 41       
+#> 3 50397168 Media La Sierra Uni… La Sierra … 2026-11-… FALSE   https:/… 41       
+#> 4 50397158 Recap McClure score… — Kruz McC… 2026-11-… FALSE   http://… 41       
+#> 5 50397106 Recap McAndrew scor… — Jackson … 2026-11-… FALSE   http://… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:12:53 UTC
-#> # A tibble: 5 × 9
-#>        id type  headline description published premium byline link_web league_id
-#>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Head… Lakers'… "The techn… 2026-11-… FALSE   Dave … https:/… 46       
-#> 2  5.04e7 Head… Raptors… "Kawhi Leo… 2026-11-… FALSE   NA     https:/… 46       
-#> 3  5.04e7 Head… Dumonts… "Sivan and… 2026-11-… FALSE   Tim M… https:/… 46       
-#> 4  5.04e7 Story Karabel… "Eric Kara… 2026-11-… FALSE   Eric … https:/… 3090     
-#> 5  5.04e7 Media Shams t… "Shams to … 2026-11-… FALSE   NA     https:/… 46       
+#> ℹ Data updated: 2026-11-06 07:19:21 UTC
+#> # A tibble: 5 × 8
+#>         id type    headline     description published premium link_web league_id
+#>      <int> <chr>   <chr>        <chr>       <chr>     <lgl>   <chr>    <chr>    
+#> 1 50397482 Preview Orlando fac… Orlando Ma… 2026-11-… FALSE   http://… 46       
+#> 2 50397481 Preview Phoenix pla… Houston Ro… 2026-11-… FALSE   http://… 46       
+#> 3 50397480 Preview Indiana tak… Denver Nug… 2026-11-… FALSE   http://… 46       
+#> 4 50397141 Media   Warriors wi… Warriors w… 2026-11-… FALSE   https:/… 46       
+#> 5 50397120 Recap   Stephen Cur… — Stephen … 2026-11-… FALSE   http://… 46       
 # }
 ```

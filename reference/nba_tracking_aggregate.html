@@ -5,11 +5,11 @@ and season_types, then aggregates the results by entity
 ported from sportsdataverse-py's aggregate_tracking_frames:
 Identity columns (*_ID, *_NAME, *_ABBREVIATION, and any other
 non-numeric string column such as TEAM_CITY) are carried via first()
-— never summed.
+and are never summed.
 *_FG_PCT / *_FT_PCT are recomputed from the summed FGM/FGA and
 FTM/FTA denominators (denom 0 -&amp;gt; NA); a *_FG_PCT / *_FT_PCT column
 whose makes/attempts pair is absent is dropped rather than recomputed.
-Other *_PCT columns (e.g., DRIVE_PTS_PCT — &quot;% of total&quot; rates)
+Other *_PCT columns (e.g., DRIVE_PTS_PCT - &quot;% of total&quot; rates)
 are dropped from the output because they are not additive.
 All remaining numeric columns are summed (numeric-content gate,
 mirroring the sportsdataverse-py dtype.is_numeric() rule).
@@ -20,11 +20,11 @@ and season_types, then aggregates the results by entity
 ported from sportsdataverse-py's aggregate_tracking_frames:
 Identity columns (*_ID, *_NAME, *_ABBREVIATION, and any other
 non-numeric string column such as TEAM_CITY) are carried via first()
-— never summed.
+and are never summed.
 *_FG_PCT / *_FT_PCT are recomputed from the summed FGM/FGA and
 FTM/FTA denominators (denom 0 -&amp;gt; NA); a *_FG_PCT / *_FT_PCT column
 whose makes/attempts pair is absent is dropped rather than recomputed.
-Other *_PCT columns (e.g., DRIVE_PTS_PCT — &quot;% of total&quot; rates)
+Other *_PCT columns (e.g., DRIVE_PTS_PCT - &quot;% of total&quot; rates)
 are dropped from the output because they are not additive.
 All remaining numeric columns are summed (numeric-content gate,
 mirroring the sportsdataverse-py dtype.is_numeric() rule).
@@ -152,11 +152,11 @@ and <code>season_types</code>, then aggregates the results by entity
 (<code>PLAYER_ID</code> for Player, <code>TEAM_ID</code> for Team) following the contract
 ported from <code>sportsdataverse-py</code>'s <code>aggregate_tracking_frames</code>:</p><ul><li><p><strong>Identity columns</strong> (<code>*_ID</code>, <code>*_NAME</code>, <code>*_ABBREVIATION</code>, and any other
 non-numeric string column such as <code>TEAM_CITY</code>) are carried via <code>first()</code>
-— never summed.</p></li>
+and are never summed.</p></li>
 <li><p><strong><code>*_FG_PCT</code> / <code>*_FT_PCT</code></strong> are recomputed from the summed FGM/FGA and
 FTM/FTA denominators (denom 0 -&gt; <code>NA</code>); a <code>*_FG_PCT</code> / <code>*_FT_PCT</code> column
 whose makes/attempts pair is absent is dropped rather than recomputed.</p></li>
-<li><p><strong>Other <code>*_PCT</code> columns</strong> (e.g., <code>DRIVE_PTS_PCT</code> — "% of total" rates)
+<li><p><strong>Other <code>*_PCT</code> columns</strong> (e.g., <code>DRIVE_PTS_PCT</code> - "% of total" rates)
 are <strong>dropped</strong> from the output because they are not additive.</p></li>
 <li><p><strong>All remaining numeric columns</strong> are summed (numeric-content gate,
 mirroring the <code>sportsdataverse-py</code> <code>dtype.is_numeric()</code> rule).</p></li>

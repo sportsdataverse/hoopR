@@ -127,7 +127,7 @@ Other LBA Functions:
 # \donttest{
   try(lba_game(game_id = 25602))
 #> ── LBA Game from legabasket.it ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:15:40 UTC
+#> ℹ Data updated: 2026-11-06 07:22:55 UTC
 #> # A tibble: 1 × 62
 #>   season game_id game_status championship_id competition_name      
 #>    <int>   <int> <chr>                 <int> <chr>                 

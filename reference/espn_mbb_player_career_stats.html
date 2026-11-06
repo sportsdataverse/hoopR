@@ -5,27 +5,27 @@ view. Pass a vector like c(0L, 1L, 2L) to attempt multiple types
 and bind them via a stat_type_id column; variants that 404 for that
 athlete are silently skipped. Stat types: 0 = regular season (default
 endpoint), 1 = postseason, 2 = career aggregate. Coverage of types 1
-and 2 is sparse — many athletes only have type 0 populated.
+and 2 is sparse - many athletes only have type 0 populated.
 Returns career stats for an NBA athlete in long format. Default
 stat_type = 0L fetches the standard &quot;All Splits&quot; / regular-season
 view. Pass a vector like c(0L, 1L, 2L) to attempt multiple types
 and bind them via a stat_type_id column; variants that 404 for that
 athlete are silently skipped. Stat types: 0 = regular season (default
 endpoint), 1 = postseason, 2 = career aggregate. Coverage of types 1
-and 2 is sparse — many athletes only have type 0 populated."><meta property="og:description" content="Returns career stats for an MBB athlete in long format. Default
+and 2 is sparse - many athletes only have type 0 populated."><meta property="og:description" content="Returns career stats for an MBB athlete in long format. Default
 stat_type = 0L fetches the standard &quot;All Splits&quot; / regular-season
 view. Pass a vector like c(0L, 1L, 2L) to attempt multiple types
 and bind them via a stat_type_id column; variants that 404 for that
 athlete are silently skipped. Stat types: 0 = regular season (default
 endpoint), 1 = postseason, 2 = career aggregate. Coverage of types 1
-and 2 is sparse — many athletes only have type 0 populated.
+and 2 is sparse - many athletes only have type 0 populated.
 Returns career stats for an NBA athlete in long format. Default
 stat_type = 0L fetches the standard &quot;All Splits&quot; / regular-season
 view. Pass a vector like c(0L, 1L, 2L) to attempt multiple types
 and bind them via a stat_type_id column; variants that 404 for that
 athlete are silently skipped. Stat types: 0 = regular season (default
 endpoint), 1 = postseason, 2 = career aggregate. Coverage of types 1
-and 2 is sparse — many athletes only have type 0 populated."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
+and 2 is sparse - many athletes only have type 0 populated."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
   window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
   plausible.init()
 </script></head><body>
@@ -149,14 +149,14 @@ view. Pass a vector like <code>c(0L, 1L, 2L)</code> to attempt multiple types
 and bind them via a <code>stat_type_id</code> column; variants that 404 for that
 athlete are silently skipped. Stat types: 0 = regular season (default
 endpoint), 1 = postseason, 2 = career aggregate. Coverage of types 1
-and 2 is sparse — many athletes only have type 0 populated.</p>
+and 2 is sparse - many athletes only have type 0 populated.</p>
 <p>Returns career stats for an NBA athlete in long format. Default
 <code>stat_type = 0L</code> fetches the standard "All Splits" / regular-season
 view. Pass a vector like <code>c(0L, 1L, 2L)</code> to attempt multiple types
 and bind them via a <code>stat_type_id</code> column; variants that 404 for that
 athlete are silently skipped. Stat types: 0 = regular season (default
 endpoint), 1 = postseason, 2 = career aggregate. Coverage of types 1
-and 2 is sparse — many athletes only have type 0 populated.</p>
+and 2 is sparse - many athletes only have type 0 populated.</p>
     </div>
 
     <div class="section level2">
@@ -187,9 +187,9 @@ Pass a vector like <code>c(0L, 1L, 2L)</code> to bind multiple types via a
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A long tibble (one row per stat_type × split × category × stat).</p>
+    <p>A long tibble (one row per stat_type x split x category x stat).</p>
 <p>Columns as documented in the shared <a href="espn_mbb_player_career_stats_schema.html">espn_mbb_player_career_stats_schema</a> table.</p>
-<p>A long tibble (one row per stat_type × split × category × stat).</p>
+<p>A long tibble (one row per stat_type x split x category x stat).</p>
 <p>Columns as documented in the shared <a href="espn_mbb_player_career_stats_schema.html">espn_mbb_player_career_stats_schema</a> table.</p>
     </div>
     <div class="section level2">
@@ -350,10 +350,10 @@ Pass a vector like <code>c(0L, 1L, 2L)</code> to bind multiple types via a
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="co"># LeBron James — regular + postseason combined</span></span></span>
+<span class="r-in"><span>  <span class="co"># LeBron James - regular + postseason combined</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_player_career_stats</span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="fl">4593919</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Career Stats ──────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-04 10:12:55 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-06 07:19:22 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 87 × 17</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    league   athlete_id stat_type_id split_id split_name split_type category_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
@@ -375,7 +375,7 @@ Pass a vector like <code>c(0L, 1L, 2L)</code> to bind multiple types via a
 <span class="r-in"><span>  <span class="co"># Just career aggregate</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_player_career_stats</span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="fl">4593919</span>, stat_type <span class="op">=</span> <span class="fl">2L</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Career Stats ──────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-04 10:12:55 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-06 07:19:22 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 17</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 17 variables: league &lt;chr&gt;, athlete_id &lt;chr&gt;, stat_type_id &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   split_id &lt;chr&gt;, split_name &lt;chr&gt;, split_type &lt;chr&gt;, category_name &lt;chr&gt;,</span></span>
@@ -384,10 +384,10 @@ Pass a vector like <code>c(0L, 1L, 2L)</code> to bind multiple types via a
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   description &lt;chr&gt;, value &lt;dbl&gt;, display_value &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="co"># LeBron James — regular + postseason combined</span></span></span>
+<span class="r-in"><span>  <span class="co"># LeBron James - regular + postseason combined</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_player_career_stats</span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="fl">1966</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Athlete Career Stats ──────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-04 10:12:55 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-06 07:19:22 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 114 × 17</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    league athlete_id stat_type_id split_id split_name split_type category_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
@@ -409,7 +409,7 @@ Pass a vector like <code>c(0L, 1L, 2L)</code> to bind multiple types via a
 <span class="r-in"><span>  <span class="co"># Just career aggregate</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_player_career_stats</span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="fl">1966</span>, stat_type <span class="op">=</span> <span class="fl">2L</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Athlete Career Stats ──────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-04 10:12:55 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-06 07:19:22 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 17</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 17 variables: league &lt;chr&gt;, athlete_id &lt;chr&gt;, stat_type_id &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   split_id &lt;chr&gt;, split_name &lt;chr&gt;, split_type &lt;chr&gt;, category_name &lt;chr&gt;,</span></span>

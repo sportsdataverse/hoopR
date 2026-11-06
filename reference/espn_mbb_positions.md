@@ -1,12 +1,12 @@
 # **Get ESPN MBB Positions Index**
 
 Returns the MBB position dictionary index. One row per position with its
-id and the canonical `$ref` URL — pass an id to
+id and the canonical `$ref` URL - pass an id to
 [`espn_mbb_position()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_position.md)
 for full details (display name, abbreviation, leaf flag, parent link).
 
 Returns the NBA position dictionary index. One row per position with its
-id and the canonical `$ref` URL — pass an id to
+id and the canonical `$ref` URL - pass an id to
 [`espn_nba_position()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_position.md)
 for full details (display name, abbreviation, leaf flag, parent link).
 
@@ -186,7 +186,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_positions()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Positions Index ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:13:02 UTC
+#> ℹ Data updated: 2026-11-06 07:19:28 UTC
 #> # A tibble: 14 × 3
 #>    position_id ref                                                        league
 #>    <chr>       <chr>                                                      <chr> 
@@ -208,7 +208,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_positions()
 #> ── ESPN NBA Positions Index ───────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:13:02 UTC
+#> ℹ Data updated: 2026-11-06 07:19:28 UTC
 #> # A tibble: 11 × 3
 #>    position_id ref                                                        league
 #>    <chr>       <chr>                                                      <chr> 

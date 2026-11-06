@@ -1,7 +1,6 @@
 # **Basketball-Reference NBA Injury Report**
 
-**Get the current NBA injury report from
-[Basketball-Reference](https://www.basketball-reference.com).**
+**Get the current NBA injury report from Basketball-Reference.**
 
 One row per injured player with team, the date the status was last
 updated and the injury note (status + description). No API key is

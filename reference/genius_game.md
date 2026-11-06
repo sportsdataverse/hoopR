@@ -127,7 +127,7 @@ Other Genius Functions:
 # \donttest{
   try(genius_game(match_id = 2902690))
 #> ── Genius LiveStats game ──────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:14:40 UTC
+#> ℹ Data updated: 2026-11-06 07:21:59 UTC
 #> # A tibble: 1 × 21
 #>   match_id period period_type in_ot clock periods_max period_length_regular
 #>      <int>  <int> <chr>       <int> <chr>       <int>                 <int>

@@ -2,13 +2,13 @@
 
 Returns the list of award IDs given out in an MBB season from
 `sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/{season}/awards`.
-The index only contains IDs and `$ref` URLs — pass an ID to
+The index only contains IDs and `$ref` URLs - pass an ID to
 [`espn_mbb_award()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_award.md)
 for the award name, description, and winners.
 
 Returns the list of award IDs given out in an NBA season from
 `sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/{season}/awards`.
-The index only contains IDs and `$ref` URLs — pass an ID to
+The index only contains IDs and `$ref` URLs - pass an ID to
 [`espn_nba_award()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_award.md)
 for the award name, description, and winners.
 
@@ -208,7 +208,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_awards(season = 2024)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Awards Index ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:13:09 UTC
+#> ℹ Data updated: 2026-11-06 07:19:35 UTC
 #> # A tibble: 11 × 4
 #>    season award_id ref                                                    league
 #>     <int> <chr>    <chr>                                                  <chr> 
@@ -227,7 +227,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_awards(season = 2024)
 #> ── ESPN NBA Season Awards Index ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:13:09 UTC
+#> ℹ Data updated: 2026-11-06 07:19:35 UTC
 #> # A tibble: 20 × 4
 #>    season award_id ref                                                    league
 #>     <int> <chr>    <chr>                                                  <chr> 

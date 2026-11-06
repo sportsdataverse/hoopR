@@ -1,11 +1,11 @@
 # **Get ESPN MBB Coach-in-Season Detail**
 
 Per-season coach detail (name, birth info, `$ref`s to team/college/
-person). ESPN's coverage of this endpoint is sparse; many (coach ×
+person). ESPN's coverage of this endpoint is sparse; many (coach x
 season) combinations return 404.
 
 Per-season coach detail (name, birth info, `$ref`s to team/college/
-person). ESPN's coverage of this endpoint is sparse; many (coach ×
+person). ESPN's coverage of this endpoint is sparse; many (coach x
 season) combinations return 404.
 
 ## Usage
@@ -206,7 +206,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_coach_season(coach_id = 32116, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Coach-in-Season Detail ────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:12:26 UTC
+#> ℹ Data updated: 2026-11-06 07:18:59 UTC
 #> # A tibble: 1 × 13
 #>   league     season coach_id uid   first_name last_name date_of_birth birth_city
 #>   <chr>       <int> <chr>    <chr> <chr>      <chr>     <chr>         <chr>     
@@ -217,7 +217,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_coach_season(coach_id = 52120, season = 2025)
 #> ── ESPN NBA Coach-in-Season Detail ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:12:26 UTC
+#> ℹ Data updated: 2026-11-06 07:18:59 UTC
 #> # A tibble: 1 × 13
 #>   league season coach_id uid       first_name last_name date_of_birth birth_city
 #>   <chr>   <int> <chr>    <chr>     <chr>      <chr>     <chr>         <chr>     

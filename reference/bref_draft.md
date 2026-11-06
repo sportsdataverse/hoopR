@@ -1,7 +1,6 @@
 # **Basketball-Reference Draft**
 
-**Get NBA draft results with career stats from
-[Basketball-Reference](https://www.basketball-reference.com).**
+**Get NBA draft results with career stats from Basketball-Reference.**
 
 Returns every pick of a draft, paired with the player's career totals
 and advanced metrics. No API key is required. Basketball-Reference

@@ -622,6 +622,21 @@ vocabulary.
   stats.nba.com wrappers send, with its API name, description, accepted
   values, default and the functions that take it
   ([\#248](https://github.com/sportsdataverse/hoopR/issues/248)).
+- The
+  [`mbb_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_schedule_crosswalk.md)
+  and
+  [`mbb_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_player_crosswalk.md)
+  examples run only in interactive sessions: each builds a whole season
+  from several sources (the player crosswalk fetches every team’s
+  roster) and took 1.5 to 2.5 minutes. The
+  [`cbbd_plays_date()`](https://hoopR.sportsdataverse.org/reference/cbbd_play_types.md)
+  and
+  [`cbbd_plays_tournament()`](https://hoopR.sportsdataverse.org/reference/cbbd_play_types.md)
+  examples now ask for one championship-game date and the eight-game
+  2024 CIT instead of a full slate and the NCAA tournament.
+- The DESCRIPTION explains NBA, ESPN, NCAA, FIBA, ACB, VTB, NBL, KBL and
+  CBA on first use, and the help pages use ASCII punctuation (`-`, `x`)
+  in place of em dashes, en dashes and multiplication signs.
 
 ## **hoopR 3.1.0**
 
@@ -802,8 +817,8 @@ barttorvik.com directly.)
 #### **Basketball-Reference (`bref_*`)**
 
 New `bref_*()` function family scraping publicly available NBA data from
-[Basketball-Reference](https://www.basketball-reference.com) — a source
-hoopR previously did not cover at all (no account or API key required):
+Basketball-Reference — a source hoopR previously did not cover at all
+(no account or API key required):
 
 - **[`bref_players_stats()`](https://hoopR.sportsdataverse.org/reference/bref_players_stats.md)**
   — league-wide player season stats; pick the table with

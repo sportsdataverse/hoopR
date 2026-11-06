@@ -85,7 +85,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_league_leagues())
 #> ── VTB League Leagues from api.vtb-league.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:19:38 UTC
+#> ℹ Data updated: 2026-11-06 07:26:53 UTC
 #> # A tibble: 3 × 6
 #>   league_id league   league_name_en          league_name_ru     league_abbrev_en
 #>       <int> <chr>    <chr>                   <chr>              <chr>           

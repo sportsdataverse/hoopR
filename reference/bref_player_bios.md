@@ -1,8 +1,7 @@
 # **Basketball-Reference Player Bios / Index**
 
 **Get the Basketball-Reference player index for a starting letter, with
-bios, from
-[Basketball-Reference](https://www.basketball-reference.com).**
+bios, from Basketball-Reference.**
 
 Returns every player whose last name begins with `letter`, with career
 span, position, listed height/weight, birth date, college(s) and the

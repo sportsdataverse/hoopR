@@ -2,12 +2,12 @@
 
 Returns the players on court at a specific MBB play in long format (one
 row per athlete entry across both competitors). Foundation for lineup
-analysis. ESPN coverage is sparse — many plays return zero rows; the
+analysis. ESPN coverage is sparse - many plays return zero rows; the
 wrapper returns a typed empty tibble in that case.
 
 Returns the players on court at a specific NBA play in long format (one
 row per athlete entry across both competitors). Foundation for lineup
-analysis. ESPN coverage is sparse — many plays return zero rows; the
+analysis. ESPN coverage is sparse - many plays return zero rows; the
 wrapper returns a typed empty tibble in that case.
 
 ## Usage
@@ -193,17 +193,17 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_game_play_personnel(event_id = 401256760, play_id = 401256760101805901)
-#> ✖ 2026-11-04 10:12:48.344494: Failed to retrieve ESPN mens-college-basketball play personnel for event_id=401256760, play_id=401256760101805888
+#> ✖ 2026-11-06 07:19:16.971003: Failed to retrieve ESPN mens-college-basketball play personnel for event_id=401256760, play_id=401256760101805888
 #> ✖ Args: league = "mens-college-basketball", event_id = 401256760, play_id = 401256760101805888
 #> ✖ Error: The API returned an error
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Play Personnel ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:12:48 UTC
+#> ℹ Data updated: 2026-11-06 07:19:16 UTC
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   espn_nba_game_play_personnel(event_id = 401283399, play_id = 4012833994)
 #> ── ESPN NBA Event Play Personnel ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:12:48 UTC
+#> ℹ Data updated: 2026-11-06 07:19:17 UTC
 #> # A tibble: 0 × 7
 #> # ℹ 7 variables: league <chr>, event_id <chr>, play_id <chr>, team_id <chr>,
 #> #   athlete_id <chr>, athlete_ref <chr>, competitor_ref <chr>

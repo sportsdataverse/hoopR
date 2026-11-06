@@ -2,7 +2,7 @@
 
 Returns the index of contract seasons recorded for an NBA athlete from
 `sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/{athlete_id}/contracts`.
-Each row is one contract year — pass the season to
+Each row is one contract year - pass the season to
 `espn_nba_player_contract()` for the full contract record.
 
 Returns the full contract record for one NBA athlete in one season,
@@ -157,10 +157,10 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  # LeBron James — athlete id 1966
+  # LeBron James - athlete id 1966
   espn_nba_player_contracts(athlete_id = 1966)
 #> ── ESPN NBA Athlete Contracts Index ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:13:45 UTC
+#> ℹ Data updated: 2026-11-06 07:20:08 UTC
 #> # A tibble: 20 × 4
 #>    athlete_id season ref                                                  league
 #>    <chr>       <int> <chr>                                                <chr> 
@@ -189,7 +189,7 @@ Saiem Gilani
   # LeBron James 2025 contract
   espn_nba_player_contract(athlete_id = 1966, season = 2025)
 #> ── ESPN NBA Athlete Contract from ESPN.com ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:13:45 UTC
+#> ℹ Data updated: 2026-11-06 07:20:08 UTC
 #> # A tibble: 1 × 23
 #>   athlete_id season bird_status   salary salary_remaining years_remaining
 #>   <chr>       <int>       <int>    <int>            <int>           <int>

@@ -1,13 +1,13 @@
 # **Get ESPN MBB Event Prop Bets (Long Format)**
 
 Returns prop-bet markets for one MBB event + provider in long format:
-one row per (athlete × prop type). Each row has american / decimal /
+one row per (athlete x prop type). Each row has american / decimal /
 fraction odds plus the current target (e.g. over/under line). Hits the
 core-v2 `competitions/{id}/odds/{provider_id}/propBets` endpoint and
 auto-paginates.
 
 Returns prop-bet markets for one NBA event + provider in long format:
-one row per (athlete × prop type). Each row has american / decimal /
+one row per (athlete x prop type). Each row has american / decimal /
 fraction odds plus the current target (e.g. over/under line). Hits the
 core-v2 `competitions/{id}/odds/{provider_id}/propBets` endpoint and
 auto-paginates.
@@ -38,9 +38,9 @@ espn_nba_game_propbets(event_id, provider_id, ...)
 
 ## Value
 
-A long tibble with one row per (athlete × prop type).
+A long tibble with one row per (athlete x prop type).
 
-A long tibble with one row per (athlete × prop type).
+A long tibble with one row per (athlete x prop type).
 
 ## Details
 
@@ -204,7 +204,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_propbets(event_id = 401256760, provider_id = 58)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Prop Bets ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:12:49 UTC
+#> ℹ Data updated: 2026-11-06 07:19:18 UTC
 #> # A tibble: 0 × 13
 #> # ℹ 13 variables: league <chr>, event_id <chr>, provider_id <chr>,
 #> #   athlete_id <chr>, prop_type_id <chr>, prop_type_name <chr>, american <chr>,
@@ -214,7 +214,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_propbets(event_id = 401283399, provider_id = 58)
 #> ── ESPN NBA Event Prop Bets ───────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:12:49 UTC
+#> ℹ Data updated: 2026-11-06 07:19:18 UTC
 #> # A tibble: 0 × 13
 #> # ℹ 13 variables: league <chr>, event_id <chr>, provider_id <chr>,
 #> #   athlete_id <chr>, prop_type_id <chr>, prop_type_name <chr>, american <chr>,

@@ -284,7 +284,7 @@ espn_nba_team_roster(team_id = team_id, season = season)
 #>  5 4683774    Bronny J… 9      G               Guard         "6' 2… 210 l… 22   
 #>  6 4433599    Arthur K… 47     F               Forward       "6' 6… 223 l… 24   
 #>  7 4433136    Walker K… 14     C               Center        "7' 2… 245 l… 25   
-#>  8 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 24   
+#>  8 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 25   
 #>  9 3155535    Kevon Lo… 55     F               Forward       "6' 9… 222 l… 30   
 #> 10 4596528    Lawson L… NA     C               Center        "7' 1… 233 l… 23   
 #> 11 4278580    Sandro M… 54     F               Forward       "6' 9… 240 l… 27   
@@ -375,14 +375,14 @@ espn_nba_leaders(season = most_recent_nba_season())
 #>     <int>       <int> <chr>         <chr>        <chr>      <chr>        <chr>  
 #>  1   2027           2 pointsPerGame PTS          3945274    NA           13     
 #>  2   2027           2 pointsPerGame PTS          4594268    NA           16     
-#>  3   2027           2 pointsPerGame PTS          3975       NA           9      
-#>  4   2027           2 pointsPerGame PTS          4431678    NA           20     
-#>  5   2027           2 pointsPerGame PTS          3032977    NA           14     
-#>  6   2027           2 pointsPerGame PTS          4278073    NA           25     
-#>  7   2027           2 pointsPerGame PTS          4065733    NA           29     
-#>  8   2027           2 pointsPerGame PTS          3936299    NA           7      
+#>  3   2027           2 pointsPerGame PTS          4278073    NA           25     
+#>  4   2027           2 pointsPerGame PTS          3975       NA           9      
+#>  5   2027           2 pointsPerGame PTS          5104157    NA           24     
+#>  6   2027           2 pointsPerGame PTS          3032977    NA           14     
+#>  7   2027           2 pointsPerGame PTS          4431678    NA           20     
+#>  8   2027           2 pointsPerGame PTS          4065733    NA           29     
 #>  9   2027           2 pointsPerGame PTS          4065648    NA           2      
-#> 10   2027           2 pointsPerGame PTS          5142620    NA           23     
+#> 10   2027           2 pointsPerGame PTS          3934672    NA           18     
 #> # ℹ 390 more rows
 #> # ℹ 4 more variables: team_abbrev <chr>, value <dbl>, rank <int>,
 #> #   display_value <chr>

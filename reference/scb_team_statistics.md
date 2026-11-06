@@ -141,7 +141,7 @@ Other SCB Functions:
 # \donttest{
   try(scb_team_statistics(season = 2026))
 #> ── BBL/DBBL Season Team Statistics from the SCB API ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:17:57 UTC
+#> ℹ Data updated: 2026-11-06 07:25:11 UTC
 #> # A tibble: 18 × 59
 #>    league season display_type team_id season_team_id team_name          team_tlc
 #>    <chr>   <int> <chr>        <chr>   <chr>          <chr>              <chr>   
@@ -162,7 +162,7 @@ Other SCB Functions:
 #> 15 bbl      2026 MAIN_ROUND   430     430            EWE Baskets Olden… OLD     
 #> 16 bbl      2026 MAIN_ROUND   426     426            SKYLINERS          FRS     
 #> 17 bbl      2026 MAIN_ROUND   433     433            MHP RIESEN Ludwig… LUD     
-#> 18 bbl      2026 MAIN_ROUND   413     413            ALBA BERLIN        BER     
+#> 18 bbl      2026 MAIN_ROUND   413     413            ALBA Berlin        BER     
 #> # ℹ 52 more variables: season_id <int>, round_code <int>, competition <chr>,
 #> #   aggregation <chr>, seconds_played <int>, points <int>,
 #> #   two_point_shots_made <int>, two_point_shots_attempted <int>,

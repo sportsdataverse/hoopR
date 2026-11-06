@@ -67,7 +67,7 @@ espn_mbb_team(team_id = team_id)                              # identity + recor
 #> # A tibble: 1 × 4
 #>   description    stats         summary type 
 #>   <chr>          <list>        <chr>   <chr>
-#> 1 Overall Record <df [30 × 2]> 1-0     total
+#> 1 Overall Record <df [30 × 2]> 2-0     total
 #> 
 #> $NextEvent
 #> # A tibble: 1 × 4
@@ -467,16 +467,16 @@ espn_mbb_standings(year = season)
 #> # A tibble: 365 × 87
 #>    team_id team             conference avgpointsagainst avgpointsfor gamesbehind
 #>      <int> <chr>            <chr>                 <dbl>        <dbl>       <dbl>
-#>  1    2803 Bryant Bulldogs  America E…               75           80           0
-#>  2     160 New Hampshire W… America E…               55           59           0
-#>  3     399 UAlbany Great D… America E…               67           74           0
-#>  4    2349 UMass Lowell Ri… America E…               57          121           0
-#>  5    2066 Binghamton Bear… America E…               86           60           1
-#>  6     311 Maine Black Bea… America E…               83           56           1
-#>  7    2885 NJIT Highlanders America E…               89           58           1
-#>  8    2378 UMBC Retrievers  America E…               82           54           1
-#>  9     261 Vermont Catamou… America E…               56           55           1
-#> 10    2429 Charlotte 49ers  American …               70           78           0
+#>  1     160 New Hampshire W… America E…             55           62.5           0
+#>  2     399 UAlbany Great D… America E…             67.5         73             0
+#>  3    2349 UMass Lowell Ri… America E…             59           96             0
+#>  4    2066 Binghamton Bear… America E…             70.5         59             1
+#>  5    2803 Bryant Bulldogs  America E…             70.5         68             1
+#>  6     311 Maine Black Bea… America E…             77.5         65             1
+#>  7     261 Vermont Catamou… America E…             61.5         67             1
+#>  8    2885 NJIT Highlanders America E…             80.5         53.5           2
+#>  9    2378 UMBC Retrievers  America E…             85           67             2
+#> 10    2429 Charlotte 49ers  American …             68.5         77.5           0
 #> # ℹ 355 more rows
 #> # ℹ 81 more variables: leaguewinpercent <dbl>, losses <dbl>, playoffseed <dbl>,
 #> #   pointdifferential <chr>, pointsagainst <dbl>, pointsfor <dbl>,

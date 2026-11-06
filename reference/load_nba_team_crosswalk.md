@@ -108,7 +108,7 @@ Other MBB Crosswalk Functions:
 # \donttest{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-01 16:31:22 UTC
+#> ℹ Data updated: 2026-11-05 16:30:16 UTC
 #> # A tibble: 30 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name
 #>     <int>        <int> <chr>             <chr>                 <chr>          
@@ -133,7 +133,7 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 16:30:37 UTC
+#> ℹ Data updated: 2026-11-05 16:30:50 UTC
 #> # A tibble: 1,207 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
 #>     <int> <chr>       <date>                 <int>             <int>
@@ -156,8 +156,8 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 16:31:07 UTC
-#> # A tibble: 470 × 21
+#> ℹ Data updated: 2026-11-05 16:31:12 UTC
+#> # A tibble: 474 × 21
 #>    season espn_team_id team_abbreviation player_name         espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                         <int>
 #>  1   2027            1 ATL               aaron wiggins               4397183
@@ -170,7 +170,7 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #>  8   2027            1 ATL               jock landale                3146557
 #>  9   2027            1 ATL               kingston flemings           5149077
 #> 10   2027            1 ATL               luguentz dort               4397020
-#> # ℹ 460 more rows
+#> # ℹ 464 more rows
 #> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, nba_player_id <chr>, nba_player_name <chr>,
 #> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,
@@ -181,8 +181,8 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 #> ── MBB team crosswalk (ESPN / Fox / Torvik / KenPom) ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-03 11:12:37 UTC
-#> # A tibble: 362 × 21
+#> ℹ Data updated: 2026-11-04 11:59:43 UTC
+#> # A tibble: 362 × 27
 #>    season espn_team_id espn_abbreviation espn_display_name       espn_short_name
 #>     <int>        <int> <chr>             <chr>                   <chr>          
 #>  1   2027         2000 ACU               Abilene Christian Wild… Abilene Chrstn 
@@ -196,12 +196,12 @@ load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 #>  9   2027         2026 APP               App State Mountaineers  App State      
 #> 10   2027            9 ASU               Arizona State Sun Devi… Arizona St     
 #> # ℹ 352 more rows
-#> # ℹ 16 more variables: espn_location <chr>, espn_mascot <chr>,
+#> # ℹ 22 more variables: espn_location <chr>, espn_mascot <chr>,
 #> #   espn_conference <chr>, fox_team_id <chr>, fox_team_name <chr>,
 #> #   fox_section <chr>, bart_team <chr>, bart_conf <chr>, kp_team <chr>,
-#> #   kp_conf <chr>, yahoo_team_id <chr>, yahoo_team_name <chr>,
-#> #   fox_match_confidence <dbl>, bart_match_confidence <dbl>,
-#> #   kp_match_confidence <dbl>, match_method <chr>
+#> #   kp_conf <chr>, ncaa_team <chr>, espn_pbp_name <chr>,
+#> #   warren_nolan_team <chr>, team_247 <chr>, sref_slug <chr>, sref_team <chr>,
+#> #   yahoo_team_id <chr>, yahoo_team_name <chr>, fox_match_confidence <dbl>, …
 # }
 # \donttest{
 load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
@@ -219,16 +219,26 @@ load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 # }
 # \donttest{
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
-#> Warning: Failed to read
-#> <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2027.rds>
-#> after 1 attempt.
-#> ! The result is incomplete: it is missing this file.
-#> ✖ cannot open the connection to
-#>   'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2027.rds';
-#>   cannot open URL
-#>   'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_player_crosswalk_2027.rds':
-#>   HTTP status was '404 Not Found'
-#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 0 × 0
+#> ── MBB player crosswalk (ESPN / Fox) ──────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-05 12:02:27 UTC
+#> # A tibble: 5,514 × 18
+#>    season espn_team_id team_abbreviation player_name        espn_athlete_id
+#>     <int>        <int> <chr>             <chr>                        <int>
+#>  1   2027         2000 ACU               evan boisdur               5313910
+#>  2   2027         2000 ACU               noah bolanga               5245765
+#>  3   2027         2000 ACU               isaac dye                  5314820
+#>  4   2027         2000 ACU               drew haffner               5461594
+#>  5   2027         2000 ACU               cade hornecker             5107885
+#>  6   2027         2000 ACU               xabi lopez                 5461597
+#>  7   2027         2000 ACU               willan marie anais         5461596
+#>  8   2027         2000 ACU               isaiah neyhart             5314819
+#>  9   2027         2000 ACU               timeo pons                 5315586
+#> 10   2027         2000 ACU               yaniel rivera              5177702
+#> # ℹ 5,504 more rows
+#> # ℹ 13 more variables: espn_full_name <chr>, espn_jersey <chr>,
+#> #   espn_position <chr>, fox_athlete_id <chr>, fox_player <chr>,
+#> #   fox_jersey <chr>, fox_position_group <chr>, yahoo_player_id <chr>,
+#> #   yahoo_player_name <chr>, kp_player_id <chr>, match_method <chr>,
+#> #   match_confidence <dbl>, match_keys <chr>
 # }
 ```

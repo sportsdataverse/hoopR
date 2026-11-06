@@ -4,7 +4,7 @@ Turns one ESPN core-v2 `/athletes/{id}` payload into the single tidy row
 released as the `player_core` dataset.
 
 This is a **pure projection**: it takes an already-fetched payload and
-never performs I/O. That is deliberate — the compile stages in
+never performs I/O. That is deliberate - the compile stages in
 `hoopR-nba-data` / `hoopR-mbb-data` read the payload from the sibling
 `-raw` tree, and re-fetching here would both break the one-way raw -\>
 data boundary and mean the R and Python pipelines read different bytes,
@@ -31,7 +31,7 @@ espn_basketball_player_core(payload, athlete_id)
 - athlete_id:
 
   numeric or character. The ESPN athlete id. **Required and never
-  inferred from the payload** — callers pass the id from the file path,
+  inferred from the payload** - callers pass the id from the file path,
   so a payload missing its own `id` still produces a joinable row.
 
 ## Value
@@ -82,7 +82,7 @@ completeness:
 ## Details
 
 **What the row means.** `current_team_id` is the athlete's team *today*,
-not their team in any past season — the season a released row is filed
+not their team in any past season - the season a released row is filed
 under is *participation* (who appeared that year, taken from
 `player_box`), not the vintage of the bio. Height, weight and jersey are
 likewise a current snapshot: ESPN overwrites them in place, so
@@ -94,7 +94,7 @@ era-correct bio is not obtainable from this endpoint.
 byte-parity by `tests/testthat/test-espn_basketball_player_core.R`
 against a golden fixture captured from that function; see
 `tests/testthat/fixtures/player_core/README.md` for provenance. Neither
-implementation is authoritative — a divergence is a review item.
+implementation is authoritative - a divergence is a review item.
 
 ## Twin
 
@@ -150,7 +150,7 @@ Saiem Gilani
   )
   espn_basketball_player_core(payload, athlete_id = 1966)
 #> ── ESPN Basketball Player Core from ESPN.com ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:12:18 UTC
+#> ℹ Data updated: 2026-11-06 07:18:52 UTC
 #> # A tibble: 1 × 35
 #>   athlete_id guid  uid   slug  type  first_name last_name full_name display_name
 #>        <int> <chr> <chr> <chr> <chr> <chr>      <chr>     <chr>     <chr>       

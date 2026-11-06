@@ -7,14 +7,14 @@ for Player, `TEAM_ID` for Team) following the contract ported from
 
 - **Identity columns** (`*_ID`, `*_NAME`, `*_ABBREVIATION`, and any
   other non-numeric string column such as `TEAM_CITY`) are carried via
-  `first()` — never summed.
+  `first()` and are never summed.
 
 - **`*_FG_PCT` / `*_FT_PCT`** are recomputed from the summed FGM/FGA and
   FTM/FTA denominators (denom 0 -\> `NA`); a `*_FG_PCT` / `*_FT_PCT`
   column whose makes/attempts pair is absent is dropped rather than
   recomputed.
 
-- **Other `*_PCT` columns** (e.g., `DRIVE_PTS_PCT` — "% of total" rates)
+- **Other `*_PCT` columns** (e.g., `DRIVE_PTS_PCT` - "% of total" rates)
   are **dropped** from the output because they are not additive.
 
 - **All remaining numeric columns** are summed (numeric-content gate,

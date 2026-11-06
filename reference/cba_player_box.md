@@ -100,7 +100,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_player_box(schedule_id = 100105799))
 #> ── CBA Player Box from data-server.cbaleague.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:11:34 UTC
+#> ℹ Data updated: 2026-11-06 07:18:10 UTC
 #> # A tibble: 26 × 26
 #>    schedule_id side  assists blocked cn_alias field_goals field_goals_attempted
 #>          <int> <chr>   <int>   <int> <chr>          <int>                 <int>

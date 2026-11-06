@@ -649,12 +649,12 @@ feed and the calendar.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 2</span></span></span>
 <span><span class="co">#&gt;   headline                                                             published</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Bethune-Cookman takes on No. 19 Texas Tech after Jordan's 22-point … 2026-11-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Meyer leads Georgia State against Charlotte after 25-point game      2026-11-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Notre Dame and Mercyhurst square off for non-conference matchup      2026-11-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Mercer takes on Virginia Tech after Cherry's 21-point game           2026-11-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Bryant visits Quinnipiac following Harvey's 20-point game            2026-11-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Campbell leads Utah against Towson after 20-point game               2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Krivas scores 30, No. 5 Arizona bounces back from opening loss with… 2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Lawal scores 25, Tulsa takes down Northern Illinois 94-75            2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> La Sierra University Golden Eagles vs. Pepperdine Waves: Game Highl… 2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> McClure scores 18 off the bench, DePaul defeats South Florida 82-80  2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> McAndrew scores 19 in Creighton's 83-55 win against Le Moyne         2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> McMillian, Ruffin lead Jackson State over Tulane 87-85               2026-11-…</span></span>
 <span></span>
 <span><span class="co"># 2025 MBB season calendar</span></span>
 <span><span class="va">mbb_cal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_calendar.html">espn_mbb_calendar</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
@@ -949,7 +949,7 @@ but for exploratory pulls you’ll usually want a small
 <span>  season <span class="op">=</span> <span class="fl">2025</span>, active <span class="op">=</span> <span class="cn">TRUE</span>, limit <span class="op">=</span> <span class="fl">5000</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 754</span></span>
+<span><span class="co">#&gt; [1] 757</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"display_name"</span>, <span class="st">"position_name"</span>, <span class="st">"team_name"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `nba_athletes[, c("display_name", "position_name", "team_name")]`:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> Can't subset columns that don't exist.</span></span>
@@ -1643,11 +1643,11 @@ season-by-season indexes, and a richer event log.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 12</span></span></span>
 <span><span class="co">#&gt;   league          coach_id record_type_id record_name record_type record_summary</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 16-15-0       </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> mens-college-b… 32116                 2 Regular Se… Regular Se… 0-0-0         </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 6 more variables: record_display &lt;chr&gt;, stat_name &lt;chr&gt;, stat_abbrev &lt;chr&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   stat_display &lt;chr&gt;, value &lt;dbl&gt;, stat_display_value &lt;chr&gt;</span></span></span></code></pre></div>
 </div>

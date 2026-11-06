@@ -150,8 +150,8 @@ on that possession).</p></dd>
 <p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>player_id</td><td>integer</td><td>NBA Stats person ID. Rows are sorted ascending by player_id.</td></tr><tr><td>o_rapm</td><td>numeric</td><td>Offensive RAPM (per-100-possession points added on offense). Positive = better offensive player.</td></tr><tr><td>d_rapm</td><td>numeric</td><td>Defensive RAPM (per-100-possession points saved on defense). Positive = better defensive player (sign is flipped so good defense is positive).</td></tr><tr><td>rapm</td><td>numeric</td><td>Total RAPM = o_rapm + d_rapm. Positive = net positive impact.</td></tr><tr><td>off_poss</td><td>integer</td><td>Number of possessions the player appeared on offense.</td></tr><tr><td>def_poss</td><td>integer</td><td>Number of possessions the player appeared on defense.</td></tr></table><p>Returns a 0-row frame with the same schema when input is empty or all
 possessions have NA lineup cells (never-raise).</p>
 <p><strong>Note:</strong> RAPM is expressed in per-100-possession units. A <strong>full season</strong>
-of possessions (~5,000–8,000) is needed for statistically meaningful
-estimates. Results from a single game (~150–250 possessions) are highly
+of possessions (~5,000-8,000) is needed for statistically meaningful
+estimates. Results from a single game (~150-250 possessions) are highly
 unstable and are provided here for pipeline illustration only.</p>
 <p>Values are relative to average: an unpenalized intercept absorbs the mean
 points per possession, and the ridge penalty applies equally to the raw

@@ -103,7 +103,7 @@ Other VTB Functions:
 # \donttest{
   try(vtb_infobasket_player(person_id = 423011))
 #> ── VTB Infobasket Player from org.infobasket.su ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:19:23 UTC
+#> ℹ Data updated: 2026-11-06 07:26:39 UTC
 #> # A tibble: 1 × 16
 #>   person_id person_last_name_ru person_first_name_ru person_last_name_en
 #>       <int> <chr>               <chr>                <chr>              

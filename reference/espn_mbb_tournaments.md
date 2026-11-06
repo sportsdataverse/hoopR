@@ -1,7 +1,7 @@
 # **Get ESPN MBB Tournaments Index**
 
 Returns the index of men's college basketball tournaments tracked by
-ESPN — including the NCAA Tournament, NIT, conference tournaments, and
+ESPN - including the NCAA Tournament, NIT, conference tournaments, and
 other in-season events. Pass an ID to
 [`espn_mbb_tournament()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_tournament.md)
 for the human-readable name and seasons-list ref.
@@ -200,7 +200,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_tournaments()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Tournaments Index ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:13:40 UTC
+#> ℹ Data updated: 2026-11-06 07:20:03 UTC
 #> # A tibble: 38 × 3
 #>    tournament_id ref                                                      league
 #>    <chr>         <chr>                                                    <chr> 
@@ -219,7 +219,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_tournaments()
 #> ── ESPN NBA Tournaments Index ─────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:13:40 UTC
+#> ℹ Data updated: 2026-11-06 07:20:03 UTC
 #> # A tibble: 2 × 3
 #>   tournament_id ref                                                       league
 #>   <chr>         <chr>                                                     <chr> 

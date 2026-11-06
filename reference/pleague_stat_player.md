@@ -118,7 +118,7 @@ Other P. LEAGUE+ Functions:
 #> layout drift: stat-player header [#排名, PLAYER球員, NO背號, TEAM球隊, GP出賽,
 #> MIN時間, PTS得分, 2PT二分, 2PM二分命中, 2PA二分出手, 2PT%二分%, 3PT三分,
 #> 3PM三分命中, 3PA三分出手, 3PT%三分%, FT罰球, FTM罰球命中, FTA罰球出手,
-#> FT%罰球%, REB籃板, OREB攻板, DREB防板, AST助攻, BLK阻攻, STL抄截, TO失誤,
+#> FT%罰球%, REB籃板, OREB攻板, DREB防板, AST助攻, STL抄截, BLK阻攻, TO失誤,
 #> PF犯規]
 # }
 ```

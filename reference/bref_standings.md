@@ -1,7 +1,6 @@
 # **Basketball-Reference Standings**
 
-**Get end-of-season conference standings from
-[Basketball-Reference](https://www.basketball-reference.com).**
+**Get end-of-season conference standings from Basketball-Reference.**
 
 No API key is required. Basketball-Reference rate-limits aggressive
 scraping (~20 requests/minute) – space repeated calls with

@@ -1,7 +1,7 @@
 # **Get ESPN NBA Team Depth Chart (Long Format)**
 
-Returns the team's depth chart in long format, one row per (position ×
-rank × athlete). NBA-only at ESPN's core-v2.
+Returns the team's depth chart in long format, one row per (position x
+rank x athlete). NBA-only at ESPN's core-v2.
 
 ## Usage
 
@@ -131,7 +131,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_depthchart(team_id = 13, season = 2025)
 #> ── ESPN NBA Team Depth Chart ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:13:46 UTC
+#> ℹ Data updated: 2026-11-06 07:20:08 UTC
 #> # A tibble: 30 × 10
 #>    league team_id season depthchart_id depthchart_name position  rank athlete_id
 #>    <chr>  <chr>    <int> <chr>         <chr>           <chr>    <int> <chr>     

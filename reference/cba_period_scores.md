@@ -77,7 +77,7 @@ Other CBA Functions:
 # \donttest{
   try(cba_period_scores(schedule_id = 100105799))
 #> ── CBA Period Scores from data-server.cbaleague.com ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:11:32 UTC
+#> ℹ Data updated: 2026-11-06 07:18:08 UTC
 #> # A tibble: 8 × 4
 #>   schedule_id side  period points
 #>         <int> <chr>  <int>  <int>

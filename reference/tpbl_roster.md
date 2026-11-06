@@ -87,7 +87,7 @@ Other TPBL Functions:
 # \donttest{
   try(tpbl_roster(division_id = 2, team_id = 4))
 #> ── TPBL Roster from api.tpbl.basketball ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:19:10 UTC
+#> ℹ Data updated: 2026-11-06 07:26:26 UTC
 #> # A tibble: 13 × 20
 #>    division_id team_id team        player_id gohoops_person_id gohoops_roster_id
 #>          <int>   <int> <chr>           <int>             <int>             <int>

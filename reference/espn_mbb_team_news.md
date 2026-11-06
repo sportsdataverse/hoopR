@@ -208,27 +208,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-11-04 10:13:29 UTC
+#> ℹ Data updated: 2026-11-06 07:19:53 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Story Asking … You have q… 2026-11-… FALSE   Joe L… https:/… 41       
-#> 2  5.04e7 Recap Dame Sa… — Dame Sar… 2026-11-… FALSE   NA     http://… 41       
-#> 3  5.04e7 Media Army Bl… Army Black… 2026-11-… FALSE   NA     https:/… 41       
-#> 4  5.02e7 Story Early t… After a sl… 2026-11-… FALSE   Paul … https:/… 41       
-#> 5  5.03e7 Prev… No. 2 D… Army Black… 2026-11-… FALSE   NA     http://… 41       
+#> 1  5.04e7 Media Coastal… Coastal Ca… 2026-11-… FALSE   NA     https:/… 41       
+#> 2  5.04e7 Recap Ngongba… — Patrick … 2026-11-… FALSE   NA     http://… 41       
+#> 3  5.02e7 Story Early t… The highes… 2026-11-… FALSE   Paul … https:/… 41       
+#> 4  5.04e7 Story The Bil… It's that … 2026-11-… FALSE   Jay B… https:/… 41       
+#> 5  5.04e7 Story 2027 NB… Which top … 2026-11-… FALSE   Jerem… https:/… 3380     
 # }
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:13:29 UTC
+#> ℹ Data updated: 2026-11-06 07:19:53 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Head… Lakers'… "The techn… 2026-11-… FALSE   Dave … https:/… 46       
-#> 2  5.04e7 Media Shams t… "Shams to … 2026-11-… FALSE   NA     https:/… 46       
-#> 3  5.04e7 Head… Luka sc… "Luka Donc… 2026-11-… FALSE   Dave … https:/… 46       
-#> 4  5.04e7 Prev… Sacrame… "Los Angel… 2026-11-… FALSE   NA     http://… 46       
-#> 5  5.04e7 Media Miami H… "Miami Hea… 2026-11-… FALSE   NA     https:/… 46       
+#> 1  4.16e7 Story Which N… In 2024, B… 2026-11-… FALSE   Keith… https:/… NA       
+#> 2  5.04e7 Media Jason K… Jason Kidd… 2026-11-… FALSE   NA     https:/… 46       
+#> 3  5.04e7 Head… Bronny … The Los An… 2026-11-… FALSE   Dave … https:/… 46       
+#> 4  5.04e7 Head… Luka Do… By droppin… 2026-11-… FALSE   Antho… https:/… 46       
+#> 5  5.04e7 Prev… Trail B… Portland T… 2026-11-… FALSE   NA     http://… 46       
 # }
 ```

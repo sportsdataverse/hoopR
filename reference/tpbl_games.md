@@ -111,7 +111,7 @@ Other TPBL Functions:
 # \donttest{
   try(tpbl_games(season = 2026))
 #> ── TPBL Games from api.tpbl.basketball ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:19:08 UTC
+#> ℹ Data updated: 2026-11-06 07:26:25 UTC
 #> # A tibble: 150 × 34
 #>    season season_id game_id gohoops_game_id division_id gohoops_division_id
 #>     <int>     <int>   <int>           <int>       <int>               <int>

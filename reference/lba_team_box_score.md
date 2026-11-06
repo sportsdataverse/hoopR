@@ -97,7 +97,7 @@ Other LBA Functions:
 # \donttest{
   try(lba_team_box_score(game_id = 25602))
 #> ── LBA Team Box Score from legabasket.it ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 10:15:49 UTC
+#> ℹ Data updated: 2026-11-06 07:23:05 UTC
 #> # A tibble: 4 × 32
 #>   game_id season side    team_id row_type   pun falli_c falli_sf falli_tc1
 #>     <int>  <int> <chr>     <int> <chr>    <int>   <int>    <int>     <int>
