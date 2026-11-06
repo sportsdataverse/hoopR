@@ -83,23 +83,21 @@ tests are all skipped on CRAN are left out of the tarball.
 
 kenpom.com and the www.nba.com stats pages answer HTTP
 403 to non-browser clients (bot protection); the links work in a browser
-and were present in 3.1.0. www.basketball-reference.com answers HTTP 503 to
-non-browser clients (it blocks automated requests); the link works in a
-browser and is unchanged since 3.1.0.
+and were present in 3.1.0. The help pages name Basketball-Reference without
+linking to it: the site answers automated requests (such as the incoming URL
+check) with HTTP 503.
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 0 notes
 
 * Local Windows 10, R 4.6.0 (ucrt), `R CMD check --as-cran --timings` on
-  the tarball built from this commit, 2026-11-05, with an empty user
+  the tarball built from this commit, 2026-11-06, with an empty user
   `.Renviron` (no API keys; NOT_CRAN and every live-test variable unset, so
   every networked test skips). The `\donttest{}` examples were not run in
   this pass (`_R_CHECK_DONTTEST_EXAMPLES_=false`); the examples changed for
   this submission were timed on their own (see Examples).
-  Status: 1 NOTE. The NOTE is the CRAN incoming feasibility check reporting
-  `https://www.basketball-reference.com` as "(possibly) invalid" with
-  "Status: 503, Service Unavailable"; see URLs above. Installed size is
+  Status: OK. Installed size is
   reported as INFO (11.5 MB: R 4.2 MB, help 6.7 MB). Tests: 0 failures,
   618 skips, 16,155 passes in 192 s. The PDF and HTML manuals build.
 * GitHub Actions (R release on Ubuntu, macOS and Windows, R-devel and
