@@ -14,7 +14,7 @@ NULL
 #' @author Saiem Gilani
 #' @description
 #' Returns the index of men's college basketball tournaments tracked by
-#' ESPN — including the NCAA Tournament, NIT, conference tournaments,
+#' ESPN - including the NCAA Tournament, NIT, conference tournaments,
 #' and other in-season events. Pass an ID to [espn_mbb_tournament()]
 #' for the human-readable name and seasons-list ref.
 #'

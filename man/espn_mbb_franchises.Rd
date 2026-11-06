@@ -36,12 +36,12 @@ A tibble with one row per franchise.
 \description{
 Returns the full MBB franchises index from
 \code{sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises}.
-Each row is one franchise with its ID and the canonical \verb{$ref} URL —
+Each row is one franchise with its ID and the canonical \verb{$ref} URL -
 pass an ID to \code{\link[=espn_mbb_franchise]{espn_mbb_franchise()}} for full franchise detail.
 
 Returns the full NBA franchises index from
 \code{sports.core.api.espn.com/v2/sports/basketball/leagues/nba/franchises}.
-Each row is one franchise with its ID and the canonical \verb{$ref} URL —
+Each row is one franchise with its ID and the canonical \verb{$ref} URL -
 pass an ID to \code{\link[=espn_nba_franchise]{espn_nba_franchise()}} for full franchise detail.
 }
 \examples{

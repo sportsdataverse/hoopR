@@ -66,7 +66,7 @@ Returns franchise-level metadata for a men's college basketball program.
 Franchise IDs are stable across program reorganization or rebrands.
 
 Returns franchise-level metadata for an NBA franchise. Franchise IDs are
-stable across relocations and rebrands — useful for tracking franchise
+stable across relocations and rebrands - useful for tracking franchise
 history independent of current team identity.
 }
 \examples{

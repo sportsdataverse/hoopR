@@ -17,7 +17,7 @@ NULL
 #' @description
 #' Returns the index of contract seasons recorded for an NBA athlete from
 #' `sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/{athlete_id}/contracts`.
-#' Each row is one contract year — pass the season to
+#' Each row is one contract year - pass the season to
 #' [espn_nba_player_contract()] for the full contract record.
 #'
 #' @param athlete_id ESPN athlete identifier (character or numeric).
@@ -39,7 +39,7 @@ NULL
 #' @family ESPN NBA Functions
 #' @examples
 #' \donttest{
-#'   # LeBron James — athlete id 1966
+#'   # LeBron James - athlete id 1966
 #'   espn_nba_player_contracts(athlete_id = 1966)
 #' }
 espn_nba_player_contracts <- function(athlete_id, ...) {

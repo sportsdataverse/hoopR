@@ -92,13 +92,13 @@ During a live game this reflects current state; after the game ends
 the values are frozen.
 
 Returns pre-game predictor statistics for one MBB event in long
-format: one row per (team × statistic). Typical stats include
+format: one row per (team x statistic). Typical stats include
 matchup quality, predicted score, win probability, and team
 strength metrics. Returns empty for events without predictor data
 (often the case for already-played games).
 
 Returns the per-team power-index \verb{$ref} URLs for one MBB event.
-Coverage is sparse — many events return zero items.
+Coverage is sparse - many events return zero items.
 
 Returns the live game situation for one NBA event: timeouts remaining,
 team fouls, fouls to give, bonus state, and a \verb{$ref} to the last play.
@@ -106,13 +106,13 @@ During a live game this reflects current state; after the game ends
 the values are frozen.
 
 Returns pre-game predictor statistics for one NBA event in long
-format: one row per (team × statistic). Typical stats include
+format: one row per (team x statistic). Typical stats include
 matchup quality, predicted score, win probability, and team
 strength metrics. Returns empty for events without predictor data
 (often the case for already-played games).
 
 Returns the per-team power-index \verb{$ref} URLs for one NBA event.
-Coverage is sparse — many events return zero items.
+Coverage is sparse - many events return zero items.
 }
 \details{
 \strong{Get ESPN MBB Event Predictor (Pre-game)}

@@ -7,7 +7,7 @@
 nba_shot_zones(game_id, ...)
 }
 \arguments{
-\item{game_id}{A length-1 character string — the ten-character NBA Stats
+\item{game_id}{A length-1 character string - the ten-character NBA Stats
 game identifier (e.g. \code{"0022200001"} for the first game of the
 2022-23 regular season).}
 
@@ -33,15 +33,15 @@ present.  Returns a 0-row frame when the game cannot be fetched (never-raise).
 
 \strong{Shot zone definitions (pbpstats-core aligned):}
 \itemize{
-\item \code{"corner_3"} — three-point attempt with
+\item \code{"corner_3"} - three-point attempt with
 \code{abs(x_legacy) >= 220} and \code{y_legacy <= 87.5}
 (baseline corner area).
-\item \code{"above_the_break_3"} — all other three-point attempts.
-\item \code{"restricted_area"} — two-point attempt within 4 ft of the basket.
-\item \code{"in_the_paint_non_ra"} — two-point attempt 4–8 ft from
+\item \code{"above_the_break_3"} - all other three-point attempts.
+\item \code{"restricted_area"} - two-point attempt within 4 ft of the basket.
+\item \code{"in_the_paint_non_ra"} - two-point attempt 4-8 ft from
 the basket and within 80 legacy units of the paint center
 (\code{abs(x_legacy) <= 80}).
-\item \code{"mid_range"} — all remaining two-point attempts.
+\item \code{"mid_range"} - all remaining two-point attempts.
 }
 }
 \description{

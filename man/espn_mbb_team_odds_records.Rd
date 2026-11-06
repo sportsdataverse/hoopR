@@ -30,27 +30,27 @@ under \code{season_type = 0} (all-types aggregate), so that is the default.}
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A long tibble with one row per (category × stat).
+A long tibble with one row per (category x stat).
 
 Columns as documented in the shared \link{espn_mbb_team_odds_records_schema} table.
 
-A long tibble with one row per (category × stat).
+A long tibble with one row per (category x stat).
 
 Columns as documented in the shared \link{espn_mbb_team_odds_records_schema} table.
 }
 \description{
 Returns the long-format odds-records breakdown for a team in one
-season. Each row is one (category × stat) — typical categories include
+season. Each row is one (category x stat) - typical categories include
 Money Line Overall, Money Line Home, Money Line Road, Against The
 Spread Overall, Over/Under, etc. ESPN's coverage of this endpoint is
-sparse; many (team × season-type) combinations return 404, in which
+sparse; many (team x season-type) combinations return 404, in which
 case the wrapper returns an empty tibble.
 
 Returns the long-format odds-records breakdown for a team in one
-season. Each row is one (category × stat) — typical categories include
+season. Each row is one (category x stat) - typical categories include
 Money Line Overall, Money Line Home, Money Line Road, Against The
 Spread Overall, Over/Under, etc. ESPN's coverage of this endpoint is
-sparse; many (team × season-type) combinations return 404, in which
+sparse; many (team x season-type) combinations return 404, in which
 case the wrapper returns an empty tibble.
 }
 \examples{

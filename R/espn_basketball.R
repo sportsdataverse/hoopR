@@ -5,8 +5,8 @@
 #' Wrappers around ESPN's basketball endpoints. Two parallel families
 #' share a common set of internal helpers in `R/espn_basketball_*.R`:
 #'
-#' - `espn_nba_*()` — ESPN NBA wrappers
-#' - `espn_mbb_*()` — ESPN men's college basketball wrappers
+#' - `espn_nba_*()` - ESPN NBA wrappers
+#' - `espn_mbb_*()` - ESPN men's college basketball wrappers
 #'
 #' Each public wrapper is a thin shim over an internal helper that takes
 #' a `league` argument (`"nba"` or `"mens-college-basketball"`); the

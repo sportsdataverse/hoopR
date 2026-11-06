@@ -12,7 +12,7 @@
 #' Fetches the core-v2 franchise resource
 #' `sports.core.api.espn.com/v2/sports/basketball/leagues/{league}/franchises/{franchise_id}`
 #' and returns a single-row tibble. The franchise resource is stable across
-#' relocations and rebrands — for example, the Charlotte Hornets and New
+#' relocations and rebrands - for example, the Charlotte Hornets and New
 #' Orleans Pelicans share a different franchise lineage than current /
 #' historical teams suggest.
 #'
@@ -99,7 +99,7 @@
 #'
 #' Fetches the paginated franchise index
 #' `sports.core.api.espn.com/v2/sports/basketball/leagues/{league}/franchises?limit=200`
-#' and returns a tibble of franchise IDs and the `$ref` URL for each — feed
+#' and returns a tibble of franchise IDs and the `$ref` URL for each - feed
 #' the IDs to `.espn_basketball_franchise()` to get full details.
 #'
 #' @param league character.

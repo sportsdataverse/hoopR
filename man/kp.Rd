@@ -9,7 +9,7 @@
 Authenticated scrapers for \href{https://kenpom.com}{kenpom.com} men's
 college-basketball pages. Authentication uses an \code{httr2} cookie jar
 via \code{login()}; pages are pulled with \code{.kp_get_page(jar, url)} and
-parsed with \code{rvest}. CSS selectors for tables are fragile — KenPom
+parsed with \code{rvest}. CSS selectors for tables are fragile - KenPom
 changes the HTML occasionally and selectors may need updating.
 
 Credentials are read from \code{KP_USER} / \code{KP_PW} env vars (or function

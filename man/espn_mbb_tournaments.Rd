@@ -36,7 +36,7 @@ A tibble with one row per tournament.
 }
 \description{
 Returns the index of men's college basketball tournaments tracked by
-ESPN — including the NCAA Tournament, NIT, conference tournaments,
+ESPN - including the NCAA Tournament, NIT, conference tournaments,
 and other in-season events. Pass an ID to \code{\link[=espn_mbb_tournament]{espn_mbb_tournament()}}
 for the human-readable name and seasons-list ref.
 
