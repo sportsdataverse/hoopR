@@ -50,4 +50,3 @@ mbb_pbp_db
 ^.*\.log$
 ^tests/testthat/fixtures/(acb|bleague|genius|nbl_rosetta|scb)$
 ^tests/testthat/fixtures/(?!fiba_gdap/)[^/]+/README\.md$
-^tests/testthat/fixtures/(crosswalk_basketball|nba_engine|nba_tracking|pbp_features|player_core)$

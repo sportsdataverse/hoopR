@@ -454,9 +454,6 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
 * The DESCRIPTION explains NBA, ESPN, NCAA, FIBA, ACB, VTB, NBL, KBL and CBA on first use,
   and the help pages use ASCII punctuation (`-`, `x`) in place of em dashes, en dashes and
   multiplication signs.
-* Five test-fixture folders whose tests are all skipped on CRAN (`crosswalk_basketball`,
-  `nba_engine`, `nba_tracking`, `pbp_features`, `player_core`) are no longer shipped in
-  the source package.
 
 # **hoopR 3.1.0**
 

@@ -72,12 +72,12 @@ fixtures and mock the HTTP layer.
 
 ## Size
 
-The package grew with the international families: the tarball is 3.9 MB
+The package grew with the international families: the tarball is 4.1 MB
 and the installed size 11.5 MB, most of it help pages (6.7 MB) and R code
 (4.2 MB) for more than 1,300 documented functions. We cut the
 help by 17% for this release by printing each family's shared source notes
-once and linking to it from the other pages. Ten test-fixture folders whose
-tests are all skipped on CRAN are left out of the tarball.
+once and linking to it from the other pages. Five test-fixture folders whose
+tests skip when the folder is absent are left out of the tarball.
 
 ## URLs
 
