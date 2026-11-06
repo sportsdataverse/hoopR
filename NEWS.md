@@ -577,7 +577,7 @@ defunct, so these wrap barttorvik.com directly.)
 ### **Basketball-Reference (`bref_*`)**
 
 New `bref_*()` function family scraping publicly available NBA data from
-[Basketball-Reference](https://www.basketball-reference.com) — a source hoopR
+Basketball-Reference — a source hoopR
 previously did not cover at all (no account or API key required):
 
 - **`bref_players_stats()`** — league-wide player season stats; pick the table

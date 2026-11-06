@@ -30,7 +30,7 @@ A \code{hoopR_data} tibble with one row per award candidate:
 }
 \description{
 \strong{Get end-of-season award voting from
-\href{https://www.basketball-reference.com}{Basketball-Reference}.}
+Basketball-Reference.}
 
 Returns the voting results for the major end-of-season awards (MVP, Rookie of
 the Year, Defensive Player of the Year, Sixth Man, Most Improved, Clutch

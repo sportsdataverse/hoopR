@@ -32,7 +32,7 @@ common identifying columns shown -- names are Basketball-Reference
 }
 \description{
 \strong{Get team season statistics from
-\href{https://www.basketball-reference.com}{Basketball-Reference}.}
+Basketball-Reference.}
 
 Scrapes a team stat table from the league season page. No API key is required.
 Basketball-Reference rate-limits aggressive scraping (~20 requests/minute) --

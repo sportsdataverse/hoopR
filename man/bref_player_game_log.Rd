@@ -44,7 +44,7 @@ Full shooting / box columns (\code{fg}, \code{fga}, \code{fg_pct}, \code{fg3}, \
 }
 \description{
 \strong{Get a player's game-by-game log for a season from
-\href{https://www.basketball-reference.com}{Basketball-Reference}.}
+Basketball-Reference.}
 
 No API key is required. Basketball-Reference rate-limits aggressive scraping
 (~20 requests/minute) -- space repeated calls with \code{Sys.sleep()}.

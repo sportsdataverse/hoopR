@@ -2,7 +2,7 @@
 #' **Basketball-Reference Player Season Stats**
 #' @description
 #' **Get player season statistics from
-#' [Basketball-Reference](https://www.basketball-reference.com).**
+#' Basketball-Reference.**
 #'
 #' Scrapes the league-wide player stat table for a season. No API key is
 #' required. Choose the stat table with `table`. Data is available back to the

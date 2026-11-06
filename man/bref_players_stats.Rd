@@ -40,7 +40,7 @@ accordingly.
 }
 \description{
 \strong{Get player season statistics from
-\href{https://www.basketball-reference.com}{Basketball-Reference}.}
+Basketball-Reference.}
 
 Scrapes the league-wide player stat table for a season. No API key is
 required. Choose the stat table with \code{table}. Data is available back to the

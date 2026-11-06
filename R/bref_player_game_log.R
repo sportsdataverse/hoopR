@@ -2,7 +2,7 @@
 #' **Basketball-Reference Player Game Log**
 #' @description
 #' **Get a player's game-by-game log for a season from
-#' [Basketball-Reference](https://www.basketball-reference.com).**
+#' Basketball-Reference.**
 #'
 #' No API key is required. Basketball-Reference rate-limits aggressive scraping
 #' (~20 requests/minute) -- space repeated calls with `Sys.sleep()`.

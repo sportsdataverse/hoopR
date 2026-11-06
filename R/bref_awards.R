@@ -2,7 +2,7 @@
 #' **Basketball-Reference Awards Voting**
 #' @description
 #' **Get end-of-season award voting from
-#' [Basketball-Reference](https://www.basketball-reference.com).**
+#' Basketball-Reference.**
 #'
 #' Returns the voting results for the major end-of-season awards (MVP, Rookie of
 #' the Year, Defensive Player of the Year, Sixth Man, Most Improved, Clutch
