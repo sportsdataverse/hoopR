@@ -149,8 +149,9 @@ espn_nba_game_all <- function(game_id) {
 #' @keywords NBA PBP
 #' @family ESPN NBA Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # Same summary request as espn_nba_game_all() above.
 #' try(espn_nba_pbp(game_id = 401071880))
 #' }
 #'
@@ -220,8 +221,9 @@ espn_nba_pbp <- function(game_id) {
 #' @keywords NBA Team Box
 #' @family ESPN NBA Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # Same summary request as espn_nba_game_all() above.
 #' try(espn_nba_team_box(game_id = 401071880))
 #' }
 #'
@@ -288,8 +290,9 @@ espn_nba_team_box <- function(game_id) {
 #' @keywords NBA Player Box
 #' @family ESPN NBA Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # Same summary request as espn_nba_game_all() above.
 #' try(espn_nba_player_box(game_id = 401071880))
 #' }
 #'
@@ -449,8 +452,9 @@ espn_nba_player_box <- function(game_id) {
 #' @keywords NBA Game Roster
 #' @family ESPN NBA Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # One request per athlete on both rosters.
 #' try(espn_nba_game_rosters(game_id = 401283399))
 #' }
 espn_nba_game_rosters <- function(game_id) {

@@ -482,7 +482,7 @@ fox_mbb_teams <- function(team_id = "1") .fox_bb_resource("cbk", "teams", team_i
 #' @family Fox Basketball Functions
 #' @examples
 #' \donttest{
-#'   try(fox_mbb_teams_all())
+#'   try(fox_mbb_teams_all(max_calls = 3))
 #' }
 fox_mbb_teams_all <- function(max_id = 500, max_calls = 60) {
   seen <- character(0)

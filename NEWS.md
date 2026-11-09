@@ -465,6 +465,15 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   `cbbd_plays_date()` and `cbbd_plays_tournament()` examples now ask for one
   championship-game date and the eight-game 2024 CIT instead of a full slate and the
   NCAA tournament.
+* Faster examples: `cba_pbp()` asks for one quarter, `sportpress_player_rankings()` for
+  the top 5 per category and `fox_mbb_teams_all()` for 3 seed calls. These run only in
+  interactive sessions: `lkl_results()` (it pages through a whole season), the
+  `espn_*_game_rosters()` examples (one request per athlete), the `espn_*_pbp()`,
+  `espn_*_team_box()` and `espn_*_player_box()` examples (the same summary request as
+  `espn_*_game_all()`, which still runs), and the release loaders whose one-season file
+  is 7-80 MB (`load_mbb_pbp()`, `load_mbb_player_box()`, `load_mbb_shots()`,
+  `load_nba_stats_pbp()`, and the NCAA MBB pbp, shots, lineups, matchup-stints,
+  possessions and player-box loaders).
 * The DESCRIPTION explains NBA, ESPN, NCAA, FIBA, ACB, VTB, NBL, KBL and CBA on first use,
   and the help pages use ASCII punctuation (`-`, `x`) in place of em dashes, en dashes and
   multiplication signs.

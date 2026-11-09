@@ -685,9 +685,12 @@ measures, use \code{\link[=load_nba_stats_leaguedash]{load_nba_stats_leaguedash(
 \donttest{
   try(load_nba_stats_officials(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # One season is a ~19 MB download.
   try(load_nba_stats_pbp(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
 \donttest{
   try(load_nba_stats_player_boxscores(seasons = most_recent_nba_stats_season()))
 }

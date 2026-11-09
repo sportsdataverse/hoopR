@@ -831,8 +831,9 @@ lkl_shots <- function(game_id) {
 #' and times are Lithuanian local (Europe/Vilnius) as the site prints them.
 #' @family LKL Functions
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Pages through the whole season, 10 games per request.
 #'   try(lkl_results(season = 2026))
 #' }
 lkl_results <- function(season) {

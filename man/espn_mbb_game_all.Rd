@@ -339,19 +339,30 @@ Columns as documented in the shared \link{espn_mbb_betting_predictor_schema} tab
 \donttest{
 try(espn_mbb_game_all(game_id = 401479672))
 }
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+# Same summary request as espn_mbb_game_all() above.
 try(espn_mbb_pbp(game_id = 401479672))
 }
-
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+# Same summary request as espn_mbb_game_all() above.
 try(espn_mbb_team_box(game_id = 401479672))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+# Same summary request as espn_mbb_game_all() above.
 try(espn_mbb_player_box(game_id = 401479672))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+# One request per athlete on both rosters.
 try(espn_mbb_game_rosters(game_id = 401256760))
 }
+\dontshow{\}) # examplesIf}
 \donttest{
 try(espn_mbb_betting(game_id = 401256760))
 }
@@ -359,21 +370,30 @@ try(espn_mbb_betting(game_id = 401256760))
 try(espn_nba_game_all(game_id = 401283399))
 }
 
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+# Same summary request as espn_nba_game_all() above.
 try(espn_nba_pbp(game_id = 401071880))
 }
-
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+# Same summary request as espn_nba_game_all() above.
 try(espn_nba_team_box(game_id = 401071880))
 }
-
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+# Same summary request as espn_nba_game_all() above.
 try(espn_nba_player_box(game_id = 401071880))
 }
-
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+# One request per athlete on both rosters.
 try(espn_nba_game_rosters(game_id = 401283399))
 }
+\dontshow{\}) # examplesIf}
 \donttest{
 try(espn_nba_betting(game_id = 401283399))
 }

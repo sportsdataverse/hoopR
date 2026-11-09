@@ -528,8 +528,9 @@ load_nba_stats_officials <- function(seasons = most_recent_nba_stats_season(),
 #'
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # One season is a ~19 MB download.
 #'   try(load_nba_stats_pbp(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_pbp <- function(seasons = most_recent_nba_stats_season(),

@@ -857,30 +857,48 @@ coverage runs seasons 2011 through 2026. The default season falls back to
 the newest published one, with a message, until its file is published.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # One season is a ~80 MB download.
   try(load_ncaa_mbb_pbp(seasons = most_recent_mbb_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # One season is a ~10 MB download.
   try(load_ncaa_mbb_shots(seasons = most_recent_mbb_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # One season is a ~20 MB download.
   try(load_ncaa_mbb_lineups(seasons = most_recent_mbb_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # One season is a ~12 MB download.
   try(load_ncaa_mbb_matchup_stints(seasons = most_recent_mbb_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # One season is a ~17 MB download.
   try(load_ncaa_mbb_possessions(seasons = most_recent_mbb_season()))
 }
+\dontshow{\}) # examplesIf}
 \donttest{
   try(load_ncaa_mbb_rapm_within_team(seasons = most_recent_mbb_season()))
 }
 \donttest{
   try(load_ncaa_mbb_rapm(seasons = most_recent_mbb_season()))
 }
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # One season is a ~10 MB download.
   try(load_ncaa_mbb_player_box(seasons = most_recent_mbb_season()))
 }
+\dontshow{\}) # examplesIf}
 \donttest{
   try(load_ncaa_mbb_team_box(seasons = most_recent_mbb_season()))
 }

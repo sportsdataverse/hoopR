@@ -466,7 +466,7 @@ sportpress_team_rankings <- function(competition_id, phase_id = NULL, limit = NU
 #' @eval .intl_details(.sportpress_ui_strings_details)
 #' @examples
 #' \donttest{
-#'   try(sportpress_player_rankings(competition_id = 24))
+#'   try(sportpress_player_rankings(competition_id = 24, limit = 5))
 #' }
 #' @export
 #' @family BNXT League Functions

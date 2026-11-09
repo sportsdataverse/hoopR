@@ -66,9 +66,12 @@ for another game or season, an error or changed body, a truncated results list).
 and times are Lithuanian local (Europe/Vilnius) as the site prints them.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Pages through the whole season, 10 games per request.
   try(lkl_results(season = 2026))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other LKL Functions:

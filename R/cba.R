@@ -883,7 +883,7 @@ cba_report_status <- function(schedule_id) {
 #' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
-#'   try(cba_pbp(schedule_id = 100105799))
+#'   try(cba_pbp(schedule_id = 100105799, quarter_num = 1))
 #' }
 #' @export
 #' @family CBA Functions

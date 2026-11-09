@@ -104,8 +104,9 @@ NULL
 #'
 #' @export
 #' @family hoopR Loader Functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # One season is a ~80 MB download.
 #' load_mbb_pbp(seasons = most_recent_mbb_season())
 #' }
 load_mbb_pbp <- function(
@@ -259,7 +260,9 @@ load_mbb_team_box <- function(
 #'
 #' @export
 #' @family hoopR Loader Functions
-#' @examples \donttest{
+#' @examplesIf interactive()
+#' \donttest{
+#' # One season is a ~7 MB download.
 #' load_mbb_player_box(seasons = most_recent_mbb_season())
 #' }
 load_mbb_player_box <- function(
@@ -1000,8 +1003,9 @@ load_mbb_player_core <- function(seasons = most_recent_mbb_season(), ...,
 #'
 #' @export
 #' @family hoopR Loader Functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # One season is a ~14 MB download.
 #' load_mbb_shots(seasons = most_recent_mbb_season())
 #' }
 load_mbb_shots <- function(seasons = most_recent_mbb_season(), ...,

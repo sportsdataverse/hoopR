@@ -164,8 +164,9 @@ espn_mbb_game_all <- function(game_id) {
 #' @keywords MBB PBP
 #' @family ESPN MBB Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # Same summary request as espn_mbb_game_all() above.
 #' try(espn_mbb_pbp(game_id = 401479672))
 #' }
 #'
@@ -235,8 +236,9 @@ espn_mbb_pbp <- function(game_id) {
 #' @keywords MBB Team Box
 #' @family ESPN MBB Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # Same summary request as espn_mbb_game_all() above.
 #' try(espn_mbb_team_box(game_id = 401479672))
 #' }
 espn_mbb_team_box <- function(game_id) {
@@ -304,8 +306,9 @@ espn_mbb_team_box <- function(game_id) {
 #' @keywords MBB Player Box
 #' @family ESPN MBB Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # Same summary request as espn_mbb_game_all() above.
 #' try(espn_mbb_player_box(game_id = 401479672))
 #' }
 espn_mbb_player_box <- function(game_id) {
@@ -447,8 +450,9 @@ espn_mbb_player_box <- function(game_id) {
 #' @keywords MBB Game Roster
 #' @family ESPN MBB Functions
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # One request per athlete on both rosters.
 #' try(espn_mbb_game_rosters(game_id = 401256760))
 #' }
 espn_mbb_game_rosters <- function(game_id) {

@@ -55,7 +55,7 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }
 \examples{
 \donttest{
-  try(sportpress_player_rankings(competition_id = 24))
+  try(sportpress_player_rankings(competition_id = 24, limit = 5))
 }
 }
 \seealso{

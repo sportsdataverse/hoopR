@@ -22,7 +22,7 @@ unseen team ids (one seed per conference) and unions the results.
 }
 \examples{
 \donttest{
-  try(fox_mbb_teams_all())
+  try(fox_mbb_teams_all(max_calls = 3))
 }
 }
 \seealso{
