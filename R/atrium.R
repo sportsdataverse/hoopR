@@ -543,8 +543,9 @@ atrium_leaders <- function(website_id, season = NULL, season_id = NULL, competit
 #' @eval .intl_details(.atrium_fixtures_details)
 #' @family Atrium Functions
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: several stat tables of a whole competition, 2-6 s.
 #'   try(atrium_player_stats(
 #'     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
 #'   ))

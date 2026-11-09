@@ -488,8 +488,9 @@ aba_score_difference <- function(game_no, season, league = "aba") {
 #' `hoopR_error`.
 #' @family ABA Functions
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: the season calendar page can take 20+ s to answer.
 #'   try(aba_calendar(season = 2026))
 #' }
 aba_calendar <- function(season, league = "aba") {
