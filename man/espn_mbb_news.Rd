@@ -27,7 +27,7 @@ A \code{hoopR_data} tibble with one row per news article.
   link_web \tab character \tab Web link / URL. \cr
   league_id \tab character \tab League identifier ('10' = WNBA). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_news")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per news article.
 
@@ -43,7 +43,7 @@ A \code{hoopR_data} tibble with one row per news article.
   link_web \tab character \tab Web link / URL. \cr
   league_id \tab character \tab League identifier ('10' = WNBA). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_news")} for the column table.}
 }
 \description{
 \strong{Get ESPN MBB News}

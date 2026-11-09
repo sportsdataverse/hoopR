@@ -35,7 +35,7 @@ A \code{hoopR_data} tibble with one row per team alias.
   match_method \tab character \tab How the row was matched: \code{deterministic} (a formula or shared key), \code{crosswalk} (carried from a published crosswalk), \code{curated} (a cited hand-made map); for a captured team directory, \code{alias}, \code{exact_name} (normalized name) or \code{dict} (curated name dictionary). \cr
   evidence \tab character \tab The asset or file the row came from. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_mbb_team_aliases")} for the column table.}
 
 \code{NULL} instead, after appending the rows to \code{tablename}, when \code{dbConnection} and
 \code{tablename} are both given.

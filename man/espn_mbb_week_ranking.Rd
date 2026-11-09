@@ -57,7 +57,7 @@ A \code{hoopR_data} tibble with one row per ranked team.
   team_ref \tab character \tab \code{$ref} to the team-in-season resource. \cr
   last_updated \tab character \tab Last-updated timestamp. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_week_ranking")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per ranked team.
 
@@ -83,7 +83,7 @@ A \code{hoopR_data} tibble with one row per ranked team.
   team_ref \tab character \tab \code{$ref} to the team-in-season resource. \cr
   last_updated \tab character \tab Last-updated timestamp. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_week_ranking")} for the column table.}
 }
 \description{
 Returns the long-format ranked teams for one (season x season-type x

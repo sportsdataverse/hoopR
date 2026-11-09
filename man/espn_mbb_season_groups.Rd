@@ -35,7 +35,7 @@ A \code{hoopR_data} tibble with one row per group.
   group_id \tab character \tab ESPN group id. \cr
   ref \tab character \tab \code{$ref} URL for the group detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_season_groups")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per group.
 
@@ -47,7 +47,7 @@ A \code{hoopR_data} tibble with one row per group.
   group_id \tab character \tab ESPN group id. \cr
   ref \tab character \tab \code{$ref} URL for the group detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_season_groups")} for the column table.}
 }
 \description{
 Returns the list of group IDs (conferences / divisions) for one

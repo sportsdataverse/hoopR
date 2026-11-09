@@ -52,7 +52,7 @@ A \code{hoopR_data} tibble with one row per record category.
   display_value \tab character \tab Same as summary in most cases. \cr
   value \tab numeric \tab Win percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team_record")} for the column table.}
 }
 \description{
 Returns the long-format record breakdown for an MBB team in one season

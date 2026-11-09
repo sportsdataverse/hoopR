@@ -25,7 +25,7 @@ A \code{hoopR_data} tibble with one row per play-by-play event.
   shot_distance \tab numeric \tab Distance from the basket in feet. \cr
   shot_zone \tab character \tab Shot-zone classification. One of \code{"corner_3"}, \code{"above_the_break_3"}, \code{"restricted_area"}, \code{"in_the_paint_non_ra"}, \code{"mid_range"}. \code{NA} on non-field-goal rows. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_shot_zones")} for the column table.}
 
 The table lists the shot columns; all other columns from the V3 PBP schema
 (\code{\link[=nba_pbp]{nba_pbp()}}) are also present. Returns a 0-row frame when the game cannot be

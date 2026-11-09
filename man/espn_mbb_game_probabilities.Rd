@@ -34,7 +34,7 @@ A \code{hoopR_data} tibble with one row per play-level win-probability entry.
   secs_to_end_of_period \tab numeric \tab  \cr
   secs_to_end_of_game \tab numeric \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_game_probabilities")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per play-level win-probability entry.
 
@@ -51,7 +51,7 @@ A \code{hoopR_data} tibble with one row per play-level win-probability entry.
   secs_to_end_of_period \tab numeric \tab  \cr
   secs_to_end_of_game \tab numeric \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_game_probabilities")} for the column table.}
 }
 \description{
 \strong{Get ESPN Women's College Basketball Event Win Probabilities}

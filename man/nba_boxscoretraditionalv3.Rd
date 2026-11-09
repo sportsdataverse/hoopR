@@ -174,7 +174,7 @@ A named list of \code{hoopR_data} tibbles: \code{home_team_player_traditional}, 
   points \tab integer \tab Points scored. \cr
   plus_minus_points \tab numeric \tab Plus/minus point differential while on court. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoretraditionalv3")} for the column table.}
 
 \strong{away_team_player_traditional}
 
@@ -213,7 +213,7 @@ Same columns as the \strong{home_team_player_traditional} table above.
   points \tab integer \tab Points scored. \cr
   plus_minus_points \tab numeric \tab Plus/minus point differential while on court. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoretraditionalv3")} for the column table.}
 
 \strong{away_team_totals_traditional}
 
@@ -251,7 +251,7 @@ Same columns as the \strong{home_team_totals_traditional} table above.
   fouls_personal \tab integer \tab Personal fouls. \cr
   points \tab integer \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoretraditionalv3")} for the column table.}
 
 \strong{away_team_starters_totals}
 
@@ -311,7 +311,7 @@ A named list of \code{hoopR_data} tibbles: \code{home_team_player_advanced}, \co
   possessions \tab numeric \tab Possessions used. \cr
   pie \tab numeric \tab Player Impact Estimate (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoreadvancedv3")} for the column table.}
 
 \strong{away_team_player_advanced}
 
@@ -354,7 +354,7 @@ Same columns as the \strong{home_team_player_advanced} table above.
   possessions \tab numeric \tab Possessions used. \cr
   pie \tab numeric \tab Player Impact Estimate (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoreadvancedv3")} for the column table.}
 
 \strong{away_team_totals_advanced}
 
@@ -396,7 +396,7 @@ A named list of \code{hoopR_data} tibbles: \code{home_team_player_misc}, \code{a
   fouls_personal \tab integer \tab Personal fouls. \cr
   fouls_drawn \tab integer \tab Personal fouls drawn (by opponent's actions). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoremiscv3")} for the column table.}
 
 \strong{away_team_player_misc}
 
@@ -428,7 +428,7 @@ Same columns as the \strong{home_team_player_misc} table above.
   fouls_personal \tab integer \tab Personal fouls. \cr
   fouls_drawn \tab integer \tab Personal fouls drawn (by opponent's actions). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoremiscv3")} for the column table.}
 
 \strong{away_team_totals_misc}
 
@@ -473,7 +473,7 @@ A named list of \code{hoopR_data} tibbles: \code{home_team_player_scoring}, \cod
   percentage_assisted_fgm \tab numeric \tab Percentage assisted fgm. \cr
   percentage_unassisted_fgm \tab numeric \tab Percentage unassisted fgm. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscorescoringv3")} for the column table.}
 
 \strong{away_team_player_scoring}
 
@@ -508,7 +508,7 @@ Same columns as the \strong{home_team_player_scoring} table above.
   percentage_assisted_fgm \tab numeric \tab Percentage assisted fgm. \cr
   percentage_unassisted_fgm \tab numeric \tab Percentage unassisted fgm. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscorescoringv3")} for the column table.}
 
 \strong{away_team_totals_scoring}
 
@@ -556,7 +556,7 @@ A named list of \code{hoopR_data} tibbles: \code{home_team_player_usage}, \code{
   percentage_personal_fouls_drawn \tab numeric \tab Percentage personal fouls drawn. \cr
   percentage_points \tab numeric \tab Percentage points. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoreusagev3")} for the column table.}
 
 \strong{away_team_player_usage}
 
@@ -594,7 +594,7 @@ Same columns as the \strong{home_team_player_usage} table above.
   percentage_personal_fouls_drawn \tab numeric \tab Percentage personal fouls drawn. \cr
   percentage_points \tab numeric \tab Percentage points. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoreusagev3")} for the column table.}
 
 \strong{away_team_totals_usage}
 
@@ -632,7 +632,7 @@ A named list of \code{hoopR_data} tibbles: \code{home_team_player_four_factors},
   opp_team_turnover_percentage \tab numeric \tab Opponent team turnover percentage (0-1 decimal). \cr
   opp_offensive_rebound_percentage \tab numeric \tab Opponent offensive rebound percentage (0-1 decimal). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscorefourfactorsv3")} for the column table.}
 
 \strong{away_team_player_four_factors}
 
@@ -660,7 +660,7 @@ Same columns as the \strong{home_team_player_four_factors} table above.
   opp_team_turnover_percentage \tab numeric \tab Opponent team turnover percentage (0-1 decimal). \cr
   opp_offensive_rebound_percentage \tab numeric \tab Opponent offensive rebound percentage (0-1 decimal). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscorefourfactorsv3")} for the column table.}
 
 \strong{away_team_totals_four_factors}
 
@@ -710,7 +710,7 @@ A named list of \code{hoopR_data} tibbles: \code{home_team_player_player_track},
   defended_at_rim_field_goals_attempted \tab integer \tab Field goal attempts allowed when defending at the rim. \cr
   defended_at_rim_field_goal_percentage \tab numeric \tab Field goal percentage allowed at the rim (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoreplayertrackv3")} for the column table.}
 
 \strong{away_team_player_player_track}
 
@@ -749,7 +749,7 @@ Same columns as the \strong{home_team_player_player_track} table above.
   defended_at_rim_field_goals_attempted \tab integer \tab Field goal attempts allowed when defending at the rim. \cr
   defended_at_rim_field_goal_percentage \tab numeric \tab Field goal percentage allowed at the rim (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoreplayertrackv3")} for the column table.}
 
 \strong{away_team_totals_player_track}
 
@@ -810,7 +810,7 @@ A named list of \code{hoopR_data} tibbles: \code{home_team_player_matchups}, \co
   matchup_free_throws_attempted \tab integer \tab Number of matchup free throws attempted. \cr
   shooting_fouls \tab integer \tab Shooting fouls. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscorematchupsv3")} for the column table.}
 
 \strong{away_team_player_matchups}
 
@@ -856,7 +856,7 @@ A named list of \code{hoopR_data} tibbles: \code{home_team_player_hustle}, \code
   box_out_player_rebounds \tab integer \tab Box-outs that led to a player rebound. \cr
   box_outs \tab integer \tab Box-outs executed. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscorehustlev2")} for the column table.}
 
 \strong{away_team_player_hustle}
 
@@ -892,7 +892,7 @@ Same columns as the \strong{home_team_player_hustle} table above.
   box_out_player_rebounds \tab integer \tab Box-outs that led to a player rebound. \cr
   box_outs \tab integer \tab Box-outs executed. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscorehustlev2")} for the column table.}
 
 \strong{away_team_totals_hustle}
 
@@ -936,7 +936,7 @@ A named list of \code{hoopR_data} tibbles: \code{home_team_player_defensive}, \c
   matchup_three_pointers_attempted \tab integer \tab Number of matchup three pointers attempted. \cr
   matchup_three_pointer_percentage \tab numeric \tab Matchup three pointer percentage (0-1 decimal). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoredefensivev2")} for the column table.}
 
 \strong{away_team_player_defensive}
 
@@ -955,7 +955,7 @@ Same columns as the \strong{home_team_player_defensive} table above.
   team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
   team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoredefensivev2")} for the column table.}
 
 \strong{away_team_totals_defensive}
 
@@ -980,7 +980,7 @@ A named list of tibbles: \code{AwayTeam}, \code{HomeTeam}.
   PT_DIFF \tab character \tab  \cr
   USG_PCT \tab character \tab Usage percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_gamerotation")} for the column table.}
 
 \strong{HomeTeam}
 
@@ -1006,7 +1006,7 @@ A named list of \code{hoopR_data} tibbles: \code{GameSummary}, \code{GameInfo}, 
   attendance \tab integer \tab Reported attendance. \cr
   sellout \tab character \tab Sellout. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv3")} for the column table.}
 
 \strong{GameInfo}
 
@@ -1017,7 +1017,7 @@ A named list of \code{hoopR_data} tibbles: \code{GameSummary}, \code{GameInfo}, 
   attendance \tab integer \tab Reported attendance. \cr
   game_duration \tab integer \tab Game duration. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv3")} for the column table.}
 
 \strong{ArenaInfo}
 
@@ -1031,7 +1031,7 @@ A named list of \code{hoopR_data} tibbles: \code{GameSummary}, \code{GameInfo}, 
   arena_country \tab character \tab Arena country. \cr
   arena_timezone \tab character \tab Arena timezone. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv3")} for the column table.}
 
 \strong{Officials}
 
@@ -1045,7 +1045,7 @@ A named list of \code{hoopR_data} tibbles: \code{GameSummary}, \code{GameInfo}, 
   family_name \tab character \tab Player's family / last name. \cr
   jersey_num \tab character \tab Jersey number worn by the player. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv3")} for the column table.}
 
 \strong{LineScore}
 
@@ -1065,7 +1065,7 @@ A named list of \code{hoopR_data} tibbles: \code{GameSummary}, \code{GameInfo}, 
   period4_score \tab integer \tab Period4 score. \cr
   score \tab integer \tab Final score. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv3")} for the column table.}
 
 \strong{InactivePlayers}
 
@@ -1078,7 +1078,7 @@ A named list of \code{hoopR_data} tibbles: \code{GameSummary}, \code{GameInfo}, 
   family_name \tab character \tab Player's family / last name. \cr
   jersey_num \tab character \tab Jersey number worn by the player. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv3")} for the column table.}
 
 \strong{LastFiveMeetings}
 
@@ -1105,7 +1105,7 @@ A named list of \code{hoopR_data} tibbles: \code{GameSummary}, \code{GameInfo}, 
   home_team_wins \tab integer \tab Home team's team wins. \cr
   home_team_losses \tab integer \tab Home team's team losses. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv3")} for the column table.}
 
 \strong{OtherStats}
 
@@ -1138,7 +1138,7 @@ A named list of \code{hoopR_data} tibbles: \code{GameSummary}, \code{GameInfo}, 
   points_from_turnovers \tab integer \tab Points from turnovers. \cr
   bench_points \tab integer \tab Points scored by the bench. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv3")} for the column table.}
 
 \strong{AvailableVideo}
 
@@ -1152,7 +1152,7 @@ A named list of \code{hoopR_data} tibbles: \code{GameSummary}, \code{GameInfo}, 
   hustle_status \tab integer \tab Hustle status. \cr
   historical_status \tab integer \tab Historical status. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv3")} for the column table.}
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}

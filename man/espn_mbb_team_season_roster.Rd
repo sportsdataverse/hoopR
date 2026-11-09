@@ -27,7 +27,7 @@ A \code{hoopR_data} tibble with one row per athlete on the season roster.
   athlete_id \tab character \tab ESPN athlete id. \cr
   ref \tab character \tab \code{$ref} URL to athlete-in-season detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team_season_roster")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per athlete on the season roster.
 
@@ -39,7 +39,7 @@ A \code{hoopR_data} tibble with one row per athlete on the season roster.
   athlete_id \tab character \tab ESPN athlete id. \cr
   ref \tab character \tab \code{$ref} URL to athlete-in-season detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team_season_roster")} for the column table.}
 }
 \description{
 Returns the per-season team roster as a tibble of athlete IDs from

@@ -117,7 +117,7 @@ A named list of tibbles: \code{Picks}, \code{TeamsWithoutPicks}, \code{LiveDetai
   prospect_height_feet_and_inches \tab character \tab Prospect height feet and inches. \cr
   prospect_height_inches_only \tab integer \tab Prospect height inches only. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_draftboard")} for the column table.}
 
 \strong{TeamsWithoutPicks}
 
@@ -136,7 +136,7 @@ A named list of tibbles: \code{Picks}, \code{TeamsWithoutPicks}, \code{LiveDetai
   picked_second_round \tab logical \tab Picked second round. \cr
   picked_first_round \tab logical \tab Picked first round. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_draftboard")} for the column table.}
 
 \strong{LiveDetails}
 
@@ -145,7 +145,7 @@ A named list of tibbles: \code{Picks}, \code{TeamsWithoutPicks}, \code{LiveDetai
   is_draft_live \tab logical \tab Is draft live. \cr
   live_draft_current_pick_number \tab numeric \tab Live draft current pick number. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_draftboard")} for the column table.}
 
 A named list of tibbles: \code{DraftCombineStats}.
 
@@ -201,7 +201,7 @@ A named list of tibbles: \code{DraftCombineStats}.
   ON_MOVE_FIFTEEN \tab character \tab  \cr
   ON_MOVE_COLLEGE \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_draftcombinestats")} for the column table.}
 
 A named list of tibbles: \code{Results}.
 
@@ -222,7 +222,7 @@ A named list of tibbles: \code{Results}.
   THREE_QUARTER_SPRINT \tab character \tab  \cr
   BENCH_PRESS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_draftcombinedrillresults")} for the column table.}
 
 A named list of tibbles: \code{Results}.
 
@@ -261,7 +261,7 @@ A named list of tibbles: \code{Results}.
   ON_MOVE_COLLEGE_ATTEMPT \tab character \tab  \cr
   ON_MOVE_COLLEGE_PCT \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_draftcombinenonstationaryshooting")} for the column table.}
 
 A named list of tibbles: \code{Results}.
 
@@ -288,7 +288,7 @@ A named list of tibbles: \code{Results}.
   HAND_LENGTH \tab character \tab  \cr
   HAND_WIDTH \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_draftcombineplayeranthro")} for the column table.}
 
 A named list of tibbles: \code{Results}.
 
@@ -348,7 +348,7 @@ A named list of tibbles: \code{Results}.
   NBA_CORNER_RIGHT_ATTEMPT \tab character \tab  \cr
   NBA_CORNER_RIGHT_PCT \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_draftcombinespotshooting")} for the column table.}
 
 A named list of tibbles: \code{DraftHistory}.
 
@@ -371,7 +371,7 @@ A named list of tibbles: \code{DraftHistory}.
   ORGANIZATION_TYPE \tab character \tab  \cr
   PLAYER_PROFILE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_drafthistory")} for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Draft Board}

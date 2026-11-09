@@ -30,7 +30,7 @@ A \code{hoopR_data} tibble with one row per calendar entry.
   start_date \tab character \tab Start date (YYYY-MM-DD). \cr
   end_date \tab character \tab End date (YYYY-MM-DD). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_calendar")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per calendar entry.
 
@@ -48,7 +48,7 @@ A \code{hoopR_data} tibble with one row per calendar entry.
   start_date \tab character \tab Start date (YYYY-MM-DD). \cr
   end_date \tab character \tab End date (YYYY-MM-DD). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_calendar")} for the column table.}
 }
 \description{
 \strong{Get ESPN MBB Calendar}

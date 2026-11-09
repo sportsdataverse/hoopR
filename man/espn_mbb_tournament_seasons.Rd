@@ -25,7 +25,7 @@ A \code{hoopR_data} tibble with one row per season.
   season \tab integer \tab Season year. \cr
   ref \tab character \tab Full \code{$ref} URL for that season. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_tournament_seasons")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per season.
 
@@ -36,7 +36,7 @@ A \code{hoopR_data} tibble with one row per season.
   season \tab integer \tab Season year. \cr
   ref \tab character \tab Full \code{$ref} URL for that season. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_tournament_seasons")} for the column table.}
 }
 \description{
 Returns the seasons in which a given MBB tournament was held.

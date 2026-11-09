@@ -32,7 +32,7 @@ A \code{hoopR_data} tibble with one row per group-season.
   parent_group_id \tab character \tab Parent group id as of that season (division to conference to subdivision or league). \cr
   n_teams \tab integer \tab Number of member teams that season. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_mbb_group_seasons")} for the column table.}
 }
 \description{
 Loads one row per group per season it existed, with the

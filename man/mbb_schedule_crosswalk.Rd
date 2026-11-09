@@ -37,7 +37,7 @@ A \code{hoopR_data} tibble with one row per game.
   match_method \tab character \tab "both"/"espn_only"/"bart_only". \cr
   match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "mbb_schedule_crosswalk")} for the column table.}
 }
 \description{
 Build a wide, one-row-per-game crosswalk linking ESPN and Bart Torvik

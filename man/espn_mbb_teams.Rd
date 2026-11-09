@@ -38,7 +38,7 @@ A \code{hoopR_data} tibble with one row per team.
   parent_group_id \tab integer \tab Unique identifier for parent group. \cr
   conference_id \tab integer \tab Conference identifier. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_teams")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per team.
 
@@ -58,7 +58,7 @@ A \code{hoopR_data} tibble with one row per team.
   logos_href_3 \tab character \tab Logos href 3. \cr
   logos_href_4 \tab character \tab Logos href 4. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_teams")} for the column table.}
 }
 \description{
 \strong{Get ESPN men's college basketball team names and IDs}

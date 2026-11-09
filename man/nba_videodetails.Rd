@@ -170,7 +170,7 @@ A named list of tibbles: \code{videoUrls}, \code{playlist}.
   scc \tab character \tab Scc. \cr
   srt \tab character \tab Srt. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_videodetailsasset")} for the column table.}
 
 \strong{playlist}
 
@@ -194,7 +194,7 @@ A named list of tibbles: \code{videoUrls}, \code{playlist}.
   vpa \tab integer \tab Vpa. \cr
   pta \tab integer \tab Pta. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_videodetailsasset")} for the column table.}
 
 A named list of tibbles: \code{videoUrls}, \code{playlist}.
 
@@ -217,7 +217,7 @@ A named list of tibbles: \code{videoUrls}, \code{playlist}.
   lth \tab logical \tab Lth. \cr
   ltw \tab logical \tab Ltw. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_videodetails")} for the column table.}
 
 \strong{playlist}
 
@@ -239,7 +239,7 @@ A named list of tibbles: \code{videoUrls}, \code{playlist}.
   vpa \tab integer \tab Vpa. \cr
   pta \tab integer \tab Pta. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_videodetails")} for the column table.}
 
 Return a list of tibbles: videoUrls, playlist
 
@@ -264,7 +264,7 @@ A named list of tibbles: \code{VideoStatus}.
   IS_AVAILABLE \tab character \tab  \cr
   PT_XYZ_AVAILABLE \tab character \tab Pt xyz available. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_videostatus")} for the column table.}
 
 Returns a named list containing video event asset data (structure varies by response)
 }

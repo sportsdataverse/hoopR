@@ -117,7 +117,7 @@ A named list of \code{hoopR_data} tibbles: \code{Plays}, \code{Team}, \code{Play
   end_game_seconds_remaining \tab integer \tab Seconds left in regulation at the end of the play (the next play's start; NA on the game's last). \cr
   score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_game_all")} for the column table.}
 
 \strong{Team}
 
@@ -178,7 +178,7 @@ A named list of \code{hoopR_data} tibbles: \code{Plays}, \code{Team}, \code{Play
   opponent_team_logo \tab character \tab Opponent team logo URL. \cr
   opponent_team_score \tab integer \tab Opponent team's score. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_game_all")} for the column table.}
 
 \strong{Player}
 
@@ -240,7 +240,7 @@ A named list of \code{hoopR_data} tibbles: \code{Plays}, \code{Team}, \code{Play
   opponent_team_alternate_color \tab character \tab Opponent team alternate color (hex). \cr
   opponent_team_score \tab integer \tab Opponent team's score. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_game_all")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{Plays}.
 
@@ -316,7 +316,7 @@ A named list of \code{hoopR_data} tibbles: \code{Plays}.
   end_game_seconds_remaining \tab integer \tab Seconds left in regulation at the end of the play (the next play's start; NA on the game's last). \cr
   score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_pbp")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{Team}.
 
@@ -379,7 +379,7 @@ A named list of \code{hoopR_data} tibbles: \code{Team}.
   opponent_team_logo \tab character \tab Opponent team logo URL. \cr
   opponent_team_score \tab integer \tab Opponent team's score. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team_box")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{Player}.
 
@@ -443,7 +443,7 @@ A named list of \code{hoopR_data} tibbles: \code{Player}.
   opponent_team_alternate_color \tab character \tab Opponent team alternate color (hex). \cr
   opponent_team_score \tab integer \tab Opponent team's score. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_box")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per athlete on a game roster.
 
@@ -521,7 +521,7 @@ A \code{hoopR_data} tibble with one row per athlete on a game roster.
   winner \tab logical \tab Winner. \cr
   roster_href \tab character \tab URL for roster. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_game_rosters")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{pickcenter}, \code{againstTheSpread}, \code{predictor}.
 
@@ -563,7 +563,7 @@ A named list of \code{hoopR_data} tibbles: \code{pickcenter}, \code{againstTheSp
   home_team_odds_spread_record_summary \tab character \tab Home team's team odds spread record summary. \cr
   game_id \tab integer \tab Unique game identifier. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_betting")} for the column table.}
 
 \strong{againstTheSpread}
 
@@ -579,7 +579,7 @@ A named list of \code{hoopR_data} tibbles: \code{pickcenter}, \code{againstTheSp
   game_id \tab integer \tab Unique game identifier. \cr
   team_id \tab integer \tab Unique team identifier. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_betting")} for the column table.}
 
 \strong{predictor}
 
@@ -591,7 +591,7 @@ A named list of \code{hoopR_data} tibbles: \code{pickcenter}, \code{againstTheSp
   away_team_game_projection \tab numeric \tab Away team's team game projection. \cr
   away_team_chance_loss \tab numeric \tab Away team's team chance loss. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_betting")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{Plays}, \code{Team}, \code{Player}.
 
@@ -673,7 +673,7 @@ A named list of \code{hoopR_data} tibbles: \code{Plays}, \code{Team}, \code{Play
   period \tab integer \tab Same as qtr. \cr
   score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_game_all")} for the column table.}
 
 \strong{Team}
 
@@ -737,7 +737,7 @@ A named list of \code{hoopR_data} tibbles: \code{Plays}, \code{Team}, \code{Play
   opponent_team_logo \tab character \tab Opponent team logo URL. \cr
   opponent_team_score \tab integer \tab Opponent team's score. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_game_all")} for the column table.}
 
 \strong{Player}
 
@@ -801,7 +801,7 @@ A named list of \code{hoopR_data} tibbles: \code{Plays}, \code{Team}, \code{Play
   opponent_team_alternate_color \tab character \tab Opponent team alternate color (hex). \cr
   opponent_team_score \tab integer \tab Opponent team's score. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_game_all")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{Plays}.
 
@@ -883,7 +883,7 @@ A named list of \code{hoopR_data} tibbles: \code{Plays}.
   period \tab integer \tab Same as qtr. \cr
   score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_pbp")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{Team}.
 
@@ -949,7 +949,7 @@ A named list of \code{hoopR_data} tibbles: \code{Team}.
   opponent_team_logo \tab character \tab Opponent team logo URL. \cr
   opponent_team_score \tab integer \tab Opponent team's score. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team_box")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{Player}.
 
@@ -1015,7 +1015,7 @@ A named list of \code{hoopR_data} tibbles: \code{Player}.
   opponent_team_alternate_color \tab character \tab Opponent team alternate color (hex). \cr
   opponent_team_score \tab integer \tab Opponent team's score. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_box")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per athlete on a game roster.
 
@@ -1112,7 +1112,7 @@ A \code{hoopR_data} tibble with one row per athlete on a game roster.
   hand_abbreviation \tab character \tab Hand abbreviation. \cr
   hand_display_value \tab character \tab Hand display value. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_game_rosters")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{pickcenter}, \code{againstTheSpread}, \code{predictor}.
 
@@ -1154,7 +1154,7 @@ A named list of \code{hoopR_data} tibbles: \code{pickcenter}, \code{againstTheSp
   home_team_odds_spread_record_summary \tab character \tab Home team's team odds spread record summary. \cr
   game_id \tab integer \tab Unique game identifier. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_betting")} for the column table.}
 
 \strong{againstTheSpread}
 
@@ -1170,7 +1170,7 @@ A named list of \code{hoopR_data} tibbles: \code{pickcenter}, \code{againstTheSp
   game_id \tab integer \tab Unique game identifier. \cr
   team_id \tab integer \tab Unique team identifier. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_betting")} for the column table.}
 
 \strong{predictor}
 
@@ -1182,7 +1182,7 @@ A named list of \code{hoopR_data} tibbles: \code{pickcenter}, \code{againstTheSp
   away_team_game_projection \tab numeric \tab Away team's team game projection. \cr
   away_team_chance_loss \tab numeric \tab Away team's team chance loss. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_betting")} for the column table.}
 }
 \description{
 \strong{Get ESPN men's college basketball data (Pbp, Team and Player Box)}

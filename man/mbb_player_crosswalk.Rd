@@ -36,7 +36,7 @@ A \code{hoopR_data} tibble with one row per player per team.
   match_confidence \tab numeric \tab Jaro-Winkler score or 1 for exact (NA if none). \cr
   match_keys \tab character \tab NA (reserved for future use). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "mbb_player_crosswalk")} for the column table.}
 }
 \description{
 Build a wide, one-row-per-player-per-team crosswalk linking ESPN and Fox

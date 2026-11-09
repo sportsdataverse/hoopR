@@ -158,7 +158,7 @@ A \code{hoopR_data} tibble with one row per player.
   logo_href \tab character \tab Team or league logo URL. \cr
   logo_dark_href \tab character \tab Logo URL for dark backgrounds. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_stats")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per player.
 
@@ -352,7 +352,7 @@ A \code{hoopR_data} tibble with one row per player.
   logos_href_2 \tab character \tab Logos href 2. \cr
   logos_href_3 \tab character \tab Logos href 3. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_stats")} for the column table.}
 }
 \description{
 \strong{Get ESPN men's college basketball player stats data}

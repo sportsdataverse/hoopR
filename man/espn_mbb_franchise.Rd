@@ -36,7 +36,7 @@ A \code{hoopR_data} tibble with one row per franchise.
   venue_ref \tab character \tab \code{$ref} to franchise's primary venue. \cr
   team_ref \tab character \tab \code{$ref} to the current team for franchise. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_franchise")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per franchise.
 
@@ -59,7 +59,7 @@ A \code{hoopR_data} tibble with one row per franchise.
   venue_ref \tab character \tab \code{$ref} to franchise's primary venue. \cr
   team_ref \tab character \tab \code{$ref} to the current team for franchise. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_franchise")} for the column table.}
 }
 \description{
 Returns franchise-level metadata for a men's college basketball program.

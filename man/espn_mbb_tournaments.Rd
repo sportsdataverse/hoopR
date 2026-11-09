@@ -22,7 +22,7 @@ A \code{hoopR_data} tibble with one row per tournament.
   ref \tab character \tab Full \code{$ref} URL for the detail. \cr
   league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_tournaments")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per tournament.
 
@@ -32,7 +32,7 @@ A \code{hoopR_data} tibble with one row per tournament.
   ref \tab character \tab Full \code{$ref} URL for the detail. \cr
   league \tab character \tab League slug (\code{"nba"}). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_tournaments")} for the column table.}
 }
 \description{
 Returns the index of men's college basketball tournaments tracked by

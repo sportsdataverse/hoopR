@@ -29,7 +29,7 @@ A \code{hoopR_data} tibble with one row per venue.
   grass \tab logical \tab  \cr
   images_url \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_venues")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per venue.
 
@@ -45,7 +45,7 @@ A \code{hoopR_data} tibble with one row per venue.
   grass \tab logical \tab  \cr
   images_url \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_venues")} for the column table.}
 }
 \description{
 \strong{Get ESPN Women's College Basketball Venues}

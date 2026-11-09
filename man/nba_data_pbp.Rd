@@ -37,7 +37,7 @@ A \code{hoopR_data} tibble with one row per play-by-play event.
   away_score \tab integer \tab Away team score at the time of the play. \cr
   order \tab integer \tab Display order within the result set. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_data_pbp")} for the column table.}
 }
 \description{
 \strong{Get NBA Data API Play-by-Play}

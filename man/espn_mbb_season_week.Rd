@@ -42,7 +42,7 @@ A \code{hoopR_data} tibble with one row per week.
   end_date \tab character \tab ISO 8601 week end. \cr
   rankings_ref \tab character \tab \code{$ref} to the per-week rankings endpoint. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_season_week")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per week.
 
@@ -57,7 +57,7 @@ A \code{hoopR_data} tibble with one row per week.
   end_date \tab character \tab ISO 8601 week end. \cr
   rankings_ref \tab character \tab \code{$ref} to the per-week rankings endpoint. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_season_week")} for the column table.}
 }
 \description{
 Returns metadata for one week (number, start / end dates, text label,

@@ -37,7 +37,7 @@ A \code{hoopR_data} tibble with one row per possession.
   def_player_4 \tab integer \tab NBA Stats person_id for defensive on-court player slot 4. \cr
   def_player_5 \tab integer \tab NBA Stats person_id for defensive on-court player slot 5. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_possession_lineups")} for the column table.}
 }
 \description{
 \strong{Get NBA Possession-Level Stint Matrix}

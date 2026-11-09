@@ -48,7 +48,7 @@ A \code{hoopR_data} tibble with one row per athlete.
   status \tab character \tab Status label. \cr
   link \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_athletes_index")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per athlete.
 
@@ -63,7 +63,7 @@ A \code{hoopR_data} tibble with one row per athlete.
   status \tab character \tab Status label. \cr
   link \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_athletes_index")} for the column table.}
 }
 \description{
 \strong{Get ESPN Women's College Basketball Athletes Index}

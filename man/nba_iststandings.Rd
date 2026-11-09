@@ -367,7 +367,7 @@ A named list of tibbles: \code{LeagueGameLog}.
   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
   VIDEO_AVAILABLE \tab character \tab Video available. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguegamelog")} for the column table.}
 
 A named list of tibbles: \code{Standings}.
 
@@ -457,7 +457,7 @@ A named list of tibbles: \code{Standings}.
   PreAS \tab character \tab  \cr
   PostAS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguestandings")} for the column table.}
 
 A named list of tibbles: \code{Standings}.
 
@@ -554,7 +554,7 @@ A named list of tibbles: \code{Standings}.
   OppTotalPoints \tab character \tab  \cr
   DiffTotalPoints \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguestandingsv3")} for the column table.}
 
 A named list of tibbles: \code{EastConfPlayoffPicture}, \code{WestConfPlayoffPicture}, \code{EastConfStandings}, \code{WestConfStandings}, \code{EastConfRemainingGames}, \code{WestConfRemainingGames}.
 
@@ -575,7 +575,7 @@ A named list of tibbles: \code{EastConfPlayoffPicture}, \code{WestConfPlayoffPic
   HIGH_SEED_SERIES_REMAINING_HOME_G \tab character \tab  \cr
   HIGH_SEED_SERIES_REMAINING_AWAY_G \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playoffpicture")} for the column table.}
 
 \strong{WestConfPlayoffPicture}
 
@@ -611,7 +611,7 @@ Same columns as the \strong{EastConfPlayoffPicture} table above.
   ELIMINATED_PLAYOFFS \tab character \tab  \cr
   SOSA_REMAINING \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playoffpicture")} for the column table.}
 
 \strong{WestConfStandings}
 
@@ -627,7 +627,7 @@ Same columns as the \strong{EastConfStandings} table above.
   REMAINING_HOME_G \tab character \tab  \cr
   REMAINING_AWAY_G \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playoffpicture")} for the column table.}
 
 \strong{WestConfRemainingGames}
 
@@ -668,7 +668,7 @@ A named list of tibbles: \code{LeagueGameFinderResults}.
   PF \tab character \tab Personal fouls. \cr
   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguegamefinder")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{Standings}.
 
@@ -701,7 +701,7 @@ A named list of \code{hoopR_data} tibbles: \code{Standings}.
   pts \tab character \tab Points scored. \cr
   opp_pts \tab character \tab Opponent points. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_iststandings")} for the column table.}
 }
 \description{
 \strong{Get NBA Stats API League Game Log}

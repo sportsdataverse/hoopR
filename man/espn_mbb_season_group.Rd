@@ -81,7 +81,7 @@ A \code{hoopR_data} tibble with one row per group.
   teams_ref \tab character \tab \code{$ref} to teams-in-group endpoint. \cr
   standings_ref \tab character \tab \code{$ref} to standings endpoint. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_season_group")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per child group.
 
@@ -94,7 +94,7 @@ A \code{hoopR_data} tibble with one row per child group.
   child_group_id \tab character \tab Child group id. \cr
   ref \tab character \tab \code{$ref} to child group detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_season_group_children")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per team in the group.
 
@@ -107,7 +107,7 @@ A \code{hoopR_data} tibble with one row per team in the group.
   team_id \tab character \tab ESPN team id. \cr
   ref \tab character \tab \code{$ref} URL to the team-in-season entry. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_season_group_teams")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per group.
 
@@ -129,7 +129,7 @@ A \code{hoopR_data} tibble with one row per group.
   teams_ref \tab character \tab \code{$ref} to teams-in-group endpoint. \cr
   standings_ref \tab character \tab \code{$ref} to standings endpoint. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_season_group")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per child group.
 
@@ -142,7 +142,7 @@ A \code{hoopR_data} tibble with one row per child group.
   child_group_id \tab character \tab Child group id. \cr
   ref \tab character \tab \code{$ref} to child group detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_season_group_children")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per team in the group.
 
@@ -155,7 +155,7 @@ A \code{hoopR_data} tibble with one row per team in the group.
   team_id \tab character \tab ESPN team id. \cr
   ref \tab character \tab \code{$ref} URL to the team-in-season entry. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_season_group_teams")} for the column table.}
 }
 \description{
 Returns metadata for one group (conference or division) in one

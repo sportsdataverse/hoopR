@@ -607,7 +607,7 @@ A named list of tibbles: \code{LeagueDashPTShots}.
   FG3A \tab character \tab Three-point field goal attempts. \cr
   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashoppptshot")} for the column table.}
 
 A named list of tibbles: \code{LeagueDashPlayerBioStats}.
 
@@ -639,7 +639,7 @@ A named list of tibbles: \code{LeagueDashPlayerBioStats}.
   TS_PCT \tab character \tab True shooting percentage (0-1). \cr
   AST_PCT \tab character \tab Assist percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashplayerbiostats")} for the column table.}
 
 A named list of tibbles: \code{LeagueDashPlayerClutch}.
 
@@ -715,7 +715,7 @@ A named list of tibbles: \code{LeagueDashPlayerClutch}.
   TD3_RANK \tab character \tab  \cr
   WNBA_FANTASY_PTS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashplayerclutch")} for the column table.}
 
 A named list of tibbles: \code{LeagueDashPTShots}.
 
@@ -744,7 +744,7 @@ A named list of tibbles: \code{LeagueDashPTShots}.
   FG3A \tab character \tab Three-point field goal attempts. \cr
   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashplayerptshot")} for the column table.}
 
 A named list of tibbles: \code{LeagueDashPlayerStats}.
 
@@ -819,7 +819,7 @@ A named list of tibbles: \code{LeagueDashPlayerStats}.
   TD3_RANK \tab character \tab  \cr
   WNBA_FANTASY_PTS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashplayerstats")} for the column table.}
 
 A named list of tibbles: \code{ShotLocations}.
 
@@ -858,7 +858,7 @@ A named list of tibbles: \code{ShotLocations}.
   Corner_3_FGA \tab character \tab  \cr
   Corner_3_FG_PCT \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashplayershotlocations")} for the column table.}
 
 A named list of tibbles: \code{LeagueDashPTDefend}.
 
@@ -881,7 +881,7 @@ A named list of tibbles: \code{LeagueDashPTDefend}.
   NORMAL_FG_PCT \tab character \tab  \cr
   PCT_PLUSMINUS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashptdefend")} for the column table.}
 
 A named list of tibbles: \code{LeagueDashPtStats}.
 
@@ -915,7 +915,7 @@ A named list of tibbles: \code{LeagueDashPtStats}.
   DRIVE_PF \tab character \tab  \cr
   DRIVE_PF_PCT \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashptstats")} for the column table.}
 
 A named list of tibbles: \code{LeagueDashPtTeamDefend}.
 
@@ -935,7 +935,7 @@ A named list of tibbles: \code{LeagueDashPtTeamDefend}.
   NORMAL_FG_PCT \tab character \tab  \cr
   PCT_PLUSMINUS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashptteamdefend")} for the column table.}
 
 A named list of tibbles: \code{LeagueDashTeamClutch}.
 
@@ -998,7 +998,7 @@ A named list of tibbles: \code{LeagueDashTeamClutch}.
   PTS_RANK \tab character \tab  \cr
   PLUS_MINUS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashteamclutch")} for the column table.}
 
 A named list of tibbles: \code{LeagueDashPTShots}.
 
@@ -1025,7 +1025,7 @@ A named list of tibbles: \code{LeagueDashPTShots}.
   FG3A \tab character \tab Three-point field goal attempts. \cr
   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashteamptshot")} for the column table.}
 
 A named list of tibbles: \code{LeagueDashTeamStats}.
 
@@ -1088,7 +1088,7 @@ A named list of tibbles: \code{LeagueDashTeamStats}.
   PTS_RANK \tab character \tab  \cr
   PLUS_MINUS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashteamstats")} for the column table.}
 
 A named list of tibbles: \code{ShotLocations}.
 
@@ -1123,7 +1123,7 @@ A named list of tibbles: \code{ShotLocations}.
   Corner_3_FGA \tab character \tab  \cr
   Corner_3_FG_PCT \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashteamshotlocations")} for the column table.}
 }
 \description{
 \strong{Get NBA Stats API League Dashboard Player Tracking - Opponent Shots}

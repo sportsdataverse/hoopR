@@ -24,7 +24,7 @@ A \code{hoopR_data} tibble with one row per game.
   season_type \tab character \tab Season type from the third digit of game_id, e.g. playoffs. \cr
   label \tab character \tab Matchup label text of the report link, edges trimmed. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_l2m_games")} for the column table.}
 }
 \description{
 Scrapes official.nba.com's season index page. JSON L2M reports exist only

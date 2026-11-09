@@ -29,7 +29,7 @@ A \code{hoopR_data} tibble with one row per group lineage.
   last_season \tab integer \tab Last season (ending year) with at least one member. \cr
   notes \tab character \tab Lineage decisions and source caveats. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_mbb_groups")} for the column table.}
 }
 \description{
 Loads one row per group lineage -- the league or subdivision,

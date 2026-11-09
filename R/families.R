@@ -104,14 +104,16 @@
       out <- c(out, paste0("Same columns as the **", same[1], "** table above."), "")
       next
     }
-    if (!is.na(cp)) seen[[cp]] <- df
+    # A placeholder table ("(varies)") is not a schema another table can share.
+    if (!is.na(cp) && !all(startsWith(df$col_name, "("))) seen[[cp]] <- df
     cell <- function(x) vapply(x, .returns_rd_text, "")
     out <- c(out,
              "\\if{html}{\\tabular{lll}{",
              "  col_name \\tab types \\tab description \\cr",
              paste0("  ", cell(df$col_name), " \\tab ", cell(df$type), " \\tab ", cell(df$description), " \\cr"),
              "}}",
-             "\\if{latex}{See the HTML help or pkgdown reference for the column table.}",
+             paste0("\\if{text,latex}{See the HTML help, the pkgdown reference or ",
+                    "\\code{subset(return_columns, fn == \"", fn, "\")} for the column table.}"),
              "")
   }
   out

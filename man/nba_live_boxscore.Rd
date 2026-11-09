@@ -79,7 +79,7 @@ A named list of \code{hoopR_data} tibbles: \code{PlayByPlay}, \code{AvailableVid
   shot_value \tab integer \tab Point value of the shot (2 or 3). \cr
   action_id \tab integer \tab Unique action identifier within a game (V3 PBP). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playbyplayv3")} for the column table.}
 
 \strong{AvailableVideo}
 
@@ -87,7 +87,7 @@ A named list of \code{hoopR_data} tibbles: \code{PlayByPlay}, \code{AvailableVid
   col_name \tab types \tab description \cr
   video_available \tab integer \tab Video available. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playbyplayv3")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per play-by-play event.
 
@@ -157,7 +157,7 @@ A \code{hoopR_data} tibble with one row per play-by-play event.
   home_player4 \tab numeric \tab Home team's player4. \cr
   home_player5 \tab numeric \tab Home team's player5. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_pbp")} for the column table.}
 
 A tibble with one row per play-by-play event.
 
@@ -227,7 +227,7 @@ A tibble with one row per play-by-play event.
   home_player4 \tab numeric \tab Home team's player4. \cr
   home_player5 \tab numeric \tab Home team's player5. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_pbps")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per play-by-play event.
 
@@ -292,7 +292,7 @@ A \code{hoopR_data} tibble with one row per play-by-play event.
   player2_id \tab integer \tab V2 PBP secondary player ID (e.g. assister / fouled-by). \cr
   player3_id \tab integer \tab V2 PBP tertiary player ID (e.g. blocker). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_live_pbp")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{game_details}, \code{arena}, \code{officials}, \code{home_team_boxscore}, \code{away_team_boxscore}, \code{home_team_player_boxscore}, \code{away_team_player_boxscore}, \code{home_team_linescores}, \code{away_team_linescores}.
 
@@ -330,7 +330,7 @@ A named list of \code{hoopR_data} tibbles: \code{game_details}, \code{arena}, \c
   away_team_in_bonus \tab character \tab Away team's team in bonus. \cr
   away_team_timeouts_remaining \tab integer \tab Away team's team timeouts remaining. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_live_boxscore")} for the column table.}
 
 \strong{arena}
 
@@ -343,7 +343,7 @@ A named list of \code{hoopR_data} tibbles: \code{game_details}, \code{arena}, \c
   arena_country \tab character \tab Arena country. \cr
   arena_timezone \tab character \tab Arena timezone. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_live_boxscore")} for the column table.}
 
 \strong{officials}
 
@@ -357,7 +357,7 @@ A named list of \code{hoopR_data} tibbles: \code{game_details}, \code{arena}, \c
   jersey_num \tab character \tab Jersey number worn by the player. \cr
   assignment \tab character \tab Assignment. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_live_boxscore")} for the column table.}
 
 \strong{home_team_boxscore}
 
@@ -432,7 +432,7 @@ A named list of \code{hoopR_data} tibbles: \code{game_details}, \code{arena}, \c
   two_pointers_made \tab integer \tab Number of two pointers made. \cr
   two_pointers_percentage \tab numeric \tab Two pointers percentage (0-1 decimal). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_live_boxscore")} for the column table.}
 
 \strong{away_team_boxscore}
 
@@ -497,7 +497,7 @@ Same columns as the \strong{home_team_boxscore} table above.
   not_playing_reason \tab character \tab Not playing reason. \cr
   not_playing_description \tab character \tab Not playing description. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_live_boxscore")} for the column table.}
 
 \strong{away_team_player_boxscore}
 
@@ -511,7 +511,7 @@ Same columns as the \strong{home_team_player_boxscore} table above.
   period_type \tab character \tab Period type. \cr
   score \tab integer \tab Final score. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_live_boxscore")} for the column table.}
 
 \strong{away_team_linescores}
 

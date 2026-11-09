@@ -157,7 +157,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   GP_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{PTSLeaders}
 
@@ -169,7 +169,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   PTS_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{ASTLeaders}
 
@@ -181,7 +181,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   AST_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{STLLeaders}
 
@@ -193,7 +193,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   STL_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{OREBLeaders}
 
@@ -205,7 +205,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   OREB_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{DREBLeaders}
 
@@ -217,7 +217,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   DREB_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{REBLeaders}
 
@@ -229,7 +229,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   REB_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{BLKLeaders}
 
@@ -241,7 +241,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   BLK_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{FGMLeaders}
 
@@ -253,7 +253,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   FGM_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{FGALeaders}
 
@@ -265,7 +265,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   FGA_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{FG_PCTLeaders}
 
@@ -277,7 +277,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   FG_PCT_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{TOVLeaders}
 
@@ -289,7 +289,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   TOV_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{FG3MLeaders}
 
@@ -301,7 +301,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   FG3M_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{FG3ALeaders}
 
@@ -313,7 +313,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   FG3A_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{FG3_PCTLeaders}
 
@@ -325,7 +325,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   FG3_PCT_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{PFLeaders}
 
@@ -337,7 +337,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   PF_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{FTMLeaders}
 
@@ -349,7 +349,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   FTM_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{FTALeaders}
 
@@ -361,7 +361,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   FTA_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 \strong{FT_PCTLeaders}
 
@@ -373,7 +373,7 @@ A named list of tibbles: \code{GPLeaders}, \code{PTSLeaders}, \code{ASTLeaders},
   FT_PCT_RANK \tab character \tab  \cr
   IS_ACTIVE_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_alltimeleadersgrids")} for the column table.}
 
 A named list of tibbles: \code{AssistLeaders}.
 
@@ -387,7 +387,7 @@ A named list of tibbles: \code{AssistLeaders}.
   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
   AST \tab character \tab Assists. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_assistleaders")} for the column table.}
 
 Returns a named list of data frames: AssistTracker
 
@@ -409,7 +409,7 @@ A named list of tibbles: \code{HomePageLeaders}, \code{LeagueAverage}, \code{Lea
   TS_PCT \tab character \tab True shooting percentage (0-1). \cr
   PTS_PER48 \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_homepageleaders")} for the column table.}
 
 \strong{LeagueAverage}
 
@@ -423,7 +423,7 @@ A named list of tibbles: \code{HomePageLeaders}, \code{LeagueAverage}, \code{Lea
   TS_PCT \tab numeric \tab True shooting percentage (0-1). \cr
   PTS_PER48 \tab numeric \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_homepageleaders")} for the column table.}
 
 \strong{LeagueMax}
 
@@ -441,7 +441,7 @@ A named list of tibbles: \code{HomePageStat1}, \code{HomePageStat2}, \code{HomeP
   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
   PTS \tab character \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_homepagev2")} for the column table.}
 
 \strong{HomePageStat2}
 
@@ -453,7 +453,7 @@ A named list of tibbles: \code{HomePageStat1}, \code{HomePageStat2}, \code{HomeP
   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
   REB \tab character \tab Total rebounds. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_homepagev2")} for the column table.}
 
 \strong{HomePageStat3}
 
@@ -465,7 +465,7 @@ A named list of tibbles: \code{HomePageStat1}, \code{HomePageStat2}, \code{HomeP
   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
   AST \tab character \tab Assists. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_homepagev2")} for the column table.}
 
 \strong{HomePageStat4}
 
@@ -477,7 +477,7 @@ A named list of tibbles: \code{HomePageStat1}, \code{HomePageStat2}, \code{HomeP
   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
   STL \tab character \tab Steals. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_homepagev2")} for the column table.}
 
 \strong{HomePageStat5}
 
@@ -489,7 +489,7 @@ A named list of tibbles: \code{HomePageStat1}, \code{HomePageStat2}, \code{HomeP
   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_homepagev2")} for the column table.}
 
 \strong{HomePageStat6}
 
@@ -501,7 +501,7 @@ A named list of tibbles: \code{HomePageStat1}, \code{HomePageStat2}, \code{HomeP
   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_homepagev2")} for the column table.}
 
 \strong{HomePageStat7}
 
@@ -513,7 +513,7 @@ A named list of tibbles: \code{HomePageStat1}, \code{HomePageStat2}, \code{HomeP
   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_homepagev2")} for the column table.}
 
 \strong{HomePageStat8}
 
@@ -525,7 +525,7 @@ A named list of tibbles: \code{HomePageStat1}, \code{HomePageStat2}, \code{HomeP
   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
   BLK \tab character \tab Blocks. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_homepagev2")} for the column table.}
 
 A named list of tibbles: \code{LeadersTiles}, \code{AllTimeSeasonHigh}, \code{LastSeasonHigh}, \code{LowSeasonHigh}.
 
@@ -539,7 +539,7 @@ A named list of tibbles: \code{LeadersTiles}, \code{AllTimeSeasonHigh}, \code{La
   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
   PTS \tab character \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaderstiles")} for the column table.}
 
 \strong{AllTimeSeasonHigh}
 
@@ -551,7 +551,7 @@ A named list of tibbles: \code{LeadersTiles}, \code{AllTimeSeasonHigh}, \code{La
   SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
   PTS \tab character \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaderstiles")} for the column table.}
 
 \strong{LastSeasonHigh}
 
@@ -599,7 +599,7 @@ A named list of tibbles: \code{LeagueLeaders}.
   AST_TOV \tab character \tab  \cr
   STL_TOV \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leagueleaders")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{DunkScoreLeaders}.
 
@@ -663,7 +663,7 @@ A named list of \code{hoopR_data} tibbles: \code{DunkScoreLeaders}.
   possible_attempted_charge \tab character \tab Possible attempted charge. \cr
   video_available \tab character \tab Video available. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_dunkscoreleaders")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{GravityLeaders}.
 
@@ -699,7 +699,7 @@ A named list of \code{hoopR_data} tibbles: \code{GravityLeaders}.
   reb \tab character \tab Total rebounds. \cr
   ast \tab character \tab Assists. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_gravityleaders")} for the column table.}
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}

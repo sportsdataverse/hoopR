@@ -34,7 +34,7 @@ A named list of \code{hoopR_data} tibbles: \code{Injuries}.
   short_comment \tab character \tab  \cr
   long_comment \tab character \tab Long-form play / event comment. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team_injuries")} for the column table.}
 
 An empty tibble (zero rows) when no injuries are reported.
 
@@ -56,7 +56,7 @@ A named list of \code{hoopR_data} tibbles: \code{Injuries}.
   short_comment \tab character \tab  \cr
   long_comment \tab character \tab Long-form play / event comment. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team_injuries")} for the column table.}
 
 An empty tibble (zero rows) when no injuries are reported.
 }

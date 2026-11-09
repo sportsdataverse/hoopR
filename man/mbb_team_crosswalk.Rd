@@ -47,7 +47,7 @@ A \code{hoopR_data} tibble with one row per ESPN team.
   kp_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
   match_method \tab character \tab Combination of matched sources, e.g. "fox+bart+kp" / "fox+bart" / "bart+kp" / "fox_only" / "bart_only" / "kp_only" / "espn_only". \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "mbb_team_crosswalk")} for the column table.}
 }
 \description{
 Build a wide, one-row-per-team-per-season crosswalk linking ESPN,

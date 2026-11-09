@@ -49,7 +49,7 @@ A \code{hoopR_data} tibble with one row per team-season.
   sources_agree \tab logical \tab Whether a second source agrees; \code{NA} when only one source covers the season. \cr
   notes \tab character \tab Membership caveats. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_mbb_team_group_seasons")} for the column table.}
 }
 \description{
 Loads one row per team per season with the team's

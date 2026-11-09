@@ -883,7 +883,7 @@ A tibble with one row per team.
   logos_href_4 \tab character \tab Logos href 4. \cr
   nba_logo_svg \tab character \tab Nba logo svg. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teams")} for the column table.}
 
 A named list of tibbles: \code{TeamBackground}, \code{TeamHistory}, \code{TeamSocialSites}, \code{TeamAwardsChampionships}, \code{TeamAwardsConf}, \code{TeamAwardsDiv}, \code{TeamHof}, \code{TeamRetired}.
 
@@ -903,7 +903,7 @@ A named list of tibbles: \code{TeamBackground}, \code{TeamHistory}, \code{TeamSo
   HEADCOACH \tab character \tab  \cr
   DLEAGUEAFFILIATION \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamdetails")} for the column table.}
 
 \strong{TeamHistory}
 
@@ -915,7 +915,7 @@ A named list of tibbles: \code{TeamBackground}, \code{TeamHistory}, \code{TeamSo
   YEARFOUNDED \tab character \tab  \cr
   YEARACTIVETILL \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamdetails")} for the column table.}
 
 \strong{TeamSocialSites}
 
@@ -924,7 +924,7 @@ A named list of tibbles: \code{TeamBackground}, \code{TeamHistory}, \code{TeamSo
   ACCOUNTTYPE \tab character \tab  \cr
   WEBSITE_LINK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamdetails")} for the column table.}
 
 \strong{TeamAwardsChampionships}
 
@@ -933,7 +933,7 @@ A named list of tibbles: \code{TeamBackground}, \code{TeamHistory}, \code{TeamSo
   YEARAWARDED \tab character \tab  \cr
   OPPOSITETEAM \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamdetails")} for the column table.}
 
 \strong{TeamAwardsConf}
 
@@ -942,7 +942,7 @@ A named list of tibbles: \code{TeamBackground}, \code{TeamHistory}, \code{TeamSo
   YEARAWARDED \tab integer \tab  \cr
   OPPOSITETEAM \tab integer \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamdetails")} for the column table.}
 
 \strong{TeamAwardsDiv}
 
@@ -959,7 +959,7 @@ Same columns as the \strong{TeamAwardsConf} table above.
   SEASONSWITHTEAM \tab character \tab  \cr
   YEAR \tab character \tab 4-digit year. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamdetails")} for the column table.}
 
 \strong{TeamRetired}
 
@@ -1002,7 +1002,7 @@ A named list of tibbles: \code{TeamEstimatedMetrics}.
   E_TM_TOV_PCT_RANK \tab character \tab  \cr
   E_PACE_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamestimatedmetrics")} for the column table.}
 
 A named list of tibbles: \code{TeamGameLog}.
 
@@ -1038,7 +1038,7 @@ A named list of tibbles: \code{TeamGameLog}.
   PF \tab character \tab Personal fouls. \cr
   PTS \tab character \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamgamelog")} for the column table.}
 
 A named list of tibbles: \code{TeamGameLogs}.
 
@@ -1103,7 +1103,7 @@ A named list of tibbles: \code{TeamGameLogs}.
   PTS_RANK \tab character \tab  \cr
   PLUS_MINUS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamgamelogs")} for the column table.}
 
 A named list of tibbles: \code{CareerLeadersByTeam}.
 
@@ -1129,7 +1129,7 @@ A named list of tibbles: \code{CareerLeadersByTeam}.
   STL_PLAYER \tab character \tab  \cr
   SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamhistoricalleaders")} for the column table.}
 
 A named list of tibbles: \code{TeamInfoCommon}, \code{TeamSeasonRanks}, \code{AvailableSeasons}.
 
@@ -1154,7 +1154,7 @@ A named list of tibbles: \code{TeamInfoCommon}, \code{TeamSeasonRanks}, \code{Av
   MIN_YEAR \tab character \tab  \cr
   MAX_YEAR \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teaminfocommon")} for the column table.}
 
 \strong{TeamSeasonRanks}
 
@@ -1172,7 +1172,7 @@ A named list of tibbles: \code{TeamInfoCommon}, \code{TeamSeasonRanks}, \code{Av
   OPP_PTS_RANK \tab character \tab  \cr
   OPP_PTS_PG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teaminfocommon")} for the column table.}
 
 \strong{AvailableSeasons}
 
@@ -1180,7 +1180,7 @@ A named list of tibbles: \code{TeamInfoCommon}, \code{TeamSeasonRanks}, \code{Av
   col_name \tab types \tab description \cr
   SEASON_ID \tab character \tab Unique season identifier. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teaminfocommon")} for the column table.}
 
 A named list of tibbles: \code{OverallTeamPlayerOnOffDetails}, \code{PlayersOnCourtTeamPlayerOnOffDetails}, \code{PlayersOffCourtTeamPlayerOnOffDetails}.
 
@@ -1246,7 +1246,7 @@ A named list of tibbles: \code{OverallTeamPlayerOnOffDetails}, \code{PlayersOnCo
   PTS_RANK \tab character \tab  \cr
   PLUS_MINUS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamplayeronoffdetails")} for the column table.}
 
 \strong{PlayersOnCourtTeamPlayerOnOffDetails}
 
@@ -1312,7 +1312,7 @@ A named list of tibbles: \code{OverallTeamPlayerOnOffDetails}, \code{PlayersOnCo
   PTS_RANK \tab character \tab  \cr
   PLUS_MINUS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamplayeronoffdetails")} for the column table.}
 
 \strong{PlayersOffCourtTeamPlayerOnOffDetails}
 
@@ -1382,7 +1382,7 @@ A named list of tibbles: \code{OverallTeamPlayerOnOffSummary}, \code{PlayersOnCo
   PTS_RANK \tab character \tab  \cr
   PLUS_MINUS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamplayeronoffsummary")} for the column table.}
 
 \strong{PlayersOnCourtTeamPlayerOnOffSummary}
 
@@ -1402,7 +1402,7 @@ A named list of tibbles: \code{OverallTeamPlayerOnOffSummary}, \code{PlayersOnCo
   DEF_RATING \tab character \tab Defensive rating (points allowed per 100 possessions). \cr
   NET_RATING \tab character \tab Net rating (off rating - def rating). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamplayeronoffsummary")} for the column table.}
 
 \strong{PlayersOffCourtTeamPlayerOnOffSummary}
 
@@ -1471,7 +1471,7 @@ A named list of tibbles: \code{TeamOverall}, \code{PlayersSeasonTotals}.
   PTS_RANK \tab character \tab  \cr
   PLUS_MINUS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamplayerdashboard")} for the column table.}
 
 \strong{PlayersSeasonTotals}
 
@@ -1542,7 +1542,7 @@ A named list of tibbles: \code{TeamOverall}, \code{PlayersSeasonTotals}.
   TD3_RANK \tab character \tab  \cr
   WNBA_FANTASY_PTS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamplayerdashboard")} for the column table.}
 
 A named list of tibbles: \code{TeamStats}.
 
@@ -1585,7 +1585,7 @@ A named list of tibbles: \code{TeamStats}.
   PTS \tab character \tab Points scored. \cr
   PTS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamyearbyyearstats")} for the column table.}
 
 A named list of tibbles: \code{Overall}, \code{vsPlayerOverall}, \code{OnOffCourt}, \code{ShotDistanceOverall}, \code{ShotDistanceOnCourt}, \code{ShotDistanceOffCourt}, \code{ShotAreaOverall}, \code{ShotAreaOnCourt}, \code{ShotAreaOffCourt}.
 
@@ -1650,7 +1650,7 @@ A named list of tibbles: \code{Overall}, \code{vsPlayerOverall}, \code{OnOffCour
   PTS_RANK \tab character \tab  \cr
   PLUS_MINUS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamvsplayer")} for the column table.}
 
 \strong{vsPlayerOverall}
 
@@ -1720,7 +1720,7 @@ A named list of tibbles: \code{Overall}, \code{vsPlayerOverall}, \code{OnOffCour
   TD3_RANK \tab character \tab  \cr
   WNBA_FANTASY_PTS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamvsplayer")} for the column table.}
 
 \strong{OnOffCourt}
 
@@ -1786,7 +1786,7 @@ A named list of tibbles: \code{Overall}, \code{vsPlayerOverall}, \code{OnOffCour
   PTS_RANK \tab character \tab  \cr
   PLUS_MINUS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamvsplayer")} for the column table.}
 
 \strong{ShotDistanceOverall}
 
@@ -1801,7 +1801,7 @@ A named list of tibbles: \code{Overall}, \code{vsPlayerOverall}, \code{OnOffCour
   FGA \tab character \tab Field goal attempts. \cr
   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamvsplayer")} for the column table.}
 
 \strong{ShotDistanceOnCourt}
 
@@ -1819,7 +1819,7 @@ A named list of tibbles: \code{Overall}, \code{vsPlayerOverall}, \code{OnOffCour
   FGA \tab character \tab Field goal attempts. \cr
   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamvsplayer")} for the column table.}
 
 \strong{ShotDistanceOffCourt}
 
@@ -1869,7 +1869,7 @@ A named list of tibbles: \code{PlayersVsPlayers}, \code{TeamPlayersVsPlayersOn},
   PTS \tab character \tab Points scored. \cr
   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamandplayersvsplayers")} for the column table.}
 
 \strong{TeamPlayersVsPlayersOn}
 
@@ -1902,7 +1902,7 @@ A named list of tibbles: \code{PlayersVsPlayers}, \code{TeamPlayersVsPlayersOn},
   PTS \tab character \tab Points scored. \cr
   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamandplayersvsplayers")} for the column table.}
 
 \strong{TeamPlayersVsPlayersOff}
 
@@ -1933,7 +1933,7 @@ A named list of tibbles: \code{TeamGameStreakFinderParametersResults}.
   FIRSTSEASON \tab character \tab  \cr
   ABBREVIATION \tab character \tab Short abbreviation. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_teamgamestreakfinder")} for the column table.}
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}

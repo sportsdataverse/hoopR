@@ -178,7 +178,7 @@ A named list of tibbles: \code{PlayerStats}, \code{TeamStats}, \code{TeamStarter
   PTS \tab character \tab Points scored. \cr
   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoretraditionalv2")} for the column table.}
 
 \strong{TeamStats}
 
@@ -210,7 +210,7 @@ A named list of tibbles: \code{PlayerStats}, \code{TeamStats}, \code{TeamStarter
   PTS \tab character \tab Points scored. \cr
   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoretraditionalv2")} for the column table.}
 
 \strong{TeamStarterBenchStats}
 
@@ -242,7 +242,7 @@ A named list of tibbles: \code{PlayerStats}, \code{TeamStats}, \code{TeamStarter
   PF \tab character \tab Personal fouls. \cr
   PTS \tab character \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoretraditionalv2")} for the column table.}
 
 A named list of tibbles: \code{PlayerStats}, \code{TeamStats}.
 
@@ -283,7 +283,7 @@ A named list of tibbles: \code{PlayerStats}, \code{TeamStats}.
   POSS \tab character \tab Poss. \cr
   PIE \tab character \tab Player Impact Estimate (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoreadvancedv2")} for the column table.}
 
 \strong{TeamStats}
 
@@ -319,7 +319,7 @@ A named list of tibbles: \code{PlayerStats}, \code{TeamStats}.
   POSS \tab character \tab Poss. \cr
   PIE \tab character \tab Player Impact Estimate (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoreadvancedv2")} for the column table.}
 
 Returns a named list of data frames: PlayerDefensiveStats, Table1
 
@@ -348,7 +348,7 @@ A named list of tibbles: \code{sqlPlayersFourFactors}, \code{sqlTeamsFourFactors
   OPP_TOV_PCT \tab character \tab  \cr
   OPP_OREB_PCT \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscorefourfactorsv2")} for the column table.}
 
 \strong{sqlTeamsFourFactors}
 
@@ -369,7 +369,7 @@ A named list of tibbles: \code{sqlPlayersFourFactors}, \code{sqlTeamsFourFactors
   OPP_TOV_PCT \tab character \tab  \cr
   OPP_OREB_PCT \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscorefourfactorsv2")} for the column table.}
 
 A named list of tibbles: \code{sqlPlayersMisc}, \code{sqlTeamsMisc}.
 
@@ -400,7 +400,7 @@ A named list of tibbles: \code{sqlPlayersMisc}, \code{sqlTeamsMisc}.
   PF \tab character \tab Personal fouls. \cr
   PFD \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoremiscv2")} for the column table.}
 
 \strong{sqlTeamsMisc}
 
@@ -425,7 +425,7 @@ A named list of tibbles: \code{sqlPlayersMisc}, \code{sqlTeamsMisc}.
   PF \tab character \tab Personal fouls. \cr
   PFD \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoremiscv2")} for the column table.}
 
 A named list of tibbles: \code{sqlPlayersScoring}, \code{sqlTeamsScoring}.
 
@@ -459,7 +459,7 @@ A named list of tibbles: \code{sqlPlayersScoring}, \code{sqlTeamsScoring}.
   PCT_AST_FGM \tab character \tab  \cr
   PCT_UAST_FGM \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscorescoringv2")} for the column table.}
 
 \strong{sqlTeamsScoring}
 
@@ -487,7 +487,7 @@ A named list of tibbles: \code{sqlPlayersScoring}, \code{sqlTeamsScoring}.
   PCT_AST_FGM \tab character \tab  \cr
   PCT_UAST_FGM \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscorescoringv2")} for the column table.}
 
 A named list of tibbles: \code{sqlPlayersUsage}, \code{sqlTeamsUsage}.
 
@@ -524,7 +524,7 @@ A named list of tibbles: \code{sqlPlayersUsage}, \code{sqlTeamsUsage}.
   PCT_PFD \tab character \tab  \cr
   PCT_PTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoreusagev2")} for the column table.}
 
 \strong{sqlTeamsUsage}
 
@@ -555,7 +555,7 @@ A named list of tibbles: \code{sqlPlayersUsage}, \code{sqlTeamsUsage}.
   PCT_PFD \tab character \tab  \cr
   PCT_PTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoreusagev2")} for the column table.}
 
 A named list of tibbles: \code{GameSummary}, \code{OtherStats}, \code{Officials}, \code{InactivePlayers}, \code{GameInfo}, \code{LineScore}, \code{LastMeeting}, \code{SeasonSeries}, \code{AvailableVideo}.
 
@@ -578,7 +578,7 @@ A named list of tibbles: \code{GameSummary}, \code{OtherStats}, \code{Officials}
   LIVE_PERIOD_TIME_BCAST \tab character \tab  \cr
   WH_STATUS \tab character \tab Wh status. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv2")} for the column table.}
 
 \strong{OtherStats}
 
@@ -599,7 +599,7 @@ A named list of tibbles: \code{GameSummary}, \code{OtherStats}, \code{Officials}
   TEAM_REBOUNDS \tab character \tab Team rebounds (rebounds credited to the team rather than a player). \cr
   PTS_OFF_TO \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv2")} for the column table.}
 
 \strong{Officials}
 
@@ -610,7 +610,7 @@ A named list of tibbles: \code{GameSummary}, \code{OtherStats}, \code{Officials}
   LAST_NAME \tab character \tab Player's last name. \cr
   JERSEY_NUM \tab character \tab Jersey number worn by the player. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv2")} for the column table.}
 
 \strong{InactivePlayers}
 
@@ -625,7 +625,7 @@ A named list of tibbles: \code{GameSummary}, \code{OtherStats}, \code{Officials}
   TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
   TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv2")} for the column table.}
 
 \strong{GameInfo}
 
@@ -635,7 +635,7 @@ A named list of tibbles: \code{GameSummary}, \code{OtherStats}, \code{Officials}
   ATTENDANCE \tab character \tab Reported attendance. \cr
   GAME_TIME \tab character \tab Game start time. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv2")} for the column table.}
 
 \strong{LineScore}
 
@@ -665,7 +665,7 @@ A named list of tibbles: \code{GameSummary}, \code{OtherStats}, \code{Officials}
   PTS_OT10 \tab character \tab  \cr
   PTS \tab character \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv2")} for the column table.}
 
 \strong{LastMeeting}
 
@@ -685,7 +685,7 @@ A named list of tibbles: \code{GameSummary}, \code{OtherStats}, \code{Officials}
   LAST_GAME_VISITOR_TEAM_CITY1 \tab character \tab  \cr
   LAST_GAME_VISITOR_TEAM_POINTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv2")} for the column table.}
 
 \strong{SeasonSeries}
 
@@ -699,7 +699,7 @@ A named list of tibbles: \code{GameSummary}, \code{OtherStats}, \code{Officials}
   HOME_TEAM_LOSSES \tab character \tab Home team's team losses. \cr
   SERIES_LEADER \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv2")} for the column table.}
 
 \strong{AvailableVideo}
 
@@ -713,7 +713,7 @@ A named list of tibbles: \code{GameSummary}, \code{OtherStats}, \code{Officials}
   HUSTLE_STATUS \tab character \tab Hustle status. \cr
   HISTORICAL_STATUS \tab character \tab Historical status. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoresummaryv2")} for the column table.}
 
 Returns a named list of data frames: PlayerMatchupsStats
 
@@ -753,7 +753,7 @@ A named list of tibbles: \code{PlayerStats}, \code{TeamStats}.
   DFGA \tab character \tab  \cr
   DFG_PCT \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoreplayertrackv2")} for the column table.}
 
 \strong{TeamStats}
 
@@ -785,7 +785,7 @@ A named list of tibbles: \code{PlayerStats}, \code{TeamStats}.
   DFGA \tab character \tab  \cr
   DFG_PCT \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_boxscoreplayertrackv2")} for the column table.}
 
 A named list of tibbles: \code{HustleStatsAvailable}, \code{PlayerStats}, \code{TeamStats}.
 
@@ -808,7 +808,7 @@ A named list of tibbles: \code{HustleStatsAvailable}, \code{PlayerStats}, \code{
   TEAM_REBOUNDS \tab character \tab Team rebounds (rebounds credited to the team rather than a player). \cr
   PTS_OFF_TO \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_hustlestatsboxscore")} for the column table.}
 
 \strong{PlayerStats}
 
@@ -840,7 +840,7 @@ A named list of tibbles: \code{HustleStatsAvailable}, \code{PlayerStats}, \code{
   BOX_OUT_PLAYER_REBS \tab character \tab  \cr
   BOX_OUTS \tab character \tab Box-outs executed. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_hustlestatsboxscore")} for the column table.}
 
 \strong{TeamStats}
 
@@ -869,7 +869,7 @@ A named list of tibbles: \code{HustleStatsAvailable}, \code{PlayerStats}, \code{
   BOX_OUT_PLAYER_REBS \tab character \tab  \cr
   BOX_OUTS \tab character \tab Box-outs executed. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_hustlestatsboxscore")} for the column table.}
 
 Returns a named list of data frames: BoxScoreSimilarityScores
 

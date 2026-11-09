@@ -49,7 +49,7 @@ A \code{hoopR_data} tibble with one row per ranked team.
   first_occurrence_type \tab character \tab First occurrence type. \cr
   first_occurrence_value \tab character \tab First occurrence value. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_rankings")} for the column table.}
 }
 \description{
 \strong{Get men's college basketball AP and Coaches Poll rankings from ESPN}

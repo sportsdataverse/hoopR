@@ -241,7 +241,7 @@ A named list of tibbles: \code{Shot_Chart_Detail}, \code{LeagueAverages}.
   HTM \tab character \tab  \cr
   VTM \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_shotchartdetail")} for the column table.}
 
 \strong{LeagueAverages}
 
@@ -255,7 +255,7 @@ A named list of tibbles: \code{Shot_Chart_Detail}, \code{LeagueAverages}.
   FGM \tab character \tab Field goals made. \cr
   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_shotchartdetail")} for the column table.}
 
 A named list of tibbles: \code{League_Wide}.
 
@@ -271,7 +271,7 @@ A named list of tibbles: \code{League_Wide}.
   FGM \tab character \tab Field goals made. \cr
   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_shotchartleaguewide")} for the column table.}
 
 A named list of tibbles: \code{ShotChartLineupDetail}, \code{ShotChartLineupLeagueAverage}.
 
@@ -306,7 +306,7 @@ A named list of tibbles: \code{ShotChartLineupDetail}, \code{ShotChartLineupLeag
   HTM \tab character \tab  \cr
   VTM \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_shotchartlineupdetail")} for the column table.}
 
 \strong{ShotChartLineupLeagueAverage}
 
@@ -320,7 +320,7 @@ A named list of tibbles: \code{ShotChartLineupDetail}, \code{ShotChartLineupLeag
   FGM \tab character \tab Field goals made. \cr
   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_shotchartlineupdetail")} for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Shot Chart Detail}

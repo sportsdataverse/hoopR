@@ -25,7 +25,7 @@ A \code{hoopR_data} tibble with one row per tournament.
   seasons_ref \tab character \tab \code{$ref} to the seasons-list endpoint. \cr
   league \tab character \tab League slug. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_tournament")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per tournament.
 
@@ -36,7 +36,7 @@ A \code{hoopR_data} tibble with one row per tournament.
   seasons_ref \tab character \tab \code{$ref} to the seasons-list endpoint. \cr
   league \tab character \tab League slug (\code{"nba"}). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_tournament")} for the column table.}
 }
 \description{
 Returns metadata for a single MBB tournament plus the \verb{$ref} URL for

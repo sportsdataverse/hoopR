@@ -62,7 +62,7 @@ A named list of tibbles: \code{FranchiseLeaders}.
   STL_PERSON_ID \tab character \tab  \cr
   STL_PLAYER \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_franchiseleaders")} for the column table.}
 
 A named list of tibbles: \code{FranchiseLeaderswRank}.
 
@@ -118,7 +118,7 @@ A named list of tibbles: \code{FranchiseLeaderswRank}.
   F_RANK_BLK \tab character \tab  \cr
   F_RANK_PTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_franchiseleaderswrank")} for the column table.}
 
 A named list of tibbles: \code{FranchisePlayers}.
 
@@ -153,7 +153,7 @@ A named list of tibbles: \code{FranchisePlayers}.
   BLK \tab character \tab Blocks. \cr
   PTS \tab character \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_franchiseplayers")} for the column table.}
 
 A named list of tibbles: \code{FranchiseHistory}, \code{DefunctTeams}.
 
@@ -177,7 +177,7 @@ A named list of tibbles: \code{FranchiseHistory}, \code{DefunctTeams}.
   CONF_TITLES \tab character \tab  \cr
   LEAGUE_TITLES \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_franchisehistory")} for the column table.}
 
 \strong{DefunctTeams}
 

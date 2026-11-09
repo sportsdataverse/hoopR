@@ -31,7 +31,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Types}, \code{Athl
   type_id \tab character \tab Type identifier (numeric). \cr
   type_name \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_season_info")} for the column table.}
 
 \strong{Types / Athletes / Coaches / Teams / Awards}
 
@@ -40,7 +40,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Types}, \code{Athl
   count \tab integer \tab Count of count. \cr
   ref \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_season_info")} for the column table.}
 
 \code{Types}, \code{Athletes}, \code{Coaches}, \code{Teams} and \code{Awards} share the second table.
 \verb{$ref} URL components are returned as character columns and are NOT
@@ -59,7 +59,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Types}, \code{Athl
   type_id \tab character \tab Type identifier (numeric). \cr
   type_name \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_season_info")} for the column table.}
 
 \strong{Types / Athletes / Coaches / Teams / Awards}
 
@@ -68,7 +68,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Types}, \code{Athl
   count \tab integer \tab Count of count. \cr
   ref \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_season_info")} for the column table.}
 
 \code{Types}, \code{Athletes}, \code{Coaches}, \code{Teams} and \code{Awards} share the second table.
 \verb{$ref} URL components are returned as character columns and are NOT

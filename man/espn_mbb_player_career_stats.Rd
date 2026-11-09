@@ -43,7 +43,7 @@ A \code{hoopR_data} tibble with one row per stat_type x split x category x stat.
   value \tab numeric \tab Stat value. \cr
   display_value \tab character \tab Display-formatted value. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_career_stats")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per stat_type x split x category x stat.
 
@@ -67,7 +67,7 @@ A \code{hoopR_data} tibble with one row per stat_type x split x category x stat.
   value \tab numeric \tab Stat value. \cr
   display_value \tab character \tab Display-formatted value. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_career_stats")} for the column table.}
 }
 \description{
 Returns career stats for an MBB athlete in long format. Default

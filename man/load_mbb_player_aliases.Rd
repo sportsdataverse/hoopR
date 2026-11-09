@@ -35,7 +35,7 @@ A \code{hoopR_data} tibble with one row per player alias.
   match_confidence \tab numeric \tab The leg's own confidence where it gives one (the lowest in the window; NCAA tiers score 1, 0.95, 0.9 and 0.85), else \code{NA}. \cr
   evidence \tab character \tab The asset or file the row came from. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_mbb_player_aliases")} for the column table.}
 
 \code{NULL} instead, after appending the rows to \code{tablename}, when \code{dbConnection} and
 \code{tablename} are both given.

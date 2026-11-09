@@ -72,7 +72,7 @@ A named list of tibbles: \code{CommonAllPlayers}.
   GAMES_PLAYED_FLAG \tab character \tab  \cr
   OTHERLEAGUE_EXPERIENCE_CH \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_commonallplayers")} for the column table.}
 
 A named list of tibbles: \code{CommonPlayerInfo}, \code{PlayerHeadlineStats}, \code{AvailableSeasons}.
 
@@ -114,7 +114,7 @@ A named list of tibbles: \code{CommonPlayerInfo}, \code{PlayerHeadlineStats}, \c
   DRAFT_NUMBER \tab character \tab  \cr
   GREATEST_75_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_commonplayerinfo")} for the column table.}
 
 \strong{PlayerHeadlineStats}
 
@@ -128,7 +128,7 @@ A named list of tibbles: \code{CommonPlayerInfo}, \code{PlayerHeadlineStats}, \c
   REB \tab character \tab Total rebounds. \cr
   PIE \tab character \tab Player Impact Estimate (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_commonplayerinfo")} for the column table.}
 
 \strong{AvailableSeasons}
 
@@ -136,7 +136,7 @@ A named list of tibbles: \code{CommonPlayerInfo}, \code{PlayerHeadlineStats}, \c
   col_name \tab types \tab description \cr
   SEASON_ID \tab character \tab Unique season identifier. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_commonplayerinfo")} for the column table.}
 
 A named list of tibbles: \code{PlayoffSeries}.
 
@@ -150,7 +150,7 @@ A named list of tibbles: \code{PlayoffSeries}.
   SERIES_ID \tab character \tab  \cr
   GAME_NUM \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_commonplayoffseries")} for the column table.}
 
 A named list of tibbles: \code{CommonTeamRoster}, \code{Coaches}.
 
@@ -175,7 +175,7 @@ A named list of tibbles: \code{CommonTeamRoster}, \code{Coaches}.
   PLAYER_ID \tab character \tab Unique player identifier. \cr
   HOW_ACQUIRED \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_commonteamroster")} for the column table.}
 
 \strong{Coaches}
 
@@ -192,7 +192,7 @@ A named list of tibbles: \code{CommonTeamRoster}, \code{Coaches}.
   SORT_SEQUENCE \tab character \tab  \cr
   SUB_SORT_SEQUENCE \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_commonteamroster")} for the column table.}
 
 A named list of tibbles: \code{TeamYears}.
 
@@ -206,7 +206,7 @@ A named list of tibbles: \code{TeamYears}.
   MAX_YEAR \tab character \tab  \cr
   ABBREVIATION \tab character \tab Short abbreviation. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_commonteamyears")} for the column table.}
 }
 \description{
 \strong{Get NBA Stats API All Players}

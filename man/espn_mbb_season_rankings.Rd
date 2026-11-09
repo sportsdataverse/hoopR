@@ -25,7 +25,7 @@ A \code{hoopR_data} tibble with one row per ranking source.
   ranking_id \tab character \tab ESPN ranking id. \cr
   ref \tab character \tab \code{$ref} URL for the ranking detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_season_rankings")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per ranking source.
 
@@ -36,7 +36,7 @@ A \code{hoopR_data} tibble with one row per ranking source.
   ranking_id \tab character \tab ESPN ranking id. \cr
   ref \tab character \tab \code{$ref} URL for the ranking detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_season_rankings")} for the column table.}
 }
 \description{
 Returns the index of season-level rankings recorded for one MBB season.

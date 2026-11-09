@@ -43,7 +43,7 @@ A named list of \code{hoopR_data} tibbles: \code{calls}, \code{game}, \code{stat
   pos_end \tab character \tab Game clock at the end of the possession. \cr
   pos_team_id \tab integer \tab NBA team id of the team in possession. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_l2m")} for the column table.}
 
 \strong{game}
 
@@ -62,7 +62,7 @@ A named list of \code{hoopR_data} tibbles: \code{calls}, \code{game}, \code{stat
   away_score \tab integer \tab Away team final score. \cr
   l2m_comments \tab character \tab Report-level note from the league; NA for almost every game. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_l2m")} for the column table.}
 
 \strong{stats}
 
@@ -73,7 +73,7 @@ A named list of \code{hoopR_data} tibbles: \code{calls}, \code{game}, \code{stat
   home \tab integer \tab Value of stat_name for the home team. \cr
   away \tab integer \tab Value of stat_name for the away team. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_l2m")} for the column table.}
 
 \code{calls}: one row per graded play. \code{decision} is normalized to
 \code{CC}/\code{CNC}/\code{IC}/\code{INC} (\code{NCC}->\code{CNC}, \code{NCI}->\code{INC}, trailing \code{*}

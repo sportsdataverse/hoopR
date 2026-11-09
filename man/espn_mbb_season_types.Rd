@@ -25,7 +25,7 @@ A \code{hoopR_data} tibble with one row per season type.
   season_type \tab integer \tab Season-type id (1/2/3/4). \cr
   ref \tab character \tab \code{$ref} URL for the type detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_season_types")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per season type.
 
@@ -36,7 +36,7 @@ A \code{hoopR_data} tibble with one row per season type.
   season_type \tab integer \tab Season-type id (1/2/3/4). \cr
   ref \tab character \tab \code{$ref} URL for the type detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_season_types")} for the column table.}
 }
 \description{
 Returns the index of season-type IDs that exist for one MBB season

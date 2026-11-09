@@ -117,7 +117,7 @@ A \code{hoopR_data} tibble with one row per team.
   offensive_shooting_efficiency \tab numeric \tab The efficiency with which a team or player shoots the basketball. \cr
   offensive_scoring_efficiency \tab numeric \tab The efficiency with which a team or player scores the basketball. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team_stats")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per team.
 
@@ -252,7 +252,7 @@ A \code{hoopR_data} tibble with one row per team.
   offensive_p40 \tab numeric \tab Points Per 40 Minutes. \cr
   offensive_a40 \tab numeric \tab Assists Per 40 Minutes. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team_stats")} for the column table.}
 }
 \description{
 \strong{Get ESPN men's college basketball team stats data}

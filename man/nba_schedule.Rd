@@ -107,7 +107,7 @@ A tibble with one row per game.
   season_type_id \tab character \tab Third digit of game_id (1 pre-season, 2 regular season, 3 all-star, 4 playoffs, 5 see details). \cr
   season_type_description \tab character \tab Label for season_type_id; NA where the digit has no label (see details). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_schedule")} for the column table.}
 
 A named list of tibbles: \code{GameHeader}, \code{LineScore}, \code{SeriesStandings}, \code{LastMeeting}, \code{EastConfStandingsByDay}, \code{WestConfStandingsByDay}, \code{Available}.
 
@@ -130,7 +130,7 @@ A named list of tibbles: \code{GameHeader}, \code{LineScore}, \code{SeriesStandi
   LIVE_PERIOD_TIME_BCAST \tab character \tab  \cr
   WH_STATUS \tab character \tab Wh status. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboard")} for the column table.}
 
 \strong{LineScore}
 
@@ -165,7 +165,7 @@ A named list of tibbles: \code{GameHeader}, \code{LineScore}, \code{SeriesStandi
   REB \tab character \tab Total rebounds. \cr
   TOV \tab character \tab Turnovers. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboard")} for the column table.}
 
 \strong{SeriesStandings}
 
@@ -179,7 +179,7 @@ A named list of tibbles: \code{GameHeader}, \code{LineScore}, \code{SeriesStandi
   HOME_TEAM_LOSSES \tab character \tab Home team's team losses. \cr
   SERIES_LEADER \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboard")} for the column table.}
 
 \strong{LastMeeting}
 
@@ -199,7 +199,7 @@ A named list of tibbles: \code{GameHeader}, \code{LineScore}, \code{SeriesStandi
   LAST_GAME_VISITOR_TEAM_CITY1 \tab character \tab  \cr
   LAST_GAME_VISITOR_TEAM_POINTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboard")} for the column table.}
 
 \strong{EastConfStandingsByDay}
 
@@ -218,7 +218,7 @@ A named list of tibbles: \code{GameHeader}, \code{LineScore}, \code{SeriesStandi
   HOME_RECORD \tab character \tab Home win-loss record. \cr
   ROAD_RECORD \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboard")} for the column table.}
 
 \strong{WestConfStandingsByDay}
 
@@ -231,7 +231,7 @@ Same columns as the \strong{EastConfStandingsByDay} table above.
   GAME_ID \tab character \tab Unique game identifier. \cr
   PT_AVAILABLE \tab character \tab Pt available. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboard")} for the column table.}
 
 A named list of tibbles: \code{GameHeader}, \code{LineScore}, \code{SeriesStandings}, \code{LastMeeting}, \code{EastConfStandingsByDay}, \code{WestConfStandingsByDay}, \code{Available}, \code{TeamLeaders}.
 
@@ -258,7 +258,7 @@ A named list of tibbles: \code{GameHeader}, \code{LineScore}, \code{SeriesStandi
   WH_STATUS \tab character \tab Wh status. \cr
   WNBA_COMMISSIONER_FLAG \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboardv2")} for the column table.}
 
 \strong{LineScore}
 
@@ -294,7 +294,7 @@ A named list of tibbles: \code{GameHeader}, \code{LineScore}, \code{SeriesStandi
   REB \tab character \tab Total rebounds. \cr
   TOV \tab character \tab Turnovers. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboardv2")} for the column table.}
 
 \strong{SeriesStandings}
 
@@ -308,7 +308,7 @@ A named list of tibbles: \code{GameHeader}, \code{LineScore}, \code{SeriesStandi
   HOME_TEAM_LOSSES \tab character \tab Home team's team losses. \cr
   SERIES_LEADER \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboardv2")} for the column table.}
 
 \strong{LastMeeting}
 
@@ -328,7 +328,7 @@ A named list of tibbles: \code{GameHeader}, \code{LineScore}, \code{SeriesStandi
   LAST_GAME_VISITOR_TEAM_CITY1 \tab character \tab  \cr
   LAST_GAME_VISITOR_TEAM_POINTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboardv2")} for the column table.}
 
 \strong{EastConfStandingsByDay}
 
@@ -347,7 +347,7 @@ A named list of tibbles: \code{GameHeader}, \code{LineScore}, \code{SeriesStandi
   HOME_RECORD \tab character \tab Home win-loss record. \cr
   ROAD_RECORD \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboardv2")} for the column table.}
 
 \strong{WestConfStandingsByDay}
 
@@ -360,7 +360,7 @@ Same columns as the \strong{EastConfStandingsByDay} table above.
   GAME_ID \tab character \tab Unique game identifier. \cr
   PT_AVAILABLE \tab character \tab Pt available. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboardv2")} for the column table.}
 
 \strong{TeamLeaders}
 
@@ -381,7 +381,7 @@ Same columns as the \strong{EastConfStandingsByDay} table above.
   AST_PLAYER_NAME \tab character \tab  \cr
   AST \tab character \tab Assists. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboardv2")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per game.
 
@@ -468,7 +468,7 @@ A \code{hoopR_data} tibble with one row per game.
   league \tab character \tab League. \cr
   broadcasters \tab data.frame \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scoreboardv3")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per game.
 
@@ -533,7 +533,7 @@ A \code{hoopR_data} tibble with one row per game.
   pb_odds_odds \tab numeric \tab Pb odds odds. \cr
   pb_odds_suspended \tab integer \tab Pb odds suspended. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_todays_scoreboard")} for the column table.}
 
 A named list of tibbles: \code{WinProbPBP}, \code{GameInfo}.
 
@@ -557,7 +557,7 @@ A named list of tibbles: \code{WinProbPBP}, \code{GameInfo}.
   PCTIMESTRING \tab character \tab  \cr
   ISVISIBLE \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_winprobabilitypbp")} for the column table.}
 
 \strong{GameInfo}
 
@@ -572,7 +572,7 @@ A named list of tibbles: \code{WinProbPBP}, \code{GameInfo}.
   VISITOR_TEAM_ABR \tab character \tab  \cr
   VISITOR_TEAM_PTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_winprobabilitypbp")} for the column table.}
 
 A named list of tibbles: \code{SeasonGames}, \code{SeasonWeeks}, \code{BroadcasterList}.
 
@@ -605,7 +605,7 @@ A named list of tibbles: \code{SeasonGames}, \code{SeasonWeeks}, \code{Broadcast
   season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
   league_id \tab character \tab League identifier ('10' = WNBA). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scheduleleaguev2int")} for the column table.}
 
 \strong{SeasonWeeks}
 
@@ -618,7 +618,7 @@ A named list of tibbles: \code{SeasonGames}, \code{SeasonWeeks}, \code{Broadcast
   start_date \tab character \tab Start date (YYYY-MM-DD). \cr
   end_date \tab character \tab End date (YYYY-MM-DD). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scheduleleaguev2int")} for the column table.}
 
 \strong{BroadcasterList}
 
@@ -631,7 +631,7 @@ A named list of tibbles: \code{SeasonGames}, \code{SeasonWeeks}, \code{Broadcast
   broadcaster_id \tab character \tab Unique identifier for broadcaster. \cr
   region_id \tab character \tab Unique identifier for region. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_scheduleleaguev2int")} for the column table.}
 }
 \description{
 Deprecated in \code{hoopR} 3.0.0. This endpoint is unstable/empty; use \code{nba_scoreboardv3()} instead.

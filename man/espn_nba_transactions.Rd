@@ -32,7 +32,7 @@ A \code{hoopR_data} tibble with one row per transaction.
   from_team_id \tab character \tab  \cr
   to_team_id \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_transactions")} for the column table.}
 }
 \description{
 \strong{Get ESPN NBA Transactions}

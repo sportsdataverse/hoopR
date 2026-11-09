@@ -74,7 +74,7 @@ A \code{hoopR_data} tibble with one row per player-team-season.
   darko_projected_rating \tab numeric \tab DARKO-style forward-looking projected rating. \cr
   darko_projected_sd \tab numeric \tab Standard deviation of the DARKO-style projected rating. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_player_impact")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per player-team-season.
 
@@ -89,7 +89,7 @@ A \code{hoopR_data} tibble with one row per player-team-season.
   box_dbpm \tab numeric \tab Box-score defensive box plus-minus. \cr
   box_bpm \tab numeric \tab Box-score net box plus-minus (box_obpm + box_dbpm). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_mbb_player_value")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per team-season.
 
@@ -107,7 +107,7 @@ A \code{hoopR_data} tibble with one row per team-season.
   rank \tab integer \tab National rank by adj_em. \cr
   adj_em_z \tab numeric \tab Z-score of adj_em relative to the season's team distribution. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_mbb_ratings")} for the column table.}
 }
 \description{
 Loads season-level NBA player-impact ratings -- one row per

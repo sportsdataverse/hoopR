@@ -24,7 +24,7 @@ A \code{hoopR_data} tibble with one row per award.
   ref \tab character \tab Full \code{$ref} URL for the award detail. \cr
   league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_season_awards")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per award.
 
@@ -35,7 +35,7 @@ A \code{hoopR_data} tibble with one row per award.
   ref \tab character \tab Full \code{$ref} URL for the award detail. \cr
   league \tab character \tab League slug (\code{"nba"}). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_season_awards")} for the column table.}
 }
 \description{
 Returns the list of award IDs given out in an MBB season from

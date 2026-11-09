@@ -548,7 +548,7 @@ A named list of tibbles: \code{PlayerIndex}.
   FROM_YEAR \tab character \tab  \cr
   TO_YEAR \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playerindex")} for the column table.}
 
 Returns a url of the png for the player_id selected
 
@@ -573,7 +573,7 @@ A named list of tibbles: \code{PlayerAwards}.
   SUBTYPE2 \tab character \tab  \cr
   SUBTYPE3 \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playerawards")} for the column table.}
 
 A named list of tibbles: \code{PlayerCareerByCollege}.
 
@@ -605,7 +605,7 @@ A named list of tibbles: \code{PlayerCareerByCollege}.
   PF \tab character \tab Personal fouls. \cr
   PTS \tab character \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playercareerbycollege")} for the column table.}
 
 A named list of tibbles: \code{East}, \code{South}, \code{Midwest}, \code{West}.
 
@@ -638,7 +638,7 @@ A named list of tibbles: \code{East}, \code{South}, \code{Midwest}, \code{West}.
   PF \tab character \tab Personal fouls. \cr
   PTS \tab character \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playercareerbycollegerollup")} for the column table.}
 
 \strong{South}
 
@@ -686,7 +686,7 @@ A named list of tibbles: \code{SeasonTotalsRegularSeason}, \code{CareerTotalsReg
   PF \tab character \tab Personal fouls. \cr
   PTS \tab character \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playercareerstats")} for the column table.}
 
 \strong{CareerTotalsRegularSeason}
 
@@ -717,7 +717,7 @@ A named list of tibbles: \code{SeasonTotalsRegularSeason}, \code{CareerTotalsReg
   PF \tab character \tab Personal fouls. \cr
   PTS \tab character \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playercareerstats")} for the column table.}
 
 \strong{SeasonTotalsPostSeason}
 
@@ -767,7 +767,7 @@ Same columns as the \strong{CareerTotalsRegularSeason} table above.
   RANK_PTS \tab character \tab  \cr
   RANK_EFF \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playercareerstats")} for the column table.}
 
 \strong{SeasonRankingsPostSeason}
 
@@ -813,7 +813,7 @@ A named list of tibbles: \code{FanDuelPlayer}.
   PTS \tab character \tab Points scored. \cr
   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_infographicfanduelplayer")} for the column table.}
 
 A named list of tibbles: \code{Overall}, \code{Location}, \code{LastNGames}, \code{DaysRestModified}, \code{Opponent}.
 
@@ -854,7 +854,7 @@ A named list of tibbles: \code{Overall}, \code{Location}, \code{LastNGames}, \co
   FAN_DUEL_PTS \tab character \tab  \cr
   NBA_FANTASY_PTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playerfantasyprofile")} for the column table.}
 
 \strong{Location}
 
@@ -902,7 +902,7 @@ Same columns as the \strong{Overall} table above.
   FAN_DUEL_PTS \tab character \tab  \cr
   NBA_FANTASY_PTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playerfantasyprofile")} for the column table.}
 
 \strong{Opponent}
 
@@ -930,7 +930,7 @@ A named list of tibbles: \code{SeasonAvg}, \code{LastFiveGamesAvg}.
   TOV \tab character \tab Turnovers. \cr
   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playerfantasyprofilebargraph")} for the column table.}
 
 \strong{LastFiveGamesAvg}
 
@@ -975,7 +975,7 @@ A named list of tibbles: \code{PlayerEstimatedMetrics}.
   E_USG_PCT_RANK \tab character \tab  \cr
   E_PACE_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playerestimatedmetrics")} for the column table.}
 
 A named list of tibbles: \code{PlayerGameLog}.
 
@@ -1011,7 +1011,7 @@ A named list of tibbles: \code{PlayerGameLog}.
   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
   VIDEO_AVAILABLE \tab character \tab Video available. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playergamelog")} for the column table.}
 
 A named list of tibbles: \code{PlayerGameLogs}.
 
@@ -1088,7 +1088,7 @@ A named list of tibbles: \code{PlayerGameLogs}.
   WNBA_FANTASY_PTS_RANK \tab character \tab  \cr
   VIDEO_AVAILABLE_FLAG \tab character \tab Video available flag. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playergamelogs")} for the column table.}
 
 A named list of tibbles: \code{PlayerGameStreakFinderResults}.
 
@@ -1106,7 +1106,7 @@ A named list of tibbles: \code{PlayerGameStreakFinderResults}.
   LASTSEASON \tab character \tab  \cr
   FIRSTSEASON \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playergamestreakfinder")} for the column table.}
 
 A named list of tibbles: \code{NextNGames}.
 
@@ -1128,7 +1128,7 @@ A named list of tibbles: \code{NextNGames}.
   HOME_WL \tab character \tab  \cr
   VISITOR_WL \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playernextngames")} for the column table.}
 
 A named list of tibbles: \code{SeasonTotalsRegularSeason}, \code{CareerTotalsRegularSeason}, \code{SeasonTotalsPostSeason}, \code{CareerTotalsPostSeason}, \code{SeasonTotalsAllStarSeason}, \code{CareerTotalsAllStarSeason}, \code{SeasonTotalsPreseason}, \code{CareerTotalsPreseason}, \code{SeasonRankingsRegularSeason}, \code{SeasonRankingsPostSeason}, \code{SeasonHighs}, \code{CareerHighs}, \code{NextGame}.
 
@@ -1164,7 +1164,7 @@ A named list of tibbles: \code{SeasonTotalsRegularSeason}, \code{CareerTotalsReg
   PF \tab character \tab Personal fouls. \cr
   PTS \tab character \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playerprofilev2")} for the column table.}
 
 \strong{CareerTotalsRegularSeason}
 
@@ -1195,7 +1195,7 @@ A named list of tibbles: \code{SeasonTotalsRegularSeason}, \code{CareerTotalsReg
   PF \tab character \tab Personal fouls. \cr
   PTS \tab character \tab Points scored. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playerprofilev2")} for the column table.}
 
 \strong{SeasonTotalsPostSeason}
 
@@ -1253,7 +1253,7 @@ Same columns as the \strong{CareerTotalsRegularSeason} table above.
   RANK_PTS \tab character \tab  \cr
   RANK_EFF \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playerprofilev2")} for the column table.}
 
 \strong{SeasonRankingsPostSeason}
 
@@ -1275,7 +1275,7 @@ Same columns as the \strong{SeasonRankingsRegularSeason} table above.
   STAT_ORDER \tab character \tab  \cr
   DATE_EST \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playerprofilev2")} for the column table.}
 
 \strong{CareerHighs}
 
@@ -1298,7 +1298,7 @@ Same columns as the \strong{SeasonHighs} table above.
   VS_TEAM_NICKNAME \tab character \tab  \cr
   VS_TEAM_ABBREVIATION \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playerprofilev2")} for the column table.}
 
 A named list of tibbles: \code{Overall}, \code{OnOffCourt}, \code{ShotDistanceOverall}, \code{ShotDistanceOnCourt}, \code{ShotDistanceOffCourt}, \code{ShotAreaOverall}, \code{ShotAreaOnCourt}, \code{ShotAreaOffCourt}, \code{PlayerInfo}, \code{VsPlayerInfo}.
 
@@ -1338,7 +1338,7 @@ A named list of tibbles: \code{Overall}, \code{OnOffCourt}, \code{ShotDistanceOv
   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
   NBA_FANTASY_PTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playervsplayer")} for the column table.}
 
 \strong{OnOffCourt}
 
@@ -1378,7 +1378,7 @@ A named list of tibbles: \code{Overall}, \code{OnOffCourt}, \code{ShotDistanceOv
   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
   NBA_FANTASY_PTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playervsplayer")} for the column table.}
 
 \strong{ShotDistanceOverall}
 
@@ -1392,7 +1392,7 @@ A named list of tibbles: \code{Overall}, \code{OnOffCourt}, \code{ShotDistanceOv
   FGA \tab character \tab Field goal attempts. \cr
   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playervsplayer")} for the column table.}
 
 \strong{ShotDistanceOnCourt}
 
@@ -1409,7 +1409,7 @@ A named list of tibbles: \code{Overall}, \code{OnOffCourt}, \code{ShotDistanceOv
   FGA \tab character \tab Field goal attempts. \cr
   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playervsplayer")} for the column table.}
 
 \strong{ShotDistanceOffCourt}
 
@@ -1442,7 +1442,7 @@ Same columns as the \strong{ShotDistanceOnCourt} table above.
   COUNTRY \tab character \tab Country (full name or code). \cr
   LAST_AFFILIATION \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playervsplayer")} for the column table.}
 
 \strong{VsPlayerInfo}
 
@@ -1479,7 +1479,7 @@ A named list of tibbles: \code{OverallCompare}, \code{Individual}.
   PTS \tab character \tab Points scored. \cr
   PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_playercompare")} for the column table.}
 
 \strong{Individual}
 

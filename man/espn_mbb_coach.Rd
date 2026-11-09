@@ -34,7 +34,7 @@ A \code{hoopR_data} tibble with one row per coach.
   team_ref \tab character \tab \code{$ref} to the coach's current team. \cr
   league \tab character \tab League slug (\code{"nba"}). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_coach")} for the column table.}
 }
 \description{
 Returns biography, current team / college refs, and counts of career

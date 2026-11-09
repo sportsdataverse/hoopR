@@ -66,7 +66,7 @@ A \code{hoopR_data} tibble with one row per draft pick.
   athlete_ref \tab character \tab \code{$ref} to athlete. \cr
   team_ref \tab character \tab \code{$ref} to team. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_draft_pick")} for the column table.}
 
 A tibble with one row per round.
 
@@ -94,7 +94,7 @@ A \code{hoopR_data} tibble with one row per draft pick.
   team_id \tab character \tab Unique team identifier. \cr
   team_ref \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_draft")} for the column table.}
 }
 \description{
 Returns a single NBA draft pick. Defaults to the most recent NBA

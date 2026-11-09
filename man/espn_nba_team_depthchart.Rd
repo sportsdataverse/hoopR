@@ -29,7 +29,7 @@ A \code{hoopR_data} tibble with one row per athlete depth entry.
   athlete_ref \tab character \tab \code{$ref} URL to athlete-in-season. \cr
   position_ref \tab character \tab \code{$ref} URL to position resource. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team_depthchart")} for the column table.}
 }
 \description{
 Returns the team's depth chart in long format, one row per

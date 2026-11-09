@@ -17,17 +17,17 @@ A \code{hoopR_data} tibble with one row per play.
 
 \if{html}{\tabular{lll}{
   col_name \tab types \tab description \cr
-  \code{game_id} \tab character \tab Referencing game ID (should be same as \code{game_id} from other functions). \cr
-  \code{play_id} \tab character \tab Referencing play ID. \cr
-  \code{period} \tab integer \tab Clock (time) left in the game. \cr
-  \code{time_left} \tab character \tab Clock (time) left in the game. \cr
-  \code{period_seconds_left} \tab integer \tab Seconds left in the period. \cr
-  \code{game_seconds_left} \tab integer \tab Seconds left in the game. \cr
-  \code{home_win_percentage} \tab double \tab The probability of the home team winning the game. \cr
-  \code{away_win_percentage} \tab double \tab The probability of the away team winning the game (calculated as 1 - \code{home_win_percentage} - \code{tie_percentage}). \cr
-  \code{tie_percentage} \tab double \tab The probability of the game ending the final period in a tie. \cr
+  game_id \tab character \tab Referencing game ID (should be same as \code{game_id} from other functions). \cr
+  play_id \tab character \tab Referencing play ID. \cr
+  period \tab integer \tab Clock (time) left in the game. \cr
+  time_left \tab character \tab Clock (time) left in the game. \cr
+  period_seconds_left \tab integer \tab Seconds left in the period. \cr
+  game_seconds_left \tab integer \tab Seconds left in the game. \cr
+  home_win_percentage \tab double \tab The probability of the home team winning the game. \cr
+  away_win_percentage \tab double \tab The probability of the away team winning the game (calculated as 1 - \code{home_win_percentage} - \code{tie_percentage}). \cr
+  tie_percentage \tab double \tab The probability of the game ending the final period in a tie. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_wp")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per play.
 
@@ -55,7 +55,7 @@ A \code{hoopR_data} tibble with one row per play.
   coordinate_x \tab integer \tab X coordinate on the court (half-court layout). \cr
   coordinate_y \tab integer \tab Y coordinate on the court (half-court layout). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_wp")} for the column table.}
 }
 \description{
 \strong{Men's College Basketball win probability chart data from ESPN}

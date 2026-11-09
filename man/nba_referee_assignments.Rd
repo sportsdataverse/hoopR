@@ -40,7 +40,7 @@ A named list of \code{hoopR_data} tibbles: \code{officials}, \code{replay_center
   official_name \tab character \tab Official's display name. \cr
   jersey_num \tab character \tab Official's jersey number, as a string. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_referee_assignments")} for the column table.}
 
 \strong{replay_center}
 
@@ -51,7 +51,7 @@ A named list of \code{hoopR_data} tibbles: \code{officials}, \code{replay_center
   official_id \tab integer \tab Replay-center official's person id from the feed. \cr
   official_name \tab character \tab Replay-center official's display name. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_referee_assignments")} for the column table.}
 
 \code{officials}: one row per game x filled crew slot. A slot whose
 official's name is absent, null or empty is skipped. A field sent as

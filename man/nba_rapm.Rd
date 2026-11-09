@@ -27,7 +27,7 @@ A \code{hoopR_data} tibble with one row per player.
   off_poss \tab integer \tab Number of possessions the player appeared on offense. \cr
   def_poss \tab integer \tab Number of possessions the player appeared on defense. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_rapm")} for the column table.}
 
 Returns a 0-row frame with the same schema when input is empty or all
 possessions have NA lineup cells (never-raise).

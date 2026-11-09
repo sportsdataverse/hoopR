@@ -35,7 +35,7 @@ A \code{hoopR_data} tibble with one row per week.
   week \tab integer \tab Week number (1-based). \cr
   ref \tab character \tab \code{$ref} URL for the week detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_season_weeks")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per week.
 
@@ -47,7 +47,7 @@ A \code{hoopR_data} tibble with one row per week.
   week \tab integer \tab Week number (1-based). \cr
   ref \tab character \tab \code{$ref} URL for the week detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_season_weeks")} for the column table.}
 }
 \description{
 Returns the list of week IDs for one (MBB season x season-type). MBB

@@ -26,7 +26,7 @@ A \code{hoopR_data} tibble with one row per contract year.
   ref \tab character \tab Full \code{$ref} URL for the contract detail. \cr
   league \tab character \tab League slug (\code{"nba"}). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_contracts")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per contract.
 
@@ -56,7 +56,7 @@ A \code{hoopR_data} tibble with one row per contract.
   team_id \tab character \tab ESPN team id parsed from \code{team_ref}. \cr
   league \tab character \tab League slug (\code{"nba"}). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_contract")} for the column table.}
 }
 \description{
 Returns the index of contract seasons recorded for an NBA athlete from

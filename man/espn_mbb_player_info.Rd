@@ -31,7 +31,7 @@ A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Positi
   date_of_birth \tab character \tab Date of birth (YYYY-MM-DD). \cr
   headshot_href \tab character \tab Headshot image URL. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_info")} for the column table.}
 
 \strong{Team}
 
@@ -41,7 +41,7 @@ A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Positi
   abbreviation \tab character \tab Short abbreviation. \cr
   display_name \tab character \tab Display name. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_info")} for the column table.}
 
 \strong{Position}
 
@@ -51,7 +51,7 @@ A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Positi
   name \tab character \tab Display name. \cr
   abbreviation \tab character \tab Short abbreviation. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_info")} for the column table.}
 
 \strong{Status}
 
@@ -61,7 +61,7 @@ A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Positi
   name \tab character \tab Display name. \cr
   type \tab character \tab Record type / category. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_info")} for the column table.}
 
 \strong{College}
 
@@ -71,7 +71,7 @@ A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Positi
   name \tab character \tab Display name. \cr
   mascot \tab character \tab Team mascot. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_info")} for the column table.}
 
 \strong{Draft}
 
@@ -81,7 +81,7 @@ A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Positi
   round \tab character \tab Tournament / playoff round. \cr
   selection \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_info")} for the column table.}
 
 A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Position}, \code{Status}, \code{College}, \code{Draft}.
 
@@ -97,7 +97,7 @@ A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Positi
   date_of_birth \tab character \tab Date of birth (YYYY-MM-DD). \cr
   headshot_href \tab character \tab Headshot image URL. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_info")} for the column table.}
 
 \strong{Team}
 
@@ -107,7 +107,7 @@ A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Positi
   abbreviation \tab character \tab Short abbreviation. \cr
   display_name \tab character \tab Display name. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_info")} for the column table.}
 
 \strong{Position}
 
@@ -117,7 +117,7 @@ A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Positi
   name \tab character \tab Display name. \cr
   abbreviation \tab character \tab Short abbreviation. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_info")} for the column table.}
 
 \strong{Status}
 
@@ -127,7 +127,7 @@ A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Positi
   name \tab character \tab Display name. \cr
   type \tab character \tab Record type / category. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_info")} for the column table.}
 
 \strong{College}
 
@@ -137,7 +137,7 @@ A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Positi
   name \tab character \tab Display name. \cr
   mascot \tab character \tab Team mascot. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_info")} for the column table.}
 
 \strong{Draft}
 
@@ -147,7 +147,7 @@ A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Positi
   round \tab character \tab Tournament / playoff round. \cr
   selection \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_info")} for the column table.}
 }
 \description{
 \strong{Get ESPN Women's College Basketball Athlete Info}

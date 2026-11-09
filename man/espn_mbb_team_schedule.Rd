@@ -57,7 +57,7 @@ A \code{hoopR_data} tibble with one row per event.
   opponent_score \tab character \tab Opponent score. \cr
   winner \tab logical \tab Winner. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team_schedule")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per event.
 
@@ -85,7 +85,7 @@ A \code{hoopR_data} tibble with one row per event.
   opponent_score \tab character \tab Opponent score. \cr
   winner \tab logical \tab Winner. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team_schedule")} for the column table.}
 }
 \description{
 \strong{Get ESPN Women's College Basketball Team Schedule}

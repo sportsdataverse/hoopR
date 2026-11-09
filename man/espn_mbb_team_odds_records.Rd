@@ -48,7 +48,7 @@ A \code{hoopR_data} tibble with one row per category and statistic.
   value \tab numeric \tab Numeric stat value. \cr
   display_value \tab character \tab Display-formatted value. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team_odds_records")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per category and statistic.
 
@@ -68,7 +68,7 @@ A \code{hoopR_data} tibble with one row per category and statistic.
   value \tab numeric \tab Numeric stat value. \cr
   display_value \tab character \tab Display-formatted value. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team_odds_records")} for the column table.}
 }
 \description{
 Returns the long-format odds-records breakdown for a team in one

@@ -21,7 +21,7 @@ A \code{hoopR_data} tibble with one row per franchise.
   ref \tab character \tab Full \code{$ref} URL for franchise detail. \cr
   league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_franchises")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per franchise.
 
@@ -31,7 +31,7 @@ A \code{hoopR_data} tibble with one row per franchise.
   ref \tab character \tab Full \code{$ref} URL for franchise detail. \cr
   league \tab character \tab League slug (\code{"nba"}). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_franchises")} for the column table.}
 }
 \description{
 Returns the full MBB franchises index from

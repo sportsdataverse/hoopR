@@ -30,7 +30,7 @@ A \code{hoopR_data} tibble with one row per free agent.
   contract_value \tab character \tab  \cr
   contract_term_years \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_freeagents")} for the column table.}
 }
 \description{
 \strong{Get ESPN NBA Free Agents}

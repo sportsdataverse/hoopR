@@ -52,7 +52,7 @@ A \code{hoopR_data} tibble with one row per game.
   away_win \tab integer \tab Away team's win. \cr
   away_record \tab character \tab Away win-loss record. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_scoreboard")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per game.
 
@@ -94,7 +94,7 @@ A \code{hoopR_data} tibble with one row per game.
   away_win \tab integer \tab Away team's win. \cr
   away_record \tab character \tab Away win-loss record. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_scoreboard")} for the column table.}
 }
 \description{
 \strong{Get ESPN men's college basketball schedule for a specific year}

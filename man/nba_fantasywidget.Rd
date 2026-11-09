@@ -245,7 +245,7 @@ A named list of tibbles: \code{FantasyWidgetResult}.
   FTA \tab character \tab Free throw attempts. \cr
   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_fantasywidget")} for the column table.}
 
 A named list of tibbles: \code{Lineups}.
 
@@ -311,7 +311,7 @@ A named list of tibbles: \code{Lineups}.
   PTS_RANK \tab character \tab  \cr
   PLUS_MINUS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguedashlineups")} for the column table.}
 
 A named list of tibbles: \code{LeagueLineupViz}.
 
@@ -344,7 +344,7 @@ A named list of tibbles: \code{LeagueLineupViz}.
   OPP_FTA_RATE \tab character \tab  \cr
   OPP_TOV_PCT \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguelineupviz")} for the column table.}
 
 A named list of tibbles: \code{PlayersOnCourtLeaguePlayerDetails}.
 
@@ -412,7 +412,7 @@ A named list of tibbles: \code{PlayersOnCourtLeaguePlayerDetails}.
   PTS_RANK \tab character \tab  \cr
   PLUS_MINUS_RANK \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leagueplayerondetails")} for the column table.}
 
 A named list of tibbles: \code{SeasonMatchups}.
 
@@ -448,7 +448,7 @@ A named list of tibbles: \code{SeasonMatchups}.
   SFL \tab character \tab  \cr
   MATCHUP_TIME_SEC \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leagueseasonmatchups")} for the column table.}
 
 A named list of tibbles: \code{MatchupsRollup}.
 
@@ -479,7 +479,7 @@ A named list of tibbles: \code{MatchupsRollup}.
   MATCHUP_FTA \tab character \tab  \cr
   SFL \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_matchupsrollup")} for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Fantasy Widget}

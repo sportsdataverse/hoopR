@@ -88,7 +88,7 @@ A \code{hoopR_data} tibble with one row per play-by-play event.
   end_game_seconds_remaining \tab integer \tab Seconds left in regulation at the end of the play (the next play's start; NA on the game's last). \cr
   score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "helper_espn_mbb_pbp")} for the column table.}
 
 These are the columns of \code{helper_espn_mbb_pbp()}, which returns \code{NULL}
 when the game has no play-by-play. \code{home_score} / \code{away_score} are rebuilt from the

@@ -40,7 +40,7 @@ A \code{hoopR_data} tibble with one row per season type.
   weeks_ref \tab character \tab \code{$ref} to the weeks endpoint. \cr
   leaders_ref \tab character \tab \code{$ref} to the leaders endpoint. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_season_type")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per season type.
 
@@ -63,7 +63,7 @@ A \code{hoopR_data} tibble with one row per season type.
   weeks_ref \tab character \tab \code{$ref} to the weeks endpoint. \cr
   leaders_ref \tab character \tab \code{$ref} to the leaders endpoint. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_season_type")} for the column table.}
 }
 \description{
 Returns metadata for one season-type within an MBB season: name,

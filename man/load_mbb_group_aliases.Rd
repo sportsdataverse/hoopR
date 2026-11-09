@@ -31,7 +31,7 @@ A \code{hoopR_data} tibble with one row per alias.
   valid_from \tab integer \tab First season (ending year) the alias applies, inclusive; \code{NA} means unbounded. \cr
   valid_to \tab integer \tab Last season (ending year) the alias applies, inclusive; \code{NA} means unbounded. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_mbb_group_aliases")} for the column table.}
 }
 \description{
 Loads every name and id that a source (ESPN, NCAA, KenPom,

@@ -63,7 +63,7 @@ A named list of \code{hoopR_data} tibbles: \code{Statistics}, \code{NextGame}, \
   col_name \tab types \tab description \cr
   (varies) \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_overview")} for the column table.}
 
 \strong{NextGame}
 
@@ -74,11 +74,15 @@ A named list of \code{hoopR_data} tibbles: \code{Statistics}, \code{NextGame}, \
   name \tab character \tab Display name. \cr
   short_name \tab character \tab Short display name. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_overview")} for the column table.}
 
 \strong{Last5Games}
 
-Same columns as the \strong{Statistics} table above.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  (varies) \tab character \tab  \cr
+}}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_overview")} for the column table.}
 
 \strong{Headlines}
 
@@ -88,11 +92,15 @@ Same columns as the \strong{Statistics} table above.
   description \tab character \tab Long-form description text. \cr
   published \tab character \tab Publication timestamp (ISO 8601). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_overview")} for the column table.}
 
 \strong{FantasyOutlook}
 
-Same columns as the \strong{Statistics} table above.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  (varies) \tab character \tab  \cr
+}}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_overview")} for the column table.}
 
 A named list of per-category tibbles. Default category names are
 \code{General}, \code{Offensive}, \code{Defensive}, \code{Rebounding}, \code{Shooting}, \code{Misc}.
@@ -116,7 +124,7 @@ A \code{hoopR_data} tibble with one row per event appearance.
   team_ref \tab character \tab  \cr
   statistics_ref \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_eventlog")} for the column table.}
 
 Per-event \code{statistics.$ref} URLs from the ESPN core-v2 API are returned as
 the character column \code{statistics_ref} and are NOT resolved. Similarly,
@@ -129,7 +137,7 @@ A \code{hoopR_data} tibble with one row per statistics entry.
   event_ref \tab character \tab Reference link to the originating event. \cr
   statistics_ref \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_statisticslog")} for the column table.}
 
 When resolved, each row corresponds to one statistical entry in the core-v2
 statistics log, with \code{event_ref} and \code{statistics_ref} character columns pointing
@@ -143,7 +151,7 @@ A named list of \code{hoopR_data} tibbles: \code{Statistics}, \code{NextGame}, \
   col_name \tab types \tab description \cr
   (varies) \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_overview")} for the column table.}
 
 \strong{NextGame}
 
@@ -154,11 +162,15 @@ A named list of \code{hoopR_data} tibbles: \code{Statistics}, \code{NextGame}, \
   name \tab character \tab Display name. \cr
   short_name \tab character \tab Short display name. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_overview")} for the column table.}
 
 \strong{Last5Games}
 
-Same columns as the \strong{Statistics} table above.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  (varies) \tab character \tab  \cr
+}}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_overview")} for the column table.}
 
 \strong{Headlines}
 
@@ -168,11 +180,15 @@ Same columns as the \strong{Statistics} table above.
   description \tab character \tab Long-form description text. \cr
   published \tab character \tab Publication timestamp (ISO 8601). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_overview")} for the column table.}
 
 \strong{FantasyOutlook}
 
-Same columns as the \strong{Statistics} table above.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  (varies) \tab character \tab  \cr
+}}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_overview")} for the column table.}
 
 A named list of per-category tibbles. Default category names are
 \code{General}, \code{Offensive}, \code{Defensive}, \code{Rebounding}, \code{Shooting}, \code{Misc}.
@@ -196,7 +212,7 @@ A \code{hoopR_data} tibble with one row per event appearance.
   team_ref \tab character \tab  \cr
   statistics_ref \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_eventlog")} for the column table.}
 
 Per-event \code{statistics.$ref} URLs from the ESPN core-v2 API are returned as
 the character column \code{statistics_ref} and are NOT resolved. Similarly,
@@ -209,7 +225,7 @@ A \code{hoopR_data} tibble with one row per statistics entry.
   event_ref \tab character \tab Reference link to the originating event. \cr
   statistics_ref \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_statisticslog")} for the column table.}
 
 When resolved, each row corresponds to one statistical entry in the core-v2
 statistics log, with \code{event_ref} and \code{statistics_ref} character columns pointing

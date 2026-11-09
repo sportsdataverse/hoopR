@@ -116,7 +116,7 @@ A named list of tibbles: \code{GameByGameStats}, \code{TotalPlayerStats}.
   PTS \tab character \tab Points scored. \cr
   AVG_PTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_cumestatsplayer")} for the column table.}
 
 \strong{TotalPlayerStats}
 
@@ -171,7 +171,7 @@ A named list of tibbles: \code{GameByGameStats}, \code{TotalPlayerStats}.
   PER_MIN_BLK \tab character \tab  \cr
   PER_MIN_PTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_cumestatsplayer")} for the column table.}
 
 A named list of tibbles: \code{CumeStatsPlayerGames}.
 
@@ -182,7 +182,7 @@ A named list of tibbles: \code{CumeStatsPlayerGames}.
   MATCHUP \tab character \tab Matchup. \cr
   GAME_ID \tab character \tab Unique game identifier. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_cumestatsplayergames")} for the column table.}
 
 A named list of tibbles: \code{GameByGameStats}, \code{TotalTeamStats}.
 
@@ -240,7 +240,7 @@ A named list of tibbles: \code{GameByGameStats}, \code{TotalTeamStats}.
   PER_MIN_BLK \tab character \tab  \cr
   PER_MIN_PTS \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_cumestatsteam")} for the column table.}
 
 \strong{TotalTeamStats}
 
@@ -283,7 +283,7 @@ A named list of tibbles: \code{GameByGameStats}, \code{TotalTeamStats}.
   AVG_PTS \tab character \tab  \cr
   DQ \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_cumestatsteam")} for the column table.}
 
 A named list of tibbles: \code{CumeStatsTeamGames}.
 
@@ -294,7 +294,7 @@ A named list of tibbles: \code{CumeStatsTeamGames}.
   MATCHUP \tab character \tab Matchup. \cr
   GAME_ID \tab character \tab Unique game identifier. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_cumestatsteamgames")} for the column table.}
 }
 \description{
 \strong{Get NBA Stats API Cumulative Player Stats}

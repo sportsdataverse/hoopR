@@ -25,7 +25,7 @@ A \code{hoopR_data} tibble with one row per career season.
   season \tab integer \tab Season year. \cr
   ref \tab character \tab \code{$ref} URL to the season detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_seasons")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per career season.
 
@@ -36,7 +36,7 @@ A \code{hoopR_data} tibble with one row per career season.
   season \tab integer \tab Season year. \cr
   ref \tab character \tab \code{$ref} URL to the season detail. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_seasons")} for the column table.}
 }
 \description{
 Returns the list of seasons an MBB athlete appeared in. Useful for

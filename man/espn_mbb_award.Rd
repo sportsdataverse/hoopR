@@ -31,7 +31,7 @@ A \code{hoopR_data} tibble with one row per winner.
   athlete_ref \tab character \tab \code{$ref} to winner's per-season athlete resource. \cr
   team_ref \tab character \tab \code{$ref} to winner's per-season team resource. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_award")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per winner.
 
@@ -47,7 +47,7 @@ A \code{hoopR_data} tibble with one row per winner.
   athlete_ref \tab character \tab \code{$ref} to winner's per-season athlete resource. \cr
   team_ref \tab character \tab \code{$ref} to winner's per-season team resource. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_award")} for the column table.}
 }
 \description{
 Returns the name, description, and winners of one MBB season award.

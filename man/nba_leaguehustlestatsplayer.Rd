@@ -219,7 +219,7 @@ A named list of tibbles: \code{HustleStatsPlayer}.
   PCT_BOX_OUTS_TEAM_REB \tab character \tab  \cr
   PCT_BOX_OUTS_REB \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsplayer")} for the column table.}
 
 A named list of tibbles: \code{PlayerContestedShotsLeaders}, \code{PlayerChargesDrawnLeaders}, \code{PlayerDeflectionsLeaders}, \code{PlayerLooseBallLeaders}, \code{PlayerScreenAssistLeaders}, \code{Table5}.
 
@@ -235,7 +235,7 @@ A named list of tibbles: \code{PlayerContestedShotsLeaders}, \code{PlayerCharges
   RANK \tab character \tab Rank. \cr
   CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsplayerleaders")} for the column table.}
 
 \strong{PlayerChargesDrawnLeaders}
 
@@ -249,7 +249,7 @@ A named list of tibbles: \code{PlayerContestedShotsLeaders}, \code{PlayerCharges
   RANK \tab character \tab Rank. \cr
   CHARGES_DRAWN \tab character \tab Charges drawn. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsplayerleaders")} for the column table.}
 
 \strong{PlayerDeflectionsLeaders}
 
@@ -263,7 +263,7 @@ A named list of tibbles: \code{PlayerContestedShotsLeaders}, \code{PlayerCharges
   RANK \tab character \tab Rank. \cr
   DEFLECTIONS \tab character \tab Defensive deflections. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsplayerleaders")} for the column table.}
 
 \strong{PlayerLooseBallLeaders}
 
@@ -277,7 +277,7 @@ A named list of tibbles: \code{PlayerContestedShotsLeaders}, \code{PlayerCharges
   RANK \tab character \tab Rank. \cr
   LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsplayerleaders")} for the column table.}
 
 \strong{PlayerScreenAssistLeaders}
 
@@ -291,7 +291,7 @@ A named list of tibbles: \code{PlayerContestedShotsLeaders}, \code{PlayerCharges
   RANK \tab character \tab Rank. \cr
   SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsplayerleaders")} for the column table.}
 
 \strong{Table5}
 
@@ -305,7 +305,7 @@ A named list of tibbles: \code{PlayerContestedShotsLeaders}, \code{PlayerCharges
   RANK \tab character \tab Rank. \cr
   BOX_OUTS \tab character \tab Box-outs executed. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsplayerleaders")} for the column table.}
 
 A named list of tibbles: \code{HustleStatsTeam}.
 
@@ -334,7 +334,7 @@ A named list of tibbles: \code{HustleStatsTeam}.
   PCT_BOX_OUTS_OFF \tab character \tab  \cr
   PCT_BOX_OUTS_DEF \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsteam")} for the column table.}
 
 A named list of tibbles: \code{TeamContestedShotsLeaders}, \code{TeamChargesDrawnLeaders}, \code{TeamDeflectionsLeaders}, \code{TeamLooseBallLeaders}, \code{TeamScreenAssistLeaders}, \code{Table5}, \code{Table6}.
 
@@ -348,7 +348,7 @@ A named list of tibbles: \code{TeamContestedShotsLeaders}, \code{TeamChargesDraw
   RANK \tab character \tab Rank. \cr
   CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsteamleaders")} for the column table.}
 
 \strong{TeamChargesDrawnLeaders}
 
@@ -360,7 +360,7 @@ A named list of tibbles: \code{TeamContestedShotsLeaders}, \code{TeamChargesDraw
   RANK \tab character \tab Rank. \cr
   CHARGES_DRAWN \tab character \tab Charges drawn. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsteamleaders")} for the column table.}
 
 \strong{TeamDeflectionsLeaders}
 
@@ -372,7 +372,7 @@ A named list of tibbles: \code{TeamContestedShotsLeaders}, \code{TeamChargesDraw
   RANK \tab character \tab Rank. \cr
   DEFLECTIONS \tab character \tab Defensive deflections. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsteamleaders")} for the column table.}
 
 \strong{TeamLooseBallLeaders}
 
@@ -384,7 +384,7 @@ A named list of tibbles: \code{TeamContestedShotsLeaders}, \code{TeamChargesDraw
   RANK \tab character \tab Rank. \cr
   LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsteamleaders")} for the column table.}
 
 \strong{TeamScreenAssistLeaders}
 
@@ -396,7 +396,7 @@ A named list of tibbles: \code{TeamContestedShotsLeaders}, \code{TeamChargesDraw
   RANK \tab character \tab Rank. \cr
   SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsteamleaders")} for the column table.}
 
 \strong{Table5}
 
@@ -408,7 +408,7 @@ A named list of tibbles: \code{TeamContestedShotsLeaders}, \code{TeamChargesDraw
   RANK \tab character \tab Rank. \cr
   BOX_OUTS \tab character \tab Box-outs executed. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_leaguehustlestatsteamleaders")} for the column table.}
 
 \strong{Table6}
 

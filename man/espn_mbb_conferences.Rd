@@ -22,7 +22,7 @@ A \code{hoopR_data} tibble with one row per conference.
   parent_group_id \tab integer \tab Unique identifier for parent group. \cr
   conference_id \tab integer \tab Conference identifier. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_conferences")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per conference.
 
@@ -36,7 +36,7 @@ A \code{hoopR_data} tibble with one row per conference.
   parent_group_id \tab integer \tab Unique identifier for parent group. \cr
   conference_id \tab integer \tab Conference identifier. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_conferences")} for the column table.}
 }
 \description{
 \strong{Get ESPN conference names and IDs}

@@ -35,7 +35,7 @@ A \code{hoopR_data} tibble with one row per player.
   headshot_url \tab character \tab NBA CDN headshot URL. \cr
   season \tab character \tab Season (echoes the \code{season} argument). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_player_dict")} for the column table.}
 }
 \description{
 A tidy player dictionary (id, name, team, bio, headshot URL)

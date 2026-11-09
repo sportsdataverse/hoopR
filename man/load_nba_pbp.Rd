@@ -201,7 +201,7 @@ A \code{hoopR_data} tibble with one row per play-by-play event.
   type_abbreviation \tab character \tab Type abbreviation. \cr
   score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). Absent from seasons published before the repair. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_pbp")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per team-game.
 
@@ -265,7 +265,7 @@ A \code{hoopR_data} tibble with one row per team-game.
   opponent_team_logo \tab character \tab Opponent team logo URL. \cr
   opponent_team_score \tab integer \tab Opponent team's score. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_team_box")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per player-game.
 
@@ -329,7 +329,7 @@ A \code{hoopR_data} tibble with one row per player-game.
   opponent_team_alternate_color \tab character \tab Opponent team alternate color (hex). \cr
   opponent_team_score \tab integer \tab Opponent team's score. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_player_box")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per game.
 
@@ -403,7 +403,7 @@ A \code{hoopR_data} tibble with one row per game.
   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_schedule")} for the column table.}
 
 Returns a tibble of per-season NBA standings.
 
@@ -446,7 +446,7 @@ A \code{hoopR_data} tibble with one row per shot attempt.
   team_mascot \tab character \tab Team mascot / nickname. \cr
   team_abbrev \tab character \tab Short team abbreviation. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_shots")} for the column table.}
 }
 \description{
 helper that loads multiple seasons from the data repo either into memory

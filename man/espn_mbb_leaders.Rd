@@ -37,7 +37,7 @@ A \code{hoopR_data} tibble with one row per category-athlete pair.
   rank \tab integer \tab Rank. \cr
   display_value \tab character \tab Human-readable display value. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_leaders")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per category-athlete pair.
 
@@ -55,7 +55,7 @@ A \code{hoopR_data} tibble with one row per category-athlete pair.
   rank \tab integer \tab Rank. \cr
   display_value \tab character \tab Human-readable display value. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_leaders")} for the column table.}
 }
 \description{
 \strong{Get ESPN Women's College Basketball League Leaders}

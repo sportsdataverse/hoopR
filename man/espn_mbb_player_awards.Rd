@@ -26,7 +26,7 @@ A \code{hoopR_data} tibble with one row per award.
   date \tab character \tab Date in YYYY-MM-DD format. \cr
   type \tab character \tab Record type / category. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_player_awards")} for the column table.}
 
 This endpoint is sparse; many athletes have no award data, in which case an
 empty tibble with canonical columns is returned.
@@ -42,7 +42,7 @@ A \code{hoopR_data} tibble with one row per award.
   date \tab character \tab Date in YYYY-MM-DD format. \cr
   type \tab character \tab Record type / category. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_player_awards")} for the column table.}
 
 This endpoint is sparse; many athletes have no award data, in which case an
 empty tibble with canonical columns is returned.

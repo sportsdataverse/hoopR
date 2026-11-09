@@ -172,7 +172,7 @@ A \code{hoopR_data} tibble with one row per coach-team-season.
   sub_sort_sequence \tab integer \tab Secondary display sort order within the coaching staff. \cr
   season_type \tab character \tab Portion of the season (e.g. 'Regular Season', 'Playoffs'). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_coaches")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per pick.
 
@@ -193,7 +193,7 @@ A \code{hoopR_data} tibble with one row per pick.
   organization_type \tab character \tab Type of organization (e.g. college, international). \cr
   player_profile_flag \tab integer \tab Player profile flag. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_draft")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per play-by-play action.
 
@@ -214,7 +214,7 @@ A \code{hoopR_data} tibble with one row per play-by-play action.
   away_player_5 \tab integer \tab Away on-court lineup slot 5 player identifier. \cr
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_game_lineups")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per inactive athlete-game pair.
 
@@ -231,7 +231,7 @@ A \code{hoopR_data} tibble with one row per inactive athlete-game pair.
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
   game_id \tab character \tab Unique game identifier. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_game_rosters")} for the column table.}
 
 Returns a \code{hoopR_data} tibble of 5-man lineup season stats (182
 columns: standard box-score rate/counting stats plus the 5 player-id
@@ -250,7 +250,7 @@ A \code{hoopR_data} tibble with one row per official-game pair.
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
   game_id \tab character \tab Unique game identifier. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_officials")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per play-by-play action.
 
@@ -306,7 +306,7 @@ A \code{hoopR_data} tibble with one row per play-by-play action.
   def_player_5 \tab integer \tab Defensive on-court lineup slot 5 player identifier. \cr
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_pbp")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per athlete-game pair.
 
@@ -347,7 +347,7 @@ A \code{hoopR_data} tibble with one row per athlete-game pair.
   game_id \tab character \tab Unique game identifier. \cr
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_player_boxscores")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per athlete-game pair.
 
@@ -385,7 +385,7 @@ A \code{hoopR_data} tibble with one row per athlete-game pair.
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
   season_type \tab character \tab Portion of the season (e.g. 'Regular Season', 'Playoffs'). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_player_game_logs")} for the column table.}
 
 Returns a \code{hoopR_data} tibble of player season stats (210
 columns: rank fields, bio fields, and standard/rank box-score
@@ -434,7 +434,7 @@ A \code{hoopR_data} tibble with one row per possession.
   lineup_source \tab character \tab Provenance of the lineup join (e.g. 'game_lineups', 'derived'). \cr
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_possessions")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per athlete-team-season.
 
@@ -459,7 +459,7 @@ A \code{hoopR_data} tibble with one row per athlete-team-season.
   supplemental_status \tab integer \tab Roster supplemental / two-way status flag. \cr
   season_type \tab character \tab Portion of the season (e.g. 'Regular Season', 'Playoffs'). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_rosters")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per game.
 
@@ -481,7 +481,7 @@ A \code{hoopR_data} tibble with one row per game.
   away_pts \tab integer \tab Points scored by the away team. \cr
   away_wl \tab character \tab Away team result, 'W' or 'L'. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_schedule")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per shot attempt.
 
@@ -506,7 +506,7 @@ A \code{hoopR_data} tibble with one row per shot attempt.
   score_home \tab character \tab Home team score after the play. \cr
   score_away \tab character \tab Away team score after the play. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_shots")} for the column table.}
 
 Returns a \code{hoopR_data} tibble of team standings (94 columns: win/
 loss splits by home/road/conference/division/last-10, streak fields,
@@ -546,7 +546,7 @@ A \code{hoopR_data} tibble with one row per team-game pair.
   game_id \tab character \tab Unique game identifier. \cr
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_team_boxscores")} for the column table.}
 
 Returns a \code{hoopR_data} tibble of team season stats (178 columns:
 rank fields plus standard/rank box-score rate/counting stats for the

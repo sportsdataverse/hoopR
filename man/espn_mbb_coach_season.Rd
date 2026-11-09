@@ -35,7 +35,7 @@ A \code{hoopR_data} tibble with one row per coach-season.
   college_ref \tab character \tab \code{$ref} to college. \cr
   team_ref \tab character \tab \code{$ref} to team-in-season. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_coach_season")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per coach-season.
 
@@ -55,7 +55,7 @@ A \code{hoopR_data} tibble with one row per coach-season.
   college_ref \tab character \tab \code{$ref} to college. \cr
   team_ref \tab character \tab \code{$ref} to team-in-season. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_coach_season")} for the column table.}
 }
 \description{
 Per-season coach detail (name, birth info, \verb{$ref}s to team/college/

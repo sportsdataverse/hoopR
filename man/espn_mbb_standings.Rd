@@ -93,7 +93,7 @@ A \code{hoopR_data} tibble with one row per team in the standings.
   vsconf_wins \tab numeric \tab Vsconf wins. \cr
   vsconf \tab character \tab Vsconf. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_standings")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per team in the standings.
 
@@ -120,7 +120,7 @@ A \code{hoopR_data} tibble with one row per team in the standings.
   vsconf \tab character \tab Vsconf. \cr
   lasttengames \tab character \tab Lasttengames. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_standings")} for the column table.}
 }
 \description{
 \strong{Get ESPN men's college basketball standings}

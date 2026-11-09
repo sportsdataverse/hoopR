@@ -58,7 +58,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Record}, \code{Nex
   alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
   logo \tab character \tab Team or league logo URL. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team")} for the column table.}
 
 \strong{Record}
 
@@ -68,7 +68,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Record}, \code{Nex
   summary \tab character \tab  \cr
   stats \tab list \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team")} for the column table.}
 
 \strong{NextEvent}
 
@@ -79,7 +79,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Record}, \code{Nex
   name \tab character \tab Display name. \cr
   short_name \tab character \tab Short display name. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team")} for the column table.}
 
 \strong{StandingSummary}
 
@@ -87,7 +87,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Record}, \code{Nex
   col_name \tab types \tab description \cr
   standing_summary \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team")} for the column table.}
 
 \strong{Coaches}
 
@@ -98,7 +98,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Record}, \code{Nex
   last_name \tab character \tab Player's last name. \cr
   experience \tab integer \tab Years of professional experience. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per athlete.
 
@@ -120,7 +120,7 @@ A \code{hoopR_data} tibble with one row per athlete.
   team_id \tab character \tab Unique team identifier. \cr
   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team_roster")} for the column table.}
 
 ESPN's roster endpoint ignores the season, so a season before the current
 one is built from that season's published player box scores (name, jersey,
@@ -140,7 +140,7 @@ A \code{hoopR_data} tibble with one row per category-rank-athlete.
   value \tab numeric \tab Numeric or string value field. \cr
   rank \tab integer \tab Rank. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team_leaders")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per team-season.
 
@@ -169,7 +169,7 @@ A \code{hoopR_data} tibble with one row per team-season.
   coaches_ref \tab character \tab \code{$ref} to team coaches resource. \cr
   franchise_ref \tab character \tab \code{$ref} to franchise resource. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_team_season_profile")} for the column table.}
 
 The table lists selected columns: team identity scalars and \verb{_ref} URL columns.
 
@@ -192,7 +192,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Record}, \code{Nex
   alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
   logo \tab character \tab Team or league logo URL. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team")} for the column table.}
 
 \strong{Record}
 
@@ -202,7 +202,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Record}, \code{Nex
   summary \tab character \tab  \cr
   stats \tab list \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team")} for the column table.}
 
 \strong{NextEvent}
 
@@ -213,7 +213,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Record}, \code{Nex
   name \tab character \tab Display name. \cr
   short_name \tab character \tab Short display name. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team")} for the column table.}
 
 \strong{StandingSummary}
 
@@ -221,7 +221,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Record}, \code{Nex
   col_name \tab types \tab description \cr
   standing_summary \tab character \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team")} for the column table.}
 
 \strong{Coaches}
 
@@ -232,7 +232,7 @@ A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Record}, \code{Nex
   last_name \tab character \tab Player's last name. \cr
   experience \tab integer \tab Years of professional experience. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per athlete.
 
@@ -254,7 +254,7 @@ A \code{hoopR_data} tibble with one row per athlete.
   team_id \tab character \tab Unique team identifier. \cr
   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team_roster")} for the column table.}
 
 ESPN's roster endpoint ignores the season, so a season before the current
 one is built from that season's published player box scores (name, jersey,
@@ -274,7 +274,7 @@ A \code{hoopR_data} tibble with one row per category-rank-athlete.
   value \tab numeric \tab Numeric or string value field. \cr
   rank \tab integer \tab Rank. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team_leaders")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per team-season.
 
@@ -304,7 +304,7 @@ A \code{hoopR_data} tibble with one row per team-season.
   transactions_ref \tab character \tab \code{$ref} to team transactions resource (if present). \cr
   franchise_ref \tab character \tab \code{$ref} to franchise resource. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_team_season_profile")} for the column table.}
 
 The table lists selected columns: team identity scalars and \verb{_ref} URL columns.
 }

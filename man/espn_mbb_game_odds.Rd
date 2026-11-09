@@ -65,7 +65,7 @@ A \code{hoopR_data} tibble with one row per odds provider.
   away_team_odds_open \tab numeric \tab  \cr
   away_team_odds_close \tab numeric \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_game_odds")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per official assigned to the game.
 
@@ -80,7 +80,7 @@ A \code{hoopR_data} tibble with one row per official assigned to the game.
   position_type \tab character \tab  \cr
   order \tab integer \tab Display order within the result set. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_game_officials")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per broadcast outlet for the game.
 
@@ -97,7 +97,7 @@ A \code{hoopR_data} tibble with one row per broadcast outlet for the game.
   lang \tab character \tab  \cr
   region \tab character \tab Region label. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_game_broadcasts")} for the column table.}
 
 A single-row tibble with timeouts + fouls for both teams.
 
@@ -122,7 +122,7 @@ A \code{hoopR_data} tibble with one row per odds provider.
   away_team_odds_open \tab numeric \tab  \cr
   away_team_odds_close \tab numeric \tab  \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_game_odds")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per official assigned to the game.
 
@@ -137,7 +137,7 @@ A \code{hoopR_data} tibble with one row per official assigned to the game.
   position_type \tab character \tab  \cr
   order \tab integer \tab Display order within the result set. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_game_officials")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per broadcast outlet for the game.
 
@@ -154,7 +154,7 @@ A \code{hoopR_data} tibble with one row per broadcast outlet for the game.
   lang \tab character \tab  \cr
   region \tab character \tab Region label. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_game_broadcasts")} for the column table.}
 
 A single-row tibble with timeouts + fouls for both teams.
 

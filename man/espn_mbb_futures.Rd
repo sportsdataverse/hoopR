@@ -31,7 +31,7 @@ A \code{hoopR_data} tibble with one row per futures market entry.
   odds_value \tab character \tab American odds for the team. \cr
   team_ref \tab character \tab \code{$ref} to the per-season team resource. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_futures")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per futures market entry.
 
@@ -49,7 +49,7 @@ A \code{hoopR_data} tibble with one row per futures market entry.
   odds_value \tab character \tab American odds for the team (e.g. "-250", "+800"). \cr
   team_ref \tab character \tab \code{$ref} to the per-season team resource. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_futures")} for the column table.}
 }
 \description{
 Returns the full futures-betting board for a men's college basketball

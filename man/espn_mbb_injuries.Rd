@@ -37,7 +37,7 @@ A named list of \code{hoopR_data} tibbles: \code{Injuries}.
   long_comment \tab character \tab Long-form play / event comment. \cr
   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_injuries")} for the column table.}
 
 ESPN's MBB injury data is typically sparse.
 An empty tibble (zero rows) when no injuries are reported.
@@ -61,7 +61,7 @@ A named list of \code{hoopR_data} tibbles: \code{Injuries}.
   long_comment \tab character \tab Long-form play / event comment. \cr
   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_injuries")} for the column table.}
 
 An empty tibble (zero rows) when no injuries are reported.
 }

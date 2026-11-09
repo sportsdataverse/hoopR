@@ -42,7 +42,7 @@ A \code{hoopR_data} tibble with one row per team and statistic.
   last_updated \tab character \tab Last-updated timestamp. \cr
   team_ref \tab character \tab \code{$ref} to the team-in-season resource. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_mbb_powerindex")} for the column table.}
 
 A \code{hoopR_data} tibble with one row per team and statistic.
 
@@ -61,7 +61,7 @@ A \code{hoopR_data} tibble with one row per team and statistic.
   last_updated \tab character \tab Last-updated timestamp. \cr
   team_ref \tab character \tab \code{$ref} to the team-in-season resource. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "espn_nba_powerindex")} for the column table.}
 }
 \description{
 Returns ESPN's Basketball Power Index (BPI) and related per-team

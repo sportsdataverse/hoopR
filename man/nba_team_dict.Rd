@@ -27,7 +27,7 @@ A \code{hoopR_data} tibble with one row per team.
   division \tab character \tab Division. \cr
   logo_url \tab character \tab NBA CDN primary logo URL. \cr
 }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "nba_team_dict")} for the column table.}
 }
 \description{
 A tidy team dictionary (id, abbreviation, name, conference,
