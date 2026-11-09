@@ -34,7 +34,7 @@
     "/odds"
   )
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(url)
       check_status(res)
@@ -231,7 +231,7 @@
   rows <- list()
   page <- 1L
   page_count <- NA_integer_
-  tryCatch(
+  .try_catch(
     expr = {
       repeat {
         url <- paste0(

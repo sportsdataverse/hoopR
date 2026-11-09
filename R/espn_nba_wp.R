@@ -31,7 +31,7 @@ espn_nba_wp <- function(game_id) {
 
   espn_wp <- data.frame()
 
-  tryCatch(
+  .try_catch(
     expr = {
       espn_wp <-
         .retry_request(sprintf("http://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=%s", espn_game_id)) %>%

@@ -37,7 +37,7 @@ espn_mbb_game_all <- function(game_id) {
   player_box_score <- NULL
 
   #---- Fetch the summary endpoint (single outer tryCatch) -------------------
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(full_url)
       check_status(res)
@@ -62,7 +62,7 @@ espn_mbb_game_all <- function(game_id) {
   }
 
   #---- Play-by-Play ------
-  tryCatch(
+  .try_catch(
     expr = {
       plays_df <- helper_espn_mbb_pbp(resp)
 
@@ -83,7 +83,7 @@ espn_mbb_game_all <- function(game_id) {
     }
   )
   #---- Team Box ------
-  tryCatch(
+  .try_catch(
     expr = {
       team_box_score <- helper_espn_mbb_team_box(resp)
 
@@ -104,7 +104,7 @@ espn_mbb_game_all <- function(game_id) {
     }
   )
   #---- Player Box ------
-  tryCatch(
+  .try_catch(
     expr = {
       player_box_score <- helper_espn_mbb_player_box(resp)
 
@@ -167,7 +167,7 @@ espn_mbb_pbp <- function(game_id) {
 
   plays_df <- NULL
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(full_url)
 
@@ -233,7 +233,7 @@ espn_mbb_team_box <- function(game_id) {
 
   team_box_score <- NULL
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(full_url)
 
@@ -298,7 +298,7 @@ espn_mbb_player_box <- function(game_id) {
 
   player_box_score <- NULL
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(full_url)
 
@@ -356,7 +356,7 @@ espn_mbb_game_rosters <- function(game_id) {
   on.exit(options(old))
   athlete_roster_df <- .empty_hoopR_data("ESPN MBB Game Roster Information from ESPN.com")
 
-  tryCatch(
+  .try_catch(
     expr = {
       play_base_url <- paste0(
         "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/",
@@ -612,7 +612,7 @@ espn_mbb_conferences <- function() {
     )
   )
 
-  tryCatch(
+  .try_catch(
     expr = {
       play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard/conferences?seasontype=2"
 
@@ -681,7 +681,7 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
 
   teams <- .empty_hoopR_data("ESPN MBB Teams Information from ESPN.com")
 
-  tryCatch(
+  .try_catch(
     expr = {
       teams_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?limit=1000"
 
@@ -899,7 +899,7 @@ espn_mbb_team_current_roster <- function(team_id) {
 
   team_roster_full <- .empty_hoopR_data("ESPN MBB Team Current Roster Information from ESPN.com")
 
-  tryCatch(
+  .try_catch(
     expr = {
       teams_base_url <- sprintf(
         "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/%s?enable=roster",
@@ -1041,7 +1041,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
   )
 
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(schedule_api)
 
@@ -1377,7 +1377,7 @@ espn_mbb_rankings <- function() {
 
   ranks <- .empty_hoopR_data("ESPN MBB Rankings Information from ESPN.com")
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(ranks_url)
 
@@ -1479,7 +1479,7 @@ espn_mbb_standings <- function(year = most_recent_mbb_season()) {
 
   standings <- .empty_hoopR_data("ESPN MBB Standings Information from ESPN.com")
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(full_url)
 
@@ -1694,7 +1694,7 @@ espn_mbb_betting <- function(game_id) {
   predictor_df <- data.frame()
   betting <- NULL
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(full_url)
 
@@ -1818,7 +1818,7 @@ espn_mbb_team_stats <- function(team_id, year, season_type = "regular", total = 
   )
 
   df <- data.frame()
-  tryCatch(
+  .try_catch(
     expr = {
       # Create the GET request and set response as res
       res <- .retry_request(full_url)
@@ -1994,7 +1994,7 @@ espn_mbb_player_stats <- function(athlete_id, year, season_type = "regular", tot
     "/athletes/", athlete_id
   )
   df <- data.frame()
-  tryCatch(
+  .try_catch(
     expr = {
       # Create the GET request and set response as res
       res <- .retry_request(full_url)

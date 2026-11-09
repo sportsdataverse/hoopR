@@ -37,7 +37,7 @@ espn_nba_game_all <- function(game_id) {
   player_box_score <- NULL
 
   #---- Fetch the summary endpoint (single outer tryCatch) -------------------
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(full_url)
       check_status(res)
@@ -58,7 +58,7 @@ espn_nba_game_all <- function(game_id) {
   }
 
   #---- Play-by-Play ------
-  tryCatch(
+  .try_catch(
     expr = {
       plays_df <- helper_espn_nba_pbp(resp)
 
@@ -75,7 +75,7 @@ espn_nba_game_all <- function(game_id) {
     finally = {}
   )
   #---- Team Box ------
-  tryCatch(
+  .try_catch(
     expr = {
       team_box_score <- helper_espn_nba_team_box(resp)
 
@@ -92,7 +92,7 @@ espn_nba_game_all <- function(game_id) {
     finally = {}
   )
   #---- Player Box ------
-  tryCatch(
+  .try_catch(
     expr = {
       player_box_score <- helper_espn_nba_player_box(resp)
 
@@ -153,7 +153,7 @@ espn_nba_pbp <- function(game_id) {
   plays_df <- NULL
 
   #---- Play-by-Play ------
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(full_url)
 
@@ -220,7 +220,7 @@ espn_nba_team_box <- function(game_id) {
   #---- Team Box ------
   team_box_score <- NULL
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(full_url)
 
@@ -284,7 +284,7 @@ espn_nba_player_box <- function(game_id) {
   #---- Player Box ------
   player_box_score <- NULL
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(full_url)
 
@@ -337,7 +337,7 @@ espn_nba_game_rosters <- function(game_id) {
   on.exit(options(old))
   athlete_roster_df <- .empty_hoopR_data("ESPN NBA Game Roster Information from ESPN.com")
 
-  tryCatch(
+  .try_catch(
     expr = {
       play_base_url <- paste0(
         "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/",
@@ -617,7 +617,7 @@ espn_nba_teams <- function() {
 
   teams <- .empty_hoopR_data("ESPN NBA Teams Information from ESPN.com")
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(teams_url)
 
@@ -729,7 +729,7 @@ espn_nba_team_current_roster <- function(team_id) {
 
   team_roster_full <- .empty_hoopR_data("ESPN NBA Team Current Roster Information from ESPN.com")
 
-  tryCatch(
+  .try_catch(
     expr = {
       teams_base_url <- sprintf(
         "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/%s?enable=roster",
@@ -887,7 +887,7 @@ espn_nba_scoreboard <- function(season) {
     season_dates
   )
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(schedule_api)
 
@@ -1303,7 +1303,7 @@ espn_nba_standings <- function(year) {
 
   standings <- .empty_hoopR_data("ESPN NBA Standings Information from ESPN.com")
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(full_url)
 
@@ -1435,7 +1435,7 @@ espn_nba_betting <- function(game_id) {
 
   betting <- NULL
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(full_url)
 
@@ -1570,7 +1570,7 @@ espn_nba_team_stats <- function(
   )
 
   df <- data.frame()
-  tryCatch(
+  .try_catch(
     expr = {
       # Create the GET request and set response as res
       res <- .retry_request(full_url)
@@ -1766,7 +1766,7 @@ espn_nba_player_stats <- function(
     athlete_id
   )
   df <- data.frame()
-  tryCatch(
+  .try_catch(
     expr = {
       # Create the GET request and set response as res
       res <- .retry_request(full_url)

@@ -47,7 +47,7 @@
     season
   )
 
-  tryCatch(
+  .try_catch(
     expr = {
       res  <- .retry_request(url)
       check_status(res)
@@ -202,7 +202,7 @@
   # the current season reaches this call (a past one returned above).
   invisible(season)
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(url)
       check_status(res)
@@ -431,7 +431,7 @@
     season_type
   )
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(url)
       check_status(res)
@@ -649,7 +649,7 @@
   # as a column on the result below.
   invisible(season)
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(url)
       check_status(res)
@@ -767,7 +767,7 @@
     "athletes", "oddsRecords", "college"
   )
 
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(url)
       check_status(res)

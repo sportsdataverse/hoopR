@@ -19,7 +19,7 @@
     league, "/events/", event_id, "/competitions/", event_id,
     "/competitors/", team_id, "/linescores?lang=en&region=us"
   )
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%
@@ -85,7 +85,7 @@
     league, "/events/", event_id, "/competitions/", event_id,
     "/competitors/", team_id, "/leaders?lang=en&region=us"
   )
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%
@@ -167,7 +167,7 @@
     league, "/events/", event_id, "/competitions/", event_id,
     "/competitors/", team_id, "/roster?limit=100&lang=en&region=us"
   )
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%
@@ -218,7 +218,7 @@
     league, "/events/", event_id, "/competitions/", event_id,
     "/competitors/", team_id, "/statistics?lang=en&region=us"
   )
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%
@@ -295,7 +295,7 @@
     league, "/events/", event_id, "/competitions/", event_id,
     "/competitors/", team_id, "/records?lang=en&region=us"
   )
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%
@@ -376,7 +376,7 @@
     "/statistics/", as.integer(stat_type),
     "?lang=en&region=us"
   )
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%
@@ -464,7 +464,7 @@
     "/competitors/", team_id, "/roster/", athlete_id,
     "?lang=en&region=us"
   )
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%
@@ -532,7 +532,7 @@
     league, "/events/", event_id, "/competitions/", event_id,
     "/competitors/", team_id, "/score?lang=en&region=us"
   )
-  tryCatch(
+  .try_catch(
     expr = {
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%

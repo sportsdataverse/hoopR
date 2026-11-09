@@ -37,7 +37,7 @@ espn_nba_conferences <- function() {
     )
   )
 
-  tryCatch(
+  .try_catch(
     expr = {
       play_base_url <- paste0(
         "https://site.api.espn.com/apis/site/v2/sports/basketball/nba",
