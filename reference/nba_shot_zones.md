@@ -24,8 +24,7 @@ nba_shot_zones(game_id, ...)
 
 ## Value
 
-Returns a `data.frame` containing the full V3 play-by-play for `game_id`
-with an appended `shot_zone` column:
+A `hoopR_data` tibble with one row per play-by-play event.
 
 |  |  |  |
 |----|----|----|
@@ -37,7 +36,8 @@ with an appended `shot_zone` column:
 | shot_distance | numeric | Distance from the basket in feet. |
 | shot_zone | character | Shot-zone classification. One of `"corner_3"`, `"above_the_break_3"`, `"restricted_area"`, `"in_the_paint_non_ra"`, `"mid_range"`. `NA` on non-field-goal rows. |
 
-All other columns from the V3 PBP schema
+The table lists the shot columns; all other columns from the V3 PBP
+schema
 ([`nba_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md))
 are also present. Returns a 0-row frame when the game cannot be fetched
 (never-raise).

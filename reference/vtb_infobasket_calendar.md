@@ -26,61 +26,12 @@ vtb_infobasket_calendar(season, tag = "vtb")
 
 ## Value
 
-A `hoopR_data` tibble: Every game of a season (finished, live and
-planned): teams, scores, date, venue, attendance. The columns are always
-these, in this order (sportsdataverse-py `vtb_infobasket_calendar`); an
-empty valid answer raises `hoopR_no_data`, a valid body with no rows for
-this frame is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. |
-| comp_id | integer | Season-level Infobasket CompID of the season (50714 = 2025-26): the id every season-keyed route takes. |
-| game_id | integer | Infobasket game id (GameID); equals the v2 API `matchId`. Joins to /Widget/GetOnline/{gameId} and /Widget/GamePage/{gameId}. |
-| game_number | character | Game number within the competition, e.g. 'RS-002' (RS = regular season); playoff games use the series code. |
-| game_date | character | Game date as an ISO 8601 date (YYYY-MM-DD); the wire sends DD.MM.YYYY. |
-| has_time | logical | True when a tip-off time is set. |
-| game_time | character | Tip-off local time, 'HH:MM'. |
-| game_time_msk | character | Tip-off time in Moscow time ('HH:MM' on calendar rows, 'HH.MM' in GetOnline). |
-| game_date_time | character | Tip-off instant as an ISO 8601 string in Moscow time with its +03:00 offset (the wire sends a .NET /Date(ms)/ value). |
-| game_date_time_moscow | character | Tip-off instant as an ISO 8601 string in Moscow time with its +03:00 offset (the wire's second .NET date; equal to game_date_time in every sample). |
-| game_status | integer | Game status in the calendar code set: 0 planned, 1 completed, 2 live. |
-| team_a_id | integer | Team A (home) TeamID. Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team\*/{teamId} and equals the v2 API `teamId`. |
-| team_b_id | integer | Team B (away) TeamID. Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team\*/{teamId} and equals the v2 API `teamId`. |
-| short_team_name_aru | character | Team short name of team A (home), Russian. |
-| short_team_name_bru | character | Team short name of team B (away), Russian. |
-| team_name_aru | character | Team name with city in brackets of team A (home), Russian. |
-| team_name_bru | character | Team name with city in brackets of team B (away), Russian. |
-| comp_team_name_aru | character | Team name as registered in the competition of team A (home), Russian. |
-| comp_team_name_bru | character | Team name as registered in the competition of team B (away), Russian. |
-| region_team_name_aru | character | Team's city or region of team A (home), Russian. |
-| region_team_name_bru | character | Team's city or region of team B (away), Russian. |
-| short_team_name_aen | character | Team short name of team A (home), English. |
-| short_team_name_ben | character | Team short name of team B (away), English. |
-| team_name_aen | character | Team name with city in brackets of team A (home), English. |
-| team_name_ben | character | Team name with city in brackets of team B (away), English. |
-| comp_team_name_aen | character | Team name as registered in the competition of team A (home), English. |
-| comp_team_name_ben | character | Team name as registered in the competition of team B (away), English. |
-| region_team_name_aen | character | Team's city or region of team A (home), English. |
-| region_team_name_ben | character | Team's city or region of team B (away), English. |
-| score_a | integer | Final score of team A (home). |
-| score_b | integer | Final score of team B (away). |
-| tv_ru | character | TV channels, in Russian. |
-| tv_en | character | TV channels, in English. |
-| region_ru | character | City or region of the game's venue in Russian. |
-| region_en | character | City or region of the game's venue in English. |
-| arena_en | character | Arena name, English. |
-| arena_ru | character | Arena, Russian ('SK' = sports complex). |
-| arena_id | integer | Infobasket arena id; equals the v2 API `venueId` (11687 = SK Basket-Hall, Krasnodar). |
-| game_attendance | integer | Spectators at the game (null when not recorded). |
-| comp_name_ru | character | Stage name, Russian ('Regulyarnyy chempionat' = 'Regular Season', 'Gruppa A' = 'Group A'). |
-| comp_name_en | character | Stage name (e.g. 'Regular Season'), English. |
-| league_name_ru | character | League name, Russian ('Edinaya liga VTB' / 'Chempionat Edinoy ligi VTB' = 'VTB United League' / 'VTB United League Championship'). |
-| league_name_en | character | League name, English. |
-| league_short_name_ru | character | League short name, Russian ('VTB' = 'VTB'). |
-| league_short_name_en | character | League short name, English. |
-| gender | integer | Competition gender: 0 on every VTB sample (men). Other values unverified. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_calendar")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -99,7 +50,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_calendar(season = 2026))
 #> ── VTB Infobasket Calendar from org.infobasket.su ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:10:04 UTC
+#> ℹ Data updated: 2026-11-09 19:15:59 UTC
 #> # A tibble: 254 × 46
 #>    season comp_id game_id game_number game_date has_time game_time game_time_msk
 #>     <int>   <int>   <int> <chr>       <chr>     <lgl>    <chr>     <chr>        

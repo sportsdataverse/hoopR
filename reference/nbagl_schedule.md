@@ -29,36 +29,12 @@ nbagl_schedule(
 
 ## Value
 
-Returns a data frame of the G League Season Schedule
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| game_date | date | Game date (YYYY-MM-DD). |
-| game_id | character | Unique game identifier. |
-| game_code | character | ESPN game code (numeric identifier). |
-| game_status | integer | Game status label. |
-| game_status_text | character | Game status display text (e.g. 'Final', '4:32 - 4th'). |
-| game_sequence | integer | Game sequence. |
-| game_date_est | character | Game date est. |
-| game_time_est | character | Game time est. |
-| game_date_utc | character | Game date utc. |
-| game_time_utc | character | Game start time in UTC (ISO 8601 timestamp). |
-| arena_name | character | Arena name. |
-| arena_state | character | Arena state. |
-| arena_city | character | Arena city. |
-| home_team_id | character | Unique identifier for the home team. |
-| home_team_name | character | Home team name. |
-| home_team_tricode | character | Home team three-letter code. |
-| home_team_score | character | Home team's score. |
-| away_team_id | character | Unique identifier for the away team. |
-| away_team_name | character | Away team name. |
-| away_team_tricode | character | Away team three-letter code. |
-| away_team_score | character | Away team's score. |
-| season | character | Season identifier (4-digit year or 'YYYY-YY' string). |
-| league_id | character | League identifier ('10' = WNBA). |
-| season_type_id | character | Unique identifier for season type. |
-| season_type_description | character | Season type description. |
+A data frame with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "nbagl_schedule")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

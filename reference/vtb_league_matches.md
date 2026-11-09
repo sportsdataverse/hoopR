@@ -26,72 +26,12 @@ vtb_league_matches(league_slug, season)
 
 ## Value
 
-A `hoopR_data` tibble: Every match of one league-season (schedule,
-scores, quarter points, venue), in one request. The columns are always
-these, in this order (sportsdataverse-py `vtb_league_matches`); an empty
-valid answer raises `hoopR_no_data`, a valid body with no rows for this
-frame is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | Match id; equals the Infobasket GameID (/Widget/GetOnline/{gameId}). |
-| league | character | League slug, echoed. |
-| season | integer | Season END year, echoed. |
-| competition | character | Competition slug: 'vtb' (league games), 'vtb-supercup', 'vtb-allstars', 'wbc'. |
-| phase_id | integer | v2 phase id of the stage (not an Infobasket CompID). |
-| phase_name_en | character | The stage name in English. |
-| phase_name_ru | character | The stage name in Russian. |
-| match_number | character | Game number ('1/2-2' = semi-final 2; regular-season numbers otherwise). |
-| match_type | character | Game type: REGULAR, FINALS (any playoff or cup knockout game), ALLSTARS. |
-| match_status | character | Status: SCHEDULED, IN_PROGRESS, COMPLETE, POSTPONED, CANCELLED, UNKNOWN (the site filters on the first four). |
-| match_time | character | Tip-off in venue local time, ISO 8601 with offset. |
-| match_time_msk | character | Tip-off in Moscow time (UTC+3), ISO 8601. |
-| match_time_utc | character | Tip-off in UTC, ISO 8601. |
-| is_time_set | logical | True when the tip-off time is fixed. |
-| time_actual | character | Unobserved: null in every sample, so its type and meaning are unconfirmed. |
-| time_end_actual | character | Unobserved: null in every sample, so its type and meaning are unconfirmed. |
-| duration | integer | Game duration; 0 in every sample (unverified). |
-| periods | integer | Periods played (4 in regulation). |
-| extra_periods_used | logical | True when the game went to overtime. |
-| attendance | integer | Spectators (null when not recorded). |
-| hosting_team_id | integer | Home team id (Infobasket TeamID). |
-| venue_id | integer | Venue id; equals the Infobasket arena id (ArenaId). |
-| venue_name_en | character | The venue name in English. |
-| venue_name_ru | character | The venue name in Russian. |
-| venue_region_name_en | character | The venue city in English. |
-| venue_region_name_ru | character | The venue city in Russian. |
-| home_team_id | integer | Infobasket TeamID of the home team. |
-| home_score | integer | Final points of the home team (an integer; 0 for a cancelled match). |
-| home_team_name_en | character | The home team's name in English. |
-| home_team_name_ru | character | The home team's name in Russian. |
-| home_team_code_en | character | The home team's short code in English. |
-| home_team_code_ru | character | The home team's short code in Russian. |
-| home_region_name_en | character | Region or city of the home team in English. |
-| home_region_name_ru | character | Region or city of the home team in Russian. |
-| away_team_id | integer | Infobasket TeamID of the away team. |
-| away_score | integer | Final points of the away team (an integer; 0 for a cancelled match). |
-| away_team_name_en | character | The away team's name in English. |
-| away_team_name_ru | character | The away team's name in Russian. |
-| away_team_code_en | character | The away team's short code in English. |
-| away_team_code_ru | character | The away team's short code in Russian. |
-| away_region_name_en | character | Region or city of the away team in English. |
-| away_region_name_ru | character | Region or city of the away team in Russian. |
-| subtitle_en | character | The site subtitle of the match in English. |
-| subtitle_ru | character | The site subtitle of the match in Russian. |
-| necessary_label_en | character | The site label of the match in English. |
-| necessary_label_ru | character | The site label of the match in Russian. |
-| points_by_quarters | character | Points per period as `[home, away]` pairs; null before the game. The home team (isHomeCompetitor true) is listed first in `competitors` on every probed row (vtb seasons 2025 and 2026, wbc 2026: 620 of 620), and the first value of each pair summed to that team's score on every finished one. |
-| home_q1 | integer | Points of the home team in period 1. |
-| away_q1 | integer | Points of the away team in period 1. |
-| home_q2 | integer | Points of the home team in period 2. |
-| away_q2 | integer | Points of the away team in period 2. |
-| home_q3 | integer | Points of the home team in period 3. |
-| away_q3 | integer | Points of the away team in period 3. |
-| home_q4 | integer | Points of the home team in period 4. |
-| away_q4 | integer | Points of the away team in period 4. |
-| home_ot | integer | Points of the home team in all overtimes together (null without overtime). |
-| away_ot | integer | Points of the away team in all overtimes together (null without overtime). |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_league_matches")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -115,7 +55,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_league_matches(league_slug = "vtb", season = 2026))
 #> ── VTB League Matches from api.vtb-league.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:10:22 UTC
+#> ℹ Data updated: 2026-11-09 19:16:17 UTC
 #> # A tibble: 273 × 57
 #>    match_id league season competition  phase_id phase_name_en  phase_name_ru    
 #>       <int> <chr>   <int> <chr>           <int> <chr>          <chr>            

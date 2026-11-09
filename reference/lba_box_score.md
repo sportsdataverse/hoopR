@@ -22,53 +22,13 @@ lba_box_score(game_id)
 
 ## Value
 
-A `hoopR_data` tibble: Box score of a final game: one row per player of
-both teams (Italian-named stat columns). The columns are always these,
-in this order (sportsdataverse-py `lba_box_score`); a column the site
-adds later is appended after them:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | Game id (global across seasons); joins lba_calendar and lba_game. |
-| season | integer | Season END year (2027 = 2026-27): the row's START year + 1. |
-| side | character | Which team of the game the row belongs to: home or visitor. |
-| team_id | integer | Team-season id (re-issued every season); join lba_teams for the stable club_id. |
-| player_id | integer | Player id (global). |
-| player_num | integer | Jersey number the player wore in the game. |
-| player_surname | character | Family name, upper case. |
-| player_name | character | Player's given name. |
-| player_code | character | Player code `SURNAME3-NAME3-YY`. |
-| player_p_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-| pun | integer | Points (`punti`). |
-| min | integer | Minutes played, whole minutes (`minuti`); 200 in `totals` = 5 x 40. |
-| sec | integer | Seconds played (`secondi`) = `min` x 60 in every sample. |
-| sf | character | Starter flag (`starting five`), number sent as a string: `1` = started. |
-| falli_c | integer | Fouls committed (`falli commessi`). |
-| falli_sf | integer | Fouls drawn (`falli subiti`). |
-| falli_tc1 | integer | Technical fouls (`falli tecnici`; reading `tc1` as category-1 technicals is inferred). |
-| falli_fla | integer | Unsportsmanlike / flagrant fouls (`falli antisportivi`). |
-| t2_r | integer | 2-point field goals made (`tiri da 2 realizzati`). |
-| t2_t | integer | 2-point field goals attempted (`tiri da 2 tentati`). |
-| t2_perc | double | 2-point field-goal percentage, 0-100 (number; 0 when no attempt). |
-| sc | integer | Dunks (`schiacciate`). |
-| t3_r | integer | 3-point field goals made. |
-| t3_t | integer | 3-point field goals attempted. |
-| t3_perc | double | 3-point field-goal percentage, 0-100. |
-| tl_r | integer | Free throws made (`tiri liberi realizzati`). |
-| tl_t | integer | Free throws attempted (`tiri liberi tentati`). |
-| tl_perc | double | Free-throw percentage, 0-100. |
-| rimbalzi_o | integer | Offensive rebounds (`rimbalzi offensivi`). |
-| rimbalzi_d | integer | Defensive rebounds (`rimbalzi difensivi`). |
-| rimbalzi_t | integer | Total rebounds (`rimbalzi totali`). |
-| stoppate_dat | integer | Blocks (`stoppate date`). |
-| stoppate_sub | integer | Own shots blocked (`stoppate subite`). |
-| palle_p | integer | Turnovers (`palle perse`). |
-| palle_r | integer | Steals (`palle recuperate`). |
-| ass | integer | Assists credited to the player in the game. |
-| val_lega | integer | LBA efficiency rating (`valutazione Lega`). |
-| val_oer | double | OER = points / (FGA + turnovers + FTA / 2); verified on every 2026-27 sample row. |
-| plus_minus | integer | Plus-minus: point margin while on court. |
+A `hoopR_data` tibble with one row per player of both teams. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lba_box_score")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -87,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(lba_box_score(game_id = 25602))
 #> ── LBA Box Score from legabasket.it ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:43 UTC
+#> ℹ Data updated: 2026-11-09 19:12:55 UTC
 #> # A tibble: 24 × 39
 #>    game_id season side  team_id player_id player_num player_surname player_name
 #>      <int>  <int> <chr>   <int>     <int>      <int> <chr>          <chr>      

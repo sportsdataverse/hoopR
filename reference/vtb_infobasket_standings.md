@@ -22,43 +22,13 @@ vtb_infobasket_standings(comp_id)
 
 ## Value
 
-A `hoopR_data` tibble: Standings of one stage (a round-robin stage such
-as the regular season), one row per team. The columns are always these,
-in this order (sportsdataverse-py `vtb_infobasket_standings`); an empty
-valid answer raises `hoopR_no_data`, a valid body with no rows for this
-frame is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| comp_id | integer | Stage CompID the request asked for (50720 = the 2025-26 regular season): a stage below the season, not an END year. |
-| comp_team_id | integer | Infobasket competition-team id: one team's registration in one competition stage (a different key space from TeamID). |
-| team_id | integer | Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team\*/{teamId} and equals the v2 API `teamId`. |
-| place | integer | Current place in the standings. |
-| start_place | integer | Place before the latest round (unverified). |
-| games | integer | Games played in the stage (top-level copy of standing_game). |
-| won | integer | Games won in the stage (top-level copy of standing_win). |
-| lost | integer | Games lost in the stage (top-level copy of standing_lose). |
-| standing_game | integer | Games played in the stage. |
-| standing_win | integer | Games won in the stage. |
-| standing_draw | character | Draws; null in basketball. |
-| standing_lose | integer | Games lost in the stage. |
-| standing_forfeit | integer | Games lost by forfeit in the stage. |
-| standing_points | integer | League points (2 per win, 1 per loss). |
-| standing_goal_plus | integer | Points scored in the stage. |
-| standing_goal_minus | integer | Points conceded in the stage. |
-| standing_goal_difference | integer | Point difference (scored minus conceded). |
-| standing_penalty | integer | Points deducted. |
-| standing_is_play | logical | True while the team is still playing in the stage. |
-| victory_percent | double | Win percentage as a number (83 = 83 percent). |
-| avg_goal_plus | double | Average points scored per game. |
-| avg_goal_minus | double | Average points conceded per game. |
-| team_short_name_ru | character | The the team's short name in Russian (as the competition names it). |
-| team_short_name_en | character | The the team's short name in English (as the competition names it). |
-| team_name_ru | character | The the team's name in Russian (as the competition names it). |
-| team_name_en | character | The the team's name in English (as the competition names it). |
-| team_region_name_ru | character | The the team's region or city in Russian (as the competition names it). |
-| team_region_name_en | character | The the team's region or city in English (as the competition names it). |
+A `hoopR_data` tibble with one row per team in the standings. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_standings")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -77,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_standings(comp_id = 50720))
 #> ── VTB Infobasket Standings from org.infobasket.su ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:10:13 UTC
+#> ℹ Data updated: 2026-11-09 19:16:08 UTC
 #> # A tibble: 11 × 28
 #>    comp_id comp_team_id team_id place start_place games   won  lost
 #>      <int>        <int>   <int> <int>       <int> <int> <int> <int>

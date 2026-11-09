@@ -38,27 +38,13 @@ tbf_team_roster(season, team_process_id, competition = "bsl")
 
 ## Value
 
-A `hoopR_data` tibble. One row per rostered person. Birth dates are not
-returned. Every column below is always present (a zero-row tibble keeps
-them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). |
-| competition | character | TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). |
-| team_process_id | integer | Team-season id of the request (key space: TBF team registrations). |
-| person_id | integer | TBF person id (personId; key space: TBF persons). |
-| first_name | character | Given name as registered with TBF, mixed case ('Yigitcan'). |
-| last_name | character | Family name as registered with TBF, mixed case ('Saybir'). |
-| nationality | character | Nationality as a TURKISH country name (country); there is no code on this route. |
-| height_cm | integer | Height in centimetres; null when TBF has none. |
-| jersey_number | character | Shirt number as a string, so '0' and '00' stay distinct. |
-| games | integer | Games played (macSayisi = game count). |
-| seconds_played | integer | Season time on court in seconds (sure 'hh:mm:ss'). |
-| points_per_game | double | Points per game (sayi). |
-| efficiency_per_game | double | Efficiency rating per game (verimlilikPuani). |
+A `hoopR_data` tibble with one row per rostered person. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_team_roster")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -105,7 +91,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_team_roster(season = 2027, team_process_id = 265995))
 #> ── TBF Team Roster ────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:43 UTC
+#> ℹ Data updated: 2026-11-09 19:15:39 UTC
 #> # A tibble: 18 × 13
 #>    season competition team_process_id person_id first_name last_name nationality
 #>     <int> <chr>                 <int>     <int> <chr>      <chr>     <chr>      

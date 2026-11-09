@@ -22,11 +22,13 @@ nbagl_live_pbp(game_id, ...)
 
 ## Value
 
-Returns a data frame: PlayByPlay
-
-Columns as documented in the shared
-[nba_live_pbp_schema](https://hoopR.sportsdataverse.org/reference/nba_live_pbp_schema.md)
-table.
+A `hoopR_data` tibble with one row per play-by-play event. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "nbagl_live_pbp")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

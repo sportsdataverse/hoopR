@@ -20,23 +20,13 @@ lkl_period_scores(game_id)
 
 ## Value
 
-A `hoopR_data` tibble. One row per team and period (home first, periods
-ascending). `points` is the points scored IN the period, not cumulative.
-`period` 1-4 is regulation (`period_type` `regular`); 5 is the first
-overtime, 6 the second (`overtime`). A body without period scores gives
-a zero-row tibble. Every column below is always present (a zero-row
-tibble keeps them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | lkl.lt game id (key space: LKL games; the `{gameId}` of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under `_request`). |
-| team_id | integer | lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body. |
-| team_side | character | Side of the game the row belongs to: home or away (the game page's teams_info side; the box score, leaders and plays say home / away, and gameStatistics is keyed by team id so the runtime supplies the side). |
-| period | integer | Period number: 1-4 regulation, 5 the first overtime, 6 the second. |
-| period_type | character | regular for periods 1-4, overtime from period 5. |
-| points | integer | Points the team scored IN this period (not cumulative); keyed by period in the site's quarter_scores. |
+A `hoopR_data` tibble with one row per team and period. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lkl_period_scores")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

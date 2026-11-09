@@ -34,38 +34,13 @@ fiba_gamepage_pbp(game_id, comp, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | FIBA game id (Int64), global across competitions: gdapGameId, the `<gameId>` of a game-page URL. |
-| competition_id | integer | FIBA competition id (Int64) of the game's edition; the comp argument. |
-| statistic_system | character | Live-stats system of the game: OVR (World Cup, Olympics) or FLS (club competitions, most qualifiers); they differ in the play-by-play action ids, order and text. |
-| period | character | Period name: Q1..Q4, then OT1, OT2... |
-| period_number | integer | 1-based position of the period in the game. |
-| action_id | character | Action id (String): '`<n>`:`<seq>`' in OVR games (3:0015), a sequence number in FLS games; unique within the game. |
-| order | integer | Sort key within the period (OVR: 1, 2, ...; FLS: 1000, 2000, ...); null on some period events. |
-| clock | character | Game clock: time REMAINING in the period, 'm:ss', counting down from 10:00 (5:00 in overtime). |
-| clock_seconds | integer | Seconds remaining in the period, derived from clock. |
-| wall_time_ms | double | Wall-clock time of the action, Unix epoch milliseconds. (Int64 in sportsdataverse-py; numeric here, the values exceed R's 32-bit integer range) |
-| score_a | integer | Team A score after the action. |
-| score_b | integer | Team B score after the action. |
-| action_code | character | Action code: P2 two-point shot, P3 three-point shot, FT free throw, REB rebound, TREB team rebound, ASS assist, ST steal, BS block, TO turnover, TTO team turnover, FOUL foul, RFOUL foul drawn, SUBST substitution, TIMO timeout, plus period events (STARTG, STARTP, ENDP, ENDG). |
-| action_family | character | Action family: shot, subst, timeout, periods, and 'unknwown' (FIBA's spelling) for every other action. |
-| description | character | English action text ('3pt jump shot missed', 'defensive rebound'); null on most OVR actions. |
-| organisation_id | integer | Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T\_`<id>` and the play-by-play oId. NOT the per-competition team_id. |
-| team_side | character | A or B: whether the row is the schedule's team A or team B (null when the page does not say). |
-| player_id | integer | FIBA person id (Int64), global across competitions and roles: the page's P\_`<id>`, play-by-play pId, roster personId and fiba_gdap_roster.player_id. |
-| player2_id | integer | FIBA person id (Int64) of the second player on a substitution; null when the game does not record it (the refs note FLS only, but the Paris 2024 final, an OVR game, carries it and the FLS games sampled leave it null). |
-| sub_direction | character | Substitution direction: IN or OUT; null on other actions. |
-| made | logical | True when the shot went in (two-pointers, three-pointers and free throws only; null otherwise). |
-| points_attempted | integer | Points the attempt was worth (2, 3 or 1), made or not; null on other actions. |
-| shot_type | character | Shot type derived from action_code: 2PT, 3PT or FT; null on other actions. |
-| shot_x | integer | Shot x, integer pixels on a half-court image across the court width (observed 0-278, basket near x = 139). Present only on shots; free throws are 0. Which sideline is x = 0 and the scale are UNVERIFIED. |
-| shot_y | integer | Shot y, integer pixels from the baseline (y = 0) towards midcourt (observed 0-224, basket near y = 25); both teams' shots are drawn on one basket. Free throws are 0. Scale UNVERIFIED. |
-| has_location | logical | True when shot_x / shot_y locate the shot (two- and three-pointers); False for free throws (always 0, 0); null on other actions. |
+A `hoopR_data` tibble with one row per play-by-play event. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gamepage_pbp")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -84,7 +59,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gamepage_pbp(game_id = 100720, comp = 208182))
 #> ── FIBA gamepage_pbp from fiba.basketball ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:31 UTC
+#> ℹ Data updated: 2026-11-09 19:11:45 UTC
 #> # A tibble: 497 × 26
 #>    game_id competition_id statistic_system period period_number action_id order
 #>      <int>          <int> <chr>            <chr>          <int> <chr>     <int>

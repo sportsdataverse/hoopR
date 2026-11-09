@@ -19,32 +19,12 @@ kzs_teams(competition_id)
 
 ## Value
 
-A `hoopR_data` tibble: Teams entered in a competition. An empty valid
-answer raises `hoopR_no_data`; the columns are always these, in this
-order (sportsdataverse-py `kzs_teams`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). |
-| team_id | integer | Team-application id: the team's registration (entry) for the season; play-by-play `teamApplicationId` is the same key space. |
-| team_application_id | integer | Team-application id: the team's registration (entry) for the season; play-by-play `teamApplicationId` is the same key space. |
-| club_id | integer | Club id: the club across seasons and categories (Ilirija = 16). No captured route is keyed by it. |
-| club_member | logical | True when the club is a KZS member (false on nested copies that omit it). |
-| team_internal_ranking | character | The club's internal team letter for the category (A = first team, B = second team). |
-| category | character | Age category: ABSOLUTE (senior) or U8-U23 / ANY (code table in kzs-returns.md). |
-| rank | character | Tier: FIRST-FOURTH or TOURNAMENT (code table). |
-| gender | character | MALE or FEMALE. |
-| sport_hall_id | integer | Sport hall (venue) id. `/sportHalls/{id}` is in the site bundle, not captured. |
-| sport_hall_name | character | Name of the venue (sports hall) where the game is played or the team is based. |
-| name | character | Team name for the season (sponsor name included). |
-| code | character | Team 3-letter code. |
-| home_jersey_color | character | Home jersey colour, hex '#RRGGBB'. |
-| guest_jersey_color | character | Away jersey colour, hex. |
-| logo_uuid | character | Team logo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
-| home_team_color | character | Home colour, hex. |
-| guest_team_color | character | Away colour, hex. |
-| short_name | character | Team short name (” when none). |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_teams")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -63,7 +43,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_teams(competition_id = 579))
 #> ── KZS Teams from api.kzs.si ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:42 UTC
+#> ℹ Data updated: 2026-11-09 19:12:54 UTC
 #> # A tibble: 11 × 19
 #>    competition_id team_id team_application_id club_id club_member
 #>             <int>   <int>               <int>   <int> <lgl>      

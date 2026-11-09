@@ -28,49 +28,13 @@ sportpress_game_team_box(competition_id, game_id)
 
 ## Value
 
-A `hoopR_data` tibble: Team totals of both sides from the box score of a
-finished game. An empty valid answer raises `hoopR_no_data`; the columns
-are always these, in this order (sportsdataverse-py
-`sportpress_game_team_box`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | Game id the box score was asked for (the body does not echo it). |
-| competition_id | integer | Competition id the box score was asked for; checked against the game. |
-| team_side | character | Side of the game the row belongs to: home or away (the provider's is_home, or side 1 / 2). |
-| competition_team_id | integer | Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. |
-| team | character | Team display name including the sponsor; varies with language and playoff suffixes: never join on it. |
-| team_short_name | character | Three-letter club code (ANT, MON, ...), stable across seasons in the samples. |
-| minute | integer | The team's total: minutes played; for a team total, the sum over its players (200 + 25 per overtime). |
-| foul | integer | The team's total: personal fouls committed. |
-| defensive_foul | integer | The team's total: fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. |
-| dunk_made | integer | The team's total: dunks made (a subset of the two-point field goals). |
-| dunk_all | integer | The team's total: dunks attempted. |
-| dunk_percent | double | The team's total: dunk percentage 0-100; 0 when none were attempted. |
-| two_point_made | integer | The team's total: two-point field goals made. |
-| two_point_all | integer | The team's total: two-point field goals attempted. |
-| two_point_percent | double | The team's total: two-point percentage 0-100. |
-| three_point_made | integer | The team's total: three-point field goals made. |
-| three_point_all | integer | The team's total: three-point field goals attempted. |
-| three_point_percent | double | The team's total: three-point percentage 0-100. |
-| throw_made | integer | The team's total: all field goals made, two- plus three-pointers (the provider calls them 'throw'). |
-| throw_all | integer | The team's total: all field goals attempted, two- plus three-pointers (the provider calls them 'throw'). |
-| throw_percent | double | The team's total: field-goal percentage 0-100. |
-| free_throw_made | integer | The team's total: free throws made. |
-| free_throw_all | integer | The team's total: free throws attempted. |
-| free_throw_percent | double | The team's total: free-throw percentage 0-100. |
-| offensive_rebound | integer | The team's total: offensive rebounds. |
-| defensive_rebound | integer | The team's total: defensive rebounds. |
-| total_rebound | integer | The team's total: total rebounds (offensive plus defensive). |
-| block | integer | The team's total: shots blocked by the player. |
-| block_against | integer | The team's total: own shots blocked by an opponent. |
-| turnover | integer | The team's total: turnovers committed. |
-| steal | integer | The team's total: steals (balls taken from an opponent). |
-| assist | integer | The team's total: assists (passes leading directly to a made basket). |
-| points | integer | Team points in the box score; can differ from the schedule final score (about 18 of 1,246 sampled team boxes, by 2-21 points). |
-| value | integer | The team's total: efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. |
-| plusminus | integer | The team's total: plus/minus: the score margin while the player (or team) was on court; for a team total it is the game margin. |
+A `hoopR_data` tibble with one row per team in the game. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportpress_game_team_box")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -89,7 +53,7 @@ lists every function in this family.
 # \donttest{
   try(sportpress_game_team_box(competition_id = 25, game_id = 11295))
 #> ── BNXT League Game Team Box Score from Sportpress ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:19 UTC
+#> ℹ Data updated: 2026-11-09 19:15:14 UTC
 #> # A tibble: 2 × 35
 #>   game_id competition_id team_side competition_team_id team      team_short_name
 #>     <int>          <int> <chr>                   <int> <chr>     <chr>          

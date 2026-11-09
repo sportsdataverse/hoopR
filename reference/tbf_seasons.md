@@ -14,21 +14,12 @@ tbf_seasons()
 
 ## Value
 
-A `hoopR_data` tibble. One row per season, newest first. `season` is the
-END year of the label (2026-2027 -\> 2027); `international` marks the
-odd `UA-` seasons. Every column below is always present (a zero-row
-tibble keeps them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season_id | integer | Internal TBF season id (key space: TBF seasons, global across leagues: 174 = 2026-2027, 172 = 2025-2026; the odd ids are international UA- seasons). Never an sdv key: use season (END year). |
-| season_label | character | Season label as TBF writes it, 'YYYY-YYYY' (start and end year). |
-| season | integer | Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). |
-| start_date | Date | Season start, Turkey local time (Europe/Istanbul, UTC+3), ISO 8601 without zone: domestic seasons run 07-01 to 06-30, international ones 10-01 to 09-30. |
-| end_date | Date | Season end, Turkey local time (Europe/Istanbul, UTC+3), ISO 8601 without zone ('2027-06-30T23:59:00'). |
-| international | logical | True for the international UA- seasons (odd season ids); false for domestic ones. |
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_seasons")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -75,7 +66,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_seasons())
 #> ── TBF Seasons ────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:39 UTC
+#> ℹ Data updated: 2026-11-09 19:15:35 UTC
 #> # A tibble: 20 × 6
 #>    season_id season_label season start_date end_date   international
 #>        <int> <chr>         <int> <date>     <date>     <lgl>        

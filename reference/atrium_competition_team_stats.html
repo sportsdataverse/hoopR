@@ -38,6 +38,7 @@ Endpoint: GET https://embed-api.eui.connect.sportradar.com/v1/embed/{website_id}
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -154,7 +155,11 @@ competitions.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble, one row per <code>(table_key, entity_name, stat_key)</code>:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>website_id</td><td>integer</td><td>Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self.</td></tr><tr><td>season_id</td><td>character</td><td>Season UUID of the table; null for the competition-scoped routes (their bodies carry none).</td></tr><tr><td>table_key</td><td>character</td><td>Statistics table the row is from: averages, shootingstatistics, totals, ... (the set is per site).</td></tr><tr><td>table_label</td><td>character</td><td>The table's heading in the site's language (e.g. Moyennes).</td></tr><tr><td>person_id</td><td>character</td><td>Player UUID decoded from the widget link beside the name (the tables carry names only); null when the link is missing or undecodable, and always null in team and competition bodies.</td></tr><tr><td>person_name</td><td>character</td><td>Player name as the site prints it; null in team tables.</td></tr><tr><td>entity_id</td><td>character</td><td>Team UUID decoded from the widget link (team tables only; player tables name the team but carry no id).</td></tr><tr><td>entity_name</td><td>character</td><td>Team name as the site prints it; for player rows of a stat table it is the player's team.</td></tr><tr><td>stat_key</td><td>character</td><td>Statistic key as the API names it (pointsPerGame, fieldGoalsMade, ...), unchanged from header key.</td></tr><tr><td>stat_name</td><td>character</td><td>Short column heading the site shows for the statistic (PTS, REB), in the site's language.</td></tr><tr><td>stat_label</td><td>character</td><td>Longer statistic label the site shows (code in the API), in the site's language.</td></tr><tr><td>value</td><td>double</td><td>Numeric value of the statistic; null when the API sends a duration or text (see value_text).</td></tr><tr><td>value_text</td><td>character</td><td>Non-numeric statistic value, e.g. an ISO 8601 duration such as PT12M2S for minutes per game.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per (<code>table_key</code>, <code>entity_name</code>, <code>stat_key</code>).
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "atrium_competition_team_stats")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="atrium_fixtures.html">atrium_fixtures()</a></code>.</p>

@@ -20,16 +20,12 @@ kzs_rounds(competition_id)
 
 ## Value
 
-A `hoopR_data` tibble: Number of rounds of each phase of a competition.
-An empty valid answer raises `hoopR_no_data`; the columns are always
-these, in this order (sportsdataverse-py `kzs_rounds`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). |
-| phase_id | integer | Competition-phase id. Joins to `competitions[].competitionPhaseId` on matches and `/competitions/{competitionId}` `phases[].id`. |
-| rounds | integer | Number of rounds in the phase. |
+A `hoopR_data` tibble with one row per round. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_rounds")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

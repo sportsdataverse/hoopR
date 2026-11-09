@@ -41,19 +41,12 @@ genius_match_competition(org, match_id, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (a zero-row tibble with these columns when Genius
-answers an empty valid page), or the raw list when
-`return_parsed = FALSE`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | Match id from the page's hidden input \#matchId (equals the {matchId} asked for). Genius match id: the {matchId} of data.json and /u/; one global sequence across every Genius customer (~0.3 M in 2016, ~2.9 M in Oct 2026) |
-| comp_id | integer | Competition id from the hidden input \#compId. Genius competition id (compId): one per org competition-season; the {compId} of hosted and data/competition paths. The way to map a data.json game to its competition and season |
-| competition_name | character | Competition label from \#competitionName, free text ('Stoiximan GBL 2026-2027'); carries the season only when the org writes it in |
-| org_label | character | First item of og:description: the org's display code (ESAKE) |
-| og_description | character | The page's og:description: `<ORG> , <competition>, Check out the full statistics here` |
-| org | character | ORG code the request used (the hosted ORG, or the LiveStats ORG for the /u/ shell). |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "genius_match_competition")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

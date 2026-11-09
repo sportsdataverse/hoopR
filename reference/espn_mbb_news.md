@@ -24,17 +24,35 @@ espn_nba_news(limit = 50)
 
 ## Value
 
-Returns a tibble of news articles.
+A `hoopR_data` tibble with one row per news article.
 
-Columns as documented in the shared
-[espn_mbb_news_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_news_schema.md)
-table.
+|             |           |                                   |
+|-------------|-----------|-----------------------------------|
+| col_name    | types     | description                       |
+| id          | character | Id.                               |
+| type        | character | Record type / category.           |
+| headline    | character | News headline.                    |
+| description | character | Long-form description text.       |
+| published   | character | Publication timestamp (ISO 8601). |
+| premium     | logical   |                                   |
+| byline      | character | News article byline / author.     |
+| link_web    | character | Web link / URL.                   |
+| league_id   | character | League identifier ('10' = WNBA).  |
 
-Returns a tibble of news articles.
+A `hoopR_data` tibble with one row per news article.
 
-Columns as documented in the shared
-[espn_mbb_news_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_news_schema.md)
-table.
+|             |           |                                   |
+|-------------|-----------|-----------------------------------|
+| col_name    | types     | description                       |
+| id          | character | Id.                               |
+| type        | character | Record type / category.           |
+| headline    | character | News headline.                    |
+| description | character | Long-form description text.       |
+| published   | character | Publication timestamp (ISO 8601). |
+| premium     | logical   |                                   |
+| byline      | character | News article byline / author.     |
+| link_web    | character | Web link / URL.                   |
+| league_id   | character | League identifier ('10' = WNBA).  |
 
 ## Details
 
@@ -65,27 +83,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:22 UTC
+#> ℹ Data updated: 2026-11-09 19:10:40 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Head… FSU hir… Florida St… 2026-11-… FALSE   Andre… https:/… 23       
-#> 2  5.04e7 Prev… Iona vi… Iona Gaels… 2026-11-… FALSE   NA     http://… 41       
-#> 3  5.04e7 Prev… Fairfie… Fairfield … 2026-11-… FALSE   NA     http://… 41       
-#> 4  5.04e7 Prev… No. 24 … Memphis Ti… 2026-11-… FALSE   NA     http://… 41       
-#> 5  5.04e7 Prev… McMilli… Jackson St… 2026-11-… FALSE   NA     http://… 41       
+#> 1  5.04e7 Story Breakin… Stats, rec… 2026-11-… FALSE   ESPN   https:/… 41       
+#> 2  5.04e7 Head… UCLA ho… UCLA jumpe… 2026-11-… FALSE   NA     https:/… 41       
+#> 3  5.04e7 Head… FSU hir… Florida St… 2026-11-… FALSE   Andre… https:/… 23       
+#> 4  5.04e7 Prev… Iona vi… Iona Gaels… 2026-11-… FALSE   NA     http://… 41       
+#> 5  5.04e7 Prev… Fairfie… Fairfield … 2026-11-… FALSE   NA     http://… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:22 UTC
+#> ℹ Data updated: 2026-11-09 19:10:40 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Story Fantasy… "Steve Ale… 2026-11-… FALSE   Steve… https:/… 3090     
-#> 2  5.00e7 Story NBA buz… "The NBA i… 2026-11-… FALSE   ESPN … https:/… 46       
-#> 3  5.04e7 Head… Giannis… "Giannis A… 2026-11-… FALSE   NA     https:/… 46       
-#> 4  5.04e7 Story Bobby M… "With tax … 2026-11-… FALSE   Bobby… https:/… 46       
-#> 5  5.04e7 Story What's … "At 4-6, t… 2026-11-… FALSE   Ramon… https:/… 46       
+#> 1  5.04e7 Story Monday'… "Andre Sne… 2026-11-… FALSE   Andre… https:/… 22000    
+#> 2  5.04e7 Head… Sources… "The NBA i… 2026-11-… FALSE   NA     https:/… 46       
+#> 3  5.04e7 Story Fantasy… "Steve Ale… 2026-11-… FALSE   Steve… https:/… 3090     
+#> 4  5.00e7 Story NBA buz… "The NBA i… 2026-11-… FALSE   ESPN … https:/… 46       
+#> 5  5.04e7 Head… Giannis… "Giannis A… 2026-11-… FALSE   NA     https:/… 46       
 # }
 ```

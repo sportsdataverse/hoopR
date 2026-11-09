@@ -58,14 +58,26 @@ espn_nba_team_season_profile(team_id, season = most_recent_nba_season(), ...)
 
 ## Value
 
-A named list of data frames: `Info`, `Record`, `NextEvent`,
+A named list of `hoopR_data` tibbles: `Info`, `Record`, `NextEvent`,
 `StandingSummary`, `Coaches`.
 
 **Info**
 
-Columns as documented in the shared
-[espn_mbb_team_info_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_info_schema.md)
-table.
+|                    |           |                                            |
+|--------------------|-----------|--------------------------------------------|
+| col_name           | types     | description                                |
+| id                 | character | Id.                                        |
+| uid                | character | ESPN UID string (universal identifier).    |
+| slug               | character | URL-safe identifier.                       |
+| abbreviation       | character | Short abbreviation.                        |
+| display_name       | character | Display name.                              |
+| short_display_name | character | Short display name.                        |
+| name               | character | Display name.                              |
+| nickname           | character | Team or athlete nickname.                  |
+| location           | character | Location.                                  |
+| color              | character | Primary color (hex without leading '#').   |
+| alternate_color    | character | Alternate color (hex without leading '#'). |
+| logo               | character | Team or league logo URL.                   |
 
 **Record**
 
@@ -103,23 +115,47 @@ table.
 | last_name  | character | Player's last name.               |
 | experience | integer   | Years of professional experience. |
 
-A single tibble with one row per athlete.
+A `hoopR_data` tibble with one row per athlete.
 
-Columns as documented in the shared
-[espn_mbb_team_roster_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_roster_schema.md)
-table. ESPN's roster endpoint ignores the season, so a season before the
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| athlete_id | character | Unique athlete identifier (ESPN). |
+| full_name | character | Player's full name. |
+| jersey | character | Jersey number worn by the player. |
+| position_abbrev | character |  |
+| position_name | character | Listed roster position ('Guard', 'Forward', 'Center'). |
+| height | character | Player height (string e.g. '6-2' or inches). |
+| weight | character | Player weight in pounds. |
+| age | character | Player age (in years). |
+| birth_date | character | Date of birth (YYYY-MM-DD). |
+| birth_place | character | Place of birth. |
+| headshot | character | Headshot image URL. |
+| link_web | character | Web link / URL. |
+| status | character | Status label. |
+| team_id | character | Unique team identifier. |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+
+ESPN's roster endpoint ignores the season, so a season before the
 current one is built from that season's published player box scores
 (name, jersey, position and headshot from the athlete's last game; bio
 columns `NA`), and errors when none are published.
 
-A single long-format tibble (one row per category-rank-athlete).
+A `hoopR_data` tibble with one row per category-rank-athlete.
 
-Columns as documented in the shared
-[espn_mbb_team_leaders_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_leaders_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| team_id | character | Unique team identifier. |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| category | character | Category label. |
+| display_name | character | Display name. |
+| athlete_id | character | Unique athlete identifier (ESPN). |
+| athlete_name | character | Athlete display name (ESPN). |
+| value | numeric | Numeric or string value field. |
+| rank | integer | Rank. |
 
-A single-row tibble with team identity scalars and `_ref` URL columns.
-Selected columns:
+A `hoopR_data` tibble with one row per team-season.
 
 |  |  |  |
 |----|----|----|
@@ -147,14 +183,29 @@ Selected columns:
 | coaches_ref | character | `$ref` to team coaches resource. |
 | franchise_ref | character | `$ref` to franchise resource. |
 
-A named list of data frames: `Info`, `Record`, `NextEvent`,
+The table lists selected columns: team identity scalars and `_ref` URL
+columns.
+
+A named list of `hoopR_data` tibbles: `Info`, `Record`, `NextEvent`,
 `StandingSummary`, `Coaches`.
 
 **Info**
 
-Columns as documented in the shared
-[espn_mbb_team_info_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_info_schema.md)
-table.
+|                    |           |                                            |
+|--------------------|-----------|--------------------------------------------|
+| col_name           | types     | description                                |
+| id                 | character | Id.                                        |
+| uid                | character | ESPN UID string (universal identifier).    |
+| slug               | character | URL-safe identifier.                       |
+| abbreviation       | character | Short abbreviation.                        |
+| display_name       | character | Display name.                              |
+| short_display_name | character | Short display name.                        |
+| name               | character | Display name.                              |
+| nickname           | character | Team or athlete nickname.                  |
+| location           | character | Location.                                  |
+| color              | character | Primary color (hex without leading '#').   |
+| alternate_color    | character | Alternate color (hex without leading '#'). |
+| logo               | character | Team or league logo URL.                   |
 
 **Record**
 
@@ -192,23 +243,47 @@ table.
 | last_name  | character | Player's last name.               |
 | experience | integer   | Years of professional experience. |
 
-A single tibble with one row per athlete.
+A `hoopR_data` tibble with one row per athlete.
 
-Columns as documented in the shared
-[espn_mbb_team_roster_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_roster_schema.md)
-table. ESPN's roster endpoint ignores the season, so a season before the
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| athlete_id | character | Unique athlete identifier (ESPN). |
+| full_name | character | Player's full name. |
+| jersey | character | Jersey number worn by the player. |
+| position_abbrev | character |  |
+| position_name | character | Listed roster position ('Guard', 'Forward', 'Center'). |
+| height | character | Player height (string e.g. '6-2' or inches). |
+| weight | character | Player weight in pounds. |
+| age | character | Player age (in years). |
+| birth_date | character | Date of birth (YYYY-MM-DD). |
+| birth_place | character | Place of birth. |
+| headshot | character | Headshot image URL. |
+| link_web | character | Web link / URL. |
+| status | character | Status label. |
+| team_id | character | Unique team identifier. |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+
+ESPN's roster endpoint ignores the season, so a season before the
 current one is built from that season's published player box scores
 (name, jersey, position and headshot from the athlete's last game; bio
 columns `NA`), and errors when none are published.
 
-A single long-format tibble (one row per category-rank-athlete).
+A `hoopR_data` tibble with one row per category-rank-athlete.
 
-Columns as documented in the shared
-[espn_mbb_team_leaders_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_leaders_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| team_id | character | Unique team identifier. |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| category | character | Category label. |
+| display_name | character | Display name. |
+| athlete_id | character | Unique athlete identifier (ESPN). |
+| athlete_name | character | Athlete display name (ESPN). |
+| value | numeric | Numeric or string value field. |
+| rank | integer | Rank. |
 
-A single-row tibble with team identity scalars and `_ref` URL columns.
-Selected columns:
+A `hoopR_data` tibble with one row per team-season.
 
 |  |  |  |
 |----|----|----|
@@ -237,6 +312,9 @@ Selected columns:
 | transactions_ref | character | `$ref` to team transactions resource (if present). |
 | franchise_ref | character | `$ref` to franchise resource. |
 
+The table lists selected columns: team identity scalars and `_ref` URL
+columns.
+
 ## See also
 
 [family_espn_mbb](https://hoopR.sportsdataverse.org/reference/family_espn_mbb.md)
@@ -256,7 +334,7 @@ Saiem Gilani
   espn_mbb_team(team_id = "150", season = 2025)
 #> $Info
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Info from ESPN.com ───────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:45 UTC
+#> ℹ Data updated: 2026-11-09 19:11:03 UTC
 #> # A tibble: 1 × 13
 #>   id    uid    slug  abbreviation display_name short_display_name name  nickname
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -266,7 +344,7 @@ Saiem Gilani
 #> 
 #> $Record
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Record from ESPN.com ─────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:45 UTC
+#> ℹ Data updated: 2026-11-09 19:11:03 UTC
 #> # A tibble: 1 × 4
 #>   description    stats         summary type 
 #>   <chr>          <list>        <chr>   <chr>
@@ -277,7 +355,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Standing Summary from ESPN.com ────────────
-#> ℹ Data updated: 2026-11-09 17:04:45 UTC
+#> ℹ Data updated: 2026-11-09 19:11:03 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary
 #>   <chr>           
@@ -290,7 +368,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_roster(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Roster from ESPN.com player box scores ────
-#> ℹ Data updated: 2026-11-09 17:04:48 UTC
+#> ℹ Data updated: 2026-11-09 19:11:05 UTC
 #> # A tibble: 15 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
@@ -319,7 +397,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_season_profile(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Profile from ESPN.com ──────────────
-#> ℹ Data updated: 2026-11-09 17:04:48 UTC
+#> ℹ Data updated: 2026-11-09 19:11:05 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <chr>    <chr>        <chr>       
@@ -336,7 +414,7 @@ Saiem Gilani
   espn_nba_team(team_id = "13", season = 2025)
 #> $Info
 #> ── ESPN NBA Team Info from ESPN.com ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:49 UTC
+#> ℹ Data updated: 2026-11-09 19:11:06 UTC
 #> # A tibble: 1 × 12
 #>   id    uid    slug  abbreviation display_name short_display_name name  location
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -346,7 +424,7 @@ Saiem Gilani
 #> 
 #> $Record
 #> ── ESPN NBA Team Record from ESPN.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:49 UTC
+#> ℹ Data updated: 2026-11-09 19:11:06 UTC
 #> # A tibble: 3 × 4
 #>   description    stats         summary type 
 #>   <chr>          <list>        <chr>   <chr>
@@ -359,7 +437,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN NBA Team Standing Summary from ESPN.com ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:49 UTC
+#> ℹ Data updated: 2026-11-09 19:11:06 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary       
 #>   <chr>                  
@@ -372,7 +450,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_roster(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Roster from ESPN.com player box scores ───────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:49 UTC
+#> ℹ Data updated: 2026-11-09 19:11:07 UTC
 #> # A tibble: 26 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
@@ -397,7 +475,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_season_profile(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Season Profile from ESPN.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:50 UTC
+#> ℹ Data updated: 2026-11-09 19:11:07 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <lgl>    <chr>        <chr>       

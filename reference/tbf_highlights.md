@@ -23,21 +23,13 @@ tbf_highlights(match_id)
 
 ## Value
 
-A `hoopR_data` tibble. One row per statistic with the home and away
-value. Every column below is always present (a zero-row tibble keeps
-them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. |
-| title | character | Statistic name in Turkish (Ribaund = rebounds, Asist = assists, Top Kaybi = turnovers). |
-| category | character | Statistic code (leaderCategory), e.g. PointsFromPaint, LeadChanges, TimeLeading. |
-| home_value | character | Home value exactly as sent (a string: '90', or '28:38' for TimeLeading). |
-| away_value | character | Away value exactly as sent (a string: '89', or '8:19' for TimeLeading). |
-| home_number | double | Home value as a number; null for a time value such as TimeLeading. |
-| away_number | double | Away value as a number; null for a time value such as TimeLeading. |
+A `hoopR_data` tibble with one row per statistic with the home and away
+value. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_highlights")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

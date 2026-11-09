@@ -27,58 +27,12 @@ pleague_stat_player(season, stage_sn)
 
 ## Value
 
-A `hoopR_data` tibble: Player season averages and totals of one season
-and stage: shooting, rebounds, assists and fouls. An empty valid answer
-is a zero-row tibble with these columns, in this order
-(sportsdataverse-py `pleague_stat_player`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2025 = the site's slug '2024-25'): the first year of the slug plus one. |
-| season_slug | character | The site's season slug as printed: the START year, then the END year's last two digits ('2024-25'). |
-| stage_sn | integer | Stage select value: 2 = regular season, 3 = playoffs, 4 = finals (echo of the request, checked against the page's selected option). |
-| stage | character | Stage slug: pre-season ((Chinese text), exhibition games before the season), regular-season ((Chinese text)), playoffs ((Chinese text)) or finals ((Chinese text), the championship series). |
-| player_page_id | character | The 8-character page id of /player/{id} (e.g. '1JbPozLB'). The box random_id on 2022-23+ rows; NOT the box player_id. |
-| name_zh | character | Player name as printed (Traditional Chinese, or a transliteration for foreign players). |
-| jersey | character | Shirt number as a string (the player's number in the latest game). |
-| team_zh | character | Team name in Traditional Chinese as the page prints it (a traded player shows the current team). |
-| games | integer | Games played ((Chinese text)). |
-| minutes_avg | character | Minutes per game 'mm:ss' ((Chinese text)). |
-| minutes_total | character | Total minutes 'mmm:ss' ((Chinese text)). |
-| fg2_made_avg | double | Per-game average of 2-point makes ((Chinese text)). |
-| fg2_made_total | integer | Season total of 2-point makes ((Chinese text)). |
-| fg2_att_avg | double | Per-game average of 2-point attempts ((Chinese text)). |
-| fg2_att_total | integer | Season total of 2-point attempts ((Chinese text)). |
-| fg3_made_avg | double | Per-game average of 3-point makes ((Chinese text)). |
-| fg3_made_total | integer | Season total of 3-point makes ((Chinese text)). |
-| fg3_att_avg | double | Per-game average of 3-point attempts ((Chinese text)). |
-| fg3_att_total | integer | Season total of 3-point attempts ((Chinese text)). |
-| ft_made_avg | double | Per-game average of free-throw makes ((Chinese text)). |
-| ft_made_total | integer | Season total of free-throw makes ((Chinese text)). |
-| ft_att_avg | double | Per-game average of free-throw attempts ((Chinese text)). |
-| ft_att_total | integer | Season total of free-throw attempts ((Chinese text)). |
-| points_avg | double | Per-game average of points ((Chinese text)). |
-| points_total | integer | Season total of points ((Chinese text)). |
-| reb_off_avg | double | Per-game average of offensive rebounds ((Chinese text)). |
-| reb_off_total | integer | Season total of offensive rebounds ((Chinese text)). |
-| reb_def_avg | double | Per-game average of defensive rebounds ((Chinese text)). |
-| reb_def_total | integer | Season total of defensive rebounds ((Chinese text)). |
-| reb_avg | double | Per-game average of total rebounds ((Chinese text)). |
-| reb_total | integer | Season total of total rebounds ((Chinese text)). |
-| ast_avg | double | Per-game average of assists ((Chinese text)). |
-| ast_total | integer | Season total of assists ((Chinese text)). |
-| stl_avg | double | Per-game average of steals ((Chinese text)). |
-| stl_total | integer | Season total of steals ((Chinese text)). |
-| blk_avg | double | Per-game average of blocks ((Chinese text)). |
-| blk_total | integer | Season total of blocks ((Chinese text)). |
-| tov_avg | double | Per-game average of turnovers ((Chinese text)). |
-| tov_total | integer | Season total of turnovers ((Chinese text)). |
-| pf_avg | double | Per-game average of personal fouls ((Chinese text)). |
-| pf_total | integer | Season total of personal fouls ((Chinese text)). |
-| fg2_pct | double | 2-point percentage 0-100 ((Chinese text); the cell holds the same value as average and total). |
-| fg3_pct | double | 3-point percentage 0-100 ((Chinese text); same value as average and total). |
-| ft_pct | double | Free-throw percentage 0-100 ((Chinese text); same value as average and total). |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "pleague_stat_player")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

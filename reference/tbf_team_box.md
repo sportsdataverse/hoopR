@@ -23,47 +23,13 @@ tbf_team_box(match_id)
 
 ## Value
 
-A `hoopR_data` tibble. Two rows: home, then away. Minutes are the
-players' summed seconds. Every column below is always present (a
-zero-row tibble keeps them and their types); an answer with nothing in
-it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. |
-| side | character | Side of the game the row belongs to: home or away (from the route's isHome flag or home / away block). |
-| team_process_id | integer | Team-season id of the side (from the game header; key space: TBF team registrations). |
-| seconds_played | integer | Time on court in seconds, parsed from the 'mm:ss' or 'hh:mm:ss' text the API sends (team totals sum their players, so 200:00 = 12000). |
-| points | integer | Points scored in the game (or season) the row covers. |
-| fg_made | integer | Team field goals made, 2PT + 3PT. |
-| fg_attempted | integer | Team field goals attempted, 2PT + 3PT. |
-| fg_pct | integer | Team field-goal percentage 0-100, rounded to an integer by the API. |
-| fg2_made | integer | Team two-point field goals MADE (the API calls it twoPointShots). |
-| fg2_attempted | integer | Team two-point field goals attempted. |
-| fg2_pct | integer | Team two-point percentage 0-100, an integer. |
-| fg3_made | integer | Team three-point field goals MADE (the API calls it threePointShots). |
-| fg3_attempted | integer | Team three-point field goals attempted. |
-| fg3_pct | integer | Team three-point percentage 0-100, an integer. |
-| ft_made | integer | Team free throws MADE. |
-| ft_attempted | integer | Team free throws attempted. |
-| ft_pct | integer | Team free-throw percentage 0-100, an integer. |
-| off_rebounds | integer | Offensive rebounds (hucum ribaundu). |
-| def_rebounds | integer | Defensive rebounds (savunma ribaundu). |
-| rebounds | integer | Total rebounds (toplam ribaund). |
-| assists | integer | Assists in this game (asist). |
-| steals | integer | Steals in this game (top calma). |
-| blocks | integer | Shots this player blocked in this game (blok). |
-| turnovers | integer | Turnovers committed in this game (top kaybi). |
-| fouls | integer | Personal fouls committed (faul). |
-| fouls_drawn | integer | Fouls drawn by the team (rivalFoul). |
-| blocks_received | integer | Team shots blocked by the opponent. |
-| efficiency | integer | Team efficiency rating (verimlilik puani): the players' ratings summed; a number on team rows. |
-| team_off_rebounds | integer | Team offensive rebounds not credited to a player (homeTeamStats). |
-| team_def_rebounds | integer | Team defensive rebounds not credited to a player. |
-| team_rebounds | integer | Team rebounds not credited to a player (offensive + defensive). |
-| team_turnovers | integer | Team turnovers not credited to a player. |
-| team_fouls | integer | Team fouls not credited to a player (bench / coach technicals); 0 in the samples. |
+A `hoopR_data` tibble with one row per team in the game. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_team_box")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -110,7 +76,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_team_box(match_id = 346279))
 #> ── TBF Team Box Score ─────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:42 UTC
+#> ℹ Data updated: 2026-11-09 19:15:38 UTC
 #> # A tibble: 2 × 33
 #>   match_id side  team_process_id seconds_played points fg_made fg_attempted
 #>      <int> <chr>           <int>          <int>  <int>   <int>        <int>

@@ -28,21 +28,12 @@ bref_player_bios(letter = "a")
 
 ## Value
 
-A `hoopR_data` tibble with one row per player:
-
-|            |           |                                                   |
-|------------|-----------|---------------------------------------------------|
-| col_name   | types     | description                                       |
-| player     | character | Player name.                                      |
-| player_id  | character | Basketball-Reference id slug (e.g. `jamesle01`).  |
-| year_min   | integer   | First season played.                              |
-| year_max   | integer   | Last season played.                               |
-| pos        | character | Position(s).                                      |
-| height     | character | Listed height (e.g. `6-9`).                       |
-| weight     | integer   | Listed weight (lbs).                              |
-| birth_date | character | Birth date.                                       |
-| colleges   | character | College(s).                                       |
-| letter     | character | Last-name initial (echoes the `letter` argument). |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bref_player_bios")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

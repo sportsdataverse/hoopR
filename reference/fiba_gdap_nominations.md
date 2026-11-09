@@ -32,28 +32,13 @@ fiba_gdap_nominations(comp, level = "competition", return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_level | character | Level the nomination is attached to: Competition. |
-| competition_level_id | integer | Id of the object the nomination is attached to: the competitionId when competitionLevel is Competition. |
-| competition_role | character | Role label at competition level; null in every sample. |
-| role | character | Role: Referee, FIBA Table Officials, FIBA Certified Statisticians, FIBA Technical Delegate, FIBA Referee Instructor. |
-| role_code | character | Role code (REF, FIBATDEL...). |
-| game_assignment_role | character | Role on a game assignment; null at competition level. |
-| game_assignment_role_code | character | Code of gameAssignmentRole; null at competition level. |
-| game_assignment_role_order | character | Order of gameAssignmentRole; null at competition level. |
-| person_id | integer | FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P\_`<id>` = gdapPlayerId. |
-| first_name | character | Given name(s) as registered with FIBA. |
-| last_name | character | Last name (officials: upper case). |
-| gender | character | Sex of the person: M or F (Male/Female on getgdapcompetitionnominationsbyid). |
-| nationalities | character | Nationalities (FIBA codes on player info; country objects on rosters and officials). Stored as a JSON string. |
-| license_nationality | character | FIBA code of the federation that licenses the official. |
-| affiliated_national_federation_country_code | character | FIBA code of the federation the official is affiliated to. |
-| affiliated_national_federation_country_name | character | Country of the federation the official is affiliated to. |
+A `hoopR_data` tibble with one row per nomination. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_nominations")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

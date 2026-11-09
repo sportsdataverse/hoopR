@@ -50,6 +50,7 @@ load_mbb_team_group_seasons() for team membership."><meta property="og:image" co
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -170,7 +171,7 @@ the data into a database.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>Returns a <code>hoopR_data</code> tibble with one row per group lineage.</p>
+    <p>A <code>hoopR_data</code> tibble with one row per group lineage.</p>
 <p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League key: <code>mbb</code> or <code>nba</code>.</td></tr><tr><td>group_id</td><td>character</td><td>SDV group id, <code>{league}:{slug}</code> (e.g. <code>mbb:big-east</code>, <code>nba:atlantic</code>); one id per lineage across renames.</td></tr><tr><td>level</td><td>character</td><td>Group level: <code>league</code> (NBA), <code>subdivision</code> (MBB Division I), <code>conference</code>, or <code>division</code>.</td></tr><tr><td>first_season</td><td>integer</td><td>First season (ending year) with at least one member.</td></tr><tr><td>last_season</td><td>integer</td><td>Last season (ending year) with at least one member.</td></tr><tr><td>notes</td><td>character</td><td>Lineage decisions and source caveats.</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

@@ -20,25 +20,13 @@ kzs_competitions(season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: Competitions of a season (leagues, cups, youth,
-3x3, national teams), or of every season. An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `kzs_competitions`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id: one per competition per season (men's top league 2025-26 = 579, 2026-27 = 608). Joins to `/competitions/{competitionId}` and the `competitionId` query params. |
-| name | character | Competition name, Slovenian; the sponsor name changes over the years (glossary in kzs-returns.md). |
-| gender | character | MALE or FEMALE. |
-| category | character | Age category: ABSOLUTE (senior) or U8-U23 / ANY (code table in kzs-returns.md). |
-| rank | character | Tier: FIRST-FOURTH or TOURNAMENT (code table). |
-| season_id | integer | Season id: OPAQUE, not a year (1 = 2000/2001 ... 27 = 2026/2027, 31 = 1991/1992). The season `name` is 'START/END'; the sdv season is the END year (the second half of `name`). |
-| season_name | character | Season, 'START/END' (2025/2026); sdv season = the END year. |
-| season_is_active | logical | True for the current season only (2026/2027 on 2026-10-12). |
-| season_active | logical | Same as `isActive`. |
-| type | character | Competition type (code table); absent on 2 competitions. |
-| season | integer | The competition's season. |
+A `hoopR_data` tibble with one row per competition. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_competitions")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -57,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_competitions(season = 2026))
 #> ── KZS Competitions from api.kzs.si ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:30 UTC
+#> ℹ Data updated: 2026-11-09 19:12:41 UTC
 #> # A tibble: 44 × 11
 #>    competition_id name               gender category rank  season_id season_name
 #>             <int> <chr>              <chr>  <chr>    <chr>     <int> <chr>      

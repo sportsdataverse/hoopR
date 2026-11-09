@@ -40,6 +40,7 @@ Get ESPN NBA League Leaders"><meta property="og:image" content="https://raw.gith
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -158,13 +159,9 @@ forward compatibility. Proxy configuration should use
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A single <code>hoopR_data</code> tibble with one row per category-athlete
-pair.</p>
-<p>Columns as documented in the shared <a href="espn_mbb_leaders_schema.html">espn_mbb_leaders_schema</a> table.</p>
-<p>A single <code>hoopR_data</code> tibble with one row per category-athlete
-pair.</p>
-<p>Columns as documented in the shared <a href="espn_mbb_leaders_schema.html">espn_mbb_leaders_schema</a> table.</p>
-    </div>
+    <p>A <code>hoopR_data</code> tibble with one row per category-athlete pair.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season identifier (4-digit year or 'YYYY-YY' string).</td></tr><tr><td>season_type</td><td>integer</td><td>Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats).</td></tr><tr><td>category</td><td>character</td><td>Category label.</td></tr><tr><td>abbreviation</td><td>character</td><td>Short abbreviation.</td></tr><tr><td>athlete_id</td><td>character</td><td>Unique athlete identifier (ESPN).</td></tr><tr><td>athlete_name</td><td>character</td><td>Athlete display name (ESPN).</td></tr><tr><td>team_id</td><td>character</td><td>Unique team identifier.</td></tr><tr><td>team_abbrev</td><td>character</td><td></td></tr><tr><td>value</td><td>numeric</td><td>Numeric or string value field.</td></tr><tr><td>rank</td><td>integer</td><td>Rank.</td></tr><tr><td>display_value</td><td>character</td><td>Human-readable display value.</td></tr></table><p>A <code>hoopR_data</code> tibble with one row per category-athlete pair.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season identifier (4-digit year or 'YYYY-YY' string).</td></tr><tr><td>season_type</td><td>integer</td><td>Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats).</td></tr><tr><td>category</td><td>character</td><td>Category label.</td></tr><tr><td>abbreviation</td><td>character</td><td>Short abbreviation.</td></tr><tr><td>athlete_id</td><td>character</td><td>Unique athlete identifier (ESPN).</td></tr><tr><td>athlete_name</td><td>character</td><td>Athlete display name (ESPN).</td></tr><tr><td>team_id</td><td>character</td><td>Unique team identifier.</td></tr><tr><td>team_abbrev</td><td>character</td><td></td></tr><tr><td>value</td><td>numeric</td><td>Numeric or string value field.</td></tr><tr><td>rank</td><td>integer</td><td>Rank.</td></tr><tr><td>display_value</td><td>character</td><td>Human-readable display value.</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p><a href="family_espn_mbb.html">family_espn_mbb</a> lists every function in this family.</p>
@@ -180,7 +177,7 @@ pair.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_leaders</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span>, season_type <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Leaders from ESPN.com ─────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:21 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:39 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 350 × 11</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season season_type category      abbreviation athlete_id athlete_name team_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
@@ -201,7 +198,7 @@ pair.</p>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_leaders</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, season_type <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Leaders from ESPN.com ─────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:21 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:39 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 400 × 11</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season season_type category      abbreviation athlete_id athlete_name team_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>

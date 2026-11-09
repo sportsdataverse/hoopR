@@ -21,26 +21,12 @@ nbl_rosetta_seasons_current(org = "nbl")
 
 ## Value
 
-A `hoopR_data` tibble (one row: the season in progress):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| org | character | Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. |
-| season_id | character | DataCore season id (UUID v1); accepted as `{season_id}`. |
-| rosetta_season_id | character | Rosetta season id (UUID v4; v5 on NBL1); the `{season_id}` route key. |
-| name | character | Season name as Rosetta spells it (NBL26, WNBL 2024/25); names drift, key on season_year. |
-| season_year | integer | Rosetta's year of the season: the START year for the NBL and WNBL from 1998-99 (2025 = 2025-26), the calendar year for NBL1 and the 1979-1997 winter seasons. See season_end_year for the sdv key. |
-| season_type | character | Season type: regular (includes finals), preseason, in_season (cups, blitz, exhibition), test. |
-| start_date | character | First day of the season, ISO date-time without offset. |
-| end_date | character | Last day of the season, ISO date-time without offset; null on older seasons. |
-| competition_name | character | Name of the competition the season belongs to (e.g. NBL). |
-| competition_age_group | character | Unobserved in samples (null in every capture); type and meaning unverified. |
-| next_match_start_datetime | character | Tip-off of the season's next match, UTC; null when none. |
-| season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
-
-Columns the body adds beyond these follow, in body order
-(sportsdataverse-py keeps them too).
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "nbl_rosetta_seasons_current")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -59,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(nbl_rosetta_seasons_current(org = "nbl"))
 #> ── NBL Rosetta seasons_current from prod.rosetta.nbl.com.au ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:08 UTC
+#> ℹ Data updated: 2026-11-09 19:14:10 UTC
 #> # A tibble: 1 × 12
 #>   org   season_id     rosetta_season_id name  season_year season_type start_date
 #>   <chr> <chr>         <chr>             <chr>       <int> <chr>       <chr>     

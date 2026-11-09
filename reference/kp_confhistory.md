@@ -26,34 +26,12 @@ kp_confhistory(conf)
 
 ## Value
 
-A data frame with the following columns:
-
-|                  |           |                                          |
-|------------------|-----------|------------------------------------------|
-| col_name         | types     | description                              |
-| year             | integer   | 4-digit year.                            |
-| rank             | character | Rank.                                    |
-| tempo            | numeric   | Tempo.                                   |
-| efficiency       | numeric   | Efficiency.                              |
-| e_fg_pct         | numeric   | E field goals percentage (0-1 decimal).  |
-| to_pct           | numeric   | To percentage (0-1 decimal).             |
-| or_pct           | numeric   | Or percentage (0-1 decimal).             |
-| ft_rate          | numeric   | Ft rate.                                 |
-| fg_2_pct         | numeric   | Field goals 2 percentage (0-1 decimal).  |
-| fg_3_pct         | numeric   | Field goals 3 percentage (0-1 decimal).  |
-| ft_pct           | numeric   | Free throw percentage (0-1).             |
-| fg_3a_pct        | numeric   | Field goals 3a percentage (0-1 decimal). |
-| a_pct            | numeric   | A percentage (0-1 decimal).              |
-| blk_pct          | numeric   | Blocks percentage (0-1 decimal).         |
-| stl_pct          | numeric   | Steals percentage (0-1 decimal).         |
-| home_record      | character | Home win-loss record.                    |
-| bids             | character | Bids.                                    |
-| s16              | character | S16.                                     |
-| f4               | character | F4.                                      |
-| ch               | character | Ch.                                      |
-| reg_season_champ | character | Reg season champ.                        |
-| tourney_champ    | character | Tourney champ.                           |
-| best_team        | character | Best team.                               |
+A data frame with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kp_confhistory")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

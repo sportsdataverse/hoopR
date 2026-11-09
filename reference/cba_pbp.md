@@ -29,32 +29,12 @@ cba_pbp(schedule_id, quarter_num = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: One row per play, oldest first, all periods. An
-empty valid answer is a zero-row tibble with these columns, in this
-order (sportsdataverse-py `cba_pbp`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| schedule_id | integer | CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the `{scheduleId}` of every game route). Stamped by the runtime from the request; null on a body parsed without it. |
-| bt_textual_format | character | Second copy of the description; equal to textualFormat on every sampled row (unverified difference). |
-| color | character | Hex colour of the acting team (homeColor or visitingColor). |
-| distance | character | Unobserved: null in every sample (a shot distance slot). The API has NO shot x/y coordinates. |
-| home_color | character | Home team colour '#RRGGBB'. |
-| home_score | integer | Home team points after the play. NOT monotone row by row: a substitution row can carry a stale score (2017 game, Q1 0:40); the game's final score is the maximum. |
-| minutes | integer | Game clock, minutes REMAINING in the period (counts down: 10 or 12 at the start, depending on the era). |
-| player_cn_names | character | Names (Chinese surnames/short names) of the players in textualFormat, in order of mention (shooter or fouler first, then assister, rebounder or fouled player). 0-3 names. There are NO player ids in the play-by-play. |
-| player_fouls | character | Unobserved: null in every sample (a player's fouls slot). |
-| player_score | character | Unobserved: null in every sample (a player's points slot). |
-| quarter_num | integer | Period of the row (1-4; 5+ would be overtime). Equals the request's quarterNum on every row. |
-| seconds | integer | Game clock, seconds remaining within the minute. |
-| team_cn_alias1 | character | Unobserved: null in every sample (a team-name slot). |
-| team_cn_alias2 | character | Unobserved: null in every sample (a team-name slot). |
-| team_cn_alias3 | character | Unobserved: null in every sample (a team-name slot). |
-| textual_format | character | Play description sentence (Chinese) naming the players; the phrase glossary translates every form seen. Team names inside it can be a different era's name than the game header (a 2025-26 text reads (Chinese text)). Sentence forms (`{P}` a player, `{T}` a team): ``` {T}``{T} ``` substitution, `{P}` replaces `{P}`; `{P}` three-point jump shot, misses, `{P}` gets the defensive rebound; `{P}` layup (driving), scores; `{P}` takes two free throws, free throw 2 made; (Chinese text) (Chinese text) = `{P}` shooting foul on the opponent's shot (drawn by an unnamed player); `{P}` receives an assist from `{P}`, jump shot, three-pointer made; the full glossary is in cba_glossary.yaml. |
-| type | integer | Team the play belongs to: 1 = home, 2 = visiting (checked on all 667 rows of two games: color equals homeColor when 1 and visitingColor when 2). See the code table. |
-| visiting_color | character | Visiting team colour '#RRGGBB'. |
-| visitor_score | integer | Visiting team points after the play (same caveat as homeScore). |
+A `hoopR_data` tibble with one row per play. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cba_pbp")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -74,7 +54,7 @@ lists every function in this family.
   # First quarter only; omit quarter_num for the whole game.
   try(cba_pbp(schedule_id = 100105799, quarter_num = 1))
 #> ── CBA Play-by-Play from data-server.cbaleague.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:20 UTC
+#> ℹ Data updated: 2026-11-09 19:09:36 UTC
 #> # A tibble: 74 × 19
 #>    schedule_id bt_textual_format    color distance home_color home_score minutes
 #>          <int> <chr>                <chr> <chr>    <chr>           <int>   <int>

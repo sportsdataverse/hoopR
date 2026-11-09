@@ -51,26 +51,13 @@ acb_team_leaders(
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_team_leaders`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| club_id | integer | Stable club id asked for. |
-| competition_id | integer | Competition of the selected edition. |
-| edition_id | integer | Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, `season`. |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| scope | character | all_time = club record holders (the API's leaders); edition = the selected season (seasonLeaders). The assignment is inferred from the values (689 games for J.C. Navarro is a career figure). |
-| metric | character | Category in snake_case; avg\_\* are per-game averages, the rest totals. |
-| rank | integer | Place in the category list, 1 = the leader, in the order the feed lists them. |
-| value | double | The player's value in the category (a total or an average depending on the metric). |
-| player_id | integer | ACB licence number: the person id everywhere. A player's box-score `player.id`, his play-by-play and shot `playerLicenseId` and the `playerLicenceId` / `playerLicense` request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... |
-| player_name | character | Display (sporting) name ('Edy Tavares') |
-| first_name | character | Legal first name(s) |
-| last_name | character | Legal last name(s) |
-| shirt_number | character | Shirt number, a string (” or null when unknown) |
-| game_role | character | Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or ” in many rows |
+A `hoopR_data` tibble with one row per scope, statistic and rank. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_team_leaders")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

@@ -40,6 +40,7 @@ Get ESPN NBA Athletes Index"><meta property="og:image" content="https://raw.gith
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -174,11 +175,9 @@ forward compatibility. Proxy configuration should use
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A single <code>hoopR_data</code> tibble with one row per athlete.</p>
-<p>Columns as documented in the shared <a href="espn_mbb_athletes_index_schema.html">espn_mbb_athletes_index_schema</a> table.</p>
-<p>A single <code>hoopR_data</code> tibble with one row per athlete.</p>
-<p>Columns as documented in the shared <a href="espn_mbb_athletes_index_schema.html">espn_mbb_athletes_index_schema</a> table.</p>
-    </div>
+    <p>A <code>hoopR_data</code> tibble with one row per athlete.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>athlete_id</td><td>character</td><td>Unique athlete identifier (ESPN).</td></tr><tr><td>full_name</td><td>character</td><td>Player's full name.</td></tr><tr><td>jersey</td><td>character</td><td>Jersey number worn by the player.</td></tr><tr><td>position</td><td>character</td><td>Listed roster position (G, F, C, etc.).</td></tr><tr><td>team_id</td><td>character</td><td>Unique team identifier.</td></tr><tr><td>headshot</td><td>character</td><td>Headshot image URL.</td></tr><tr><td>status</td><td>character</td><td>Status label.</td></tr><tr><td>link</td><td>character</td><td></td></tr></table><p>A <code>hoopR_data</code> tibble with one row per athlete.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>athlete_id</td><td>character</td><td>Unique athlete identifier (ESPN).</td></tr><tr><td>full_name</td><td>character</td><td>Player's full name.</td></tr><tr><td>jersey</td><td>character</td><td>Jersey number worn by the player.</td></tr><tr><td>position</td><td>character</td><td>Listed roster position (G, F, C, etc.).</td></tr><tr><td>team_id</td><td>character</td><td>Unique team identifier.</td></tr><tr><td>headshot</td><td>character</td><td>Headshot image URL.</td></tr><tr><td>status</td><td>character</td><td>Status label.</td></tr><tr><td>link</td><td>character</td><td></td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p><a href="family_espn_mbb.html">family_espn_mbb</a> lists every function in this family.</p>
@@ -195,7 +194,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-in"><span>  <span class="fu">espn_mbb_athletes_index</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span>, limit <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Fetching page 1 of 1 for mens-college-basketball athletes (season=2025)...</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athletes Index from ESPN.com ──── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:03 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:21 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 50 × 9</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    athlete_id full_name jersey position team_id headshot status link     ref_url</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
@@ -215,7 +214,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-in"><span>  <span class="fu">espn_nba_athletes_index</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span>, limit <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Fetching page 1 of 1 for nba athletes (season=2025)...</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Athletes Index from ESPN.com ──────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:03 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:21 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 50 × 9</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    athlete_id full_name jersey position team_id headshot status link     ref_url</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>

@@ -122,7 +122,7 @@ nba_cumestatsteamgames(
 
 ## Value
 
-Return a named list of data frames: GameByGameStats, TotalPlayerStats
+A named list of tibbles: `GameByGameStats`, `TotalPlayerStats`.
 
 **GameByGameStats**
 
@@ -212,7 +212,7 @@ Return a named list of data frames: GameByGameStats, TotalPlayerStats
 | PER_MIN_BLK        | character |                                           |
 | PER_MIN_PTS        | character |                                           |
 
-Returns a named list of data frames: CumeStatsPlayerGames
+A named list of tibbles: `CumeStatsPlayerGames`.
 
 **CumeStatsPlayerGames**
 
@@ -222,7 +222,7 @@ Returns a named list of data frames: CumeStatsPlayerGames
 | MATCHUP  | character | Matchup.                |
 | GAME_ID  | character | Unique game identifier. |
 
-Returns a named list of data frames: GameByGameStats, TotalTeamStats
+A named list of tibbles: `GameByGameStats`, `TotalTeamStats`.
 
 **GameByGameStats**
 
@@ -321,7 +321,7 @@ Returns a named list of data frames: GameByGameStats, TotalTeamStats
 | AVG_PTS | character |  |
 | DQ | character |  |
 
-Returns a named list of data frames: CumeStatsTeamGames
+A named list of tibbles: `CumeStatsTeamGames`.
 
 **CumeStatsTeamGames**
 

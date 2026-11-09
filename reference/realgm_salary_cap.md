@@ -18,20 +18,12 @@ realgm_salary_cap()
 
 ## Value
 
-A `hoopR_data` tibble with one row per season:
-
-|                  |           |                                   |
-|------------------|-----------|-----------------------------------|
-| col_name         | types     | description                       |
-| season           | character | Season (e.g. `2025-2026`).        |
-| salary_cap       | character | Salary cap.                       |
-| luxury_tax       | character | Luxury-tax threshold.             |
-| x1st_apron       | character | First apron.                      |
-| x2nd_apron       | character | Second apron.                     |
-| bae              | character | Bi-annual exception.              |
-| non_taxpayer_mle | character | Non-taxpayer mid-level exception. |
-| taxpayer_mle     | character | Taxpayer mid-level exception.     |
-| team_room_mle    | character | Room mid-level exception.         |
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "realgm_salary_cap")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

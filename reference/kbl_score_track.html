@@ -36,6 +36,7 @@ Endpoint: GET https://api.kbl.or.kr/match/{gmkey}/match-chart"><meta property="o
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -140,9 +141,11 @@ season_code, game_code and game_no of kbl_schedule. Only final games are served;
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Lead tracker and score chart of a final game: home margin and both scores at eight
-checkpoints per period. The columns are always these, in this order (sportsdataverse-py <code>kbl_score_track</code>); an empty valid
-answer raises <code>hoopR_no_data</code>, a valid body with no rows for this frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>gmkey</td><td>character</td><td>Game key <code>S{seasonCode}G{gameCode}N{gameNo}</code> (e.g. S47G01N49): the id of every game route and game frame.</td></tr><tr><td>season_code</td><td>integer</td><td>KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League).</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS).</td></tr><tr><td>game_code</td><td>character</td><td>Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day.</td></tr><tr><td>game_no</td><td>integer</td><td>Game number inside the competition (glkey): the N part of the gmkey.</td></tr><tr><td>period</td><td>integer</td><td>Period number: 1-4 for the quarters, 5, 6, ... for the overtimes (the wire says X1 in the play-by-play, EQ1 in the match chart).</td></tr><tr><td>period_label</td><td>character</td><td>Period label: Q1-Q4, then OT1, OT2, ... (normalised from the wire's X1 / EQ1 / eq1).</td></tr><tr><td>checkpoint</td><td>integer</td><td>1-based checkpoint inside the period: eight per period, evenly spaced is assumed (every 75 s of a quarter; unverified), the last at the period's end.</td></tr><tr><td>home_margin</td><td>integer</td><td>Home margin (home minus away points) at the checkpoint.</td></tr><tr><td>home_score</td><td>integer</td><td>Home team points: cumulative at the checkpoint on the score track, the final total (all periods summed) on a game row, the full-time score in the schedule.</td></tr><tr><td>away_score</td><td>integer</td><td>Away team points: cumulative at the checkpoint on the score track, the final total (all periods summed) on a game row, the full-time score in the schedule.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per checkpoint of the game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "kbl_score_track")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="kbl_seasons.html">kbl_seasons()</a></code>.</p>

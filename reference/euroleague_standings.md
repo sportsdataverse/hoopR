@@ -51,120 +51,14 @@ euroleague_standings(
 
 ## Value
 
-A `hoopR_data` tibble with one row per team. The columns depend on
-`kind`:
-
-**`kind = "basicstandings"`**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| position | integer | Position code of the player (engine integer). |
-| position_change | character | Movement since the previous round (Up, Down, Equal). |
-| games_played | integer | Games played. |
-| games_won | integer | Games won. |
-| games_lost | integer | Games lost. |
-| qualified | logical | Whether the team has clinched qualification for the next phase. |
-| win_percentage | character | Win percentage, formatted (e.g. 100%). |
-| points_difference | character | Points for minus points against, signed and formatted (e.g. +19). |
-| points_for | integer | Points scored. |
-| points_against | integer | Points conceded. |
-| home_record | character | Home win-loss record (W-L). |
-| away_record | character | Away win-loss record (W-L). |
-| neutral_record | character | Neutral-venue win-loss record (W-L). |
-| overtime_record | character | Overtime win-loss record (W-L). |
-| last_ten_record | character | Win-loss record over the last ten games (W-L). |
-| group_name | character | Group: display name. |
-| last5_form | character | Results of the last five games, oldest first (W / L), JSON-encoded. |
-| club_code | character | Club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| club_name | character | Club: display name. |
-| club_abbreviated_name | character | Club: abbreviated display name. |
-| club_editorial_name | character | Club: editorial (long-form) display name. |
-| club_tv_code | character | Club: three-letter broadcast abbreviation of the club. |
-| club_is_virtual | logical | Club: whether the club is a placeholder rather than a real club. |
-| club_images_crest | character | Club: URL of the club crest image. |
-
-**`kind = "calendarstandings"`** (the `streaks` cell is JSON text:
-semantically equal to sportsdataverse-py's, not byte-equal – separators
-and unicode escaping differ)
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| position | integer | Position code of the player (engine integer). |
-| position_change | character | Movement since the previous round (Up, Down, Equal). |
-| games_played | integer | Games played. |
-| games_won | integer | Games won. |
-| games_lost | integer | Games lost. |
-| qualified | logical | Whether the team has clinched qualification for the next phase. |
-| group_name | character | Group: display name. |
-| streaks | character | Per-round result streaks: start date, end date and W-L record of each run, JSON-encoded. |
-| club_code | character | Club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| club_name | character | Club: display name. |
-| club_abbreviated_name | character | Club: abbreviated display name. |
-| club_editorial_name | character | Club: editorial (long-form) display name. |
-| club_tv_code | character | Club: three-letter broadcast abbreviation of the club. |
-| club_is_virtual | logical | Club: whether the club is a placeholder rather than a real club. |
-| club_images_crest | character | Club: URL of the club crest image. |
-
-**`kind = "streaks"`**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| position | integer | Position code of the player (engine integer). |
-| position_change | character | Movement since the previous round (Up, Down, Equal). |
-| games_played | integer | Games played. |
-| games_won | integer | Games won. |
-| games_lost | integer | Games lost. |
-| qualified | logical | Whether the team has clinched qualification for the next phase. |
-| home_record | character | Home win-loss record (W-L). |
-| away_record | character | Away win-loss record (W-L). |
-| last10 | character | Win-loss record over the last ten games (W-L). |
-| home_last5 | character | Win-loss record over the last five home games (W-L). |
-| away_last5 | character | Win-loss record over the last five away games (W-L). |
-| longest_wins_streak_current_season | integer | Longest winning streak this season. |
-| longest_loses_streak_current_season | integer | Longest losing streak this season. |
-| longest_wins_streak_any_season | integer | Longest winning streak in any season. |
-| longest_loses_streak_any_season | integer | Longest losing streak in any season. |
-| group_name | character | Group: display name. |
-| club_code | character | Club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| club_name | character | Club: display name. |
-| club_abbreviated_name | character | Club: abbreviated display name. |
-| club_editorial_name | character | Club: editorial (long-form) display name. |
-| club_tv_code | character | Club: three-letter broadcast abbreviation of the club. |
-| club_is_virtual | logical | Club: whether the club is a placeholder rather than a real club. |
-| club_images_crest | character | Club: URL of the club crest image. |
-
-**`kind = "aheadbehind"`**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| position | integer | Position code of the player (engine integer). |
-| position_change | character | Movement since the previous round (Up, Down, Equal). |
-| games_played | integer | Games played. |
-| games_won | integer | Games won. |
-| games_lost | integer | Games lost. |
-| qualified | logical | Whether the team has clinched qualification for the next phase. |
-| wins_percentage | character | Win percentage, formatted (e.g. 100%). |
-| quater1_ahead | character | Win-loss record when ahead after the 1st quarter (W-L; sic: the API spells quarter this way). |
-| quater1_behind | character | Win-loss record when behind after the 1st quarter (W-L; sic: the API spells quarter this way). |
-| quater1_tied | character | Win-loss record when tied after the 1st quarter (W-L; sic: the API spells quarter this way). |
-| half1_ahead | character | Win-loss record when ahead at the half (W-L; sic: the API spells quarter this way). |
-| half1_behind | character | Win-loss record when behind at the half (W-L; sic: the API spells quarter this way). |
-| half1_tied | character | Win-loss record when tied at the half (W-L; sic: the API spells quarter this way). |
-| quater3_ahead | character | Win-loss record when ahead after the 3rd quarter (W-L; sic: the API spells quarter this way). |
-| quater3_behind | character | Win-loss record when behind after the 3rd quarter (W-L; sic: the API spells quarter this way). |
-| quater3_tied | character | Win-loss record when tied after the 3rd quarter (W-L; sic: the API spells quarter this way). |
-| group_name | character | Group: display name. |
-| club_code | character | Club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| club_name | character | Club: display name. |
-| club_abbreviated_name | character | Club: abbreviated display name. |
-| club_editorial_name | character | Club: editorial (long-form) display name. |
-| club_tv_code | character | Club: three-letter broadcast abbreviation of the club. |
-| club_is_virtual | logical | Club: whether the club is a placeholder rather than a real club. |
-| club_images_crest | character | Club: URL of the club crest image. |
+A `hoopR_data` tibble with one row per team. Its columns depend on
+`kind`: `"basicstandings"`, `"calendarstandings"`, `"streaks"`,
+`"aheadbehind"`. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "euroleague_standings")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -193,7 +87,7 @@ lists every function in this family.
     euroleague_standings(competition_code = "E", season_code = "E2025", round = 1, kind = "streaks")
   })
 #> ── EuroLeague standings streaks from api-live.euroleague.net ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:13 UTC
+#> ℹ Data updated: 2026-11-09 19:11:25 UTC
 #> # A tibble: 20 × 23
 #>    position position_change games_played games_won games_lost qualified
 #>       <int> <chr>                  <int>     <int>      <int> <lgl>    

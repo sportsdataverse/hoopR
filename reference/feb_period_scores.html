@@ -40,6 +40,7 @@ cumulative. Overtime numbering is unverified."><meta property="og:image" content
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -145,7 +146,11 @@ cumulative. Overtime numbering is unverified.</p>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble with these columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>FEB game id (one global sequence): the {gameId} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request.</td></tr><tr><td>period</td><td>integer</td><td>Period number (1-4 regulation; overtime numbering is unverified, no overtime game is in the samples).</td></tr><tr><td>home_points</td><td>integer</td><td>Points the home team scored IN this period (not cumulative).</td></tr><tr><td>away_points</td><td>integer</td><td>Points the away team scored IN this period (not cumulative).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per period played.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "feb_period_scores")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="feb_game_info.html">feb_game_info()</a></code>.</p>

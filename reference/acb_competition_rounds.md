@@ -23,20 +23,13 @@ acb_competition_rounds(competition_ids = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py
-`acb_competition_rounds`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa. |
-| edition_id | integer | Season id the round belongs to (START year - 1935). |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| round_id | integer | Round id: global across seasons, not the round number (6017 = Liga 2026-27 round 3; 2600 = 2016-17 round 1) |
-| round_number | integer | Round number within the phase |
-| subphase_id | integer | Sub-phase id inside a phase (a playoff round or a cup round, e.g. 291, 292, 293); null in the regular season |
-| subphase_number | integer | Sub-phase number; null in the regular season |
+A `hoopR_data` tibble with one row per edition and round. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_competition_rounds")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

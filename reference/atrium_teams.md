@@ -56,17 +56,13 @@ atrium_teams(
 
 ## Value
 
-A `hoopR_data` tibble, one row per `(season_id, entity_id)`; `entity_id`
-is stable across seasons:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| season_id | character | Season UUID of the team list. |
-| entity_id | character | Team UUID (entity): one id per club across seasons, shared by every site that shows the team. |
-| name | character | Team name in the site's language. |
-| image_url | character | URL of the Sportradar-hosted image (400 px). |
+A `hoopR_data` tibble with one row per (`season_id`, `entity_id`). Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_teams")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -114,7 +110,7 @@ Other Atrium Functions:
     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
   ))
 #> ── Atrium teams from embed-api.eui.connect.sportradar.com ─────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:01 UTC
+#> ℹ Data updated: 2026-11-09 19:09:16 UTC
 #> # A tibble: 16 × 5
 #>    website_id season_id                            entity_id     name  image_url
 #>         <int> <chr>                                <chr>         <chr> <chr>    

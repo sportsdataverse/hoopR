@@ -724,15 +724,33 @@ nba_leaguedashteamshotlocations(
 
 ## Value
 
-Returns a named list of data frames: LeagueDashPTShots
+A named list of tibbles: `LeagueDashPTShots`.
 
 **LeagueDashPTShots**
 
-Columns as documented in the shared
-[nba_leaguedashoppptshot_leaguedashptshots_schema](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot_leaguedashptshots_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| GP | character | Games played. |
+| G | character | Games played. |
+| FGA_FREQUENCY | character |  |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| EFG_PCT | character | Effective field goal percentage (0-1). |
+| FG2A_FREQUENCY | character |  |
+| FG2M | character |  |
+| FG2A | character |  |
+| FG2_PCT | character |  |
+| FG3A_FREQUENCY | character |  |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
 
-Returns a named list of data frames: LeagueDashPlayerBioStats
+A named list of tibbles: `LeagueDashPlayerBioStats`.
 
 **LeagueDashPlayerBioStats**
 
@@ -763,7 +781,7 @@ Returns a named list of data frames: LeagueDashPlayerBioStats
 | TS_PCT               | character | True shooting percentage (0-1).       |
 | AST_PCT              | character | Assist percentage (0-1).              |
 
-Returns a named list of data frames: LeagueDashPlayerClutch
+A named list of tibbles: `LeagueDashPlayerClutch`.
 
 **LeagueDashPlayerClutch**
 
@@ -838,7 +856,7 @@ Returns a named list of data frames: LeagueDashPlayerClutch
 | TD3_RANK | character |  |
 | WNBA_FANTASY_PTS_RANK | character |  |
 
-Returns a named list of data frames: LeagueDashPTShots
+A named list of tibbles: `LeagueDashPTShots`.
 
 **LeagueDashPTShots**
 
@@ -866,7 +884,7 @@ Returns a named list of data frames: LeagueDashPTShots
 | FG3A | character | Three-point field goal attempts. |
 | FG3_PCT | character | Three-point field goal percentage (0-1). |
 
-Returns a named list of data frames: LeagueDashPlayerStats
+A named list of tibbles: `LeagueDashPlayerStats`.
 
 **LeagueDashPlayerStats**
 
@@ -940,7 +958,7 @@ Returns a named list of data frames: LeagueDashPlayerStats
 | TD3_RANK | character |  |
 | WNBA_FANTASY_PTS_RANK | character |  |
 
-Returns a named list of data frames: ShotLocations
+A named list of tibbles: `ShotLocations`.
 
 **ShotLocations**
 
@@ -978,7 +996,7 @@ Returns a named list of data frames: ShotLocations
 | Corner_3_FGA               | character |                                       |
 | Corner_3_FG_PCT            | character |                                       |
 
-Returns a named list of data frames: LeagueDashPTDefend
+A named list of tibbles: `LeagueDashPTDefend`.
 
 **LeagueDashPTDefend**
 
@@ -1000,7 +1018,7 @@ Returns a named list of data frames: LeagueDashPTDefend
 | NORMAL_FG_PCT                 | character |                        |
 | PCT_PLUSMINUS                 | character |                        |
 
-Returns a named list of data frames: LeagueDashPtStats
+A named list of tibbles: `LeagueDashPtStats`.
 
 **LeagueDashPtStats**
 
@@ -1033,7 +1051,7 @@ Returns a named list of data frames: LeagueDashPtStats
 | DRIVE_PF          | character |                                       |
 | DRIVE_PF_PCT      | character |                                       |
 
-Returns a named list of data frames: LeagueDashPtTeamDefend
+A named list of tibbles: `LeagueDashPtTeamDefend`.
 
 **LeagueDashPtTeamDefend**
 
@@ -1052,31 +1070,157 @@ Returns a named list of data frames: LeagueDashPtTeamDefend
 | NORMAL_FG_PCT | character |  |
 | PCT_PLUSMINUS | character |  |
 
-Returns a named list of data frames: LeagueDashTeamClutch
+A named list of tibbles: `LeagueDashTeamClutch`.
 
 **LeagueDashTeamClutch**
 
-Columns as documented in the shared
-[nba_leaguedashteamclutch_leaguedashteamclutch_schema](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamclutch_leaguedashteamclutch_schema.md)
-table.
+|                 |           |                                                 |
+|-----------------|-----------|-------------------------------------------------|
+| col_name        | types     | description                                     |
+| TEAM_ID         | character | Unique team identifier.                         |
+| TEAM_NAME       | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| GP              | character | Games played.                                   |
+| W               | character | Wins.                                           |
+| L               | character | Losses.                                         |
+| W_PCT           | character |                                                 |
+| MIN             | character | Minutes played.                                 |
+| FGM             | character | Field goals made.                               |
+| FGA             | character | Field goal attempts.                            |
+| FG_PCT          | character | Field goal percentage (0-1).                    |
+| FG3M            | character | Three-point field goals made.                   |
+| FG3A            | character | Three-point field goal attempts.                |
+| FG3_PCT         | character | Three-point field goal percentage (0-1).        |
+| FTM             | character | Free throws made.                               |
+| FTA             | character | Free throw attempts.                            |
+| FT_PCT          | character | Free throw percentage (0-1).                    |
+| OREB            | character | Offensive rebounds.                             |
+| DREB            | character | Defensive rebounds.                             |
+| REB             | character | Total rebounds.                                 |
+| AST             | character | Assists.                                        |
+| TOV             | character | Turnovers.                                      |
+| STL             | character | Steals.                                         |
+| BLK             | character | Blocks.                                         |
+| BLKA            | character |                                                 |
+| PF              | character | Personal fouls.                                 |
+| PFD             | character |                                                 |
+| PTS             | character | Points scored.                                  |
+| PLUS_MINUS      | character | Plus/minus point differential while on court.   |
+| GP_RANK         | character |                                                 |
+| W_RANK          | character |                                                 |
+| L_RANK          | character |                                                 |
+| W_PCT_RANK      | character |                                                 |
+| MIN_RANK        | character |                                                 |
+| FGM_RANK        | character |                                                 |
+| FGA_RANK        | character |                                                 |
+| FG_PCT_RANK     | character |                                                 |
+| FG3M_RANK       | character |                                                 |
+| FG3A_RANK       | character |                                                 |
+| FG3_PCT_RANK    | character |                                                 |
+| FTM_RANK        | character |                                                 |
+| FTA_RANK        | character |                                                 |
+| FT_PCT_RANK     | character |                                                 |
+| OREB_RANK       | character |                                                 |
+| DREB_RANK       | character |                                                 |
+| REB_RANK        | character |                                                 |
+| AST_RANK        | character |                                                 |
+| TOV_RANK        | character |                                                 |
+| STL_RANK        | character |                                                 |
+| BLK_RANK        | character |                                                 |
+| BLKA_RANK       | character |                                                 |
+| PF_RANK         | character |                                                 |
+| PFD_RANK        | character |                                                 |
+| PTS_RANK        | character |                                                 |
+| PLUS_MINUS_RANK | character |                                                 |
 
-Returns a named list of data frames: LeagueDashPTShots
+A named list of tibbles: `LeagueDashPTShots`.
 
 **LeagueDashPTShots**
 
-Columns as documented in the shared
-[nba_leaguedashoppptshot_leaguedashptshots_schema](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot_leaguedashptshots_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| GP | character | Games played. |
+| G | character | Games played. |
+| FGA_FREQUENCY | character |  |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| EFG_PCT | character | Effective field goal percentage (0-1). |
+| FG2A_FREQUENCY | character |  |
+| FG2M | character |  |
+| FG2A | character |  |
+| FG2_PCT | character |  |
+| FG3A_FREQUENCY | character |  |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
 
-Returns a named list of data frames: LeagueDashTeamStats
+A named list of tibbles: `LeagueDashTeamStats`.
 
 **LeagueDashTeamStats**
 
-Columns as documented in the shared
-[nba_leaguedashteamclutch_leaguedashteamclutch_schema](https://hoopR.sportsdataverse.org/reference/nba_leaguedashteamclutch_leaguedashteamclutch_schema.md)
-table.
+|                 |           |                                                 |
+|-----------------|-----------|-------------------------------------------------|
+| col_name        | types     | description                                     |
+| TEAM_ID         | character | Unique team identifier.                         |
+| TEAM_NAME       | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| GP              | character | Games played.                                   |
+| W               | character | Wins.                                           |
+| L               | character | Losses.                                         |
+| W_PCT           | character |                                                 |
+| MIN             | character | Minutes played.                                 |
+| FGM             | character | Field goals made.                               |
+| FGA             | character | Field goal attempts.                            |
+| FG_PCT          | character | Field goal percentage (0-1).                    |
+| FG3M            | character | Three-point field goals made.                   |
+| FG3A            | character | Three-point field goal attempts.                |
+| FG3_PCT         | character | Three-point field goal percentage (0-1).        |
+| FTM             | character | Free throws made.                               |
+| FTA             | character | Free throw attempts.                            |
+| FT_PCT          | character | Free throw percentage (0-1).                    |
+| OREB            | character | Offensive rebounds.                             |
+| DREB            | character | Defensive rebounds.                             |
+| REB             | character | Total rebounds.                                 |
+| AST             | character | Assists.                                        |
+| TOV             | character | Turnovers.                                      |
+| STL             | character | Steals.                                         |
+| BLK             | character | Blocks.                                         |
+| BLKA            | character |                                                 |
+| PF              | character | Personal fouls.                                 |
+| PFD             | character |                                                 |
+| PTS             | character | Points scored.                                  |
+| PLUS_MINUS      | character | Plus/minus point differential while on court.   |
+| GP_RANK         | character |                                                 |
+| W_RANK          | character |                                                 |
+| L_RANK          | character |                                                 |
+| W_PCT_RANK      | character |                                                 |
+| MIN_RANK        | character |                                                 |
+| FGM_RANK        | character |                                                 |
+| FGA_RANK        | character |                                                 |
+| FG_PCT_RANK     | character |                                                 |
+| FG3M_RANK       | character |                                                 |
+| FG3A_RANK       | character |                                                 |
+| FG3_PCT_RANK    | character |                                                 |
+| FTM_RANK        | character |                                                 |
+| FTA_RANK        | character |                                                 |
+| FT_PCT_RANK     | character |                                                 |
+| OREB_RANK       | character |                                                 |
+| DREB_RANK       | character |                                                 |
+| REB_RANK        | character |                                                 |
+| AST_RANK        | character |                                                 |
+| TOV_RANK        | character |                                                 |
+| STL_RANK        | character |                                                 |
+| BLK_RANK        | character |                                                 |
+| BLKA_RANK       | character |                                                 |
+| PF_RANK         | character |                                                 |
+| PFD_RANK        | character |                                                 |
+| PTS_RANK        | character |                                                 |
+| PLUS_MINUS_RANK | character |                                                 |
 
-Returns a named list of data frames: ShotLocations
+A named list of tibbles: `ShotLocations`.
 
 **ShotLocations**
 

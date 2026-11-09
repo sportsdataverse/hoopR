@@ -23,34 +23,13 @@ easl_pbp(fixture_id)
 
 ## Value
 
-A `hoopR_data` tibble: Play-by-play of a finished game in delivered
-order, with the running score and the points each event scored. An empty
-answer raises `hoopR_no_data`; the columns are always these, in this
-order (sportsdataverse-py `easl_pbp`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| fixture_id | character | DataCore fixture (game) UUID v1 from the request. |
-| event_number | integer | 1-based position of the event in the delivered array, which is the only usable order (sequence is not monotonic). |
-| sequence | integer | Event sequence number from the scorer's system: NOT in game order (the delivered array order is), and not always unique within a game (35 of 106 games repeat values). |
-| period_id | integer | Period: 1-4 regulation, 11 = first overtime (12 = second overtime appears in team totals). |
-| period_label | character | Q1-Q4 for periods 1-4; OT1, OT2 ... for overtimes (the server numbers the first overtime 11 in team totals; periods 5-10 are read as `OT{n-4}`, unverified). |
-| event_time | character | When the event was logged, wall-clock 'YYYY-MM-DDTHH:MM:SS.mmm' in UTC with no zone marker. There is NO game clock (time remaining) in this feed. |
-| received_time | double | When the event was received upstream, Unix epoch MILLISECONDS (UTC): a median 1.6 s after eventTime (5th to 95th percentile -0.6 s to +55 s over 30,874 events); meaning unverified. |
-| description | character | Event text. Shots read `<2pt/3pt> <shot type> missed[ (modifier)]` for EVERY field-goal attempt, made or not: the word 'missed' is always there and the result is the change of `scores` (see the divergence notes). Free throws read 'Free throw K of M made' (M = 1, 2 or 3) for every attempt, also always 'made'. The shot types, modifiers and other events are listed under "Event descriptions". |
-| team_id | character | DataCore team UUID v1 of the acting team; null on events with no team. |
-| player_id | character | DataCore person UUID v1 of the acting player; null for team events (team rebounds, timeouts). |
-| player_name | character | Player display name in 'FAMILY Given' form with the family name upper-cased (OSAKABE Taiki), in Latin script. Absent on some rows. |
-| player_name_latin | character | Alternative name: equal to nameFullLocal for 257 of 552 players, otherwise null; never non-Latin in the observed data. Absent on some rows. |
-| jersey_number | character | Jersey number as a string; null on one event. Absent on some rows. |
-| team_score | integer | The event team's running score as of this event (the running score lags the true score on a minority of events); null on events with no team. |
-| opponent_score | integer | The other team's running score as of this event; null on events with no team. |
-| points_scored | integer | Points the event team gained since the previous event (change of its running score): the made shot's value. The description always says 'missed', so count points here, not strings; the running score lags on some games, which shifts points to a later event. |
-| team1_id | character | First team of the body's teams array (the fixture's competitors order, arbitrary home/away); team1_score belongs to it. |
-| team1_score | integer | Running score of team1_id as of this event. |
-| team2_id | character | Second team of the body's teams array; team2_score belongs to it. |
-| team2_score | integer | Running score of team2_id as of this event. |
+A `hoopR_data` tibble with one row per play-by-play event. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "easl_pbp")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -99,7 +78,7 @@ lists every function in this family.
 # \donttest{
   try(easl_pbp(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
 #> ── EASL Play-by-Play from easl.joshricha.com ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:51 UTC
+#> ℹ Data updated: 2026-11-09 19:10:10 UTC
 #> # A tibble: 495 × 20
 #>    fixture_id            event_number sequence period_id period_label event_time
 #>    <chr>                        <int>    <int>     <int> <chr>        <chr>     

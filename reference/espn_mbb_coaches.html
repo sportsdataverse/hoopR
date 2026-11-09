@@ -40,6 +40,7 @@ Get ESPN NBA Coaches"><meta property="og:image" content="https://raw.githubuserc
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -153,11 +154,9 @@ forward compatibility. Proxy configuration should use
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A single <code>hoopR_data</code> tibble with one row per coach.</p>
-<p>Columns as documented in the shared <a href="espn_mbb_coaches_schema.html">espn_mbb_coaches_schema</a> table.</p>
-<p>A single <code>hoopR_data</code> tibble with one row per coach.</p>
-<p>Columns as documented in the shared <a href="espn_mbb_coaches_schema.html">espn_mbb_coaches_schema</a> table.</p>
-    </div>
+    <p>A <code>hoopR_data</code> tibble with one row per coach.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>coach_id</td><td>character</td><td></td></tr><tr><td>first_name</td><td>character</td><td>Player's first name.</td></tr><tr><td>last_name</td><td>character</td><td>Player's last name.</td></tr><tr><td>full_name</td><td>character</td><td>Player's full name.</td></tr><tr><td>experience</td><td>integer</td><td>Years of professional experience.</td></tr><tr><td>team_id</td><td>character</td><td>Unique team identifier.</td></tr></table><p>A <code>hoopR_data</code> tibble with one row per coach.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>coach_id</td><td>character</td><td></td></tr><tr><td>first_name</td><td>character</td><td>Player's first name.</td></tr><tr><td>last_name</td><td>character</td><td>Player's last name.</td></tr><tr><td>full_name</td><td>character</td><td>Player's full name.</td></tr><tr><td>experience</td><td>integer</td><td>Years of professional experience.</td></tr><tr><td>team_id</td><td>character</td><td>Unique team identifier.</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p><a href="family_espn_mbb.html">family_espn_mbb</a> lists every function in this family.</p>
@@ -173,7 +172,7 @@ forward compatibility. Proxy configuration should use
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_coaches</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Coaches from ESPN.com ─────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:09 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:27 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 373 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    coach_id first_name last_name full_name experience team_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>
@@ -192,7 +191,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_coaches</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Coaches from ESPN.com ─────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:09 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:27 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 30 × 6</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    coach_id first_name last_name full_name experience team_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span>

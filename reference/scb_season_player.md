@@ -30,34 +30,13 @@ scb_season_player(season_player_id, league = "bbl")
 
 ## Value
 
-A `hoopR_data` tibble: Player profile by season-player id: bio,
-position, club and previous clubs. An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `scb_season_player`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| league | character | League the row belongs to: `bbl` (men) or `dbbl` (women); BBL and DBBL game ids overlap, so a game is (league, game_id). |
-| season_player_id | character | Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move). Joins box-score lines, actions, records and `scb_season_player`. |
-| real_player_id | integer | Global person id: the same across clubs and seasons. Joins to `realPlayerId` everywhere. |
-| active_season_player_id | character | The player's current season-player id (his latest club engagement). Joins to `/season-players/{seasonPlayerId}`. |
-| first_name | character | Player's given name. |
-| last_name | character | Player's family name. |
-| birth_date | character | Date of birth, YYYY-MM-DD. |
-| position | character | Position: POINT_GUARD, SHOOTING_GUARD, SMALL_FORWARD, POWER_FORWARD, CENTER. |
-| shirt_number | character | Jersey number. A number or a numeric string across rows. |
-| height | double | Height in metres (float32 noise: 1.77 arrives as 1.7699999809265137). |
-| weight | integer | Weight in kg; 0 when unknown. |
-| nationalities | character | Nationalities, ISO 3166-1 alpha-2 codes. |
-| is_all_star | logical | All-Star selection flag. |
-| is_young | logical | Young-player flag (German-trained youth rule; inferred). |
-| has_changed_teams | logical | Moved clubs during the season. |
-| bbl_games_played | integer | Career league games played (BBL host; 0 on DBBL). |
-| team_id | character | Club id, a string; equal to `season_team_id` in every sample. Joins to `scb_team` and `scb_season_teams`. |
-| team_name | character | Team name as listed that season (sponsor names included). |
-| previous_teams | character | Former clubs, free text (German names). |
-| season_ids | character | Seasons (start years) with this player or club. |
+A `hoopR_data` tibble with one row per season-player. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "scb_season_player")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

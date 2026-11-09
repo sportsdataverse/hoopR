@@ -50,17 +50,55 @@ espn_nba_week_ranking(
 
 ## Value
 
-A tibble with one row per ranked team (typically 25).
+A `hoopR_data` tibble with one row per ranked team.
 
-Columns as documented in the shared
-[espn_mbb_week_ranking_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_ranking_schema.md)
-table.
+|                   |           |                                              |
+|-------------------|-----------|----------------------------------------------|
+| col_name          | types     | description                                  |
+| league            | character | League slug.                                 |
+| season            | integer   | Season year.                                 |
+| season_type       | integer   | Season-type id.                              |
+| week              | integer   | Week number.                                 |
+| ranking_id        | character | ESPN ranking id.                             |
+| name              | character | Ranking name (e.g. "AP Top 25").             |
+| short_name        | character | Short name.                                  |
+| type              | character | Ranking type code.                           |
+| headline          | character | Full headline.                               |
+| date              | character | Date of the ranking.                         |
+| current           | integer   | Current rank.                                |
+| previous          | integer   | Previous-week rank.                          |
+| points            | numeric   | Voting points.                               |
+| first_place_votes | integer   | First-place vote count.                      |
+| trend             | character | Trend indicator (e.g. "+3", "-2", "-").      |
+| record_summary    | character | Team's record at time of poll (e.g. "20-2"). |
+| team_id           | character | ESPN team id.                                |
+| team_ref          | character | `$ref` to the team-in-season resource.       |
+| last_updated      | character | Last-updated timestamp.                      |
 
-A tibble with one row per ranked team (typically 25).
+A `hoopR_data` tibble with one row per ranked team.
 
-Columns as documented in the shared
-[espn_mbb_week_ranking_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_ranking_schema.md)
-table.
+|                   |           |                                              |
+|-------------------|-----------|----------------------------------------------|
+| col_name          | types     | description                                  |
+| league            | character | League slug.                                 |
+| season            | integer   | Season year.                                 |
+| season_type       | integer   | Season-type id.                              |
+| week              | integer   | Week number.                                 |
+| ranking_id        | character | ESPN ranking id.                             |
+| name              | character | Ranking name (e.g. "AP Top 25").             |
+| short_name        | character | Short name.                                  |
+| type              | character | Ranking type code.                           |
+| headline          | character | Full headline.                               |
+| date              | character | Date of the ranking.                         |
+| current           | integer   | Current rank.                                |
+| previous          | integer   | Previous-week rank.                          |
+| points            | numeric   | Voting points.                               |
+| first_place_votes | integer   | First-place vote count.                      |
+| trend             | character | Trend indicator (e.g. "+3", "-2", "-").      |
+| record_summary    | character | Team's record at time of poll (e.g. "20-2"). |
+| team_id           | character | ESPN team id.                                |
+| team_ref          | character | `$ref` to the team-in-season resource.       |
+| last_updated      | character | Last-updated timestamp.                      |
 
 ## Details
 
@@ -86,7 +124,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_week_ranking(ranking_id = 1, week = 5, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Week Ranking Detail ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:03 UTC
+#> ℹ Data updated: 2026-11-09 19:11:17 UTC
 #> # A tibble: 25 × 19
 #>    league    season season_type  week ranking_id name  short_name type  headline
 #>    <chr>      <int>       <int> <int> <chr>      <chr> <chr>      <chr> <chr>   
@@ -107,11 +145,11 @@ Saiem Gilani
 # }
 # \donttest{
   espn_nba_week_ranking(ranking_id = 1, week = 5, season = 2025)
-#> ✖ 2026-11-09 17:05:03.875898: Failed to retrieve ESPN nba week-5 ranking 1 for season=2025
+#> ✖ 2026-11-09 19:11:17.216411: Failed to retrieve ESPN nba week-5 ranking 1 for season=2025
 #> ✖ Args: league = "nba", season = 2025, season_type = 2L, week = 5, ranking_id = 1
 #> ✖ Error: The API returned an error
 #> ── ESPN NBA Week Ranking Detail ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:03 UTC
+#> ℹ Data updated: 2026-11-09 19:11:17 UTC
 #> # A tibble: 0 × 0
 # }
 ```

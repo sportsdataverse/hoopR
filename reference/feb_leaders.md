@@ -28,23 +28,13 @@ feb_leaders(game_id)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | FEB game id (one global sequence): the {gameId} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request. |
-| team_side | character | Side of the game the row belongs to: home or away (the feed's TEAM\[0\] / TEAM\[1\], or its 1/2 and 0/1 side codes, normalised). |
-| team_id | integer | Team-season id (key space: FEB team registrations; a NEW id every season, e.g. HLA Alicante = 979989 in 2025-26 and 1008687 in 2026-27). Joins the schedule's home_team_id / away_team_id; not a club or player id. |
-| team | character | Team name as registered for the season (sponsor name, uppercase: 'HLA ALICANTE'). |
-| category | character | Leader category: points, rebounds, assists or fouls (the feed's Puntos, Rebotes, Asistencias, Faltas). |
-| rank | integer | Place in the team's category list, 1 = the leader, in the order the feed lists them. |
-| player_id | integer | FEB person id: stable across seasons and clubs (A. Jorda Rodriguez = 1676991 in 2025-26 and 2026-27). Joins the box score, play-by-play, shots and leaders; not the per-season licence_id. |
-| shirt_number | character | Shirt number (dorsal) as a string, so '00' and '0' stay distinct. The shot feed names the shooter by this number. |
-| player | character | Player name as 'I. SURNAME(S)', uppercase ('V. AGUILAR HERNANDEZ'). |
-| starter | logical | True when the player was in the starting five (the page's I column), false when on the bench. |
-| captain | logical | True for the team captain. Null on 2020-21 games, where the feed does not send it. |
-| value | integer | The player's count in the row's category (points, rebounds, assists or personal fouls). |
+A `hoopR_data` tibble with one row per team, statistic and rank. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "feb_leaders")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

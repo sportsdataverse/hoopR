@@ -44,6 +44,7 @@ Requires a headless browser (see realgm_players())."><meta property="og:image" c
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -166,10 +167,11 @@ Defaults to <code><a href="most_recent_nba_season.html">most_recent_nba_season()
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble (one row per qualified player) carrying the
-requested <code>season</code>, <code>stat_type</code> and <code>season_type</code> as columns. Columns vary
-by <code>stat_type</code>; for <code>"Averages"</code>:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>player</td><td>character</td><td>Player name.</td></tr><tr><td>team</td><td>character</td><td>Team abbreviation.</td></tr><tr><td>gp</td><td>integer</td><td>Games played.</td></tr><tr><td>mpg</td><td>numeric</td><td>Minutes per game.</td></tr><tr><td>ppg</td><td>numeric</td><td>Points per game.</td></tr><tr><td>rpg</td><td>numeric</td><td>Rebounds per game.</td></tr><tr><td>apg</td><td>numeric</td><td>Assists per game.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per qualified player.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "realgm_player_stats")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p><a href="family_realgm.html">family_realgm</a> lists every function in this family.</p></div>

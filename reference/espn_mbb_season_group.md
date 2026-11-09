@@ -86,41 +86,95 @@ espn_nba_season_group_teams(
 
 ## Value
 
-A single-row tibble.
+A `hoopR_data` tibble with one row per group.
 
-Columns as documented in the shared
-[espn_mbb_season_group_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group_schema.md)
-table.
+|               |           |                                        |
+|---------------|-----------|----------------------------------------|
+| col_name      | types     | description                            |
+| league        | character | League slug.                           |
+| season        | integer   | Season year.                           |
+| season_type   | integer   | Season-type id.                        |
+| group_id      | character | ESPN group id.                         |
+| uid           | character | ESPN UID string.                       |
+| name          | character | Full name (e.g. "Eastern Conference"). |
+| abbreviation  | character | Short code (e.g. "EAST").              |
+| short_name    | character | Short name.                            |
+| midsize_name  | character | Mid-size display name.                 |
+| is_conference | logical   | Whether this group is a conference.    |
+| slug          | character | URL slug.                              |
+| parent_ref    | character | `$ref` to parent group (if any).       |
+| children_ref  | character | `$ref` to child-groups endpoint.       |
+| teams_ref     | character | `$ref` to teams-in-group endpoint.     |
+| standings_ref | character | `$ref` to standings endpoint.          |
 
-A tibble with one row per child group.
+A `hoopR_data` tibble with one row per child group.
 
-Columns as documented in the shared
-[espn_mbb_season_group_children_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group_children_schema.md)
-table.
+|                 |           |                               |
+|-----------------|-----------|-------------------------------|
+| col_name        | types     | description                   |
+| league          | character | League slug.                  |
+| season          | integer   | Season year.                  |
+| season_type     | integer   | Season-type id.               |
+| parent_group_id | character | Parent group id (queried).    |
+| child_group_id  | character | Child group id.               |
+| ref             | character | `$ref` to child group detail. |
 
-A tibble with one row per team in the group.
+A `hoopR_data` tibble with one row per team in the group.
 
-Columns as documented in the shared
-[espn_mbb_season_group_teams_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group_teams_schema.md)
-table.
+|             |           |                                         |
+|-------------|-----------|-----------------------------------------|
+| col_name    | types     | description                             |
+| league      | character | League slug.                            |
+| season      | integer   | Season year.                            |
+| season_type | integer   | Season-type id.                         |
+| group_id    | character | ESPN group id.                          |
+| team_id     | character | ESPN team id.                           |
+| ref         | character | `$ref` URL to the team-in-season entry. |
 
-A single-row tibble.
+A `hoopR_data` tibble with one row per group.
 
-Columns as documented in the shared
-[espn_mbb_season_group_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group_schema.md)
-table.
+|               |           |                                        |
+|---------------|-----------|----------------------------------------|
+| col_name      | types     | description                            |
+| league        | character | League slug.                           |
+| season        | integer   | Season year.                           |
+| season_type   | integer   | Season-type id.                        |
+| group_id      | character | ESPN group id.                         |
+| uid           | character | ESPN UID string.                       |
+| name          | character | Full name (e.g. "Eastern Conference"). |
+| abbreviation  | character | Short code (e.g. "EAST").              |
+| short_name    | character | Short name.                            |
+| midsize_name  | character | Mid-size display name.                 |
+| is_conference | logical   | Whether this group is a conference.    |
+| slug          | character | URL slug.                              |
+| parent_ref    | character | `$ref` to parent group (if any).       |
+| children_ref  | character | `$ref` to child-groups endpoint.       |
+| teams_ref     | character | `$ref` to teams-in-group endpoint.     |
+| standings_ref | character | `$ref` to standings endpoint.          |
 
-A tibble with one row per child group.
+A `hoopR_data` tibble with one row per child group.
 
-Columns as documented in the shared
-[espn_mbb_season_group_children_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group_children_schema.md)
-table.
+|                 |           |                               |
+|-----------------|-----------|-------------------------------|
+| col_name        | types     | description                   |
+| league          | character | League slug.                  |
+| season          | integer   | Season year.                  |
+| season_type     | integer   | Season-type id.               |
+| parent_group_id | character | Parent group id (queried).    |
+| child_group_id  | character | Child group id.               |
+| ref             | character | `$ref` to child group detail. |
 
-A tibble with one row per team in the group.
+A `hoopR_data` tibble with one row per team in the group.
 
-Columns as documented in the shared
-[espn_mbb_season_group_teams_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_group_teams_schema.md)
-table.
+|             |           |                                         |
+|-------------|-----------|-----------------------------------------|
+| col_name    | types     | description                             |
+| league      | character | League slug.                            |
+| season      | integer   | Season year.                            |
+| season_type | integer   | Season-type id.                         |
+| group_id    | character | ESPN group id.                          |
+| team_id     | character | ESPN team id.                           |
+| ref         | character | `$ref` URL to the team-in-season entry. |
 
 ## Details
 
@@ -154,7 +208,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_group(group_id = 5, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Group Detail ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:34 UTC
+#> ℹ Data updated: 2026-11-09 19:10:53 UTC
 #> # A tibble: 1 × 15
 #>   league         season season_type group_id uid   name  abbreviation short_name
 #>   <chr>           <int>       <int> <chr>    <chr> <chr> <chr>        <chr>     
@@ -165,7 +219,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_group_children(group_id = 5, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Group Children Index ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:34 UTC
+#> ℹ Data updated: 2026-11-09 19:10:53 UTC
 #> # A tibble: 0 × 6
 #> # ℹ 6 variables: league <chr>, season <int>, season_type <int>,
 #> #   parent_group_id <chr>, child_group_id <chr>, ref <chr>
@@ -173,7 +227,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_group_teams(group_id = 5, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Group Teams Index ──────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:34 UTC
+#> ℹ Data updated: 2026-11-09 19:10:53 UTC
 #> # A tibble: 10 × 6
 #>    league                  season season_type group_id team_id ref              
 #>    <chr>                    <int>       <int> <chr>    <chr>   <chr>            
@@ -191,7 +245,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_group(group_id = 5, season = 2025)
 #> ── ESPN NBA Season Group Detail ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:34 UTC
+#> ℹ Data updated: 2026-11-09 19:10:53 UTC
 #> # A tibble: 1 × 15
 #>   league season season_type group_id uid           name  abbreviation short_name
 #>   <chr>   <int>       <int> <chr>    <chr>         <chr> <chr>        <chr>     
@@ -202,7 +256,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_group_children(group_id = 5, season = 2025)
 #> ── ESPN NBA Season Group Children Index ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:34 UTC
+#> ℹ Data updated: 2026-11-09 19:10:53 UTC
 #> # A tibble: 3 × 6
 #>   league season season_type parent_group_id child_group_id ref                  
 #>   <chr>   <int>       <int> <chr>           <chr>          <chr>                
@@ -213,7 +267,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_group_teams(group_id = 5, season = 2025)
 #> ── ESPN NBA Season Group Teams Index ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:35 UTC
+#> ℹ Data updated: 2026-11-09 19:10:53 UTC
 #> # A tibble: 15 × 6
 #>    league season season_type group_id team_id ref                               
 #>    <chr>   <int>       <int> <chr>    <chr>   <chr>                             

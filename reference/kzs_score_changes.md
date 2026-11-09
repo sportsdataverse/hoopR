@@ -20,18 +20,12 @@ kzs_score_changes(match_id)
 
 ## Value
 
-A `hoopR_data` tibble: The score at the end of each minute of a final
-game. An empty valid answer raises `hoopR_no_data`; the columns are
-always these, in this order (sportsdataverse-py `kzs_score_changes`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | KZS match id. Joins to `/matches/{matchId}` (and its /playByPlay, /stats) and stats `matchId`. |
-| minute | integer | Game minute (1-40, then overtime minutes). |
-| score1 | integer | First (home) team score at the end of the minute, an integer. |
-| score2 | integer | Second (away) team score at the end of the minute, an integer. |
-| total_minutes | integer | Game length in minutes (40, 45 with one overtime). |
+A `hoopR_data` tibble with one row per minute. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_score_changes")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

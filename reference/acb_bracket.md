@@ -32,30 +32,12 @@ acb_bracket(competition_id = NULL, season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_bracket`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| stage | character | Bracket stage: quarter_finals, semifinals, final (other_positions when present). |
-| phase_id | integer | Phase id of the series (111 = Play Off Titulo). |
-| subphase_id | integer | Sub-phase id (the playoff stage). |
-| home_team_id | integer | Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every `homeTeamId` / `awayTeamId` / `teamId` / `teamEditionId`. Not the club id. |
-| home_club_id | integer | Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the `clubId` request param and every `homeClubId` / `awayClubId`. |
-| home_team | character | Team name that season (sponsor names change) |
-| home_team_abbr | character | Three-letter abbreviation (BAR, RMB) |
-| away_team_id | integer | Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every `homeTeamId` / `awayTeamId` / `teamId` / `teamEditionId`. Not the club id. |
-| away_club_id | integer | Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the `clubId` request param and every `homeClubId` / `awayClubId`. |
-| away_team | character | Team name that season (sponsor names change) |
-| away_team_abbr | character | Three-letter abbreviation (BAR, RMB) |
-| home_wins | integer | Games won by the home-court team in the series. |
-| away_wins | integer | Games won by the other team in the series. |
-| finished | logical | True once the series is decided. |
-| best_of | integer | Series length (best of N). |
-| n_games | integer | Games listed for the series. |
-| edition_id | integer | Season id (`editionId`) = season START year - 1935 (91 = 2026-27, 81 = 2016-17, 70 = 2005-06, 48 = 1983-84, the first). The sdv season (END year) is editionId + 1936. Season lists also carry `seasonStartYear` / `seasonEndYear` |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
+A `hoopR_data` tibble with one row per series. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_bracket")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -74,7 +56,7 @@ lists every function in this family.
 # \donttest{
   try(acb_bracket(season = 2026))
 #> ── ACB Bracket from api2.acb.com ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:23 UTC
+#> ℹ Data updated: 2026-11-09 19:08:40 UTC
 #> # A tibble: 7 × 18
 #>   stage  phase_id subphase_id home_team_id home_club_id home_team home_team_abbr
 #>   <chr>     <int>       <int>        <int>        <int> <chr>     <chr>         

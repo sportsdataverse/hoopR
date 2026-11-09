@@ -44,6 +44,7 @@ standings, or playoff legs."><meta property="og:image" content="https://raw.gith
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -161,11 +162,9 @@ standings, or playoff legs.</p>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A single-row tibble.</p>
-<p>Columns as documented in the shared <a href="espn_mbb_season_type_schema.html">espn_mbb_season_type_schema</a> table.</p>
-<p>A single-row tibble.</p>
-<p>Columns as documented in the shared <a href="espn_mbb_season_type_schema.html">espn_mbb_season_type_schema</a> table.</p>
-    </div>
+    <p>A <code>hoopR_data</code> tibble with one row per season type.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League slug.</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>season_type</td><td>integer</td><td>Season-type id.</td></tr><tr><td>type</td><td>integer</td><td>Numeric type code.</td></tr><tr><td>name</td><td>character</td><td>Display name (e.g. "Regular Season").</td></tr><tr><td>abbreviation</td><td>character</td><td>Short code (e.g. "reg").</td></tr><tr><td>year</td><td>integer</td><td>Year stamp.</td></tr><tr><td>start_date</td><td>character</td><td>ISO 8601 start date.</td></tr><tr><td>end_date</td><td>character</td><td>ISO 8601 end date.</td></tr><tr><td>has_groups</td><td>logical</td><td>Whether groups exist for this type.</td></tr><tr><td>has_standings</td><td>logical</td><td>Whether standings exist.</td></tr><tr><td>has_legs</td><td>logical</td><td>Whether playoff legs exist.</td></tr><tr><td>slug</td><td>character</td><td>URL slug.</td></tr><tr><td>groups_ref</td><td>character</td><td><code>$ref</code> to the groups endpoint.</td></tr><tr><td>weeks_ref</td><td>character</td><td><code>$ref</code> to the weeks endpoint.</td></tr><tr><td>leaders_ref</td><td>character</td><td><code>$ref</code> to the leaders endpoint.</td></tr></table><p>A <code>hoopR_data</code> tibble with one row per season type.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League slug.</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>season_type</td><td>integer</td><td>Season-type id.</td></tr><tr><td>type</td><td>integer</td><td>Numeric type code.</td></tr><tr><td>name</td><td>character</td><td>Display name (e.g. "Regular Season").</td></tr><tr><td>abbreviation</td><td>character</td><td>Short code (e.g. "reg").</td></tr><tr><td>year</td><td>integer</td><td>Year stamp.</td></tr><tr><td>start_date</td><td>character</td><td>ISO 8601 start date.</td></tr><tr><td>end_date</td><td>character</td><td>ISO 8601 end date.</td></tr><tr><td>has_groups</td><td>logical</td><td>Whether groups exist for this type.</td></tr><tr><td>has_standings</td><td>logical</td><td>Whether standings exist.</td></tr><tr><td>has_legs</td><td>logical</td><td>Whether playoff legs exist.</td></tr><tr><td>slug</td><td>character</td><td>URL slug.</td></tr><tr><td>groups_ref</td><td>character</td><td><code>$ref</code> to the groups endpoint.</td></tr><tr><td>weeks_ref</td><td>character</td><td><code>$ref</code> to the weeks endpoint.</td></tr><tr><td>leaders_ref</td><td>character</td><td><code>$ref</code> to the leaders endpoint.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><strong>Get ESPN MBB Season-Type Detail</strong></p>
@@ -186,7 +185,7 @@ standings, or playoff legs.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_season_type</span><span class="op">(</span>season_type <span class="op">=</span> <span class="fl">2</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Season Type Detail ────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:41 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:59 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 16</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   league   season season_type  type name  abbreviation  year start_date end_date</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
@@ -197,7 +196,7 @@ standings, or playoff legs.</p>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_season_type</span><span class="op">(</span>season_type <span class="op">=</span> <span class="fl">2</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Season Type Detail ────────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:41 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:59 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 16</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   league season season_type  type name    abbreviation  year start_date end_date</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>

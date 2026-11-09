@@ -37,22 +37,13 @@ nbl_rosetta_outcomes(season, org = "nbl", season_type = "regular")
 
 ## Value
 
-A `hoopR_data` tibble (one row per team name):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| org | character | Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. |
-| team_name | character | Name of the team, the key of Rosetta's outcomes map (the body carries no team id). |
-| wins | integer | Wins of the team in the season type asked for. |
-| losses | integer | Losses of the team in the season type asked for. |
-| last10 | character | Results of the team's last 10 games as a W/L string, oldest first. |
-| last5 | character | Results of the team's last 5 games as a W/L string, oldest first. |
-| last3 | character | Results of the team's last 3 games as a W/L string, oldest first. |
-| season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
-
-Columns the body adds beyond these follow, in body order
-(sportsdataverse-py keeps them too).
+A `hoopR_data` tibble with one row per team name. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "nbl_rosetta_outcomes")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

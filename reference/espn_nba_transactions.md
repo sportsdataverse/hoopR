@@ -29,7 +29,7 @@ espn_nba_transactions(season = most_recent_nba_season(), limit = 100, ...)
 
 ## Value
 
-A `hoopR_data` tibble with one row per transaction:
+A `hoopR_data` tibble with one row per transaction.
 
 |                |           |                                   |
 |----------------|-----------|-----------------------------------|
@@ -66,7 +66,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_transactions(season = 2025, limit = 10)
 #> ── ESPN NBA Transactions from ESPN.com ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:07 UTC
+#> ℹ Data updated: 2026-11-09 19:11:20 UTC
 #> # A tibble: 10 × 9
 #>    transaction_id date         type  description team_id athlete_id athlete_name
 #>    <chr>          <chr>        <chr> <chr>       <chr>   <chr>      <chr>       

@@ -20,22 +20,22 @@ espn_nba_wp(game_id)
 
 ## Value
 
-`espn_mbb_wp()` - A data frame with 9 variables:
+A `hoopR_data` tibble with one row per play.
 
 |  |  |  |
 |----|----|----|
-| col_name | type | description |
-| `game_id` | character | Referencing game ID (should be same as `game_id` from other functions). |
-| `play_id` | character | Referencing play ID. |
-| `period` | integer | Clock (time) left in the game. |
-| `time_left` | character | Clock (time) left in the game. |
-| `period_seconds_left` | integer | Seconds left in the period. |
-| `game_seconds_left` | integer | Seconds left in the game. |
-| `home_win_percentage` | double | The probability of the home team winning the game. |
-| `away_win_percentage` | double | The probability of the away team winning the game (calculated as 1 - `home_win_percentage` - `tie_percentage`). |
-| `tie_percentage` | double | The probability of the game ending the final period in a tie. |
+| col_name | types | description |
+| game_id | character | Referencing game ID (should be same as `game_id` from other functions). |
+| play_id | character | Referencing play ID. |
+| period | integer | Clock (time) left in the game. |
+| time_left | character | Clock (time) left in the game. |
+| period_seconds_left | integer | Seconds left in the period. |
+| game_seconds_left | integer | Seconds left in the game. |
+| home_win_percentage | double | The probability of the home team winning the game. |
+| away_win_percentage | double | The probability of the away team winning the game (calculated as 1 - `home_win_percentage` - `tie_percentage`). |
+| tie_percentage | double | The probability of the game ending the final period in a tie. |
 
-`espn_nba_wp()` - A data frame with 21 variables:
+A `hoopR_data` tibble with one row per play.
 
 |  |  |  |
 |----|----|----|
@@ -76,7 +76,7 @@ lists every function in this family.
 # \donttest{
 espn_mbb_wp(game_id = 401256760)
 #> ── ESPN MBB Win Probability Information from ESPN.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:04 UTC
+#> ℹ Data updated: 2026-11-09 19:11:18 UTC
 #> # A tibble: 352 × 9
 #>    game_id   play_id      period time_left period_seconds_left game_seconds_left
 #>  * <chr>     <chr>         <dbl> <chr>                   <dbl>             <dbl>
@@ -98,7 +98,7 @@ espn_mbb_wp(game_id = 401256760)
 # \donttest{
 espn_nba_wp(game_id = 401283399)
 #> ── ESPN NBA Win Probability Information from ESPN.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:05 UTC
+#> ℹ Data updated: 2026-11-09 19:11:18 UTC
 #> # A tibble: 472 × 24
 #>      game_id play_id     home_win_percentage away_win_percentage tie_percentage
 #>        <dbl> <chr>                     <dbl>               <dbl>          <dbl>

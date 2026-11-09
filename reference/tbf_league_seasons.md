@@ -22,21 +22,13 @@ tbf_league_seasons(competition = "bsl")
 
 ## Value
 
-A `hoopR_data` tibble. One row per season of the league, newest first.
-Every column below is always present (a zero-row tibble keeps them and
-their types); an answer with nothing in it raises `hoopR_no_data`, as in
-sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| activity_id | integer | Activity id (faaliyet = activity; key space: TBF league-SEASONS, new every season: BSL 2026-27 = 22214, BSL 2025-26 = 20728, TBL 2026-27 = 22215, KBSL 2026-27 = 22209). Cast to an integer from the 22214 / 22214.0 the API sends. |
-| activity_name | character | League-season name as TBF prints it ('BSL 2026-2027'; the top flight reads 'TBL 2006-2007' until 2007-08). |
-| url | character | League-season slug, '`<prefix>`-`<YYYY>`-`<YYYY>`' (bsl-2026-2027). |
-| season_id | integer | Internal TBF season id (key space: TBF seasons, global across leagues: 174 = 2026-2027, 172 = 2025-2026; the odd ids are international UA- seasons). Never an sdv key: use season (END year). |
-| season_label | character | Season label as TBF writes it, 'YYYY-YYYY' (start and end year). |
-| season | integer | Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). |
-| competition | character | TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). |
+A `hoopR_data` tibble with one row per season of the league. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_league_seasons")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -83,7 +75,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_league_seasons(competition = "bsl"))
 #> ── TBF League Seasons ─────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:32 UTC
+#> ℹ Data updated: 2026-11-09 19:15:28 UTC
 #> # A tibble: 61 × 7
 #>    activity_id activity_name     url   season_id season_label season competition
 #>          <int> <chr>             <chr>     <int> <chr>         <int> <chr>      

@@ -30,23 +30,47 @@ espn_nba_team_injuries(team_id, ...)
 
 ## Value
 
-Returns a tibble of injury records for the specified MBB team. Returns
-an empty tibble (zero rows) when the team has no reported injuries.
+A named list of `hoopR_data` tibbles: `Injuries`.
 
 **Injuries**
 
-Columns as documented in the shared
-[espn_mbb_team_injuries_injuries_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_injuries_injuries_schema.md)
-table.
+|               |           |                                                   |
+|---------------|-----------|---------------------------------------------------|
+| col_name      | types     | description                                       |
+| team_id       | character | Unique team identifier.                           |
+| athlete_id    | character | Unique athlete identifier (ESPN).                 |
+| athlete_name  | character | Athlete display name (ESPN).                      |
+| position      | character | Listed roster position (G, F, C, etc.).           |
+| status        | character | Status label.                                     |
+| date          | character | Date in YYYY-MM-DD format.                        |
+| type          | character | Record type / category.                           |
+| side          | character | Side label (e.g. 'home', 'away', or 'overUnder'). |
+| returns_at    | character |                                                   |
+| short_comment | character |                                                   |
+| long_comment  | character | Long-form play / event comment.                   |
 
-Returns a tibble of injury records for the specified NBA team. Returns
-an empty tibble (zero rows) when the team has no reported injuries.
+An empty tibble (zero rows) when no injuries are reported.
+
+A named list of `hoopR_data` tibbles: `Injuries`.
 
 **Injuries**
 
-Columns as documented in the shared
-[espn_mbb_team_injuries_injuries_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_injuries_injuries_schema.md)
-table.
+|               |           |                                                   |
+|---------------|-----------|---------------------------------------------------|
+| col_name      | types     | description                                       |
+| team_id       | character | Unique team identifier.                           |
+| athlete_id    | character | Unique athlete identifier (ESPN).                 |
+| athlete_name  | character | Athlete display name (ESPN).                      |
+| position      | character | Listed roster position (G, F, C, etc.).           |
+| status        | character | Status label.                                     |
+| date          | character | Date in YYYY-MM-DD format.                        |
+| type          | character | Record type / category.                           |
+| side          | character | Side label (e.g. 'home', 'away', or 'overUnder'). |
+| returns_at    | character |                                                   |
+| short_comment | character |                                                   |
+| long_comment  | character | Long-form play / event comment.                   |
+
+An empty tibble (zero rows) when no injuries are reported.
 
 ## See also
 

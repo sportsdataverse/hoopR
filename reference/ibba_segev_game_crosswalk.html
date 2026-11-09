@@ -44,6 +44,7 @@ id casts) and the mapping must be one-to-one both ways."><meta property="og:imag
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -150,7 +151,11 @@ id casts) and the mapping must be one-to-one both ways.</p>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble, one row per game:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>IBBA game id (key space: basket.co.il games): the <code>game_id</code> of <code><a href="ibba_games.html">ibba_games()</a></code> and <code><a href="ibba_box_score.html">ibba_box_score()</a></code>.</td></tr><tr><td>segev_game_id</td><td>integer</td><td>The Segev game id of the same game: the <code>game_id</code> every <code>ibba_segev_*()</code> wrapper takes.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "ibba_segev_game_crosswalk")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Raises <code>hoopR_bad_request</code> when <code>df</code> is not a data frame, lacks a column, has an id

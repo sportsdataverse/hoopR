@@ -32,48 +32,12 @@ kbl_schedule(season = NULL, from_date = NULL, to_date = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: Every game (all competitions, KBL and D-League)
-of a season or of a date window, with scores and venue. The columns are
-always these, in this order (sportsdataverse-py `kbl_schedule`); an
-empty valid answer raises `hoopR_no_data`, a valid body with no rows for
-this frame is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| gmkey | character | Game key `S{seasonCode}G{gameCode}N{gameNo}` (e.g. S47G01N49): the id of every `/match/{gmkey}` route. |
-| glkey | character | Competition key `S{seasonCode}G{gameCode}` (e.g. S47G01 = 2025-26 regular season): the id of the /leagues and /league/rank routes. |
-| season | integer | Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). |
-| season_code | integer | KBL season code: sequential over every season and D-League edition (2 = 1997-98, 47 = 2025-26); the crosswalk to the sdv END year is in the README. |
-| season_name | character | Season label as sent: 'YYYY-YYYY' for a KBL season, '1997' for the inaugural one, a D-League edition label, or an empty string on EASL rows. |
-| season_grade | integer | Division: 1 = the KBL itself, 2 = the KBL D-League (reserve league). |
-| game_code | character | Competition type within the season (2-digit string; code table in the README and below): 01 regular season, 03 playoffs, 04 final, ... |
-| game_no | integer | Game number within the competition (glkey); the N part of the gmkey. |
-| season_category | character | Category code of the competition: R regular season, PO playoffs, CP final, D1/D2 D-League stages, AS All-Star, EG/CU cups, EA EASL, OM Open Match Day (table below). |
-| season_category_name | character | Category name in Korean (regular season, playoffs, championship final, D-League stage 1 / 2, All-Star Game, cups, 'KBL' Cup, 'EASL', 'OPEN MATCH DAY'). |
-| game_date | Date | Game date (KST). |
-| week_day | character | Day of the week in Korean (one Hangul syllable, Monday to Sunday). |
-| game_start | character | Tip-off time, HHMM (KST). |
-| game_end | character | End time, HHMM (KST); '0000' or blanks when not recorded. |
-| game_time | integer | Duration of the game in minutes (a numeric string on the wire; null on some rows). |
-| home_team_code | character | Home team code. KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList `teamCode`, game `tcodeH`/`tcodeA`, `t` in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (`teamCodeD`). |
-| away_team_code | character | Away team code. KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList `teamCode`, game `tcodeH`/`tcodeA`, `t` in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (`teamCodeD`). |
-| home_team_name | character | Home team short name (Korean, e.g. Goyang Sono). English names: /common/teamList `teamNameEn` / `teamNameFullEn`, joined on the team code. |
-| away_team_name | character | Away team short name (Korean, e.g. Changwon LG). English names: /common/teamList `teamNameEn` / `teamNameFullEn`, joined on the team code. |
-| home_team_name_full | character | Home team full name (Korean). |
-| away_team_name_full | character | Away team full name (Korean). |
-| home_score | integer | Home team points (scoreH). |
-| away_score | integer | Away team points (scoreA). |
-| is_started | integer | 1 when the game has started. Unreliable for old games (0 on finished 1997-2006 games in /match/list). |
-| is_ended | integer | 1 when the game is over. Unreliable: 0 on every finished game through 2005-06 and on some later ones (e.g. S45G01N95's header); the capture treats a past-dated game with scores as final. |
-| playing_quarter | character | Period in progress: 'X' when none (before or after the game), else e.g. 'Q4' or 'EQ1'. Can stay stale after the game (the overtime sample says 'EQ1'). |
-| stadium_name | character | Venue short name (Korean). |
-| stadium_name_full | character | Venue full name (Korean). |
-| stadium_name_en | character | Venue name in English; an empty string, or the Korean name, for some old venues. |
-| tv | character | Broadcaster name(s), e.g. 'tvN SPORTS', 'SPOTV2 / SPOTV ON'. |
-| tv_code | character | Broadcaster code(s), comma-separated (e.g. 'T24,T25'); the site uses it instead of `tv` from seasonCode 45. |
-| article_id | integer | Id of the game's news article on kbl.or.kr; null when none. |
-| challenge_id | integer | Id of the game in KBL Challenge (the site's prediction game); null when none. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kbl_schedule")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -92,7 +56,7 @@ lists every function in this family.
 # \donttest{
   try(kbl_schedule(from_date = "20251101", to_date = "20251102"))
 #> ── KBL Schedule from api.kbl.or.kr ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:18 UTC
+#> ℹ Data updated: 2026-11-09 19:12:30 UTC
 #> # A tibble: 6 × 33
 #>   gmkey     glkey  season season_code season_name season_grade game_code game_no
 #>   <chr>     <chr>   <int>       <int> <chr>              <int> <chr>       <int>

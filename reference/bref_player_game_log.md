@@ -29,31 +29,13 @@ bref_player_game_log(player_id, season = most_recent_nba_season())
 
 ## Value
 
-A `hoopR_data` tibble with one row per regular-season game (column names
-are Basketball-Reference `data-stat` keys):
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| ranker | integer | Season game number. |
-| player_game_num_career | integer | Career game number. |
-| date | character | Game date. |
-| team | character | Team abbreviation. |
-| location | character | `@` for away games, empty for home. |
-| opp | character | Opponent abbreviation. |
-| result | character | Result with final score (e.g. `W (+12)`). |
-| is_starter | integer | 1 if the player started. |
-| mp | character | Minutes played. |
-| pts | numeric | Points. |
-| trb | numeric | Total rebounds. |
-| ast | numeric | Assists. |
-| game_score | numeric | Hollinger game score. |
-| plus_minus | numeric | Plus/minus. |
-| player_id | character | Player id (echoes the `player_id` argument). |
-| season | integer | Season (echoes the `season` argument). |
-
-Full shooting / box columns (`fg`, `fga`, `fg_pct`, `fg3`, `ft`, `orb`,
-`drb`, `stl`, `blk`, `tov`, `pf`, ...) are also returned.
+A `hoopR_data` tibble with one row per regular-season game. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bref_player_game_log")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

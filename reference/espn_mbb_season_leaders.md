@@ -40,17 +40,47 @@ espn_nba_season_leaders(
 
 ## Value
 
-A long tibble with one row per (category x leader).
+A `hoopR_data` tibble with one row per category and leader.
 
-Columns as documented in the shared
-[espn_mbb_season_leaders_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_leaders_schema.md)
-table.
+|                  |           |                                               |
+|------------------|-----------|-----------------------------------------------|
+| col_name         | types     | description                                   |
+| league           | character | League slug.                                  |
+| season           | integer   | Season year.                                  |
+| season_type      | integer   | Season-type id.                               |
+| category_name    | character | Internal category key (e.g. "pointsPerGame"). |
+| category_display | character | Human-readable category name.                 |
+| category_short   | character | Short display name.                           |
+| category_abbrev  | character | Stat abbreviation (e.g. "PTS").               |
+| rank             | integer   | Rank within the category (1 = best).          |
+| athlete_id       | character | ESPN athlete id.                              |
+| team_id          | character | ESPN team id.                                 |
+| display_value    | character | Display-formatted value.                      |
+| value            | numeric   | Numeric leader value.                         |
+| rel              | character | Comma-joined `rel` tags from ESPN.            |
+| athlete_ref      | character | `$ref` URL to the leader's athlete.           |
+| team_ref         | character | `$ref` URL to the leader's team.              |
 
-A long tibble with one row per (category x leader).
+A `hoopR_data` tibble with one row per category and leader.
 
-Columns as documented in the shared
-[espn_mbb_season_leaders_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_leaders_schema.md)
-table.
+|                  |           |                                               |
+|------------------|-----------|-----------------------------------------------|
+| col_name         | types     | description                                   |
+| league           | character | League slug.                                  |
+| season           | integer   | Season year.                                  |
+| season_type      | integer   | Season-type id.                               |
+| category_name    | character | Internal category key (e.g. "pointsPerGame"). |
+| category_display | character | Human-readable category name.                 |
+| category_short   | character | Short display name.                           |
+| category_abbrev  | character | Stat abbreviation (e.g. "PTS").               |
+| rank             | integer   | Rank within the category (1 = best).          |
+| athlete_id       | character | ESPN athlete id.                              |
+| team_id          | character | ESPN team id.                                 |
+| display_value    | character | Display-formatted value.                      |
+| value            | numeric   | Numeric leader value.                         |
+| rel              | character | Comma-joined `rel` tags from ESPN.            |
+| athlete_ref      | character | `$ref` URL to the leader's athlete.           |
+| team_ref         | character | `$ref` URL to the leader's team.              |
 
 ## Details
 
@@ -76,7 +106,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_leaders(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season-Type Leaders ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:38 UTC
+#> ℹ Data updated: 2026-11-09 19:10:56 UTC
 #> # A tibble: 350 × 15
 #>    league       season season_type category_name category_display category_short
 #>    <chr>         <int>       <int> <chr>         <chr>            <chr>         
@@ -98,7 +128,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_leaders(season = 2025)
 #> ── ESPN NBA Season-Type Leaders ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:40 UTC
+#> ℹ Data updated: 2026-11-09 19:10:58 UTC
 #> # A tibble: 800 × 15
 #>    league season season_type category_name category_display category_short
 #>    <chr>   <int>       <int> <chr>         <chr>            <chr>         

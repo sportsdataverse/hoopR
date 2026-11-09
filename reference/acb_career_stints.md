@@ -23,23 +23,12 @@ acb_career_stints(player_id)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py
-`acb_career_stints`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| player_id | integer | ACB licence number asked for. |
-| initial_year | integer | Year the stint starts. |
-| end_year | integer | Year the stint ends (the season's END year). |
-| team_id | integer | Team entry of the stint's latest edition. |
-| club_id | integer | Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the `clubId` request param and every `homeClubId` / `awayClubId`. |
-| team | character | Team name that season (sponsor names change) |
-| team_abbr | character | Three-letter abbreviation (BAR, RMB) |
-| edition_id | integer | Season id of the stint's team entry (START year - 1935). |
-| n_editions | integer | Editions the stint spans. |
-| has_no_validated_data | logical | True when the stint has no validated data. |
+A `hoopR_data` tibble with one row per stint. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_career_stints")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

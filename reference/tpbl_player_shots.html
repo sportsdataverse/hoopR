@@ -36,6 +36,7 @@ Endpoint: GET https://api.tpbl.basketball/api/divisions/{division_id}/players/{p
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -145,8 +146,11 @@ Not the GoHoops person id and not the roster id.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Every field-goal attempt of one player in one division with its court position. An empty
-answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py <code>tpbl_player_shots</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>division_id</td><td>integer</td><td>TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the <code>{division_id}</code> of every division route. Not the GoHoops division id.</td></tr><tr><td>player_id</td><td>integer</td><td>TPBL player id (key space: TPBL players; one per person across seasons and teams): the <code>{player_id}</code> of the player routes. Not the GoHoops person id and not the roster id.</td></tr><tr><td>is_made</td><td>logical</td><td>True when the shot went in.</td></tr><tr><td>point_x</td><td>integer</td><td>Shot position in MILLIMETRES, 0-28000 along the court length (a 28 m court). The hoops sit at x = 1575 (offense_basket 0) and x = 26425 (offense_basket 1), y = 7500. Same frame as the team list, where it was verified; here it is only checked to stay on the court.</td></tr><tr><td>point_y</td><td>integer</td><td>Shot position in MILLIMETRES, 0-15000 across the court (a 15 m court). The hoops sit at x = 1575 (offense_basket 0) and x = 26425 (offense_basket 1), y = 7500. The direction of y is unverified.</td></tr><tr><td>offense_basket</td><td>integer</td><td>Basket the player's team attacked: 0 = the hoop at x = 1575, 1 = the hoop at x = 26425.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per shot.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "tpbl_player_shots")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="tpbl_seasons.html">tpbl_seasons()</a></code>.</p>

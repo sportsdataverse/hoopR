@@ -28,13 +28,13 @@ fiba_gdap_gateway_competition_ids(start_date, end_date, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | FIBA competition id (Int64, GDAP key space) of a competition that runs in the window. |
+A `hoopR_data` tibble with one row per competition. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_gateway_competition_ids")`)
+and in the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

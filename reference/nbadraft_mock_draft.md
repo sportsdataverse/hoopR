@@ -21,20 +21,13 @@ nbadraft_mock_draft(year = NULL)
 
 ## Value
 
-A `hoopR_data` tibble with one row per mock-draft pick:
-
-|          |           |                                                   |
-|----------|-----------|---------------------------------------------------|
-| col_name | types     | description                                       |
-| round    | integer   | Draft round (1 or 2).                             |
-| pick     | integer   | Pick number within the round.                     |
-| team     | character | Projected team (`*` traded-pick marker stripped). |
-| player   | character | Projected player.                                 |
-| height   | character | Player height.                                    |
-| weight   | character | Player weight.                                    |
-| position | character | Player position.                                  |
-| school   | character | Player school / pre-draft team.                   |
-| class    | character | Player class / draft eligibility.                 |
+A `hoopR_data` tibble with one row per mock-draft pick. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "nbadraft_mock_draft")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 
@@ -48,7 +41,7 @@ Other Salary & Draft Functions:
 # \donttest{
   try(nbadraft_mock_draft())
 #> ── Mock draft from nbadraft.net ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:07:54 UTC
+#> ℹ Data updated: 2026-11-09 19:13:58 UTC
 #> # A tibble: 60 × 9
 #>     pick team        player            height weight position school class round
 #>    <int> <chr>       <chr>             <chr>   <int> <chr>    <chr>  <chr> <int>

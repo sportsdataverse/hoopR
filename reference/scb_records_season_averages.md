@@ -24,28 +24,13 @@ scb_records_season_averages(league = "bbl")
 
 ## Value
 
-A `hoopR_data` tibble: All-time season-average records (points,
-rebounds, assists, ...), one row per record. An empty valid answer
-raises `hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `scb_records_season_averages`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| league | character | League the row belongs to: `bbl` (men) or `dbbl` (women); BBL and DBBL game ids overlap, so a game is (league, game_id). |
-| stat | character | The record's stat list: assist_average, block_average, efficiency_average, foul_average, free_throws_success_percentage, points_average, rebound_average, steal_average, three_point_shot_average or turnover_average. |
-| season | integer | Season END year (2026 = 2025-26), the sdv key; the API's `season_id` plus one. |
-| season_id | integer | Season, START year (2026 = 2026-27). |
-| place | integer | Rank within the list (1 = best); 0 on some rows. |
-| order_id | integer | Sort order within the list. |
-| value | double | The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages. |
-| ratio | double | \[made, attempted\] as strings, on percentage records only; null otherwise. |
-| season_player_id | character | Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score `seasonPlayer.id`, action `seasonPlayerId` and `/season-players/{seasonPlayerId}`. |
-| real_player_id | integer | Global person id: the same across clubs and seasons. Joins to `realPlayerId` everywhere. |
-| first_name | character | Player's given name. |
-| last_name | character | Player's family name. |
-| team_name | character | Team name as listed that season (sponsor names included). |
-| team_tlc | character | The player's team code. |
+A `hoopR_data` tibble with one row per season-average record. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "scb_records_season_averages")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

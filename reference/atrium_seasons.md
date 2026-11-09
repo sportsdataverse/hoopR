@@ -33,21 +33,12 @@ atrium_seasons(website_id, locale = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per `season_id`; `is_default_season`
-marks the season the site serves by default:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| season_id | character | Season UUID; pass it as season_id to any season-scoped wrapper. |
-| competition_id | character | Competition UUID; pass it as competition_id to pick one of several seasons of an END year. |
-| competition_name | character | Competition name in the site's language; the same name can appear for several years. |
-| season_name | character | Season name in the site's language, e.g. Betclic ELITE 2025. |
-| abbreviation_local | character | Local abbreviation of the season; null in every body seen. |
-| year | integer | The site's own year of the season: the START year on LNB (site 12), the calendar year elsewhere. |
-| season_end_year | integer | Season END year (the sdv key): the site's year + 1 on LNB (site 12), the calendar year on the other registered sites; null when the site is unregistered, lists no seasons or the body has no season list. |
-| is_default_season | logical | True for the season the body is about (the site's default when none was asked). |
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_seasons")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -93,7 +84,7 @@ Other Atrium Functions:
 # \donttest{
   try(atrium_seasons(website_id = 12))
 #> ── Atrium seasons from embed-api.eui.connect.sportradar.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:56 UTC
+#> ℹ Data updated: 2026-11-09 19:09:11 UTC
 #> # A tibble: 19 × 9
 #>    website_id season_id              competition_id competition_name season_name
 #>         <int> <chr>                  <chr>          <chr>            <chr>      

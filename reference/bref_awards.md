@@ -25,21 +25,13 @@ bref_awards(season = most_recent_nba_season())
 
 ## Value
 
-A `hoopR_data` tibble with one row per award candidate:
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| award | character | Award slug (`mvp`, `roy`, `dpoy`, `smoy`, `mip`, `clutch_poy`, `coy`). |
-| rank | integer | Finish in the voting. |
-| player | character | Player (or coach) name. |
-| age | integer | Age. |
-| team | character | Team abbreviation. |
-| votes_first | numeric | First-place votes. |
-| points_won | numeric | Voting points won. |
-| points_max | numeric | Maximum possible voting points. |
-| award_share | numeric | Share of the maximum voting points. |
-| season | integer | Season (echoes the `season` argument). |
+A `hoopR_data` tibble with one row per award candidate. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bref_awards")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

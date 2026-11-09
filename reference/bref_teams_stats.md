@@ -29,19 +29,12 @@ bref_teams_stats(season = most_recent_nba_season(), table = "per_game")
 
 ## Value
 
-A `hoopR_data` tibble with one row per team (columns vary by `table`;
-common identifying columns shown – names are Basketball-Reference
-`data-stat` keys):
-
-|          |           |                                        |
-|----------|-----------|----------------------------------------|
-| col_name | types     | description                            |
-| ranker   | integer   | Row rank.                              |
-| team     | character | Team name.                             |
-| g        | integer   | Games played.                          |
-| mp       | numeric   | Minutes played.                        |
-| pts      | numeric   | Points (scaled to the chosen `table`). |
-| season   | integer   | Season (echoes the `season` argument). |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bref_teams_stats")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

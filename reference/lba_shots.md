@@ -22,25 +22,13 @@ lba_shots(game_id)
 
 ## Value
 
-A `hoopR_data` tibble: Shooting by court zone per team for a final game
-(made / attempted aggregates; zone 7 includes free throws). The columns
-are always these, in this order (sportsdataverse-py `lba_shots`); a
-column the site adds later is appended after them:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | Game id (global across seasons); joins lba_calendar and lba_game. |
-| season | integer | Season END year (2027 = 2026-27): the row's START year + 1. |
-| side | character | Which team of the game the row belongs to: home or visitor. |
-| team_id | integer | Team-season id (re-issued every season); join lba_teams for the stable club_id. |
-| zone | integer | Court zone 1-10 (the play-by-play side_area_code); zone 7 also holds the free throws. |
-| made | integer | Shots made in the zone, parsed from num. |
-| attempts | integer | Shots attempted in the zone, parsed from num. |
-| perc | double | Made / attempted x 100. |
-| precision | integer | Decimal places the site shows (1). |
-| num | character | Made/attempted as a string (`17/21`); zone `7` also counts free throws. |
-| opacity | integer | Heat-map shading for the site: `perc` floored, minimum 5. |
+A `hoopR_data` tibble with one row per shooting zone. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lba_shots")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -59,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(lba_shots(game_id = 25602))
 #> ── LBA Shots from legabasket.it ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:54 UTC
+#> ℹ Data updated: 2026-11-09 19:13:06 UTC
 #> # A tibble: 20 × 11
 #>    game_id season side    team_id  zone  made attempts  perc precision num  
 #>      <int>  <int> <chr>     <int> <int> <int>    <int> <dbl>     <int> <chr>

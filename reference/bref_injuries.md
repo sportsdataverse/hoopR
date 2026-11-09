@@ -20,15 +20,13 @@ bref_injuries()
 
 ## Value
 
-A `hoopR_data` tibble with one row per injured player:
-
-|             |           |                                   |
-|-------------|-----------|-----------------------------------|
-| col_name    | types     | description                       |
-| player      | character | Player name.                      |
-| team_name   | character | Team name.                        |
-| date_update | character | Date the status was last updated. |
-| note        | character | Injury status and description.    |
+A `hoopR_data` tibble with one row per injured player. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bref_injuries")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

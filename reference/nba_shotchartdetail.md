@@ -334,7 +334,7 @@ nba_shotchartlineupdetail(
 
 ## Value
 
-Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
+A named list of tibbles: `Shot_Chart_Detail`, `LeagueAverages`.
 
 **Shot_Chart_Detail**
 
@@ -368,20 +368,34 @@ Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
 
 **LeagueAverages**
 
-Columns as documented in the shared
-[nba_shotchartdetail_leagueaverages_schema](https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail_leagueaverages_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GRID_TYPE | character |  |
+| SHOT_ZONE_BASIC | character | Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3'). |
+| SHOT_ZONE_AREA | character | Shot zone area ('Left Side', 'Right Side', 'Center'). |
+| SHOT_ZONE_RANGE | character | Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.). |
+| FGA | character | Field goal attempts. |
+| FGM | character | Field goals made. |
+| FG_PCT | character | Field goal percentage (0-1). |
 
-Return a named list of data frames: League_Wide
+A named list of tibbles: `League_Wide`.
 
 **League_Wide**
 
-Columns as documented in the shared
-[nba_shotchartdetail_leagueaverages_schema](https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail_leagueaverages_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GRID_TYPE | character |  |
+| SHOT_ZONE_BASIC | character | Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3'). |
+| SHOT_ZONE_AREA | character | Shot zone area ('Left Side', 'Right Side', 'Center'). |
+| SHOT_ZONE_RANGE | character | Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.). |
+| FGA | character | Field goal attempts. |
+| FGM | character | Field goals made. |
+| FG_PCT | character | Field goal percentage (0-1). |
 
-Return a named list of data frames: ShotChartLineupDetail,
-ShotChartLineupLeagueAverage
+A named list of tibbles: `ShotChartLineupDetail`,
+`ShotChartLineupLeagueAverage`.
 
 **ShotChartLineupDetail**
 
@@ -417,9 +431,16 @@ ShotChartLineupLeagueAverage
 
 **ShotChartLineupLeagueAverage**
 
-Columns as documented in the shared
-[nba_shotchartdetail_leagueaverages_schema](https://hoopR.sportsdataverse.org/reference/nba_shotchartdetail_leagueaverages_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GRID_TYPE | character |  |
+| SHOT_ZONE_BASIC | character | Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3'). |
+| SHOT_ZONE_AREA | character | Shot zone area ('Left Side', 'Right Side', 'Center'). |
+| SHOT_ZONE_RANGE | character | Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.). |
+| FGA | character | Field goal attempts. |
+| FGM | character | Field goals made. |
+| FG_PCT | character | Field goal percentage (0-1). |
 
 ## Details
 

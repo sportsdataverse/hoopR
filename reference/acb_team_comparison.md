@@ -29,24 +29,13 @@ acb_team_comparison(match_id)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py
-`acb_team_comparison`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. |
-| quarter | integer | Period of the bar: 0 = the whole game, 1-4 quarters. |
-| stat | character | Compared statistic (free_throws, two_pointers, three_pointers, field_goals, rebounds, assists, steals, turnovers, personal_fouls, time_outs, points_off_turnover, paint_points, second_chance_points, fast_break_points, bench_points ...). |
-| home_value | double | Home value of the bar: a percentage 0-100 for the shooting statistics (the API's `'79,17%'` decimal comma parsed), a count otherwise. |
-| away_value | double | Away value of the bar, same units as home_value. |
-| home_made | integer | Home shots made, from the 'made/attempted' subtitle; null for the non-shooting statistics. |
-| home_attempted | integer | Home shots attempted, from the subtitle; null for the non-shooting statistics. |
-| away_made | integer | Away shots made, from the subtitle; null for the non-shooting statistics. |
-| away_attempted | integer | Away shots attempted, from the subtitle; null for the non-shooting statistics. |
-| home_is_highlighted | logical | True when the site highlights the home bar as the better value. |
-| away_is_highlighted | logical | True when the site highlights the away bar as the better value. |
+A `hoopR_data` tibble with one row per period and statistic. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_team_comparison")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

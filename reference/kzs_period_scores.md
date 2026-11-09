@@ -19,19 +19,13 @@ kzs_period_scores(match_id)
 
 ## Value
 
-A `hoopR_data` tibble: Points by match part (quarters and overtimes)
-from the match header. An empty valid answer raises `hoopR_no_data`; the
-columns are always these, in this order (sportsdataverse-py
-`kzs_period_scores`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | Match id: the federation key of a game, global across seasons (joins kzs_matches and kzs_match). |
-| score_id | integer | Period-score row id. |
-| match_part | character | Period: QUARTER1-QUARTER4, then OT1 for the first overtime (OT2 and on by the same pattern, unobserved). |
-| first_team_score | integer | First (home) team points in the period. |
-| second_team_score | integer | Second (away) team points in the period. |
+A `hoopR_data` tibble with one row per team and period. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_period_scores")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -50,7 +44,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_period_scores(match_id = 101839))
 #> ── KZS Period Scores from api.kzs.si ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:34 UTC
+#> ℹ Data updated: 2026-11-09 19:12:46 UTC
 #> # A tibble: 5 × 5
 #>   match_id score_id match_part first_team_score second_team_score
 #>      <int>    <int> <chr>                 <int>             <int>

@@ -25,21 +25,13 @@ tpbl_divisions(season)
 
 ## Value
 
-A `hoopR_data` tibble: The divisions (preseason, regular season,
-play-in, playoffs, finals) of one season. An empty answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `tpbl_divisions`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = the 2025-26 season), the year asked for. Null when the body was parsed without the request stamp. |
-| season_id | integer | TPBL season id (key space: TPBL seasons on api.tpbl.basketball; 1 = 2024-25, 2 = 2025-26, 3 = 2026-27): the `{season_id}` of the season game list and, equal to it, the `{event_id}` of `/events/{event_id}/*`. Not the GoHoops season id. Null when the body was parsed without the request stamp. |
-| division_id | integer | TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the `{division_id}` of every division route. Not the GoHoops division id. |
-| gohoops_division_id | integer | GoHoops division id (key space: GoHoops divisions; e.g. 64 = the 2024-25 preseason, 65 = the 2024-25 regular season). Not the TPBL division id. |
-| gohoops_event_id | integer | GoHoops event id (key space: GoHoops events, one per TPBL season; 319 = 2024-25, 490 = 2025-26, 613 = 2026-27). Not the TPBL season id and not the GoHoops season id. |
-| name | character | Division name (Traditional Chinese: preseason (warm-up games), regular season, postseason challenge (play-in round), playoffs, finals). |
-| status | character | Division status: COMPLETED or IN_PROGRESS. |
+A `hoopR_data` tibble with one row per division. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tpbl_divisions")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

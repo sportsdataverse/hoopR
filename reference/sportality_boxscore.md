@@ -21,46 +21,13 @@ sportality_boxscore(game_uuid)
 
 ## Value
 
-A `hoopR_data` tibble: Player box score and team rows of both sides
-(2023/24 on). An empty valid answer raises `hoopR_no_data`; the
-documented columns come first, in this order (sportsdataverse-py
-`sportality_boxscore`), then any column the API added later:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_side | character | home or away: the side the row belongs to. |
-| row_type | character | Kind of row: player, team_coach (the bench row: team rebounds, turnovers and fouls charged to the team or coach) or team_totals. |
-| player_id | integer | Genius person id (Int64). A string key in the players maps, an integer in play-by-play and box-score rows; cast here so the frames join, and join the genius family. |
-| team_id | integer | Genius team id (Int64): in gameday bodies, an integer in standings and stats tables. |
-| team_name | character | Name of the team. |
-| period | integer | Period of the line: 0 = the whole game (the only value seen). |
-| full_name | character | Full display name of the player. |
-| first_name | character | Given (first) name(s) of the player. |
-| last_name | character | Family name (surname) of the player. |
-| nr | integer | Jersey number (null on the bench and totals rows). |
-| pos | character | Position code of the line (G, F, C; null on the bench and totals rows). |
-| mins | character | Minutes played as 'MM:SS' (null on the bench and totals rows). |
-| pts | integer | Number of points scored. |
-| fg | character | Field goals as 'made-attempted'. |
-| fg_perc | double | Field-goal percentage, 0-100. |
-| 2_p | character | Two-pointers as 'made-attempted'. |
-| 2_p_perc | double | Two-point percentage, 0-100. |
-| 3_p | character | Three-pointers as 'made-attempted'. |
-| 3_p_perc | double | Three-point percentage, 0-100. |
-| ft | character | Free throws as 'made-attempted'. |
-| ft_perc | double | Free-throw percentage, 0-100. |
-| off | integer | Offensive rebounds. |
-| def | integer | Defensive rebounds. |
-| reb | integer | Total rebounds. |
-| ast | integer | Number of assists credited. |
-| to | integer | Number of turnovers committed. |
-| stl | integer | Number of steals. |
-| blk | integer | Number of blocked shots made. |
-| blkr | integer | Blocks received (shots of the player that were blocked). |
-| pf | integer | Personal fouls. |
-| f_on | integer | Fouls on (fouls drawn). |
-| plus_minus | integer | Plus/minus while on court. |
+A `hoopR_data` tibble with one row per player or team row, per side. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportality_boxscore")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -79,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(sportality_boxscore(game_uuid = "c4hh5nig6t"))
 #> ── Basketligaen Box Score from basketligaen.dk ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:55 UTC
+#> ℹ Data updated: 2026-11-09 19:14:48 UTC
 #> # A tibble: 28 × 32
 #>    team_side row_type player_id team_id team_name    period full_name first_name
 #>    <chr>     <chr>        <int>   <int> <chr>         <int> <chr>     <chr>     

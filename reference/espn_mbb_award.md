@@ -30,7 +30,7 @@ espn_nba_award(award_id, season = most_recent_nba_season(), ...)
 
 ## Value
 
-A tibble with one row per winner.
+A `hoopR_data` tibble with one row per winner.
 
 |             |           |                                                 |
 |-------------|-----------|-------------------------------------------------|
@@ -45,7 +45,7 @@ A tibble with one row per winner.
 | athlete_ref | character | `$ref` to winner's per-season athlete resource. |
 | team_ref    | character | `$ref` to winner's per-season team resource.    |
 
-A tibble with one row per winner.
+A `hoopR_data` tibble with one row per winner.
 
 |  |  |  |
 |----|----|----|
@@ -78,7 +78,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_award(award_id = 344, season = 2024)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Award Detail from ESPN.com ──────────────
-#> ℹ Data updated: 2026-11-09 17:04:03 UTC
+#> ℹ Data updated: 2026-11-09 19:10:22 UTC
 #> # A tibble: 1 × 9
 #>   league        season award_id name  description athlete_id team_id athlete_ref
 #>   <chr>          <int> <chr>    <chr> <chr>       <chr>      <chr>   <chr>      
@@ -89,7 +89,7 @@ Saiem Gilani
   # MVP award id = 33
   espn_nba_award(award_id = 33, season = 2024)
 #> ── ESPN NBA Season Award Detail from ESPN.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:03 UTC
+#> ℹ Data updated: 2026-11-09 19:10:22 UTC
 #> # A tibble: 1 × 9
 #>   league season award_id name  description        athlete_id team_id athlete_ref
 #>   <chr>   <int> <chr>    <chr> <chr>              <chr>      <chr>   <chr>      

@@ -50,7 +50,7 @@ load_nba_team_group_seasons(
 
 ## Value
 
-Returns a `hoopR_data` tibble with one row per team-season.
+A `hoopR_data` tibble with one row per team-season.
 
 |  |  |  |
 |----|----|----|

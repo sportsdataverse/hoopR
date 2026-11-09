@@ -115,3 +115,9 @@
   A searchable reference table of every query parameter used by the NBA
   Stats API endpoints wrapped in `hoopR` – parameter name, description,
   accepted values, and which functions accept it.
+
+- [Return
+  Columns](https://hoopR.sportsdataverse.org/articles/return-columns.md):
+
+  A searchable table of the columns every `hoopR` function returns –
+  function, list element, column name, type and description.

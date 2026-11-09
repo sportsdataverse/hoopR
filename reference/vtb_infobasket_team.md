@@ -29,30 +29,12 @@ vtb_infobasket_team(team_id, lang = "en", tag = "vtb")
 
 ## Value
 
-A `hoopR_data` tibble: Club profile: names, region, country, status. The
-columns are always these, in this order (sportsdataverse-py
-`vtb_infobasket_team`); an empty valid answer raises `hoopR_no_data`, a
-valid body with no rows for this frame is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team\*/{teamId} and equals the v2 API `teamId`. The scope check compares it with the request. |
-| team_type | integer | Team type code: 1 on the club record. |
-| team_name_ru | character | Club name, Russian. |
-| team_name_en | character | Club name, English. |
-| team_short_name_ru | character | Club short name, Russian. |
-| team_short_name_en | character | Club short name, English. |
-| team_abc_name_ru | character | Club abbreviation, Russian (the full name in the sample). |
-| team_abc_name_en | character | Club abbreviation, English. |
-| team_gender | integer | Team gender code: 0 on every sample (men). |
-| team_region | integer | Infobasket region id of the club's city. |
-| team_country | integer | Country id of the club (1 = Russia, unverified). |
-| team_logo | integer | Logo flag; 0 in the samples. |
-| team_uniform1 | integer | First uniform colour code. |
-| team_uniform2 | integer | Second uniform colour code. |
-| team_status | integer | Club record status (1 active). |
-| team_record_id | integer | Id of the club-record name (CurrentTeamName.TeamID, 2259 for team 2650): a different key space from team_id. |
+A `hoopR_data` tibble with one row per club. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_team")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -71,7 +53,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_team(team_id = 2650))
 #> ── VTB Infobasket Team from org.infobasket.su ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:10:15 UTC
+#> ℹ Data updated: 2026-11-09 19:16:09 UTC
 #> # A tibble: 1 × 16
 #>   team_id team_type team_name_ru     team_name_en    team_short_name_ru
 #>     <int>     <int> <chr>            <chr>           <chr>             

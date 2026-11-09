@@ -20,22 +20,13 @@ lba_teams(season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: Teams of a season, one row per team-season with
-the stable club id. The columns are always these, in this order
-(sportsdataverse-py `lba_teams`); a column the site adds later is
-appended after them:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2027 = 2026-27): the row's START year + 1. |
-| team_id | integer | Team id (one team-season). |
-| name | character | Team name of that season (sponsor name). |
-| year | integer | Season START year (2026 = 2026-27); sdv END year = year + 1. |
-| club_id | integer | Club id: the cross-season join key for team ids (only here and in the `team` headers); stability across seasons is unverified. |
-| club_code | character | Club code (`TVB`, `TS`); whether it is stable across seasons is unverified. |
-| updated_at | character | Timestamp, ISO-8601 with the Italian offset. |
-| logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
+A `hoopR_data` tibble with one row per team-season with the stable club
+id. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lba_teams")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -54,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(lba_teams(season = 2027))
 #> ── LBA Teams from legabasket.it ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:07:00 UTC
+#> ℹ Data updated: 2026-11-09 19:13:12 UTC
 #> # A tibble: 16 × 8
 #>    season team_id name                year club_id club_code updated_at logo_key
 #>     <int>   <int> <chr>              <int>   <int> <chr>     <chr>      <chr>   

@@ -26,90 +26,12 @@ fiba_gdap_team_games(team_id, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | FIBA game id, global across competitions (GDAP key space): gdapGameId, the `<gameId>` of a game-page URL. |
-| round_name | character | Round label (Group Phase, Quarter-Finals, Final...). |
-| game_number | character | Game number within the round or pairing (a string: '1', 'A'). |
-| status | character | Game status label (Validated). |
-| status_code | character | Game status code: VALID (validated result), CLOS (closed, pre-2000 rows). |
-| game_day | integer | Game day number within the round. |
-| team_a_from | character | How team A qualified for this slot; null in group play. |
-| team_b_from | character | How team B qualified for this slot; null in group play. |
-| team_a_team_id | integer | Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. |
-| team_a_organisation_id | integer | Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T\_`<id>`. |
-| team_a_code | character | Team code (national: FIBA country code; club: a club abbreviation such as OOST). |
-| team_a_official_name | character | Official name of team A: the country for a national team, the club for a club team. |
-| team_a_short_name | character | Short name of team A: the country code for a national team, the club's short name for a club. |
-| team_b_team_id | integer | Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. |
-| team_b_organisation_id | integer | Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T\_`<id>`. |
-| team_b_code | character | Team code (national: FIBA country code; club: a club abbreviation such as NANT). |
-| team_b_official_name | character | Official name of team B: the country for a national team, the club for a club team. |
-| team_b_short_name | character | Short name of team B: the country code for a national team, the club's short name for a club. |
-| team_a_score | integer | Team A points in the period. |
-| team_b_score | integer | Team B points in the period. |
-| host_city | character | City of the venue. |
-| host_country | character | Country of the venue (name; a FIBA code in getgdapgameswithleaderdetailsbyteamid). |
-| host_country_code | character | FIBA code of the venue's country; always null in the samples, values unverified. |
-| venue_id | integer | Venue id (GDAP key space; 0 = unknown). |
-| venue_name | character | Name of the arena the game is played in. |
-| game_date_time | character | Tip-off in venue-local wall-clock time, ISO 8601 without offset (T00:00:00 when hasTimeGameDateTime is false). |
-| game_date_time_utc | character | Tip-off in UTC, ISO 8601 without the Z. |
-| has_time_game_date_time | logical | False when only the date is known (the time part is then 00:00:00). |
-| iana_time_zone | character | IANA time zone of the venue. |
-| utc_offset | double | Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). |
-| buy_tickets_url | character | Ticket link; always ” in the samples. |
-| watch_url | character | Stream link; always ” in the samples. |
-| is_postponed | logical | True when the game was postponed. |
-| is_played_behind_closed_doors | logical | True when played without spectators. |
-| venue_capacity | integer | Venue capacity (0 = unknown). |
-| spectators | integer | Attendance at the game, as recorded by FIBA. |
-| is_live | logical | True while the game is being played. |
-| leaders_team_a_points_leader_player_id | integer | FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P\_`<id>` = gdapPlayerId. |
-| leaders_team_a_points_leader_first_name | character | Given name(s) as registered with FIBA. |
-| leaders_team_a_points_leader_last_name | character | Last name (officials: upper case). |
-| leaders_team_a_points_leader_statistics_value | integer | Leader's value for the statistic. |
-| leaders_team_a_points_leader_nationality | character | FIBA code of the main nationality. |
-| leaders_team_a_points_leader_rank | integer | Rank (1 = first). |
-| leaders_team_a_rebounds_leader_player_id | integer | FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P\_`<id>` = gdapPlayerId. |
-| leaders_team_a_rebounds_leader_first_name | character | Given name(s) as registered with FIBA. |
-| leaders_team_a_rebounds_leader_last_name | character | Last name (officials: upper case). |
-| leaders_team_a_rebounds_leader_statistics_value | integer | Leader's value for the statistic. |
-| leaders_team_a_rebounds_leader_nationality | character | FIBA code of the main nationality. |
-| leaders_team_a_rebounds_leader_rank | integer | Rank (1 = first). |
-| leaders_team_a_assists_leader_player_id | integer | FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P\_`<id>` = gdapPlayerId. |
-| leaders_team_a_assists_leader_first_name | character | Given name(s) as registered with FIBA. |
-| leaders_team_a_assists_leader_last_name | character | Last name (officials: upper case). |
-| leaders_team_a_assists_leader_statistics_value | integer | Leader's value for the statistic. |
-| leaders_team_a_assists_leader_nationality | character | FIBA code of the main nationality. |
-| leaders_team_a_assists_leader_rank | integer | Rank (1 = first). |
-| leaders_team_b_points_leader_player_id | integer | FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P\_`<id>` = gdapPlayerId. |
-| leaders_team_b_points_leader_first_name | character | Given name(s) as registered with FIBA. |
-| leaders_team_b_points_leader_last_name | character | Last name (officials: upper case). |
-| leaders_team_b_points_leader_statistics_value | integer | Leader's value for the statistic. |
-| leaders_team_b_points_leader_nationality | character | FIBA code of the main nationality. |
-| leaders_team_b_points_leader_rank | integer | Rank (1 = first). |
-| leaders_team_b_rebounds_leader_player_id | integer | FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P\_`<id>` = gdapPlayerId. |
-| leaders_team_b_rebounds_leader_first_name | character | Given name(s) as registered with FIBA. |
-| leaders_team_b_rebounds_leader_last_name | character | Last name (officials: upper case). |
-| leaders_team_b_rebounds_leader_statistics_value | integer | Leader's value for the statistic. |
-| leaders_team_b_rebounds_leader_nationality | character | FIBA code of the main nationality. |
-| leaders_team_b_rebounds_leader_rank | integer | Rank (1 = first). |
-| leaders_team_b_assists_leader_player_id | integer | FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P\_`<id>` = gdapPlayerId. |
-| leaders_team_b_assists_leader_first_name | character | Given name(s) as registered with FIBA. |
-| leaders_team_b_assists_leader_last_name | character | Last name (officials: upper case). |
-| leaders_team_b_assists_leader_statistics_value | integer | Leader's value for the statistic. |
-| leaders_team_b_assists_leader_nationality | character | FIBA code of the main nationality. |
-| leaders_team_b_assists_leader_rank | integer | Rank (1 = first). |
-| periods | character | Score by period. Stored as a JSON string. |
-| game_statistic_status_code | character | Box-score validation status: VALID. |
-| game_play_by_play_status_code | character | Play-by-play availability flag: VALID or EMPTY. UNRELIABLE: World Cup 2014 and EuroBasket 2017 say EMPTY but their game pages carry full play-by-play; always check the page. |
-| game_result_status_code | character | Result validation status: VALID. |
-| game_result_additional_information | character | Free-text result note (forfeit, overtime remark); null when none. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_team_games")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -128,7 +50,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gdap_team_games(team_id = 279569))
 #> ── FIBA gdap_team_games from fiba.basketball ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:47 UTC
+#> ℹ Data updated: 2026-11-09 19:11:59 UTC
 #> # A tibble: 8 × 78
 #>   game_id round_name     game_number status    status_code game_day team_a_from 
 #>     <int> <chr>          <chr>       <chr>     <chr>          <int> <chr>       

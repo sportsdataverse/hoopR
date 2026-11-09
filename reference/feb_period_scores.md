@@ -27,15 +27,13 @@ feb_period_scores(game_id)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | FEB game id (one global sequence): the {gameId} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request. |
-| period | integer | Period number (1-4 regulation; overtime numbering is unverified, no overtime game is in the samples). |
-| home_points | integer | Points the home team scored IN this period (not cumulative). |
-| away_points | integer | Points the away team scored IN this period (not cumulative). |
+A `hoopR_data` tibble with one row per period played. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "feb_period_scores")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

@@ -36,6 +36,7 @@ Endpoint: GET https://www.basketligaen.dk/api/sports-v2/teams/{team_uuid}"><meta
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,8 +140,11 @@ space: platform team uuids (not the numeric Genius team id).</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: One team. An empty valid answer raises <code>hoopR_no_data</code>; the documented columns come
-first, in this order (sportsdataverse-py <code>sportality_team</code>), then any column the API added later:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>names_code</td><td>character</td><td>Three-letter team code (HOL, RAN ...); codes changed between seasons for some clubs (BAK in 2026, BKA in 2025 for Bakken Bears).</td></tr><tr><td>names_short</td><td>character</td><td>Short name of the team.</td></tr><tr><td>names_long</td><td>character</td><td>Long name of the team.</td></tr><tr><td>names_full</td><td>character</td><td>Full name of the team.</td></tr><tr><td>names_code_site</td><td>character</td><td>Team code as the club's own site shows it.</td></tr><tr><td>names_short_site</td><td>character</td><td>Short team name as the club's own site shows it.</td></tr><tr><td>names_full_site</td><td>character</td><td>Full team name as the club's own site shows it.</td></tr><tr><td>names_long_site</td><td>character</td><td>Long team name as the club's own site shows it.</td></tr><tr><td>info</td><td>character</td><td>Detail record (shape depends on the route; see the child columns).</td></tr><tr><td>uuid</td><td>character</td><td>Platform uuid of this record (10-character lowercase key space of its record type; joins the route that serves it).</td></tr><tr><td>nationality</td><td>character</td><td>ISO 3166-1 alpha-2 country code.</td></tr><tr><td>arena_name</td><td>character</td><td>Name of the arena.</td></tr><tr><td>public_url</td><td>character</td><td>The club's own website.</td></tr><tr><td>icon</td><td>character</td><td>Team logo URL (SVG on sportality.cdn.s8y.se).</td></tr><tr><td>owner_instance_id</td><td>character</td><td>Site instance id of the club that owns the team (platform key space, e.g. hol2_hol).</td></tr><tr><td>site_display_name</td><td>character</td><td>Team name as the league site displays it.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per team.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "sportality_team")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="sportality_schedule.html">sportality_schedule()</a></code>.</p>
@@ -155,7 +159,7 @@ first, in this order (sportsdataverse-py <code>sportality_team</code>), then any
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportality_team</span><span class="op">(</span>team_uuid <span class="op">=</span> <span class="st">"rfo82vr830"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── Basketligaen Team from basketligaen.dk ─────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:09:08 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:15:02 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 16</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   names_code names_short  names_long names_full names_code_site names_short_site</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           </span>

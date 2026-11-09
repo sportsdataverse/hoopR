@@ -33,55 +33,13 @@ fiba_gamepage_box_players(game_id, comp, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | FIBA game id (Int64), global across competitions: gdapGameId, the `<gameId>` of a game-page URL. |
-| competition_id | integer | FIBA competition id (Int64) of the game's edition; the comp argument. |
-| team_side | character | A or B: whether the row is the schedule's team A or team B (null when the page does not say). |
-| organisation_id | integer | Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T\_`<id>` and the play-by-play oId. NOT the per-competition team_id. |
-| player_id | integer | FIBA person id (Int64), global across competitions and roles: the page's P\_`<id>`, play-by-play pId, roster personId and fiba_gdap_roster.player_id. |
-| first_name | character | Given name(s) as registered with FIBA. |
-| last_name | character | Last name as registered with FIBA. |
-| jersey | character | Jersey number as a string. |
-| position | character | Playing position code from the lineup card (PG, SG, SF, PF, C). |
-| is_captain | logical | True for the team captain. |
-| is_starter | logical | True for the starting five. |
-| has_played | logical | True when the player got on the court. |
-| minutes | character | Minutes played as an 'm:ss' string ('0:0' = did not play). |
-| seconds_played | integer | Seconds played, derived from minutes. |
-| points | integer | Points scored in the game. |
-| fg_made | integer | Field goals made (2 + 3 points). |
-| fg_attempted | integer | Field goals attempted (2 + 3 points). |
-| fg_pct | double | Field-goal percentage, 0-100. |
-| fg2_made | integer | Two-point field goals made. |
-| fg2_attempted | integer | Two-point field goals attempted. |
-| fg2_pct | double | Two-point field-goal percentage, 0-100. |
-| fg3_made | integer | Three-point field goals made. |
-| fg3_attempted | integer | Three-point field goals attempted. |
-| fg3_pct | double | Three-point field-goal percentage, 0-100. |
-| ft_made | integer | Free throws made. |
-| ft_attempted | integer | Free throws attempted. |
-| ft_pct | double | Free-throw percentage, 0-100. |
-| reb_offensive | integer | Offensive rebounds. |
-| reb_defensive | integer | Defensive rebounds. |
-| reb_total | integer | Total rebounds (a team row includes the team rebounds team_reb_total). |
-| assists | integer | Assists credited in the game. |
-| steals | integer | Steals credited in the game. |
-| blocks | integer | Blocked shots (blocks made). |
-| blocks_received | integer | Own shots blocked by the opponent (blocks received). |
-| turnovers | integer | Turnovers (a team row includes the team turnovers team_turnovers). |
-| fouls | integer | Personal fouls (a team row includes the team fouls team_fouls). |
-| fouls_drawn | integer | Fouls drawn in the game. |
-| paint_fg_made | integer | Field goals made in the paint (team points_in_paint = 2 x paint_fg_made on every sampled game). |
-| paint_fg_attempted | integer | Field goals attempted in the paint. |
-| paint_fg_pct | double | Field-goal percentage in the paint, 0-100. |
-| efficiency | integer | Efficiency (FIBA EFF: points + rebounds + assists + steals + blocks - missed field goals - missed free throws - turnovers). |
-| plus_minus | integer | Plus/minus: the team's point differential while the player was on the court. |
-| cb | logical | Boolean flag, false on every sampled player; meaning unverified. |
+A `hoopR_data` tibble with one row per player in the game. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gamepage_box_players")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -144,7 +102,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gamepage_box_players(game_id = 100720, comp = 208182))
 #> ── FIBA gamepage_box_players from fiba.basketball ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:30 UTC
+#> ℹ Data updated: 2026-11-09 19:11:43 UTC
 #> # A tibble: 24 × 43
 #>    game_id competition_id team_side organisation_id player_id first_name
 #>      <int>          <int> <chr>               <int>     <int> <chr>     

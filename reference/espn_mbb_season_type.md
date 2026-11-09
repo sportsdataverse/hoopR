@@ -33,17 +33,49 @@ espn_nba_season_type(season_type = 2L, season = most_recent_nba_season(), ...)
 
 ## Value
 
-A single-row tibble.
+A `hoopR_data` tibble with one row per season type.
 
-Columns as documented in the shared
-[espn_mbb_season_type_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_type_schema.md)
-table.
+|               |           |                                       |
+|---------------|-----------|---------------------------------------|
+| col_name      | types     | description                           |
+| league        | character | League slug.                          |
+| season        | integer   | Season year.                          |
+| season_type   | integer   | Season-type id.                       |
+| type          | integer   | Numeric type code.                    |
+| name          | character | Display name (e.g. "Regular Season"). |
+| abbreviation  | character | Short code (e.g. "reg").              |
+| year          | integer   | Year stamp.                           |
+| start_date    | character | ISO 8601 start date.                  |
+| end_date      | character | ISO 8601 end date.                    |
+| has_groups    | logical   | Whether groups exist for this type.   |
+| has_standings | logical   | Whether standings exist.              |
+| has_legs      | logical   | Whether playoff legs exist.           |
+| slug          | character | URL slug.                             |
+| groups_ref    | character | `$ref` to the groups endpoint.        |
+| weeks_ref     | character | `$ref` to the weeks endpoint.         |
+| leaders_ref   | character | `$ref` to the leaders endpoint.       |
 
-A single-row tibble.
+A `hoopR_data` tibble with one row per season type.
 
-Columns as documented in the shared
-[espn_mbb_season_type_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_type_schema.md)
-table.
+|               |           |                                       |
+|---------------|-----------|---------------------------------------|
+| col_name      | types     | description                           |
+| league        | character | League slug.                          |
+| season        | integer   | Season year.                          |
+| season_type   | integer   | Season-type id.                       |
+| type          | integer   | Numeric type code.                    |
+| name          | character | Display name (e.g. "Regular Season"). |
+| abbreviation  | character | Short code (e.g. "reg").              |
+| year          | integer   | Year stamp.                           |
+| start_date    | character | ISO 8601 start date.                  |
+| end_date      | character | ISO 8601 end date.                    |
+| has_groups    | logical   | Whether groups exist for this type.   |
+| has_standings | logical   | Whether standings exist.              |
+| has_legs      | logical   | Whether playoff legs exist.           |
+| slug          | character | URL slug.                             |
+| groups_ref    | character | `$ref` to the groups endpoint.        |
+| weeks_ref     | character | `$ref` to the weeks endpoint.         |
+| leaders_ref   | character | `$ref` to the leaders endpoint.       |
 
 ## Details
 
@@ -69,7 +101,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_type(season_type = 2, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Type Detail ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:41 UTC
+#> ℹ Data updated: 2026-11-09 19:10:59 UTC
 #> # A tibble: 1 × 16
 #>   league   season season_type  type name  abbreviation  year start_date end_date
 #>   <chr>     <int>       <int> <int> <chr> <chr>        <int> <chr>      <chr>   
@@ -80,7 +112,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_type(season_type = 2, season = 2025)
 #> ── ESPN NBA Season Type Detail ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:41 UTC
+#> ℹ Data updated: 2026-11-09 19:10:59 UTC
 #> # A tibble: 1 × 16
 #>   league season season_type  type name    abbreviation  year start_date end_date
 #>   <chr>   <int>       <int> <int> <chr>   <chr>        <int> <chr>      <chr>   

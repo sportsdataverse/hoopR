@@ -27,23 +27,12 @@ cebl_roster(team_id, season)
 
 ## Value
 
-A `hoopR_data` tibble: One team's roster in one season: player,
-nationality, birth date, position and jersey. An empty valid answer
-raises `hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `cebl_roster`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season of the roster asked for (from the request; the body does not echo it). |
-| team_id | integer | CEBL team id of the roster asked for (from the request; the body does not echo it). |
-| player_id | integer | CEBL player id (its own key space). Joins /players/{player_id}/ and `id` in the other player rows. Genius LiveStats `data.json` carries no person id, so the join to Genius play-by-play is by name, team and jersey number (unverified). |
-| full_name | character | Player's full name. |
-| nationality | character | Nationality: an upper-case English country name ('CANADA', 'UNITED STATES', 'SOUTH SUDAN'); null when unknown. |
-| birth_date | Date | Date of birth, YYYY-MM-DD (players' public bio field); null when unknown. |
-| position | character | Playing position: G (guard), F (forward), C (center), or a combination such as 'C/F'; null when unknown. |
-| jersey_number | character | Jersey number, as a string of up to 2 characters ('0', '00' and '1' are distinct); null when unknown. |
-| photo_url | character | Player headshot URL on the Genius Sports image CDN (images.statsengine.playbyplay.api.geniussports.com). |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cebl_roster")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -72,7 +61,7 @@ Other CEBL Functions:
 # \donttest{
   try(cebl_roster(team_id = 14, season = 2025))
 #> ── CEBL Team Roster from the CEBL Stats API ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:36 UTC
+#> ℹ Data updated: 2026-11-09 19:09:54 UTC
 #> # A tibble: 14 × 9
 #>    season team_id player_id full_name         nationality   birth_date position
 #>     <int>   <int>     <int> <chr>             <chr>         <date>     <chr>   

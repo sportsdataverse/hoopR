@@ -20,19 +20,13 @@ kzs_pbp_players(match_id)
 
 ## Value
 
-A `hoopR_data` tibble: The players the play-by-play feed lists for each
-side of a final game. An empty valid answer raises `hoopR_no_data`; the
-columns are always these, in this order (sportsdataverse-py
-`kzs_pbp_players`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | Match id: the federation key of a game, global across seasons (joins kzs_matches and kzs_match). |
-| team_side | character | Which side of the match the row belongs to: home (the organiser, firstTeam on the wire) or away. |
-| player_id | integer | Player id (KZS player registry). Joins to `/players/{playerId}`, box-score and play-by-play `playerId`. Players listed here are the first (home) team. |
-| first_name | character | The home player's (as in the feed) given name. |
-| last_name | character | The home player's (as in the feed) family name. |
+A `hoopR_data` tibble with one row per player in the game. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_pbp_players")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

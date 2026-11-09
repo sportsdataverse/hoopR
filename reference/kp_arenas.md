@@ -54,131 +54,53 @@ kp_fanmatch(date)
 
 ## Value
 
-A data frame with the following columns:
+A data frame with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kp_trends")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-|              |         |                                                       |
-|--------------|---------|-------------------------------------------------------|
-| col_name     | types   | description                                           |
-| season       | numeric | Season identifier (4-digit year or 'YYYY-YY' string). |
-| efficiency   | numeric | Efficiency.                                           |
-| tempo        | numeric | Tempo.                                                |
-| e_fg_pct     | numeric | E field goals percentage (0-1 decimal).               |
-| to_pct       | numeric | To percentage (0-1 decimal).                          |
-| or_pct       | numeric | Or percentage (0-1 decimal).                          |
-| ft_rate      | numeric | Ft rate.                                              |
-| fg_2_pct     | numeric | Field goals 2 percentage (0-1 decimal).               |
-| fg_3_pct     | numeric | Field goals 3 percentage (0-1 decimal).               |
-| fg_3a_pct    | numeric | Field goals 3a percentage (0-1 decimal).              |
-| ft_pct       | numeric | Free throw percentage (0-1).                          |
-| a_pct        | numeric | A percentage (0-1 decimal).                           |
-| blk_pct      | numeric | Blocks percentage (0-1 decimal).                      |
-| stl_pct      | numeric | Steals percentage (0-1 decimal).                      |
-| non_stl_pct  | numeric | Non steals percentage (0-1 decimal).                  |
-| avg_hgt      | numeric | Avg hgt.                                              |
-| continuity   | numeric | Continuity.                                           |
-| home_win_pct | numeric | Home win percentage (0-1 decimal).                    |
-| ppg          | numeric | Points per game.                                      |
+A data frame with one row per official. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kp_officials")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-A data frame with the following columns:
+A data frame with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kp_referee")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-|               |           |                                 |
-|---------------|-----------|---------------------------------|
-| col_name      | types     | description                     |
-| rk            | integer   | Rk.                             |
-| official_name | character | Official name.                  |
-| ref_rating    | numeric   | Ref rating.                     |
-| gms           | numeric   | Gms.                            |
-| last_game     | character | Last game date or score string. |
-| last_game_1   | character | Last game 1.                    |
-| year          | numeric   | 4-digit year.                   |
+A data frame with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kp_hca")`) and in the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-A data frame with the following columns:
+A data frame with one row per venue. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kp_arenas")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-|              |           |                             |
-|--------------|-----------|-----------------------------|
-| col_name     | types     | description                 |
-| game_number  | integer   | Game number.                |
-| date         | character | Date in YYYY-MM-DD format.  |
-| time_et      | character | Time et.                    |
-| game         | character | Game.                       |
-| location     | character | Location.                   |
-| venue        | character | Venue name.                 |
-| conference   | character | Conference.                 |
-| thrill_score | numeric   | Thrill score.               |
-| referee_name | character | Referee name.               |
-| ref_rank     | numeric   | League/season rank for ref. |
-| year         | numeric   | 4-digit year.               |
+A tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kp_game_attrs")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-A data frame with the following columns:
-
-|          |           |                                     |
-|----------|-----------|-------------------------------------|
-| col_name | types     | description                         |
-| team     | character | Team-side label or team identifier. |
-| conf     | character | character.                          |
-| hca      | numeric   | Hca.                                |
-| hca_rk   | numeric   | Hca rk.                             |
-| pf       | numeric   | Personal fouls.                     |
-| pf_rk    | numeric   | Pf rk.                              |
-| pts      | numeric   | Points scored.                      |
-| pts_rk   | numeric   | Pts rk.                             |
-| nst      | numeric   | Nst.                                |
-| nst_rk   | numeric   | Nst rk.                             |
-| blk      | numeric   | Blocks.                             |
-| blk_rk   | numeric   | Blk rk.                             |
-| elev     | numeric   | Elev.                               |
-| elev_rk  | numeric   | Elev rk.                            |
-
-A data frame with the following columns:
-
-|           |           |                                     |
-|-----------|-----------|-------------------------------------|
-| col_name  | types     | description                         |
-| rk        | numeric   | Rk.                                 |
-| team      | character | Team-side label or team identifier. |
-| conf      | character | character.                          |
-| arena     | character | Arena.                              |
-| alternate | character | Alternate.                          |
-| year      | numeric   | 4-digit year.                       |
-
-Returns a tibble with game attributes
-
-|            |           |               |
-|------------|-----------|---------------|
-| col_name   | types     | description   |
-| rk         | integer   | Rk.           |
-| data       | character | Data.         |
-| game       | character | Game.         |
-| location   | character | Location.     |
-| conf       | character | character.    |
-| excitement | numeric   | Excitement.   |
-| year       | numeric   | 4-digit year. |
-
-A data frame with the following columns:
-
-|              |           |                            |
-|--------------|-----------|----------------------------|
-| col_name     | types     | description                |
-| prediction   | character | Prediction.                |
-| time_et      | character | Time et.                   |
-| location     | character | Location.                  |
-| thrill_score | numeric   | Thrill score.              |
-| comeback     | numeric   | Comeback.                  |
-| excitement   | numeric   | Excitement.                |
-| road_rk      | numeric   | Road rk.                   |
-| road_team    | character | Road team.                 |
-| home_rk      | numeric   | Home team's rk.            |
-| home_team    | character | Home team's team.          |
-| win_rk       | numeric   | Win rk.                    |
-| win_team     | character | Win team.                  |
-| win_score    | numeric   | Win score.                 |
-| loss_rk      | numeric   | Loss rk.                   |
-| loss_team    | character | Loss team.                 |
-| loss_score   | numeric   | Loss score.                |
-| poss         | numeric   | Poss.                      |
-| mvp          | character | Mvp.                       |
-| event        | character | Event.                     |
-| date         | character | Date in YYYY-MM-DD format. |
+A data frame with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kp_fanmatch")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Examples
 

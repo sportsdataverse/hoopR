@@ -31,25 +31,12 @@ sportality_player_crosswalk(season, game_type = "regular")
 
 ## Value
 
-A `hoopR_data` tibble, one row per player. sportsdataverse-py documents
-no fixed schema for this frame: the columns after the first two are the
-fields the `players` map carries (the 2025/26 map is shown); birth dates
-are dropped.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| player_id | integer | Genius person id (the map key); joins play-by-play, box scores, stats tables and the genius family. |
-| athlete_uuid | character | Platform athlete uuid (NA where the site has none, common before about 2005); joins rosters and the athlete routes. |
-| first_name | character | Given (first) name(s) of the player. |
-| last_name | character | Family name (surname) of the player. |
-| shoots | character | Shooting hand (empty or NA for every player seen). |
-| ep_url | character | Profile URL on an external site (empty for every player seen). |
-| full_name | character | Full display name of the player. |
-| nationality | character | ISO 3166-1 alpha-2 country code. |
-| gender | character | Gender as recorded by the site (`male`, or empty). |
-| weight | integer | Weight in kilograms. |
-| height | integer | Height in centimetres. |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportality_player_crosswalk")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

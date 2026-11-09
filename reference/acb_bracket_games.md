@@ -30,35 +30,12 @@ acb_bracket_games(competition_id = NULL, season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py
-`acb_bracket_games`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| stage | character | Bracket stage: quarter_finals, semifinals, final, other_positions. |
-| phase_id | integer | Phase id of the series (111 = Play Off Titulo). |
-| subphase_id | integer | Sub-phase id of the series (the playoff stage). |
-| series_home_team_id | integer | Season-team entry of the series' home-court team (new every season). |
-| series_home_club_id | integer | Stable club id of the series' home-court team. |
-| series_away_team_id | integer | Season-team entry of the other team of the series. |
-| series_away_club_id | integer | Stable club id of the other team of the series. |
-| series_home_wins | integer | Games won by the home-court team in the series (the API's homeScore). |
-| series_away_wins | integer | Games won by the other team in the series (the API's awayScore). |
-| series_finished | logical | True once the series is decided. |
-| best_of | integer | Series length (best of N) as sent; 0 in the 2016-17 final sample, so read 0 as unknown. |
-| edition_id | integer | Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, `season`. |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| match_id | integer | Match id. Legacy ids (seasons up to 2019-20) sit below about 20000 (12559 = 2005-06 final, 17718 = 2016-17 final); from 2020-21 they start at about 100000 (102920 in 2021-22, 105401 in 2026-27). One key space across competitions: the matchId param of every matchdata route. |
-| home_team_id | integer | Home team. Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every `homeTeamId` / `awayTeamId` / `teamId` / `teamEditionId`. Not the club id. |
-| away_team_id | integer | Away team. Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every `homeTeamId` / `awayTeamId` / `teamId` / `teamEditionId`. Not the club id. |
-| home_score | integer | Home points (null before the match) |
-| away_score | integer | Away points (null before the match) |
-| start | POSIXct | Tip-off, ISO 8601 UTC |
-| status | character | Match state (x-match-statuses) |
-| is_on_half_time | logical | At half time (live) |
-| current_quarter | integer | Current or last quarter (5+ = overtime); not reliable after the match (1 in the 2017 series rows) |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_bracket_games")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

@@ -22,15 +22,13 @@ cba_schedule_month(year, month)
 
 ## Value
 
-A `hoopR_data` tibble: One row per day with games: date and game count.
-An empty valid answer is a zero-row tibble with these columns, in this
-order (sportsdataverse-py `cba_schedule_month`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| schedule_num | integer | Number of games scheduled on that day (0 = none). |
-| schedule_time | character | The day as 'YYYY-MM-DD 00:00:00' (China local time, no zone); one row per calendar day of the month. |
+A `hoopR_data` tibble with one row per day with games. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cba_schedule_month")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -49,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(cba_schedule_month(month = 12, year = 2025))
 #> ── CBA Schedule Month from data-server.cbaleague.com ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:26 UTC
+#> ℹ Data updated: 2026-11-09 19:09:42 UTC
 #> # A tibble: 31 × 2
 #>    schedule_num schedule_time      
 #>           <int> <chr>              

@@ -36,6 +36,7 @@ Endpoint: GET https://digital-api.fiba.basketball/hapi/getgdapfederationsranking
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -157,7 +158,11 @@ before it (2026-03-10 answers the 2026-03-03 ranking). Omitted = the latest rank
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble (the raw JSON list when <code>return_parsed = FALSE</code>) with the following columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>as_of_date</td><td>character</td><td>Date of the ranking returned: the latest ranking published on or before the requested date.</td></tr><tr><td>zone_ranking_code</td><td>character</td><td>Ranking zone code (WORLD, AFRICA...).</td></tr><tr><td>zone_ranking_official_name</td><td>character</td><td>Ranking zone official name.</td></tr><tr><td>world_rank</td><td>integer</td><td>Position in the FIBA world ranking (1 = best).</td></tr><tr><td>country_name</td><td>character</td><td>Country name in English.</td></tr><tr><td>zone_rank</td><td>integer</td><td>Rank within the zone.</td></tr><tr><td>ioc_code</td><td>character</td><td>IOC country code.</td></tr><tr><td>fiba_code</td><td>character</td><td>FIBA three-letter country code (GER, USA; historic URS, YUG).</td></tr><tr><td>current_points</td><td>double</td><td>Ranking points (one decimal).</td></tr><tr><td>world_rank_variation</td><td>integer</td><td>Change in world rank since the previous release (positive = up).</td></tr><tr><td>comments</td><td>character</td><td>Ranking note; null in every sample.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per ranked federation.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "fiba_gdap_federation_ranking")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="fiba_gdap_awards.html">fiba_gdap_awards()</a></code>.</p>

@@ -5750,6 +5750,11 @@ Data included within the package
 
   **NBA Stats API Parameter Descriptions**
 
+- [`return_columns`](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+  :
+
+  **Return Columns of hoopR Functions**
+
 ### hoopR Helper Functions
 
 Internal functions used by hoopR
@@ -5974,3 +5979,9 @@ Internal functions used by hoopR
   A searchable reference table of every query parameter used by the NBA
   Stats API endpoints wrapped in `hoopR` – parameter name, description,
   accepted values, and which functions accept it.
+
+- [Return
+  Columns](https://hoopR.sportsdataverse.org/articles/return-columns.md):
+
+  A searchable table of the columns every `hoopR` function returns –
+  function, list element, column name, type and description.

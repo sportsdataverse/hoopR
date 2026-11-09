@@ -34,7 +34,7 @@ espn_nba_season_types(season = most_recent_nba_season(), ...)
 
 ## Value
 
-A tibble with one row per season type.
+A `hoopR_data` tibble with one row per season type.
 
 |             |           |                                            |
 |-------------|-----------|--------------------------------------------|
@@ -44,7 +44,7 @@ A tibble with one row per season type.
 | season_type | integer   | Season-type id (1/2/3/4).                  |
 | ref         | character | `$ref` URL for the type detail.            |
 
-A tibble with one row per season type.
+A `hoopR_data` tibble with one row per season type.
 
 |             |           |                                 |
 |-------------|-----------|---------------------------------|
@@ -72,7 +72,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_types(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Types Index ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:41 UTC
+#> ℹ Data updated: 2026-11-09 19:10:59 UTC
 #> # A tibble: 4 × 4
 #>   league                  season season_type ref                                
 #>   <chr>                    <int>       <int> <chr>                              
@@ -84,7 +84,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_types(season = 2025)
 #> ── ESPN NBA Season Types Index ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:41 UTC
+#> ℹ Data updated: 2026-11-09 19:10:59 UTC
 #> # A tibble: 5 × 4
 #>   league season season_type ref                                                 
 #>   <chr>   <int>       <int> <chr>                                               

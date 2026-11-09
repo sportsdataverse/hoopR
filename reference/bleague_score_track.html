@@ -48,6 +48,7 @@ zero-row tibble."><meta property="og:image" content="https://raw.githubuserconte
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -164,7 +165,11 @@ belong to; a context whose <code>Year</code> differs raises <code>hoopR_asset_fe
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble with these columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>schedule_key</td><td>integer</td><td>B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The {schedule_key} every game wrapper takes and the schedule page's list-item id.</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26), the feed's Year (the START year) plus one.</td></tr><tr><td>feed</td><td>character</td><td>Source feed of the row: v2 (v2_genius_contexts, B1/B2 from 2020-21) or v1 (v1_contexts: B3, B1/B2 2018-2020, and the 2016-17 / 2017-18 game-page embed). The feeds differ in id types, dates and some codes.</td></tr><tr><td>period</td><td>integer</td><td>Period number: 1-4 regulation; overtime numbering is unverified (no overtime sample).</td></tr><tr><td>event_index</td><td>integer</td><td>Index of the scoring event, 0 = the 0-0 start row, then 1, 2... (the score track's x axis; NOT a clock).</td></tr><tr><td>home_points</td><td>integer</td><td>Home running total after the event.</td></tr><tr><td>away_points</td><td>integer</td><td>Away running total after the event.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per scoring event.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "bleague_score_track")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="bleague_game_info.html">bleague_game_info()</a></code>.</p>

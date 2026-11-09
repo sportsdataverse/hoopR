@@ -26,33 +26,12 @@ vtb_infobasket_comp_issue(season, tag = "vtb")
 
 ## Value
 
-A `hoopR_data` tibble: Stage tree of a season (regular season, playoff,
-series): the stage ids the standings wrappers take. The columns are
-always these, in this order (sportsdataverse-py
-`vtb_infobasket_comp_issue`); an empty valid answer raises
-`hoopR_no_data`, a valid body with no rows for this frame is a zero-row
-tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. |
-| season_comp_id | integer | Season-level Infobasket CompID of the season (50714 = 2025-26): the id every season-keyed route takes. |
-| level | integer | Depth in the stage tree: 1 = a stage of the season, 2 = a series or group below it. |
-| comp_id | integer | Stage CompID (the id vtb_infobasket_standings, \_cross_table and \_playoff take). |
-| parent_comp_id | integer | CompID of the parent stage (0 at the top). |
-| comp_type | integer | Stage type code: 0 season, regular season or group; 10 playoff container; 5 and 7 playoff series; -5 seen in season lists. Meanings inferred from the stage names, unverified. |
-| comp_sort | integer | Sort order among sibling stages. |
-| comp_round | integer | Playoff round as the number of series in it (4 = quarter-finals, 2 = semi-finals, 1 = final); 0 outside the playoff. |
-| comp_short_name_ru | character | Stage name, Russian. |
-| comp_short_name_en | character | Stage name, English. |
-| comp_abc_name_ru | character | Stage abbreviation ('1/4-1' = quarter-final 1), Russian. |
-| comp_abc_name_en | character | Stage abbreviation ('1/4-1' = quarter-final 1), English. |
-| comp_gender | integer | Competition gender: 0 on every sample (men). |
-| comp_state | integer | Stage state code: 0 or 2 seen (2 on finished stages, but some finished stages show 0); unverified. |
-| is_public | logical | True when the site shows the stage. |
-| note_ru | character | Unobserved: null in every sample, so its type and meaning are unconfirmed. |
-| note_en | character | Unobserved: null in every sample, so its type and meaning are unconfirmed. |
+A `hoopR_data` tibble with one row per stage. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_comp_issue")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

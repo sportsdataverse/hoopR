@@ -29,30 +29,13 @@ easl_team_leaders(team_id, season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: A team's top-5 player leaders per category in one
-season, shaped like easl_leaders. An empty answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `easl_team_leaders`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = EASL 25-26): stamped by easl_runtime from the request, null when the body is parsed bare. |
-| season_id | character | DataCore season UUID v1 of the leader row. |
-| category | character | Leader category, the wire key of the group: pointsPerGame, reboundsPerGame, assistsPerGame, stealsPerGame, blocksPerGame, pointsThreeMade, pointsThreePercentage, fieldGoalsPercentage or freeThrowsPercentage. |
-| rank | integer | Rank inside the category, 1 = best, in the delivered order (the server lists the top 5). |
-| value | double | The leader's value in the category: a per-game average, a count (pointsThreeMade) or a percentage (0-100). Float64. |
-| player_id | character | playerId: DataCore person UUID v1 (key space: EASL persons, the same id as the box score's `personId`; joins /players, leaders and play-by-play players). Not a team id. |
-| player_name | character | Player display name in 'FAMILY Given' form with the family name upper-cased (OSAKABE Taiki), in Latin script. |
-| player_name_latin | character | Alternative name: equal to nameFullLocal for 257 of 552 players, otherwise null; never non-Latin in the observed data. |
-| jersey_number | character | Jersey number as a string ('00', '0' and '75' are distinct). |
-| position | character | Playing position: G, F, C, PG, SG, SF, PF or GF (guard-forward). |
-| player_status | character | Registration state of the player in the database: ACTIVE, INACTIVE or UNREGISTERED. |
-| team_id | character | teamId: DataCore team (entity) UUID v1 (key space: EASL teams, the same id as `entityId`; joins /teams, /standings team.id, fixture competitors, box and play-by-play teams). Not a player id. |
-| team_name | character | Display name. Despite the field name this is the English / Latin-script name used on the league site. |
-| team_name_native | character | Alternative name: the native-script name of some Japanese clubs (for example the Japanese-script name of Utsunomiya Brex), blank for most clubs; for players it usually equals nameFullLocal. Despite the field name it is not always Latin script. |
-| team_code_latin | character | Three-letter club code (for example BRE); null or empty for some clubs. |
-| team_code_local | character | Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (String). |
+A `hoopR_data` tibble with one row per leaderboard entry. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "easl_team_leaders")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

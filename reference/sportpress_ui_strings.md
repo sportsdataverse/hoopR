@@ -13,17 +13,13 @@ sportpress_ui_strings()
 
 ## Value
 
-A `hoopR_data` tibble: UI string tables of the site in English, French
-and Dutch (one row per language and key). An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `sportpress_ui_strings`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| language | character | ISO 639-1 code of the UI language: en, fr (French) or nl (Dutch). |
-| key | character | Dotted UI string key such as 'statistics.individual.points'; 302 keys per language. |
-| text | character | The UI text in that language; 11 keys label statistics columns, the rest are menus and buttons. |
+A `hoopR_data` tibble with one row per language and key. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportpress_ui_strings")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

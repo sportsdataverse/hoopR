@@ -21,16 +21,12 @@ cba_team_options(season)
 
 ## Value
 
-A `hoopR_data` tibble: One row per team: id (key) and display name. An
-empty valid answer is a zero-row tibble with these columns, in this
-order (sportsdataverse-py `cba_team_options`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| is_default | integer | Default-selection flag: 2 = not the default on every row (the site prepends its own 'all teams' row, which this route does not send). |
-| key | character | Team display name (Chinese) in the requested season; names change with the sponsor, the teamId does not. |
-| value | character | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. Here a string of digits. |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cba_team_options")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -49,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(cba_team_options(season = 2026))
 #> ── CBA Team Options from data-server.cbaleague.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:29 UTC
+#> ℹ Data updated: 2026-11-09 19:09:45 UTC
 #> # A tibble: 20 × 3
 #>    is_default key          value    
 #>         <int> <chr>        <chr>    

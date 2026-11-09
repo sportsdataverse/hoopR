@@ -66,24 +66,12 @@ atrium_player(
 
 ## Value
 
-A `hoopR_data` tibble, one row for the player:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| person_id | character | Player UUID (person), shared across seasons and sites. |
-| name | character | Player name as the site prints it. |
-| bib | character | Jersey number on the card; null when none. |
-| team_id | character | Team UUID of the player's current team on the card. |
-| team_name | character | Name of the player's current team on the card. |
-| image_url | character | URL of the Sportradar-hosted image (400 px). |
-| date_of_birth | Date | Player's date of birth, from the card's info items. |
-| age | integer | Player's age in years, from the card's info items. |
-| nationality | character | Player's nationality in the site's language, from the card's info items. |
-| points_per_game | double | Points per game over the season shown on the card. |
-| rebounds_offensive_per_game | double | Offensive rebounds per game over the season shown on the card. |
-| rebounds_defensive_per_game | double | Defensive rebounds per game over the season shown on the card. |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_player")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

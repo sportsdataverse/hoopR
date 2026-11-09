@@ -32,28 +32,13 @@ feb_standings(group, season)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| group | integer | The site's menu group (1 Primera FEB, 2 Segunda FEB, 4 Liga Femenina Endesa); not a competition id. |
-| season | integer | Season END year (2027 = 2026-27), the site's START-year key plus one. |
-| competition | character | Competition name on the page header ('PRIMERA FEB'). |
-| comp_id | integer | Competition id (CompID) read from the page; ties the site group to the API (group 1 -\> 115, 2 -\> 118, 4 -\> 210). |
-| table | character | live = the in-season league table; final = the final classification once the season is over. |
-| position | integer | Rank in the table (Po). |
-| team_id | integer | Team-season id (new every season; joins the schedule and game wrappers). |
-| team | character | Team name as printed in the table (sponsor name, uppercase). |
-| played | integer | Games played (PJ); null in the final classification. |
-| won | integer | Games won (PG); null in the final classification. |
-| lost | integer | Games lost (PP); null in the final classification. |
-| points_for | integer | Points scored (PF); null in the final classification. |
-| points_against | integer | Points conceded (PC); null in the final classification. |
-| point_diff | integer | Point difference (DIF), signed; null in the final classification. |
-| win_pct | double | Win percentage, 0-100 (the page's '100,0%', decimal comma converted). |
-| streak | integer | Current streak as a signed integer: +3 = three wins in a row, -2 = two losses. |
-| streak_text | character | The streak cell verbatim ('+3'). |
+A `hoopR_data` tibble with one row per team in the standings. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "feb_standings")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -81,7 +66,7 @@ Other FEB Functions:
 # \donttest{
   try(feb_standings(group = 1, season = 2027))
 #> ── FEB standings from baloncestoenvivo.feb.es ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:25 UTC
+#> ℹ Data updated: 2026-11-09 19:11:38 UTC
 #> # A tibble: 18 × 17
 #>    group season competition comp_id table position team_id team     played   won
 #>    <int>  <int> <chr>         <int> <chr>    <int>   <int> <chr>     <int> <int>

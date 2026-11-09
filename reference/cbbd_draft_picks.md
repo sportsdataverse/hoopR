@@ -41,67 +41,48 @@ cbbd_draft_picks(
 
 ## Value
 
-A `hoopR_data` tibble with one row per NBA team:
+A `hoopR_data` tibble with one row per NBA team. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_draft_teams")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-|              |           |                         |
-|--------------|-----------|-------------------------|
-| col_name     | types     | description             |
-| id           | integer   | NBA team id.            |
-| source_id    | character | Source (ESPN) team id.  |
-| location     | character | Team location (city).   |
-| name         | character | Team name.              |
-| display_name | character | Full team display name. |
-| abbreviation | character | Team abbreviation.      |
+A `hoopR_data` tibble with one row per draft position. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_draft_positions")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-A `hoopR_data` tibble with one row per draft position:
-
-|              |           |                        |
-|--------------|-----------|------------------------|
-| col_name     | types     | description            |
-| name         | character | Position name.         |
-| abbreviation | character | Position abbreviation. |
-
-A `hoopR_data` tibble with one row per draft pick:
-
-|                                |           |                                  |
-|--------------------------------|-----------|----------------------------------|
-| col_name                       | types     | description                      |
-| athlete_id                     | integer   | Athlete id.                      |
-| source_team_id                 | integer   | College team id.                 |
-| source_team_location           | character | College team location.           |
-| source_team_name               | character | College team name.               |
-| source_team_league_affiliation | character | College team league affiliation. |
-| source_team_college_id         | numeric   | College id.                      |
-| draft_team_id                  | numeric   | NBA team id.                     |
-| draft_team                     | character | NBA team name.                   |
-| year                           | integer   | Draft year.                      |
-| overall                        | integer   | Overall pick number.             |
-| round                          | integer   | Draft round.                     |
-| pick                           | integer   | Pick number within the round.    |
-| name                           | character | Player name.                     |
-| overall_rank                   | integer   | Pre-draft overall rank.          |
-| position_rank                  | integer   | Pre-draft position rank.         |
-| height                         | numeric   | Player height.                   |
-| weight                         | integer   | Player weight (lbs).             |
+A `hoopR_data` tibble with one row per draft pick. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_draft_picks")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Examples
 
 ``` r
 # \donttest{
   try(cbbd_draft_teams())
-#> ✖ 2026-11-09 17:03:30.362731: Invalid arguments or no draft teams available!
+#> ✖ 2026-11-09 19:09:46.67088: Invalid arguments or no draft teams available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_draft_positions())
-#> ✖ 2026-11-09 17:03:30.36892: Invalid arguments or no draft positions available!
+#> ✖ 2026-11-09 19:09:46.679197: Invalid arguments or no draft positions available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_draft_picks(year = 2024))
-#> ✖ 2026-11-09 17:03:30.375431: Invalid arguments or no draft picks available!
+#> ✖ 2026-11-09 19:09:46.686959: Invalid arguments or no draft picks available!
 #> ✖ Args: year = 2024, draft_team = NULL, source_team = NULL, position = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

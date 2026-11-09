@@ -20,39 +20,12 @@ vtb_infobasket_playoff(comp_id)
 
 ## Value
 
-A `hoopR_data` tibble: Playoff bracket of a playoff stage, one row per
-series. The columns are always these, in this order (sportsdataverse-py
-`vtb_infobasket_playoff`); an empty valid answer raises `hoopR_no_data`,
-a valid body with no rows for this frame is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| comp_id | integer | Stage CompID the request asked for (50720 = the 2025-26 regular season): a stage below the season, not an END year. |
-| tree | integer | Bracket tree number (1 = the main bracket). |
-| round | integer | Round as the number of series in it (4 = quarter-finals, 2 = semi-finals, 1 = final). |
-| is_current_round | logical | True for the round in progress. |
-| sort | integer | Series order within the round. |
-| round_name_ru | character | Round name, Russian. |
-| round_name_en | character | Round name, English. |
-| score1 | integer | Series wins of side 1. |
-| score2 | integer | Series wins of side 2. |
-| is_final | logical | True for a final (decided) result. |
-| winner | integer | Series winner: 1 side 1, 2 side 2. |
-| team1_id | integer | Infobasket TeamID of team 1. |
-| team1_short_name_ru | character | The team 1 of the series's short name in Russian (as the competition names it). |
-| team1_short_name_en | character | The team 1 of the series's short name in English (as the competition names it). |
-| team1_name_ru | character | The team 1 of the series's name in Russian (as the competition names it). |
-| team1_name_en | character | The team 1 of the series's name in English (as the competition names it). |
-| team1_region_name_ru | character | The team 1 of the series's region or city in Russian (as the competition names it). |
-| team1_region_name_en | character | The team 1 of the series's region or city in English (as the competition names it). |
-| team2_id | integer | Infobasket TeamID of team 2. |
-| team2_short_name_ru | character | The team 2 of the series's short name in Russian (as the competition names it). |
-| team2_short_name_en | character | The team 2 of the series's short name in English (as the competition names it). |
-| team2_name_ru | character | The team 2 of the series's name in Russian (as the competition names it). |
-| team2_name_en | character | The team 2 of the series's name in English (as the competition names it). |
-| team2_region_name_ru | character | The team 2 of the series's region or city in Russian (as the competition names it). |
-| team2_region_name_en | character | The team 2 of the series's region or city in English (as the competition names it). |
+A `hoopR_data` tibble with one row per series. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_playoff")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -71,7 +44,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_playoff(comp_id = 54281))
 #> ── VTB Infobasket Playoff from org.infobasket.su ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:10:09 UTC
+#> ℹ Data updated: 2026-11-09 19:16:04 UTC
 #> # A tibble: 8 × 25
 #>   comp_id  tree round is_current_round  sort round_name_ru  round_name_en score1
 #>     <int> <int> <int> <lgl>            <int> <chr>          <chr>          <int>

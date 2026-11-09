@@ -23,48 +23,13 @@ tbf_player_box(match_id)
 
 ## Value
 
-A `hoopR_data` tibble. One row per player who is on the sheet;
-`is_starter` marks the starting five (none flagged in 2006-07). Every
-column below is always present (a zero-row tibble keeps them and their
-types); an answer with nothing in it raises `hoopR_no_data`, as in
-sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. |
-| side | character | Side of the game the row belongs to: home or away (from the route's isHome flag or home / away block). |
-| team_process_id | integer | Team-season id of the player's side (from the game header; key space: TBF team registrations). |
-| player_id | integer | TBF person id (key space: TBF persons, stable across seasons and clubs: 196413). The same value as person_id in the player and team tables and the player_id argument of tbf_player_career. |
-| player_name | character | Player name as TBF prints it for that route (title case, Turkish letters kept). |
-| jersey_number | character | Shirt number as a string, so '0' and '00' stay distinct. |
-| is_starter | logical | True for the starting five (homeTopFive / awayTopFive block); none are flagged in 2006-07. |
-| seconds_played | integer | Time on court in seconds, parsed from the 'mm:ss' or 'hh:mm:ss' text the API sends (team totals sum their players, so 200:00 = 12000). |
-| points | integer | Points scored in the game (or season) the row covers. |
-| fg_made | integer | Field goals made, 2PT + 3PT (successfulShots). |
-| fg_attempted | integer | Field goals attempted, 2PT + 3PT (shotAttempts). |
-| fg_pct | integer | Field-goal percentage 0-100, rounded to an integer by the API. |
-| fg2_made | integer | Two-point field goals MADE (the API calls it twoPointShots; attempts are fg2_attempted). |
-| fg2_attempted | integer | Two-point field goals attempted (twoPointShotAttempts). |
-| fg2_pct | integer | Two-point percentage 0-100, an integer. |
-| fg3_made | integer | Three-point field goals MADE (the API calls it threePointShots). |
-| fg3_attempted | integer | Three-point field goals attempted (threePointShotAttempts). |
-| fg3_pct | integer | Three-point percentage 0-100, an integer. |
-| ft_made | integer | Free throws MADE (serbest atis; the API calls it freeThrows). |
-| ft_attempted | integer | Free throws attempted (freeThrowAttempts). |
-| ft_pct | integer | Free-throw percentage 0-100, an integer. |
-| off_rebounds | integer | Offensive rebounds (hucum ribaundu). |
-| def_rebounds | integer | Defensive rebounds (savunma ribaundu). |
-| rebounds | integer | Total rebounds (toplam ribaund). |
-| assists | integer | Assists in this game (asist). |
-| steals | integer | Steals in this game (top calma). |
-| blocks | integer | Shots this player blocked in this game (blok). |
-| turnovers | integer | Turnovers committed in this game (top kaybi). |
-| fouls | integer | Personal fouls committed (faul). |
-| fouls_drawn | integer | Fouls drawn (rivalFoul = foul committed by the opponent). |
-| blocks_received | integer | Own shots blocked by an opponent (blocksReceived). |
-| plus_minus | integer | Plus/minus while on court (plusMinus); null when the API sends ”. |
-| efficiency | integer | Efficiency rating (verimlilik puani, PIR): points + rebounds + assists + steals + blocks + fouls drawn - missed shots - turnovers - fouls. An integer on player rows. |
+A `hoopR_data` tibble with one row per player who is on the sheet. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_player_box")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -111,7 +76,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_player_box(match_id = 346279))
 #> ── TBF Player Box Score ───────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:36 UTC
+#> ℹ Data updated: 2026-11-09 19:15:32 UTC
 #> # A tibble: 24 × 33
 #>    match_id side  team_process_id player_id player_name jersey_number is_starter
 #>       <int> <chr>           <int>     <int> <chr>       <chr>         <lgl>     

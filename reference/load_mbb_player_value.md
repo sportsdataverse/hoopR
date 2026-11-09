@@ -73,7 +73,7 @@ load_mbb_ratings(
 
 ## Value
 
-Returns a `hoopR_data` tibble with one row per player-team-season.
+A `hoopR_data` tibble with one row per player-team-season.
 
 |  |  |  |
 |----|----|----|
@@ -107,7 +107,7 @@ Returns a `hoopR_data` tibble with one row per player-team-season.
 | darko_projected_rating | numeric | DARKO-style forward-looking projected rating. |
 | darko_projected_sd | numeric | Standard deviation of the DARKO-style projected rating. |
 
-Returns a `hoopR_data` tibble with one row per player-team-season.
+A `hoopR_data` tibble with one row per player-team-season.
 
 |           |           |                                                     |
 |-----------|-----------|-----------------------------------------------------|
@@ -121,7 +121,7 @@ Returns a `hoopR_data` tibble with one row per player-team-season.
 | box_dbpm  | numeric   | Box-score defensive box plus-minus.                 |
 | box_bpm   | numeric   | Box-score net box plus-minus (box_obpm + box_dbpm). |
 
-Returns a `hoopR_data` tibble with one row per team-season.
+A `hoopR_data` tibble with one row per team-season.
 
 |  |  |  |
 |----|----|----|

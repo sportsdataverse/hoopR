@@ -21,37 +21,13 @@ pleague_player_seasons(player_page_id)
 
 ## Value
 
-A `hoopR_data` tibble: One player's season totals and per-game averages,
-league and East Asia Super League, with a career row. An empty valid
-answer is a zero-row tibble with these columns, in this order
-(sportsdataverse-py `pleague_player_seasons`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| player_page_id | character | The 8-character page id of /player/{id} (e.g. '1JbPozLB'). The box random_id on 2022-23+ rows; NOT the box player_id. |
-| competition | character | Table block: plg (the league's tables) or easl (the East Asia Super League block, present only for players with games there). |
-| table | character | totals (the (Chinese text) table: season totals) or averages (the (Chinese text) table: per game). |
-| season | integer | Season END year of the slug; null on the career row. |
-| season_slug | character | Season slug as printed ('2025-26'), or 'career' for the final totals / averages row. |
-| games | integer | Games played ((Chinese text)). |
-| minutes | character | Minutes 'mm:ss' (a season total in the totals table, a per-game average in the averages table). |
-| points | double | Points (total in the totals table, per game in the averages table; (Chinese text)). |
-| reb | double | Rebounds (total / per game; (Chinese text)). |
-| ast | double | Assists (total / per game; (Chinese text)). |
-| stl | double | Steals (total / per game; (Chinese text)). |
-| blk | double | Blocks (total / per game; (Chinese text)). |
-| tov | double | Turnovers (total / per game; (Chinese text)). |
-| pf | double | Personal fouls (total / per game; (Chinese text)). |
-| fg2_made | double | 2-point makes: the first number of the page's '56 - 103' cell (total / per game). |
-| fg2_att | double | 2-point attempts: the second number of the cell. |
-| fg2_pct | double | 2-point percentage 0-100 ('54.4 percent' -\> 54.4). |
-| fg3_made | double | 3-point makes (total / per game). |
-| fg3_att | double | 3-point attempts (total / per game). |
-| fg3_pct | double | 3-point percentage 0-100. |
-| ft_made | double | Free-throw makes (total / per game). |
-| ft_att | double | Free-throw attempts (total / per game). |
-| ft_pct | double | Free-throw percentage 0-100. |
+A `hoopR_data` tibble with one row per player-season. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "pleague_player_seasons")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

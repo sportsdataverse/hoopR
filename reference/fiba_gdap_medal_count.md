@@ -27,21 +27,12 @@ fiba_gdap_medal_count(family_id, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_name | character | Team name (country or club). |
-| organisation_id | integer | Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T\_`<id>`. |
-| fiba_code | character | FIBA three-letter country code (GER, USA; historic URS, YUG). |
-| team_zone_code | character | Zone code of the team (E Europe, NAM Americas north...). |
-| rank | integer | Rank (1 = first). |
-| total_first_rank | integer | Gold medals (first places). |
-| total_second_rank | integer | Number of silver medals the federation has won in the competition family. |
-| total_third_rank | integer | Number of bronze medals the federation has won in the competition family. |
-| total_participations | integer | Editions played. |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_medal_count")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

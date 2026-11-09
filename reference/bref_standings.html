@@ -40,6 +40,7 @@ No API key is required. Basketball-Reference rate-limits aggressive scraping
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -145,8 +146,11 @@ Basketball-Reference.</strong></p>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble with one row per team:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>conference</td><td>character</td><td>Conference (<code>E</code> or <code>W</code>).</td></tr><tr><td>team</td><td>character</td><td>Team name (with playoff-seed marker stripped).</td></tr><tr><td>wins</td><td>integer</td><td>Wins.</td></tr><tr><td>losses</td><td>integer</td><td>Losses.</td></tr><tr><td>win_loss_pct</td><td>numeric</td><td>Win-loss percentage.</td></tr><tr><td>gb</td><td>character</td><td>Games behind the conference leader.</td></tr><tr><td>pts_per_g</td><td>numeric</td><td>Points scored per game.</td></tr><tr><td>opp_pts_per_g</td><td>numeric</td><td>Opponent points per game.</td></tr><tr><td>srs</td><td>numeric</td><td>Simple Rating System (point margin + SOS).</td></tr><tr><td>playoffs</td><td>logical</td><td><code>TRUE</code> if the team made the playoffs (<code>*</code> marker).</td></tr><tr><td>season</td><td>integer</td><td>Season (echoes the <code>season</code> argument).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per team.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "bref_standings")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other Basketball-Reference Functions:

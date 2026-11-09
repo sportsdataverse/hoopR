@@ -21,22 +21,12 @@ sportpress_competition_teams(competition_id)
 
 ## Value
 
-A `hoopR_data` tibble: Every competition team of one competition: ids,
-names and country. An empty valid answer raises `hoopR_no_data`; the
-columns are always these, in this order (sportsdataverse-py
-`sportpress_competition_teams`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id the team plays in (key space: sportpress competitions); the competition_id the route was asked for. |
-| season | integer | Season END year of the team's competition. |
-| uu_team_id | integer | Stable club key across seasons (key space: sportpress clubs-as-teams); competition_team_id changes every season, this does not. |
-| competition_team_id | integer | Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. |
-| team | character | Team display name including the sponsor; varies with language and playoff suffixes: never join on it. |
-| team_short_name | character | Three-letter club code (ANT, MON, ...), stable across seasons in the samples. |
-| club_id | integer | Country of the team (key space: sportpress clubs): 1 = Belgium, 2 = Netherlands. The provider calls the country a club. |
-| club_name | character | Country name in English, Belgium or Netherlands. |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportpress_competition_teams")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -55,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(sportpress_competition_teams(competition_id = 24))
 #> ── BNXT League Competition Teams from Sportpress ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:12 UTC
+#> ℹ Data updated: 2026-11-09 19:15:08 UTC
 #> # A tibble: 18 × 8
 #>    competition_id season uu_team_id competition_team_id team     team_short_name
 #>             <int>  <int>      <int>               <int> <chr>    <chr>          

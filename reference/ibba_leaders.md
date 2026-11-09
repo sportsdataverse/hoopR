@@ -32,19 +32,13 @@ ibba_leaders(stat_type, season, team_id = 0)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| value | double | The leader's value in the requested category (per-game average, percentage or count). |
-| games | integer | Games the leader played. |
-| season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-| team_id | integer | Team-season id of the leader's team. |
-| jersey | character | The leader's jersey number as a zero-padded string. |
-| player_id | integer | Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows. |
-| player_name_he | character | Player name in Hebrew, HTML-unescaped. |
-| photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
+A `hoopR_data` tibble with one row per leaderboard entry. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_leaders")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

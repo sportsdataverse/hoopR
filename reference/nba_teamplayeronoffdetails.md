@@ -1282,7 +1282,7 @@ nba_teamgamestreakfinder(
 
 ## Value
 
-Return a data frame with the following columns:
+A tibble with one row per team.
 
 |  |  |  |
 |----|----|----|
@@ -1312,9 +1312,9 @@ Return a data frame with the following columns:
 | logos_href_4 | character | Logos href 4. |
 | nba_logo_svg | character | Nba logo svg. |
 
-Return a named list of data frames: TeamAwardsChampionships,
-TeamAwardsConf, TeamAwardsDiv, TeamBackground, TeamHistory, TeamHof,
-TeamRetired, TeamSocialSites
+A named list of tibbles: `TeamBackground`, `TeamHistory`,
+`TeamSocialSites`, `TeamAwardsChampionships`, `TeamAwardsConf`,
+`TeamAwardsDiv`, `TeamHof`, `TeamRetired`.
 
 **TeamBackground**
 
@@ -1388,7 +1388,7 @@ Same columns as the **TeamAwardsConf** table above.
 
 Same columns as the **TeamHof** table above.
 
-Return a named list of data frames: TeamEstimatedMetrics
+A named list of tibbles: `TeamEstimatedMetrics`.
 
 **TeamEstimatedMetrics**
 
@@ -1426,7 +1426,7 @@ Return a named list of data frames: TeamEstimatedMetrics
 | E_TM_TOV_PCT_RANK | character |  |
 | E_PACE_RANK | character |  |
 
-Return a named list of data frames: TeamGameLog
+A named list of tibbles: `TeamGameLog`.
 
 **TeamGameLog**
 
@@ -1461,7 +1461,7 @@ Return a named list of data frames: TeamGameLog
 | PF        | character | Personal fouls.                          |
 | PTS       | character | Points scored.                           |
 
-Return a named list of data frames: TeamGameLogs
+A named list of tibbles: `TeamGameLogs`.
 
 **TeamGameLogs**
 
@@ -1525,7 +1525,7 @@ Return a named list of data frames: TeamGameLogs
 | PTS_RANK | character |  |
 | PLUS_MINUS_RANK | character |  |
 
-Return a named list of data frames: CareerLeadersByTeam
+A named list of tibbles: `CareerLeadersByTeam`.
 
 **CareerLeadersByTeam**
 
@@ -1550,8 +1550,8 @@ Return a named list of data frames: CareerLeadersByTeam
 | STL_PLAYER    | character |                                        |
 | SEASON_YEAR   | character | Season year string ('YYYY-YY' format). |
 
-Return a named list of data frames: AvailableSeasons, TeamInfoCommon,
-TeamSeasonRanks
+A named list of tibbles: `TeamInfoCommon`, `TeamSeasonRanks`,
+`AvailableSeasons`.
 
 **TeamInfoCommon**
 
@@ -1599,37 +1599,209 @@ TeamSeasonRanks
 | col_name  | types     | description               |
 | SEASON_ID | character | Unique season identifier. |
 
-Return a named list of data frames: OverallTeamPlayerOnOffDetails,
-PlayersOffCourtTeamPlayerOnOffDetails,
-PlayersOnCourtTeamPlayerOnOffDetails
+A named list of tibbles: `OverallTeamPlayerOnOffDetails`,
+`PlayersOnCourtTeamPlayerOnOffDetails`,
+`PlayersOffCourtTeamPlayerOnOffDetails`.
 
 **OverallTeamPlayerOnOffDetails**
 
-Columns as documented in the shared
-[nba_teamplayeronoffdetails_overallteamplayeronoffdetails_schema](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails_overallteamplayeronoffdetails_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GROUP_SET | character |  |
+| GROUP_VALUE | character |  |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| GP | character | Games played. |
+| W | character | Wins. |
+| L | character | Losses. |
+| W_PCT | character |  |
+| MIN | character | Minutes played. |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
+| FTM | character | Free throws made. |
+| FTA | character | Free throw attempts. |
+| FT_PCT | character | Free throw percentage (0-1). |
+| OREB | character | Offensive rebounds. |
+| DREB | character | Defensive rebounds. |
+| REB | character | Total rebounds. |
+| AST | character | Assists. |
+| TOV | character | Turnovers. |
+| STL | character | Steals. |
+| BLK | character | Blocks. |
+| BLKA | character |  |
+| PF | character | Personal fouls. |
+| PFD | character |  |
+| PTS | character | Points scored. |
+| PLUS_MINUS | character | Plus/minus point differential while on court. |
+| GP_RANK | character |  |
+| W_RANK | character |  |
+| L_RANK | character |  |
+| W_PCT_RANK | character |  |
+| MIN_RANK | character |  |
+| FGM_RANK | character |  |
+| FGA_RANK | character |  |
+| FG_PCT_RANK | character |  |
+| FG3M_RANK | character |  |
+| FG3A_RANK | character |  |
+| FG3_PCT_RANK | character |  |
+| FTM_RANK | character |  |
+| FTA_RANK | character |  |
+| FT_PCT_RANK | character |  |
+| OREB_RANK | character |  |
+| DREB_RANK | character |  |
+| REB_RANK | character |  |
+| AST_RANK | character |  |
+| TOV_RANK | character |  |
+| STL_RANK | character |  |
+| BLK_RANK | character |  |
+| BLKA_RANK | character |  |
+| PF_RANK | character |  |
+| PFD_RANK | character |  |
+| PTS_RANK | character |  |
+| PLUS_MINUS_RANK | character |  |
 
 **PlayersOnCourtTeamPlayerOnOffDetails**
 
-Columns as documented in the shared
-[nba_leagueplayerondetails_playersoncourtleagueplayerdetails_schema](https://hoopR.sportsdataverse.org/reference/nba_leagueplayerondetails_playersoncourtleagueplayerdetails_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GROUP_SET | character |  |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| VS_PLAYER_ID | character |  |
+| VS_PLAYER_NAME | character |  |
+| COURT_STATUS | character |  |
+| GP | character | Games played. |
+| W | character | Wins. |
+| L | character | Losses. |
+| W_PCT | character |  |
+| MIN | character | Minutes played. |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
+| FTM | character | Free throws made. |
+| FTA | character | Free throw attempts. |
+| FT_PCT | character | Free throw percentage (0-1). |
+| OREB | character | Offensive rebounds. |
+| DREB | character | Defensive rebounds. |
+| REB | character | Total rebounds. |
+| AST | character | Assists. |
+| TOV | character | Turnovers. |
+| STL | character | Steals. |
+| BLK | character | Blocks. |
+| BLKA | character |  |
+| PF | character | Personal fouls. |
+| PFD | character |  |
+| PTS | character | Points scored. |
+| PLUS_MINUS | character | Plus/minus point differential while on court. |
+| GP_RANK | character |  |
+| W_RANK | character |  |
+| L_RANK | character |  |
+| W_PCT_RANK | character |  |
+| MIN_RANK | character |  |
+| FGM_RANK | character |  |
+| FGA_RANK | character |  |
+| FG_PCT_RANK | character |  |
+| FG3M_RANK | character |  |
+| FG3A_RANK | character |  |
+| FG3_PCT_RANK | character |  |
+| FTM_RANK | character |  |
+| FTA_RANK | character |  |
+| FT_PCT_RANK | character |  |
+| OREB_RANK | character |  |
+| DREB_RANK | character |  |
+| REB_RANK | character |  |
+| AST_RANK | character |  |
+| TOV_RANK | character |  |
+| STL_RANK | character |  |
+| BLK_RANK | character |  |
+| BLKA_RANK | character |  |
+| PF_RANK | character |  |
+| PFD_RANK | character |  |
+| PTS_RANK | character |  |
+| PLUS_MINUS_RANK | character |  |
 
 **PlayersOffCourtTeamPlayerOnOffDetails**
 
-Columns as documented in the shared
-[nba_leagueplayerondetails_playersoncourtleagueplayerdetails_schema](https://hoopR.sportsdataverse.org/reference/nba_leagueplayerondetails_playersoncourtleagueplayerdetails_schema.md)
-table.
+Same columns as the **PlayersOnCourtTeamPlayerOnOffDetails** table
+above.
 
-Return a named list of data frames: OverallTeamPlayerOnOffSummary,
-PlayersOffCourtTeamPlayerOnOffSummary,
-PlayersOnCourtTeamPlayerOnOffSummary
+A named list of tibbles: `OverallTeamPlayerOnOffSummary`,
+`PlayersOnCourtTeamPlayerOnOffSummary`,
+`PlayersOffCourtTeamPlayerOnOffSummary`.
 
 **OverallTeamPlayerOnOffSummary**
 
-Columns as documented in the shared
-[nba_teamplayeronoffdetails_overallteamplayeronoffdetails_schema](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails_overallteamplayeronoffdetails_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GROUP_SET | character |  |
+| GROUP_VALUE | character |  |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| GP | character | Games played. |
+| W | character | Wins. |
+| L | character | Losses. |
+| W_PCT | character |  |
+| MIN | character | Minutes played. |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
+| FTM | character | Free throws made. |
+| FTA | character | Free throw attempts. |
+| FT_PCT | character | Free throw percentage (0-1). |
+| OREB | character | Offensive rebounds. |
+| DREB | character | Defensive rebounds. |
+| REB | character | Total rebounds. |
+| AST | character | Assists. |
+| TOV | character | Turnovers. |
+| STL | character | Steals. |
+| BLK | character | Blocks. |
+| BLKA | character |  |
+| PF | character | Personal fouls. |
+| PFD | character |  |
+| PTS | character | Points scored. |
+| PLUS_MINUS | character | Plus/minus point differential while on court. |
+| GP_RANK | character |  |
+| W_RANK | character |  |
+| L_RANK | character |  |
+| W_PCT_RANK | character |  |
+| MIN_RANK | character |  |
+| FGM_RANK | character |  |
+| FGA_RANK | character |  |
+| FG_PCT_RANK | character |  |
+| FG3M_RANK | character |  |
+| FG3A_RANK | character |  |
+| FG3_PCT_RANK | character |  |
+| FTM_RANK | character |  |
+| FTA_RANK | character |  |
+| FT_PCT_RANK | character |  |
+| OREB_RANK | character |  |
+| DREB_RANK | character |  |
+| REB_RANK | character |  |
+| AST_RANK | character |  |
+| TOV_RANK | character |  |
+| STL_RANK | character |  |
+| BLK_RANK | character |  |
+| BLKA_RANK | character |  |
+| PF_RANK | character |  |
+| PFD_RANK | character |  |
+| PTS_RANK | character |  |
+| PLUS_MINUS_RANK | character |  |
 
 **PlayersOnCourtTeamPlayerOnOffSummary**
 
@@ -1655,7 +1827,7 @@ table.
 Same columns as the **PlayersOnCourtTeamPlayerOnOffSummary** table
 above.
 
-Return a named list of data frames: PlayersSeasonTotals, TeamOverall
+A named list of tibbles: `TeamOverall`, `PlayersSeasonTotals`.
 
 **TeamOverall**
 
@@ -1789,7 +1961,7 @@ Return a named list of data frames: PlayersSeasonTotals, TeamOverall
 | TD3_RANK | character |  |
 | WNBA_FANTASY_PTS_RANK | character |  |
 
-Return a named list of data frames: TeamStats
+A named list of tibbles: `TeamStats`.
 
 **TeamStats**
 
@@ -1831,10 +2003,9 @@ Return a named list of data frames: TeamStats
 | PTS | character | Points scored. |
 | PTS_RANK | character |  |
 
-Return a named list of data frames: OnOffCourt, Overall,
-ShotAreaOffCourt, ShotAreaOnCourt, ShotAreaOverall,
-ShotDistanceOffCourt, ShotDistanceOnCourt, ShotDistanceOverall,
-vsPlayerOverall
+A named list of tibbles: `Overall`, `vsPlayerOverall`, `OnOffCourt`,
+`ShotDistanceOverall`, `ShotDistanceOnCourt`, `ShotDistanceOffCourt`,
+`ShotAreaOverall`, `ShotAreaOnCourt`, `ShotAreaOffCourt`.
 
 **Overall**
 
@@ -1969,9 +2140,68 @@ vsPlayerOverall
 
 **OnOffCourt**
 
-Columns as documented in the shared
-[nba_leagueplayerondetails_playersoncourtleagueplayerdetails_schema](https://hoopR.sportsdataverse.org/reference/nba_leagueplayerondetails_playersoncourtleagueplayerdetails_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GROUP_SET | character |  |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| VS_PLAYER_ID | character |  |
+| VS_PLAYER_NAME | character |  |
+| COURT_STATUS | character |  |
+| GP | character | Games played. |
+| W | character | Wins. |
+| L | character | Losses. |
+| W_PCT | character |  |
+| MIN | character | Minutes played. |
+| FGM | character | Field goals made. |
+| FGA | character | Field goal attempts. |
+| FG_PCT | character | Field goal percentage (0-1). |
+| FG3M | character | Three-point field goals made. |
+| FG3A | character | Three-point field goal attempts. |
+| FG3_PCT | character | Three-point field goal percentage (0-1). |
+| FTM | character | Free throws made. |
+| FTA | character | Free throw attempts. |
+| FT_PCT | character | Free throw percentage (0-1). |
+| OREB | character | Offensive rebounds. |
+| DREB | character | Defensive rebounds. |
+| REB | character | Total rebounds. |
+| AST | character | Assists. |
+| TOV | character | Turnovers. |
+| STL | character | Steals. |
+| BLK | character | Blocks. |
+| BLKA | character |  |
+| PF | character | Personal fouls. |
+| PFD | character |  |
+| PTS | character | Points scored. |
+| PLUS_MINUS | character | Plus/minus point differential while on court. |
+| GP_RANK | character |  |
+| W_RANK | character |  |
+| L_RANK | character |  |
+| W_PCT_RANK | character |  |
+| MIN_RANK | character |  |
+| FGM_RANK | character |  |
+| FGA_RANK | character |  |
+| FG_PCT_RANK | character |  |
+| FG3M_RANK | character |  |
+| FG3A_RANK | character |  |
+| FG3_PCT_RANK | character |  |
+| FTM_RANK | character |  |
+| FTA_RANK | character |  |
+| FT_PCT_RANK | character |  |
+| OREB_RANK | character |  |
+| DREB_RANK | character |  |
+| REB_RANK | character |  |
+| AST_RANK | character |  |
+| TOV_RANK | character |  |
+| STL_RANK | character |  |
+| BLK_RANK | character |  |
+| BLKA_RANK | character |  |
+| PF_RANK | character |  |
+| PFD_RANK | character |  |
+| PTS_RANK | character |  |
+| PLUS_MINUS_RANK | character |  |
 
 **ShotDistanceOverall**
 
@@ -2020,9 +2250,8 @@ Same columns as the **ShotDistanceOnCourt** table above.
 
 Same columns as the **ShotDistanceOnCourt** table above.
 
-Returns a named list of data frames: PlayersVsPlayers,
-TeamPlayersVsPlayersOff, TeamPlayersVsPlayersOn, TeamVsPlayers,
-TeamVsPlayersOff
+A named list of tibbles: `PlayersVsPlayers`, `TeamPlayersVsPlayersOn`,
+`TeamPlayersVsPlayersOff`, `TeamVsPlayers`, `TeamVsPlayersOff`.
 
 **PlayersVsPlayers**
 
@@ -2099,8 +2328,7 @@ Same columns as the **PlayersVsPlayers** table above.
 
 Same columns as the **PlayersVsPlayers** table above.
 
-Return a named list of data frames:
-TeamGameStreakFinderParametersResults
+A named list of tibbles: `TeamGameStreakFinderParametersResults`.
 
 **TeamGameStreakFinderParametersResults**
 

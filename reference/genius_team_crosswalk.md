@@ -25,13 +25,12 @@ genius_team_crosswalk(df, source)
 
 ## Value
 
-A `hoopR_data` tibble, one row per team:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_uuid | character | Sportality platform team uuid. |
-| genius_team_id | integer | Genius team id of the same team (home_team_id / away_team_id of the genius schedule frames). |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "genius_team_crosswalk")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -70,7 +69,7 @@ Other Genius Functions:
   standings <- data.frame(team_uuid = c("a1", "b2"), team_id = c(101L, 102L))
   genius_team_crosswalk(standings, "sportality_standings")
 #> ── Genius LiveStats team crosswalk ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:58 UTC
+#> ℹ Data updated: 2026-11-09 19:12:11 UTC
 #> # A tibble: 2 × 2
 #>   team_uuid genius_team_id
 #>   <chr>              <int>

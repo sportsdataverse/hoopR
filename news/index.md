@@ -635,6 +635,11 @@ vocabulary.
   Suggests; the parquet loaders now warn that arrow is needed and return
   an empty table when it is missing, instead of a misleading “Failed to
   read_parquet”.
+- `ByteCompile: false`: the package is no longer byte-compiled at
+  install. The compiled code doubled the installed `R/` directory (4.2
+  MB, 1.7 MB without it); R’s JIT compiler still compiles each function
+  the first time it is called, so only that first call is slower. Lazy
+  data is now xz-compressed (`LazyDataCompression: xz`).
 
 #### **Documentation**
 
@@ -648,6 +653,18 @@ vocabulary.
   stats.nba.com wrappers send, with its API name, description, accepted
   values, default and the functions that take it
   ([\#248](https://github.com/sportsdataverse/hoopR/issues/248)).
+- New dataset `return_columns` and article “Return Columns”: one row per
+  column of every data frame 959 hoopR functions return (function, list
+  element, column name, type and description), searchable on the site;
+  `subset(return_columns, fn == "nba_pbp")` gives one function’s columns
+  in R. The NBA and men’s college basketball functions (`load_nba_*`,
+  `load_mbb_*`, `espn_nba_*`, `espn_mbb_*`, `nba_*`) keep their column
+  tables in the help page; the other 647 functions (the international
+  families, `cbbd_*`, `fox_*`, `kp_*`, `torvik_*`, `realgm_*`,
+  `ncaa_mbb_*`, `nbagl_*`, `bref_*`, `euroleague_*`) now say what one
+  row is and point to the dataset and the article. Together with
+  `ByteCompile: false` this takes the installed size from 10.4 MB to 6.3
+  MB.
 - The
   [`mbb_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_schedule_crosswalk.md)
   and
@@ -673,14 +690,33 @@ vocabulary.
   (one Fox request per conference, plus ESPN and Torvik), the
   `espn_*_game_rosters()` examples (one request per athlete), the
   `espn_*_pbp()`, `espn_*_team_box()` and `espn_*_player_box()` examples
-  (the same summary request as `espn_*_game_all()`, which still runs),
-  and the release loaders whose one-season file is 7-80 MB
+  (the same summary request as `espn_*_game_all()`;
+  [`espn_nba_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+  still runs), and the release loaders whose one-season file is 7-80 MB
   ([`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
   [`load_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
   [`load_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
   [`load_nba_stats_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md),
   and the NCAA MBB pbp, shots, lineups, matchup-stints, possessions and
   player-box loaders).
+  [`espn_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_teams.md),
+  [`torvik_game_schedule()`](https://hoopR.sportsdataverse.org/reference/torvik_game_schedule.md),
+  [`torvik_game_stats()`](https://hoopR.sportsdataverse.org/reference/torvik_game_stats.md),
+  [`espn_mbb_powerindex()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_powerindex.md),
+  [`atrium_player_stats()`](https://hoopR.sportsdataverse.org/reference/atrium_player_stats.md),
+  [`espn_mbb_game_all()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
+  [`aba_box_players()`](https://hoopR.sportsdataverse.org/reference/aba_box_players.md),
+  [`aba_box_teams()`](https://hoopR.sportsdataverse.org/reference/aba_box_teams.md),
+  [`aba_calendar()`](https://hoopR.sportsdataverse.org/reference/aba_calendar.md),
+  [`aba_game()`](https://hoopR.sportsdataverse.org/reference/aba_game.md),
+  [`aba_pbp()`](https://hoopR.sportsdataverse.org/reference/aba_pbp.md)
+  and 15 of the 17 `load_nba_stats_*()` loaders on
+  [`?load_nba_stats_coaches`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  also run their examples only interactively
+  ([`load_nba_stats_coaches()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  and
+  [`load_nba_stats_draft()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  still run).
 - The help pages of the 22 largest function families (ESPN MBB and NBA,
   and most international families) link to one family index page
   ([`?family_espn_mbb`](https://hoopR.sportsdataverse.org/reference/family_espn_mbb.md),

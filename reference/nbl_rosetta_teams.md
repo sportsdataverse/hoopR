@@ -27,36 +27,13 @@ nbl_rosetta_teams(org = "nbl", limit = NULL)
 
 ## Value
 
-A `hoopR_data` tibble (one row per team record):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| org | character | Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. |
-| team_id | character | DataCore team id (UUID v1); stable across seasons. |
-| rosetta_team_id | character | Rosetta team id (UUID v4; v5 on NBL1); stable across seasons; accepted as `{team_id}`. |
-| name | character | Team name as Rosetta spells it, e.g. Perth Wildcats. |
-| team_code | character | Team code, e.g. PER (the `{team_code}` path value) |
-| established | character | Year the club was founded; often null. |
-| head_coach | character | Head coach; often null. |
-| championships | character | Championships won; often null. |
-| website | character | Club website URL. |
-| external_media_competitor_id | character | Team id on the media/OTT service; often null. |
-| conference | character | NBL1 conference of the team (name); null for NBL and WNBL teams. |
-| division | character | NBL1 division of the team (name); null for NBL and WNBL teams. |
-| venue_name | character | Name of the venue (arena), e.g. RAC Arena. |
-| venue_address | character | Unobserved in samples (null in every capture); type and meaning unverified. |
-| venue_state | character | Unobserved in samples (null in every capture); type and meaning unverified. |
-| venue_country | character | Unobserved in samples (null in every capture); type and meaning unverified. |
-| venue_timezone | character | IANA time zone of the venue, e.g. Australia/Sydney. |
-| venue_latitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
-| venue_longitude | double | Unobserved in samples (null in every capture); type and meaning unverified. |
-| venue_capacity | integer | Unobserved in samples (null in every capture); type and meaning unverified. |
-| conference_name | character | Name of the NBL1 conference the team plays in (e.g. North, South); null outside NBL1. |
-| division_name | character | Division name (NBL1 conference + gender) |
-
-Columns the body adds beyond these follow, in body order
-(sportsdataverse-py keeps them too).
+A `hoopR_data` tibble with one row per team record. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "nbl_rosetta_teams")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -75,7 +52,7 @@ lists every function in this family.
 # \donttest{
   try(nbl_rosetta_teams(org = "nbl"))
 #> ── NBL Rosetta teams from prod.rosetta.nbl.com.au ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:11 UTC
+#> ℹ Data updated: 2026-11-09 19:14:13 UTC
 #> # A tibble: 86 × 22
 #>    org   team_id          rosetta_team_id name  team_code established head_coach
 #>    <chr> <chr>            <chr>           <chr> <chr>     <chr>       <chr>     

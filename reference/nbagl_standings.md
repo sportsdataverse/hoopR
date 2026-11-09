@@ -38,37 +38,13 @@ nbagl_standings(
 
 ## Value
 
-Returns a named list of data frames: Standings
-
-**Standings**
-
-|                     |           |                              |
-|---------------------|-----------|------------------------------|
-| col_name            | types     | description                  |
-| LeagueID            | character |                              |
-| SeasonID            | character |                              |
-| TeamID              | character | Teamid.                      |
-| TeamCity            | character | Teamcity.                    |
-| TeamName            | character | Teamname.                    |
-| TeamSlug            | character |                              |
-| Conference          | character | Conference.                  |
-| ConferenceRecord    | character |                              |
-| PlayoffRank         | character |                              |
-| Division            | character | Team division.               |
-| WINS                | character | Total wins.                  |
-| LOSSES              | character | Total losses.                |
-| WinPCT              | character |                              |
-| LeagueRank          | character |                              |
-| Record              | character | Record string (e.g. '12-4'). |
-| HOME                | character | Home.                        |
-| ROAD                | character | Road.                        |
-| CurrentStreak       | character |                              |
-| strCurrentStreak    | character |                              |
-| ConferenceGamesBack | character |                              |
-| DivisionGamesBack   | character |                              |
-| LeagueGamesBack     | character |                              |
-| ClinchedPostSeason  | character |                              |
-| NEUTRAL             | character |                              |
+A named list of data frames: `Standings`. Their column names and types
+are in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md),
+e.g. `subset(return_columns, fn == "nbagl_standings")`, and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

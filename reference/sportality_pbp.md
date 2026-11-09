@@ -22,63 +22,13 @@ sportality_pbp(game_uuid)
 
 ## Value
 
-A `hoopR_data` tibble: Play-by-play events with shot coordinates and the
-Genius ids (2023/24 on). An empty valid answer raises `hoopR_no_data`;
-the documented columns come first, in this order (sportsdataverse-py
-`sportality_pbp`), then any column the API added later:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_source_id | integer | Genius match id (Int64), the same number as game_id and sports-v2 game_info_ext_id. |
-| game_id | integer | Genius match id (Int64), the join to the genius family; on play-by-play lines, an integer elsewhere. |
-| event_id | integer | Genius event number within the game (Int64), increasing through the game. |
-| type | character | Event type: one line per action; shots are the shooter's line, assists, blocks, steals and fouls drawn are further lines. Values: `2pt` = two-point attempt (made when isSuccessful = 1); `3pt` = three-point attempt (made when isSuccessful = 1); `assist` = assist on the previous made shot; `block` = block; `clock` = clock start, stop or adjustment; `foul` = foul committed; `foulon` = foul drawn (fouled player); `freethrow` = free-throw attempt; `game` = game start / end line; `headcoachchallenge` = head coach challenge; `jumpball` = jump ball or held ball; `period` = period start / end line; `rebound` = rebound; `steal` = steal; `substitution` = substitution (in or out); `timeout` = timeout; `turnover` = turnover. |
-| event_uuid | character | Event uuid (UUID v5 derived from the event; unique per event). |
-| period | integer | Period: 0 = the whole game, 1-4 the quarters, 5 and up overtime. |
-| period_type | character | REGULAR or OVERTIME; absent on the period marker lines. Values: `OVERTIME` = overtime period; `REGULAR` = regulation period. |
-| time | character | Clock REMAINING in the period as mm:ss:cc (cc looks like hundredths of a second, only ever 00, 10, 30, 50 ... seen; unverified). Absent on the per-period marker lines. |
-| real_world_time | character | Wall-clock time of the event, ISO 8601 UTC. |
-| updated_time | character | When the feed last updated the event, ISO 8601 UTC. |
-| home_team_id | integer | Genius team id of the home team (Genius key space; Int64). |
-| home_team_code | character | Home team code as Genius spells it (mixed case, 'Hol'). |
-| home_team_name | character | Name of the home team. |
-| home_abbreviation | character | Home team abbreviation. |
-| home_team_number | integer | Team number in the game; home is 1. |
-| home_place | character | Side of the home block: always home. |
-| home_score | integer | Points scored by the home team. |
-| away_team_id | integer | Genius team id of the away team (Genius key space; Int64). |
-| away_team_code | character | Away team code as Genius spells it. |
-| away_team_name | character | Name of the away team. |
-| away_abbreviation | character | Away team abbreviation. |
-| away_team_number | integer | Team number in the game; away is 2. |
-| away_place | character | Side of the away block: always away. |
-| away_score | integer | Points scored by the away team. |
-| revision | integer | Revision counter of the event. |
-| game_state | character | Game state at the event: ongoing during play, GameEnded on the final line. Values: `GameEnded` = game over (the final line of a complete feed); `ongoing` = game in progress. |
-| game_type | character | Game type of the game (” on every line seen). |
-| round | integer | Round number (0). |
-| start_date_and_time | character | Start of the game (” on every line seen). |
-| sub_type | character | Refinement of `type` (the shot type, rebound kind, foul kind, ...); null on types that have none. Values are listed under "Sub-type codes" below. |
-| qualifiers | character | Event qualifiers joined by ';' (a list in recent games, a ';'-joined string or null in older ones). |
-| is_successful | integer | 1 when the action succeeded (a made shot or free throw, a recorded rebound ...). ABSENT, not 0, for a missed shot, so count misses as rows without it. |
-| instance_id | character | Site instance id of the club or league (platform key space, `<code><n>_<code>` such as hol2_hol; the league itself is dbl1_dbl). |
-| source | character | Feed that produced the line (genius-basketball-stream-reader). |
-| game_uuid | character | Platform game uuid (c4hh5nig6t); every gameday route takes it. |
-| event_team_id | integer | Genius team id (Genius key space; Int64). |
-| event_team_code | character | Team code as Genius spells it. |
-| event_team_name | character | Name of the team. |
-| event_abbreviation | character | Team abbreviation. |
-| event_team_number | integer | Team number in the game (1 home, 2 away). |
-| event_place | character | Side of the team the event belongs to: home or away. |
-| player_id | integer | Genius person id (Int64). A string key in the players maps, an integer in play-by-play and box-score rows; cast here so the frames join, and join the genius family. |
-| player_pno | integer | Genius shirt-table number of the player. |
-| player_team_number | integer | Team number in the game (1 home, 2 away). |
-| player_first_name | character | Given (first) name(s) of the player. |
-| player_family_name | character | Family name (this route says familyName; the others lastName). |
-| coordinates_x | double | Shot or event x coordinate in Genius court units (Float64); origin and scale unverified. |
-| coordinates_y | double | Shot or event y coordinate in Genius court units (Float64); origin and orientation unverified. |
-| period_time | integer | Marker lines only: 0 (an integer), the start of the period. |
+A `hoopR_data` tibble with one row per play-by-play event. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportality_pbp")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -219,7 +169,7 @@ lists every function in this family.
 # \donttest{
   try(sportality_pbp(game_uuid = "c4hh5nig6t"))
 #> ── Basketligaen Play-by-Play from basketligaen.dk ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:00 UTC
+#> ℹ Data updated: 2026-11-09 19:14:54 UTC
 #> # A tibble: 804 × 49
 #>    game_source_id game_id event_id type     event_uuid  period period_type time 
 #>             <int>   <int>    <int> <chr>    <chr>        <int> <chr>       <chr>

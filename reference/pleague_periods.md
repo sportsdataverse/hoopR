@@ -22,19 +22,12 @@ pleague_periods(gid)
 
 ## Value
 
-A `hoopR_data` tibble: Points each team scored in each quarter and
-overtime of one finished game. An empty valid answer is a zero-row
-tibble with these columns, in this order (sportsdataverse-py
-`pleague_periods`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| gid | integer | P. LEAGUE+ game id on the site: ONE global integer sequence over every stage and season (1-12 = 2020-21 pre-season, 13 = the 2020-21 opener, 197 = the 2022-23 opener, 662 = the 2025-26 opener), with gaps; a row id, not a count. The {gid} of /game/{gid}. |
-| period | character | Period label: Q1-Q4, then OT1, OT2 for overtime. |
-| period_no | integer | 1-based position of the period: 1-4 for Q1-Q4, then 5 for OT1, 6 for OT2. |
-| home_points | integer | Home points scored IN the period (not cumulative). |
-| away_points | integer | Away points scored IN the period (not cumulative). |
+A `hoopR_data` tibble with one row per period. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "pleague_periods")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -53,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(pleague_periods(gid = 197))
 #> ── P. LEAGUE+ Periods from pleagueofficial.com ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:28 UTC
+#> ℹ Data updated: 2026-11-09 19:14:19 UTC
 #> # A tibble: 4 × 5
 #>     gid period period_no home_points away_points
 #>   <int> <chr>      <int>       <int>       <int>

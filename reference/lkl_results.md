@@ -23,38 +23,13 @@ lkl_results(season)
 
 ## Value
 
-A `hoopR_data` tibble. One row per played game, in the site's order
-(newest first). `season_end_year` is the END year of the season (2026 =
-2025-26) and `season_id` the site's opaque results-season id (from
-2016-17 it is the Genius LiveStats competition id). Teams are given by
-slug, code and name only (no team id); map a slug to `team_id` with
-`lkl_game_info`. `time` is the Lithuanian local tip-off `HH:MM`.
-`winner_highlighted` is the side whose score the page shows in bold.
-Played games only; the unplayed schedule is not wrapped. A record
-without games gives a zero-row tibble. Every column below is always
-present (a zero-row tibble keeps them and their types); an answer with
-nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season_id | integer | Results season id (key space: lkl.lt championships; LKL 2026-27 = 49436). From 2016-17 it is the Genius LiveStats competition id (leagueId 110). |
-| season_end_year | integer | Season END year (2026 = 2025-26), read from the season label 'YYYY-YYYY m. sezonas'. |
-| game_id | integer | lkl.lt game id (key space: LKL games; the `{gameId}` of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under `_request`). |
-| date | Date | Game date from the site's Lithuanian day header; checked to fall in the season (Aug 1 - Jul 31). |
-| weekday | character | Weekday of the header, translated to English ('sestadienis' -\> 'Saturday'). |
-| time | character | Tip-off 'HH:MM', Europe/Vilnius. |
-| arena | character | Arena name ('Arena dar nezinoma' = arena not yet known, on some 2007-08 games). |
-| city | character | City, from 'Arena , City'; null when the venue line has no city (2007-08 'Arena dar nezinoma'). |
-| home_slug | character | Home team: Team slug (key space: lkl.lt clubs; the `{slug}` of https://lkl.lt/komandos/`{slug}`; one per club, stable across renamings: 'rytas' for Lietuvos Rytas / Rytas). The results and standings rows carry only this; the game page teams_info gives slug + id. |
-| home_code | character | Home three-letter team code ('LIE'). |
-| home_name | character | Home team name as printed (the logo alt text; the CURRENT club name even on old games: 2007-08 'Rytas'). |
-| home_score | integer | Home team points in the game (the final score). |
-| away_slug | character | Away team: Team slug (key space: lkl.lt clubs; the `{slug}` of https://lkl.lt/komandos/`{slug}`; one per club, stable across renamings: 'rytas' for Lietuvos Rytas / Rytas). The results and standings rows carry only this; the game page teams_info gives slug + id. |
-| away_code | character | Away three-letter team code. |
-| away_name | character | Away team name as printed. |
-| away_score | integer | Away team points in the game (the final score). |
-| winner_highlighted | character | Which side's score the page sets in bold: home or away (the winner). |
+A `hoopR_data` tibble with one row per played game. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lkl_results")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

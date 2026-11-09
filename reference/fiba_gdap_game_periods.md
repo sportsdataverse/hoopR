@@ -24,19 +24,12 @@ fiba_gdap_game_periods(game_id, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | FIBA game id (Int64) of the game the period belongs to. |
-| name | character | Period name ('Q1'...'OT1'). |
-| number | integer | Period number (1-based). |
-| team_a_score | integer | Team A points in the period. |
-| team_b_score | integer | Team B points in the period. |
-| team_a_from | character | How team A qualified for this slot ('Winner of Game 87', '1st of group C'); null in group play. |
-| team_b_from | character | How team B qualified for this slot ('Winner of Game 88', '2nd of group A'); null in group play. |
+A `hoopR_data` tibble with one row per period. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_game_periods")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -55,7 +48,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gdap_game_periods(game_id = 100720))
 #> ── FIBA gdap_game_periods from fiba.basketball ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:38 UTC
+#> ℹ Data updated: 2026-11-09 19:11:52 UTC
 #> # A tibble: 4 × 7
 #>   game_id name  number team_a_score team_b_score team_a_from       team_b_from  
 #>     <int> <chr>  <int>        <int>        <int> <chr>             <chr>        

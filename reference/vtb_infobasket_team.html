@@ -36,6 +36,7 @@ Endpoint: GET https://org.infobasket.su/Widget/TeamPage/{team_id}"><meta propert
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -149,9 +150,11 @@ The season table is read for this tag.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Club profile: names, region, country, status. The columns are always these, in this order
-(sportsdataverse-py <code>vtb_infobasket_team</code>); an empty valid answer raises <code>hoopR_no_data</code>, a valid body with no rows for this
-frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>team_id</td><td>integer</td><td>Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team*/{teamId} and equals the v2 API <code>teamId</code>. The scope check compares it with the request.</td></tr><tr><td>team_type</td><td>integer</td><td>Team type code: 1 on the club record.</td></tr><tr><td>team_name_ru</td><td>character</td><td>Club name, Russian.</td></tr><tr><td>team_name_en</td><td>character</td><td>Club name, English.</td></tr><tr><td>team_short_name_ru</td><td>character</td><td>Club short name, Russian.</td></tr><tr><td>team_short_name_en</td><td>character</td><td>Club short name, English.</td></tr><tr><td>team_abc_name_ru</td><td>character</td><td>Club abbreviation, Russian (the full name in the sample).</td></tr><tr><td>team_abc_name_en</td><td>character</td><td>Club abbreviation, English.</td></tr><tr><td>team_gender</td><td>integer</td><td>Team gender code: 0 on every sample (men).</td></tr><tr><td>team_region</td><td>integer</td><td>Infobasket region id of the club's city.</td></tr><tr><td>team_country</td><td>integer</td><td>Country id of the club (1 = Russia, unverified).</td></tr><tr><td>team_logo</td><td>integer</td><td>Logo flag; 0 in the samples.</td></tr><tr><td>team_uniform1</td><td>integer</td><td>First uniform colour code.</td></tr><tr><td>team_uniform2</td><td>integer</td><td>Second uniform colour code.</td></tr><tr><td>team_status</td><td>integer</td><td>Club record status (1 active).</td></tr><tr><td>team_record_id</td><td>integer</td><td>Id of the club-record name (CurrentTeamName.TeamID, 2259 for team 2650): a different key space from team_id.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per club.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "vtb_infobasket_team")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="vtb_infobasket_seasons.html">vtb_infobasket_seasons()</a></code>.</p>
@@ -166,7 +169,7 @@ frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">vtb_infobasket_team</span><span class="op">(</span>team_id <span class="op">=</span> <span class="fl">2650</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── VTB Infobasket Team from org.infobasket.su ─────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:10:15 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:16:09 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 16</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   team_id team_type team_name_ru     team_name_en    team_short_name_ru</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             </span>

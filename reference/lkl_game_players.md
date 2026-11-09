@@ -21,24 +21,13 @@ lkl_game_players(game_id)
 
 ## Value
 
-A `hoopR_data` tibble. One row per rostered player. `player_id` (lkl.lt
-persons, stable across seasons) and `slug` are the two keys: this frame
-is the slug -\> id map for the box score, leaders and play-by-play,
-which carry the slug only. `jersey` is a string. An empty or
-unrecognised input gives a zero-row tibble. Every column below is always
-present (a zero-row tibble keeps them and their types); an answer with
-nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | lkl.lt game id (key space: LKL games; the `{gameId}` of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under `_request`). |
-| team_side | character | Side of the game the row belongs to: home or away (the game page's teams_info side; the box score, leaders and plays say home / away, and gameStatistics is keyed by team id so the runtime supplies the side). |
-| team_id | integer | lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body. |
-| player_id | integer | lkl.lt player id (key space: lkl.lt persons, stable across seasons). Joins the shot chart's player_id; the box score, leaders and play-by-play carry the slug, which this frame maps. |
-| player | character | Full player name as the game page prints it. |
-| jersey | character | Shirt number as a string (so '00' and '0' stay distinct). |
-| slug | character | Player slug (key space: lkl.lt persons; the `{slug}` of lkl.lt/zaidejai/`{slug}`). Join key to the player_slug of the box score, leaders and play-by-play. |
+A `hoopR_data` tibble with one row per rostered player. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lkl_game_players")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

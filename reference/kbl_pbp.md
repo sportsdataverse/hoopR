@@ -22,38 +22,12 @@ kbl_pbp(gmkey)
 
 ## Value
 
-A `hoopR_data` tibble: Play-by-play (the site's text cast) of a final
-game, one row per event, from 1997-98 on. The columns are always these,
-in this order (sportsdataverse-py `kbl_pbp`); an empty valid answer
-raises `hoopR_no_data`, a valid body with no rows for this frame is a
-zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| gmkey | character | Game key `S{seasonCode}G{gameCode}N{gameNo}` (e.g. S47G01N49): the id of every game route and game frame. |
-| season_code | integer | KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League). |
-| season | integer | Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). |
-| game_code | character | Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day. |
-| game_no | integer | Game number inside the competition (glkey): the N part of the gmkey. |
-| action_number | integer | 1-based position of the event in the feed, which is in game order (the wire's n is 0 on every row of some games). |
-| event_number | integer | Sequence number of the event in the game (1-based); 0 on every row of some games (e.g. S45G01N95), so order by array position. |
-| period | integer | Period number: 1-4 for the quarters, 5, 6, ... for the overtimes (the wire says X1 in the play-by-play, EQ1 in the match chart). |
-| period_label | character | Period label: Q1-Q4, then OT1, OT2, ... (normalised from the wire's X1 / EQ1 / eq1). |
-| minutes_left | integer | Minutes remaining in the period (10-minute quarters, 5-minute overtimes). |
-| seconds_left | integer | Seconds part of the time remaining (0-59). |
-| clock_seconds_left | integer | Seconds left in the period (minutes_left \* 60 + seconds_left); quarters are 10 minutes, overtimes 5. |
-| team_code | character | Team code of the acting team (the KBL team code, as `tcodeH`/`tcodeA`); ” (or ' ' in 1997-98) on game events such as period start/end. |
-| player_name | character | Player name in Korean; absent on team and game events. |
-| player_name_en | character | Player name in English / romanized; absent on team and game events. |
-| action_code | character | Action code (string, e.g. '201'); table in the returns md. |
-| action | character | English meaning of action_code (kbl_codes.ACTIONS), translated from the site's Korean label; null for an unknown code. |
-| action_ko | character | The site's own Korean label of action_code (Hangul, e.g. the label for two-point field goal made). |
-| points | integer | Points the event scored: 2 for a made two-point shot or dunk (201, 207), 3 for a made three (205), 1 for a made free throw (203); null otherwise. |
-| substitution_code | character | Substitution sub-type code on substitution-out (102) rows (e.g. '101_0'); table in the returns md. |
-| substitution | character | English meaning of substitution_code on substitution-out rows (e.g. 106_1 = fouled out, five fouls); null otherwise. |
-| foul_code | character | Foul type code (the site reads an f field; no sampled row carries it): PNF personal, TCF technical, FRF unsportsmanlike, FTF fighting, PCF punching, EBF elbow. |
-| foul | character | English meaning of foul_code (e.g. TCF = technical foul). No sampled row carries a foul code, so this is unverified. |
+A `hoopR_data` tibble with one row per event. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kbl_pbp")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -72,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(kbl_pbp(gmkey = "S47G01N49"))
 #> ── KBL Play-by-Play from api.kbl.or.kr ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:11 UTC
+#> ℹ Data updated: 2026-11-09 19:12:26 UTC
 #> # A tibble: 603 × 23
 #>    gmkey  season_code season game_code game_no action_number event_number period
 #>    <chr>        <int>  <int> <chr>       <int>         <int>        <int>  <int>

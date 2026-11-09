@@ -28,105 +28,12 @@ scb_game(game_id, league = "bbl")
 
 ## Value
 
-A `hoopR_data` tibble: One game header: teams, score by period,
-officials, venue and top scorer. An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `scb_game`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| league | character | League the row belongs to: `bbl` (men) or `dbbl` (women); BBL and DBBL game ids overlap, so a game is (league, game_id). |
-| season | integer | Season END year (2026 = 2025-26), the sdv key; the API's `season_id` plus one. |
-| season_id | integer | Season, START year (2026 = 2026-27). |
-| game_id | character | Game id, a string; unique within a league only (BBL and DBBL overlap), and not chronological. |
-| competition | character | Competition: BBL, BBL_CUP (Pokal), ALLSTAR, CHAMPIONS_CUP on the BBL host; DBBL, DBBL_CUP on the DBBL host. |
-| stage | character | Stage: MAIN_ROUND (Hauptrunde, regular season), PLAYINS, FIRST_ROUND, SECOND_ROUND, ROUND_OF_16 (Achtelfinale), ROUND_OF_8 (Viertelfinale), SEMI_FINALS, FINALS, THIRD_PLACE_GAME, QUALIFICATION, GROUP_STAGE. |
-| status | character | Game status: PRE (scheduled), LIVE, POST (ended, not yet official), OFFICIAL (final). |
-| stat_status | character | Live-stats feed status code. Observed: E (ended; German Ende), N (not started), 1 (old games), empty string. Meaning inferred. |
-| game_progress | character | Live progress code: E (ended), empty or null before the game. Meaning inferred. |
-| scheduled_time | character | Scheduled tip-off, ISO 8601 UTC. |
-| match_day | integer | Round number within the stage (Spieltag). |
-| is_tbd | logical | Date or time not yet fixed. |
-| is_hidden | logical | True when the API hides the game (0/1 on /games, a boolean on the header). |
-| home_team_id | character | Club id; equal to `seasonTeamId` in every sample. Joins to `/teams/{teamId}`. |
-| home_season_team_id | character | Season-team id; equal to the club `teamId` in every sample (BBL 2005-2026, DBBL 2024-2026). |
-| home_team_name | character | Team name as listed that season (sponsor names included, e.g. 'EWE Baskets Oldenburg'). |
-| home_tlc | character | Three-letter club code. |
-| home_is_foreign | logical | The team is not in this league (cup opponents from the ProA / ProB). |
-| home_rank | integer | The team's current table position. |
-| home_streak | character | Current streak: W or L; empty when none. |
-| home_streak_count | integer | Length of the current streak. |
-| home_last10_victories | integer | Wins in the last 10 games. |
-| home_last10_losses | integer | Losses in the last 10 games. |
-| home_total_games | integer | Games the home team has played so far (the API sends it as a string). |
-| guest_team_id | character | Club id; equal to `seasonTeamId` in every sample. Joins to `/teams/{teamId}`. |
-| guest_season_team_id | character | Season-team id; equal to the club `teamId` in every sample (BBL 2005-2026, DBBL 2024-2026). |
-| guest_team_name | character | Team name as listed that season (sponsor names included, e.g. 'EWE Baskets Oldenburg'). |
-| guest_tlc | character | Three-letter club code. |
-| guest_is_foreign | logical | The team is not in this league (cup opponents from the ProA / ProB). |
-| guest_rank | integer | The team's current table position. |
-| guest_streak | character | Current streak: W or L; empty when none. |
-| guest_streak_count | integer | Length of the current streak. |
-| guest_last10_victories | integer | Wins in the last 10 games. |
-| guest_last10_losses | integer | Losses in the last 10 games. |
-| guest_total_games | integer | Games the guest team has played so far (the API sends it as a string). |
-| home_score | integer | Home team final score. |
-| guest_score | integer | Guest team final score. |
-| latest_period | integer | Number of the last period played (4 = Q4, 5 = OT1, ...); the API sends `Q4` on /games and 4 on /games/recent. Null before the game. |
-| spectators | integer | Attendance; 0 when not recorded. |
-| home_q1_score | integer | Home team points in quarter 1; 0 when quarter scores were not recorded. |
-| home_q2_score | integer | Home team points in quarter 2; 0 when quarter scores were not recorded. |
-| home_q3_score | integer | Home team points in quarter 3; 0 when quarter scores were not recorded. |
-| home_q4_score | integer | Home team points in quarter 4; 0 when quarter scores were not recorded. |
-| home_ot1_score | integer | Home team points in overtime 1; 0 when not played (null from OT5 on in old seasons). |
-| home_ot2_score | integer | Home team points in overtime 2; 0 when not played (null from OT5 on in old seasons). |
-| home_ot3_score | integer | Home team points in overtime 3; 0 when not played (null from OT5 on in old seasons). |
-| home_ot4_score | integer | Home team points in overtime 4; 0 when not played (null from OT5 on in old seasons). |
-| home_ot5_score | integer | Home team points in overtime 5; 0 when not played (null from OT5 on in old seasons). |
-| home_ot6_score | integer | Home team points in overtime 6; 0 when not played (null from OT5 on in old seasons). |
-| home_ot7_score | integer | Home team points in overtime 7; 0 when not played (null from OT5 on in old seasons). |
-| home_ot8_score | integer | Home team points in overtime 8; 0 when not played (null from OT5 on in old seasons). |
-| home_ot9_score | integer | Home team points in overtime 9; 0 when not played (null from OT5 on in old seasons). |
-| guest_q1_score | integer | Guest team points in quarter 1; 0 when quarter scores were not recorded. |
-| guest_q2_score | integer | Guest team points in quarter 2; 0 when quarter scores were not recorded. |
-| guest_q3_score | integer | Guest team points in quarter 3; 0 when quarter scores were not recorded. |
-| guest_q4_score | integer | Guest team points in quarter 4; 0 when quarter scores were not recorded. |
-| guest_ot1_score | integer | Guest team points in overtime 1; 0 when not played (null from OT5 on in old seasons). |
-| guest_ot2_score | integer | Guest team points in overtime 2; 0 when not played (null from OT5 on in old seasons). |
-| guest_ot3_score | integer | Guest team points in overtime 3; 0 when not played (null from OT5 on in old seasons). |
-| guest_ot4_score | integer | Guest team points in overtime 4; 0 when not played (null from OT5 on in old seasons). |
-| guest_ot5_score | integer | Guest team points in overtime 5; 0 when not played (null from OT5 on in old seasons). |
-| guest_ot6_score | integer | Guest team points in overtime 6; 0 when not played (null from OT5 on in old seasons). |
-| guest_ot7_score | integer | Guest team points in overtime 7; 0 when not played (null from OT5 on in old seasons). |
-| guest_ot8_score | integer | Guest team points in overtime 8; 0 when not played (null from OT5 on in old seasons). |
-| guest_ot9_score | integer | Guest team points in overtime 9; 0 when not played (null from OT5 on in old seasons). |
-| referee1_id | character | Official id; joins to /referees `refId` (= its `id`). /referees lists only the current officials (44), so older games' officials can be missing there: all 40 of 2026-27's matched, 6 of 10 of 2008-09's. |
-| referee1_first_name | character | Official's given name. |
-| referee1_last_name | character | Official's family name. |
-| referee2_id | character | Official id; joins to /referees `refId` (= its `id`). /referees lists only the current officials (44), so older games' officials can be missing there: all 40 of 2026-27's matched, 6 of 10 of 2008-09's. |
-| referee2_first_name | character | Official's given name. |
-| referee2_last_name | character | Official's family name. |
-| referee3_id | character | Official id; joins to /referees `refId` (= its `id`). /referees lists only the current officials (44), so older games' officials can be missing there: all 40 of 2026-27's matched, 6 of 10 of 2008-09's. |
-| referee3_first_name | character | Official's given name. |
-| referee3_last_name | character | Official's family name. |
-| commissioner_id | character | Official id; joins to /referees `refId` (= its `id`). /referees lists only the current officials (44), so older games' officials can be missing there: all 40 of 2026-27's matched, 6 of 10 of 2008-09's. |
-| commissioner_first_name | character | Official's given name. |
-| commissioner_last_name | character | Official's family name. |
-| venue_id | character | Arena id, stable across seasons (Uber Arena = 2 in both 2025-26 and 2026-27); a different key space from /teams `seasonVenues.id`, and no captured route is keyed by it. A string in /games and `/games/{gameId}`, an integer in /games/recent. |
-| venue_name | character | Name of the arena the game is played in; `venue_id` is its stable arena id. |
-| venue_address | character | Postal address, German. |
-| venue_capacity | integer | Arena capacity, spectators. |
-| venue_is_main | logical | The club's main arena. |
-| tv_channel | character | TV channel(s) showing the game, comma-joined (a list on some routes, an empty string when none). |
-| tv_type | character | TV coverage type; empty or null in every sample. |
-| is_free_tv | logical | Shown on free-to-air TV. |
-| live_stream_url | character | Live-stream link (DBBL games link YouTube); empty when none. |
-| top_score | integer | Points of the game's top scorer; null before the game. |
-| top_scorer_season_player_id | character | Season-player id. BBL: a string equal to `id`. DBBL: an INTEGER that matches `/seasons/{seasonId}` `seasonPlayerId` (5 of 5 rows checked, 2026-27). Joins to `/season-players/{seasonPlayerId}`. |
-| top_scorer_real_player_id | character | Global person id: the same across clubs and seasons. Joins to `realPlayerId` everywhere. |
-| top_scorer_first_name | character | Player's given name. |
-| top_scorer_last_name | character | Player's family name. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "scb_game")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -145,7 +52,7 @@ lists every function in this family.
 # \donttest{
   try(scb_game(game_id = "2006920"))
 #> ── BBL/DBBL Game from the SCB API ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:41 UTC
+#> ℹ Data updated: 2026-11-09 19:14:34 UTC
 #> # A tibble: 1 × 91
 #>   league season season_id game_id competition stage      status   stat_status
 #>   <chr>   <int>     <int> <chr>   <chr>       <chr>      <chr>    <chr>      

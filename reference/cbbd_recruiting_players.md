@@ -64,75 +64,49 @@ cbbd_recruiting_portal(
 
 ## Value
 
-A `hoopR_data` tibble with one row per recruit. The `hometown` and
-`committed_to` objects are flattened into prefixed columns:
+A `hoopR_data` tibble with one row per recruit. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_recruiting_players")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-|               |           |                             |
-|---------------|-----------|-----------------------------|
-| col_name      | types     | description                 |
-| id            | integer   | Recruit id.                 |
-| source_id     | character | Source (ESPN) recruit id.   |
-| position      | character | Recruit position.           |
-| school_id     | integer   | High school / club id.      |
-| school        | character | High school / club name.    |
-| athlete_id    | integer   | Athlete id (once enrolled). |
-| year          | integer   | Recruiting class year.      |
-| name          | character | Recruit name.               |
-| height_inches | numeric   | Height in inches.           |
-| weight_pounds | integer   | Weight in pounds.           |
-| stars         | integer   | Star rating.                |
-| rating        | numeric   | Numeric recruit rating.     |
-| ranking       | integer   | Overall ranking.            |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_recruiting_teams")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-A `hoopR_data` tibble with one row per team:
-
-|            |           |                                |
-|------------|-----------|--------------------------------|
-| col_name   | types     | description                    |
-| team_id    | integer   | CollegeBasketballData team id. |
-| team       | character | Team name.                     |
-| conference | character | Conference name.               |
-| year       | integer   | Recruiting class year.         |
-| ranking    | integer   | Team recruiting ranking.       |
-| rating     | numeric   | Team recruiting rating.        |
-
-A `hoopR_data` tibble with one row per transfer. The `origin` and
-`destination` objects are flattened into prefixed columns:
-
-|                 |           |                                 |
-|-----------------|-----------|---------------------------------|
-| col_name        | types     | description                     |
-| id              | integer   | Transfer id.                    |
-| source_id       | character | Source (ESPN) athlete id.       |
-| year            | integer   | Transfer class year.            |
-| first_name      | character | Player first name.              |
-| last_name       | character | Player last name.               |
-| position        | character | Player position.                |
-| eligibility     | character | Eligibility status.             |
-| years_remaining | integer   | Years of eligibility remaining. |
-| stars           | integer   | Star rating.                    |
-| rating          | numeric   | Numeric rating.                 |
+A `hoopR_data` tibble with one row per transfer. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_recruiting_portal")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Examples
 
 ``` r
 # \donttest{
   try(cbbd_recruiting_players(year = 2024))
-#> ✖ 2026-11-09 17:03:31.805442: Invalid arguments or no recruiting players available!
+#> ✖ 2026-11-09 19:09:48.458004: Invalid arguments or no recruiting players available!
 #> ✖ Args: year = 2024, team = NULL, conference = NULL, position = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_recruiting_teams(year = 2024))
-#> ✖ 2026-11-09 17:03:31.813552: Invalid arguments or no team recruiting rankings available!
+#> ✖ 2026-11-09 19:09:48.469356: Invalid arguments or no team recruiting rankings available!
 #> ✖ Args: year = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_recruiting_portal(year = 2024))
-#> ✖ 2026-11-09 17:03:31.821417: Invalid arguments or no transfer portal data available!
+#> ✖ 2026-11-09 19:09:48.479784: Invalid arguments or no transfer portal data available!
 #> ✖ Args: year = 2024, source_team = NULL, destination_team = NULL, source_conference = NULL, destination_conference = NULL, position = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

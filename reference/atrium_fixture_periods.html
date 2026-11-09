@@ -42,6 +42,7 @@ score. Overtime periods are period_id 11, 12, ... (not 5)."><meta property="og:i
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -160,7 +161,11 @@ competitions.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble, one row per <code>(fixture_id, period_id)</code>:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>website_id</td><td>integer</td><td>Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self.</td></tr><tr><td>fixture_id</td><td>character</td><td>Game UUID (fixture); the key of every game frame and of the fixture_detail routes.</td></tr><tr><td>season_id</td><td>character</td><td>Season UUID of the game.</td></tr><tr><td>period_id</td><td>integer</td><td>Period number: 1-4 regulation, 11, 12, ... overtimes (not 5).</td></tr><tr><td>label</td><td>character</td><td>Short period label in the site's language (Q1, P1), as sent.</td></tr><tr><td>is_overtime</td><td>logical</td><td>True for an overtime period.</td></tr><tr><td>is_shootout</td><td>logical</td><td>True for a shootout period.</td></tr><tr><td>started</td><td>logical</td><td>True once the period has started.</td></tr><tr><td>ended</td><td>logical</td><td>True once the period has ended.</td></tr><tr><td>duration_minutes</td><td>integer</td><td>Length of the period in minutes.</td></tr><tr><td>elapsed_minutes_before_period</td><td>integer</td><td>Minutes of game time played before the period starts (40 for the first overtime).</td></tr><tr><td>home_entity_id</td><td>character</td><td>Team UUID of the home team, from the fixture's isHome flag.</td></tr><tr><td>away_entity_id</td><td>character</td><td>Team UUID of the away team, from the fixture's isHome flag.</td></tr><tr><td>home_points</td><td>integer</td><td>Points the home team scored in this period (not the running score).</td></tr><tr><td>away_points</td><td>integer</td><td>Points the away team scored in this period (not the running score).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per (<code>fixture_id</code>, <code>period_id</code>).
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "atrium_fixture_periods")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="atrium_fixtures.html">atrium_fixtures()</a></code>.</p>

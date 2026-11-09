@@ -25,22 +25,13 @@ fiba_gdap_game_officials(game_id, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | FIBA game id (Int64) of the game the official was nominated to. |
-| person_id | integer | FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P\_`<id>` = gdapPlayerId. |
-| first_name | character | Given name(s) as registered with FIBA. |
-| last_name | character | Last name (officials: upper case). |
-| gender | character | Sex of the person: M or F (Male/Female on getgdapcompetitionnominationsbyid). |
-| role_code | character | Role code (REF, FIBATDEL...). |
-| role_name | character | Role name on the game (Crew chief, Umpire, Commissioner, Assistant scorer...). |
-| role_order | character | Order within the role; a numeric string or null. |
-| default_nationality | character | FIBA code of the official's main nationality. |
-| license_nationality | character | FIBA code of the federation that licenses the official. |
+A `hoopR_data` tibble with one row per official. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_game_officials")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

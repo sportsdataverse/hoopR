@@ -32,7 +32,7 @@ load_nba_group_aliases(..., dbConnection = NULL, tablename = NULL)
 
 ## Value
 
-Returns a `hoopR_data` tibble with one row per alias.
+A `hoopR_data` tibble with one row per alias.
 
 |  |  |  |
 |----|----|----|

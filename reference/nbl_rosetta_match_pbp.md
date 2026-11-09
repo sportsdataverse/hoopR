@@ -22,43 +22,12 @@ nbl_rosetta_match_pbp(match_id)
 
 ## Value
 
-A `hoopR_data` tibble (one row per event, sorted on action_id):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | character | DataCore fixture id of the match (UUID v1): the `{match_id}` route key and fixtureId in play-by-play. Join on it. |
-| rosetta_match_id | character | Rosetta's match RECORD id (UUID v4) as carried by box-score and play-by-play rows; no route accepts it. Join on match_id. |
-| match_status | character | Status of the match in Rosetta's words (complete for a finished game): box score and play-by-play of any other status are partial. |
-| action_id | integer | Event sequence number within the match (ascending in feed time) |
-| period | integer | Period number, an INTEGER here (1-4 = quarters) |
-| period_type | character | Period type: regular (overtime unobserved) |
-| clock | character | Game clock at the event, MM:SS remaining in the period; null on some feed-control events. |
-| clock_seconds | double | Game clock at the event as seconds (parsed from clock, MM:SS); null for events without a clock. |
-| shot_clock | character | Shot clock at the event, MM:SS; in Genius-era matches it repeats the game clock (no shot-clock data) |
-| shot_clock_seconds | double | Shot clock at the event as seconds (parsed from shot_clock); in Genius-era backfills it repeats the game clock. |
-| score_home | integer | Home team's running score after the event (score_1 in the body). |
-| score_away | integer | Away team's running score after the event (score_2 in the body). |
-| action_type | character | Event type: 2pt, 3pt, freeThrow, rebound, assist, steal, block, turnover, foul, substitution, timeOut, jumpBall, possession, possessionArrow, period, fixture, main (clock start/stop) |
-| sub_type | character | Event detail (shot type, foul type, "1Of2" free throw, In/Out...); absent when the event has none. Two vocabularies: Title Case ("Jump Shot") in NBL/WNBL 2025-26 feeds (events carry fixtureId), camelCase ("jumpShot") in older backfills and NBL1. |
-| sub_type_key | character | sub_type folded to snake_case, so the Title Case 2025-26 spelling and the camelCase backfill spelling match. |
-| success | logical | Shot or free throw made (true) or missed (false). DataCore-era feeds (events with fixtureId) and NBL1 carry it only on shots and free throws (absent elsewhere); older backfills carry it on every event, true on non-shot events. |
-| team_id | character | DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. |
-| team_code | character | Team code, e.g. PER (the `{team_code}` path value) |
-| team_name | character | Name of the team as Rosetta spells it, e.g. Perth Wildcats. |
-| is_home | logical | True when the event's team is the match's home team; null when the event has no team. |
-| player_id | character | DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. |
-| player_name | character | Full name of the player the event belongs to; null for events no player owns (team rebounds, period starts). |
-| jersey_number | character | Jersey number of the player at the event, as text (a WNBL backfill writes 6.0). |
-| x | double | Shot or event position along the court length, percent 0-100, in game orientation (each team's shots sit at x \> 50 for two periods and x \< 50 for the others). Unverified: which end is x = 0; DataCore-era free-throw, foul and turnover coordinates are not at the free-throw line. Null where none was recorded. |
-| y | double | Shot or event position across the court width, percent 0-100 (free throws and close shots cluster near 50). Unverified: which sideline is y = 0. Null where none was recorded. |
-| readable_action_type | character | Human-readable event label, e.g. "Game - Game completed". |
-| system_action_type | character | Machine event label, e.g. game_game_completed. |
-| timestamp | character | Wall-clock time of the event, ISO 8601 without offset (UTC) |
-| feed | character | Feed shape: datacore (NBL and WNBL 2025-26: events carry fixtureId, arrive newest first, Title Case sub_type, a real shot clock) or backfill (older seasons and NBL1 2025: no fixtureId, oldest first, camelCase sub_type, shot_clock repeating the game clock). |
-
-Columns the body adds beyond these follow, in body order
-(sportsdataverse-py keeps them too).
+A `hoopR_data` tibble with one row per event. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "nbl_rosetta_match_pbp")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -77,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(nbl_rosetta_match_pbp(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #> ── NBL Rosetta match_pbp from prod.rosetta.nbl.com.au ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:07:57 UTC
+#> ℹ Data updated: 2026-11-09 19:14:02 UTC
 #> # A tibble: 982 × 29
 #>    match_id     rosetta_match_id match_status action_id period period_type clock
 #>    <chr>        <chr>            <chr>            <int>  <int> <chr>       <chr>

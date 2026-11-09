@@ -36,6 +36,7 @@ Endpoint: GET https://www.legabasket.it/api/statistics/get-teams-statistics-by-t
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -143,9 +144,11 @@ Endpoint: GET https://www.legabasket.it/api/statistics/get-teams-statistics-by-t
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Season team leaderboards, offensive or defensive, one row per team and category. The
-columns are always these, in this order (sportsdataverse-py <code>lba_teams_leaderboard</code>); a column the site adds later is
-appended after them:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2027 = 2026-27): the row's START year + 1.</td></tr><tr><td>category</td><td>character</td><td>Category of this row (the <code>cat</code> param, e.g. <code>points</code>).</td></tr><tr><td>name</td><td>character</td><td>Given name (players) / team name (teams).</td></tr><tr><td>sponsor_name</td><td>character</td><td>Sponsor name (empty or null in the samples).</td></tr><tr><td>short_name</td><td>character</td><td>Short name of the team, e.g. BC Roma.</td></tr><tr><td>tv_name</td><td>character</td><td>Short team name for TV graphics.</td></tr><tr><td>year</td><td>integer</td><td>Season START year (2026 = 2026-27); sdv END year = year + 1.</td></tr><tr><td>logo_key</td><td>character</td><td>Image key: the image is <code>{cdn_url}/{key}</code>, resized copies <code>{cdn_url}/variants/{key}/thumb</code> or <code>/large</code> (the site's getApiImageUrl).</td></tr><tr><td>attempts</td><td>integer</td><td>Shots attempted in the zone, parsed from num.</td></tr><tr><td>total_played_matches</td><td>integer</td><td>Games the team has played, counted for the leaderboard.</td></tr><tr><td>total_points</td><td>integer</td><td>Points scored (offensive) or allowed (defensive) in the season.</td></tr><tr><td>minutes</td><td>integer</td><td>Minutes per game (players: decimal string <code>28.67</code>) / total minutes (teams: integer).</td></tr><tr><td>score_40_min</td><td>double</td><td>Value per 40 minutes.</td></tr><tr><td>score</td><td>double</td><td>Value in the category under the <code>ob</code> order (default <code>avg</code> = per game); players send a decimal string, teams a number.</td></tr><tr><td>team_id</td><td>integer</td><td>Team id (team-season).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per team and category.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "lba_teams_leaderboard")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="lba_championships.html">lba_championships()</a></code>.</p>

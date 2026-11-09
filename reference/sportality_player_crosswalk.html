@@ -44,6 +44,7 @@ Endpoint: GET https://www.basketligaen.dk/api/statistics-v2/stats-info/players_s
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -155,9 +156,11 @@ playoffs, Slutspil).</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble, one row per player. sportsdataverse-py documents no fixed schema for this frame: the
-columns after the first two are the fields the <code>players</code> map carries (the 2025/26 map is shown);
-birth dates are dropped.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>player_id</td><td>integer</td><td>Genius person id (the map key); joins play-by-play, box scores, stats tables and the genius family.</td></tr><tr><td>athlete_uuid</td><td>character</td><td>Platform athlete uuid (NA where the site has none, common before about 2005); joins rosters and the athlete routes.</td></tr><tr><td>first_name</td><td>character</td><td>Given (first) name(s) of the player.</td></tr><tr><td>last_name</td><td>character</td><td>Family name (surname) of the player.</td></tr><tr><td>shoots</td><td>character</td><td>Shooting hand (empty or NA for every player seen).</td></tr><tr><td>ep_url</td><td>character</td><td>Profile URL on an external site (empty for every player seen).</td></tr><tr><td>full_name</td><td>character</td><td>Full display name of the player.</td></tr><tr><td>nationality</td><td>character</td><td>ISO 3166-1 alpha-2 country code.</td></tr><tr><td>gender</td><td>character</td><td>Gender as recorded by the site (<code>male</code>, or empty).</td></tr><tr><td>weight</td><td>integer</td><td>Weight in kilograms.</td></tr><tr><td>height</td><td>integer</td><td>Height in centimetres.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per player.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "sportality_player_crosswalk")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="sportality_schedule.html">sportality_schedule()</a></code>.</p>

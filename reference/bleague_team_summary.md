@@ -38,51 +38,13 @@ bleague_team_summary(schedule_key, season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| schedule_key | integer | B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The {schedule_key} every game wrapper takes and the schedule page's list-item id. |
-| season | integer | Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. |
-| feed | character | Source feed of the row: v2 (v2_genius_contexts, B1/B2 from 2020-21) or v1 (v1_contexts: B3, B1/B2 2018-2020, and the 2016-17 / 2017-18 game-page embed). The feeds differ in id types, dates and some codes. |
-| period_category | integer | Period category: 1-4 = quarters 1-4, 15 = first half, 16 = second half, 18 = whole game. Overtime codes are unverified. |
-| team_side | character | Side of the game the row belongs to: home or away. |
-| team_id | character | B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. |
-| team_name_j | character | Team name in Japanese. |
-| team_name_e | character | Team name in English, uppercase. |
-| fg_made | integer | Field goals made (PTM). |
-| fg_attempted | integer | Field goals attempted (PTA). |
-| fg_pct | double | Field-goal percentage 0-100, one decimal. |
-| fg2_made | integer | Two-point field goals made. |
-| fg2_attempted | integer | Two-point field goals attempted. |
-| fg2_pct | double | Two-point percentage 0-100. |
-| fg3_made | integer | Three-point field goals made. |
-| fg3_attempted | integer | Three-point field goals attempted. |
-| fg3_pct | double | Three-point percentage 0-100. |
-| ft_made | integer | Free throws made. |
-| ft_attempted | integer | Free throws attempted. |
-| ft_pct | double | Free-throw percentage 0-100. |
-| reb_off | integer | Offensive rebounds. |
-| reb_def | integer | Defensive rebounds. |
-| reb | integer | Total rebounds. |
-| assists | integer | Assists credited to the team in the period category. |
-| turnovers | integer | Turnovers committed by the team in the period category. |
-| steals | integer | Steals made by the team in the period category. |
-| blocks | integer | Blocks made by the team in the period category. |
-| blocks_received | integer | Shots blocked by the opponent. |
-| fouls | integer | Fouls committed. |
-| fouls_drawn | integer | Fouls drawn. |
-| paint_points | integer | Points in the paint (inside-the-paint 2PT points; 2x the players' PT2IN count on v2). |
-| points_off_turnover | integer | Points off turnovers. |
-| second_chance_points | integer | Second-chance points. |
-| fast_break_points | integer | Fast-break points. |
-| max_lead | integer | Largest lead of the team in the period category (0 if it never led). |
-| lead_last | integer | Lead statistic (LeadLast), integer; meaning unverified (7 for the home side on all checked games). |
-| lead_last_home | integer | Home score-like value tied to lead_last; meaning unverified. A string on v2 quarter / game rows. |
-| lead_last_away | integer | Away score-like value tied to lead_last; meaning unverified. |
-| lead_changes | integer | Lead changes in the period category (LeadCount); the same on both side rows. |
-| ties | integer | Times the score was tied in the period category (TieCount); the same on both side rows. |
+A `hoopR_data` tibble with one row per team side. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bleague_team_summary")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

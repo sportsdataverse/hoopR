@@ -36,6 +36,7 @@ Endpoint: GET https://www.fiba.basketball/en/games/{game_id}"><meta property="og
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -150,7 +151,11 @@ game-page objects <code>game</code>, <code>playByPlay</code>, <code>gameDetails<
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble (the raw JSON list when <code>return_parsed = FALSE</code>) with the following columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>FIBA game id (Int64), global across competitions: gdapGameId, the <code>&lt;gameId&gt;</code> of a game-page URL.</td></tr><tr><td>competition_id</td><td>integer</td><td>FIBA competition id (Int64) of the game's edition; the comp argument.</td></tr><tr><td>team_side</td><td>character</td><td>A or B: whether the row is the schedule's team A or team B (null when the page does not say).</td></tr><tr><td>organisation_id</td><td>integer</td><td>Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T_<code>&lt;id&gt;</code> and the play-by-play oId. NOT the per-competition team_id.</td></tr><tr><td>period</td><td>character</td><td>Period name: Q1..Q4, then OT1, OT2...</td></tr><tr><td>period_number</td><td>integer</td><td>1-based position of the period in the game.</td></tr><tr><td>points</td><td>integer</td><td>Points the team scored in the period.</td></tr><tr><td>points_first_five_min</td><td>integer</td><td>Points the team scored in the first five minutes of the period (matches the play-by-play except free throws on the 5:00 boundary); null when absent.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per team and period.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "fiba_gamepage_period_scores")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="fiba_gamepage_box_players.html">fiba_gamepage_box_players()</a></code>.</p>
@@ -165,7 +170,7 @@ game-page objects <code>game</code>, <code>playByPlay</code>, <code>gameDetails<
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">fiba_gamepage_period_scores</span><span class="op">(</span>game_id <span class="op">=</span> <span class="fl">100720</span>, comp <span class="op">=</span> <span class="fl">208182</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── FIBA gamepage_period_scores from fiba.basketball ───────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:05:32 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:11:46 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 8 × 8</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   game_id competition_id team_side organisation_id period period_number points</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>

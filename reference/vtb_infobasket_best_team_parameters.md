@@ -19,17 +19,13 @@ vtb_infobasket_best_team_parameters(lang = "en")
 
 ## Value
 
-A `hoopR_data` tibble: Team leader categories (a code table). The
-columns are always these, in this order (sportsdataverse-py
-`vtb_infobasket_best_team_parameters`); an empty valid answer raises
-`hoopR_no_data`, a valid body with no rows for this frame is a zero-row
-tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| param | integer | Leader-category id; pass it as `param` to /Widget/BestPlayers or /Widget/BestTeams. |
-| name | character | Leader-category name, English (double spaces as sent). |
+A `hoopR_data` tibble with one row per leader category. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_best_team_parameters")`)
+and in the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

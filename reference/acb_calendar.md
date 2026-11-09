@@ -32,37 +32,12 @@ acb_calendar(competition_id = NULL, season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_calendar`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa. |
-| edition_id | integer | Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, `season`. |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| round_id | integer | Global round id (6017 = Liga 2026-27 round 3); not the round number. |
-| round_number | integer | Round number within its phase. |
-| subphase_id | integer | Sub-phase id of the round (playoff stages); null in the regular season. |
-| subphase_number | integer | Sub-phase number of the round; null in the regular season. |
-| week_id | integer | Not sent by the calendar route (always null). |
-| match_id | integer | Match id. Legacy ids (seasons up to 2019-20) sit below about 20000 (12559 = 2005-06 final, 17718 = 2016-17 final); from 2020-21 they start at about 100000 (102920 in 2021-22, 105401 in 2026-27). One key space across competitions: the matchId param of every matchdata route. |
-| home_team_id | integer | Home season-team entry id (new every season; joins the body's team list). |
-| away_team_id | integer | Away season-team entry id (new every season; joins the body's team list). |
-| home_score | integer | Home points (null before the match) |
-| away_score | integer | Away points (null before the match) |
-| start | POSIXct | Tip-off, ISO 8601 UTC |
-| status | character | Match state (x-match-statuses) |
-| is_on_half_time | logical | At half time (live) |
-| current_quarter | integer | Current or last quarter (5+ = overtime); not reliable after the match (1 in the 2017 series rows) |
-| home_club_id | integer | Stable club id of the home team (looked up in the body's team list). |
-| home_team | character | Home team name for the season (looked up in the body's team list). |
-| home_team_abbr | character | Home team three-letter abbreviation (looked up in the body's team list). |
-| away_club_id | integer | Stable club id of the away team (looked up in the body's team list). |
-| away_team | character | Away team name for the season (looked up in the body's team list). |
-| away_team_abbr | character | Away team three-letter abbreviation (looked up in the body's team list). |
-| ticketing_link | character | Ticket shop URL; null when none. |
-| broadcasters | character | Broadcast channel names of the game joined with '; ' (the first is the primary). |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_calendar")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -81,7 +56,7 @@ lists every function in this family.
 # \donttest{
   try(acb_calendar(season = 2027))
 #> ── ACB Calendar from api2.acb.com ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:25 UTC
+#> ℹ Data updated: 2026-11-09 19:08:42 UTC
 #> # A tibble: 306 × 25
 #>    competition_id edition_id season round_id round_number subphase_id
 #>             <int>      <int>  <int>    <int>        <int>       <int>

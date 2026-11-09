@@ -37,13 +37,9 @@ nba_referee_assignments(date, league = "nba", proxy = NULL)
 
 ## Value
 
-Named list of `hoopR_data` tibbles:
+A named list of `hoopR_data` tibbles: `officials`, `replay_center`.
 
-**officials** – one row per game x filled crew slot. A slot whose
-official's name is absent, null or empty is skipped. A field sent as
-null, an array or an object reads as NA, never as a dropped or
-duplicated row: an array or object name keeps its row, and the
-official's id, with an NA `official_name`.
+**officials**
 
 |  |  |  |
 |----|----|----|
@@ -63,11 +59,7 @@ official's id, with an NA `official_name`.
 | official_name | character | Official's display name. |
 | jersey_num | character | Official's jersey number, as a string. |
 
-**replay_center** – the replay-center officials on duty that date, one
-row per official. The rows are per date, not tied to a game or a league:
-the feed can repeat the same rows in every league block (`league` only
-records which block was read), and they can be present when the league
-has no games.
+**replay_center**
 
 |  |  |  |
 |----|----|----|
@@ -77,9 +69,18 @@ has no games.
 | official_id | integer | Replay-center official's person id from the feed. |
 | official_name | character | Replay-center official's display name. |
 
-A date with no games for the league is not an error: `officials` comes
-back zero-row rather than raising, while `replay_center` can still hold
-that date's replay-center officials.
+`officials`: one row per game x filled crew slot. A slot whose
+official's name is absent, null or empty is skipped. A field sent as
+null, an array or an object reads as NA, never as a dropped or
+duplicated row: an array or object name keeps its row, and the
+official's id, with an NA `official_name`. `replay_center`: the
+replay-center officials on duty that date, one row per official. The
+rows are per date, not tied to a game or a league: the feed can repeat
+the same rows in every league block (`league` only records which block
+was read), and they can be present when the league has no games. A date
+with no games for the league is not an error: `officials` comes back
+zero-row rather than raising, while `replay_center` can still hold that
+date's replay-center officials.
 
 ## Details
 
@@ -128,7 +129,7 @@ Saiem Gilani
     head(refs$officials)
   })
 #> ── NBA referee assignments -- officials (official.nba.com) ────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:07:49 UTC
+#> ℹ Data updated: 2026-11-09 19:13:53 UTC
 #> # A tibble: 4 × 14
 #>   league game_id    game_date  season season_type game_code       home_team_id
 #>   <chr>  <chr>      <date>      <int> <chr>       <chr>                  <int>

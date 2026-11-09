@@ -41,30 +41,12 @@ acb_current_roster(club_id, competition_id = NULL, season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py
-`acb_current_roster`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| club_id | integer | Stable club id asked for (the body names no club). |
-| role | character | player or staff (head coach and assistants). |
-| person_id | integer | ACB licence number of the person; a player's player_id elsewhere. |
-| person_name | character | Display name as the site shows it. |
-| first_name | character | First name(s); null when the API does not send it. |
-| last_name | character | Last name(s); null when the API does not send it. |
-| shirt_number | character | Shirt number as a string; null for staff. |
-| game_role | character | Position or staff role in Spanish (Base, Escolta, Alero, Ala-pivot, Pivot; Entrenador, Segundo Entrenador). |
-| licensing | character | Licence code (for example EUR, JFL, CRE); meaning unverified. |
-| age | integer | Age in years as sent by the roster route. |
-| nationality | character | Nationality as sent, a Spanish country name ('Serbia', 'EE.UU.'). |
-| nationality_iso | character | ISO 3166-1 alpha-2 code of nationality, from the 31 observed names; null for an unseen name. |
-| height_cm | integer | Height in centimetres (players only). |
-| is_license_active | logical | True when the licence is active in the current season. |
-| edition_id | integer | Season id the person record was read for (START year - 1935). |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| temporary_roster | logical | True while the roster is provisional. |
+A `hoopR_data` tibble with one row per person. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_current_roster")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -83,7 +65,7 @@ lists every function in this family.
 # \donttest{
   try(acb_current_roster(club_id = 2, season = 2027))
 #> ── ACB Current Roster from api2.acb.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:28 UTC
+#> ℹ Data updated: 2026-11-09 19:08:45 UTC
 #> # A tibble: 19 × 17
 #>    club_id role   person_id person_name        first_name last_name shirt_number
 #>      <int> <chr>      <int> <chr>              <chr>      <chr>     <chr>       

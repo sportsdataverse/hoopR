@@ -53,17 +53,43 @@ espn_nba_team_odds_records(
 
 ## Value
 
-A long tibble with one row per (category x stat).
+A `hoopR_data` tibble with one row per category and statistic.
 
-Columns as documented in the shared
-[espn_mbb_team_odds_records_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_odds_records_schema.md)
-table.
+|                  |           |                                               |
+|------------------|-----------|-----------------------------------------------|
+| col_name         | types     | description                                   |
+| league           | character | League slug.                                  |
+| team_id          | character | ESPN team identifier.                         |
+| season           | integer   | Season year.                                  |
+| season_type      | integer   | Season-type id.                               |
+| category_type    | character | Category type code (e.g. "moneyLineOverall"). |
+| category_abbrev  | character | Category abbreviation (e.g. "ML").            |
+| category_short   | character | Short display.                                |
+| category_display | character | Full category name.                           |
+| stat_type        | character | Stat type code (e.g. "win", "loss").          |
+| stat_abbrev      | character | Stat abbreviation (e.g. "W", "L").            |
+| stat_display     | character | Stat display name.                            |
+| value            | numeric   | Numeric stat value.                           |
+| display_value    | character | Display-formatted value.                      |
 
-A long tibble with one row per (category x stat).
+A `hoopR_data` tibble with one row per category and statistic.
 
-Columns as documented in the shared
-[espn_mbb_team_odds_records_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_odds_records_schema.md)
-table.
+|                  |           |                                               |
+|------------------|-----------|-----------------------------------------------|
+| col_name         | types     | description                                   |
+| league           | character | League slug.                                  |
+| team_id          | character | ESPN team identifier.                         |
+| season           | integer   | Season year.                                  |
+| season_type      | integer   | Season-type id.                               |
+| category_type    | character | Category type code (e.g. "moneyLineOverall"). |
+| category_abbrev  | character | Category abbreviation (e.g. "ML").            |
+| category_short   | character | Short display.                                |
+| category_display | character | Full category name.                           |
+| stat_type        | character | Stat type code (e.g. "win", "loss").          |
+| stat_abbrev      | character | Stat abbreviation (e.g. "W", "L").            |
+| stat_display     | character | Stat display name.                            |
+| value            | numeric   | Numeric stat value.                           |
+| display_value    | character | Display-formatted value.                      |
 
 ## See also
 
@@ -82,20 +108,20 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_team_odds_records(team_id = 150, season = 2026)
-#> ✖ 2026-11-09 17:04:52.560909: Failed to retrieve ESPN mens-college-basketball team odds-records for team_id=150, season=2026
+#> ✖ 2026-11-09 19:11:09.424095: Failed to retrieve ESPN mens-college-basketball team odds-records for team_id=150, season=2026
 #> ✖ Args: league = "mens-college-basketball", team_id = 150, season = 2026, season_type = 0L
 #> ✖ Error: The API returned an error
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Odds-Records ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:52 UTC
+#> ℹ Data updated: 2026-11-09 19:11:09 UTC
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   espn_nba_team_odds_records(team_id = 13, season = 2026)
-#> ✖ 2026-11-09 17:04:52.622392: Failed to retrieve ESPN nba team odds-records for team_id=13, season=2026
+#> ✖ 2026-11-09 19:11:09.510325: Failed to retrieve ESPN nba team odds-records for team_id=13, season=2026
 #> ✖ Args: league = "nba", team_id = 13, season = 2026, season_type = 0L
 #> ✖ Error: The API returned an error
 #> ── ESPN NBA Team Odds-Records ─────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:52 UTC
+#> ℹ Data updated: 2026-11-09 19:11:09 UTC
 #> # A tibble: 0 × 0
 # }
 ```

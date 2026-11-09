@@ -23,30 +23,13 @@ acb_competition_current(competition_ids = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py
-`acb_competition_current`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition the site opens by default. |
-| edition_id | integer | Edition (season) the site opens by default. |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| week_id | integer | Week the site opens by default. |
-| round_id | integer | Round the site opens by default. |
-| match_grouping | character | round or week (current pointers) |
-| match_id | integer | The current match (the featured game). |
-| status | character | State of the current match. |
-| start | POSIXct | Tip-off instant (UTC) of the current match. |
-| home_team_id | integer | Home season-team entry id of the current match. |
-| home_club_id | integer | Home stable club id of the current match. |
-| home_team | character | Home team name of the current match. |
-| home_team_abbr | character | Home team abbreviation of the current match. |
-| away_team_id | integer | Away season-team entry id of the current match. |
-| away_club_id | integer | Away stable club id of the current match. |
-| away_team | character | Away team name of the current match. |
-| away_team_abbr | character | Away team abbreviation of the current match. |
+A `hoopR_data` tibble with one row per game of the current round. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_competition_current")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

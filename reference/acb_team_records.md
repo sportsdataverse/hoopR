@@ -26,31 +26,13 @@ acb_team_records(club_id)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_team_records`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| club_id | integer | Stable club id asked for. |
-| stat | character | Record category in snake_case (rating, points, rebounds, assists, steals, ...). |
-| value | double | The record value (a count; Float64 so every category fits). |
-| game_id | integer | Match id of the record game (legacy sequence for old games). |
-| game_date | POSIXct | Date of the record game (UTC midnight). |
-| player_id | integer | ACB licence number: the person id everywhere. A player's box-score `player.id`, his play-by-play and shot `playerLicenseId` and the `playerLicenceId` / `playerLicense` request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... |
-| player_name | character | Display (sporting) name ('Edy Tavares') |
-| first_name | character | Legal first name(s) |
-| last_name | character | Legal last name(s) |
-| shirt_number | character | Shirt number, a string (” or null when unknown) |
-| game_role | character | Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or ” in many rows |
-| local_team_id | integer | Home season-team entry of the record game. |
-| local_club_id | integer | Home stable club id of the record game. |
-| local_team | character | Home team name in the record game. |
-| local_team_abbr | character | Home team abbreviation in the record game. |
-| visitor_team_id | integer | Away season-team entry of the record game. |
-| visitor_club_id | integer | Away stable club id of the record game. |
-| visitor_team | character | Away team name in the record game. |
-| visitor_team_abbr | character | Away team abbreviation in the record game. |
+A `hoopR_data` tibble with one row per statistic. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_team_records")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

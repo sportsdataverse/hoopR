@@ -13,17 +13,13 @@ easl_health()
 
 ## Value
 
-A `hoopR_data` tibble: Liveness probe of the unofficial sync server:
-status, message and the server's own timestamp. An empty answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `easl_health`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| status | character | Server status: 'OK'. |
-| message | character | Human-readable status text ('EASL Basketball API is running'). |
-| timestamp | character | Server time, ISO 8601 with milliseconds and Z (UTC). |
+A `hoopR_data` tibble with one row per health check. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "easl_health")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

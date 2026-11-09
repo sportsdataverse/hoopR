@@ -28,42 +28,13 @@ acb_team_box(match_id)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_team_box`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. |
-| edition_id | integer | Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, `season`. |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| team_side | character | Side of the game the team played: home or away (the feed lists the home team first). |
-| team_id | integer | Season-team entry id: one club in one competition edition, NEW every season (Barca = 4467 in Liga 2026-27). Not the club: use club_id to follow a club across seasons. |
-| club_id | integer | Stable ACB club id (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the same across seasons and sponsor names, and the club_id request argument. |
-| team | character | Team name as registered for that season (sponsor names change; the club id does not). |
-| team_abbr | character | Three-letter team abbreviation (BAR, RMB, VBC). |
-| quarter | integer | Period: 0 = the whole game, 1-4 the quarters, 5+ overtimes (games before about 2010 carry only 0). |
-| scope | character | total = everything the team did (its players plus the team's own events); team = the part credited to the team itself rather than a player (team rebounds, team turnovers). |
-| points | integer | Points, team total (players + team) |
-| free_throws_made | integer | Free throws made, team total (players + team) |
-| free_throws_attempted | integer | Free throws attempted, team total (players + team) |
-| two_pointers_made | integer | Two-point field goals made, team total (players + team) |
-| two_pointers_attempted | integer | Two-point field goals attempted, team total (players + team) |
-| three_pointers_made | integer | Three-point field goals made, team total (players + team) |
-| three_pointers_attempted | integer | Three-point field goals attempted, team total (players + team) |
-| assists | integer | Assists, team total (players + team) |
-| off_rebounds | integer | Offensive rebounds, team total (players + team) |
-| def_rebounds | integer | Defensive rebounds, team total (players + team) |
-| total_rebounds | integer | Total rebounds, team total (players + team) |
-| steals | integer | Steals, team total (players + team) |
-| turnovers | integer | Turnovers, team total (players + team) |
-| blocks | integer | Shots blocked (by this player or team), team total (players + team) |
-| received_blocks | integer | Own shots blocked by an opponent, team total (players + team) |
-| dunks | integer | Dunks, team total (players + team) |
-| personal_fouls | integer | Fouls committed, team total (players + team) |
-| fouls_drawn | integer | Fouls received, team total (players + team) |
-| plus_minus | integer | Point differential while on court (+/-), team total (players + team) |
-| rating | integer | Valoracion: ACB's efficiency rating (PIR) = points + rebounds + assists + steals + blocks + fouls received - missed field goals - missed free throws - turnovers - shots blocked by an opponent - fouls committed, team total (players + team) |
+A `hoopR_data` tibble with one row per team and period. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_team_box")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -82,7 +53,7 @@ lists every function in this family.
 # \donttest{
   try(acb_team_box(match_id = 105401))
 #> ── ACB Team Box from api2.acb.com ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:41 UTC
+#> ℹ Data updated: 2026-11-09 19:08:59 UTC
 #> # A tibble: 20 × 30
 #>    match_id edition_id season team_side team_id club_id team   team_abbr quarter
 #>       <int>      <int>  <int> <chr>       <int>   <int> <chr>  <chr>       <int>

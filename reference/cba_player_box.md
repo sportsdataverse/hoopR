@@ -23,40 +23,13 @@ cba_player_box(schedule_id)
 
 ## Value
 
-A `hoopR_data` tibble: One row per player and a team rebounds/turnovers
-row per side (null player_id). An empty valid answer is a zero-row
-tibble with these columns, in this order (sportsdataverse-py
-`cba_player_box`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| schedule_id | integer | CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the `{scheduleId}` of every game route). Stamped by the runtime from the request; null on a body parsed without it. |
-| side | character | Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block). |
-| assists | integer | Assists in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| blocked | integer | Blocks in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| cn_alias | character | Player name (Chinese). The team row reads 'team rebounds / turnovers' (rebounds and turnovers not credited to a player; that row does not exist in the 2009-10 sample). |
-| field_goals | integer | Field goals made in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| field_goals_attempted | integer | Field goals attempted in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| field_goals_percentage | double | Field-goal percentage as a FRACTION 0-1 (0.308), null when no attempt (0/0) as well as on the team row. |
-| fouls | integer | Personal fouls in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| free_throws | integer | Free throws made in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| free_throws_attempted | integer | Free throws attempted in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| free_throws_percentage | double | Free-throw percentage as a FRACTION 0-1, null on the team row. |
-| game_start | integer | Starter flag: 1 = started the game. Null on the team row. |
-| number | character | Jersey number as a string. Null on the team row. |
-| player_id | integer | playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. Null on the team row. |
-| plus_minus | integer | Plus-minus while on court. Null on the team row and on every row of the 2009-10 sample (not tracked then). |
-| points | integer | Points in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| rebounds | integer | Total rebounds in this game (integer). The team row carries the team's own total here. |
-| rebounds_defensive | integer | Defensive rebounds in this game (integer). The team row carries the team's own total here. |
-| rebounds_offensive | integer | Offensive rebounds in this game (integer). The team row carries the team's own total here. |
-| steals | integer | Steals in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| three_point_attempted | integer | Three-pointers attempted in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| three_point_goals | integer | Three-pointers made in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). |
-| three_point_percentage | double | Three-point percentage as a FRACTION 0-1, null on the team row. |
-| turnovers | integer | Turnovers in this game (integer). The team row carries the team's own total here. |
-| up_time | integer | Time on court in SECONDS (1692 = 28:12). Null on the team row. |
+A `hoopR_data` tibble with one row per player, plus a team row per side.
+Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cba_player_box")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -75,7 +48,7 @@ lists every function in this family.
 # \donttest{
   try(cba_player_box(schedule_id = 100105799))
 #> ── CBA Player Box from data-server.cbaleague.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:22 UTC
+#> ℹ Data updated: 2026-11-09 19:09:38 UTC
 #> # A tibble: 26 × 26
 #>    schedule_id side  assists blocked cn_alias field_goals field_goals_attempted
 #>          <int> <chr>   <int>   <int> <chr>          <int>                 <int>

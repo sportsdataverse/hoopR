@@ -29,59 +29,13 @@ scb_game_players(game_id, league = "bbl")
 
 ## Value
 
-A `hoopR_data` tibble: Box score of a finished game: one row per player
-line of both teams (2002-03 on). An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `scb_game_players`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| league | character | League the row belongs to: `bbl` (men) or `dbbl` (women); BBL and DBBL game ids overlap, so a game is (league, game_id). |
-| game_id | character | Game id, a string. Joins to `/games/{gameId}`. |
-| season | integer | Season END year (2026 = 2025-26), the sdv key; the API's `season_id` plus one. |
-| side | character | `home` or `guest` (the away side), for the team the row belongs to. |
-| team_id | character | Club id; equal to `seasonTeamId` in every sample. Joins to `/teams/{teamId}`. |
-| season_player_id | character | Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score `seasonPlayer.id`, action `seasonPlayerId` and `/season-players/{seasonPlayerId}`. |
-| real_player_id | integer | Global person id: the same across clubs and seasons. Joins to `realPlayerId` everywhere. |
-| first_name | character | Player's given name. |
-| last_name | character | Player's family name. |
-| shirt_number | character | Jersey number. A number or a numeric string across rows. |
-| position | character | Position: POINT_GUARD, SHOOTING_GUARD, SMALL_FORWARD, POWER_FORWARD, CENTER. |
-| season_team_id | character | Season-team id; equal to the club `teamId` in every sample (BBL 2005-2026, DBBL 2024-2026). |
-| team_name | character | Team name as listed that season (sponsor names included, e.g. 'EWE Baskets Oldenburg'). |
-| team_tlc | character | Three-letter club code. |
-| season_id | integer | Season, START year (2026 = 2026-27). |
-| seconds_played | integer | The player's playing time in SECONDS in the game. |
-| points | integer | The player's points in the game. |
-| two_point_shots_made | integer | The player's 2-point field goals made in the game. |
-| two_point_shots_attempted | integer | The player's 2-point field goals attempted in the game. |
-| two_point_shot_success_percent | double | The player's 2-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
-| three_point_shots_made | integer | The player's 3-point field goals made in the game. |
-| three_point_shots_attempted | integer | The player's 3-point field goals attempted in the game. |
-| three_point_shot_success_percent | double | The player's 3-point field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
-| field_goals_made | integer | The player's field goals made in the game. |
-| field_goals_attempted | integer | The player's field goals attempted in the game. |
-| field_goals_success_percent | double | The player's field-goal percentage in the game, 0-100 (one decimal); 0 when no attempts. |
-| free_throws_made | integer | The player's free throws made in the game. |
-| free_throws_attempted | integer | The player's free throws attempted in the game. |
-| free_throws_success_percent | double | The player's free-throw percentage in the game, 0-100 (one decimal); 0 when no attempts. |
-| offensive_rebounds | integer | The player's offensive rebounds in the game. |
-| defensive_rebounds | integer | The player's defensive rebounds in the game. |
-| total_rebounds | integer | The player's rebounds (offensive + defensive) in the game. |
-| assists | integer | The player's assists in the game. |
-| steals | integer | The player's steals in the game. |
-| turnovers | integer | The player's turnovers in the game. |
-| blocks | integer | The player's blocked shots in the game. |
-| fouls_committed | integer | The player's fouls committed in the game. |
-| efficiency | integer | The player's efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score) in the game. |
-| plus_minus | integer | The player's plus-minus (point margin while on court); null when the API sends an empty string (2005-06). |
-| is_starting_five | logical | Started the game. |
-| double_double | integer | The player's double-doubles in the game. |
-| triple_double | integer | The player's triple-doubles in the game. |
-| fouls_received | integer | The player's fouls drawn in the game. |
-| opponent_team_name | character | Opponent's name. |
-| field_goals_recomputed | logical | True when the API's field-goal totals disagreed with its 2-point plus 3-point parts (2005-06 box scores) and were recomputed from the parts. |
+A `hoopR_data` tibble with one row per player line of both teams. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "scb_game_players")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -100,7 +54,7 @@ lists every function in this family.
 # \donttest{
   try(scb_game_players(game_id = "2006920"))
 #> ── BBL/DBBL Game Player Box Score from the SCB API ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:43 UTC
+#> ℹ Data updated: 2026-11-09 19:14:36 UTC
 #> # A tibble: 23 × 45
 #>    league game_id season side  team_id season_player_id real_player_id
 #>    <chr>  <chr>    <int> <chr> <chr>   <chr>                     <int>

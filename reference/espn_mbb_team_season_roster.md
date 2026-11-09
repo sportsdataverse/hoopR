@@ -38,17 +38,27 @@ espn_nba_team_season_roster(team_id, season = most_recent_nba_season(), ...)
 
 ## Value
 
-A tibble with one row per athlete on the season roster.
+A `hoopR_data` tibble with one row per athlete on the season roster.
 
-Columns as documented in the shared
-[espn_mbb_team_season_roster_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_season_roster_schema.md)
-table.
+|            |           |                                         |
+|------------|-----------|-----------------------------------------|
+| col_name   | types     | description                             |
+| league     | character | League slug.                            |
+| team_id    | character | ESPN team id.                           |
+| season     | integer   | Season year.                            |
+| athlete_id | character | ESPN athlete id.                        |
+| ref        | character | `$ref` URL to athlete-in-season detail. |
 
-A tibble with one row per athlete on the season roster.
+A `hoopR_data` tibble with one row per athlete on the season roster.
 
-Columns as documented in the shared
-[espn_mbb_team_season_roster_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_season_roster_schema.md)
-table.
+|            |           |                                         |
+|------------|-----------|-----------------------------------------|
+| col_name   | types     | description                             |
+| league     | character | League slug.                            |
+| team_id    | character | ESPN team id.                           |
+| season     | integer   | Season year.                            |
+| athlete_id | character | ESPN athlete id.                        |
+| ref        | character | `$ref` URL to athlete-in-season detail. |
 
 ## Details
 
@@ -74,7 +84,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_season_roster(team_id = 150, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Roster ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:56 UTC
+#> ℹ Data updated: 2026-11-09 19:11:12 UTC
 #> # A tibble: 23 × 5
 #>    league                  team_id season athlete_id ref                        
 #>    <chr>                   <chr>    <int> <chr>      <chr>                      
@@ -93,7 +103,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_season_roster(team_id = 13, season = 2025)
 #> ── ESPN NBA Team Season Roster ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:56 UTC
+#> ℹ Data updated: 2026-11-09 19:11:12 UTC
 #> # A tibble: 19 × 5
 #>    league team_id season athlete_id ref                                         
 #>    <chr>  <chr>    <int> <chr>      <chr>                                       

@@ -31,22 +31,12 @@ feb_shots(game_id)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | FEB game id (one global sequence): the {gameId} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request. |
-| period | integer | Period number of the attempt. |
-| clock | character | Game clock REMAINING in the period at the shot, 'mm:ss' (the play-by-play line's time). |
-| clock_seconds | integer | The clock as whole seconds remaining in the period (08:34 = 514), derived by the parser. |
-| team_side | character | Side of the shooter: home (feed code 0) or away (feed code 1; play-by-play uses 1/2). |
-| team_id | integer | Team-season id of the shooter's team (from the shot chart's TEAM list); new every season. |
-| shirt_number | character | Shirt number (dorsal) as a string, so '00' and '0' stay distinct. The shot feed names the shooter by this number. |
-| player_id | integer | FEB person id of the shooter, resolved from side + shirt number in the game's roster; null when that pair is not unique. The feed itself carries no player id. |
-| made | logical | True when the shot was made, false when missed. Free throws are not in the feed. |
-| x | double | Court x position: percent (0-100) of the length of a horizontal full-court image, origin top-left. Teams change ends at half-time; metres (x/100 x 28) are an unverified inference. |
-| y | double | Court y position: percent (0-100) of the width of a horizontal full-court image from the top edge; baskets sit near y = 50. Metres (y/100 x 15) are an unverified inference. |
+A `hoopR_data` tibble with one row per shot. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "feb_shots")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

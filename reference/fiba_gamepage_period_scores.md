@@ -33,20 +33,13 @@ fiba_gamepage_period_scores(game_id, comp, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | FIBA game id (Int64), global across competitions: gdapGameId, the `<gameId>` of a game-page URL. |
-| competition_id | integer | FIBA competition id (Int64) of the game's edition; the comp argument. |
-| team_side | character | A or B: whether the row is the schedule's team A or team B (null when the page does not say). |
-| organisation_id | integer | Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T\_`<id>` and the play-by-play oId. NOT the per-competition team_id. |
-| period | character | Period name: Q1..Q4, then OT1, OT2... |
-| period_number | integer | 1-based position of the period in the game. |
-| points | integer | Points the team scored in the period. |
-| points_first_five_min | integer | Points the team scored in the first five minutes of the period (matches the play-by-play except free throws on the 5:00 boundary); null when absent. |
+A `hoopR_data` tibble with one row per team and period. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gamepage_period_scores")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -65,7 +58,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gamepage_period_scores(game_id = 100720, comp = 208182))
 #> ── FIBA gamepage_period_scores from fiba.basketball ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:32 UTC
+#> ℹ Data updated: 2026-11-09 19:11:46 UTC
 #> # A tibble: 8 × 8
 #>   game_id competition_id team_side organisation_id period period_number points
 #>     <int>          <int> <chr>               <int> <chr>          <int>  <int>

@@ -36,6 +36,7 @@ Endpoint: GET https://org.infobasket.su/Comp/GetBestTeams/{season}"><meta proper
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -153,9 +154,11 @@ The season table is read for this tag.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Team leaders of a season for the first <code>count</code> leader categories. The columns are always
-these, in this order (sportsdataverse-py <code>vtb_infobasket_best_teams</code>); an empty valid answer raises <code>hoopR_no_data</code>, a valid
-body with no rows for this frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime.</td></tr><tr><td>param_id</td><td>integer</td><td>Leader-category id (the <code>param</code> of the parameter lists).</td></tr><tr><td>param_name</td><td>character</td><td>Leader category name (ParamName), e.g. 'Points'.</td></tr><tr><td>param_short_name</td><td>character</td><td>Leader category short label, e.g. 'Points in a game'.</td></tr><tr><td>param_label</td><td>character</td><td>Leader category label in the requested language (lang).</td></tr><tr><td>param_group</td><td>integer</td><td>Category group; 0 in the samples.</td></tr><tr><td>rank</td><td>integer</td><td>Rank in the leader list.</td></tr><tr><td>team_id</td><td>integer</td><td>Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id.</td></tr><tr><td>team_short_name_ru</td><td>character</td><td>The the team's short name in Russian (as the competition names it).</td></tr><tr><td>team_short_name_en</td><td>character</td><td>The the team's short name in English (as the competition names it).</td></tr><tr><td>team_name_ru</td><td>character</td><td>The the team's name in Russian (as the competition names it).</td></tr><tr><td>team_name_en</td><td>character</td><td>The the team's name in English (as the competition names it).</td></tr><tr><td>team_region_name_ru</td><td>character</td><td>The the team's region or city in Russian (as the competition names it).</td></tr><tr><td>team_region_name_en</td><td>character</td><td>The the team's region or city in English (as the competition names it).</td></tr><tr><td>game_id</td><td>integer</td><td>Infobasket GameID of the game (the v2 matches' match_id); global across seasons.</td></tr><tr><td>game_count</td><td>integer</td><td>Games the value is averaged over.</td></tr><tr><td>res</td><td>double</td><td>The leader's value (a per-game average for 'in a game' categories).</td></tr><tr><td>pre_res</td><td>character</td><td>The value as displayed, a string (e.g. '1070' for 10.70 without separator; format unverified).</td></tr><tr><td>is_same</td><td>logical</td><td>True when the row ties the previous one.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per ranked team.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "vtb_infobasket_best_teams")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="vtb_infobasket_seasons.html">vtb_infobasket_seasons()</a></code>.</p>

@@ -29,23 +29,13 @@ tbf_teams(season, competition = "bsl")
 
 ## Value
 
-A `hoopR_data` tibble. One row per team registration. Every column below
-is always present (a zero-row tibble keeps them and their types); an
-answer with nothing in it raises `hoopR_no_data`, as in
-sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). |
-| competition | character | TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). |
-| team_process_id | integer | Team-season id (teamProcessId = takimIslemId, a team REGISTRATION; key space: TBF team registrations, a NEW id per club per league-season: Tofas = 265995 in BSL 2026-27). The team_process_id argument of the team wrappers; not the stable club_id. |
-| club_id | integer | Stable club id (takimID / teamId of the team lists; key space: TBF clubs, the same across seasons and leagues: Tofas = 13). Not the team-season id (team_process_id). |
-| team_name | character | Team name as registered for that season, uppercase with Turkish letters. |
-| city | character | Home city (teamCityName), uppercase Turkish. |
-| code | character | Team short code (teamCode). |
-| season_id | integer | Internal TBF season id (key space: TBF seasons, global across leagues: 174 = 2026-2027, 172 = 2025-2026; the odd ids are international UA- seasons). Never an sdv key: use season (END year). |
-| season_label | character | Season label 'YYYY-YYYY' of the league-season. |
+A `hoopR_data` tibble with one row per team registration. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_teams")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -92,7 +82,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_teams(competition = "bsl", season = 2027))
 #> ── TBF Teams ──────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:44 UTC
+#> ℹ Data updated: 2026-11-09 19:15:40 UTC
 #> # A tibble: 16 × 9
 #>    season competition team_process_id club_id team_name    city  code  season_id
 #>     <int> <chr>                 <int>   <int> <chr>        <chr> <chr>     <int>

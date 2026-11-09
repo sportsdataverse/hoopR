@@ -32,40 +32,12 @@ fiba_gdap_player_info(player_id, comp, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| player_id | integer | FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P\_`<id>` = gdapPlayerId. |
-| competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
-| competition_team_id | integer | Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. |
-| organisation_id | integer | Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T\_`<id>`. |
-| first_name | character | Given name(s) as registered with FIBA. |
-| last_name | character | Last name (officials: upper case). |
-| height_cm | integer | Height in centimetres. |
-| height_ft_in | character | Height, feet and inches string. |
-| club_name | character | Club at the time of the competition. |
-| club_code | character | Club abbreviation; always null in the samples, values unverified. |
-| is_player_free_agent | logical | True when the player had no club. |
-| points_per_game | double | The player's average points per game played. |
-| rank_points_per_game | double | Rank in the competition by points per game (1 = highest). |
-| rebounds_per_game | double | The player's average rebounds per game played. |
-| rank_rebounds_per_game | double | Rank in the competition by rebounds per game (1 = highest). |
-| assists_per_game | double | The player's average assists per game played. |
-| rank_assists_per_game | double | Rank in the competition by assists per game (1 = highest). |
-| points_per_game_per_competition_category | double | Average points per game across the competition category, the comparison baseline (unverified). |
-| rebounds_per_game_per_competition_category | double | Average rebounds per game across the competition category, the comparison baseline (unverified). |
-| assists_per_game_per_competition_category | double | Average assists per game across the competition category, the comparison baseline (unverified). |
-| birth_date | character | Date of birth, YYYY-MM-DD. |
-| nationalities | character | Nationalities (FIBA codes on player info; country objects on rosters and officials). Stored as a JSON string. |
-| social_media_website | character | Website URL; always null in the samples, values unverified. |
-| social_media_twitter | character | X/Twitter handle; always null in the samples, values unverified. |
-| social_media_facebook | character | Facebook handle or URL; always null in the samples, values unverified. |
-| social_media_instagram | character | Instagram handle; always null in the samples, values unverified. |
-| social_media_youtube | character | YouTube handle; always null in the samples, values unverified. |
-| social_networks | character | Social-network handles. Stored as a JSON string. |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_player_info")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

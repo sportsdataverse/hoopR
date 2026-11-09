@@ -28,25 +28,12 @@ scb_team(team_id, league = "bbl")
 
 ## Value
 
-A `hoopR_data` tibble: Club profile: names, code, home page, ticket
-shop, year joined and honours. An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `scb_team`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| league | character | League the row belongs to: `bbl` (men) or `dbbl` (women); BBL and DBBL game ids overlap, so a game is (league, game_id). |
-| team_id | character | Club id, a string; equal to `season_team_id` in every sample. Joins to `scb_team` and `scb_season_teams`. |
-| tlc | character | Three-letter club code. |
-| name_full | character | Full club name as the API lists it today. |
-| name_short | character | Short name (often the city); null on DBBL. |
-| mascot | character | Club mascot name (null when none). |
-| homepage_url | character | Club website address as sent (it can lack the scheme). |
-| ticket_url | character | Ticket shop URL. |
-| year_joined_bbl | integer | Year the club joined the league. |
-| order_id | integer | Display order of the club on the site; null on some clubs. |
-| best_achievements | character | Honours, German free text (Deutscher Meister = German champion, Pokalsieger = cup winner, Vizepokalsieger = cup runner-up). |
+A `hoopR_data` tibble with one row per club. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "scb_team")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

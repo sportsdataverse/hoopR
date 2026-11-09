@@ -30,7 +30,7 @@ espn_nba_coach(coach_id, ...)
 
 A single-row tibble. See `espn_nba_coach()` for column schema.
 
-A single-row tibble.
+A `hoopR_data` tibble with one row per coach.
 
 |                  |           |                                     |
 |------------------|-----------|-------------------------------------|
@@ -66,7 +66,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_coach(coach_id = 32116)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Coach Detail ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:08 UTC
+#> ℹ Data updated: 2026-11-09 19:10:26 UTC
 #> # A tibble: 1 × 12
 #>   coach_id uid         first_name last_name date_of_birth birth_city birth_state
 #>   <chr>    <chr>       <chr>      <chr>     <chr>         <chr>      <chr>      
@@ -77,7 +77,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_coach(coach_id = 52120)
 #> ── ESPN NBA Coach Detail ──────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:08 UTC
+#> ℹ Data updated: 2026-11-09 19:10:26 UTC
 #> # A tibble: 1 × 12
 #>   coach_id uid         first_name last_name date_of_birth birth_city birth_state
 #>   <chr>    <chr>       <chr>      <chr>     <chr>         <chr>      <chr>      

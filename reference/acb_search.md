@@ -29,24 +29,12 @@ acb_search(search_term, limit = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_search`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| kind | character | player, team or coach. |
-| person_id | integer | ACB licence number (players, coaches) or the team entry id (teams). |
-| name | character | Display name (nickname) of a player or coach; the team name of a team. |
-| short_name | character | Short display name ('T. Martin'). |
-| first_name | character | Legal first name(s) |
-| last_name | character | Legal last name(s) |
-| shirt_number | character | Shirt number, a string (” or null when unknown) |
-| game_role | character | Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or ” in many rows |
-| is_license_active | logical | The licence is active in the current season |
-| club_id | integer | Stable club id of a team hit; null for players. |
-| edition_id | integer | Season id of the record; null in search results. |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
+A `hoopR_data` tibble with one row per hit. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_search")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

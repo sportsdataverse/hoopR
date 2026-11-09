@@ -21,26 +21,12 @@ ibba_segev_game_info(game_id)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | Segev game id (key space: one flat sequence across seasons and competitions); equals the IBBA ibba_games segev_game_id from 2025-26. Not an IBBA game id. |
-| start_time | POSIXct | Scheduled tip-off in Israel local time as a naive datetime (the feed has no offset; it can differ from the IBBA tip_off by minutes). |
-| competition | character | Competition name ('Winner League', 'Winner Cup', 'Women', 'Leumit', 'Noar', 'School', 'Preparation Games'): the reliable men's / women's discriminator. |
-| home_team_id | integer | Home Segev team id (key space: Segev teams, stable across seasons and competitions; Maccabi Tel Aviv = 2). Not an IBBA team-season id. |
-| home_team | character | Home team name in English, upper case; some women's teams end in ' (W)', not all. |
-| home_team_local | character | Home team name in Hebrew (Latin sponsor words kept). |
-| home_short_name | character | Home team short name in English, upper case. |
-| away_team_id | integer | Away Segev team id (key space: Segev teams, stable across seasons and competitions). |
-| away_team | character | Away team name in English, upper case. |
-| away_team_local | character | Away team name in Hebrew (Latin sponsor words kept). |
-| away_short_name | character | Away team short name in English, upper case. |
-| periods | integer | Regulation periods in the game (4). |
-| finished | logical | True once the game is final (the wrappers read finished games only). |
-| current_period | integer | Current period, the last one played for a finished game (5+ means overtime). |
-| clock | character | Game clock remaining as 'mm:ss' ('00:00' for a finished game). |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_segev_game_info")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -102,7 +88,7 @@ Other IBBA Segev Functions:
 # \donttest{
   try(ibba_segev_game_info(game_id = 50))
 #> ── IBBA Segev game info ───────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:05 UTC
+#> ℹ Data updated: 2026-11-09 19:12:19 UTC
 #> # A tibble: 1 × 15
 #>   game_id start_time          competition home_team_id home_team home_team_local
 #>     <int> <dttm>              <chr>              <int> <chr>     <chr>          

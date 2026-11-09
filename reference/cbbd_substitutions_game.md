@@ -42,23 +42,13 @@ cbbd_substitutions_team(season = most_recent_mbb_season(), team)
 
 ## Value
 
-A `hoopR_data` tibble with one row per substitution. `sub_in` and
-`sub_out` objects are flattened to `sub_in_*` / `sub_out_*` columns:
-
-|                     |           |                             |
-|---------------------|-----------|-----------------------------|
-| col_name            | types     | description                 |
-| game_id             | integer   | Game id.                    |
-| start_date          | character | Game start date (ISO 8601). |
-| team_id             | integer   | Team id.                    |
-| team                | character | Team name.                  |
-| conference          | character | Team conference.            |
-| athlete_id          | integer   | Athlete id.                 |
-| athlete             | character | Athlete name.               |
-| position            | character | Athlete position.           |
-| opponent_id         | integer   | Opponent team id.           |
-| opponent            | character | Opponent team name.         |
-| opponent_conference | character | Opponent conference.        |
+A `hoopR_data` tibble with one row per substitution. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_substitutions_game")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 A `hoopR_data` tibble with one row per substitution (same columns as
 `cbbd_substitutions_game()`).
@@ -71,21 +61,21 @@ A `hoopR_data` tibble with one row per substitution (same columns as
 ``` r
 # \donttest{
   try(cbbd_substitutions_game(game_id = 5881))
-#> ✖ 2026-11-09 17:03:32.266206: Invalid arguments or no substitution data available for 5881!
+#> ✖ 2026-11-09 19:09:49.00514: Invalid arguments or no substitution data available for 5881!
 #> ✖ Args: game_id = 5881
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_substitutions_player(player_id = 160, season = 2024))
-#> ✖ 2026-11-09 17:03:32.285611: Invalid arguments or no substitution data available for player 160!
+#> ✖ 2026-11-09 19:09:49.015678: Invalid arguments or no substitution data available for player 160!
 #> ✖ Args: player_id = 160, season = 2024
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_substitutions_team(season = 2024, team = "Duke"))
-#> ✖ 2026-11-09 17:03:32.293771: Invalid arguments or no substitution data available for Duke!
+#> ✖ 2026-11-09 19:09:49.034417: Invalid arguments or no substitution data available for Duke!
 #> ✖ Args: season = 2024, team = "Duke"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

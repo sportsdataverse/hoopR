@@ -22,16 +22,13 @@ lba_pbp_legend(game_id)
 
 ## Value
 
-A `hoopR_data` tibble: The play-by-play qualifier code table (59 codes)
-with its Italian labels. The columns are always these, in this order
-(sportsdataverse-py `lba_pbp_legend`); a column the site adds later is
-appended after them:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| code | integer | Qualifier code, the value of action_1_qualifier_code / action_2_qualifier_code on the actions. |
-| label | character | Italian label of the qualifier code, as sent. |
+A `hoopR_data` tibble with one row per play-by-play code. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lba_pbp_legend")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

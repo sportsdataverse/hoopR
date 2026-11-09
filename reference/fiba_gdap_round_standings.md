@@ -27,35 +27,13 @@ fiba_gdap_round_standings(comp, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| round_id | integer | Round id (Int64) the group belongs to. |
-| round_name | character | Round name (Preliminary Round, Final Round...). |
-| round_code | character | Round code (a short code such as G or F). |
-| group_name | character | Group name within the round (A, B...). |
-| group_status_code | character | Group status code (COMPL when the group is complete). |
-| rank | integer | Rank in the group. |
-| team_team_id | integer | Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. |
-| team_organisation_id | integer | Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T\_`<id>`. |
-| team_code | character | Team code (FIBA country code or club abbreviation). |
-| team_official_name | character | Official team name (the country for a national team, the club for a club team). |
-| team_short_name | character | Short team name: the country code for a national team, the club's short name for a club. |
-| games_played | integer | Games played in the group. |
-| games_lost | integer | Losses in the group. |
-| games_won | integer | Wins in the group. |
-| points | integer | Standing points (2 per win, 1 per loss). |
-| points_against | integer | Points conceded. |
-| points_for | integer | Points the team scored in the group's games. |
-| starting_position | integer | Seed / draw position in the group. |
-| final_position | integer | Final position in the group. |
-| plus_minus | integer | Point differential (pointsFor - pointsAgainst). |
-| penalty_points | integer | Standing points deducted. |
-| draw_points | integer | Points for a draw (0); null when not applicable. |
-| group_game_results | character | This team's games in the group. Stored as a JSON string. |
+A `hoopR_data` tibble with one row per team in the standings. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_round_standings")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -74,7 +52,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gdap_round_standings(comp = 208182))
 #> ── FIBA gdap_round_standings from fiba.basketball ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:43 UTC
+#> ℹ Data updated: 2026-11-09 19:11:56 UTC
 #> # A tibble: 88 × 23
 #>    round_id round_name  round_code group_name group_status_code  rank
 #>       <int> <chr>       <chr>      <chr>      <chr>             <int>

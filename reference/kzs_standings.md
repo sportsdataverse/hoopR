@@ -19,39 +19,13 @@ kzs_standings(competition_id)
 
 ## Value
 
-A `hoopR_data` tibble: Standings of a competition, one row per team in
-each phase (and group). An empty valid answer raises `hoopR_no_data`;
-the columns are always these, in this order (sportsdataverse-py
-`kzs_standings`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). |
-| phase_id | integer | Competition-phase id. Joins to `competitions[].competitionPhaseId` on matches and `/competitions/{competitionId}` `phases[].id`. |
-| phase_name | character | Phase name, Slovenian (see `phases[].name`). |
-| phase_type | character | Phase format (code table). |
-| group_id | integer | Group id inside the phase (null when the table is the phase's own). |
-| group_name | character | Group name inside the phase (null when the table is the phase's own). |
-| position | integer | 1-based position of the row in its table, in the order the API lists it (the wire has no rank column). |
-| team_id | integer | Team id: one club team in one season (Ilirija 2025-26 = 17551). Joins to `/teams/{teamId}`, standings `teamId`, box-score `teamId` and the `teamId` query params. |
-| team_name | character | Team name for the season, sponsor included. |
-| club_code | character | Club 3-letter code. |
-| logo_uuid | character | Team logo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
-| games_played | integer | Games played in the phase. |
-| won | integer | Wins in the phase. |
-| lost | integer | Losses in the phase. |
-| pts_plus | integer | Points scored by the team through its games played. |
-| pts_minus | integer | Points allowed. |
-| home_won | integer | Home games the team has won. |
-| home_lost | integer | Home games the team has lost. |
-| away_won | integer | Away games the team has won. |
-| away_lost | integer | Away games the team has lost. |
-| points | integer | Table points: 2 per win, 1 per loss (Krka 26-1 = 53). |
-| draws | integer | Draws (0: basketball has none). |
-| lost_points | integer | Table points deducted (0 in every sample). |
-| tie_break_position | integer | Final position after tie-breaks (absent on playoff-phase rows). |
-| pts_difference | integer | Point differential (scored - allowed). |
+A `hoopR_data` tibble with one row per team in each phase. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_standings")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -70,7 +44,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_standings(competition_id = 579))
 #> ── KZS Standings from api.kzs.si ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:39 UTC
+#> ℹ Data updated: 2026-11-09 19:12:50 UTC
 #> # A tibble: 24 × 25
 #>    competition_id phase_id phase_name phase_type group_id group_name position
 #>             <int>    <int> <chr>      <chr>         <int> <chr>         <int>

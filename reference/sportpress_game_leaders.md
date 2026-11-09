@@ -22,26 +22,13 @@ sportpress_game_leaders(game_id)
 
 ## Value
 
-A `hoopR_data` tibble: The game leader of each side in every statistic
-(one row per side and statistic). An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `sportpress_game_leaders`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | Game id the overview was asked for (the body does not echo it). |
-| team_side | character | Side of the game the row belongs to: home or away (the provider's is_home, or side 1 / 2). |
-| competition_team_id | integer | Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. |
-| team | character | Team display name including the sponsor; varies with language and playoff suffixes: never join on it. |
-| team_short_name | character | Three-letter club code (ANT, MON, ...), stable across seasons in the samples. |
-| stat | character | Statistic the leader leads, in the provider's column name (points, total_rebound, value, ...). |
-| player_id | integer | Player id (key space: sportpress persons): stable across seasons and teams, distinct from roster_id. Not a Genius or FIBA person id. |
-| first_name | character | Given name of the player as entered in the CMS. |
-| last_name | character | Family name of the player as entered in the CMS. |
-| nationality_code | character | Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining. |
-| birth_date | Date | Date of birth as shown on the public player page; null when unknown. |
-| value | double | The leader's count (or percentage) in that statistic in this game. |
+A `hoopR_data` tibble with one row per side and statistic. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportpress_game_leaders")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -60,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(sportpress_game_leaders(game_id = 11295))
 #> ── BNXT League Game Leaders from Sportpress ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:16 UTC
+#> ℹ Data updated: 2026-11-09 19:15:11 UTC
 #> # A tibble: 56 × 12
 #>    game_id team_side competition_team_id team    team_short_name stat  player_id
 #>      <int> <chr>                   <int> <chr>   <chr>           <chr>     <int>

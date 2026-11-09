@@ -42,6 +42,7 @@ Get the current scoreboard from the CollegeBasketballData API."><meta property="
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -219,53 +220,61 @@ Defaults to <code><a href="most_recent_mbb_season.html">most_recent_mbb_season()
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble with one row per game (key columns; period-point
-arrays are returned as list-columns):</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>integer</td><td>CollegeBasketballData game id.</td></tr><tr><td>source_id</td><td>character</td><td>Source (ESPN) game id.</td></tr><tr><td>season</td><td>integer</td><td>Season (4-digit ending-year).</td></tr><tr><td>season_type</td><td>character</td><td>Season type.</td></tr><tr><td>start_date</td><td>character</td><td>Game start date (ISO 8601).</td></tr><tr><td>neutral_site</td><td>logical</td><td>Whether the game was at a neutral site.</td></tr><tr><td>conference_game</td><td>logical</td><td>Whether the game was a conference game.</td></tr><tr><td>status</td><td>character</td><td>Game status.</td></tr><tr><td>home_team_id</td><td>integer</td><td>Home team id.</td></tr><tr><td>home_team</td><td>character</td><td>Home team name.</td></tr><tr><td>home_points</td><td>integer</td><td>Home team points.</td></tr><tr><td>home_winner</td><td>logical</td><td>Whether the home team won.</td></tr><tr><td>away_team_id</td><td>integer</td><td>Away team id.</td></tr><tr><td>away_team</td><td>character</td><td>Away team name.</td></tr><tr><td>away_points</td><td>integer</td><td>Away team points.</td></tr><tr><td>away_winner</td><td>logical</td><td>Whether the away team won.</td></tr><tr><td>venue_id</td><td>integer</td><td>Venue id.</td></tr><tr><td>venue</td><td>character</td><td>Venue name.</td></tr></table><p>A <code>hoopR_data</code> tibble with one row per game. The <code>broadcasts</code> column is
-a nested list of broadcast outlets:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>CollegeBasketballData game id.</td></tr><tr><td>season</td><td>integer</td><td>Season (4-digit ending-year).</td></tr><tr><td>season_type</td><td>character</td><td>Season type.</td></tr><tr><td>start_date</td><td>character</td><td>Game start date (ISO 8601).</td></tr><tr><td>home_team_id</td><td>integer</td><td>Home team id.</td></tr><tr><td>home_team</td><td>character</td><td>Home team name.</td></tr><tr><td>away_team_id</td><td>integer</td><td>Away team id.</td></tr><tr><td>away_team</td><td>character</td><td>Away team name.</td></tr><tr><td>neutral_site</td><td>logical</td><td>Whether the game was at a neutral site.</td></tr><tr><td>conference_game</td><td>logical</td><td>Whether the game was a conference game.</td></tr><tr><td>broadcasts</td><td>list</td><td>Nested list of broadcast outlets.</td></tr></table><p>A <code>hoopR_data</code> tibble with one row per team-game. Per-team statistic
-objects (<code>team_stats</code>, <code>opponent_stats</code>) are flattened into <code>team_stats_*</code> /
-<code>opponent_stats_*</code> columns. Key identifying columns:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>CollegeBasketballData game id.</td></tr><tr><td>season</td><td>integer</td><td>Season (4-digit ending-year).</td></tr><tr><td>start_date</td><td>character</td><td>Game start date (ISO 8601).</td></tr><tr><td>team_id</td><td>integer</td><td>Team id.</td></tr><tr><td>team</td><td>character</td><td>Team name.</td></tr><tr><td>conference</td><td>character</td><td>Team conference.</td></tr><tr><td>opponent_id</td><td>integer</td><td>Opponent team id.</td></tr><tr><td>opponent</td><td>character</td><td>Opponent team name.</td></tr><tr><td>is_home</td><td>logical</td><td>Whether the team was home.</td></tr><tr><td>neutral_site</td><td>logical</td><td>Whether the game was at a neutral site.</td></tr><tr><td>game_minutes</td><td>numeric</td><td>Total team minutes.</td></tr><tr><td>pace</td><td>numeric</td><td>Game pace (possessions).</td></tr></table><p>A <code>hoopR_data</code> tibble with one row per team-game. The <code>players</code> column
-is a nested list of per-player box scores. Key identifying columns:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>CollegeBasketballData game id.</td></tr><tr><td>season</td><td>integer</td><td>Season (4-digit ending-year).</td></tr><tr><td>start_date</td><td>character</td><td>Game start date (ISO 8601).</td></tr><tr><td>team_id</td><td>integer</td><td>Team id.</td></tr><tr><td>team</td><td>character</td><td>Team name.</td></tr><tr><td>conference</td><td>character</td><td>Team conference.</td></tr><tr><td>opponent_id</td><td>integer</td><td>Opponent team id.</td></tr><tr><td>opponent</td><td>character</td><td>Opponent team name.</td></tr><tr><td>is_home</td><td>logical</td><td>Whether the team was home.</td></tr><tr><td>game_minutes</td><td>numeric</td><td>Total team minutes.</td></tr><tr><td>game_pace</td><td>numeric</td><td>Game pace (possessions).</td></tr><tr><td>players</td><td>list</td><td>Nested list of per-player box scores.</td></tr></table><p>A <code>hoopR_data</code> tibble with one row per game. The <code>home_team</code>,
-<code>away_team</code> and <code>betting</code> objects are flattened into <code>home_team_*</code>,
-<code>away_team_*</code> and <code>betting_*</code> columns. Key identifying columns:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>integer</td><td>CollegeBasketballData game id.</td></tr><tr><td>start_date</td><td>character</td><td>Game start date (ISO 8601).</td></tr><tr><td>tv</td><td>character</td><td>Broadcast TV network.</td></tr><tr><td>neutral_site</td><td>logical</td><td>Whether the game is at a neutral site.</td></tr><tr><td>conference_game</td><td>logical</td><td>Whether the game is a conference game.</td></tr><tr><td>status</td><td>character</td><td>Game status.</td></tr><tr><td>period</td><td>integer</td><td>Current period.</td></tr><tr><td>clock</td><td>character</td><td>Game clock.</td></tr><tr><td>venue</td><td>character</td><td>Venue name.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "cbbd_games")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+<p>A <code>hoopR_data</code> tibble with one row per game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "cbbd_games_media")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+<p>A <code>hoopR_data</code> tibble with one row per team-game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "cbbd_games_teams")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+<p>A <code>hoopR_data</code> tibble with one row per team-game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "cbbd_games_players")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+<p>A <code>hoopR_data</code> tibble with one row per game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "cbbd_scoreboard")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cbbd_games</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 17:03:30.560554: Invalid arguments or no games data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 19:09:46.913947: Invalid arguments or no games data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL, status = NULL, tournament = NULL</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cbbd_games_media</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 17:03:30.569419: Invalid arguments or no game media available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 19:09:46.925308: Invalid arguments or no game media available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL, tournament = NULL</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cbbd_games_teams</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 17:03:30.577868: Invalid arguments or no team box score data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 19:09:46.936099: Invalid arguments or no team box score data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL, tournament = NULL</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cbbd_games_players</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 17:03:30.58655: Invalid arguments or no player box score data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 19:09:46.946612: Invalid arguments or no player box score data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL, tournament = NULL</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cbbd_scoreboard</span><span class="op">(</span>conference <span class="op">=</span> <span class="st">"ACC"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 17:03:30.594947: Invalid arguments or no scoreboard data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 19:09:46.957252: Invalid arguments or no scoreboard data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: conference = "ACC"</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>

@@ -36,6 +36,7 @@ Endpoint: GET https://pleagueofficial.com/game/{gid}"><meta property="og:image" 
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -140,9 +141,11 @@ are served.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: The referee and the two umpires printed under the header of one finished game (names
-only). An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
-<code>pleague_officials</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>gid</td><td>integer</td><td>P. LEAGUE+ game id on the site: ONE global integer sequence over every stage and season (1-12 = 2020-21 pre-season, 13 = the 2020-21 opener, 197 = the 2022-23 opener, 662 = the 2025-26 opener), with gaps; a row id, not a count. The {gid} of /game/{gid}.</td></tr><tr><td>official_no</td><td>integer</td><td>1-based position of the official in the printed line (referee first).</td></tr><tr><td>role</td><td>character</td><td>Role translated: referee ((Chinese text), the crew chief), first_umpire ((Chinese text), literally 'first inspector'), second_umpire ((Chinese text)). Null for a role this table does not know.</td></tr><tr><td>role_zh</td><td>character</td><td>Official's role as printed: (Chinese text) = referee, (Chinese text) = first umpire, (Chinese text) = second umpire.</td></tr><tr><td>name_zh</td><td>character</td><td>Official's name in Traditional Chinese. Names only: the page carries no ids or contact data.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per official.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "pleague_officials")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="pleague_schedule.html">pleague_schedule()</a></code>.</p>

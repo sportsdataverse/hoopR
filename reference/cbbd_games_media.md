@@ -97,139 +97,77 @@ cbbd_scoreboard(conference = NULL)
 
 ## Value
 
-A `hoopR_data` tibble with one row per game (key columns; period-point
-arrays are returned as list-columns):
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_games")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-|                 |           |                                         |
-|-----------------|-----------|-----------------------------------------|
-| col_name        | types     | description                             |
-| id              | integer   | CollegeBasketballData game id.          |
-| source_id       | character | Source (ESPN) game id.                  |
-| season          | integer   | Season (4-digit ending-year).           |
-| season_type     | character | Season type.                            |
-| start_date      | character | Game start date (ISO 8601).             |
-| neutral_site    | logical   | Whether the game was at a neutral site. |
-| conference_game | logical   | Whether the game was a conference game. |
-| status          | character | Game status.                            |
-| home_team_id    | integer   | Home team id.                           |
-| home_team       | character | Home team name.                         |
-| home_points     | integer   | Home team points.                       |
-| home_winner     | logical   | Whether the home team won.              |
-| away_team_id    | integer   | Away team id.                           |
-| away_team       | character | Away team name.                         |
-| away_points     | integer   | Away team points.                       |
-| away_winner     | logical   | Whether the away team won.              |
-| venue_id        | integer   | Venue id.                               |
-| venue           | character | Venue name.                             |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_games_media")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-A `hoopR_data` tibble with one row per game. The `broadcasts` column is
-a nested list of broadcast outlets:
+A `hoopR_data` tibble with one row per team-game. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_games_teams")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-|                 |           |                                         |
-|-----------------|-----------|-----------------------------------------|
-| col_name        | types     | description                             |
-| game_id         | integer   | CollegeBasketballData game id.          |
-| season          | integer   | Season (4-digit ending-year).           |
-| season_type     | character | Season type.                            |
-| start_date      | character | Game start date (ISO 8601).             |
-| home_team_id    | integer   | Home team id.                           |
-| home_team       | character | Home team name.                         |
-| away_team_id    | integer   | Away team id.                           |
-| away_team       | character | Away team name.                         |
-| neutral_site    | logical   | Whether the game was at a neutral site. |
-| conference_game | logical   | Whether the game was a conference game. |
-| broadcasts      | list      | Nested list of broadcast outlets.       |
+A `hoopR_data` tibble with one row per team-game. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_games_players")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-A `hoopR_data` tibble with one row per team-game. Per-team statistic
-objects (`team_stats`, `opponent_stats`) are flattened into
-`team_stats_*` / `opponent_stats_*` columns. Key identifying columns:
-
-|              |           |                                         |
-|--------------|-----------|-----------------------------------------|
-| col_name     | types     | description                             |
-| game_id      | integer   | CollegeBasketballData game id.          |
-| season       | integer   | Season (4-digit ending-year).           |
-| start_date   | character | Game start date (ISO 8601).             |
-| team_id      | integer   | Team id.                                |
-| team         | character | Team name.                              |
-| conference   | character | Team conference.                        |
-| opponent_id  | integer   | Opponent team id.                       |
-| opponent     | character | Opponent team name.                     |
-| is_home      | logical   | Whether the team was home.              |
-| neutral_site | logical   | Whether the game was at a neutral site. |
-| game_minutes | numeric   | Total team minutes.                     |
-| pace         | numeric   | Game pace (possessions).                |
-
-A `hoopR_data` tibble with one row per team-game. The `players` column
-is a nested list of per-player box scores. Key identifying columns:
-
-|              |           |                                       |
-|--------------|-----------|---------------------------------------|
-| col_name     | types     | description                           |
-| game_id      | integer   | CollegeBasketballData game id.        |
-| season       | integer   | Season (4-digit ending-year).         |
-| start_date   | character | Game start date (ISO 8601).           |
-| team_id      | integer   | Team id.                              |
-| team         | character | Team name.                            |
-| conference   | character | Team conference.                      |
-| opponent_id  | integer   | Opponent team id.                     |
-| opponent     | character | Opponent team name.                   |
-| is_home      | logical   | Whether the team was home.            |
-| game_minutes | numeric   | Total team minutes.                   |
-| game_pace    | numeric   | Game pace (possessions).              |
-| players      | list      | Nested list of per-player box scores. |
-
-A `hoopR_data` tibble with one row per game. The `home_team`,
-`away_team` and `betting` objects are flattened into `home_team_*`,
-`away_team_*` and `betting_*` columns. Key identifying columns:
-
-|                 |           |                                        |
-|-----------------|-----------|----------------------------------------|
-| col_name        | types     | description                            |
-| id              | integer   | CollegeBasketballData game id.         |
-| start_date      | character | Game start date (ISO 8601).            |
-| tv              | character | Broadcast TV network.                  |
-| neutral_site    | logical   | Whether the game is at a neutral site. |
-| conference_game | logical   | Whether the game is a conference game. |
-| status          | character | Game status.                           |
-| period          | integer   | Current period.                        |
-| clock           | character | Game clock.                            |
-| venue           | character | Venue name.                            |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_scoreboard")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Examples
 
 ``` r
 # \donttest{
   try(cbbd_games(season = 2024, team = "Duke"))
-#> ✖ 2026-11-09 17:03:30.560554: Invalid arguments or no games data available!
+#> ✖ 2026-11-09 19:09:46.913947: Invalid arguments or no games data available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL, status = NULL, tournament = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_games_media(season = 2024, team = "Duke"))
-#> ✖ 2026-11-09 17:03:30.569419: Invalid arguments or no game media available!
+#> ✖ 2026-11-09 19:09:46.925308: Invalid arguments or no game media available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL, tournament = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_games_teams(season = 2024, team = "Duke"))
-#> ✖ 2026-11-09 17:03:30.577868: Invalid arguments or no team box score data available!
+#> ✖ 2026-11-09 19:09:46.936099: Invalid arguments or no team box score data available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL, tournament = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_games_players(season = 2024, team = "Duke"))
-#> ✖ 2026-11-09 17:03:30.58655: Invalid arguments or no player box score data available!
+#> ✖ 2026-11-09 19:09:46.946612: Invalid arguments or no player box score data available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL, tournament = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_scoreboard(conference = "ACC"))
-#> ✖ 2026-11-09 17:03:30.594947: Invalid arguments or no scoreboard data available!
+#> ✖ 2026-11-09 19:09:46.957252: Invalid arguments or no scoreboard data available!
 #> ✖ Args: conference = "ACC"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

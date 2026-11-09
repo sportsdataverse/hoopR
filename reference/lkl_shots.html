@@ -36,6 +36,7 @@ Endpoint: GET https://lkl.lt/api/livestream/shot-chart/{game_id}"><meta property
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,15 +140,11 @@ before 2018-19. Only a finished game is served.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble. One row per attempt (free throws are not charted), periods ascending. The data is
-Genius LiveStats'. <code>x</code> is the percent (0-100) of the court LENGTH from the left baseline of a horizontal full court
-(baskets near 5 and 95) and <code>y</code> the percent of the WIDTH (baskets at 50); metres are <code>x / 100 x 28</code> and <code>y / 100 x 15</code>, an inference. Which sideline is <code>y</code> 0 is unverified. <code>side</code> is the basket half (<code>LEFT</code> = x &lt; 50) except
-backcourt heaves, and teams switch baskets at half-time, so normalise to one basket before plotting. <code>area</code> is a
-zone code, <code>left</code> / <code>right</code> from the shooter's view. The shooter is named by <code>player_id</code> (lkl.lt persons);
-<code>player_slug</code> is the reverse lookup through the runtime's roster (null on a body without the stamp). The site charts
-shots from 2024-25 on. A body without shots gives a zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises <code>hoopR_no_data</code>, as in sportsdataverse-py.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>lkl.lt game id (key space: LKL games; the <code>{gameId}</code> of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under <code>_request</code>).</td></tr><tr><td>shot_id</td><td>integer</td><td>Shot event id (key space: lkl.lt shot events, increasing over time); joins nothing else and is not the Genius action number.</td></tr><tr><td>period</td><td>integer</td><td>Period number: 1-4 regulation, 5 the first overtime, 6 the second.</td></tr><tr><td>period_type</td><td>character</td><td>regular for periods 1-4, overtime from period 5.</td></tr><tr><td>team_side</td><td>character</td><td>Side of the shooter's team (the line's is_home flag): home or away.</td></tr><tr><td>team_id</td><td>integer</td><td>lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body.</td></tr><tr><td>player_id</td><td>integer</td><td>lkl.lt player id (key space: lkl.lt persons, stable across seasons). Resolved from the player slug through the game roster the runtime stamps from the game page; null on a bare body or a slug the roster lacks.</td></tr><tr><td>player_slug</td><td>character</td><td>lkl.lt player slug (key space: lkl.lt persons; the <code>{slug}</code> of lkl.lt/zaidejai/<code>{slug}</code>, stable across seasons). Join key to lkl_game_players.slug.</td></tr><tr><td>type</td><td>character</td><td>2pt or 3pt (free throws are not in the chart).</td></tr><tr><td>made</td><td>logical</td><td>True when the shot was made, false when missed.</td></tr><tr><td>x</td><td>double</td><td>Court x position: percent (0-100) of the LENGTH of a horizontal full court from the left baseline (baskets near 5 and 95). Teams switch baskets at half-time; metres (x / 100 x 28) are an inference.</td></tr><tr><td>y</td><td>double</td><td>Court y position: percent (0-100) of the court WIDTH (baskets at 50). Metres (y / 100 x 15) are an inference; which sideline is y = 0 is unverified.</td></tr><tr><td>side</td><td>character</td><td>Basket half the shot is at: LEFT (x &lt; 50) or RIGHT, except backcourt heaves (area backcourt).</td></tr><tr><td>area</td><td>character</td><td>Court zone code (e.g. inthepaint, underbasket, outsideleft); left and right are from the shooter's view, so zones are point-symmetric between the two baskets.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per attempt.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "lkl_shots")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and

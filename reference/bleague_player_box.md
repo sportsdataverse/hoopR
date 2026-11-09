@@ -38,61 +38,13 @@ bleague_player_box(schedule_key, season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| schedule_key | integer | B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The {schedule_key} every game wrapper takes and the schedule page's list-item id. |
-| season | integer | Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. |
-| feed | character | Source feed of the row: v2 (v2_genius_contexts, B1/B2 from 2020-21) or v1 (v1_contexts: B3, B1/B2 2018-2020, and the 2016-17 / 2017-18 game-page embed). The feeds differ in id types, dates and some codes. |
-| team_side | character | Side of the game the row belongs to: home or away. |
-| team_id | character | B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. |
-| category | integer | Row category: 1 = player, 2 = team / coaches row (team-credited stats; on v1 it names the head coach), 3 = team totals. One row per (category, player, period category). |
-| period_category | integer | Period category: 1-4 = quarters 1-4, 15 = first half, 16 = second half, 18 = whole game. Overtime codes are unverified. |
-| team_name_j | character | Team name in Japanese (official name, e.g. Alvark Tokyo). |
-| team_name_e | character | Team name in English, uppercase ('ALVARK TOKYO'). |
-| player_id | character | B.LEAGUE PlayerID as text (key space: B.LEAGUE persons, stable across seasons and clubs: Makoto Hiejima = '8589'). A string on v2, an integer on v1; both are text here. Null where the row names no player. |
-| player_no | character | Shirt number as text, so '00' and '0' stay distinct; null on team and game-level rows. |
-| player_name_j | character | Player name in Japanese (katakana for foreign players); null on team and game-level rows. |
-| player_name_e | character | Player name in English ('Makoto Hiejima'); null on team and totals rows. |
-| play_time | character | Minutes played as the feed's 'mm:ss'; 'DNP' = did not play. Totals rows hold 5 x the period length ('200:00' for the game). |
-| on_court | logical | True for the five players on court when the context was last written (for a final game, at the final buzzer); the same value on every period row of the player. Null on v2 team and totals rows. |
-| display_order | integer | Display order of the row (v1 only), integer; null on v2. |
-| starter | logical | True when the player started; false for the bench; null on team and totals rows. (The feed sends 1 / null on v2 and a boolean on v1.) |
-| seconds_played | integer | Time on court in seconds, parsed from play_time (50:00 = 3000); null for DNP and blank. |
-| points | integer | Points scored. The v2 feed sends ” (a placeholder, not 0) on the team row of quarters; null here. |
-| fg3_made | integer | Three-point field goals made (v2 placeholder ” on quarter team rows becomes null). |
-| fg3_attempted | integer | Three-point field goals attempted. |
-| fg2_made | integer | Two-point field goals made. |
-| fg2_attempted | integer | Two-point field goals attempted. |
-| ft_made | integer | Free throws made. |
-| ft_attempted | integer | Free throws attempted. |
-| fouls | integer | Personal fouls committed (F). |
-| fouls_drawn | integer | Fouls drawn (FD). |
-| reb_off | integer | Offensive rebounds (OR). |
-| reb_def | integer | Defensive rebounds (DR). |
-| reb | integer | Total rebounds. |
-| turnovers | integer | Turnovers (TO). |
-| assists | integer | Assists credited to the player or team (AS). |
-| steals | integer | Steals credited to the player or team (ST). |
-| blocks | integer | Blocks made (BS). |
-| blocks_received | integer | Shots of this player or team that were blocked (BSON). |
-| ptfb | integer | Fast-break figure; equals the summary's fast-break points on the one game checked, but whether it counts points or baskets is unverified. |
-| pt2in | integer | Inside-the-paint figure: on v2 a COUNT of made inside-the-paint 2PT (the summary holds 2x that in points); on v1 points in the paint (0 on B3, whose 2PT shots are never split by paint). |
-| pt2nd | integer | Second-chance figure; smaller than the summary's second-chance points, so likely made baskets; unverified. |
-| ptpft | integer | Points off turnovers; v1 box rows only, null on v2. |
-| dunks | integer | Dunks made (PT2DUNK); v1 box rows only, null on v2. |
-| efficiency | integer | Efficiency rating (kokendo), era-dependent: v2 = points + rebounds + assists + steals + blocks + fouls drawn - missed FG - missed FT - turnovers - fouls - shots blocked (PIR); v1 omits fouls drawn, fouls and shots blocked. |
-| plus_minus | integer | Plus/minus: team point difference while on court. v2 from 2022-23 only; null on totals and half rows. |
-| ast_to | double | Assist-to-turnover ratio (0 when no turnovers). v2 from 2022-23 only; null on half rows. |
-| efg | double | Effective field-goal percentage as a FRACTION 0-1 (3PT weighted 1.5x); the site multiplies by 100. v2 from 2022-23 only. |
-| ts | double | True-shooting percentage as a FRACTION 0-1; the site multiplies by 100. v2 from 2022-23 only. |
-| usg | double | Usage rate in PERCENT 0-100. v2 from 2022-23 only; absent on totals rows. |
-| off_rtg | double | Offensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-| def_rtg | double | Defensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-| net_rtg | double | Net rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-| poss | double | Possessions. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
+A `hoopR_data` tibble with one row per player, period and category. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bleague_player_box")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -111,7 +63,7 @@ lists every function in this family.
 # \donttest{
   try(bleague_player_box(schedule_key = 504734))
 #> ── B.LEAGUE player box from b-league.s3.amazonaws.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:07 UTC
+#> ℹ Data updated: 2026-11-09 19:09:22 UTC
 #> # A tibble: 175 × 50
 #>    schedule_key season feed  team_side team_id category period_category
 #>           <int>  <int> <chr> <chr>     <chr>      <int>           <int>

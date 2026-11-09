@@ -36,6 +36,7 @@ Endpoint: GET https://digital-api.fiba.basketball/hapi/getgdapmedalcount"><meta 
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -144,7 +145,11 @@ World Cup, 112 = BCL tier 1, 211 = EuroLeague Women.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble (the raw JSON list when <code>return_parsed = FALSE</code>) with the following columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>team_name</td><td>character</td><td>Team name (country or club).</td></tr><tr><td>organisation_id</td><td>integer</td><td>Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_<code>&lt;id&gt;</code>.</td></tr><tr><td>fiba_code</td><td>character</td><td>FIBA three-letter country code (GER, USA; historic URS, YUG).</td></tr><tr><td>team_zone_code</td><td>character</td><td>Zone code of the team (E Europe, NAM Americas north...).</td></tr><tr><td>rank</td><td>integer</td><td>Rank (1 = first).</td></tr><tr><td>total_first_rank</td><td>integer</td><td>Gold medals (first places).</td></tr><tr><td>total_second_rank</td><td>integer</td><td>Number of silver medals the federation has won in the competition family.</td></tr><tr><td>total_third_rank</td><td>integer</td><td>Number of bronze medals the federation has won in the competition family.</td></tr><tr><td>total_participations</td><td>integer</td><td>Editions played.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per team.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "fiba_gdap_medal_count")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="fiba_gdap_awards.html">fiba_gdap_awards()</a></code>.</p>

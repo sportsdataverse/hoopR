@@ -75,7 +75,7 @@ mbb_team_crosswalk(season = most_recent_mbb_season(), fox = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per ESPN team:
+A `hoopR_data` tibble with one row per ESPN team.
 
 |  |  |  |
 |----|----|----|
@@ -99,17 +99,14 @@ A `hoopR_data` tibble, one row per ESPN team:
 | espn_pbp_name | character | Team name as ESPN play-by-play prints it; same for every season (NA if unknown). |
 | warren_nolan_team | character | Warren Nolan team name; same for every season (NA if unknown). |
 | team_247 | character | 247Sports team name; same for every season (NA if unknown). |
-| sref_slug | character | Sports-Reference school URL slug (\`/cbb/schools/\<slug\>/\`); same for every season (NA if unknown). |
+| sref_slug | character | Sports-Reference school URL slug (`/cbb/schools/<slug>/`); same for every season (NA if unknown). |
 | sref_team | character | Sports-Reference school name; same for every season (NA if unknown). |
 | yahoo_team_id | character | Yahoo team id (NA placeholder). |
 | yahoo_team_name | character | Yahoo team name (NA placeholder). |
 | fox_match_confidence | numeric | 1 for matched, NA for unmatched. |
 | bart_match_confidence | numeric | 1 for matched, NA for unmatched. |
 | kp_match_confidence | numeric | 1 for matched, NA for unmatched. |
-| match_method | character | Combination of matched sources, e.g. |
-|  |  | "fox+bart+kp" / "fox+bart" / "bart+kp" / |
-|  |  | "fox_only" / "bart_only" / "kp_only" / |
-|  |  | "espn_only". |
+| match_method | character | Combination of matched sources, e.g. "fox+bart+kp" / "fox+bart" / "bart+kp" / "fox_only" / "bart_only" / "kp_only" / "espn_only". |
 
 ## See also
 

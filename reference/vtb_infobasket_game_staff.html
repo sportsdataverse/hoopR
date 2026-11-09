@@ -36,6 +36,7 @@ Endpoint: GET https://org.infobasket.su/Widget/GetOnline/{game_id}"><meta proper
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,9 +140,11 @@ across seasons.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: The coaches and officials of a finished game (names and roles only). The columns are always
-these, in this order (sportsdataverse-py <code>vtb_infobasket_game_staff</code>); an empty valid answer raises <code>hoopR_no_data</code>, a valid
-body with no rows for this frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>Infobasket GameID of the game (the v2 matches' match_id); global across seasons.</td></tr><tr><td>team_number</td><td>integer</td><td>Side: 1 team A (home), 2 team B (away), 0 neither (officials, the placeholder row).</td></tr><tr><td>team_id</td><td>integer</td><td>Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id.</td></tr><tr><td>start_id</td><td>integer</td><td>Line-up slot id within this game; not a person id.</td></tr><tr><td>start_type</td><td>integer</td><td>Line-up row type: 3 coach, 4 official.</td></tr><tr><td>role</td><td>character</td><td>English role of the person: head coach, assistant coach, referee, commissioner, table official (from start_type and pos_id).</td></tr><tr><td>pos_id</td><td>integer</td><td>Position code of the coach or official (coach 1000 head / 1001 assistant; referees 101-103, commissioner 104, table officials 111-123).</td></tr><tr><td>person_id</td><td>integer</td><td>Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/{personId} (players) and /Widget/CoachPage/{personId} (coaches). 0 on team and placeholder rows.</td></tr><tr><td>person_name_en</td><td>character</td><td>Name in English, as 'Last First'.</td></tr><tr><td>person_name_ru</td><td>character</td><td>Name in Russian, as 'Last First'.</td></tr><tr><td>country_code_ioc</td><td>character</td><td>Country code as the host sends it (ISO alpha-2 in most rows, IOC alpha-3 in some).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per staff member.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "vtb_infobasket_game_staff")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="vtb_infobasket_seasons.html">vtb_infobasket_seasons()</a></code>.</p>

@@ -36,41 +36,12 @@ aba_pbp(game_no, season, league = "aba")
 
 ## Value
 
-A `hoopR_data` tibble. One row per event, `seq` 1-based in game order
-(the page lists each period newest first). `period` is 1-4 for the
-quarters and 5 for every overtime together; `clock` is `mm:ss` REMAINING
-(10:00 per quarter, 05:00 in overtime) and null on starting-lineup and
-period markers. The score is printed only on scoring events, so
-`home_score` / `away_score` are null elsewhere (carry them forward for a
-running score). `text` is the English event; `action` is the text
-without its parenthesised `qualifier` (shot type, rebound side, `n of m`
-free throw, foul or turnover type). Team-only rows print just the
-qualifier, so `action` is null there. Empty before 2017-18 (the page has
-no play-by-play tab). Every column below is always present (a zero-row
-tibble keeps them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_no | integer | Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The {gameNo} of the match route. |
-| season | integer | Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. |
-| league_id | integer | League code, the site's lea: 1 = ABA League, 2 = ABA League 2. |
-| league | character | League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. |
-| seq | integer | 1-based position in game order across the whole game (after the reversal). |
-| period | integer | 1-4 = quarters, 5 = overtime (the \#q5 tab; every overtime of the game). |
-| clock | character | Clock in the period, 'mm:ss' REMAINING (counts down from 10:00; overtime from 05:00). Null on the starting-lineup rows and on game / period start and end markers. |
-| seconds_left | integer | The clock as whole seconds REMAINING in the period (08:34 = 514), derived by the parser; null where the clock is. |
-| home_score | integer | Home score after this event: only set on scoring events (the page prints the score only there); null otherwise. Carry it forward for a running score. |
-| away_score | integer | Away score after this event, as home_score. |
-| side | character | Which column the event sits in: 'home', 'away', or null for game/period markers and bare-clock rows. A timeout row gets the side of its team badge. |
-| team_id | integer | ABA club id (global: the same id in every season and in both leagues, e.g. Partizan = 22 in 2008-09 and 2025-26). Joins every frame that carries it; the calendar has club names only. |
-| jersey | integer | Jersey number as printed; the play-by-play omits it on some rows (all starting-lineup rows and many home rows), so it is null there. |
-| player_id | integer | ABA player id (global: one person keeps one id across seasons and both leagues, e.g. Carlik Jones = 4807), cast to an integer. Join on it, never on the printed name. |
-| player_name | character | Name as the play-by-play prints it: 'SURNAME I' upper case (the trailing '.' belongs to the event text on the page and is dropped). |
-| text | character | Event text in English after the player's name: `<action> (<qualifier>)`, 'in starting lineup', or the whole text of a team / game row ('(defensive)', 'Timeout', 'start of 1. quarter'). Null on bare-clock rows ('10:00' with nothing else, opening some periods). |
-| action | character | text without its parenthesised qualifier; see the action table below the route. Null on team rows (they print only '(qualifier)') and bare-clock rows. |
-| qualifier | character | The parenthesised part of text (shot type, rebound side, free-throw 'n of m', foul or turnover type); see the qualifier table. Null when the text has none. |
+A `hoopR_data` tibble with one row per event. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "aba_pbp")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -130,26 +101,10 @@ Other ABA Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
+  # Interactive only: parsing the play-by-play page takes 2-4 s.
   try(aba_pbp(game_no = 6, season = 2026))
-#> ── ABA League Play-by-Play ────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:20 UTC
-#> # A tibble: 659 × 18
-#>    game_no season league_id league   seq period clock seconds_left home_score
-#>      <int>  <int>     <int> <chr>  <int>  <int> <chr>        <int>      <int>
-#>  1       6   2026         1 aba        1      1 NA              NA         NA
-#>  2       6   2026         1 aba        2      1 NA              NA         NA
-#>  3       6   2026         1 aba        3      1 NA              NA         NA
-#>  4       6   2026         1 aba        4      1 NA              NA         NA
-#>  5       6   2026         1 aba        5      1 NA              NA         NA
-#>  6       6   2026         1 aba        6      1 NA              NA         NA
-#>  7       6   2026         1 aba        7      1 NA              NA         NA
-#>  8       6   2026         1 aba        8      1 NA              NA         NA
-#>  9       6   2026         1 aba        9      1 NA              NA         NA
-#> 10       6   2026         1 aba       10      1 NA              NA         NA
-#> # ℹ 649 more rows
-#> # ℹ 9 more variables: away_score <int>, side <chr>, team_id <int>,
-#> #   jersey <int>, player_id <int>, player_name <chr>, text <chr>, action <chr>,
-#> #   qualifier <chr>
 # }
+}
 ```

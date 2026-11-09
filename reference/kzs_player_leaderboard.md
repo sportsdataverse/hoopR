@@ -54,30 +54,12 @@ kzs_player_leaderboard(
 
 ## Value
 
-A `hoopR_data` tibble: Player leaderboard of a competition for one stat
-category (total, per-game average and single-game best). An empty valid
-answer raises `hoopR_no_data`; the columns are always these, in this
-order (sportsdataverse-py `kzs_player_leaderboard`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). |
-| stats_category | character | Stat category of the board (PTS points, R rebounds, ASS assists ...): the request's, the rows do not echo it. |
-| club_id | integer | Club id: the club across seasons and categories (Ilirija = 16). No captured route is keyed by it. |
-| club_fullname | character | Club's full legal name. |
-| club_logo_uuid | character | Club logo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
-| club_code | character | Club 3-letter code. |
-| team_id | integer | Team id: one club team in one season (Ilirija 2025-26 = 17551). Joins to `/teams/{teamId}`, standings `teamId`, box-score `teamId` and the `teamId` query params. |
-| team_name | character | Team name for the season, sponsor included. |
-| games_played | integer | Games the player played in the competition. |
-| sum | double | Season total of the requested statsCategory. |
-| average | double | Per-game average of the statsCategory. |
-| max | double | Single-game best of the statsCategory. |
-| player_id | integer | Player id (KZS player registry). Joins to `/players/{playerId}`, box-score and play-by-play `playerId`. |
-| player_firstname | character | The player's given name as registered with KZS (lower-case n in this route). |
-| player_lastname | character | The player's family name as registered with KZS (lower-case n in this route). |
-| photo_uuid | character | Player photo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_player_leaderboard")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

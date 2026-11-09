@@ -37,48 +37,12 @@ tpbl_games(season, team_id = NULL, verify = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: Every game of one season, all divisions, played
-and scheduled, with teams, venue, status and score. An empty answer
-raises `hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `tpbl_games`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = the 2025-26 season), the year asked for. Null when the body was parsed without the request stamp. |
-| season_id | integer | TPBL season id (key space: TPBL seasons on api.tpbl.basketball; 1 = 2024-25, 2 = 2025-26, 3 = 2026-27): the `{season_id}` of the season game list and, equal to it, the `{event_id}` of `/events/{event_id}/*`. Not the GoHoops season id. Null when the body was parsed without the request stamp. |
-| game_id | integer | TPBL game id (key space: TPBL games on api.tpbl.basketball): the `{game_id}` of the game routes. Not sequential by date (2024-25 = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). The box score echoes no game id, so a box frame parsed without the request stamp has a null game_id. |
-| gohoops_game_id | integer | GoHoops game id (key space: GoHoops games; 1242 for TPBL game 6). Not the TPBL game id. |
-| division_id | integer | TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the `{division_id}` of every division route. Not the GoHoops division id. |
-| gohoops_division_id | integer | GoHoops division id (key space: GoHoops divisions; e.g. 64 = the 2024-25 preseason, 65 = the 2024-25 regular season). Not the TPBL division id. |
-| gohoops_season_id | integer | GoHoops season id (key space: GoHoops seasons, the id system the API echoes beside its own; 101 = 2024-25, 213 = 2025-26, 275 = 2026-27). Not the TPBL season id. Read from the home team. |
-| gohoops_event_id | integer | GoHoops event id (key space: GoHoops events, one per TPBL season; 319 = 2024-25, 490 = 2025-26, 613 = 2026-27). Not the TPBL season id and not the GoHoops season id. Read from the home team. |
-| code | character | Game code inside the division: the game number as text in the regular season ('1' ... '42'), a series label in the playoffs ('AG1' = series A game 1, 'G7' = finals game 7), ” for preseason games. |
-| status | character | Game status. Observed: COMPLETED (finished) and NOT_STARTED (scheduled). A game in progress has is_live true. |
-| is_live | logical | True while the game is being played; false for finished and scheduled games. |
-| periods | integer | Number of quarters played: 4 for a regulation game, 5 for one overtime, 6 for two; 0 before tip-off. |
-| game_date | Date | Game date (Taiwan local date). |
-| game_day_of_week | character | Traditional Chinese weekday in parentheses: Mon, Tue, Wed, Thu, Fri, Sat, Sun. |
-| game_time | character | Scheduled tip-off 'HH:MM:SS'. Taiwan local date and time (UTC+8 by every tip-off seen; the API sends no zone). |
-| tipoff | POSIXct | Scheduled tip-off as a naive timestamp (no zone). Taiwan local date and time (UTC+8 by every tip-off seen; the API sends no zone). |
-| venue | character | Venue name in Traditional Chinese (Xinzhuang Gymnasium, Heping Basketball Gymnasium, Taichung Intercontinental Mini Dome, Hsinchu County Gymnasium, Kaohsiung Arena, Taoyuan Arena). |
-| attendance | integer | Attendance as an integer, parsed from the API's visitors string; null before the game, when the API sends none or on a postponed game. |
-| home_team_id | integer | Home TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the `{team_id}` of the division team routes. Not the GoHoops franchise id and not the squad id. |
-| home_gohoops_team_id | integer | Home GoHoops franchise id (key space: GoHoops franchises, 940-946; stable across seasons; = the TPBL team id + 938). |
-| home_gohoops_squad_id | integer | Home GoHoops squad id (key space: GoHoops squads = one team in one season: 8209-8215 in 2024-25, 11931-11937 in 2025-26, 15536-15542 in 2026-27; it changes every season). |
-| home_team | character | Home team name. Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). |
-| home_alt_name | character | Home team slug. Lowercase English slug of the team: aquas, dreamers, lioneers, leopards, dea, kings, mars. |
-| home_score | integer | Home team final score (points scored); null before tip-off. |
-| away_team_id | integer | Away TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the `{team_id}` of the division team routes. Not the GoHoops franchise id and not the squad id. |
-| away_gohoops_team_id | integer | Away GoHoops franchise id (key space: GoHoops franchises, 940-946; stable across seasons; = the TPBL team id + 938). |
-| away_gohoops_squad_id | integer | Away GoHoops squad id (key space: GoHoops squads = one team in one season: 8209-8215 in 2024-25, 11931-11937 in 2025-26, 15536-15542 in 2026-27; it changes every season). |
-| away_team | character | Away team name. Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). |
-| away_alt_name | character | Away team slug. Lowercase English slug of the team: aquas, dreamers, lioneers, leopards, dea, kings, mars. |
-| away_score | integer | Away team final score (points scored); null before tip-off. |
-| recap_url | character | YouTube recap URL; null when the game has none (the list can omit it, the game detail carries it). |
-| live_stream_url | character | YouTube live-stream URL of the game; null when the API omits it. |
-| judgement_report_url | character | URL of the referees' judgement report (a Google Drive file); null when none. |
-| ticket_url | character | URL of the ticket page; null on most rows. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tpbl_games")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -97,7 +61,7 @@ lists every function in this family.
 # \donttest{
   try(tpbl_games(season = 2026))
 #> ── TPBL Games from api.tpbl.basketball ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:52 UTC
+#> ℹ Data updated: 2026-11-09 19:15:48 UTC
 #> # A tibble: 150 × 34
 #>    season season_id game_id gohoops_game_id division_id gohoops_division_id
 #>     <int>     <int>   <int>           <int>       <int>               <int>

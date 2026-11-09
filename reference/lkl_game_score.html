@@ -36,6 +36,7 @@ Endpoint: GET https://lkl.lt/api/livestream/game-score/{game_id}"><meta property
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,11 +140,11 @@ before 2018-19. Only a finished game is served.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble. One row: the two scores and the clock text. The clock is NOT a state flag: an old
-game keeps <code>'1 KELINYS - 10:00'</code> after the final, and a finished overtime game reads <code>'1 pratesimas - 00:00'</code>. A
-body without scores gives a zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises <code>hoopR_no_data</code>, as in sportsdataverse-py.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>lkl.lt game id (key space: LKL games; the <code>{gameId}</code> of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under <code>_request</code>).</td></tr><tr><td>home_score</td><td>integer</td><td>Home team points on the score line.</td></tr><tr><td>away_score</td><td>integer</td><td>Away team points on the score line.</td></tr><tr><td>clock</td><td>character</td><td>Clock text, NOT a state flag: an old game keeps '1 KELINYS - 10:00' after the final; a finished overtime game reads '1 pratesimas - 00:00'.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "lkl_game_score")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and

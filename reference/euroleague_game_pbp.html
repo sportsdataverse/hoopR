@@ -50,6 +50,7 @@ game."><meta property="og:image" content="https://raw.githubusercontent.com/spor
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -165,8 +166,11 @@ the <code>game_code</code> column of <code><a href="euroleague_games.html">eurol
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble with one row per play:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>quarter</td><td>integer</td><td>Period of the play: 1-4, or 5 for every overtime period.</td></tr><tr><td>team_a</td><td>character</td><td>Display name of team A (= the home side, measured on one game).</td></tr><tr><td>team_b</td><td>character</td><td>Display name of team B (= the away side, measured on one game).</td></tr><tr><td>code_team_a</td><td>character</td><td>EuroLeague club code of team A (= the home side, measured on one game); Utf8 join key.</td></tr><tr><td>code_team_b</td><td>character</td><td>EuroLeague club code of team B (= the away side, measured on one game); Utf8 join key.</td></tr><tr><td>type</td><td>integer</td><td>Play type (engine integer).</td></tr><tr><td>numberofplay</td><td>integer</td><td>Sequence number of the play within the game.</td></tr><tr><td>codeteam</td><td>character</td><td>EuroLeague club code of the team on the play (Utf8 join key; blank on administrative plays).</td></tr><tr><td>player_id</td><td>character</td><td>EuroLeague player code (Utf8 join key; space padding stripped; blank on team rows).</td></tr><tr><td>playtype</td><td>character</td><td>Play type code (BP = begin period, 2FGM, 3FGA, FTM, AS = assist, TO, RV, CM, ...).</td></tr><tr><td>player</td><td>character</td><td>Player display name (SURNAME, GIVEN NAME).</td></tr><tr><td>team</td><td>character</td><td>Display name of the team on the play (null on administrative plays).</td></tr><tr><td>dorsal</td><td>character</td><td>Jersey number as displayed.</td></tr><tr><td>minute</td><td>integer</td><td>Game minute of the event (1-based; 41+ in overtime).</td></tr><tr><td>markertime</td><td>character</td><td>Game clock at the play (mm:ss remaining in the period).</td></tr><tr><td>points_a</td><td>integer</td><td>Running score of team A (= the home side, measured on one game) after the event.</td></tr><tr><td>points_b</td><td>integer</td><td>Running score of team B (= the away side, measured on one game) after the event.</td></tr><tr><td>comment</td><td>character</td><td>Free-text annotation of the play.</td></tr><tr><td>playinfo</td><td>character</td><td>Play description.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per play.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "euroleague_game_pbp")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only

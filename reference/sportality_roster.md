@@ -21,25 +21,12 @@ sportality_roster(team_uuid)
 
 ## Value
 
-A `hoopR_data` tibble: Current roster of a team, grouped by position. An
-empty valid answer raises `hoopR_no_data`; the documented columns come
-first, in this order (sportsdataverse-py `sportality_roster`), then any
-column the API added later:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| position | character | Playing position. |
-| position_code | character | Position code (G, F, C, or a finer code such as SG on the profile route). Values: `C` = center; `F` = forward; `G` = guard. |
-| player_type | character | Record type (athlete). Values: `athlete` = a player. |
-| gender | character | Gender of the person as recorded by the site (male in every row seen). |
-| uuid | character | Athlete uuid (platform key space). |
-| first_name | character | Given (first) name(s) of the player. |
-| last_name | character | Family name (surname) of the player. |
-| full_name | character | Full display name of the player. |
-| nationality | character | ISO 3166-1 alpha-2 country code. |
-| jersey_number | integer | Jersey (shirt) number of the player. |
-| portrait_url | character | URL of the player's latest rendered portrait. |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportality_roster")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -58,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(sportality_roster(team_uuid = "rfo82vr830"))
 #> ── Basketligaen Team Roster from basketligaen.dk ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:02 UTC
+#> ℹ Data updated: 2026-11-09 19:14:56 UTC
 #> # A tibble: 14 × 13
 #>    position position_code player_type gender uuid       first_name    last_name 
 #>    <chr>    <chr>         <chr>       <chr>  <chr>      <chr>         <chr>     

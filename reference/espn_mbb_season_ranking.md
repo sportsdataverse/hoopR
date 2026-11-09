@@ -35,17 +35,35 @@ espn_nba_season_ranking(ranking_id, season = most_recent_nba_season(), ...)
 
 ## Value
 
-A tibble with one row per weekly snapshot.
+A `hoopR_data` tibble with one row per weekly snapshot.
 
-Columns as documented in the shared
-[espn_mbb_season_ranking_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_ranking_schema.md)
-table.
+|             |           |                                             |
+|-------------|-----------|---------------------------------------------|
+| col_name    | types     | description                                 |
+| league      | character | League slug.                                |
+| season      | integer   | Season year.                                |
+| ranking_id  | character | ESPN ranking id.                            |
+| name        | character | Ranking name (e.g. "AP Top 25").            |
+| short_name  | character | Short name (e.g. "AP Poll").                |
+| type        | character | Ranking type code (e.g. "ap").              |
+| season_type | integer   | Season-type id of this snapshot.            |
+| week        | integer   | Week number of this snapshot.               |
+| ref         | character | `$ref` URL for the per-week ranking detail. |
 
-A tibble with one row per weekly snapshot.
+A `hoopR_data` tibble with one row per weekly snapshot.
 
-Columns as documented in the shared
-[espn_mbb_season_ranking_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_ranking_schema.md)
-table.
+|             |           |                                             |
+|-------------|-----------|---------------------------------------------|
+| col_name    | types     | description                                 |
+| league      | character | League slug.                                |
+| season      | integer   | Season year.                                |
+| ranking_id  | character | ESPN ranking id.                            |
+| name        | character | Ranking name (e.g. "AP Top 25").            |
+| short_name  | character | Short name (e.g. "AP Poll").                |
+| type        | character | Ranking type code (e.g. "ap").              |
+| season_type | integer   | Season-type id of this snapshot.            |
+| week        | integer   | Week number of this snapshot.               |
+| ref         | character | `$ref` URL for the per-week ranking detail. |
 
 ## Details
 
@@ -71,7 +89,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_ranking(ranking_id = 1, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Ranking Snapshots Index ── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:40 UTC
+#> ℹ Data updated: 2026-11-09 19:10:58 UTC
 #> # A tibble: 21 × 9
 #>    league       season ranking_id name  short_name type  season_type  week ref  
 #>    <chr>         <int> <chr>      <chr> <chr>      <chr>       <int> <int> <chr>
@@ -89,11 +107,11 @@ Saiem Gilani
 # }
 # \donttest{
   espn_nba_season_ranking(ranking_id = 1, season = 2025)
-#> ✖ 2026-11-09 17:04:40.538286: Failed to retrieve ESPN nba ranking 1 for season=2025
+#> ✖ 2026-11-09 19:10:58.670176: Failed to retrieve ESPN nba ranking 1 for season=2025
 #> ✖ Args: league = "nba", season = 2025, ranking_id = 1
 #> ✖ Error: The API returned an error
 #> ── ESPN NBA Season Ranking Snapshots Index ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:40 UTC
+#> ℹ Data updated: 2026-11-09 19:10:58 UTC
 #> # A tibble: 0 × 0
 # }
 ```

@@ -24,7 +24,7 @@ espn_nba_tournament_seasons(tournament_id, ...)
 
 ## Value
 
-A tibble with one row per season.
+A `hoopR_data` tibble with one row per season.
 
 |               |           |                                  |
 |---------------|-----------|----------------------------------|
@@ -34,7 +34,7 @@ A tibble with one row per season.
 | season        | integer   | Season year.                     |
 | ref           | character | Full `$ref` URL for that season. |
 
-A tibble with one row per season.
+A `hoopR_data` tibble with one row per season.
 
 |               |           |                                  |
 |---------------|-----------|----------------------------------|
@@ -62,7 +62,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_tournament_seasons(tournament_id = 3)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Tournament Seasons ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:01 UTC
+#> ℹ Data updated: 2026-11-09 19:11:15 UTC
 #> # A tibble: 14 × 4
 #>    league                  tournament_id season ref                             
 #>    <chr>                   <chr>          <int> <chr>                           
@@ -84,7 +84,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_tournament_seasons(tournament_id = 1)
 #> ── ESPN NBA Tournament Seasons ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:02 UTC
+#> ℹ Data updated: 2026-11-09 19:11:15 UTC
 #> # A tibble: 3 × 4
 #>   league tournament_id season ref                                               
 #>   <chr>  <chr>          <int> <chr>                                             

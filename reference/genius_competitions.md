@@ -34,21 +34,13 @@ genius_competitions(org, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (a zero-row tibble with these columns when Genius
-answers an empty valid page), or the raw list when
-`return_parsed = FALSE`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| org | character | ORG code the request used (the hosted ORG, or the LiveStats ORG for the /u/ shell). |
-| comp_id | integer | Genius competition id (compId): one per org competition-season; the {compId} of hosted and data/competition paths |
-| label | character | Competition label as the org typed it, free text in any language: may or may not carry a season ('BASKET LEAGUE 2019 - 20', '1st division', 'Kypello Elladas' (in Greek script) = Greek Cup, 'Mavroskoufeia' (in Greek script) = Mavroskoufeia youth tournament) |
-| league_id | integer | Genius league id of the org (ESAKE = 115; IBBA has two: 187 and 549) |
-| year | integer | Genius season year of the competition: the START year of a two-year season (BNXT '2023-2024' = 2023), the year itself for a calendar season. null when the page gives none |
-| season | integer | sdv END-year season of the competition (2026 = 2025-26) from the label span, else the Genius year; null when no rule applies. See season_rule. |
-| season_rule | character | Which rule produced season: 'label span', 'genius year + 1 (split)', 'genius year (calendar)', 'label year (calendar)' or 'unknown'. |
-| selected | logical | True for the competition the hosted chooser pre-selects (the org's default, not always the newest). |
+A `hoopR_data` tibble with one row per competition-season. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "genius_competitions")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -112,7 +104,7 @@ Other Genius Functions:
 # \donttest{
   try(genius_competitions(org = "ESAKE"))
 #> ── Genius LiveStats competitions ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:54 UTC
+#> ℹ Data updated: 2026-11-09 19:12:07 UTC
 #> # A tibble: 47 × 8
 #>    org   comp_id label               league_id  year season season_rule selected
 #>    <chr>   <int> <chr>                   <int> <int>  <int> <chr>       <lgl>   

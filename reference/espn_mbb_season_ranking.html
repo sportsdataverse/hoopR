@@ -48,6 +48,7 @@ wrapped by a forthcoming espn_nba_week_ranking()."><meta property="og:image" con
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -166,11 +167,9 @@ wrapped by a forthcoming <code><a href="espn_mbb_week_ranking.html">espn_nba_wee
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A tibble with one row per weekly snapshot.</p>
-<p>Columns as documented in the shared <a href="espn_mbb_season_ranking_schema.html">espn_mbb_season_ranking_schema</a> table.</p>
-<p>A tibble with one row per weekly snapshot.</p>
-<p>Columns as documented in the shared <a href="espn_mbb_season_ranking_schema.html">espn_mbb_season_ranking_schema</a> table.</p>
-    </div>
+    <p>A <code>hoopR_data</code> tibble with one row per weekly snapshot.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League slug.</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>ranking_id</td><td>character</td><td>ESPN ranking id.</td></tr><tr><td>name</td><td>character</td><td>Ranking name (e.g. "AP Top 25").</td></tr><tr><td>short_name</td><td>character</td><td>Short name (e.g. "AP Poll").</td></tr><tr><td>type</td><td>character</td><td>Ranking type code (e.g. "ap").</td></tr><tr><td>season_type</td><td>integer</td><td>Season-type id of this snapshot.</td></tr><tr><td>week</td><td>integer</td><td>Week number of this snapshot.</td></tr><tr><td>ref</td><td>character</td><td><code>$ref</code> URL for the per-week ranking detail.</td></tr></table><p>A <code>hoopR_data</code> tibble with one row per weekly snapshot.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League slug.</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>ranking_id</td><td>character</td><td>ESPN ranking id.</td></tr><tr><td>name</td><td>character</td><td>Ranking name (e.g. "AP Top 25").</td></tr><tr><td>short_name</td><td>character</td><td>Short name (e.g. "AP Poll").</td></tr><tr><td>type</td><td>character</td><td>Ranking type code (e.g. "ap").</td></tr><tr><td>season_type</td><td>integer</td><td>Season-type id of this snapshot.</td></tr><tr><td>week</td><td>integer</td><td>Week number of this snapshot.</td></tr><tr><td>ref</td><td>character</td><td><code>$ref</code> URL for the per-week ranking detail.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><strong>Get ESPN MBB Season Ranking Detail</strong></p>
@@ -191,7 +190,7 @@ wrapped by a forthcoming <code><a href="espn_mbb_week_ranking.html">espn_nba_wee
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_season_ranking</span><span class="op">(</span>ranking_id <span class="op">=</span> <span class="fl">1</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Season Ranking Snapshots Index ── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:40 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:58 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 21 × 9</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    league       season ranking_id name  short_name type  season_type  week ref  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
@@ -209,11 +208,11 @@ wrapped by a forthcoming <code><a href="espn_mbb_week_ranking.html">espn_nba_wee
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_season_ranking</span><span class="op">(</span>ranking_id <span class="op">=</span> <span class="fl">1</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 17:04:40.538286: Failed to retrieve ESPN nba ranking 1 for season=2025</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 19:10:58.670176: Failed to retrieve ESPN nba ranking 1 for season=2025</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league = "nba", season = 2025, ranking_id = 1</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Season Ranking Snapshots Index ────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:40 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:58 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>

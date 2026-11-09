@@ -23,23 +23,12 @@ cba_player_extras(schedule_id)
 
 ## Value
 
-A `hoopR_data` tibble: One row per player (deduplicated on player_id,
-first row kept). An empty valid answer is a zero-row tibble with these
-columns, in this order (sportsdataverse-py `cba_player_extras`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| schedule_id | integer | CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the `{scheduleId}` of every game route). Stamped by the runtime from the request; null on a body parsed without it. |
-| side | character | Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block). |
-| cn_alias | character | Player name (Chinese). |
-| dunks_points | integer | points scored on dunks. |
-| fast_break_points | integer | fast-break points scored by the player. |
-| field_goals_at_rim_made | integer | points scored in the paint (the site's own column title). The field name says 'made' but the value is a POINTS count: it exceeds field goals made for 15 of 65 sampled players (e.g. 10 against 9 field goals made, 28 points). |
-| game_start | integer | Starter flag: 1 = started the game. |
-| number | character | Jersey number as a string. |
-| player_id | integer | playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. |
-| up_time | integer | Time on court in SECONDS. |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cba_player_extras")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

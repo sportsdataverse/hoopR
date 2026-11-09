@@ -20,16 +20,13 @@ kzs_playing_days(competition_id)
 
 ## Value
 
-A `hoopR_data` tibble: Match days of a competition and the number of
-games on each. An empty valid answer raises `hoopR_no_data`; the columns
-are always these, in this order (sportsdataverse-py `kzs_playing_days`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). |
-| date | character | Calendar date of the match day, 'YYYY-MM-DD'. |
-| no_of_games | integer | Matches on that day. |
+A `hoopR_data` tibble with one row per match day. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_playing_days")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

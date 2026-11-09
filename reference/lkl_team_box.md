@@ -21,59 +21,13 @@ lkl_team_box(game_id)
 
 ## Value
 
-A `hoopR_data` tibble. Two rows (home first). The body keys the totals
-by team id with no side marker, so `team_side` comes from the game page
-the runtime stamps (null on a body without the stamp). Percentages are
-0-100 floats (the site sends two-decimal strings); `time_leading` is
-seconds (the site sends a string). `points_off_turnovers`,
-`fast_break_points`, `second_chance_points` and `points_in_paint` are 0
-before 2024-25 (not tracked). Per-period points are in
-`lkl_period_scores`. A body without `gameStatistics` gives a zero-row
-tibble. Every column below is always present (a zero-row tibble keeps
-them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | lkl.lt game id (key space: LKL games; the `{gameId}` of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under `_request`). |
-| team_id | integer | lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body. |
-| team_side | character | Side of the game the row belongs to: home or away (the game page's teams_info side; the box score, leaders and plays say home / away, and gameStatistics is keyed by team id so the runtime supplies the side). |
-| points | integer | Team points: the final score (the capture banks finished games only). |
-| seconds_played | integer | Summed playing time of all the team's players in seconds (12000 = 5 x 40:00; 13500 with one overtime). |
-| field_goals_made_total | integer | Field goals made, 2PT + 3PT. |
-| field_goals_attempted_total | integer | Field goals attempted, 2PT + 3PT. |
-| field_goals_made_2pt | integer | Two-point field goals made. |
-| field_goals_attempted_2pt | integer | Two-point field goals attempted. |
-| field_goals_made_3pt | integer | Three-point field goals made. |
-| field_goals_attempted_3pt | integer | Three-point field goals attempted. |
-| free_throws_made | integer | Free throws made by the team in the game (count). |
-| free_throws_attempted | integer | Free throws attempted by the team in the game (count). |
-| offensive_rebounds | integer | Team offensive rebounds in the game (count). |
-| defensive_rebounds | integer | Team defensive rebounds in the game (count). |
-| total_rebounds | integer | Team rebounds, offensive + defensive (count). |
-| assists | integer | Team assists in the game (count). |
-| steals | integer | Team steals in the game (count). |
-| blocks | integer | Blocks made by the team in the game (count). |
-| blocks_received | integer | Shots of this team that were blocked. |
-| turnovers | integer | Team turnovers in the game (count). |
-| fouls | integer | Fouls committed. |
-| fouls_on | integer | Fouls drawn (fouls committed on this team). |
-| efficiency | integer | Team efficiency rating (Efektyvumas), a PIR-style index (points + rebounds + assists + steals + blocks + fouls drawn - missed shots - turnovers - shots blocked - fouls). The exact formula is unverified: game 11590 home gives 121 where that formula gives 122. |
-| points_off_turnovers | integer | Points off the opponent's turnovers; 0 on the 2007-08 sample (not tracked then). |
-| fast_break_points | integer | Fast-break points; 0 on the 2007-08 sample. |
-| second_chance_points | integer | Second-chance points (after an offensive rebound); 0 on the 2007-08 sample. |
-| points_in_paint | integer | Points in the paint; 0 on the 2007-08 sample. |
-| bench_points | integer | Points by players who did not start. |
-| biggest_lead | integer | This team's biggest lead in points (0 when it never led). |
-| biggest_scoring_run | integer | This team's longest unanswered scoring run, in points. |
-| lead_changes | integer | Lead changes in the game (the same value on both rows). |
-| tie_results | integer | Times the score was tied (the same value on both rows). |
-| time_leading | integer | Seconds this team led during the game (the site sends it as a string; 1892 = 31:32). |
-| field_goals_percentage | double | Field-goal percentage, 0-100 float (the site sends a two-decimal string). |
-| field_goals_2pt_percentage | double | Two-point percentage, 0-100 float (the site sends a two-decimal string). |
-| field_goals_3pt_percentage | double | Three-point percentage, 0-100 float (the site sends a two-decimal string). |
-| free_throws_percentage | double | Free-throw percentage, 0-100 float (the site sends a two-decimal string). |
+A `hoopR_data` tibble with one row per team in the game. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lkl_team_box")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

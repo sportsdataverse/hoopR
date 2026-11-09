@@ -21,20 +21,13 @@ tpbl_referees(game_id)
 
 ## Value
 
-A `hoopR_data` tibble: The officiating crew of one finished game, chief
-referee first (names only). An empty answer raises `hoopR_no_data`; the
-columns are always these, in this order (sportsdataverse-py
-`tpbl_referees`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | TPBL game id (key space: TPBL games on api.tpbl.basketball): the `{game_id}` of the game routes. Not sequential by date (2024-25 = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). The box score echoes no game id, so a box frame parsed without the request stamp has a null game_id. |
-| sequence | integer | Position in the crew as the API lists it: 1 = the chief referee. |
-| referee_id | integer | TPBL referee id (key space: TPBL referees on api.tpbl.basketball). Not the GoHoops referee id. |
-| gohoops_referee_id | integer | GoHoops referee id (key space: GoHoops referees). Not the TPBL referee id. |
-| name | character | Referee name in Traditional Chinese. Names only: no contact or birth data is published. |
-| role | character | Crew role enum: BASKETBALL_CHIEF_REFEREE = crew chief, BASKETBALL_FIRST_ASSISTANT_REFEREE = first assistant (umpire 1), BASKETBALL_SECOND_ASSISTANT_REFEREE = second assistant (umpire 2). |
+A `hoopR_data` tibble with one row per official. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tpbl_referees")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

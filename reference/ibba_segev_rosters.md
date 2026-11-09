@@ -21,22 +21,13 @@ ibba_segev_rosters(game_id)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | Segev game id (key space: one flat sequence across seasons and competitions); equals the IBBA ibba_games segev_game_id from 2025-26. Not an IBBA game id. |
-| team_side | character | Side of the game: home or away (the feed's homeTeam / awayTeam; an action's parameters.team 1 = home, 2 = away). |
-| team_id | integer | Segev team id of the roster's side (stable across seasons). |
-| player_id | integer | Segev player id (key space: Segev players, stable across seasons: Jaylen Hoard = 1000 in games 50 and 419); null on team lines and on actions without a player. Not an IBBA player-season id. |
-| jersey_number | integer | Jersey number as an integer. |
-| first_name | character | First name in English, upper case. |
-| last_name | character | Last name in English, upper case. |
-| first_name_local | character | First name in Hebrew. |
-| last_name_local | character | Last name in Hebrew. |
-| in_roster | integer | Roster flag, 0 or 2 in the samples; meaning unverified. |
-| api_id | integer | External player id as an integer: null or equal to the Segev player_id (both occur within one game); its source is unverified. |
+A `hoopR_data` tibble with one row per player on a game roster. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_segev_rosters")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

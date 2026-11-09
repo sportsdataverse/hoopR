@@ -22,22 +22,12 @@ bref_standings(season = most_recent_nba_season())
 
 ## Value
 
-A `hoopR_data` tibble with one row per team:
-
-|               |           |                                                    |
-|---------------|-----------|----------------------------------------------------|
-| col_name      | types     | description                                        |
-| conference    | character | Conference (`E` or `W`).                           |
-| team          | character | Team name (with playoff-seed marker stripped).     |
-| wins          | integer   | Wins.                                              |
-| losses        | integer   | Losses.                                            |
-| win_loss_pct  | numeric   | Win-loss percentage.                               |
-| gb            | character | Games behind the conference leader.                |
-| pts_per_g     | numeric   | Points scored per game.                            |
-| opp_pts_per_g | numeric   | Opponent points per game.                          |
-| srs           | numeric   | Simple Rating System (point margin + SOS).         |
-| playoffs      | logical   | `TRUE` if the team made the playoffs (`*` marker). |
-| season        | integer   | Season (echoes the `season` argument).             |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bref_standings")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

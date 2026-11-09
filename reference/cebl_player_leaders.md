@@ -50,30 +50,13 @@ cebl_player_leaders(
 
 ## Value
 
-A `hoopR_data` tibble: Top five players per requested statistic (long
-frame, one row per statistic and leader). An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `cebl_player_leaders`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| statistic | character | Statistic this leader row ranks, the body's key for the list: POINTS, REBOUNDS, ASSISTS, TARGET_SCORES and the other names the request asked for. |
-| ranking | integer | Rank in this statistic, 1 = best; ties share a rank and skip the next (1, 1, 1, 4). The list is the top 5 rows, no more. |
-| season | integer | Season: the calendar year it is played in (May to August) = the sdv END year (2025). Taken from the request (the body does not echo it); null for the all-time table and for a bare body. |
-| mode | character | Table mode of the request: TOTALS (sums over the selected games) or PER_GAME (per-game averages); the body does not echo it. |
-| competition | character | Competition filter of the request: REGULAR or FINALS; null when both were asked. The body does not echo it. |
-| player_id | integer | CEBL player id (its own key space). Joins /players/{player_id}/ and `id` in the other player rows. Genius LiveStats `data.json` carries no person id, so the join to Genius play-by-play is by name, team and jersey number (unverified). |
-| full_name | character | Player's full name. |
-| team_id | integer | CEBL team id (its own key space; not a Genius id). Joins /teams/ `id`, the games' `home_team_id` / `away_team_id`, `team_id` in player rows and the `team_id` / `vs_team_id` params. A relocated or renamed franchise has a second id: the Stats Hub groups 15+56 (Saskatchewan Rattlers, Saskatoon Mamba), 17+53 (Calgary Surge, Guelph Nighthawks), 19+55 (Brampton, Hamilton Honey Badgers) and 16+54 (Vancouver, Fraser Valley Bandits). |
-| team_name_en | character | Full English name of the player's team. |
-| team_short_name_en | character | Short English name (city) of the player's team. |
-| team_name_fr | character | Full French name of the player's team. |
-| team_short_name_fr | character | Short French name (city) of the player's team. |
-| team_abbreviated_name | character | Three-letter code of the player's team ('OTT', 'VAN'). |
-| team_logo_url | character | Logo URL (icon with the name) of the player's team. |
-| value | double | The player's figure for the statistic this list is keyed by, in the requested mode (TOTALS sum or PER_GAME average; percentages 0-100). A decimal string ('25.9'). |
-| photo_url | character | Player headshot URL on the Genius Sports image CDN (images.statsengine.playbyplay.api.geniussports.com). |
+A `hoopR_data` tibble with one row per statistic and leader. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cebl_player_leaders")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

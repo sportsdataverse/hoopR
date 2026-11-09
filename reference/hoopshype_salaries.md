@@ -20,24 +20,13 @@ hoopshype_salaries()
 
 ## Value
 
-A `hoopR_data` tibble with one row per player-season:
-
-|                  |           |                                        |
-|------------------|-----------|----------------------------------------|
-| col_name         | types     | description                            |
-| player_id        | character | HoopsHype player id.                   |
-| player           | character | Player name.                           |
-| first_name       | character | Player first name.                     |
-| last_name        | character | Player last name.                      |
-| team_id          | character | HoopsHype team id.                     |
-| team             | character | Team name.                             |
-| season           | integer   | Contract season (4-digit ending year). |
-| salary           | numeric   | Salary for the season (USD).           |
-| cap_allocation   | numeric   | Cap allocation for the season (USD).   |
-| team_option      | logical   | Whether the season is a team option.   |
-| player_option    | logical   | Whether the season is a player option. |
-| two_way          | logical   | Whether it is a two-way contract.      |
-| qualifying_offer | logical   | Whether it is a qualifying offer.      |
+A `hoopR_data` tibble with one row per player-season. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "hoopshype_salaries")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 
@@ -51,7 +40,7 @@ Other Salary & Draft Functions:
 # \donttest{
   try(hoopshype_salaries())
 #> ── Player salaries from hoopshype.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:00 UTC
+#> ℹ Data updated: 2026-11-09 19:12:13 UTC
 #> # A tibble: 0 × 0
 # }
 ```

@@ -34,6 +34,7 @@
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -127,8 +128,11 @@
 
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A data frame with 17 columns:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>rk</td><td>numeric</td><td>Rk.</td></tr><tr><td>team</td><td>character</td><td>Team-side label or team identifier.</td></tr><tr><td>conf</td><td>character</td><td>character.</td></tr><tr><td>rtg</td><td>numeric</td><td>Rtg.</td></tr><tr><td>best_rk</td><td>numeric</td><td>Best rk.</td></tr><tr><td>best_yr</td><td>numeric</td><td>Best yr.</td></tr><tr><td>worst_rk</td><td>numeric</td><td>Worst rk.</td></tr><tr><td>worst_yr</td><td>numeric</td><td>Worst yr.</td></tr><tr><td>kp_median</td><td>numeric</td><td>Kp median.</td></tr><tr><td>top10</td><td>numeric</td><td>Top10.</td></tr><tr><td>top25</td><td>numeric</td><td>Top25.</td></tr><tr><td>top50</td><td>numeric</td><td>Top50.</td></tr><tr><td>ch</td><td>numeric</td><td>Ch.</td></tr><tr><td>f4</td><td>numeric</td><td>F4.</td></tr><tr><td>s16</td><td>numeric</td><td>S16.</td></tr><tr><td>r1</td><td>numeric</td><td>R1.</td></tr><tr><td>chg</td><td>numeric</td><td>Chg.</td></tr></table></div>
+    <p>A data frame with one row per team.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "kp_program_ratings")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other KenPom Historical Functions:

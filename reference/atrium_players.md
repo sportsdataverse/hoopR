@@ -69,26 +69,13 @@ atrium_players(
 
 ## Value
 
-A `hoopR_data` tibble, one row per `(season_id, person_id)`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| season_id | character | Season UUID of the roster list. |
-| person_id | character | Player UUID (person), shared across seasons and sites. |
-| name | character | Player name as the site prints it. |
-| bib | character | Jersey number, as text. |
-| entity_id | character | Team UUID the player is rostered with that season. |
-| team_name | character | Team name in the site's language. |
-| position_code | character | Position code (C, PG, SF, ...), language-independent. |
-| position_name | character | Position name in the site's language. |
-| nationality | character | Player's nationality in the site's language (e.g. Belgique). |
-| date_of_birth | Date | Player's date of birth. |
-| age | integer | Player's age in years when the body was generated. |
-| height | integer | Height as an integer, centimetres presumed (unit unverified); null when the site gives none. |
-| status | character | Player status in the site's language (Actif, Blesse). |
-| image_url | character | URL of the Sportradar-hosted image (400 px). |
+A `hoopR_data` tibble with one row per (`season_id`, `person_id`). Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_players")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -136,7 +123,7 @@ Other Atrium Functions:
     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
   ))
 #> ── Atrium players from embed-api.eui.connect.sportradar.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:55 UTC
+#> ℹ Data updated: 2026-11-09 19:09:10 UTC
 #> # A tibble: 294 × 15
 #>    website_id season_id  person_id name  bib   entity_id team_name position_code
 #>         <int> <chr>      <chr>     <chr> <chr> <chr>     <chr>     <chr>        

@@ -28,19 +28,35 @@ espn_nba_player_awards(athlete_id, ...)
 
 ## Value
 
-A single tibble. This endpoint is sparse; many athletes have no award
-data, in which case an empty tibble with canonical columns is returned.
+A `hoopR_data` tibble with one row per award.
 
-Columns as documented in the shared
-[espn_mbb_player_awards_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_awards_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| season | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| award_id | character |  |
+| name | character | Display name. |
+| description | character | Long-form description text. |
+| date | character | Date in YYYY-MM-DD format. |
+| type | character | Record type / category. |
 
-A single tibble. This endpoint is sparse; many athletes have no award
-data, in which case an empty tibble with canonical columns is returned.
+This endpoint is sparse; many athletes have no award data, in which case
+an empty tibble with canonical columns is returned.
 
-Columns as documented in the shared
-[espn_mbb_player_awards_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_awards_schema.md)
-table.
+A `hoopR_data` tibble with one row per award.
+
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| season | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| award_id | character |  |
+| name | character | Display name. |
+| description | character | Long-form description text. |
+| date | character | Date in YYYY-MM-DD format. |
+| type | character | Record type / category. |
+
+This endpoint is sparse; many athletes have no award data, in which case
+an empty tibble with canonical columns is returned.
 
 ## See also
 
@@ -60,7 +76,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_player_awards(athlete_id = "4593919")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Awards from ESPN.com ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:22 UTC
+#> ℹ Data updated: 2026-11-09 19:10:40 UTC
 #> # A tibble: 0 × 6
 #> # ℹ 6 variables: season <chr>, award_id <chr>, name <chr>, description <chr>,
 #> #   date <chr>, type <chr>
@@ -68,7 +84,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_player_awards(athlete_id = "1966")
 #> ── ESPN NBA Athlete Awards from ESPN.com ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:22 UTC
+#> ℹ Data updated: 2026-11-09 19:10:40 UTC
 #> # A tibble: 25 × 7
 #>    season award_id name  description date  type  ref_url                        
 #>    <chr>  <chr>    <chr> <chr>       <chr> <chr> <chr>                          

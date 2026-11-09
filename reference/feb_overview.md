@@ -17,36 +17,13 @@ feb_overview()
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| comp_id | integer | Competition id (constant across seasons): 115 Primera FEB (LEB Oro), 118 Segunda FEB, 210 Liga Femenina Endesa, 214 LF Challenge, 218 LF-2, 111 Tercera FEB. Not the site's menu group. |
-| comp_code | integer | Season-specific competition edition code (e.g. 23473 = Primera FEB 2026-27). |
-| competition | character | Competition name as printed that season, uppercase ('PRIMERA FEB'; 2020-21 'LIGA LEB ORO'). |
-| game_id | integer | FEB game id (one global sequence): the {gameId} of every LiveStats route. |
-| round_id | integer | Round id; 0 in every sample (the route does not fill it). |
-| stage | character | Stage code as a string; '0' in every sample (meaning unverified). |
-| venue | character | Name of the venue (pabellon) where the game is played. |
-| start_time | POSIXct | Tip-off in Spanish local time (POSIXct, tz Europe/Madrid; the source has no offset). |
-| start_time_utc | POSIXct | Tip-off in UTC (POSIXct, tz UTC). |
-| period | integer | Current or last period (4 when finished). |
-| clock | character | 'FINAL' once finished, else the game clock ('00:00' before tip-off). |
-| status | integer | Game state code: 3 = finished, 1 = scheduled (seen 2026-10-12); the live codes are unverified. |
-| home_team_id | integer | Home team-season id (new every season; joins the schedule pages). |
-| home_team | character | Home team name for the season. |
-| home_team_code | character | Home federation team code, 8 digits as a string. |
-| home_club_code | character | Home federation club code, 6 digits as a string. |
-| home_abbreviation | character | Home team three-letter abbreviation ('PAL'). |
-| home_score | integer | Home points (0 before tip-off). |
-| away_team_id | integer | Away team-season id (new every season; joins the schedule pages). |
-| away_team | character | Away team name for the season. |
-| away_team_code | character | Away federation team code, 8 digits as a string. |
-| away_club_code | character | Away federation club code, 6 digits as a string. |
-| away_abbreviation | character | Away team three-letter abbreviation. |
-| away_score | integer | Away points (0 before tip-off). |
-| period_scores | character | Points per period as 'home-away' pairs joined by ';' ('16-16;19-16;10-21;14-14'); null before tip-off. |
+A `hoopR_data` tibble with one row per game across the competitions with
+games in the window. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "feb_overview")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

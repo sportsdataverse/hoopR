@@ -36,32 +36,13 @@ tbf_standings(season, competition = "bsl", week = NULL)
 
 ## Value
 
-A `hoopR_data` tibble. One row per team and group. Tie-break detail rows
-(`tiedRows`) are not included. Every column below is always present (a
-zero-row tibble keeps them and their types); an answer with nothing in
-it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). |
-| competition | character | TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). |
-| group | character | Group name (grup); empty for a single-group league. |
-| activity_id | integer | Activity id (faaliyet = activity; key space: TBF league-SEASONS, new every season: BSL 2026-27 = 22214, BSL 2025-26 = 20728, TBL 2026-27 = 22215, KBSL 2026-27 = 22209). Cast to an integer from the 22214 / 22214.0 the API sends. |
-| team_process_id | integer | Team-season id (teamProcessId = takimIslemId, a team REGISTRATION; key space: TBF team registrations, a NEW id per club per league-season: Tofas = 265995 in BSL 2026-27). The team_process_id argument of the team wrappers; not the stable club_id. |
-| team_name | character | Team name as registered for that season, uppercase with Turkish letters (sponsor name: 'PIZZABULLS BORDO BANDIRMA'). |
-| week | integer | The week the table is computed after (hafta); equals the week argument, else the latest. |
-| rank | integer | League rank (sira) after that week. |
-| played | integer | Games played (o = oynanan). |
-| won | integer | Games won (g = galibiyet). |
-| lost | integer | Games lost (m = maglubiyet). |
-| points_for | integer | Points scored (a = atilan). |
-| points_against | integer | Points conceded (y = yenilen). |
-| points | integer | League points (puan): 2 for a win, 1 for a loss. |
-| head_to_head_points | integer | Head-to-head league points among teams tied on points (icP = ic puan). |
-| head_to_head_diff | integer | Head-to-head point difference among teams tied on points (icA = ic averaj). |
-| total_diff | integer | Total point difference over all games (toA = toplam averaj). |
-| excluded | integer | Exclusion marker (ihrac = expulsion); 0 for teams still in the league. |
+A `hoopR_data` tibble with one row per team and group. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_standings")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -108,7 +89,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_standings(competition = "bsl", season = 2027))
 #> ── TBF Standings ──────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:41 UTC
+#> ℹ Data updated: 2026-11-09 19:15:37 UTC
 #> # A tibble: 16 × 18
 #>    season competition group activity_id team_process_id team_name     week  rank
 #>     <int> <chr>       <chr>       <int>           <int> <chr>        <int> <int>
@@ -119,10 +100,10 @@ lists every function in this family.
 #>  5   2027 bsl         NA          22214          266026 GALATASARAY…     7     5
 #>  6   2027 bsl         NA          22214          266048 ALİAĞA PETK…     7     6
 #>  7   2027 bsl         NA          22214          266029 TRABZONSPOR      7     7
-#>  8   2027 bsl         NA          22214          266024 ESENLER ERO…     7     8
-#>  9   2027 bsl         NA          22214          265995 TOFAŞ            7     9
-#> 10   2027 bsl         NA          22214          266027 KARŞIYAKA        7    10
-#> 11   2027 bsl         NA          22214          265992 BEŞİKTAŞ         7    11
+#>  8   2027 bsl         NA          22214          266027 KARŞIYAKA        7     8
+#>  9   2027 bsl         NA          22214          266024 ESENLER ERO…     7     9
+#> 10   2027 bsl         NA          22214          265992 BEŞİKTAŞ         7    10
+#> 11   2027 bsl         NA          22214          265995 TOFAŞ            7    11
 #> 12   2027 bsl         NA          22214          268222 BİOTEKNO KÖ…     7    12
 #> 13   2027 bsl         NA          22214          265993 PİZZABULLS …     7    13
 #> 14   2027 bsl         NA          22214          265994 GLİNT ÇAYIR…     7    14

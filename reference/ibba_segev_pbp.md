@@ -21,41 +21,13 @@ ibba_segev_pbp(game_id)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | Segev game id (key space: one flat sequence across seasons and competitions); equals the IBBA ibba_games segev_game_id from 2025-26. Not an IBBA game id. |
-| action_id | integer | Action id (key space: Segev actions; unique and increasing within one game, 500001 ... for game 50). |
-| parent_action_id | integer | Id of the action this one follows from (rebound -\> missed shot, steal -\> turnover, assist or block -\> shot); null when none. |
-| period | integer | Period number (1-4 regulation, 5+ overtime). |
-| clock | character | Game clock remaining in the period as 'mm:ss', counting down from 10:00. |
-| user_time_utc | character | Wall-clock time the scorer logged the action, 'HH:MM:SS', UTC (inferred: game 50 tipped at 18:40 Israel time and its first tick reads 15:42). |
-| type | character | Action type: game, quarter, clock, substitution, shot, freeThrow, rebound, assist, steal, turnover, block, deflection, foul, foul-drawn or timeout. |
-| subtype | character | Subtype by type: shot jump-shot / lay-up / dunk; rebound offensive / defensive; turnover bad-pass, ball-handling, travelling, ...; foul personal / technical / unsportsmanlike; start-of-game, end-of-quarter, ... |
-| team_id | integer | Segev team id of the acting side (stable across seasons); null on game-level actions. |
-| player_id | integer | Segev player id (key space: Segev players, stable across seasons: Jaylen Hoard = 1000 in games 50 and 419); null on team lines and on actions without a player. Not an IBBA player-season id. |
-| team_side | character | Side of the game: home or away (the feed's homeTeam / awayTeam; an action's parameters.team 1 = home, 2 = away). |
-| jersey | character | Jersey number (a string, not an id) of the acting player; null when none (team rebound, timeout). |
-| score_away | integer | Away running score after a scoring action (the feed's score reads away-home); null otherwise. |
-| score_home | integer | Home running score after a scoring action; null otherwise. |
-| player_points | integer | The scorer's running points after a scoring action; null otherwise. |
-| points | integer | Shot value, 2 or 3; null on other actions. |
-| made | character | Shot or free-throw result: made, missed, or blocked (shots only). |
-| x | double | Shot x: across the half court, sideline to sideline, 0-1470, basket near 735; which sideline is 0 and the metric scale are unverified. |
-| y | double | Shot y: distance out from the baseline, rim near 112-140, deepest observed 1176; metric scale unverified. |
-| fast_break | logical | True when the shot or free throw came on a fast break. |
-| second_chance | logical | True when the attempt followed an offensive rebound. |
-| points_from_turnover | logical | True when the attempt came off an opponent turnover. |
-| free_throw_number | integer | Which free throw of the set (1, 2, 3). |
-| free_throws_awarded | integer | Free throws in the set. |
-| foul_kind | character | Foul kind, shooting or offensive; absent on some fouls. 'shooting' also appears on technical and offensive-unsportsmanlike fouls, so it does not prove a shooting foul. |
-| fouled_on_jersey | character | Jersey number (string) of the fouled player. |
-| foul_free_throws | integer | Free throws the foul awards (the feed sends a string when non-zero, 0 otherwise). |
-| is_coach_foul | logical | True on a foul charged to the coach or bench (player_id null); null otherwise. |
-| player_in_jersey | character | Substitution: jersey of the player coming in; null on the row that records the player going out. |
-| player_out_jersey | character | Substitution: jersey of the player going out; null on the row that records the player coming in. |
+A `hoopR_data` tibble with one row per play-by-play event. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_segev_pbp")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -78,7 +50,7 @@ Other IBBA Segev Functions:
 # \donttest{
   try(ibba_segev_pbp(game_id = 50))
 #> ── IBBA Segev play-by-play ────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:06 UTC
+#> ℹ Data updated: 2026-11-09 19:12:20 UTC
 #> # A tibble: 768 × 30
 #>    game_id action_id parent_action_id period clock user_time_utc type    subtype
 #>      <int>     <int>            <int>  <int> <chr> <chr>         <chr>   <chr>  

@@ -26,38 +26,13 @@ torvik_game_stats(year = most_recent_mbb_season())
 
 ## Value
 
-A `hoopR_data` tibble with one row per team-game:
-
-|            |           |                                                     |
-|------------|-----------|-----------------------------------------------------|
-| col_name   | types     | description                                         |
-| date       | character | Game date (M/D/YY).                                 |
-| type       | numeric   | Game-type flag.                                     |
-| team       | character | Team name.                                          |
-| conf       | character | Team conference.                                    |
-| opp        | character | Opponent name.                                      |
-| venue      | character | Venue relative to `team` (`H`/`A`/`N`).             |
-| result     | character | Result string (e.g. `L, 78-73`).                    |
-| adj_oe     | numeric   | Adjusted offensive efficiency.                      |
-| adj_de     | numeric   | Adjusted defensive efficiency.                      |
-| oe         | numeric   | Raw offensive efficiency (points/100 poss).         |
-| off_efg    | numeric   | Offensive effective field goal percentage.          |
-| off_to     | numeric   | Offensive turnover percentage.                      |
-| off_or     | numeric   | Offensive rebound percentage.                       |
-| off_ftr    | numeric   | Offensive free-throw rate.                          |
-| de         | numeric   | Raw defensive efficiency (points allowed/100 poss). |
-| def_efg    | numeric   | Defensive effective field goal percentage allowed.  |
-| def_to     | numeric   | Defensive turnover percentage forced.               |
-| def_or     | numeric   | Defensive (opponent) rebound percentage.            |
-| def_ftr    | numeric   | Defensive free-throw rate allowed.                  |
-| game_score | numeric   | Bart Torvik single-game quality score.              |
-| opp_conf   | character | Opponent conference.                                |
-| year       | integer   | Season (4-digit ending-year).                       |
-| tempo      | numeric   | Game tempo (possessions).                           |
-| muid       | character | Matchup unique id.                                  |
-| coach      | character | Team head coach.                                    |
-| opp_coach  | character | Opponent head coach.                                |
-| win_prob   | numeric   | Pre-game win probability for `team`.                |
+A `hoopR_data` tibble with one row per team-game. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "torvik_game_stats")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 
@@ -71,11 +46,10 @@ Other Torvik Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
+  # Interactive only: every team-game of a season, 4-5 s of parsing.
   try(torvik_game_stats(year = 2024))
-#> ✖ 2026-11-09 17:09:46.151912: Invalid arguments or no game stats available for 2024!
-#> ✖ Args: year = 2024
-#> ✖ Error: lexical error: invalid char in json text.                                        <!DOCTYPE HTML PUBLIC "-//W3C//                      (right here) ------^ 
-#> data frame with 0 columns and 0 rows
 # }
+}
 ```

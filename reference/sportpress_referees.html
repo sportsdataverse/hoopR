@@ -36,6 +36,7 @@ Endpoint: GET https://bnxt.sportpress.info/api/v1/staff/list"><meta property="og
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -130,8 +131,11 @@ Endpoint: GET https://bnxt.sportpress.info/api/v1/staff/list"><meta property="og
 
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Referees of the league (staff title 2). An empty valid answer raises <code>hoopR_no_data</code>; the
-columns are always these, in this order (sportsdataverse-py <code>sportpress_referees</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>staff_id</td><td>integer</td><td>Staff member id (key space: sportpress staff); the referees are title 2.</td></tr><tr><td>name</td><td>character</td><td>Referee name 'First Last' (free text).</td></tr><tr><td>title_id</td><td>integer</td><td>Staff title id: 1 = Head coach, 2 = Referee; Assistant coach has its own id.</td></tr><tr><td>title_name</td><td>character</td><td>Staff title in English: Head coach, Assistant coach or Referee.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per official.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "sportpress_referees")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="sportpress_ui_strings.html">sportpress_ui_strings()</a></code>.</p>

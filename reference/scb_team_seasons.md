@@ -28,22 +28,13 @@ scb_team_seasons(team_id, league = "bbl")
 
 ## Value
 
-A `hoopR_data` tibble: Every season a club played: its name that season
-and its championship and cup titles. An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `scb_team_seasons`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| league | character | League the row belongs to: `bbl` (men) or `dbbl` (women); BBL and DBBL game ids overlap, so a game is (league, game_id). |
-| team_id | character | Club id, a string; equal to `season_team_id` in every sample. Joins to `scb_team` and `scb_season_teams`. |
-| season | integer | Season END year (2026 = 2025-26), the sdv key; the API's `season_id` plus one. |
-| season_id | integer | Season, START year (2026 = 2026-27). |
-| season_team_id | character | Season-team id, a string; equal to the club `team_id` in every sample (BBL 2005-2026, DBBL 2024-2026). |
-| team_name | character | Team name as listed that season (sponsor names included). |
-| is_championship_winner | logical | Won the championship that season. |
-| is_cup_winner | logical | Won the cup that season. |
+A `hoopR_data` tibble with one row per team-season. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "scb_team_seasons")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

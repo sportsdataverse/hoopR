@@ -28,18 +28,13 @@ acb_lead_stats(match_id)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_lead_stats`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. |
-| stat | character | Statistic: best_score_run, max_difference, time_ahead or lead_changes. |
-| side | character | Side the value belongs to: home or away. |
-| value | character | Display value as sent: a count, or 'mm:ss' for time_ahead. |
-| bar_progress | double | Length of the site's comparison bar (a drawing value, not a statistic). |
-| is_highlighted | logical | True for the side whose bar the site highlights as the better value. |
+A `hoopR_data` tibble with one row per statistic and side. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_lead_stats")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

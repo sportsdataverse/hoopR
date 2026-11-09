@@ -12,17 +12,13 @@ sportpress_referees()
 
 ## Value
 
-A `hoopR_data` tibble: Referees of the league (staff title 2). An empty
-valid answer raises `hoopR_no_data`; the columns are always these, in
-this order (sportsdataverse-py `sportpress_referees`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| staff_id | integer | Staff member id (key space: sportpress staff); the referees are title 2. |
-| name | character | Referee name 'First Last' (free text). |
-| title_id | integer | Staff title id: 1 = Head coach, 2 = Referee; Assistant coach has its own id. |
-| title_name | character | Staff title in English: Head coach, Assistant coach or Referee. |
+A `hoopR_data` tibble with one row per official. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportpress_referees")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

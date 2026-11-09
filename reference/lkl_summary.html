@@ -36,6 +36,7 @@ Endpoint: GET https://lkl.lt/api/livestream/summary/{game_id}"><meta property="o
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,15 +140,11 @@ before 2018-19. Only a finished game is served.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble. One row per comparison line (up to 14), home and away side by side. <code>label</code> is the
-site's Lithuanian text and <code>stat</code> its English code (null for a label this package does not know). Shooting lines
-have a <code>"made/attempted"</code> <code>*_value</code> string and a <code>*_percentage</code> (0-100 float, the site's <code>"46.7%"</code>); counting lines
-have an integer-valued string and no percentage. <code>*_graph_length</code> is the bar length for the chart and <code>*_winning</code>
-marks the side that leads the line. <code>group</code> is null here (the flat list has no groups; <code>lkl_game_stats</code> labels
-them). The summary also repeats <code>gameStatistics</code> (use <code>lkl_team_box</code>), four leader categories (use <code>lkl_leaders</code>)
-and a broadcasts HTML string, which is not parsed. A body without a comparison gives a zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises <code>hoopR_no_data</code>, as in sportsdataverse-py.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>lkl.lt game id (key space: LKL games; the <code>{gameId}</code> of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under <code>_request</code>).</td></tr><tr><td>group</td><td>character</td><td>Always null here: the flat comparison list has no groups (lkl_game_stats labels them).</td></tr><tr><td>stat</td><td>character</td><td>English code for the site's Lithuanian label (field_goals, two_pointers, three_pointers, free_throws, rebounds, assists, steals, blocks, turnovers, fouls, points, ...); null for a label this package does not know.</td></tr><tr><td>label</td><td>character</td><td>Row label in LITHUANIAN: 'Metimai is zaidimo' = field goals, 'Dvitaskiai metimai' = 2PT, 'Tritaskiai metimai' = 3PT, 'Baudu metimai' = free throws, 'Atkovoti kamuoliai' = rebounds, 'Atkovoti kamuoliai gynyboje' = defensive rebounds, 'Atkovoti kamuoliai puolime' = offensive rebounds, 'Rezultatyvus perdavimai' = assists, 'Perimti kamuoliai' = steals, 'Blokai' = blocks, 'Klaidos' = turnovers, 'Prazangos' = fouls, 'Taskai' = points, 'Taskai po klaidu' = points off turnovers, 'Taskai greitose atakose' = fast-break points, 'Taskai antru bandymu' = second-chance points, 'Atsarginiu zaideju taskai' = bench points.</td></tr><tr><td>home_value</td><td>character</td><td>Shooting rows: 'made/attempted' string ('25/35'); counting rows: integer.</td></tr><tr><td>home_percentage</td><td>double</td><td>Shooting rows only (absent on counting rows): percentage with ONE decimal and a % sign ('71.4%').</td></tr><tr><td>home_graph_length</td><td>double</td><td>Bar length in percent: shooting rows = the percentage as a string ('71.4'); counting rows = this side's share of the two values, 0-100, a number (43 vs 37 -&gt; 53.75).</td></tr><tr><td>home_winning</td><td>logical</td><td>True when this side's bar is highlighted as the better one (both false on a tie).</td></tr><tr><td>away_value</td><td>character</td><td>Shooting rows: 'made/attempted' string ('25/35'); counting rows: integer.</td></tr><tr><td>away_percentage</td><td>double</td><td>Shooting rows only (absent on counting rows): percentage with ONE decimal and a % sign ('71.4%').</td></tr><tr><td>away_graph_length</td><td>double</td><td>Bar length in percent: shooting rows = the percentage as a string ('71.4'); counting rows = this side's share of the two values, 0-100, a number (43 vs 37 -&gt; 53.75).</td></tr><tr><td>away_winning</td><td>logical</td><td>True when this side's bar is highlighted as the better one (both false on a tie).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per comparison line.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "lkl_summary")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and

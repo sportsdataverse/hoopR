@@ -40,6 +40,7 @@ Endpoint: GET https://api2.acb.com/api/matchdata/Preview/quickfacts"><meta prope
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -147,8 +148,11 @@ accepted.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py <code>acb_quickfacts</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>match_id</td><td>integer</td><td>ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game.</td></tr><tr><td>team_side</td><td>character</td><td>Side of the game the team played: home or away (the feed lists the home team first).</td></tr><tr><td>team_id</td><td>integer</td><td>Season-team entry id (new every season).</td></tr><tr><td>club_id</td><td>integer</td><td>Stable club id (2 = Barca, 9 = Real Madrid).</td></tr><tr><td>team</td><td>character</td><td>Team name for the season.</td></tr><tr><td>team_abbr</td><td>character</td><td>Three-letter team abbreviation.</td></tr><tr><td>edition_id</td><td>integer</td><td>Season id (START year - 1935).</td></tr><tr><td>season</td><td>integer</td><td>Season END year (edition_id + 1936).</td></tr><tr><td>standing</td><td>integer</td><td>League position before the game.</td></tr><tr><td>wins</td><td>integer</td><td>Wins before the game.</td></tr><tr><td>losses</td><td>integer</td><td>Losses before the game (the API's currentLoses).</td></tr><tr><td>last_results</td><td>character</td><td>Recent results joined with '; ' (WIN / LOSS), in the order the API sends them.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per team in the game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "acb_quickfacts")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="acb_match_header.html">acb_match_header()</a></code>.</p>

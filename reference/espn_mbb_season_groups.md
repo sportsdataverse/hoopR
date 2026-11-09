@@ -40,17 +40,27 @@ espn_nba_season_groups(
 
 ## Value
 
-A tibble with one row per group.
+A `hoopR_data` tibble with one row per group.
 
-Columns as documented in the shared
-[espn_mbb_season_groups_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_groups_schema.md)
-table.
+|             |           |                                  |
+|-------------|-----------|----------------------------------|
+| col_name    | types     | description                      |
+| league      | character | League slug.                     |
+| season      | integer   | Season year.                     |
+| season_type | integer   | Season-type id.                  |
+| group_id    | character | ESPN group id.                   |
+| ref         | character | `$ref` URL for the group detail. |
 
-A tibble with one row per group.
+A `hoopR_data` tibble with one row per group.
 
-Columns as documented in the shared
-[espn_mbb_season_groups_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_groups_schema.md)
-table.
+|             |           |                                  |
+|-------------|-----------|----------------------------------|
+| col_name    | types     | description                      |
+| league      | character | League slug.                     |
+| season      | integer   | Season year.                     |
+| season_type | integer   | Season-type id.                  |
+| group_id    | character | ESPN group id.                   |
+| ref         | character | `$ref` URL for the group detail. |
 
 ## See also
 
@@ -70,7 +80,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_groups(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Groups Index ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:36 UTC
+#> ℹ Data updated: 2026-11-09 19:10:54 UTC
 #> # A tibble: 4 × 5
 #>   league                  season season_type group_id ref                       
 #>   <chr>                    <int>       <int> <chr>    <chr>                     
@@ -82,7 +92,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_groups(season = 2025)
 #> ── ESPN NBA Season Groups Index ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:37 UTC
+#> ℹ Data updated: 2026-11-09 19:10:55 UTC
 #> # A tibble: 4 × 5
 #>   league season season_type group_id ref                                        
 #>   <chr>   <int>       <int> <chr>    <chr>                                      

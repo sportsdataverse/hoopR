@@ -21,21 +21,12 @@ sportality_game_summary(game_uuid)
 
 ## Value
 
-A `hoopR_data` tibble: Points per period, team comparison and best
-scorers (2023/24 on). An empty valid answer raises `hoopR_no_data`; the
-documented columns come first, in this order (sportsdataverse-py
-`sportality_game_summary`), then any column the API added later:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_head2_head | character | Team comparison rows (2P, 3P, FT, rebounds, ...), home and away side by side. |
-| team_period_caption | character | Column caption of the table (G = goals/points). Values: `G` = goals/points column. |
-| team_period_overtime | logical | Whether the game went to overtime. |
-| team_period_shootout | logical | Whether the game was decided by a shootout (false). |
-| team_period_stats | character | One row per period. |
-| best_scorers | character | The game's top scorers, one per side (or the two best). |
-| statistics_provider | character | Stats provider of the data (genius-basketball = Genius Sports LiveStats). |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportality_game_summary")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -54,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(sportality_game_summary(game_uuid = "c4hh5nig6t"))
 #> ── Basketligaen Game Summary from basketligaen.dk ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:57 UTC
+#> ℹ Data updated: 2026-11-09 19:14:51 UTC
 #> # A tibble: 1 × 7
 #>   team_head2_head  team_period_caption team_period_overtime team_period_shootout
 #>   <chr>            <chr>               <lgl>                <lgl>               

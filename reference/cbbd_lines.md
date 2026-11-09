@@ -44,47 +44,34 @@ cbbd_lines_providers()
 
 ## Value
 
-A `hoopR_data` tibble with one row per game. The `lines` column is a
-nested list of per-provider lines:
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_lines")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-|                 |           |                                            |
-|-----------------|-----------|--------------------------------------------|
-| col_name        | types     | description                                |
-| game_id         | integer   | CollegeBasketballData game id.             |
-| season          | integer   | Season (4-digit ending-year).              |
-| season_type     | character | Season type.                               |
-| start_date      | character | Game start date (ISO 8601).                |
-| home_team_id    | integer   | Home team id.                              |
-| home_team       | character | Home team name.                            |
-| home_conference | character | Home team conference.                      |
-| home_score      | numeric   | Home team final score.                     |
-| away_team_id    | integer   | Away team id.                              |
-| away_team       | character | Away team name.                            |
-| away_conference | character | Away team conference.                      |
-| away_score      | numeric   | Away team final score.                     |
-| lines           | list      | Nested list of per-provider betting lines. |
-
-A `hoopR_data` tibble with one row per line provider:
-
-|          |           |                     |
-|----------|-----------|---------------------|
-| col_name | types     | description         |
-| id       | integer   | Line provider id.   |
-| name     | character | Line provider name. |
+A `hoopR_data` tibble with one row per line provider. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_lines_providers")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Examples
 
 ``` r
 # \donttest{
   try(cbbd_lines(season = 2024, team = "Duke"))
-#> ✖ 2026-11-09 17:03:30.819848: Invalid arguments or no betting lines available!
+#> ✖ 2026-11-09 19:09:47.223617: Invalid arguments or no betting lines available!
 #> ✖ Args: season = 2024, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_lines_providers())
-#> ✖ 2026-11-09 17:03:30.828944: Invalid arguments or no line providers available!
+#> ✖ 2026-11-09 19:09:47.234634: Invalid arguments or no line providers available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

@@ -34,22 +34,12 @@ kbl_rounds(season, division = "kbl", game_code = "01")
 
 ## Value
 
-A `hoopR_data` tibble: The season's round calendar (the KBL plays six
-rounds) with each round's first and last date. The columns are always
-these, in this order (sportsdataverse-py `kbl_rounds`); an empty valid
-answer raises `hoopR_no_data`, a valid body with no rows for this frame
-is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). |
-| season_code | integer | KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League). |
-| game_code | character | Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day. |
-| glkey | character | Competition key `S{seasonCode}G{gameCode}` (e.g. S47G01 = 2025-26 regular season): the id of the season routes. |
-| round | integer | Round number of the season (the KBL plays six rounds). |
-| from_date | Date | First date of the round, YYYYMMDD. |
-| to_date | Date | Last date of the round, YYYYMMDD. |
+A `hoopR_data` tibble with one row per round. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kbl_rounds")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

@@ -32,7 +32,7 @@ espn_nba_season_awards(season = most_recent_nba_season(), ...)
 
 ## Value
 
-A tibble with one row per award.
+A `hoopR_data` tibble with one row per award.
 
 |          |           |                                            |
 |----------|-----------|--------------------------------------------|
@@ -42,7 +42,7 @@ A tibble with one row per award.
 | ref      | character | Full `$ref` URL for the award detail.      |
 | league   | character | League slug (`"mens-college-basketball"`). |
 
-A tibble with one row per award.
+A `hoopR_data` tibble with one row per award.
 
 |          |           |                                       |
 |----------|-----------|---------------------------------------|
@@ -70,7 +70,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_awards(season = 2024)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Awards Index ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:34 UTC
+#> ℹ Data updated: 2026-11-09 19:10:52 UTC
 #> # A tibble: 11 × 4
 #>    season award_id ref                                                    league
 #>     <int> <chr>    <chr>                                                  <chr> 
@@ -89,7 +89,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_awards(season = 2024)
 #> ── ESPN NBA Season Awards Index ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:34 UTC
+#> ℹ Data updated: 2026-11-09 19:10:52 UTC
 #> # A tibble: 20 × 4
 #>    season award_id ref                                                    league
 #>     <int> <chr>    <chr>                                                  <chr> 

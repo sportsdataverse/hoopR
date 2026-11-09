@@ -40,17 +40,27 @@ espn_nba_season_weeks(
 
 ## Value
 
-A tibble with one row per week.
+A `hoopR_data` tibble with one row per week.
 
-Columns as documented in the shared
-[espn_mbb_season_weeks_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_weeks_schema.md)
-table.
+|             |           |                                 |
+|-------------|-----------|---------------------------------|
+| col_name    | types     | description                     |
+| league      | character | League slug.                    |
+| season      | integer   | Season year.                    |
+| season_type | integer   | Season-type id.                 |
+| week        | integer   | Week number (1-based).          |
+| ref         | character | `$ref` URL for the week detail. |
 
-A tibble with one row per week.
+A `hoopR_data` tibble with one row per week.
 
-Columns as documented in the shared
-[espn_mbb_season_weeks_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_weeks_schema.md)
-table.
+|             |           |                                 |
+|-------------|-----------|---------------------------------|
+| col_name    | types     | description                     |
+| league      | character | League slug.                    |
+| season      | integer   | Season year.                    |
+| season_type | integer   | Season-type id.                 |
+| week        | integer   | Week number (1-based).          |
+| ref         | character | `$ref` URL for the week detail. |
 
 ## See also
 
@@ -70,7 +80,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_weeks(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Weeks Index ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:43 UTC
+#> ℹ Data updated: 2026-11-09 19:11:00 UTC
 #> # A tibble: 24 × 5
 #>    league                  season season_type  week ref                         
 #>    <chr>                    <int>       <int> <int> <chr>                       
@@ -89,7 +99,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_weeks(season = 2025)
 #> ── ESPN NBA Season Weeks Index ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:43 UTC
+#> ℹ Data updated: 2026-11-09 19:11:01 UTC
 #> # A tibble: 35 × 5
 #>    league season season_type  week ref                                          
 #>    <chr>   <int>       <int> <int> <chr>                                        

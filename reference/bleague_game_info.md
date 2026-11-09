@@ -40,114 +40,12 @@ bleague_game_info(schedule_key, season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| schedule_key | integer | B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The {schedule_key} every game wrapper takes and the schedule page's list-item id. |
-| season | integer | Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. |
-| feed | character | Source feed of the row: v2 (v2_genius_contexts, B1/B2 from 2020-21) or v1 (v1_contexts: B3, B1/B2 2018-2020, and the 2016-17 / 2017-18 game-page embed). The feeds differ in id types, dates and some codes. |
-| year | integer | Season START year as the site stores it (2025 = 2025-26); season is the END year. |
-| code | integer | Feed/organisation code repeated on every row: 546 on v2, 6 on v1; meaning unverified. |
-| event | integer | Competition type (v1 header only): 2 B1 league, 3 B1 Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs, 11 B1-B2 promotion/relegation, 15 B3 league, 32 B3 playoffs; null on v2. |
-| convention_key | character | ConventionKey as text (key space: competition-seasons, taikai): v2 '514' = B1 2025-26, v1 102 = B3 2025-26. Key on (feed, convention_key); the feeds may number independently. |
-| convention_class | integer | Competition class code (1 on every sample); meaning unverified. |
-| round | integer | Round (setsu) within the competition-season; playoffs use 100+ (101). Integer. |
-| game_no | integer | Game number within the competition (v1 header only); null on v2. |
-| schedule_state | integer | Schedule state code (v1 header only; 2 on the final-game sample); meaning unverified. |
-| schedule_conference | integer | Conference code (v1 header only); meaning unverified. |
-| interleague | logical | True for an inter-league game (v1 header only). |
-| stadium_cd | character | StadiumCD as text (key space: B.LEAGUE venues; stability unverified). |
-| attendance | integer | Announced attendance. |
-| game_datetime | POSIXct | Scheduled tip-off as a UTC instant (the feed's JST wall clock minus nine hours). |
-| game_start_time | POSIXct | Actual start as a UTC instant (v1 header only; epoch seconds on the 2016-17 embed). |
-| game_end_time | POSIXct | Actual end as a UTC instant (v1 header only). |
-| max_period | integer | Number of periods the game had (4 plus overtimes). |
-| current_period | integer | Period the context was last written in (the last period for a final game). |
-| rest_time | integer | Clock remaining when last written (v1 header only; 0 for a final game). |
-| game_ended | logical | True when the game has ended; the runtime serves only games where this and record_fixed are true. |
-| record_fixed | logical | True when the record is finalised (no more corrections expected). |
-| box_exists | logical | True when the box score exists. |
-| pbp_exists | logical | True when play-by-play exists. |
-| picture_exists | logical | True when photos exist (v1 header only). |
-| report_exists | logical | True when a game report text exists (v1 header only). |
-| home_win | logical | True when the home team won (v1 header only); null on v2. |
-| commissioner_id | character | Commissioner id as text; null when none is assigned. |
-| referee_id | character | Crew-chief referee RefereeID as text (key space: officials; stability unverified). |
-| sub_referee_id1 | character | Second referee RefereeID as text. |
-| sub_referee_id2 | character | Third referee RefereeID as text. |
-| temperature | double | Temperature; null in every observed body, so its dtype is an assumption. |
-| humidity | double | Humidity; null in every observed body, so its dtype is an assumption. |
-| convention_name_j | character | Competition name in Japanese (e.g. the Resona Group B.LEAGUE 2025-26 B1 regular season). |
-| convention_name_e | character | Competition name in English; empty (null) on early v1 bodies. |
-| convention_title_j | character | Competition title in Japanese (v1 header only). |
-| convention_title_e | character | Competition title in English (v1 header only). |
-| stadium_name_j | character | Venue name in Japanese (e.g. TOYOTA ARENA TOKYO, AGF Suzuka Gymnasium). |
-| stadium_name_e | character | Venue name in English; often empty (null). |
-| court | character | Court number at the venue (v1 header only). |
-| report | character | Game report text (v1 header only); usually empty (null). |
-| weather | character | Weather text (v1 header only); null in every observed body. |
-| schedule_class_name_j | character | Schedule class name in Japanese (v1 header only); usually empty. |
-| schedule_class_name_e | character | Schedule class name in English (v1 header only); usually empty. |
-| schedule_class_short_name_j | character | Schedule class short name in Japanese (v1 header only); usually empty. |
-| schedule_class_short_name_e | character | Schedule class short name in English (v1 header only); usually empty. |
-| commissioner_name_j | character | Commissioner name in Japanese (names only; no contact data is published). |
-| commissioner_name_e | character | Commissioner name in English (v1 header only). |
-| referee_name_j | character | Crew-chief referee name in Japanese (name only; no contact data is published). |
-| referee_name_e | character | Crew-chief referee name in English (v1 header only). |
-| sub_referee_name_j1 | character | Second referee name in Japanese. |
-| sub_referee_name_e1 | character | Second referee name in English (v1 header only). |
-| sub_referee_name_j2 | character | Third referee name in Japanese. |
-| sub_referee_name_e2 | character | Third referee name in English (v1 header only). |
-| home_team_id | character | Home team id. B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. |
-| home_team_name_j | character | Home team name in Japanese (official name). |
-| home_team_name_e | character | Home team name in English, uppercase. |
-| home_team_short_name_j | character | Home team short name in Japanese (e.g. the short form of Alvark Tokyo). |
-| home_team_short_name_e | character | Home team short name in English (e.g. A TOKYO). |
-| home_team_sub_name_j | character | Home team sub name in Japanese (v1 header only); usually empty. |
-| home_team_sub_name_e | character | Home team sub name in English (v1 header only); usually empty. |
-| home_score | integer | Home team final score. |
-| home_winning_count | integer | Home team winning streak (v1 header only); null in every observed body. |
-| home_losing_count | integer | Home team losing streak (v1 header only); null in every observed body. |
-| away_team_id | character | Away team id. B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. |
-| away_team_name_j | character | Away team name in Japanese (official name). |
-| away_team_name_e | character | Away team name in English, uppercase. |
-| away_team_short_name_j | character | Away team short name in Japanese (e.g. the short form of Alvark Tokyo). |
-| away_team_short_name_e | character | Away team short name in English (e.g. A TOKYO). |
-| away_team_sub_name_j | character | Away team sub name in Japanese (v1 header only); usually empty. |
-| away_team_sub_name_e | character | Away team sub name in English (v1 header only); usually empty. |
-| away_score | integer | Away team final score. |
-| away_winning_count | integer | Away team winning streak (v1 header only); null in every observed body. |
-| away_losing_count | integer | Away team losing streak (v1 header only); null in every observed body. |
-| home_score_p1 | integer | Home team points scored IN period 1 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| home_score_p2 | integer | Home team points scored IN period 2 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| home_score_p3 | integer | Home team points scored IN period 3 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| home_score_p4 | integer | Home team points scored IN period 4 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| home_score_p5 | integer | Home team points scored IN period 5 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| home_score_p6 | integer | Home team points scored IN period 6 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| home_score_p7 | integer | Home team points scored IN period 7 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| home_score_p8 | integer | Home team points scored IN period 8 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| home_score_p9 | integer | Home team points scored IN period 9 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| home_score_p10 | integer | Home team points scored IN period 10 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| home_score_p11 | integer | Home team points scored IN period 11 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| home_score_p12 | integer | Home team points scored IN period 12 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| home_score_p13 | integer | Home team points scored IN period 13 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| home_score_p14 | integer | Home team points scored IN period 14 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p1 | integer | Away team points scored IN period 1 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p2 | integer | Away team points scored IN period 2 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p3 | integer | Away team points scored IN period 3 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p4 | integer | Away team points scored IN period 4 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p5 | integer | Away team points scored IN period 5 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p6 | integer | Away team points scored IN period 6 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p7 | integer | Away team points scored IN period 7 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p8 | integer | Away team points scored IN period 8 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p9 | integer | Away team points scored IN period 9 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p10 | integer | Away team points scored IN period 10 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p11 | integer | Away team points scored IN period 11 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p12 | integer | Away team points scored IN period 12 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p13 | integer | Away team points scored IN period 13 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-| away_score_p14 | integer | Away team points scored IN period 14 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bleague_game_info")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -204,7 +102,7 @@ lists every function in this family.
 # \donttest{
   try(bleague_game_info(schedule_key = 504734))
 #> ── B.LEAGUE game info from b-league.s3.amazonaws.com ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:03 UTC
+#> ℹ Data updated: 2026-11-09 19:09:18 UTC
 #> # A tibble: 1 × 103
 #>   schedule_key season feed   year  code event convention_key convention_class
 #>          <int>  <int> <chr> <int> <int> <int> <chr>                     <int>

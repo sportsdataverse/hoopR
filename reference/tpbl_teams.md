@@ -23,20 +23,12 @@ tpbl_teams(season)
 
 ## Value
 
-A `hoopR_data` tibble: The teams of one season (bracket placeholders
-flagged). An empty answer raises `hoopR_no_data`; the columns are always
-these, in this order (sportsdataverse-py `tpbl_teams`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = the 2025-26 season), the year asked for. Null when the body was parsed without the request stamp. |
-| season_id | integer | TPBL season id (key space: TPBL seasons on api.tpbl.basketball; 1 = 2024-25, 2 = 2025-26, 3 = 2026-27): the `{season_id}` of the season game list and, equal to it, the `{event_id}` of `/events/{event_id}/*`. Not the GoHoops season id. Null when the body was parsed without the request stamp. |
-| team_id | integer | TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the `{team_id}` of the division team routes. Not the GoHoops franchise id and not the squad id. |
-| gohoops_team_id | integer | GoHoops franchise id (key space: GoHoops franchises, 940-946; stable across seasons; = the TPBL team id + 938). |
-| name | character | Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). |
-| is_real_team | logical | True for a real club; false for a bracket placeholder (67 higher-seed team, 68 lower-seed team in 2025-26). |
-| status | character | Team status. 'ACTIVE' is the only value seen in every sampled route; the full set of statuses is unknown. |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tpbl_teams")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -55,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(tpbl_teams(season = 2026))
 #> ── TPBL Teams from api.tpbl.basketball ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:56 UTC
+#> ℹ Data updated: 2026-11-09 19:15:52 UTC
 #> # A tibble: 9 × 7
 #>   season season_id team_id gohoops_team_id name             is_real_team status
 #>    <int>     <int>   <int>           <int> <chr>            <lgl>        <chr> 

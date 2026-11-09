@@ -27,52 +27,12 @@ lba_calendar(championship_id, round = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: Games of one round of a championship: teams,
-score, venue, referees and broadcasters. The columns are always these,
-in this order (sportsdataverse-py `lba_calendar`); a column the site
-adds later is appended after them:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2027 = 2026-27): the row's START year + 1. |
-| game_id | integer | Game id (global across seasons); joins lba_calendar and lba_game. |
-| game_status | character | Game status, number sent as a string: `0` scheduled, `1` live, `2` final (per the OSS client; only `2` sampled). |
-| championship_id | integer | Championship id (season + phase) of the game. |
-| championships_day_id | integer | Round id (`championships_day_id` key space: one round of one championship; joins `filters.days[].id` and standings `championships_day_id`; not the `d` param). |
-| year | integer | Season START year (2026 = 2026-27); sdv END year = year + 1. |
-| number | integer | Round number of the game, equal to `day_serial` (the `d` echo the capture checks). |
-| match_datetime | character | Tip-off, ISO-8601 with the Italian offset (1995-96: midnight, no time kept). |
-| match_hh | integer | Tip-off hour, local time. |
-| match_mm | integer | Tip-off minute, local time. |
-| home_final_score | integer | Final points of the home team. |
-| visitor_final_score | integer | Final points of the away team. |
-| target_score | character | Null in every sample (meaning unverified). |
-| additional_time | integer | Overtime periods played (0 in every sample; reading inferred). |
-| plant_id | integer | Arena id (arena key space; joins nothing specced). |
-| websocket_match_id | integer | Live-feed game id, number sent as a string; separate from the game id. |
-| ticketing_url | character | Ticket shop URL (null for old games). |
-| has_streaming | integer | 1 when a stream exists, else 0. |
-| updated_at | character | Timestamp, ISO-8601 with the Italian offset. Last update of the game row. |
-| h_team_id | integer | Home team id (team-season). |
-| h_team_name | character | Home team name (sponsor name of that season). |
-| h_club_code | character | Home club code, e.g. `TVB`; null on the 2017-18 and 1995-96 calendar rows. |
-| h_team_enabled | logical | Home team page enabled on the site. |
-| home_logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-| v_team_id | integer | Away team id (team-season). |
-| v_team_name | character | Visitor team name (the sponsor name of that season). |
-| v_club_code | character | Away club code (`BCR`); null on the 2017-18 and 1995-96 calendar rows. |
-| v_team_enabled | logical | Away team page enabled on the site. |
-| v_logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-| town_id | integer | Town id of the arena (town key space; joins nothing specced). |
-| plant_name | character | Name of the arena where the game is played. |
-| town_name | character | Town of the arena. |
-| day_code | character | Round code (`1`, `2`, ...; string in game rows, integer in standings). |
-| day_serial | integer | Round number (`event_serial`, the `d` param). |
-| day_name | character | Round name, Italian: `1o Giornata` = matchday 1. |
-| match_serie_key | character | The two team ids joined low_high (`1761_1764`). |
-| referees | character | JSON list of the game's referees (id, name, surname); null when the site lists none. |
-| broadcasters | character | JSON list of the game's broadcasters (name, logo key); null when the site lists none. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lba_calendar")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -91,7 +51,7 @@ lists every function in this family.
 # \donttest{
   try(lba_calendar(championship_id = 602, round = 1))
 #> ── LBA Calendar from legabasket.it ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:44 UTC
+#> ℹ Data updated: 2026-11-09 19:12:56 UTC
 #> # A tibble: 8 × 38
 #>   season game_id game_status championship_id championships_day_id  year number
 #>    <int>   <int> <chr>                 <int>                <int> <int>  <int>

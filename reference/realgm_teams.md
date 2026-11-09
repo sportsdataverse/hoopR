@@ -14,14 +14,12 @@ realgm_teams()
 
 ## Value
 
-A `hoopR_data` tibble with one row per team:
-
-|            |           |                             |
-|------------|-----------|-----------------------------|
-| col_name   | types     | description                 |
-| team       | character | Team name.                  |
-| division   | character | Division (e.g. `Atlantic`). |
-| conference | character | `Eastern` or `Western`.     |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "realgm_teams")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

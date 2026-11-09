@@ -26,24 +26,13 @@ acb_quickfacts(match_id)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_quickfacts`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. |
-| team_side | character | Side of the game the team played: home or away (the feed lists the home team first). |
-| team_id | integer | Season-team entry id (new every season). |
-| club_id | integer | Stable club id (2 = Barca, 9 = Real Madrid). |
-| team | character | Team name for the season. |
-| team_abbr | character | Three-letter team abbreviation. |
-| edition_id | integer | Season id (START year - 1935). |
-| season | integer | Season END year (edition_id + 1936). |
-| standing | integer | League position before the game. |
-| wins | integer | Wins before the game. |
-| losses | integer | Losses before the game (the API's currentLoses). |
-| last_results | character | Recent results joined with '; ' (WIN / LOSS), in the order the API sends them. |
+A `hoopR_data` tibble with one row per team in the game. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_quickfacts")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

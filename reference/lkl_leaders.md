@@ -21,30 +21,13 @@ lkl_leaders(game_id)
 
 ## Value
 
-A `hoopR_data` tibble. One row per team, category and ranked player.
-`category` is points, total_rebounds, assists, efficiency, steals or
-blocks; `category_label` the site's Lithuanian label. `rank` 1 is the
-category leader and 2 and up are the runners-up, in the order the site
-lists them (up to 4 a side). `player_slug` is the site's key and
-`player_id` is resolved through the game roster the runtime stamps (null
-on a body without the stamp). A body without leaders gives a zero-row
-tibble. Every column below is always present (a zero-row tibble keeps
-them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | lkl.lt game id (key space: LKL games; the `{gameId}` of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under `_request`). |
-| category | character | Leader category: points, total_rebounds, assists, efficiency, steals or blocks. |
-| category_label | character | Category label in Lithuanian ('Pelnomi taskai' = points scored, 'Naudingumas' = efficiency rating). |
-| team_side | character | Side of the game the row belongs to: home or away (the game page's teams_info side; the box score, leaders and plays say home / away, and gameStatistics is keyed by team id so the runtime supplies the side). |
-| team_id | integer | lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body. |
-| rank | integer | Place in the team's category list: 1 = the category leader, 2 and up = the runners-up in the order the site lists them (up to 4). |
-| player | character | Player name as the site prints it in this route (the box score short form 'I. Surname', other routes the full name). |
-| player_slug | character | lkl.lt player slug (key space: lkl.lt persons; the `{slug}` of lkl.lt/zaidejai/`{slug}`, stable across seasons). Join key to lkl_game_players.slug. |
-| player_id | integer | lkl.lt player id (key space: lkl.lt persons, stable across seasons). Resolved from the player slug through the game roster the runtime stamps from the game page; null on a bare body or a slug the roster lacks. |
-| value | integer | The player's count in the row's category. |
+A `hoopR_data` tibble with one row per statistic, team and rank. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lkl_leaders")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

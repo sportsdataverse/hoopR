@@ -13,22 +13,12 @@ cebl_teams()
 
 ## Value
 
-A `hoopR_data` tibble: Every franchise identity, past and present (15
-team ids; a relocated franchise has a second id). An empty valid answer
-raises `hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `cebl_teams`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | CEBL team id (its own key space; not a Genius id). Joins /teams/ `id`, the games' `home_team_id` / `away_team_id`, `team_id` in player rows and the `team_id` / `vs_team_id` params. A relocated or renamed franchise has a second id: the Stats Hub groups 15+56 (Saskatchewan Rattlers, Saskatoon Mamba), 17+53 (Calgary Surge, Guelph Nighthawks), 19+55 (Brampton, Hamilton Honey Badgers) and 16+54 (Vancouver, Fraser Valley Bandits). |
-| name_en | character | Team full name in English ('Niagara River Lions'). |
-| short_name_en | character | Team short name in English, usually the city ('Niagara'). |
-| name_fr | character | Team full name in French ('River Lions de Niagara'). |
-| short_name_fr | character | Team short name in French, usually the city. |
-| is_active | logical | True for a team in the current league; false for a former identity (Guelph Nighthawks, Hamilton Honey Badgers, Fraser Valley Bandits, Saskatchewan Rattlers, Newfoundland Growlers). |
-| logo_url | character | Team logo URL (icon with the team name; upstream: 'Should include the icon and team name'). |
-| icon_url | character | Team icon URL (upstream: 'Should not include the team name'). |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cebl_teams")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -57,7 +47,7 @@ Other CEBL Functions:
 # \donttest{
   try(cebl_teams())
 #> ── CEBL Teams from the CEBL Stats API ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:39 UTC
+#> ℹ Data updated: 2026-11-09 19:09:57 UTC
 #> # A tibble: 15 × 8
 #>    team_id name_en        short_name_en name_fr short_name_fr is_active logo_url
 #>      <int> <chr>          <chr>         <chr>   <chr>         <lgl>     <chr>   

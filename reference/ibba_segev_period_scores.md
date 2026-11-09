@@ -20,17 +20,13 @@ ibba_segev_period_scores(game_id)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | Segev game id (key space: one flat sequence across seasons and competitions); equals the IBBA ibba_games segev_game_id from 2025-26. Not an IBBA game id. |
-| period | integer | Period number (1-4 regulation, 5+ overtime). |
-| home_points | integer | Points the home side scored IN this period (not cumulative). |
-| away_points | integer | Points the away side scored IN this period (not cumulative). |
-| home_fouls | integer | Team fouls the home side committed in this period. |
-| away_fouls | integer | Team fouls the away side committed in this period. |
+A `hoopR_data` tibble with one row per team and period. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_segev_period_scores")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

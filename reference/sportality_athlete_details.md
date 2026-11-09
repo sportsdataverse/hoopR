@@ -21,29 +21,13 @@ sportality_athlete_details(athlete_uuid)
 
 ## Value
 
-A `hoopR_data` tibble: Player bio plus playerExtIds (the Genius person
-id). An empty valid answer raises `hoopR_no_data`; the documented
-columns come first, in this order (sportsdataverse-py
-`sportality_athlete_details`), then any column the API added later:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| athlete_uuid | character | Platform athlete uuid (rosters and athlete routes key on it); not the Genius person id; null where the site has none. |
-| player_id | integer | Genius person id (Int64). A string key in the players maps, an integer in play-by-play and box-score rows; cast here so the frames join, and join the genius family. |
-| created_at | character | Creation timestamp. |
-| created_by | character | Creating site instance. |
-| creator_site | character | Unobserved: null in every sample and every full body. When filled: Creating site (null). |
-| height | integer | Height of the player in centimetres. |
-| deleted | logical | Soft-delete flag. |
-| first_name | character | Given (first) name(s) of the player. |
-| gender | character | Gender of the person as recorded by the site (male in every row seen). |
-| last_modified | character | Last-modified timestamp. |
-| last_name | character | Family name (surname) of the player. |
-| metadata | character | Free metadata (always empty). |
-| nationality | character | ISO 3166-1 alpha-2 country code. |
-| shoots | character | Shooting hand (”). |
-| weight | integer | Weight of the player in kilograms. |
+A `hoopR_data` tibble with one row per athlete. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportality_athlete_details")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

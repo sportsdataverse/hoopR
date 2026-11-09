@@ -12,17 +12,12 @@ cba_teams()
 
 ## Value
 
-A `hoopR_data` tibble: One row per club: logo, id, club name and display
-name. An empty valid answer is a zero-row tibble with these columns, in
-this order (sportsdataverse-py `cba_teams`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| club | character | Empty string on every row; meaning unverified (a club-code slot the site leaves unused). |
-| team_cn_alias | character | Current team name (Chinese short name, e.g. 'Beijing Holdings'). Names change with the sponsor, the id does not; teamId -\> English glossary in cba_glossary.yaml. |
-| team_id | integer | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. |
-| team_logo | character | Protocol-relative URL of the 300x300 team logo (`//image.cbaleague.com/cbaleague/teamlogo/300x300/<teamId>_300.png`). |
+A `hoopR_data` tibble with one row per club. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cba_teams")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -41,7 +36,7 @@ lists every function in this family.
 # \donttest{
   try(cba_teams())
 #> ── CBA Teams from data-server.cbaleague.com ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:30 UTC
+#> ℹ Data updated: 2026-11-09 19:09:46 UTC
 #> # A tibble: 20 × 4
 #>    club  team_cn_alias   team_id team_logo                                      
 #>    <chr> <chr>             <int> <chr>                                          

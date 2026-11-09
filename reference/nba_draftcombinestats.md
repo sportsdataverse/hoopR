@@ -110,8 +110,7 @@ nba_drafthistory(
 
 ## Value
 
-Returns a named list of data frames: Picks, TeamsWithoutPicks,
-LiveDetails
+A named list of tibbles: `Picks`, `TeamsWithoutPicks`, `LiveDetails`.
 
 **Picks**
 
@@ -179,7 +178,7 @@ LiveDetails
 | is_draft_live                  | logical | Is draft live.                  |
 | live_draft_current_pick_number | numeric | Live draft current pick number. |
 
-Returns a named list of data frames: DraftCombineStats
+A named list of tibbles: `DraftCombineStats`.
 
 **DraftCombineStats**
 
@@ -234,7 +233,7 @@ Returns a named list of data frames: DraftCombineStats
 | ON_MOVE_FIFTEEN | character |  |
 | ON_MOVE_COLLEGE | character |  |
 
-Returns a named list of data frames: Results
+A named list of tibbles: `Results`.
 
 **Results**
 
@@ -254,7 +253,7 @@ Returns a named list of data frames: Results
 | THREE_QUARTER_SPRINT | character |  |
 | BENCH_PRESS | character |  |
 
-Returns a named list of data frames: Results
+A named list of tibbles: `Results`.
 
 **Results**
 
@@ -292,7 +291,7 @@ Returns a named list of data frames: Results
 | ON_MOVE_COLLEGE_ATTEMPT | character |  |
 | ON_MOVE_COLLEGE_PCT | character |  |
 
-Returns a named list of data frames: Results
+A named list of tibbles: `Results`.
 
 **Results**
 
@@ -318,7 +317,7 @@ Returns a named list of data frames: Results
 | HAND_LENGTH           | character |                                         |
 | HAND_WIDTH            | character |                                         |
 
-Returns a named list of data frames: Results
+A named list of tibbles: `Results`.
 
 **Results**
 
@@ -377,7 +376,7 @@ Returns a named list of data frames: Results
 | NBA_CORNER_RIGHT_ATTEMPT | character |  |
 | NBA_CORNER_RIGHT_PCT | character |  |
 
-Returns a named list of data frames: DraftHistory
+A named list of tibbles: `DraftHistory`.
 
 **DraftHistory**
 

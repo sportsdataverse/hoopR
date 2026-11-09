@@ -20,36 +20,12 @@ lba_roster(team_id)
 
 ## Value
 
-A `hoopR_data` tibble: Players of one team-season with bio, number and
-role. The columns are always these, in this order (sportsdataverse-py
-`lba_roster`); a column the site adds later is appended after them:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | Team-season id (re-issued every season); join lba_teams for the stable club_id. |
-| club_id | integer | Club id: the cross-season join key for team ids (only here and in the `team` headers); stability across seasons is unverified. |
-| club_code | character | Club code (`TVB`, `TS`); whether it is stable across seasons is unverified. |
-| season | integer | Season END year (2027 = 2026-27): the row's START year + 1. |
-| player_id | integer | Player id (global). |
-| name | character | Player's given name. |
-| surname | character | Player's family name. |
-| code | character | Player code `SURNAME3-NAME3-YY`. |
-| place_of_birth | character | Birthplace (Italian spelling). |
-| birth_date | character | Birth date, Date `YYYY-MM-DD`. |
-| player_number | character | Jersey number, number sent as a string. |
-| country | character | Nationality, ISO alpha-3. |
-| uefa_ratio | character | Eligibility class for the foreign-player quota: `I`, `E` or `C` (7 / 6 / 1 on the Treviso roster; reading as Italian / EU / non-EU is inferred). |
-| height | integer | Player's height in centimetres. |
-| weight | integer | Player's weight in kilograms. |
-| year | integer | Season START year of the player entry (2026 = 2026-27). |
-| start_date | character | Contract start with the team, Date `YYYY-MM-DD`. |
-| end_date | character | Contract end with the team, Date `YYYY-MM-DD`. |
-| player_role_id | integer | Position id (position key space: the id behind `player_role`; joins the `r_id` filter). |
-| player_role | character | Position, Italian: `Playmaker` (point guard), `Guardia` (guard), `Ala` (forward), `Centro` (center), `-` unknown. |
-| team_name | character | Team name in that season, with its sponsor (`Nutribullet Treviso Basket`); changes with the sponsor. |
-| player_picture_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-| team_logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lba_roster")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

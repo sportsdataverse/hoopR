@@ -23,37 +23,13 @@ lkl_standings(season)
 
 ## Value
 
-A `hoopR_data` tibble. One row per team and table. `table` is `full`
-(overall: with `win_pct` and `streak`), `home` and `away` (the same
-record split by venue) or `final` (the final ranking: position and team
-only, empty until the season is over and for old seasons). `win_pct` is
-0-100, null when the site shows `-` (2007-08). `streak` is a signed
-integer as the site prints it; its sign convention is unverified.
-`points_for_avg` / `points_against_avg` are per-game averages. `last5`
-is the last results as `W` / `L` letters in the order rendered (oldest
-first, unverified). `season_id` is the site's standings-season id, a
-different key space from the results id. Team slugs join `lkl_results`.
-A record without tables gives a zero-row tibble. Every column below is
-always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season_id | integer | STANDINGS season id (a separate small key space: 35 = 2026-27, 1 = 2016-17, 24 = 1993-94); NOT the results season id. |
-| season_end_year | integer | Season END year (2026 = 2025-26), read from the season label 'YYYY-YYYY m. sezonas'. |
-| table | character | Which table the row comes from: full (overall), home, away or final (the final ranking). |
-| position | integer | Rank in the table (Poz.); in the final table the final place. |
-| team_slug | character | Team slug (key space: lkl.lt clubs; the `{slug}` of https://lkl.lt/komandos/`{slug}`; one per club, stable across renamings: 'rytas' for Lietuvos Rytas / Rytas). The results and standings rows carry only this; the game page teams_info gives slug + id. |
-| team_name | character | Team name as printed for that season ('Lietuvos Rytas' in 2007-08). |
-| played | integer | Games played (Rng., rungtynes); null in the final table. |
-| won | integer | Wins (Per., pergales); null in the final table. |
-| lost | integer | Losses (Pr., pralaimejimai); null in the final table. |
-| win_pct | double | Win percentage 0-100 (Laim.%); null in the home, away and final tables and when the site prints '-' (2007-08). |
-| streak | integer | Current streak (Serija) as a signed integer: 27 = 27 wins in a row, -1 = one loss. Null outside the full table. |
-| points_for_avg | double | Points scored per game (first number of Tsk. vid.); null in the final table. |
-| points_against_avg | double | Points allowed per game (second number of Tsk. vid.); null in the final table. |
-| last5 | character | Last five results (Paskutines 5) as W / L letters in the order the page renders them, left to right; fewer than five early in a season; null in the final table. |
+A `hoopR_data` tibble with one row per team and table. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lkl_standings")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

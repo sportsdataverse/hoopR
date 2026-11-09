@@ -13,21 +13,12 @@ tpbl_seasons()
 
 ## Value
 
-A `hoopR_data` tibble: Every TPBL season with its TPBL and GoHoops ids,
-label, status and date window. An empty answer raises `hoopR_no_data`;
-the columns are always these, in this order (sportsdataverse-py
-`tpbl_seasons`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year, read from the label '2024-2025' plus the Chinese word for season: 2025 for 2024-25. |
-| season_id | integer | TPBL season id (key space: TPBL seasons on api.tpbl.basketball; 1 = 2024-25, 2 = 2025-26, 3 = 2026-27): the `{season_id}` of the season game list and, equal to it, the `{event_id}` of `/events/{event_id}/*`. Not the GoHoops season id. |
-| gohoops_season_id | integer | GoHoops season id (key space: GoHoops seasons, the id system the API echoes beside its own; 101 = 2024-25, 213 = 2025-26, 275 = 2026-27). Not the TPBL season id. |
-| name | character | Season label in Traditional Chinese: '2024-2025' plus the Chinese word for season. |
-| status | character | Season status: COMPLETED or IN_PROGRESS. |
-| started_at | character | Season start, 'YYYY-MM-DD 00:00:00' text. Preseason games can be played before it (the 2026-27 start is 2026-10-17, its first games were played 2026-10-09). |
-| ended_at | character | Season end, 'YYYY-MM-DD 00:00:00' text (the planned end for a season in progress). |
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tpbl_seasons")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -91,7 +82,7 @@ lists every function in this family.
 # \donttest{
   try(tpbl_seasons())
 #> ── TPBL Seasons from api.tpbl.basketball ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:54 UTC
+#> ℹ Data updated: 2026-11-09 19:15:50 UTC
 #> # A tibble: 3 × 7
 #>   season season_id gohoops_season_id name           status   started_at ended_at
 #>    <int>     <int>             <int> <chr>          <chr>    <chr>      <chr>   

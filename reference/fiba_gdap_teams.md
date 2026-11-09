@@ -28,41 +28,12 @@ fiba_gdap_teams(comp, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. |
-| team_code | character | Team abbreviation (FIBA country code or club abbreviation). |
-| short_name | character | Short team name: the country code for a national team, the club's short name for a club. |
-| profile_team_id | integer | Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. |
-| profile_organisation_id | integer | Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T\_`<id>`. |
-| profile_name | character | Team name as registered for the competition. |
-| profile_code | character | Team code (FIBA country code or club abbreviation). |
-| profile_country_name | character | Country of the team, in English. |
-| profile_country_code | character | Country FIBA code. |
-| profile_gender | character | Men or Women: the gender of the team's competition. |
-| profile_facebook | character | Facebook handle or URL; always null in the samples, values unverified. |
-| profile_twitter | character | X/Twitter handle; always null in the samples, values unverified. |
-| profile_instagram | character | Instagram handle; always null in the samples, values unverified. |
-| profile_website | character | The team's website address. |
-| profile_you_tube | character | YouTube handle; always null in the samples, values unverified. |
-| profile_final_ranking | integer | Final rank in the competition. |
-| profile_points_per_game | double | The team's average points per game played. |
-| profile_rebounds_per_game | double | The team's average rebounds per game played. |
-| profile_assists_per_game | double | The team's average assists per game played. |
-| profile_rank_points_per_game | double | Rank in the competition by points per game (1 = highest). |
-| profile_rank_rebounds_per_game | double | Rank in the competition by rebounds per game (1 = highest). |
-| profile_rank_assists_per_game | double | Rank in the competition by assists per game (1 = highest). |
-| profile_total_games_won | integer | The team's total games won over the games played. |
-| profile_total_games_lost | integer | The team's total games lost over the games played. |
-| profile_social_networks | character | Social-network handles. Stored as a JSON string. |
-| profile_competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
-| status_code | character | Team entry status: APPR approved. |
-| status_name | character | Team entry status label (Approved). |
-| organisation_id | integer | Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T\_`<id>`. |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_teams")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -81,7 +52,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gdap_teams(comp = 208182))
 #> ── FIBA gdap_teams from fiba.basketball ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:49 UTC
+#> ℹ Data updated: 2026-11-09 19:12:01 UTC
 #> # A tibble: 32 × 29
 #>    team_id team_code short_name    profile_team_id profile_organisation_id
 #>      <int> <chr>     <chr>                   <int>                   <int>

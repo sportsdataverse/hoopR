@@ -36,23 +36,13 @@ aba_periods(game_no, season, league = "aba")
 
 ## Value
 
-A `hoopR_data` tibble. One row per period played: `period` (`Q1`..`Q4`,
-then `OT1`, `OT2`...), its 1-based `period_no` and the points scored IN
-the period (not cumulative). Every column below is always present (a
-zero-row tibble keeps them and their types); an answer with nothing in
-it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_no | integer | Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The {gameNo} of the match route. |
-| season | integer | Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. |
-| league_id | integer | League code, the site's lea: 1 = ABA League, 2 = ABA League 2. |
-| league | character | League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. |
-| period | character | 'Q1'..'Q4', then 'OT1', 'OT2' ... for overtimes. |
-| period_no | integer | 1-based position of the period: 1-4 for Q1-Q4, then 5 for OT1, 6 for OT2. |
-| home_points | integer | Home points scored IN the period (not cumulative). |
-| away_points | integer | Away points scored IN the period (not cumulative). |
+A `hoopR_data` tibble with one row per period played. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "aba_periods")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

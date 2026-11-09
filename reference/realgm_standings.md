@@ -19,25 +19,12 @@ realgm_standings()
 
 ## Value
 
-A `hoopR_data` tibble with one row per team:
-
-|            |           |                           |
-|------------|-----------|---------------------------|
-| col_name   | types     | description               |
-| number     | integer   | Conference rank.          |
-| team       | character | Team name.                |
-| w          | integer   | Wins.                     |
-| l          | integer   | Losses.                   |
-| pct        | numeric   | Win percentage.           |
-| gb         | numeric   | Games back.               |
-| l10        | character | Last-ten record.          |
-| strk       | character | Current streak.           |
-| ppg        | numeric   | Points per game.          |
-| oppg       | numeric   | Opponent points per game. |
-| diff       | numeric   | Scoring margin.           |
-| home       | character | Home record.              |
-| away       | character | Away record.              |
-| conference | character | `Eastern` or `Western`.   |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "realgm_standings")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

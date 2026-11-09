@@ -23,27 +23,12 @@ tbf_pbp(match_id)
 
 ## Value
 
-A `hoopR_data` tibble. One row per event. Games before 2025-26 raise
-`hoopR_no_data`. The feed has no player id. Every column below is always
-present (a zero-row tibble keeps them and their types); an answer with
-nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. |
-| action_number | integer | Play sequence number (actionNumber); gaps are deleted or hidden actions. Rows are in the API's game order, and a period-end line can carry a LOWER number than the last play of the period (884 after 885 in the sample), so sort by period and clock, not by this number. |
-| period | integer | Period number (quarterNumber): 1-4; overtime numbering is unverified. |
-| period_type | integer | Period type code: 1 = regulation, 2 = overtime (from the app code; no overtime game in the samples). |
-| clock | character | Game clock REMAINING in the period as 'mm:ss' (counts down from 10:00). |
-| seconds_remaining | integer | Game clock remaining in the period, in seconds. |
-| home_score | integer | Running home score after the play (the home half of the 'home-away' score text). |
-| away_score | integer | Running away score after the play (the away half of the score text). |
-| side | character | Side of the acting team (isHome); null on game events (period start / end, game end). |
-| player_name | character | Acting player's name; null on game events. The feed carries no player id. |
-| jersey_number | character | Shirt number as a string, so '0' and '00' stay distinct. |
-| action | character | Play type in Turkish exactly as TBF sends it (77 values seen). |
-| action_en | character | English gloss of the Turkish action, from the refs action vocabulary; null for an action not in it. |
+A `hoopR_data` tibble with one row per event. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_pbp")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -90,7 +75,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_pbp(match_id = 346279))
 #> ── TBF Play-by-Play ───────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:35 UTC
+#> ℹ Data updated: 2026-11-09 19:15:31 UTC
 #> # A tibble: 639 × 13
 #>    match_id action_number period period_type clock seconds_remaining home_score
 #>       <int>         <int>  <int>       <int> <chr>             <int>      <int>

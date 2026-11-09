@@ -36,6 +36,7 @@ Endpoint: GET https://lkl.lt/api/livestream/leaders/{game_id}"><meta property="o
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,13 +140,11 @@ before 2018-19. Only a finished game is served.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble. One row per team, category and ranked player. <code>category</code> is points, total_rebounds,
-assists, efficiency, steals or blocks; <code>category_label</code> the site's Lithuanian label. <code>rank</code> 1 is the category leader
-and 2 and up are the runners-up, in the order the site lists them (up to 4 a side). <code>player_slug</code> is the site's key
-and <code>player_id</code> is resolved through the game roster the runtime stamps (null on a body without the stamp). A body
-without leaders gives a zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises <code>hoopR_no_data</code>, as in sportsdataverse-py.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>lkl.lt game id (key space: LKL games; the <code>{gameId}</code> of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under <code>_request</code>).</td></tr><tr><td>category</td><td>character</td><td>Leader category: points, total_rebounds, assists, efficiency, steals or blocks.</td></tr><tr><td>category_label</td><td>character</td><td>Category label in Lithuanian ('Pelnomi taskai' = points scored, 'Naudingumas' = efficiency rating).</td></tr><tr><td>team_side</td><td>character</td><td>Side of the game the row belongs to: home or away (the game page's teams_info side; the box score, leaders and plays say home / away, and gameStatistics is keyed by team id so the runtime supplies the side).</td></tr><tr><td>team_id</td><td>integer</td><td>lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body.</td></tr><tr><td>rank</td><td>integer</td><td>Place in the team's category list: 1 = the category leader, 2 and up = the runners-up in the order the site lists them (up to 4).</td></tr><tr><td>player</td><td>character</td><td>Player name as the site prints it in this route (the box score short form 'I. Surname', other routes the full name).</td></tr><tr><td>player_slug</td><td>character</td><td>lkl.lt player slug (key space: lkl.lt persons; the <code>{slug}</code> of lkl.lt/zaidejai/<code>{slug}</code>, stable across seasons). Join key to lkl_game_players.slug.</td></tr><tr><td>player_id</td><td>integer</td><td>lkl.lt player id (key space: lkl.lt persons, stable across seasons). Resolved from the player slug through the game roster the runtime stamps from the game page; null on a bare body or a slug the roster lacks.</td></tr><tr><td>value</td><td>integer</td><td>The player's count in the row's category.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per statistic, team and rank.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "lkl_leaders")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and

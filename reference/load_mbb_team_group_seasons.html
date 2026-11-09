@@ -44,6 +44,7 @@ release tag and load_nba_team_group_seasons() the nba_groups tag."><meta propert
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -178,7 +179,7 @@ the data into a database.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>Returns a <code>hoopR_data</code> tibble with one row per team-season.</p>
+    <p>A <code>hoopR_data</code> tibble with one row per team-season.</p>
 <p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League key: <code>mbb</code> or <code>nba</code>.</td></tr><tr><td>season</td><td>integer</td><td>Season (ending year; 2025 = 2024-25).</td></tr><tr><td>team_id</td><td>character</td><td>ESPN team id.</td></tr><tr><td>team_id_source</td><td>character</td><td>Id system of <code>team_id</code>: <code>espn</code>.</td></tr><tr><td>team_name</td><td>character</td><td>Team name as of that season.</td></tr><tr><td>subdivision_id</td><td>character</td><td>SDV group id of the subdivision (<code>mbb:d1</code>); <code>NA</code> for the NBA.</td></tr><tr><td>conference_id</td><td>character</td><td>SDV group id of the conference.</td></tr><tr><td>division_id</td><td>character</td><td>SDV group id of the division; <code>NA</code> where the league or conference had none.</td></tr><tr><td>source</td><td>character</td><td>Source the membership came from: <code>espn_standings</code>, <code>espn_core_groups</code> or <code>kenpom</code> (MBB); <code>nba_stats</code> or <code>curated</code> (NBA).</td></tr><tr><td>sources_agree</td><td>logical</td><td>Whether a second source agrees; <code>NA</code> when only one source covers the season.</td></tr><tr><td>notes</td><td>character</td><td>Membership caveats.</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

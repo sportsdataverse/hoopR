@@ -13,13 +13,13 @@ ibba_stats_types()
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| stat_type | character | Stat category code to pass to ibba_leaders as stat_type (bracketed codes such as '\[OR\]' are literal). |
-| stat_name_he | character | Stat category name in Hebrew. |
+A `hoopR_data` tibble with one row per statistic type. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_stats_types")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

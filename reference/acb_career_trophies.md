@@ -22,17 +22,13 @@ acb_career_trophies(player_id)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py
-`acb_career_trophies`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| player_id | integer | ACB licence number asked for. |
-| competition_id | integer | Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa (x-competitions) |
-| times_champion | integer | Times the player won the competition. |
-| times_runner_up | integer | Times the player was runner-up in the competition. |
+A `hoopR_data` tibble with one row per competition. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_career_trophies")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

@@ -35,39 +35,12 @@ vtb_infobasket_roster(team_id, season, lang = "en", tag = "vtb")
 
 ## Value
 
-A `hoopR_data` tibble: A club's player roster in one season. The columns
-are always these, in this order (sportsdataverse-py
-`vtb_infobasket_roster`); an empty valid answer raises `hoopR_no_data`,
-a valid body with no rows for this frame is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id. |
-| season | integer | Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. |
-| person_id | integer | Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/{personId} (players) and /Widget/CoachPage/{personId} (coaches). |
-| player_number | integer | Shirt number as an integer (-1 when none). |
-| display_number | character | Shirt number as displayed ('0' and '00' differ). |
-| is_captain | logical | 1 for the team captain, else 0. |
-| birth_date | character | Birth date (ISO 8601 date) of a player: public bio, kept; coaches' and officials' birth data is never output. |
-| pos_id | integer | Position code: players 1 point guard, 2 shooting guard, 3 small forward, 4 power forward, 5 centre; coaches 1000 head coach, 1001 assistant; officials 101-103 referees, 104 commissioner, 111-123 table officials (exact roles unverified). |
-| position | character | Playing position: a record (PlayerPage) or its English name (TeamRoster). |
-| nationality_code | character | Nationality, ISO 3166 alpha-2. |
-| country_code | character | Nationality, ISO 3166 alpha-2. |
-| country_code_ioc | character | Nationality code: ISO 3166 alpha-2 in most rows ('RU', 'US'), IOC alpha-3 in some ('BLR'). |
-| country_name | character | Nationality, English country name. |
-| rank | integer | Unobserved: the roster sends an empty string for every player and coach (null here); the field belongs to the leader lists (best_players), so its meaning on the roster is unconfirmed. |
-| height | integer | Height in centimetres. |
-| weight | integer | Weight in kilograms. |
-| is_active | logical | True while the person is on the current roster. |
-| active_status | character | Roster status text ('Accepted'), empty otherwise. |
-| person_last_name_ru | character | Last name, Russian. |
-| person_last_name_en | character | Last name, English. |
-| person_first_name_ru | character | First name, Russian. |
-| person_first_name_en | character | First name, English. |
-| person_full_name_ru | character | Full name, 'Last First', Russian. |
-| person_full_name_en | character | Full name, 'Last First', English. |
-| person_gender | integer | Person gender: 1 on every sampled (male) person. |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_roster")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -86,7 +59,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_roster(season = 2026, team_id = 2650))
 #> ── VTB Infobasket Roster from org.infobasket.su ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:10:11 UTC
+#> ℹ Data updated: 2026-11-09 19:16:06 UTC
 #> # A tibble: 19 × 25
 #>    team_id season person_id player_number display_number is_captain birth_date
 #>      <int>  <int>     <int>         <int> <chr>          <lgl>      <chr>     

@@ -28,21 +28,13 @@ bref_team_roster(team, season = most_recent_nba_season())
 
 ## Value
 
-A `hoopR_data` tibble with one row per player on the roster:
-
-|                  |           |                                                 |
-|------------------|-----------|-------------------------------------------------|
-| col_name         | types     | description                                     |
-| number           | character | Jersey number.                                  |
-| player           | character | Player name.                                    |
-| pos              | character | Position.                                       |
-| height           | character | Height.                                         |
-| weight           | integer   | Weight (lbs).                                   |
-| birth_date       | character | Birth date.                                     |
-| years_experience | character | Years of NBA experience (`R` for rookies).      |
-| college          | character | College.                                        |
-| team             | character | Team abbreviation (echoes the `team` argument). |
-| season           | integer   | Season (echoes the `season` argument).          |
+A `hoopR_data` tibble with one row per player on the roster. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bref_team_roster")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

@@ -26,71 +26,13 @@ lba_standings(championship_id, round = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: Standings of a championship after a round, one
-row per team. The columns are always these, in this order
-(sportsdataverse-py `lba_standings`); a column the site adds later is
-appended after them:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2027 = 2026-27): the row's START year + 1. |
-| standing_id | integer | Standings row id (one team after one round; joins nothing else). |
-| championships_day_id | integer | Round id the standings are after. |
-| team_id | integer | Team id (team-season). |
-| position | integer | Rank in the standings. |
-| wins | integer | Games the team has won through the round. |
-| defeats | integer | Games the team has lost through the round. |
-| points_made | integer | Points the team has scored through the round. |
-| points_suffered | integer | Points allowed. |
-| qp | integer | Tie-break quotient (`quoziente punti`?); 1 in the samples (unverified). |
-| lv | character | Null in every sample (meaning unverified). |
-| lp | character | Null in every sample (meaning unverified). |
-| lpf | character | Null in every sample (meaning unverified). |
-| lps | character | Null in every sample (meaning unverified). |
-| lqp | character | Null in every sample (meaning unverified). |
-| updated_at | character | Timestamp, ISO-8601 with the Italian offset. |
-| points | integer | Standings points (2 per win). |
-| penalty_points | integer | Points deducted (0 or null). |
-| game_played | integer | Games the team has played through the round. |
-| home_game_played | integer | Home games played. |
-| home_wins | integer | Home games won. |
-| home_defeats | integer | Home games the team has lost through the round. |
-| away_game_played | integer | Away games played. |
-| away_wins | integer | Away games won. |
-| away_defeats | integer | Away games the team has lost through the round. |
-| avg_points_made | double | Points scored per game. |
-| avg_points_suffered | double | Points allowed per game. |
-| home_points_made | integer | Points scored at home. |
-| home_points_suffered | integer | Points allowed at home. |
-| home_avg_points_made | double | Points scored per home game. |
-| home_avg_points_suffered | double | Points allowed per home game. |
-| away_points_made | integer | Points scored away. |
-| away_points_suffered | integer | Points allowed away. |
-| away_avg_points_made | double | Points scored per away game. |
-| away_avg_points_suffered | double | Points allowed per away game. |
-| year | integer | Season START year (2026 = 2026-27); sdv END year = year + 1. |
-| ties | integer | Ties (0 or null; basketball has none). |
-| home_ties | integer | Home ties (null). |
-| away_ties | integer | Away ties (null). |
-| play_off_qualified | logical | Clinched a play-off place (null in old seasons). |
-| relegation | logical | Relegated (null in old seasons). |
-| movement | character | Position change since the previous round, signed string (`+2`, `-1`; null for finished seasons). |
-| wins_percent | double | Win percentage as a string with `%` (`100%`). |
-| home_wins_percent | double | Home win percentage, string with `%`. |
-| away_wins_percent | double | Away win percentage, string with `%`. |
-| max_points_made | integer | Most points scored in a game. |
-| home_max_points_made | integer | Most points scored in a home game. |
-| away_max_points_made | integer | Most points scored in an away game. |
-| day_code | integer | Round code the standings are after (integer). |
-| day_name | character | Round name, Italian (`4a Giornata - 2o fase` = matchday 4 of the 2nd phase). |
-| team_name | character | Team name in that season, with its sponsor (`Nutribullet Treviso Basket`); changes with the sponsor. |
-| club_code | character | Club code (`TVB`, `TS`); whether it is stable across seasons is unverified. |
-| logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-| ctp | integer | Classification marker; 0 or null in the samples (unverified). |
-| ctp_symbol | character | Null in every sample (meaning unverified). |
-| ctp_description | character | Null in every sample (meaning unverified). |
-| season_start_year | integer | The wire season field: the season START year (2026 = 2026-27), same as year. |
+A `hoopR_data` tibble with one row per team in the standings. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lba_standings")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -109,7 +51,7 @@ lists every function in this family.
 # \donttest{
   try(lba_standings(championship_id = 602, round = 3))
 #> ── LBA Standings from legabasket.it ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:56 UTC
+#> ℹ Data updated: 2026-11-09 19:13:08 UTC
 #> # A tibble: 16 × 57
 #>    season standing_id championships_day_id team_id position  wins defeats
 #>     <int>       <int>                <int>   <int>    <int> <int>   <int>

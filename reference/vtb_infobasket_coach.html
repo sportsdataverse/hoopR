@@ -36,6 +36,7 @@ Endpoint: GET https://org.infobasket.su/Widget/CoachPage/{person_id}"><meta prop
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,9 +140,11 @@ Endpoint: GET https://org.infobasket.su/Widget/CoachPage/{person_id}"><meta prop
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Coach profile: names, height, weight (no birth data). The columns are always these, in this
-order (sportsdataverse-py <code>vtb_infobasket_coach</code>); an empty valid answer raises <code>hoopR_no_data</code>, a valid body with no rows for
-this frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>person_id</td><td>integer</td><td>Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/{personId} (players) and /Widget/CoachPage/{personId} (coaches). The scope check compares it with the request.</td></tr><tr><td>person_last_name_ru</td><td>character</td><td>Last name, Russian.</td></tr><tr><td>person_first_name_ru</td><td>character</td><td>First name, Russian.</td></tr><tr><td>person_last_name_en</td><td>character</td><td>Last name, English.</td></tr><tr><td>person_first_name_en</td><td>character</td><td>First name, English.</td></tr><tr><td>person_gender</td><td>integer</td><td>Person gender: 1 on every sampled (male) person.</td></tr><tr><td>person_height</td><td>integer</td><td>Height in centimetres.</td></tr><tr><td>person_weight</td><td>integer</td><td>Weight in kilograms.</td></tr><tr><td>person_status</td><td>integer</td><td>Person record status (1 active, 0 otherwise); meaning unverified.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per coach.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "vtb_infobasket_coach")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="vtb_infobasket_seasons.html">vtb_infobasket_seasons()</a></code>.</p>

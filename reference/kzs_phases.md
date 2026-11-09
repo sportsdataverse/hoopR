@@ -21,23 +21,12 @@ kzs_phases(competition_id)
 
 ## Value
 
-A `hoopR_data` tibble: The phases of a competition (regular season,
-play-offs, finals) with dates and type. An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `kzs_phases`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). |
-| season | integer | Season END year (2026/2027 = 2027), from the row's own season name or id, else from the request. |
-| phase_id | integer | Competition-phase id. Joins to `competitions[].competitionPhaseId` on matches and `/competitions/{competitionId}` `phases[].id`. |
-| name | character | Phase name, Slovenian: 'Redni del' = regular season, 'Cetrtfinale' = quarterfinal, 'Polfinale' = semifinal, 'Finale' = final, '1. del' / '2. del' = first / second stage. |
-| start_date | character | Phase start date (UTC midnight). |
-| end_date | character | Phase end date (UTC midnight). |
-| type | character | Phase format (code table). |
-| groups | character | Groups of the phase (empty when the phase has one table). |
-| wins_needed | integer | Wins needed to take a best-of series. |
+A `hoopR_data` tibble with one row per phase. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_phases")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

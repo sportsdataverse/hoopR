@@ -36,6 +36,7 @@ Endpoint: GET https://api.kzs.si/api/v1/public/matches/{match_id}/playByPlay"><m
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -138,8 +139,11 @@ Endpoint: GET https://api.kzs.si/api/v1/public/matches/{match_id}/playByPlay"><m
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: The players the play-by-play feed lists for each side of a final game. An empty valid answer
-raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py <code>kzs_pbp_players</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>match_id</td><td>integer</td><td>Match id: the federation key of a game, global across seasons (joins kzs_matches and kzs_match).</td></tr><tr><td>team_side</td><td>character</td><td>Which side of the match the row belongs to: home (the organiser, firstTeam on the wire) or away.</td></tr><tr><td>player_id</td><td>integer</td><td>Player id (KZS player registry). Joins to <code>/players/{playerId}</code>, box-score and play-by-play <code>playerId</code>. Players listed here are the first (home) team.</td></tr><tr><td>first_name</td><td>character</td><td>The home player's (as in the feed) given name.</td></tr><tr><td>last_name</td><td>character</td><td>The home player's (as in the feed) family name.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per player in the game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "kzs_pbp_players")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="kzs_seasons.html">kzs_seasons()</a></code>.</p>

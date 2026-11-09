@@ -36,6 +36,7 @@ Endpoint: GET https://api.kbl.or.kr/league/rank/team"><meta property="og:image" 
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -130,9 +131,11 @@ Endpoint: GET https://api.kbl.or.kr/league/rank/team"><meta property="og:image" 
 
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Current standings of the active season (no parameter): record, games behind, streaks,
-splits. The columns are always these, in this order (sportsdataverse-py <code>kbl_current_standings</code>); an empty valid answer
-raises <code>hoopR_no_data</code>, a valid body with no rows for this frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>rank</td><td>integer</td><td>Standing (1 = first).</td></tr><tr><td>team_code</td><td>character</td><td>KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList <code>teamCode</code>, game <code>tcodeH</code>/<code>tcodeA</code>, <code>t</code> in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (<code>teamCodeD</code>).</td></tr><tr><td>team_name</td><td>character</td><td>Team short name (Korean, e.g. Changwon LG), as it was at the time. English names: /common/teamList <code>teamNameEn</code> / <code>teamNameFullEn</code>, joined on the team code.</td></tr><tr><td>team_name_full</td><td>character</td><td>Team full name (Korean, e.g. Changwon LG Sakers).</td></tr><tr><td>wins</td><td>integer</td><td>Wins (a count on this route; on <code>/league/rank/{glkey}</code> win is a boolean about the latest game).</td></tr><tr><td>losses</td><td>integer</td><td>Losses (a count on this route).</td></tr><tr><td>draws</td><td>integer</td><td>Draws (always 0 in basketball).</td></tr><tr><td>win_diff</td><td>double</td><td>Games behind the leader.</td></tr><tr><td>home_wins</td><td>integer</td><td>Wins in the team's home games.</td></tr><tr><td>home_losses</td><td>integer</td><td>Losses in the team's home games.</td></tr><tr><td>away_wins</td><td>integer</td><td>Wins in the team's away games.</td></tr><tr><td>away_losses</td><td>integer</td><td>Losses in the team's away games.</td></tr><tr><td>conti_win</td><td>integer</td><td>Current winning streak (0 when the last game was a loss).</td></tr><tr><td>conti_loss</td><td>integer</td><td>Current losing streak (0 when the last game was a win).</td></tr><tr><td>max_win</td><td>integer</td><td>Longest winning streak of the season.</td></tr><tr><td>max_loss</td><td>integer</td><td>Longest losing streak of the season.</td></tr><tr><td>last_five</td><td>character</td><td>The last five results as a comma-separated string, most recent first: 1 win, 0 loss.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per team in the standings.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "kbl_current_standings")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="kbl_seasons.html">kbl_seasons()</a></code>.</p>

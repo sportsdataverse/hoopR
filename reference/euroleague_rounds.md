@@ -25,19 +25,12 @@ euroleague_rounds(competition_code, season_code)
 
 ## Value
 
-A `hoopR_data` tibble with one row per round:
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| season_code | character | Season code: competition code + start year, e.g. E2025 for 2025-26 (Utf8 join key). |
-| phase_type_code | character | Phase type code (RS = regular season, PO = playoffs, ...). |
-| round | integer | Round number within the season. |
-| index | integer | Ordinal position of the round within the season. |
-| name | character | Display name. |
-| min_game_start_date | character | Earliest game start in the round (ISO 8601). |
-| max_game_start_date | character | Latest game start in the round (ISO 8601). |
-| dates_formmated | character | Human-readable date range of the round (sic: the API spells it this way). |
+A `hoopR_data` tibble with one row per round. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "euroleague_rounds")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -65,7 +58,7 @@ lists every function in this family.
     euroleague_rounds(competition_code = "E", season_code = "E2025")
   })
 #> ── EuroLeague rounds from api-live.euroleague.net ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:13 UTC
+#> ℹ Data updated: 2026-11-09 19:11:25 UTC
 #> # A tibble: 47 × 8
 #>    season_code phase_type_code round index name      min_game_start_date
 #>    <chr>       <chr>           <int> <int> <chr>     <chr>              

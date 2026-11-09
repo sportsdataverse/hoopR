@@ -26,17 +26,25 @@ espn_nba_player_seasons(athlete_id, ...)
 
 ## Value
 
-A tibble with one row per career season.
+A `hoopR_data` tibble with one row per career season.
 
-Columns as documented in the shared
-[espn_mbb_player_seasons_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_seasons_schema.md)
-table.
+|            |           |                                  |
+|------------|-----------|----------------------------------|
+| col_name   | types     | description                      |
+| league     | character | League slug.                     |
+| athlete_id | character | ESPN athlete id.                 |
+| season     | integer   | Season year.                     |
+| ref        | character | `$ref` URL to the season detail. |
 
-A tibble with one row per career season.
+A `hoopR_data` tibble with one row per career season.
 
-Columns as documented in the shared
-[espn_mbb_player_seasons_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_seasons_schema.md)
-table.
+|            |           |                                  |
+|------------|-----------|----------------------------------|
+| col_name   | types     | description                      |
+| league     | character | League slug.                     |
+| athlete_id | character | ESPN athlete id.                 |
+| season     | integer   | Season year.                     |
+| ref        | character | `$ref` URL to the season detail. |
 
 ## See also
 
@@ -56,18 +64,18 @@ Saiem Gilani
 # \donttest{
   # LeBron James (1966): 23 career seasons
   espn_mbb_player_seasons(athlete_id = 4593919)
-#> ✖ 2026-11-09 17:04:26.686899: Failed to retrieve ESPN mens-college-basketball athlete seasons for athlete_id=4593919
+#> ✖ 2026-11-09 19:10:45.269501: Failed to retrieve ESPN mens-college-basketball athlete seasons for athlete_id=4593919
 #> ✖ Args: league = "mens-college-basketball", athlete_id = 4593919
 #> ✖ Error: The API returned an error
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Seasons ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:26 UTC
+#> ℹ Data updated: 2026-11-09 19:10:45 UTC
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   # LeBron James (1966): 23 career seasons
   espn_nba_player_seasons(athlete_id = 1966)
 #> ── ESPN NBA Athlete Seasons ───────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:26 UTC
+#> ℹ Data updated: 2026-11-09 19:10:45 UTC
 #> # A tibble: 24 × 4
 #>    league athlete_id season ref                                                 
 #>    <chr>  <chr>       <int> <chr>                                               

@@ -22,7 +22,7 @@ nba_data_pbp(game_id = "0021900001", ...)
 
 ## Value
 
-Returns a tibble
+A `hoopR_data` tibble with one row per play-by-play event.
 
 |  |  |  |
 |----|----|----|
@@ -47,36 +47,6 @@ Returns a tibble
 | home_score | integer | Home team score at the time of the play. |
 | away_score | integer | Away team score at the time of the play. |
 | order | integer | Display order within the result set. |
-
-Event Message Types (event_type):
-
-1 -\> MAKE
-
-2 -\> MISS
-
-3 -\> FreeThrow
-
-4 -\> Rebound
-
-5 -\> Turnover
-
-6 -\> Foul
-
-7 -\> Violation
-
-8 -\> Substitution
-
-9 -\> Timeout
-
-10 -\> JumpBall
-
-11 -\> Ejection
-
-12 -\> StartOfPeriod
-
-13 -\> EndOfPeriod
-
-14 -\> Empty
 
 ## Details
 

@@ -28,17 +28,27 @@ espn_nba_seasons(...)
 
 ## Value
 
-A single `hoopR_data` tibble with one row per season.
+A `hoopR_data` tibble with one row per season.
 
-Columns as documented in the shared
-[espn_mbb_seasons_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_seasons_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| start_date | character | Start date (YYYY-MM-DD). |
+| end_date | character | End date (YYYY-MM-DD). |
+| display_name | character | Display name. |
+| season_type_count | integer |  |
 
-A single `hoopR_data` tibble with one row per season.
+A `hoopR_data` tibble with one row per season.
 
-Columns as documented in the shared
-[espn_mbb_seasons_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_seasons_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| start_date | character | Start date (YYYY-MM-DD). |
+| end_date | character | End date (YYYY-MM-DD). |
+| display_name | character | Display name. |
+| season_type_count | integer |  |
 
 ## See also
 
@@ -58,7 +68,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_seasons()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Seasons from ESPN.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:44 UTC
+#> ℹ Data updated: 2026-11-09 19:11:01 UTC
 #> # A tibble: 1 × 5
 #>   season start_date end_date display_name season_type_count
 #>    <int> <chr>      <chr>    <chr>                    <int>
@@ -67,7 +77,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_seasons()
 #> ── ESPN NBA Seasons from ESPN.com ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:44 UTC
+#> ℹ Data updated: 2026-11-09 19:11:01 UTC
 #> # A tibble: 1 × 5
 #>   season start_date end_date display_name season_type_count
 #>    <int> <chr>      <chr>    <chr>                    <int>

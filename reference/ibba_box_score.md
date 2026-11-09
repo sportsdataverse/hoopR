@@ -25,44 +25,13 @@ ibba_box_score(game_id, season)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| player_id | integer | Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows. |
-| jersey | character | Jersey number as a zero-padded string ('02'); a box score also uses '\_TEAM' and 'TOTAL' for its two non-player lines. |
-| team_id | integer | Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. |
-| game_id | integer | IBBA game id (key space: basket.co.il games). Joins ibba_games to ibba_box_score; in ibba_games_ex it is an EXTERNAL game id (the ig\_ space, e.g. 8888 for a pre-season game). |
-| board_id | integer | Board id of the game (5 = league). |
-| season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-| round | integer | Round (game number) of the game within its board. |
-| starter | logical | True when the player started the game. |
-| minutes | integer | Minutes played, whole minutes; a TOTAL line holds the team's player-minutes (200 plus 25 per overtime). |
-| pts | integer | Points scored by the player or team (free throws included). |
-| fg2m | integer | Two-point field goals made. |
-| fg2a | integer | Two-point field goals attempted (verified equal to Segev made + missed). |
-| fg2_pct | double | Two-point field-goal percentage, 0-100. |
-| fg3m | integer | Three-point field goals made. |
-| fg3a | integer | Three-point field goals attempted. |
-| fg3_pct | double | Three-point field-goal percentage, 0-100. |
-| ftm | integer | Free throws made. |
-| fta | integer | Free throws attempted. |
-| ft_pct | double | Free-throw percentage, 0-100. |
-| dreb | integer | Defensive rebounds. |
-| oreb | integer | Offensive rebounds. |
-| reb | integer | Total rebounds. |
-| fouls_drawn | integer | Fouls DRAWN: fouls opponents committed against the player or team (the wire's fouls_against; verified equal to Segev f_drawn). |
-| fouls | integer | Fouls COMMITTED by the player or team (the wire's fouls_for; verified equal to Segev f). |
-| steals | integer | Steals made by the player or team. |
-| turnovers | integer | Turnovers (the wire's misspelt tournovers). |
-| assists | integer | Assists credited to the player or team. |
-| blocks | integer | Shots the player or team blocked. |
-| blocks_against | integer | Own shots that were blocked. |
-| val | integer | Efficiency rating (valuation; verified equal to Segev rate); -1 on 2004-05 team-credited lines. |
-| plus_minus | integer | Plus-minus; 0 on every line of the 2004-05 sample (not recorded then, inferred). |
-| dunks | integer | Dunks made by the player or team. |
-| row_type | character | Kind of box line: player, team (actions credited to the team: team rebounds and turnovers) or total (the team's TOTAL line, equal to players plus team lines). |
+A `hoopR_data` tibble with one row per player in the game. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_box_score")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -81,7 +50,7 @@ lists every function in this family.
 # \donttest{
   try(ibba_box_score(game_id = 26392, season = 2026))
 #> ── IBBA box score ─────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:01 UTC
+#> ℹ Data updated: 2026-11-09 19:12:14 UTC
 #> # A tibble: 27 × 33
 #>    player_id jersey team_id game_id board_id season round starter minutes   pts
 #>        <int> <chr>    <int>   <int>    <int>  <int> <int> <lgl>     <int> <int>

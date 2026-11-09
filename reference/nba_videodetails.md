@@ -220,7 +220,7 @@ nba_videoeventsasset(game_id, game_event_id = 0, ...)
 
 ## Value
 
-Return a list of tibbles: videoUrls, playlist
+A named list of tibbles: `videoUrls`, `playlist`.
 
 **videoUrls**
 
@@ -264,7 +264,7 @@ Return a list of tibbles: videoUrls, playlist
 | vpa      | integer   | Vpa.        |
 | pta      | integer   | Pta.        |
 
-Return a list of tibbles: videoUrls, playlist
+A named list of tibbles: `videoUrls`, `playlist`.
 
 **videoUrls**
 
@@ -309,7 +309,7 @@ Return a list of tibbles: videoUrls, playlist
 
 Return a list of tibbles: videoUrls, playlist
 
-Return a list of tibbles: VideoStatus
+A named list of tibbles: `VideoStatus`.
 
 **VideoStatus**
 

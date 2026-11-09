@@ -26,7 +26,7 @@ mbb_player_crosswalk(season = most_recent_mbb_season(), min_confidence = 0.92)
 
 ## Value
 
-A `hoopR_data` tibble, one row per player per team (ESPN-anchored):
+A `hoopR_data` tibble with one row per player per team.
 
 |  |  |  |
 |----|----|----|

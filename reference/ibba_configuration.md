@@ -20,17 +20,12 @@ ibba_configuration(season)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-| season_label | character | Season label as 'YYYY-YY' ('2025-26', '2004-05'). |
-| red_line | integer | Standings position the site draws its cut line under (12 in 2025-26, 10 in 2004-05); meaning inferred. |
-| active_board_id | integer | Board id the site treats as the active competition (17 = final series in 2025-26, 5 = league in 2004-05); meaning inferred. |
-| next_round | integer | Next round (game number) to be played; meaning inferred. |
-| total_rounds | integer | Rounds in the regular season (32 in 2025-26, 22 in 2004-05); meaning inferred. |
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_configuration")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

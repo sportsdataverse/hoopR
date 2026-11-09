@@ -29,34 +29,12 @@ pleague_preciser_shots(uuid, gid = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: Every field-goal attempt of one finished game
-with court x / y (vendor frame), zone, style and result. An empty valid
-answer is a zero-row tibble with these columns, in this order
-(sportsdataverse-py `pleague_preciser_shots`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_uuid | character | Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; `uuid` of pleague_game. |
-| shot_no | integer | 1-based position in the order the vendor sent the shots, which is NOT guaranteed game order: sort on period and seconds_left. |
-| period | integer | Period number: 1-4, 5 and up for overtime (OT1 = 5). |
-| period_label | character | Period label: Q1-Q4, then OT1, OT2. |
-| clock | character | Game clock REMAINING in the period 'mm:ss' (counts down). |
-| seconds_left | integer | The clock as whole seconds remaining in the period (08:34 = 514), derived by the parser. |
-| side | character | Which team took the shot: home or away, from the shooter's team uuid against home_id / away_id. |
-| team_uuid | character | Preciser team uuid (key space: the vendor's teams; the file name of the club logo). Joins the site team_id through pleague_standings.team_uuid: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark). |
-| person_id | character | Preciser person uuid (key space: the vendor's persons): equal to the site box person_id of the same player, the join between this row and pleague_box_players (2022-23 on). |
-| player_name | character | Shooter's name as printed (Traditional Chinese or a transliteration); equals the box name_zh. |
-| type | character | Shot value: 2pt or 3pt. |
-| subtype | character | Shot style: jumpShot, layup, drivingLayup, floatingJumpShot (floater), tipIn (putback), pullUpJumpShot, fadeAway, dunk, turnAroundJumpShot, hookShot, stepBackJumpShot, alleyOop; null on a few shots (7 of 2,566). |
-| area | character | Shot zone, English label '{side} {distance band}': 'Center 8ft' (restricted-area band, within 8 ft), 'Center 8-16ft', 'Left 8-16ft', 'Right 8-16ft', 'Left 16-23ft', 'Center 16-23ft', 'Right 16-23ft', 'Left Center 16-23ft', ... and the three-point zones; null on some shots. |
-| success | logical | True when the shot was made, false when missed. |
-| x | double | Shot x: PERCENT (0-100) of the court LENGTH in the VENDOR frame, in which the HOME team always attacks the basket at x = 95 and the away team the basket at x = 5 (the frame does not flip at half-time). x_vendor = 100 - x_pbp in the halves where the home team attacks x \< 50 (pleague_pbp.x is the physical frame). Court 28.75 m long: distance = hypot((x - 5) x 0.2875, (y - 50) x 0.1525) m (mean error 0.010 m on 1,893 shots). |
-| y | double | Shot y: PERCENT (0-100) of the court WIDTH in the vendor frame (baskets at y = 50); y_vendor = 100 - y_pbp in the halves where the home team attacks x \< 50 (held for 166 of the 168 shots of gid 197 matched to the play-by-play; one shot differs in y only). Which sideline is y = 0 is unverified. Court 15.25 m wide. |
-| message_zh | character | Play text in Traditional Chinese, '{player}((Chinese text))(Chinese text)((Chinese text)){distance}(Chinese text){shot}' = '{player} made / missed a {distance} m {shot}'; the distance is in metres and matches x / y. |
-| has_video | logical | True when the shot has a clip. The clip url is never kept: it carries a vendor access key. |
-| home_team_uuid | character | Preciser team uuid (key space: the vendor's teams; the file name of the club logo). Joins the site team_id through pleague_standings.team_uuid: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark). |
-| away_team_uuid | character | Preciser team uuid (key space: the vendor's teams; the file name of the club logo). Joins the site team_id through pleague_standings.team_uuid: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark). |
+A `hoopR_data` tibble with one row per shot. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "pleague_preciser_shots")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -112,7 +90,7 @@ lists every function in this family.
 # \donttest{
   try(pleague_preciser_shots(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
 #> ── P. LEAGUE+ Shots from api.preciser.io ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:29 UTC
+#> ℹ Data updated: 2026-11-09 19:14:21 UTC
 #> # A tibble: 168 × 20
 #>    game_uuid      shot_no period period_label clock seconds_left side  team_uuid
 #>    <chr>            <int>  <int> <chr>        <chr>        <int> <chr> <chr>    

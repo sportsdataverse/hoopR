@@ -13,21 +13,12 @@ kbl_teams()
 
 ## Value
 
-A `hoopR_data` tibble: The current ten clubs with Korean and English
-names and the code of each club's D-League side. The columns are always
-these, in this order (sportsdataverse-py `kbl_teams`); an empty valid
-answer raises `hoopR_no_data`, a valid body with no rows for this frame
-is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_code | character | KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList `teamCode`, game `tcodeH`/`tcodeA`, `t` in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (`teamCodeD`). |
-| team_code_d | character | Team code of the club's D-League (reserve) side, in the same team-code space as `teamCode`. |
-| team_name | character | Team short name (Korean, no space, e.g. Changwon LG); the English form is `teamNameEn`. |
-| team_name_full | character | Team full name (Korean). |
-| team_name_en | character | Team short name in English. |
-| team_name_full_en | character | Team full name in English (e.g. 'CHANGWON LG SAKERS'). |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kbl_teams")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -46,7 +37,7 @@ lists every function in this family.
 # \donttest{
   try(kbl_teams())
 #> ── KBL Teams from api.kbl.or.kr ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:23 UTC
+#> ℹ Data updated: 2026-11-09 19:12:35 UTC
 #> # A tibble: 10 × 6
 #>    team_code team_code_d team_name team_name_full team_name_en team_name_full_en
 #>    <chr>     <chr>       <chr>     <chr>          <chr>        <chr>            

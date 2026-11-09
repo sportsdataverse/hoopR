@@ -29,41 +29,13 @@ sportpress_standings(competition_id, phase_id)
 
 ## Value
 
-A `hoopR_data` tibble: Standings of one phase of a competition: record,
-points, home/away split, last five and streak. An empty valid answer
-raises `hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `sportpress_standings`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id (key space: sportpress competitions): ONE season of the league (24 = 2025-26, 25 = 2026-27). Not the season number. The key of the standings, ranking, slider and box routes. |
-| phase_id | integer | Phase id (key space: sportpress phases), a stage of one competition such as the regular season or the playoffs; new every season. |
-| competition_team_id | integer | Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. |
-| team | character | Team display name including the sponsor; varies with language and playoff suffixes: never join on it. |
-| team_short_name | character | Three-letter club code (ANT, MON, ...), stable across seasons in the samples. |
-| club_id | integer | Country of the team (key space: sportpress clubs): 1 = Belgium, 2 = Netherlands. The provider calls the country a club. |
-| club_name | character | Country name in English, Belgium or Netherlands. |
-| position | integer | Rank in the table, 1 = first. |
-| played | integer | Games played in the phase (win + loss + even). |
-| win | integer | Games won in the phase. |
-| loss | integer | Games lost in the phase. |
-| even | integer | Games drawn; 0 in every sample (basketball has no draws). |
-| score | integer | Points scored in the phase. |
-| against | integer | Points conceded in the phase. |
-| score_difference | integer | score - against. |
-| percent | double | Win percentage 0-100, rounded to 1 decimal. |
-| point | integer | League points: 2 per win plus 1 per loss. |
-| point_percent | double | Share of the possible league points won, 0-1 rounded to 2 decimals. |
-| home_win | integer | Wins in home games. |
-| home_loss | integer | Losses in home games. |
-| away_win | integer | Wins in away games. |
-| away_loss | integer | Losses in away games. |
-| last5_win | integer | Wins among the last five games. |
-| last5_loss | integer | Losses among the last five games. |
-| streak_is_win | logical | True for a winning streak, false for a losing one. |
-| streak_count | integer | Length of the current streak in games. |
-| group | character | Group label for split phases; null in every sample. |
+A `hoopR_data` tibble with one row per team in the standings. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportpress_standings")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -82,7 +54,7 @@ lists every function in this family.
 # \donttest{
   try(sportpress_standings(competition_id = 24, phase_id = 169))
 #> ── BNXT League Standings from Sportpress ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:26 UTC
+#> ℹ Data updated: 2026-11-09 19:15:21 UTC
 #> # A tibble: 18 × 27
 #>    competition_id phase_id competition_team_id team      team_short_name club_id
 #>             <int>    <int>               <int> <chr>     <chr>             <int>

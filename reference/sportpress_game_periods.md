@@ -22,19 +22,13 @@ sportpress_game_periods(game_id)
 
 ## Value
 
-A `hoopR_data` tibble: Points each side scored in each period of a game
-(periods 5 and up are overtimes). An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `sportpress_game_periods`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | Game id (key space: sportpress games), unique across seasons: the key of every game route. |
-| team_side | character | Side of the game the row belongs to: home or away (the provider's is_home, or side 1 / 2). |
-| competition_team_id | integer | Competition-team id of the side. |
-| period | integer | Period number: 1-4 are the quarters, 5 and up are overtimes (5 = first overtime). |
-| score | integer | Points the side scored IN that period (not cumulative). |
+A `hoopR_data` tibble with one row per side and period. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportpress_game_periods")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -53,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(sportpress_game_periods(game_id = 11295))
 #> ── BNXT League Game Periods from Sportpress ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:18 UTC
+#> ℹ Data updated: 2026-11-09 19:15:13 UTC
 #> # A tibble: 12 × 5
 #>    game_id team_side competition_team_id period score
 #>      <int> <chr>                   <int>  <int> <int>

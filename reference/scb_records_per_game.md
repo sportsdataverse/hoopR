@@ -29,35 +29,13 @@ scb_records_per_game(season, league = "bbl")
 
 ## Value
 
-A `hoopR_data` tibble: Single-game records: the season's and the
-all-time ones, one row per record. An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `scb_records_per_game`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| league | character | League the row belongs to: `bbl` (men) or `dbbl` (women); BBL and DBBL game ids overlap, so a game is (league, game_id). |
-| season | integer | Season END year (2026 = 2025-26), the sdv key; the API's `season_id` plus one. |
-| season_id | integer | The API's own season key, the START year (2025 = 2025-26); `season` minus one. |
-| scope | character | `season` for the requested season's records, `all_time` for the all-time list. |
-| stat | character | The record's stat: points, rebounds, assists, steals, blocks, turnovers, efficiency, free_throws_made, three_point_shots_made or free_throws_success_percentage. |
-| place | integer | Rank within the list (1 = best); 0 on some rows. |
-| all_time_place | integer | Rank on the all-time list; null when not on it. |
-| order_id | integer | Sort order within the list. |
-| all_time_order_id | integer | Sort order on the all-time list; null when not on it. |
-| value | double | The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages. |
-| ratio | double | \[made, attempted\] as strings, on percentage records only; null otherwise. |
-| season_player_id | character | Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score `seasonPlayer.id`, action `seasonPlayerId` and `/season-players/{seasonPlayerId}`. |
-| real_player_id | integer | Global person id: the same across clubs and seasons. Joins to `realPlayerId` everywhere. |
-| first_name | character | Player's given name. |
-| last_name | character | Player's family name. |
-| team_name | character | Team name as listed that season (sponsor names included). |
-| team_tlc | character | The player's team code. |
-| home_tlc | character | Three-letter code of the home team of the record game. |
-| guest_tlc | character | Three-letter code of the guest team of the record game. |
-| game_id | character | Game id, a string. Joins to `/games/{gameId}`. |
-| scheduled_time | character | Scheduled tip-off, ISO 8601 UTC. |
+A `hoopR_data` tibble with one row per single-game record. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "scb_records_per_game")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

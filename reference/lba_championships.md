@@ -22,28 +22,13 @@ lba_championships(season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: Championships of a season, one per phase (Regular
-Season, Play Off); every season when none is given. The columns are
-always these, in this order (sportsdataverse-py `lba_championships`); a
-column the site adds later is appended after them:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2027 = 2026-27): the row's START year + 1. |
-| championship_id | integer | Championship id (one season and phase). |
-| year | integer | Season START year (2026 = 2026-27); sdv END year = year + 1. |
-| name | character | Championship name, e.g. `Regular Season A`, `Play Off A1`. |
-| status | integer | Championship status: 1 = in progress, 2 = finished (inferred from the 2026-27 and past samples). |
-| championship_type_id | integer | Phase type id: 4 = Regular Season, 2 = Play Off. |
-| championship_series_id | integer | Series id, 1 = Serie A. |
-| full_name | character | Name with the season, e.g. `Regular Season A 2017`. |
-| focus_on | logical | Highlighted on the site. |
-| ctype_code | character | Phase type code: `RS` / `PO`. |
-| ctype_name | character | Phase type name, as sent in English: `Regular Season`, `Play Off`. |
-| cserie_code | character | Series code, `A1` = Serie A. |
-| cserie_name | character | Name of the championship series, e.g. Serie A. |
-| logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
+A `hoopR_data` tibble with one row per championship (phase). Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lba_championships")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -95,7 +80,7 @@ lists every function in this family.
 # \donttest{
   try(lba_championships(season = 2027))
 #> ── LBA Championships from legabasket.it ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:46 UTC
+#> ℹ Data updated: 2026-11-09 19:12:58 UTC
 #> # A tibble: 1 × 14
 #>   season championship_id  year name                  status championship_type_id
 #>    <int>           <int> <int> <chr>                  <int>                <int>

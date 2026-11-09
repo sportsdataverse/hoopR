@@ -21,15 +21,13 @@ sportality_ssgt_provider(ssgt_uuid)
 
 ## Value
 
-A `hoopR_data` tibble: Stats provider of an ssgt, a bare word
-(genius-basketball). An empty valid answer raises `hoopR_no_data`; the
-documented columns come first, in this order (sportsdataverse-py
-`sportality_ssgt_provider`), then any column the API added later:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| provider | character | Stats provider of the ssgt (genius-basketball, a Genius Sports LiveStats relay). |
+A `hoopR_data` tibble with one row per stats provider. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportality_ssgt_provider")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

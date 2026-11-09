@@ -18,22 +18,12 @@ realgm_players_abroad()
 
 ## Value
 
-A `hoopR_data` tibble with one row per player:
-
-|            |           |                                               |
-|------------|-----------|-----------------------------------------------|
-| col_name   | types     | description                                   |
-| player     | character | Player name.                                  |
-| pos        | character | Position.                                     |
-| ht         | character | Listed height.                                |
-| wt         | integer   | Listed weight (lbs).                          |
-| nba_status | character | NBA contract / rights status.                 |
-| team_s     | character | Current overseas team(s) and NBA affiliation. |
-| gp         | integer   | Games played.                                 |
-| mpg        | numeric   | Minutes per game.                             |
-| ppg        | numeric   | Points per game.                              |
-| rpg        | numeric   | Rebounds per game.                            |
-| apg        | numeric   | Assists per game.                             |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "realgm_players_abroad")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

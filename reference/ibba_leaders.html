@@ -36,6 +36,7 @@ Endpoint: GET https://basket.co.il/ws/ws.asmx/LeaderByType"><meta property="og:i
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -150,7 +151,11 @@ unchanged.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble with these columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>value</td><td>double</td><td>The leader's value in the requested category (per-game average, percentage or count).</td></tr><tr><td>games</td><td>integer</td><td>Games the leader played.</td></tr><tr><td>season</td><td>integer</td><td>Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping.</td></tr><tr><td>team_id</td><td>integer</td><td>Team-season id of the leader's team.</td></tr><tr><td>jersey</td><td>character</td><td>The leader's jersey number as a zero-padded string.</td></tr><tr><td>player_id</td><td>integer</td><td>Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows.</td></tr><tr><td>player_name_he</td><td>character</td><td>Player name in Hebrew, HTML-unescaped.</td></tr><tr><td>photo_path</td><td>character</td><td>Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per leaderboard entry.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "ibba_leaders")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="ibba_configuration.html">ibba_configuration()</a></code>.</p>

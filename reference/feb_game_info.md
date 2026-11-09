@@ -26,35 +26,12 @@ feb_game_info(game_id)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | FEB game id (one global sequence): the {gameId} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request. |
-| comp_id | integer | Competition id (constant across seasons): 115 Primera FEB (LEB Oro), 118 Segunda FEB, 210 Liga Femenina Endesa, 214 LF Challenge, 218 LF-2, 111 Tercera FEB. Not the site's menu group. |
-| competition | character | Competition name as printed that season, uppercase ('PRIMERA FEB'; 2020-21 'LIGA LEB ORO'). |
-| group_label | character | The game's group (grupo) label, trimmed: 'Unico' = the single group, '"A"' = group A. It is the page's group label, not the site's menu group number. |
-| period | integer | Current or last period number; 4 for a finished regulation game. |
-| clock | character | 'FINAL' once the game is over, else the game clock 'mm:ss' remaining in the period. |
-| start_time | POSIXct | Tip-off in Spanish local time (POSIXct, tz Europe/Madrid): the source carries no offset, so the zone is assumed. |
-| venue | character | Venue (pabellon) name. |
-| address | character | Venue street address, free text. |
-| referee1 | character | Crew chief (arbitro principal), 'SURNAMES, NAME'. |
-| referee2 | character | First umpire (arbitro auxiliar 1), 'SURNAMES, NAME'. |
-| referee3 | character | Second umpire (arbitro auxiliar 2), 'SURNAMES, NAME'; null when the game had two referees. |
-| status | integer | Game state code: 3 = finished (status_text FINISHED). Null on 2020-21 games. |
-| status_text | character | Game state label in English ('FINISHED'). Null on 2020-21 games. |
-| home_team_id | integer | Home team-season id (key space: FEB team registrations, new every season). |
-| home_team | character | Home team name for the season (sponsor name, uppercase). |
-| home_team_code | character | Home federation team code, 8 digits as a string. Null on 2020-21 games. |
-| home_club_code | character | Home federation club code, 6 digits as a string. Null on 2020-21 games. |
-| home_score | integer | Home points: the final score when clock is FINAL, else the live score. |
-| away_team_id | integer | Away team-season id (key space: FEB team registrations, new every season). |
-| away_team | character | Away team name for the season (sponsor name, uppercase). |
-| away_team_code | character | Away federation team code, 8 digits as a string. Null on 2020-21 games. |
-| away_club_code | character | Away federation club code, 6 digits as a string. Null on 2020-21 games. |
-| away_score | integer | Away points: the final score when clock is FINAL, else the live score. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "feb_game_info")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -118,7 +95,7 @@ Other FEB Functions:
 # \donttest{
   try(feb_game_info(game_id = 2535725))
 #> ── FEB game info from intrafeb.feb.es ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:19 UTC
+#> ℹ Data updated: 2026-11-09 19:11:31 UTC
 #> # A tibble: 1 × 24
 #>   game_id comp_id competition group_label period clock start_time          venue
 #>     <int>   <int> <chr>       <chr>        <int> <chr> <dttm>              <chr>

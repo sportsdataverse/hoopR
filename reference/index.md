@@ -5441,6 +5441,11 @@ Data included within the package
 
   **NBA Stats API Parameter Descriptions**
 
+- [`return_columns`](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+  :
+
+  **Return Columns of hoopR Functions**
+
 ### hoopR Helper Functions
 
 Internal functions used by hoopR

@@ -29,25 +29,13 @@ tbf_leaders_efficiency(season, competition = "bsl")
 
 ## Value
 
-A `hoopR_data` tibble. Up to 20 rows per `kind` (`total` and `average`),
-best first. Every column below is always present (a zero-row tibble
-keeps them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). |
-| competition | character | TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). |
-| category | character | Statistic of the wrapper: points, assists, blocks, rebounds, steals, minutes, threes, turnovers or efficiency. |
-| kind | character | total = the server's top 20 by season TOTAL; average = the top 20 by PER-GAME average. |
-| rank | integer | Rank in the list, 1 = best (the API's order). |
-| person_id | integer | TBF person id (oyuncuKodu, sent as a string; key space: TBF persons). |
-| player_name | character | Player name as TBF prints it for that route (title case, Turkish letters kept). |
-| team_process_id | integer | Team-season id (takimKodu, sent as a string; key space: TBF team registrations; despite the name NOT the club id). |
-| team_name | character | Team name as registered for that season, uppercase with Turkish letters (sponsor name: 'PIZZABULLS BORDO BANDIRMA'). |
-| games | integer | Games played (macSayisi, sent as a string). |
-| value | double | The ranked statistic: the season total for kind total, the per-game average for kind average (the API names the field grup and sends it as a string). |
+A `hoopR_data` tibble with one row per leader and `kind`. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_leaders_efficiency")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

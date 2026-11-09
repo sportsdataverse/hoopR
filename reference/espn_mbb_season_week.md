@@ -44,17 +44,33 @@ espn_nba_season_week(
 
 ## Value
 
-A single-row tibble.
+A `hoopR_data` tibble with one row per week.
 
-Columns as documented in the shared
-[espn_mbb_season_week_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_week_schema.md)
-table.
+|              |           |                                           |
+|--------------|-----------|-------------------------------------------|
+| col_name     | types     | description                               |
+| league       | character | League slug.                              |
+| season       | integer   | Season year.                              |
+| season_type  | integer   | Season-type id.                           |
+| week         | integer   | Week number.                              |
+| text         | character | Display label (e.g. "Week 5").            |
+| start_date   | character | ISO 8601 week start.                      |
+| end_date     | character | ISO 8601 week end.                        |
+| rankings_ref | character | `$ref` to the per-week rankings endpoint. |
 
-A single-row tibble.
+A `hoopR_data` tibble with one row per week.
 
-Columns as documented in the shared
-[espn_mbb_season_week_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_week_schema.md)
-table.
+|              |           |                                           |
+|--------------|-----------|-------------------------------------------|
+| col_name     | types     | description                               |
+| league       | character | League slug.                              |
+| season       | integer   | Season year.                              |
+| season_type  | integer   | Season-type id.                           |
+| week         | integer   | Week number.                              |
+| text         | character | Display label (e.g. "Week 5").            |
+| start_date   | character | ISO 8601 week start.                      |
+| end_date     | character | ISO 8601 week end.                        |
+| rankings_ref | character | `$ref` to the per-week rankings endpoint. |
 
 ## Details
 
@@ -80,7 +96,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_week(week = 5, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Week Detail ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:41 UTC
+#> ℹ Data updated: 2026-11-09 19:10:59 UTC
 #> # A tibble: 1 × 8
 #>   league         season season_type  week text  start_date end_date rankings_ref
 #>   <chr>           <int>       <int> <int> <chr> <chr>      <chr>    <chr>       
@@ -89,7 +105,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_week(week = 5, season = 2025)
 #> ── ESPN NBA Season Week Detail ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:41 UTC
+#> ℹ Data updated: 2026-11-09 19:11:00 UTC
 #> # A tibble: 1 × 8
 #>   league season season_type  week text   start_date        end_date rankings_ref
 #>   <chr>   <int>       <int> <int> <chr>  <chr>             <chr>    <chr>       

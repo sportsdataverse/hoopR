@@ -19,20 +19,13 @@ scb_referees(page_size = 100)
 
 ## Value
 
-A `hoopR_data` tibble: Current referees and commissioners (BBL only). An
-empty valid answer raises `hoopR_no_data`; the columns are always these,
-in this order (sportsdataverse-py `scb_referees`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| league | character | League the row belongs to: `bbl` (men) or `dbbl` (women); BBL and DBBL game ids overlap, so a game is (league, game_id). |
-| referee_id | character | Official id (`refId`, equal to the API's `id`); joins `referee1_id` .. `commissioner_id` of `scb_games`. |
-| first_name | character | Official's given name. |
-| last_name | character | Official's family name. |
-| official_function | character | REFEREE or COMMISSIONER. |
-| participations | integer | League games officiated. |
-| year_joined_bbl | integer | Year the official joined the league. |
+A `hoopR_data` tibble with one row per official. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "scb_referees")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

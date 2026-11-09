@@ -20,112 +20,12 @@ kzs_match(match_id)
 
 ## Value
 
-A `hoopR_data` tibble: Match header: teams, scores, venue, officials'
-names, best performers and status. An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `kzs_match`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | KZS match id. Joins to `/matches/{matchId}` (and its /playByPlay, /stats) and stats `matchId`. |
-| competition_id | integer | Competition id: one per competition per season (men's top league 2025-26 = 579, 2026-27 = 608). Joins to `/competitions/{competitionId}` and the `competitionId` query params. |
-| competition_name | character | Competition name (Slovenian; the sponsor name changes: Liga Telemach 2007-15, NovaKBM 2015-24, OTP banka 2024-). |
-| competition_type | character | Competition type (code table). |
-| competition_phase_id | integer | Competition-phase id. Joins to `competitions[].competitionPhaseId` on matches and `/competitions/{competitionId}` `phases[].id`. |
-| competition_phase_name | character | Phase name, Slovenian (see `phases[].name`). |
-| transferred | logical | True when the match was carried over from an earlier phase (results transferred). |
-| season_id | integer | Opaque KZS season id (27 = 2026/2027); the sdv season is the END year in season. |
-| season | integer | Season END year (2026/2027 = 2027), from the row's own season name or id, else from the request. |
-| genius_match_id | integer | Genius LiveStats match id parsed from fiba_live_stats_url (org KZS); null before 2015/16. |
-| organiser_team_id | integer | Team id: one club team in one season (Ilirija 2025-26 = 17551). Joins to `/teams/{teamId}`, standings `teamId`, box-score `teamId` and the `teamId` query params. The organising (home) team. |
-| round | integer | Round (matchday) number within the phase. |
-| fiba_live_stats_url | character | Genius Sports LiveStats URL `'https://fibalivestats.dcd.shared.geniussports.com/u/KZS/{geniusMatchId}/'`; the number is the Genius match id that keys genius-livestats/ data.json. Absent before 2015-16 (no live stats). |
-| game_index | integer | Game number within the round (fixture order). |
-| date_time | character | Tip-off, UTC (ISO 8601 'Z'). |
-| attendance | integer | Spectators (0 when not recorded). |
-| first_team_id | integer | Match-team id: this team's entry in this one match (unique per match and side). Joins to play-by-play `matchTeamId`; NOT a team id. First (home) side. |
-| first_team_team_id | integer | Team id: one club team in one season (Ilirija 2025-26 = 17551). Joins to `/teams/{teamId}`, standings `teamId`, box-score `teamId` and the `teamId` query params. |
-| first_team_name | character | First (home) team name; absent on 2007-08 headers. |
-| first_team_home_jersey_color | character | First team home colour, hex. |
-| first_team_guest_jersey_color | character | First team away colour, hex. |
-| first_team_logo_uuid | character | First (home) team logo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
-| first_team_code | character | First team 3-letter code. |
-| first_team_forfeited | logical | True when this team forfeited. |
-| first_team_is_placeholder | logical | True when the slot is a bracket placeholder. |
-| first_team_best_performer_player_id | integer | Player id (KZS player registry). Joins to `/players/{playerId}`, box-score and play-by-play `playerId`. |
-| first_team_best_performer_player_first_name | character | The player's given name as registered with KZS. |
-| first_team_best_performer_player_last_name | character | The player's family name as registered with KZS. |
-| first_team_best_performer_player_photo_uuid | character | Player photo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
-| first_team_best_performer_efficiency | integer | Efficiency (PIR) in the match. |
-| first_team_best_performer_points | integer | Points in the match. |
-| first_team_best_performer_rebounds | integer | Rebounds in the match. |
-| first_team_best_performer_assists | integer | Assists in the match. |
-| first_team_best_performer_steals | integer | Steals in the match. |
-| first_team_best_performer_blocks | integer | Blocks in the match. |
-| second_team_id | integer | Match-team id: this team's entry in this one match (unique per match and side). Joins to play-by-play `matchTeamId`; NOT a team id. Second (away) side. |
-| second_team_team_id | integer | Team id: one club team in one season (Ilirija 2025-26 = 17551). Joins to `/teams/{teamId}`, standings `teamId`, box-score `teamId` and the `teamId` query params. |
-| second_team_name | character | Second (away) team name; absent on 2007-08 headers. |
-| second_team_home_jersey_color | character | Second team home colour, hex. |
-| second_team_guest_jersey_color | character | Second team away colour, hex. |
-| second_team_logo_uuid | character | Second (away) team logo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
-| second_team_code | character | Second team 3-letter code. |
-| second_team_forfeited | logical | True when this team forfeited. |
-| second_team_is_placeholder | logical | True when the slot is a bracket placeholder. |
-| second_team_best_performer_player_id | integer | Player id (KZS player registry). Joins to `/players/{playerId}`, box-score and play-by-play `playerId`. |
-| second_team_best_performer_player_first_name | character | The player's given name as registered with KZS. |
-| second_team_best_performer_player_last_name | character | The player's family name as registered with KZS. |
-| second_team_best_performer_player_photo_uuid | character | Player photo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
-| second_team_best_performer_efficiency | integer | Efficiency (PIR) in the match. |
-| second_team_best_performer_points | integer | Points in the match. |
-| second_team_best_performer_rebounds | integer | Rebounds in the match. |
-| second_team_best_performer_assists | integer | Assists in the match. |
-| second_team_best_performer_steals | integer | Steals in the match. |
-| second_team_best_performer_blocks | integer | Blocks in the match. |
-| sport_hall_id | integer | Sport hall (venue) id. `/sportHalls/{id}` is in the site bundle, not captured. |
-| sport_hall_name | character | Name of the venue (sports hall) where the game is played or the team is based. |
-| first_team_score | integer | First (home) team final score. |
-| second_team_score | integer | Second (away) team final score. |
-| score_inserted_manually | logical | True when the score was typed in by the federation rather than taken from the live-stats feed. |
-| status | character | Match status: FINISHED in every sample (the capture banks final games only); the site also filters POSTPONED matches. |
-| referee1_id | integer | Official id (referee/commissioner registry); a different key space from `person.id`. /referees/ and /commissioners/ are in the site bundle but not captured. |
-| referee1_person_id | integer | Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. |
-| referee1_person_first_name | character | The official's given name. |
-| referee1_person_last_name | character | The official's family name. |
-| referee1_person_gender | character | MALE or FEMALE. |
-| referee1_ranks | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
-| referee2_id | integer | Official id (referee/commissioner registry); a different key space from `person.id`. /referees/ and /commissioners/ are in the site bundle but not captured. |
-| referee2_person_id | integer | Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. |
-| referee2_person_first_name | character | The official's given name. |
-| referee2_person_last_name | character | The official's family name. |
-| referee2_person_gender | character | MALE or FEMALE. |
-| referee2_ranks | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
-| referee3_id | integer | Official id (referee/commissioner registry); a different key space from `person.id`. /referees/ and /commissioners/ are in the site bundle but not captured. |
-| referee3_person_id | integer | Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. |
-| referee3_person_first_name | character | The official's given name. |
-| referee3_person_last_name | character | The official's family name. |
-| referee3_person_gender | character | MALE or FEMALE. |
-| referee3_ranks | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
-| commissioner_id | integer | Official id (referee/commissioner registry); a different key space from `person.id`. /referees/ and /commissioners/ are in the site bundle but not captured. |
-| commissioner_person_id | integer | Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. |
-| commissioner_person_first_name | character | The official's given name. |
-| commissioner_person_last_name | character | The official's family name. |
-| commissioner_person_gender | character | MALE or FEMALE. |
-| commissioner_ranks | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
-| referee_controller_id | integer | Official id (referee/commissioner registry); a different key space from `person.id`. /referees/ and /commissioners/ are in the site bundle but not captured. |
-| referee_controller_person_id | integer | Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. |
-| referee_controller_person_first_name | character | The official's given name. |
-| referee_controller_person_last_name | character | The official's family name. |
-| referee_controller_person_gender | character | MALE or FEMALE. |
-| referee_controller_ranks | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
-| gender | character | MALE or FEMALE. |
-| live_stats | logical | True when the match has live stats (box score and play-by-play). |
-| without_stats | logical | True when the match keeps no statistics. |
-| delegated | logical | True once officials are assigned to the match. |
-| home_jersey_color | character | Home jersey colour, hex '#RRGGBB'. |
-| guest_jersey_color | character | Away jersey colour, hex. |
-| bests | character | Each team's top player per stat. |
-| match_evaluation_id | integer | Id of the officials' evaluation record (internal; no public route). |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_match")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -144,7 +44,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_match(match_id = 101839))
 #> ── KZS Match Header from api.kzs.si ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:31 UTC
+#> ℹ Data updated: 2026-11-09 19:12:42 UTC
 #> # A tibble: 1 × 98
 #>   match_id competition_id competition_name competition_type competition_phase_id
 #>      <int>          <int> <chr>            <chr>                           <int>

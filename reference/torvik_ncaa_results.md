@@ -32,31 +32,12 @@ torvik_ncaa_results(min_year, max_year, type = "team")
 
 ## Value
 
-A `hoopR_data` tibble with one row per team/coach/conference/seed:
-
-|               |           |                                                |
-|---------------|-----------|------------------------------------------------|
-| col_name      | types     | description                                    |
-| rk            | integer   | Rank within the queried split.                 |
-| team          | character | Team / coach / conference / seed (per `type`). |
-| pake          | numeric   | Performance above KenPom expectation (wins).   |
-| pase          | numeric   | Performance above seed expectation (wins).     |
-| wins          | integer   | Total tournament wins.                         |
-| loss          | integer   | Total tournament losses.                       |
-| w_percent     | numeric   | Tournament win percentage.                     |
-| r64           | integer   | Round of 64 appearances.                       |
-| r32           | integer   | Round of 32 appearances.                       |
-| s16           | integer   | Sweet 16 appearances.                          |
-| e8            | integer   | Elite 8 appearances.                           |
-| f4            | integer   | Final 4 appearances.                           |
-| f2            | integer   | Championship-game appearances.                 |
-| champ         | integer   | National championships.                        |
-| top2          | integer   | Top-2 (runner-up or champion) finishes.        |
-| f4_percent    | numeric   | Final 4 rate.                                  |
-| champ_percent | numeric   | Championship rate.                             |
-| min_year      | integer   | Minimum year queried (echoes `min_year`).      |
-| max_year      | integer   | Maximum year queried (echoes `max_year`).      |
-| type          | character | Aggregation level queried (echoes `type`).     |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "torvik_ncaa_results")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 
@@ -72,7 +53,7 @@ Other Torvik Functions:
 ``` r
 # \donttest{
   try(torvik_ncaa_results(min_year = 2010, max_year = 2024, type = "conf"))
-#> ✖ 2026-11-09 17:09:46.343379: Invalid arguments or no NCAA tournament results available!
+#> ✖ 2026-11-09 19:15:42.391986: Invalid arguments or no NCAA tournament results available!
 #> ✖ Args: min_year = 2010, max_year = 2024, type = "conf"
 #> ✖ Error: `clean_names()` requires that either names or dimnames be non-null.
 #> data frame with 0 columns and 0 rows

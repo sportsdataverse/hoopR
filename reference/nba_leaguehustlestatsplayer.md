@@ -247,7 +247,7 @@ nba_leaguehustlestatsteamleaders(
 
 ## Value
 
-Returns a named list of data frames: HustleStatsPlayer
+A named list of tibbles: `HustleStatsPlayer`.
 
 **HustleStatsPlayer**
 
@@ -283,9 +283,9 @@ Returns a named list of data frames: HustleStatsPlayer
 | PCT_BOX_OUTS_TEAM_REB | character |  |
 | PCT_BOX_OUTS_REB | character |  |
 
-Returns a named list of data frames: PlayerChargesDrawnLeaders,
-PlayerContestedShotsLeaders, PlayerDeflectionsLeaders,
-PlayerLooseBallLeaders, PlayerScreenAssistLeaders, Table5
+A named list of tibbles: `PlayerContestedShotsLeaders`,
+`PlayerChargesDrawnLeaders`, `PlayerDeflectionsLeaders`,
+`PlayerLooseBallLeaders`, `PlayerScreenAssistLeaders`, `Table5`.
 
 **PlayerContestedShotsLeaders**
 
@@ -365,7 +365,7 @@ PlayerLooseBallLeaders, PlayerScreenAssistLeaders, Table5
 | RANK              | character | Rank.                                 |
 | BOX_OUTS          | character | Box-outs executed.                    |
 
-Returns a named list of data frames: HustleStatsTeam
+A named list of tibbles: `HustleStatsTeam`.
 
 **HustleStatsTeam**
 
@@ -393,9 +393,9 @@ Returns a named list of data frames: HustleStatsTeam
 | PCT_BOX_OUTS_OFF | character |  |
 | PCT_BOX_OUTS_DEF | character |  |
 
-Returns a named list of data frames: Table5, Table6,
-TeamChargesDrawnLeaders, TeamContestedShotsLeaders,
-TeamDeflectionsLeaders, TeamLooseBallLeaders, TeamScreenAssistLeaders
+A named list of tibbles: `TeamContestedShotsLeaders`,
+`TeamChargesDrawnLeaders`, `TeamDeflectionsLeaders`,
+`TeamLooseBallLeaders`, `TeamScreenAssistLeaders`, `Table5`, `Table6`.
 
 **TeamContestedShotsLeaders**
 

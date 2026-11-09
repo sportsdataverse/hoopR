@@ -46,6 +46,7 @@ space repeated calls with Sys.sleep()."><meta property="og:image" content="https
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -160,12 +161,10 @@ or <code>per_poss</code> (per 100 possessions).</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble with one row per player (columns vary by
-<code>table</code>; common identifying columns shown – column names are
-Basketball-Reference <code>data-stat</code> keys):</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>ranker</td><td>integer</td><td>Row rank.</td></tr><tr><td>player</td><td>character</td><td>Player name.</td></tr><tr><td>age</td><td>integer</td><td>Player age on Feb 1 of the season.</td></tr><tr><td>team_id</td><td>character</td><td>Team abbreviation (<code>TOT</code> for players on &gt;1 team).</td></tr><tr><td>pos</td><td>character</td><td>Position.</td></tr><tr><td>g</td><td>integer</td><td>Games played.</td></tr><tr><td>gs</td><td>integer</td><td>Games started.</td></tr><tr><td>mp_per_g</td><td>numeric</td><td>Minutes (per_game table) / <code>mp</code> total (totals table).</td></tr><tr><td>pts_per_g</td><td>numeric</td><td>Points (scaled to the chosen <code>table</code>).</td></tr><tr><td>season</td><td>integer</td><td>Season (echoes the <code>season</code> argument).</td></tr></table><p>The <code>advanced</code> table adds <code>per</code>, <code>ts_pct</code>, <code>usg_pct</code>, <code>ws</code>, <code>bpm</code>, <code>vorp</code>,
-etc.; <code>totals</code>/<code>per_minute</code>/<code>per_poss</code> return the same box categories scaled
-accordingly.</p>
+    <p>A <code>hoopR_data</code> tibble with one row per player.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "bref_players_stats")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

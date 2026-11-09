@@ -33,55 +33,13 @@ euroleague_people(competition_code, season_code, limit = NULL, offset = NULL)
 
 ## Value
 
-A `hoopR_data` tibble with one row per person-club registration:
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| type | character | Person type code (J = player, E = coach, ...). |
-| type_name | character | Person type name. |
-| active | logical | Whether the record is currently active. |
-| start_date | character | Start date (ISO 8601). |
-| end_date | character | End date (ISO 8601). |
-| order | integer | Display order within the roster. |
-| dorsal | character | Jersey number as displayed. |
-| dorsal_raw | character | Jersey number as stored by the engine. |
-| position | integer | Position code of the player (engine integer). |
-| position_name | character | Position name of the player. |
-| last_team | character | Previous club of the person. |
-| external_id | character | External (statistics-provider) identifier of the person (Utf8 join key). |
-| person_code | character | Person: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| person_name | character | Person: display name. |
-| person_alias | character | Person: short display alias. |
-| person_alias_raw | character | Person: short alias as stored by the engine. |
-| person_passport_name | character | Person: given name as on the passport. |
-| person_passport_surname | character | Person: surname as on the passport. |
-| person_jersey_name | character | Person: name printed on the jersey. |
-| person_abbreviated_name | character | Person: abbreviated display name. |
-| person_country_code | character | Person: ISO country code. |
-| person_country_name | character | Person: country name. |
-| person_height | integer | Person: height in centimetres. |
-| person_weight | integer | Person: weight in kilograms. |
-| person_birth_date | character | Person: date of birth (ISO 8601). |
-| person_birth_country_code | character | Person: birth country: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| person_birth_country_name | character | Person: birth country: display name. |
-| person_twitter_account | character | Person: twitter / X handle. |
-| person_instagram_account | character | Person: instagram handle. |
-| person_facebook_account | character | Person: facebook handle. |
-| person_is_referee | logical | Person: whether the person is a referee. |
-| club_code | character | Club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| club_name | character | Club: display name. |
-| club_abbreviated_name | character | Club: abbreviated display name. |
-| club_editorial_name | character | Club: editorial (long-form) display name. |
-| club_tv_code | character | Club: three-letter broadcast abbreviation of the club. |
-| club_is_virtual | logical | Club: whether the club is a placeholder rather than a real club. |
-| club_images_crest | character | Club: URL of the club crest image. |
-| season_name | character | Season: display name. |
-| season_code | character | Season code: competition code + start year, e.g. E2025 for 2025-26 (Utf8 join key). |
-| season_alias | character | Season: short display alias. |
-| season_competition_code | character | Season: competition code (E = EuroLeague, U = EuroCup; Utf8 join key). |
-| season_year | integer | Season: start year of the season. |
-| season_start_date | character | Season: start date (ISO 8601). |
+A `hoopR_data` tibble with one row per person-club registration. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "euroleague_people")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -109,7 +67,7 @@ lists every function in this family.
     euroleague_people(competition_code = "E", season_code = "E2025", limit = 50)
   })
 #> ── EuroLeague people from api-live.euroleague.net ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:12 UTC
+#> ℹ Data updated: 2026-11-09 19:11:24 UTC
 #> # A tibble: 50 × 48
 #>    type  type_name   active start_date end_date order dorsal dorsal_raw position
 #>    <chr> <chr>       <lgl>  <chr>      <chr>    <int> <chr>  <chr>         <int>

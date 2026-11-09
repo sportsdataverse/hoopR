@@ -543,7 +543,7 @@ nba_iststandings(
 
 ## Value
 
-Return a named list of data frames: LeagueGameLog
+A named list of tibbles: `LeagueGameLog`.
 
 **LeagueGameLog**
 
@@ -580,7 +580,7 @@ Return a named list of data frames: LeagueGameLog
 | PLUS_MINUS | character | Plus/minus point differential while on court. |
 | VIDEO_AVAILABLE | character | Video available. |
 
-Return a named list of data frames: Standings
+A named list of tibbles: `Standings`.
 
 **Standings**
 
@@ -669,7 +669,7 @@ Return a named list of data frames: Standings
 | PreAS                   | character |                              |
 | PostAS                  | character |                              |
 
-Return a named list of data frames: Standings
+A named list of tibbles: `Standings`.
 
 **Standings**
 
@@ -765,9 +765,9 @@ Return a named list of data frames: Standings
 | OppTotalPoints          | character |                              |
 | DiffTotalPoints         | character |                              |
 
-Return a named list of data frames: EastConfPlayoffPicture,
-EastConfRemainingGames, EastConfStandings, WestConfPlayoffPicture,
-WestConfRemainingGames, WestConfStandings
+A named list of tibbles: `EastConfPlayoffPicture`,
+`WestConfPlayoffPicture`, `EastConfStandings`, `WestConfStandings`,
+`EastConfRemainingGames`, `WestConfRemainingGames`.
 
 **EastConfPlayoffPicture**
 
@@ -841,7 +841,7 @@ Same columns as the **EastConfStandings** table above.
 
 Same columns as the **EastConfRemainingGames** table above.
 
-Return a named list of data frames: LeagueGameFinderResults
+A named list of tibbles: `LeagueGameFinderResults`.
 
 **LeagueGameFinderResults**
 
@@ -877,7 +877,7 @@ Return a named list of data frames: LeagueGameFinderResults
 | PF | character | Personal fouls. |
 | PLUS_MINUS | character | Plus/minus point differential while on court. |
 
-Returns a named list of data frames: Standings
+A named list of `hoopR_data` tibbles: `Standings`.
 
 **Standings**
 

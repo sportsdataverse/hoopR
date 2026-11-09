@@ -36,40 +36,12 @@ tbf_schedule(season, competition = "bsl", week = NULL)
 
 ## Value
 
-A `hoopR_data` tibble. One row per game. Scores are null before the
-game; `status_id` 1 = played, 4 = not played, 19 = no date yet. Every
-column below is always present (a zero-row tibble keeps them and their
-types); an answer with nothing in it raises `hoopR_no_data`, as in
-sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. |
-| match_code | character | TBF short game code ('1EA4917'); unique per game, meaning of the letters unverified. |
-| genius_id | integer | Genius Sports LiveStats match id (TBF spells it genuisId); joins the genius family. Null when TBF stored none: every game before 2018-19, many 2021-25 games and games not yet assigned one. |
-| activity_id | integer | Activity id (faaliyet = activity; key space: TBF league-SEASONS, new every season: BSL 2026-27 = 22214, BSL 2025-26 = 20728, TBL 2026-27 = 22215, KBSL 2026-27 = 22209). Cast to an integer from the 22214 / 22214.0 the API sends. |
-| activity_name | character | Activity name ('BSL 2026-2027'). |
-| competition | character | TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). |
-| season_id | integer | Internal TBF season id (key space: TBF seasons, global across leagues: 174 = 2026-2027, 172 = 2025-2026; the odd ids are international UA- seasons). Never an sdv key: use season (END year). |
-| season_label | character | Season label as TBF writes it, 'YYYY-YYYY' (start and end year). |
-| season | integer | Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). |
-| tipoff | POSIXct | Tip-off as a naive timestamp in Turkey local time (Europe/Istanbul, UTC+3); the API sends no offset. |
-| match_date | Date | Tip-off date 'YYYY-MM-DD' (Turkey local). |
-| week | character | Week label: 'N. Hafta' (week N) or the playoff round ('Playoff Final'). |
-| phase | integer | Phase code as an integer: 1 = first half of the regular season; see tbf_weeks. |
-| status_id | integer | Game status code: 1 = played (Oynandi), 4 = not played (Oynanmadi), 19 = fixture without a date and time. Cast to an integer from the 1 / 1.0 the API sends. |
-| home_team_process_id | integer | Team-season id (teamProcessId = takimIslemId, 'team registration'; key space: TBF team registrations, a NEW id per club per league-season: Tofas = 265995 in BSL 2026-27). The TeamProcessId parameter of the /Team/ routes. Not the club id (takimID / teamId of the team lists). |
-| home_team | character | Team name as registered for that season, uppercase with Turkish letters (sponsor name: 'PIZZABULLS BORDO BANDIRMA'). |
-| home_score | integer | Home points (null before the game; the API sends ” ). |
-| away_team_process_id | integer | Team-season id (teamProcessId = takimIslemId, 'team registration'; key space: TBF team registrations, a NEW id per club per league-season: Tofas = 265995 in BSL 2026-27). The TeamProcessId parameter of the /Team/ routes. Not the club id (takimID / teamId of the team lists). |
-| away_team | character | Team name as registered for that season, uppercase with Turkish letters (sponsor name: 'PIZZABULLS BORDO BANDIRMA'). |
-| away_score | integer | Away points (null before the game; the API sends ” ). |
-| venue | character | Venue (salon) name. |
-| province | character | Province (il) of the venue, uppercase Turkish ('ISTANBUL'). |
-| gender | character | Gender in Turkish: Erkek = men, Kadin = women. |
-| broadcast_channel | character | Broadcaster ('beINSports', 'HT SPOR', 'Youtube / TBF TV'), or ”. |
-| has_overtime | logical | Overtime flag (uzatma = overtime). Reliability unverified: false on every one of 64 BSL 2025-26 games checked. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_schedule")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -116,7 +88,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_schedule(competition = "bsl", season = 2027, week = 1))
 #> ── TBF Schedule ───────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:38 UTC
+#> ℹ Data updated: 2026-11-09 19:15:34 UTC
 #> # A tibble: 8 × 25
 #>   match_id match_code genius_id activity_id activity_name competition season_id
 #>      <int> <chr>          <int>       <int> <chr>         <chr>           <int>

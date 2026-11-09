@@ -36,6 +36,7 @@ Endpoint: GET https://data-server.cbaleague.com/api/team-match-datas/getMatchDat
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,8 +140,11 @@ Endpoint: GET https://data-server.cbaleague.com/api/team-match-datas/getMatchDat
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: One row with the is_report flag. An empty valid answer is a zero-row tibble with these
-columns, in this order (sportsdataverse-py <code>cba_report_status</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>schedule_id</td><td>integer</td><td>CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the <code>{scheduleId}</code> of every game route). Stamped by the runtime from the request; null on a body parsed without it.</td></tr><tr><td>is_report</td><td>logical</td><td>True when the game report page exists (equals schedules/day isReport == 1 in every sample).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "cba_report_status")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="cba_seasons.html">cba_seasons()</a></code>.</p>

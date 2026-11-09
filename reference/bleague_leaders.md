@@ -37,28 +37,13 @@ bleague_leaders(schedule_key, season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| schedule_key | integer | B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The {schedule_key} every game wrapper takes and the schedule page's list-item id. |
-| season | integer | Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. |
-| feed | character | Source feed of the row: v2 (v2_genius_contexts, B1/B2 from 2020-21) or v1 (v1_contexts: B3, B1/B2 2018-2020, and the 2016-17 / 2017-18 game-page embed). The feeds differ in id types, dates and some codes. |
-| period_category | integer | Period category: 1-4 = quarters 1-4, 15 = first half, 16 = second half, 18 = whole game. Overtime codes are unverified. |
-| category | integer | Leader category code, decoded by matching count to the box score: 1 points, 2 assists, 3 steals, 4 blocks, 5 rebounds, 8 shots blocked. |
-| category_name | character | English name of category (points, assists, steals, blocks, rebounds, blocks_received); null for an unknown code. |
-| rank | integer | Rank within the team for the category (1 = best; ties share a rank). |
-| tie_order | integer | Order within a tied rank (1 = first listed). |
-| team_side | character | Side of the game the row belongs to: home or away. |
-| team_id | character | B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. |
-| team_name_j | character | Team name in Japanese (official name, e.g. Alvark Tokyo). |
-| player_id | character | B.LEAGUE PlayerID as text (key space: B.LEAGUE persons, stable across seasons and clubs: Makoto Hiejima = '8589'). A string on v2, an integer on v1; both are text here. Null where the row names no player. |
-| player_no | character | Shirt number as text, so '00' and '0' stay distinct; null on team and game-level rows. |
-| player_name_j | character | Player name in Japanese (katakana for foreign players); null on team and game-level rows. |
-| count | integer | The player's value in the category for the period category. |
-| reb_off_count | integer | Offensive-rebound count carried on the row (filled for the rebounds category). |
-| reb_def_count | integer | Defensive-rebound count carried on the row (filled for the rebounds category). |
+A `hoopR_data` tibble with one row per period, statistic and rank. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bleague_leaders")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

@@ -29,32 +29,12 @@ scb_playoff_series(season, league = "bbl")
 
 ## Value
 
-A `hoopR_data` tibble: Playoff bracket of a season: one row per series
-(quarter-finals, semi-finals, finals). An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `scb_playoff_series`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| league | character | League the row belongs to: `bbl` (men) or `dbbl` (women); BBL and DBBL game ids overlap, so a game is (league, game_id). |
-| season | integer | Season END year (2026 = 2025-26), the sdv key; the API's `season_id` plus one. |
-| season_id | integer | Season, START year (2026 = 2026-27). |
-| round | character | Round of the bracket: `quarter_finals`, `semi_finals` or `finals`. |
-| series | integer | 1-based position of the series within its round, in the order the API lists them. |
-| match_winner_id | character | Season-team id of the series winner, a string (the playoff tree sends an integer). |
-| is_match_finished | logical | The series is decided. |
-| team_a_id | character | Season-team id of series team A (the higher seed is A), a string (the playoff tree sends it as an integer); equals the club team id. |
-| team_a_name | character | Name of series team A (the higher seed is A) as listed that season. |
-| team_a_tlc | character | Three-letter club code of series team A (the higher seed is A). |
-| team_a_rank | integer | Regular-season table position (the seed) of series team A (the higher seed is A). |
-| team_a_victories | integer | Series wins of team A. |
-| team_b_id | character | Season-team id of series team B (the higher seed is A), a string (the playoff tree sends it as an integer); equals the club team id. |
-| team_b_name | character | Name of series team B (the higher seed is A) as listed that season. |
-| team_b_tlc | character | Three-letter club code of series team B (the higher seed is A). |
-| team_b_rank | integer | Regular-season table position (the seed) of series team B (the higher seed is A). |
-| team_b_victories | integer | Series wins of team B. |
-| games | integer | Games of the series. |
+A `hoopR_data` tibble with one row per series. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "scb_playoff_series")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

@@ -27,17 +27,12 @@ acb_period_scores(match_id)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py
-`acb_period_scores`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. |
-| quarter | integer | Period number: 1-4 quarters, 5+ overtimes (a finished game lists every period played). |
-| home_score | integer | Points the home team scored IN this period (not cumulative). |
-| away_score | integer | Points the away team scored IN this period (not cumulative). |
+A `hoopR_data` tibble with one row per period. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_period_scores")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -56,7 +51,7 @@ lists every function in this family.
 # \donttest{
   try(acb_period_scores(match_id = 105401))
 #> ── ACB Period Scores from api2.acb.com ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:32 UTC
+#> ℹ Data updated: 2026-11-09 19:08:50 UTC
 #> # A tibble: 4 × 4
 #>   match_id quarter home_score away_score
 #>      <int>   <int>      <int>      <int>

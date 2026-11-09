@@ -35,29 +35,12 @@ feb_schedule(group, season)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| group | integer | The site's menu group (1 Primera FEB, 2 Segunda FEB, 4 Liga Femenina Endesa); not a competition id. |
-| season | integer | Season END year (2027 = 2026-27), the site's START-year key plus one. |
-| competition | character | Competition name on the page header ('PRIMERA FEB'). |
-| round | integer | Round number (jornada) the game belongs to. |
-| round_label | character | Round heading as printed ('Jornada 4 16/10/2026'). |
-| round_date | Date | Date of the round (the heading's date); played games carry no date of their own on this page. |
-| game_id | integer | FEB game id (one global sequence): the {gameId} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request. |
-| home_team_id | integer | Home team-season id (new every season; joins feb_overview and the game wrappers). |
-| home_team | character | Home team name, uppercase. |
-| away_team_id | integer | Away team-season id (new every season). |
-| away_team | character | Away team name, uppercase. |
-| result_text | character | Result cell verbatim: 'home-away' points when played; before the game the calendar shows the Spanish weekday, date and time and the results page shows '*-*'. |
-| home_score | integer | Home points; null before the game. |
-| away_score | integer | Away points; null before the game. |
-| status | character | played when the result cell holds a score, scheduled otherwise. |
-| weekday | character | English weekday of a scheduled game (translated from the Spanish cell); null for played games. |
-| date | Date | Game date; null for played games on the schedule page (use round_date). |
-| time | character | Tip-off 'HH:MM', Spanish local time; null for played games on the schedule page. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "feb_schedule")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -85,7 +68,7 @@ Other FEB Functions:
 # \donttest{
   try(feb_schedule(group = 1, season = 2027))
 #> ── FEB schedule from baloncestoenvivo.feb.es ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:24 UTC
+#> ℹ Data updated: 2026-11-09 19:11:37 UTC
 #> # A tibble: 306 × 18
 #>    group season competition round round_label    round_date game_id home_team_id
 #>    <int>  <int> <chr>       <int> <chr>          <date>       <int>        <int>

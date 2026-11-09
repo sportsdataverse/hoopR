@@ -36,6 +36,7 @@ Get betting line providers from the CollegeBasketballData API."><meta property="
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -163,23 +164,28 @@ Defaults to <code><a href="most_recent_mbb_season.html">most_recent_mbb_season()
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble with one row per game. The <code>lines</code> column is a
-nested list of per-provider lines:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>CollegeBasketballData game id.</td></tr><tr><td>season</td><td>integer</td><td>Season (4-digit ending-year).</td></tr><tr><td>season_type</td><td>character</td><td>Season type.</td></tr><tr><td>start_date</td><td>character</td><td>Game start date (ISO 8601).</td></tr><tr><td>home_team_id</td><td>integer</td><td>Home team id.</td></tr><tr><td>home_team</td><td>character</td><td>Home team name.</td></tr><tr><td>home_conference</td><td>character</td><td>Home team conference.</td></tr><tr><td>home_score</td><td>numeric</td><td>Home team final score.</td></tr><tr><td>away_team_id</td><td>integer</td><td>Away team id.</td></tr><tr><td>away_team</td><td>character</td><td>Away team name.</td></tr><tr><td>away_conference</td><td>character</td><td>Away team conference.</td></tr><tr><td>away_score</td><td>numeric</td><td>Away team final score.</td></tr><tr><td>lines</td><td>list</td><td>Nested list of per-provider betting lines.</td></tr></table><p>A <code>hoopR_data</code> tibble with one row per line provider:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>integer</td><td>Line provider id.</td></tr><tr><td>name</td><td>character</td><td>Line provider name.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "cbbd_lines")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+<p>A <code>hoopR_data</code> tibble with one row per line provider.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "cbbd_lines_providers")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cbbd_lines</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 17:03:30.819848: Invalid arguments or no betting lines available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 19:09:47.223617: Invalid arguments or no betting lines available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: season = 2024, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cbbd_lines_providers</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 17:03:30.828944: Invalid arguments or no line providers available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 19:09:47.234634: Invalid arguments or no line providers available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>

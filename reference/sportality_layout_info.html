@@ -36,6 +36,7 @@ Endpoint: GET https://www.basketligaen.dk/api/statistics-v2/layout-info"><meta p
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -130,9 +131,11 @@ Endpoint: GET https://www.basketligaen.dk/api/statistics-v2/layout-info"><meta p
 
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Directory of every ssgt (season + series + game type) with its teams, and the stats
-modules. An empty valid answer raises <code>hoopR_no_data</code>; the documented columns come first, in this order
-(sportsdataverse-py <code>sportality_layout_info</code>), then any column the API added later:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025/26).</td></tr><tr><td>season_code</td><td>character</td><td>Provider season code: the START year (2025 = 2025/26).</td></tr><tr><td>season_name</td><td>character</td><td>Season name as 'YYYY/YYYY' (start/end year).</td></tr><tr><td>game_type</td><td>character</td><td>Game type of the game (” on every line seen).</td></tr><tr><td>game_type_name</td><td>character</td><td>Game type name in Danish (Grundspil = regular season, Slutspil = playoffs).</td></tr><tr><td>series_code</td><td>character</td><td>Series code (DBL = Basketligaen).</td></tr><tr><td>ssgt_uuid</td><td>character</td><td>ssgt uuid (platform key space: one season + series + game type); joins /statistics-v2/layout-info <code>seasonSeriesGameTypeTeams[].ssgtUuid</code> and every route keyed by ssgt.</td></tr><tr><td>state</td><td>character</td><td>Game state. Schedule and day views: pre-game or post-game (hyphen). sports-v2 game-info: post_game (underscore). Gameday overview: GameEnded. Values: <code>active</code> = current ssgt; <code>closed</code> = past ssgt.</td></tr><tr><td>season_uuid</td><td>character</td><td>Season uuid (platform key space).</td></tr><tr><td>series_uuid</td><td>character</td><td>Series uuid (platform key space).</td></tr><tr><td>game_type_uuid</td><td>character</td><td>Game type uuid (platform key space).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per season-series-game type (ssgt).
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "sportality_layout_info")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="sportality_schedule.html">sportality_schedule()</a></code>.</p>

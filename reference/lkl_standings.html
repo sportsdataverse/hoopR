@@ -36,6 +36,7 @@ Endpoint: GET https://lkl.lt/loadStandings/{season}"><meta property="og:image" c
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -140,15 +141,11 @@ results id and a standings id, neither a year); the runtime reads them from the 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble. One row per team and table. <code>table</code> is <code>full</code> (overall: with <code>win_pct</code> and <code>streak</code>),
-<code>home</code> and <code>away</code> (the same record split by venue) or <code>final</code> (the final ranking: position and team only, empty
-until the season is over and for old seasons). <code>win_pct</code> is 0-100, null when the site shows <code>-</code> (2007-08). <code>streak</code>
-is a signed integer as the site prints it; its sign convention is unverified. <code>points_for_avg</code> /
-<code>points_against_avg</code> are per-game averages. <code>last5</code> is the last results as <code>W</code> / <code>L</code> letters in the order rendered
-(oldest first, unverified). <code>season_id</code> is the site's standings-season id, a different key space from the results
-id. Team slugs join <code>lkl_results</code>. A record without tables gives a zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises <code>hoopR_no_data</code>, as in sportsdataverse-py.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season_id</td><td>integer</td><td>STANDINGS season id (a separate small key space: 35 = 2026-27, 1 = 2016-17, 24 = 1993-94); NOT the results season id.</td></tr><tr><td>season_end_year</td><td>integer</td><td>Season END year (2026 = 2025-26), read from the season label 'YYYY-YYYY m. sezonas'.</td></tr><tr><td>table</td><td>character</td><td>Which table the row comes from: full (overall), home, away or final (the final ranking).</td></tr><tr><td>position</td><td>integer</td><td>Rank in the table (Poz.); in the final table the final place.</td></tr><tr><td>team_slug</td><td>character</td><td>Team slug (key space: lkl.lt clubs; the <code>{slug}</code> of https://lkl.lt/komandos/<code>{slug}</code>; one per club, stable across renamings: 'rytas' for Lietuvos Rytas / Rytas). The results and standings rows carry only this; the game page teams_info gives slug + id.</td></tr><tr><td>team_name</td><td>character</td><td>Team name as printed for that season ('Lietuvos Rytas' in 2007-08).</td></tr><tr><td>played</td><td>integer</td><td>Games played (Rng., rungtynes); null in the final table.</td></tr><tr><td>won</td><td>integer</td><td>Wins (Per., pergales); null in the final table.</td></tr><tr><td>lost</td><td>integer</td><td>Losses (Pr., pralaimejimai); null in the final table.</td></tr><tr><td>win_pct</td><td>double</td><td>Win percentage 0-100 (Laim.%); null in the home, away and final tables and when the site prints '-' (2007-08).</td></tr><tr><td>streak</td><td>integer</td><td>Current streak (Serija) as a signed integer: 27 = 27 wins in a row, -1 = one loss. Null outside the full table.</td></tr><tr><td>points_for_avg</td><td>double</td><td>Points scored per game (first number of Tsk. vid.); null in the final table.</td></tr><tr><td>points_against_avg</td><td>double</td><td>Points allowed per game (second number of Tsk. vid.); null in the final table.</td></tr><tr><td>last5</td><td>character</td><td>Last five results (Paskutines 5) as W / L letters in the order the page renders them, left to right; fewer than five early in a season; null in the final table.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per team and table.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "lkl_standings")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and

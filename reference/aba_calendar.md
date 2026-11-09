@@ -29,41 +29,12 @@ aba_calendar(season, league = "aba")
 
 ## Value
 
-A `hoopR_data` tibble. One row per game in page order (one accordion
-panel per `round`), keyed by (`game_no`, `season`, `league_id`). Scores
-are null for a game not played yet. The calendar carries club NAMES and
-three-letter codes only (no team ids): join to the box score on
-`game_no`. `when` is the cell verbatim; `date` / `date_to` / `time` are
-split from it (null for `TBA` or a date window). `time_zone` is `CET`
-(Central European wall-clock time including summer time) or `local` (ABA
-League 2). `group` is the group letter, null after the groups and absent
-on seasons without a Group column. Every column below is always present
-(a zero-row tibble keeps them and their types); an answer with nothing
-in it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_no | integer | Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The {gameNo} of the match route. |
-| season | integer | Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. |
-| league_id | integer | League code, the site's lea: 1 = ABA League, 2 = ABA League 2. |
-| league | character | League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. |
-| season_label | character | Season label as the page prints it ('2025/26' on the match page, 'Season 2025/26' on the calendar and standings pages). |
-| round | character | Round or phase label, the accordion panel title ('ROUND 1', 'Top8 - R1', 'Quarter-finals, Round 1', 'Finals, Round 4'). |
-| group | character | Group letter ('A', 'B') from the Group column, which exists only in seasons with groups; null after the groups (Top8, Play-out, playoffs) and where the page has no Group column. |
-| home_team | character | Home club name as the site prints it now (see the match page's game.home_team). Null while a playoff pairing is not set (' : '): seen on the live 2026-27 page (122 of 302 games), which is NOT banked, so no committed sample shows it. |
-| away_team | character | Away club name; null like home_team while a pairing is not set (live 2026-27 page, not banked). |
-| home_abbr | character | Home club's three-letter code ('PAR', 'CZV'), from the mobile copy of the cell. |
-| away_abbr | character | Away club's three-letter code. |
-| home_score | integer | Home final score. Null for a game not played yet (empty Result cell): seen on the live 2026-27 page (282 of 302 games), which is NOT banked. |
-| away_score | integer | Away final score; null like home_score for a game not played yet (live 2026-27 page, not banked). |
-| when | character | Date and Time cell verbatim: 'Monday, 06.10.2025 18:00 CET', with '(19:00 Dubai local time)' for arenas outside Central Europe, 'Local time' on ABA League 2, a date window or 'TBA' before scheduling. |
-| date | Date | Game date, from the date-and-time line (the first date of a window); null for 'TBA'. |
-| date_to | Date | Last date of a 'dd.mm.yyyy - dd.mm.yyyy' window printed before a game is scheduled; null on a game with a single date. |
-| time | character | Tip-off 'hh:mm' in time_zone. Null when only a date window or 'TBA' is printed (live 2026-27 page, NOT banked). |
-| time_zone | character | 'CET' = Central European wall-clock time INCLUDING summer time (CET in winter, CEST in summer; the label never changes); 'local' = arena local time ('Local time', ABA League 2). Null with a date window or 'TBA' (live 2026-27 page, NOT banked). |
-| local_time | character | Arena-local tip-off 'hh:mm' when the arena is outside Central Europe ('(19:00 Dubai local time)'); null otherwise. |
-| local_place | character | City of local_time ('Dubai', 'Cluj-Napoca'); null when the arena is in Central Europe. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "aba_calendar")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -123,26 +94,10 @@ Other ABA Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
+  # Interactive only: the season calendar page can take 20+ s to answer.
   try(aba_calendar(season = 2026))
-#> ── ABA League Calendar ────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:18 UTC
-#> # A tibble: 248 × 20
-#>    game_no season league_id league season_label  round group home_team away_team
-#>      <int>  <int>     <int> <chr>  <chr>         <chr> <chr> <chr>     <chr>    
-#>  1       3   2026         1 aba    Season 2025/… ROUN… A     Igokea m… FMP      
-#>  2       8   2026         1 aba    Season 2025/… ROUN… B     BC Vienna Perspekt…
-#>  3       4   2026         1 aba    Season 2025/… ROUN… A     SC Derby  Borac Mo…
-#>  4       7   2026         1 aba    Season 2025/… ROUN… B     Cedevita… Mega Sup…
-#>  5       6   2026         1 aba    Season 2025/… ROUN… B     Budućnos… Spartak …
-#>  6       2   2026         1 aba    Season 2025/… ROUN… A     Dubai Ba… Split    
-#>  7       1   2026         1 aba    Season 2025/… ROUN… A     Partizan… Krka     
-#>  8       5   2026         1 aba    Season 2025/… ROUN… B     Crvena z… Zadar    
-#>  9       9   2026         1 aba    Season 2025/… ROUN… A     Split     Partizan…
-#> 10      12   2026         1 aba    Season 2025/… ROUN… A     FMP       SC Derby 
-#> # ℹ 238 more rows
-#> # ℹ 11 more variables: home_abbr <chr>, away_abbr <chr>, home_score <int>,
-#> #   away_score <int>, when <chr>, date <date>, date_to <date>, time <chr>,
-#> #   time_zone <chr>, local_time <chr>, local_place <chr>
 # }
+}
 ```

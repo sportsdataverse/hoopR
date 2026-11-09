@@ -30,24 +30,12 @@ genius_widget_games(widget_key, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (a zero-row tibble with these columns when Genius
-answers an empty valid page), or the raw list when
-`return_parsed = FALSE`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | From the webcast link. Genius match id: the {matchId} of data.json and /u/; one global sequence across every Genius customer (~0.3 M in 2016, ~2.9 M in Oct 2026) |
-| webcast_org | character | ORG code of the webcast link; can differ from the hosted ORG (NZNBL games link /webcast/NZN/) |
-| competition_name | character | Competition label, free text |
-| status | character | Status text as shown ('Final', 'Live', a tip-off time) |
-| date | character | Date as shown, 'DD/MM/YYYY' in samples (format follows the widget locale; unverified for others) |
-| home_team_id | integer | Home team from the `tid<N>` class. Genius team id (warehouse key space, global across orgs and seasons; the /team/{id} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code |
-| home_team_code | character | Home team short code from the widget, in the local script when the org enters one. |
-| home_score | integer | Home points; null before tip-off (typed integer only on a route whose 3 sampled rows were all played) |
-| away_team_id | integer | Away team from the `tid<N>` class. Genius team id (warehouse key space, global across orgs and seasons; the /team/{id} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code |
-| away_team_code | character | Away team short code from the widget, in the local script when the org enters one. |
-| away_score | integer | Away points; null before tip-off (typed integer only on a route whose 3 sampled rows were all played) |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "genius_widget_games")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

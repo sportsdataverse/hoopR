@@ -25,20 +25,13 @@ acb_competition_editions(competition_ids = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py
-`acb_competition_editions`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa. |
-| competition_name | character | The API's competition name ('Liga Nacional' for the Liga). |
-| edition_id | integer | Season id (START year - 1935). |
-| season_start_year | integer | Calendar year the season starts (2026 for 2026-27). |
-| season | integer | Season END year (2027 for 2026-27) = seasonEndYear. |
-| n_rounds | integer | Rounds the edition lists. |
-| n_weeks | integer | Weeks the edition lists. |
+A `hoopR_data` tibble with one row per edition. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_competition_editions")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

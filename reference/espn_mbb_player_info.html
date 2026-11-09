@@ -40,6 +40,7 @@ Get ESPN NBA Athlete Info"><meta property="og:image" content="https://raw.github
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -152,15 +153,21 @@ forward compatibility. Proxy configuration should use
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A named list of data frames: <code>Bio</code>, <code>Team</code>, <code>Position</code>,
-<code>Status</code>, <code>College</code>, <code>Draft</code>.</p>
+    <p>A named list of <code>hoopR_data</code> tibbles: <code>Bio</code>, <code>Team</code>, <code>Position</code>, <code>Status</code>, <code>College</code>, <code>Draft</code>.</p>
 <p><strong>Bio</strong></p>
-<p>Columns as documented in the shared <a href="espn_mbb_player_info_bio_schema.html">espn_mbb_player_info_bio_schema</a> table.</p>
-<p><strong>Team</strong></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>abbreviation</td><td>character</td><td>Short abbreviation.</td></tr><tr><td>display_name</td><td>character</td><td>Display name.</td></tr></table><p><strong>Position</strong></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>name</td><td>character</td><td>Display name.</td></tr><tr><td>abbreviation</td><td>character</td><td>Short abbreviation.</td></tr></table><p><strong>Status</strong></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>name</td><td>character</td><td>Display name.</td></tr><tr><td>type</td><td>character</td><td>Record type / category.</td></tr></table><p><strong>College</strong></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>name</td><td>character</td><td>Display name.</td></tr><tr><td>mascot</td><td>character</td><td>Team mascot.</td></tr></table><p><strong>Draft</strong></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>year</td><td>character</td><td>4-digit year.</td></tr><tr><td>round</td><td>character</td><td>Tournament / playoff round.</td></tr><tr><td>selection</td><td>character</td><td></td></tr></table><p>A named list of data frames: <code>Bio</code>, <code>Team</code>, <code>Position</code>,
-<code>Status</code>, <code>College</code>, <code>Draft</code>.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>full_name</td><td>character</td><td>Player's full name.</td></tr><tr><td>display_name</td><td>character</td><td>Display name.</td></tr><tr><td>jersey</td><td>character</td><td>Jersey number worn by the player.</td></tr><tr><td>age</td><td>character</td><td>Player age (in years).</td></tr><tr><td>date_of_birth</td><td>character</td><td>Date of birth (YYYY-MM-DD).</td></tr><tr><td>headshot_href</td><td>character</td><td>Headshot image URL.</td></tr></table><p><strong>Team</strong></p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>abbreviation</td><td>character</td><td>Short abbreviation.</td></tr><tr><td>display_name</td><td>character</td><td>Display name.</td></tr></table><p><strong>Position</strong></p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>name</td><td>character</td><td>Display name.</td></tr><tr><td>abbreviation</td><td>character</td><td>Short abbreviation.</td></tr></table><p><strong>Status</strong></p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>name</td><td>character</td><td>Display name.</td></tr><tr><td>type</td><td>character</td><td>Record type / category.</td></tr></table><p><strong>College</strong></p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>name</td><td>character</td><td>Display name.</td></tr><tr><td>mascot</td><td>character</td><td>Team mascot.</td></tr></table><p><strong>Draft</strong></p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>year</td><td>character</td><td>4-digit year.</td></tr><tr><td>round</td><td>character</td><td>Tournament / playoff round.</td></tr><tr><td>selection</td><td>character</td><td></td></tr></table><p>A named list of <code>hoopR_data</code> tibbles: <code>Bio</code>, <code>Team</code>, <code>Position</code>, <code>Status</code>, <code>College</code>, <code>Draft</code>.</p>
 <p><strong>Bio</strong></p>
-<p>Columns as documented in the shared <a href="espn_mbb_player_info_bio_schema.html">espn_mbb_player_info_bio_schema</a> table.</p>
-<p><strong>Team</strong></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>abbreviation</td><td>character</td><td>Short abbreviation.</td></tr><tr><td>display_name</td><td>character</td><td>Display name.</td></tr></table><p><strong>Position</strong></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>name</td><td>character</td><td>Display name.</td></tr><tr><td>abbreviation</td><td>character</td><td>Short abbreviation.</td></tr></table><p><strong>Status</strong></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>name</td><td>character</td><td>Display name.</td></tr><tr><td>type</td><td>character</td><td>Record type / category.</td></tr></table><p><strong>College</strong></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>name</td><td>character</td><td>Display name.</td></tr><tr><td>mascot</td><td>character</td><td>Team mascot.</td></tr></table><p><strong>Draft</strong></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>year</td><td>character</td><td>4-digit year.</td></tr><tr><td>round</td><td>character</td><td>Tournament / playoff round.</td></tr><tr><td>selection</td><td>character</td><td></td></tr></table></div>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>full_name</td><td>character</td><td>Player's full name.</td></tr><tr><td>display_name</td><td>character</td><td>Display name.</td></tr><tr><td>jersey</td><td>character</td><td>Jersey number worn by the player.</td></tr><tr><td>age</td><td>character</td><td>Player age (in years).</td></tr><tr><td>date_of_birth</td><td>character</td><td>Date of birth (YYYY-MM-DD).</td></tr><tr><td>headshot_href</td><td>character</td><td>Headshot image URL.</td></tr></table><p><strong>Team</strong></p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>abbreviation</td><td>character</td><td>Short abbreviation.</td></tr><tr><td>display_name</td><td>character</td><td>Display name.</td></tr></table><p><strong>Position</strong></p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>name</td><td>character</td><td>Display name.</td></tr><tr><td>abbreviation</td><td>character</td><td>Short abbreviation.</td></tr></table><p><strong>Status</strong></p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>name</td><td>character</td><td>Display name.</td></tr><tr><td>type</td><td>character</td><td>Record type / category.</td></tr></table><p><strong>College</strong></p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Id.</td></tr><tr><td>name</td><td>character</td><td>Display name.</td></tr><tr><td>mascot</td><td>character</td><td>Team mascot.</td></tr></table><p><strong>Draft</strong></p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>year</td><td>character</td><td>4-digit year.</td></tr><tr><td>round</td><td>character</td><td>Tournament / playoff round.</td></tr><tr><td>selection</td><td>character</td><td></td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p><a href="family_espn_mbb.html">family_espn_mbb</a> lists every function in this family.</p>
@@ -177,7 +184,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-in"><span>  <span class="fu">espn_mbb_player_info</span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="st">"4593919"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Bio</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Bio from ESPN.com ─────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:24 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:42 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 18</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   id      uid       guid  first_name last_name full_name display_name short_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
@@ -188,7 +195,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Team</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Team from ESPN.com ────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:24 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:42 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 1</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   x_ref                                                                         </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                         </span>
@@ -196,7 +203,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Position</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Position from ESPN.com ── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:24 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:42 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   id    name  display_name abbreviation leaf </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span></span>
@@ -204,7 +211,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Status</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Status from ESPN.com ──── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:24 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:42 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   id    name     type     abbreviation</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
@@ -212,12 +219,12 @@ forward compatibility. Proxy configuration should use
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $College</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete College from ESPN.com ─── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:24 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:42 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Draft</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Draft from ESPN.com ───── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:24 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:42 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
@@ -225,7 +232,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-in"><span>  <span class="fu">espn_nba_player_info</span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="st">"1966"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Bio</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Athlete Bio from ESPN.com ─────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:24 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:42 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 21</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   id    uid         guid  first_name last_name full_name display_name short_name</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
@@ -237,7 +244,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Team</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Athlete Team from ESPN.com ────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:24 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:42 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 1</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   x_ref                                                                         </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                         </span>
@@ -245,7 +252,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Position</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Athlete Position from ESPN.com ────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:24 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:42 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   id    name    display_name abbreviation leaf </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span></span>
@@ -253,7 +260,7 @@ forward compatibility. Proxy configuration should use
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Status</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Athlete Status from ESPN.com ──────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:24 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:42 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   id    name   type   abbreviation</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
@@ -261,12 +268,12 @@ forward compatibility. Proxy configuration should use
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $College</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Athlete College from ESPN.com ─────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:24 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:42 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Draft</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Athlete Draft from ESPN.com ───────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:24 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:42 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   year  round selection display_text               </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                      </span>

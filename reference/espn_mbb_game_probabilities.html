@@ -40,6 +40,7 @@ Get ESPN NBA Event Win Probabilities"><meta property="og:image" content="https:/
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -155,11 +156,9 @@ Defaults to <code>200</code>. Pagination is handled internally.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A tibble with one row per play-level win-probability entry.</p>
-<p>Columns as documented in the shared <a href="espn_mbb_game_probabilities_schema.html">espn_mbb_game_probabilities_schema</a> table.</p>
-<p>A tibble with one row per play-level win-probability entry.</p>
-<p>Columns as documented in the shared <a href="espn_mbb_game_probabilities_schema.html">espn_mbb_game_probabilities_schema</a> table.</p>
-    </div>
+    <p>A <code>hoopR_data</code> tibble with one row per play-level win-probability entry.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>event_id</td><td>character</td><td>Unique event / game identifier (ESPN).</td></tr><tr><td>sequence_number</td><td>character</td><td>Sequence number representing a shot-possession (V3 PBP).</td></tr><tr><td>play_id</td><td>character</td><td>Unique play identifier within a game.</td></tr><tr><td>period</td><td>integer</td><td>Period of the game (1-4 quarters; 5+ for OT).</td></tr><tr><td>clock</td><td>character</td><td>Game clock value.</td></tr><tr><td>home_win_percentage</td><td>numeric</td><td>Home win percentage (0-1 decimal).</td></tr><tr><td>away_win_percentage</td><td>numeric</td><td>Away win percentage (0-1 decimal).</td></tr><tr><td>tie_percentage</td><td>numeric</td><td>Tie percentage (0-1 decimal).</td></tr><tr><td>secs_to_end_of_period</td><td>numeric</td><td></td></tr><tr><td>secs_to_end_of_game</td><td>numeric</td><td></td></tr></table><p>A <code>hoopR_data</code> tibble with one row per play-level win-probability entry.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>event_id</td><td>character</td><td>Unique event / game identifier (ESPN).</td></tr><tr><td>sequence_number</td><td>character</td><td>Sequence number representing a shot-possession (V3 PBP).</td></tr><tr><td>play_id</td><td>character</td><td>Unique play identifier within a game.</td></tr><tr><td>period</td><td>integer</td><td>Period of the game (1-4 quarters; 5+ for OT).</td></tr><tr><td>clock</td><td>character</td><td>Game clock value.</td></tr><tr><td>home_win_percentage</td><td>numeric</td><td>Home win percentage (0-1 decimal).</td></tr><tr><td>away_win_percentage</td><td>numeric</td><td>Away win percentage (0-1 decimal).</td></tr><tr><td>tie_percentage</td><td>numeric</td><td>Tie percentage (0-1 decimal).</td></tr><tr><td>secs_to_end_of_period</td><td>numeric</td><td></td></tr><tr><td>secs_to_end_of_game</td><td>numeric</td><td></td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p><a href="family_espn_mbb.html">family_espn_mbb</a> lists every function in this family.</p>
@@ -175,7 +174,7 @@ Defaults to <code>200</code>. Pagination is handled internally.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_game_probabilities</span><span class="op">(</span>event_id <span class="op">=</span> <span class="st">"401256760"</span>, limit <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Event Probabilities (event_id=401256760) from ES</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:18 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:37 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 50 × 10</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    event_id  sequence_number play_id period clock home_win_percentage</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
@@ -196,7 +195,7 @@ Defaults to <code>200</code>. Pagination is handled internally.</p></dd>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_game_probabilities</span><span class="op">(</span>event_id <span class="op">=</span> <span class="st">"401283399"</span>, limit <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Event Probabilities (event_id=401283399) from ESPN.com ─────────────</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:04:18 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:10:37 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 50 × 10</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    event_id  sequence_number play_id period clock home_win_percentage</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>

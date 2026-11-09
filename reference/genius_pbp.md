@@ -38,38 +38,13 @@ genius_pbp(match_id, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (a zero-row tibble with these columns when Genius
-answers an empty valid page), or the raw list when
-`return_parsed = FALSE`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | Genius match id of the game. data.json does not carry it: it is the match_id asked for, stamped by the runtime (the global match sequence shared by every Genius customer). |
-| row_index | integer | Position of the action in the feed order, 0 = the newest action by game time (normally the game end row). The feed is not strictly sorted by action_number, so sort on action_number for entry order. |
-| action_number | integer | Action sequence number, unique within the game (gaps where actions were deleted); a shot joins its play-by-play row on it. Null in the 2014-15 feed. |
-| previous_action | integer | action_number of the linked earlier action (the shot an assist or rebound belongs to); null when the feed sends an empty string. |
-| period | integer | Period number; restarts at 1 for the first overtime (read it with period_type). |
-| period_type | character | Period type: REGULAR or OVERTIME. |
-| gt | character | Game clock, 'mm:ss' remaining in the period |
-| clock | character | Game clock with hundredths, 'mm:ss:cc' remaining in the period; absent in older feeds (the 2014-15 WBBL sample has gt only) |
-| tno | integer | Team number within this game: 1 = the team listed first (home on the hosted schedule and widget), 2 = the other, 0 = no team. In-game only: not a team id. |
-| pno | integer | Player number within this game, the key of the team's player map; 0 = no player. In-game only: not a person id and not the shirt number. |
-| player | character | Player display name; ” when no player |
-| shirt_number | character | Player shirt number (string); ” when no player |
-| first_name | character | Given name in the competition's own script and spelling (Greek, Hebrew, Czech, ... as entered) |
-| family_name | character | Family name in the competition's own script |
-| international_first_name | character | Given name in Latin script |
-| international_family_name | character | Family name in Latin script (often upper case) |
-| scoreboard_name | character | Short display name ('T. Nichols'), in the local script when the org enters one |
-| action_type | character | Action type: 2pt, 3pt, freethrow, rebound, assist, turnover, steal, block, foul, foulon (foul drawn), substitution, timeout, jumpball, period, game, headcoachchallenge |
-| sub_type | character | Action subtype, free-text code per actionType: shot type for 2pt/3pt (layup, drivinglayup, jumpshot, pullupjumpshot, turnaroundjumpshot, ...), 'in'/'out' for substitutions, 'start'/'end' for period and game, foul kind for fouls; empty string when none |
-| qualifier | character | Qualifier codes of the action joined with commas (pointsinthepaint, fromturnover, 2ndchance, fastbreak, blocked, ...); null when none. |
-| success | integer | 1 = made / successful, 0 = missed (shots, free throws); 1 for other actions |
-| scoring | integer | 1 when the action is a scoring attempt (shot or free throw), else 0 |
-| score_1 | integer | Team 1 score after the action, always an integer (the feed sends a string in most games). |
-| score_2 | integer | Team 2 score after the action, always an integer (the feed sends a string in most games). |
-| lead | integer | Score margin after the action, team 1 minus team 2 (negative when team 2 leads) |
+A `hoopR_data` tibble with one row per play-by-play event. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "genius_pbp")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -134,7 +109,7 @@ Other Genius Functions:
 # \donttest{
   try(genius_pbp(match_id = 2902690))
 #> ── Genius LiveStats play-by-play ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:56 UTC
+#> ℹ Data updated: 2026-11-09 19:12:08 UTC
 #> # A tibble: 663 × 25
 #>    match_id row_index action_number previous_action period period_type gt   
 #>       <int>     <int>         <int>           <int>  <int> <chr>       <chr>

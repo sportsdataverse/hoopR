@@ -36,6 +36,7 @@ Endpoint: GET https://api.basketball-bundesliga.de/referees"><meta property="og:
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,8 +140,11 @@ that needs more pages is refused.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Current referees and commissioners (BBL only). An empty valid answer raises
-<code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py <code>scb_referees</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League the row belongs to: <code>bbl</code> (men) or <code>dbbl</code> (women); BBL and DBBL game ids overlap, so a game is (league, game_id).</td></tr><tr><td>referee_id</td><td>character</td><td>Official id (<code>refId</code>, equal to the API's <code>id</code>); joins <code>referee1_id</code> .. <code>commissioner_id</code> of <code>scb_games</code>.</td></tr><tr><td>first_name</td><td>character</td><td>Official's given name.</td></tr><tr><td>last_name</td><td>character</td><td>Official's family name.</td></tr><tr><td>official_function</td><td>character</td><td>REFEREE or COMMISSIONER.</td></tr><tr><td>participations</td><td>integer</td><td>League games officiated.</td></tr><tr><td>year_joined_bbl</td><td>integer</td><td>Year the official joined the league.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per official.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "scb_referees")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="scb_seasons.html">scb_seasons()</a></code>.</p>

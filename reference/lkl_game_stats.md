@@ -21,30 +21,13 @@ lkl_game_stats(game_id)
 
 ## Value
 
-A `hoopR_data` tibble. One row per line of `comparison.all`, with the
-same columns as `lkl_summary`. `group` marks the lines the tab also
-shows in its `shooting` (2PT, 3PT, free throws) and `main` (rebounds,
-assists, steals) bar groups; it is null for the rest. A 2007-08 game has
-only a few lines and a flat lead chart (no event data then). A body
-without a comparison gives a zero-row tibble. Every column below is
-always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | lkl.lt game id (key space: LKL games; the `{gameId}` of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under `_request`). |
-| group | character | Bar group the tab also shows the line in: shooting (2PT, 3PT, free throws) or main (rebounds, assists, steals); null for lines only in the full list. |
-| stat | character | English code for the site's Lithuanian label (field_goals, two_pointers, three_pointers, free_throws, rebounds, assists, steals, blocks, turnovers, fouls, points, ...); null for a label this package does not know. |
-| label | character | Row label in LITHUANIAN: 'Metimai is zaidimo' = field goals, 'Dvitaskiai metimai' = 2PT, 'Tritaskiai metimai' = 3PT, 'Baudu metimai' = free throws, 'Atkovoti kamuoliai' = rebounds, 'Atkovoti kamuoliai gynyboje' = defensive rebounds, 'Atkovoti kamuoliai puolime' = offensive rebounds, 'Rezultatyvus perdavimai' = assists, 'Perimti kamuoliai' = steals, 'Blokai' = blocks, 'Klaidos' = turnovers, 'Prazangos' = fouls, 'Taskai' = points, 'Taskai po klaidu' = points off turnovers, 'Taskai greitose atakose' = fast-break points, 'Taskai antru bandymu' = second-chance points, 'Atsarginiu zaideju taskai' = bench points. |
-| home_value | character | Shooting rows: 'made/attempted' string ('25/35'); counting rows: integer. |
-| home_percentage | double | Shooting rows only (absent on counting rows): percentage with ONE decimal and a % sign ('71.4%'). |
-| home_graph_length | double | Bar length in percent: shooting rows = the percentage as a string ('71.4'); counting rows = this side's share of the two values, 0-100, a number (43 vs 37 -\> 53.75). |
-| home_winning | logical | True when this side's bar is highlighted as the better one (both false on a tie). |
-| away_value | character | Shooting rows: 'made/attempted' string ('25/35'); counting rows: integer. |
-| away_percentage | double | Shooting rows only (absent on counting rows): percentage with ONE decimal and a % sign ('71.4%'). |
-| away_graph_length | double | Bar length in percent: shooting rows = the percentage as a string ('71.4'); counting rows = this side's share of the two values, 0-100, a number (43 vs 37 -\> 53.75). |
-| away_winning | logical | True when this side's bar is highlighted as the better one (both false on a tie). |
+A `hoopR_data` tibble with one row per line of comparison. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lkl_game_stats")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

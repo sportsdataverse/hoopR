@@ -21,15 +21,12 @@ cba_report_status(schedule_id)
 
 ## Value
 
-A `hoopR_data` tibble: One row with the is_report flag. An empty valid
-answer is a zero-row tibble with these columns, in this order
-(sportsdataverse-py `cba_report_status`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| schedule_id | integer | CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the `{scheduleId}` of every game route). Stamped by the runtime from the request; null on a body parsed without it. |
-| is_report | logical | True when the game report page exists (equals schedules/day isReport == 1 in every sample). |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cba_report_status")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

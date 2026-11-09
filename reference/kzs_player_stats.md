@@ -26,65 +26,13 @@ kzs_player_stats(player_id, season)
 
 ## Value
 
-A `hoopR_data` tibble: A player's totals and per-game averages in each
-competition of one season. An empty valid answer raises `hoopR_no_data`;
-the columns are always these, in this order (sportsdataverse-py
-`kzs_player_stats`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| player_id | integer | Player registry id of the request (the body does not echo it). |
-| season_id | integer | Opaque KZS season id (27 = 2026/2027); the sdv season is the END year in season. |
-| season | integer | Season END year (2026/2027 = 2027), from the row's own season name or id, else from the request. |
-| competition_id | integer | Competition id: one per competition per season (men's top league 2025-26 = 579, 2026-27 = 608). Joins to `/competitions/{competitionId}` and the `competitionId` query params. |
-| a1 | integer | Season total: free throws attempted. |
-| a2 | integer | Season total: two-pointers attempted. |
-| a3 | integer | Season total: three-pointers attempted. |
-| pts | integer | Season total: points. |
-| ass | integer | Season total: assists. |
-| blag | integer | Season total: own shots blocked (blocks against). |
-| blfv | integer | Season total: blocks made (blocks in favour). |
-| captain | integer | Games as captain. |
-| m1 | integer | Season total: free throws made. |
-| m2 | integer | Season total: two-pointers made. |
-| m3 | integer | Season total: three-pointers made. |
-| mins | double | Season total: minutes played (decimal minutes). |
-| pfcm | integer | Season total: fouls committed. |
-| pfrv | integer | Season total: fouls received. |
-| rd | integer | Season total: defensive rebounds. |
-| ro | integer | Season total: offensive rebounds. |
-| st | integer | Season total: steals. |
-| startinglineup | integer | Games the player started in the competition. |
-| tov | integer | Season total: turnovers. |
-| played | integer | Games the player played in the competition. |
-| plus_minus | integer | Season total: the team's point difference while the player was on court. |
-| efficiency | integer | Season total: efficiency (PIR). |
-| avgpts | double | Per game: points. |
-| avga1 | double | Per game: free throws attempted. |
-| avga2 | double | Per game: two-pointers attempted. |
-| avga3 | double | Per game: three-pointers attempted. |
-| avgass | double | Per game: assists. |
-| avgblag | double | Per game: own shots blocked (blocks against). |
-| avgblfv | double | Per game: blocks made (blocks in favour). |
-| avgm1 | double | Per game: free throws made. |
-| avgm2 | double | Per game: two-pointers made. |
-| avgm3 | double | Per game: three-pointers made. |
-| avgmins | double | Per game: minutes played (decimal minutes). |
-| avgpfcm | double | Per game: fouls committed. |
-| avgpfrv | double | Per game: fouls received. |
-| avgrd | double | Per game: defensive rebounds. |
-| avgro | double | Per game: offensive rebounds. |
-| avgsecs | integer | Per game: seconds (0 in every sample: unused). |
-| avgst | double | Per game: steals. |
-| avgtov | double | Per game: turnovers. |
-| avgplus_minus | double | Per game: the team's point difference while the player was on court. |
-| avgefficiency | double | Per game: efficiency (PIR). |
-| live_stats | logical | True when the competition has live stats. |
-| competition_name | character | Competition name, Slovenian (e.g. 'Liga OTP banka', 'Pokal Spar'). |
-| competition_rank | character | Tier of the competition (code table). |
-| competition_category | character | Category of the competition (code table). |
-| competition_gender | character | MALE or FEMALE competition. |
+A `hoopR_data` tibble with one row per competition. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_player_stats")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -103,7 +51,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_player_stats(player_id = 106285, season = 2026))
 #> ── KZS Player Season Stats from api.kzs.si ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:36 UTC
+#> ℹ Data updated: 2026-11-09 19:12:48 UTC
 #> # A tibble: 2 × 51
 #>   player_id season_id season competition_id    a1    a2    a3   pts   ass  blag
 #>       <int>     <int>  <int>          <int> <int> <int> <int> <int> <int> <int>

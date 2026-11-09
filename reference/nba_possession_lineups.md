@@ -23,7 +23,7 @@ nba_possession_lineups(game_id, ...)
 
 ## Value
 
-Returns a data frame with one row per possession:
+A `hoopR_data` tibble with one row per possession.
 
 |  |  |  |
 |----|----|----|

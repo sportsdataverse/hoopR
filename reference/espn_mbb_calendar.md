@@ -26,17 +26,39 @@ espn_nba_calendar(season = most_recent_nba_season())
 
 ## Value
 
-Returns a tibble of calendar entries.
+A `hoopR_data` tibble with one row per calendar entry.
 
-Columns as documented in the shared
-[espn_mbb_calendar_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_calendar_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| season | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | character | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| season_type_label | character |  |
+| season_start_date | character | Date in YYYY-MM-DD format. |
+| season_end_date | character | Date in YYYY-MM-DD format. |
+| label | character |  |
+| alternate_label | character |  |
+| detail | character |  |
+| value | character | Numeric or string value field. |
+| start_date | character | Start date (YYYY-MM-DD). |
+| end_date | character | End date (YYYY-MM-DD). |
 
-Returns a tibble of calendar entries.
+A `hoopR_data` tibble with one row per calendar entry.
 
-Columns as documented in the shared
-[espn_mbb_calendar_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_calendar_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| season | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | character | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| season_type_label | character |  |
+| season_start_date | character | Date in YYYY-MM-DD format. |
+| season_end_date | character | Date in YYYY-MM-DD format. |
+| label | character |  |
+| alternate_label | character |  |
+| detail | character |  |
+| value | character | Numeric or string value field. |
+| start_date | character | Start date (YYYY-MM-DD). |
+| end_date | character | End date (YYYY-MM-DD). |
 
 ## Details
 
@@ -72,7 +94,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_calendar(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Calendar from ESPN.com ────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:06 UTC
+#> ℹ Data updated: 2026-11-09 19:10:24 UTC
 #> # A tibble: 131 × 12
 #>    season season_type season_type_label season_start_date season_end_date  
 #>    <chr>  <chr>       <chr>             <chr>             <chr>            
@@ -93,7 +115,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_calendar(season = 2025)
 #> ── ESPN NBA Calendar from ESPN.com ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:07 UTC
+#> ℹ Data updated: 2026-11-09 19:10:26 UTC
 #> # A tibble: 230 × 12
 #>    season season_type season_type_label season_start_date season_end_date  
 #>    <chr>  <chr>       <chr>             <chr>             <chr>            

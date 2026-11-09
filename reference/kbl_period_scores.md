@@ -22,25 +22,13 @@ kbl_period_scores(gmkey)
 
 ## Value
 
-A `hoopR_data` tibble: Points by period (quarters and overtimes) and
-side of a final game, from the game header. The columns are always
-these, in this order (sportsdataverse-py `kbl_period_scores`); an empty
-valid answer raises `hoopR_no_data`, a valid body with no rows for this
-frame is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| gmkey | character | Game key `S{seasonCode}G{gameCode}N{gameNo}` (e.g. S47G01N49): the id of every game route and game frame. |
-| season_code | integer | KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League). |
-| season | integer | Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). |
-| game_code | character | Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day. |
-| game_no | integer | Game number inside the competition (glkey): the N part of the gmkey. |
-| side | character | Which side of the game the row belongs to: home or away. |
-| team_code | character | Team code: the KBL club in that season (two-digit string with a leading zero, e.g. '50' = Changwon LG). Joins kbl_teams team_code; not stable across ownership changes (the Anyang club is '40' in 1997-98, '70' today). |
-| period | integer | Period number: 1-4 for the quarters, 5, 6, ... for the overtimes (the wire says X1 in the play-by-play, EQ1 in the match chart). |
-| period_label | character | Period label: Q1-Q4, then OT1, OT2, ... (normalised from the wire's X1 / EQ1 / eq1). |
-| score | integer | Points the side scored in the period. |
+A `hoopR_data` tibble with one row per team and period. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kbl_period_scores")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -59,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(kbl_period_scores(gmkey = "S47G01N49"))
 #> ── KBL Period Scores from api.kbl.or.kr ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:12 UTC
+#> ℹ Data updated: 2026-11-09 19:12:26 UTC
 #> # A tibble: 8 × 10
 #>   gmkey season_code season game_code game_no side  team_code period period_label
 #>   <chr>       <int>  <int> <chr>       <int> <chr> <chr>      <int> <chr>       

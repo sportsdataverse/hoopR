@@ -34,7 +34,7 @@ espn_nba_player_contract(athlete_id, season = most_recent_nba_season(), ...)
 
 ## Value
 
-A tibble with one row per contract year.
+A `hoopR_data` tibble with one row per contract year.
 
 |            |           |                                          |
 |------------|-----------|------------------------------------------|
@@ -44,7 +44,7 @@ A tibble with one row per contract year.
 | ref        | character | Full `$ref` URL for the contract detail. |
 | league     | character | League slug (`"nba"`).                   |
 
-A single-row tibble.
+A `hoopR_data` tibble with one row per contract.
 
 |  |  |  |
 |----|----|----|
@@ -89,7 +89,7 @@ Saiem Gilani
   # LeBron James - athlete id 1966
   espn_nba_player_contracts(athlete_id = 1966)
 #> ── ESPN NBA Athlete Contracts Index ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:06 UTC
+#> ℹ Data updated: 2026-11-09 19:11:19 UTC
 #> # A tibble: 20 × 4
 #>    athlete_id season ref                                                  league
 #>    <chr>       <int> <chr>                                                <chr> 
@@ -118,7 +118,7 @@ Saiem Gilani
   # LeBron James 2025 contract
   espn_nba_player_contract(athlete_id = 1966, season = 2025)
 #> ── ESPN NBA Athlete Contract from ESPN.com ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:07 UTC
+#> ℹ Data updated: 2026-11-09 19:11:19 UTC
 #> # A tibble: 1 × 23
 #>   athlete_id season bird_status   salary salary_remaining years_remaining
 #>   <chr>       <int>       <int>    <int>            <int>           <int>

@@ -15,14 +15,12 @@ pleague_team_crosswalk()
 
 ## Value
 
-A `hoopR_data` tibble of eight rows (sportsdataverse-py
-`pleague_team_crosswalk`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | P. LEAGUE+ site team id (1-8), stable across seasons and renames. |
-| team_uuid | character | Preciser team uuid of the same club (team_uuid of the pleague_preciser frames). |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "pleague_team_crosswalk")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 
@@ -35,7 +33,7 @@ lists every function in this family.
 # \donttest{
   pleague_team_crosswalk()
 #> ── P. LEAGUE+ Team Crosswalk ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:34 UTC
+#> ℹ Data updated: 2026-11-09 19:14:25 UTC
 #> # A tibble: 8 × 2
 #>   team_id team_uuid                           
 #>     <int> <chr>                               

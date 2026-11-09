@@ -12,17 +12,12 @@ cebl_seasons()
 
 ## Value
 
-A `hoopR_data` tibble: Every CEBL season (2019 on), with the active and
-live flags. An empty valid answer raises `hoopR_no_data`; the columns
-are always these, in this order (sportsdataverse-py `cebl_seasons`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season_id | integer | CEBL season row id (1 = 2019 ... 8 = 2026). No route takes it: routes take `year`. |
-| season | integer | Season: the calendar year it is played in (May-August) = the sdv END year. The key every route's `season` param takes. |
-| is_active | logical | True for the current season (one row: 2026 on 2026-10-12). |
-| is_live | logical | True while the current season is in progress or open for live data (true for 2026 on 2026-10-12, after its last game: the exact meaning is unverified). |
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cebl_seasons")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -92,7 +87,7 @@ Other CEBL Functions:
 # \donttest{
   try(cebl_seasons())
 #> ── CEBL Seasons from the CEBL Stats API ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:37 UTC
+#> ℹ Data updated: 2026-11-09 19:09:55 UTC
 #> # A tibble: 8 × 4
 #>   season_id season is_active is_live
 #>       <int>  <int> <lgl>     <lgl>  

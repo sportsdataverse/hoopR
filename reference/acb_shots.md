@@ -36,36 +36,13 @@ acb_shots(match_id)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_shots`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. |
-| edition_id | integer | Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, `season`. |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| shot_id | integer | Event id of the attempt within one match; joins nothing outside this body. |
-| pos_x | integer | Court x as sent. mm system: millimetres from the attacked basket towards midcourt (never negative; 0 for free throws and dunks); grid system: 0-100 percent of the court length, not mirrored. |
-| pos_y | integer | Court y as sent. mm system: millimetres across the court (sidelines at -7500 and +7500, negative = the shooter's left); grid system: 0-100 percent of the width (which sideline is 0 is unverified). Free throws are (0, 0). |
-| coord_system | character | Shot coordinate system, told by the match id: mm = millimetres from the attacked basket (match ids from 2020-21), grid = 0-100 percent of the full court (up to 2019-20). Null when the match id is unknown. |
-| x_basket_m | double | Shot x in metres from the centre of the attacked basket towards midcourt, when coord_system is mm and the attempt is a field goal; null otherwise. Units and origin are inferred by the refs (arc and sideline fit), not documented by ACB. |
-| y_basket_m | double | Shot y in metres across the court from the basket line, negative = the shooter's left, when coord_system is mm and the attempt is a field goal; null otherwise (inferred by the refs, not documented by ACB). |
-| quarter | integer | Period of the attempt: 1-4 quarters, 5+ overtimes. |
-| minute | integer | Game clock left in the period, minutes |
-| second | integer | Game clock left in the period, seconds part |
-| clock_seconds | integer | Game clock REMAINING in the period as whole seconds (minute x 60 + second; the clock counts down from 600, overtimes from 300). |
-| play_type | integer | Event code (92 free throw made, 93 two made, 94 three made, 96 free throw missed, 97 two missed, 98 three missed, 100 dunk, 533 dunk missed). |
-| play_name | character | Bundle name of play_type (acb_codes.PLAY_TYPES, e.g. TWO_POINTER_MADE); null for a code outside the enum such as the minute marker 600. |
-| is_home | logical | True when the shooter's team is the home team (the API's local). |
-| score_home | integer | Home score after the attempt. |
-| score_away | integer | Away score after the attempt. |
-| player_id | integer | ACB licence number of the shooter. |
-| player_name | character | Shooter's short name from the game's shooter list (e.g. 'T. Martin'). |
-| shirt_number | character | Shooter's shirt number as a string, from the game's shooter list. |
-| zone | character | Shot zone (acb_codes.SHOT_ZONES: restricted_area, paint, mid_range\_*, corner_three\_*, wing_three\_\*, top_three); null on free throws; legacy zones (up to 2019-20) are unreliable. |
-| made | logical | True when the shot went in; null on some free throws. |
-| points | integer | Points the attempt scored (2 or 3 on made field goals); null on free throws and misses. |
+A `hoopR_data` tibble with one row per attempt. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_shots")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -84,7 +61,7 @@ lists every function in this family.
 # \donttest{
   try(acb_shots(match_id = 105401))
 #> ── ACB Shots from api2.acb.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:39 UTC
+#> ℹ Data updated: 2026-11-09 19:08:57 UTC
 #> # A tibble: 188 × 24
 #>    match_id edition_id season shot_id pos_x pos_y coord_system x_basket_m
 #>       <int>      <int>  <int>   <int> <int> <int> <chr>             <dbl>

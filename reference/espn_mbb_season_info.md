@@ -34,15 +34,19 @@ espn_nba_season_info(season = most_recent_nba_season(), ...)
 ## Value
 
 A named list of `hoopR_data` tibbles: `Info`, `Types`, `Athletes`,
-`Coaches`, `Teams`, `Awards`. `$ref` URL components are returned as
-character columns and are NOT auto-resolved – use targeted endpoint
-functions for details.
+`Coaches`, `Teams`, `Awards`.
 
 **Info**
 
-Columns as documented in the shared
-[espn_mbb_season_info_info_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_info_info_schema.md)
-table.
+|              |           |                            |
+|--------------|-----------|----------------------------|
+| col_name     | types     | description                |
+| year         | integer   | 4-digit year.              |
+| start_date   | character | Start date (YYYY-MM-DD).   |
+| end_date     | character | End date (YYYY-MM-DD).     |
+| display_name | character | Display name.              |
+| type_id      | character | Type identifier (numeric). |
+| type_name    | character |                            |
 
 **Types / Athletes / Coaches / Teams / Awards**
 
@@ -51,17 +55,25 @@ table.
 | col_name | types     | description     |
 | count    | integer   | Count of count. |
 | ref      | character |                 |
+
+`Types`, `Athletes`, `Coaches`, `Teams` and `Awards` share the second
+table. `$ref` URL components are returned as character columns and are
+NOT auto-resolved – use targeted endpoint functions for details.
 
 A named list of `hoopR_data` tibbles: `Info`, `Types`, `Athletes`,
-`Coaches`, `Teams`, `Awards`. `$ref` URL components are returned as
-character columns and are NOT auto-resolved – use targeted endpoint
-functions for details.
+`Coaches`, `Teams`, `Awards`.
 
 **Info**
 
-Columns as documented in the shared
-[espn_mbb_season_info_info_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_info_info_schema.md)
-table.
+|              |           |                            |
+|--------------|-----------|----------------------------|
+| col_name     | types     | description                |
+| year         | integer   | 4-digit year.              |
+| start_date   | character | Start date (YYYY-MM-DD).   |
+| end_date     | character | End date (YYYY-MM-DD).     |
+| display_name | character | Display name.              |
+| type_id      | character | Type identifier (numeric). |
+| type_name    | character |                            |
 
 **Types / Athletes / Coaches / Teams / Awards**
 
@@ -70,6 +82,10 @@ table.
 | col_name | types     | description     |
 | count    | integer   | Count of count. |
 | ref      | character |                 |
+
+`Types`, `Athletes`, `Coaches`, `Teams` and `Awards` share the second
+table. `$ref` URL components are returned as character columns and are
+NOT auto-resolved – use targeted endpoint functions for details.
 
 ## See also
 
@@ -90,7 +106,7 @@ Saiem Gilani
   espn_mbb_season_info(season = 2025)
 #> $Info
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Info from ESPN.com ─────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:37 UTC
+#> ℹ Data updated: 2026-11-09 19:10:55 UTC
 #> # A tibble: 1 × 6
 #>    year start_date        end_date          display_name type_id type_name 
 #>   <int> <chr>             <chr>             <chr>        <chr>   <chr>     
@@ -98,7 +114,7 @@ Saiem Gilani
 #> 
 #> $Types
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Types from ESPN.com ────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:37 UTC
+#> ℹ Data updated: 2026-11-09 19:10:55 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   
@@ -106,7 +122,7 @@ Saiem Gilani
 #> 
 #> $Athletes
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Athletes from ESPN.com ─── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:37 UTC
+#> ℹ Data updated: 2026-11-09 19:10:55 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   
@@ -114,17 +130,17 @@ Saiem Gilani
 #> 
 #> $Coaches
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Coaches from ESPN.com ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:37 UTC
+#> ℹ Data updated: 2026-11-09 19:10:55 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Teams
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Teams from ESPN.com ────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:37 UTC
+#> ℹ Data updated: 2026-11-09 19:10:55 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Awards
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Awards from ESPN.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:37 UTC
+#> ℹ Data updated: 2026-11-09 19:10:55 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   
@@ -135,7 +151,7 @@ Saiem Gilani
   espn_nba_season_info(season = 2025)
 #> $Info
 #> ── ESPN NBA Season Info from ESPN.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:37 UTC
+#> ℹ Data updated: 2026-11-09 19:10:55 UTC
 #> # A tibble: 1 × 6
 #>    year start_date        end_date          display_name type_id type_name     
 #>   <int> <chr>             <chr>             <chr>        <chr>   <chr>         
@@ -143,7 +159,7 @@ Saiem Gilani
 #> 
 #> $Types
 #> ── ESPN NBA Season Types from ESPN.com ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:37 UTC
+#> ℹ Data updated: 2026-11-09 19:10:55 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   
@@ -151,22 +167,22 @@ Saiem Gilani
 #> 
 #> $Athletes
 #> ── ESPN NBA Season Athletes from ESPN.com ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:37 UTC
+#> ℹ Data updated: 2026-11-09 19:10:55 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Coaches
 #> ── ESPN NBA Season Coaches from ESPN.com ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:37 UTC
+#> ℹ Data updated: 2026-11-09 19:10:55 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Teams
 #> ── ESPN NBA Season Teams from ESPN.com ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:37 UTC
+#> ℹ Data updated: 2026-11-09 19:10:55 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Awards
 #> ── ESPN NBA Season Awards from ESPN.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:37 UTC
+#> ℹ Data updated: 2026-11-09 19:10:55 UTC
 #> # A tibble: 1 × 2
 #>   count ref                                                                     
 #>   <int> <chr>                                                                   

@@ -31,7 +31,7 @@ nba_l2m_games(season, proxy = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per unique game id in page order:
+A `hoopR_data` tibble with one row per game.
 
 |  |  |  |
 |----|----|----|
@@ -77,7 +77,7 @@ Saiem Gilani
     head(games)
   })
 #> ── NBA L2M games listing (official.nba.com) ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:07:44 UTC
+#> ℹ Data updated: 2026-11-09 19:13:48 UTC
 #> # A tibble: 6 × 4
 #>   game_id    season season_type label                         
 #>   <chr>       <int> <chr>       <chr>                         

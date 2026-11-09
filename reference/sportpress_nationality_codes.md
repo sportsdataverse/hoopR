@@ -21,16 +21,13 @@ sportpress_nationality_codes(season)
 
 ## Value
 
-A `hoopR_data` tibble: Distinct player nationality codes of a season
-(dirty: lower case, pairs, empty). An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `sportpress_nationality_codes`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year the codes were asked for. |
-| nationality_code | character | A distinct nationality code of the season's players, as served (dirty). |
+A `hoopR_data` tibble with one row per nationality code. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportpress_nationality_codes")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

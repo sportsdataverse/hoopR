@@ -20,20 +20,12 @@ lkl_game_score(game_id)
 
 ## Value
 
-A `hoopR_data` tibble. One row: the two scores and the clock text. The
-clock is NOT a state flag: an old game keeps `'1 KELINYS - 10:00'` after
-the final, and a finished overtime game reads `'1 pratesimas - 00:00'`.
-A body without scores gives a zero-row tibble. Every column below is
-always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | lkl.lt game id (key space: LKL games; the `{gameId}` of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under `_request`). |
-| home_score | integer | Home team points on the score line. |
-| away_score | integer | Away team points on the score line. |
-| clock | character | Clock text, NOT a state flag: an old game keeps '1 KELINYS - 10:00' after the final; a finished overtime game reads '1 pratesimas - 00:00'. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lkl_game_score")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

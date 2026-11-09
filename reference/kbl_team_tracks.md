@@ -34,23 +34,13 @@ kbl_team_tracks(season, division = "kbl", game_code = "01")
 
 ## Value
 
-A `hoopR_data` tibble: Each team's standing after every game of the
-season, one row per team and game. The columns are always these, in this
-order (sportsdataverse-py `kbl_team_tracks`); an empty valid answer
-raises `hoopR_no_data`, a valid body with no rows for this frame is a
-zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). |
-| season_code | integer | KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League). |
-| game_code | character | Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day. |
-| glkey | character | Competition key `S{seasonCode}G{gameCode}` (e.g. S47G01 = 2025-26 regular season): the id of the season routes. |
-| team_code | character | KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList `teamCode`, game `tcodeH`/`tcodeA`, `t` in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (`teamCodeD`). |
-| team_name | character | Team short name in English (e.g. 'KT'). |
-| game_number | integer | 1-based game number in the team's season: the n-th entry of the team's rank track. |
-| rank | integer | Standing (1 = first): after the game_number-th game on the rank track, the current rank on the standings routes. |
+A `hoopR_data` tibble with one row per team and game. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kbl_team_tracks")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

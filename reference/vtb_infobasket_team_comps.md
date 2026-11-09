@@ -35,24 +35,13 @@ vtb_infobasket_team_comps(team_id, season, lang = "en", tag = "vtb")
 
 ## Value
 
-A `hoopR_data` tibble: The competitions a club played in one season. The
-columns are always these, in this order (sportsdataverse-py
-`vtb_infobasket_team_comps`); an empty valid answer raises
-`hoopR_no_data`, a valid body with no rows for this frame is a zero-row
-tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id. |
-| season | integer | Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. |
-| comp_id | integer | Competition id (the season or a stage of it). |
-| comp_type | integer | Stage type code: 0 season, regular season or group; 10 playoff container; 5 and 7 playoff series; -5 seen in season lists. Meanings inferred from the stage names, unverified. |
-| comp_sort | integer | Sort order among sibling stages. |
-| level | integer | Depth of the competition in the tree (1 = season level). |
-| comp_name_ru | character | Competition name, Russian ('Edinaya liga VTB' = 'VTB United League'). |
-| comp_name_en | character | Stage name (e.g. 'Regular Season'), English. |
-| parent_comp_id | integer | Unobserved: null in every sample, so its type and meaning are unconfirmed. |
+A `hoopR_data` tibble with one row per competition. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_team_comps")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

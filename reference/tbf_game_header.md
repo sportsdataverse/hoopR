@@ -23,40 +23,12 @@ tbf_game_header(match_id)
 
 ## Value
 
-A `hoopR_data` tibble. One row. Every column below is always present (a
-zero-row tibble keeps them and their types); an answer with nothing in
-it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. |
-| match_code | character | TBF short game code ('1EA4917'). |
-| genius_id | integer | Genius Sports LiveStats match id (TBF spells it genuisId); joins the genius family. Null when TBF stored none: every game before 2018-19, many 2021-25 games and games not yet assigned one. |
-| activity_id | integer | Activity id (faaliyet = activity; key space: TBF league-SEASONS, new every season: BSL 2026-27 = 22214, BSL 2025-26 = 20728, TBL 2026-27 = 22215, KBSL 2026-27 = 22209). Cast to an integer from the 22214 / 22214.0 the API sends. |
-| activity_name | character | Activity name ('BSL 2026-2027'). |
-| season_id | integer | Internal TBF season id (key space: TBF seasons, global across leagues: 174 = 2026-2027, 172 = 2025-2026; the odd ids are international UA- seasons). Never an sdv key: use season (END year). |
-| season_label | character | Season label 'YYYY-YYYY' (seasonName). |
-| season | integer | Season END year, read from the season label (seasonName). |
-| tipoff | POSIXct | Tip-off as a naive timestamp in Turkey local time (Europe/Istanbul, UTC+3). |
-| status_id | integer | Game status code: 1 = played (Oynandi), 4 = not played (Oynanmadi), 19 = fixture without a date and time. Cast to an integer from the 1 / 1.0 the API sends. |
-| status | character | Game status text in Turkish: Oynandi = played. Only finished games are served. |
-| venue | character | Venue name (location) as TBF prints it. |
-| attendance | integer | Spectator count (matchSpectatorCount); 0 when not recorded. |
-| has_overtime | logical | Overtime flag (uzatma = overtime). Reliability unverified: false on every one of 64 BSL 2025-26 games checked. |
-| broadcast_channel | character | Broadcaster (matchBroadcastChannel), e.g. beINSports, or null. |
-| home_team_process_id | integer | Home team-season id (key space: TBF team registrations; the header calls it homeTeamProcessId). |
-| home_team | character | Home team name as registered for that season, uppercase with Turkish letters. |
-| home_coach | character | Home head coach name, uppercase. |
-| home_score | integer | Home final score. |
-| away_team_process_id | integer | Away team-season id (key space: TBF team registrations). |
-| away_team | character | Away team name as registered for that season, uppercase with Turkish letters. |
-| away_coach | character | Away head coach name, uppercase. |
-| away_score | integer | Away final score. |
-| referee | character | Main referee's name (names only: no contact or birth data is returned). |
-| first_assistant_referee | character | First assistant referee's name. |
-| second_assistant_referee | character | Second assistant referee's name. |
-| commissioner | character | Commissioner's (temsilci = representative) name. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_game_header")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -103,7 +75,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_game_header(match_id = 346279))
 #> ── TBF Game Header ────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:30 UTC
+#> ℹ Data updated: 2026-11-09 19:15:25 UTC
 #> # A tibble: 1 × 27
 #>   match_id match_code genius_id activity_id activity_name season_id season_label
 #>      <int> <chr>          <int>       <int> <chr>             <int> <chr>       

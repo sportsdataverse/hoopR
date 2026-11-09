@@ -36,6 +36,7 @@ Endpoint: GET https://api-live.euroleague.net/v2/competitions/{competition_code}
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,8 +140,11 @@ Endpoint: GET https://api-live.euroleague.net/v2/competitions/{competition_code}
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble with one row per season:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>name</td><td>character</td><td>Display name.</td></tr><tr><td>code</td><td>character</td><td>EuroLeague code of the entity (competition, season, club, person or venue; Utf8 join key).</td></tr><tr><td>alias</td><td>character</td><td>Short display alias.</td></tr><tr><td>competition_code</td><td>character</td><td>Competition code (E = EuroLeague, U = EuroCup; Utf8 join key).</td></tr><tr><td>year</td><td>integer</td><td>Start year of the season.</td></tr><tr><td>start_date</td><td>character</td><td>Start date (ISO 8601).</td></tr><tr><td>activation_date</td><td>character</td><td>Date the season was activated in the engine (ISO 8601).</td></tr><tr><td>end_date</td><td>character</td><td>End date (ISO 8601).</td></tr><tr><td>winner</td><td>numeric</td><td>Winning club of the season (null while in progress).</td></tr><tr><td>winner_code</td><td>character</td><td>Winning club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key).</td></tr><tr><td>winner_name</td><td>character</td><td>Winning club: display name.</td></tr><tr><td>winner_abbreviated_name</td><td>character</td><td>Winning club: abbreviated display name.</td></tr><tr><td>winner_editorial_name</td><td>character</td><td>Winning club: editorial (long-form) display name.</td></tr><tr><td>winner_tv_code</td><td>character</td><td>Winning club: three-letter broadcast abbreviation of the club.</td></tr><tr><td>winner_is_virtual</td><td>character</td><td>Winning club: whether the club is a placeholder rather than a real club.</td></tr><tr><td>winner_images_crest</td><td>character</td><td>Winning club: URL of the club crest image.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per season.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "euroleague_seasons")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial, keyless API, not supported by Euroleague Basketball; hoopR only
@@ -165,7 +169,7 @@ transport error, a non-JSON body) is <code>hoopR_fetch_error</code>; all three i
 <span class="r-in"><span>    <span class="fu">euroleague_seasons</span><span class="op">(</span>competition_code <span class="op">=</span> <span class="st">"E"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">}</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── EuroLeague seasons from api-live.euroleague.net ────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:05:13 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:11:25 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 27 × 16</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    name   code  alias competition_code  year start_date activation_date end_date</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>

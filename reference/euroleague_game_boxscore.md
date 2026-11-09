@@ -36,50 +36,13 @@ euroleague_game_boxscore(game_code, season_code)
 
 ## Value
 
-A `hoopR_data` tibble with one row per player plus two per side:
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| row_type | character | Row kind: player, team (team-only rebounds) or total (side totals). |
-| team_name | character | Club display name. |
-| coach | character | Head coach name. |
-| attendance | character | Attendance, as reported by the box score (repeated on every row). |
-| referees | character | Referees of the game, comma-separated SURNAME, GIVEN NAME (repeated on every row). |
-| by_quarter_q1 | integer | Points the row's team scored in quarter 1 (from the box score's ByQuarter block). |
-| by_quarter_q2 | integer | Points the row's team scored in quarter 2 (from the box score's ByQuarter block). |
-| by_quarter_q3 | integer | Points the row's team scored in quarter 3 (from the box score's ByQuarter block). |
-| by_quarter_q4 | integer | Points the row's team scored in quarter 4 (from the box score's ByQuarter block). |
-| end_of_quarter_q1 | integer | Score of the row's team at the end of quarter 1 (cumulative; from the box score's EndOfQuarter block). |
-| end_of_quarter_q2 | integer | Score of the row's team at the end of quarter 2 (cumulative; from the box score's EndOfQuarter block). |
-| end_of_quarter_q3 | integer | Score of the row's team at the end of quarter 3 (cumulative; from the box score's EndOfQuarter block). |
-| end_of_quarter_q4 | integer | Score of the row's team at the end of quarter 4 (cumulative; from the box score's EndOfQuarter block). |
-| player_id | character | EuroLeague player code (Utf8 join key; space padding stripped; blank on team rows). |
-| is_starter | integer | Whether the player started (1 / 0). |
-| is_playing | integer | Whether the player appeared in the game (1 / 0). |
-| team | character | EuroLeague club code of the team (Utf8 join key; space padding stripped). |
-| dorsal | character | Jersey number as displayed. |
-| player | character | Player display name (SURNAME, GIVEN NAME). |
-| minutes | character | Minutes played (mm:ss). |
-| points | integer | Points. |
-| field_goals_made2 | integer | Two-point field goals made. |
-| field_goals_attempted2 | integer | Two-point field goals attempted. |
-| field_goals_made3 | integer | Three-point field goals made. |
-| field_goals_attempted3 | integer | Three-point field goals attempted. |
-| free_throws_made | integer | Free throws made. |
-| free_throws_attempted | integer | Free throws attempted. |
-| offensive_rebounds | integer | Offensive rebounds. |
-| defensive_rebounds | integer | Defensive rebounds. |
-| total_rebounds | integer | Total rebounds. |
-| assistances | integer | Assists. |
-| steals | integer | Steals. |
-| turnovers | integer | Turnovers. |
-| blocks_favour | integer | Blocks made. |
-| blocks_against | integer | Shots blocked by the opponent. |
-| fouls_commited | integer | Personal fouls committed. |
-| fouls_received | integer | Fouls drawn. |
-| valuation | integer | Performance index rating (PIR). |
-| plusminus | numeric | Plus/minus. |
+A `hoopR_data` tibble with one row per player, plus two team rows per
+side. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "euroleague_game_boxscore")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -109,7 +72,7 @@ lists every function in this family.
     box[box$row_type == "player", c("team", "player", "minutes", "points", "valuation")]
   })
 #> ── EuroLeague game box score from live.euroleague.net ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:08 UTC
+#> ℹ Data updated: 2026-11-09 19:11:21 UTC
 #> # A tibble: 24 × 5
 #>    team  player                minutes points valuation
 #>    <chr> <chr>                 <chr>    <int>     <int>

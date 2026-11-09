@@ -32,7 +32,7 @@ espn_nba_team_stats(team_id, year, season_type = "regular", total = FALSE)
 
 ## Value
 
-Returns a tibble with the team stats data
+A `hoopR_data` tibble with one row per team.
 
 |  |  |  |
 |----|----|----|
@@ -131,7 +131,7 @@ Returns a tibble with the team stats data
 | offensive_shooting_efficiency | numeric | The efficiency with which a team or player shoots the basketball. |
 | offensive_scoring_efficiency | numeric | The efficiency with which a team or player scores the basketball. |
 
-Returns a tibble with the team stats data
+A `hoopR_data` tibble with one row per team.
 
 |  |  |  |
 |----|----|----|
@@ -283,7 +283,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_team_stats(team_id = 150, year = 2020))
 #> ── ESPN MBB Team Season Stats from ESPN.com ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:57 UTC
+#> ℹ Data updated: 2026-11-09 19:11:13 UTC
 #> # A tibble: 1 × 168
 #>   team_id team_guid          team_uid team_sdr team_slug team_location team_name
 #>     <int> <chr>              <chr>       <int> <chr>     <chr>         <chr>    
@@ -299,7 +299,7 @@ try(espn_mbb_team_stats(team_id = 150, year = 2020))
 # \donttest{
 try(espn_nba_team_stats(team_id = 13, year = 2020))
 #> ── ESPN NBA Team Season Stats from ESPN.com ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:57 UTC
+#> ℹ Data updated: 2026-11-09 19:11:14 UTC
 #> # A tibble: 1 × 213
 #>   team_id team_guid team_uid team_slug team_location team_name team_abbreviation
 #>     <int> <chr>     <chr>    <chr>     <chr>         <chr>     <chr>            

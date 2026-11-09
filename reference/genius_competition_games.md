@@ -32,33 +32,12 @@ genius_competition_games(comp_id, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (a zero-row tibble with these columns when Genius
-answers an empty valid page), or the raw list when
-`return_parsed = FALSE`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| league_id | integer | Genius league id of the org (ESAKE = 115); the leagueId column of the hosted chooser |
-| competition_id | integer | Genius competition id (compId): one per org competition-season; the {compId} of hosted and data/competition paths |
-| match_id | integer | Genius match id: the {matchId} of data.json and /u/; one global sequence across every Genius customer (~0.3 M in 2016, ~2.9 M in Oct 2026) |
-| match_status | character | Match status: COMPLETE, SCHEDULED, IN_PROGRESS, ... (upper case) |
-| match_time | character | Local tip-off time, 'YYYY-MM-DD HH:MM:SS' (venue time zone, not stated) |
-| match_time_utc | character | Tip-off time in UTC, 'YYYY-MM-DD HH:MM:SS' |
-| live | integer | 1 while the game is live, else 0 |
-| period | integer | Current period of a live or finished game (present on some rows only) |
-| period_type | character | Current period type: REGULAR or OVERTIME (present on some rows only) |
-| clock | character | Period clock of a live or finished game, 'mm:ss' remaining (present on some rows only) |
-| home_team_id | integer | Home team: Genius team id (warehouse key space, global across orgs and seasons; the /team/{id} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code |
-| home_name | character | Home team full name, in the competition's own script when the org enters one. |
-| home_name_international | character | Home team name in Latin script |
-| home_code | character | Home team short code, in the competition's own script when the org enters one. |
-| home_score | integer | Home points: a string on most rows, an integer on some (” before tip-off); cast it |
-| away_team_id | integer | Away team: Genius team id (warehouse key space, global across orgs and seasons; the /team/{id} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code |
-| away_name | character | Away team full name, in the competition's own script when the org enters one. |
-| away_name_international | character | Away team name in Latin script |
-| away_code | character | Away team short code, in the competition's own script when the org enters one. |
-| away_score | integer | Away points: a string on most rows, an integer on some (” before tip-off); cast it |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "genius_competition_games")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -123,7 +102,7 @@ Other Genius Functions:
 # \donttest{
   try(genius_competition_games(comp_id = 49915))
 #> ── Genius LiveStats competition games ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:54 UTC
+#> ℹ Data updated: 2026-11-09 19:12:06 UTC
 #> # A tibble: 1 × 20
 #>   league_id competition_id match_id match_status match_time match_time_utc  live
 #>       <int>          <int>    <int> <chr>        <chr>      <chr>          <int>

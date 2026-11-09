@@ -36,6 +36,7 @@ Endpoint: GET https://api.kbl.or.kr/league/round-mvp/{season}"><meta property="o
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,9 +140,11 @@ maps it to the KBL seasonCode (47 = 2025-26).</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: The round MVPs of a season with their totals over the round. The columns are always these,
-in this order (sportsdataverse-py <code>kbl_round_mvps</code>); an empty valid answer raises <code>hoopR_no_data</code>, a valid body with no rows
-for this frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS).</td></tr><tr><td>season_code</td><td>integer</td><td>KBL season code: sequential over every season and D-League edition (2 = 1997-98, 47 = 2025-26); the crosswalk to the sdv END year is in the README.</td></tr><tr><td>round</td><td>integer</td><td>Round number of the season (the KBL plays six rounds).</td></tr><tr><td>pcode</td><td>character</td><td>KBL player code (six-digit string) of the round MVP (the wire's playerNo).</td></tr><tr><td>team_code</td><td>character</td><td>KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList <code>teamCode</code>, game <code>tcodeH</code>/<code>tcodeA</code>, <code>t</code> in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (<code>teamCodeD</code>).</td></tr><tr><td>player_name</td><td>character</td><td>Round MVP's name in Korean (kname).</td></tr><tr><td>player_name_en</td><td>character</td><td>Player name in English / romanized (sometimes Hangul for former players).</td></tr><tr><td>game_count</td><td>integer</td><td>Games played in the round.</td></tr><tr><td>total_seconds</td><td>integer</td><td>Playing time over the round in seconds (totalHour * 3600 + totalMinute * 60 + totalSecond; only the seconds part is non-zero in the samples).</td></tr><tr><td>total_score</td><td>integer</td><td>Points over the round.</td></tr><tr><td>total_rebound</td><td>integer</td><td>Rebounds over the round.</td></tr><tr><td>total_assist</td><td>integer</td><td>Assists over the round.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per round MVP.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "kbl_round_mvps")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="kbl_seasons.html">kbl_seasons()</a></code>.</p>

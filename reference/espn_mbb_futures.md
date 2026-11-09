@@ -30,7 +30,7 @@ espn_nba_futures(season = most_recent_nba_season(), ...)
 
 ## Value
 
-A long-format tibble.
+A `hoopR_data` tibble with one row per futures market entry.
 
 |                |           |                                         |
 |----------------|-----------|-----------------------------------------|
@@ -47,7 +47,7 @@ A long-format tibble.
 | odds_value     | character | American odds for the team.             |
 | team_ref       | character | `$ref` to the per-season team resource. |
 
-A long-format tibble.
+A `hoopR_data` tibble with one row per futures market entry.
 
 |  |  |  |
 |----|----|----|
@@ -82,8 +82,8 @@ Saiem Gilani
 # \donttest{
   espn_mbb_futures(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Futures ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:11 UTC
-#> # A tibble: 1,793 × 11
+#> ℹ Data updated: 2026-11-09 19:10:30 UTC
+#> # A tibble: 1,618 × 11
 #>    season league    market_id market_name market_type market_display provider_id
 #>     <int> <chr>         <int> <chr>       <chr>       <chr>          <chr>      
 #>  1   2025 mens-col…      6099 NCAA(B) - … NA          NCAA(B) - Wes… 58         
@@ -96,14 +96,14 @@ Saiem Gilani
 #>  8   2025 mens-col…      6099 NCAA(B) - … NA          NCAA(B) - Wes… 58         
 #>  9   2025 mens-col…      6099 NCAA(B) - … NA          NCAA(B) - Wes… 58         
 #> 10   2025 mens-col…      6099 NCAA(B) - … NA          NCAA(B) - Wes… 58         
-#> # ℹ 1,783 more rows
+#> # ℹ 1,608 more rows
 #> # ℹ 4 more variables: provider_name <chr>, team_id <chr>, odds_value <chr>,
 #> #   team_ref <chr>
 # }
 # \donttest{
   espn_nba_futures(season = 2025)
 #> ── ESPN NBA Season Futures ────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:12 UTC
+#> ℹ Data updated: 2026-11-09 19:10:30 UTC
 #> # A tibble: 574 × 11
 #>    season league market_id market_name  market_type market_display   provider_id
 #>     <int> <chr>      <int> <chr>        <chr>       <chr>            <chr>      

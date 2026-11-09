@@ -18,24 +18,13 @@ realgm_future_free_agents()
 
 ## Value
 
-A `hoopR_data` tibble with one row per future free agent:
-
-|                   |           |                                        |
-|-------------------|-----------|----------------------------------------|
-| col_name          | types     | description                            |
-| player            | character | Player name.                           |
-| pos               | character | Position.                              |
-| team              | character | Current team abbreviation.             |
-| season            | character | Free-agency season (e.g. `2026-2027`). |
-| age               | integer   | Age.                                   |
-| yos               | integer   | Years of service.                      |
-| veteran_fa_status | character | Bird / Non-Bird / veteran FA status.   |
-| gp                | integer   | Games played.                          |
-| pts               | numeric   | Points per game.                       |
-| reb               | numeric   | Rebounds per game.                     |
-| ast               | numeric   | Assists per game.                      |
-| per               | numeric   | Player Efficiency Rating.              |
-| agent             | character | Listed player agent.                   |
+A `hoopR_data` tibble with one row per future free agent. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "realgm_future_free_agents")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

@@ -32,27 +32,12 @@ bref_players_stats(season = most_recent_nba_season(), table = "per_game")
 
 ## Value
 
-A `hoopR_data` tibble with one row per player (columns vary by `table`;
-common identifying columns shown – column names are Basketball-Reference
-`data-stat` keys):
-
-|           |           |                                                       |
-|-----------|-----------|-------------------------------------------------------|
-| col_name  | types     | description                                           |
-| ranker    | integer   | Row rank.                                             |
-| player    | character | Player name.                                          |
-| age       | integer   | Player age on Feb 1 of the season.                    |
-| team_id   | character | Team abbreviation (`TOT` for players on \>1 team).    |
-| pos       | character | Position.                                             |
-| g         | integer   | Games played.                                         |
-| gs        | integer   | Games started.                                        |
-| mp_per_g  | numeric   | Minutes (per_game table) / `mp` total (totals table). |
-| pts_per_g | numeric   | Points (scaled to the chosen `table`).                |
-| season    | integer   | Season (echoes the `season` argument).                |
-
-The `advanced` table adds `per`, `ts_pct`, `usg_pct`, `ws`, `bpm`,
-`vorp`, etc.; `totals`/`per_minute`/`per_poss` return the same box
-categories scaled accordingly.
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bref_players_stats")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

@@ -49,7 +49,7 @@ espn_nba_team_record(
 A tibble with one row per record category. See `espn_nba_team_record()`
 for the full column schema.
 
-A tibble with one row per record category.
+A `hoopR_data` tibble with one row per record category.
 
 |                    |           |                                          |
 |--------------------|-----------|------------------------------------------|
@@ -87,7 +87,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_record(team_id = 150, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Record ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:53 UTC
+#> ℹ Data updated: 2026-11-09 19:11:10 UTC
 #> # A tibble: 12 × 14
 #>    league   team_id season season_type record_id name  abbreviation display_name
 #>    <chr>    <chr>    <int>       <int> <chr>     <chr> <chr>        <chr>       
@@ -109,7 +109,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_record(team_id = 13, season = 2025)
 #> ── ESPN NBA Team Record ───────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:54 UTC
+#> ℹ Data updated: 2026-11-09 19:11:11 UTC
 #> # A tibble: 12 × 14
 #>    league team_id season season_type record_id name    abbreviation display_name
 #>    <chr>  <chr>    <int>       <int> <chr>     <chr>   <chr>        <chr>       

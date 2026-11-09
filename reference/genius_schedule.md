@@ -45,29 +45,13 @@ genius_schedule(org, comp_id, round_number = -1, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (a zero-row tibble with these columns when Genius
-answers an empty valid page), or the raw list when
-`return_parsed = FALSE`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | From the block id `extfix_<id>`. Genius match id: the {matchId} of data.json and /u/; one global sequence across every Genius customer (~0.3 M in 2016, ~2.9 M in Oct 2026) |
-| link_match_id | integer | Match id of the block's `/match/<id>/summary` link; equals match_id (the capture refuses a page where it does not); null when the org hides match pages (FFBB) |
-| comp_id | integer | CompId of the match link, or of the team links when the org hides match pages (FFBB); equals the {compId} asked for. A 'To be determined' slot (no team or match link) takes the {compId} the page's other blocks prove |
-| org | character | ORG code of the match link (or the team links, as comp_id) |
-| status | character | Status from the block class STATUS\_\*: COMPLETE, SCHEDULED, POSTPONED, ... |
-| date_time | character | Tip-off as displayed, 'Mon D, YYYY, h:mm AM' (local time, zone not stated); null when unscheduled |
-| venue_id | integer | Genius venue id (the /venue/{id} of hosted pages); null when the venue is plain text (FFBB) |
-| venue_name | character | Venue name as entered (local script) |
-| home_team_id | integer | Home team: Genius team id (warehouse key space, global across orgs and seasons; the /team/{id} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code |
-| home_team_name | character | Home team full name |
-| home_team_code | character | Home team code (local script possible) |
-| home_score | integer | Home points; null before tip-off (typed integer only on a route whose 3 sampled rows were all played) |
-| away_team_id | integer | Away team: Genius team id (warehouse key space, global across orgs and seasons; the /team/{id} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code |
-| away_team_name | character | Away team full name |
-| away_team_code | character | Away team code (local script possible) |
-| away_score | integer | Away points; null before tip-off (typed integer only on a route whose 3 sampled rows were all played) |
+A `hoopR_data` tibble with one row per match in page order. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "genius_schedule")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -132,7 +116,7 @@ Other Genius Functions:
 # \donttest{
   try(genius_schedule(org = "CEBL", comp_id = 47852))
 #> ── Genius LiveStats schedule ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:57 UTC
+#> ℹ Data updated: 2026-11-09 19:12:10 UTC
 #> # A tibble: 130 × 16
 #>    match_id link_match_id comp_id org   status     date_time venue_id venue_name
 #>       <int>         <int>   <int> <chr> <chr>      <chr>        <int> <chr>     

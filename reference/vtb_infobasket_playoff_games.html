@@ -36,6 +36,7 @@ Endpoint: GET https://org.infobasket.su/Widget/PlayOff/{comp_id}"><meta property
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,9 +140,11 @@ Endpoint: GET https://org.infobasket.su/Widget/PlayOff/{comp_id}"><meta property
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: The games of every series of a playoff stage. The columns are always these, in this order
-(sportsdataverse-py <code>vtb_infobasket_playoff_games</code>); an empty valid answer raises <code>hoopR_no_data</code>, a valid body with no rows
-for this frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>comp_id</td><td>integer</td><td>Stage CompID the request asked for (50720 = the 2025-26 regular season): a stage below the season, not an END year.</td></tr><tr><td>tree</td><td>integer</td><td>Bracket tree number (1 = the main bracket).</td></tr><tr><td>round</td><td>integer</td><td>Round as the number of series in it (4 = quarter-finals, 2 = semi-finals, 1 = final).</td></tr><tr><td>sort</td><td>integer</td><td>Series order within the round.</td></tr><tr><td>game_id</td><td>integer</td><td>Infobasket game id (GameID); equals the v2 API <code>matchId</code>. Joins to /Widget/GetOnline/{gameId} and /Widget/GamePage/{gameId}.</td></tr><tr><td>game_status</td><td>integer</td><td>Game status in the game-record code set: 21 on every completed game sampled (not the calendar's 0/1/2).</td></tr><tr><td>score</td><td>character</td><td>Final score 'side1:side2'.</td></tr><tr><td>plus_minus</td><td>integer</td><td>Point difference from side 1's view.</td></tr><tr><td>game_date</td><td>character</td><td>Game date as an ISO 8601 date (YYYY-MM-DD); the wire sends DD.MM.YYYY.</td></tr><tr><td>team1_id</td><td>integer</td><td>TeamID of side 1.</td></tr><tr><td>team2_id</td><td>integer</td><td>TeamID of side 2.</td></tr><tr><td>team1_place</td><td>integer</td><td>Seed of side 1.</td></tr><tr><td>team2_place</td><td>integer</td><td>Seed of side 2.</td></tr><tr><td>home_team</td><td>integer</td><td>Home side of that game (1 or 2).</td></tr><tr><td>win_team</td><td>integer</td><td>Winning side of that game (1 or 2).</td></tr><tr><td>score1</td><td>integer</td><td>Series wins of side 1.</td></tr><tr><td>score2</td><td>integer</td><td>Series wins of side 2.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "vtb_infobasket_playoff_games")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="vtb_infobasket_seasons.html">vtb_infobasket_seasons()</a></code>.</p>
@@ -156,7 +159,7 @@ for this frame is a zero-row tibble:</p><table class="table table"><tr><td>col_n
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">vtb_infobasket_playoff_games</span><span class="op">(</span>comp_id <span class="op">=</span> <span class="fl">54281</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── VTB Infobasket Playoff Games from org.infobasket.su ────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:10:10 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:16:05 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 34 × 17</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    comp_id  tree round  sort game_id game_status score  plus_minus game_date </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>

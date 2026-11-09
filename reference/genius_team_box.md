@@ -35,78 +35,13 @@ genius_team_box(match_id, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (a zero-row tibble with these columns when Genius
-answers an empty valid page), or the raw list when
-`return_parsed = FALSE`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | Genius match id of the game. data.json does not carry it: it is the match_id asked for, stamped by the runtime (the global match sequence shared by every Genius customer). |
-| tno | integer | Team number within this game: 1 = the team listed first (home on the hosted schedule and widget), 2 = the other, 0 = no team. In-game only: not a team id. |
-| name | character | Team name as the org enters it |
-| name_international | character | Team name in Latin script |
-| short_name | character | Short team name (shortName in the feed), in the competition's own script when the org enters one. |
-| code | character | Team code, three letters as entered (may be in the local script, e.g. Greek 'AEK' in Greek script) |
-| code_international | character | Team code in Latin script |
-| coach | character | Head coach display name |
-| score | integer | Team points (current or final); a numeric string in the 2014-15 era sample (WBBL 12248), an integer since |
-| full_score | integer | Team points including overtime; equal to score in every sample (a numeric string in the 2014-15 era) |
-| p1_score | integer | Points scored in period 1 (a numeric string in the 2014-15 era) |
-| p2_score | integer | Points scored in period 2 (a numeric string in the 2014-15 era) |
-| p3_score | integer | Points scored in period 3 (a numeric string in the 2014-15 era) |
-| p4_score | integer | Points scored in period 4 (a numeric string in the 2014-15 era) |
-| ot_score | integer | Points the team scored in overtime; null without overtime. Whether several overtimes are summed is unverified. |
-| fouls | integer | Team fouls in the current (last) period |
-| timeouts | integer | Timeouts counter of the current period (unverified: remaining vs taken); 0 in every sampled (finished) game |
-| minutes | character | Minutes as the feed prints them, an 'mm:ss' text (can exceed 59 for a team; '199:60' happens); the text of an integer when the feed sends one. |
-| seconds_played | integer | Seconds played parsed from the printed mm:ss text as minutes \* 60 + seconds (so '224:60' gives 13500); null when the feed sent an integer, whose unit is unknown. |
-| field_goals_made | integer | Team total: field goals made |
-| field_goals_attempted | integer | Team total: field goals attempted |
-| field_goals_percentage | double | Team total: field-goal percentage, 0-100, rounded to an integer by the feed |
-| three_pointers_made | integer | Team total: three-pointers made |
-| three_pointers_attempted | integer | Team total: three-pointers attempted |
-| three_pointers_percentage | double | Team total: three-point percentage, 0-100, rounded to an integer |
-| two_pointers_made | integer | Team total: two-pointers made |
-| two_pointers_attempted | integer | Team total: two-pointers attempted |
-| two_pointers_percentage | double | Team total: two-point percentage, 0-100, rounded to an integer |
-| free_throws_made | integer | Team total: free throws made |
-| free_throws_attempted | integer | Team total: free throws attempted |
-| free_throws_percentage | double | Team total: free-throw percentage, 0-100, rounded to an integer |
-| rebounds_defensive | integer | Team total: defensive rebounds |
-| rebounds_offensive | integer | Team total: offensive rebounds |
-| rebounds_total | integer | Team total: total rebounds |
-| assists | integer | Team total: assists |
-| turnovers | integer | Team total: turnovers |
-| steals | integer | Team total: steals |
-| blocks | integer | Team total: blocks made |
-| blocks_received | integer | Team total: own shots blocked by an opponent |
-| fouls_personal | integer | Team total: personal fouls committed |
-| fouls_on | integer | Team total: fouls drawn |
-| points | integer | Team total: points |
-| points_from_turnovers | integer | Team total: points off turnovers |
-| points_second_chance | integer | Team total: second-chance points |
-| points_fast_break | integer | Team total: fast-break points |
-| points_in_the_paint | integer | Team total: points in the paint |
-| eff_1 | integer | Genius efficiency formula 1. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
-| eff_2 | integer | Genius efficiency formula 2. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Team tot_eff_2 is 2 in every 2016+ sample (a constant, not a stat). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
-| eff_3 | double | Genius efficiency formula 3. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
-| eff_4 | double | Genius efficiency formula 4. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
-| eff_5 | integer | Genius efficiency formula 5. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
-| eff_6 | integer | Genius efficiency formula 6. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
-| eff_7 | integer | Genius efficiency formula 7. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site (team total). Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
-| bench_points | integer | Team total: points scored by non-starters |
-| biggest_lead | integer | Team total: biggest lead, points |
-| biggest_scoring_run | integer | Team total: biggest unanswered scoring run, points |
-| lead_changes | integer | Team total: lead changes in the game (same value on both teams) |
-| times_scores_level | integer | Team total: times the score was tied (same value on both teams) |
-| time_leading | double | Team total: minutes the team led, decimal minutes (33.58 = 33 min 35 s) |
-| fouls_team | integer | Team total: team (bench) fouls |
-| fouls_total | integer | Team total: all fouls committed (personal + technical + team bench) |
-| rebounds_team | integer | Team total: team rebounds (credited to no player) |
-| rebounds_team_defensive | integer | Team total: team defensive rebounds |
-| rebounds_team_offensive | integer | Team total: team offensive rebounds |
-| turnovers_team | integer | Team total: team turnovers (credited to no player, e.g. shot clock) |
+A `hoopR_data` tibble with one row per team in the game. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "genius_team_box")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

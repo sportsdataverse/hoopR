@@ -44,6 +44,7 @@ source is joined."><meta property="og:image" content="https://raw.githubusercont
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -156,7 +157,7 @@ source is joined.</p>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble, one row per player per team (ESPN-anchored):</p>
+    <p>A <code>hoopR_data</code> tibble with one row per player per team.</p>
 <p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>espn_team_id</td><td>integer</td><td>ESPN team id (canonical key).</td></tr><tr><td>team_abbreviation</td><td>character</td><td>ESPN team abbreviation.</td></tr><tr><td>player_name</td><td>character</td><td>Normalized player name (matching key).</td></tr><tr><td>espn_athlete_id</td><td>character</td><td>ESPN athlete id.</td></tr><tr><td>espn_full_name</td><td>character</td><td>ESPN full name.</td></tr><tr><td>espn_jersey</td><td>character</td><td>ESPN jersey number.</td></tr><tr><td>espn_position</td><td>character</td><td>ESPN position abbreviation.</td></tr><tr><td>fox_athlete_id</td><td>character</td><td>Fox athlete id (NA if unmatched).</td></tr><tr><td>fox_player</td><td>character</td><td>Fox player name (NA if unmatched).</td></tr><tr><td>fox_jersey</td><td>character</td><td>Fox jersey number (NA if unmatched).</td></tr><tr><td>fox_position_group</td><td>character</td><td>Fox position group label (NA if unmatched).</td></tr><tr><td>yahoo_player_id</td><td>character</td><td>Yahoo player id (NA placeholder).</td></tr><tr><td>yahoo_player_name</td><td>character</td><td>Yahoo player name (NA placeholder).</td></tr><tr><td>match_method</td><td>character</td><td>"exact_name"/"fuzzy_jw"/"unmatched".</td></tr><tr><td>match_confidence</td><td>numeric</td><td>Jaro-Winkler score or 1 for exact (NA if none).</td></tr><tr><td>match_keys</td><td>character</td><td>NA (reserved for future use).</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

@@ -33,106 +33,12 @@ euroleague_games(competition_code, season_code, limit = NULL, offset = NULL)
 
 ## Value
 
-A `hoopR_data` tibble with one row per game:
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| id | character | Provider identifier for the entity (Utf8 join key). |
-| identifier | character | Season-qualified game identifier, e.g. E2025_1. |
-| game_code | character | Game number within the season (1-based; Utf8 join key). |
-| round | integer | Round number within the season. |
-| round_alias | character | Short alias of the round. |
-| round_name | character | Display name of the round. |
-| played | logical | Whether the game has been played. |
-| date | character | Scheduled tip-off (ISO 8601, venue local time). |
-| confirmed_date | logical | Whether the game date is confirmed. |
-| confirmed_hour | logical | Whether the tip-off time is confirmed. |
-| local_time_zone | integer | UTC offset of the venue, in hours. |
-| local_date | character | Scheduled tip-off in venue local time (ISO 8601). |
-| utc_date | character | Scheduled tip-off in UTC (ISO 8601). |
-| audience | integer | Attendance. |
-| audience_confirmed | logical | Whether the attendance figure is confirmed. |
-| social_feed | character | Social-media hashtag or feed tag for the game. |
-| operations_code | character | Engine operations code of the game. |
-| referee4 | character | Fourth referee (null unless a fourth official is assigned). |
-| is_neutral_venue | logical | Whether the game is played at a neutral venue. |
-| game_status | character | Game status (scheduled, live, result). |
-| season_name | character | Season: display name. |
-| season_code | character | Season code: competition code + start year, e.g. E2025 for 2025-26 (Utf8 join key). |
-| season_alias | character | Season: short display alias. |
-| season_competition_code | character | Season: competition code (E = EuroLeague, U = EuroCup; Utf8 join key). |
-| season_year | integer | Season: start year of the season. |
-| season_start_date | character | Season: start date (ISO 8601). |
-| group_id | character | Group: provider identifier for the entity (Utf8 join key). |
-| group_order | integer | Group: display order within the roster. |
-| group_name | character | Group: display name. |
-| group_raw_name | character | Group: group name as stored by the engine. |
-| phase_type_code | character | Phase type code (RS = regular season, PO = playoffs, ...). |
-| phase_type_alias | character | Phase type: short display alias. |
-| phase_type_name | character | Phase type: display name. |
-| phase_type_is_group_phase | logical | Phase type: whether the phase is played in groups. |
-| local_club_code | character | Home side: club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| local_club_name | character | Home side: club: display name. |
-| local_club_abbreviated_name | character | Home side: club: abbreviated display name. |
-| local_club_editorial_name | character | Home side: club: editorial (long-form) display name. |
-| local_club_tv_code | character | Home side: club: three-letter broadcast abbreviation of the club. |
-| local_club_is_virtual | logical | Home side: club: whether the club is a placeholder rather than a real club. |
-| local_club_images_crest | character | Home side: club: URL of the club crest image. |
-| local_score | integer | Home side: final score of the side. |
-| local_standings_score | integer | Home side: score of the side as counted for the standings. |
-| local_partials_partials1 | integer | Home side: quarter scores: points scored in the 1st quarter. |
-| local_partials_partials2 | integer | Home side: quarter scores: points scored in the 2nd quarter. |
-| local_partials_partials3 | integer | Home side: quarter scores: points scored in the 3rd quarter. |
-| local_partials_partials4 | integer | Home side: quarter scores: points scored in the 4th quarter. |
-| road_club_code | character | Away side: club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| road_club_name | character | Away side: club: display name. |
-| road_club_abbreviated_name | character | Away side: club: abbreviated display name. |
-| road_club_editorial_name | character | Away side: club: editorial (long-form) display name. |
-| road_club_tv_code | character | Away side: club: three-letter broadcast abbreviation of the club. |
-| road_club_is_virtual | logical | Away side: club: whether the club is a placeholder rather than a real club. |
-| road_club_images_crest | character | Away side: club: URL of the club crest image. |
-| road_score | integer | Away side: final score of the side. |
-| road_standings_score | integer | Away side: score of the side as counted for the standings. |
-| road_partials_partials1 | integer | Away side: quarter scores: points scored in the 1st quarter. |
-| road_partials_partials2 | integer | Away side: quarter scores: points scored in the 2nd quarter. |
-| road_partials_partials3 | integer | Away side: quarter scores: points scored in the 3rd quarter. |
-| road_partials_partials4 | integer | Away side: quarter scores: points scored in the 4th quarter. |
-| referee1_code | character | First referee: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| referee1_name | character | First referee: display name. |
-| referee1_alias | character | First referee: short display alias. |
-| referee1_country_code | character | First referee: ISO country code. |
-| referee1_country_name | character | First referee: country name. |
-| referee1_images_vertical_small | character | First referee: URL of the small portrait image. |
-| referee1_active | logical | First referee: whether the record is currently active. |
-| referee2_code | character | Second referee: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| referee2_name | character | Second referee: display name. |
-| referee2_alias | character | Second referee: short display alias. |
-| referee2_country_code | character | Second referee: ISO country code. |
-| referee2_country_name | character | Second referee: country name. |
-| referee2_images_vertical_small | character | Second referee: URL of the small portrait image. |
-| referee2_active | logical | Second referee: whether the record is currently active. |
-| referee3_code | character | Third referee: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| referee3_name | character | Third referee: display name. |
-| referee3_alias | character | Third referee: short display alias. |
-| referee3_country_code | character | Third referee: ISO country code. |
-| referee3_country_name | character | Third referee: country name. |
-| referee3_images_vertical_small | character | Third referee: URL of the small portrait image. |
-| referee3_active | logical | Third referee: whether the record is currently active. |
-| venue_name | character | Venue: display name. |
-| venue_code | character | Code of the venue the club or game plays at (Utf8 join key). |
-| venue_capacity | integer | Venue: seating capacity of the venue. |
-| venue_address | character | Venue: street address. |
-| venue_images_medium | character | Venue: URL of the medium-size venue image. |
-| venue_active | logical | Venue: whether the record is currently active. |
-| venue_notes | character | Venue: venue notes. |
-| winner_code | character | Winning club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| winner_name | character | Winning club: display name. |
-| winner_abbreviated_name | character | Winning club: abbreviated display name. |
-| winner_editorial_name | character | Winning club: editorial (long-form) display name. |
-| winner_tv_code | character | Winning club: three-letter broadcast abbreviation of the club. |
-| winner_is_virtual | logical | Winning club: whether the club is a placeholder rather than a real club. |
-| winner_images_crest | character | Winning club: URL of the club crest image. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "euroleague_games")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -160,7 +66,7 @@ lists every function in this family.
     euroleague_games(competition_code = "E", season_code = "E2025")
   })
 #> ── EuroLeague games from api-live.euroleague.net ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:11 UTC
+#> ℹ Data updated: 2026-11-09 19:11:24 UTC
 #> # A tibble: 402 × 101
 #>    id             identifier game_code round round_alias round_name played date 
 #>    <chr>          <chr>      <chr>     <int> <chr>       <chr>      <lgl>  <chr>

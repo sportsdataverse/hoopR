@@ -29,37 +29,12 @@ pleague_schedule(season, stage = "regular-season")
 
 ## Value
 
-A `hoopR_data` tibble: Schedule and results of one season and stage
-(pre-season, regular season, playoffs or finals): one row per game, away
-team first. An empty valid answer is a zero-row tibble with these
-columns, in this order (sportsdataverse-py `pleague_schedule`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2025 = the site's slug '2024-25'): the first year of the slug plus one. |
-| season_slug | character | The site's season slug as printed: the START year, then the END year's last two digits ('2024-25'). |
-| stage | character | Stage slug: pre-season ((Chinese text), exhibition games before the season), regular-season ((Chinese text)), playoffs ((Chinese text)) or finals ((Chinese text), the championship series). |
-| gid | integer | P. LEAGUE+ game id on the site: ONE global integer sequence over every stage and season (1-12 = 2020-21 pre-season, 13 = the 2020-21 opener, 197 = the 2022-23 opener, 662 = the 2025-26 opener), with gaps; a row id, not a count. The {gid} of /game/{gid}. Cross-checked with the page's trackGame() call. |
-| date | Date | Game date, Asia/Taipei (UTC+8) local time. |
-| weekday_zh | character | Weekday as one Chinese character: (Chinese text) Sun, (Chinese text) Mon, (Chinese text) Tue, (Chinese text) Wed, (Chinese text) Thu, (Chinese text) Fri, (Chinese text) Sat. |
-| time | character | Scheduled tip-off 'HH:MM', Asia/Taipei (UTC+8) local time. |
-| starred | logical | True when the date cell carries the site's star icon (a highlighted game). |
-| game_label | character | Game label as printed: 'G01' = game 1 of the stage, 'PLAYOFFS Game1' / 'PLAYOFFS A G1' = playoff game (series A / B), 'FINALS G1' / 'Final Game1' = finals game, '(Chinese text)G1' = game 1 of the first 'stop' ((Chinese text), a round-robin hub weekend; 2020-21). |
-| venue_zh | character | Venue (arena) name in Traditional Chinese. |
-| attendance | integer | Spectators: the first number of the page's 'N / M' seat cell; 0 on future games. |
-| capacity | integer | Seats: the second number of the 'N / M' seat cell (the venue capacity as the site records it); 0 on future games. |
-| phase | character | Row state from the page's CSS class: before_today = the date is past (the score is the result), is_future = not yet played (both scores 0), is_today. A past game printing 0-0 may be a series game that was never played: check the game page's status. |
-| away_team_id | integer | P. LEAGUE+ club id on the site (stable across seasons AND renames): 1 = Taipei Fubon Braves, 2 = Taoyuan Pauian Pilots, 3 = Hsinchu Jko / Toplus Lioneers, 4 = Formosa Taishin Dreamers, 5 = Kaohsiung 17LIVE Steelers, 6 = New Taipei Kings, 7 = TSG Ghosthawks, 8 = Yankey Ark. NOT a Preciser team uuid (that joins through the standings team_uuid). |
-| away_name_zh | character | Away team's name on that date in Traditional Chinese (short or long form; (Chinese text) = Braves, (Chinese text) = Pilots, (Chinese text) = Lioneers, (Chinese text) = Dreamers, (Chinese text) = Steelers, (Chinese text) = Kings, (Chinese text) = Ghosthawks, (Chinese text) = Yankey Ark). Printed names change by season (short and long forms, renames): key on the id, not the name. |
-| away_name_en | character | Away team's English name on that date; renames change it. Null on 2020-21 game pages (no English name is printed). |
-| away_logo | character | Away team logo url as printed by the page: protocol-relative ('//d36fypkbmmogz6.cloudfront.net/upload/p_team/logo\_{team}\_{epoch}.png'); some game pages print a malformed 'https:////d36...'. The trailing number is the upload time. |
-| away_score | integer | Away team's final points (0 on a future game). |
-| home_team_id | integer | P. LEAGUE+ club id on the site (stable across seasons AND renames): 1 = Taipei Fubon Braves, 2 = Taoyuan Pauian Pilots, 3 = Hsinchu Jko / Toplus Lioneers, 4 = Formosa Taishin Dreamers, 5 = Kaohsiung 17LIVE Steelers, 6 = New Taipei Kings, 7 = TSG Ghosthawks, 8 = Yankey Ark. NOT a Preciser team uuid (that joins through the standings team_uuid). |
-| home_name_zh | character | Home team's name on that date in Traditional Chinese (short or long form). Printed names change by season (short and long forms, renames): key on the id, not the name. |
-| home_name_en | character | Home team's English name on that date; renames change it. Null on 2020-21 game pages (no English name is printed). |
-| home_logo | character | Home team logo url as printed by the page: protocol-relative ('//d36fypkbmmogz6.cloudfront.net/upload/p_team/logo\_{team}\_{epoch}.png'); some game pages print a malformed 'https:////d36...'. The trailing number is the upload time. |
-| home_score | integer | Home team's final points (0 on a future game). |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "pleague_schedule")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -125,7 +100,7 @@ lists every function in this family.
 # \donttest{
   try(pleague_schedule(season = 2025))
 #> ── P. LEAGUE+ Schedule from pleagueofficial.com ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:30 UTC
+#> ℹ Data updated: 2026-11-09 19:14:22 UTC
 #> # A tibble: 48 × 23
 #>    season season_slug stage   gid date       weekday_zh time  starred game_label
 #>     <int> <chr>       <chr> <int> <date>     <chr>      <chr> <lgl>   <chr>     

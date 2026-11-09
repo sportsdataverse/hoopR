@@ -31,49 +31,13 @@ feb_player_box(game_id)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | FEB game id (one global sequence): the {gameId} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request. |
-| team_side | character | Side of the game the row belongs to: home or away (the feed's TEAM\[0\] / TEAM\[1\], or its 1/2 and 0/1 side codes, normalised). |
-| team_id | integer | Team-season id (key space: FEB team registrations; a NEW id every season, e.g. HLA Alicante = 979989 in 2025-26 and 1008687 in 2026-27). Joins the schedule's home_team_id / away_team_id; not a club or player id. |
-| team | character | Team name as registered for the season (sponsor name, uppercase: 'HLA ALICANTE'). |
-| player_id | integer | FEB person id: stable across seasons and clubs (A. Jorda Rodriguez = 1676991 in 2025-26 and 2026-27). Joins the box score, play-by-play, shots and leaders; not the per-season licence_id. |
-| shirt_number | character | Shirt number (dorsal) as a string, so '00' and '0' stay distinct. The shot feed names the shooter by this number. |
-| player | character | Player name as 'I. SURNAME(S)', uppercase ('V. AGUILAR HERNANDEZ'). |
-| starter | logical | True when the player was in the starting five (the page's I column), false when on the bench. |
-| captain | logical | True for the team captain. Null on 2020-21 games, where the feed does not send it. |
-| seconds_played | integer | Seconds on court (the feed's min, an integer count of seconds: 1064 = 17:44; a team row sums its players, 12000 = 200:00). Null on /TeamStats rows. |
-| min_formatted | character | Time played as 'mm:ss'. |
-| pts | integer | Points scored (the team's points on team rows; the final score when the clock is FINAL, else live). |
-| p1m | integer | Free throws made (tiros libres; integer as a string). |
-| p1a | integer | Free throws attempted (integer as a string). |
-| p1p | double | Free-throw percentage, 0-100, as a string with a DECIMAL COMMA ('77,3'); '0,0' when no attempts. |
-| p2m | integer | Two-point field goals made (integer as a string). |
-| p2a | integer | Two-point field goals attempted (integer as a string). |
-| p2p | double | Two-point percentage, 0-100, string with a decimal comma ('54,1'). |
-| p3m | integer | Three-point field goals made (integer as a string). |
-| p3a | integer | Three-point field goals attempted (integer as a string). |
-| p3p | double | Three-point percentage, 0-100, string with a decimal comma ('47,6'). |
-| fgm | integer | Field goals made, 2PT + 3PT (tiros de campo; integer as a string). |
-| fga | integer | Field goals attempted, 2PT + 3PT (integer as a string). |
-| fgp | double | Field-goal percentage, 0-100, string with a decimal comma ('51,7'). |
-| ro | integer | Offensive rebounds (rebotes ofensivos; integer as a string). |
-| rd | integer | Defensive rebounds (rebotes defensivos; integer as a string). |
-| rt | integer | Total rebounds (rebotes totales; integer as a string). |
-| reb | integer | Total rebounds (the same count as rt). |
-| assist | integer | Assists (asistencias; integer as a string). |
-| st | integer | Steals (balones robados, page column BR; integer as a string). |
-| to | integer | Turnovers (balones perdidos, page column BP; integer as a string). |
-| bs | integer | Blocks made (tapones a favor, page column TF; integer as a string). |
-| tc | integer | Shots of this player/team that were blocked (tapones en contra / recibidos, page column TC; integer as a string). |
-| mt | integer | Dunks (mates, page column MT; integer as a string). |
-| pf | integer | Personal fouls committed (faltas cometidas, page column FC; integer as a string). |
-| rf | integer | Fouls received / drawn (faltas recibidas, page column FR; integer as a string). |
-| pllss | integer | Plus/minus while the player was on court (balance, page column +/-), signed integer. |
-| val | integer | FEB efficiency rating (valoracion): points + rebounds + assists + steals + blocks + fouls drawn - missed shots - turnovers - shots blocked - fouls committed. |
+A `hoopR_data` tibble with one row per player and team. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "feb_player_box")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -101,7 +65,7 @@ Other FEB Functions:
 # \donttest{
   try(feb_player_box(game_id = 2535725))
 #> ── FEB player box from intrafeb.feb.es ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:21 UTC
+#> ℹ Data updated: 2026-11-09 19:11:34 UTC
 #> # A tibble: 24 × 38
 #>    game_id team_side team_id team  player_id shirt_number player starter captain
 #>      <int> <chr>       <int> <chr>     <int> <chr>        <chr>  <lgl>   <lgl>  

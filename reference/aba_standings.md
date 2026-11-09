@@ -29,36 +29,13 @@ aba_standings(season, league = "aba")
 
 ## Value
 
-A `hoopR_data` tibble. One row per team per table, in page order. A
-season has several tables: `table` is the phase heading
-(`Regular Season 2025/26`, `Top 8 Season 2025/26`,
-`Play-out Season 2025/26`) and `group` the group under it (`Group A`,
-null without one). `standing_points` are table points, 2 per win and 1
-per loss. `points_for` / `points_against` are the two sides of the
-page's `Overall` column; Top 8 and Play-out tables carry points over
-from the regular season. Every column below is always present (a
-zero-row tibble keeps them and their types); an answer with nothing in
-it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. |
-| league_id | integer | League code, the site's lea: 1 = ABA League, 2 = ABA League 2. |
-| league | character | League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. |
-| season_label | character | Season label as the page prints it ('2025/26' on the match page, 'Season 2025/26' on the calendar and standings pages). |
-| table | character | Title of the table's phase heading (h2): 'Top 8 Season 2025/26', 'Play-out Season 2025/26', 'Regular Season 2025/26'. |
-| group | character | Group heading under the phase ('Group A', 'Group B'); null when the table has no group heading. |
-| rank | integer | Position in this table (#). |
-| team_id | integer | ABA club id (global: the same id in every season and in both leagues, e.g. Partizan = 22 in 2008-09 and 2025-26). Joins every frame that carries it; the calendar has club names only. |
-| team_name | character | Club name as the site prints it now (see the match page's game.home_team). |
-| games | integer | Games played (GP). |
-| wins | integer | Games won in this table (the W column). |
-| losses | integer | Games lost in this table (the L column). |
-| points_for | integer | Points scored (left side of 'Overall' 'for:against'). |
-| points_against | integer | Points allowed (right side of 'Overall'). |
-| point_diff | integer | Point difference (Diff), points_for - points_against. |
-| standing_points | integer | Standings points (Points): 2 per win and 1 per loss (FIBA), e.g. 21-3 = 45. |
+A `hoopR_data` tibble with one row per team in each table. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "aba_standings")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -121,7 +98,7 @@ Other ABA Functions:
 # \donttest{
   try(aba_standings(season = 2026))
 #> ── ABA League Standings ───────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:22 UTC
+#> ℹ Data updated: 2026-11-09 19:08:38 UTC
 #> # A tibble: 36 × 16
 #>    season league_id league season_label   table    group  rank team_id team_name
 #>     <int>     <int> <chr>  <chr>          <chr>    <chr> <int>   <int> <chr>    

@@ -21,27 +21,13 @@ lkl_lead_chart(game_id)
 
 ## Value
 
-A `hoopR_data` tibble. One row per chart point, periods ascending and
-points in clock order. `diff` is home minus away (signed); `score_home`
-/ `score_away` are the cumulative scores (the site sends strings);
-`clock` is the clock REMAINING as the site's `mm:ss:00` text (a trailing
-`:00`; `10:00:00` is the period start); `column_height` is the bar
-height (`abs(diff) / maxDiff x 50`). A 2007-08 game has a flat chart (no
-event data then). A body without `leads` gives a zero-row tibble. Every
-column below is always present (a zero-row tibble keeps them and their
-types); an answer with nothing in it raises `hoopR_no_data`, as in
-sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | lkl.lt game id (key space: LKL games; the `{gameId}` of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under `_request`). |
-| period | integer | Period number: 1-4 regulation, 5 the first overtime, 6 the second. |
-| diff | integer | Home minus away score at that chart point (signed integer). |
-| clock | character | Clock REMAINING in the period as the site's 'mm:ss:00' text (a trailing ':00'): '10:00:00' is the period start. |
-| score_home | integer | Home cumulative score at that point (the site sends a string). |
-| score_away | integer | Away cumulative score at that point (the site sends a string). |
-| column_height | double | Bar height for the site's chart: abs(diff) / maxDiff x 50 (percent of the chart). |
+A `hoopR_data` tibble with one row per chart point. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lkl_lead_chart")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

@@ -13,25 +13,12 @@ kbl_seasons()
 
 ## Value
 
-A `hoopR_data` tibble: Every KBL regular season (1997 to the next one)
-with its competition key and date range, newest first. The columns are
-always these, in this order (sportsdataverse-py `kbl_seasons`); an empty
-valid answer raises `hoopR_no_data`, a valid body with no rows for this
-frame is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). |
-| season_code | integer | KBL season code: sequential over every season and D-League edition (2 = 1997-98, 47 = 2025-26); the crosswalk to the sdv END year is in the README. |
-| glkey | character | Competition key `S{seasonCode}G{gameCode}` (e.g. S47G01 = 2025-26 regular season): the id of the /leagues and /league/rank routes. |
-| season_name | character | Season label: 'YYYY-YYYY' for a KBL season (e.g. '2025-2026'), '1997' for the inaugural season. |
-| season_name_full | character | Division label in Korean: the first-team (top-division) season. |
-| season_grade | integer | Division: 1 = the KBL itself, 2 = the KBL D-League (reserve league). |
-| season_category | character | Category code of the competition: R regular season, PO playoffs, CP final, D1/D2 D-League stages, AS All-Star, EG/CU cups, EA EASL, OM Open Match Day (table below). |
-| game_code | character | Competition type within the season: 01 regular season (the only value the list returns). |
-| start_date | Date | First date of the season, YYYYMMDD. |
-| end_date | Date | Last date of the season, YYYYMMDD. |
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kbl_seasons")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -105,7 +92,7 @@ lists every function in this family.
 # \donttest{
   try(kbl_seasons())
 #> ── KBL Seasons from api.kbl.or.kr ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:19 UTC
+#> ℹ Data updated: 2026-11-09 19:12:31 UTC
 #> # A tibble: 31 × 10
 #>    season season_code glkey  season_name season_name_full season_grade
 #>     <int>       <int> <chr>  <chr>       <chr>                   <int>

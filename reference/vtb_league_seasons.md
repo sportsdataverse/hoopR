@@ -21,20 +21,12 @@ vtb_league_seasons(league_slug)
 
 ## Value
 
-A `hoopR_data` tibble: The seasons the API serves for one league (new
-seasons only, from 2024-25). The columns are always these, in this order
-(sportsdataverse-py `vtb_league_seasons`); an empty valid answer raises
-`hoopR_no_data`, a valid body with no rows for this frame is a zero-row
-tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26); the sdv season key and the `{season}` path param. |
-| league | character | League slug, echoed. |
-| is_current | logical | True for the current season. |
-| season_name | character | Season name ('Season 2025/2026'). |
-| season_abbrev | character | Season abbreviation ('25/26'). |
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_league_seasons")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -58,7 +50,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_league_seasons(league_slug = "vtb"))
 #> ── VTB League Seasons from api.vtb-league.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:10:22 UTC
+#> ℹ Data updated: 2026-11-09 19:16:17 UTC
 #> # A tibble: 3 × 5
 #>   season league is_current season_name                             season_abbrev
 #>    <int> <chr>  <lgl>      <chr>                                   <chr>        

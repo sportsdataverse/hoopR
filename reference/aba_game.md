@@ -36,46 +36,13 @@ aba_game(game_no, season, league = "aba")
 
 ## Value
 
-A `hoopR_data` tibble. One row keyed by (`game_no`, `season`,
-`league_id`): round and competition labels, the date line split into
-`date` / `time` / `time_zone` (`CET` is wall-clock Central European time
-including summer time; ABA League 2 prints `local`), attendance, venue
-(null before 2017-18), the two clubs with their global `team_id` and
-final score, the commissioner and the referees (`"; "`-joined, names
-only). Every column below is always present (a zero-row tibble keeps
-them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_no | integer | Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The {gameNo} of the match route. |
-| season | integer | Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. |
-| league_id | integer | League code, the site's lea: 1 = ABA League, 2 = ABA League 2. |
-| league | character | League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. |
-| season_label | character | Season label as the page prints it ('2025/26' on the match page, 'Season 2025/26' on the calendar and standings pages). |
-| round | character | Round / phase label as the page prints it: 'ROUND 1', 'Top8 - R2', 'Quarter-finals, Round 1', 'Finals, Round 4', 'Semifinal'. Same vocabulary as calendar games\[\].round. |
-| competition | character | Competition name as printed, sponsor included and applied to every season: 'AdmiralBet ABA League' (2017-18 and 2025-26), 'Regional League' (2008-09), '2. ABA liga' (ABA League 2). |
-| group | character | Group letter of a two-group regular season ('A', 'B'). ABSENT when the season has no groups (2008-09, 2017-18 and ABA League 2 samples). |
-| when | character | Date-and-time line verbatim (English weekday, dd.mm.yyyy, hh:mm, time-zone label). |
-| date | Date | Game date, from the date-and-time line (the first date of a window); null for 'TBA'. |
-| date_to | Date | Last date of a 'dd.mm.yyyy - dd.mm.yyyy' window printed before a game is scheduled; null on a game with a single date. |
-| time | character | Tip-off time 'hh:mm' in time_zone. |
-| time_zone | character | 'CET' = Central European wall-clock time INCLUDING summer time (the label never changes; the Dubai local times prove CEST in October/June, CET in winter); 'local' = the arena's local time (ABA League 2 prints 'Local time'). |
-| local_time | character | Arena-local tip-off 'hh:mm' when the arena is outside Central Europe ('(19:00 Dubai local time)'); null otherwise. |
-| local_place | character | City of local_time ('Dubai', 'Cluj-Napoca'); null when the arena is in Central Europe. |
-| attendance | integer | Spectators (the users icon). The parser sets null when the page prints none (never seen: every banked page prints it; null is part of the record contract). |
-| venue | character | Arena name ('Venue: ...'). ABSENT on the 2008-09 sample (the page has no venue line). |
-| home_team_id | integer | ABA team id (key space: aba-liga.com clubs, the same id in every season and in both leagues, e.g. Partizan = 22 in 2008-09 and 2025-26, Krka = 10). The first number of /team/{id}/{sez}/{lea}/0/{slug}/ and of the logo images/club/{size}/{id}.png. Joins match game.\*\_team_id / players / teams / pbp, standings rows and the player page. Not a player id. |
-| home_team | character | Home club name as the site prints it NOW: a club's current name is applied to every season (2008-09 shows 'Partizan Mozzart Bet'); a club that no longer plays keeps its last name (2008-09 'Petrol Olimpija'). Join on the team id. |
-| home_city | character | Home club city (local spelling: 'Beograd', 'Novo Mesto'). |
-| home_score | integer | Home final score. |
-| away_team_id | integer | ABA team id (key space: aba-liga.com clubs, the same id in every season and in both leagues, e.g. Partizan = 22 in 2008-09 and 2025-26, Krka = 10). The first number of /team/{id}/{sez}/{lea}/0/{slug}/ and of the logo images/club/{size}/{id}.png. Joins match game.\*\_team_id / players / teams / pbp, standings rows and the player page. Not a player id. |
-| away_team | character | Away club name as the site prints it now (see home_team). |
-| away_city | character | Away club city (local spelling). |
-| away_score | integer | Away final score. |
-| commissioner | character | Game commissioner's name ('Commissioner:' line); 2008-09 adds an IOC-style country code in parentheses ('(SRB)'). Null when not printed. |
-| referees | character | Referees' names in page order (crew chief first), joined with '; ' (2008-09 adds an IOC-style country code in parentheses). Names only. |
+A `hoopR_data` tibble with one row per (`game_no`, `season`,
+`league_id`). Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "aba_game")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -135,18 +102,10 @@ Other ABA Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
+  # Interactive only: aba-liga.com can take 20+ s to answer.
   try(aba_game(game_no = 6, season = 2026))
-#> ── ABA League Game ────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:19 UTC
-#> # A tibble: 1 × 27
-#>   game_no season league_id league season_label round   competition   group when 
-#>     <int>  <int>     <int> <chr>  <chr>        <chr>   <chr>         <chr> <chr>
-#> 1       6   2026         1 aba    2025/26      ROUND 1 AdmiralBet A… B     Sund…
-#> # ℹ 18 more variables: date <date>, date_to <date>, time <chr>,
-#> #   time_zone <chr>, local_time <chr>, local_place <chr>, attendance <int>,
-#> #   venue <chr>, home_team_id <int>, home_team <chr>, home_city <chr>,
-#> #   home_score <int>, away_team_id <int>, away_team <chr>, away_city <chr>,
-#> #   away_score <int>, commissioner <chr>, referees <chr>
 # }
+}
 ```

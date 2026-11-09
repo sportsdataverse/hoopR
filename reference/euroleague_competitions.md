@@ -13,13 +13,13 @@ euroleague_competitions()
 
 ## Value
 
-A `hoopR_data` tibble with one row per competition:
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| name | character | Display name. |
-| code | character | EuroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
+A `hoopR_data` tibble with one row per competition. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "euroleague_competitions")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -47,7 +47,7 @@ lists every function in this family.
     euroleague_competitions()
   })
 #> ── EuroLeague competitions from api-live.euroleague.net ───────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:08 UTC
+#> ℹ Data updated: 2026-11-09 19:11:20 UTC
 #> # A tibble: 43 × 2
 #>    name                   code 
 #>    <chr>                  <chr>

@@ -30,22 +30,13 @@ pleague_preciser_score_log(uuid, gid = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: Scoring log of one finished game (scoring events
-only, with the running score). An empty valid answer is a zero-row
-tibble with these columns, in this order (sportsdataverse-py
-`pleague_preciser_score_log`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_uuid | character | Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; `uuid` of pleague_game. |
-| seq | integer | 1-based position of the scoring event in game order. |
-| period | character | Period label: Q1-Q4, then OT1, OT2 (the vendor sends it in lower case). |
-| period_no | integer | 1-based position of the period: 1-4 for Q1-Q4, 5 for OT1, 6 for OT2. |
-| clock | character | Game clock REMAINING in the period 'mm:ss' (counts down). |
-| seconds_left | integer | The clock as whole seconds remaining in the period (08:34 = 514), derived by the parser. |
-| home_score | integer | Home score after the event. |
-| away_score | integer | Away score after the event. |
+A `hoopR_data` tibble with one row per scoring event. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "pleague_preciser_score_log")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

@@ -26,7 +26,7 @@ nba_rapm(possessions, ...)
 
 ## Value
 
-Returns a `data.frame` with one row per player:
+A `hoopR_data` tibble with one row per player.
 
 |  |  |  |
 |----|----|----|

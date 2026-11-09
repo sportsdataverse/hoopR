@@ -36,6 +36,7 @@ Fetch NBA Play-by-Play and Classify Field-Goal Attempts by Shot Zone"><meta prop
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -144,18 +145,16 @@ game identifier (e.g. <code>"0022200001"</code> for the first game of the
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>Returns a <code>data.frame</code> containing the full V3 play-by-play for
-<code>game_id</code> with an appended <code>shot_zone</code> column:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>event_type</td><td>character</td><td>Play event type code. <code>"1"</code> = MadeShot, <code>"2"</code> = MissedShot, <code>"3"</code> = FreeThrow, etc.</td></tr><tr><td>shot_value</td><td>integer</td><td>Point value of the shot attempt (2 or 3); 0 for non-FGA events.</td></tr><tr><td>x_legacy</td><td>numeric</td><td>Horizontal court coordinate (legacy units). Negative = left side of the court.</td></tr><tr><td>y_legacy</td><td>numeric</td><td>Vertical court coordinate (legacy units). Values near 0 = baseline.</td></tr><tr><td>shot_distance</td><td>numeric</td><td>Distance from the basket in feet.</td></tr><tr><td>shot_zone</td><td>character</td><td>Shot-zone classification. One of <code>"corner_3"</code>, <code>"above_the_break_3"</code>, <code>"restricted_area"</code>, <code>"in_the_paint_non_ra"</code>, <code>"mid_range"</code>. <code>NA</code> on non-field-goal rows.</td></tr></table><p>All other columns from the V3 PBP schema (<code><a href="nba_live_boxscore.html">nba_pbp()</a></code>) are also
-present.  Returns a 0-row frame when the game cannot be fetched (never-raise).</p>
-<p><strong>Shot zone definitions (pbpstats-core aligned):</strong></p><ul><li><p><code>"corner_3"</code> - three-point attempt with
-<code>abs(x_legacy) &gt;= 220</code> and <code>y_legacy &lt;= 87.5</code>
-(baseline corner area).</p></li>
+    <p>A <code>hoopR_data</code> tibble with one row per play-by-play event.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>event_type</td><td>character</td><td>Play event type code. <code>"1"</code> = MadeShot, <code>"2"</code> = MissedShot, <code>"3"</code> = FreeThrow, etc.</td></tr><tr><td>shot_value</td><td>integer</td><td>Point value of the shot attempt (2 or 3); 0 for non-FGA events.</td></tr><tr><td>x_legacy</td><td>numeric</td><td>Horizontal court coordinate (legacy units). Negative = left side of the court.</td></tr><tr><td>y_legacy</td><td>numeric</td><td>Vertical court coordinate (legacy units). Values near 0 = baseline.</td></tr><tr><td>shot_distance</td><td>numeric</td><td>Distance from the basket in feet.</td></tr><tr><td>shot_zone</td><td>character</td><td>Shot-zone classification. One of <code>"corner_3"</code>, <code>"above_the_break_3"</code>, <code>"restricted_area"</code>, <code>"in_the_paint_non_ra"</code>, <code>"mid_range"</code>. <code>NA</code> on non-field-goal rows.</td></tr></table><p>The table lists the shot columns; all other columns from the V3 PBP schema
+(<code><a href="nba_live_boxscore.html">nba_pbp()</a></code>) are also present. Returns a 0-row frame when the game cannot be
+fetched (never-raise).</p>
+<p><strong>Shot zone definitions (pbpstats-core aligned):</strong></p><ul><li><p><code>"corner_3"</code> - three-point attempt with <code>abs(x_legacy) &gt;= 220</code> and
+<code>y_legacy &lt;= 87.5</code> (baseline corner area).</p></li>
 <li><p><code>"above_the_break_3"</code> - all other three-point attempts.</p></li>
 <li><p><code>"restricted_area"</code> - two-point attempt within 4 ft of the basket.</p></li>
-<li><p><code>"in_the_paint_non_ra"</code> - two-point attempt 4-8 ft from
-the basket and within 80 legacy units of the paint center
-(<code>abs(x_legacy) &lt;= 80</code>).</p></li>
+<li><p><code>"in_the_paint_non_ra"</code> - two-point attempt 4-8 ft from the basket and
+within 80 legacy units of the paint center (<code>abs(x_legacy) &lt;= 80</code>).</p></li>
 <li><p><code>"mid_range"</code> - all remaining two-point attempts.</p></li>
 </ul></div>
     <div class="section level2">

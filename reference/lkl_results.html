@@ -36,6 +36,7 @@ Endpoint: GET https://lkl.lt/loadResults"><meta property="og:image" content="htt
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -140,14 +141,11 @@ results id and a standings id, neither a year); the runtime reads them from the 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble. One row per played game, in the site's order (newest first). <code>season_end_year</code> is the
-END year of the season (2026 = 2025-26) and <code>season_id</code> the site's opaque results-season id (from 2016-17 it is the
-Genius LiveStats competition id). Teams are given by slug, code and name only (no team id); map a slug to <code>team_id</code>
-with <code>lkl_game_info</code>. <code>time</code> is the Lithuanian local tip-off <code>HH:MM</code>. <code>winner_highlighted</code> is the side whose score
-the page shows in bold. Played games only; the unplayed schedule is not wrapped. A record without games gives a
-zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises <code>hoopR_no_data</code>, as in sportsdataverse-py.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season_id</td><td>integer</td><td>Results season id (key space: lkl.lt championships; LKL 2026-27 = 49436). From 2016-17 it is the Genius LiveStats competition id (leagueId 110).</td></tr><tr><td>season_end_year</td><td>integer</td><td>Season END year (2026 = 2025-26), read from the season label 'YYYY-YYYY m. sezonas'.</td></tr><tr><td>game_id</td><td>integer</td><td>lkl.lt game id (key space: LKL games; the <code>{gameId}</code> of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under <code>_request</code>).</td></tr><tr><td>date</td><td>Date</td><td>Game date from the site's Lithuanian day header; checked to fall in the season (Aug 1 - Jul 31).</td></tr><tr><td>weekday</td><td>character</td><td>Weekday of the header, translated to English ('sestadienis' -&gt; 'Saturday').</td></tr><tr><td>time</td><td>character</td><td>Tip-off 'HH:MM', Europe/Vilnius.</td></tr><tr><td>arena</td><td>character</td><td>Arena name ('Arena dar nezinoma' = arena not yet known, on some 2007-08 games).</td></tr><tr><td>city</td><td>character</td><td>City, from 'Arena , City'; null when the venue line has no city (2007-08 'Arena dar nezinoma').</td></tr><tr><td>home_slug</td><td>character</td><td>Home team: Team slug (key space: lkl.lt clubs; the <code>{slug}</code> of https://lkl.lt/komandos/<code>{slug}</code>; one per club, stable across renamings: 'rytas' for Lietuvos Rytas / Rytas). The results and standings rows carry only this; the game page teams_info gives slug + id.</td></tr><tr><td>home_code</td><td>character</td><td>Home three-letter team code ('LIE').</td></tr><tr><td>home_name</td><td>character</td><td>Home team name as printed (the logo alt text; the CURRENT club name even on old games: 2007-08 'Rytas').</td></tr><tr><td>home_score</td><td>integer</td><td>Home team points in the game (the final score).</td></tr><tr><td>away_slug</td><td>character</td><td>Away team: Team slug (key space: lkl.lt clubs; the <code>{slug}</code> of https://lkl.lt/komandos/<code>{slug}</code>; one per club, stable across renamings: 'rytas' for Lietuvos Rytas / Rytas). The results and standings rows carry only this; the game page teams_info gives slug + id.</td></tr><tr><td>away_code</td><td>character</td><td>Away three-letter team code.</td></tr><tr><td>away_name</td><td>character</td><td>Away team name as printed.</td></tr><tr><td>away_score</td><td>integer</td><td>Away team points in the game (the final score).</td></tr><tr><td>winner_highlighted</td><td>character</td><td>Which side's score the page sets in bold: home or away (the winner).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per played game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "lkl_results")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and

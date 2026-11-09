@@ -30,42 +30,13 @@ pleague_preciser_summary_teams(uuid, gid = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: Post-game team comparison of one finished game:
-totals, situational points, lead tracker and top performer. An empty
-valid answer is a zero-row tibble with these columns, in this order
-(sportsdataverse-py `pleague_preciser_summary_teams`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_uuid | character | Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; `uuid` of pleague_game. |
-| side | character | Which team the row belongs to: home or away. |
-| team_uuid | character | Preciser team uuid (key space: the vendor's teams; the file name of the club logo). Joins the site team_id through pleague_standings.team_uuid: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark). |
-| team_name_zh | character | Team full name in Traditional Chinese ((Chinese text) = Taipei Fubon Braves, (Chinese text) = Taoyuan Pauian Pilots, (Chinese text) = Hsinchu Toplus Lioneers, (Chinese text) = Formosa Dreamers, (Chinese text) = Kaohsiung 17LIVE Steelers, (Chinese text) = New Taipei Kings, (Chinese text) = TSG Ghosthawks). |
-| color | character | Team colour as a CSS hex string. |
-| logo_url | character | Team logo url (photonew.preciser.io/plg/teams/{team uuid}.png). |
-| points | integer | Team points (the comparison block). |
-| rebounds | integer | Team total rebounds (the comparison block). |
-| assists | integer | Team assists (the comparison block). |
-| steals | integer | Team steals (the comparison block). |
-| blocks | integer | Team blocks made (the comparison block). |
-| turnovers | integer | Team turnovers. |
-| fg_made | integer | Team field goals MADE: the vendor's key is field_goal_percentage but the value is a count of makes. |
-| fg2_pct | double | Team 2-point percentage 0-100. |
-| fg3_pct | double | Team 3-point percentage 0-100. |
-| ft_pct | double | Team free-throw percentage 0-100. |
-| fast_break_points | double | Team fast-break points. |
-| paint_points | double | Team points in the paint. |
-| second_chance_points | double | Team second-chance points. |
-| biggest_lead | integer | The team's largest lead in points. |
-| biggest_scoring_run | integer | The team's longest unanswered scoring run, in points. |
-| time_leading_seconds | integer | Seconds the team led. |
-| lead_changes | integer | Number of lead changes in the game (the same for both rows). |
-| top_player_name | character | Name of the team's top performer (Traditional Chinese or a transliteration). |
-| top_player_jersey | character | Shirt number of the top performer as a string. |
-| top_player_points | integer | Points of the top performer in the game. |
-| top_player_rebounds | integer | Total rebounds of the top performer in the game. |
-| top_player_assists | integer | Assists of the top performer in the game. |
+A `hoopR_data` tibble with one row per team in the game. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "pleague_preciser_summary_teams")`) and
+in the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

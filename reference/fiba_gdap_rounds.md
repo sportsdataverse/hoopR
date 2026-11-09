@@ -27,30 +27,12 @@ fiba_gdap_rounds(comp, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_system | character | Pairing system label (Single, Home and Away, Best of 3). |
-| game_system_code | character | Pairing system code: S single game, HA home and away, BOF3 best of three. |
-| parent_round_id | integer | roundId of the round this one belongs to; null for a top-level round. |
-| round_code | character | Round code (GP group phase, QF, SF, F final, RS regular season, CL17-32 classification...). |
-| round_id | integer | Round id (GDAP key space, unique across competitions); the first segment of gameName. |
-| round_name | character | Round label (Group Phase, Quarter-Finals, Final...). |
-| round_number | integer | Round number within the competition (1-based). |
-| round_type | character | Round type label: Group Round, Non Group Round, Super Round (getgdapgamesbycompetitionid uses the code G/NG here). |
-| round_type_code | character | Round type code: G group, NG non-group (knockout), S super round. |
-| round_status_code | character | Round status: COMPL completed, PROGR in progress, CLOS closed. |
-| start_date | character | Round start, local date-time. |
-| end_date | character | Round end, local date-time (23:59:59.9999999 on the last day). |
-| has_teams_assigned | logical | True once the round's teams are known. |
-| round_kind | character | Standard Round or Qualifiers. |
-| standing_header_code | character | Code of the standings table the round feeds. |
-| standing_header_name | character | Name of the standings table the round feeds. |
-| qualified_team_information | character | Qualification note of the round; null in every sample. |
-| round_order | integer | Display order of the round. |
+A `hoopR_data` tibble with one row per round. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_rounds")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -69,7 +51,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gdap_rounds(comp = 208182))
 #> ── FIBA gdap_rounds from fiba.basketball ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:44 UTC
+#> ℹ Data updated: 2026-11-09 19:11:57 UTC
 #> # A tibble: 10 × 18
 #>    game_system game_system_code parent_round_id round_code round_id round_name  
 #>    <chr>       <chr>                      <int> <chr>         <int> <chr>       

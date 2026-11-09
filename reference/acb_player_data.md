@@ -29,40 +29,12 @@ acb_player_data(player_id)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_player_data`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| player_id | integer | ACB licence number of the player. |
-| player_name | character | Display (sporting) name ('Edy Tavares') |
-| first_name | character | Legal first name(s) |
-| last_name | character | Legal last name(s) |
-| shirt_number | character | Shirt number, a string (” or null when unknown) |
-| game_role | character | Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or ” in many rows |
-| is_license_active | logical | True when the licence is active in the current season. |
-| licensing | character | Licence code (for example EUR, JFL); meaning unverified. |
-| birth_date | Date | Birth date (the API sends DD-MM-YYYY). |
-| birth_place | character | Birth place (town or city) as sent. |
-| birth_country | character | Birth country as sent, a Spanish name. |
-| birth_country_iso | character | ISO 3166-1 alpha-2 code of the birth country; null for an unseen name. |
-| nationality | character | Nationality as sent, a Spanish country name. |
-| nationality_iso | character | ISO 3166-1 alpha-2 code of nationality; null for an unseen name. |
-| height_m | double | Height in metres (the API sends '2,20', a decimal comma). |
-| player_number | integer | Current shirt number (integer). |
-| team_id | integer | Current team's season-team entry id. |
-| club_id | integer | Current team's stable club id. |
-| team | character | Current team name for the edition. |
-| team_abbr | character | Current team abbreviation. |
-| edition_id | integer | Season id the player record was read for (START year - 1935). |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| instagram | character | Instagram handle; null when none. |
-| twitter | character | X / Twitter handle; null when none. |
-| facebook | character | Facebook handle; null when none. |
-| youtube | character | YouTube handle; null when none. |
-| tiktok | character | TikTok handle; null when none. |
-| pronunciation_url | character | URL of an audio clip of the name; null when none. |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_player_data")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -81,7 +53,7 @@ lists every function in this family.
 # \donttest{
   try(acb_player_data(player_id = 20209407))
 #> ── ACB Player Data from api2.acb.com ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:34 UTC
+#> ℹ Data updated: 2026-11-09 19:08:52 UTC
 #> # A tibble: 1 × 28
 #>   player_id player_name first_name last_name shirt_number game_role
 #>       <int> <chr>       <chr>      <chr>     <chr>        <chr>    

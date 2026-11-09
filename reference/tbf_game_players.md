@@ -23,22 +23,13 @@ tbf_game_players(match_id)
 
 ## Value
 
-A `hoopR_data` tibble. One row per rostered player. The header carries
-no usable player id; join on name + shirt number + side. Every column
-below is always present (a zero-row tibble keeps them and their types);
-an answer with nothing in it raises `hoopR_no_data`, as in
-sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. |
-| side | character | Side of the game the row belongs to: home or away (from the route's isHome flag or home / away block). |
-| team | character | Team name for the roster row; empty in the samples, so null. |
-| player_name | character | Player name as the header roster lists it. |
-| jersey_number | character | Shirt number as a string, so '0' and '00' stay distinct. |
-| is_starter | logical | True for a starter in the header roster (isStarter). |
-| is_active | logical | True when the player is flagged active in the header (isActive). |
+A `hoopR_data` tibble with one row per rostered player. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_game_players")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

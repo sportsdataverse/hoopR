@@ -20,16 +20,12 @@ ibba_boards(season)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| board_id | integer | Competition (board) id: 5 league, 10 cup, 16 / 26 / 17 playoff quarterfinals / semifinals / final, 33 play-in, 34 Supercup, 11 the 2004-05 semifinal group; 1001+ external competitions (1001 EuroLeague, 1003 Champions League, 1005 pre-season, 1008 EuroBasket, 1012 EuroCup, 1013 State Cup). |
-| season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-| board_name_he | character | Competition name in Hebrew, HTML-unescaped. |
-| board_title_he | character | Sponsor-branded competition name in Hebrew (the Hebrew for 'Winner League'). |
-| category_he | character | Competition format in Hebrew: the Hebrew words for table, knockout or series. |
+A `hoopR_data` tibble with one row per board. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_boards")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -48,7 +44,7 @@ lists every function in this family.
 # \donttest{
   try(ibba_boards(season = 2026))
 #> ── IBBA boards ────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:00 UTC
+#> ℹ Data updated: 2026-11-09 19:12:13 UTC
 #> # A tibble: 7 × 5
 #>   board_id season board_name_he        board_title_he                category_he
 #>      <int>  <int> <chr>                <chr>                         <chr>      

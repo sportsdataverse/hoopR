@@ -35,30 +35,13 @@ aba_player(player_id, season, league = "aba")
 
 ## Value
 
-A `hoopR_data` tibble. One row keyed by (`player_id`, `season`,
-`league_id`) with the club (`team_id` is the global club id), position,
-height in cm, birth date and place, nationality (a three-letter code)
-and `career`, the free-text Clubs box joined with `"; "` (oldest first).
-These bio fields are the public player profile. Every column below is
-always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| player_id | integer | ABA player id (global: one person keeps one id across seasons and both leagues, e.g. Carlik Jones = 4807), cast to an integer. Join on it, never on the printed name. |
-| season | integer | Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. |
-| league_id | integer | League code, the site's lea: 1 = ABA League, 2 = ABA League 2. |
-| league | character | League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. |
-| name | character | Full name from the h1, 'First Last' (checked against the expected name). |
-| team_id | integer | ABA club id (global: the same id in every season and in both leagues, e.g. Partizan = 22 in 2008-09 and 2025-26). Joins every frame that carries it; the calendar has club names only. |
-| club | character | Club name of the 'Club:' row. |
-| position | character | Position in English as printed ('Guard' on the sample). |
-| height_cm | integer | Height in centimetres ('185 cm'). |
-| birth_date | Date | Date of birth, ISO 'YYYY-MM-DD' (public player bio). |
-| birth_place | character | Place of birth as printed, 'City, COUNTRY' ('Cincinnati, USA'). |
-| nationality | character | Sporting nationality, a three-letter code as printed ('SSD' = South Sudan; IOC/FIBA-style codes). |
-| career | character | The Clubs box, one free-text line per stint, oldest first, joined with '; ' ('2021/22 - Texas Legends; 2024-27 - Partizan Mozzart Bet'). |
+A `hoopR_data` tibble with one row per (`player_id`, `season`,
+`league_id`). Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "aba_player")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

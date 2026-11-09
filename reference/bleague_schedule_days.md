@@ -47,15 +47,13 @@ bleague_schedule_days(season, tab, month, day, event = NULL)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. |
-| tab | integer | Division tab: 1 = B1, 2 = B2, 3 = B3. |
-| event | integer | Competition type of the page: 2 B1 league, 3 B1 Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs, 11 B1-B2 promotion/relegation, 15 B3 league, 32 B3 playoffs. |
-| date | Date | Local date of a game day in the requested month (a date strip entry). |
+A `hoopR_data` tibble with one row per game day of the requested month.
+Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bleague_schedule_days")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

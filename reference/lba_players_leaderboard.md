@@ -26,30 +26,12 @@ lba_players_leaderboard(season = NULL, category = "points")
 
 ## Value
 
-A `hoopR_data` tibble: Season player leaderboard for one category
-(per-game average). The columns are always these, in this order
-(sportsdataverse-py `lba_players_leaderboard`); a column the site adds
-later is appended after them:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2027 = 2026-27): the row's START year + 1. |
-| category | character | Category of this row (the `cat` param, e.g. `points`). |
-| player_id | integer | Player id (global, one per career). |
-| name | character | Given name (players) / team name (teams). |
-| surname | character | Player's family name. |
-| team_name | character | Team name in that season, with its sponsor (`Nutribullet Treviso Basket`); changes with the sponsor. |
-| tv_name | character | Short team name for TV graphics. |
-| year | integer | Season START year (2026 = 2026-27); sdv END year = year + 1. |
-| category_filter_total | integer | Season total in the category. |
-| attempts | integer | Shots attempted in the zone, parsed from num. |
-| presences | integer | Games the player appeared in, counted for the leaderboard. |
-| minutes | double | Minutes per game (players: decimal string `28.67`) / total minutes (teams: integer). |
-| score_40_min | double | Value per 40 minutes. |
-| score | double | Value in the category under the `ob` order (default `avg` = per game); players send a decimal string, teams a number. |
-| team_id | integer | Team id (team-season). |
-| player_photo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lba_players_leaderboard")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

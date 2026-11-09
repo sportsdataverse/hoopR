@@ -21,44 +21,13 @@ cebl_standings(season)
 
 ## Value
 
-A `hoopR_data` tibble: Standings of one season, one row per team:
-record, home/away splits, games behind, streak. An empty valid answer
-raises `hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `cebl_standings`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season: the calendar year it is played in (May to August) = the sdv END year (2025). Taken from the request (the body does not echo it); null for the all-time table and for a bare body. |
-| team_id | integer | CEBL team id (its own key space; not a Genius id). Joins /teams/ `id`, the games' `home_team_id` / `away_team_id`, `team_id` in player rows and the `team_id` / `vs_team_id` params. A relocated or renamed franchise has a second id: the Stats Hub groups 15+56 (Saskatchewan Rattlers, Saskatoon Mamba), 17+53 (Calgary Surge, Guelph Nighthawks), 19+55 (Brampton, Hamilton Honey Badgers) and 16+54 (Vancouver, Fraser Valley Bandits). |
-| name_en | character | Team full name in English ('Niagara River Lions'). |
-| short_name_en | character | Team short name in English, usually the city ('Niagara'). |
-| name_fr | character | Team full name in French ('River Lions de Niagara'). |
-| short_name_fr | character | Team short name in French, usually the city. |
-| conference | character | Conference: EAST or WEST. |
-| position | integer | Rank in the team's conference standings (1 = first), not a playing position. |
-| played | integer | Regular-season games played (24 a team in 2025). |
-| wins | integer | Regular-season games won. |
-| win_percentage | double | Win fraction, 0-1 (0.583), not a percentage; the API sends a decimal string. |
-| home_wins | integer | Regular-season home games won. |
-| away_wins | integer | Regular-season away games won. |
-| losses | integer | Regular-season games lost. |
-| home_losses | integer | Regular-season home games lost. |
-| away_losses | integer | Regular-season away games lost. |
-| games_behind | double | Games behind the conference leader; the API sends a decimal string ('0.0'). |
-| points_difference | integer | Points scored minus points allowed over the season. An integer. |
-| last_five | character | Record in the last 5 games, 'W-L' ('4-1'). |
-| streak | character | Current streak: W or L and its length ('W4', 'L1'). |
-| logo_url | character | Team logo URL (icon with the team name) on Google Cloud Storage. |
-| icon_url | character | Team icon URL (without the team name) on Google Cloud Storage. |
-| tickets_url_en | character | Ticket-sales page for the team's home games (English). |
-| tickets_url_fr | character | Ticket-sales page for the team's home games (French). |
-| website_url_en | character | The team's own website (English). |
-| website_url_fr | character | The team's own website (French). |
-| shop_url_en | character | The team's merchandise shop (English). |
-| shop_url_fr | character | The team's merchandise shop (French). |
-| stats_url_en | character | The team's stats page on cebl.ca (`https://cebl.ca/stats/{slug}`). |
-| stats_url_fr | character | The team's stats page on the French cebl.ca (`https://cebl.ca/fr-ca/stats/{slug}`). |
+A `hoopR_data` tibble with one row per team in the standings. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cebl_standings")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -87,7 +56,7 @@ Other CEBL Functions:
 # \donttest{
   try(cebl_standings(season = 2025))
 #> ── CEBL Standings from the CEBL Stats API ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:38 UTC
+#> ℹ Data updated: 2026-11-09 19:09:56 UTC
 #> # A tibble: 10 × 30
 #>    season team_id name_en         short_name_en name_fr short_name_fr conference
 #>     <int>   <int> <chr>           <chr>         <chr>   <chr>         <chr>     

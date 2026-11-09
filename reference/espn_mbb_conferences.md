@@ -16,17 +16,31 @@ espn_nba_conferences()
 
 ## Value
 
-A conferences data frame
+A `hoopR_data` tibble with one row per conference.
 
-Columns as documented in the shared
-[espn_mbb_conferences_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| group_id | integer | Group identifier (e.g. conference group_id). |
+| conference_short_name | character | Conference short name (e.g. 'ACC'). |
+| conference_uid | character | ESPN universal conference identifier. |
+| conference_name | character | Full conference name. |
+| conference_logo | character | Logo image URL for conference. |
+| parent_group_id | integer | Unique identifier for parent group. |
+| conference_id | integer | Conference identifier. |
 
-A `hoopR_data` tibble with one row per conference:
+A `hoopR_data` tibble with one row per conference.
 
-Columns as documented in the shared
-[espn_mbb_conferences_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_conferences_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| group_id | integer | Group identifier (e.g. conference group_id). |
+| conference_short_name | character | Conference short name (e.g. 'ACC'). |
+| conference_uid | character | ESPN universal conference identifier. |
+| conference_name | character | Full conference name. |
+| conference_logo | character | Logo image URL for conference. |
+| parent_group_id | integer | Unique identifier for parent group. |
+| conference_id | integer | Conference identifier. |
 
 ## See also
 
@@ -46,7 +60,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_conferences())
 #> ── ESPN MBB Conferences Information from ESPN.com ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:09 UTC
+#> ℹ Data updated: 2026-11-09 19:10:28 UTC
 #> # A tibble: 32 × 7
 #>    group_id conference_name conference_short_name conference_uid conference_logo
 #>       <int> <chr>           <chr>                 <chr>          <chr>          
@@ -65,10 +79,10 @@ try(espn_mbb_conferences())
 # }
 # \donttest{
   try(espn_nba_conferences())
-#> ✖ 2026-11-09 17:04:10.015615: Invalid arguments or no conferences info available!
+#> ✖ 2026-11-09 19:10:28.130239: Invalid arguments or no conferences info available!
 #> ✖ Error: `select()` doesn't handle lists.
 #> ── ESPN NBA Conferences Information from ESPN.com ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:09 UTC
+#> ℹ Data updated: 2026-11-09 19:10:28 UTC
 #> # A tibble: 0 × 7
 #> # ℹ 7 variables: group_id <chr>, conference_short_name <chr>,
 #> #   conference_uid <chr>, conference_name <chr>, conference_logo <chr>,

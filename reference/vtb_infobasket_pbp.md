@@ -20,33 +20,13 @@ vtb_infobasket_pbp(game_id)
 
 ## Value
 
-A `hoopR_data` tibble: Play-by-play of a finished game with shot x/y
-(2022-23 onwards; earlier games have no plays). The columns are always
-these, in this order (sportsdataverse-py `vtb_infobasket_pbp`); an empty
-valid answer raises `hoopR_no_data`, a valid body with no rows for this
-frame is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | Infobasket GameID of the game (the v2 matches' match_id); global across seasons. |
-| play_id | integer | Play id within the game (the row-0 header play included); parent_play_id points at another play_id. |
-| parent_play_id | integer | play_id of the parent play (a made shot's children: shot type, assist, possession change). |
-| play_type_id | integer | Play type code (see play_type; the full table is in vtb-returns.md). |
-| play_type | character | English label of play_type_id from the site widget's table (null for a code the table lacks). |
-| play_period | integer | Period: 1-4 quarters, 5+ overtimes. |
-| play_second | integer | Time ELAPSED in the period, in tenths of a second (6000 = 600 s = end of a 10-minute quarter). Game clock = period length - PlaySecond/10. |
-| play_sort_order | integer | Order among plays sharing the same play_second. |
-| play_flag | integer | Play flag; 0 in every sample (meaning unverified). |
-| start_id | integer | Line-up slot id within this game's line-up (0 = the placeholder row); not a person id. |
-| team_number | integer | Side (1 or 2) of the line-up slot the play belongs to; null for a play with no player. |
-| team_id | integer | Infobasket TeamID of the team the play belongs to; null for a play with no player. |
-| person_id | integer | Infobasket PersonID of the player of the line-up slot; null for a play with no player. |
-| play_zone | integer | Court zone code of a shot: 1-3 count as paint in the site's widget, 3-pointers sit in zones 7-12; the full map is unverified. |
-| play_x | integer | Shot x in decimetres across the court, -75..75, origin at the basket centre (orientation from the renderer, unverified). |
-| play_y | integer | Shot y in decimetres from the basket toward midcourt (about -16 baseline, 124 midcourt). |
-| video_from | integer | Video clip start, Unix epoch seconds; 0 when none. |
-| video_to | integer | Video clip end, Unix epoch seconds; 0 when none. |
+A `hoopR_data` tibble with one row per play-by-play event. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_pbp")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -65,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_pbp(game_id = 921391))
 #> ── VTB Infobasket Play-by-Play from org.infobasket.su ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:10:06 UTC
+#> ℹ Data updated: 2026-11-09 19:16:01 UTC
 #> # A tibble: 1,152 × 18
 #>    game_id play_id parent_play_id play_type_id play_type play_period play_second
 #>      <int>   <int>          <int>        <int> <chr>           <int>       <int>

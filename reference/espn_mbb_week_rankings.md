@@ -49,17 +49,29 @@ espn_nba_week_rankings(
 
 ## Value
 
-A tibble with one row per ranking source.
+A `hoopR_data` tibble with one row per ranking source.
 
-Columns as documented in the shared
-[espn_mbb_week_rankings_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_rankings_schema.md)
-table.
+|             |           |                                         |
+|-------------|-----------|-----------------------------------------|
+| col_name    | types     | description                             |
+| league      | character | League slug.                            |
+| season      | integer   | Season year.                            |
+| season_type | integer   | Season-type id.                         |
+| week        | integer   | Week number.                            |
+| ranking_id  | character | ESPN ranking id.                        |
+| ref         | character | `$ref` URL for the ranked-teams detail. |
 
-A tibble with one row per ranking source.
+A `hoopR_data` tibble with one row per ranking source.
 
-Columns as documented in the shared
-[espn_mbb_week_rankings_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_rankings_schema.md)
-table.
+|             |           |                                         |
+|-------------|-----------|-----------------------------------------|
+| col_name    | types     | description                             |
+| league      | character | League slug.                            |
+| season      | integer   | Season year.                            |
+| season_type | integer   | Season-type id.                         |
+| week        | integer   | Week number.                            |
+| ranking_id  | character | ESPN ranking id.                        |
+| ref         | character | `$ref` URL for the ranked-teams detail. |
 
 ## Details
 
@@ -85,7 +97,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_week_rankings(week = 5, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Week Rankings Index ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:04 UTC
+#> ℹ Data updated: 2026-11-09 19:11:17 UTC
 #> # A tibble: 2 × 6
 #>   league                  season season_type  week ranking_id ref               
 #>   <chr>                    <int>       <int> <int> <chr>      <chr>             
@@ -95,7 +107,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_week_rankings(week = 5, season = 2025)
 #> ── ESPN NBA Week Rankings Index ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:04 UTC
+#> ℹ Data updated: 2026-11-09 19:11:17 UTC
 #> # A tibble: 0 × 6
 #> # ℹ 6 variables: league <chr>, season <int>, season_type <int>, week <int>,
 #> #   ranking_id <chr>, ref <chr>

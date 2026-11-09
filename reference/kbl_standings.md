@@ -33,79 +33,13 @@ kbl_standings(season, division = "kbl", game_code = "01")
 
 ## Value
 
-A `hoopR_data` tibble: Standings of one competition with each team's
-season totals. The columns are always these, in this order
-(sportsdataverse-py `kbl_standings`); an empty valid answer raises
-`hoopR_no_data`, a valid body with no rows for this frame is a zero-row
-tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). |
-| season_code | integer | KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League). |
-| game_code | character | Competition type within the season (2-digit string; code table in the README and below): 01 regular season, 03 playoffs, 04 final, ... |
-| rank | integer | Standing (1 = first). |
-| team_code | character | Team code: the KBL club in that season (two-digit string with a leading zero, e.g. '50' = Changwon LG). Joins kbl_teams team_code; not stable across ownership changes (the Anyang club is '40' in 1997-98, '70' today). |
-| team_name | character | Team short name (Korean, e.g. Wonju DB). English names: /common/teamList `teamNameEn` / `teamNameFullEn`, joined on the team code. |
-| team_name_full | character | Team full name (Korean). |
-| game_count | integer | Games played (this season or competition). |
-| wins | integer | Season wins of the team (the wire's TWin). |
-| losses | integer | Season losses of the team (the wire's TLoss). |
-| draws | integer | Draws (TDraw, always 0). |
-| win_rate | double | Win fraction, 0-1. |
-| win_diff | double | Games behind the leader. |
-| home_wins | integer | Wins in the team's home games. |
-| home_losses | integer | Losses in the team's home games. |
-| away_wins | integer | Wins in the team's away games. |
-| away_losses | integer | Losses in the team's away games. |
-| conti_win | integer | Current winning streak (0 when the last game was a loss). |
-| conti_loss | integer | Current losing streak (0 when the last game was a win). |
-| conti_date | Date | Date (YYYYMMDD) the current streak started (inferred; unverified). |
-| max_win | integer | Longest winning streak of the season. |
-| max_loss | integer | Longest losing streak of the season. |
-| last_game_date | Date | Date of the latest game counted in the row, YYYYMMDD. |
-| last_five | character | The last five results as a comma-separated string, most recent first: 1 win, 0 loss (the name is cut short in the API). |
-| last_game_won | logical | True when the team's latest game was a win (the wire's win; a boolean, not a count). |
-| last_game_lost | logical | True when the team's latest game was a loss (inferred from conti_loss). |
-| last_game_drawn | logical | True when the team's latest game was a draw (always false). |
-| game_flag | logical | Boolean flag in the standings row; meaning unverified (true in the sample). |
-| updated_at | character | When the standings row was written (ISO 8601 UTC timestamp). |
-| score | integer | Points. Team season total for the competition (glkey). |
-| fg | integer | Two-point field goals made, dunks included: 201 + 207 rows (score = 2*fg + 3*threep + ft holds on every sampled box). Team season total for the competition (glkey). |
-| fg_a | integer | Two-point field-goal attempts, made + missed, dunks included: 201 + 202 + 207 + 208 rows (checked per team on S47G01N49). Team season total for the competition (glkey). |
-| threep | integer | Three-point field goals made (action 205). Team season total for the competition (glkey). |
-| threep_a | integer | Three-point attempts, made + missed (205 + 206). Team season total for the competition (glkey). |
-| ft | integer | Free throws made (action 203). Team season total for the competition (glkey). |
-| ft_a | integer | Free-throw attempts, made + missed (203 + 204). Team season total for the competition (glkey). |
-| dk | integer | Dunks made (action 207); included in `fg`. Team season total for the competition (glkey). |
-| dk_a | integer | Dunk attempts (made + missed, actions 207 + 208). Team season total for the competition (glkey). |
-| ast | integer | Assists. Team season total for the competition (glkey). |
-| bs | integer | Blocked shots. Team season total for the competition (glkey). |
-| defr | integer | Defensive rebounds. Team season total for the competition (glkey). |
-| offr | integer | Offensive rebounds. Team season total for the competition (glkey). |
-| stl | integer | Steals. Team season total for the competition (glkey). |
-| to | integer | Turnovers. Team season total for the competition (glkey). |
-| team_r | integer | Team rebounds (action 218), unverified against `teamR`. Team season total for the competition (glkey). |
-| pp | integer | Paint field goals made: 0 in every sampled row (see PScore). |
-| pp_a | integer | Paint field-goal attempts: 0 in every sampled row (see PScore). |
-| pscore | integer | Points in the paint (pp/ppA are 0 on this route in every sampled row). Team season total for the competition (glkey). |
-| wft | integer | Fouls that awarded free throws (action 215). Team season total for the competition (glkey). |
-| woft | integer | Fouls that awarded no free throws (action 216). Team season total for the competition (glkey). |
-| foul_total | integer | Personal fouls over the season (foulTot). |
-| tfb | integer | Team fast breaks (action 217). Team season total for the competition (glkey). |
-| tto | integer | Team turnovers (action 223). Team season total for the competition (glkey). |
-| tf | integer | Probably technical fouls (unverified; 0 in most rows). Team season total for the competition (glkey). |
-| fb | integer | Fast breaks credited to the player (action 217 rows that name a player, as in 1997-98); 0 in recent seasons, where fast breaks are team rows (`tfb`). Team season total for the competition (glkey). |
-| ef | integer | Meaning unverified (0 in every game sample; non-zero in some season totals). Team season total for the competition (glkey). |
-| bf | integer | Meaning unverified (probably bench fouls; 0 in every game sample). Team season total for the competition (glkey). |
-| gd | integer | Good-defense plays (action 221). Team season total for the competition (glkey). |
-| idf | integer | Illegal-defense violations (action 219; an early-KBL rule, so non-zero only in old seasons). Team season total for the competition (glkey). |
-| inout | integer | Times the player entered the game, the start included (checked on the 2025-26 sample game); a team row sums its players. Team season total for the competition (glkey). |
-| inout1 | integer | Times the player was substituted out before the end (checked on the 2025-26 sample game); a team row sums its players. Team season total for the competition (glkey). |
-| foulout | integer | Players fouled out (unverified). Team season total for the competition (glkey). |
-| play_min | integer | Minutes of playing time; add `playSec` seconds. Team season total for the competition (glkey). |
-| play_sec | integer | Seconds part of the playing time (0-59), added to `playMin`. Team season total for the competition (glkey). |
+A `hoopR_data` tibble with one row per team in the standings. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kbl_standings")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -124,7 +58,7 @@ lists every function in this family.
 # \donttest{
   try(kbl_standings(season = 2025))
 #> ── KBL Standings from api.kbl.or.kr ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:21 UTC
+#> ℹ Data updated: 2026-11-09 19:12:33 UTC
 #> # A tibble: 10 × 64
 #>    season season_code game_code  rank team_code team_name         team_name_full
 #>     <int>       <int> <chr>     <int> <chr>     <chr>             <chr>         

@@ -46,23 +46,12 @@ cbbd_lineups_game(game_id)
 
 ## Value
 
-A `hoopR_data` tibble with one row per lineup. The `athletes` column is
-a list of lineup members; `team_stats`/`opponent_stats` are flattened
-into prefixed columns. Key identifying columns:
-
-|                |           |                                     |
-|----------------|-----------|-------------------------------------|
-| col_name       | types     | description                         |
-| team_id        | integer   | Team id.                            |
-| team           | character | Team name.                          |
-| conference     | character | Conference name.                    |
-| id_hash        | character | Unique hash identifying the lineup. |
-| athletes       | list      | List of athletes in the lineup.     |
-| total_seconds  | numeric   | Total seconds the lineup played.    |
-| pace           | numeric   | Lineup pace (possessions).          |
-| offense_rating | numeric   | Lineup offensive rating.            |
-| defense_rating | numeric   | Lineup defensive rating.            |
-| net_rating     | numeric   | Lineup net rating.                  |
+A `hoopR_data` tibble with one row per lineup. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_lineups_team")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 A `hoopR_data` tibble with one row per lineup (same columns as
 `cbbd_lineups_team()`).
@@ -72,14 +61,14 @@ A `hoopR_data` tibble with one row per lineup (same columns as
 ``` r
 # \donttest{
   try(cbbd_lineups_team(season = 2024, team = "Duke"))
-#> ✖ 2026-11-09 17:03:30.996438: Invalid arguments or no lineup data available for Duke!
+#> ✖ 2026-11-09 19:09:47.447259: Invalid arguments or no lineup data available for Duke!
 #> ✖ Args: season = 2024, team = "Duke", start_date_range = NULL, end_date_range = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_lineups_game(game_id = 5881))
-#> ✖ 2026-11-09 17:03:31.005121: Invalid arguments or no lineup data available for 5881!
+#> ✖ 2026-11-09 19:09:47.467283: Invalid arguments or no lineup data available for 5881!
 #> ✖ Args: game_id = 5881
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

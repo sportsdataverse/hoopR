@@ -19,22 +19,13 @@ realgm_players()
 
 ## Value
 
-A `hoopR_data` tibble with one row per active player:
-
-|                |           |                                |
-|----------------|-----------|--------------------------------|
-| col_name       | types     | description                    |
-| number         | integer   | Row number.                    |
-| player         | character | Player name.                   |
-| pos            | character | Position.                      |
-| ht             | character | Listed height.                 |
-| wt             | integer   | Listed weight (lbs).           |
-| age            | numeric   | Age.                           |
-| current_team   | character | Current NBA team.              |
-| yos            | integer   | Years of service.              |
-| pre_draft_team | character | Pre-draft team / school.       |
-| draft_status   | character | Draft pick / undrafted status. |
-| nationality    | character | Player nationality.            |
+A `hoopR_data` tibble with one row per active player. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "realgm_players")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

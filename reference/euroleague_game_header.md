@@ -32,55 +32,12 @@ euroleague_game_header(game_code, season_code)
 
 ## Value
 
-A `hoopR_data` tibble with one row (the game):
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| live | logical | Whether the game is in progress. |
-| round | character | Round label (e.g. Round 1). |
-| date | character | Game date (venue local, dd/mm/yyyy). |
-| hour | character | Scheduled tip-off time (venue local, HH:MM). |
-| stadium | character | Venue name. |
-| capacity | character | Capacity as reported by the API (equals the box score's attendance on the captured game; semantics unverified). |
-| team_a | character | Display name of team A (= the home side, measured on one game). |
-| team_b | character | Display name of team B (= the away side, measured on one game). |
-| code_team_a | character | EuroLeague club code of team A (= the home side, measured on one game); Utf8 join key. |
-| tv_code_a | character | Three-letter broadcast abbreviation of team A. |
-| code_team_b | character | EuroLeague club code of team B (= the away side, measured on one game); Utf8 join key. |
-| tv_code_b | character | Three-letter broadcast abbreviation of team B. |
-| im_a | character | Crest image file name of team A. |
-| im_b | character | Crest image file name of team B. |
-| score_a | character | Score of team A (= the home side, measured on one game). |
-| score_b | character | Score of team B (= the away side, measured on one game). |
-| coach_a | character | Head coach of team A. |
-| coach_b | character | Head coach of team B. |
-| game_time | character | Elapsed game time (mm:ss). |
-| remaining_partial_time | character | Time remaining in the current period (mm:ss). |
-| wid | character | Live-feed widget identifier of the game. |
-| quarter | character | Current period of the game. |
-| foults_a | character | Team fouls of team A in the current period (sic: the API spells it this way). |
-| foults_b | character | Team fouls of team B in the current period (sic: the API spells it this way). |
-| timeouts_a | character | Timeouts used by team A. |
-| timeouts_b | character | Timeouts used by team B. |
-| score_quarter1_a | integer | Score of team A at the end of quarter 1 (cumulative). |
-| score_quarter2_a | integer | Score of team A at the end of quarter 2 (cumulative). |
-| score_quarter3_a | integer | Score of team A at the end of quarter 3 (cumulative). |
-| score_quarter4_a | integer | Score of team A at the end of quarter 4 (cumulative). |
-| score_extra_time_a | integer | Points scored by team A in overtime (0 when none). |
-| score_quarter1_b | integer | Score of team B at the end of quarter 1 (cumulative). |
-| score_quarter2_b | integer | Score of team B at the end of quarter 2 (cumulative). |
-| score_quarter3_b | integer | Score of team B at the end of quarter 3 (cumulative). |
-| score_quarter4_b | integer | Score of team B at the end of quarter 4 (cumulative). |
-| score_extra_time_b | integer | Points scored by team B in overtime (0 when none). |
-| phase | character | Phase name (Regular Season, Playoffs, ...). |
-| phase_reduced_name | character | Short phase name. |
-| competition | character | Competition name. |
-| competition_reduced_name | character | Short competition name. |
-| pcom | character | Competition code of the live feed (E = EuroLeague, U = EuroCup). |
-| referee1 | character | First referee. |
-| referee2 | character | Second referee. |
-| referee3 | character | Third referee. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "euroleague_game_header")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -109,17 +66,17 @@ lists every function in this family.
     euroleague_game_header(game_code = 1, season_code = "E2025")
   })
 #> ── EuroLeague game header from live.euroleague.net ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:09 UTC
+#> ℹ Data updated: 2026-11-09 19:11:21 UTC
 #> # A tibble: 1 × 44
-#>   live  round date    hour  stadium capacity team_a team_b code_team_a tv_code_a
-#>   <lgl> <chr> <chr>   <chr> <chr>   <chr>    <chr>  <chr>  <chr>       <chr>    
-#> 1 FALSE 1     30/09/… 19:45 MORACA  2110     ANADO… MACCA… IST         EFS      
-#> # ℹ 34 more variables: code_team_b <chr>, tv_code_b <chr>, im_a <chr>,
-#> #   im_b <chr>, score_a <chr>, score_b <chr>, coach_a <chr>, coach_b <chr>,
-#> #   game_time <chr>, remaining_partial_time <chr>, wid <chr>, quarter <chr>,
-#> #   foults_a <chr>, foults_b <chr>, timeouts_a <chr>, timeouts_b <chr>,
-#> #   score_quarter1_a <int>, score_quarter2_a <int>, score_quarter3_a <int>,
-#> #   score_quarter4_a <int>, score_extra_time_a <int>, score_quarter1_b <int>,
-#> #   score_quarter2_b <int>, score_quarter3_b <int>, score_quarter4_b <int>, …
+#>   score_quarter1_a score_quarter1_b score_quarter2_a score_quarter2_b
+#>              <int>            <int>            <int>            <int>
+#> 1               21               19               40               44
+#> # ℹ 40 more variables: score_quarter3_a <int>, score_quarter3_b <int>,
+#> #   score_quarter4_a <int>, score_quarter4_b <int>, live <lgl>, round <chr>,
+#> #   date <chr>, hour <chr>, stadium <chr>, capacity <chr>, team_a <chr>,
+#> #   team_b <chr>, code_team_a <chr>, tv_code_a <chr>, code_team_b <chr>,
+#> #   tv_code_b <chr>, im_a <chr>, im_b <chr>, score_a <chr>, score_b <chr>,
+#> #   coach_a <chr>, coach_b <chr>, game_time <chr>,
+#> #   remaining_partial_time <chr>, wid <chr>, quarter <chr>, foults_a <chr>, …
 # }
 ```

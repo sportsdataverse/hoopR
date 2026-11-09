@@ -28,22 +28,12 @@ scb_season_players(season, league = "bbl")
 
 ## Value
 
-A `hoopR_data` tibble: Every player registered in a season: the id
-crosswalk (season_player_id, real_player_id, season_team_id). An empty
-valid answer raises `hoopR_no_data`; the columns are always these, in
-this order (sportsdataverse-py `scb_season_players`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| league | character | League the row belongs to: `bbl` (men) or `dbbl` (women); BBL and DBBL game ids overlap, so a game is (league, game_id). |
-| season | integer | Season END year (2026 = 2025-26), the sdv key; the API's `season_id` plus one. |
-| season_id | integer | The API's own season key, the START year (2025 = 2025-26); `season` minus one. |
-| season_player_id | character | Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score `seasonPlayer.id`, action `seasonPlayerId` and `/season-players/{seasonPlayerId}`. |
-| real_player_id | integer | Global person id: the same across clubs and seasons. Joins to `realPlayerId` everywhere. |
-| season_team_id | character | Season-team id; equal to the club `teamId` in every sample (BBL 2005-2026, DBBL 2024-2026). |
-| first_name | character | Player's given name. |
-| last_name | character | Player's family name. |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "scb_season_players")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -62,7 +52,7 @@ lists every function in this family.
 # \donttest{
   try(scb_season_players(season = 2026))
 #> ── BBL/DBBL Season Players from the SCB API ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:49 UTC
+#> ℹ Data updated: 2026-11-09 19:14:42 UTC
 #> # A tibble: 376 × 8
 #>    league season season_id season_player_id real_player_id season_team_id
 #>    <chr>   <int>     <int> <chr>                     <int> <chr>         

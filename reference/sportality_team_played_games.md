@@ -21,55 +21,12 @@ sportality_team_played_games(team_uuid)
 
 ## Value
 
-A `hoopR_data` tibble: A team's recent games (current season view). An
-empty valid answer raises `hoopR_no_data`; the documented columns come
-first, in this order (sportsdataverse-py
-`sportality_team_played_games`), then any column the API added later:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| date | character | Game date, 'D mon YY' in English ('10 oct 26'). |
-| time | character | Local start time 'HH:MM' (Europe/Copenhagen). |
-| game_uuid | character | Platform game uuid (c4hh5nig6t); every gameday route takes it. |
-| start_date_time | character | Scheduled start. On the schedule route this is the LOCAL (Europe/Copenhagen) wall time 'YYYY-MM-DD HH:MM:SS' with no zone; on the other routes it is ISO 8601 UTC with milliseconds (compare rawStartDateTime). |
-| state | character | Game state. Schedule and day views: pre-game or post-game (hyphen). sports-v2 game-info: post_game (underscore). Gameday overview: GameEnded. Values: `post-game` = played (schedule, day views). |
-| overtime | logical | Whether the game went to overtime. |
-| shootout | character | Unobserved: null in every sample and every full body. When filled: Whether the game was decided by a shootout (null on every game seen; basketball has none). |
-| ssgt_uuid | character | ssgt uuid (platform key space: one season + series + game type); joins /statistics-v2/layout-info `seasonSeriesGameTypeTeams[].ssgtUuid` and every route keyed by ssgt. |
-| home_team_status | character | WIN or LOSE for the home team once the game is played; absent or empty before. Values: `LOSE` = the team lost; `WIN` = the team won. |
-| home_team_uuid | character | Home team uuid (platform key space); joins `/sports-v2/teams/{team_uuid}`. |
-| home_team_owner_instance_id | character | Site instance id of the club that owns the team (platform key space, e.g. hol2_hol). |
-| home_team_code | character | Three-letter code of the home team. |
-| home_team_names_code | character | Three-letter team code (HOL, RAN ...); codes changed between seasons for some clubs (BAK in 2026, BKA in 2025 for Bakken Bears). |
-| home_team_names_short | character | Short name of the team. |
-| home_team_names_long | character | Long name of the team. |
-| home_team_names_full | character | Full name of the team. |
-| home_team_names_code_site | character | Team code as the club's own site shows it. |
-| home_team_names_short_site | character | Short team name as the club's own site shows it. |
-| home_team_names_full_site | character | Full team name as the club's own site shows it. |
-| home_team_names_long_site | character | Long team name as the club's own site shows it. |
-| home_team_score | integer | Home points; null before the game is played. |
-| home_team_icon | character | Home team logo URL. |
-| away_team_status | character | WIN or LOSE for the away team once the game is played; absent or empty before. Values: `LOSE` = the team lost; `WIN` = the team won. |
-| away_team_uuid | character | Away team uuid (platform key space); joins `/sports-v2/teams/{team_uuid}`. |
-| away_team_owner_instance_id | character | Site instance id of the club that owns the team (platform key space, e.g. hol2_hol). |
-| away_team_code | character | Three-letter code of the away team. |
-| away_team_names_code | character | Three-letter team code (HOL, RAN ...); codes changed between seasons for some clubs (BAK in 2026, BKA in 2025 for Bakken Bears). |
-| away_team_names_short | character | Short name of the team. |
-| away_team_names_long | character | Long name of the team. |
-| away_team_names_full | character | Full name of the team. |
-| away_team_names_code_site | character | Team code as the club's own site shows it. |
-| away_team_names_short_site | character | Short team name as the club's own site shows it. |
-| away_team_names_full_site | character | Full team name as the club's own site shows it. |
-| away_team_names_long_site | character | Long team name as the club's own site shows it. |
-| away_team_score | integer | Away points; null before the game is played. |
-| away_team_icon | character | Away team logo URL. |
-| venue_uuid | character | Venue uuid (platform key space). |
-| venue_name | character | Venue name; absent when unknown. |
-| series_uuid | character | Series uuid (platform key space). |
-| series_code | character | Series display name (Basketligaen; NOT the DBL code). |
-| series_display_name | character | Series display name (Basketligaen). |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportality_team_played_games")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

@@ -36,64 +36,13 @@ genius_player_box(match_id, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (a zero-row tibble with these columns when Genius
-answers an empty valid page), or the raw list when
-`return_parsed = FALSE`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | Genius match id of the game. data.json does not carry it: it is the match_id asked for, stamped by the runtime (the global match sequence shared by every Genius customer). |
-| tno | integer | Team number within this game: 1 = the team listed first (home on the hosted schedule and widget), 2 = the other, 0 = no team. In-game only: not a team id. |
-| pno | integer | Player number within this game, the key of the team's player map; 0 = no player. In-game only: not a person id and not the shirt number. |
-| name | character | Display name ('T. Nichols') |
-| first_name | character | Given name in the competition's own script and spelling (Greek, Hebrew, Czech, ... as entered) |
-| family_name | character | Family name in the competition's own script |
-| international_first_name | character | Given name in Latin script |
-| international_family_name | character | Family name in Latin script (often upper case) |
-| scoreboard_name | character | Short display name ('T. Nichols'), in the local script when the org enters one |
-| shirt_number | character | Shirt number as a string ('0' and '00' differ) |
-| playing_position | character | Playing position code (PG, SG, SF, PF, C, G, F, ...); empty string when not entered |
-| starter | integer | 1 when the player started the game, else 0 |
-| captain | integer | 1 for the team captain, else 0; absent in some orgs |
-| active | integer | 1 when the player is on court now (at game end: on court at the final whistle), else 0 |
-| minutes | character | Minutes as the feed prints them, an 'mm:ss' text (can exceed 59 for a team; '199:60' happens); the text of an integer when the feed sends one. |
-| seconds_played | integer | Seconds played parsed from the printed mm:ss text as minutes \* 60 + seconds (so '224:60' gives 13500); null when the feed sent an integer, whose unit is unknown. |
-| field_goals_made | integer | Field goals the player made in the game (two- and three-pointers together; a count). |
-| field_goals_attempted | integer | Field goals the player attempted in the game (two- and three-pointers together; a count). |
-| field_goals_percentage | double | Field-goal percentage, 0-100, rounded to an integer by the feed |
-| three_pointers_made | integer | Three-pointers made |
-| three_pointers_attempted | integer | Three-pointers attempted |
-| three_pointers_percentage | double | Three-point percentage, 0-100, rounded to an integer |
-| two_pointers_made | integer | Two-pointers made |
-| two_pointers_attempted | integer | Two-pointers attempted |
-| two_pointers_percentage | double | Two-point percentage, 0-100, rounded to an integer |
-| free_throws_made | integer | Free throws the player made in the game (a count). |
-| free_throws_attempted | integer | Free throws the player attempted in the game (a count). |
-| free_throws_percentage | double | Free-throw percentage, 0-100, rounded to an integer |
-| rebounds_defensive | integer | Defensive rebounds |
-| rebounds_offensive | integer | Offensive rebounds |
-| rebounds_total | integer | Total rebounds (offensive plus defensive) the player collected in the game. |
-| assists | integer | Assists credited to the player in the game. |
-| turnovers | integer | Turnovers committed by the player in the game. |
-| steals | integer | Steals credited to the player in the game. |
-| blocks | integer | Shots the player blocked in the game (blocks made, not received). |
-| blocks_received | integer | Own shots blocked by an opponent |
-| fouls_personal | integer | Personal fouls committed |
-| fouls_on | integer | Fouls drawn: personal fouls committed against the player in the game. |
-| points | integer | Points the player scored in the game, free throws included. |
-| points_from_turnovers | integer | Points off turnovers |
-| points_second_chance | integer | Second-chance points |
-| points_fast_break | integer | Fast-break points |
-| points_in_the_paint | integer | Points the player scored in the paint in the game (the feed's sPointsInThePaint). |
-| plus_minus_points | integer | Plus/minus: team point margin while the player was on court |
-| eff_1 | integer | Genius efficiency formula 1. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
-| eff_2 | integer | Genius efficiency formula 2. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
-| eff_3 | double | Genius efficiency formula 3. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
-| eff_4 | double | Genius efficiency formula 4. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
-| eff_5 | integer | Genius efficiency formula 5. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
-| eff_6 | integer | Genius efficiency formula 6. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site |
-| eff_7 | integer | Genius efficiency formula 7. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site. Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff\_\* |
+A `hoopR_data` tibble with one row per player in the game. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "genius_player_box")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -158,7 +107,7 @@ Other Genius Functions:
 # \donttest{
   try(genius_player_box(match_id = 2902690))
 #> ── Genius LiveStats player box score ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:57 UTC
+#> ℹ Data updated: 2026-11-09 19:12:09 UTC
 #> # A tibble: 24 × 51
 #>    match_id   tno   pno name       first_name family_name international_first_…¹
 #>       <int> <int> <int> <chr>      <chr>      <chr>       <chr>                 

@@ -86,27 +86,12 @@ cbbd_play_types()
 
 ## Value
 
-A `hoopR_data` tibble with one row per play (key columns; `shot_info` is
-flattened to `shot_info_*`, `participants`/`on_floor` are list-columns):
-
-|                   |           |                                  |
-|-------------------|-----------|----------------------------------|
-| col_name          | types     | description                      |
-| id                | integer   | Play id.                         |
-| game_id           | integer   | Game id.                         |
-| season            | numeric   | Season (4-digit ending-year).    |
-| play_type         | character | Play type description.           |
-| team_id           | integer   | Team id of the team on the play. |
-| team              | character | Team on the play.                |
-| period            | integer   | Period number.                   |
-| clock             | character | Game clock.                      |
-| seconds_remaining | integer   | Seconds remaining in the period. |
-| home_score        | integer   | Home score after the play.       |
-| away_score        | integer   | Away score after the play.       |
-| scoring_play      | logical   | Whether the play scored.         |
-| shooting_play     | logical   | Whether the play was a shot.     |
-| score_value       | numeric   | Point value of the play.         |
-| play_text         | character | Play description text.           |
+A `hoopR_data` tibble with one row per play. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_plays_game")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 A `hoopR_data` tibble with one row per play (same columns as
 `cbbd_plays_game()`).
@@ -120,55 +105,55 @@ A `hoopR_data` tibble with one row per play (same columns as
 A `hoopR_data` tibble with one row per play (same columns as
 `cbbd_plays_game()`).
 
-A `hoopR_data` tibble with one row per play type:
-
-|          |           |                 |
-|----------|-----------|-----------------|
-| col_name | types     | description     |
-| id       | integer   | Play type id.   |
-| name     | character | Play type name. |
+A `hoopR_data` tibble with one row per play type. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_play_types")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Examples
 
 ``` r
 # \donttest{
   try(cbbd_plays_game(game_id = 5881))
-#> ✖ 2026-11-09 17:03:31.1795: Invalid arguments or no play data available for 5881!
+#> ✖ 2026-11-09 19:09:47.689667: Invalid arguments or no play data available for 5881!
 #> ✖ Args: game_id = 5881, shooting_plays_only = FALSE
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_plays_player(player_id = 160, season = 2024))
-#> ✖ 2026-11-09 17:03:31.188417: Invalid arguments or no play data available for player 160!
+#> ✖ 2026-11-09 19:09:47.70065: Invalid arguments or no play data available for player 160!
 #> ✖ Args: player_id = 160, season = 2024, shooting_plays_only = FALSE
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_plays_team(season = 2024, team = "Duke"))
-#> ✖ 2026-11-09 17:03:31.196525: Invalid arguments or no play data available for Duke!
+#> ✖ 2026-11-09 19:09:47.711489: Invalid arguments or no play data available for Duke!
 #> ✖ Args: season = 2024, team = "Duke", shooting_plays_only = FALSE
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_plays_date(date = "2024-04-09T00:00:00.000Z"))
-#> ✖ 2026-11-09 17:03:31.205438: Invalid arguments or no play data available for 2024-04-09T00:00:00.000Z!
+#> ✖ 2026-11-09 19:09:47.721968: Invalid arguments or no play data available for 2024-04-09T00:00:00.000Z!
 #> ✖ Args: date = "2024-04-09T00:00:00.000Z", shooting_plays_only = FALSE, utc_offset = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_plays_tournament(tournament = "CIT", season = 2024))
-#> ✖ 2026-11-09 17:03:31.213977: Invalid arguments or no play data available for CIT!
+#> ✖ 2026-11-09 19:09:47.733154: Invalid arguments or no play data available for CIT!
 #> ✖ Args: tournament = "CIT", season = 2024, shooting_plays_only = FALSE
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_play_types())
-#> ✖ 2026-11-09 17:03:31.222318: Invalid arguments or no play types available!
+#> ✖ 2026-11-09 19:09:47.743904: Invalid arguments or no play types available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

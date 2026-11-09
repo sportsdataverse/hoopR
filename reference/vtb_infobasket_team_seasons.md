@@ -31,19 +31,13 @@ vtb_infobasket_team_seasons(team_id, lang = "en", tag = "vtb")
 
 ## Value
 
-A `hoopR_data` tibble: The seasons a club has data for (END year and the
-club's competition id). The columns are always these, in this order
-(sportsdataverse-py `vtb_infobasket_team_seasons`); an empty valid
-answer raises `hoopR_no_data`, a valid body with no rows for this frame
-is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id. |
-| season | integer | Season END year of the club's season entry (2027 = 2026/2027). |
-| comp_id | integer | Competition id of the season in the club's rfb tag (56293 for 2027), not the VTB tag's season CompID. |
-| season_name | character | Season name in Russian ('Sezon 2026/2027' = 'Season 2026/2027'). |
+A `hoopR_data` tibble with one row per team-season. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_team_seasons")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

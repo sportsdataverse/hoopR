@@ -21,41 +21,13 @@ kzs_pbp(match_id)
 
 ## Value
 
-A `hoopR_data` tibble: Play-by-play of a final game (2015/16 on, with
-gaps), one row per action with shot x/y. An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `kzs_pbp`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | Match id: the federation key of a game, global across seasons (joins kzs_matches and kzs_match). |
-| action_number | integer | 1-based position of the action in the feed, which is in game order. |
-| team_side | character | Which side of the match the row belongs to: home (the organiser, firstTeam on the wire) or away. |
-| source | character | Feed the action came from: GENIUS_SPORTS in every sample. |
-| clock | character | Time remaining in the period, 'MM:SS:CC' (minutes, seconds, hundredths): '09:56:00' = 9:56 left. |
-| action_type | character | Action type (code table). |
-| sub_type | character | Action subtype (” when none; code table). |
-| qualifiers | character | Semicolon-separated qualifiers (” when none; code table). |
-| x | double | Location along the court length, 0-100 percent (see the coordinate section): shots, and from 2020-21 fouls and turnovers; 0.0 when the row has no location. |
-| y | double | Location across the court width, 0-100 percent (see the coordinate section); 0.0 when the row has no location. |
-| area | character | Court zone of the action (code table): set on shots, and from 2020-21 on located fouls and turnovers; ” on rows without a location and on every shot of early 2015-16 games. |
-| side | character | Basket end: LEFT (x~0) or RIGHT (x~100). Absent on non-shot rows before 2020-21 and on some 2020-21 rows (read absent on a shot as LEFT). |
-| success | logical | True when the shot / free throw was made (true on non-shot rows). |
-| score1 | integer | First (home) team score after the action, a numeric STRING. |
-| score2 | integer | Second (away) team score after the action, a numeric STRING. |
-| period | integer | Period number; overtime restarts at 1 with periodType OVERTIME. |
-| period_type | character | REGULAR or OVERTIME. |
-| part | character | Period label: QUARTER1-QUARTER4, then OT1 (OT2 and on by the same pattern, unobserved). |
-| match_team_player_id | integer | Match-player id: the player's entry in this one match; NOT the player id. No captured route is keyed by it: join on `playerId` on the same row. |
-| player_id | integer | Player id (KZS player registry). Joins to `/players/{playerId}`, box-score and play-by-play `playerId`. |
-| match_team_player_first_name | character | The acting player's given name, as entered for this match. |
-| match_team_player_last_name | character | The acting player's family name, as entered for this match. |
-| team_application_id | integer | Team-application id: the team's registration (entry) for the season; play-by-play `teamApplicationId` is the same key space. |
-| team_name | character | Team name for the season, sponsor included (e.g. 'Perspektiva Ilirija'). |
-| match_team_id | integer | Match-team id: this team's entry in this one match (unique per match and side). Joins to play-by-play `matchTeamId`; NOT a team id. |
-| player_photo_uuid | character | Player photo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
-| shirt_number | character | Shirt number worn by the acting player, sent as a string. |
+A `hoopR_data` tibble with one row per action with shot x/y. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_pbp")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -74,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_pbp(match_id = 101839))
 #> ── KZS Play-by-Play from api.kzs.si ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:34 UTC
+#> ℹ Data updated: 2026-11-09 19:12:46 UTC
 #> # A tibble: 816 × 27
 #>    match_id action_number team_side source clock action_type sub_type qualifiers
 #>       <int>         <int> <chr>     <chr>  <chr> <chr>       <chr>    <chr>     

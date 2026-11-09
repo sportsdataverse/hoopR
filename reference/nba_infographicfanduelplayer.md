@@ -730,7 +730,7 @@ nba_playercompare(
 
 ## Value
 
-Return a named list of data frames: PlayerIndex
+A named list of tibbles: `PlayerIndex`.
 
 **PlayerIndex**
 
@@ -766,7 +766,7 @@ Return a named list of data frames: PlayerIndex
 
 Returns a url of the png for the player_id selected
 
-Return a named list of data frames: PlayerAwards
+A named list of tibbles: `PlayerAwards`.
 
 **PlayerAwards**
 
@@ -788,7 +788,7 @@ Return a named list of data frames: PlayerAwards
 | SUBTYPE2 | character |  |
 | SUBTYPE3 | character |  |
 
-Return a named list of data frames: PlayerCareerByCollege
+A named list of tibbles: `PlayerCareerByCollege`.
 
 **PlayerCareerByCollege**
 
@@ -819,7 +819,7 @@ Return a named list of data frames: PlayerCareerByCollege
 | PF          | character | Personal fouls.                          |
 | PTS         | character | Points scored.                           |
 
-Return a named list of data frames: East, Midwest, South, West
+A named list of tibbles: `East`, `South`, `Midwest`, `West`.
 
 **East**
 
@@ -863,18 +863,44 @@ Same columns as the **East** table above.
 
 Same columns as the **East** table above.
 
-Return a named list of data frames: CareerTotalsAllStarSeason,
-CareerTotalsCollegeSeason, CareerTotalsPostSeason,
-CareerTotalsRegularSeason, SeasonRankingsPostSeason,
-SeasonRankingsRegularSeason, SeasonTotalsAllStarSeason,
-SeasonTotalsCollegeSeason, SeasonTotalsPostSeason,
-SeasonTotalsRegularSeason
+A named list of tibbles: `SeasonTotalsRegularSeason`,
+`CareerTotalsRegularSeason`, `SeasonTotalsPostSeason`,
+`CareerTotalsPostSeason`, `SeasonTotalsAllStarSeason`,
+`CareerTotalsAllStarSeason`, `SeasonRankingsRegularSeason`,
+`SeasonRankingsPostSeason`.
 
 **SeasonTotalsRegularSeason**
 
-Columns as documented in the shared
-[nba_playercareerstats_seasontotalsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasontotalsregularseason_schema.md)
-table.
+|                   |           |                                          |
+|-------------------|-----------|------------------------------------------|
+| col_name          | types     | description                              |
+| PLAYER_ID         | character | Unique player identifier.                |
+| SEASON_ID         | character | Unique season identifier.                |
+| LEAGUE_ID         | character | League identifier ('10' = WNBA).         |
+| TEAM_ID           | character | Unique team identifier.                  |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS').    |
+| PLAYER_AGE        | character |                                          |
+| GP                | character | Games played.                            |
+| GS                | character | Games started.                           |
+| MIN               | character | Minutes played.                          |
+| FGM               | character | Field goals made.                        |
+| FGA               | character | Field goal attempts.                     |
+| FG_PCT            | character | Field goal percentage (0-1).             |
+| FG3M              | character | Three-point field goals made.            |
+| FG3A              | character | Three-point field goal attempts.         |
+| FG3_PCT           | character | Three-point field goal percentage (0-1). |
+| FTM               | character | Free throws made.                        |
+| FTA               | character | Free throw attempts.                     |
+| FT_PCT            | character | Free throw percentage (0-1).             |
+| OREB              | character | Offensive rebounds.                      |
+| DREB              | character | Defensive rebounds.                      |
+| REB               | character | Total rebounds.                          |
+| AST               | character | Assists.                                 |
+| STL               | character | Steals.                                  |
+| BLK               | character | Blocks.                                  |
+| TOV               | character | Turnovers.                               |
+| PF                | character | Personal fouls.                          |
+| PTS               | character | Points scored.                           |
 
 **CareerTotalsRegularSeason**
 
@@ -908,9 +934,7 @@ table.
 
 **SeasonTotalsPostSeason**
 
-Columns as documented in the shared
-[nba_playercareerstats_seasontotalsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasontotalsregularseason_schema.md)
-table.
+Same columns as the **SeasonTotalsRegularSeason** table above.
 
 **CareerTotalsPostSeason**
 
@@ -918,35 +942,50 @@ Same columns as the **CareerTotalsRegularSeason** table above.
 
 **SeasonTotalsAllStarSeason**
 
-Columns as documented in the shared
-[nba_playercareerstats_seasontotalsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasontotalsregularseason_schema.md)
-table.
+Same columns as the **SeasonTotalsRegularSeason** table above.
 
 **CareerTotalsAllStarSeason**
 
 Same columns as the **CareerTotalsRegularSeason** table above.
 
-**SeasonTotalsCollegeSeason**
-
-**CareerTotalsCollegeSeason**
-
-**SeasonTotalsShowcaseSeason**
-
-**CareerTotalsShowcaseSeason**
-
 **SeasonRankingsRegularSeason**
 
-Columns as documented in the shared
-[nba_playercareerstats_seasonrankingsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasonrankingsregularseason_schema.md)
-table.
+|                   |           |                                       |
+|-------------------|-----------|---------------------------------------|
+| col_name          | types     | description                           |
+| PLAYER_ID         | character | Unique player identifier.             |
+| SEASON_ID         | character | Unique season identifier.             |
+| LEAGUE_ID         | character | League identifier ('10' = WNBA).      |
+| TEAM_ID           | character | Unique team identifier.               |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| PLAYER_AGE        | character |                                       |
+| GP                | character | Games played.                         |
+| GS                | character | Games started.                        |
+| RANK_MIN          | character |                                       |
+| RANK_FGM          | character |                                       |
+| RANK_FGA          | character |                                       |
+| RANK_FG_PCT       | character |                                       |
+| RANK_FG3M         | character |                                       |
+| RANK_FG3A         | character |                                       |
+| RANK_FG3_PCT      | character |                                       |
+| RANK_FTM          | character |                                       |
+| RANK_FTA          | character |                                       |
+| RANK_FT_PCT       | character |                                       |
+| RANK_OREB         | character |                                       |
+| RANK_DREB         | character |                                       |
+| RANK_REB          | character |                                       |
+| RANK_AST          | character |                                       |
+| RANK_STL          | character |                                       |
+| RANK_BLK          | character |                                       |
+| RANK_TOV          | character |                                       |
+| RANK_PTS          | character |                                       |
+| RANK_EFF          | character |                                       |
 
 **SeasonRankingsPostSeason**
 
-Columns as documented in the shared
-[nba_playercareerstats_seasonrankingsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasonrankingsregularseason_schema.md)
-table.
+Same columns as the **SeasonRankingsRegularSeason** table above.
 
-Return a named list of data frames: FanDuelPlayer
+A named list of tibbles: `FanDuelPlayer`.
 
 **FanDuelPlayer**
 
@@ -987,8 +1026,8 @@ Return a named list of data frames: FanDuelPlayer
 | PTS | character | Points scored. |
 | PLUS_MINUS | character | Plus/minus point differential while on court. |
 
-Return a named list of data frames: DaysRestModified, LastNGames,
-Location, Opponent, Overall
+A named list of tibbles: `Overall`, `Location`, `LastNGames`,
+`DaysRestModified`, `Opponent`.
 
 **Overall**
 
@@ -1079,7 +1118,7 @@ Same columns as the **Overall** table above.
 
 Same columns as the **Overall** table above.
 
-Return a named list of data frames: LastFiveGamesAvg, SeasonAvg
+A named list of tibbles: `SeasonAvg`, `LastFiveGamesAvg`.
 
 **SeasonAvg**
 
@@ -1106,7 +1145,7 @@ Return a named list of data frames: LastFiveGamesAvg, SeasonAvg
 
 Same columns as the **SeasonAvg** table above.
 
-Return a named list of data frames: PlayerEstimatedMetrics
+A named list of tibbles: `PlayerEstimatedMetrics`.
 
 **PlayerEstimatedMetrics**
 
@@ -1146,7 +1185,7 @@ Return a named list of data frames: PlayerEstimatedMetrics
 | E_USG_PCT_RANK    | character |                           |
 | E_PACE_RANK       | character |                           |
 
-Return a named list of data frames: PlayerGameLog
+A named list of tibbles: `PlayerGameLog`.
 
 **PlayerGameLog**
 
@@ -1181,7 +1220,7 @@ Return a named list of data frames: PlayerGameLog
 | PLUS_MINUS      | character | Plus/minus point differential while on court. |
 | VIDEO_AVAILABLE | character | Video available.                              |
 
-Return a named list of data frames: PlayerGameLogs
+A named list of tibbles: `PlayerGameLogs`.
 
 **PlayerGameLogs**
 
@@ -1257,7 +1296,7 @@ Return a named list of data frames: PlayerGameLogs
 | WNBA_FANTASY_PTS_RANK | character |  |
 | VIDEO_AVAILABLE_FLAG | character | Video available flag. |
 
-Return a named list of data frames: PlayerGameStreakFinderResults
+A named list of tibbles: `PlayerGameStreakFinderResults`.
 
 **PlayerGameStreakFinderResults**
 
@@ -1274,7 +1313,7 @@ Return a named list of data frames: PlayerGameStreakFinderResults
 | LASTSEASON             | character |                           |
 | FIRSTSEASON            | character |                           |
 
-Return a named list of data frames: NextNGames
+A named list of tibbles: `NextNGames`.
 
 **NextNGames**
 
@@ -1295,19 +1334,45 @@ Return a named list of data frames: NextNGames
 | HOME_WL                   | character |                                      |
 | VISITOR_WL                | character |                                      |
 
-Return a named list of data frames: CareerHighs,
-CareerTotalsAllStarSeason, CareerTotalsCollegeSeason,
-CareerTotalsPostSeason, CareerTotalsPreseason,
-CareerTotalsRegularSeason, NextGame, SeasonHighs,
-SeasonRankingsPostSeason, SeasonRankingsRegularSeason,
-SeasonTotalsAllStarSeason, SeasonTotalsCollegeSeason,
-SeasonTotalsPostSeason, SeasonTotalsPreseason, SeasonTotalsRegularSeason
+A named list of tibbles: `SeasonTotalsRegularSeason`,
+`CareerTotalsRegularSeason`, `SeasonTotalsPostSeason`,
+`CareerTotalsPostSeason`, `SeasonTotalsAllStarSeason`,
+`CareerTotalsAllStarSeason`, `SeasonTotalsPreseason`,
+`CareerTotalsPreseason`, `SeasonRankingsRegularSeason`,
+`SeasonRankingsPostSeason`, `SeasonHighs`, `CareerHighs`, `NextGame`.
 
 **SeasonTotalsRegularSeason**
 
-Columns as documented in the shared
-[nba_playercareerstats_seasontotalsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasontotalsregularseason_schema.md)
-table.
+|                   |           |                                          |
+|-------------------|-----------|------------------------------------------|
+| col_name          | types     | description                              |
+| PLAYER_ID         | character | Unique player identifier.                |
+| SEASON_ID         | character | Unique season identifier.                |
+| LEAGUE_ID         | character | League identifier ('10' = WNBA).         |
+| TEAM_ID           | character | Unique team identifier.                  |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS').    |
+| PLAYER_AGE        | character |                                          |
+| GP                | character | Games played.                            |
+| GS                | character | Games started.                           |
+| MIN               | character | Minutes played.                          |
+| FGM               | character | Field goals made.                        |
+| FGA               | character | Field goal attempts.                     |
+| FG_PCT            | character | Field goal percentage (0-1).             |
+| FG3M              | character | Three-point field goals made.            |
+| FG3A              | character | Three-point field goal attempts.         |
+| FG3_PCT           | character | Three-point field goal percentage (0-1). |
+| FTM               | character | Free throws made.                        |
+| FTA               | character | Free throw attempts.                     |
+| FT_PCT            | character | Free throw percentage (0-1).             |
+| OREB              | character | Offensive rebounds.                      |
+| DREB              | character | Defensive rebounds.                      |
+| REB               | character | Total rebounds.                          |
+| AST               | character | Assists.                                 |
+| STL               | character | Steals.                                  |
+| BLK               | character | Blocks.                                  |
+| TOV               | character | Turnovers.                               |
+| PF                | character | Personal fouls.                          |
+| PTS               | character | Points scored.                           |
 
 **CareerTotalsRegularSeason**
 
@@ -1341,9 +1406,7 @@ table.
 
 **SeasonTotalsPostSeason**
 
-Columns as documented in the shared
-[nba_playercareerstats_seasontotalsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasontotalsregularseason_schema.md)
-table.
+Same columns as the **SeasonTotalsRegularSeason** table above.
 
 **CareerTotalsPostSeason**
 
@@ -1351,23 +1414,15 @@ Same columns as the **CareerTotalsRegularSeason** table above.
 
 **SeasonTotalsAllStarSeason**
 
-Columns as documented in the shared
-[nba_playercareerstats_seasontotalsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasontotalsregularseason_schema.md)
-table.
+Same columns as the **SeasonTotalsRegularSeason** table above.
 
 **CareerTotalsAllStarSeason**
 
 Same columns as the **CareerTotalsRegularSeason** table above.
 
-**SeasonTotalsCollegeSeason**
-
-**CareerTotalsCollegeSeason**
-
 **SeasonTotalsPreseason**
 
-Columns as documented in the shared
-[nba_playercareerstats_seasontotalsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasontotalsregularseason_schema.md)
-table.
+Same columns as the **SeasonTotalsRegularSeason** table above.
 
 **CareerTotalsPreseason**
 
@@ -1375,15 +1430,40 @@ Same columns as the **CareerTotalsRegularSeason** table above.
 
 **SeasonRankingsRegularSeason**
 
-Columns as documented in the shared
-[nba_playercareerstats_seasonrankingsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasonrankingsregularseason_schema.md)
-table.
+|                   |           |                                       |
+|-------------------|-----------|---------------------------------------|
+| col_name          | types     | description                           |
+| PLAYER_ID         | character | Unique player identifier.             |
+| SEASON_ID         | character | Unique season identifier.             |
+| LEAGUE_ID         | character | League identifier ('10' = WNBA).      |
+| TEAM_ID           | character | Unique team identifier.               |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| PLAYER_AGE        | character |                                       |
+| GP                | character | Games played.                         |
+| GS                | character | Games started.                        |
+| RANK_MIN          | character |                                       |
+| RANK_FGM          | character |                                       |
+| RANK_FGA          | character |                                       |
+| RANK_FG_PCT       | character |                                       |
+| RANK_FG3M         | character |                                       |
+| RANK_FG3A         | character |                                       |
+| RANK_FG3_PCT      | character |                                       |
+| RANK_FTM          | character |                                       |
+| RANK_FTA          | character |                                       |
+| RANK_FT_PCT       | character |                                       |
+| RANK_OREB         | character |                                       |
+| RANK_DREB         | character |                                       |
+| RANK_REB          | character |                                       |
+| RANK_AST          | character |                                       |
+| RANK_STL          | character |                                       |
+| RANK_BLK          | character |                                       |
+| RANK_TOV          | character |                                       |
+| RANK_PTS          | character |                                       |
+| RANK_EFF          | character |                                       |
 
 **SeasonRankingsPostSeason**
 
-Columns as documented in the shared
-[nba_playercareerstats_seasonrankingsregularseason_schema](https://hoopR.sportsdataverse.org/reference/nba_playercareerstats_seasonrankingsregularseason_schema.md)
-table.
+Same columns as the **SeasonRankingsRegularSeason** table above.
 
 **SeasonHighs**
 
@@ -1424,10 +1504,9 @@ Same columns as the **SeasonHighs** table above.
 | VS_TEAM_NICKNAME         | character |                         |
 | VS_TEAM_ABBREVIATION     | character |                         |
 
-Return a named list of data frames: OnOffCourt, Overall, PlayerInfo,
-ShotAreaOffCourt, ShotAreaOnCourt, ShotAreaOverall,
-ShotDistanceOffCourt, ShotDistanceOnCourt, ShotDistanceOverall,
-VsPlayerInfo
+A named list of tibbles: `Overall`, `OnOffCourt`, `ShotDistanceOverall`,
+`ShotDistanceOnCourt`, `ShotDistanceOffCourt`, `ShotAreaOverall`,
+`ShotAreaOnCourt`, `ShotAreaOffCourt`, `PlayerInfo`, `VsPlayerInfo`.
 
 **Overall**
 
@@ -1570,7 +1649,7 @@ Same columns as the **ShotDistanceOnCourt** table above.
 
 Same columns as the **PlayerInfo** table above.
 
-Return a named list of data frames: Individual, OverallCompare
+A named list of tibbles: `OverallCompare`, `Individual`.
 
 **OverallCompare**
 

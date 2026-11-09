@@ -147,11 +147,11 @@ nba_boxscoresummaryv3(game_id = "0022200021", ...)
 
 ## Value
 
-Returns a named list of data frames: home_team_player_traditional,
-away_team_player_traditional, home_team_totals_traditional,
-away_team_totals_traditional, home_team_starters_totals,
-away_team_starters_totals, home_team_bench_totals,
-away_team_bench_totals
+A named list of `hoopR_data` tibbles: `home_team_player_traditional`,
+`away_team_player_traditional`, `home_team_totals_traditional`,
+`away_team_totals_traditional`, `home_team_starters_totals`,
+`away_team_starters_totals`, `home_team_bench_totals`,
+`away_team_bench_totals`.
 
 **home_team_player_traditional**
 
@@ -282,9 +282,9 @@ Same columns as the **home_team_starters_totals** table above.
 
 Same columns as the **home_team_starters_totals** table above.
 
-Returns a named list of data frames: home_team_player_advanced,
-away_team_player_advanced, home_team_totals_advanced,
-away_team_totals_advanced
+A named list of `hoopR_data` tibbles: `home_team_player_advanced`,
+`away_team_player_advanced`, `home_team_totals_advanced`,
+`away_team_totals_advanced`.
 
 **home_team_player_advanced**
 
@@ -377,8 +377,9 @@ Same columns as the **home_team_player_advanced** table above.
 
 Same columns as the **home_team_totals_advanced** table above.
 
-Returns a named list of data frames: home_team_player_misc,
-away_team_player_misc, home_team_totals_misc, away_team_totals_misc
+A named list of `hoopR_data` tibbles: `home_team_player_misc`,
+`away_team_player_misc`, `home_team_totals_misc`,
+`away_team_totals_misc`.
 
 **home_team_player_misc**
 
@@ -450,9 +451,9 @@ Same columns as the **home_team_player_misc** table above.
 
 Same columns as the **home_team_totals_misc** table above.
 
-Returns a named list of data frames: home_team_player_scoring,
-away_team_player_scoring, home_team_totals_scoring,
-away_team_totals_scoring
+A named list of `hoopR_data` tibbles: `home_team_player_scoring`,
+`away_team_player_scoring`, `home_team_totals_scoring`,
+`away_team_totals_scoring`.
 
 **home_team_player_scoring**
 
@@ -530,8 +531,9 @@ Same columns as the **home_team_player_scoring** table above.
 
 Same columns as the **home_team_totals_scoring** table above.
 
-Returns a named list of data frames: home_team_player_usage,
-away_team_player_usage, home_team_totals_usage, away_team_totals_usage
+A named list of `hoopR_data` tibbles: `home_team_player_usage`,
+`away_team_player_usage`, `home_team_totals_usage`,
+`away_team_totals_usage`.
 
 **home_team_player_usage**
 
@@ -615,9 +617,9 @@ Same columns as the **home_team_player_usage** table above.
 
 Same columns as the **home_team_totals_usage** table above.
 
-Returns a named list of data frames: home_team_player_four_factors,
-away_team_player_four_factors, home_team_totals_four_factors,
-away_team_totals_four_factors
+A named list of `hoopR_data` tibbles: `home_team_player_four_factors`,
+`away_team_player_four_factors`, `home_team_totals_four_factors`,
+`away_team_totals_four_factors`.
 
 **home_team_player_four_factors**
 
@@ -681,9 +683,9 @@ Same columns as the **home_team_player_four_factors** table above.
 
 Same columns as the **home_team_totals_four_factors** table above.
 
-Returns a named list of data frames: home_team_player_player_track,
-away_team_player_player_track, home_team_totals_player_track,
-away_team_totals_player_track
+A named list of `hoopR_data` tibbles: `home_team_player_player_track`,
+`away_team_player_player_track`, `home_team_totals_player_track`,
+`away_team_totals_player_track`.
 
 **home_team_player_player_track**
 
@@ -770,8 +772,8 @@ Same columns as the **home_team_player_player_track** table above.
 
 Same columns as the **home_team_totals_player_track** table above.
 
-Returns a named list of data frames: home_team_player_matchups,
-away_team_player_matchups
+A named list of `hoopR_data` tibbles: `home_team_player_matchups`,
+`away_team_player_matchups`.
 
 **home_team_player_matchups**
 
@@ -831,9 +833,9 @@ away_team_player_matchups
 
 Same columns as the **home_team_player_matchups** table above.
 
-Returns a named list of data frames: home_team_player_hustle,
-away_team_player_hustle, home_team_hustle_totals,
-away_team_hustle_totals
+A named list of `hoopR_data` tibbles: `home_team_player_hustle`,
+`away_team_player_hustle`, `home_team_totals_hustle`,
+`away_team_totals_hustle`.
 
 **home_team_player_hustle**
 
@@ -913,9 +915,9 @@ Same columns as the **home_team_player_hustle** table above.
 
 Same columns as the **home_team_totals_hustle** table above.
 
-Returns a named list of data frames: home_team_player_defensive,
-away_team_player_defensive, home_team_totals_defensive,
-away_team_totals_defensive
+A named list of `hoopR_data` tibbles: `home_team_player_defensive`,
+`away_team_player_defensive`, `home_team_totals_defensive`,
+`away_team_totals_defensive`.
 
 **home_team_player_defensive**
 
@@ -976,7 +978,7 @@ Same columns as the **home_team_player_defensive** table above.
 
 Same columns as the **home_team_totals_defensive** table above.
 
-Returns a named list of data frames: AwayTeam, HomeTeam
+A named list of tibbles: `AwayTeam`, `HomeTeam`.
 
 **AwayTeam**
 
@@ -1000,9 +1002,9 @@ Returns a named list of data frames: AwayTeam, HomeTeam
 
 Same columns as the **AwayTeam** table above.
 
-Returns a named list of data frames: GameSummary, GameInfo, ArenaInfo,
-Officials, LineScore, InactivePlayers, LastFiveMeetings, OtherStats,
-AvailableVideo
+A named list of `hoopR_data` tibbles: `GameSummary`, `GameInfo`,
+`ArenaInfo`, `Officials`, `LineScore`, `InactivePlayers`,
+`LastFiveMeetings`, `OtherStats`, `AvailableVideo`.
 
 **GameSummary**
 

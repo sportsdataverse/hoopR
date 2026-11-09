@@ -34,55 +34,12 @@ acb_player_matches(player_id, season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py
-`acb_player_matches`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| player_id | integer | ACB licence number asked for. |
-| match_id | integer | ACB match id of the game. |
-| round_type | character | Phase code of the game (LR regular season, PO playoff). |
-| round_number | integer | Round number within the phase. |
-| date | POSIXct | Tip-off instant (UTC). |
-| home_team_id | integer | Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every `homeTeamId` / `awayTeamId` / `teamId` / `teamEditionId`. Not the club id. |
-| home_club_id | integer | Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the `clubId` request param and every `homeClubId` / `awayClubId`. |
-| home_team | character | Team name that season (sponsor names change) |
-| home_team_abbr | character | Three-letter abbreviation (BAR, RMB) |
-| away_team_id | integer | Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every `homeTeamId` / `awayTeamId` / `teamId` / `teamEditionId`. Not the club id. |
-| away_club_id | integer | Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the `clubId` request param and every `homeClubId` / `awayClubId`. |
-| away_team | character | Team name that season (sponsor names change) |
-| away_team_abbr | character | Three-letter abbreviation (BAR, RMB) |
-| edition_id | integer | Season id read from the home team entry (START year - 1935). |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| is_selected_local | logical | True when the player's team played at home. |
-| has_won | logical | True when the player's team won the game. |
-| play_time | character | Time on court as 'mm:ss'. |
-| seconds_played | integer | Time on court in whole seconds (play_time parsed). |
-| points | integer | Points (player game-log row) |
-| three_pointers_made | integer | Three-point field goals made |
-| three_pointers_attempted | integer | Three-point field goals attempted |
-| three_pointers_percentage | double | Three-point percentage, 0-100 with one decimal; 0 when there was no attempt |
-| two_pointers_made | integer | Two-point field goals made |
-| two_pointers_attempted | integer | Two-point field goals attempted |
-| two_pointers_percentage | double | Two-point percentage, 0-100 with one decimal; 0 when there was no attempt |
-| free_throws_made | integer | Free throws the player made in that match (a count, not a season total). |
-| free_throws_attempted | integer | Free throws the player attempted in that match (a count, not a season total). |
-| free_throws_percentage | double | Free-throw percentage, 0-100 with one decimal; 0 when there was no attempt |
-| rebounds | integer | Total rebounds in the game. |
-| offensive_rebounds | integer | Offensive rebounds the player took in that match (a count; part of the total rebounds). |
-| defensive_rebounds | integer | Defensive rebounds the player took in that match (a count; part of the total rebounds). |
-| assists | integer | Assists (player game-log row) |
-| steals | integer | Steals (player game-log row) |
-| turnovers | integer | Turnovers (player game-log row) |
-| blocks | integer | Shots blocked (player game-log row) |
-| shots_rejected | integer | Shots of the player that were blocked. |
-| dunks | integer | Dunks (player game-log row) |
-| personal_fouls | integer | Fouls committed |
-| fouls_received | integer | Fouls drawn by the player in the game. |
-| rating | integer | ACB rating (valoracion) of the game. |
-| plus_minus | integer | Point differential while on court (+/-) |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_player_matches")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -101,7 +58,7 @@ lists every function in this family.
 # \donttest{
   try(acb_player_matches(player_id = 20209407, season = 2027))
 #> ── ACB Player Matches from api2.acb.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:35 UTC
+#> ℹ Data updated: 2026-11-09 19:08:53 UTC
 #> # A tibble: 7 × 42
 #>   player_id match_id round_type round_number date                home_team_id
 #>       <int>    <int> <chr>             <int> <dttm>                     <int>

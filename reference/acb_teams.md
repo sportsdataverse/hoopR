@@ -31,21 +31,12 @@ acb_teams(competition_id = NULL, season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_teams`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | Season-team entry of the selected edition (new every season). |
-| club_id | integer | Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the `clubId` request param and every `homeClubId` / `awayClubId`. |
-| team | character | Team name that season (sponsor names change) |
-| team_abbr | character | Three-letter abbreviation (BAR, RMB) |
-| competition_id | integer | Competition of the selected entry. |
-| edition_id | integer | Season id of the selected entry (START year - 1935). |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| latest_team_id | integer | The club's most recent season-team entry. |
-| latest_team | character | The club's most recent team name. |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_teams")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -64,7 +55,7 @@ lists every function in this family.
 # \donttest{
   try(acb_teams(season = 2027))
 #> ── ACB Teams from api2.acb.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:44 UTC
+#> ℹ Data updated: 2026-11-09 19:09:02 UTC
 #> # A tibble: 18 × 9
 #>    team_id club_id team               team_abbr competition_id edition_id season
 #>      <int>   <int> <chr>              <chr>              <int>      <int>  <int>

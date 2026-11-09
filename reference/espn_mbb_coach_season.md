@@ -32,17 +32,43 @@ espn_nba_coach_season(coach_id, season = most_recent_nba_season(), ...)
 
 ## Value
 
-A single-row tibble.
+A `hoopR_data` tibble with one row per coach-season.
 
-Columns as documented in the shared
-[espn_mbb_coach_season_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_coach_season_schema.md)
-table.
+|               |           |                            |
+|---------------|-----------|----------------------------|
+| col_name      | types     | description                |
+| league        | character | League slug.               |
+| season        | integer   | Season year.               |
+| coach_id      | character | ESPN coach id.             |
+| uid           | character | ESPN UID string.           |
+| first_name    | character | First name.                |
+| last_name     | character | Last name.                 |
+| date_of_birth | character | Date of birth.             |
+| birth_city    | character | Birth city.                |
+| birth_state   | character | Birth state / region.      |
+| n_records     | integer   | Count of records entries.  |
+| person_ref    | character | `$ref` to person resource. |
+| college_ref   | character | `$ref` to college.         |
+| team_ref      | character | `$ref` to team-in-season.  |
 
-A single-row tibble.
+A `hoopR_data` tibble with one row per coach-season.
 
-Columns as documented in the shared
-[espn_mbb_coach_season_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_coach_season_schema.md)
-table.
+|               |           |                            |
+|---------------|-----------|----------------------------|
+| col_name      | types     | description                |
+| league        | character | League slug.               |
+| season        | integer   | Season year.               |
+| coach_id      | character | ESPN coach id.             |
+| uid           | character | ESPN UID string.           |
+| first_name    | character | First name.                |
+| last_name     | character | Last name.                 |
+| date_of_birth | character | Date of birth.             |
+| birth_city    | character | Birth city.                |
+| birth_state   | character | Birth state / region.      |
+| n_records     | integer   | Count of records entries.  |
+| person_ref    | character | `$ref` to person resource. |
+| college_ref   | character | `$ref` to college.         |
+| team_ref      | character | `$ref` to team-in-season.  |
 
 ## Details
 
@@ -68,7 +94,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_coach_season(coach_id = 32116, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Coach-in-Season Detail ────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:08 UTC
+#> ℹ Data updated: 2026-11-09 19:10:27 UTC
 #> # A tibble: 1 × 13
 #>   league     season coach_id uid   first_name last_name date_of_birth birth_city
 #>   <chr>       <int> <chr>    <chr> <chr>      <chr>     <chr>         <chr>     
@@ -79,7 +105,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_coach_season(coach_id = 52120, season = 2025)
 #> ── ESPN NBA Coach-in-Season Detail ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:08 UTC
+#> ℹ Data updated: 2026-11-09 19:10:27 UTC
 #> # A tibble: 1 × 13
 #>   league season coach_id uid       first_name last_name date_of_birth birth_city
 #>   <chr>   <int> <chr>    <chr>     <chr>      <chr>     <chr>         <chr>     

@@ -21,20 +21,12 @@ spotrac_team_cap(season = most_recent_nba_season())
 
 ## Value
 
-A `hoopR_data` tibble with one row per team (columns reflect Spotrac's
-table; dollar figures are returned as numeric):
-
-|                       |           |                                        |
-|-----------------------|-----------|----------------------------------------|
-| col_name              | types     | description                            |
-| rank                  | integer   | Spotrac cap rank.                      |
-| team                  | character | Team abbreviation.                     |
-| record                | character | Win-loss record.                       |
-| players_active        | integer   | Number of active players.              |
-| avg_age_team          | numeric   | Average roster age.                    |
-| total_cap_allocations | numeric   | Total cap allocations (USD).           |
-| cap_space_all         | numeric   | Cap space / over-the-cap amount (USD). |
-| season                | integer   | Season (echoes the `season` argument). |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "spotrac_team_cap")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 
@@ -48,7 +40,7 @@ Other Salary & Draft Functions:
 # \donttest{
   try(spotrac_team_cap(season = 2024))
 #> ── Team salary cap from spotrac.com ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:29 UTC
+#> ℹ Data updated: 2026-11-09 19:15:24 UTC
 #> # A tibble: 31 × 11
 #>    rank  team  record players_active avg_age_team total_cap_allocations
 #>    <chr> <chr> <chr>           <dbl>        <dbl>                 <dbl>

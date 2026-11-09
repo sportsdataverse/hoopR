@@ -21,50 +21,13 @@ easl_standings(season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: Group-stage standings of one season: rank within
-the pool, record, splits, points and the last five results. An empty
-answer raises `hoopR_no_data`; the columns are always these, in this
-order (sportsdataverse-py `easl_standings`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = EASL 25-26), from the request. |
-| season_id | character | DataCore season UUID v1, from the request (the standings rows carry none). |
-| standing_id | character | Standings row id: a DataCore UUID v1 for the (season, pool, team) row (joins nothing else). |
-| position | integer | Rank within the pool, 1-4. |
-| team_id | character | teamId: DataCore team (entity) UUID v1 (key space: EASL teams, the same id as `entityId`; joins /teams, /standings team.id, fixture competitors, box and play-by-play teams). Not a player id. |
-| team_name | character | Display name. Despite the field name this is the English / Latin-script name used on the league site. |
-| team_code | character | Three-letter club code; null for some clubs. |
-| pool_id | character | Pool id: a 30-character hex string (equals a fixture's poolCode). |
-| pool_name | character | Pool name: 'Group A', 'Group B' or 'Group C'. |
-| pool_abb | character | Pool abbreviation: A, B or C. Null on some rows. |
-| live | logical | True while the standing is recomputed live during games (false on all six snapshots checked). |
-| latest | logical | True on the newest standings snapshot (false on all six snapshots checked, including the active season's). |
-| game_played | integer | Games played (group stage only: playoff games are not counted, although lastFiveMatches includes them). |
-| game_played_home | integer | Games played at home. |
-| game_played_away | integer | Games played away. |
-| wins | integer | Wins: all group-stage games on the standings route, all games on the season statistics routes. |
-| wins_home | integer | Wins in the team's home games. |
-| wins_away | integer | Wins in the team's away games. |
-| losses | integer | Losses: all group-stage games on the standings route, all games on the season statistics routes. |
-| losses_home | integer | Losses in the team's home games. |
-| losses_away | integer | Losses in the team's away games. |
-| draws | integer | Draws (0: basketball has none). |
-| draws_home | integer | Home draws (0). |
-| draws_away | integer | Away draws (0). |
-| win_percentage | double | Winning share as a 0-1 ratio rounded to 2 decimals (0.83 = 5-1), NOT a percentage. |
-| win_percentage_home | double | Home winning share, 0-1 ratio. |
-| win_percentage_away | double | Away winning share, 0-1 ratio. |
-| points_for | integer | Points the team scored over its group-stage games (points_against is the points it conceded). |
-| points_against | integer | Points allowed. |
-| point_difference | integer | Points for minus points against. |
-| point_difference_home | integer | Point difference in home games. |
-| point_difference_away | integer | Point difference in away games. |
-| steak | integer | Current winning streak in games (the key is misspelled 'steak'); 0 after a loss. Never negative: losing streaks are not tracked. |
-| streak_home | integer | Current winning streak in home games; 0 after a loss. |
-| streak_away | integer | Current winning streak in away games; 0 after a loss. |
-| last_five | character | Results of the team's last five games as a comma-separated string, most recent first (W win, L loss). |
+A `hoopR_data` tibble with one row per team in the standings. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "easl_standings")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -83,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(easl_standings(season = 2026))
 #> ── EASL Standings from easl.joshricha.com ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:59 UTC
+#> ℹ Data updated: 2026-11-09 19:10:17 UTC
 #> # A tibble: 12 × 36
 #>    season season_id     standing_id position team_id team_name team_code pool_id
 #>     <int> <chr>         <chr>          <int> <chr>   <chr>     <chr>     <chr>  

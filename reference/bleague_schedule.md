@@ -46,28 +46,12 @@ bleague_schedule(season, tab, month, day, event = NULL)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. |
-| tab | integer | Division tab: 1 = B1, 2 = B2, 3 = B3. |
-| event | integer | Competition type of the page: 2 B1 league, 3 B1 Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs, 11 B1-B2 promotion/relegation, 15 B3 league, 32 B3 playoffs. |
-| schedule_key | integer | B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The {schedule_key} every game wrapper takes and the schedule page's list-item id. |
-| date | Date | Local game date, derived from the requested month and day (September to June; months 7-12 fall in the season's START year). |
-| round_label | character | Round label as printed in Japanese, 'dai N setsu' (round N); playoffs print other labels. |
-| round | integer | Round number parsed from round_label; null when the label is not 'dai N setsu' (round N). |
-| home_team_id | character | Home club TeamID as text, mapped from the page's club filter. B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. |
-| home_team | character | Home club short name in Japanese as the page prints it (e.g. Osaka). |
-| home_score | integer | Home final score; null for a game without one. |
-| away_team_id | character | Away club TeamID as text, mapped from the page's club filter. B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. |
-| away_team | character | Away club short name in Japanese as the page prints it (e.g. San-en). |
-| away_score | integer | Away final score; null for a game without one. |
-| prefecture | character | Prefecture of the venue in Japanese (e.g. Osaka Prefecture); null when the page gives none. |
-| venue | character | Venue name in Japanese, abbreviated by the page (e.g. Ookini for Osaka Edion Arena). |
-| tip_time | character | Tip-off time 'HH:MM' in JST (no offset on the page); null when absent. |
-| state | character | Score-state label on the page (FINAL for a finished game); null when absent. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bleague_schedule")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -86,7 +70,7 @@ lists every function in this family.
 # \donttest{
   try(bleague_schedule(season = 2026, tab = 1, month = 10, day = 4))
 #> ── B.LEAGUE schedule from www.bleague.jp ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:08 UTC
+#> ℹ Data updated: 2026-11-09 19:09:24 UTC
 #> # A tibble: 12 × 17
 #>    season   tab event schedule_key date       round_label round home_team_id
 #>     <int> <int> <int>        <int> <date>     <chr>       <int> <chr>       

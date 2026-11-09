@@ -38,26 +38,13 @@ atrium_fixture_periods(website_id, fixture_id, locale = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per `(fixture_id, period_id)`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| fixture_id | character | Game UUID (fixture); the key of every game frame and of the fixture_detail routes. |
-| season_id | character | Season UUID of the game. |
-| period_id | integer | Period number: 1-4 regulation, 11, 12, ... overtimes (not 5). |
-| label | character | Short period label in the site's language (Q1, P1), as sent. |
-| is_overtime | logical | True for an overtime period. |
-| is_shootout | logical | True for a shootout period. |
-| started | logical | True once the period has started. |
-| ended | logical | True once the period has ended. |
-| duration_minutes | integer | Length of the period in minutes. |
-| elapsed_minutes_before_period | integer | Minutes of game time played before the period starts (40 for the first overtime). |
-| home_entity_id | character | Team UUID of the home team, from the fixture's isHome flag. |
-| away_entity_id | character | Team UUID of the away team, from the fixture's isHome flag. |
-| home_points | integer | Points the home team scored in this period (not the running score). |
-| away_points | integer | Points the away team scored in this period (not the running score). |
+A `hoopR_data` tibble with one row per (`fixture_id`, `period_id`). Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_fixture_periods")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

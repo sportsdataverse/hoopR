@@ -64,7 +64,7 @@ nba_franchisehistory(league_id = "00", ...)
 
 ## Value
 
-Returns a named list of data frames: FranchiseLeaders
+A named list of tibbles: `FranchiseLeaders`.
 
 **FranchiseLeaders**
 
@@ -88,7 +88,7 @@ Returns a named list of data frames: FranchiseLeaders
 | STL_PERSON_ID | character |                         |
 | STL_PLAYER    | character |                         |
 
-Returns a named list of data frames: FranchiseLeaderswRank
+A named list of tibbles: `FranchiseLeaderswRank`.
 
 **FranchiseLeaderswRank**
 
@@ -143,7 +143,7 @@ Returns a named list of data frames: FranchiseLeaderswRank
 | F_RANK_BLK | character |  |
 | F_RANK_PTS | character |  |
 
-Returns a named list of data frames: FranchisePlayers
+A named list of tibbles: `FranchisePlayers`.
 
 **FranchisePlayers**
 
@@ -177,7 +177,7 @@ Returns a named list of data frames: FranchisePlayers
 | BLK | character | Blocks. |
 | PTS | character | Points scored. |
 
-Returns a named list of data frames: DefunctTeams, FranchiseHistory
+A named list of tibbles: `FranchiseHistory`, `DefunctTeams`.
 
 **FranchiseHistory**
 

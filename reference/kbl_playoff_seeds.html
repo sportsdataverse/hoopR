@@ -36,6 +36,7 @@ Endpoint: GET https://api.kbl.or.kr/league/playoff/{season}"><meta property="og:
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,9 +140,11 @@ maps it to the KBL seasonCode (47 = 2025-26).</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: The regular-season finish that seeds the playoffs (the top six). The columns are always
-these, in this order (sportsdataverse-py <code>kbl_playoff_seeds</code>); an empty valid answer raises <code>hoopR_no_data</code>, a valid body
-with no rows for this frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS).</td></tr><tr><td>season_code</td><td>integer</td><td>KBL season code: sequential over every season and D-League edition (2 = 1997-98, 47 = 2025-26); the crosswalk to the sdv END year is in the README.</td></tr><tr><td>game_code</td><td>character</td><td>Competition type of the standings: '01' regular season.</td></tr><tr><td>seed</td><td>integer</td><td>Final regular-season standing, i.e. the playoff seed (1-6).</td></tr><tr><td>team_code</td><td>character</td><td>KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList <code>teamCode</code>, game <code>tcodeH</code>/<code>tcodeA</code>, <code>t</code> in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (<code>teamCodeD</code>).</td></tr><tr><td>team_name</td><td>character</td><td>Team short name (Korean, e.g. Wonju DB). English names: /common/teamList <code>teamNameEn</code> / <code>teamNameFullEn</code>, joined on the team code.</td></tr><tr><td>team_name_full</td><td>character</td><td>Team full name (Korean).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per seeded team.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "kbl_playoff_seeds")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="kbl_seasons.html">kbl_seasons()</a></code>.</p>

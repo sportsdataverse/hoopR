@@ -32,7 +32,7 @@ espn_nba_player_stats(athlete_id, year, season_type = "regular", total = FALSE)
 
 ## Value
 
-Returns a tibble with the player stats data
+A `hoopR_data` tibble with one row per player.
 
 |  |  |  |
 |----|----|----|
@@ -172,7 +172,7 @@ Returns a tibble with the player stats data
 | logo_href | character | Team or league logo URL. |
 | logo_dark_href | character | Logo URL for dark backgrounds. |
 
-Returns a tibble with the player stats data
+A `hoopR_data` tibble with one row per player.
 
 |  |  |  |
 |----|----|----|
@@ -383,7 +383,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_player_stats(athlete_id = 4593919, year = 2021))
 #> ── ESPN MBB Player Season Stats from ESPN.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:27 UTC
+#> ℹ Data updated: 2026-11-09 19:10:45 UTC
 #> # A tibble: 1 × 207
 #>   athlete_id athlete_uid   athlete_guid athlete_type    sdr first_name last_name
 #>        <int> <chr>         <chr>        <chr>         <int> <chr>      <chr>    
@@ -399,7 +399,7 @@ try(espn_mbb_player_stats(athlete_id = 4593919, year = 2021))
 # \donttest{
 try(espn_nba_player_stats(athlete_id = 1966, year = 2022))
 #> ── ESPN NBA Player Season Stats from ESPN.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:27 UTC
+#> ℹ Data updated: 2026-11-09 19:10:46 UTC
 #> # A tibble: 1 × 272
 #>   athlete_id athlete_uid   athlete_guid athlete_type    sdr first_name last_name
 #>        <int> <chr>         <chr>        <chr>         <int> <chr>      <chr>    

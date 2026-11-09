@@ -59,68 +59,13 @@ euroleague_team_stats(
 
 ## Value
 
-A `hoopR_data` tibble with one row per team. The columns depend on
-`mode`:
-
-**`mode = "traditional"`**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| team_ranking | integer | Rank of the team on the requested statistic mode. |
-| games_played | numeric | Games played. |
-| minutes_played | numeric | Minutes played. |
-| points_scored | numeric | Points scored. |
-| two_pointers_made | numeric | Two-point field goals made. |
-| two_pointers_attempted | numeric | Two-point field goals attempted. |
-| two_pointers_percentage | character | Two-point field-goal percentage, formatted. |
-| three_pointers_made | numeric | Three-point field goals made. |
-| three_pointers_attempted | numeric | Three-point field goals attempted. |
-| three_pointers_percentage | character | Three-point field-goal percentage, formatted. |
-| free_throws_made | numeric | Free throws made. |
-| free_throws_attempted | numeric | Free throws attempted. |
-| free_throws_percentage | character | Free-throw percentage, formatted. |
-| offensive_rebounds | numeric | Offensive rebounds. |
-| defensive_rebounds | numeric | Defensive rebounds. |
-| total_rebounds | numeric | Total rebounds. |
-| assists | numeric | Assists. |
-| steals | numeric | Steals. |
-| turnovers | numeric | Turnovers. |
-| blocks | numeric | Blocks made. |
-| blocks_against | numeric | Shots blocked by the opponent. |
-| fouls_commited | numeric | Personal fouls committed. |
-| fouls_drawn | numeric | Fouls drawn. |
-| pir | numeric | Performance index rating (PIR). |
-| team_code | character | EuroLeague club code (Utf8 join key). |
-| team_tv_codes | character | Three-letter broadcast abbreviation(s) of the club. |
-| team_name | character | Club display name. |
-| team_image_url | character | URL of the club crest image. |
-
-**`mode = "advanced"`**
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| team_ranking | integer | Rank of the team on the requested statistic mode. |
-| games_played | numeric | Games played. |
-| effective_field_goal_percentage | character | Effective field-goal percentage, formatted. |
-| true_shooting_percentage | character | True shooting percentage, formatted. |
-| offensive_rebounds_percentage | character | Offensive rebound percentage, formatted. |
-| defensive_rebounds_percentage | character | Defensive rebound percentage, formatted. |
-| rebounds_percentage | character | Total rebound percentage, formatted. |
-| assists_to_turnovers_ratio | numeric | Assist-to-turnover ratio. |
-| assists_ratio | character | Assist ratio (assists per 100 possessions used), formatted. |
-| turnovers_ratio | character | Turnover ratio (turnovers per 100 possessions used), formatted. |
-| two_point_rate | character | Share of field-goal attempts that are two-pointers, formatted. |
-| three_point_rate | character | Share of field-goal attempts that are three-pointers, formatted. |
-| free_throws_rate | character | Free-throw rate (free-throw attempts per field-goal attempt), formatted. |
-| points_from_two_pointers_percentage | character | Share of points from two-pointers, formatted. |
-| points_from_three_pointers_percentage | character | Share of points from three-pointers, formatted. |
-| points_from_free_throws_percentage | character | Share of points from free throws, formatted. |
-| team_code | character | EuroLeague club code (Utf8 join key). |
-| team_tv_codes | character | Three-letter broadcast abbreviation(s) of the club. |
-| team_name | character | Club display name. |
-| team_image_url | character | URL of the club crest image. |
+A `hoopR_data` tibble with one row per team. Its columns depend on
+`mode`: `"traditional"`, `"advanced"`. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "euroleague_team_stats")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -149,7 +94,7 @@ lists every function in this family.
     euroleague_team_stats(competition_code = "E", season_code = "E2025", mode = "advanced")
   })
 #> ── EuroLeague advanced team stats from api-live.euroleague.net ── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:14 UTC
+#> ℹ Data updated: 2026-11-09 19:11:25 UTC
 #> # A tibble: 20 × 20
 #>    team_ranking games_played effective_field_goal_perce…¹ true_shooting_percen…²
 #>           <int>        <dbl> <chr>                        <chr>                 

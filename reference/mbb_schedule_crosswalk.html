@@ -64,6 +64,7 @@ when partial KenPom data is unavailable."><meta property="og:image" content="htt
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -190,7 +191,7 @@ Default <code>FALSE</code>.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble, one row per game:</p>
+    <p>A <code>hoopR_data</code> tibble with one row per game.</p>
 <p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>game_date</td><td>Date</td><td>ET game date.</td></tr><tr><td>home_espn_team_id</td><td>integer</td><td>ESPN home team id (NA for bart-only rows).</td></tr><tr><td>away_espn_team_id</td><td>integer</td><td>ESPN away team id (NA for bart-only rows).</td></tr><tr><td>espn_game_id</td><td>character</td><td>ESPN game id (NA for bart-only rows).</td></tr><tr><td>bart_muid</td><td>character</td><td>Torvik muid (NA for espn-only rows).</td></tr><tr><td>bart_team1</td><td>character</td><td>Torvik team1 name (NA for espn-only rows).</td></tr><tr><td>bart_team2</td><td>character</td><td>Torvik team2 name (NA for espn-only rows).</td></tr><tr><td>bart_winner</td><td>character</td><td>Torvik winner name (NA for espn-only rows).</td></tr><tr><td>kp_game_id</td><td>character</td><td>KenPom game id (NA unless kenpom enabled).</td></tr><tr><td>fox_game_id</td><td>character</td><td>Fox game id (NA placeholder).</td></tr><tr><td>yahoo_game_id</td><td>character</td><td>Yahoo game id (NA placeholder).</td></tr><tr><td>match_method</td><td>character</td><td>"both"/"espn_only"/"bart_only".</td></tr><tr><td>match_confidence</td><td>numeric</td><td>1 for matched, NA for unmatched.</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

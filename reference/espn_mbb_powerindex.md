@@ -41,7 +41,7 @@ espn_nba_powerindex(
 
 ## Value
 
-A long tibble with one row per (team x stat).
+A `hoopR_data` tibble with one row per team and statistic.
 
 |               |           |                                        |
 |---------------|-----------|----------------------------------------|
@@ -59,7 +59,7 @@ A long tibble with one row per (team x stat).
 | last_updated  | character | Last-updated timestamp.                |
 | team_ref      | character | `$ref` to the team-in-season resource. |
 
-A long tibble with one row per (team x stat).
+A `hoopR_data` tibble with one row per team and statistic.
 
 |               |           |                                        |
 |---------------|-----------|----------------------------------------|
@@ -92,31 +92,16 @@ Saiem Gilani
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
+  # Interactive only: every team's power index for a season, 2-5 s.
   espn_mbb_powerindex(season = 2025)
-#> ── ESPN MENS-COLLEGE-BASKETBALL Season Power Index ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:29 UTC
-#> # A tibble: 1,475 × 12
-#>    league         season season_type team_id stat_name abbreviation display_name
-#>    <chr>           <int>       <int> <chr>   <chr>     <chr>        <chr>       
-#>  1 mens-college-…   2025          NA 150     bpi       NA           BPI         
-#>  2 mens-college-…   2025          NA 150     bpirank   NA           BPI RK      
-#>  3 mens-college-…   2025          NA 150     rpirank   NA           RPI RK      
-#>  4 mens-college-…   2025          NA 150     sor       NA           SOR         
-#>  5 mens-college-…   2025          NA 150     sorrank   NA           SOR RK      
-#>  6 mens-college-…   2025          NA 150     sospast   NA           SOS         
-#>  7 mens-college-…   2025          NA 150     sospastr… NA           SOS RK      
-#>  8 mens-college-…   2025          NA 150     wins      NA           W           
-#>  9 mens-college-…   2025          NA 150     losses    NA           L           
-#> 10 mens-college-…   2025          NA 150     winpct    NA           W-L         
-#> # ℹ 1,465 more rows
-#> # ℹ 5 more variables: description <chr>, value <dbl>, display_value <chr>,
-#> #   last_updated <chr>, team_ref <chr>
 # }
+}
 # \donttest{
   espn_nba_powerindex(season = 2025)
 #> ── ESPN NBA Season Power Index ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:32 UTC
+#> ℹ Data updated: 2026-11-09 19:10:50 UTC
 #> # A tibble: 4,260 × 12
 #>    league season season_type team_id stat_name     abbreviation display_name
 #>    <chr>   <int>       <int> <chr>   <chr>         <chr>        <chr>       

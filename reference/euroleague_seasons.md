@@ -20,27 +20,12 @@ euroleague_seasons(competition_code)
 
 ## Value
 
-A `hoopR_data` tibble with one row per season:
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| name | character | Display name. |
-| code | character | EuroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| alias | character | Short display alias. |
-| competition_code | character | Competition code (E = EuroLeague, U = EuroCup; Utf8 join key). |
-| year | integer | Start year of the season. |
-| start_date | character | Start date (ISO 8601). |
-| activation_date | character | Date the season was activated in the engine (ISO 8601). |
-| end_date | character | End date (ISO 8601). |
-| winner | numeric | Winning club of the season (null while in progress). |
-| winner_code | character | Winning club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| winner_name | character | Winning club: display name. |
-| winner_abbreviated_name | character | Winning club: abbreviated display name. |
-| winner_editorial_name | character | Winning club: editorial (long-form) display name. |
-| winner_tv_code | character | Winning club: three-letter broadcast abbreviation of the club. |
-| winner_is_virtual | character | Winning club: whether the club is a placeholder rather than a real club. |
-| winner_images_crest | character | Winning club: URL of the club crest image. |
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "euroleague_seasons")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -68,7 +53,7 @@ lists every function in this family.
     euroleague_seasons(competition_code = "E")
   })
 #> ── EuroLeague seasons from api-live.euroleague.net ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:13 UTC
+#> ℹ Data updated: 2026-11-09 19:11:25 UTC
 #> # A tibble: 27 × 16
 #>    name   code  alias competition_code  year start_date activation_date end_date
 #>    <chr>  <chr> <chr> <chr>            <int> <chr>      <chr>           <chr>   

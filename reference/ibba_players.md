@@ -32,24 +32,12 @@ ibba_players(team_id, team_uid, season)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| player_id | integer | Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows. |
-| jersey | character | Jersey number as a zero-padded string ('02'); a box score also uses '\_TEAM' and 'TOTAL' for its two non-player lines. |
-| season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-| team_id | integer | Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. |
-| player_name_he | character | Player name in Hebrew, HTML-unescaped. |
-| player_name | character | Player name in English, HTML-unescaped. |
-| is_replaced | logical | True when the person was replaced during the season (left the roster or staff). |
-| is_local | logical | True for an Israeli (local) player; the isr\_ leader categories count only these. |
-| photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
-| height_m | double | Height in metres (1.93). |
-| position_he | character | Position in Hebrew. |
-| position | character | Position code: PG, G, G-F, F, F-C or C. |
-| birth_date | Date | Date of birth (public player bio); null when not published. |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_players")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -68,7 +56,7 @@ lists every function in this family.
 # \donttest{
   try(ibba_players(season = 2026, team_id = 1109, team_uid = 10))
 #> ── IBBA players ───────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:04 UTC
+#> ℹ Data updated: 2026-11-09 19:12:17 UTC
 #> # A tibble: 20 × 13
 #>    player_id jersey season team_id player_name_he        player_name is_replaced
 #>        <int> <chr>   <int>   <int> <chr>                 <chr>       <lgl>      

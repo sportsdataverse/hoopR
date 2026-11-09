@@ -39,53 +39,12 @@ atrium_fixture(website_id, fixture_id, locale = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row for the game:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| fixture_id | character | Game UUID (fixture); the key of every game frame and of the fixture_detail routes. |
-| season_id | character | Season UUID of the game. |
-| competition_name | character | Name of the competition, in the site's language. |
-| name | character | Fixture name; null on LNBP. |
-| fixture_type | character | Kind of game as sent: REGULAR, PLAYOFF, ... (the set is open). |
-| age_group | character | Age group of the competition, e.g. SENIOR. |
-| status | character | Status code of the game, e.g. CONFIRMED (final), as sent. |
-| status_label | character | Status of the game as the site words it in its own language (e.g. Termine, Final). |
-| start_time_utc | POSIXct | Scheduled start, naive datetime in UTC (the API sends no offset). |
-| start_time_local | character | Scheduled start in the venue's local time, as the API sends it (`YYYY-MM-DDTHH:MM:SS`, no offset; timezone gives the zone, which varies per row). |
-| timezone | character | IANA time zone of the venue (e.g. Europe/Paris, Mexico/General) that start_time_local is in. |
-| venue | character | Name of the arena where the game is played. |
-| venue_id | character | Venue UUID; joins no other route. |
-| attendance | integer | Spectators at the game; null when not reported. |
-| external_id | character | The league's own match number (LNB: the lnb.fr number); null elsewhere. |
-| updated | POSIXct | When the record was last updated, naive datetime (no offset; zone unverified). |
-| live_data_available | logical | True when live data feeds are enabled for the game. |
-| live_video_available | logical | True when a live video stream is attached. |
-| discipline | character | Discipline label of the game; null in every body seen. |
-| series | character | Playoff series the game belongs to as sent (JSON text when an object); null outside a series. |
-| number_of_periods | integer | Regulation periods in the game (4). |
-| period_length | integer | Length of a regulation period, in minutes. |
-| overtime_allowed | logical | True when the game may go to overtime. |
-| overtime_length | integer | Length of an overtime period, in minutes. |
-| shot_clock | integer | Shot clock length, in seconds. |
-| max_fouls_personal | integer | Personal fouls that disqualify a player. |
-| fouls_before_bonus | integer | Team fouls in a period before the bonus applies. |
-| maximum_players_on_court | integer | Players a team has on court at once. |
-| maximum_roster_size | integer | Largest roster a team may enter for the game. |
-| home_entity_id | character | Team UUID of the home team. |
-| home_code | character | Short code of the home team (e.g. PAB). |
-| home_name | character | Name of the home team. |
-| home_score | integer | Points scored by the home team (the API sends a string; Int64 here). |
-| home_result_status | character | Result status of the home team's score, e.g. CONFIRMED. |
-| away_entity_id | character | Team UUID of the away team. |
-| away_code | character | Short code of the away team (e.g. PAB). |
-| away_name | character | Name of the away team. |
-| away_score | integer | Points scored by the away team (the API sends a string; Int64 here). |
-| away_result_status | character | Result status of the away team's score, e.g. CONFIRMED. |
-| home_captain_person_id | character | Person UUID of the home team's captain; null when the body names none. |
-| away_captain_person_id | character | Person UUID of the away team's captain; null when the body names none. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_fixture")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -131,7 +90,7 @@ Other Atrium Functions:
 # \donttest{
   try(atrium_fixture(website_id = 14, fixture_id = "0dc631bd-c34c-11f1-8d16-4d5a21afb79d"))
 #> ── Atrium fixture from embed-api.eui.connect.sportradar.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:47 UTC
+#> ℹ Data updated: 2026-11-09 19:09:04 UTC
 #> # A tibble: 1 × 42
 #>   website_id fixture_id  season_id competition_name name  fixture_type age_group
 #>        <int> <chr>       <chr>     <chr>            <chr> <chr>        <chr>    

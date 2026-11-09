@@ -42,33 +42,12 @@ atrium_pbp(website_id, fixture_id, locale = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per `event_id`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| fixture_id | character | Game UUID (fixture); the key of every game frame and of the fixture_detail routes. |
-| season_id | character | Season UUID of the game. |
-| sequence | integer | 1-based position of the event in the game (periods in order, events chronological). |
-| event_id | character | Event UUID, shared with the same event in atrium_shots. |
-| period_id | integer | Period number: 1-4 regulation, 11, 12, ... overtimes (not 5). |
-| clock | character | Time REMAINING in the period as an ISO 8601 duration (PT10M0S at the start). |
-| clock_seconds | integer | Seconds remaining in the period, parsed from clock. |
-| entity_id | character | Team UUID the event is credited to. |
-| side | character | Side of the game the row belongs to: home or away (from the fixture's isHome flag). |
-| person_id | character | Player UUID; null for team events (time-outs, team rebounds). |
-| person_name | character | Player the event is credited to; null for team events (time-outs, team rebounds). |
-| bib | character | Jersey number of the player, as text; null for team events. |
-| event_type | character | Event type: 2pt, 3pt, freeThrow, rebound, assist, steal, block, turnover, foul, substitution, timeOut, jumpBall, ... (language-independent). |
-| event_sub_type | character | Event detail: jumpShot, layup, offensive, defensive, in, out, 1Of2, personal, ...; null when none. |
-| description | character | The event's text in the site's language (e.g. Entre-deux remporte). |
-| success | logical | True when a shot or free throw was made, false when missed; null for other events. |
-| success_label | character | The made / missed label in the site's language; sent on shot events only. |
-| x | double | Shot location along the 28 m court length as percent of the court (0-100, origin at a corner); the home team attacks the low-x basket all game; null for non-shots. |
-| y | double | Shot location across the 15 m width as percent of the court (0-100); which sideline is 0 is unverified; null for non-shots. |
-| home_score | integer | Home team's running score after the event. |
-| away_score | integer | Away team's running score after the event. |
+A `hoopR_data` tibble with one row per event. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_pbp")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -114,7 +93,7 @@ Other Atrium Functions:
 # \donttest{
   try(atrium_pbp(website_id = 14, fixture_id = "0dc631bd-c34c-11f1-8d16-4d5a21afb79d"))
 #> ── Atrium play-by-play from embed-api.eui.connect.sportradar.com ───────────────
-#> ℹ Data updated: 2026-11-09 17:02:49 UTC
+#> ℹ Data updated: 2026-11-09 19:09:06 UTC
 #> # A tibble: 497 × 22
 #>    website_id fixture_id             season_id sequence event_id period_id clock
 #>         <int> <chr>                  <chr>        <int> <chr>        <int> <chr>

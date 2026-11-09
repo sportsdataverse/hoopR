@@ -32,28 +32,12 @@ fiba_gdap_awards(comp, discipline_format = NULL, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. |
-| competition_end_date | character | Last day of the competition, YYYY-MM-DD. |
-| award_date | character | Date awarded, YYYY-MM-DD. |
-| competition_season | integer | Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the package season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029). |
-| competition_official_name | character | Official name of the competition edition the award was given in. |
-| award_name | character | Award name (All-Star 5, MVP...). |
-| award_code | character | Award code (ALLSTAR, MVP...). |
-| award_level_id | integer | Id of the object the award is attached to: the competitionId when awardLevel is Competition. |
-| award_level | character | Level the award is given at: Competition. |
-| award_label | character | Extra label; null in every sample. |
-| player_id | integer | FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P\_`<id>` = gdapPlayerId. |
-| player_first_name | character | Awarded player's first name. |
-| player_last_name | character | Awarded player's last name. |
-| player_date_of_birth | character | Awarded player's date of birth, YYYY-MM-DD. |
-| player_nationality | character | Awarded player's nationality, FIBA code. |
-| teams | character | Teams the awarded player played for in the competition. Stored as a JSON string. |
+A `hoopR_data` tibble with one row per award. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_awards")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

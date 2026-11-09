@@ -35,29 +35,12 @@ euroleague_game_points(game_code, season_code)
 
 ## Value
 
-A `hoopR_data` tibble with one row per shot:
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| num_anot | integer | Sequence number of the scoring annotation within the game. |
-| team | character | EuroLeague club code of the team (Utf8 join key; space padding stripped). |
-| id_player | character | EuroLeague player code (Utf8 join key; space padding stripped). |
-| player | character | Player display name (SURNAME, GIVEN NAME). |
-| id_action | character | Shot type code: 2FGM / 2FGA / 3FGM / 3FGA (made / attempted field goal) or FTM (made free throw). |
-| action | character | Shot type label (Two Pointer, Three Pointer, Free Throw In, ...). |
-| points | integer | Points the shot is worth (1, 2 or 3). |
-| coord_x | integer | Shot x in integer centimeters from the hoop, signed left/right of it (-683 to 696 cm measured): both teams are mapped onto one basket; 3-point zone H is x \< 0 and I is x \> 0; which sideline is positive (from the shooter's view or from the scorer's table) is UNVERIFIED from the data alone. Made free throws (FTM) carry the -1 sentinel. |
-| coord_y | integer | Shot y in integer centimeters from the hoop, growing away from the baseline toward the court (-6 to 865 cm measured; 3FG rows at 414-865): both teams are mapped onto one basket, negative y is behind the hoop. Made free throws (FTM) carry the -1 sentinel. |
-| zone | character | Court zone letter: A rim, B/C close left/right, D/E mid, F/G long two, H/I three; blank on free throws. |
-| fastbreak | character | Whether the shot came on a fast break (0 / 1 as a string). |
-| second_chance | character | Whether the shot was a second-chance attempt (0 / 1 as a string). |
-| points_off_turnover | character | Whether the shot came off a turnover (0 / 1 as a string). |
-| minute | integer | Game minute of the event (1-based; 41+ in overtime). |
-| console | character | Game clock at the event (mm:ss remaining in the period). |
-| points_a | integer | Running score of team A (= the home side, measured on one game) after the event. |
-| points_b | integer | Running score of team B (= the away side, measured on one game) after the event. |
-| utc | character | UTC timestamp of the event (yyyymmddHHMMSS). |
+A `hoopR_data` tibble with one row per shot. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "euroleague_game_points")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -112,7 +95,7 @@ lists every function in this family.
     shots[shots$id_action != "FTM", c("team", "id_action", "coord_x", "coord_y", "zone")]
   })
 #> ── EuroLeague game points (shot chart) from live.euroleague.net ────────────────
-#> ℹ Data updated: 2026-11-09 17:05:10 UTC
+#> ℹ Data updated: 2026-11-09 19:11:22 UTC
 #> # A tibble: 131 × 5
 #>    team  id_action coord_x coord_y zone 
 #>    <chr> <chr>       <int>   <int> <chr>

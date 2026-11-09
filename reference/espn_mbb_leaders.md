@@ -38,17 +38,39 @@ espn_nba_leaders(season = most_recent_nba_season(), season_type = 2, ...)
 
 ## Value
 
-A single `hoopR_data` tibble with one row per category-athlete pair.
+A `hoopR_data` tibble with one row per category-athlete pair.
 
-Columns as documented in the shared
-[espn_mbb_leaders_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_leaders_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| category | character | Category label. |
+| abbreviation | character | Short abbreviation. |
+| athlete_id | character | Unique athlete identifier (ESPN). |
+| athlete_name | character | Athlete display name (ESPN). |
+| team_id | character | Unique team identifier. |
+| team_abbrev | character |  |
+| value | numeric | Numeric or string value field. |
+| rank | integer | Rank. |
+| display_value | character | Human-readable display value. |
 
-A single `hoopR_data` tibble with one row per category-athlete pair.
+A `hoopR_data` tibble with one row per category-athlete pair.
 
-Columns as documented in the shared
-[espn_mbb_leaders_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_leaders_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| category | character | Category label. |
+| abbreviation | character | Short abbreviation. |
+| athlete_id | character | Unique athlete identifier (ESPN). |
+| athlete_name | character | Athlete display name (ESPN). |
+| team_id | character | Unique team identifier. |
+| team_abbrev | character |  |
+| value | numeric | Numeric or string value field. |
+| rank | integer | Rank. |
+| display_value | character | Human-readable display value. |
 
 ## See also
 
@@ -68,7 +90,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_leaders(season = 2025, season_type = 2)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Leaders from ESPN.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:21 UTC
+#> ℹ Data updated: 2026-11-09 19:10:39 UTC
 #> # A tibble: 350 × 11
 #>    season season_type category      abbreviation athlete_id athlete_name team_id
 #>     <int>       <int> <chr>         <chr>        <chr>      <chr>        <chr>  
@@ -89,7 +111,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_leaders(season = 2024, season_type = 2)
 #> ── ESPN NBA Leaders from ESPN.com ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:21 UTC
+#> ℹ Data updated: 2026-11-09 19:10:39 UTC
 #> # A tibble: 400 × 11
 #>    season season_type category      abbreviation athlete_id athlete_name team_id
 #>     <int>       <int> <chr>         <chr>        <chr>      <chr>        <chr>  

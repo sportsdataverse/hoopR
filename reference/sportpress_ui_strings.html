@@ -36,6 +36,7 @@ Endpoint: GET https://bnxt.sportpress.info/api/v1/server-config"><meta property=
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -130,9 +131,11 @@ Endpoint: GET https://bnxt.sportpress.info/api/v1/server-config"><meta property=
 
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: UI string tables of the site in English, French and Dutch (one row per language and key). An
-empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py
-<code>sportpress_ui_strings</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>language</td><td>character</td><td>ISO 639-1 code of the UI language: en, fr (French) or nl (Dutch).</td></tr><tr><td>key</td><td>character</td><td>Dotted UI string key such as 'statistics.individual.points'; 302 keys per language.</td></tr><tr><td>text</td><td>character</td><td>The UI text in that language; 11 keys label statistics columns, the rest are menus and buttons.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per language and key.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "sportpress_ui_strings")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
 

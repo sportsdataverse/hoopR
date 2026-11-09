@@ -26,37 +26,12 @@ ibba_teams(season, board_id = 5)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_uid | integer | IBBA CLUB id, stable across seasons (Maccabi Tel Aviv = 10): the team_uid parameter of the roster routes. Not the per-season team_id. |
-| team_id | integer | Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. |
-| season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-| team_name_he | character | Team name in Hebrew, HTML-unescaped. |
-| team_short_name_he | character | Short team name in Hebrew, HTML-unescaped. |
-| team_name | character | Team name in English as registered for the season. |
-| team_short_name | character | Short team name in English. |
-| board_id | integer | Competition (board) id: 5 league, 10 cup, 16 / 26 / 17 playoff quarterfinals / semifinals / final, 33 play-in, 34 Supercup, 11 the 2004-05 semifinal group; 1001+ external competitions (1001 EuroLeague, 1003 Champions League, 1005 pre-season, 1008 EuroBasket, 1012 EuroCup, 1013 State Cup). |
-| place | integer | Rank in the standings of the board (1 = first). |
-| games | integer | Games played (in the standings or in the season stats). |
-| wins | integer | Games won in the season so far (standings line). |
-| losses | integer | Games lost in the season so far (standings line). |
-| points_for | integer | Points scored over the games played. |
-| points_against | integer | Points conceded over the games played. |
-| table_points | integer | Standings points (2 per win, 1 per loss in the league table). |
-| logo_url | character | Absolute URL of the team logo. |
-| photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
-| address_he | character | Club address in Hebrew, HTML-unescaped. |
-| sponsors_he | character | Club sponsors in Hebrew, comma-separated. |
-| facebook_url | character | Club Facebook page URL; null when none. |
-| twitter_url | character | Club Twitter / X profile URL; null when none. |
-| instagram_url | character | Club Instagram profile URL; null when none. |
-| youtube_url | character | Club YouTube channel URL; null when none. |
-| ticket_url | character | Ticket-sales URL; null when none. |
-| subscribe_url | character | Season-ticket subscription URL; null when none. |
-| coaches_he | character | Coaching staff as one Hebrew text ('head coach: ..., assistant coach: ...', in Hebrew). |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_teams")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -75,7 +50,7 @@ lists every function in this family.
 # \donttest{
   try(ibba_teams(season = 2026))
 #> ── IBBA teams ─────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:09 UTC
+#> ℹ Data updated: 2026-11-09 19:12:23 UTC
 #> # A tibble: 14 × 26
 #>    team_uid team_id season team_name_he             team_short_name_he team_name
 #>       <int>   <int>  <int> <chr>                    <chr>              <chr>    

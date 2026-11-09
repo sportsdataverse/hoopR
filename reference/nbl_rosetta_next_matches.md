@@ -29,30 +29,13 @@ nbl_rosetta_next_matches(season, org = "nbl")
 
 ## Value
 
-A `hoopR_data` tibble (one row per team and upcoming match):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| org | character | Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. |
-| rosetta_team_id | character | Rosetta's own id (UUID v4; v5 on NBL1) of the team; routes that take this entity accept it as well as the DataCore id. |
-| team_name | character | Name of the team as Rosetta spells it, e.g. Perth Wildcats. |
-| team_code | character | Team code, e.g. PER (the `{team_code}` path value) |
-| division | character | Unobserved in samples (null in every capture); type and meaning unverified. |
-| conference | character | Unobserved in samples (null in every capture); type and meaning unverified. |
-| match_slug | character | URL slug of the upcoming match, e.g. sydney-kings-v-nz-breakers-men-14-10-2026. |
-| match_title | character | Title of the upcoming match, e.g. Sydney Kings v NZ Breakers men 14-10-2026. |
-| start_time_datetime | character | Start of the upcoming match, UTC, ISO 8601 text without an offset. |
-| is_home | logical | True when the row's team is the home team of the upcoming match. |
-| opponent_name | character | Name of the opponent in the upcoming match. |
-| venue | character | Name of the venue (arena) of the upcoming match. |
-| match_id | character | DataCore fixture id of the match (UUID v1): the `{match_id}` route key and fixtureId in play-by-play. Join on it. |
-| rosetta_match_id | character | Rosetta's match RECORD id (UUID v4) as carried by box-score and play-by-play rows; no route accepts it. Join on match_id. |
-| rosetta_opponent_id | character | Rosetta's own id (UUID v4; v5 on NBL1) of the opponent; routes that take this entity accept it as well as the DataCore id. |
-| season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
-
-Columns the body adds beyond these follow, in body order
-(sportsdataverse-py keeps them too).
+A `hoopR_data` tibble with one row per team and upcoming match. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "nbl_rosetta_next_matches")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

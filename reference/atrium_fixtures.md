@@ -81,51 +81,13 @@ atrium_fixtures(
 
 ## Value
 
-A `hoopR_data` tibble, one row per `fixture_id`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| season_id | character | Season UUID the page is about (the site's default season when none was asked). |
-| competition_id | character | Competition UUID of the season. |
-| competition_name | character | Competition name in the site's language, e.g. Betclic ELITE or LIGA CALIENTE.MX LNBP. |
-| season_end_year | integer | Season END year (the sdv key): the site's year + 1 on LNB (site 12), the calendar year on the other registered sites; null when the site is unregistered, lists no seasons or the body has no season list. |
-| fixture_id | character | Game UUID (fixture); the key of every game frame and of the fixture_detail routes. |
-| fixture_type | character | Kind of game as sent: REGULAR, PLAYOFF, ... (the set is open). |
-| name | character | Fixture name as the site prints it (e.g. Paris - Lyon-Villeurbanne); null on LNBP. |
-| round | character | Round of the game as the site words it, e.g. Journee: 30. |
-| round_code | character | Round code; null in every body seen. |
-| pool | character | Pool the game belongs to; null when the competition has none. |
-| series | character | Playoff series the game belongs to as sent (JSON text when an object); null outside a series. |
-| stage_code | character | Opaque 30-hex stage code of the game; null in every body seen. |
-| status | character | Status code of the game, e.g. CONFIRMED (final), as sent. |
-| status_label | character | Status of the game as the site words it in its own language (e.g. Termine, Final). |
-| start_time_utc | POSIXct | Scheduled start, naive datetime in UTC (the API sends no offset). |
-| start_time_local | character | Scheduled start in the venue's local time, as the API sends it (`YYYY-MM-DDTHH:MM:SS`, no offset; timezone gives the zone, which varies per row). |
-| timezone | character | IANA time zone of the venue (e.g. Europe/Paris, Mexico/General) that start_time_local is in. |
-| times_unconfirmed | logical | True while the start time is not final. |
-| venue | character | Name of the arena where the game is played. |
-| venue_id | character | Venue UUID; joins no other route. |
-| attendance | integer | Spectators at the game; null when not reported. |
-| home_entity_id | character | Team UUID of the home team. |
-| home_code | character | Short code of the home team (e.g. PAB). |
-| home_name | character | Name of the home team. |
-| home_score | integer | Points scored by the home team (the API sends a string; Int64 here). |
-| home_result_place | integer | Result place of the home team: 1 for the winner, 2 for the loser. |
-| home_result_status | character | Result status of the home team's score, e.g. CONFIRMED. |
-| home_draw | logical | True when the game ended level for the home team. |
-| home_shootout_attempts | character | Shootout attempts of the home team as sent (an empty string becomes null). |
-| home_secondary_score | character | Secondary score of the home team (unused in the samples; shown as text). |
-| away_entity_id | character | Team UUID of the away team. |
-| away_code | character | Short code of the away team (e.g. PAB). |
-| away_name | character | Name of the away team. |
-| away_score | integer | Points scored by the away team (the API sends a string; Int64 here). |
-| away_result_place | integer | Result place of the away team: 1 for the winner, 2 for the loser. |
-| away_result_status | character | Result status of the away team's score, e.g. CONFIRMED. |
-| away_draw | logical | True when the game ended level for the away team. |
-| away_shootout_attempts | character | Shootout attempts of the away team as sent (an empty string becomes null). |
-| away_secondary_score | character | Secondary score of the away team (unused in the samples; shown as text). |
+A `hoopR_data` tibble with one row per fixture. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_fixtures")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -202,7 +164,7 @@ Other Atrium Functions:
 # \donttest{
   try(atrium_fixtures(website_id = 14))
 #> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:48 UTC
+#> ℹ Data updated: 2026-11-09 19:09:05 UTC
 #> # A tibble: 4 × 40
 #>   website_id season_id           competition_id competition_name season_end_year
 #>        <int> <chr>               <chr>          <chr>                      <int>

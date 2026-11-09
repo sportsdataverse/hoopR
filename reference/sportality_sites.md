@@ -21,19 +21,12 @@ sportality_sites(ssgt_uuid)
 
 ## Value
 
-A `hoopR_data` tibble: Clubs (sites) taking part in an ssgt. An empty
-valid answer raises `hoopR_no_data`; the documented columns come first,
-in this order (sportsdataverse-py `sportality_sites`), then any column
-the API added later:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| id | character | Site instance id of the club (platform key space; the same as instanceId). |
-| instance_id | character | Site instance id of the club or league (platform key space, `<code><n>_<code>` such as hol2_hol; the league itself is dbl1_dbl). |
-| public_url | character | The club's own website. |
-| name | character | Display name of the club. |
-| icon | character | Team logo URL (SVG on sportality.cdn.s8y.se). |
+A `hoopR_data` tibble with one row per club. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportality_sites")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

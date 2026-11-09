@@ -36,6 +36,7 @@ Get historical conference membership from the CollegeBasketballData API."><meta 
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -141,22 +142,27 @@ Get historical conference membership from the CollegeBasketballData API."><meta 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble with one row per conference:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>integer</td><td>CollegeBasketballData conference id.</td></tr><tr><td>source_id</td><td>character</td><td>Source (ESPN) conference id.</td></tr><tr><td>name</td><td>character</td><td>Conference name (e.g. <code>Big Ten</code>).</td></tr><tr><td>abbreviation</td><td>character</td><td>Conference abbreviation (e.g. <code>B1G</code>).</td></tr><tr><td>short_name</td><td>character</td><td>Conference short name.</td></tr></table><p>A <code>hoopR_data</code> tibble with one row per conference. The <code>teams</code> column
-is a nested list of per-team membership spans:</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>id</td><td>integer</td><td>CollegeBasketballData conference id.</td></tr><tr><td>source_id</td><td>character</td><td>Source (ESPN) conference id.</td></tr><tr><td>name</td><td>character</td><td>Conference name.</td></tr><tr><td>abbreviation</td><td>character</td><td>Conference abbreviation.</td></tr><tr><td>short_name</td><td>character</td><td>Conference short name.</td></tr><tr><td>teams</td><td>list</td><td>Nested list of member-team membership spans.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per conference.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "cbbd_conferences")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+<p>A <code>hoopR_data</code> tibble with one row per conference.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "cbbd_conferences_history")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cbbd_conferences</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 17:03:30.189484: Invalid arguments or no conferences data available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 19:09:46.419695: Invalid arguments or no conferences data available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">cbbd_conferences_history</span><span class="op">(</span>conference <span class="op">=</span> <span class="st">"B1G"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 17:03:30.196701: Invalid arguments or no conference history available!</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 19:09:46.461972: Invalid arguments or no conference history available!</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: conference = "B1G"</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data frame with 0 columns and 0 rows</span>

@@ -20,90 +20,12 @@ kzs_team_box_score(match_id)
 
 ## Value
 
-A `hoopR_data` tibble: Team totals of a final game's box score, one row
-per side. An empty valid answer raises `hoopR_no_data`; the columns are
-always these, in this order (sportsdataverse-py `kzs_team_box_score`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | Match id: the federation key of a game, global across seasons (joins kzs_matches and kzs_match). |
-| team_side | character | Which side of the match the row belongs to: home (the organiser, firstTeam on the wire) or away. |
-| team_id | integer | Team id: one club team in one season (joins kzs_teams); not the match-team id and not the club id. |
-| team_name | character | Name of the team for the season, sponsor included. |
-| minutes | double | Team minutes: the sum of its players (200.0 = 5 x 40; 0.0 on 2015-16 team lines). |
-| two_pm | integer | The team's two-point field goals made. |
-| two_pa | integer | The team's two-point field goals attempted. |
-| two_p_perc | double | The team's two-point percentage, 0-100. |
-| three_pm | integer | The team's three-point field goals made. |
-| three_pa | integer | The team's three-point field goals attempted. |
-| three_p_perc | double | The team's three-point percentage, 0-100. |
-| f_tm | integer | The team's free throws made. |
-| f_ta | integer | The team's free throws attempted. |
-| f_t_perc | double | The team's free-throw percentage, 0-100. |
-| fg_m | integer | The team's field goals made. |
-| fg_a | integer | The team's field goals attempted. |
-| fg_perc | double | The team's field-goal percentage, 0-100. |
-| offensive_rebounds | integer | The team's offensive rebounds. |
-| defensive_rebounds | integer | The team's defensive rebounds. |
-| total_rebounds | integer | The team's total rebounds. |
-| assists | integer | The team's assists. |
-| steals | integer | The team's steals. |
-| turnovers | integer | The team's turnovers. |
-| blocks_in_favor | integer | The team's shots blocked (blocks made). |
-| blocks_against | integer | The team's own shots that were blocked. |
-| foul_commited | integer | The team's fouls committed. |
-| foul_received | integer | The team's fouls drawn. |
-| p_ir | integer | The team's PIR, performance index rating ((points + rebounds + assists + steals + blocks + fouls drawn) - (missed field goals + missed free throws + turnovers + shots blocked + fouls committed)). |
-| plus_minus | integer | The team's plus-minus: points scored minus allowed while on court (team line: the final margin). |
-| assists_turnover_ratio | double | The team's assist-to-turnover ratio (0 in every sample: not computed). |
-| defensive_rating | double | The team's defensive rating (0 in every sample: not computed). |
-| efficiency | integer | Team efficiency (PIR); -1 on 2015-16 team lines (not computed). |
-| points | integer | The team's points. |
-| efficiency_custom | double | The team's custom efficiency as the federation computes it (equal to `efficiency` on player rows; 0 on team lines). |
-| efficiency_game_score | double | The team's game score (0 in every sample: not computed). |
-| fast_break_points_attempted | integer | The team's fast-break attempts (0 in every sample: not computed). |
-| fast_break_points_made | integer | The team's fast-break makes (0 in every sample: not computed). |
-| usage_percentage | double | The team's usage percentage (0 in every sample: not computed). |
-| m_vp_votes | integer | The team's MVP votes (0 in every sample). |
-| minus | integer | The team's points allowed on court (0 in every sample: not computed). |
-| offensive_rating | double | The team's offensive rating (0 in every sample: not computed). |
-| p_er | double | The team's PER (0 in every sample: not computed). |
-| plus | integer | The team's points scored on court (0 in every sample: not computed). |
-| points_fast_break | integer | The team's fast-break points. |
-| points_in_the_paint | integer | The team's points in the paint. |
-| points_in_the_paint_attempted | integer | The team's paint attempts (0 in every sample: not computed). |
-| points_in_the_paint_made | integer | The team's paint makes (0 in every sample: not computed). |
-| points_second_chance | integer | The team's second-chance points. |
-| second_chance_points_attempted | integer | The team's second-chance attempts (0 in every sample: not computed). |
-| second_chance_points_made | integer | The team's second-chance makes (0 in every sample: not computed). |
-| true_shooting_attempts | integer | The team's true-shooting attempts (0 in every sample: not computed). |
-| true_shooting_percentage | double | The team's true-shooting percentage (0 in every sample: not computed). |
-| bench_points | integer | Points by players who did not start. |
-| biggest_lead | integer | Biggest lead, points. |
-| biggest_scoring_run | integer | Biggest unanswered scoring run, points. |
-| fouls_bench_technical | integer | Technical fouls charged to the bench (not the coach). |
-| fouls_coach_disqualifying | integer | Disqualifying fouls charged to the head coach. |
-| fouls_coach_technical | integer | Technical fouls charged to the head coach. |
-| fouls_disqualifying | integer | Disqualifying fouls by players (ejections). |
-| fouls_offensive | integer | Offensive (charging) fouls by players. |
-| fouls_on | integer | Fouls drawn by the team. |
-| fouls_personal | integer | Personal fouls by players, all kinds that count toward fouling out. |
-| fouls_team | integer | Team fouls (0 in every sample). |
-| fouls_technical | integer | Technical fouls by players. |
-| fouls_technical_other | integer | Other technical fouls (0 in every sample). |
-| fouls_throw_in | integer | Throw-in fouls (0 in every sample). |
-| fouls_total | integer | All fouls committed. |
-| fouls_unsportsmanlike | integer | Unsportsmanlike (flagrant) fouls by players. |
-| fouled_out | integer | Players fouled out (0 in every sample). |
-| lead_changes | integer | Lead changes in the game. |
-| points_from_turnovers | integer | Points off opponent turnovers. |
-| time_leading | double | Time the team led, decimal minutes. |
-| times_scores_level | integer | Times the score was tied. |
-| rebounds_team | integer | Team rebounds (not credited to a player). |
-| rebounds_team_defensive | integer | Defensive rebounds credited to the team, not a player. |
-| rebounds_team_offensive | integer | Offensive rebounds credited to the team, not a player. |
-| turnovers_team | integer | Team turnovers (not credited to a player). |
+A `hoopR_data` tibble with one row per side. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_team_box_score")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -122,7 +44,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_team_box_score(match_id = 101839))
 #> ── KZS Team Box Score from api.kzs.si ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:40 UTC
+#> ℹ Data updated: 2026-11-09 19:12:52 UTC
 #> # A tibble: 2 × 77
 #>   match_id team_side team_id team_name minutes two_pm two_pa two_p_perc three_pm
 #>      <int> <chr>       <int> <chr>       <dbl>  <int>  <int>      <dbl>    <int>

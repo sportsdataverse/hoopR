@@ -63,24 +63,13 @@ atrium_player_stats(
 
 ## Value
 
-A `hoopR_data` tibble, one row per `(table_key, person_id, stat_key)`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| season_id | character | Season UUID of the table; null for the competition-scoped routes (their bodies carry none). |
-| table_key | character | Statistics table the row is from: averages, shootingstatistics, totals, ... (the set is per site). |
-| table_label | character | The table's heading in the site's language (e.g. Moyennes). |
-| person_id | character | Player UUID decoded from the widget link beside the name (the tables carry names only); null when the link is missing or undecodable, and always null in team and competition bodies. |
-| person_name | character | Player name as the site prints it; null in team tables. |
-| entity_id | character | Team UUID decoded from the widget link (team tables only; player tables name the team but carry no id). |
-| entity_name | character | Team name as the site prints it; for player rows of a stat table it is the player's team. |
-| stat_key | character | Statistic key as the API names it (pointsPerGame, fieldGoalsMade, ...), unchanged from header key. |
-| stat_name | character | Short column heading the site shows for the statistic (PTS, REB), in the site's language. |
-| stat_label | character | Longer statistic label the site shows (code in the API), in the site's language. |
-| value | double | Numeric value of the statistic; null when the API sends a duration or text (see value_text). |
-| value_text | character | Non-numeric statistic value, e.g. an ISO 8601 duration such as PT12M2S for minutes per game. |
+A `hoopR_data` tibble with one row per (`table_key`, `person_id`,
+`stat_key`). Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_player_stats")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -123,27 +112,12 @@ Other Atrium Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
+  # Interactive only: several stat tables of a whole competition, 2-6 s.
   try(atrium_player_stats(
     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
   ))
-#> ── Atrium player stats from embed-api.eui.connect.sportradar.com ───────────────
-#> ℹ Data updated: 2026-11-09 17:02:54 UTC
-#> # A tibble: 10,212 × 13
-#>    website_id season_id    table_key table_label person_id person_name entity_id
-#>         <int> <chr>        <chr>     <chr>       <chr>     <chr>       <chr>    
-#>  1         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
-#>  2         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
-#>  3         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
-#>  4         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
-#>  5         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
-#>  6         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
-#>  7         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
-#>  8         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
-#>  9         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
-#> 10         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
-#> # ℹ 10,202 more rows
-#> # ℹ 6 more variables: entity_name <chr>, stat_key <chr>, stat_name <chr>,
-#> #   stat_label <chr>, value <dbl>, value_text <chr>
 # }
+}
 ```

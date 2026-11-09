@@ -41,7 +41,7 @@ load_nba_groups(..., dbConnection = NULL, tablename = NULL)
 
 ## Value
 
-Returns a `hoopR_data` tibble with one row per group lineage.
+A `hoopR_data` tibble with one row per group lineage.
 
 |  |  |  |
 |----|----|----|

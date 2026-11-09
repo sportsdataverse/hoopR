@@ -27,34 +27,12 @@ tpbl_roster(division_id, team_id)
 
 ## Value
 
-A `hoopR_data` tibble: The registered roster of one team in one division
-(birth dates omitted). An empty answer raises `hoopR_no_data`; the
-columns are always these, in this order (sportsdataverse-py
-`tpbl_roster`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| division_id | integer | TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the `{division_id}` of every division route. Not the GoHoops division id. |
-| team_id | integer | TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the `{team_id}` of the division team routes. Not the GoHoops franchise id and not the squad id. |
-| team | character | Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). |
-| player_id | integer | TPBL player id (key space: TPBL players; one per person across seasons and teams): the `{player_id}` of the player routes. Not the GoHoops person id and not the roster id. |
-| gohoops_person_id | integer | GoHoops person id (key space: GoHoops persons; one per human). Not the TPBL player id and not the roster id. |
-| gohoops_roster_id | integer | GoHoops roster id (key space: GoHoops rosters = one player registered with one squad in one season; it changes when the player changes season or team). The key of the box score players: join tpbl_box_players to tpbl_roster on it. Not the TPBL player id and not the person id. |
-| gohoops_squad_id | integer | GoHoops squad id (key space: GoHoops squads = one team in one season: 8209-8215 in 2024-25, 11931-11937 in 2025-26, 15536-15542 in 2026-27; it changes every season). |
-| gohoops_event_id | integer | GoHoops event id (key space: GoHoops events, one per TPBL season; 319 = 2024-25, 490 = 2025-26, 613 = 2026-27). Not the TPBL season id and not the GoHoops season id. |
-| gohoops_season_id | integer | GoHoops season id (key space: GoHoops seasons, the id system the API echoes beside its own; 101 = 2024-25, 213 = 2025-26, 275 = 2026-27). Not the TPBL season id. |
-| player | character | Player name (Traditional Chinese, or a transliteration for foreign players). |
-| alt_name | character | Romanized name (e.g. 'Chian Kuang-Chien'); ” when none. |
-| number | character | Jersey number as text (so '0' and '00' stay distinct). |
-| position | character | Playing position as a PascalCase enum: PointGuard, ShootingGuard, SmallForward, PowerForward, Center, and the combinations PointGuardAndShootingGuard, ShootingGuardAndSmallForward, SmallForwardAndPowerForward and PowerForwardAndCenter; ” when unset. |
-| height_cm | integer | Height in centimetres. |
-| weight_kg | double | Weight in kilograms (a number; fractions possible). |
-| nationality | character | Nationality text: 'Local' for a Taiwan-born player, ” when unset. |
-| national_identity | character | Player category: 'Local' (Taiwanese), ” when unset (foreign and naturalized categories use other strings). |
-| national_identity_detail | character | Free-text detail on the category; ” in every sample. |
-| registered | logical | True when the player is registered with the squad. |
-| is_listing | logical | True when the player is shown on the team's public roster page. |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tpbl_roster")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -73,7 +51,7 @@ lists every function in this family.
 # \donttest{
   try(tpbl_roster(division_id = 2, team_id = 4))
 #> ── TPBL Roster from api.tpbl.basketball ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:53 UTC
+#> ℹ Data updated: 2026-11-09 19:15:49 UTC
 #> # A tibble: 13 × 20
 #>    division_id team_id team        player_id gohoops_person_id gohoops_roster_id
 #>          <int>   <int> <chr>           <int>             <int>             <int>

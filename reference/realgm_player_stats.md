@@ -42,20 +42,13 @@ realgm_player_stats(
 
 ## Value
 
-A `hoopR_data` tibble (one row per qualified player) carrying the
-requested `season`, `stat_type` and `season_type` as columns. Columns
-vary by `stat_type`; for `"Averages"`:
-
-|          |           |                    |
-|----------|-----------|--------------------|
-| col_name | types     | description        |
-| player   | character | Player name.       |
-| team     | character | Team abbreviation. |
-| gp       | integer   | Games played.      |
-| mpg      | numeric   | Minutes per game.  |
-| ppg      | numeric   | Points per game.   |
-| rpg      | numeric   | Rebounds per game. |
-| apg      | numeric   | Assists per game.  |
+A `hoopR_data` tibble with one row per qualified player. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "realgm_player_stats")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

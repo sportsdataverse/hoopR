@@ -13,19 +13,12 @@ kzs_seasons()
 
 ## Value
 
-A `hoopR_data` tibble: Every season (39: 1991/1992 to 2029/2030) with
-its opaque id and the sdv END year. An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `kzs_seasons`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season_id | integer | Season id: OPAQUE, not a year (1 = 2000/2001 ... 27 = 2026/2027, 31 = 1991/1992). The season `name` is 'START/END'; the sdv season is the END year (the second half of `name`). |
-| name | character | Season, 'START/END' (2025/2026); the sdv season is the END year. |
-| is_active | logical | True for the current season only (2026/2027 on 2026-10-12). |
-| active | logical | Same as `isActive`. |
-| season | integer | Season END year (2026/2027 = 2027), from the row's own season name or id, else from the request. |
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_seasons")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -88,7 +81,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_seasons())
 #> ── KZS Seasons from api.kzs.si ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:38 UTC
+#> ℹ Data updated: 2026-11-09 19:12:49 UTC
 #> # A tibble: 39 × 5
 #>    season_id name      is_active active season
 #>        <int> <chr>     <lgl>     <lgl>   <int>

@@ -25,22 +25,13 @@ acb_lead_tracker(match_id)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_lead_tracker`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. |
-| edition_id | integer | Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, `season`. |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| quarter | integer | Period: 1-4, 5+ overtime |
-| minute | integer | Game clock left in the period, minutes part. |
-| second | integer | Game clock left in the period, seconds part. |
-| clock_seconds | integer | Game clock REMAINING in the period as whole seconds (minute x 60 + second; the clock counts down from 600, overtimes from 300). |
-| home_score | integer | Home score at that moment. |
-| away_score | integer | Away score at that moment. |
-| margin | integer | Home score minus away score at that moment (positive = the home team leads). |
+A `hoopR_data` tibble with one row per scoring moment. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_lead_tracker")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

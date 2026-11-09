@@ -36,48 +36,13 @@ espn_basketball_player_core(payload, athlete_id)
 
 ## Value
 
-A one-row tibble carrying the full 35-column set (absent fields are
-`NA`), so callers see a stable schema regardless of payload
-completeness:
-
-|                       |           |
-|-----------------------|-----------|
-| col_name              | types     |
-| athlete_id            | integer   |
-| guid                  | character |
-| uid                   | character |
-| slug                  | character |
-| type                  | character |
-| first_name            | character |
-| last_name             | character |
-| full_name             | character |
-| display_name          | character |
-| short_name            | character |
-| height                | numeric   |
-| display_height        | character |
-| weight                | numeric   |
-| display_weight        | character |
-| age                   | integer   |
-| date_of_birth         | character |
-| birth_city            | character |
-| birth_state           | character |
-| birth_country         | character |
-| jersey                | character |
-| position_id           | integer   |
-| position_name         | character |
-| position_abbreviation | character |
-| position_display_name | character |
-| college_id            | integer   |
-| current_team_id       | integer   |
-| headshot_href         | character |
-| experience_years      | integer   |
-| status_id             | integer   |
-| status_name           | character |
-| status_type           | character |
-| draft_year            | integer   |
-| draft_round           | integer   |
-| draft_selection       | integer   |
-| active                | logical   |
+A `hoopR_data` tibble with one row per athlete. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "espn_basketball_player_core")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -133,7 +98,7 @@ Saiem Gilani
   )
   espn_basketball_player_core(payload, athlete_id = 1966)
 #> ── ESPN Basketball Player Core from ESPN.com ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:02 UTC
+#> ℹ Data updated: 2026-11-09 19:10:21 UTC
 #> # A tibble: 1 × 35
 #>   athlete_id guid  uid   slug  type  first_name last_name full_name display_name
 #>        <int> <chr> <chr> <chr> <chr> <chr>      <chr>     <chr>     <chr>       

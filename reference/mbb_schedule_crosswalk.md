@@ -44,7 +44,7 @@ mbb_schedule_crosswalk(
 
 ## Value
 
-A `hoopR_data` tibble, one row per game:
+A `hoopR_data` tibble with one row per game.
 
 |                   |           |                                             |
 |-------------------|-----------|---------------------------------------------|

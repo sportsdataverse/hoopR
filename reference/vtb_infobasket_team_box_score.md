@@ -20,60 +20,13 @@ vtb_infobasket_team_box_score(game_id)
 
 ## Value
 
-A `hoopR_data` tibble: Team box score of a finished game, with the head
-coach's technical fouls. The columns are always these, in this order
-(sportsdataverse-py `vtb_infobasket_team_box_score`); an empty valid
-answer raises `hoopR_no_data`, a valid body with no rows for this frame
-is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | Infobasket GameID of the game (the v2 matches' match_id); global across seasons. |
-| is_home | logical | True for team 1, the team listed first (team A, the home side in the calendar); the body has no explicit home flag (unverified). |
-| team_number | integer | Side: 1 team A (home), 2 team B (away). |
-| team_id | integer | Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team\*/{teamId} and equals the v2 API `teamId`. The scope check compares both sides with the request. |
-| score | integer | Final points of the team. |
-| points | integer | Points. The wire's null is 0 here (null counts are filled). |
-| shot1 | integer | Free throws attempted. The wire's null is 0 here (null counts are filled). |
-| goal1 | integer | Free throws made. The wire's null is 0 here (null counts are filled). |
-| shot2 | integer | 2-point field goals attempted. The wire's null is 0 here (null counts are filled). |
-| goal2 | integer | 2-point field goals made. The wire's null is 0 here (null counts are filled). |
-| shot3 | integer | 3-point field goals attempted. The wire's null is 0 here (null counts are filled). |
-| goal3 | integer | 3-point field goals made. The wire's null is 0 here (null counts are filled). |
-| shot1_percent | double | Free-throw percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| shot2_percent | double | 2-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| shot3_percent | double | 3-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| assist | integer | Assists. The wire's null is 0 here (null counts are filled). |
-| blocks | integer | Blocked shots. The wire's null is 0 here (null counts are filled). |
-| def_rebound | integer | Defensive rebounds. The wire's null is 0 here (null counts are filled). |
-| off_rebound | integer | Offensive rebounds. The wire's null is 0 here (null counts are filled). |
-| rebound | integer | Total rebounds. The wire's null is 0 here (null counts are filled). |
-| steal | integer | Steals. The wire's null is 0 here (null counts are filled). |
-| turnover | integer | Turnovers. The wire's null is 0 here (null counts are filled). |
-| team_def_rebound | integer | Team defensive rebounds (not credited to a player). The wire's null is 0 here (null counts are filled). |
-| team_off_rebound | integer | Team offensive rebounds (not credited to a player). The wire's null is 0 here (null counts are filled). |
-| team_rebound | integer | Team rebounds (not credited to a player). The wire's null is 0 here (null counts are filled). |
-| team_steal | integer | Unobserved: null in every sample, so its type and meaning are unconfirmed. |
-| team_turnover | integer | Team turnovers (not credited to a player, e.g. shot-clock violations). The wire's null is 0 here (null counts are filled). |
-| foul | integer | Personal fouls committed by the team. |
-| opponent_foul | integer | Fouls drawn. The wire's null is 0 here (null counts are filled). |
-| seconds | integer | Playing time in seconds. |
-| played_time | character | Playing time as 'minutes:seconds' (team rows sum the five players: '200:00' = 40 minutes x 5). |
-| plus_minus | integer | Unobserved: null in every sample, so its type and meaning are unconfirmed. |
-| team_short_name_ru | character | The the team's short name in Russian (as the competition names it). |
-| team_short_name_en | character | The the team's short name in English (as the competition names it). |
-| team_name_ru | character | The the team's name in Russian (as the competition names it). |
-| team_name_en | character | The the team's name in English (as the competition names it). |
-| team_region_name_ru | character | The the team's region or city in Russian (as the competition names it). |
-| team_region_name_en | character | The the team's region or city in English (as the competition names it). |
-| coach_person_id | integer | Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/{personId} (players) and /Widget/CoachPage/{personId} (coaches). |
-| coach_name_en | character | Head coach's name in English, as 'Last First'. |
-| coach_name_ru | character | Head coach's name in Russian, as 'Last First'. |
-| coach_foul_c | integer | Technical fouls on the head coach for his own conduct (scoresheet 'C'). |
-| coach_foul_b | integer | Technical fouls on the head coach for bench conduct (scoresheet 'B'). |
-| coach_foul_d | integer | Disqualifying fouls on the coach (scoresheet 'D'). |
-| coach_foul | integer | Fouls charged to the coach (C + B + D). |
+A `hoopR_data` tibble with one row per team in the game. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_team_box_score")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -92,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_team_box_score(game_id = 921391))
 #> ── VTB Infobasket Team Box Score from org.infobasket.su ───────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:10:15 UTC
+#> ℹ Data updated: 2026-11-09 19:16:10 UTC
 #> # A tibble: 2 × 45
 #>   game_id is_home team_number team_id score points shot1 goal1 shot2 goal2 shot3
 #>     <int> <lgl>         <int>   <int> <int>  <int> <int> <int> <int> <int> <int>

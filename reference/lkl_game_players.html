@@ -36,6 +36,7 @@ Endpoint: GET https://lkl.lt/rungtynes/{game_id}"><meta property="og:image" cont
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,11 +140,11 @@ before 2018-19. Only a finished game is served.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble. One row per rostered player. <code>player_id</code> (lkl.lt persons, stable across seasons) and
-<code>slug</code> are the two keys: this frame is the slug -&gt; id map for the box score, leaders and play-by-play, which carry
-the slug only. <code>jersey</code> is a string. An empty or unrecognised input gives a zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises <code>hoopR_no_data</code>, as in sportsdataverse-py.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>lkl.lt game id (key space: LKL games; the <code>{gameId}</code> of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under <code>_request</code>).</td></tr><tr><td>team_side</td><td>character</td><td>Side of the game the row belongs to: home or away (the game page's teams_info side; the box score, leaders and plays say home / away, and gameStatistics is keyed by team id so the runtime supplies the side).</td></tr><tr><td>team_id</td><td>integer</td><td>lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body.</td></tr><tr><td>player_id</td><td>integer</td><td>lkl.lt player id (key space: lkl.lt persons, stable across seasons). Joins the shot chart's player_id; the box score, leaders and play-by-play carry the slug, which this frame maps.</td></tr><tr><td>player</td><td>character</td><td>Full player name as the game page prints it.</td></tr><tr><td>jersey</td><td>character</td><td>Shirt number as a string (so '00' and '0' stay distinct).</td></tr><tr><td>slug</td><td>character</td><td>Player slug (key space: lkl.lt persons; the <code>{slug}</code> of lkl.lt/zaidejai/<code>{slug}</code>). Join key to the player_slug of the box score, leaders and play-by-play.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per rostered player.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "lkl_game_players")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial and unsupported: these are the routes lkl.lt's own game page calls (found in its front-end bundle) and

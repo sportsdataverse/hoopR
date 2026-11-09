@@ -67,34 +67,13 @@ atrium_fixtures_ribbon(
 
 ## Value
 
-A `hoopR_data` tibble, one row per `fixture_id`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| season_id | character | Season UUID of the game. |
-| season_name | character | Name of the season / competition the game belongs to. |
-| fixture_id | character | Game UUID (fixture); the key of every game frame and of the fixture_detail routes. |
-| series | character | Playoff series the game belongs to as sent (JSON text when an object); null outside a series. |
-| stage_name | character | Name of the stage; null in every body seen. |
-| status | character | Status code of the game, e.g. CONFIRMED. |
-| status_label | character | Status of the game as the site words it in its own language (e.g. Termine, Final). |
-| is_final | logical | True when the game is over. |
-| is_live | logical | True while the game is being played. |
-| times_unconfirmed | logical | True while the start time is not final. |
-| start_time_utc | POSIXct | Scheduled start, naive datetime in UTC (the API sends no offset). |
-| start_time_local | character | The ribbon's fixture date as the API sends it: a local wall-clock time (no offset; the zone is not given). |
-| home_entity_id | character | Team UUID of the home team. |
-| home_name | character | Name of the home team. |
-| home_score | integer | Points scored by the home team (the API sends a string; Int64 here). |
-| home_result_status | character | Result status of the home team's score, e.g. CONFIRMED. |
-| home_is_leading | logical | True while the home team leads (ribbon rows). |
-| away_entity_id | character | Team UUID of the away team. |
-| away_name | character | Name of the away team. |
-| away_score | integer | Points scored by the away team (the API sends a string; Int64 here). |
-| away_result_status | character | Result status of the away team's score, e.g. CONFIRMED. |
-| away_is_leading | logical | True while the away team leads (ribbon rows). |
+A `hoopR_data` tibble with one row per fixture. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_fixtures_ribbon")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

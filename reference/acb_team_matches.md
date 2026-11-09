@@ -37,42 +37,12 @@ acb_team_matches(club_id, competition_id = NULL, season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_team_matches`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | Match id. Legacy ids (seasons up to 2019-20) sit below about 20000 (12559 = 2005-06 final, 17718 = 2016-17 final); from 2020-21 they start at about 100000 (102920 in 2021-22, 105401 in 2026-27). One key space across competitions: the matchId param of every matchdata route. |
-| round_type | character | Phase code: LR = Liga Regular (regular season), PO = playoffs (a bundle value, not in the samples); null on every row of /Menu/competition-data and /TeamProfile/next-matches |
-| round_id | integer | Round id: global across seasons, not the round number (6017 = Liga 2026-27 round 3; 2600 = 2016-17 round 1) |
-| round_number | integer | Round number within the phase |
-| group_id | integer | Group id in group-stage competitions |
-| subphase_id | integer | Sub-phase id of the round (playoff stages); null in the regular season. |
-| subphase_number | integer | Sub-phase number of the round; null in the regular season. |
-| week_id | integer | Week id: global across seasons (2989 = the week of 2026-10-10) |
-| status | character | Match state (x-match-statuses) |
-| is_on_half_time | logical | Not sent by this route (always null). |
-| current_quarter | integer | Not sent by this route (always null). |
-| home_score | integer | Home points (null before the match) |
-| away_score | integer | Away points (null before the match) |
-| start | POSIXct | Tip-off, ISO 8601 UTC |
-| home_wins | integer | Not sent by this route (series records are in acb_matchlist). |
-| home_losses | integer | Not sent by this route (series records are in acb_matchlist). |
-| away_wins | integer | Not sent by this route (series records are in acb_matchlist). |
-| away_losses | integer | Not sent by this route (series records are in acb_matchlist). |
-| home_team_id | integer | Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every `homeTeamId` / `awayTeamId` / `teamId` / `teamEditionId`. Not the club id. |
-| home_club_id | integer | Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the `clubId` request param and every `homeClubId` / `awayClubId`. |
-| home_team | character | Team name that season (sponsor names change) |
-| home_team_abbr | character | Three-letter abbreviation (BAR, RMB) |
-| away_team_id | integer | Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every `homeTeamId` / `awayTeamId` / `teamId` / `teamEditionId`. Not the club id. |
-| away_club_id | integer | Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the `clubId` request param and every `homeClubId` / `awayClubId`. |
-| away_team | character | Team name that season (sponsor names change) |
-| away_team_abbr | character | Three-letter abbreviation (BAR, RMB) |
-| competition_id | integer | Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa (x-competitions) |
-| edition_id | integer | Season id (`editionId`) = season START year - 1935 (91 = 2026-27, 81 = 2016-17, 70 = 2005-06, 48 = 1983-84, the first). The sdv season (END year) is editionId + 1936. Season lists also carry `seasonStartYear` / `seasonEndYear` |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| is_selected_local | logical | True when the requested club played at home. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_team_matches")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -91,7 +61,7 @@ lists every function in this family.
 # \donttest{
   try(acb_team_matches(club_id = 2, season = 2027))
 #> ── ACB Team Matches from api2.acb.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:42 UTC
+#> ℹ Data updated: 2026-11-09 19:09:00 UTC
 #> # A tibble: 34 × 30
 #>    match_id round_type round_id round_number group_id subphase_id
 #>       <int> <chr>         <int>        <int>    <int>       <int>

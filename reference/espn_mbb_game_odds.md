@@ -72,24 +72,53 @@ espn_nba_game_powerindex(event_id, ...)
 
 ## Value
 
-A tibble with one row per odds provider (typically empty for MBB because
-ESPN does not carry NCAA basketball betting lines).
+A `hoopR_data` tibble with one row per odds provider.
 
-Columns as documented in the shared
-[espn_mbb_game_odds_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds_schema.md)
-table.
+|                      |           |                                        |
+|----------------------|-----------|----------------------------------------|
+| col_name             | types     | description                            |
+| event_id             | character | Unique event / game identifier (ESPN). |
+| provider_id          | character | Unique identifier for provider.        |
+| provider_name        | character | Provider name.                         |
+| details              | character | Details.                               |
+| over_under           | numeric   | Over under.                            |
+| spread               | numeric   | Spread.                                |
+| home_money_line      | integer   |                                        |
+| away_money_line      | integer   |                                        |
+| home_team_odds_open  | numeric   |                                        |
+| home_team_odds_close | numeric   |                                        |
+| away_team_odds_open  | numeric   |                                        |
+| away_team_odds_close | numeric   |                                        |
 
-A tibble with one row per official assigned to the game.
+A `hoopR_data` tibble with one row per official assigned to the game.
 
-Columns as documented in the shared
-[espn_mbb_game_officials_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_officials_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| event_id | character | Unique event / game identifier (ESPN). |
+| official_id | character | Unique official / referee identifier. |
+| full_name | character | Player's full name. |
+| display_name | character | Display name. |
+| position_id | character | Unique position identifier. |
+| position_name | character | Listed roster position ('Guard', 'Forward', 'Center'). |
+| position_type | character |  |
+| order | integer | Display order within the result set. |
 
-A tibble with one row per broadcast outlet for the game.
+A `hoopR_data` tibble with one row per broadcast outlet for the game.
 
-Columns as documented in the shared
-[espn_mbb_game_broadcasts_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_broadcasts_schema.md)
-table.
+|                 |           |                                        |
+|-----------------|-----------|----------------------------------------|
+| col_name        | types     | description                            |
+| event_id        | character | Unique event / game identifier (ESPN). |
+| broadcast_id    | character |                                        |
+| type_id         | character | Type identifier (numeric).             |
+| type_short_name | character |                                        |
+| type_long_name  | character |                                        |
+| market_id       | character |                                        |
+| market_type     | character |                                        |
+| names           | character |                                        |
+| lang            | character |                                        |
+| region          | character | Region label.                          |
 
 A single-row tibble with timeouts + fouls for both teams.
 
@@ -97,23 +126,53 @@ A long tibble with rows for both home and away teams.
 
 A tibble with one row per team-game power-index entry.
 
-A tibble with one row per odds provider.
+A `hoopR_data` tibble with one row per odds provider.
 
-Columns as documented in the shared
-[espn_mbb_game_odds_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_odds_schema.md)
-table.
+|                      |           |                                        |
+|----------------------|-----------|----------------------------------------|
+| col_name             | types     | description                            |
+| event_id             | character | Unique event / game identifier (ESPN). |
+| provider_id          | character | Unique identifier for provider.        |
+| provider_name        | character | Provider name.                         |
+| details              | character | Details.                               |
+| over_under           | numeric   | Over under.                            |
+| spread               | numeric   | Spread.                                |
+| home_money_line      | integer   |                                        |
+| away_money_line      | integer   |                                        |
+| home_team_odds_open  | numeric   |                                        |
+| home_team_odds_close | numeric   |                                        |
+| away_team_odds_open  | numeric   |                                        |
+| away_team_odds_close | numeric   |                                        |
 
-A tibble with one row per official assigned to the game.
+A `hoopR_data` tibble with one row per official assigned to the game.
 
-Columns as documented in the shared
-[espn_mbb_game_officials_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_officials_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| event_id | character | Unique event / game identifier (ESPN). |
+| official_id | character | Unique official / referee identifier. |
+| full_name | character | Player's full name. |
+| display_name | character | Display name. |
+| position_id | character | Unique position identifier. |
+| position_name | character | Listed roster position ('Guard', 'Forward', 'Center'). |
+| position_type | character |  |
+| order | integer | Display order within the result set. |
 
-A tibble with one row per broadcast outlet for the game.
+A `hoopR_data` tibble with one row per broadcast outlet for the game.
 
-Columns as documented in the shared
-[espn_mbb_game_broadcasts_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_broadcasts_schema.md)
-table.
+|                 |           |                                        |
+|-----------------|-----------|----------------------------------------|
+| col_name        | types     | description                            |
+| event_id        | character | Unique event / game identifier (ESPN). |
+| broadcast_id    | character |                                        |
+| type_id         | character | Type identifier (numeric).             |
+| type_short_name | character |                                        |
+| type_long_name  | character |                                        |
+| market_id       | character |                                        |
+| market_type     | character |                                        |
+| names           | character |                                        |
+| lang            | character |                                        |
+| region          | character | Region label.                          |
 
 A single-row tibble with timeouts + fouls for both teams.
 
@@ -149,7 +208,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_odds(event_id = "401256760")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Odds (event_id=401256760) from ESPN.com ──
-#> ℹ Data updated: 2026-11-09 17:04:16 UTC
+#> ℹ Data updated: 2026-11-09 19:10:34 UTC
 #> # A tibble: 9 × 12
 #>   event_id  provider_id provider_name  details over_under spread home_money_line
 #>   <chr>     <chr>       <chr>          <chr>        <dbl>  <dbl>           <int>
@@ -169,7 +228,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_officials(event_id = "401256760")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Officials (event_id=401256760) from ESPN.c
-#> ℹ Data updated: 2026-11-09 17:04:16 UTC
+#> ℹ Data updated: 2026-11-09 19:10:34 UTC
 #> # A tibble: 3 × 8
 #>   event_id  official_id full_name     display_name  position_id position_name
 #>   <chr>     <chr>       <chr>         <chr>         <chr>       <chr>        
@@ -181,7 +240,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_broadcasts(event_id = "401256760")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Broadcasts (event_id=401256760) from ESPN.
-#> ℹ Data updated: 2026-11-09 17:04:16 UTC
+#> ℹ Data updated: 2026-11-09 19:10:34 UTC
 #> # A tibble: 1 × 10
 #>   event_id  broadcast_id type_id type_short_name type_long_name market_id
 #>   <chr>     <chr>        <chr>   <chr>           <chr>          <chr>    
@@ -191,7 +250,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_situation(event_id = 401256760)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Situation ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:16 UTC
+#> ℹ Data updated: 2026-11-09 19:10:34 UTC
 #> # A tibble: 1 × 15
 #>   league                  event_id  home_timeouts_current home_timeouts_remain…¹
 #>   <chr>                   <chr>                     <int>                  <int>
@@ -207,7 +266,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_predictor(event_id = 401256760)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Predictor ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:16 UTC
+#> ℹ Data updated: 2026-11-09 19:10:34 UTC
 #> # A tibble: 16 × 13
 #>    league        event_id name  short_name last_modified side  team_id stat_name
 #>    <chr>         <chr>    <chr> <chr>      <chr>         <chr> <chr>   <chr>    
@@ -233,7 +292,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_powerindex(event_id = 401256760)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Power Index ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:16 UTC
+#> ℹ Data updated: 2026-11-09 19:10:34 UTC
 #> # A tibble: 2 × 4
 #>   league                  event_id  team_id ref                                 
 #>   <chr>                   <chr>     <chr>   <chr>                               
@@ -243,7 +302,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_odds(event_id = "401283399")
 #> ── ESPN NBA Event Odds (event_id=401283399) from ESPN.com ─────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:16 UTC
+#> ℹ Data updated: 2026-11-09 19:10:34 UTC
 #> # A tibble: 16 × 12
 #>    event_id  provider_id provider_name details over_under spread home_money_line
 #>    <chr>     <chr>       <chr>         <chr>        <dbl>  <dbl>           <int>
@@ -270,7 +329,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_officials(event_id = "401283399")
 #> ── ESPN NBA Event Officials (event_id=401283399) from ESPN.com ── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:16 UTC
+#> ℹ Data updated: 2026-11-09 19:10:34 UTC
 #> # A tibble: 3 × 8
 #>   event_id  official_id full_name   display_name position_id position_name
 #>   <chr>     <chr>       <chr>       <chr>        <chr>       <chr>        
@@ -282,7 +341,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_broadcasts(event_id = "401283399")
 #> ── ESPN NBA Event Broadcasts (event_id=401283399) from ESPN.com ────────────────
-#> ℹ Data updated: 2026-11-09 17:04:17 UTC
+#> ℹ Data updated: 2026-11-09 19:10:35 UTC
 #> # A tibble: 0 × 10
 #> # ℹ 10 variables: event_id <chr>, broadcast_id <chr>, type_id <chr>,
 #> #   type_short_name <chr>, type_long_name <chr>, market_id <chr>,
@@ -291,7 +350,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_situation(event_id = 401283399)
 #> ── ESPN NBA Event Situation ───────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:17 UTC
+#> ℹ Data updated: 2026-11-09 19:10:35 UTC
 #> # A tibble: 1 × 15
 #>   league event_id  home_timeouts_current home_timeouts_remaining
 #>   <chr>  <chr>                     <int>                   <int>
@@ -306,7 +365,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_predictor(event_id = 401283399)
 #> ── ESPN NBA Event Predictor ───────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:17 UTC
+#> ℹ Data updated: 2026-11-09 19:10:35 UTC
 #> # A tibble: 6 × 13
 #>   league event_id  name         short_name last_modified side  team_id stat_name
 #>   <chr>  <chr>     <chr>        <chr>      <chr>         <chr> <chr>   <chr>    
@@ -322,7 +381,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_powerindex(event_id = 401283399)
 #> ── ESPN NBA Event Power Index ─────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:17 UTC
+#> ℹ Data updated: 2026-11-09 19:10:35 UTC
 #> # A tibble: 2 × 4
 #>   league event_id  team_id ref                                                  
 #>   <chr>  <chr>     <chr>   <chr>                                                

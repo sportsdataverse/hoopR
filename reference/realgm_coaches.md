@@ -14,17 +14,12 @@ realgm_coaches()
 
 ## Value
 
-A `hoopR_data` tibble with one row per coach:
-
-|               |           |                                         |
-|---------------|-----------|-----------------------------------------|
-| col_name      | types     | description                             |
-| staff         | character | Coach name.                             |
-| team          | character | Team name.                              |
-| start_season  | character | Season the coach started with the team. |
-| years_in_role | integer   | Seasons in the role.                    |
-| birth_date    | character | Birth date (when listed).               |
-| nationality   | character | Nationality.                            |
+A `hoopR_data` tibble with one row per coach. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "realgm_coaches")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

@@ -36,6 +36,7 @@ Endpoint: GET https://bnxt.sportpress.info/api/v1/roster/season-nationality-code
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -138,9 +139,11 @@ Endpoint: GET https://bnxt.sportpress.info/api/v1/roster/season-nationality-code
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Distinct player nationality codes of a season (dirty: lower case, pairs, empty). An empty
-valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py
-<code>sportpress_nationality_codes</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year the codes were asked for.</td></tr><tr><td>nationality_code</td><td>character</td><td>A distinct nationality code of the season's players, as served (dirty).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per nationality code.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "sportpress_nationality_codes")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="sportpress_ui_strings.html">sportpress_ui_strings()</a></code>.</p>

@@ -21,39 +21,13 @@ lkl_shots(game_id)
 
 ## Value
 
-A `hoopR_data` tibble. One row per attempt (free throws are not
-charted), periods ascending. The data is Genius LiveStats'. `x` is the
-percent (0-100) of the court LENGTH from the left baseline of a
-horizontal full court (baskets near 5 and 95) and `y` the percent of the
-WIDTH (baskets at 50); metres are `x / 100 x 28` and `y / 100 x 15`, an
-inference. Which sideline is `y` 0 is unverified. `side` is the basket
-half (`LEFT` = x \< 50) except backcourt heaves, and teams switch
-baskets at half-time, so normalise to one basket before plotting. `area`
-is a zone code, `left` / `right` from the shooter's view. The shooter is
-named by `player_id` (lkl.lt persons); `player_slug` is the reverse
-lookup through the runtime's roster (null on a body without the stamp).
-The site charts shots from 2024-25 on. A body without shots gives a
-zero-row tibble. Every column below is always present (a zero-row tibble
-keeps them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | lkl.lt game id (key space: LKL games; the `{gameId}` of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under `_request`). |
-| shot_id | integer | Shot event id (key space: lkl.lt shot events, increasing over time); joins nothing else and is not the Genius action number. |
-| period | integer | Period number: 1-4 regulation, 5 the first overtime, 6 the second. |
-| period_type | character | regular for periods 1-4, overtime from period 5. |
-| team_side | character | Side of the shooter's team (the line's is_home flag): home or away. |
-| team_id | integer | lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body. |
-| player_id | integer | lkl.lt player id (key space: lkl.lt persons, stable across seasons). Resolved from the player slug through the game roster the runtime stamps from the game page; null on a bare body or a slug the roster lacks. |
-| player_slug | character | lkl.lt player slug (key space: lkl.lt persons; the `{slug}` of lkl.lt/zaidejai/`{slug}`, stable across seasons). Join key to lkl_game_players.slug. |
-| type | character | 2pt or 3pt (free throws are not in the chart). |
-| made | logical | True when the shot was made, false when missed. |
-| x | double | Court x position: percent (0-100) of the LENGTH of a horizontal full court from the left baseline (baskets near 5 and 95). Teams switch baskets at half-time; metres (x / 100 x 28) are an inference. |
-| y | double | Court y position: percent (0-100) of the court WIDTH (baskets at 50). Metres (y / 100 x 15) are an inference; which sideline is y = 0 is unverified. |
-| side | character | Basket half the shot is at: LEFT (x \< 50) or RIGHT, except backcourt heaves (area backcourt). |
-| area | character | Court zone code (e.g. inthepaint, underbasket, outsideleft); left and right are from the shooter's view, so zones are point-symmetric between the two baskets. |
+A `hoopR_data` tibble with one row per attempt. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lkl_shots")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

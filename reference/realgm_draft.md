@@ -25,25 +25,13 @@ realgm_draft(year = most_recent_nba_season() - 1L)
 
 ## Value
 
-A `hoopR_data` tibble carrying `draft_year` and `round` columns:
-
-|                |           |                                            |
-|----------------|-----------|--------------------------------------------|
-| col_name       | types     | description                                |
-| pick           | integer   | Overall pick number (`NA` for undrafted).  |
-| player         | character | Player name.                               |
-| team           | character | Drafting team abbreviation.                |
-| draft_trades   | character | Draft-night trade note, if any.            |
-| pos            | character | Position.                                  |
-| ht             | character | Listed height.                             |
-| wt             | integer   | Listed weight (lbs).                       |
-| age            | numeric   | Age at draft.                              |
-| yos            | integer   | Years of service since.                    |
-| pre_draft_team | character | Pre-draft team / school / club.            |
-| class          | character | College class / draft eligibility note.    |
-| nationality    | character | Player nationality.                        |
-| round          | integer   | Draft round (`1`, `2`, or `NA` undrafted). |
-| draft_year     | numeric   | Draft year (echoes `year`).                |
+A `hoopR_data` tibble with one row per selection. Its columns are listed
+in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "realgm_draft")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

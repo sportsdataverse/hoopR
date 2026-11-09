@@ -26,52 +26,13 @@ lba_team_players_stats(team_id, season = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: Season totals of each player of a team-season.
-The columns are always these, in this order (sportsdataverse-py
-`lba_team_players_stats`); a column the site adds later is appended
-after them:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | Team-season id (re-issued every season); join lba_teams for the stable club_id. |
-| club_id | integer | Club id: the cross-season join key for team ids (only here and in the `team` headers); stability across seasons is unverified. |
-| club_code | character | Club code (`TVB`, `TS`); whether it is stable across seasons is unverified. |
-| season | integer | Season END year (2027 = 2026-27): the row's START year + 1. |
-| player_id | integer | Player id (global, one per career). |
-| player_name | character | Player's given name. |
-| player_surname | character | Player's family name. |
-| player_season | integer | Season START year (2026 = 2026-27); sdv END year = year + 1. |
-| player_photo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-| played_matches | integer | Games the player appeared in, in the request's championship series. |
-| total_matches | integer | Team games while the player was listed (inferred). |
-| start_formation | integer | Games the player started, in the request's championship series. |
-| points_sum | integer | Season total of points. |
-| played_minutes_sum | integer | Season total of minutes played. |
-| rating_lega_sum | integer | Season total of LBA efficiency rating (`valutazione`). |
-| rating_oer_sum | double | Sum of the per-game OER values (3.34 over 3 games), not a season OER. |
-| offensive_rebound_sum | integer | Season total of offensive rebounds. |
-| defensive_rebound_sum | integer | Season total of defensive rebounds. |
-| total_rebound_sum | integer | Season total of total rebounds. |
-| assists_sum | integer | Season total of assists. |
-| regain_balls_sum | integer | Season total of steals. |
-| lost_balls_sum | integer | Season total of turnovers. |
-| ball_stop_given_sum | integer | Season total of blocks. |
-| ball_stop_received_sum | integer | Season total of own shots blocked. |
-| done_fouls_sum | integer | Season total of fouls committed. |
-| suffered_fouls_sum | integer | Season total of fouls drawn. |
-| plus_minus_sum | integer | Season total of plus-minus. |
-| aplus_dp_sum | integer | Season total of `aplus_dp`, an unverified metric (not plus-minus or assists: Macura 2026-27 has 9 against plus-minus 8 and 3 assists). |
-| slam_dunk_sum | integer | Season total of dunks. |
-| shots_2p_realized_sum | integer | Season total of 2-point field goals made. |
-| shots_2p_total_sum | integer | Season total of 2-point field goals attempted. |
-| shots_2p_perc_sum | double | Season 2-point percentage, 0-100 (a rate despite `_sum`). |
-| shots_3p_realized_sum | integer | Season total of 3-point field goals made. |
-| shots_3p_total_sum | integer | Season total of 3-point field goals attempted. |
-| shots_3p_perc_sum | double | Season 3-point percentage, 0-100 (a rate despite `_sum`). |
-| free_throws_realized_sum | integer | Season total of free throws made. |
-| free_throws_total_sum | integer | Season total of free throws attempted. |
-| free_throws_perc_sum | double | Season free-throw percentage, 0-100 (a rate despite `_sum`). |
+A `hoopR_data` tibble with one row per player of the team. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lba_team_players_stats")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

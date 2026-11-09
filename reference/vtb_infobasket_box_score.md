@@ -20,62 +20,13 @@ vtb_infobasket_box_score(game_id)
 
 ## Value
 
-A `hoopR_data` tibble: Player box score of a finished game (one row per
-player of each team, DNPs included). The columns are always these, in
-this order (sportsdataverse-py `vtb_infobasket_box_score`); an empty
-valid answer raises `hoopR_no_data`, a valid body with no rows for this
-frame is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | Infobasket GameID of the game (the v2 matches' match_id); global across seasons. |
-| team_id | integer | Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id. |
-| is_home | logical | True for team 1, the team listed first (team A, the home side in the calendar); the body has no explicit home flag (unverified). |
-| person_id | integer | Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/{personId} (players) and /Widget/CoachPage/{personId} (coaches). |
-| team_number | integer | Side of the player's team: 1 team A (home), 2 team B (away). |
-| player_number | integer | Shirt number as an integer (-1 when none). |
-| display_number | character | Shirt number as displayed ('0' and '00' differ). |
-| last_name_ru | character | Last name in Russian. |
-| last_name_en | character | Last name in English. |
-| first_name_ru | character | First name in Russian. |
-| first_name_en | character | First name in English. |
-| person_name_ru | character | Name 'Last First' in Russian. |
-| person_name_en | character | Name 'Last First' in English. |
-| is_captain | logical | 1 for the team captain, else 0. |
-| birth_date | character | Birth date (ISO 8601 date) of a player: public bio, kept; coaches' and officials' birth data is never output. |
-| pos_id | integer | Position code: players 1 point guard, 2 shooting guard, 3 small forward, 4 power forward, 5 centre; coaches 1000 head coach, 1001 assistant; officials 101-103 referees, 104 commissioner, 111-123 table officials (exact roles unverified). |
-| country_code_ioc | character | Nationality code: ISO 3166 alpha-2 in most rows ('RU', 'US'), IOC alpha-3 in some ('BLR'). |
-| country_name_ru | character | Nationality code (same as CountryCodeIOC), not a name. |
-| country_name_en | character | Nationality code (same as CountryCodeIOC), not a name. |
-| rank_ru | character | Sporting title, Russian; empty or null in the samples. |
-| rank_en | character | Sporting title, English; empty or null in the samples. |
-| height | integer | Height in centimetres. |
-| weight | integer | Weight in kilograms. |
-| points | integer | Points. The wire's null is 0 here (null counts are filled). |
-| shot1 | integer | Free throws attempted. The wire's null is 0 here (null counts are filled). |
-| goal1 | integer | Free throws made. The wire's null is 0 here (null counts are filled). |
-| shot1_percent | double | Free-throw percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| shot2 | integer | 2-point field goals attempted. The wire's null is 0 here (null counts are filled). |
-| goal2 | integer | 2-point field goals made. The wire's null is 0 here (null counts are filled). |
-| shot2_percent | double | 2-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| shot3 | integer | 3-point field goals attempted. The wire's null is 0 here (null counts are filled). |
-| goal3 | integer | 3-point field goals made. The wire's null is 0 here (null counts are filled). |
-| shot3_percent | double | 3-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| assist | integer | Assists. The wire's null is 0 here (null counts are filled). |
-| blocks | integer | Blocked shots. The wire's null is 0 here (null counts are filled). |
-| def_rebound | integer | Defensive rebounds. The wire's null is 0 here (null counts are filled). |
-| off_rebound | integer | Offensive rebounds. The wire's null is 0 here (null counts are filled). |
-| rebound | integer | Total rebounds. The wire's null is 0 here (null counts are filled). |
-| steal | integer | Steals. The wire's null is 0 here (null counts are filled). |
-| turnover | integer | Turnovers. The wire's null is 0 here (null counts are filled). |
-| foul | integer | Personal fouls committed. The wire's null is 0 here (null counts are filled). |
-| opponent_foul | integer | Fouls drawn. The wire's null is 0 here (null counts are filled). |
-| plus_minus | integer | Plus-minus: point differential while on the court. Null where the host sends none. |
-| seconds | integer | Playing time in seconds. |
-| played_time | character | Playing time as 'minutes:seconds' (team rows sum the five players: '200:00' = 40 minutes x 5). |
-| is_start | logical | True for a starter. |
-| start_mark | character | '+' for a starter, else empty. |
+A `hoopR_data` tibble with one row per player of each team. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_box_score")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -94,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_box_score(game_id = 921391))
 #> ── VTB Infobasket Box Score from org.infobasket.su ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:10:02 UTC
+#> ℹ Data updated: 2026-11-09 19:15:56 UTC
 #> # A tibble: 24 × 47
 #>    game_id team_id is_home person_id team_number player_number display_number
 #>      <int>   <int> <lgl>       <int>       <int>         <int> <chr>         

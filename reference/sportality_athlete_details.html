@@ -36,6 +36,7 @@ Endpoint: GET https://www.basketligaen.dk/api/sports-v2/athlete-details/{athlete
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,9 +140,11 @@ athlete uuids (not the Genius person id).</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Player bio plus playerExtIds (the Genius person id). An empty valid answer raises
-<code>hoopR_no_data</code>; the documented columns come first, in this order (sportsdataverse-py <code>sportality_athlete_details</code>),
-then any column the API added later:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>athlete_uuid</td><td>character</td><td>Platform athlete uuid (rosters and athlete routes key on it); not the Genius person id; null where the site has none.</td></tr><tr><td>player_id</td><td>integer</td><td>Genius person id (Int64). A string key in the players maps, an integer in play-by-play and box-score rows; cast here so the frames join, and join the genius family.</td></tr><tr><td>created_at</td><td>character</td><td>Creation timestamp.</td></tr><tr><td>created_by</td><td>character</td><td>Creating site instance.</td></tr><tr><td>creator_site</td><td>character</td><td>Unobserved: null in every sample and every full body. When filled: Creating site (null).</td></tr><tr><td>height</td><td>integer</td><td>Height of the player in centimetres.</td></tr><tr><td>deleted</td><td>logical</td><td>Soft-delete flag.</td></tr><tr><td>first_name</td><td>character</td><td>Given (first) name(s) of the player.</td></tr><tr><td>gender</td><td>character</td><td>Gender of the person as recorded by the site (male in every row seen).</td></tr><tr><td>last_modified</td><td>character</td><td>Last-modified timestamp.</td></tr><tr><td>last_name</td><td>character</td><td>Family name (surname) of the player.</td></tr><tr><td>metadata</td><td>character</td><td>Free metadata (always empty).</td></tr><tr><td>nationality</td><td>character</td><td>ISO 3166-1 alpha-2 country code.</td></tr><tr><td>shoots</td><td>character</td><td>Shooting hand (”).</td></tr><tr><td>weight</td><td>integer</td><td>Weight of the player in kilograms.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per athlete.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "sportality_athlete_details")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="sportality_schedule.html">sportality_schedule()</a></code>.</p>

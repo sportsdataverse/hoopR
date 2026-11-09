@@ -16,33 +16,12 @@ kp_pomeroy_archive_ratings(date)
 
 ## Value
 
-A data frame with 22 columns:
-
-|                |           |                                     |
-|----------------|-----------|-------------------------------------|
-| col_name       | types     | description                         |
-| adj_em_rk      | numeric   | Adj em rk.                          |
-| team           | character | Team-side label or team identifier. |
-| conf           | character | character.                          |
-| adj_em         | numeric   | Adj em.                             |
-| adj_o          | numeric   | Adj o.                              |
-| adj_o_rk       | numeric   | Adj o rk.                           |
-| adj_d          | numeric   | Adj d.                              |
-| adj_d_rk       | numeric   | Adj d rk.                           |
-| adj_t          | numeric   | Adj t.                              |
-| adj_t_rk       | numeric   | Adj t rk.                           |
-| final_rk       | numeric   | Final rk.                           |
-| final_adj_em   | numeric   | Final adj em.                       |
-| final_adj_o    | numeric   | Final adj o.                        |
-| final_adj_o_rk | numeric   | Final adj o rk.                     |
-| final_adj_d    | numeric   | Final adj d.                        |
-| final_adj_d_rk | numeric   | Final adj d rk.                     |
-| final_adj_t    | numeric   | Final adj t.                        |
-| final_adj_t_rk | numeric   | Final adj t rk.                     |
-| rk_chg         | numeric   | Rk chg.                             |
-| em_chg         | numeric   | Em chg.                             |
-| adj_t_chg      | numeric   | Adj t chg.                          |
-| ncaa_seed      | numeric   | Ncaa seed.                          |
+A data frame with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kp_pomeroy_archive_ratings")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

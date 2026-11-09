@@ -38,9 +38,7 @@ load_nba_player_aliases(..., dbConnection = NULL, tablename = NULL)
 
 ## Value
 
-Returns a `hoopR_data` tibble with one row per player alias, or `NULL`
-after appending the rows to `tablename` when `dbConnection` and
-`tablename` are both given.
+A `hoopR_data` tibble with one row per player alias.
 
 |  |  |  |
 |----|----|----|
@@ -57,6 +55,9 @@ after appending the rows to `tablename` when `dbConnection` and
 | match_method | character | How the id was matched: the source leg's own method (`exact_name`, `fuzzy_jw`; NCAA `name_jersey`, `name`, `last_jersey`, `jaro_winkler`), `crosswalk` (a leg that names none), `propagated` (carried from the same id's match in another season) or `override` (a hand-verified fix). |
 | match_confidence | numeric | The leg's own confidence where it gives one (the lowest in the window; NCAA tiers score 1, 0.95, 0.9 and 0.85), else `NA`. |
 | evidence | character | The asset or file the row came from. |
+
+`NULL` instead, after appending the rows to `tablename`, when
+`dbConnection` and `tablename` are both given.
 
 ## See also
 

@@ -22,26 +22,13 @@ bref_draft(season = most_recent_nba_season())
 
 ## Value
 
-A `hoopR_data` tibble with one row per draft pick (career columns shown
-– column names are Basketball-Reference `data-stat` keys):
-
-|              |           |                                            |
-|--------------|-----------|--------------------------------------------|
-| col_name     | types     | description                                |
-| pick_overall | integer   | Overall draft pick number.                 |
-| round        | integer   | Draft round.                               |
-| team         | character | Drafting team abbreviation.                |
-| player       | character | Player name.                               |
-| college_name | character | College / pre-draft team.                  |
-| seasons      | integer   | NBA seasons played.                        |
-| g            | integer   | Career games.                              |
-| pts          | numeric   | Career points.                             |
-| trb          | numeric   | Career total rebounds.                     |
-| ast          | numeric   | Career assists.                            |
-| ws           | numeric   | Career win shares.                         |
-| bpm          | numeric   | Career box plus/minus.                     |
-| vorp         | numeric   | Career value over replacement player.      |
-| season       | integer   | Draft year (echoes the `season` argument). |
+A `hoopR_data` tibble with one row per draft pick. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bref_draft")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

@@ -35,34 +35,13 @@ genius_game(match_id, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (a zero-row tibble with these columns when Genius
-answers an empty valid page), or the raw list when
-`return_parsed = FALSE`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | Genius match id of the game. data.json does not carry it: it is the match_id asked for, stamped by the runtime (the global match sequence shared by every Genius customer). |
-| period | integer | Current (or last) period number; restarts at 1 in overtime |
-| period_type | character | Current period type: REGULAR or OVERTIME |
-| in_ot | integer | 1 when the game is (or ended) in overtime, else 0 |
-| clock | character | Clock of the current period at capture time, 'mm:ss' remaining ('00:00' once the game is over) |
-| periods_max | integer | Number of regulation periods (4) |
-| period_length_regular | integer | Length of a regulation period, minutes (10 under FIBA rules, 12 in some leagues) |
-| period_length_overtime | integer | Length of an overtime period, minutes |
-| attendance | integer | Attendance as entered by the org; 0 when not entered |
-| disable_match | integer | 1 when the org disabled the public feed for this game, else 0 |
-| total_time_added | integer | Clock time added by corrections, seconds (unverified; 0 in every sample) |
-| team1_name | character | Full name of team 1, the team listed first (the home team on the hosted schedule and widget). |
-| team1_code | character | Short code of team 1, in the competition's own script when the org enters one. |
-| team1_score | integer | Final points of team 1 (cast to an integer; the 2014-15 feed sends a string). |
-| team2_name | character | Full name of team 2, the team listed second. |
-| team2_code | character | Short code of team 2, in the competition's own script when the org enters one. |
-| team2_score | integer | Final points of team 2 (cast to an integer; the 2014-15 feed sends a string). |
-| referee1 | character | First referee's name, from officials.referee1 (international form) or the flat officials_referee1 text. |
-| referee2 | character | Second referee's name, from officials.referee2 (international form) or the flat officials_referee2 text. |
-| referee3 | character | Third referee's name when the feed lists one; null otherwise. |
-| commissioner | character | Commissioner (game supervisor) name when the feed lists one; null otherwise. |
+A `hoopR_data` tibble with one row per finished game. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "genius_game")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -127,7 +106,7 @@ Other Genius Functions:
 # \donttest{
   try(genius_game(match_id = 2902690))
 #> ── Genius LiveStats game ──────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:55 UTC
+#> ℹ Data updated: 2026-11-09 19:12:07 UTC
 #> # A tibble: 1 × 21
 #>   match_id period period_type in_ot clock periods_max period_length_regular
 #>      <int>  <int> <chr>       <int> <chr>       <int>                 <int>

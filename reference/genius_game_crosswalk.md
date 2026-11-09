@@ -25,13 +25,12 @@ genius_game_crosswalk(df, source)
 
 ## Value
 
-A `hoopR_data` tibble, one row per game:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_key | integer or character | Provider's own game key: the BNXT, CEBL, TBF or KZS integer game id, or the Sportality platform game uuid (a string) for source sportality. |
-| genius_match_id | integer | Genius Sports LiveStats match id of the same game (the match_id every genius\_\* wrapper takes). |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "genius_game_crosswalk")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -72,7 +71,7 @@ Other Genius Functions:
   slider <- data.frame(game_id = c(1L, 2L), genius_id = c(2902690L, NA))
   genius_game_crosswalk(slider, "sportpress")
 #> ── Genius LiveStats game crosswalk ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:55 UTC
+#> ℹ Data updated: 2026-11-09 19:12:07 UTC
 #> # A tibble: 1 × 2
 #>   game_key genius_match_id
 #>      <int>           <int>

@@ -42,6 +42,7 @@ Endpoint: GET https://api2.acb.com/api/seasondata/Search/search"><meta property=
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -153,8 +154,11 @@ double is accepted.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py <code>acb_search</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>kind</td><td>character</td><td>player, team or coach.</td></tr><tr><td>person_id</td><td>integer</td><td>ACB licence number (players, coaches) or the team entry id (teams).</td></tr><tr><td>name</td><td>character</td><td>Display name (nickname) of a player or coach; the team name of a team.</td></tr><tr><td>short_name</td><td>character</td><td>Short display name ('T. Martin').</td></tr><tr><td>first_name</td><td>character</td><td>Legal first name(s)</td></tr><tr><td>last_name</td><td>character</td><td>Legal last name(s)</td></tr><tr><td>shirt_number</td><td>character</td><td>Shirt number, a string (” or null when unknown)</td></tr><tr><td>game_role</td><td>character</td><td>Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or ” in many rows</td></tr><tr><td>is_license_active</td><td>logical</td><td>The licence is active in the current season</td></tr><tr><td>club_id</td><td>integer</td><td>Stable club id of a team hit; null for players.</td></tr><tr><td>edition_id</td><td>integer</td><td>Season id of the record; null in search results.</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per hit.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "acb_search")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="acb_match_header.html">acb_match_header()</a></code>.</p>

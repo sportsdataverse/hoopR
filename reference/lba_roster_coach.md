@@ -20,28 +20,13 @@ lba_roster_coach(team_id)
 
 ## Value
 
-A `hoopR_data` tibble: Head coach of one team-season. The columns are
-always these, in this order (sportsdataverse-py `lba_roster_coach`); a
-column the site adds later is appended after them:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | Team-season id (re-issued every season); join lba_teams for the stable club_id. |
-| club_id | integer | Club id: the cross-season join key for team ids (only here and in the `team` headers); stability across seasons is unverified. |
-| club_code | character | Club code (`TVB`, `TS`); whether it is stable across seasons is unverified. |
-| season | integer | Season END year (2027 = 2026-27): the row's START year + 1. |
-| coach_id | integer | Coach id (global coach key space; joins the game header `home_coach_id` / `visitor_coach_id`). |
-| name | character | Coach's given name. |
-| surname | character | Coach's family name. |
-| birth_date | character | Birth date, Date `YYYY-MM-DD`. |
-| place_of_birth | character | Birthplace (Italian spelling, e.g. `Londra`). |
-| coach_type_id | integer | Coach role id (1 = head coach). |
-| coach_type_description | character | Coach role, Italian: `Allenatore` = head coach. |
-| coach_type_code | character | Coach role code, number sent as a string. |
-| team_name | character | Team, short name. |
-| coach_picture_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
-| team_logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
+A `hoopR_data` tibble with one row per head coach. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lba_roster_coach")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

@@ -19,32 +19,13 @@ cbbd_teams_directory(season = most_recent_mbb_season())
 
 ## Value
 
-A named list of two `hoopR_data` tibbles, `teams` and `conferences`.
-Both carry the season as attributes: `season` (integer) and
-`season_label` (character, the upstream season label).
-
-**teams: one row per team**
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| id | integer | CollegeBasketballData team id. |
-| source_id | character | Source (ESPN) team id. |
-| school | character | School name. |
-| mascot | character | Team mascot. |
-| abbreviation | character | Team abbreviation. |
-| display_name | character | Full display name (school and mascot). |
-| short_display_name | character | Short display name. |
-| conference_id | integer | Conference id for the season; joins to `id` in `conferences`. |
-
-**conferences: one row per conference**
-
-|              |           |                          |
-|--------------|-----------|--------------------------|
-| col_name     | type      | description              |
-| id           | integer   | Conference id.           |
-| name         | character | Conference name.         |
-| abbreviation | character | Conference abbreviation. |
+A named list of `hoopR_data` tibbles: `teams`, `conferences`. Their
+column names and types are in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md),
+e.g. `subset(return_columns, fn == "cbbd_teams_directory")`, and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 
@@ -57,7 +38,7 @@ Other CBD Teams Functions:
 ``` r
 # \donttest{
   try(cbbd_teams_directory(season = 2025))
-#> ✖ 2026-11-09 17:03:32.648171: Invalid arguments or no team directory data available!
+#> ✖ 2026-11-09 19:09:49.471226: Invalid arguments or no team directory data available!
 #> ✖ Args: season = 2025
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> list()

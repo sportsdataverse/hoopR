@@ -34,42 +34,13 @@ vtb_infobasket_best_players(season, count = 5, lang = "en", tag = "vtb")
 
 ## Value
 
-A `hoopR_data` tibble: Player leaders of a season for the first `count`
-leader categories. The columns are always these, in this order
-(sportsdataverse-py `vtb_infobasket_best_players`); an empty valid
-answer raises `hoopR_no_data`, a valid body with no rows for this frame
-is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. |
-| param_id | integer | Leader-category id (the `param` of the parameter lists). |
-| param_name | character | Leader category name (ParamName), e.g. 'Points'. |
-| param_short_name | character | Leader category short label, e.g. 'Points in a game'. |
-| param_label | character | Leader category label in the requested language (lang). |
-| param_group | integer | Category group; 0 in the samples. |
-| rank | integer | Rank in the leader list. |
-| team_id | integer | Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id. |
-| team_short_name_ru | character | The the team's short name in Russian (as the competition names it). |
-| team_short_name_en | character | The the team's short name in English (as the competition names it). |
-| team_name_ru | character | The the team's name in Russian (as the competition names it). |
-| team_name_en | character | The the team's name in English (as the competition names it). |
-| team_region_name_ru | character | The the team's region or city in Russian (as the competition names it). |
-| team_region_name_en | character | The the team's region or city in English (as the competition names it). |
-| person_id | integer | Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/{personId} (players) and /Widget/CoachPage/{personId} (coaches). |
-| person_last_name_ru | character | Last name, Russian. |
-| person_last_name_en | character | Last name, English. |
-| person_first_name_ru | character | First name, Russian. |
-| person_first_name_en | character | First name, English. |
-| person_full_name_ru | character | Full name, 'Last First', Russian. |
-| person_full_name_en | character | Full name, 'Last First', English. |
-| person_gender | integer | Person gender: 1 on every sampled (male) person. |
-| game_id | integer | Infobasket GameID of the game (the v2 matches' match_id); global across seasons. |
-| game_count | integer | Games the value is averaged over. |
-| res | double | The leader's value (a per-game average for 'in a game' categories). |
-| pre_res | character | The value as displayed, a string (e.g. '1070' for 10.70 without separator; format unverified). |
-| is_same | logical | True when the row ties the previous one. |
+A `hoopR_data` tibble with one row per ranked player. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_best_players")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

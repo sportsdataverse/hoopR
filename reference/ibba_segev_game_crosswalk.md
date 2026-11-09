@@ -29,13 +29,12 @@ ibba_segev_game_crosswalk(df)
 
 ## Value
 
-A `hoopR_data` tibble, one row per game:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | IBBA game id (key space: basket.co.il games): the `game_id` of [`ibba_games()`](https://hoopR.sportsdataverse.org/reference/ibba_games.md) and [`ibba_box_score()`](https://hoopR.sportsdataverse.org/reference/ibba_box_score.md). |
-| segev_game_id | integer | The Segev game id of the same game: the `game_id` every `ibba_segev_*()` wrapper takes. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_segev_game_crosswalk")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

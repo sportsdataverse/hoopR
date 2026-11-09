@@ -31,38 +31,12 @@ acb_match_header(match_id)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_match_header`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| match_id | integer | Match id. Legacy ids (seasons up to 2019-20) sit below about 20000 (12559 = 2005-06 final, 17718 = 2016-17 final); from 2020-21 they start at about 100000 (102920 in 2021-22, 105401 in 2026-27). One key space across competitions: the matchId param of every matchdata route. |
-| competition_id | integer | Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa (x-competitions) |
-| start | POSIXct | Tip-off, ISO 8601 UTC |
-| status | character | Game state: FINALIZED once over; the live and scheduled values are unverified. |
-| is_on_half_time | logical | At half time (live) |
-| time_left | character | Period clock remaining as 'mm:ss' ('00:00' once the game is over). |
-| current_quarter | integer | Current or last quarter (5+ = overtime; 0 for 2005-06 matches) |
-| home_score | integer | Home points: the final score once the game is over, else the live score. |
-| away_score | integer | Away points: the final score once the game is over, else the live score. |
-| home_bonus | integer | Home team-foul bonus counter of the current period (unverified meaning). |
-| away_bonus | integer | Away team-foul bonus counter of the current period (unverified meaning). |
-| home_team_id | integer | Home season-team entry id (new every season). |
-| home_club_id | integer | Home stable club id (2 = Barca, 9 = Real Madrid). |
-| home_team | character | Team name that season (sponsor names change) |
-| home_team_abbr | character | Three-letter abbreviation (BAR, RMB) |
-| away_team_id | integer | Away season-team entry id (new every season). |
-| away_club_id | integer | Away stable club id. |
-| away_team | character | Team name that season (sponsor names change) |
-| away_team_abbr | character | Three-letter abbreviation (BAR, RMB) |
-| edition_id | integer | Season id (START year - 1935) read from the home team entry. |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| has_overview | logical | True when the site offers the overview panels (lead tracker, lineups, leaders) for the game. |
-| has_play_by_play | logical | True when the site offers play-by-play (2016-17 onward). |
-| has_boxscore | logical | True when the site offers a box score for the game. |
-| has_advanced | logical | True when the site offers advanced statistics for the game. |
-| highlights_url | character | Highlights video URL; null when none is published. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_match_header")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -120,7 +94,7 @@ lists every function in this family.
 # \donttest{
   try(acb_match_header(match_id = 105401))
 #> ── ACB Match Header from api2.acb.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:29 UTC
+#> ℹ Data updated: 2026-11-09 19:08:47 UTC
 #> # A tibble: 1 × 26
 #>   match_id competition_id start               status   is_on_half_time time_left
 #>      <int>          <int> <dttm>              <chr>    <lgl>           <chr>    

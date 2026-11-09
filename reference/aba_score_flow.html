@@ -40,6 +40,7 @@ sez = season - 2001; league = &quot;aba2&quot; reads https://druga.aba-liga.com 
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -155,12 +156,11 @@ druga.aba-liga.com, lea=2). Both sites serve one database; the runtime asks the 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble.
-One row per minute: <code>minute</code> 0 (tip-off) to 40, then 41-45 per overtime, and the CUMULATIVE <code>home_score</code> /
-<code>away_score</code> at the end of that minute (the site sends them as numeric strings; cast here). The last row equals
-the final score.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises <code>hoopR_no_data</code>, as in sportsdataverse-py.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_no</td><td>integer</td><td>Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The {gameNo} of the match route.</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001.</td></tr><tr><td>league_id</td><td>integer</td><td>League code, the site's lea: 1 = ABA League, 2 = ABA League 2.</td></tr><tr><td>league</td><td>character</td><td>League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument.</td></tr><tr><td>minute</td><td>integer</td><td>Elapsed game minute: 0 (tip-off) to 40, then 41-45 per overtime; every minute once, in order.</td></tr><tr><td>home_score</td><td>integer</td><td>Home cumulative score at the end of that minute (the site sends a numeric string). The last row equals the final score.</td></tr><tr><td>away_score</td><td>integer</td><td>Away cumulative score at the end of that minute (the site sends a numeric string). The last row equals the final score.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per minute.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "aba_score_flow")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Unofficial use of a public source: these wrappers read the leagues' own PHP sites (www.aba-liga.com,

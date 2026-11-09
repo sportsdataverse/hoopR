@@ -32,7 +32,7 @@ load_nba_group_seasons(..., dbConnection = NULL, tablename = NULL)
 
 ## Value
 
-Returns a `hoopR_data` tibble with one row per group-season.
+A `hoopR_data` tibble with one row per group-season.
 
 |  |  |  |
 |----|----|----|

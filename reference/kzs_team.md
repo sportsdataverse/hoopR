@@ -20,43 +20,12 @@ kzs_team(team_id)
 
 ## Value
 
-A `hoopR_data` tibble: Team profile: club, home hall, colours and the
-competitions the team entered. An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `kzs_team`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | Team-application id: the team's registration (entry) for the season; play-by-play `teamApplicationId` is the same key space. |
-| team_application_id | integer | Team-application id: the team's registration (entry) for the season; play-by-play `teamApplicationId` is the same key space. |
-| club_id | integer | Club id: the club across seasons and categories (Ilirija = 16). No captured route is keyed by it. |
-| club_member | logical | True when the club is a KZS member (false on nested copies that omit it). |
-| category | character | Age category: ABSOLUTE (senior) or U8-U23 / ANY (code table in kzs-returns.md). |
-| rank | character | Tier: FIRST-FOURTH or TOURNAMENT (code table). |
-| gender | character | MALE or FEMALE. |
-| sport_hall_id | integer | Sport hall (venue) id. `/sportHalls/{id}` is in the site bundle, not captured. |
-| sport_hall_name | character | Name of the venue (sports hall) where the game is played or the team is based. |
-| sport_hall_address_id | integer | Id of the venue's address record. |
-| sport_hall_address_post_office_id | integer | Post-office id (FMS internal). |
-| sport_hall_address_post_office_zip_code | character | Postal code (REDACTED under a club `addresses[]` row; kept for venues). |
-| sport_hall_address_post_office_name | character | Post-office town. |
-| sport_hall_address_post_office_municipality | character | Municipality, upper case. |
-| sport_hall_address_post_office_country | character | Country, ISO 3166-1 alpha-2 (SI). |
-| sport_hall_address_street | character | Venue street (a public sports hall). |
-| sport_hall_address_house_number | character | Venue house number, a string ('6 A'). |
-| name | character | Team name for the season (sponsor name included). |
-| code | character | Team 3-letter code. |
-| season_id | integer | Season id: OPAQUE, not a year (1 = 2000/2001 ... 27 = 2026/2027, 31 = 1991/1992). The season `name` is 'START/END'; the sdv season is the END year (the second half of `name`). |
-| season_name | character | Season, 'START/END' (2025/2026); sdv season = the END year. |
-| season_is_active | logical | True for the current season only (2026/2027 on 2026-10-12). |
-| season_active | logical | Same as `isActive`. |
-| short_name | character | Team short name (” when none). |
-| home_jersey_color | character | Home jersey colour, hex '#RRGGBB'. |
-| guest_jersey_color | character | Away jersey colour, hex. |
-| logo_uuid | character | Logo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
-| season | integer | Season of the registration. |
-| competitions | character | Competitions of the team this season (id, name, rule, phases). |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_team")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

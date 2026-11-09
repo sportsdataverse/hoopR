@@ -21,27 +21,13 @@ sportality_standings(ssgt_uuid)
 
 ## Value
 
-A `hoopR_data` tibble: Standings of an ssgt (gameday widget). An empty
-valid answer raises `hoopR_no_data`; the documented columns come first,
-in this order (sportsdataverse-py `sportality_standings`), then any
-column the API added later:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | Genius team id (Int64): in gameday bodies, an integer in standings and stats tables. |
-| team_uuid | character | Platform team uuid. |
-| team_code | character | Platform team code (HOL, RAN). |
-| team_name | character | Name of the team. |
-| rank | integer | Rank in the standings table, 1 = first. |
-| gp | integer | Number of games played. |
-| w | integer | Number of wins. |
-| l | integer | Number of losses. |
-| tp | integer | League table points (2 per win). |
-| for | integer | Points scored by the team (points for). |
-| ga | integer | Points conceded. |
-| plus_minus | integer | Point difference. |
-| strk | integer | Current streak as a signed integer: positive = wins in a row, negative = losses in a row. |
+A `hoopR_data` tibble with one row per team in the standings. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportality_standings")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -60,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(sportality_standings(ssgt_uuid = "xs07bd3fmp"))
 #> ── Basketligaen Standings from basketligaen.dk ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:07 UTC
+#> ℹ Data updated: 2026-11-09 19:15:01 UTC
 #> # A tibble: 12 × 13
 #>    team_id team_uuid  team_code team_name     rank    gp     w     l    tp `for`
 #>      <int> <chr>      <chr>     <chr>        <int> <int> <int> <int> <int> <int>

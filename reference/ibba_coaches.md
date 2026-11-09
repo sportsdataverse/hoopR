@@ -31,20 +31,13 @@ ibba_coaches(team_id, team_uid, season)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| coach_id | integer | Coach id in the IBBA coach table (per team-season registration as far as the samples show; stability across seasons is unverified). |
-| coach_type | integer | Staff role code: 1 = head coach, 2 = assistant coach (inferred from the Maccabi Tel Aviv sample). |
-| season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-| team_id | integer | Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. |
-| coach_name_he | character | Coach name in Hebrew, HTML-unescaped. |
-| coach_name | character | Coach name in English. |
-| is_replaced | logical | True when the person was replaced during the season (left the roster or staff). |
-| photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
-| sort_order | integer | Display order of the coach within the staff list (mOrder). |
+A `hoopR_data` tibble with one row per staff member. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_coaches")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

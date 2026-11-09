@@ -80,8 +80,8 @@ espn_nba_player_statisticslog(
 
 ## Value
 
-A named list of data frames: `Statistics`, `NextGame`, `Last5Games`,
-`Headlines`, `FantasyOutlook`.
+A named list of `hoopR_data` tibbles: `Statistics`, `NextGame`,
+`Last5Games`, `Headlines`, `FantasyOutlook`.
 
 **Statistics**
 
@@ -136,19 +136,22 @@ A single long-format tibble. When data are present, columns include at
 minimum `category` and `split_name`, plus per-stat columns driven by
 ESPN labels.
 
-A single tibble. Per-event `statistics.$ref` URLs from the ESPN core-v2
-API are returned as the character column `statistics_ref` and are NOT
-resolved. Similarly, `event_ref`, `competition_ref`, and `team_ref` are
-returned as character columns.
+A `hoopR_data` tibble with one row per event appearance.
 
-Columns as documented in the shared
-[espn_mbb_player_eventlog_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_eventlog_schema.md)
-table.
+|                 |           |                                          |
+|-----------------|-----------|------------------------------------------|
+| col_name        | types     | description                              |
+| event_ref       | character | Reference link to the originating event. |
+| competition_ref | character |                                          |
+| team_ref        | character |                                          |
+| statistics_ref  | character |                                          |
 
-A single tibble. When resolved, each row corresponds to one statistical
-entry in the core-v2 statistics log, with `event_ref` and
-`statistics_ref` character columns pointing to resolvable ESPN
-endpoints.
+Per-event `statistics.$ref` URLs from the ESPN core-v2 API are returned
+as the character column `statistics_ref` and are NOT resolved.
+Similarly, `event_ref`, `competition_ref`, and `team_ref` are returned
+as character columns.
+
+A `hoopR_data` tibble with one row per statistics entry.
 
 |                |           |                                          |
 |----------------|-----------|------------------------------------------|
@@ -156,8 +159,12 @@ endpoints.
 | event_ref      | character | Reference link to the originating event. |
 | statistics_ref | character |                                          |
 
-A named list of data frames: `Statistics`, `NextGame`, `Last5Games`,
-`Headlines`, `FantasyOutlook`.
+When resolved, each row corresponds to one statistical entry in the
+core-v2 statistics log, with `event_ref` and `statistics_ref` character
+columns pointing to resolvable ESPN endpoints.
+
+A named list of `hoopR_data` tibbles: `Statistics`, `NextGame`,
+`Last5Games`, `Headlines`, `FantasyOutlook`.
 
 **Statistics**
 
@@ -212,25 +219,32 @@ A single long-format tibble. When data are present, columns include at
 minimum `category` and `split_name`, plus per-stat columns driven by
 ESPN labels.
 
-A single tibble. Per-event `statistics.$ref` URLs from the ESPN core-v2
-API are returned as the character column `statistics_ref` and are NOT
-resolved. Similarly, `event_ref`, `competition_ref`, and `team_ref` are
-returned as character columns.
+A `hoopR_data` tibble with one row per event appearance.
 
-Columns as documented in the shared
-[espn_mbb_player_eventlog_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_eventlog_schema.md)
-table.
+|                 |           |                                          |
+|-----------------|-----------|------------------------------------------|
+| col_name        | types     | description                              |
+| event_ref       | character | Reference link to the originating event. |
+| competition_ref | character |                                          |
+| team_ref        | character |                                          |
+| statistics_ref  | character |                                          |
 
-A single tibble. When resolved, each row corresponds to one statistical
-entry in the core-v2 statistics log, with `event_ref` and
-`statistics_ref` character columns pointing to resolvable ESPN
-endpoints.
+Per-event `statistics.$ref` URLs from the ESPN core-v2 API are returned
+as the character column `statistics_ref` and are NOT resolved.
+Similarly, `event_ref`, `competition_ref`, and `team_ref` are returned
+as character columns.
+
+A `hoopR_data` tibble with one row per statistics entry.
 
 |                |           |                                          |
 |----------------|-----------|------------------------------------------|
 | col_name       | types     | description                              |
 | event_ref      | character | Reference link to the originating event. |
 | statistics_ref | character |                                          |
+
+When resolved, each row corresponds to one statistical entry in the
+core-v2 statistics log, with `event_ref` and `statistics_ref` character
+columns pointing to resolvable ESPN endpoints.
 
 ## See also
 
@@ -251,12 +265,12 @@ Saiem Gilani
   espn_mbb_player_overview(athlete_id = "4593919", season = 2025)
 #> $Statistics
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview Statistics from ESPN.com ──────
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $NextGame
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview NextGame from ESPN.com ────────
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 1 × 4
 #>   id    date  name  short_name
 #>   <chr> <chr> <chr> <chr>     
@@ -264,32 +278,32 @@ Saiem Gilani
 #> 
 #> $Last5Games
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview Last5Games from ESPN.com ──────
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Headlines
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview Headlines from ESPN.com ───────
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 13 × 5
 #>    headline                                   description published byline type 
 #>    <chr>                                      <chr>       <chr>     <chr>  <chr>
-#>  1 FSU hires alum Jeff Purinton as athletic … Florida St… 2026-11-… Andre… Head…
-#>  2 UConn's Demary, Mullins exact revenge aga… UConn's Si… 2026-11-… Jeff … Head…
-#>  3 NCAA secures win in struggle over five-ye… Federal ap… 2026-11-… NA     Head…
-#>  4 Sources: SEC considering luxury tax for e… The SEC is… 2026-11-… Mark … Head…
-#>  5 RJ Godfrey sues Arizona Board of Regents … RJ Godfrey… 2026-11-… NA     Head…
-#>  6 Central Michigan's Andy Bronkema on leave… Central Mi… 2026-11-… NA     Head…
-#>  7 Saint Louis star Robbie Avila granted inj… Saint Loui… 2026-11-… NA     Head…
-#>  8 Early top-10 men's basketball recruiting … The highes… 2026-11-… Paul … Story
-#>  9 How Boynton calmed a storm that threatene… Repeating … 2026-11-… Jeff … Story
-#> 10 The Bilas Index: The best men's basketbal… It's that … 2026-11-… Jay B… Story
-#> 11 2027 NBA draft big board rankings: Top 10… Which top … 2026-11-… Jerem… Story
-#> 12 College basketball betting: Seven future … Mark Zinno… 2026-11-… Mark … Story
-#> 13 Cherif Millogo, 7-foot-5 center and No. 8… Kentucky h… 2026-11-… Jeff … Head…
+#>  1 Breaking down the men's 2026-27 AP week 1… Stats, rec… 2026-11-… ESPN   Story
+#>  2 UCLA hops into top 10 of men's AP Top 25 … UCLA jumpe… 2026-11-… NA     Head…
+#>  3 FSU hires alum Jeff Purinton as athletic … Florida St… 2026-11-… Andre… Head…
+#>  4 UConn's Demary, Mullins exact revenge aga… UConn's Si… 2026-11-… Jeff … Head…
+#>  5 NCAA secures win in struggle over five-ye… Federal ap… 2026-11-… NA     Head…
+#>  6 Sources: SEC considering luxury tax for e… The SEC is… 2026-11-… Mark … Head…
+#>  7 RJ Godfrey sues Arizona Board of Regents … RJ Godfrey… 2026-11-… NA     Head…
+#>  8 Central Michigan's Andy Bronkema on leave… Central Mi… 2026-11-… NA     Head…
+#>  9 Saint Louis star Robbie Avila granted inj… Saint Loui… 2026-11-… NA     Head…
+#> 10 Early top-10 men's basketball recruiting … The highes… 2026-11-… Paul … Story
+#> 11 How Boynton calmed a storm that threatene… Repeating … 2026-11-… Jeff … Story
+#> 12 The Bilas Index: The best men's basketbal… It's that … 2026-11-… Jay B… Story
+#> 13 2027 NBA draft big board rankings: Top 10… Which top … 2026-11-… Jerem… Story
 #> 
 #> $FantasyOutlook
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Overview FantasyOutlook from ESPN.com ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 # }
@@ -297,7 +311,7 @@ Saiem Gilani
   espn_mbb_player_stats_v3(athlete_id = "4593919", season = 2025)
 #> $`Season Averages`
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 3 × 5
 #>   team_id team_slug              season$year $displayName stats      position
 #>   <chr>   <chr>                        <int> <chr>        <list>     <chr>   
@@ -307,7 +321,7 @@ Saiem Gilani
 #> 
 #> $`Season Totals`
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 3 × 5
 #>   team_id team_slug              season$year $displayName stats      position
 #>   <chr>   <chr>                        <int> <chr>        <list>     <chr>   
@@ -317,7 +331,7 @@ Saiem Gilani
 #> 
 #> $`Season Misc Totals`
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 3 × 5
 #>   team_id team_slug              season$year $displayName stats      position
 #>   <chr>   <chr>                        <int> <chr>        <list>     <chr>   
@@ -327,32 +341,32 @@ Saiem Gilani
 #> 
 #> $General
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Offensive
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Defensive
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Rebounding
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Shooting
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Misc
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Stats from ESPN.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 # }
@@ -363,7 +377,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_player_splits(athlete_id = "4593919", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Splits from ESPN.com ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 1 × 2
 #>   name  display_name
 #>   <chr> <chr>       
@@ -376,7 +390,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_player_statisticslog(athlete_id = "4593919", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Statisticslog from ESPN.com ────────────
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 3 × 2
 #>   season$`$ref`                                                       statistics
 #>   <chr>                                                               <list>    
@@ -388,12 +402,12 @@ Saiem Gilani
   espn_nba_player_overview(athlete_id = "1966", season = 2024)
 #> $Statistics
 #> ── ESPN NBA Athlete Overview Statistics from ESPN.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $NextGame
 #> ── ESPN NBA Athlete Overview NextGame from ESPN.com ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 1 × 4
 #>   id    date  name  short_name
 #>   <chr> <chr> <chr> <chr>     
@@ -401,12 +415,12 @@ Saiem Gilani
 #> 
 #> $Last5Games
 #> ── ESPN NBA Athlete Overview Last5Games from ESPN.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Headlines
 #> ── ESPN NBA Athlete Overview Headlines from ESPN.com ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 13 × 5
 #>    headline                                   description published byline type 
 #>    <chr>                                      <chr>       <chr>     <chr>  <chr>
@@ -426,7 +440,7 @@ Saiem Gilani
 #> 
 #> $FantasyOutlook
 #> ── ESPN NBA Athlete Overview FantasyOutlook from ESPN.com ─────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 1 × 1
 #>   outlook
 #>   <chr>  
@@ -437,7 +451,7 @@ Saiem Gilani
   espn_nba_player_stats_v3(athlete_id = "1966", season = 2024)
 #> $`Regular Season Averages`
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 24 × 5
 #>    team_id team_slug           season$year $displayName stats      position
 #>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
@@ -455,7 +469,7 @@ Saiem Gilani
 #> 
 #> $`Regular Season Totals`
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 24 × 5
 #>    team_id team_slug           season$year $displayName stats      position
 #>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
@@ -473,7 +487,7 @@ Saiem Gilani
 #> 
 #> $`Regular Season Misc Totals`
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 24 × 5
 #>    team_id team_slug           season$year $displayName stats      position
 #>    <chr>   <chr>                     <int> <chr>        <list>     <chr>   
@@ -491,39 +505,39 @@ Saiem Gilani
 #> 
 #> $General
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Offensive
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Defensive
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Rebounding
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Shooting
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 #> $Misc
 #> ── ESPN NBA Athlete Stats from ESPN.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:25 UTC
+#> ℹ Data updated: 2026-11-09 19:10:43 UTC
 #> # A tibble: 0 × 0
 #> 
 # }
 # \donttest{
   espn_nba_player_gamelog(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Gamelog from ESPN.com ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:26 UTC
+#> ℹ Data updated: 2026-11-09 19:10:44 UTC
 #> # A tibble: 82 × 25
 #>    id        at_vs game_date     score home_team_id away_team_id home_team_score
 #>    <chr>     <chr> <chr>         <chr> <chr>        <chr>        <chr>          
@@ -548,7 +562,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_player_splits(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Splits from ESPN.com ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:26 UTC
+#> ℹ Data updated: 2026-11-09 19:10:44 UTC
 #> # A tibble: 6 × 3
 #>   name       display_name splits       
 #>   <chr>      <chr>        <list>       
@@ -562,7 +576,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_player_eventlog(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Eventlog from ESPN.com ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:26 UTC
+#> ℹ Data updated: 2026-11-09 19:10:44 UTC
 #> # A tibble: 25 × 6
 #>    event_ref              competition_ref team_ref statistics_ref team_id played
 #>    <chr>                  <chr>           <chr>    <chr>          <chr>   <lgl> 
@@ -581,7 +595,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_player_statisticslog(athlete_id = "1966", season = 2024)
 #> ── ESPN NBA Athlete Statisticslog from ESPN.com ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:26 UTC
+#> ℹ Data updated: 2026-11-09 19:10:44 UTC
 #> # A tibble: 24 × 2
 #>    season$`$ref`                                                      statistics
 #>    <chr>                                                              <list>    

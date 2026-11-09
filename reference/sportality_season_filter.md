@@ -13,19 +13,13 @@ sportality_season_filter()
 
 ## Value
 
-A `hoopR_data` tibble: Series, the 25 seasons (2002/03 on), game types
-and the default ssgt. An empty valid answer raises `hoopR_no_data`; the
-documented columns come first, in this order (sportsdataverse-py
-`sportality_season_filter`), then any column the API added later:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| kind | character | Directory entry kind: series, season or game_type. |
-| code | character | Series code (DBL = Basketligaen). |
-| name | character | Game type name in Danish (Grundspil = regular season, Slutspil = playoffs). |
-| uuid | character | Series uuid (platform key space); the seriesUuid of /sports-v2/game-schedule. |
-| deleted | logical | Soft-delete flag; false on every record seen. |
+A `hoopR_data` tibble with one row per filter option. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportality_season_filter")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -44,7 +38,7 @@ lists every function in this family.
 # \donttest{
   try(sportality_season_filter())
 #> ── Basketligaen Season Filter from basketligaen.dk ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:04 UTC
+#> ℹ Data updated: 2026-11-09 19:14:58 UTC
 #> # A tibble: 27 × 5
 #>    kind   code  name         uuid       deleted
 #>    <chr>  <chr> <chr>        <chr>      <lgl>  

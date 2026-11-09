@@ -24,22 +24,12 @@ lba_players(season = NULL, page = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: Players of a season, 50 per page (walk the pages
-with page). The columns are always these, in this order
-(sportsdataverse-py `lba_players`); a column the site adds later is
-appended after them:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2027 = 2026-27): the row's START year + 1. |
-| player_id | integer | Player id (global). |
-| name | character | Player's given name. |
-| surname | character | Player's family name. |
-| code | character | Player code `SURNAME3-NAME3-YY`. |
-| team_name | character | Team name in that season, with its sponsor (`Nutribullet Treviso Basket`); changes with the sponsor. |
-| year | integer | Season START year (2026 = 2026-27); sdv END year = year + 1. The season of the team the row places the player on. |
-| player_picture_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lba_players")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -58,7 +48,7 @@ lists every function in this family.
 # \donttest{
   try(lba_players(season = 2027))
 #> ── LBA Players from legabasket.it ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:52 UTC
+#> ℹ Data updated: 2026-11-09 19:13:04 UTC
 #> # A tibble: 50 × 8
 #>    season player_id name     surname    code  team_name  year player_picture_key
 #>     <int>     <int> <chr>    <chr>      <chr> <chr>     <int> <chr>             

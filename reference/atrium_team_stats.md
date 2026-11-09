@@ -57,24 +57,13 @@ atrium_team_stats(
 
 ## Value
 
-A `hoopR_data` tibble, one row per `(table_key, entity_name, stat_key)`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| season_id | character | Season UUID of the table; null for the competition-scoped routes (their bodies carry none). |
-| table_key | character | Statistics table the row is from: averages, shootingstatistics, totals, ... (the set is per site). |
-| table_label | character | The table's heading in the site's language (e.g. Moyennes). |
-| person_id | character | Player UUID decoded from the widget link beside the name (the tables carry names only); null when the link is missing or undecodable, and always null in team and competition bodies. |
-| person_name | character | Player name as the site prints it; null in team tables. |
-| entity_id | character | Team UUID decoded from the widget link (team tables only; player tables name the team but carry no id). |
-| entity_name | character | Team name as the site prints it; for player rows of a stat table it is the player's team. |
-| stat_key | character | Statistic key as the API names it (pointsPerGame, fieldGoalsMade, ...), unchanged from header key. |
-| stat_name | character | Short column heading the site shows for the statistic (PTS, REB), in the site's language. |
-| stat_label | character | Longer statistic label the site shows (code in the API), in the site's language. |
-| value | double | Numeric value of the statistic; null when the API sends a duration or text (see value_text). |
-| value_text | character | Non-numeric statistic value, e.g. an ISO 8601 duration such as PT12M2S for minutes per game. |
+A `hoopR_data` tibble with one row per (`table_key`, `entity_name`,
+`stat_key`). Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_team_stats")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -122,7 +111,7 @@ Other Atrium Functions:
     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
   ))
 #> ── Atrium team stats from embed-api.eui.connect.sportradar.com ── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:00 UTC
+#> ℹ Data updated: 2026-11-09 19:09:15 UTC
 #> # A tibble: 400 × 13
 #>    website_id season_id    table_key table_label person_id person_name entity_id
 #>         <int> <chr>        <chr>     <chr>       <chr>     <chr>       <chr>    

@@ -47,62 +47,50 @@ cbbd_ratings_elo(
 
 ## Value
 
-A `hoopR_data` tibble with one row per team-season:
+A `hoopR_data` tibble with one row per team-season. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_ratings_srs")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-|            |           |                                   |
-|------------|-----------|-----------------------------------|
-| col_name   | types     | description                       |
-| season     | integer   | Season (4-digit ending-year).     |
-| team_id    | integer   | CollegeBasketballData team id.    |
-| team       | character | Team name.                        |
-| conference | character | Conference name.                  |
-| rating     | numeric   | Simple Rating System (SRS) value. |
+A `hoopR_data` tibble with one row per team-season. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_ratings_adjusted")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-A `hoopR_data` tibble with one row per team-season. `rankings_*` columns
-are flattened from the nested `rankings` object:
-
-|                  |           |                                       |
-|------------------|-----------|---------------------------------------|
-| col_name         | types     | description                           |
-| season           | integer   | Season (4-digit ending-year).         |
-| team_id          | integer   | CollegeBasketballData team id.        |
-| team             | character | Team name.                            |
-| conference       | character | Conference name.                      |
-| offensive_rating | numeric   | Adjusted offensive efficiency rating. |
-| defensive_rating | numeric   | Adjusted defensive efficiency rating. |
-| net_rating       | numeric   | Adjusted net efficiency rating.       |
-
-A `hoopR_data` tibble with one row per team-season:
-
-|            |           |                                |
-|------------|-----------|--------------------------------|
-| col_name   | types     | description                    |
-| season     | integer   | Season (4-digit ending-year).  |
-| team_id    | integer   | CollegeBasketballData team id. |
-| team       | character | Team name.                     |
-| conference | character | Conference name.               |
-| elo        | integer   | End-of-season Elo rating.      |
+A `hoopR_data` tibble with one row per team-season. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_ratings_elo")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Examples
 
 ``` r
 # \donttest{
   try(cbbd_ratings_srs(season = 2024))
-#> ✖ 2026-11-09 17:03:31.603609: Invalid arguments or no SRS ratings available!
+#> ✖ 2026-11-09 19:09:48.20744: Invalid arguments or no SRS ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_ratings_adjusted(season = 2024))
-#> ✖ 2026-11-09 17:03:31.611776: Invalid arguments or no adjusted ratings available!
+#> ✖ 2026-11-09 19:09:48.218024: Invalid arguments or no adjusted ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_ratings_elo(season = 2024))
-#> ✖ 2026-11-09 17:03:31.630466: Invalid arguments or no Elo ratings available!
+#> ✖ 2026-11-09 19:09:48.228272: Invalid arguments or no Elo ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

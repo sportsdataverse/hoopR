@@ -47,17 +47,59 @@ espn_nba_team_schedule(
 
 ## Value
 
-A single tibble with one row per event.
+A `hoopR_data` tibble with one row per event.
 
-Columns as documented in the shared
-[espn_mbb_team_schedule_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_schedule_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| event_id | character | Unique event / game identifier (ESPN). |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| week | integer | Week number within the season. |
+| date | character | Date in YYYY-MM-DD format. |
+| name | character | Display name. |
+| short_name | character | Short display name. |
+| opponent_id | character | Unique identifier for opponent. |
+| opponent_abbrev | character | Abbreviation for opponent. |
+| home_away | character | Game venue label ('home' or 'away'). |
+| neutral_site | logical | Neutral site. |
+| conference_competition | logical | Conference competition. |
+| venue_id | character | Unique venue identifier. |
+| venue_name | character | Venue name. |
+| venue_city | character | Venue city. |
+| venue_state | character | Venue state / region. |
+| broadcast | character | Broadcast information string. |
+| result | character | Result. |
+| team_score | character | Team's score / final score. |
+| opponent_score | character | Opponent score. |
+| winner | logical | Winner. |
 
-A single tibble with one row per event.
+A `hoopR_data` tibble with one row per event.
 
-Columns as documented in the shared
-[espn_mbb_team_schedule_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_schedule_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| event_id | character | Unique event / game identifier (ESPN). |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| week | integer | Week number within the season. |
+| date | character | Date in YYYY-MM-DD format. |
+| name | character | Display name. |
+| short_name | character | Short display name. |
+| opponent_id | character | Unique identifier for opponent. |
+| opponent_abbrev | character | Abbreviation for opponent. |
+| home_away | character | Game venue label ('home' or 'away'). |
+| neutral_site | logical | Neutral site. |
+| conference_competition | logical | Conference competition. |
+| venue_id | character | Unique venue identifier. |
+| venue_name | character | Venue name. |
+| venue_city | character | Venue city. |
+| venue_state | character | Venue state / region. |
+| broadcast | character | Broadcast information string. |
+| result | character | Result. |
+| team_score | character | Team's score / final score. |
+| opponent_score | character | Opponent score. |
+| winner | logical | Winner. |
 
 ## See also
 
@@ -77,7 +119,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_schedule(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Schedule from ESPN.com ───── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:55 UTC
+#> ℹ Data updated: 2026-11-09 19:11:12 UTC
 #> # A tibble: 34 × 21
 #>    event_id  season season_type  week date          name  short_name opponent_id
 #>    <chr>      <int>       <int> <int> <chr>         <chr> <chr>      <chr>      
@@ -100,7 +142,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_schedule(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Schedule from ESPN.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:55 UTC
+#> ℹ Data updated: 2026-11-09 19:11:12 UTC
 #> # A tibble: 84 × 21
 #>    event_id  season season_type  week date          name  short_name opponent_id
 #>    <chr>      <int>       <int> <int> <chr>         <chr> <chr>      <chr>      

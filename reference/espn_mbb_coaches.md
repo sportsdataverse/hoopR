@@ -33,17 +33,29 @@ espn_nba_coaches(season = most_recent_nba_season(), ...)
 
 ## Value
 
-A single `hoopR_data` tibble with one row per coach.
+A `hoopR_data` tibble with one row per coach.
 
-Columns as documented in the shared
-[espn_mbb_coaches_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_coaches_schema.md)
-table.
+|            |           |                                   |
+|------------|-----------|-----------------------------------|
+| col_name   | types     | description                       |
+| coach_id   | character |                                   |
+| first_name | character | Player's first name.              |
+| last_name  | character | Player's last name.               |
+| full_name  | character | Player's full name.               |
+| experience | integer   | Years of professional experience. |
+| team_id    | character | Unique team identifier.           |
 
-A single `hoopR_data` tibble with one row per coach.
+A `hoopR_data` tibble with one row per coach.
 
-Columns as documented in the shared
-[espn_mbb_coaches_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_coaches_schema.md)
-table.
+|            |           |                                   |
+|------------|-----------|-----------------------------------|
+| col_name   | types     | description                       |
+| coach_id   | character |                                   |
+| first_name | character | Player's first name.              |
+| last_name  | character | Player's last name.               |
+| full_name  | character | Player's full name.               |
+| experience | integer   | Years of professional experience. |
+| team_id    | character | Unique team identifier.           |
 
 ## See also
 
@@ -63,7 +75,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_coaches(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Coaches from ESPN.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:09 UTC
+#> ℹ Data updated: 2026-11-09 19:10:27 UTC
 #> # A tibble: 373 × 6
 #>    coach_id first_name last_name full_name experience team_id
 #>    <chr>    <chr>      <chr>     <chr>          <int> <chr>  
@@ -82,7 +94,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_coaches(season = 2025)
 #> ── ESPN NBA Coaches from ESPN.com ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:09 UTC
+#> ℹ Data updated: 2026-11-09 19:10:27 UTC
 #> # A tibble: 30 × 6
 #>    coach_id first_name last_name full_name experience team_id
 #>    <chr>    <chr>      <chr>     <chr>          <int> <chr>  

@@ -25,64 +25,12 @@ kzs_team_general(team_id, competition_id)
 
 ## Value
 
-A `hoopR_data` tibble: A team's record, form and best players in one
-competition (the body echoes neither id). An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `kzs_team_general`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_id | integer | Team id: one club team in one season (joins kzs_teams); not the match-team id and not the club id. |
-| competition_id | integer | Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). |
-| won | integer | Wins in the competition (all phases). |
-| lost | integer | Losses in the competition. |
-| last_games | character | Recent results, 'W' or 'L' per game (order unverified). |
-| best_points_player_id | integer | Player id (KZS player registry). Joins to `/players/{playerId}`, box-score and play-by-play `playerId`. |
-| best_points_player_identification_number | integer | Player's KZS registration (licence) number; a different key space from the player id, used by no captured route. |
-| best_points_player_person_id | integer | Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. |
-| best_points_player_person_first_name | character | The player's given name. |
-| best_points_player_person_last_name | character | The player's family name. |
-| best_points_player_person_year_of_birth | integer | Year of birth (players: public bio). |
-| best_points_player_nationality_id | integer | Country id (FMS internal; use the ISO codes). |
-| best_points_player_nationality_alpha2_code | character | ISO 3166-1 alpha-2 country code. |
-| best_points_player_nationality_alpha3_code | character | ISO 3166-1 alpha-3 country code. |
-| best_points_player_nationality_name | character | Country name in Slovenian (e.g. 'Zdruzene drzave' = United States); use `engName` or the ISO codes. |
-| best_points_player_nationality_eng_name | character | Country name in English. |
-| best_points_player_homegrown | logical | True when the player counts as homegrown (domaci igralec) for roster limits. |
-| best_points_player_photo_uuid | character | Player photo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
-| best_points_player_positions | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
-| best_average_points | double | That player's points per game. |
-| best_rebounds_player_id | integer | Player id (KZS player registry). Joins to `/players/{playerId}`, box-score and play-by-play `playerId`. |
-| best_rebounds_player_identification_number | integer | Player's KZS registration (licence) number; a different key space from the player id, used by no captured route. |
-| best_rebounds_player_person_id | integer | Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. |
-| best_rebounds_player_person_first_name | character | The player's given name. |
-| best_rebounds_player_person_last_name | character | The player's family name. |
-| best_rebounds_player_person_year_of_birth | integer | Year of birth (players: public bio). |
-| best_rebounds_player_nationality_id | integer | Country id (FMS internal; use the ISO codes). |
-| best_rebounds_player_nationality_alpha2_code | character | ISO 3166-1 alpha-2 country code. |
-| best_rebounds_player_nationality_alpha3_code | character | ISO 3166-1 alpha-3 country code. |
-| best_rebounds_player_nationality_name | character | Country name in Slovenian (e.g. 'Zdruzene drzave' = United States); use `engName` or the ISO codes. |
-| best_rebounds_player_nationality_eng_name | character | Country name in English. |
-| best_rebounds_player_homegrown | logical | True when the player counts as homegrown (domaci igralec) for roster limits. |
-| best_rebounds_player_photo_uuid | character | Player photo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
-| best_rebounds_player_positions | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
-| best_average_rebounds | double | That player's rebounds per game. |
-| best_assists_player_id | integer | Player id (KZS player registry). Joins to `/players/{playerId}`, box-score and play-by-play `playerId`. |
-| best_assists_player_identification_number | integer | Player's KZS registration (licence) number; a different key space from the player id, used by no captured route. |
-| best_assists_player_person_id | integer | Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. |
-| best_assists_player_person_first_name | character | The player's given name. |
-| best_assists_player_person_last_name | character | The player's family name. |
-| best_assists_player_person_year_of_birth | integer | Year of birth (players: public bio). |
-| best_assists_player_nationality_id | integer | Country id (FMS internal; use the ISO codes). |
-| best_assists_player_nationality_alpha2_code | character | ISO 3166-1 alpha-2 country code. |
-| best_assists_player_nationality_alpha3_code | character | ISO 3166-1 alpha-3 country code. |
-| best_assists_player_nationality_name | character | Country name in Slovenian (e.g. 'Zdruzene drzave' = United States); use `engName` or the ISO codes. |
-| best_assists_player_nationality_eng_name | character | Country name in English. |
-| best_assists_player_homegrown | logical | True when the player counts as homegrown (domaci igralec) for roster limits. |
-| best_assists_player_photo_uuid | character | Player photo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
-| best_assists_player_positions | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
-| best_average_assists | double | That player's assists per game. |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kzs_team_general")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

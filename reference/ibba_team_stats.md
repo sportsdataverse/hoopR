@@ -35,38 +35,12 @@ ibba_team_stats(team_id, season, is_averages = FALSE, is_playoff = FALSE)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-| team_id | integer | Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. |
-| games | integer | Games played (in the standings or in the season stats). |
-| minutes | double | Minutes played, whole minutes; a TOTAL line holds the team's player-minutes (200 plus 25 per overtime). Season total, or the per-game average when is_averages is true. |
-| pts | double | Points scored by the player or team (free throws included). Season total, or the per-game average when is_averages is true. |
-| fg2m | double | Two-point field goals made. Season total, or the per-game average when is_averages is true. |
-| fg2a | double | Two-point field goals attempted (verified equal to Segev made + missed). Season total, or the per-game average when is_averages is true. |
-| fg2_pct | double | Two-point field-goal percentage, 0-100. Season total, or the per-game average when is_averages is true. |
-| fg3m | double | Three-point field goals made. Season total, or the per-game average when is_averages is true. |
-| fg3a | double | Three-point field goals attempted. Season total, or the per-game average when is_averages is true. |
-| fg3_pct | double | Three-point field-goal percentage, 0-100. Season total, or the per-game average when is_averages is true. |
-| ftm | double | Free throws made. Season total, or the per-game average when is_averages is true. |
-| fta | double | Free throws attempted. Season total, or the per-game average when is_averages is true. |
-| ft_pct | double | Free-throw percentage, 0-100. Season total, or the per-game average when is_averages is true. |
-| dreb | double | Defensive rebounds. Season total, or the per-game average when is_averages is true. |
-| oreb | double | Offensive rebounds. Season total, or the per-game average when is_averages is true. |
-| reb | double | Total rebounds. Season total, or the per-game average when is_averages is true. |
-| fouls_drawn | double | Fouls DRAWN: fouls opponents committed against the player or team (the wire's fouls_against; verified equal to Segev f_drawn). Season total, or the per-game average when is_averages is true. |
-| fouls | double | Fouls COMMITTED by the player or team (the wire's fouls_for; verified equal to Segev f). Season total, or the per-game average when is_averages is true. |
-| steals | double | Steals made by the player or team. Season total, or the per-game average when is_averages is true. |
-| turnovers | double | Turnovers (the wire's misspelt tournovers). Season total, or the per-game average when is_averages is true. |
-| assists | double | Assists credited to the player or team. Season total, or the per-game average when is_averages is true. |
-| blocks | double | Shots the player or team blocked. Season total, or the per-game average when is_averages is true. |
-| blocks_against | double | Own shots that were blocked. Season total, or the per-game average when is_averages is true. |
-| val | double | Efficiency rating (valuation; verified equal to Segev rate); -1 on 2004-05 team-credited lines. Season total, or the per-game average when is_averages is true. |
-| plus_minus | double | Plus-minus; 0 on every line of the 2004-05 sample (not recorded then, inferred). Season total, or the per-game average when is_averages is true. |
-| dunks | double | Dunks made by the player or team. Season total, or the per-game average when is_averages is true. |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ibba_team_stats")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -85,7 +59,7 @@ lists every function in this family.
 # \donttest{
   try(ibba_team_stats(season = 2026, team_id = 1109))
 #> ── IBBA team stats ────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:06:08 UTC
+#> ℹ Data updated: 2026-11-09 19:12:22 UTC
 #> # A tibble: 1 × 27
 #>   season team_id games minutes   pts  fg2m  fg2a fg2_pct  fg3m  fg3a fg3_pct
 #>    <int>   <int> <int>   <dbl> <dbl> <dbl> <dbl>   <dbl> <dbl> <dbl>   <dbl>

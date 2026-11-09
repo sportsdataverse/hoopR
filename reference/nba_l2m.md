@@ -34,14 +34,9 @@ nba_l2m(game_id, proxy = NULL)
 
 ## Value
 
-Named list of `hoopR_data` tibbles:
+A named list of `hoopR_data` tibbles: `calls`, `game`, `stats`.
 
-**calls** – one row per graded play. `decision` is normalized to
-`CC`/`CNC`/`IC`/`INC` (`NCC`-\>`CNC`, `NCI`-\>`INC`, trailing `*`
-stripped; a real `INC` stays `INC`, while a blank or `"Undetectable"`
-grade becomes `NA` and is never counted as `INC`). `game_id` is a
-10-char zero-padded string. Player and team names are kept verbatim (no
-ASCII folding).
+**calls**
 
 |  |  |  |
 |----|----|----|
@@ -66,7 +61,7 @@ ASCII folding).
 | pos_end | character | Game clock at the end of the possession. |
 | pos_team_id | integer | NBA team id of the team in possession. |
 
-**game** – one row of game metadata.
+**game**
 
 |  |  |  |
 |----|----|----|
@@ -84,8 +79,7 @@ ASCII folding).
 | away_score | integer | Away team final score. |
 | l2m_comments | character | Report-level note from the league; NA for almost every game. |
 
-**stats** – 3 rows of error-count stats (`Calls`, `Errors in Favor`,
-`Possessions in Favor`).
+**stats**
 
 |  |  |  |
 |----|----|----|
@@ -94,6 +88,14 @@ ASCII folding).
 | stat_name | character | Statistic: Calls, Errors in Favor or Possessions in Favor. |
 | home | integer | Value of stat_name for the home team. |
 | away | integer | Value of stat_name for the away team. |
+
+`calls`: one row per graded play. `decision` is normalized to
+`CC`/`CNC`/`IC`/`INC` (`NCC`-\>`CNC`, `NCI`-\>`INC`, trailing `*`
+stripped; a real `INC` stays `INC`, while a blank or `"Undetectable"`
+grade becomes `NA` and is never counted as `INC`). `game_id` is a
+10-char zero-padded string. Player and team names are kept verbatim (no
+ASCII folding). `game`: one row of game metadata. `stats`: 3 rows of
+error-count stats (`Calls`, `Errors in Favor`, `Possessions in Favor`).
 
 ## Errors
 
@@ -133,7 +135,7 @@ Saiem Gilani
     head(l2m$calls)
   })
 #> ── NBA L2M calls (official.nba.com) ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:07:43 UTC
+#> ℹ Data updated: 2026-11-09 19:13:48 UTC
 #> # A tibble: 6 × 19
 #>   game_id    period period_name pc_time seconds_remaining call_type  call  type 
 #>   <chr>       <int> <chr>       <chr>               <dbl> <chr>      <chr> <chr>

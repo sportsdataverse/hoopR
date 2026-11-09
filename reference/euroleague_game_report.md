@@ -32,56 +32,12 @@ euroleague_game_report(competition_code, season_code, game_code)
 
 ## Value
 
-A `hoopR_data` tibble with one row (the game):
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| game_code | character | Game number within the season (1-based; Utf8 join key). |
-| round | integer | Round number within the season. |
-| round_alias | character | Short alias of the round. |
-| round_name | character | Display name of the round. |
-| played | logical | Whether the game has been played. |
-| date | character | Scheduled tip-off (ISO 8601, venue local time). |
-| confirmed_date | logical | Whether the game date is confirmed. |
-| confirmed_hour | logical | Whether the tip-off time is confirmed. |
-| local_time_zone | integer | UTC offset of the venue, in hours. |
-| local_date | character | Scheduled tip-off in venue local time (ISO 8601). |
-| utc_date | character | Scheduled tip-off in UTC (ISO 8601). |
-| local_last5_form | character | Home side: results of the last five games, oldest first (W / L), JSON-encoded. |
-| road_last5_form | character | Away side: results of the last five games, oldest first (W / L), JSON-encoded. |
-| season_name | character | Season: display name. |
-| season_code | character | Season code: competition code + start year, e.g. E2025 for 2025-26 (Utf8 join key). |
-| season_alias | character | Season: short display alias. |
-| season_competition_code | character | Season: competition code (E = EuroLeague, U = EuroCup; Utf8 join key). |
-| season_year | integer | Season: start year of the season. |
-| season_start_date | character | Season: start date (ISO 8601). |
-| group_id | character | Group: provider identifier for the entity (Utf8 join key). |
-| group_order | integer | Group: display order within the roster. |
-| group_name | character | Group: display name. |
-| group_raw_name | character | Group: group name as stored by the engine. |
-| phase_type_code | character | Phase type code (RS = regular season, PO = playoffs, ...). |
-| phase_type_alias | character | Phase type: short display alias. |
-| phase_type_name | character | Phase type: display name. |
-| phase_type_is_group_phase | logical | Phase type: whether the phase is played in groups. |
-| local_club_code | character | Home side: club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| local_club_name | character | Home side: club: display name. |
-| local_club_abbreviated_name | character | Home side: club: abbreviated display name. |
-| local_club_editorial_name | character | Home side: club: editorial (long-form) display name. |
-| local_club_tv_code | character | Home side: club: three-letter broadcast abbreviation of the club. |
-| local_club_is_virtual | logical | Home side: club: whether the club is a placeholder rather than a real club. |
-| local_club_images_crest | character | Home side: club: URL of the club crest image. |
-| local_score | integer | Home side: final score of the side. |
-| local_standings_score | integer | Home side: score of the side as counted for the standings. |
-| road_club_code | character | Away side: club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| road_club_name | character | Away side: club: display name. |
-| road_club_abbreviated_name | character | Away side: club: abbreviated display name. |
-| road_club_editorial_name | character | Away side: club: editorial (long-form) display name. |
-| road_club_tv_code | character | Away side: club: three-letter broadcast abbreviation of the club. |
-| road_club_is_virtual | logical | Away side: club: whether the club is a placeholder rather than a real club. |
-| road_club_images_crest | character | Away side: club: URL of the club crest image. |
-| road_score | integer | Away side: final score of the side. |
-| road_standings_score | integer | Away side: score of the side as counted for the standings. |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "euroleague_game_report")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -109,7 +65,7 @@ lists every function in this family.
     euroleague_game_report(competition_code = "E", season_code = "E2025", game_code = 1)
   })
 #> ── EuroLeague game report from api-live.euroleague.net ────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:10 UTC
+#> ℹ Data updated: 2026-11-09 19:11:22 UTC
 #> # A tibble: 1 × 45
 #>   game_code round round_alias round_name played date              confirmed_date
 #>   <chr>     <int> <chr>       <chr>      <lgl>  <chr>             <lgl>         

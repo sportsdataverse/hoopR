@@ -25,72 +25,12 @@ vtb_infobasket_team_stats(season, tag = "vtb")
 
 ## Value
 
-A `hoopR_data` tibble: Season totals of every team of a season (all
-stages). The columns are always these, in this order (sportsdataverse-py
-`vtb_infobasket_team_stats`); an empty valid answer raises
-`hoopR_no_data`, a valid body with no rows for this frame is a zero-row
-tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. |
-| team_id | integer | Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team\*/{teamId} and equals the v2 API `teamId`. |
-| game_count | integer | Games in the totals (the whole competition, all stages, for the season-level CompID). |
-| points | integer | Points. The wire's null is 0 here (null counts are filled). |
-| shot1 | integer | Free throws attempted. The wire's null is 0 here (null counts are filled). |
-| goal1 | integer | Free throws made. The wire's null is 0 here (null counts are filled). |
-| shot2 | integer | 2-point field goals attempted. The wire's null is 0 here (null counts are filled). |
-| goal2 | integer | 2-point field goals made. The wire's null is 0 here (null counts are filled). |
-| shot3 | integer | 3-point field goals attempted. The wire's null is 0 here (null counts are filled). |
-| goal3 | integer | 3-point field goals made. The wire's null is 0 here (null counts are filled). |
-| shot23 | integer | Field goals (2 + 3 points) attempted. The wire's null is 0 here (null counts are filled). |
-| goal23 | integer | Field goals (2 + 3 points) made. The wire's null is 0 here (null counts are filled). |
-| shot1_percent | double | Free-throw percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| shot2_percent | double | 2-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| shot3_percent | double | 3-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| shot23_percent | double | Field-goal percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| assist | integer | Assists. The wire's null is 0 here (null counts are filled). |
-| blocks | integer | Blocked shots. The wire's null is 0 here (null counts are filled). |
-| def_rebound | integer | Defensive rebounds. The wire's null is 0 here (null counts are filled). |
-| off_rebound | integer | Offensive rebounds. The wire's null is 0 here (null counts are filled). |
-| rebound | integer | Total rebounds. The wire's null is 0 here (null counts are filled). |
-| steal | integer | Steals. The wire's null is 0 here (null counts are filled). |
-| turnover | integer | Turnovers. The wire's null is 0 here (null counts are filled). |
-| team_def_rebound | integer | Team defensive rebounds (not credited to a player). The wire's null is 0 here (null counts are filled). |
-| team_off_rebound | integer | Team offensive rebounds (not credited to a player). The wire's null is 0 here (null counts are filled). |
-| team_rebound | integer | Team rebounds (not credited to a player). The wire's null is 0 here (null counts are filled). |
-| team_steal | integer | Team steals (not credited to a player). The wire's null is 0 here (null counts are filled). |
-| team_turnover | integer | Team turnovers (not credited to a player, e.g. shot-clock violations). The wire's null is 0 here (null counts are filled). |
-| kpi | integer | Efficiency index (KPI, the platform's 'KPI'); formula unverified. |
-| avg_points | double | Per-game average of: points; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_assist | double | Per-game average of: assists; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_blocks | double | Per-game average of: blocked shots; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_def_rebound | double | Per-game average of: defensive rebounds; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_off_rebound | double | Per-game average of: offensive rebounds; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_rebound | double | Per-game average of: total rebounds; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_steal | double | Per-game average of: steals; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_turnover | double | Per-game average of: turnovers; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_foul | double | Per-game average of: personal fouls committed; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_opponent_foul | double | Per-game average of: fouls drawn; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_plus_minus | double | Per-game average of: plus-minus: point differential while on the court; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_team_def_rebound | double | Per-game average of: team defensive rebounds (not credited to a player); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_team_off_rebound | double | Per-game average of: team offensive rebounds (not credited to a player); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_team_rebound | double | Per-game average of: team rebounds (not credited to a player); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_team_steal | double | Per-game average of: team steals (not credited to a player); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| avg_team_turnover | double | Per-game average of: team turnovers (not credited to a player, e.g. shot-clock violations); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). |
-| foul | integer | Personal fouls committed. The wire's null is 0 here (null counts are filled). |
-| opponent_foul | integer | Fouls drawn. The wire's null is 0 here (null counts are filled). |
-| seconds | integer | Playing time in seconds. |
-| played_time | character | Playing time as 'minutes:seconds' (team rows sum the five players: '200:00' = 40 minutes x 5). |
-| avg_played_time | character | Average playing time per game as 'minutes:seconds'. |
-| plus_minus | integer | Plus-minus: point differential while on the court. Null where the host sends none. |
-| team_short_name_ru | character | The the team's short name in Russian (as the competition names it). |
-| team_short_name_en | character | The the team's short name in English (as the competition names it). |
-| team_name_ru | character | The the team's name in Russian (as the competition names it). |
-| team_name_en | character | The the team's name in English (as the competition names it). |
-| team_region_name_ru | character | The the team's region or city in Russian (as the competition names it). |
-| team_region_name_en | character | The the team's region or city in English (as the competition names it). |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_team_stats")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -109,7 +49,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_team_stats(season = 2026))
 #> ── VTB Infobasket Team Stats from org.infobasket.su ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:10:18 UTC
+#> ℹ Data updated: 2026-11-09 19:16:13 UTC
 #> # A tibble: 11 × 57
 #>    season team_id game_count points shot1 goal1 shot2 goal2 shot3 goal3 shot23
 #>     <int>   <int>      <int>  <int> <int> <int> <int> <int> <int> <int>  <int>

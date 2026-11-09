@@ -19,13 +19,13 @@ realgm_transactions()
 
 ## Value
 
-A `hoopR_data` tibble with one row per transaction:
-
-|             |           |                          |
-|-------------|-----------|--------------------------|
-| col_name    | types     | description              |
-| date        | Date      | Transaction date.        |
-| transaction | character | Transaction description. |
+A `hoopR_data` tibble with one row per transaction. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "realgm_transactions")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

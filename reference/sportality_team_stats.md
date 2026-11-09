@@ -21,33 +21,13 @@ sportality_team_stats(game_uuid)
 
 ## Value
 
-A `hoopR_data` tibble: Team totals per period (2023/24 on). An empty
-valid answer raises `hoopR_no_data`; the documented columns come first,
-in this order (sportsdataverse-py `sportality_team_stats`), then any
-column the API added later:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| team_side | character | home or away: the side the row belongs to. |
-| game_source_id | integer | Genius match id (Int64), the same number as game_id and sports-v2 game_info_ext_id. |
-| game_id | integer | Genius match id (Int64), the join to the genius family; on play-by-play lines, an integer elsewhere. |
-| team_id | integer | Genius team id (Int64): in gameday bodies, an integer in standings and stats tables. |
-| team_name | character | Name of the team. |
-| team_code | character | Platform team code (HOL, RAN). |
-| team_number | integer | Team number; home is 1. |
-| instance_id | character | Site instance that owns the feed (platform key space; dbl1_dbl). |
-| source | character | Feed that produced the row (genius-basketball-stream-reader). |
-| game_uuid | character | Platform game uuid (c4hh5nig6t); every gameday route takes it. |
-| period | integer | Period: 0 = the whole game, 1-4 the quarters, 5 and up overtime. |
-| period_type | character | REGULAR or OVERTIME; absent on the whole-game row of some eras. Values: `REGULAR` = regulation period. |
-| tp | integer | Points scored by the team in the period (period 0 = the whole game). |
-| fgm | integer | Field goals made (total). |
-| a | integer | Assists (total). |
-| reb | integer | Total rebounds. |
-| stl | integer | Number of steals. |
-| blk | integer | Number of blocked shots made. |
-| pf | integer | Personal fouls. |
+A `hoopR_data` tibble with one row per team and period. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportality_team_stats")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -66,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(sportality_team_stats(game_uuid = "c4hh5nig6t"))
 #> ── Basketligaen Team Stats from basketligaen.dk ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:09 UTC
+#> ℹ Data updated: 2026-11-09 19:15:03 UTC
 #> # A tibble: 10 × 19
 #>    team_side game_source_id game_id team_id team_name      team_code team_number
 #>    <chr>              <int>   <int>   <int> <chr>          <chr>           <int>

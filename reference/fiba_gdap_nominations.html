@@ -36,6 +36,7 @@ Endpoint: GET https://digital-api.fiba.basketball/hapi/getgdapcompetitionnominat
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -149,7 +150,11 @@ competition.competitionId of any game row (208182 = World Cup 2023, 208722 = Par
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble (the raw JSON list when <code>return_parsed = FALSE</code>) with the following columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>competition_level</td><td>character</td><td>Level the nomination is attached to: Competition.</td></tr><tr><td>competition_level_id</td><td>integer</td><td>Id of the object the nomination is attached to: the competitionId when competitionLevel is Competition.</td></tr><tr><td>competition_role</td><td>character</td><td>Role label at competition level; null in every sample.</td></tr><tr><td>role</td><td>character</td><td>Role: Referee, FIBA Table Officials, FIBA Certified Statisticians, FIBA Technical Delegate, FIBA Referee Instructor.</td></tr><tr><td>role_code</td><td>character</td><td>Role code (REF, FIBATDEL...).</td></tr><tr><td>game_assignment_role</td><td>character</td><td>Role on a game assignment; null at competition level.</td></tr><tr><td>game_assignment_role_code</td><td>character</td><td>Code of gameAssignmentRole; null at competition level.</td></tr><tr><td>game_assignment_role_order</td><td>character</td><td>Order of gameAssignmentRole; null at competition level.</td></tr><tr><td>person_id</td><td>integer</td><td>FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P_<code>&lt;id&gt;</code> = gdapPlayerId.</td></tr><tr><td>first_name</td><td>character</td><td>Given name(s) as registered with FIBA.</td></tr><tr><td>last_name</td><td>character</td><td>Last name (officials: upper case).</td></tr><tr><td>gender</td><td>character</td><td>Sex of the person: M or F (Male/Female on getgdapcompetitionnominationsbyid).</td></tr><tr><td>nationalities</td><td>character</td><td>Nationalities (FIBA codes on player info; country objects on rosters and officials). Stored as a JSON string.</td></tr><tr><td>license_nationality</td><td>character</td><td>FIBA code of the federation that licenses the official.</td></tr><tr><td>affiliated_national_federation_country_code</td><td>character</td><td>FIBA code of the federation the official is affiliated to.</td></tr><tr><td>affiliated_national_federation_country_name</td><td>character</td><td>Country of the federation the official is affiliated to.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per nomination.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "fiba_gdap_nominations")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="fiba_gdap_awards.html">fiba_gdap_awards()</a></code>.</p>

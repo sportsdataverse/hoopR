@@ -29,17 +29,12 @@ pleague_preciser_win_probability(uuid, gid = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: The vendor's home-team win probability by minute
-for one finished game. An empty valid answer is a zero-row tibble with
-these columns, in this order (sportsdataverse-py
-`pleague_preciser_win_probability`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_uuid | character | Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; `uuid` of pleague_game. |
-| minute | integer | Minute mark: 0 is the tip-off (50 percent); 49 entries for a 48-minute game. |
-| home_win_pct | double | The home team's win probability in percent (0-100) at that minute; the vendor documents no method. |
+A `hoopR_data` tibble with one row per minute. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "pleague_preciser_win_probability")`) and
+in the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

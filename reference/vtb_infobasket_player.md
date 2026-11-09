@@ -24,31 +24,12 @@ vtb_infobasket_player(person_id, tag = "vtb")
 
 ## Value
 
-A `hoopR_data` tibble: Player profile: names, birth date, height,
-weight, position. The columns are always these, in this order
-(sportsdataverse-py `vtb_infobasket_player`); an empty valid answer
-raises `hoopR_no_data`, a valid body with no rows for this frame is a
-zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| person_id | integer | Infobasket PersonID: one person across clubs and seasons; players, coaches and officials share the space. |
-| person_last_name_ru | character | Last name, Russian. |
-| person_first_name_ru | character | First name, Russian. |
-| person_last_name_en | character | Last name, English. |
-| person_first_name_en | character | First name, English. |
-| person_gender | integer | Person gender: 1 on every sampled (male) person. |
-| birth_date | character | Birth date (ISO 8601 date) of a player: public bio, kept; coaches' and officials' birth data is never output. |
-| person_height | integer | Height in centimetres. |
-| person_weight | integer | Weight in kilograms. |
-| person_status | integer | Person record status (1 active, 0 otherwise); meaning unverified. |
-| player_position | integer | Unobserved: null in every sample, so its type and meaning are unconfirmed. |
-| player_hand | character | Unobserved: null in every sample, so its type and meaning are unconfirmed. |
-| is_naturalized | logical | True for naturalised players. |
-| position_id | integer | Position id of the player (PosID), with its names in position_name_ru / position_name_en. |
-| position_name_ru | character | Position name in Russian. |
-| position_name_en | character | Position name in English. |
+A `hoopR_data` tibble with one row per player. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_player")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -67,7 +48,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_player(person_id = 423011))
 #> ── VTB Infobasket Player from org.infobasket.su ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:10:07 UTC
+#> ℹ Data updated: 2026-11-09 19:16:02 UTC
 #> # A tibble: 1 × 16
 #>   person_id person_last_name_ru person_first_name_ru person_last_name_en
 #>       <int> <chr>               <chr>                <chr>              

@@ -36,6 +36,7 @@ Endpoint: GET https://api.preciser.io/game/injury/list/o/plg/gameId/{uuid}"><met
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -145,8 +146,11 @@ the uuid must be the game page's. Without it only the checks the body allows by 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Injury report of one finished game: one row per team. An empty valid answer is a zero-row
-tibble with these columns, in this order (sportsdataverse-py <code>pleague_preciser_injury</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_uuid</td><td>character</td><td>Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; <code>uuid</code> of pleague_game.</td></tr><tr><td>side</td><td>character</td><td>Which team the row belongs to: home or away.</td></tr><tr><td>team_uuid</td><td>character</td><td>Preciser team uuid (key space: the vendor's teams; the file name of the club logo). Joins the site team_id through pleague_standings.team_uuid: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark).</td></tr><tr><td>team_name_zh</td><td>character</td><td>Team short name in Traditional Chinese ('(Chinese text)' = Lioneers).</td></tr><tr><td>team_name_en</td><td>character</td><td>Team short English name ('Lioneers').</td></tr><tr><td>color</td><td>character</td><td>Team colour as a CSS hex string.</td></tr><tr><td>logo_url</td><td>character</td><td>Team logo url (photonew.preciser.io/plg/teams/{team uuid}.png).</td></tr><tr><td>injury_report</td><td>character</td><td>The team's injury report as a JSON string; null when the vendor sent null. It was null on all 16 sampled games, so its shape is unverified.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per team.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "pleague_preciser_injury")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="pleague_preciser_shots.html">pleague_preciser_shots()</a></code>.</p>

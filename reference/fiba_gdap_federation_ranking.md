@@ -41,23 +41,13 @@ fiba_gdap_federation_ranking(
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| as_of_date | character | Date of the ranking returned: the latest ranking published on or before the requested date. |
-| zone_ranking_code | character | Ranking zone code (WORLD, AFRICA...). |
-| zone_ranking_official_name | character | Ranking zone official name. |
-| world_rank | integer | Position in the FIBA world ranking (1 = best). |
-| country_name | character | Country name in English. |
-| zone_rank | integer | Rank within the zone. |
-| ioc_code | character | IOC country code. |
-| fiba_code | character | FIBA three-letter country code (GER, USA; historic URS, YUG). |
-| current_points | double | Ranking points (one decimal). |
-| world_rank_variation | integer | Change in world rank since the previous release (positive = up). |
-| comments | character | Ranking note; null in every sample. |
+A `hoopR_data` tibble with one row per ranked federation. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_federation_ranking")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

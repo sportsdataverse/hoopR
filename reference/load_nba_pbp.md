@@ -212,7 +212,7 @@ load_nba_shots(
 
 ## Value
 
-Returns a tibble
+A `hoopR_data` tibble with one row per play-by-play event.
 
 |  |  |  |
 |----|----|----|
@@ -279,19 +279,133 @@ Returns a tibble
 | type_abbreviation | character | Type abbreviation. |
 | score_source | character | Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). Absent from seasons published before the repair. |
 
-Returns a tibble
+A `hoopR_data` tibble with one row per team-game.
 
-Columns as documented in the shared
-[espn_nba_game_all_team_schema](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all_team_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | integer | Unique game identifier. |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| game_date | Date | Game date (YYYY-MM-DD). |
+| game_date_time | POSIXct | Game start date/time (ISO 8601). |
+| team_id | integer | Unique team identifier. |
+| team_uid | character | ESPN universal team identifier (UID format 's:40~l:...~t:...'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| team_location | character | Team city or location string. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_abbreviation | character | Short team abbreviation (e.g. 'LAS'). |
+| team_display_name | character | Full team display name. |
+| team_short_display_name | character | Short team display name (e.g. 'Aces'). |
+| team_color | character | Team primary color (hex without leading '#'). |
+| team_alternate_color | character | Team alternate color (hex without leading '#'). |
+| team_logo | character | Team logo image URL. |
+| team_home_away | character | Team home away. |
+| team_score | integer | Team's score / final score. |
+| team_winner | logical | TRUE if the team won this game. |
+| assists | integer | Total assists. |
+| blocks | integer | Total blocks. |
+| defensive_rebounds | integer | Defensive rebounds. |
+| fast_break_points | character | Fast-break points scored. |
+| field_goal_pct | numeric | Field goal percentage (0-1). |
+| field_goals_made | integer | Field goals made (2-pt + 3-pt). |
+| field_goals_attempted | integer | Field goal attempts (2-pt + 3-pt). |
+| flagrant_fouls | integer | Total flagrant fouls. |
+| fouls | integer | Personal fouls. |
+| free_throw_pct | numeric | Free throw percentage (0-1). |
+| free_throws_made | integer | Free throws made. |
+| free_throws_attempted | integer | Free throw attempts. |
+| largest_lead | character | Largest lead during the game. |
+| offensive_rebounds | integer | Offensive rebounds. |
+| points_in_paint | character | Points scored in the paint. |
+| steals | integer | Total steals. |
+| team_turnovers | integer | Team turnovers (turnovers credited to the team rather than a player). |
+| technical_fouls | integer | Total technical fouls. |
+| three_point_field_goal_pct | numeric | Three-point field goal percentage (0-1). |
+| three_point_field_goals_made | integer | Three-point field goals made. |
+| three_point_field_goals_attempted | integer | Three-point field goal attempts. |
+| total_rebounds | integer | Total rebounds. |
+| total_technical_fouls | integer | Total technical fouls (player + team). |
+| total_turnovers | integer | Total turnovers (player + team). |
+| turnover_points | character | Turnover points. |
+| turnovers | integer | Total turnovers. |
+| opponent_team_id | integer | Unique identifier for the opponent team. |
+| opponent_team_uid | character | Opponent team uid. |
+| opponent_team_slug | character | Opponent team slug. |
+| opponent_team_location | character | Opponent team city / location. |
+| opponent_team_name | character | Opponent team display name. |
+| opponent_team_abbreviation | character | Opponent team abbreviation. |
+| opponent_team_display_name | character | Opponent team full display name. |
+| opponent_team_short_display_name | character | Opponent team short display name. |
+| opponent_team_color | character | Opponent team primary color (hex). |
+| opponent_team_alternate_color | character | Opponent team alternate color (hex). |
+| opponent_team_logo | character | Opponent team logo URL. |
+| opponent_team_score | integer | Opponent team's score. |
 
-Returns a tibble
+A `hoopR_data` tibble with one row per player-game.
 
-Columns as documented in the shared
-[espn_nba_game_all_player_schema](https://hoopR.sportsdataverse.org/reference/espn_nba_game_all_player_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| game_id | integer | Unique game identifier. |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| game_date | Date | Game date (YYYY-MM-DD). |
+| game_date_time | POSIXct | Game start date/time (ISO 8601). |
+| athlete_id | integer | Unique athlete identifier (ESPN). |
+| athlete_display_name | character | Athlete display name (full). |
+| team_id | integer | Unique team identifier. |
+| team_name | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| team_location | character | Team city or location string. |
+| team_short_display_name | character | Short team display name (e.g. 'Aces'). |
+| minutes | numeric | Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). |
+| field_goals_made | integer | Field goals made (2-pt + 3-pt). |
+| field_goals_attempted | integer | Field goal attempts (2-pt + 3-pt). |
+| three_point_field_goals_made | integer | Three-point field goals made. |
+| three_point_field_goals_attempted | integer | Three-point field goal attempts. |
+| free_throws_made | integer | Free throws made. |
+| free_throws_attempted | integer | Free throw attempts. |
+| offensive_rebounds | integer | Offensive rebounds. |
+| defensive_rebounds | integer | Defensive rebounds. |
+| rebounds | integer | Total rebounds. |
+| assists | integer | Total assists. |
+| steals | integer | Total steals. |
+| blocks | integer | Total blocks. |
+| turnovers | integer | Total turnovers. |
+| fouls | integer | Personal fouls. |
+| plus_minus | character | Plus/minus point differential while on court. |
+| points | integer | Points scored. |
+| starter | logical | TRUE if the player was in the starting lineup; FALSE otherwise. |
+| ejected | logical | TRUE if the player was ejected from the game. |
+| did_not_play | logical | TRUE if the player did not appear in the game. |
+| reason | character | Reason. |
+| active | logical | TRUE if the row represents an active record (player / team / season). |
+| athlete_jersey | character | Athlete jersey number. |
+| athlete_short_name | character | Athlete short display name. |
+| athlete_headshot_href | character | Athlete headshot image URL. |
+| athlete_position_name | character | Athlete position ('Guard', 'Forward', 'Center'). |
+| athlete_position_abbreviation | character | Athlete position abbreviation (G / F / C). |
+| team_display_name | character | Full team display name. |
+| team_uid | character | ESPN universal team identifier (UID format 's:40~l:...~t:...'). |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
+| team_logo | character | Team logo image URL. |
+| team_abbreviation | character | Short team abbreviation (e.g. 'LAS'). |
+| team_color | character | Team primary color (hex without leading '#'). |
+| team_alternate_color | character | Team alternate color (hex without leading '#'). |
+| home_away | character | Game venue label ('home' or 'away'). |
+| team_winner | logical | TRUE if the team won this game. |
+| team_score | integer | Team's score / final score. |
+| opponent_team_id | integer | Unique identifier for the opponent team. |
+| opponent_team_name | character | Opponent team display name. |
+| opponent_team_location | character | Opponent team city / location. |
+| opponent_team_display_name | character | Opponent team full display name. |
+| opponent_team_abbreviation | character | Opponent team abbreviation. |
+| opponent_team_logo | character | Opponent team logo URL. |
+| opponent_team_color | character | Opponent team primary color (hex). |
+| opponent_team_alternate_color | character | Opponent team alternate color (hex). |
+| opponent_team_score | integer | Opponent team's score. |
 
-Returns a tibble
+A `hoopR_data` tibble with one row per game.
 
 |  |  |  |
 |----|----|----|
@@ -381,7 +495,7 @@ Returns a tibble of NBA team rosters.
 Returns a tibble of NBA athlete core records (one row per
 athlete-season).
 
-Returns a tibble with one row per shot attempt.
+A `hoopR_data` tibble with one row per shot attempt.
 
 |  |  |  |
 |----|----|----|
@@ -430,20 +544,20 @@ Other hoopR Loader Functions:
 # \donttest{
 load_nba_pbp(seasons = most_recent_nba_season())
 #> ── ESPN NBA pbp from hoopR data repository ────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 70,414 × 68
+#> # A tibble: 73,820 × 68
 #>    game_play_number id        sequence_number type_id type_text text  away_score
 #>               <int> <chr>               <int>   <int> <chr>     <chr>      <int>
-#>  1                1 40190993…               4     615 Jumpball  Niko…          0
-#>  2                2 40190993…               7     131 Pullup J… Andr…          0
-#>  3                3 40190993…               8     155 Defensiv… Came…          0
-#>  4                4 40190993…               9      92 Jump Shot Niko…          0
-#>  5                5 40190993…              10     155 Defensiv… Aaro…          0
-#>  6                6 40190993…              11     146 Running … Pasc…          0
-#>  7                7 40190993…              12      92 Jump Shot Chri…          0
-#>  8                8 40190993…              13     155 Defensiv… Ivic…          0
-#>  9                9 40190993…              14      63 Lost Bal… Ivic…          0
-#> 10               10 40190993…              16      92 Jump Shot Aaro…          0
-#> # ℹ 70,404 more rows
+#>  1                1 40190994…               5     615 Jumpball  Joel…          0
+#>  2                2 40190994…               8     119 Driving … LeBr…          0
+#>  3                3 40190994…               9     155 Defensiv… Cale…          0
+#>  4                4 40190994…              10     141 Cutting … Isaa…          0
+#>  5                5 40190994…              12      92 Jump Shot Joel…          0
+#>  6                6 40190994…              13     155 Defensiv… Jale…          0
+#>  7                7 40190994…              14     116 Running … Cale…          0
+#>  8                8 40190994…              16     114 Turnarou… Joel…          0
+#>  9                9 40190994…              17     155 Defensiv… Jale…          0
+#> 10               10 40190994…              18      92 Jump Shot Jale…          0
+#> # ℹ 73,810 more rows
 #> # ℹ 61 more variables: home_score <int>, period_number <int>,
 #> #   period_display_value <chr>, clock_display_value <chr>, scoring_play <lgl>,
 #> #   score_value <int>, team_id <int>, athlete_id_1 <int>, athlete_id_2 <int>,
@@ -454,21 +568,21 @@ load_nba_pbp(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_team_box(seasons = most_recent_nba_season())
 #> ── ESPN NBA team_box from hoopR data repository ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-08 12:32:08 UTC
-#> # A tibble: 278 × 59
+#> ℹ Data updated: 2026-11-09 17:18:25 UTC
+#> # A tibble: 292 × 59
 #>      game_id season season_type game_date  game_date_time      team_id team_uid 
 #>        <int>  <int>       <int> <date>     <dttm>                <int> <chr>    
-#>  1 401909938   2027           2 2026-11-07 2026-11-07 17:00:00       7 s:40~l:4…
-#>  2 401909938   2027           2 2026-11-07 2026-11-07 17:00:00      11 s:40~l:4…
-#>  3 401909939   2027           2 2026-11-07 2026-11-07 19:30:00      17 s:40~l:4…
-#>  4 401909939   2027           2 2026-11-07 2026-11-07 19:30:00       1 s:40~l:4…
-#>  5 401909940   2027           2 2026-11-07 2026-11-07 20:00:00      18 s:40~l:4…
-#>  6 401909940   2027           2 2026-11-07 2026-11-07 20:00:00       5 s:40~l:4…
-#>  7 401909941   2027           2 2026-11-07 2026-11-07 20:00:00      27 s:40~l:4…
-#>  8 401909941   2027           2 2026-11-07 2026-11-07 20:00:00      25 s:40~l:4…
-#>  9 401909942   2027           2 2026-11-07 2026-11-07 20:30:00      19 s:40~l:4…
-#> 10 401909942   2027           2 2026-11-07 2026-11-07 20:30:00       9 s:40~l:4…
-#> # ℹ 268 more rows
+#>  1 401909945   2027           2 2026-11-08 2026-11-08 15:30:00      20 s:40~l:4…
+#>  2 401909945   2027           2 2026-11-08 2026-11-08 15:30:00       4 s:40~l:4…
+#>  3 401909946   2027           2 2026-11-08 2026-11-08 18:00:00      13 s:40~l:4…
+#>  4 401909946   2027           2 2026-11-08 2026-11-08 18:00:00       8 s:40~l:4…
+#>  5 401909947   2027           2 2026-11-08 2026-11-08 19:00:00      26 s:40~l:4…
+#>  6 401909947   2027           2 2026-11-08 2026-11-08 19:00:00      16 s:40~l:4…
+#>  7 401909948   2027           2 2026-11-08 2026-11-08 19:30:00      17 s:40~l:4…
+#>  8 401909948   2027           2 2026-11-08 2026-11-08 19:30:00       6 s:40~l:4…
+#>  9 401909949   2027           2 2026-11-08 2026-11-08 20:00:00       2 s:40~l:4…
+#> 10 401909949   2027           2 2026-11-08 2026-11-08 20:00:00      15 s:40~l:4…
+#> # ℹ 282 more rows
 #> # ℹ 52 more variables: team_slug <chr>, team_location <chr>, team_name <chr>,
 #> #   team_abbreviation <chr>, team_display_name <chr>,
 #> #   team_short_display_name <chr>, team_color <chr>,
@@ -479,21 +593,21 @@ load_nba_team_box(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_box(seasons = most_recent_nba_season())
 #> ── ESPN NBA player_box from hoopR data repository ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-08 12:32:26 UTC
-#> # A tibble: 3,749 × 57
+#> ℹ Data updated: 2026-11-09 17:18:45 UTC
+#> # A tibble: 3,936 × 57
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>
-#>  1 401909938   2027           2 2026-11-07 2026-11-07 17:00:00    3064290
-#>  2 401909938   2027           2 2026-11-07 2026-11-07 17:00:00    3138196
-#>  3 401909938   2027           2 2026-11-07 2026-11-07 17:00:00    3112335
-#>  4 401909938   2027           2 2026-11-07 2026-11-07 17:00:00    3936299
-#>  5 401909938   2027           2 2026-11-07 2026-11-07 17:00:00    4431767
-#>  6 401909938   2027           2 2026-11-07 2026-11-07 17:00:00    4277848
-#>  7 401909938   2027           2 2026-11-07 2026-11-07 17:00:00    4565698
-#>  8 401909938   2027           2 2026-11-07 2026-11-07 17:00:00    4592427
-#>  9 401909938   2027           2 2026-11-07 2026-11-07 17:00:00    4698719
-#> 10 401909938   2027           2 2026-11-07 2026-11-07 17:00:00       3978
-#> # ℹ 3,739 more rows
+#>  1 401909945   2027           2 2026-11-08 2026-11-08 15:30:00       1966
+#>  2 401909945   2027           2 2026-11-08 2026-11-08 15:30:00    3059318
+#>  3 401909945   2027           2 2026-11-08 2026-11-08 15:30:00    3917376
+#>  4 401909945   2027           2 2026-11-08 2026-11-08 15:30:00    4431678
+#>  5 401909945   2027           2 2026-11-08 2026-11-08 15:30:00    5124612
+#>  6 401909945   2027           2 2026-11-08 2026-11-08 15:30:00    3912848
+#>  7 401909945   2027           2 2026-11-08 2026-11-08 15:30:00    4432446
+#>  8 401909945   2027           2 2026-11-08 2026-11-08 15:30:00    2581018
+#>  9 401909945   2027           2 2026-11-08 2026-11-08 15:30:00    4351851
+#> 10 401909945   2027           2 2026-11-08 2026-11-08 15:30:00    4711297
+#> # ℹ 3,926 more rows
 #> # ℹ 51 more variables: athlete_display_name <chr>, team_id <int>,
 #> #   team_name <chr>, team_location <chr>, team_short_display_name <chr>,
 #> #   minutes <dbl>, field_goals_made <int>, field_goals_attempted <int>,
@@ -504,7 +618,7 @@ load_nba_player_box(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule(seasons = most_recent_nba_season())
 #> ── ESPN NBA schedules from hoopR data repository ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-08 12:33:04 UTC
+#> ℹ Data updated: 2026-11-09 17:19:34 UTC
 #> # A tibble: 1,206 × 79
 #>         id uid   date  attendance time_valid neutral_site play_by_play_available
 #>      <int> <chr> <chr>      <dbl> <lgl>      <lgl>        <lgl>                 
@@ -529,21 +643,21 @@ load_nba_schedule(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_shots(seasons = most_recent_nba_season())
 #> ── ESPN NBA shots from hoopR data repository ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-08 12:33:44 UTC
-#> # A tibble: 31,672 × 20
+#> ℹ Data updated: 2026-11-09 17:20:36 UTC
+#> # A tibble: 33,231 × 20
 #>      game_id season period_number clock_display_value team_id athlete_id_1
 #>        <int>  <int>         <int> <chr>                 <int>        <int>
-#>  1 401909938   2027             1 11:46                    11      4395712
-#>  2 401909938   2027             1 11:32                     7      3112335
-#>  3 401909938   2027             1 11:24                    11      3149673
-#>  4 401909938   2027             1 11:05                     7      4431767
-#>  5 401909938   2027             1 10:38                     7      3064290
-#>  6 401909938   2027             1 10:18                    11      4017837
-#>  7 401909938   2027             1 10:03                     7      3064290
-#>  8 401909938   2027             1 9:49                      7      3138196
-#>  9 401909938   2027             1 9:35                     11      4017837
-#> 10 401909938   2027             1 9:35                     11      4017837
-#> # ℹ 31,662 more rows
+#>  1 401909945   2027             1 11:48                    20         1966
+#>  2 401909945   2027             1 11:26                     4      4432822
+#>  3 401909945   2027             1 11:14                    20      3059318
+#>  4 401909945   2027             1 11:05                     4      5095151
+#>  5 401909945   2027             1 10:42                    20      3059318
+#>  6 401909945   2027             1 10:34                     4      4397189
+#>  7 401909945   2027             1 10:31                     4      4432822
+#>  8 401909945   2027             1 10:31                     4      4432822
+#>  9 401909945   2027             1 10:17                    20      4431678
+#> 10 401909945   2027             1 10:10                     4      5095151
+#> # ℹ 33,221 more rows
 #> # ℹ 14 more variables: athlete_id_2 <int>, type_id <int>, type_text <chr>,
 #> #   scoring_play <lgl>, score_value <int>, coordinate_x <dbl>,
 #> #   coordinate_y <dbl>, coordinate_x_raw <dbl>, coordinate_y_raw <dbl>,

@@ -38,6 +38,7 @@ https://api-1.dbbl.scb.world)."><meta property="og:image" content="https://raw.g
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -143,9 +144,11 @@ api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (le
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: All-time season-average records (points, rebounds, assists, ...), one row per
-record. An empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this order (sportsdataverse-py
-<code>scb_records_season_averages</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League the row belongs to: <code>bbl</code> (men) or <code>dbbl</code> (women); BBL and DBBL game ids overlap, so a game is (league, game_id).</td></tr><tr><td>stat</td><td>character</td><td>The record's stat list: assist_average, block_average, efficiency_average, foul_average, free_throws_success_percentage, points_average, rebound_average, steal_average, three_point_shot_average or turnover_average.</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26), the sdv key; the API's <code>season_id</code> plus one.</td></tr><tr><td>season_id</td><td>integer</td><td>Season, START year (2026 = 2026-27).</td></tr><tr><td>place</td><td>integer</td><td>Rank within the list (1 = best); 0 on some rows.</td></tr><tr><td>order_id</td><td>integer</td><td>Sort order within the list.</td></tr><tr><td>value</td><td>double</td><td>The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages.</td></tr><tr><td>ratio</td><td>double</td><td>[made, attempted] as strings, on percentage records only; null otherwise.</td></tr><tr><td>season_player_id</td><td>character</td><td>Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score <code>seasonPlayer.id</code>, action <code>seasonPlayerId</code> and <code>/season-players/{seasonPlayerId}</code>.</td></tr><tr><td>real_player_id</td><td>integer</td><td>Global person id: the same across clubs and seasons. Joins to <code>realPlayerId</code> everywhere.</td></tr><tr><td>first_name</td><td>character</td><td>Player's given name.</td></tr><tr><td>last_name</td><td>character</td><td>Player's family name.</td></tr><tr><td>team_name</td><td>character</td><td>Team name as listed that season (sponsor names included).</td></tr><tr><td>team_tlc</td><td>character</td><td>The player's team code.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per season-average record.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "scb_records_season_averages")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="scb_seasons.html">scb_seasons()</a></code>.</p>

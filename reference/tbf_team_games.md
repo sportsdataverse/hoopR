@@ -37,35 +37,13 @@ tbf_team_games(season, team_process_id, competition = "bsl")
 
 ## Value
 
-A `hoopR_data` tibble. One row per game of the team (scheduled games
-included). Every column below is always present (a zero-row tibble keeps
-them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). |
-| competition | character | TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). |
-| team_process_id | integer | Team-season id of the request (key space: TBF team registrations). |
-| match_id | integer | TBF game id (key space: TBF games, one global sequence). |
-| match_code | character | TBF short game code. |
-| tipoff | POSIXct | Tip-off as a naive timestamp in Turkey local time (tarih). |
-| week | character | Week label (formattedWeek), e.g. '1. Hafta'. |
-| city | character | City of the venue (sehir), uppercase Turkish. |
-| venue | character | Venue name (salon). |
-| home_team_process_id | integer | Home team-season id (takimAId; key space: TBF team registrations). |
-| home_team | character | Home team name (takimA). |
-| home_score | integer | Home points (skorA); null before the game. |
-| away_team_process_id | integer | Away team-season id (takimBId). |
-| away_team | character | Away team name (takimB). |
-| away_score | integer | Away points (skorB); null before the game. |
-| team_is_home | logical | True when the asked team was the home side (isHome). |
-| team_won | logical | True when the asked team won (isWin); false for a loss or an unplayed game. |
-| is_played | logical | True once the game has been played (isPlayed). |
-| status | character | Game status text in Turkish: Oynandi = played, Oynanmadi = not played (durum). |
-| status_id | integer | Game status code (durumId): 1 = played, 4 = not played. |
-| has_overtime | logical | Overtime flag (uzatma = overtime). Reliability unverified: false on every one of 64 BSL 2025-26 games checked. |
+A `hoopR_data` tibble with one row per game of the team. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_team_games")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

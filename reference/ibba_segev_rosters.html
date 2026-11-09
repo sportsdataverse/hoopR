@@ -36,6 +36,7 @@ Endpoint: GET https://stats.segevstats.com/realtimestat_heb/api/?method=getGameI
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,7 +140,11 @@ Aviv, 2025-26 round 1): <code>segev_game_id</code> in ibba_games.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble with these columns:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_id</td><td>integer</td><td>Segev game id (key space: one flat sequence across seasons and competitions); equals the IBBA ibba_games segev_game_id from 2025-26. Not an IBBA game id.</td></tr><tr><td>team_side</td><td>character</td><td>Side of the game: home or away (the feed's homeTeam / awayTeam; an action's parameters.team 1 = home, 2 = away).</td></tr><tr><td>team_id</td><td>integer</td><td>Segev team id of the roster's side (stable across seasons).</td></tr><tr><td>player_id</td><td>integer</td><td>Segev player id (key space: Segev players, stable across seasons: Jaylen Hoard = 1000 in games 50 and 419); null on team lines and on actions without a player. Not an IBBA player-season id.</td></tr><tr><td>jersey_number</td><td>integer</td><td>Jersey number as an integer.</td></tr><tr><td>first_name</td><td>character</td><td>First name in English, upper case.</td></tr><tr><td>last_name</td><td>character</td><td>Last name in English, upper case.</td></tr><tr><td>first_name_local</td><td>character</td><td>First name in Hebrew.</td></tr><tr><td>last_name_local</td><td>character</td><td>Last name in Hebrew.</td></tr><tr><td>in_roster</td><td>integer</td><td>Roster flag, 0 or 2 in the samples; meaning unverified.</td></tr><tr><td>api_id</td><td>integer</td><td>External player id as an integer: null or equal to the Segev player_id (both occur within one game); its source is unverified.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per player on a game roster.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "ibba_segev_rosters")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="ibba_segev_game_info.html">ibba_segev_game_info()</a></code>.</p>

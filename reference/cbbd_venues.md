@@ -10,24 +10,19 @@ cbbd_venues()
 
 ## Value
 
-A `hoopR_data` tibble with one row per venue:
-
-|           |           |                                 |
-|-----------|-----------|---------------------------------|
-| col_name  | types     | description                     |
-| id        | integer   | CollegeBasketballData venue id. |
-| source_id | character | Source (ESPN) venue id.         |
-| name      | character | Venue name.                     |
-| city      | character | Venue city.                     |
-| state     | character | Venue state.                    |
-| country   | character | Venue country.                  |
+A `hoopR_data` tibble with one row per venue. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_venues")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Examples
 
 ``` r
 # \donttest{
   try(cbbd_venues())
-#> ✖ 2026-11-09 17:03:33.060771: Invalid arguments or no venues data available!
+#> ✖ 2026-11-09 19:09:49.863909: Invalid arguments or no venues data available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

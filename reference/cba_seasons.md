@@ -14,16 +14,12 @@ cba_seasons()
 
 ## Value
 
-A `hoopR_data` tibble: One row per season: label, START year, default
-flag. An empty valid answer is a zero-row tibble with these columns, in
-this order (sportsdataverse-py `cba_seasons`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| is_default | integer | Default-selection flag: 1 = the site's default season (exactly one row: the season in progress or next), 2 = not the default. |
-| key | character | Season label 'YYYY-YYYY' (START year - END year), e.g. '2025-2026'; the sdv season key is the second year. The list runs from the upcoming season (2026-2027, 32 rows) down to 1995-1996 with no gap. |
-| value | character | Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. String of digits ('2025'); the value every season parameter takes. |
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cba_seasons")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -125,7 +121,7 @@ lists every function in this family.
 # \donttest{
   try(cba_seasons())
 #> ── CBA Seasons from data-server.cbaleague.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:27 UTC
+#> ℹ Data updated: 2026-11-09 19:09:43 UTC
 #> # A tibble: 32 × 3
 #>    is_default key       value
 #>         <int> <chr>     <chr>

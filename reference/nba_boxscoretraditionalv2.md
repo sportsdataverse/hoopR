@@ -197,7 +197,8 @@ nba_glalumboxscoresimilarityscore(
 
 ## Value
 
-A list of data frames: PlayerStats, TeamStats, TeamStarterBenchStats
+A named list of tibbles: `PlayerStats`, `TeamStats`,
+`TeamStarterBenchStats`.
 
 **PlayerStats**
 
@@ -296,9 +297,9 @@ A list of data frames: PlayerStats, TeamStats, TeamStarterBenchStats
 | PF | character | Personal fouls. |
 | PTS | character | Points scored. |
 
-Returns a named list of data frames: PlayerStats, TeamStats
+A named list of tibbles: `PlayerStats`, `TeamStats`.
 
-PlayerStats
+**PlayerStats**
 
 |  |  |  |
 |----|----|----|
@@ -336,7 +337,7 @@ PlayerStats
 | POSS | character | Poss. |
 | PIE | character | Player Impact Estimate (0-1). |
 
-TeamStats
+**TeamStats**
 
 |  |  |  |
 |----|----|----|
@@ -373,8 +374,7 @@ TeamStats
 
 Returns a named list of data frames: PlayerDefensiveStats, Table1
 
-Returns a named list of data frames: sqlPlayersFourFactors,
-sqlTeamFourFactors
+A named list of tibbles: `sqlPlayersFourFactors`, `sqlTeamsFourFactors`.
 
 **sqlPlayersFourFactors**
 
@@ -420,7 +420,7 @@ sqlTeamFourFactors
 | OPP_TOV_PCT | character |  |
 | OPP_OREB_PCT | character |  |
 
-Returns a named list of data frames: sqlPlayersMisc, sqlTeamsMisc
+A named list of tibbles: `sqlPlayersMisc`, `sqlTeamsMisc`.
 
 **sqlPlayersMisc**
 
@@ -474,7 +474,7 @@ Returns a named list of data frames: sqlPlayersMisc, sqlTeamsMisc
 | PF | character | Personal fouls. |
 | PFD | character |  |
 
-Returns a named list of data frames: sqlPlayersScoring, sqlTeamsScoring
+A named list of tibbles: `sqlPlayersScoring`, `sqlTeamsScoring`.
 
 **sqlPlayersScoring**
 
@@ -534,7 +534,7 @@ Returns a named list of data frames: sqlPlayersScoring, sqlTeamsScoring
 | PCT_AST_FGM | character |  |
 | PCT_UAST_FGM | character |  |
 
-Returns a named list of data frames: sqlPlayersUsage, sqlTeamsUsage
+A named list of tibbles: `sqlPlayersUsage`, `sqlTeamsUsage`.
 
 **sqlPlayersUsage**
 
@@ -600,15 +600,29 @@ Returns a named list of data frames: sqlPlayersUsage, sqlTeamsUsage
 | PCT_PFD | character |  |
 | PCT_PTS | character |  |
 
-Returns a named list of data frames: AvailableVideo, GameInfo,
-GameSummary, InactivePlayers, LastMeeting, LineScore, Officials,
-OtherStats, SeasonSeries
+A named list of tibbles: `GameSummary`, `OtherStats`, `Officials`,
+`InactivePlayers`, `GameInfo`, `LineScore`, `LastMeeting`,
+`SeasonSeries`, `AvailableVideo`.
 
 **GameSummary**
 
-Columns as documented in the shared
-[nba_boxscoresummaryv2_gamesummary_schema](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv2_gamesummary_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_DATE_EST | character | Game date est. |
+| GAME_SEQUENCE | character | Game sequence. |
+| GAME_ID | character | Unique game identifier. |
+| GAME_STATUS_ID | character | Numeric game status identifier. |
+| GAME_STATUS_TEXT | character | Game status display text (e.g. 'Final', '4:32 - 4th'). |
+| GAMECODE | character |  |
+| HOME_TEAM_ID | character | Unique identifier for the home team. |
+| VISITOR_TEAM_ID | character |  |
+| SEASON | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| LIVE_PERIOD | character |  |
+| LIVE_PC_TIME | character |  |
+| NATL_TV_BROADCASTER_ABBREVIATION | character |  |
+| LIVE_PERIOD_TIME_BCAST | character |  |
+| WH_STATUS | character | Wh status. |
 
 **OtherStats**
 
@@ -694,15 +708,35 @@ table.
 
 **LastMeeting**
 
-Columns as documented in the shared
-[nba_boxscoresummaryv2_lastmeeting_schema](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv2_lastmeeting_schema.md)
-table.
+|                                  |           |                         |
+|----------------------------------|-----------|-------------------------|
+| col_name                         | types     | description             |
+| GAME_ID                          | character | Unique game identifier. |
+| LAST_GAME_ID                     | character |                         |
+| LAST_GAME_DATE_EST               | character |                         |
+| LAST_GAME_HOME_TEAM_ID           | character |                         |
+| LAST_GAME_HOME_TEAM_CITY         | character |                         |
+| LAST_GAME_HOME_TEAM_NAME         | character |                         |
+| LAST_GAME_HOME_TEAM_ABBREVIATION | character |                         |
+| LAST_GAME_HOME_TEAM_POINTS       | character |                         |
+| LAST_GAME_VISITOR_TEAM_ID        | character |                         |
+| LAST_GAME_VISITOR_TEAM_CITY      | character |                         |
+| LAST_GAME_VISITOR_TEAM_NAME      | character |                         |
+| LAST_GAME_VISITOR_TEAM_CITY1     | character |                         |
+| LAST_GAME_VISITOR_TEAM_POINTS    | character |                         |
 
 **SeasonSeries**
 
-Columns as documented in the shared
-[nba_boxscoresummaryv2_seasonseries_schema](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv2_seasonseries_schema.md)
-table.
+|                  |           |                                      |
+|------------------|-----------|--------------------------------------|
+| col_name         | types     | description                          |
+| GAME_ID          | character | Unique game identifier.              |
+| HOME_TEAM_ID     | character | Unique identifier for the home team. |
+| VISITOR_TEAM_ID  | character |                                      |
+| GAME_DATE_EST    | character | Game date est.                       |
+| HOME_TEAM_WINS   | character | Home team's team wins.               |
+| HOME_TEAM_LOSSES | character | Home team's team losses.             |
+| SERIES_LEADER    | character |                                      |
 
 **AvailableVideo**
 
@@ -719,7 +753,7 @@ table.
 
 Returns a named list of data frames: PlayerMatchupsStats
 
-Returns a named list of data frames: PlayerStats, TeamStats
+A named list of tibbles: `PlayerStats`, `TeamStats`.
 
 **PlayerStats**
 
@@ -787,8 +821,8 @@ Returns a named list of data frames: PlayerStats, TeamStats
 | DFGA | character |  |
 | DFG_PCT | character |  |
 
-Returns a named list of data frames: HustleStatsAvailable, PlayerStats,
-TeamStats
+A named list of tibbles: `HustleStatsAvailable`, `PlayerStats`,
+`TeamStats`.
 
 **HustleStatsAvailable**
 

@@ -32,7 +32,7 @@ espn_nba_season_rankings(season = most_recent_nba_season(), ...)
 
 ## Value
 
-A tibble with one row per ranking source.
+A `hoopR_data` tibble with one row per ranking source.
 
 |            |           |                                    |
 |------------|-----------|------------------------------------|
@@ -42,7 +42,7 @@ A tibble with one row per ranking source.
 | ranking_id | character | ESPN ranking id.                   |
 | ref        | character | `$ref` URL for the ranking detail. |
 
-A tibble with one row per ranking source.
+A `hoopR_data` tibble with one row per ranking source.
 
 |            |           |                                    |
 |------------|-----------|------------------------------------|
@@ -76,7 +76,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_rankings(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Rankings Index ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:40 UTC
+#> ℹ Data updated: 2026-11-09 19:10:58 UTC
 #> # A tibble: 2 × 4
 #>   league                  season ranking_id ref                                 
 #>   <chr>                    <int> <chr>      <chr>                               
@@ -86,7 +86,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_rankings(season = 2025)
 #> ── ESPN NBA Season Rankings Index ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:40 UTC
+#> ℹ Data updated: 2026-11-09 19:10:59 UTC
 #> # A tibble: 0 × 4
 #> # ℹ 4 variables: league <chr>, season <int>, ranking_id <chr>, ref <chr>
 # }

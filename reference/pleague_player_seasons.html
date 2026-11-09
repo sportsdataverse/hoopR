@@ -36,6 +36,7 @@ Endpoint: GET https://pleagueofficial.com/player/{player_page_id}"><meta propert
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,9 +140,11 @@ Endpoint: GET https://pleagueofficial.com/player/{player_page_id}"><meta propert
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: One player's season totals and per-game averages, league and East Asia Super League, with
-a career row. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
-<code>pleague_player_seasons</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>player_page_id</td><td>character</td><td>The 8-character page id of /player/{id} (e.g. '1JbPozLB'). The box random_id on 2022-23+ rows; NOT the box player_id.</td></tr><tr><td>competition</td><td>character</td><td>Table block: plg (the league's tables) or easl (the East Asia Super League block, present only for players with games there).</td></tr><tr><td>table</td><td>character</td><td>totals (the (Chinese text) table: season totals) or averages (the (Chinese text) table: per game).</td></tr><tr><td>season</td><td>integer</td><td>Season END year of the slug; null on the career row.</td></tr><tr><td>season_slug</td><td>character</td><td>Season slug as printed ('2025-26'), or 'career' for the final totals / averages row.</td></tr><tr><td>games</td><td>integer</td><td>Games played ((Chinese text)).</td></tr><tr><td>minutes</td><td>character</td><td>Minutes 'mm:ss' (a season total in the totals table, a per-game average in the averages table).</td></tr><tr><td>points</td><td>double</td><td>Points (total in the totals table, per game in the averages table; (Chinese text)).</td></tr><tr><td>reb</td><td>double</td><td>Rebounds (total / per game; (Chinese text)).</td></tr><tr><td>ast</td><td>double</td><td>Assists (total / per game; (Chinese text)).</td></tr><tr><td>stl</td><td>double</td><td>Steals (total / per game; (Chinese text)).</td></tr><tr><td>blk</td><td>double</td><td>Blocks (total / per game; (Chinese text)).</td></tr><tr><td>tov</td><td>double</td><td>Turnovers (total / per game; (Chinese text)).</td></tr><tr><td>pf</td><td>double</td><td>Personal fouls (total / per game; (Chinese text)).</td></tr><tr><td>fg2_made</td><td>double</td><td>2-point makes: the first number of the page's '56 - 103' cell (total / per game).</td></tr><tr><td>fg2_att</td><td>double</td><td>2-point attempts: the second number of the cell.</td></tr><tr><td>fg2_pct</td><td>double</td><td>2-point percentage 0-100 ('54.4 percent' -&gt; 54.4).</td></tr><tr><td>fg3_made</td><td>double</td><td>3-point makes (total / per game).</td></tr><tr><td>fg3_att</td><td>double</td><td>3-point attempts (total / per game).</td></tr><tr><td>fg3_pct</td><td>double</td><td>3-point percentage 0-100.</td></tr><tr><td>ft_made</td><td>double</td><td>Free-throw makes (total / per game).</td></tr><tr><td>ft_att</td><td>double</td><td>Free-throw attempts (total / per game).</td></tr><tr><td>ft_pct</td><td>double</td><td>Free-throw percentage 0-100.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per player-season.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "pleague_player_seasons")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="pleague_schedule.html">pleague_schedule()</a></code>.</p>

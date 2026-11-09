@@ -40,9 +40,7 @@ load_nba_team_aliases(..., dbConnection = NULL, tablename = NULL)
 
 ## Value
 
-Returns a `hoopR_data` tibble with one row per team alias, or `NULL`
-after appending the rows to `tablename` when `dbConnection` and
-`tablename` are both given.
+A `hoopR_data` tibble with one row per team alias.
 
 |  |  |  |
 |----|----|----|
@@ -59,6 +57,9 @@ after appending the rows to `tablename` when `dbConnection` and
 | valid_to | integer | Last season (ending year) the source shows this id or name on the team, inclusive; a gap in the source splits the window into two rows. |
 | match_method | character | How the row was matched: `deterministic` (a formula or shared key), `crosswalk` (carried from a published crosswalk), `curated` (a cited hand-made map); for a captured team directory, `alias`, `exact_name` (normalized name) or `dict` (curated name dictionary). |
 | evidence | character | The asset or file the row came from. |
+
+`NULL` instead, after appending the rows to `tablename`, when
+`dbConnection` and `tablename` are both given.
 
 ## See also
 

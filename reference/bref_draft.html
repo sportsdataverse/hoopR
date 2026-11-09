@@ -44,6 +44,7 @@ Sys.sleep()."><meta property="og:image" content="https://raw.githubusercontent.c
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -151,9 +152,11 @@ aggressive scraping (~20 requests/minute) – space repeated calls with
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble with one row per draft pick (career columns
-shown – column names are Basketball-Reference <code>data-stat</code> keys):</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>pick_overall</td><td>integer</td><td>Overall draft pick number.</td></tr><tr><td>round</td><td>integer</td><td>Draft round.</td></tr><tr><td>team</td><td>character</td><td>Drafting team abbreviation.</td></tr><tr><td>player</td><td>character</td><td>Player name.</td></tr><tr><td>college_name</td><td>character</td><td>College / pre-draft team.</td></tr><tr><td>seasons</td><td>integer</td><td>NBA seasons played.</td></tr><tr><td>g</td><td>integer</td><td>Career games.</td></tr><tr><td>pts</td><td>numeric</td><td>Career points.</td></tr><tr><td>trb</td><td>numeric</td><td>Career total rebounds.</td></tr><tr><td>ast</td><td>numeric</td><td>Career assists.</td></tr><tr><td>ws</td><td>numeric</td><td>Career win shares.</td></tr><tr><td>bpm</td><td>numeric</td><td>Career box plus/minus.</td></tr><tr><td>vorp</td><td>numeric</td><td>Career value over replacement player.</td></tr><tr><td>season</td><td>integer</td><td>Draft year (echoes the <code>season</code> argument).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per draft pick.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "bref_draft")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other Basketball-Reference Functions:

@@ -34,6 +34,7 @@
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -143,8 +144,11 @@
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A data frame with the following variables</p>
-<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>team_id</td><td>character</td><td>Franchise team id (legacy <code>/team/{id}/...</code> urls).</td></tr><tr><td>team_name</td><td>character</td><td>Full team display name (e.g. 'Las Vegas Aces').</td></tr><tr><td>team_url</td><td>character</td><td>URL for team.</td></tr><tr><td>conference_id</td><td>character</td><td>Conference identifier.</td></tr><tr><td>conference</td><td>character</td><td>Conference.</td></tr><tr><td>division</td><td>numeric</td><td>Team division.</td></tr><tr><td>year</td><td>numeric</td><td>4-digit year.</td></tr><tr><td>season_id</td><td>character</td><td>Season id (legacy urls).</td></tr><tr><td>season_team_id</td><td>character</td><td>Season-team id (modern <code>/teams/{id}</code> urls).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per team.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "ncaa_mbb_teams")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p></p><div class="sourceCode r"><pre><code><span>  <span class="fu"><a href="../reference/ncaa_mbb_teams.html">ncaa_mbb_teams</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2023</span>, division <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre><p></p></div>

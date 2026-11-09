@@ -43,17 +43,53 @@ espn_nba_player_career_stats(athlete_id, stat_type = 0L, ...)
 
 ## Value
 
-A long tibble (one row per stat_type x split x category x stat).
+A `hoopR_data` tibble with one row per stat_type x split x category x
+stat.
 
-Columns as documented in the shared
-[espn_mbb_player_career_stats_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_career_stats_schema.md)
-table.
+|                  |           |                                                 |
+|------------------|-----------|-------------------------------------------------|
+| col_name         | types     | description                                     |
+| league           | character | League slug.                                    |
+| athlete_id       | character | ESPN athlete id.                                |
+| stat_type_id     | character | Stat-type code (0 = reg, 1 = post, 2 = career). |
+| split_id         | character | Split id.                                       |
+| split_name       | character | Split name (typically "All Splits").            |
+| split_type       | character | Split type code.                                |
+| category_name    | character | Category key (e.g. "defensive").                |
+| category_display | character | Category display name.                          |
+| category_short   | character | Category short display.                         |
+| category_abbrev  | character | Category abbreviation.                          |
+| stat_name        | character | Stat key.                                       |
+| stat_abbrev      | character | Stat abbreviation.                              |
+| stat_display     | character | Stat display name.                              |
+| stat_short       | character | Stat short display.                             |
+| description      | character | Stat description.                               |
+| value            | numeric   | Stat value.                                     |
+| display_value    | character | Display-formatted value.                        |
 
-A long tibble (one row per stat_type x split x category x stat).
+A `hoopR_data` tibble with one row per stat_type x split x category x
+stat.
 
-Columns as documented in the shared
-[espn_mbb_player_career_stats_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_player_career_stats_schema.md)
-table.
+|                  |           |                                                 |
+|------------------|-----------|-------------------------------------------------|
+| col_name         | types     | description                                     |
+| league           | character | League slug.                                    |
+| athlete_id       | character | ESPN athlete id.                                |
+| stat_type_id     | character | Stat-type code (0 = reg, 1 = post, 2 = career). |
+| split_id         | character | Split id.                                       |
+| split_name       | character | Split name (typically "All Splits").            |
+| split_type       | character | Split type code.                                |
+| category_name    | character | Category key (e.g. "defensive").                |
+| category_display | character | Category display name.                          |
+| category_short   | character | Category short display.                         |
+| category_abbrev  | character | Category abbreviation.                          |
+| stat_name        | character | Stat key.                                       |
+| stat_abbrev      | character | Stat abbreviation.                              |
+| stat_display     | character | Stat display name.                              |
+| stat_short       | character | Stat short display.                             |
+| description      | character | Stat description.                               |
+| value            | numeric   | Stat value.                                     |
+| display_value    | character | Display-formatted value.                        |
 
 ## Details
 
@@ -80,7 +116,7 @@ Saiem Gilani
   # LeBron James - regular + postseason combined
   espn_mbb_player_career_stats(athlete_id = 4593919)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Career Stats ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:22 UTC
+#> ℹ Data updated: 2026-11-09 19:10:41 UTC
 #> # A tibble: 87 × 17
 #>    league   athlete_id stat_type_id split_id split_name split_type category_name
 #>    <chr>    <chr>      <chr>        <chr>    <chr>      <chr>      <chr>        
@@ -102,7 +138,7 @@ Saiem Gilani
   # Just career aggregate
   espn_mbb_player_career_stats(athlete_id = 4593919, stat_type = 2L)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Career Stats ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:23 UTC
+#> ℹ Data updated: 2026-11-09 19:10:41 UTC
 #> # A tibble: 0 × 17
 #> # ℹ 17 variables: league <chr>, athlete_id <chr>, stat_type_id <chr>,
 #> #   split_id <chr>, split_name <chr>, split_type <chr>, category_name <chr>,
@@ -114,7 +150,7 @@ Saiem Gilani
   # LeBron James - regular + postseason combined
   espn_nba_player_career_stats(athlete_id = 1966)
 #> ── ESPN NBA Athlete Career Stats ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:23 UTC
+#> ℹ Data updated: 2026-11-09 19:10:41 UTC
 #> # A tibble: 114 × 17
 #>    league athlete_id stat_type_id split_id split_name split_type category_name
 #>    <chr>  <chr>      <chr>        <chr>    <chr>      <chr>      <chr>        
@@ -136,7 +172,7 @@ Saiem Gilani
   # Just career aggregate
   espn_nba_player_career_stats(athlete_id = 1966, stat_type = 2L)
 #> ── ESPN NBA Athlete Career Stats ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:23 UTC
+#> ℹ Data updated: 2026-11-09 19:10:41 UTC
 #> # A tibble: 0 × 17
 #> # ℹ 17 variables: league <chr>, athlete_id <chr>, stat_type_id <chr>,
 #> #   split_id <chr>, split_name <chr>, split_type <chr>, category_name <chr>,

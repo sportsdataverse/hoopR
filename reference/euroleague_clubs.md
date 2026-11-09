@@ -25,31 +25,12 @@ euroleague_clubs(competition_code, season_code)
 
 ## Value
 
-A `hoopR_data` tibble with one row per club:
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| code | character | EuroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). |
-| name | character | Display name. |
-| abbreviated_name | character | Abbreviated display name. |
-| editorial_name | character | Editorial (long-form) display name. |
-| tv_code | character | Three-letter broadcast abbreviation of the club. |
-| is_virtual | logical | Whether the club is a placeholder rather than a real club. |
-| sponsor | character | Club sponsor. |
-| club_permanent_name | character | Permanent club name independent of sponsor naming. |
-| club_permanent_alias | character | Permanent club alias independent of sponsor naming. |
-| address | character | Street address. |
-| website | character | Official website URL. |
-| tickets_url | character | Ticketing URL. |
-| twitter_account | character | Twitter / X handle. |
-| venue_code | character | Code of the venue the club or game plays at (Utf8 join key). |
-| city | character | City the club is based in. |
-| president | character | Club president. |
-| phone | character | Contact phone number. |
-| images_crest | character | URL of the club crest image. |
-| country_code | character | ISO country code. |
-| country_name | character | Country name. |
+A `hoopR_data` tibble with one row per club. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "euroleague_clubs")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -77,7 +58,7 @@ lists every function in this family.
     euroleague_clubs(competition_code = "E", season_code = "E2025")
   })
 #> ── EuroLeague clubs from api-live.euroleague.net ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:08 UTC
+#> ℹ Data updated: 2026-11-09 19:11:20 UTC
 #> # A tibble: 20 × 20
 #>    code  name         abbreviated_name editorial_name tv_code is_virtual sponsor
 #>    <chr> <chr>        <chr>            <chr>          <chr>   <lgl>      <chr>  

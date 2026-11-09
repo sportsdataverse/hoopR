@@ -24,20 +24,13 @@ cebl_news(language, team_source_id = NULL)
 
 ## Value
 
-A `hoopR_data` tibble: News articles in one language. The API answered
-an empty list on every probe, so this raises `hoopR_no_data`. An empty
-valid answer raises `hoopR_no_data`; the columns are always these, in
-this order (sportsdataverse-py `cebl_news`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| news_id | integer | CEBL news article id; null when the API gives none. Unobserved: the route answered an empty list on every probe. |
-| language | character | Language code of the request ('en'); the body does not echo it. |
-| title | character | Article headline (upstream schema; unobserved, the route answered an empty list on every probe). |
-| published_at_utc | POSIXct | Publication time in UTC (upstream schema; unobserved, no article was ever served). |
-| image_url | character | Article image URL (upstream schema; unobserved, no article was ever served). |
-| html_content | character | Article body as HTML (upstream schema; unobserved, no article was ever served). |
+A `hoopR_data` tibble with one row per news article. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cebl_news")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

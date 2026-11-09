@@ -35,30 +35,12 @@ euroleague_game_pbp(game_code, season_code)
 
 ## Value
 
-A `hoopR_data` tibble with one row per play:
-
-|  |  |  |
-|----|----|----|
-| col_name | types | description |
-| quarter | integer | Period of the play: 1-4, or 5 for every overtime period. |
-| team_a | character | Display name of team A (= the home side, measured on one game). |
-| team_b | character | Display name of team B (= the away side, measured on one game). |
-| code_team_a | character | EuroLeague club code of team A (= the home side, measured on one game); Utf8 join key. |
-| code_team_b | character | EuroLeague club code of team B (= the away side, measured on one game); Utf8 join key. |
-| type | integer | Play type (engine integer). |
-| numberofplay | integer | Sequence number of the play within the game. |
-| codeteam | character | EuroLeague club code of the team on the play (Utf8 join key; blank on administrative plays). |
-| player_id | character | EuroLeague player code (Utf8 join key; space padding stripped; blank on team rows). |
-| playtype | character | Play type code (BP = begin period, 2FGM, 3FGA, FTM, AS = assist, TO, RV, CM, ...). |
-| player | character | Player display name (SURNAME, GIVEN NAME). |
-| team | character | Display name of the team on the play (null on administrative plays). |
-| dorsal | character | Jersey number as displayed. |
-| minute | integer | Game minute of the event (1-based; 41+ in overtime). |
-| markertime | character | Game clock at the play (mm:ss remaining in the period). |
-| points_a | integer | Running score of team A (= the home side, measured on one game) after the event. |
-| points_b | integer | Running score of team B (= the away side, measured on one game) after the event. |
-| comment | character | Free-text annotation of the play. |
-| playinfo | character | Play description. |
+A `hoopR_data` tibble with one row per play. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "euroleague_game_pbp")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

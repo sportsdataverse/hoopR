@@ -28,22 +28,13 @@ tbf_weeks(season, competition = "bsl")
 
 ## Value
 
-A `hoopR_data` tibble. One row per week in play order; `week` is the
-value the schedule and standings take. Every column below is always
-present (a zero-row tibble keeps them and their types); an answer with
-nothing in it raises `hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| activity_id | integer | Activity id of the request's league-season (key space: TBF league-seasons). |
-| season | integer | Season END year of the request (2027 = 2026-2027). |
-| competition | character | TBF league of the request: bsl, tbl or kbsl. |
-| week | character | Week number as a string; the value the week argument of tbf_standings and tbf_schedule takes. |
-| phase | integer | Phase code (devre = half / phase): 1 = first half of the regular season, 2 = second half, 3 = playoff quarter-final, 4 = semi-final, 5 = final. |
-| phase_name | character | Phase name in Turkish on playoff weeks (Playoff Final = final); null on regular-season weeks. |
-| label | character | Week label: 'Hafta N' (week N) or the playoff round name. |
-| is_current | logical | True on the current (or last played) week; exactly one row. |
+A `hoopR_data` tibble with one row per week in play order. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tbf_weeks")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -90,7 +81,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_weeks(competition = "bsl", season = 2027))
 #> ── TBF Weeks ──────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:45 UTC
+#> ℹ Data updated: 2026-11-09 19:15:41 UTC
 #> # A tibble: 30 × 8
 #>    activity_id season competition week  phase phase_name label    is_current
 #>          <int>  <int> <chr>       <chr> <int> <chr>      <chr>    <lgl>     

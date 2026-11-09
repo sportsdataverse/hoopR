@@ -22,20 +22,13 @@ sportpress_competition_staff(competition_id)
 
 ## Value
 
-A `hoopR_data` tibble: Coaching staff (head coach, assistants) of every
-competition team of one competition. An empty valid answer raises
-`hoopR_no_data`; the columns are always these, in this order
-(sportsdataverse-py `sportpress_competition_staff`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id of the team the staff member works for. |
-| competition_team_id | integer | Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. |
-| staff_id | integer | Staff member id (key space: sportpress staff). |
-| name | character | Staff member name 'First Last' (free text). |
-| title_id | integer | Staff title id: 1 = Head coach; Assistant coach has its own id. |
-| title_name | character | Staff title in English: Head coach or Assistant coach. |
+A `hoopR_data` tibble with one row per staff member. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportpress_competition_staff")`) and in
+the searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

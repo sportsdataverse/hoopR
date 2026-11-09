@@ -34,22 +34,13 @@ fiba_gamepage_lineup(game_id, comp, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | FIBA game id (Int64), global across competitions: gdapGameId, the `<gameId>` of a game-page URL. |
-| competition_id | integer | FIBA competition id (Int64) of the game's edition; the comp argument. |
-| team_side | character | A or B: whether the row is the schedule's team A or team B (null when the page does not say). |
-| organisation_id | integer | Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T\_`<id>` and the play-by-play oId. NOT the per-competition team_id. |
-| player_id | integer | FIBA person id (Int64), global across competitions and roles: the page's P\_`<id>`, play-by-play pId, roster personId and fiba_gdap_roster.player_id. |
-| first_name | character | Given name(s) as registered with FIBA. |
-| last_name | character | Last name as registered with FIBA. |
-| jersey | character | Jersey number as a string. |
-| position | character | Playing position code from the lineup card (PG, SG, SF, PF, C). |
-| is_captain | logical | True for the team captain. |
+A `hoopR_data` tibble with one row per player in the lineup. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gamepage_lineup")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

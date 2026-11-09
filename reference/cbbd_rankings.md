@@ -45,29 +45,20 @@ cbbd_rankings(
 
 ## Value
 
-A `hoopR_data` tibble with one row per ranked team per poll:
-
-|                   |           |                                |
-|-------------------|-----------|--------------------------------|
-| col_name          | types     | description                    |
-| season            | integer   | Season (4-digit ending-year).  |
-| season_type       | character | Season type.                   |
-| week              | integer   | Poll week.                     |
-| poll_date         | character | Date the poll was released.    |
-| poll_type         | character | Poll type (`ap` or `coaches`). |
-| team_id           | integer   | CollegeBasketballData team id. |
-| team              | character | Team name.                     |
-| conference        | character | Conference name.               |
-| ranking           | integer   | Poll rank.                     |
-| points            | numeric   | Poll points received.          |
-| first_place_votes | numeric   | Number of first-place votes.   |
+A `hoopR_data` tibble with one row per ranked team per poll. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_rankings")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Examples
 
 ``` r
 # \donttest{
   try(cbbd_rankings(season = 2024, poll_type = "ap"))
-#> ✖ 2026-11-09 17:03:31.429403: Invalid arguments or no rankings data available!
+#> ✖ 2026-11-09 19:09:48.003322: Invalid arguments or no rankings data available!
 #> ✖ Args: season = 2024, season_type = NULL, week = NULL, poll_type = "ap", team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

@@ -21,45 +21,12 @@ lkl_game_info(game_id)
 
 ## Value
 
-A `hoopR_data` tibble. One row. `start_date` / `start_time` are the
-Lithuanian local date and `HH:MM` (the page carries no offset; the zone
-is Europe/Vilnius by the site's own wording). `referees` is the page's
-name list as one string. `coach` / `assistant_coach` are the team's
-CURRENT staff on an old game; team name and slug are historical. The
-page carries no officials' contact or birth data; any such key would be
-dropped by the runtime. Videos, logos and the UI config props are
-dropped. An empty or unrecognised input gives a zero-row tibble with the
-documented columns. Every column below is always present (a zero-row
-tibble keeps them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_id | integer | lkl.lt game id (key space: LKL games; the `{gameId}` of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under `_request`). |
-| game_status | character | Game state label in Lithuanian: 'Pasibaige' = finished, the only value served (the runtime refuses an unfinished game). |
-| start_date | Date | Game date (Europe/Vilnius), parsed from the page header 'YYYY m. `<month>` D d., HH:MM'. |
-| start_time | character | Tip-off 'HH:MM' local time (Europe/Vilnius by the site's wording; the page carries no offset). |
-| arena | character | Arena name as printed on the game page header. |
-| attendance | character | Attendance text as printed ('1097 ziurovai' = 1097 spectators). |
-| attendance_count | integer | Attendance as an integer, parsed from the attendance text; null when the page has none. |
-| referees | character | Referee names, comma-separated, crew chief first; 'Nepaskelbta' = not announced (old games). Names only: the site publishes no official's contact or birth data. |
-| has_actions | logical | True when the game has play-by-play events (2024-25 onward); false on older games. |
-| is_streaming | logical | True while a live stream is on; false on finished games. |
-| home_team_id | integer | Home team id (key space: lkl.lt clubs, stable across seasons and renamings; joins the team_id of every other frame). Not the Genius team id. |
-| home_team | character | Home team name as of that game (historical: 'Lietuvos Rytas' in 2007-08). |
-| home_short_name | character | Home three-letter team code ('RYT'); can be the club's current code on old games. |
-| home_slug | character | Home team slug (key space: lkl.lt clubs; the `{slug}` of lkl.lt/komandos/`{slug}`); joins the team slugs of lkl_results and lkl_standings. |
-| home_winner | logical | True when the home team won the game. |
-| home_coach | character | Home head coach's full name as stored for the team: on old games the CURRENT coach, not the historical one. |
-| home_assistant_coach | character | Home assistant coach's full name (same caveat as the head coach: current staff on old games). |
-| away_team_id | integer | Away team id (key space: lkl.lt clubs, stable across seasons and renamings; joins the team_id of every other frame). Not the Genius team id. |
-| away_team | character | Away team name as of that game (historical: 'Lietuvos Rytas' in 2007-08). |
-| away_short_name | character | Away three-letter team code ('RYT'); can be the club's current code on old games. |
-| away_slug | character | Away team slug (key space: lkl.lt clubs; the `{slug}` of lkl.lt/komandos/`{slug}`); joins the team slugs of lkl_results and lkl_standings. |
-| away_winner | logical | True when the away team won the game. |
-| away_coach | character | Away head coach's full name as stored for the team: on old games the CURRENT coach, not the historical one. |
-| away_assistant_coach | character | Away assistant coach's full name (same caveat as the head coach: current staff on old games). |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "lkl_game_info")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

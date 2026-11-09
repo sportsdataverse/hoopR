@@ -36,6 +36,7 @@ Endpoint: GET https://api.data.cebl.ca/news/articles/{language}/"><meta property
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -142,9 +143,11 @@ Endpoint: GET https://api.data.cebl.ca/news/articles/{language}/"><meta property
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: News articles in one language. The API answered an empty list on every probe, so this
-raises <code>hoopR_no_data</code>. An empty valid answer raises <code>hoopR_no_data</code>; the columns are always these, in this
-order (sportsdataverse-py <code>cebl_news</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>news_id</td><td>integer</td><td>CEBL news article id; null when the API gives none. Unobserved: the route answered an empty list on every probe.</td></tr><tr><td>language</td><td>character</td><td>Language code of the request ('en'); the body does not echo it.</td></tr><tr><td>title</td><td>character</td><td>Article headline (upstream schema; unobserved, the route answered an empty list on every probe).</td></tr><tr><td>published_at_utc</td><td>POSIXct</td><td>Publication time in UTC (upstream schema; unobserved, no article was ever served).</td></tr><tr><td>image_url</td><td>character</td><td>Article image URL (upstream schema; unobserved, no article was ever served).</td></tr><tr><td>html_content</td><td>character</td><td>Article body as HTML (upstream schema; unobserved, no article was ever served).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per news article.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "cebl_news")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="cebl_seasons.html">cebl_seasons()</a></code>.</p>

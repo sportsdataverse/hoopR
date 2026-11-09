@@ -22,31 +22,12 @@ pleague_game(gid)
 
 ## Value
 
-A `hoopR_data` tibble: Header of one finished game: date, venue, both
-clubs with their score and the Preciser game uuid. An empty valid answer
-is a zero-row tibble with these columns, in this order
-(sportsdataverse-py `pleague_game`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| gid | integer | P. LEAGUE+ game id on the site: ONE global integer sequence over every stage and season (1-12 = 2020-21 pre-season, 13 = the 2020-21 opener, 197 = the 2022-23 opener, 662 = the 2025-26 opener), with gaps; a row id, not a count. The {gid} of /game/{gid}. |
-| uuid | character | Preciser game uuid (key space: the analytics vendor's games, a version-1 uuid), embedded in the game page as getPlayByPlay('uuid'); keys the play-by-play and every pleague_preciser wrapper. Null before 2022-23 (the page embeds an empty string: no play-by-play or vendor data). |
-| status_zh | character | Status badge: (Chinese text) = finished. The only value the wrappers serve (anything else raises hoopR_asset_fetch). |
-| finished | logical | True when the status badge is (Chinese text) (finished); always true for a served game. |
-| date | Date | Game date from the header, Asia/Taipei (UTC+8) local time. |
-| time | character | Tip-off 'HH:MM' from the header, Asia/Taipei (UTC+8) local time. |
-| venue_zh | character | Venue (arena) name in Traditional Chinese. |
-| game_label_zh | character | Stage and game number as printed in the header: '(Chinese text)G1' = regular season game 1 ('(Chinese text)G01' on 2020-21 pages); (Chinese text) = playoffs, (Chinese text) = finals. |
-| away_name_zh | character | Away team's name on that date in Traditional Chinese (short or long form; (Chinese text) = Braves, (Chinese text) = Pilots, (Chinese text) = Lioneers, (Chinese text) = Dreamers, (Chinese text) = Steelers, (Chinese text) = Kings, (Chinese text) = Ghosthawks, (Chinese text) = Yankey Ark). Printed names change by season (short and long forms, renames): key on the id, not the name. |
-| away_name_en | character | Away team's English name on that date; renames change it. Null on 2020-21 game pages (no English name is printed). |
-| away_logo | character | Away team logo url as printed by the page: protocol-relative ('//d36fypkbmmogz6.cloudfront.net/upload/p_team/logo\_{team}\_{epoch}.png'); some game pages print a malformed 'https:////d36...'. The trailing number is the upload time. |
-| away_score | integer | Away team's final points (0 on a future game). |
-| home_name_zh | character | Home team's name on that date in Traditional Chinese (short or long form). Printed names change by season (short and long forms, renames): key on the id, not the name. |
-| home_name_en | character | Home team's English name on that date; renames change it. Null on 2020-21 game pages (no English name is printed). |
-| home_logo | character | Home team logo url as printed by the page: protocol-relative ('//d36fypkbmmogz6.cloudfront.net/upload/p_team/logo\_{team}\_{epoch}.png'); some game pages print a malformed 'https:////d36...'. The trailing number is the upload time. |
-| home_score | integer | Home team's final points (0 on a future game). |
-| overtimes | integer | Number of overtime periods played (overtime cells with points on the page). |
+A `hoopR_data` tibble with one row per game. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "pleague_game")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -65,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(pleague_game(gid = 197))
 #> ── P. LEAGUE+ Game from pleagueofficial.com ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:14 UTC
+#> ℹ Data updated: 2026-11-09 19:14:17 UTC
 #> # A tibble: 1 × 17
 #>     gid uuid          status_zh finished date       time  venue_zh game_label_zh
 #>   <int> <chr>         <chr>     <lgl>    <date>     <chr> <chr>    <chr>        

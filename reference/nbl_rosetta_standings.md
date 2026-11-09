@@ -36,38 +36,13 @@ nbl_rosetta_standings(season, org = "nbl", limit = NULL)
 
 ## Value
 
-A `hoopR_data` tibble (one row per ladder entry):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| org | character | Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. |
-| rosetta_standing_id | character | Rosetta's id of this ladder row (UUID v4); not an entity id. |
-| position | integer | Ladder position (1 = top) |
-| won | integer | Wins in the season. |
-| lost | integer | Losses in the season. |
-| played | integer | Games played in the season (wins plus losses). |
-| points_percentage | double | points_for / points_against, a RATIO (1.1379 = 113.79 %) |
-| win_percentage | double | Won / played, a 0-1 FRACTION. |
-| last_5 | character | Results string, W/L oldest first. Despite the name it can hold the whole season (33 characters in NBL 2025-26) |
-| streak | integer | Current streak length (the type is the last letter of last_5) |
-| points_for | integer | Points scored by the team in the season. |
-| points_against | integer | Points conceded. |
-| away_losses | integer | Away losses in the season. |
-| away_wins | integer | Away wins in the season. |
-| home_losses | integer | Home losses in the season. |
-| home_wins | integer | Home wins in the season. |
-| team_id | character | DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. |
-| rosetta_team_id | character | Rosetta's own id (UUID v4; v5 on NBL1) of the team; routes that take this entity accept it as well as the DataCore id. |
-| team_code | character | Team code, e.g. PER (the `{team_code}` path value) |
-| team_name | character | Name of the team as Rosetta spells it, e.g. Perth Wildcats. |
-| season_year | integer | Rosetta's year of the season: the START year for the NBL and WNBL from 1998-99 (2025 = 2025-26), the calendar year for NBL1 and the 1979-1997 winter seasons. See season_end_year for the sdv key. |
-| season_type | character | Season type: regular (includes finals), preseason, in_season (cups, blitz, exhibition), test. |
-| season_competition_division | character | NBL1 divisions (conference x gender); empty for NBL and WNBL. |
-| season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
-
-Columns the body adds beyond these follow, in body order
-(sportsdataverse-py keeps them too).
+A `hoopR_data` tibble with one row per ladder entry. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "nbl_rosetta_standings")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -86,7 +61,7 @@ lists every function in this family.
 # \donttest{
   try(nbl_rosetta_standings(org = "nbl", season = 2026))
 #> ── NBL Rosetta standings from prod.rosetta.nbl.com.au ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:09 UTC
+#> ℹ Data updated: 2026-11-09 19:14:11 UTC
 #> # A tibble: 10 × 24
 #>    org   rosetta_standing_id       position   won  lost played points_percentage
 #>    <chr> <chr>                        <int> <int> <int>  <int>             <dbl>

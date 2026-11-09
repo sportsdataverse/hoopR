@@ -81,7 +81,7 @@ nba_commonteamyears(league_id = "00", ...)
 
 ## Value
 
-Return a named list of data frames: CommonAllPlayers
+A named list of tibbles: `CommonAllPlayers`.
 
 **CommonAllPlayers**
 
@@ -105,8 +105,8 @@ Return a named list of data frames: CommonAllPlayers
 | GAMES_PLAYED_FLAG | character |  |
 | OTHERLEAGUE_EXPERIENCE_CH | character |  |
 
-Return a named list of data frames: CommonPlayerInfo,
-PlayerHeadlineStats, AvailableSeasons
+A named list of tibbles: `CommonPlayerInfo`, `PlayerHeadlineStats`,
+`AvailableSeasons`.
 
 **CommonPlayerInfo**
 
@@ -167,7 +167,7 @@ PlayerHeadlineStats, AvailableSeasons
 | col_name  | types     | description               |
 | SEASON_ID | character | Unique season identifier. |
 
-Return a named list of data frames: PlayoffSeries
+A named list of tibbles: `PlayoffSeries`.
 
 **PlayoffSeries**
 
@@ -180,7 +180,7 @@ Return a named list of data frames: PlayoffSeries
 | SERIES_ID       | character |                                      |
 | GAME_NUM        | character |                                      |
 
-Return a named list of data frames: Coaches, CommonTeamRoster
+A named list of tibbles: `CommonTeamRoster`, `Coaches`.
 
 **CommonTeamRoster**
 
@@ -220,7 +220,7 @@ Return a named list of data frames: Coaches, CommonTeamRoster
 | SORT_SEQUENCE | character |  |
 | SUB_SORT_SEQUENCE | character |  |
 
-Returns a named list of data frames: TeamYears
+A named list of tibbles: `TeamYears`.
 
 **TeamYears**
 

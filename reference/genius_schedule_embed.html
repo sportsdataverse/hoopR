@@ -38,6 +38,7 @@ The same columns and rules as genius_schedule(), read from the /embednf/ {css, j
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -156,8 +157,11 @@ record parsed from an HTML page.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble (a zero-row tibble with these columns when Genius answers
-an empty valid page), or the raw list when <code>return_parsed = FALSE</code>:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>match_id</td><td>integer</td><td>From the block id <code>extfix_&lt;id&gt;</code>. Genius match id: the {matchId} of data.json and /u/; one global sequence across every Genius customer (~0.3 M in 2016, ~2.9 M in Oct 2026)</td></tr><tr><td>link_match_id</td><td>integer</td><td>Match id of the block's <code>/match/&lt;id&gt;/summary</code> link; equals match_id (the capture refuses a page where it does not); null when the org hides match pages (FFBB)</td></tr><tr><td>comp_id</td><td>integer</td><td>CompId of the match link, or of the team links when the org hides match pages (FFBB); equals the {compId} asked for. A 'To be determined' slot (no team or match link) takes the {compId} the page's other blocks prove</td></tr><tr><td>org</td><td>character</td><td>ORG code of the match link (or the team links, as comp_id)</td></tr><tr><td>status</td><td>character</td><td>Status from the block class STATUS_*: COMPLETE, SCHEDULED, POSTPONED, ...</td></tr><tr><td>date_time</td><td>character</td><td>Tip-off as displayed, 'Mon D, YYYY, h:mm AM' (local time, zone not stated); null when unscheduled</td></tr><tr><td>venue_id</td><td>integer</td><td>Genius venue id (the /venue/{id} of hosted pages); null when the venue is plain text (FFBB)</td></tr><tr><td>venue_name</td><td>character</td><td>Venue name as entered (local script)</td></tr><tr><td>home_team_id</td><td>integer</td><td>Home team: Genius team id (warehouse key space, global across orgs and seasons; the /team/{id} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code</td></tr><tr><td>home_team_name</td><td>character</td><td>Home team full name</td></tr><tr><td>home_team_code</td><td>character</td><td>Home team code (local script possible)</td></tr><tr><td>home_score</td><td>integer</td><td>Home points; null before tip-off (typed integer only on a route whose 3 sampled rows were all played)</td></tr><tr><td>away_team_id</td><td>integer</td><td>Away team: Genius team id (warehouse key space, global across orgs and seasons; the /team/{id} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code</td></tr><tr><td>away_team_name</td><td>character</td><td>Away team full name</td></tr><tr><td>away_team_code</td><td>character</td><td>Away team code (local script possible)</td></tr><tr><td>away_score</td><td>integer</td><td>Away points; null before tip-off (typed integer only on a route whose 3 sampled rows were all played)</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per game.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "genius_schedule_embed")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><strong>Access.</strong> The Genius hosts publish no robots.txt and no terms. CloudFront refuses

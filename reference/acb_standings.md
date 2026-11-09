@@ -40,34 +40,13 @@ acb_standings(competition_id = NULL, season = NULL, round_id = NULL)
 
 ## Value
 
-A `hoopR_data` tibble, one row per record described above; the columns
-are always these, in this order (sportsdataverse-py `acb_standings`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa. |
-| edition_id | integer | Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, `season`. |
-| season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
-| round_id | integer | Round the table is as of (the selected round). |
-| total_rounds | integer | Rounds in the phase. |
-| team_id | integer | Season-team entry id (new every season). |
-| club_id | integer | Stable ACB club id (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the same across seasons and sponsor names, and the club_id request argument. |
-| team | character | Team name as registered for that season (sponsor names change; the club id does not). |
-| team_abbr | character | Three-letter team abbreviation (BAR, RMB, VBC). |
-| position | integer | Table position (standings row) |
-| position_trend | integer | Change in position since the previous round: positive = up (meaning of the sign unverified). |
-| played | integer | Games played (standings row) |
-| wins | integer | Wins (standings row) |
-| losses | integer | Losses (the key is misspelt by the API) |
-| win_pct | double | Win percentage, 0-100. |
-| points_for | integer | Points scored (standings row) |
-| points_against | integer | Points allowed (standings row) |
-| plus_minus | integer | Point differential (points for minus points against). |
-| home_wins | integer | Wins at home (the API's localBalanceWins). |
-| home_losses | integer | Losses at home. |
-| away_wins | integer | Wins away from home (the API's awayBalanceWins). |
-| away_losses | integer | Losses away from home (the API's awayBalanceLosses). |
+A `hoopR_data` tibble with one row per team in the standings. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "acb_standings")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -86,7 +65,7 @@ lists every function in this family.
 # \donttest{
   try(acb_standings(season = 2027))
 #> ── ACB Standings from api2.acb.com ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:02:40 UTC
+#> ℹ Data updated: 2026-11-09 19:08:58 UTC
 #> # A tibble: 18 × 22
 #>    competition_id edition_id season round_id total_rounds team_id club_id team  
 #>             <int>      <int>  <int>    <int>        <int>   <int>   <int> <chr> 

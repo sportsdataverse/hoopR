@@ -30,7 +30,7 @@ espn_nba_franchises(...)
 
 ## Value
 
-A tibble with one row per franchise.
+A `hoopR_data` tibble with one row per franchise.
 
 |              |           |                                            |
 |--------------|-----------|--------------------------------------------|
@@ -39,7 +39,7 @@ A tibble with one row per franchise.
 | ref          | character | Full `$ref` URL for franchise detail.      |
 | league       | character | League slug (`"mens-college-basketball"`). |
 
-A tibble with one row per franchise.
+A `hoopR_data` tibble with one row per franchise.
 
 |              |           |                                       |
 |--------------|-----------|---------------------------------------|
@@ -66,7 +66,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_franchises()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Franchises Index ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:10 UTC
+#> ℹ Data updated: 2026-11-09 19:10:28 UTC
 #> # A tibble: 200 × 3
 #>    franchise_id ref                                                       league
 #>    <chr>        <chr>                                                     <chr> 
@@ -85,7 +85,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_franchises()
 #> ── ESPN NBA Franchises Index ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:04:10 UTC
+#> ℹ Data updated: 2026-11-09 19:10:28 UTC
 #> # A tibble: 30 × 3
 #>    franchise_id ref                                                       league
 #>    <chr>        <chr>                                                     <chr> 

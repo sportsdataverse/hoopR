@@ -78,7 +78,7 @@ nba_scheduleleaguev2int(
 
 ## Value
 
-Returns a tibble with the following columns:
+A tibble with one row per game.
 
 |  |  |  |
 |----|----|----|
@@ -133,15 +133,29 @@ Returns a tibble with the following columns:
 | season_type_id | character | Third digit of game_id (1 pre-season, 2 regular season, 3 all-star, 4 playoffs, 5 see details). |
 | season_type_description | character | Label for season_type_id; NA where the digit has no label (see details). |
 
-Return a named list of data frames: Available, EastConfStandingsByDay,
-GameHeader, LastMeeting, LineScore, SeriesStandings,
-WestConfStandingsByDay
+A named list of tibbles: `GameHeader`, `LineScore`, `SeriesStandings`,
+`LastMeeting`, `EastConfStandingsByDay`, `WestConfStandingsByDay`,
+`Available`.
 
 **GameHeader**
 
-Columns as documented in the shared
-[nba_boxscoresummaryv2_gamesummary_schema](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv2_gamesummary_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| GAME_DATE_EST | character | Game date est. |
+| GAME_SEQUENCE | character | Game sequence. |
+| GAME_ID | character | Unique game identifier. |
+| GAME_STATUS_ID | character | Numeric game status identifier. |
+| GAME_STATUS_TEXT | character | Game status display text (e.g. 'Final', '4:32 - 4th'). |
+| GAMECODE | character |  |
+| HOME_TEAM_ID | character | Unique identifier for the home team. |
+| VISITOR_TEAM_ID | character |  |
+| SEASON | character | Season identifier (4-digit year or 'YYYY-YY' string). |
+| LIVE_PERIOD | character |  |
+| LIVE_PC_TIME | character |  |
+| NATL_TV_BROADCASTER_ABBREVIATION | character |  |
+| LIVE_PERIOD_TIME_BCAST | character |  |
+| WH_STATUS | character | Wh status. |
 
 **LineScore**
 
@@ -179,27 +193,57 @@ table.
 
 **SeriesStandings**
 
-Columns as documented in the shared
-[nba_boxscoresummaryv2_seasonseries_schema](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv2_seasonseries_schema.md)
-table.
+|                  |           |                                      |
+|------------------|-----------|--------------------------------------|
+| col_name         | types     | description                          |
+| GAME_ID          | character | Unique game identifier.              |
+| HOME_TEAM_ID     | character | Unique identifier for the home team. |
+| VISITOR_TEAM_ID  | character |                                      |
+| GAME_DATE_EST    | character | Game date est.                       |
+| HOME_TEAM_WINS   | character | Home team's team wins.               |
+| HOME_TEAM_LOSSES | character | Home team's team losses.             |
+| SERIES_LEADER    | character |                                      |
 
 **LastMeeting**
 
-Columns as documented in the shared
-[nba_boxscoresummaryv2_lastmeeting_schema](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv2_lastmeeting_schema.md)
-table.
+|                                  |           |                         |
+|----------------------------------|-----------|-------------------------|
+| col_name                         | types     | description             |
+| GAME_ID                          | character | Unique game identifier. |
+| LAST_GAME_ID                     | character |                         |
+| LAST_GAME_DATE_EST               | character |                         |
+| LAST_GAME_HOME_TEAM_ID           | character |                         |
+| LAST_GAME_HOME_TEAM_CITY         | character |                         |
+| LAST_GAME_HOME_TEAM_NAME         | character |                         |
+| LAST_GAME_HOME_TEAM_ABBREVIATION | character |                         |
+| LAST_GAME_HOME_TEAM_POINTS       | character |                         |
+| LAST_GAME_VISITOR_TEAM_ID        | character |                         |
+| LAST_GAME_VISITOR_TEAM_CITY      | character |                         |
+| LAST_GAME_VISITOR_TEAM_NAME      | character |                         |
+| LAST_GAME_VISITOR_TEAM_CITY1     | character |                         |
+| LAST_GAME_VISITOR_TEAM_POINTS    | character |                         |
 
 **EastConfStandingsByDay**
 
-Columns as documented in the shared
-[nba_scoreboard_eastconfstandingsbyday_schema](https://hoopR.sportsdataverse.org/reference/nba_scoreboard_eastconfstandingsbyday_schema.md)
-table.
+|               |           |                                     |
+|---------------|-----------|-------------------------------------|
+| col_name      | types     | description                         |
+| TEAM_ID       | character | Unique team identifier.             |
+| LEAGUE_ID     | character | League identifier ('10' = WNBA).    |
+| SEASON_ID     | character | Unique season identifier.           |
+| STANDINGSDATE | character |                                     |
+| CONFERENCE    | character | Conference.                         |
+| TEAM          | character | Team-side label or team identifier. |
+| G             | character | Games played.                       |
+| W             | character | Wins.                               |
+| L             | character | Losses.                             |
+| W_PCT         | character |                                     |
+| HOME_RECORD   | character | Home win-loss record.               |
+| ROAD_RECORD   | character |                                     |
 
 **WestConfStandingsByDay**
 
-Columns as documented in the shared
-[nba_scoreboard_eastconfstandingsbyday_schema](https://hoopR.sportsdataverse.org/reference/nba_scoreboard_eastconfstandingsbyday_schema.md)
-table.
+Same columns as the **EastConfStandingsByDay** table above.
 
 **Available**
 
@@ -209,9 +253,9 @@ table.
 | GAME_ID      | character | Unique game identifier. |
 | PT_AVAILABLE | character | Pt available.           |
 
-Return a named list of data frames: Available, EastConfStandingsByDay,
-GameHeader, LastMeeting, LineScore, SeriesStandings, TeamLeaders,
-TicketLinks, WestConfStandingsByDay, WinProbability
+A named list of tibbles: `GameHeader`, `LineScore`, `SeriesStandings`,
+`LastMeeting`, `EastConfStandingsByDay`, `WestConfStandingsByDay`,
+`Available`, `TeamLeaders`.
 
 **GameHeader**
 
@@ -274,27 +318,57 @@ TicketLinks, WestConfStandingsByDay, WinProbability
 
 **SeriesStandings**
 
-Columns as documented in the shared
-[nba_boxscoresummaryv2_seasonseries_schema](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv2_seasonseries_schema.md)
-table.
+|                  |           |                                      |
+|------------------|-----------|--------------------------------------|
+| col_name         | types     | description                          |
+| GAME_ID          | character | Unique game identifier.              |
+| HOME_TEAM_ID     | character | Unique identifier for the home team. |
+| VISITOR_TEAM_ID  | character |                                      |
+| GAME_DATE_EST    | character | Game date est.                       |
+| HOME_TEAM_WINS   | character | Home team's team wins.               |
+| HOME_TEAM_LOSSES | character | Home team's team losses.             |
+| SERIES_LEADER    | character |                                      |
 
 **LastMeeting**
 
-Columns as documented in the shared
-[nba_boxscoresummaryv2_lastmeeting_schema](https://hoopR.sportsdataverse.org/reference/nba_boxscoresummaryv2_lastmeeting_schema.md)
-table.
+|                                  |           |                         |
+|----------------------------------|-----------|-------------------------|
+| col_name                         | types     | description             |
+| GAME_ID                          | character | Unique game identifier. |
+| LAST_GAME_ID                     | character |                         |
+| LAST_GAME_DATE_EST               | character |                         |
+| LAST_GAME_HOME_TEAM_ID           | character |                         |
+| LAST_GAME_HOME_TEAM_CITY         | character |                         |
+| LAST_GAME_HOME_TEAM_NAME         | character |                         |
+| LAST_GAME_HOME_TEAM_ABBREVIATION | character |                         |
+| LAST_GAME_HOME_TEAM_POINTS       | character |                         |
+| LAST_GAME_VISITOR_TEAM_ID        | character |                         |
+| LAST_GAME_VISITOR_TEAM_CITY      | character |                         |
+| LAST_GAME_VISITOR_TEAM_NAME      | character |                         |
+| LAST_GAME_VISITOR_TEAM_CITY1     | character |                         |
+| LAST_GAME_VISITOR_TEAM_POINTS    | character |                         |
 
 **EastConfStandingsByDay**
 
-Columns as documented in the shared
-[nba_scoreboard_eastconfstandingsbyday_schema](https://hoopR.sportsdataverse.org/reference/nba_scoreboard_eastconfstandingsbyday_schema.md)
-table.
+|               |           |                                     |
+|---------------|-----------|-------------------------------------|
+| col_name      | types     | description                         |
+| TEAM_ID       | character | Unique team identifier.             |
+| LEAGUE_ID     | character | League identifier ('10' = WNBA).    |
+| SEASON_ID     | character | Unique season identifier.           |
+| STANDINGSDATE | character |                                     |
+| CONFERENCE    | character | Conference.                         |
+| TEAM          | character | Team-side label or team identifier. |
+| G             | character | Games played.                       |
+| W             | character | Wins.                               |
+| L             | character | Losses.                             |
+| W_PCT         | character |                                     |
+| HOME_RECORD   | character | Home win-loss record.               |
+| ROAD_RECORD   | character |                                     |
 
 **WestConfStandingsByDay**
 
-Columns as documented in the shared
-[nba_scoreboard_eastconfstandingsbyday_schema](https://hoopR.sportsdataverse.org/reference/nba_scoreboard_eastconfstandingsbyday_schema.md)
-table.
+Same columns as the **EastConfStandingsByDay** table above.
 
 **Available**
 
@@ -324,11 +398,7 @@ table.
 | AST_PLAYER_NAME   | character |                                         |
 | AST               | character | Assists.                                |
 
-**TicketLinks**
-
-**WinProbability**
-
-Return a tibble with the following scoreboard data:
+A `hoopR_data` tibble with one row per game.
 
 |  |  |  |
 |----|----|----|
@@ -414,7 +484,7 @@ Return a tibble with the following scoreboard data:
 | league | character | League. |
 | broadcasters | data.frame |  |
 
-Return a data frame with the following columns:
+A `hoopR_data` tibble with one row per game.
 
 |  |  |  |
 |----|----|----|
@@ -478,7 +548,7 @@ Return a data frame with the following columns:
 | pb_odds_odds | numeric | Pb odds odds. |
 | pb_odds_suspended | integer | Pb odds suspended. |
 
-Return a named list of data frames: WinProbPBP, GameInfo
+A named list of tibbles: `WinProbPBP`, `GameInfo`.
 
 **WinProbPBP**
 
@@ -515,8 +585,8 @@ Return a named list of data frames: WinProbPBP, GameInfo
 | VISITOR_TEAM_ABR | character |                                      |
 | VISITOR_TEAM_PTS | character |                                      |
 
-Returns a named list of data frames: SeasonGames, SeasonWeeks,
-BroadcasterList
+A named list of tibbles: `SeasonGames`, `SeasonWeeks`,
+`BroadcasterList`.
 
 **SeasonGames**
 

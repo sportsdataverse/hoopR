@@ -20,21 +20,12 @@ vtb_infobasket_seasons(tag = "vtb")
 
 ## Value
 
-A `hoopR_data` tibble: Season END year -\> season-level CompID for a
-competition tag (the table every season-keyed wrapper maps with). The
-columns are always these, in this order (sportsdataverse-py
-`vtb_infobasket_seasons`); an empty valid answer raises `hoopR_no_data`,
-a valid body with no rows for this frame is a zero-row tibble:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. |
-| comp_id | integer | Season-level CompID of that season (50714 = VTB 2025-26). Pass it as `comps` to /Comp/GetCalendar/. |
-| name_ru | character | Season name in Russian ('Sezon 2025/2026' = 'Season 2025/2026'). |
-| name_en | character | Season name in English. |
-| db | character | Infobasket database the competition lives in ('org'). |
-| tag | character | Competition tag of the request (vtb is the VTB United League; vtbyouth, wbc, wpremier and rfb also answer). |
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "vtb_infobasket_seasons")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -114,7 +105,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_seasons())
 #> ── VTB Infobasket Seasons from org.infobasket.su ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:10:12 UTC
+#> ℹ Data updated: 2026-11-09 19:16:07 UTC
 #> # A tibble: 18 × 6
 #>    season comp_id name_ru         name_en          db    tag  
 #>     <int>   <int> <chr>           <chr>            <chr> <chr>

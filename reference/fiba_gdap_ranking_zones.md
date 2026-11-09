@@ -20,15 +20,13 @@ fiba_gdap_ranking_zones(return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| zone_ranking_id | integer | Ranking zone id (getgdaprankingzones key space: 1 = World ... 5 = Europe). |
-| code | character | Ranking zone code (W, AF, AM, AS, EU). |
-| official_name | character | Official name of the ranking zone (World, FIBA Europe, FIBA Americas...). |
+A `hoopR_data` tibble with one row per ranking zone. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_ranking_zones")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

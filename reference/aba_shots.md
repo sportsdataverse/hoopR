@@ -37,33 +37,13 @@ aba_shots(game_no, season, league = "aba")
 
 ## Value
 
-A `hoopR_data` tibble. One row per field-goal attempt (no free throws),
-in the site's order. `x` and `y` are PERCENTAGES of the full court on
-the site's 1000x535 px image (court 28 x 15 m), cast to float (the site
-sends x as a string in one half of a game and a number in the other). x
-runs from the LEFT baseline (home shoots at x \< 50, away at x \> 50). y
-is drawn upward from the bottom edge, 50 = the line through both
-baskets; whether "up" is the scorer's table side is unverified. `side`
-is `home` / `away` (the site's `ekipa` 1 / 2). `player_id` is cast from
-the site's string (null when the shooter was not recorded, id 0); join
-on it, not on the name. The chart can differ from the box score by one
-attempt per shooter. Every column below is always present (a zero-row
-tibble keeps them and their types); an answer with nothing in it raises
-`hoopR_no_data`, as in sportsdataverse-py.
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| game_no | integer | Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The {gameNo} of the match route. |
-| season | integer | Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. |
-| league_id | integer | League code, the site's lea: 1 = ABA League, 2 = ABA League 2. |
-| league | character | League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. |
-| side | character | Which team took the shot: home or away (the site's ekipa, a string '1' / '2'). |
-| x | double | Shot x as a PERCENTAGE (0-100) of the court LENGTH from the LEFT baseline of the site's 1000x535 px full-court image. Home shoots at x \< 50 and away at x \> 50. The site sends it as a string in one half of a game and a number in the other; cast to float. |
-| y | double | Shot y as a PERCENTAGE (0-100) of the court WIDTH, drawn upward from the bottom edge (the line through both baskets is 50). Whether 'up' is the scorer's table side is unverified. |
-| made | logical | True when the attempt was made (the site's koordinata_uspeh '1'), false when missed. |
-| player_id | integer | Shooter's ABA player id (global), cast from the site's string; null when the shooter was not recorded (id 0). Join to the box score on it, never on the name. |
-| player_name | character | Shooter's full name, 'First Last' (the box prints 'Last F.'); null when not recorded. |
+A `hoopR_data` tibble with one row per field-goal attempt. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "aba_shots")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

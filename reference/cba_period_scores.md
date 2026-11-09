@@ -23,17 +23,13 @@ cba_period_scores(schedule_id)
 
 ## Value
 
-A `hoopR_data` tibble: One row per side and played period (overtime
-included). An empty valid answer is a zero-row tibble with these
-columns, in this order (sportsdataverse-py `cba_period_scores`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| schedule_id | integer | CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the `{scheduleId}` of every game route). Stamped by the runtime from the request; null on a body parsed without it. |
-| side | character | Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block). |
-| period | integer | Period number: 1-4 regulation, 5 and up overtime (the API holds up to seven periods). |
-| points | integer | Points the side scored IN this period (not cumulative); overtime periods included. |
+A `hoopR_data` tibble with one row per side and played period. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cba_period_scores")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -52,7 +48,7 @@ lists every function in this family.
 # \donttest{
   try(cba_period_scores(schedule_id = 100105799))
 #> ── CBA Period Scores from data-server.cbaleague.com ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:20 UTC
+#> ℹ Data updated: 2026-11-09 19:09:36 UTC
 #> # A tibble: 8 × 4
 #>   schedule_id side  period points
 #>         <int> <chr>  <int>  <int>

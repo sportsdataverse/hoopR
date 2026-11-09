@@ -26,7 +26,7 @@ nba_team_dict(season = year_to_season(most_recent_nba_season() - 2), ...)
 
 ## Value
 
-A `hoopR_data` tibble with one row per team:
+A `hoopR_data` tibble with one row per team.
 
 |                   |           |                                     |
 |-------------------|-----------|-------------------------------------|

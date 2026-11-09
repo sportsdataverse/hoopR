@@ -67,42 +67,12 @@ atrium_team(
 
 ## Value
 
-A `hoopR_data` tibble, one row for the team:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| entity_id | character | Team UUID, decoded from the page's tab links (the body does not echo it elsewhere). |
-| name | character | Team name from the page banner. |
-| color | character | Team colour from the banner, hex string with its \#. |
-| logo_url | character | URL of the banner's team logo. |
-| previous_fixture_id | character | Game UUID of the last played game shown on the team page. |
-| previous_round | character | Round of the last played game as the site words it (e.g. 30). |
-| previous_status | character | Status code of the last played game, e.g. CONFIRMED. |
-| previous_start_time_utc | POSIXct | Start of the last played game, naive UTC datetime. |
-| previous_start_time_local | character | Start of the last played game in venue-local time, as the API sends it (no offset). |
-| previous_venue | character | Arena of the last played game. |
-| previous_attendance | integer | Spectators at the last played game; null when not reported. |
-| previous_home_entity_id | character | Team UUID of the last played game's home team. |
-| previous_home_name | character | Name of the last played game's home team. |
-| previous_home_score | integer | Home team's points in the last played game. |
-| previous_away_entity_id | character | Team UUID of the last played game's away team. |
-| previous_away_name | character | Name of the last played game's away team. |
-| previous_away_score | integer | Away team's points in the last played game. |
-| next_fixture_id | character | Game UUID of the next scheduled game shown on the team page. |
-| next_round | character | Round of the next scheduled game as the site words it (e.g. 30). |
-| next_status | character | Status code of the next scheduled game, e.g. CONFIRMED. |
-| next_start_time_utc | POSIXct | Start of the next scheduled game, naive UTC datetime. |
-| next_start_time_local | character | Start of the next scheduled game in venue-local time, as the API sends it (no offset). |
-| next_venue | character | Arena of the next scheduled game. |
-| next_attendance | integer | Spectators at the next scheduled game; null when not reported. |
-| next_home_entity_id | character | Team UUID of the next scheduled game's home team. |
-| next_home_name | character | Name of the next scheduled game's home team. |
-| next_home_score | integer | Home team's points in the next scheduled game. |
-| next_away_entity_id | character | Team UUID of the next scheduled game's away team. |
-| next_away_name | character | Name of the next scheduled game's away team. |
-| next_away_score | integer | Away team's points in the next scheduled game. |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_team")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

@@ -25,20 +25,12 @@ ncaa_mbb_teams(year = most_recent_mbb_season(), division = 1, ...)
 
 ## Value
 
-A data frame with the following variables
-
-|                |           |                                                   |
-|----------------|-----------|---------------------------------------------------|
-| col_name       | types     | description                                       |
-| team_id        | character | Franchise team id (legacy `/team/{id}/...` urls). |
-| team_name      | character | Full team display name (e.g. 'Las Vegas Aces').   |
-| team_url       | character | URL for team.                                     |
-| conference_id  | character | Conference identifier.                            |
-| conference     | character | Conference.                                       |
-| division       | numeric   | Team division.                                    |
-| year           | numeric   | 4-digit year.                                     |
-| season_id      | character | Season id (legacy urls).                          |
-| season_team_id | character | Season-team id (modern `/teams/{id}` urls).       |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "ncaa_mbb_teams")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

@@ -22,25 +22,13 @@ tpbl_standings(division_id)
 
 ## Value
 
-A `hoopR_data` tibble: League table of one division: rank, record, games
-behind and streak. An empty answer raises `hoopR_no_data`; the columns
-are always these, in this order (sportsdataverse-py `tpbl_standings`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| division_id | integer | TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the `{division_id}` of every division route. Not the GoHoops division id. |
-| rank | integer | Rank in the division, 1-based. |
-| team_id | integer | TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the `{team_id}` of the division team routes. Not the GoHoops franchise id and not the squad id. |
-| gohoops_team_id | integer | GoHoops franchise id (key space: GoHoops franchises, 940-946; stable across seasons; = the TPBL team id + 938). |
-| gohoops_squad_id | integer | GoHoops squad id (key space: GoHoops squads = one team in one season: 8209-8215 in 2024-25, 11931-11937 in 2025-26, 15536-15542 in 2026-27; it changes every season). |
-| team | character | Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). |
-| alt_name | character | Lowercase English slug of the team: aquas, dreamers, lioneers, leopards, dea, kings, mars. |
-| won | integer | Games won in the division so far. |
-| lost | integer | Games lost in the division so far. |
-| drawn | integer | Games drawn (always 0 in basketball). |
-| games_behind | double | Games behind the leader (0 for the leader); a whole number in every captured division, read as a float so half games cannot break the dtype. |
-| streak | character | Current streak: 'W' + count for wins, 'L' + count for losses (W2 = two straight wins). |
+A `hoopR_data` tibble with one row per team in the standings. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "tpbl_standings")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -59,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(tpbl_standings(division_id = 2))
 #> ── TPBL Standings from api.tpbl.basketball ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:55 UTC
+#> ℹ Data updated: 2026-11-09 19:15:51 UTC
 #> # A tibble: 7 × 12
 #>   division_id  rank team_id gohoops_team_id gohoops_squad_id team       alt_name
 #>         <int> <int>   <int>           <int>            <int> <chr>      <chr>   

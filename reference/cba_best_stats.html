@@ -36,6 +36,7 @@ Endpoint: GET https://data-server.cbaleague.com/api/team-match-datas/getMatchDat
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,8 +140,11 @@ Endpoint: GET https://data-server.cbaleague.com/api/team-match-datas/getMatchDat
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: One row per side and category. An empty valid answer is a zero-row tibble with these
-columns, in this order (sportsdataverse-py <code>cba_best_stats</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>schedule_id</td><td>integer</td><td>CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the <code>{scheduleId}</code> of every game route). Stamped by the runtime from the request; null on a body parsed without it.</td></tr><tr><td>side</td><td>character</td><td>Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block).</td></tr><tr><td>ctype</td><td>character</td><td>Statistic the row leads: points, assists, steals, rebounds, blocked (five rows per side in every sample). See the code table.</td></tr><tr><td>cvalue</td><td>character</td><td>The leader's value of ctype, as a STRING ('16').</td></tr><tr><td>player_id</td><td>integer</td><td>playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. A STRING here ('100005271'), an integer on every box route.</td></tr><tr><td>player_name</td><td>character</td><td>Player name (Chinese). Null on rows whose name the report does not repeat (the same player's earlier row carries it).</td></tr><tr><td>player_no</td><td>character</td><td>Jersey number as a string. Null where playerName is null.</td></tr><tr><td>seconds</td><td>integer</td><td>The leader's time on court in SECONDS.</td></tr><tr><td>team_id</td><td>integer</td><td>Unobserved: null in every sample (the side is the enclosing list).</td></tr><tr><td>type</td><td>integer</td><td>Side flag: 0 on home rows, 2 on visiting rows (differs from advance-count, where the visiting side is 1).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per side and category.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "cba_best_stats")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="cba_seasons.html">cba_seasons()</a></code>.</p>

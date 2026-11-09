@@ -36,6 +36,7 @@ Endpoint: GET https://org.infobasket.su/Widget/CompIssue/{season}"><meta propert
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -144,9 +145,11 @@ The season table is read for this tag.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Stage tree of a season (regular season, playoff, series): the stage ids the standings
-wrappers take. The columns are always these, in this order (sportsdataverse-py <code>vtb_infobasket_comp_issue</code>); an empty valid
-answer raises <code>hoopR_no_data</code>, a valid body with no rows for this frame is a zero-row tibble:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime.</td></tr><tr><td>season_comp_id</td><td>integer</td><td>Season-level Infobasket CompID of the season (50714 = 2025-26): the id every season-keyed route takes.</td></tr><tr><td>level</td><td>integer</td><td>Depth in the stage tree: 1 = a stage of the season, 2 = a series or group below it.</td></tr><tr><td>comp_id</td><td>integer</td><td>Stage CompID (the id vtb_infobasket_standings, _cross_table and _playoff take).</td></tr><tr><td>parent_comp_id</td><td>integer</td><td>CompID of the parent stage (0 at the top).</td></tr><tr><td>comp_type</td><td>integer</td><td>Stage type code: 0 season, regular season or group; 10 playoff container; 5 and 7 playoff series; -5 seen in season lists. Meanings inferred from the stage names, unverified.</td></tr><tr><td>comp_sort</td><td>integer</td><td>Sort order among sibling stages.</td></tr><tr><td>comp_round</td><td>integer</td><td>Playoff round as the number of series in it (4 = quarter-finals, 2 = semi-finals, 1 = final); 0 outside the playoff.</td></tr><tr><td>comp_short_name_ru</td><td>character</td><td>Stage name, Russian.</td></tr><tr><td>comp_short_name_en</td><td>character</td><td>Stage name, English.</td></tr><tr><td>comp_abc_name_ru</td><td>character</td><td>Stage abbreviation ('1/4-1' = quarter-final 1), Russian.</td></tr><tr><td>comp_abc_name_en</td><td>character</td><td>Stage abbreviation ('1/4-1' = quarter-final 1), English.</td></tr><tr><td>comp_gender</td><td>integer</td><td>Competition gender: 0 on every sample (men).</td></tr><tr><td>comp_state</td><td>integer</td><td>Stage state code: 0 or 2 seen (2 on finished stages, but some finished stages show 0); unverified.</td></tr><tr><td>is_public</td><td>logical</td><td>True when the site shows the stage.</td></tr><tr><td>note_ru</td><td>character</td><td>Unobserved: null in every sample, so its type and meaning are unconfirmed.</td></tr><tr><td>note_en</td><td>character</td><td>Unobserved: null in every sample, so its type and meaning are unconfirmed.</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per stage.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "vtb_infobasket_comp_issue")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="vtb_infobasket_seasons.html">vtb_infobasket_seasons()</a></code>.</p>

@@ -31,33 +31,13 @@ bleague_standings(season, tab)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. |
-| tab | integer | Division tab: 1 = B1, 2 = B2, 3 = B3. |
-| season_label | character | Season label of the selected option (2025-26). |
-| section | character | Table heading in Japanese (East, Central and West divisions, wild card); section_en is its English name. |
-| section_en | character | English name of section for the four known headings; null for any other heading. |
-| rank | integer | Rank in that table; a club in a division table also appears in the wild-card table. |
-| team_id | character | B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. |
-| team | character | Club name in Japanese as the standings page prints it (e.g. Chiba Jets). |
-| team_short | character | Club short name in Japanese (e.g. Chiba J). |
-| wins | integer | Games won so far this season in the table. |
-| losses | integer | Games lost so far this season in the table. |
-| win_pct | double | Win percentage as a 0-1 fraction. |
-| games_behind | double | Games behind the table leader. |
-| points_for | integer | Points scored over the season to date. |
-| points_against | integer | Points allowed over the season to date. |
-| point_diff | integer | Point differential. |
-| home_record | character | Home record W-L. |
-| away_record | character | Away record W-L. |
-| last_n | integer | Length of the recent-form window the page shows: 5 or 10 games. |
-| last_n_record | character | Record W-L over the last_n games. |
-| streak | character | Current streak as printed: W5 = five straight wins, L1 = one loss. |
-| division_title | character | Division-title mark as printed; null when none ('–'). |
+A `hoopR_data` tibble with one row per club per table. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bleague_standings")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -76,7 +56,7 @@ lists every function in this family.
 # \donttest{
   try(bleague_standings(season = 2026, tab = 1))
 #> ── B.LEAGUE standings from www.bleague.jp ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:11 UTC
+#> ℹ Data updated: 2026-11-09 19:09:27 UTC
 #> # A tibble: 48 × 22
 #>    season   tab season_label section section_en  rank team_id team    team_short
 #>     <int> <int> <chr>        <chr>   <chr>      <int> <chr>   <chr>   <chr>     

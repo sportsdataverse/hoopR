@@ -13,15 +13,12 @@ sportpress_club_seasons()
 
 ## Value
 
-A `hoopR_data` tibble: Seasons (END years) in which Belgian and Dutch
-clubs have teams. An empty valid answer raises `hoopR_no_data`; the
-columns are always these, in this order (sportsdataverse-py
-`sportpress_club_seasons`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year in which the clubs (countries) have teams; includes 2021 = 2020-21. |
+A `hoopR_data` tibble with one row per season. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "sportpress_club_seasons")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -40,7 +37,7 @@ lists every function in this family.
 # \donttest{
   try(sportpress_club_seasons())
 #> ── BNXT League Club Seasons from Sportpress ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:09:11 UTC
+#> ℹ Data updated: 2026-11-09 19:15:07 UTC
 #> # A tibble: 6 × 1
 #>   season
 #>    <int>

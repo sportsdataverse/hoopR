@@ -46,16 +46,13 @@ bleague_schedule_events(season, tab, month, day, event = NULL)
 
 ## Value
 
-A `hoopR_data` tibble with these columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| season | integer | Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. |
-| tab | integer | Division tab: 1 = B1, 2 = B2, 3 = B3. |
-| event_id | integer | Competition type code (see event); the page's event filter value. |
-| label | character | Competition label in Japanese (e.g. B1 league, all-star game, B1 Championship). |
-| selected | logical | True for the competition the page was asked for. |
+A `hoopR_data` tibble with one row per competition type. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "bleague_schedule_events")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

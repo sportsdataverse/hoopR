@@ -34,39 +34,19 @@ cbbd_teams_roster(season = most_recent_mbb_season(), team = NULL)
 
 ## Value
 
-A `hoopR_data` tibble with one row per team:
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_teams")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
-|                    |           |                                |
-|--------------------|-----------|--------------------------------|
-| col_name           | types     | description                    |
-| id                 | integer   | CollegeBasketballData team id. |
-| source_id          | character | Source (ESPN) team id.         |
-| school             | character | School name.                   |
-| mascot             | character | Team mascot.                   |
-| abbreviation       | character | Team abbreviation.             |
-| display_name       | character | Full team display name.        |
-| short_display_name | character | Short team display name.       |
-| primary_color      | character | Primary team color (hex).      |
-| secondary_color    | character | Secondary team color (hex).    |
-| current_venue_id   | integer   | Current home venue id.         |
-| current_venue      | character | Current home venue name.       |
-| current_city       | character | Current home venue city.       |
-| current_state      | character | Current home venue state.      |
-| conference_id      | integer   | Conference id.                 |
-| conference         | character | Conference name.               |
-
-A `hoopR_data` tibble with one row per team. The `players` column is a
-nested list of roster players:
-
-|                |           |                                |
-|----------------|-----------|--------------------------------|
-| col_name       | types     | description                    |
-| team_id        | integer   | CollegeBasketballData team id. |
-| team_source_id | character | Source (ESPN) team id.         |
-| team           | character | Team name.                     |
-| conference     | character | Conference name.               |
-| season         | integer   | Season (4-digit ending-year).  |
-| players        | list      | Nested list of roster players. |
+A `hoopR_data` tibble with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cbbd_teams_roster")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 
@@ -79,14 +59,14 @@ Other CBD Teams Functions:
 ``` r
 # \donttest{
   try(cbbd_teams(conference = "ACC"))
-#> ✖ 2026-11-09 17:03:32.464005: Invalid arguments or no teams data available!
+#> ✖ 2026-11-09 19:09:49.253348: Invalid arguments or no teams data available!
 #> ✖ Args: conference = "ACC", season = 2027
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_teams_roster(season = 2024, team = "Duke"))
-#> ✖ 2026-11-09 17:03:32.472069: Invalid arguments or no roster data available!
+#> ✖ 2026-11-09 19:09:49.263889: Invalid arguments or no roster data available!
 #> ✖ Args: season = 2024, team = "Duke"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

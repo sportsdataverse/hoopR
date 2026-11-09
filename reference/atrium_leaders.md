@@ -68,23 +68,13 @@ atrium_leaders(
 
 ## Value
 
-A `hoopR_data` tibble, one row per `(season_id, stat_key, rank)`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| season_id | character | Season UUID of the leaders. |
-| stat_key | character | Statistic the leader is ranked in (points, pointsPerGame, efficiency, doubleDouble, ...). |
-| stat_name | character | Short column heading the site shows for the statistic (PTS, REB), in the site's language. |
-| stat_label | character | Longer statistic label the site shows (code in the API), in the site's language. |
-| rank | integer | Position of the leader within the statistic, 1-based (the API lists the top 5). |
-| entity_id | character | Team UUID of the leader's team. |
-| entity_name | character | Name of the leader's team. |
-| person_id | character | Player UUID of the leader. |
-| person_name | character | Name of the leader. |
-| value | double | Numeric value of the statistic; null when the API sends a duration or text (see value_text). |
-| value_text | character | Non-numeric statistic value, e.g. an ISO 8601 duration such as PT12M2S for minutes per game. |
+A `hoopR_data` tibble with one row per (`season_id`, `stat_key`,
+`rank`). Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_leaders")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

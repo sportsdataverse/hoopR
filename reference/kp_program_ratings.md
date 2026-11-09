@@ -10,28 +10,12 @@ kp_program_ratings()
 
 ## Value
 
-A data frame with 17 columns:
-
-|           |           |                                     |
-|-----------|-----------|-------------------------------------|
-| col_name  | types     | description                         |
-| rk        | numeric   | Rk.                                 |
-| team      | character | Team-side label or team identifier. |
-| conf      | character | character.                          |
-| rtg       | numeric   | Rtg.                                |
-| best_rk   | numeric   | Best rk.                            |
-| best_yr   | numeric   | Best yr.                            |
-| worst_rk  | numeric   | Worst rk.                           |
-| worst_yr  | numeric   | Worst yr.                           |
-| kp_median | numeric   | Kp median.                          |
-| top10     | numeric   | Top10.                              |
-| top25     | numeric   | Top25.                              |
-| top50     | numeric   | Top50.                              |
-| ch        | numeric   | Ch.                                 |
-| f4        | numeric   | F4.                                 |
-| s16       | numeric   | S16.                                |
-| r1        | numeric   | R1.                                 |
-| chg       | numeric   | Chg.                                |
+A data frame with one row per team. Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "kp_program_ratings")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## See also
 

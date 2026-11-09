@@ -36,6 +36,7 @@ Endpoint: GET https://miniappapi.tbf.org.tr/webapi-service/api/Player/get-top-ca
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -145,9 +146,11 @@ The top flight was named TBL until 2007-08 and is listed under bsl.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble. Up to 20 rows per <code>kind</code> (<code>total</code> and <code>average</code>), best first.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises <code>hoopR_no_data</code>, as in sportsdataverse-py.</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id).</td></tr><tr><td>competition</td><td>character</td><td>TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports).</td></tr><tr><td>category</td><td>character</td><td>Statistic of the wrapper: points, assists, blocks, rebounds, steals, minutes, threes, turnovers or efficiency.</td></tr><tr><td>kind</td><td>character</td><td>total = the server's top 20 by season TOTAL; average = the top 20 by PER-GAME average.</td></tr><tr><td>rank</td><td>integer</td><td>Rank in the list, 1 = best (the API's order).</td></tr><tr><td>person_id</td><td>integer</td><td>TBF person id (oyuncuKodu, sent as a string; key space: TBF persons).</td></tr><tr><td>player_name</td><td>character</td><td>Player name as TBF prints it for that route (title case, Turkish letters kept).</td></tr><tr><td>team_process_id</td><td>integer</td><td>Team-season id (takimKodu, sent as a string; key space: TBF team registrations; despite the name NOT the club id).</td></tr><tr><td>team_name</td><td>character</td><td>Team name as registered for that season, uppercase with Turkish letters (sponsor name: 'PIZZABULLS BORDO BANDIRMA').</td></tr><tr><td>games</td><td>integer</td><td>Games played (macSayisi, sent as a string).</td></tr><tr><td>value</td><td>double</td><td>The ranked statistic: the season total for kind total, the per-game average for kind average (the API names the field grup and sends it as a string).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per leader and <code>kind</code>.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "tbf_leaders_steals")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Official TBF app API, unofficial for SportsDataverse: the backend of the Turkish Basketball Federation's

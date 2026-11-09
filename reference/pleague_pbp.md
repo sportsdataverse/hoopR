@@ -23,40 +23,13 @@ pleague_pbp(gid)
 
 ## Value
 
-A `hoopR_data` tibble: Play-by-play of one finished game (2022-23 on) in
-game order, with shot x / y and the clip references. An empty valid
-answer is a zero-row tibble with these columns, in this order
-(sportsdataverse-py `pleague_pbp`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| gid | integer | P. LEAGUE+ game id on the site: ONE global integer sequence over every stage and season (1-12 = 2020-21 pre-season, 13 = the 2020-21 opener, 197 = the 2022-23 opener, 662 = the 2025-26 opener), with gaps; a row id, not a count. The {gid} of /game/{gid}. |
-| seq | integer | Position of the play in game order, 1-based (the fragment lists plays oldest first within the fragment). |
-| period | character | Period label: Q1-Q4, then OT1, OT2 for overtime. |
-| period_no | integer | 1-based position of the period: 1-4 for Q1-Q4, then 5 for OT1, 6 for OT2. |
-| clock | character | Game clock REMAINING in the period 'mm:ss' (counts down; Q1 opens at 12:00, OT at 05:00). |
-| seconds_left | integer | The clock as whole seconds remaining in the period (08:34 = 514), derived by the parser. |
-| side | character | Side of the acting team: away or home (the fragment places the play in the away or home column). |
-| jersey | character | Shirt number of the acting player as printed; null on team rows and where the name is printed without a number. |
-| player_zh | character | Acting player's name as printed; null on team rows (a team rebound, timeout or shot-clock violation). The page prints no player ids: join to the box on side, jersey and name_zh. |
-| action | character | Action code (one of the codes listed under "Action codes" below; an unseen phrase is refused as layout drift). |
-| action_zh | character | The action phrase as printed, Traditional Chinese ((Chinese text) = dunk, made; '#35 (Chinese text)' = '#35 {player} dunk, made'); blank on an unlabelled row. Each of the 82 observed phrases maps to one action code (see `action`). |
-| action_en | character | English meaning of the play's phrase (see action), so a free throw reads its own trip, e.g. 'free throw 2, made'; null for a code outside the observed table. |
-| text_zh | character | The whole printed text of the play, e.g. '#35 (Chinese text)' = '#35 {player} dunk, made'. |
-| ft_number | integer | Which free throw of the trip this is (1, 2 or 3), from (Chinese text); null on every other play. |
-| ft_awarded | integer | Free throws awarded in the trip (1, 2 or 3) from (Chinese text); set only on the FIRST free throw's row, null otherwise. |
-| points | integer | Points scored by the play from the '+2' / '+3' / '+1' tag; null when the tag is a bare '+'. |
-| score_away | integer | Away score after the play, from the 'A - H' cell (AWAY first, unlike the box); null on plays that print no score (substitutions, rebounds, jump balls). |
-| score_home | integer | Home score after the play, from the 'A - H' cell; null when the play prints no score. |
-| x | double | Shot / play x: PERCENT (0-100) of the court LENGTH in the PHYSICAL court frame (not normalised per team): baskets near x = 5 and x = 95, teams swap ends at half-time. The Preciser shot list uses a home-attacks-95 frame: x_vendor = 100 - x in the halves where the home team attacks x \< 50. Null on plays without a location. Court 28.75 m long. |
-| y | double | Shot / play y: PERCENT (0-100) of the court WIDTH in the physical frame (baskets at y = 50); y_vendor = 100 - y in the halves where the home team attacks x \< 50. Which sideline is y = 0 is unverified. Court 15.25 m wide. |
-| nice_play | logical | True when the site stars the play (a nice_play row class and a starred clip). |
-| video_uuid | character | Clip uuid (key space: the clip vendor tryspot); null on plays without a clip (about 3 in 4). The clip urls are never kept: they carry a vendor access key. |
-| synergy_play_id | character | Synergy Sports play uuid of the clip (the site links Synergy); a string on every one of the 50,862 clips in the corpus. |
-| video_stat_category | character | The clip's own stat label (ast, blk, ft_made, ft_miss, pfoul, reb_d, reb_o, stl, three_made, three_miss, timeout, turnover, two_made, two_miss): it names the PLAY the clip shows, not always this row's action (a rebound row carries the missed shot's clip). |
-| tryspot_player_id | integer | Player id in the clip vendor's key space (an integer such as 59476); NOT the box player_id. |
-| video_created_at | character | When the clip was created, UTC ISO 8601 with milliseconds. |
+A `hoopR_data` tibble with one row per play-by-play event. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "pleague_pbp")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -262,7 +235,7 @@ lists every function in this family.
 # \donttest{
   try(pleague_pbp(gid = 197))
 #> ── P. LEAGUE+ Play-by-Play from pleagueofficial.com ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:28 UTC
+#> ℹ Data updated: 2026-11-09 19:14:19 UTC
 #> # A tibble: 630 × 26
 #>      gid   seq period period_no clock seconds_left side  jersey player_zh action
 #>    <int> <int> <chr>      <int> <chr>        <int> <chr> <chr>  <chr>     <chr> 

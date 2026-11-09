@@ -22,21 +22,13 @@ rotowire_injuries()
 
 ## Value
 
-A `hoopR_data` tibble with one row per injured player:
-
-|             |           |                                                   |
-|-------------|-----------|---------------------------------------------------|
-| col_name    | types     | description                                       |
-| player_id   | character | RotoWire player id.                               |
-| player      | character | Player name.                                      |
-| first_name  | character | First name.                                       |
-| last_name   | character | Last name.                                        |
-| team        | character | Team abbreviation.                                |
-| position    | character | Position.                                         |
-| injury      | character | Injury (body part / description).                 |
-| status      | character | Injury designation (Out, GTD, Questionable, ...). |
-| return_date | character | Projected return (`NA` unless a subscriber).      |
-| url         | character | RotoWire player page URL.                         |
+A `hoopR_data` tibble with one row per injured player. Its columns are
+listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "rotowire_injuries")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Examples
 
@@ -44,7 +36,7 @@ A `hoopR_data` tibble with one row per injured player:
 # \donttest{
   try(rotowire_injuries())
 #> ── NBA injury report from rotowire.com ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:08:38 UTC
+#> ℹ Data updated: 2026-11-09 19:14:30 UTC
 #> # A tibble: 5 × 10
 #>   player_id player first_name last_name team  position injury status return_date
 #>   <chr>     <chr>  <chr>      <chr>     <chr> <chr>    <chr>  <chr>  <chr>      

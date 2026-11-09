@@ -27,21 +27,13 @@ fiba_gdap_final_standings(comp, return_parsed = TRUE)
 
 ## Value
 
-A `hoopR_data` tibble (the raw JSON list when `return_parsed = FALSE`)
-with the following columns:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| competition_id | integer | FIBA competition id (Int64) the final ranking belongs to; the comp argument. |
-| final_rank | integer | Final rank in the competition. |
-| team_team_id | integer | Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. |
-| team_team_code | character | Team abbreviation (FIBA country code or club abbreviation). |
-| team_short_name | character | Short team name: the country code for a national team, the club's short name for a club. |
-| team_profile | character | Team profile; null in this route. |
-| team_status_code | character | Team entry status; always null in the samples, values unverified. |
-| team_status_name | character | Team entry status label; always null in the samples, values unverified. |
-| team_organisation_id | integer | Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T\_`<id>`. |
+A `hoopR_data` tibble with one row per team in the standings. Its
+columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "fiba_gdap_final_standings")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -60,7 +52,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gdap_final_standings(comp = 208182))
 #> ── FIBA gdap_final_standings from fiba.basketball ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:36 UTC
+#> ℹ Data updated: 2026-11-09 19:11:50 UTC
 #> # A tibble: 32 × 9
 #>    competition_id final_rank team_team_id team_team_code team_short_name
 #>             <int>      <int>        <int> <chr>          <chr>          

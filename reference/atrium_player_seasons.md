@@ -67,30 +67,13 @@ atrium_player_seasons(
 
 ## Value
 
-A `hoopR_data` tibble, one row per `(person_id, season_name, team_id)`:
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| website_id | integer | Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. |
-| person_id | character | Player UUID (person), shared across seasons and sites. |
-| season_name | character | Competition-season the line is for, in the site's language (Betclic ELITE - Playoffs 2025). |
-| season_year | integer | The site's own year of that season (START year on LNB). |
-| season_end_year | integer | Season END year of that season (sdv key); null when the site is unmapped. |
-| team_id | character | Team UUID the player played for in that season. |
-| team_name | character | Name of the team the player played for in that season. |
-| minutes_per_game | character | Minutes per game as an ISO 8601 duration (player, that competition-season). |
-| points_per_game | double | Points per game (player, that competition-season). |
-| rebounds_per_game | double | Rebounds per game (player, that competition-season). |
-| rebounds_offensive_per_game | double | Offensive rebounds per game (player, that competition-season). |
-| rebounds_defensive_per_game | double | Defensive rebounds per game (player, that competition-season). |
-| assists_per_game | double | Assists per game (player, that competition-season). |
-| steals_per_game | double | Steals per game (player, that competition-season). |
-| blocks_per_game | double | Blocks per game (player, that competition-season). |
-| turnovers_per_game | double | Turnovers per game (player, that competition-season). |
-| fouls_personal_per_game | double | Personal fouls per game (player, that competition-season). |
-| dunks_per_game | double | Dunks per game (player, that competition-season). |
-| efficiency | integer | Efficiency rating, from the site's own formula (player, that competition-season). |
+A `hoopR_data` tibble with one row per (`person_id`, `season_name`,
+`team_id`). Its columns are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "atrium_player_seasons")`) and in the
+searchable [return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 

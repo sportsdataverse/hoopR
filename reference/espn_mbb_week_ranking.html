@@ -40,6 +40,7 @@ week x ranking-source). NBA typically returns an empty tibble."><meta property="
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -174,11 +175,9 @@ week x ranking-source). NBA typically returns an empty tibble.</p>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A tibble with one row per ranked team (typically 25).</p>
-<p>Columns as documented in the shared <a href="espn_mbb_week_ranking_schema.html">espn_mbb_week_ranking_schema</a> table.</p>
-<p>A tibble with one row per ranked team (typically 25).</p>
-<p>Columns as documented in the shared <a href="espn_mbb_week_ranking_schema.html">espn_mbb_week_ranking_schema</a> table.</p>
-    </div>
+    <p>A <code>hoopR_data</code> tibble with one row per ranked team.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League slug.</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>season_type</td><td>integer</td><td>Season-type id.</td></tr><tr><td>week</td><td>integer</td><td>Week number.</td></tr><tr><td>ranking_id</td><td>character</td><td>ESPN ranking id.</td></tr><tr><td>name</td><td>character</td><td>Ranking name (e.g. "AP Top 25").</td></tr><tr><td>short_name</td><td>character</td><td>Short name.</td></tr><tr><td>type</td><td>character</td><td>Ranking type code.</td></tr><tr><td>headline</td><td>character</td><td>Full headline.</td></tr><tr><td>date</td><td>character</td><td>Date of the ranking.</td></tr><tr><td>current</td><td>integer</td><td>Current rank.</td></tr><tr><td>previous</td><td>integer</td><td>Previous-week rank.</td></tr><tr><td>points</td><td>numeric</td><td>Voting points.</td></tr><tr><td>first_place_votes</td><td>integer</td><td>First-place vote count.</td></tr><tr><td>trend</td><td>character</td><td>Trend indicator (e.g. "+3", "-2", "-").</td></tr><tr><td>record_summary</td><td>character</td><td>Team's record at time of poll (e.g. "20-2").</td></tr><tr><td>team_id</td><td>character</td><td>ESPN team id.</td></tr><tr><td>team_ref</td><td>character</td><td><code>$ref</code> to the team-in-season resource.</td></tr><tr><td>last_updated</td><td>character</td><td>Last-updated timestamp.</td></tr></table><p>A <code>hoopR_data</code> tibble with one row per ranked team.</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>league</td><td>character</td><td>League slug.</td></tr><tr><td>season</td><td>integer</td><td>Season year.</td></tr><tr><td>season_type</td><td>integer</td><td>Season-type id.</td></tr><tr><td>week</td><td>integer</td><td>Week number.</td></tr><tr><td>ranking_id</td><td>character</td><td>ESPN ranking id.</td></tr><tr><td>name</td><td>character</td><td>Ranking name (e.g. "AP Top 25").</td></tr><tr><td>short_name</td><td>character</td><td>Short name.</td></tr><tr><td>type</td><td>character</td><td>Ranking type code.</td></tr><tr><td>headline</td><td>character</td><td>Full headline.</td></tr><tr><td>date</td><td>character</td><td>Date of the ranking.</td></tr><tr><td>current</td><td>integer</td><td>Current rank.</td></tr><tr><td>previous</td><td>integer</td><td>Previous-week rank.</td></tr><tr><td>points</td><td>numeric</td><td>Voting points.</td></tr><tr><td>first_place_votes</td><td>integer</td><td>First-place vote count.</td></tr><tr><td>trend</td><td>character</td><td>Trend indicator (e.g. "+3", "-2", "-").</td></tr><tr><td>record_summary</td><td>character</td><td>Team's record at time of poll (e.g. "20-2").</td></tr><tr><td>team_id</td><td>character</td><td>ESPN team id.</td></tr><tr><td>team_ref</td><td>character</td><td><code>$ref</code> to the team-in-season resource.</td></tr><tr><td>last_updated</td><td>character</td><td>Last-updated timestamp.</td></tr></table></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p><strong>Get ESPN MBB Per-Week Ranking Detail</strong></p>
@@ -199,7 +198,7 @@ week x ranking-source). NBA typically returns an empty tibble.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_week_ranking</span><span class="op">(</span>ranking_id <span class="op">=</span> <span class="fl">1</span>, week <span class="op">=</span> <span class="fl">5</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Week Ranking Detail ───────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:05:03 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:11:17 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 25 × 19</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    league    season season_type  week ranking_id name  short_name type  headline</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   </span>
@@ -220,11 +219,11 @@ week x ranking-source). NBA typically returns an empty tibble.</p>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_week_ranking</span><span class="op">(</span>ranking_id <span class="op">=</span> <span class="fl">1</span>, week <span class="op">=</span> <span class="fl">5</span>, season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 17:05:03.875898: Failed to retrieve ESPN nba week-5 ranking 1 for season=2025</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> 2026-11-09 19:11:17.216411: Failed to retrieve ESPN nba week-5 ranking 1 for season=2025</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Args: league = "nba", season = 2025, season_type = 2L, week = 5, ranking_id = 1</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> Error: The API returned an error</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Week Ranking Detail ───────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 17:05:03 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 19:11:17 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>

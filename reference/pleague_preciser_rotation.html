@@ -36,6 +36,7 @@ Endpoint: GET https://api.preciser.io/game/rotation/chart/o/plg/gameId/{uuid}"><
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -145,8 +146,11 @@ the uuid must be the game page's. Without it only the checks the body allows by 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: On-court stints of every player of one finished game (the rotation chart). An empty valid
-answer is a zero-row tibble with these columns, in this order (sportsdataverse-py <code>pleague_preciser_rotation</code>):</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>game_uuid</td><td>character</td><td>Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; <code>uuid</code> of pleague_game.</td></tr><tr><td>side</td><td>character</td><td>Which team the row belongs to: home or away.</td></tr><tr><td>name_zh</td><td>character</td><td>Player name (Traditional Chinese); equals the site box name_zh, which is how the runtime checks the roster.</td></tr><tr><td>jersey</td><td>integer</td><td>Shirt number (an integer here; the box prints it as a string).</td></tr><tr><td>started</td><td>logical</td><td>True when the player started the game.</td></tr><tr><td>stint_no</td><td>integer</td><td>1-based position of the stint among the player's stints, in game order.</td></tr><tr><td>start_period</td><td>character</td><td>Period in which the stint starts (Q1-Q4, OT1, ...).</td></tr><tr><td>start_clock</td><td>character</td><td>Clock REMAINING in start_period when the stint starts, 'm:ss'.</td></tr><tr><td>start_seconds</td><td>integer</td><td>Seconds elapsed on the game clock when the stint starts (cumulative across periods).</td></tr><tr><td>end_period</td><td>character</td><td>Period in which the stint ends.</td></tr><tr><td>end_clock</td><td>character</td><td>Clock REMAINING in end_period when the stint ends, 'm:ss'.</td></tr><tr><td>end_seconds</td><td>integer</td><td>Seconds elapsed on the game clock when the stint ends (cumulative across periods).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per player stint.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "pleague_preciser_rotation")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="pleague_preciser_shots.html">pleague_preciser_shots()</a></code>.</p>

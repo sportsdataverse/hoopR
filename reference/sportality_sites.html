@@ -36,6 +36,7 @@ Endpoint: GET https://www.basketligaen.dk/api/sports-v2/all-sites/{ssgt_uuid}"><
     <li><a class="dropdown-item" href="../articles/mbb-cookbook.html">MBB Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/nba-cookbook.html">NBA Cookbook</a></li>
     <li><a class="dropdown-item" href="../articles/parameter-descriptions.html">NBA Stats API Parameter Descriptions</a></li>
+    <li><a class="dropdown-item" href="../articles/return-columns.html">Return Columns</a></li>
     <li><a class="dropdown-item" href="../articles/international-basketball-leagues.html">International Basketball Leagues</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Guides</h6></li>
@@ -139,9 +140,11 @@ Directory: <code>/statistics-v2/layout-info</code> <code>seasonSeriesGameTypeTea
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hoopR_data</code> tibble: Clubs (sites) taking part in an ssgt. An empty valid answer raises <code>hoopR_no_data</code>;
-the documented columns come first, in this order (sportsdataverse-py <code>sportality_sites</code>), then any column the API added
-later:</p><table class="table table"><tr><td>col_name</td><td>type</td><td>description</td></tr><tr><td>id</td><td>character</td><td>Site instance id of the club (platform key space; the same as instanceId).</td></tr><tr><td>instance_id</td><td>character</td><td>Site instance id of the club or league (platform key space, <code>&lt;code&gt;&lt;n&gt;_&lt;code&gt;</code> such as hol2_hol; the league itself is dbl1_dbl).</td></tr><tr><td>public_url</td><td>character</td><td>The club's own website.</td></tr><tr><td>name</td><td>character</td><td>Display name of the club.</td></tr><tr><td>icon</td><td>character</td><td>Team logo URL (SVG on sportality.cdn.s8y.se).</td></tr></table></div>
+    <p>A <code>hoopR_data</code> tibble with one row per club.
+Its columns are listed in <a href="return_columns.html">return_columns</a>
+(<code>subset(return_columns, fn == "sportality_sites")</code>) and in the searchable
+<a href="https://hoopR.sportsdataverse.org/articles/return-columns.html">return columns</a> article.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>Source, terms of use, request pacing, seasons, ids, coverage and error classes of this family: see the notes in <code><a href="sportality_schedule.html">sportality_schedule()</a></code>.</p>

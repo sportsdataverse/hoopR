@@ -22,52 +22,13 @@ cba_rosters(schedule_id)
 
 ## Value
 
-A `hoopR_data` tibble: One row per registered player (season
-registration, not the game box). An empty valid answer is a zero-row
-tibble with these columns, in this order (sportsdataverse-py
-`cba_rosters`):
-
-|  |  |  |
-|----|----|----|
-| col_name | type | description |
-| schedule_id | integer | CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the `{scheduleId}` of every game route). Stamped by the runtime from the request; null on a body parsed without it. |
-| side | character | Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block). |
-| age | integer | Age in years as registered (0 on every sampled row: not maintained). |
-| birth_date | character | Date of birth 'YYYY-MM-DD'. A public player bio field of the roster (kept; officials' and coaches' dates would be redacted by the capture). |
-| body_data | character | JSON string of physical-testing results as the league stores it (wingspan, standing reach, vertical reach, hand size); null where not tested. |
-| cn_alias | character | Player short name (Chinese). |
-| cn_alias_show | character | Display name (Chinese); '—' for a placeholder row. |
-| cn_name | character | Player full name (Chinese; may include a first-name form for foreigners). |
-| created_date | character | Audit field: row creation time 'YYYY-MM-DD HH:MM:SS'. |
-| first_name | character | Given name in Latin letters as registered, in capitals (e.g. 'CAI S.L.S.'). |
-| height | integer | Height in cm (integer). |
-| id | character | Internal row id of the (player, team, season) registration, a 19-digit integer beyond 2^53: read it as a string/int64, never as a JS number. Not the playerId. |
-| is_captain | logical | Team captain flag (false on every sampled row). |
-| is_delete | logical | Soft-delete flag (false on every sampled row). |
-| is_injury | logical | Injury flag (false on every sampled row). |
-| is_three | integer | Flag, 2 on every sampled row; meaning unverified. |
-| last_modified_date | character | Audit field: last modification time; null on rows never modified. |
-| last_name | character | Family name in Latin letters; ” when none, and null on some older rows. |
-| match_type_id | integer | Match type id (1 = regular season) of the registration. |
-| nationality | character | Nationality (Chinese country name; see the nationality code table for every value seen and its English name). Chinese country names seen: China; United States; Canada; France; Chinese Taipei; Iran; Nigeria; Jordan. |
-| number | character | Jersey number as a string. |
-| player_cba_id | integer | A registration id from the league's own system (e.g. 502672); 0 when unset (27 of 101 sampled rows). Not the playerId (unverified beyond that). |
-| player_id | integer | playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. |
-| player_pic | character | Absolute URL of the player's photo; null when there is none. |
-| position | character | Position code as registered: SG, SF, PG, PF, C and their '/' pairs, or the coarse G (guard) / F (forward) on older rows (see positionDescription). Label glosses: C = (Chinese text); C/PF = (Chinese text); F = (Chinese text); G = (Chinese text); PF = (Chinese text); PF/C = (Chinese text); PF/SF = (Chinese text); PG = (Chinese text); PG/SG = (Chinese text); SF = (Chinese text); SF/PF = (Chinese text); SF/SG = (Chinese text); SG = (Chinese text); SG/PG = (Chinese text); SG/SF = (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text). |
-| position_description | character | Position label (Chinese). Eras differ: coarse (Chinese text) (guard) / (Chinese text) (forward) / (Chinese text) (center) in older seasons, five-way (Chinese text) (point guard) / (Chinese text) (shooting guard) / (Chinese text) (small forward) / (Chinese text) (power forward) / (Chinese text) (center) in newer ones; dual positions are joined with '/' (e.g. (Chinese text)). Label glosses: C = (Chinese text); C/PF = (Chinese text); F = (Chinese text); G = (Chinese text); PF = (Chinese text); PF/C = (Chinese text); PF/SF = (Chinese text); PG = (Chinese text); PG/SG = (Chinese text); SF = (Chinese text); SF/PF = (Chinese text); SF/SG = (Chinese text); SG = (Chinese text); SG/PG = (Chinese text); SG/SF = (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text). |
-| position_string | character | Unobserved: null in every sample. |
-| season | integer | Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. |
-| season_id | integer | Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. Same value as season. |
-| season_name | character | Unobserved: null in every sample. |
-| season_year | character | Unobserved: null in every sample. |
-| team_cba_id | integer | teamId again as an integer (29128); meaning unverified beyond equalling team_id in the sample. |
-| team_cn_alias | character | Team short name (Chinese) in that season. |
-| team_cn_name | character | Team full legal name (Chinese), e.g. 'Zhejiang Guangsha Lions Club Zheshang Securities basketball team'. |
-| team_en_alias | character | Team code or English city name as registered: a three-letter code on recent rows ('ZGL', 'SBW'), an English city name on older ones ('Guangdong', 'Sichuan'), ” when none. |
-| team_en_name | character | Team English name as the league registers it (the sample reads 'GUANG SHA'). |
-| team_id | integer | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. |
-| weight | integer | Weight in kg (integer). |
+A `hoopR_data` tibble with one row per registered player. Its columns
+are listed in
+[return_columns](https://hoopR.sportsdataverse.org/reference/return_columns.md)
+(`subset(return_columns, fn == "cba_rosters")`) and in the searchable
+[return
+columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
+article.
 
 ## Details
 
@@ -86,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(cba_rosters(schedule_id = 100105799))
 #> ── CBA Rosters from data-server.cbaleague.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:03:24 UTC
+#> ℹ Data updated: 2026-11-09 19:09:40 UTC
 #> # A tibble: 32 × 38
 #>    schedule_id side    age birth_date body_data   cn_alias cn_alias_show cn_name
 #>          <int> <chr> <int> <chr>      <chr>       <chr>    <chr>         <chr>  

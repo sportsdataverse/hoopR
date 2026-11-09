@@ -28,17 +28,35 @@ espn_nba_venues(...)
 
 ## Value
 
-A single `hoopR_data` tibble with one row per venue.
+A `hoopR_data` tibble with one row per venue.
 
-Columns as documented in the shared
-[espn_mbb_venues_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_venues_schema.md)
-table.
+|               |           |                          |
+|---------------|-----------|--------------------------|
+| col_name      | types     | description              |
+| venue_id      | character | Unique venue identifier. |
+| name          | character | Display name.            |
+| full_name     | character | Player's full name.      |
+| address_city  | character |                          |
+| address_state | character |                          |
+| capacity      | integer   |                          |
+| indoor        | logical   |                          |
+| grass         | logical   |                          |
+| images_url    | character |                          |
 
-A single `hoopR_data` tibble with one row per venue.
+A `hoopR_data` tibble with one row per venue.
 
-Columns as documented in the shared
-[espn_mbb_venues_schema](https://hoopR.sportsdataverse.org/reference/espn_mbb_venues_schema.md)
-table.
+|               |           |                          |
+|---------------|-----------|--------------------------|
+| col_name      | types     | description              |
+| venue_id      | character | Unique venue identifier. |
+| name          | character | Display name.            |
+| full_name     | character | Player's full name.      |
+| address_city  | character |                          |
+| address_state | character |                          |
+| capacity      | integer   |                          |
+| indoor        | logical   |                          |
+| grass         | logical   |                          |
+| images_url    | character |                          |
 
 ## See also
 
@@ -58,7 +76,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_venues()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Venues from ESPN.com ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:03 UTC
+#> ℹ Data updated: 2026-11-09 19:11:16 UTC
 #> # A tibble: 1,003 × 9
 #>    venue_id name  full_name address_city address_state capacity indoor grass
 #>    <chr>    <chr> <chr>     <chr>        <chr>            <int> <lgl>  <lgl>
@@ -78,7 +96,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_venues()
 #> ── ESPN NBA Venues from ESPN.com ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 17:05:03 UTC
+#> ℹ Data updated: 2026-11-09 19:11:16 UTC
 #> # A tibble: 648 × 9
 #>    venue_id name  full_name address_city address_state capacity indoor grass
 #>    <chr>    <chr> <chr>     <chr>        <chr>            <int> <lgl>  <lgl>

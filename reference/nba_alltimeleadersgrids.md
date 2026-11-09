@@ -193,11 +193,11 @@ nba_gravityleaders(
 
 ## Value
 
-Returns a named list of data frames: ASTLeaders, BLKLeaders,
-DREBLeaders, FG3ALeaders, FG3MLeaders, FG3_PCTLeaders, FGALeaders,
-FGMLeaders, FG_PCTLeaders, FTALeaders, FTMLeaders, FT_PCTLeaders,
-GPLeaders, OREBLeaders, PFLeaders, PTSLeaders, REBLeaders, STLLeaders,
-TOVLeaders
+A named list of tibbles: `GPLeaders`, `PTSLeaders`, `ASTLeaders`,
+`STLLeaders`, `OREBLeaders`, `DREBLeaders`, `REBLeaders`, `BLKLeaders`,
+`FGMLeaders`, `FGALeaders`, `FG_PCTLeaders`, `TOVLeaders`,
+`FG3MLeaders`, `FG3ALeaders`, `FG3_PCTLeaders`, `PFLeaders`,
+`FTMLeaders`, `FTALeaders`, `FT_PCTLeaders`.
 
 **GPLeaders**
 
@@ -408,18 +408,23 @@ TOVLeaders
 | FT_PCT_RANK    | character |                              |
 | IS_ACTIVE_FLAG | character |                              |
 
-Returns a named list of data frames: AssistLeaders
+A named list of tibbles: `AssistLeaders`.
 
 **AssistLeaders**
 
-Columns as documented in the shared
-[nba_assistleaders_assistleaders_schema](https://hoopR.sportsdataverse.org/reference/nba_assistleaders_assistleaders_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| AST | character | Assists. |
 
 Returns a named list of data frames: AssistTracker
 
-Returns a named list of data frames: HomePageLeaders, LeagueAverage,
-LeagueMax
+A named list of tibbles: `HomePageLeaders`, `LeagueAverage`,
+`LeagueMax`.
 
 **HomePageLeaders**
 
@@ -455,15 +460,20 @@ LeagueMax
 
 Same columns as the **LeagueAverage** table above.
 
-Returns a named list of data frames: HomePageStat1, HomePageStat2,
-HomePageStat3, HomePageStat4, HomePageStat5, HomePageStat6,
-HomePageStat7, HomePageStat8
+A named list of tibbles: `HomePageStat1`, `HomePageStat2`,
+`HomePageStat3`, `HomePageStat4`, `HomePageStat5`, `HomePageStat6`,
+`HomePageStat7`, `HomePageStat8`.
 
 **HomePageStat1**
 
-Columns as documented in the shared
-[nba_homepagev2_homepagestat1_schema](https://hoopR.sportsdataverse.org/reference/nba_homepagev2_homepagestat1_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| PTS | character | Points scored. |
 
 **HomePageStat2**
 
@@ -478,9 +488,14 @@ table.
 
 **HomePageStat3**
 
-Columns as documented in the shared
-[nba_assistleaders_assistleaders_schema](https://hoopR.sportsdataverse.org/reference/nba_assistleaders_assistleaders_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| AST | character | Assists. |
 
 **HomePageStat4**
 
@@ -537,14 +552,19 @@ table.
 | TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
 | BLK | character | Blocks. |
 
-Returns a named list of data frames: AllTimeSeasonHigh, LastSeasonHigh,
-LeadersTiles, LowSeasonHigh,
+A named list of tibbles: `LeadersTiles`, `AllTimeSeasonHigh`,
+`LastSeasonHigh`, `LowSeasonHigh`.
 
 **LeadersTiles**
 
-Columns as documented in the shared
-[nba_homepagev2_homepagestat1_schema](https://hoopR.sportsdataverse.org/reference/nba_homepagev2_homepagestat1_schema.md)
-table.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| RANK | character | Rank. |
+| TEAM_ID | character | Unique team identifier. |
+| TEAM_ABBREVIATION | character | Short team abbreviation (e.g. 'LAS'). |
+| TEAM_NAME | character | Full team display name (e.g. 'Las Vegas Aces'). |
+| PTS | character | Points scored. |
 
 **AllTimeSeasonHigh**
 
@@ -559,9 +579,7 @@ table.
 
 **LastSeasonHigh**
 
-Columns as documented in the shared
-[nba_homepagev2_homepagestat1_schema](https://hoopR.sportsdataverse.org/reference/nba_homepagev2_homepagestat1_schema.md)
-table.
+Same columns as the **LeadersTiles** table above.
 
 **LowSeasonHigh**
 
@@ -571,7 +589,7 @@ Returns a named list of data frames: DefenseHubStat1, DefenseHubStat10,
 DefenseHubStat2, DefenseHubStat3, DefenseHubStat4, DefenseHubStat5,
 DefenseHubStat6, DefenseHubStat7, DefenseHubStat8, DefenseHubStat9
 
-Returns a named list of data frames: LeagueLeaders
+A named list of tibbles: `LeagueLeaders`.
 
 **LeagueLeaders**
 
@@ -607,7 +625,7 @@ Returns a named list of data frames: LeagueLeaders
 | AST_TOV   | character |                                          |
 | STL_TOV   | character |                                          |
 
-Returns a named list of data frames: DunkScoreLeaders
+A named list of `hoopR_data` tibbles: `DunkScoreLeaders`.
 
 **DunkScoreLeaders**
 
@@ -670,7 +688,7 @@ Returns a named list of data frames: DunkScoreLeaders
 | possible_attempted_charge | character | Possible attempted charge. |
 | video_available | character | Video available. |
 
-Returns a named list of data frames: GravityLeaders
+A named list of `hoopR_data` tibbles: `GravityLeaders`.
 
 **GravityLeaders**
 
