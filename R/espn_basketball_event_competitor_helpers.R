@@ -172,12 +172,20 @@
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%
         jsonlite::fromJSON(simplifyVector = FALSE)
-      items <- raw[["items"]] %||% list()
-      refs <- if (length(items) == 0L) character(0) else
-        vapply(items, function(x) x[["$ref"]] %||% NA_character_,
-               character(1))
-      aids <- if (length(refs) == 0L) character(0) else
-        sub(".*/roster/([0-9]+).*", "\\1", refs)
+      # ESPN serves the roster inline as `entries` (playerId + athlete $ref);
+      # the older paginated `items` of roster/<id> $refs is kept as a fallback.
+      entries <- raw[["entries"]] %||% list()
+      if (length(entries) > 0L) {
+        aids <- vapply(entries, function(x) as.character(x[["playerId"]] %||% NA), character(1))
+        refs <- vapply(entries, function(x) {
+          a <- x[["athlete"]]
+          if (is.list(a)) a[["$ref"]] %||% NA_character_ else NA_character_
+        }, character(1))
+      } else {
+        items <- raw[["items"]] %||% list()
+        refs <- vapply(items, function(x) x[["$ref"]] %||% NA_character_, character(1))
+        aids <- sub(".*/roster/([0-9]+).*", "\\1", refs)
+      }
       result <- data.frame(
         league     = rep(league, length(refs)),
         event_id   = rep(as.character(event_id), length(refs)),
