@@ -435,11 +435,9 @@ load_mbb_schedule <- function(
 }
 
 # load games file
-load_mbb_games <- function() {
-  .url <- "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/mbb/mbb_games_in_data_repo.csv"
-  dat <- .release_csv_from_url(.url)
-  # close(con)
-  return(dat)
+.mbb_games_index_url <- "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/mbb/mbb_games_in_data_repo.csv"
+load_mbb_games <- function(strict = FALSE) {
+  .release_csv_from_url(.mbb_games_index_url, strict = strict)
 }
 
 #' **Update or create a hoopR MBB play-by-play database**
@@ -597,7 +595,20 @@ build_mbb_db <- function(
     show_message = TRUE) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  valid_seasons <- load_mbb_games() %>%
+  # The index decides which seasons are rebuilt after the purge below, so it is
+  # read strictly and before anything is dropped: a partial index would lose
+  # the missing seasons from the user's table.
+  games <- tryCatch(
+    load_mbb_games(strict = TRUE),
+    error = function(e) {
+      cli::cli_abort(c(
+        "{my_time()} | Could not read the games index {.url {(.mbb_games_index_url)}}.",
+        "i" = "The data table {.val {tblname}} was left unchanged.",
+        "x" = "{conditionMessage(e)}"
+      ), call = NULL)
+    }
+  )
+  valid_seasons <- games %>%
     dplyr::filter(.data$season >= 2006) %>%
     dplyr::group_by(.data$season) %>%
     dplyr::summarise() %>%

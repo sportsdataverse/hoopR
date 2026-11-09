@@ -342,10 +342,9 @@ load_nba_schedule <- function(seasons = most_recent_nba_season(), ...,
 }
 
 # load games file
-load_nba_games <- function() {
-  .url <- "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/nba/nba_games_in_data_repo.csv"
-  dat <- .release_csv_from_url(.url)
-  return(dat)
+.nba_games_index_url <- "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/nba/nba_games_in_data_repo.csv"
+load_nba_games <- function(strict = FALSE) {
+  .release_csv_from_url(.nba_games_index_url, strict = strict)
 }
 
 #' **Update or create a hoopR NBA play-by-play database**
@@ -464,7 +463,20 @@ update_nba_db <- function(dbdir = tools::R_user_dir("hoopR", "data"),
 build_nba_db <- function(tblname = "hoopR_nba_pbp", db_conn, rebuild = FALSE, show_message = TRUE) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  valid_seasons <- load_nba_games() %>%
+  # The index decides which seasons are rebuilt after the purge below, so it is
+  # read strictly and before anything is dropped: a partial index would lose
+  # the missing seasons from the user's table.
+  games <- tryCatch(
+    load_nba_games(strict = TRUE),
+    error = function(e) {
+      cli::cli_abort(c(
+        "{my_time()} | Could not read the games index {.url {(.nba_games_index_url)}}.",
+        "i" = "The data table {.val {tblname}} was left unchanged.",
+        "x" = "{conditionMessage(e)}"
+      ), call = NULL)
+    }
+  )
+  valid_seasons <- games %>%
     dplyr::filter(.data$season >= 2002) %>%
     dplyr::group_by(.data$season) %>%
     dplyr::summarise() %>%

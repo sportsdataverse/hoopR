@@ -169,9 +169,24 @@ csv_from_url <- function(...) {
 # `csv_from_url()` directly. These are single files (games index, manifests),
 # so when every try fails the last error is raised, as before, after the
 # warning that names the url.
-.release_csv_from_url <- function(url, ...) {
-  # `file =` so fread() never takes a url with spaces for a shell command.
-  load <- .read_release_asset(url, function(u) csv_from_url(file = u, ...))
+#
+# The file is downloaded with libcurl first and fread() reads the local copy:
+# fread(url) under `download.file.method = "curl"` shells out to curl, which
+# ignores R's `timeout` and saves an HTTP 503 error page as if it were the csv.
+# With `strict = TRUE` a fread() warning (it stops early on a malformed row and
+# returns the rows before it) is an error, so a partial table never passes.
+.release_csv_from_url <- function(url, ..., strict = FALSE) {
+  read <- function(u) {
+    tmp <- tempfile(fileext = if (grepl("\\.gz$", u)) ".csv.gz" else ".csv")
+    on.exit(unlink(tmp), add = TRUE)
+    .download_url(u, tmp, method = "libcurl")
+    if (!strict) return(csv_from_url(file = tmp, ...))
+    withCallingHandlers(
+      csv_from_url(file = tmp, ...),
+      warning = function(w) stop("fread() warned, so the table may be partial: ", conditionMessage(w), call. = FALSE)
+    )
+  }
+  load <- .read_release_asset(url, read)
   if (inherits(load, "try-error")) stop(attr(load, "condition"))
   load
 }
@@ -265,8 +280,9 @@ parquet_from_url <- function(url) {
   readRDS(con)
 }
 
-.download_url <- function(url, dest) {
-  status <- utils::download.file(url, dest, mode = "wb", quiet = TRUE)
+# `...` goes to download.file(), e.g. `method = "libcurl"`.
+.download_url <- function(url, dest, ...) {
+  status <- utils::download.file(url, dest, mode = "wb", quiet = TRUE, ...)
   if (status != 0L || !file.exists(dest) || file.size(dest) == 0) {
     stop("Download failed (status ", status, ") or the file is empty.", call. = FALSE)
   }

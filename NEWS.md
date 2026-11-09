@@ -414,6 +414,15 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   returned.
   The games-index csv files behind `update_mbb_db()` and `update_nba_db()`
   are now read the same way.
+* `update_mbb_db(force_rebuild = TRUE)` / `update_nba_db(force_rebuild = TRUE)` no
+  longer lose seasons when the games index reads only partly. The index decides which
+  seasons are rebuilt after the table is dropped, but `data.table::fread()` can stop
+  early on a malformed row and return the rows before it with only a warning, and with
+  `options(download.file.method = "curl")` it fetched the url through curl, which ignores
+  R's `timeout` and saves an HTTP 503 error page as the csv. The index is now
+  downloaded with libcurl to a temporary file and read from there, a `fread()` warning
+  on it is an error, and the rebuild stops with an error naming the index url before
+  anything is dropped, leaving the table unchanged.
 
 ### **Dependencies**
 
