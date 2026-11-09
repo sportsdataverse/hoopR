@@ -204,7 +204,14 @@
   dplyr::bind_rows(parts)
 }
 .fox_bb_odds <- function(raw, game_id) {
-  sp <- raw[["sixPack"]]; o <- if (is.null(sp)) NULL else sp[["odds"]]; rows <- list()
+  sp <- raw[["sixPack"]]
+  if (is.null(sp)) {
+    # The odds route now nests the six-pack as a module: sectionList[[i]]$modules[[j]]$model.
+    for (s in .fox_or(raw[["sectionList"]], list())) for (m in .fox_or(s[["modules"]], list())) {
+      if (is.null(sp) && identical(m[["type"]], "six-pack")) sp <- m[["model"]]
+    }
+  }
+  o <- if (is.null(sp)) NULL else sp[["odds"]]; rows <- list()
   if (!is.null(o)) {
     hdr <- janitor::make_clean_names(.fox_cells(o[["columnHeaders"]]))
     for (r in .fox_or(o[["rows"]], list())) {
