@@ -25,7 +25,8 @@
 #' @import rvest
 #' @export
 #' @keywords NBA Game
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #' try(espn_nba_game_all(game_id = 401283399))
@@ -147,7 +148,8 @@ espn_nba_game_all <- function(game_id) {
 #' @import rvest
 #' @export
 #' @keywords NBA PBP
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #'
 #' @examplesIf interactive()
 #' \donttest{
@@ -219,7 +221,8 @@ espn_nba_pbp <- function(game_id) {
 #' @import rvest
 #' @export
 #' @keywords NBA Team Box
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #'
 #' @examplesIf interactive()
 #' \donttest{
@@ -288,7 +291,8 @@ espn_nba_team_box <- function(game_id) {
 #' @import rvest
 #' @export
 #' @keywords NBA Player Box
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #'
 #' @examplesIf interactive()
 #' \donttest{
@@ -450,7 +454,8 @@ espn_nba_player_box <- function(game_id) {
 #' @import rvest
 #' @export
 #' @keywords NBA Game Roster
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #'
 #' @examplesIf interactive()
 #' \donttest{
@@ -746,7 +751,8 @@ espn_nba_game_rosters <- function(game_id) {
 #' @import rvest
 #' @export
 #' @keywords NBA Teams
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #'
 #' @examples
 #' \donttest{
@@ -860,7 +866,8 @@ espn_nba_teams <- function() {
 #' @import rvest
 #' @export
 #' @keywords NBA Team Roster
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #' try(espn_nba_team_current_roster(team_id = 13))
@@ -1045,7 +1052,8 @@ espn_nba_team_current_roster <- function(team_id) {
 #' @importFrom tidyr unnest_wider unchop hoist
 #' @import rvest
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #'
 #' # Get schedule from date 2022-11-17 (returns 1000 results, max allowable.)
@@ -1492,7 +1500,8 @@ espn_nba_scoreboard <- function(season) {
 #' @importFrom data.table rbindlist
 #' @export
 #' @keywords NBA Standings
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #' try(espn_nba_standings(year = 2021))
@@ -1632,7 +1641,8 @@ espn_nba_standings <- function(year) {
 #' @importFrom dplyr select rename
 #' @export
 #' @keywords NBA Betting
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #' try(espn_nba_betting(game_id = 401283399))
@@ -1893,7 +1903,8 @@ espn_nba_betting <- function(game_id) {
 #' @importFrom tidyr unnest unnest_wider everything
 #' @export
 #' @keywords NBA Team Stats
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #'
 #' @examples
 #' \donttest{
@@ -2277,7 +2288,8 @@ espn_nba_team_stats <- function(
 #'
 #' @export
 #' @keywords NBA Player Stats
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #' try(espn_nba_player_stats(athlete_id = 1966, year = 2022))

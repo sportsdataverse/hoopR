@@ -16,7 +16,8 @@ NULL
 #' @importFrom janitor clean_names
 #' @import rvest
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @details
 #' Retrieve ESPN NBA news. Uses `getOption("hoopR.proxy")` or
 #' `http_proxy`/`https_proxy` environment variables for proxy configuration
@@ -49,7 +50,8 @@ NULL
 #' @importFrom janitor clean_names
 #' @import rvest
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @details
 #' Retrieve ESPN NBA news for a specific team. Uses
 #' `getOption("hoopR.proxy")` or `http_proxy`/`https_proxy` environment

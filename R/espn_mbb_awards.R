@@ -34,7 +34,8 @@ NULL
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_season_awards(season = 2024)
@@ -80,7 +81,8 @@ NULL
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_award(award_id = 344, season = 2024)

@@ -86,7 +86,8 @@
 #'   try(pleague_schedule(season = 2025))
 #' }
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_schedule <- function(season, stage = "regular-season") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("schedule", list(season = season, stage = stage), call = rlang::current_env())
@@ -131,7 +132,8 @@ pleague_schedule <- function(season, stage = "regular-season") {
 #'   try(pleague_game(gid = 197))
 #' }
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_game <- function(gid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("game", list(gid = gid), call = rlang::current_env())
@@ -163,7 +165,8 @@ pleague_game <- function(gid) {
 #'   try(pleague_periods(gid = 197))
 #' }
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_periods <- function(gid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("periods", list(gid = gid), call = rlang::current_env())
@@ -192,7 +195,8 @@ pleague_periods <- function(gid) {
 #' | name_zh | character | Official's name in Traditional Chinese. Names only: the page carries no ids or contact data. |
 #' @eval .intl_details(.pleague_schedule_details, "pleague_officials(gid = 197)")
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_officials <- function(gid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("officials", list(gid = gid), call = rlang::current_env())
@@ -268,7 +272,8 @@ pleague_officials <- function(gid) {
 #'   try(pleague_box_players(gid = 197))
 #' }
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_box_players <- function(gid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("box_players", list(gid = gid), call = rlang::current_env())
@@ -318,7 +323,8 @@ pleague_box_players <- function(gid) {
 #'   try(pleague_box_teams(gid = 197))
 #' }
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_box_teams <- function(gid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("box_teams", list(gid = gid), call = rlang::current_env())
@@ -458,7 +464,8 @@ pleague_box_teams <- function(gid) {
 #'   try(pleague_pbp(gid = 197))
 #' }
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_pbp <- function(gid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("pbp", list(gid = gid), call = rlang::current_env())
@@ -505,7 +512,8 @@ pleague_pbp <- function(gid) {
 #'   try(pleague_standings(season = 2025))
 #' }
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_standings <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("standings", list(season = season), call = rlang::current_env())
@@ -577,7 +585,8 @@ pleague_standings <- function(season) {
 #'   try(pleague_stat_player(season = 2025, stage_sn = 2))
 #' }
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_stat_player <- function(season, stage_sn) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("stat_player", list(season = season, stage_sn = stage_sn), call = rlang::current_env())
@@ -614,7 +623,8 @@ pleague_stat_player <- function(season, stage_sn) {
 #' | education | character | Education lines ((Chinese text)) as printed, joined with '; '. |
 #' @eval .intl_details(.pleague_schedule_details, 'pleague_player(player_page_id = "1JbPozLB")')
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_player <- function(player_page_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("player", list(player_page_id = player_page_id), call = rlang::current_env())
@@ -660,7 +670,8 @@ pleague_player <- function(player_page_id) {
 #' | ft_pct | double | Free-throw percentage 0-100. |
 #' @eval .intl_details(.pleague_schedule_details, 'pleague_player_seasons(player_page_id = "1JbPozLB")')
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_player_seasons <- function(player_page_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("player_seasons", list(player_page_id = player_page_id), call = rlang::current_env())
@@ -735,7 +746,8 @@ pleague_player_seasons <- function(player_page_id) {
 #'   try(pleague_preciser_shots(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
 #' }
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_preciser_shots <- function(uuid, gid = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("preciser_shots", list(uuid = uuid, gid = gid), call = rlang::current_env())
@@ -789,7 +801,8 @@ pleague_preciser_shots <- function(uuid, gid = NULL) {
 #' | top_player_assists | integer | Assists of the top performer in the game. |
 #' @eval .intl_details(.pleague_preciser_shots_details, 'pleague_preciser_summary_teams(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")')
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_preciser_summary_teams <- function(uuid, gid = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("preciser_summary_teams", list(uuid = uuid, gid = gid), call = rlang::current_env())
@@ -822,7 +835,8 @@ pleague_preciser_summary_teams <- function(uuid, gid = NULL) {
 #' | away_score | integer | Away score after the event. |
 #' @eval .intl_details(.pleague_preciser_shots_details, 'pleague_preciser_score_log(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")')
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_preciser_score_log <- function(uuid, gid = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("preciser_score_log", list(uuid = uuid, gid = gid), call = rlang::current_env())
@@ -857,7 +871,8 @@ pleague_preciser_score_log <- function(uuid, gid = NULL) {
 #' | score_difference | integer | home_score minus away_score (positive = home leads). |
 #' @eval .intl_details(.pleague_preciser_shots_details, 'pleague_preciser_lead_flow(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")')
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_preciser_lead_flow <- function(uuid, gid = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("preciser_lead_flow", list(uuid = uuid, gid = gid), call = rlang::current_env())
@@ -885,7 +900,8 @@ pleague_preciser_lead_flow <- function(uuid, gid = NULL) {
 #' | home_win_pct | double | The home team's win probability in percent (0-100) at that minute; the vendor documents no method. |
 #' @eval .intl_details(.pleague_preciser_shots_details, 'pleague_preciser_win_probability(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")')
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_preciser_win_probability <- function(uuid, gid = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("preciser_win_probability", list(uuid = uuid, gid = gid), call = rlang::current_env())
@@ -922,7 +938,8 @@ pleague_preciser_win_probability <- function(uuid, gid = NULL) {
 #' | end_seconds | integer | Seconds elapsed on the game clock when the stint ends (cumulative across periods). |
 #' @eval .intl_details(.pleague_preciser_shots_details, 'pleague_preciser_rotation(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")')
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_preciser_rotation <- function(uuid, gid = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("preciser_rotation", list(uuid = uuid, gid = gid), call = rlang::current_env())
@@ -955,7 +972,8 @@ pleague_preciser_rotation <- function(uuid, gid = NULL) {
 #' | injury_report | character | The team's injury report as a JSON string; null when the vendor sent null. It was null on all 16 sampled games, so its shape is unverified. |
 #' @eval .intl_details(.pleague_preciser_shots_details, 'pleague_preciser_injury(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf")')
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_preciser_injury <- function(uuid, gid = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .pleague_run("preciser_injury", list(uuid = uuid, gid = gid), call = rlang::current_env())
@@ -980,7 +998,8 @@ pleague_preciser_injury <- function(uuid, gid = NULL) {
 #'   pleague_team_crosswalk()
 #' }
 #' @export
-#' @family P. LEAGUE+ Functions
+#' @concept P. LEAGUE+ Functions
+#' @seealso [family_p_league] lists every function in this family.
 pleague_team_crosswalk <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   out <- dplyr::tibble(team_id = as.integer(names(.PLEAGUE_TEAMS)), team_uuid = unname(.PLEAGUE_TEAMS))

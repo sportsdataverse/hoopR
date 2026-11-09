@@ -50,7 +50,8 @@
 #' \donttest{
 #'   try(nbl_rosetta_seasons(org = "nbl"))
 #' }
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_seasons <- function(org = "nbl", limit = NULL) {
   .nbl_rosetta_call(
@@ -90,7 +91,8 @@ nbl_rosetta_seasons <- function(org = "nbl", limit = NULL) {
 #' \donttest{
 #'   try(nbl_rosetta_seasons_current(org = "nbl"))
 #' }
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_seasons_current <- function(org = "nbl") {
   .nbl_rosetta_call(
@@ -181,7 +183,8 @@ nbl_rosetta_seasons_current <- function(org = "nbl") {
 #' \donttest{
 #'   try(nbl_rosetta_matches(org = "nbl", season = 2026, season_type = "regular"))
 #' }
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_matches <- function(season, org = "nbl", season_type = "all", limit = NULL, offset = NULL) {
   .nbl_rosetta_call(
@@ -232,7 +235,8 @@ nbl_rosetta_matches <- function(season, org = "nbl", season_type = "all", limit 
 #' \donttest{
 #'   try(nbl_rosetta_teams(org = "nbl"))
 #' }
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_teams <- function(org = "nbl", limit = NULL) {
   .nbl_rosetta_call(
@@ -308,7 +312,8 @@ nbl_rosetta_teams <- function(org = "nbl", limit = NULL) {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_match_by_id <- function(match_id) {
   .nbl_rosetta_call(
@@ -388,7 +393,8 @@ nbl_rosetta_match_by_id <- function(match_id) {
 #' \donttest{
 #'   try(nbl_rosetta_match(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #' }
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_match <- function(match_id) {
   .nbl_rosetta_call(
@@ -464,7 +470,8 @@ nbl_rosetta_match <- function(match_id) {
 #' \donttest{
 #'   try(nbl_rosetta_match_player_box(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #' }
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_match_player_box <- function(match_id) {
   .nbl_rosetta_call(
@@ -527,7 +534,8 @@ nbl_rosetta_match_player_box <- function(match_id) {
 #' \donttest{
 #'   try(nbl_rosetta_match_team_box(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #' }
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_match_team_box <- function(match_id) {
   .nbl_rosetta_call(
@@ -589,7 +597,8 @@ nbl_rosetta_match_team_box <- function(match_id) {
 #'   | jersey_number | character | Jersey number, a STRING. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_match_player_period_box <- function(match_id) {
   .nbl_rosetta_call(
@@ -646,7 +655,8 @@ nbl_rosetta_match_player_period_box <- function(match_id) {
 #' \donttest{
 #'   try(nbl_rosetta_match_pbp(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #' }
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_match_pbp <- function(match_id) {
   .nbl_rosetta_call(
@@ -700,7 +710,8 @@ nbl_rosetta_match_pbp <- function(match_id) {
 #' \donttest{
 #'   try(nbl_rosetta_standings(org = "nbl", season = 2026))
 #' }
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_standings <- function(season, org = "nbl", limit = NULL) {
   .nbl_rosetta_call(
@@ -764,7 +775,8 @@ nbl_rosetta_standings <- function(season, org = "nbl", limit = NULL) {
 #' \donttest{
 #'   try(nbl_rosetta_players(org = "nbl", season = 2026))
 #' }
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_players <- function(season, org = "nbl", limit = NULL, offset = NULL) {
   .nbl_rosetta_call(
@@ -820,7 +832,8 @@ nbl_rosetta_players <- function(season, org = "nbl", limit = NULL, offset = NULL
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_team_players <- function(team_id, season, org = "nbl") {
   .nbl_rosetta_call(
@@ -854,7 +867,8 @@ nbl_rosetta_team_players <- function(team_id, season, org = "nbl") {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_outcomes <- function(season, org = "nbl", season_type = "regular") {
   .nbl_rosetta_call(
@@ -952,7 +966,8 @@ nbl_rosetta_outcomes <- function(season, org = "nbl", season_type = "regular") {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_player_game_log <- function(player_id, season, org = "nbl", participated = NULL) {
   .nbl_rosetta_call(
@@ -1072,7 +1087,8 @@ nbl_rosetta_player_game_log <- function(player_id, season, org = "nbl", particip
 #' \donttest{
 #'   try(nbl_rosetta_player_stats(org = "nbl", player_id = "7619d3ea-410d-11f0-9235-2902fc2f936f"))
 #' }
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_player_stats <- function(player_id, org = "nbl") {
   .nbl_rosetta_call(
@@ -1178,7 +1194,8 @@ nbl_rosetta_player_stats <- function(player_id, org = "nbl") {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_stats_leaders <- function(season_id, org = "nbl", limit = NULL) {
   .nbl_rosetta_call(
@@ -1275,7 +1292,8 @@ nbl_rosetta_stats_leaders <- function(season_id, org = "nbl", limit = NULL) {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_team_stats_leaders <- function(season_id, team_code, org = "nbl", limit = NULL, period = NULL, sort = NULL) {
   .nbl_rosetta_call(
@@ -1354,7 +1372,8 @@ nbl_rosetta_team_stats_leaders <- function(season_id, team_code, org = "nbl", li
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_team_stats <- function(season, org = "nbl", limit = NULL) {
   .nbl_rosetta_call(
@@ -1432,7 +1451,8 @@ nbl_rosetta_team_stats <- function(season, org = "nbl", limit = NULL) {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_next_match <- function(season, org = "nbl") {
   .nbl_rosetta_call(
@@ -1511,7 +1531,8 @@ nbl_rosetta_next_match <- function(season, org = "nbl") {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_next_match_team <- function(team_code, season, org = "nbl") {
   .nbl_rosetta_call(
@@ -1552,7 +1573,8 @@ nbl_rosetta_next_match_team <- function(team_code, season, org = "nbl") {
 #'   | season_end_year | integer | sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. |
 #'
 #'   Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
-#' @family NBL Rosetta Functions
+#' @concept NBL Rosetta Functions
+#' @seealso [family_nbl_rosetta] lists every function in this family.
 #' @export
 nbl_rosetta_next_matches <- function(season, org = "nbl") {
   .nbl_rosetta_call(

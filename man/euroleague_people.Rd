@@ -94,20 +94,6 @@ transport error, a non-JSON body) is \code{hoopR_fetch_error}; all three inherit
 }
 }
 \seealso{
-Other Euroleague:
-\code{\link[=euroleague_clubs]{euroleague_clubs()}},
-\code{\link[=euroleague_competitions]{euroleague_competitions()}},
-\code{\link[=euroleague_game_boxscore]{euroleague_game_boxscore()}},
-\code{\link[=euroleague_game_header]{euroleague_game_header()}},
-\code{\link[=euroleague_game_pbp]{euroleague_game_pbp()}},
-\code{\link[=euroleague_game_points]{euroleague_game_points()}},
-\code{\link[=euroleague_game_report]{euroleague_game_report()}},
-\code{\link[=euroleague_game_stats]{euroleague_game_stats()}},
-\code{\link[=euroleague_games]{euroleague_games()}},
-\code{\link[=euroleague_player_stats]{euroleague_player_stats()}},
-\code{\link[=euroleague_rounds]{euroleague_rounds()}},
-\code{\link[=euroleague_seasons]{euroleague_seasons()}},
-\code{\link[=euroleague_standings]{euroleague_standings()}},
-\code{\link[=euroleague_team_stats]{euroleague_team_stats()}}
+\link{family_euroleague} lists every function in this family.
 }
 \concept{Euroleague}

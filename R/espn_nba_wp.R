@@ -40,7 +40,8 @@
 #' @import dplyr
 #' @export
 #' @keywords NBA Win Probability Chart Data
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #' espn_nba_wp(game_id = 401283399)

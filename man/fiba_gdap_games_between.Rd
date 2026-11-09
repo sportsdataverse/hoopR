@@ -116,42 +116,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other FIBA Functions:
-\code{\link[=fiba_gamepage_box_players]{fiba_gamepage_box_players()}},
-\code{\link[=fiba_gamepage_box_teams]{fiba_gamepage_box_teams()}},
-\code{\link[=fiba_gamepage_lineup]{fiba_gamepage_lineup()}},
-\code{\link[=fiba_gamepage_pbp]{fiba_gamepage_pbp()}},
-\code{\link[=fiba_gamepage_period_scores]{fiba_gamepage_period_scores()}},
-\code{\link[=fiba_gamepage_shots]{fiba_gamepage_shots()}},
-\code{\link[=fiba_gdap_awards]{fiba_gdap_awards()}},
-\code{\link[=fiba_gdap_competition]{fiba_gdap_competition()}},
-\code{\link[=fiba_gdap_editions]{fiba_gdap_editions()}},
-\code{\link[=fiba_gdap_federation_games]{fiba_gdap_federation_games()}},
-\code{\link[=fiba_gdap_federation_ranking]{fiba_gdap_federation_ranking()}},
-\code{\link[=fiba_gdap_final_standings]{fiba_gdap_final_standings()}},
-\code{\link[=fiba_gdap_game]{fiba_gdap_game()}},
-\code{\link[=fiba_gdap_game_officials]{fiba_gdap_game_officials()}},
-\code{\link[=fiba_gdap_game_periods]{fiba_gdap_game_periods()}},
-\code{\link[=fiba_gdap_gateway_competition_ids]{fiba_gdap_gateway_competition_ids()}},
-\code{\link[=fiba_gdap_gateway_federation_ranking]{fiba_gdap_gateway_federation_ranking()}},
-\code{\link[=fiba_gdap_medal_count]{fiba_gdap_medal_count()}},
-\code{\link[=fiba_gdap_national_teams]{fiba_gdap_national_teams()}},
-\code{\link[=fiba_gdap_nominations]{fiba_gdap_nominations()}},
-\code{\link[=fiba_gdap_player_game_stats]{fiba_gdap_player_game_stats()}},
-\code{\link[=fiba_gdap_player_info]{fiba_gdap_player_info()}},
-\code{\link[=fiba_gdap_player_stats]{fiba_gdap_player_stats()}},
-\code{\link[=fiba_gdap_ranking_zones]{fiba_gdap_ranking_zones()}},
-\code{\link[=fiba_gdap_roster]{fiba_gdap_roster()}},
-\code{\link[=fiba_gdap_roster_coaches]{fiba_gdap_roster_coaches()}},
-\code{\link[=fiba_gdap_roster_latest]{fiba_gdap_roster_latest()}},
-\code{\link[=fiba_gdap_round_gamedays]{fiba_gdap_round_gamedays()}},
-\code{\link[=fiba_gdap_round_standings]{fiba_gdap_round_standings()}},
-\code{\link[=fiba_gdap_rounds]{fiba_gdap_rounds()}},
-\code{\link[=fiba_gdap_schedule]{fiba_gdap_schedule()}},
-\code{\link[=fiba_gdap_team_games]{fiba_gdap_team_games()}},
-\code{\link[=fiba_gdap_team_player_stats]{fiba_gdap_team_player_stats()}},
-\code{\link[=fiba_gdap_team_staff]{fiba_gdap_team_staff()}},
-\code{\link[=fiba_gdap_team_stats]{fiba_gdap_team_stats()}},
-\code{\link[=fiba_gdap_teams]{fiba_gdap_teams()}}
+\link{family_fiba} lists every function in this family.
 }
 \concept{FIBA Functions}

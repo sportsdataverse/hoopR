@@ -29,7 +29,8 @@ NULL
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_season_groups(season = 2025)
@@ -64,7 +65,8 @@ espn_nba_season_groups <- function(season = most_recent_nba_season(),
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_season_group(group_id = 5, season = 2025)
@@ -100,7 +102,8 @@ espn_nba_season_group <- function(group_id,
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_season_group_children(group_id = 5, season = 2025)
@@ -136,7 +139,8 @@ espn_nba_season_group_children <- function(group_id,
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_season_group_teams(group_id = 5, season = 2025)

@@ -46,24 +46,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other LBA Functions:
-\code{\link[=lba_box_score]{lba_box_score()}},
-\code{\link[=lba_calendar]{lba_calendar()}},
-\code{\link[=lba_championships]{lba_championships()}},
-\code{\link[=lba_game]{lba_game()}},
-\code{\link[=lba_game_log]{lba_game_log()}},
-\code{\link[=lba_pbp]{lba_pbp()}},
-\code{\link[=lba_pbp_legend]{lba_pbp_legend()}},
-\code{\link[=lba_player]{lba_player()}},
-\code{\link[=lba_player_stats]{lba_player_stats()}},
-\code{\link[=lba_players]{lba_players()}},
-\code{\link[=lba_players_leaderboard]{lba_players_leaderboard()}},
-\code{\link[=lba_roster]{lba_roster()}},
-\code{\link[=lba_roster_coach]{lba_roster_coach()}},
-\code{\link[=lba_shots]{lba_shots()}},
-\code{\link[=lba_standings]{lba_standings()}},
-\code{\link[=lba_team_box_score]{lba_team_box_score()}},
-\code{\link[=lba_team_players_stats]{lba_team_players_stats()}},
-\code{\link[=lba_teams]{lba_teams()}}
+\link{family_lba} lists every function in this family.
 }
 \concept{LBA Functions}

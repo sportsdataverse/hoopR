@@ -29,7 +29,8 @@
 #' @import dplyr
 #' @export
 #' @keywords MBB Win Probability Chart Data
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #' espn_mbb_wp(game_id = 401256760)

@@ -113,27 +113,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other NBL Rosetta Functions:
-\code{\link[=nbl_rosetta_match]{nbl_rosetta_match()}},
-\code{\link[=nbl_rosetta_match_by_id]{nbl_rosetta_match_by_id()}},
-\code{\link[=nbl_rosetta_match_pbp]{nbl_rosetta_match_pbp()}},
-\code{\link[=nbl_rosetta_match_player_box]{nbl_rosetta_match_player_box()}},
-\code{\link[=nbl_rosetta_match_player_period_box]{nbl_rosetta_match_player_period_box()}},
-\code{\link[=nbl_rosetta_match_team_box]{nbl_rosetta_match_team_box()}},
-\code{\link[=nbl_rosetta_matches]{nbl_rosetta_matches()}},
-\code{\link[=nbl_rosetta_next_match]{nbl_rosetta_next_match()}},
-\code{\link[=nbl_rosetta_next_match_team]{nbl_rosetta_next_match_team()}},
-\code{\link[=nbl_rosetta_next_matches]{nbl_rosetta_next_matches()}},
-\code{\link[=nbl_rosetta_outcomes]{nbl_rosetta_outcomes()}},
-\code{\link[=nbl_rosetta_player_game_log]{nbl_rosetta_player_game_log()}},
-\code{\link[=nbl_rosetta_player_stats]{nbl_rosetta_player_stats()}},
-\code{\link[=nbl_rosetta_players]{nbl_rosetta_players()}},
-\code{\link[=nbl_rosetta_seasons]{nbl_rosetta_seasons()}},
-\code{\link[=nbl_rosetta_seasons_current]{nbl_rosetta_seasons_current()}},
-\code{\link[=nbl_rosetta_standings]{nbl_rosetta_standings()}},
-\code{\link[=nbl_rosetta_team_players]{nbl_rosetta_team_players()}},
-\code{\link[=nbl_rosetta_team_stats]{nbl_rosetta_team_stats()}},
-\code{\link[=nbl_rosetta_team_stats_leaders]{nbl_rosetta_team_stats_leaders()}},
-\code{\link[=nbl_rosetta_teams]{nbl_rosetta_teams()}}
+\link{family_nbl_rosetta} lists every function in this family.
 }
 \concept{NBL Rosetta Functions}

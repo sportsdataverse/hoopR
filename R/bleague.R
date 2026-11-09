@@ -175,7 +175,8 @@
 #' | away_score_p12 | integer | Away team points scored IN period 12 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
 #' | away_score_p13 | integer | Away team points scored IN period 13 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
 #' | away_score_p14 | integer | Away team points scored IN period 14 (not cumulative). v2 headers carry four slots, v1 fourteen; an unplayed period is 0 on v1 and null on v2. |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -210,7 +211,8 @@ bleague_game_info <- function(schedule_key, season = NULL) {
 #' | team_side | character | Side of the game the row belongs to: home or away. |
 #' | team_id | character | B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. |
 #' | points | integer | Points the team scored IN this period (not cumulative); from the header's score slots. |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 bleague_period_scores <- function(schedule_key, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -288,7 +290,8 @@ bleague_period_scores <- function(schedule_key, season = NULL) {
 #' | def_rtg | double | Defensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
 #' | net_rtg | double | Net rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
 #' | poss | double | Possessions. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -369,7 +372,8 @@ bleague_player_box <- function(schedule_key, season = NULL) {
 #' | def_rtg | double | Defensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
 #' | net_rtg | double | Net rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
 #' | poss | double | Possessions. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -441,7 +445,8 @@ bleague_team_box <- function(schedule_key, season = NULL) {
 #' | lead_last_away | integer | Away score-like value tied to lead_last; meaning unverified. |
 #' | lead_changes | integer | Lead changes in the period category (LeadCount); the same on both side rows. |
 #' | ties | integer | Times the score was tied in the period category (TieCount); the same on both side rows. |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 bleague_team_summary <- function(schedule_key, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -510,7 +515,8 @@ bleague_team_summary <- function(schedule_key, season = NULL) {
 #' | recorded_at | POSIXct | When the event was logged, as a UTC instant (v2 stores UTC text, v1 a JST-offset .NET date, the embed epoch seconds). |
 #' | edited_at | POSIXct | When the event was last edited, as a UTC instant; null when never edited. |
 #' | code | integer | Feed/organisation code repeated on every row: 546 on v2, 6 on v1; meaning unverified. |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -566,7 +572,8 @@ bleague_pbp <- function(schedule_key, season = NULL) {
 #' | rest_time | character | Game clock REMAINING in the period as the feed's 'mm:ss' text (counts down from 10:00). |
 #' | clock_seconds | integer | Game clock remaining in the period in whole seconds (8:50 = 530), derived from rest_time. |
 #' | score | character | Running score 'home-away' after the event (e.g. '2-4'); null on player-in rows and v1 substitutions. |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -614,7 +621,8 @@ bleague_shots <- function(schedule_key, season = NULL) {
 #' | count | integer | The player's value in the category for the period category. |
 #' | reb_off_count | integer | Offensive-rebound count carried on the row (filled for the rebounds category). |
 #' | reb_def_count | integer | Defensive-rebound count carried on the row (filled for the rebounds category). |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 bleague_leaders <- function(schedule_key, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -647,7 +655,8 @@ bleague_leaders <- function(schedule_key, season = NULL) {
 #' | event_index | integer | Index of the scoring event, 0 = the 0-0 start row, then 1, 2... (the score track's x axis; NOT a clock). |
 #' | home_points | integer | Home running total after the event. |
 #' | away_points | integer | Away running total after the event. |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 bleague_score_track <- function(schedule_key, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -699,7 +708,8 @@ bleague_score_track <- function(schedule_key, season = NULL) {
 #' | venue | character | Venue name in Japanese, abbreviated by the page (e.g. Ookini for Osaka Edion Arena). |
 #' | tip_time | character | Tip-off time 'HH:MM' in JST (no offset on the page); null when absent. |
 #' | state | character | Score-state label on the page (FINAL for a finished game); null when absent. |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -732,7 +742,8 @@ bleague_schedule <- function(season, tab, month, day, event = NULL) {
 #' | event | integer | Competition type of the page: 2 B1 league, 3 B1 Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs, 11 B1-B2 promotion/relegation, 15 B3 league, 32 B3 playoffs. |
 #' | team_id | character | B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. |
 #' | name | character | Club short name in Japanese as the schedule page prints it (e.g. Hokkaido). |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 bleague_schedule_clubs <- function(season, tab, month, day, event = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -762,7 +773,8 @@ bleague_schedule_clubs <- function(season, tab, month, day, event = NULL) {
 #' | event_id | integer | Competition type code (see event); the page's event filter value. |
 #' | label | character | Competition label in Japanese (e.g. B1 league, all-star game, B1 Championship). |
 #' | selected | logical | True for the competition the page was asked for. |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 bleague_schedule_events <- function(season, tab, month, day, event = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -791,7 +803,8 @@ bleague_schedule_events <- function(season, tab, month, day, event = NULL) {
 #' | tab | integer | Division tab: 1 = B1, 2 = B2, 3 = B3. |
 #' | event | integer | Competition type of the page: 2 B1 league, 3 B1 Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs, 11 B1-B2 promotion/relegation, 15 B3 league, 32 B3 playoffs. |
 #' | date | Date | Local date of a game day in the requested month (a date strip entry). |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 bleague_schedule_days <- function(season, tab, month, day, event = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -840,7 +853,8 @@ bleague_schedule_days <- function(season, tab, month, day, event = NULL) {
 #' | last_n_record | character | Record W-L over the last_n games. |
 #' | streak | character | Current streak as printed: W5 = five straight wins, L1 = one loss. |
 #' | division_title | character | Division-title mark as printed; null when none ('--'). |
-#' @family B.LEAGUE Functions
+#' @concept B.LEAGUE Functions
+#' @seealso [family_b_league] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{

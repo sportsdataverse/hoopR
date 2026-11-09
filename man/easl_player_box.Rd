@@ -126,23 +126,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }
 }
 \seealso{
-Other EASL Functions:
-\code{\link[=easl_game]{easl_game()}},
-\code{\link[=easl_health]{easl_health()}},
-\code{\link[=easl_leaders]{easl_leaders()}},
-\code{\link[=easl_pbp]{easl_pbp()}},
-\code{\link[=easl_player]{easl_player()}},
-\code{\link[=easl_player_stats]{easl_player_stats()}},
-\code{\link[=easl_players]{easl_players()}},
-\code{\link[=easl_schedule]{easl_schedule()}},
-\code{\link[=easl_seasons]{easl_seasons()}},
-\code{\link[=easl_standings]{easl_standings()}},
-\code{\link[=easl_team]{easl_team()}},
-\code{\link[=easl_team_box]{easl_team_box()}},
-\code{\link[=easl_team_box_by_period]{easl_team_box_by_period()}},
-\code{\link[=easl_team_leaders]{easl_team_leaders()}},
-\code{\link[=easl_team_schedule]{easl_team_schedule()}},
-\code{\link[=easl_team_stats]{easl_team_stats()}},
-\code{\link[=easl_teams]{easl_teams()}}
+\link{family_easl} lists every function in this family.
 }
 \concept{EASL Functions}

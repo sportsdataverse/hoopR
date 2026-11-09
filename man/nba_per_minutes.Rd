@@ -30,24 +30,6 @@ box <- data.frame(player = c("A", "B"), min = c(36, 24),
 nba_per_minutes(box, cols = c("pts", "reb", "ast"))
 }
 \seealso{
-Other Basketball Analytics Utilities:
-\code{\link[=espn_basketball_player_core]{espn_basketball_player_core()}},
-\code{\link[=nba_add_advanced_metrics]{nba_add_advanced_metrics()}},
-\code{\link[=nba_assist_pct]{nba_assist_pct()}},
-\code{\link[=nba_assist_to_turnover]{nba_assist_to_turnover()}},
-\code{\link[=nba_defensive_rating]{nba_defensive_rating()}},
-\code{\link[=nba_effective_fg_pct]{nba_effective_fg_pct()}},
-\code{\link[=nba_four_factors]{nba_four_factors()}},
-\code{\link[=nba_ft_rate]{nba_ft_rate()}},
-\code{\link[=nba_game_score]{nba_game_score()}},
-\code{\link[=nba_net_rating]{nba_net_rating()}},
-\code{\link[=nba_offensive_rating]{nba_offensive_rating()}},
-\code{\link[=nba_oreb_pct]{nba_oreb_pct()}},
-\code{\link[=nba_pace]{nba_pace()}},
-\code{\link[=nba_per_possessions]{nba_per_possessions()}},
-\code{\link[=nba_possessions]{nba_possessions()}},
-\code{\link[=nba_true_shooting_pct]{nba_true_shooting_pct()}},
-\code{\link[=nba_turnover_pct]{nba_turnover_pct()}},
-\code{\link[=nba_usage_rate]{nba_usage_rate()}}
+\link{family_basketball_analytics_utilities} lists every function in this family.
 }
 \concept{Basketball Analytics Utilities}

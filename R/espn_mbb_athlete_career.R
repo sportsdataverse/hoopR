@@ -25,7 +25,8 @@ NULL
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   # LeBron James (1966): 23 career seasons
@@ -68,7 +69,8 @@ espn_mbb_player_seasons <- function(athlete_id, ...) {
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   # LeBron James - regular + postseason combined
@@ -106,7 +108,8 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per event appearance.
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_player_eventlog_v2(athlete_id = 4683735, season = 2025)

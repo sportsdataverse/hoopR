@@ -36,7 +36,8 @@
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble bind_rows
-#' @family RealGM Functions
+#' @concept RealGM Functions
+#' @seealso [family_realgm] lists every function in this family.
 #' @export
 #' @examples
 #' \dontrun{
@@ -98,7 +99,8 @@ realgm_draft <- function(year = most_recent_nba_season() - 1L) {
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble bind_rows
-#' @family RealGM Functions
+#' @concept RealGM Functions
+#' @seealso [family_realgm] lists every function in this family.
 #' @export
 #' @examples
 #' \dontrun{

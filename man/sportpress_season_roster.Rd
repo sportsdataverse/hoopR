@@ -44,33 +44,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }
 }
 \seealso{
-Other BNXT League Functions:
-\code{\link[=sportpress_club_seasons]{sportpress_club_seasons()}},
-\code{\link[=sportpress_competition_staff]{sportpress_competition_staff()}},
-\code{\link[=sportpress_competition_teams]{sportpress_competition_teams()}},
-\code{\link[=sportpress_game_box]{sportpress_game_box()}},
-\code{\link[=sportpress_game_film]{sportpress_game_film()}},
-\code{\link[=sportpress_game_find]{sportpress_game_find()}},
-\code{\link[=sportpress_game_leaders]{sportpress_game_leaders()}},
-\code{\link[=sportpress_game_overview]{sportpress_game_overview()}},
-\code{\link[=sportpress_game_periods]{sportpress_game_periods()}},
-\code{\link[=sportpress_game_slider]{sportpress_game_slider()}},
-\code{\link[=sportpress_game_team_box]{sportpress_game_team_box()}},
-\code{\link[=sportpress_game_top_performers]{sportpress_game_top_performers()}},
-\code{\link[=sportpress_nationality_codes]{sportpress_nationality_codes()}},
-\code{\link[=sportpress_phases]{sportpress_phases()}},
-\code{\link[=sportpress_player_career]{sportpress_player_career()}},
-\code{\link[=sportpress_player_games]{sportpress_player_games()}},
-\code{\link[=sportpress_player_rankings]{sportpress_player_rankings()}},
-\code{\link[=sportpress_referees]{sportpress_referees()}},
-\code{\link[=sportpress_roster_find]{sportpress_roster_find()}},
-\code{\link[=sportpress_schedule]{sportpress_schedule()}},
-\code{\link[=sportpress_standings]{sportpress_standings()}},
-\code{\link[=sportpress_team_find]{sportpress_team_find()}},
-\code{\link[=sportpress_team_games]{sportpress_team_games()}},
-\code{\link[=sportpress_team_player_averages]{sportpress_team_player_averages()}},
-\code{\link[=sportpress_team_rankings]{sportpress_team_rankings()}},
-\code{\link[=sportpress_team_roster]{sportpress_team_roster()}},
-\code{\link[=sportpress_ui_strings]{sportpress_ui_strings()}}
+\link{family_bnxt_league} lists every function in this family.
 }
 \concept{BNXT League Functions}

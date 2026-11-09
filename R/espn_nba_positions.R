@@ -22,7 +22,8 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per position.
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_positions()
@@ -52,7 +53,8 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_position(position_id = 1)

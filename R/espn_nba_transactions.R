@@ -48,7 +48,8 @@ NULL
 #' @importFrom rlang %||%
 #' @import rvest
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @details
 #' Calls the ESPN core-v2 endpoint
 #' `https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/{year}/draft/rounds`,
@@ -187,7 +188,8 @@ NULL
 #' @importFrom rlang %||%
 #' @import rvest
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @details
 #' Calls the ESPN core-v2 endpoint
 #' `https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/{year}/freeagents`.
@@ -365,7 +367,8 @@ NULL
 #' @importFrom rlang %||%
 #' @import rvest
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @details
 #' Calls the ESPN site-v2 endpoint
 #' `https://site.api.espn.com/apis/site/v2/sports/basketball/nba/transactions?season={year}&limit={limit}`.

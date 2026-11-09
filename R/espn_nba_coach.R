@@ -37,7 +37,8 @@ NULL
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_coach(coach_id = 52120)
@@ -69,7 +70,8 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble.
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_coach_record(coach_id = 52120, record_type = 2)

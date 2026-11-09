@@ -50,7 +50,8 @@
 #' | text | character | The UI text in that language; 11 keys label statistics columns, the rest are menus and buttons. |
 #' @eval .intl_details(.sportpress_ui_strings_details, full = TRUE, "sportpress_ui_strings()")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_ui_strings <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -79,7 +80,8 @@ sportpress_ui_strings <- function() {
 #'   try(sportpress_club_seasons())
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_club_seasons <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -108,7 +110,8 @@ sportpress_club_seasons <- function() {
 #' | title_name | character | Staff title in English: Head coach, Assistant coach or Referee. |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_referees()")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_referees <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -144,7 +147,8 @@ sportpress_referees <- function() {
 #'   try(sportpress_phases(season = 2026))
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_phases <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -183,7 +187,8 @@ sportpress_phases <- function(season) {
 #'   try(sportpress_competition_teams(competition_id = 24))
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_competition_teams <- function(competition_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -217,7 +222,8 @@ sportpress_competition_teams <- function(competition_id) {
 #' | title_name | character | Staff title in English: Head coach or Assistant coach. |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_competition_staff(competition_id = 24)")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_competition_staff <- function(competition_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -277,7 +283,8 @@ sportpress_competition_staff <- function(competition_id) {
 #'   try(sportpress_standings(competition_id = 24, phase_id = 169))
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_standings <- function(competition_id, phase_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -330,7 +337,8 @@ sportpress_standings <- function(competition_id, phase_id) {
 #'   try(sportpress_schedule(season = 2026))
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_schedule <- function(season, month = -1, phase_id = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -375,7 +383,8 @@ sportpress_schedule <- function(season, month = -1, phase_id = NULL) {
 #' | away_score | integer | Away side. Final points of the side, including overtime. |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_game_slider(competition_id = 25)")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_game_slider <- function(competition_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -416,7 +425,8 @@ sportpress_game_slider <- function(competition_id) {
 #'   try(sportpress_team_rankings(competition_id = 24))
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_team_rankings <- function(competition_id, phase_id = NULL, limit = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -469,7 +479,8 @@ sportpress_team_rankings <- function(competition_id, phase_id = NULL, limit = NU
 #'   try(sportpress_player_rankings(competition_id = 24, limit = 5))
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_player_rankings <- function(competition_id, phase_id = NULL, limit = NULL, type = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -515,7 +526,8 @@ sportpress_player_rankings <- function(competition_id, phase_id = NULL, limit = 
 #'   try(sportpress_season_roster(season = 2026))
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_season_roster <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -544,7 +556,8 @@ sportpress_season_roster <- function(season) {
 #' | nationality_code | character | A distinct nationality code of the season's players, as served (dirty). |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_nationality_codes(season = 2026)")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_nationality_codes <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -584,7 +597,8 @@ sportpress_nationality_codes <- function(season) {
 #' | birth_date | Date | Date of birth as shown on the public player page; null when unknown. |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_team_roster(competition_team_id = 541)")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_team_roster <- function(competition_team_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -623,7 +637,8 @@ sportpress_team_roster <- function(competition_team_id) {
 #' | field_goal_percent | double | Team field-goal percentage 0-100; null for a team with no statistics. |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_team_find(competition_team_id = 541)")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_team_find <- function(competition_team_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -687,7 +702,8 @@ sportpress_team_find <- function(competition_team_id) {
 #' | value | double | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. Per-game mean over the games played (fractional). |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_team_player_averages(competition_team_id = 541)")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_team_player_averages <- function(competition_team_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -763,7 +779,8 @@ sportpress_team_player_averages <- function(competition_team_id) {
 #' | plusminus | integer | The team's own plus/minus: the score margin while the player (or team) was on court; for a team total it is the game margin. |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_team_games(competition_team_id = 541)")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_team_games <- function(competition_team_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -807,7 +824,8 @@ sportpress_team_games <- function(competition_team_id) {
 #' | season | integer | Season END year of the roster entry's competition. |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_roster_find(roster_id = 11193)")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_roster_find <- function(roster_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -874,7 +892,8 @@ sportpress_roster_find <- function(roster_id) {
 #' | value | double | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. Per-game mean over the games played (fractional). |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_player_career(roster_id = 11193)")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_player_career <- function(roster_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -951,7 +970,8 @@ sportpress_player_career <- function(roster_id) {
 #' | value | integer | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_player_games(roster_id = 11193)")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_player_games <- function(roster_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -1002,7 +1022,8 @@ sportpress_player_games <- function(roster_id) {
 #'   try(sportpress_game_find(game_id = 11295))
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_game_find <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -1038,7 +1059,8 @@ sportpress_game_find <- function(game_id) {
 #'   try(sportpress_game_periods(game_id = 11295))
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_game_periods <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -1103,7 +1125,8 @@ sportpress_game_periods <- function(game_id) {
 #'   try(sportpress_game_overview(game_id = 11295))
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_game_overview <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -1169,7 +1192,8 @@ sportpress_game_overview <- function(game_id) {
 #' | value | integer | Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_game_top_performers(game_id = 11295)")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_game_top_performers <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -1212,7 +1236,8 @@ sportpress_game_top_performers <- function(game_id) {
 #'   try(sportpress_game_leaders(game_id = 11295))
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_game_leaders <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -1289,7 +1314,8 @@ sportpress_game_leaders <- function(game_id) {
 #'   try(sportpress_game_box(competition_id = 25, game_id = 11295))
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_game_box <- function(competition_id, game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -1356,7 +1382,8 @@ sportpress_game_box <- function(competition_id, game_id) {
 #'   try(sportpress_game_team_box(competition_id = 25, game_id = 11295))
 #' }
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_game_team_box <- function(competition_id, game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(
@@ -1408,7 +1435,8 @@ sportpress_game_team_box <- function(competition_id, game_id) {
 #' | player2_last_name | character | Family name of the second player; substitutions only. |
 #' @eval .intl_details(.sportpress_ui_strings_details, "sportpress_game_film(competition_id = 25, game_id = 11295)")
 #' @export
-#' @family BNXT League Functions
+#' @concept BNXT League Functions
+#' @seealso [family_bnxt_league] lists every function in this family.
 sportpress_game_film <- function(competition_id, game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportpress_get(

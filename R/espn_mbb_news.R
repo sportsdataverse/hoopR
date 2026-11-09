@@ -15,7 +15,8 @@ NULL
 #' @importFrom janitor clean_names
 #' @import rvest
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @details
 #' Retrieve ESPN women's college basketball news. Uses
 #' `getOption("hoopR.proxy")` or `http_proxy`/`https_proxy` environment
@@ -49,7 +50,8 @@ NULL
 #' @importFrom janitor clean_names
 #' @import rvest
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @details
 #' Retrieve ESPN women's college basketball news for a specific team. Uses
 #' `getOption("hoopR.proxy")` or `http_proxy`/`https_proxy` environment

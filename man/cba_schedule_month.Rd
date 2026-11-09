@@ -33,32 +33,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }
 }
 \seealso{
-Other CBA Functions:
-\code{\link[=cba_best_player]{cba_best_player()}},
-\code{\link[=cba_best_stats]{cba_best_stats()}},
-\code{\link[=cba_game_info]{cba_game_info()}},
-\code{\link[=cba_game_team_four]{cba_game_team_four()}},
-\code{\link[=cba_game_team_shots]{cba_game_team_shots()}},
-\code{\link[=cba_match_types]{cba_match_types()}},
-\code{\link[=cba_pbp]{cba_pbp()}},
-\code{\link[=cba_period_scores]{cba_period_scores()}},
-\code{\link[=cba_player_advanced]{cba_player_advanced()}},
-\code{\link[=cba_player_base]{cba_player_base()}},
-\code{\link[=cba_player_box]{cba_player_box()}},
-\code{\link[=cba_player_defensive]{cba_player_defensive()}},
-\code{\link[=cba_player_extras]{cba_player_extras()}},
-\code{\link[=cba_player_offensive]{cba_player_offensive()}},
-\code{\link[=cba_player_shots]{cba_player_shots()}},
-\code{\link[=cba_report_status]{cba_report_status()}},
-\code{\link[=cba_rosters]{cba_rosters()}},
-\code{\link[=cba_schedule_day]{cba_schedule_day()}},
-\code{\link[=cba_seasons]{cba_seasons()}},
-\code{\link[=cba_team_basic]{cba_team_basic()}},
-\code{\link[=cba_team_counts]{cba_team_counts()}},
-\code{\link[=cba_team_four]{cba_team_four()}},
-\code{\link[=cba_team_options]{cba_team_options()}},
-\code{\link[=cba_team_overview]{cba_team_overview()}},
-\code{\link[=cba_team_shots]{cba_team_shots()}},
-\code{\link[=cba_teams]{cba_teams()}}
+\link{family_cba} lists every function in this family.
 }
 \concept{CBA Functions}

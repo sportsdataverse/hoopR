@@ -54,24 +54,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }
 }
 \seealso{
-Other P. LEAGUE+ Functions:
-\code{\link[=pleague_box_players]{pleague_box_players()}},
-\code{\link[=pleague_game]{pleague_game()}},
-\code{\link[=pleague_officials]{pleague_officials()}},
-\code{\link[=pleague_pbp]{pleague_pbp()}},
-\code{\link[=pleague_periods]{pleague_periods()}},
-\code{\link[=pleague_player]{pleague_player()}},
-\code{\link[=pleague_player_seasons]{pleague_player_seasons()}},
-\code{\link[=pleague_preciser_injury]{pleague_preciser_injury()}},
-\code{\link[=pleague_preciser_lead_flow]{pleague_preciser_lead_flow()}},
-\code{\link[=pleague_preciser_rotation]{pleague_preciser_rotation()}},
-\code{\link[=pleague_preciser_score_log]{pleague_preciser_score_log()}},
-\code{\link[=pleague_preciser_shots]{pleague_preciser_shots()}},
-\code{\link[=pleague_preciser_summary_teams]{pleague_preciser_summary_teams()}},
-\code{\link[=pleague_preciser_win_probability]{pleague_preciser_win_probability()}},
-\code{\link[=pleague_schedule]{pleague_schedule()}},
-\code{\link[=pleague_standings]{pleague_standings()}},
-\code{\link[=pleague_stat_player]{pleague_stat_player()}},
-\code{\link[=pleague_team_crosswalk]{pleague_team_crosswalk()}}
+\link{family_p_league} lists every function in this family.
 }
 \concept{P. LEAGUE+ Functions}

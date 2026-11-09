@@ -100,7 +100,8 @@
 #' | plus_minus | integer | Plus/minus: the team's point differential while the player was on the court. |
 #' | cb | logical | Boolean flag, false on every sampled player; meaning unverified. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -187,7 +188,8 @@ fiba_gamepage_box_players <- function(game_id, comp, return_parsed = TRUE) {
 #' | duration | character | Game duration as an 'h:mm' string (game-level; repeats on both team rows). |
 #' | attendance | integer | Attendance (game-level; repeats on both team rows). |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -226,7 +228,8 @@ fiba_gamepage_box_teams <- function(game_id, comp, return_parsed = TRUE) {
 #' | position | character | Playing position code from the lineup card (PG, SG, SF, PF, C). |
 #' | is_captain | logical | True for the team captain. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gamepage_lineup <- function(game_id, comp, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -278,7 +281,8 @@ fiba_gamepage_lineup <- function(game_id, comp, return_parsed = TRUE) {
 #' | shot_y | integer | Shot y, integer pixels from the baseline (y = 0) towards midcourt (observed 0-224, basket near y = 25); both teams' shots are drawn on one basket. Free throws are 0. Scale UNVERIFIED. |
 #' | has_location | logical | True when shot_x / shot_y locate the shot (two- and three-pointers); False for free throws (always 0, 0); null on other actions. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -316,7 +320,8 @@ fiba_gamepage_pbp <- function(game_id, comp, return_parsed = TRUE) {
 #' | points | integer | Points the team scored in the period. |
 #' | points_first_five_min | integer | Points the team scored in the first five minutes of the period (matches the play-by-play except free throws on the 5:00 boundary); null when absent. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -365,7 +370,8 @@ fiba_gamepage_period_scores <- function(game_id, comp, return_parsed = TRUE) {
 #' | shot_y | integer | Shot y, integer pixels from the baseline (y = 0) towards midcourt (observed 0-224, basket near y = 25); both teams' shots are drawn on one basket. Free throws are 0. Scale UNVERIFIED. |
 #' | has_location | logical | True when shot_x / shot_y locate the shot (two- and three-pointers); False for free throws (always 0, 0); null on other actions. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{

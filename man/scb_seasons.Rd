@@ -59,28 +59,6 @@ inheriting \code{hoopR_error}. Wrappers raise; they never return an empty frame.
 }
 }
 \seealso{
-Other SCB Functions:
-\code{\link[=scb_game]{scb_game()}},
-\code{\link[=scb_game_actions]{scb_game_actions()}},
-\code{\link[=scb_game_players]{scb_game_players()}},
-\code{\link[=scb_game_teams]{scb_game_teams()}},
-\code{\link[=scb_games]{scb_games()}},
-\code{\link[=scb_games_recent]{scb_games_recent()}},
-\code{\link[=scb_player_statistics]{scb_player_statistics()}},
-\code{\link[=scb_playoff_games]{scb_playoff_games()}},
-\code{\link[=scb_playoff_series]{scb_playoff_series()}},
-\code{\link[=scb_records_per_game]{scb_records_per_game()}},
-\code{\link[=scb_records_season_averages]{scb_records_season_averages()}},
-\code{\link[=scb_referees]{scb_referees()}},
-\code{\link[=scb_season_player]{scb_season_player()}},
-\code{\link[=scb_season_players]{scb_season_players()}},
-\code{\link[=scb_season_teams]{scb_season_teams()}},
-\code{\link[=scb_standings]{scb_standings()}},
-\code{\link[=scb_team]{scb_team()}},
-\code{\link[=scb_team_rosters]{scb_team_rosters()}},
-\code{\link[=scb_team_seasons]{scb_team_seasons()}},
-\code{\link[=scb_team_statistics]{scb_team_statistics()}},
-\code{\link[=scb_transfers]{scb_transfers()}},
-\code{\link[=scb_transfers_teams]{scb_transfers_teams()}}
+\link{family_scb} lists every function in this family.
 }
 \concept{SCB Functions}

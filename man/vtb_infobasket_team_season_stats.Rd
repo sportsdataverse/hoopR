@@ -95,43 +95,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other VTB Functions:
-\code{\link[=vtb_infobasket_best_player_parameters]{vtb_infobasket_best_player_parameters()}},
-\code{\link[=vtb_infobasket_best_players]{vtb_infobasket_best_players()}},
-\code{\link[=vtb_infobasket_best_team_parameters]{vtb_infobasket_best_team_parameters()}},
-\code{\link[=vtb_infobasket_best_teams]{vtb_infobasket_best_teams()}},
-\code{\link[=vtb_infobasket_box_score]{vtb_infobasket_box_score()}},
-\code{\link[=vtb_infobasket_calendar]{vtb_infobasket_calendar()}},
-\code{\link[=vtb_infobasket_coach]{vtb_infobasket_coach()}},
-\code{\link[=vtb_infobasket_comp_issue]{vtb_infobasket_comp_issue()}},
-\code{\link[=vtb_infobasket_cross_table]{vtb_infobasket_cross_table()}},
-\code{\link[=vtb_infobasket_game]{vtb_infobasket_game()}},
-\code{\link[=vtb_infobasket_game_page]{vtb_infobasket_game_page()}},
-\code{\link[=vtb_infobasket_game_staff]{vtb_infobasket_game_staff()}},
-\code{\link[=vtb_infobasket_pbp]{vtb_infobasket_pbp()}},
-\code{\link[=vtb_infobasket_player]{vtb_infobasket_player()}},
-\code{\link[=vtb_infobasket_player_career_stats]{vtb_infobasket_player_career_stats()}},
-\code{\link[=vtb_infobasket_player_game_log]{vtb_infobasket_player_game_log()}},
-\code{\link[=vtb_infobasket_player_season_stats]{vtb_infobasket_player_season_stats()}},
-\code{\link[=vtb_infobasket_playoff]{vtb_infobasket_playoff()}},
-\code{\link[=vtb_infobasket_playoff_games]{vtb_infobasket_playoff_games()}},
-\code{\link[=vtb_infobasket_roster]{vtb_infobasket_roster()}},
-\code{\link[=vtb_infobasket_roster_coaches]{vtb_infobasket_roster_coaches()}},
-\code{\link[=vtb_infobasket_seasons]{vtb_infobasket_seasons()}},
-\code{\link[=vtb_infobasket_standings]{vtb_infobasket_standings()}},
-\code{\link[=vtb_infobasket_team]{vtb_infobasket_team()}},
-\code{\link[=vtb_infobasket_team_box_score]{vtb_infobasket_team_box_score()}},
-\code{\link[=vtb_infobasket_team_coach_stats]{vtb_infobasket_team_coach_stats()}},
-\code{\link[=vtb_infobasket_team_comps]{vtb_infobasket_team_comps()}},
-\code{\link[=vtb_infobasket_team_games]{vtb_infobasket_team_games()}},
-\code{\link[=vtb_infobasket_team_player_stats]{vtb_infobasket_team_player_stats()}},
-\code{\link[=vtb_infobasket_team_preview]{vtb_infobasket_team_preview()}},
-\code{\link[=vtb_infobasket_team_seasons]{vtb_infobasket_team_seasons()}},
-\code{\link[=vtb_infobasket_team_stats]{vtb_infobasket_team_stats()}},
-\code{\link[=vtb_infobasket_team_stats_coaches]{vtb_infobasket_team_stats_coaches()}},
-\code{\link[=vtb_infobasket_team_stats_players]{vtb_infobasket_team_stats_players()}},
-\code{\link[=vtb_league_leagues]{vtb_league_leagues()}},
-\code{\link[=vtb_league_matches]{vtb_league_matches()}},
-\code{\link[=vtb_league_seasons]{vtb_league_seasons()}}
+\link{family_vtb} lists every function in this family.
 }
 \concept{VTB Functions}

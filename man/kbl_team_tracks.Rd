@@ -44,27 +44,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other KBL Functions:
-\code{\link[=kbl_current_standings]{kbl_current_standings()}},
-\code{\link[=kbl_game]{kbl_game()}},
-\code{\link[=kbl_game_leaders]{kbl_game_leaders()}},
-\code{\link[=kbl_pbp]{kbl_pbp()}},
-\code{\link[=kbl_period_scores]{kbl_period_scores()}},
-\code{\link[=kbl_player_box]{kbl_player_box()}},
-\code{\link[=kbl_player_totals]{kbl_player_totals()}},
-\code{\link[=kbl_players]{kbl_players()}},
-\code{\link[=kbl_playoff_games]{kbl_playoff_games()}},
-\code{\link[=kbl_playoff_seeds]{kbl_playoff_seeds()}},
-\code{\link[=kbl_playoff_series]{kbl_playoff_series()}},
-\code{\link[=kbl_round_mvps]{kbl_round_mvps()}},
-\code{\link[=kbl_rounds]{kbl_rounds()}},
-\code{\link[=kbl_schedule]{kbl_schedule()}},
-\code{\link[=kbl_score_track]{kbl_score_track()}},
-\code{\link[=kbl_season_leaders]{kbl_season_leaders()}},
-\code{\link[=kbl_seasons]{kbl_seasons()}},
-\code{\link[=kbl_shots]{kbl_shots()}},
-\code{\link[=kbl_standings]{kbl_standings()}},
-\code{\link[=kbl_team_box]{kbl_team_box()}},
-\code{\link[=kbl_teams]{kbl_teams()}}
+\link{family_kbl} lists every function in this family.
 }
 \concept{KBL Functions}

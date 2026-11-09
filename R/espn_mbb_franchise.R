@@ -32,7 +32,8 @@ NULL
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_franchises()
@@ -85,7 +86,8 @@ NULL
 #' @importFrom dplyr as_tibble
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_franchise(franchise_id = 150)

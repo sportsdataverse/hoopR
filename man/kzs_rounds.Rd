@@ -31,28 +31,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other KZS Functions:
-\code{\link[=kzs_box_score]{kzs_box_score()}},
-\code{\link[=kzs_competition]{kzs_competition()}},
-\code{\link[=kzs_competitions]{kzs_competitions()}},
-\code{\link[=kzs_match]{kzs_match()}},
-\code{\link[=kzs_matches]{kzs_matches()}},
-\code{\link[=kzs_pbp]{kzs_pbp()}},
-\code{\link[=kzs_pbp_players]{kzs_pbp_players()}},
-\code{\link[=kzs_period_scores]{kzs_period_scores()}},
-\code{\link[=kzs_phases]{kzs_phases()}},
-\code{\link[=kzs_player]{kzs_player()}},
-\code{\link[=kzs_player_leaderboard]{kzs_player_leaderboard()}},
-\code{\link[=kzs_player_stats]{kzs_player_stats()}},
-\code{\link[=kzs_playing_days]{kzs_playing_days()}},
-\code{\link[=kzs_roster]{kzs_roster()}},
-\code{\link[=kzs_score_changes]{kzs_score_changes()}},
-\code{\link[=kzs_seasons]{kzs_seasons()}},
-\code{\link[=kzs_standings]{kzs_standings()}},
-\code{\link[=kzs_team]{kzs_team()}},
-\code{\link[=kzs_team_box_score]{kzs_team_box_score()}},
-\code{\link[=kzs_team_general]{kzs_team_general()}},
-\code{\link[=kzs_team_leaderboard]{kzs_team_leaderboard()}},
-\code{\link[=kzs_teams]{kzs_teams()}}
+\link{family_kzs} lists every function in this family.
 }
 \concept{KZS Functions}

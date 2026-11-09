@@ -105,7 +105,8 @@ NULL
 #' **a change to one must land in the other in the same session, verified.**
 #' @author Saiem Gilani
 #' @importFrom janitor clean_names
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 espn_basketball_player_core <- function(payload, athlete_id) {
   cols <- .player_core_cols()

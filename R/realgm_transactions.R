@@ -22,7 +22,8 @@
 #' @keywords RealGM
 #' @importFrom rvest read_html html_element html_elements html_text2
 #' @importFrom dplyr as_tibble bind_rows
-#' @family RealGM Functions
+#' @concept RealGM Functions
+#' @seealso [family_realgm] lists every function in this family.
 #' @export
 #' @examples
 #' \dontrun{

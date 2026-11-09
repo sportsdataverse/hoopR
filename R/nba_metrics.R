@@ -17,7 +17,8 @@
 #'   `PTS / (2 * (FGA + 0.44 * FTA))`.
 #' @param pts,fga,fta Numeric vectors: points, field-goal attempts, free-throw attempts.
 #' @return A numeric vector of true-shooting percentages (0-1 scale).
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples nba_true_shooting_pct(pts = 30, fga = 20, fta = 8)
 nba_true_shooting_pct <- function(pts, fga, fta) {
@@ -29,7 +30,8 @@ nba_true_shooting_pct <- function(pts, fga, fta) {
 #'   three-pointer: `(FGM + 0.5 * FG3M) / FGA`.
 #' @param fgm,fg3m,fga Numeric vectors: field goals made, three-pointers made, field-goal attempts.
 #' @return A numeric vector of effective field-goal percentages (0-1 scale).
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples nba_effective_fg_pct(fgm = 10, fg3m = 4, fga = 20)
 nba_effective_fg_pct <- function(fgm, fg3m, fga) {
@@ -40,7 +42,8 @@ nba_effective_fg_pct <- function(fgm, fg3m, fga) {
 #' @description Free-throw attempts per field-goal attempt: `FTA / FGA`.
 #' @param fta,fga Numeric vectors: free-throw attempts, field-goal attempts.
 #' @return A numeric vector.
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples nba_ft_rate(fta = 8, fga = 20)
 nba_ft_rate <- function(fta, fga) {
@@ -52,7 +55,8 @@ nba_ft_rate <- function(fta, fga) {
 #'   points (a Game Score of 40 is outstanding, 10 is an average starter).
 #' @param pts,fgm,fga,fta,ftm,oreb,dreb,stl,ast,blk,pf,tov Numeric vectors of box-score totals.
 #' @return A numeric vector of game scores.
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples
 #' nba_game_score(pts = 30, fgm = 10, fga = 20, fta = 8, ftm = 7,
@@ -65,7 +69,8 @@ nba_game_score <- function(pts, fgm, fga, fta, ftm, oreb, dreb, stl, ast, blk, p
 #' @title **Assist-to-Turnover Ratio**
 #' @param ast,tov Numeric vectors: assists, turnovers.
 #' @return A numeric vector (`NA` when turnovers are 0).
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples nba_assist_to_turnover(ast = 8, tov = 3)
 nba_assist_to_turnover <- function(ast, tov) {
@@ -78,7 +83,8 @@ nba_assist_to_turnover <- function(ast, tov) {
 #'   possessions formula with opponent inputs.
 #' @param fga,fta,oreb,tov Numeric vectors: field-goal attempts, free-throw attempts, offensive rebounds, turnovers.
 #' @return A numeric vector of estimated possessions.
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples nba_possessions(fga = 88, fta = 25, oreb = 10, tov = 13)
 nba_possessions <- function(fga, fta, oreb, tov) {
@@ -90,7 +96,8 @@ nba_possessions <- function(fga, fta, oreb, tov) {
 #' @param minutes Numeric vector of total team minutes played (player-minutes; 240
 #'   for a regulation game).
 #' @return A numeric vector of pace (possessions per 48 minutes).
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples nba_pace(poss = 100, minutes = 240)
 nba_pace <- function(poss, minutes) {
@@ -100,7 +107,8 @@ nba_pace <- function(poss, minutes) {
 #' @title **Offensive Rating (points per 100 possessions)**
 #' @param pts,poss Numeric vectors: points scored, possessions.
 #' @return A numeric vector of points per 100 possessions.
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples nba_offensive_rating(pts = 115, poss = 100)
 nba_offensive_rating <- function(pts, poss) {
@@ -110,7 +118,8 @@ nba_offensive_rating <- function(pts, poss) {
 #' @title **Defensive Rating (points allowed per 100 possessions)**
 #' @param opp_pts,poss Numeric vectors: opponent points, possessions.
 #' @return A numeric vector of points allowed per 100 possessions.
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples nba_defensive_rating(opp_pts = 108, poss = 100)
 nba_defensive_rating <- function(opp_pts, poss) {
@@ -120,7 +129,8 @@ nba_defensive_rating <- function(opp_pts, poss) {
 #' @title **Net Rating**
 #' @param off_rating,def_rating Numeric vectors: offensive and defensive ratings.
 #' @return A numeric vector (`off_rating - def_rating`).
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples nba_net_rating(off_rating = 115, def_rating = 108)
 nba_net_rating <- function(off_rating, def_rating) {
@@ -132,7 +142,8 @@ nba_net_rating <- function(off_rating, def_rating) {
 #' @param fga,fta,tov,minutes Player box-score totals: field-goal attempts, free-throw attempts, turnovers, minutes.
 #' @param team_fga,team_fta,team_tov,team_minutes Team totals for the same game(s).
 #' @return A numeric vector of usage percentages (0-100 scale).
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples
 #' nba_usage_rate(fga = 20, fta = 8, tov = 3, minutes = 36,
@@ -149,7 +160,8 @@ nba_usage_rate <- function(fga, fta, tov, minutes,
 #' @param ast,fgm,minutes Player totals: assists, field goals made, minutes.
 #' @param team_fgm,team_minutes Team field goals made and minutes for the same game(s).
 #' @return A numeric vector of assist percentages (0-100 scale).
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples
 #' nba_assist_pct(ast = 8, fgm = 10, minutes = 36, team_fgm = 40, team_minutes = 240)
@@ -161,7 +173,8 @@ nba_assist_pct <- function(ast, fgm, minutes, team_fgm, team_minutes) {
 #' @description Turnovers per 100 plays: `100 * TOV / (FGA + 0.44 * FTA + TOV)`.
 #' @param tov,fga,fta Numeric vectors: turnovers, field-goal attempts, free-throw attempts.
 #' @return A numeric vector (0-100 scale).
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples nba_turnover_pct(tov = 13, fga = 88, fta = 25)
 nba_turnover_pct <- function(tov, fga, fta) {
@@ -171,7 +184,8 @@ nba_turnover_pct <- function(tov, fga, fta) {
 #' @title **Offensive Rebound Percentage**
 #' @param oreb,opp_dreb Numeric vectors: offensive rebounds, opponent defensive rebounds.
 #' @return A numeric vector (0-100 scale).
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples nba_oreb_pct(oreb = 10, opp_dreb = 33)
 nba_oreb_pct <- function(oreb, opp_dreb) {
@@ -186,7 +200,8 @@ nba_oreb_pct <- function(oreb, opp_dreb) {
 #' @param opp_dreb Opponent defensive rebounds (for offensive-rebound percentage).
 #' @return A `tibble` with columns `efg_pct`, `tov_pct`, `oreb_pct`, `ft_rate`.
 #' @importFrom dplyr tibble
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples
 #' nba_four_factors(fgm = 40, fg3m = 12, fga = 88, fta = 25, ftm = 20,

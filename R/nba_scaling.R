@@ -21,7 +21,8 @@
 #' @param per Minutes to scale to. Defaults to `36`.
 #' @return `df` with the added per-minute columns.
 #' @importFrom cli cli_abort
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples
 #' box <- data.frame(player = c("A", "B"), min = c(36, 24),
@@ -50,7 +51,8 @@ nba_per_minutes <- function(df, cols, minutes = "min", per = 36) {
 #' @param per Possessions to scale to. Defaults to `100`.
 #' @return `df` with the added per-possession columns.
 #' @importFrom cli cli_abort
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples
 #' box <- data.frame(team = c("A", "B"), poss = c(98, 102),
@@ -80,7 +82,8 @@ nba_per_possessions <- function(df, cols, possessions = "poss", per = 100) {
 #' @param df A data frame / tibble of player or team box-score rows.
 #' @return `df` with the available advanced-metric columns appended.
 #' @importFrom cli cli_inform
-#' @family Basketball Analytics Utilities
+#' @concept Basketball Analytics Utilities
+#' @seealso [family_basketball_analytics_utilities] lists every function in this family.
 #' @export
 #' @examples
 #' box <- data.frame(player = "A", pts = 30, fgm = 10, fga = 20,

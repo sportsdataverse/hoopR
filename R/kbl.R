@@ -70,7 +70,8 @@
 #'   try(kbl_seasons())
 #' }
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_seasons <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_simple_get("/season/list", call = rlang::current_env())
@@ -102,7 +103,8 @@ kbl_seasons <- function() {
 #'   try(kbl_teams())
 #' }
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_teams <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_simple_get("/common/teamList", call = rlang::current_env())
@@ -167,7 +169,8 @@ kbl_teams <- function() {
 #'   try(kbl_schedule(from_date = "20251101", to_date = "20251102"))
 #' }
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_schedule <- function(season = NULL, from_date = NULL, to_date = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_schedule_get(season, from_date, to_date, call = rlang::current_env())
@@ -236,7 +239,8 @@ kbl_schedule <- function(season = NULL, from_date = NULL, to_date = NULL) {
 #'   try(kbl_game(gmkey = "S47G01N49"))
 #' }
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_game <- function(gmkey) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_game_get("header", gmkey, call = rlang::current_env())
@@ -275,7 +279,8 @@ kbl_game <- function(gmkey) {
 #'   try(kbl_period_scores(gmkey = "S47G01N49"))
 #' }
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_period_scores <- function(gmkey) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_game_get("header", gmkey, call = rlang::current_env())
@@ -327,7 +332,8 @@ kbl_period_scores <- function(gmkey) {
 #'   try(kbl_pbp(gmkey = "S47G01N49"))
 #' }
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_pbp <- function(gmkey) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_game_get("text_cast", gmkey, call = rlang::current_env())
@@ -427,7 +433,8 @@ kbl_pbp <- function(gmkey) {
 #'   try(kbl_player_box(gmkey = "S47G01N49"))
 #' }
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_player_box <- function(gmkey) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_game_get("player_stat", gmkey, call = rlang::current_env())
@@ -524,7 +531,8 @@ kbl_player_box <- function(gmkey) {
 #'   try(kbl_team_box(gmkey = "S47G01N49"))
 #' }
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_team_box <- function(gmkey) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_game_get("team_record", gmkey, call = rlang::current_env())
@@ -568,7 +576,8 @@ kbl_team_box <- function(gmkey) {
 #'   try(kbl_shots(gmkey = "S47G01N49"))
 #' }
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_shots <- function(gmkey) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_game_get("match_chart", gmkey, call = rlang::current_env())
@@ -604,7 +613,8 @@ kbl_shots <- function(gmkey) {
 #' | away_score | integer | Away team points: cumulative at the checkpoint on the score track, the final total (all periods summed) on a game row, the full-time score in the schedule. |
 #' @eval .intl_details(.kbl_seasons_details, 'kbl_score_track(gmkey = "S47G01N49")')
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_score_track <- function(gmkey) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_game_get("match_chart", gmkey, call = rlang::current_env())
@@ -643,7 +653,8 @@ kbl_score_track <- function(gmkey) {
 #' | play_sec | integer | Seconds part of the leader's playing time (0-59). |
 #' @eval .intl_details(.kbl_seasons_details, 'kbl_game_leaders(gmkey = "S47G01N49")')
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_game_leaders <- function(gmkey) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_game_get("match_chart", gmkey, call = rlang::current_env())
@@ -723,7 +734,8 @@ kbl_game_leaders <- function(gmkey) {
 #' | minutes_played | double | Playing time in minutes (play_min + play_sec / 60), derived. |
 #' @eval .intl_details(.kbl_seasons_details, "kbl_player_totals(season = 2025)")
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_player_totals <- function(season, division = "kbl", game_code = "01") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .kbl_check_division(division, call = rlang::current_env())
@@ -821,7 +833,8 @@ kbl_player_totals <- function(season, division = "kbl", game_code = "01") {
 #'   try(kbl_standings(season = 2025))
 #' }
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_standings <- function(season, division = "kbl", game_code = "01") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .kbl_check_division(division, call = rlang::current_env())
@@ -859,7 +872,8 @@ kbl_standings <- function(season, division = "kbl", game_code = "01") {
 #' | rank | integer | Standing (1 = first): after the game_number-th game on the rank track, the current rank on the standings routes. |
 #' @eval .intl_details(.kbl_seasons_details, "kbl_team_tracks(season = 2025)")
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_team_tracks <- function(season, division = "kbl", game_code = "01") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .kbl_check_division(division, call = rlang::current_env())
@@ -896,7 +910,8 @@ kbl_team_tracks <- function(season, division = "kbl", game_code = "01") {
 #' | to_date | Date | Last date of the round, YYYYMMDD. |
 #' @eval .intl_details(.kbl_seasons_details, "kbl_rounds(season = 2025)")
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_rounds <- function(season, division = "kbl", game_code = "01") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .kbl_check_division(division, call = rlang::current_env())
@@ -928,7 +943,8 @@ kbl_rounds <- function(season, division = "kbl", game_code = "01") {
 #' | team_name_full | character | Team full name (Korean). |
 #' @eval .intl_details(.kbl_seasons_details, "kbl_playoff_seeds(season = 2025)")
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_playoff_seeds <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_season_get("playoff", season, call = rlang::current_env())
@@ -963,7 +979,8 @@ kbl_playoff_seeds <- function(season) {
 #' | game_date | Date | Date of a game of the series, KST (which one is unverified); old bracket format only. |
 #' @eval .intl_details(.kbl_seasons_details, "kbl_playoff_series(season = 2025)")
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_playoff_series <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_season_get("playoff", season, call = rlang::current_env())
@@ -1002,7 +1019,8 @@ kbl_playoff_series <- function(season) {
 #' | home_win | logical | 1 when the home team won, else 0. |
 #' @eval .intl_details(.kbl_seasons_details, "kbl_playoff_games(season = 2025)")
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_playoff_games <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_season_get("playoff", season, call = rlang::current_env())
@@ -1038,7 +1056,8 @@ kbl_playoff_games <- function(season) {
 #' | total_assist | integer | Assists over the round. |
 #' @eval .intl_details(.kbl_seasons_details, "kbl_round_mvps(season = 2025)")
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_round_mvps <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_season_get("round_mvp", season, call = rlang::current_env())
@@ -1077,7 +1096,8 @@ kbl_round_mvps <- function(season) {
 #' | last_five | character | The last five results as a comma-separated string, most recent first: 1 win, 0 loss. |
 #' @eval .intl_details(.kbl_seasons_details, "kbl_current_standings()")
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_current_standings <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_simple_get("/league/rank/team", call = rlang::current_env())
@@ -1112,7 +1132,8 @@ kbl_current_standings <- function() {
 #' | player_flag | character | Player type (string): '0' domestic, '1' foreign import, '2' Asian-quota player. |
 #' @eval .intl_details(.kbl_seasons_details, "kbl_season_leaders()")
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_season_leaders <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_simple_get("/league/season-leader", call = rlang::current_env())
@@ -1148,7 +1169,8 @@ kbl_season_leaders <- function() {
 #'   try(kbl_players())
 #' }
 #' @export
-#' @family KBL Functions
+#' @concept KBL Functions
+#' @seealso [family_kbl] lists every function in this family.
 kbl_players <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .kbl_simple_get("/players", call = rlang::current_env())

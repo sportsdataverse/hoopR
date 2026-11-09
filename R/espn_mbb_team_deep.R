@@ -32,7 +32,8 @@ NULL
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_team_odds_records(team_id = 150, season = 2026)
@@ -72,7 +73,8 @@ espn_mbb_team_odds_records <- function(team_id,
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_team_season_roster(team_id = 150, season = 2025)
@@ -109,7 +111,8 @@ espn_mbb_team_season_roster <- function(team_id,
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_coach_season(coach_id = 32116, season = 2025)
@@ -145,7 +148,8 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble.
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_team_record_detail(team_id = 150, season = 2024, record_id = 0)
