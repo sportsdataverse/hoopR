@@ -54,6 +54,9 @@
   the request sent). Python-only arguments (`return_parsed`, `return_as_pandas`) are not ported, and a
   whole-number double is accepted wherever sportsdataverse-py takes an integer. Live tests run only with
   `HOOPR_INTL_LIVE_TESTS=1`; Genius needs `GENIUS_PROXY` and CBA `CBA_PROXY`.
+* The international parsers name each JSON field once per session instead of once per row,
+  so a 300-row SCB season table parses in about 1 s instead of 4.5 s (LBA, NBL and the other
+  families that use the same naming helper speed up too).
 
 ### **EuroLeague and EuroCup (`euroleague_*`)**
 
