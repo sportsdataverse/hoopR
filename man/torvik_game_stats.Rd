@@ -27,9 +27,12 @@ the column names below are mapped from its observed positional layout. Data is
 available from 2008 to present.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: every team-game of a season, 4-5 s of parsing.
   try(torvik_game_stats(year = 2024))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Torvik Functions:

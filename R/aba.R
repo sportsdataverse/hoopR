@@ -159,8 +159,9 @@ aba_periods <- function(game_no, season, league = "aba") {
 #' `hoopR_error`.
 #' @family ABA Functions
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: parsing the box-score page takes about 4 s.
 #'   try(aba_box_players(game_no = 6, season = 2026))
 #' }
 aba_box_players <- function(game_no, season, league = "aba") {

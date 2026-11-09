@@ -26,9 +26,12 @@ and tempo, the final result, and post-game game-quality metrics. No API key is
 required. Data is available from 2008 to present.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: a whole season's schedule, 3-5 s of parsing.
   try(torvik_game_schedule(year = 2024))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other Torvik Functions:

@@ -17,8 +17,9 @@
 #' @importFrom dplyr as_tibble
 #' @family Torvik Functions
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: a whole season's schedule, 3-5 s of parsing.
 #'   try(torvik_game_schedule(year = 2024))
 #' }
 torvik_game_schedule <- function(year = most_recent_mbb_season()) {
