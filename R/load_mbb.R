@@ -483,11 +483,11 @@ build_mbb_db <- function(
 # this is a helper function to check a list of completed games
 # against the games that exist in a database connection
 get_missing_mbb_games <- function(completed_games, dbConnection, tablename) {
-  db_ids <- dplyr::tbl(dbConnection, tablename) %>%
-    dplyr::select("game_id") %>%
-    dplyr::distinct() %>%
-    dplyr::collect() %>%
-    dplyr::pull("game_id")
+  # Plain DBI: dplyr::tbl() on a connection needs dbplyr, which hoopR does not declare.
+  db_ids <- DBI::dbGetQuery(
+    dbConnection,
+    paste0("SELECT DISTINCT game_id FROM ", DBI::dbQuoteIdentifier(dbConnection, tablename))
+  )[["game_id"]]
 
   need_scrape <- completed_games[!completed_games %in% db_ids]
 
