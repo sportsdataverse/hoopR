@@ -126,47 +126,47 @@ article.
 \strong{Get KPoY Leaders Tables}
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_pomeroy_ratings(min_year = 2021, max_year = 2021))
 }
 \dontshow{\}) # examplesIf}
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_efficiency(min_year = 2021, max_year = 2021))
 }
 \dontshow{\}) # examplesIf}
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_fourfactors(min_year = 2021, max_year = 2021))
 }
 \dontshow{\}) # examplesIf}
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_pointdist(min_year = 2021, max_year = 2021))
 }
 \dontshow{\}) # examplesIf}
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_height(min_year = 2021, max_year = 2021))
 }
 \dontshow{\}) # examplesIf}
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_foul_trouble(min_year = 2021, max_year = 2021))
 }
 \dontshow{\}) # examplesIf}
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_teamstats(min_year = 2021, max_year = 2021))
 }
 \dontshow{\}) # examplesIf}
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
 }
 \dontshow{\}) # examplesIf}
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_kpoy(year = 2026))
 }

@@ -19,7 +19,7 @@
 #' @importFrom cli cli_abort
 #' @family Basketball-Reference Functions
 #' @export
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'   try(bref_teams_stats(season = 2024, table = "per_game"))
 #' }

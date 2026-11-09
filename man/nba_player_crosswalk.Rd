@@ -21,7 +21,7 @@ within a team block, then Jaro-Winkler fuzzy with jersey/DOB tiebreakers.
 Yahoo columns are NA placeholders.
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
   try(nba_player_crosswalk())
 }

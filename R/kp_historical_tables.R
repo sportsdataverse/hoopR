@@ -13,7 +13,7 @@
 #' @keywords Team History
 #' @family KenPom Historical Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #'   \donttest{
 #'     try(kp_team_history(team = 'Florida St.'))
 #'   }
@@ -254,7 +254,7 @@ kp_team_history <- function(team){
 #' @keywords Coach History
 #' @family KenPom Historical Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #'   \donttest{
 #'    try(kp_coach_history(coach = 'Leonard Hamilton'))
 #'   }
@@ -478,7 +478,7 @@ kp_coach_history <- function(coach){
 #' @export
 #' @keywords Program Ratings
 #' @family KenPom Historical Functions
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'   try(kp_program_ratings())
 #' }
@@ -550,7 +550,7 @@ kp_program_ratings <- function(){
 #' @export
 #' @keywords Ratings Archive
 #' @family KenPom Historical Functions
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'   try(kp_pomeroy_archive_ratings(date='2018-11-22'))
 #' }
@@ -634,7 +634,7 @@ kp_pomeroy_archive_ratings <- function(date){
 #' @export
 #' @keywords Conference Stats
 #' @family KenPom Historical Functions
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'     try(kp_conf(year = 2020, conf = 'ACC'))
 #' }
@@ -793,7 +793,7 @@ kp_conf <- function(year, conf){
 #' @keywords Conference Comparison
 #' @family KenPom Historical Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'   try(kp_confstats(year=most_recent_mbb_season()))
 #' }
@@ -885,7 +885,7 @@ kp_confstats <- function(year = most_recent_mbb_season()){
 #' @keywords Conference History
 #' @family KenPom Historical Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'   try(kp_confhistory(conf = 'ACC'))
 #' }

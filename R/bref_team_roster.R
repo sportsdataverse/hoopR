@@ -17,7 +17,7 @@
 #' @importFrom dplyr as_tibble
 #' @family Basketball-Reference Functions
 #' @export
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'   try(bref_team_roster(team = "BOS", season = 2024))
 #' }

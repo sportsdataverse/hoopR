@@ -59,7 +59,7 @@ silently dropped so the function always returns a complete crosswalk even
 when partial KenPom data is unavailable.
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
   try(mbb_schedule_crosswalk(season = 2025))
 }

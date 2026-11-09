@@ -80,7 +80,7 @@ shared with the \code{sportsdataverse} reference engine); verify aggregation
 semantics before using rate-heavy measures.
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
   try({
     df <- nba_tracking_aggregate(

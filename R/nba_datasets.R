@@ -21,7 +21,7 @@
 #' @importFrom dplyr as_tibble relocate all_of
 #' @family NBA Combined Datasets
 #' @export
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'   try(nba_tidy_franchise_history())
 #' }
@@ -71,7 +71,7 @@ nba_tidy_franchise_history <- function(...) {
 #' @importFrom dplyr as_tibble left_join
 #' @family NBA Combined Datasets
 #' @export
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'   try(nba_tidy_boxscore(game_id = "0022300061"))
 #' }
@@ -125,7 +125,7 @@ nba_tidy_boxscore <- function(game_id, ...) {
 #' @keywords NBA Combined Datasets
 #' @family NBA Combined Datasets
 #' @export
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'   prof <- try(nba_tidy_player_profile(player_id = 201939))
 #' }

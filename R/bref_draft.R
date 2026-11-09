@@ -16,7 +16,7 @@
 #' @importFrom dplyr as_tibble rename any_of
 #' @family Basketball-Reference Functions
 #' @export
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'   try(bref_draft(season = 2024))
 #' }

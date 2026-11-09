@@ -555,7 +555,7 @@ NULL
 #' @importFrom dplyr transmute bind_rows left_join mutate
 #' @export
 #' @family MBB Crosswalk Functions
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'   try(mbb_schedule_crosswalk(season = 2025))
 #' }

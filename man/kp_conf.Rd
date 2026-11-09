@@ -28,7 +28,7 @@ article.
 \strong{Get KenPom's conference-wide stats}
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
     try(kp_conf(year = 2020, conf = 'ACC'))
 }

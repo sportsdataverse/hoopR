@@ -19,7 +19,7 @@ Its columns are listed in \link{return_columns}
 \strong{Get KenPom's ratings archive pages}
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
   try(kp_pomeroy_archive_ratings(date='2018-11-22'))
 }

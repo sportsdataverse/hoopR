@@ -12,7 +12,7 @@
 #' @keywords Game Box Score
 #' @family KenPom Boxscore Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #' try(kp_box(game_id = 6, year = 2021))
 #' }
@@ -199,7 +199,7 @@ kp_box <- function(game_id, year) {
 #' @keywords Win Probability
 #' @family KenPom Boxscore Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #' try(kp_winprob(game_id = 1238, year = 2020))
 #' }

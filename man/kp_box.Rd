@@ -33,12 +33,12 @@ article.
 \strong{Get KenPom Win Probability}
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_box(game_id = 6, year = 2021))
 }
 \dontshow{\}) # examplesIf}
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
 try(kp_winprob(game_id = 1238, year = 2020))
 }

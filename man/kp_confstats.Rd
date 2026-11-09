@@ -19,7 +19,7 @@ Its columns are listed in \link{return_columns}
 \strong{Get KenPom's conference comparison stats}
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
   try(kp_confstats(year=most_recent_mbb_season()))
 }

@@ -12,7 +12,7 @@
 #' @keywords Ratings
 #' @family KenPom Ratings Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #' try(kp_pomeroy_ratings(min_year = 2021, max_year = 2021))
 #' }
@@ -116,7 +116,7 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()) {
 #' @keywords Efficiency
 #' @family KenPom Ratings Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #' try(kp_efficiency(min_year = 2021, max_year = 2021))
 #' }
@@ -280,7 +280,7 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()) {
 #' @keywords Four Factors
 #' @family KenPom Ratings Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #' try(kp_fourfactors(min_year = 2021, max_year = 2021))
 #' }
@@ -391,7 +391,7 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()) {
 #' @keywords Points
 #' @family KenPom Ratings Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #' try(kp_pointdist(min_year = 2021, max_year = 2021))
 #' }
@@ -503,7 +503,7 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()) {
 #' @keywords Roster
 #' @family KenPom Ratings Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #' try(kp_height(min_year = 2021, max_year = 2021))
 #' }
@@ -671,7 +671,7 @@ kp_height <- function(min_year, max_year = most_recent_mbb_season()) {
 #' @keywords Foul Trouble
 #' @family KenPom Ratings Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #' try(kp_foul_trouble(min_year = 2021, max_year = 2021))
 #' }
@@ -777,7 +777,7 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()) {
 #' @keywords Team
 #' @family KenPom Ratings Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #' try(kp_teamstats(min_year = 2021, max_year = 2021))
 #' }
@@ -967,7 +967,7 @@ kp_teamstats <- function(min_year, max_year = most_recent_mbb_season()) {
 #' @keywords Player
 #' @family KenPom Ratings Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #' try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
 #' }
@@ -1122,7 +1122,7 @@ kp_playerstats <- function(metric = "eFG", conf = NULL, conf_only = FALSE, year 
 #' @keywords Leaders
 #' @family KenPom Ratings Functions
 #'
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #' try(kp_kpoy(year = 2026))
 #' }

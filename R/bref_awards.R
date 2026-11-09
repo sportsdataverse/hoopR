@@ -17,7 +17,7 @@
 #' @importFrom dplyr as_tibble rename any_of bind_rows
 #' @family Basketball-Reference Functions
 #' @export
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'   try(bref_awards(season = 2024))
 #' }

@@ -27,7 +27,7 @@ award. No API key is required. Basketball-Reference rate-limits aggressive
 scraping (~20 requests/minute) -- space repeated calls with \code{Sys.sleep()}.
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
   try(bref_awards(season = 2024))
 }

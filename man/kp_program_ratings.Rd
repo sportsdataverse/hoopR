@@ -16,7 +16,7 @@ Its columns are listed in \link{return_columns}
 \strong{Get KenPom's program ratings}
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
   try(kp_program_ratings())
 }

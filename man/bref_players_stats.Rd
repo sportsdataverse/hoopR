@@ -32,7 +32,7 @@ Basketball-Reference rate-limits aggressive scraping (~20 requests/minute) --
 space repeated calls with \code{Sys.sleep()}.
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
   try(bref_players_stats(season = 2024, table = "per_game"))
 }

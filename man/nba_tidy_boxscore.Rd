@@ -23,7 +23,7 @@ totals onto every player row by \code{GAME_ID} + \code{TEAM_ID}, suffixing the t
 columns with \verb{_team}.
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
   try(nba_tidy_boxscore(game_id = "0022300061"))
 }

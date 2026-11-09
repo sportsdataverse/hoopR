@@ -67,7 +67,13 @@ jobs:
           pak::pkg_install("r-lib/pkgapi")
         shell: Rscript {0}
       - name: Build site
-        run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
+        # interactive() is TRUE for this build, so the @examplesIf interactive()
+        # examples run and their output is shown on the site; the ones that
+        # call sites we don't scrape from CI also check Sys.getenv("CI").
+        run: |
+          unlockBinding("interactive", baseenv())
+          assign("interactive", function() TRUE, envir = baseenv())
+          pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
         shell: Rscript {0}
       # pkgdown renders every top-level and .github/*.md file; the agent and
       # contributor-tooling notes are not user documentation, so drop their

@@ -19,7 +19,7 @@ Its columns are listed in \link{return_columns}
 \strong{Get KenPom's team efficiency history}
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
   \donttest{
     try(kp_team_history(team = 'Florida St.'))
   }

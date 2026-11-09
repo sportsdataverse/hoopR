@@ -43,7 +43,7 @@ sourced from the stats.nba.com player index. Handy for joining player ids to
 names/teams and for fetching headshots.
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
   try(nba_player_dict())
 }

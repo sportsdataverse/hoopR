@@ -35,7 +35,7 @@ division, logo URL) derived from the stats.nba.com player index plus a
 static conference/division map.
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
   try(nba_team_dict())
 }

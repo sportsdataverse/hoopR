@@ -53,7 +53,7 @@ within 80 legacy units of the paint center (\code{abs(x_legacy) <= 80}).
 }\if{html}{\out{</div>}}
 }
 \examples{
-\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\dontshow{if (interactive() && !nzchar(Sys.getenv("CI"))) withAutoprint(\{ # examplesIf}
 \donttest{
   try({
     df <- nba_shot_zones(game_id = "0022200001")

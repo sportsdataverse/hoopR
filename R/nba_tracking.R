@@ -246,7 +246,7 @@ NULL
 #'                         pt_measure_type = "Drives",
 #'                         player_or_team  = "Player")
 #' ```
-#' @examplesIf interactive()
+#' @examplesIf interactive() && !nzchar(Sys.getenv("CI"))
 #' \donttest{
 #'   try({
 #'     df <- nba_tracking_aggregate(
