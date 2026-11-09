@@ -211,8 +211,10 @@
 
 * `espn_mbb_team_roster()` / `espn_nba_team_roster()` for a past season now
   build the roster from that season's published player box scores
-  (`load_mbb_player_box()` / `load_nba_player_box()`), and error when none are
-  published. ESPN's roster endpoint ignores `?season=`, so a past season used
+  (`load_mbb_player_box()` / `load_nba_player_box()`). When that season's box
+  scores cannot be read (none published, or no network) they warn and return an
+  empty roster, like the other ESPN wrappers, instead of today's roster or an
+  error. ESPN's roster endpoint ignores `?season=`, so a past season used
   to return today's roster under the past season's label, which also fed
   `mbb_player_crosswalk()` / `nba_player_crosswalk()`. Mirrors
   sportsdataverse/sportsdataverse-py#782.

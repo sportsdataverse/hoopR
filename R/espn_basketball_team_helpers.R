@@ -345,16 +345,24 @@
   box <- .espn_past_roster_cache[[key]]
   if (is.null(box)) {
     loader <- if (league == "nba") load_nba_player_box else load_mbb_player_box
-    box <- loader(seasons = as.integer(season))
+    err <- NULL
+    box <- tryCatch(loader(seasons = as.integer(season)), error = function(e) {
+      err <<- conditionMessage(e)
+      NULL
+    })
+    # Like the other ESPN wrappers: no data (or no network) is a warning and an empty roster, not an error.
+    # The empty result is not cached, so a later call retries the download.
     if (is.null(box) || !nrow(box)) {
-      cli::cli_abort(c(
-        "No {league} player box scores are published for season {season}.",
-        "i" = "ESPN's roster endpoint ignores {.code season}, so a past season cannot fall back to today's roster."
+      cli::cli_warn(c(
+        "No {league} player box scores could be read for season {season}; returning an empty roster.",
+        "i" = "ESPN's roster endpoint ignores {.code season}, so a past season cannot fall back to today's roster.",
+        if (!is.null(err)) c("x" = "{err}")
       ))
+    } else {
+      .espn_past_roster_cache[[key]] <- box
     }
-    .espn_past_roster_cache[[key]] <- box
   }
-  last <- box %>%
+  last <- if (is.null(box) || !nrow(box)) data.frame() else box %>%
     dplyr::filter(
       !is.na(.data$athlete_id),
       as.character(.data$team_id) == as.character(.env$team_id)
