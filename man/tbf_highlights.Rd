@@ -56,37 +56,6 @@ Timestamps are Turkey local time (\code{Europe/Istanbul}).
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other TBF Functions:
-\code{\link[=tbf_daily_matches]{tbf_daily_matches()}},
-\code{\link[=tbf_game_header]{tbf_game_header()}},
-\code{\link[=tbf_game_leaders]{tbf_game_leaders()}},
-\code{\link[=tbf_game_players]{tbf_game_players()}},
-\code{\link[=tbf_leaders_assists]{tbf_leaders_assists()}},
-\code{\link[=tbf_leaders_blocks]{tbf_leaders_blocks()}},
-\code{\link[=tbf_leaders_efficiency]{tbf_leaders_efficiency()}},
-\code{\link[=tbf_leaders_minutes]{tbf_leaders_minutes()}},
-\code{\link[=tbf_leaders_points]{tbf_leaders_points()}},
-\code{\link[=tbf_leaders_rebounds]{tbf_leaders_rebounds()}},
-\code{\link[=tbf_leaders_steals]{tbf_leaders_steals()}},
-\code{\link[=tbf_leaders_threes]{tbf_leaders_threes()}},
-\code{\link[=tbf_leaders_turnovers]{tbf_leaders_turnovers()}},
-\code{\link[=tbf_league_seasons]{tbf_league_seasons()}},
-\code{\link[=tbf_leagues]{tbf_leagues()}},
-\code{\link[=tbf_pbp]{tbf_pbp()}},
-\code{\link[=tbf_period_scores]{tbf_period_scores()}},
-\code{\link[=tbf_player_box]{tbf_player_box()}},
-\code{\link[=tbf_player_career]{tbf_player_career()}},
-\code{\link[=tbf_players]{tbf_players()}},
-\code{\link[=tbf_schedule]{tbf_schedule()}},
-\code{\link[=tbf_seasons]{tbf_seasons()}},
-\code{\link[=tbf_shots]{tbf_shots()}},
-\code{\link[=tbf_standings]{tbf_standings()}},
-\code{\link[=tbf_team_box]{tbf_team_box()}},
-\code{\link[=tbf_team_games]{tbf_team_games()}},
-\code{\link[=tbf_team_player_stats]{tbf_team_player_stats()}},
-\code{\link[=tbf_team_roster]{tbf_team_roster()}},
-\code{\link[=tbf_team_staff]{tbf_team_staff()}},
-\code{\link[=tbf_teams]{tbf_teams()}},
-\code{\link[=tbf_weeks]{tbf_weeks()}}
+\link{family_tbf} lists every function in this family.
 }
 \concept{TBF Functions}

@@ -279,6 +279,12 @@ test_that(".empty_tibble builds a zero-row tibble with the documented types", {
 test_that(".intl_clean_names is sdv-py's underscore()", {
   expect_identical(.intl_clean_names(c("DeviceType", "IOError", "playerID2", "kebab-case", "already_snake")),
                    c("device_type", "io_error", "player_id2", "kebab_case", "already_snake"))
+  # one name at a time goes through the memo; a second call reads it back unchanged
+  expect_identical(.intl_clean_names("IOError"), "io_error")
+  expect_identical(.intl_clean_names("IOError"), "io_error")
+  expect_identical(.intl_clean_names(""), "")
+  expect_identical(.intl_clean_names(NA_character_), NA_character_)
+  expect_identical(.intl_clean_names(character()), character())
 })
 
 test_that("the competition registry keeps this package's genders only", {

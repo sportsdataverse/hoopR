@@ -64,21 +64,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }
 }
 \seealso{
-Other TPBL Functions:
-\code{\link[=tpbl_box_player_periods]{tpbl_box_player_periods()}},
-\code{\link[=tpbl_box_players]{tpbl_box_players()}},
-\code{\link[=tpbl_box_team_periods]{tpbl_box_team_periods()}},
-\code{\link[=tpbl_box_teams]{tpbl_box_teams()}},
-\code{\link[=tpbl_divisions]{tpbl_divisions()}},
-\code{\link[=tpbl_games]{tpbl_games()}},
-\code{\link[=tpbl_player_games]{tpbl_player_games()}},
-\code{\link[=tpbl_player_shots]{tpbl_player_shots()}},
-\code{\link[=tpbl_referees]{tpbl_referees()}},
-\code{\link[=tpbl_roster]{tpbl_roster()}},
-\code{\link[=tpbl_seasons]{tpbl_seasons()}},
-\code{\link[=tpbl_standings]{tpbl_standings()}},
-\code{\link[=tpbl_standings_against]{tpbl_standings_against()}},
-\code{\link[=tpbl_team_shots]{tpbl_team_shots()}},
-\code{\link[=tpbl_teams]{tpbl_teams()}}
+\link{family_tpbl} lists every function in this family.
 }
 \concept{TPBL Functions}

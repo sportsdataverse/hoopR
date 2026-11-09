@@ -125,16 +125,21 @@ nba_rapm <- function(possessions, ...) {
   fit_fixed <- function() {
     stats::coef(glmnet::glmnet(X, y, alpha = 0, standardize = FALSE, lambda = 0.1))
   }
-  if (all(y == y[1L])) {
-    # Constant points (incl. a single possession): the intercept explains
-    # everything and glmnet refuses a constant response, so every player is
-    # exactly average.
+  # A 0/1 column has zero variance when it is all 0 or all 1:
+  # n * sum(x^2) == sum(x)^2 holds exactly for the integer counts here.
+  flat_x <- all(n * Matrix::colSums(X^2) == cs^2)
+  if (all(y == y[1L]) || flat_x) {
+    # Constant points (incl. a single possession), or the same ten players on
+    # every possession: the intercept explains everything. glmnet refuses a
+    # constant response, and older glmnet releases (4.1-1) also a design whose
+    # predictors all have zero variance, so every player is exactly average.
     coef <- numeric(2L * P)
   } else {
     # Guard: cv.glmnet needs at least 3 folds, and on a handful of
     # possessions a fold can be left with no usable lambda path. For those
-    # degenerate inputs fall back to a fixed-lambda fit, with a warning, so
-    # the function never errors.
+    # degenerate inputs fall back to a fixed-lambda fit instead of erroring:
+    # silently with fewer than 3 possessions, and with a warning when
+    # cv.glmnet() itself fails on 3 or more.
     if (n < 3L) {
       cf <- fit_fixed()
     } else {

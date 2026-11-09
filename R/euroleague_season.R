@@ -138,7 +138,8 @@
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
-#' @family Euroleague
+#' @concept Euroleague
+#' @seealso [family_euroleague] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -251,7 +252,8 @@ euroleague_standings <- function(competition_code, season_code, round,
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
-#' @family Euroleague
+#' @concept Euroleague
+#' @seealso [family_euroleague] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -347,7 +349,8 @@ euroleague_player_stats <- function(competition_code, mode = c("traditional", "a
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
-#' @family Euroleague
+#' @concept Euroleague
+#' @seealso [family_euroleague] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{

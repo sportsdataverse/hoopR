@@ -54,6 +54,9 @@
   the request sent). Python-only arguments (`return_parsed`, `return_as_pandas`) are not ported, and a
   whole-number double is accepted wherever sportsdataverse-py takes an integer. Live tests run only with
   `HOOPR_INTL_LIVE_TESTS=1`; Genius needs `GENIUS_PROXY` and CBA `CBA_PROXY`.
+* The international parsers name each JSON field once per session instead of once per row,
+  so a 300-row SCB season table parses in about 1 s instead of 4.5 s (LBA, NBL and the other
+  families that use the same naming helper speed up too).
 
 ### **EuroLeague and EuroCup (`euroleague_*`)**
 
@@ -138,11 +141,13 @@
   from 0.960 to 0.989, and with `load_nba_player_impact()` RAPM from 0.955 to
   0.986. The player order is not the same as before (Spearman 0.94 for those
   players, 0.83 for everyone), so earlier `nba_rapm()` output is not
-  comparable. Constant `points` (including a single possession) now returns
-  all-zero player values instead of an error, possessions with missing
-  `points` are dropped like those with a missing lineup slot, and a failed
-  cross-validation on tiny inputs falls back to a fixed `lambda` with a
-  warning.
+  comparable. Constant `points` (including a single possession), or the same
+  ten players on every possession, now returns all-zero player values instead
+  of an error, possessions with missing
+  `points` are dropped like those with a missing lineup slot, and tiny inputs
+  fall back to a fixed `lambda` instead of erroring: silently with fewer than
+  3 possessions (too few for cross-validation), and with a warning when
+  cross-validation fails on 3 or more.
 
 ### **New data loaders**
 
@@ -414,6 +419,16 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   returned.
   The games-index csv files behind `update_mbb_db()` and `update_nba_db()`
   are now read the same way.
+* `update_mbb_db(force_rebuild = TRUE)` / `update_nba_db(force_rebuild = TRUE)` no
+  longer lose seasons when the games index reads only partly. The index decides which
+  seasons are rebuilt after the table is dropped, but `data.table::fread()` can stop
+  early on a malformed row and return the rows before it with only a warning, and with
+  `options(download.file.method = "curl")` it fetched the url through curl, which ignores
+  R's `timeout` and saves an HTTP 503 error page as the csv. The index is now
+  downloaded with libcurl to a temporary file and read from there, a `fread()` warning
+  on it is an error (not retried: the file is the same on every try), and the rebuild
+  stops with an error naming the index url before anything is dropped, leaving the
+  table unchanged.
 
 ### **Dependencies**
 
@@ -451,6 +466,20 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   `cbbd_plays_date()` and `cbbd_plays_tournament()` examples now ask for one
   championship-game date and the eight-game 2024 CIT instead of a full slate and the
   NCAA tournament.
+* Faster examples: `cba_pbp()` asks for one quarter, `sportpress_player_rankings()` for
+  the top 5 per category and `fox_mbb_teams_all()` for 3 seed calls. These run only in
+  interactive sessions: `lkl_results()` (it pages through a whole season),
+  `mbb_team_crosswalk()` (one Fox request per conference, plus ESPN and Torvik), the
+  `espn_*_game_rosters()` examples (one request per athlete), the `espn_*_pbp()`,
+  `espn_*_team_box()` and `espn_*_player_box()` examples (the same summary request as
+  `espn_*_game_all()`, which still runs), and the release loaders whose one-season file
+  is 7-80 MB (`load_mbb_pbp()`, `load_mbb_player_box()`, `load_mbb_shots()`,
+  `load_nba_stats_pbp()`, and the NCAA MBB pbp, shots, lineups, matchup-stints,
+  possessions and player-box loaders).
+* The help pages of the 22 largest function families (ESPN MBB and NBA, and most international
+  families) link to one family index page (`?family_espn_mbb`, `?family_acb`, ...) in
+  "See also" instead of listing every other member. The lists repeated each family on every
+  page and were 1.2 MB of the installed help.
 * The DESCRIPTION explains NBA, ESPN, NCAA, FIBA, ACB, VTB, NBL, KBL and CBA on first use,
   and the help pages use ASCII punctuation (`-`, `x`) in place of em dashes, en dashes and
   multiplication signs.

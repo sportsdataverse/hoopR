@@ -59,7 +59,8 @@
 #'   try(lba_championships(season = 2027))
 #' }
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_championships <- function(season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("championships", list(s = season), call = rlang::current_env())
@@ -126,7 +127,8 @@ lba_championships <- function(season = NULL) {
 #'   try(lba_calendar(championship_id = 602, round = 1))
 #' }
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_calendar <- function(championship_id, round = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("calendar", list(id = championship_id, d = round), call = rlang::current_env())
@@ -213,7 +215,8 @@ lba_calendar <- function(championship_id, round = NULL) {
 #'   try(lba_game(game_id = 25602))
 #' }
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_game <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("game", list(id = game_id), call = rlang::current_env())
@@ -278,7 +281,8 @@ lba_game <- function(game_id) {
 #'   try(lba_box_score(game_id = 25602))
 #' }
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_box_score <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("box_score", list(id = game_id), call = rlang::current_env())
@@ -336,7 +340,8 @@ lba_box_score <- function(game_id) {
 #'   try(lba_team_box_score(game_id = 25602))
 #' }
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_team_box_score <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("team_box_score", list(id = game_id), call = rlang::current_env())
@@ -398,7 +403,8 @@ lba_team_box_score <- function(game_id) {
 #'   try(lba_pbp(game_id = 25602))
 #' }
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_pbp <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("pbp", list(id = game_id), call = rlang::current_env())
@@ -421,7 +427,8 @@ lba_pbp <- function(game_id) {
 #' | label | character | Italian label of the qualifier code, as sent. |
 #' @eval .intl_details(.lba_championships_details, "lba_pbp_legend(game_id = 25602)")
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_pbp_legend <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("pbp_legend", list(id = game_id), call = rlang::current_env())
@@ -458,7 +465,8 @@ lba_pbp_legend <- function(game_id) {
 #'   try(lba_shots(game_id = 25602))
 #' }
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_shots <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("shots", list(id = game_id), call = rlang::current_env())
@@ -543,7 +551,8 @@ lba_shots <- function(game_id) {
 #'   try(lba_standings(championship_id = 602, round = 3))
 #' }
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_standings <- function(championship_id, round = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("standings", list(id = championship_id, d = round), call = rlang::current_env())
@@ -576,7 +585,8 @@ lba_standings <- function(championship_id, round = NULL) {
 #'   try(lba_teams(season = 2027))
 #' }
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_teams <- function(season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("teams", list(year = season), call = rlang::current_env())
@@ -621,7 +631,8 @@ lba_teams <- function(season = NULL) {
 #' | team_logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
 #' @eval .intl_details(.lba_championships_details, "lba_roster(team_id = 1764)")
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_roster <- function(team_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("roster", list(id = team_id), call = rlang::current_env())
@@ -658,7 +669,8 @@ lba_roster <- function(team_id) {
 #' | team_logo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
 #' @eval .intl_details(.lba_championships_details, "lba_roster_coach(team_id = 1764)")
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_roster_coach <- function(team_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("roster_coach", list(id = team_id), call = rlang::current_env())
@@ -719,7 +731,8 @@ lba_roster_coach <- function(team_id) {
 #' | free_throws_perc_sum | double | Season free-throw percentage, 0-100 (a rate despite `_sum`). |
 #' @eval .intl_details(.lba_championships_details, "lba_team_players_stats(team_id = 1764, season = 2027)")
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_team_players_stats <- function(team_id, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("team_players_stats", list(id = team_id, s = season), call = rlang::current_env())
@@ -753,7 +766,8 @@ lba_team_players_stats <- function(team_id, season = NULL) {
 #'   try(lba_players(season = 2027))
 #' }
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_players <- function(season = NULL, page = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("players", list(year = season, page = page), call = rlang::current_env())
@@ -884,7 +898,8 @@ lba_players <- function(season = NULL, page = NULL) {
 #' | stats_avg_rs_id | integer | Always null (not a key). |
 #' @eval .intl_details(.lba_championships_details, "lba_player(player_id = 969)")
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_player <- function(player_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("player", list(id = player_id), call = rlang::current_env())
@@ -940,7 +955,8 @@ lba_player <- function(player_id) {
 #' | aplus_dp | integer | Per-game average of `aplus_dp`, an unverified metric (not plus-minus or assists: Macura 2026-27 has 9 against plus-minus 8 and 3 assists) in that season, competition and team. |
 #' @eval .intl_details(.lba_championships_details, "lba_player_stats(player_id = 969)")
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_player_stats <- function(player_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("player_stats", list(id = player_id), call = rlang::current_env())
@@ -1032,7 +1048,8 @@ lba_player_stats <- function(player_id) {
 #' | visitor_match_result | character | `w` / `l` for the away team when the player was on it, else null. |
 #' @eval .intl_details(.lba_championships_details, "lba_game_log(player_id = 969, season = 2027)")
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_game_log <- function(player_id, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("game_log", list(id = player_id, s = season), call = rlang::current_env())
@@ -1071,7 +1088,8 @@ lba_game_log <- function(player_id, season = NULL) {
 #' | player_photo_key | character | Image key: the image is `{cdn_url}/{key}`, resized copies `{cdn_url}/variants/{key}/thumb` or `/large` (the site's getApiImageUrl). |
 #' @eval .intl_details(.lba_championships_details, 'lba_players_leaderboard(season = 2027, category = "points")')
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_players_leaderboard <- function(season = NULL, category = "points") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_call("players_leaderboard", list(s = season, cat = category), call = rlang::current_env())
@@ -1110,7 +1128,8 @@ lba_players_leaderboard <- function(season = NULL, category = "points") {
 #' | team_id | integer | Team id (team-season). |
 #' @eval .intl_details(.lba_championships_details, 'lba_teams_leaderboard(board = "teams_offensive", season = 2027)')
 #' @export
-#' @family LBA Functions
+#' @concept LBA Functions
+#' @seealso [family_lba] lists every function in this family.
 lba_teams_leaderboard <- function(board, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .lba_choice(board, c("teams_offensive", "teams_defensive"), "board", call = rlang::current_env())

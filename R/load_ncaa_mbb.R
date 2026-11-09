@@ -122,8 +122,9 @@
 #'
 #' @export
 #' @family NCAA MBB loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # One season is a ~80 MB download.
 #'   try(load_ncaa_mbb_pbp(seasons = most_recent_mbb_season()))
 #' }
 load_ncaa_mbb_pbp <- function(seasons = most_recent_mbb_season(),
@@ -206,8 +207,9 @@ load_ncaa_mbb_pbp <- function(seasons = most_recent_mbb_season(),
 #'
 #' @export
 #' @family NCAA MBB loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # One season is a ~10 MB download.
 #'   try(load_ncaa_mbb_shots(seasons = most_recent_mbb_season()))
 #' }
 load_ncaa_mbb_shots <- function(seasons = most_recent_mbb_season(),
@@ -354,8 +356,9 @@ NULL
 #'
 #' @export
 #' @family NCAA MBB loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # One season is a ~20 MB download.
 #'   try(load_ncaa_mbb_lineups(seasons = most_recent_mbb_season()))
 #' }
 load_ncaa_mbb_lineups <- function(seasons = most_recent_mbb_season(),
@@ -451,8 +454,9 @@ load_ncaa_mbb_lineups <- function(seasons = most_recent_mbb_season(),
 #'
 #' @export
 #' @family NCAA MBB loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # One season is a ~12 MB download.
 #'   try(load_ncaa_mbb_matchup_stints(seasons = most_recent_mbb_season()))
 #' }
 load_ncaa_mbb_matchup_stints <- function(seasons = most_recent_mbb_season(),
@@ -571,8 +575,9 @@ load_ncaa_mbb_matchup_stints <- function(seasons = most_recent_mbb_season(),
 #'
 #' @export
 #' @family NCAA MBB loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # One season is a ~17 MB download.
 #'   try(load_ncaa_mbb_possessions(seasons = most_recent_mbb_season()))
 #' }
 load_ncaa_mbb_possessions <- function(seasons = most_recent_mbb_season(),
@@ -916,8 +921,9 @@ load_ncaa_mbb_rapm <- function(seasons = most_recent_mbb_season(),
 #'
 #' @export
 #' @family NCAA MBB loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # One season is a ~10 MB download.
 #'   try(load_ncaa_mbb_player_box(seasons = most_recent_mbb_season()))
 #' }
 load_ncaa_mbb_player_box <- function(seasons = most_recent_mbb_season(),

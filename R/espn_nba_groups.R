@@ -20,7 +20,8 @@ NULL
 #' @import rvest
 #' @export
 #' @keywords NBA Conferences
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   try(espn_nba_conferences())

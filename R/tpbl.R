@@ -62,7 +62,8 @@
 #'   try(tpbl_seasons())
 #' }
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_seasons <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -95,7 +96,8 @@ tpbl_seasons <- function() {
 #' | status | character | Division status: COMPLETED or IN_PROGRESS. |
 #' @eval .intl_details(.tpbl_seasons_details, "tpbl_divisions(season = 2026)")
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_divisions <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -132,7 +134,8 @@ tpbl_divisions <- function(season) {
 #'   try(tpbl_teams(season = 2026))
 #' }
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_teams <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -202,7 +205,8 @@ tpbl_teams <- function(season) {
 #'   try(tpbl_games(season = 2026))
 #' }
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_games <- function(season, team_id = NULL, verify = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -243,7 +247,8 @@ tpbl_games <- function(season, team_id = NULL, verify = NULL) {
 #'   try(tpbl_standings(division_id = 2))
 #' }
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_standings <- function(division_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -276,7 +281,8 @@ tpbl_standings <- function(division_id) {
 #' | drawn | integer | Games drawn against this opponent (always 0). |
 #' @eval .intl_details(.tpbl_seasons_details, "tpbl_standings_against(division_id = 2)")
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_standings_against <- function(division_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -338,7 +344,8 @@ tpbl_standings_against <- function(division_id) {
 #'   try(tpbl_game(game_id = 6))
 #' }
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_game <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -368,7 +375,8 @@ tpbl_game <- function(game_id) {
 #' | role | character | Crew role enum: BASKETBALL_CHIEF_REFEREE = crew chief, BASKETBALL_FIRST_ASSISTANT_REFEREE = first assistant (umpire 1), BASKETBALL_SECOND_ASSISTANT_REFEREE = second assistant (umpire 2). |
 #' @eval .intl_details(.tpbl_seasons_details, "tpbl_referees(game_id = 6)")
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_referees <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -534,7 +542,8 @@ tpbl_referees <- function(game_id) {
 #'   try(tpbl_box_players(game_id = 6))
 #' }
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_box_players <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -695,7 +704,8 @@ tpbl_box_players <- function(game_id) {
 #' | three_pointers_pull_up_jump_shot_attempted | integer | 3-point field goals attempted that were a pull-up jump shot by the player in this quarter. |
 #' @eval .intl_details(.tpbl_seasons_details, "tpbl_box_player_periods(game_id = 6)")
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_box_player_periods <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -764,7 +774,8 @@ tpbl_box_player_periods <- function(game_id) {
 #'   try(tpbl_box_teams(game_id = 6))
 #' }
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_box_teams <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -830,7 +841,8 @@ tpbl_box_teams <- function(game_id) {
 #' | fast_break_points | integer | Points scored on the fast break by the team in this quarter. |
 #' @eval .intl_details(.tpbl_seasons_details, "tpbl_box_team_periods(game_id = 6)")
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_box_team_periods <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -881,7 +893,8 @@ tpbl_box_team_periods <- function(game_id) {
 #'   try(tpbl_roster(division_id = 2, team_id = 4))
 #' }
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_roster <- function(division_id, team_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -918,7 +931,8 @@ tpbl_roster <- function(division_id, team_id) {
 #' | offense_basket | integer | Basket the team attacked: 0 = the hoop at x = 1575, 1 = the hoop at x = 26425. |
 #' @eval .intl_details(.tpbl_seasons_details, "tpbl_team_shots(division_id = 2, team_id = 4, rounds = 1)")
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_team_shots <- function(division_id, team_id, rounds = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -951,7 +965,8 @@ tpbl_team_shots <- function(division_id, team_id, rounds = NULL) {
 #' | offense_basket | integer | Basket the player's team attacked: 0 = the hoop at x = 1575, 1 = the hoop at x = 26425. |
 #' @eval .intl_details(.tpbl_seasons_details, "tpbl_player_shots(division_id = 2, player_id = 75)")
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_player_shots <- function(division_id, player_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1123,7 +1138,8 @@ tpbl_player_shots <- function(division_id, player_id) {
 #' | tsp | double | True-shooting percentage, 0-100 (the API's true_shooting_percentage, a one-decimal string). |
 #' @eval .intl_details(.tpbl_seasons_details, "tpbl_player_games(player_id = 75, division_id = 2)")
 #' @export
-#' @family TPBL Functions
+#' @concept TPBL Functions
+#' @seealso [family_tpbl] lists every function in this family.
 tpbl_player_games <- function(player_id, division_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()

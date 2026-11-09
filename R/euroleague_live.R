@@ -75,7 +75,8 @@
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
-#' @family Euroleague
+#' @concept Euroleague
+#' @seealso [family_euroleague] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -131,7 +132,8 @@ euroleague_game_points <- function(game_code, season_code) {
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
-#' @family Euroleague
+#' @concept Euroleague
+#' @seealso [family_euroleague] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -209,7 +211,8 @@ euroleague_game_pbp <- function(game_code, season_code) {
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
-#' @family Euroleague
+#' @concept Euroleague
+#' @seealso [family_euroleague] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -299,7 +302,8 @@ euroleague_game_boxscore <- function(game_code, season_code) {
 #'    }}
 #'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
 #'
-#' @family Euroleague
+#' @concept Euroleague
+#' @seealso [family_euroleague] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{

@@ -48,19 +48,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other B.LEAGUE Functions:
-\code{\link[=bleague_game_info]{bleague_game_info()}},
-\code{\link[=bleague_leaders]{bleague_leaders()}},
-\code{\link[=bleague_pbp]{bleague_pbp()}},
-\code{\link[=bleague_period_scores]{bleague_period_scores()}},
-\code{\link[=bleague_player_box]{bleague_player_box()}},
-\code{\link[=bleague_schedule]{bleague_schedule()}},
-\code{\link[=bleague_schedule_days]{bleague_schedule_days()}},
-\code{\link[=bleague_schedule_events]{bleague_schedule_events()}},
-\code{\link[=bleague_score_track]{bleague_score_track()}},
-\code{\link[=bleague_shots]{bleague_shots()}},
-\code{\link[=bleague_standings]{bleague_standings()}},
-\code{\link[=bleague_team_box]{bleague_team_box()}},
-\code{\link[=bleague_team_summary]{bleague_team_summary()}}
+\link{family_b_league} lists every function in this family.
 }
 \concept{B.LEAGUE Functions}

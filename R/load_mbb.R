@@ -104,8 +104,9 @@ NULL
 #'
 #' @export
 #' @family hoopR Loader Functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # One season is a ~80 MB download.
 #' load_mbb_pbp(seasons = most_recent_mbb_season())
 #' }
 load_mbb_pbp <- function(
@@ -259,7 +260,9 @@ load_mbb_team_box <- function(
 #'
 #' @export
 #' @family hoopR Loader Functions
-#' @examples \donttest{
+#' @examplesIf interactive()
+#' \donttest{
+#' # One season is a ~7 MB download.
 #' load_mbb_player_box(seasons = most_recent_mbb_season())
 #' }
 load_mbb_player_box <- function(
@@ -435,11 +438,9 @@ load_mbb_schedule <- function(
 }
 
 # load games file
-load_mbb_games <- function() {
-  .url <- "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/mbb/mbb_games_in_data_repo.csv"
-  dat <- .release_csv_from_url(.url)
-  # close(con)
-  return(dat)
+.mbb_games_index_url <- "https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/mbb/mbb_games_in_data_repo.csv"
+load_mbb_games <- function(strict = FALSE) {
+  .release_csv_from_url(.mbb_games_index_url, strict = strict)
 }
 
 #' **Update or create a hoopR MBB play-by-play database**
@@ -534,6 +535,7 @@ update_mbb_db <- function(
       RSQLite::SQLite(),
       file.path(dbdir, dbname)
     )
+    on.exit(DBI::dbDisconnect(connection), add = TRUE)
   } else {
     connection <- db_connection
   }
@@ -585,8 +587,8 @@ update_mbb_db <- function(
   cli::cli_alert_info(
     "{my_time()} | Path to your db: {.file {DBI::dbGetInfo(connection)$dbname}}"
   )
-  if (is.null(db_connection)) DBI::dbDisconnect(connection)
   # rule_footer("DONE")
+  invisible(TRUE)
 }
 
 # this is a helper function to build hoopR database from Scratch
@@ -597,7 +599,20 @@ build_mbb_db <- function(
     show_message = TRUE) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
-  valid_seasons <- load_mbb_games() %>%
+  # The index decides which seasons are rebuilt after the purge below, so it is
+  # read strictly and before anything is dropped: a partial index would lose
+  # the missing seasons from the user's table.
+  games <- tryCatch(
+    load_mbb_games(strict = TRUE),
+    error = function(e) {
+      cli::cli_abort(c(
+        "{my_time()} | Could not read the games index {.url {(.mbb_games_index_url)}}.",
+        "i" = "Nothing was written to the data table {.val {tblname}}.",
+        "x" = "{conditionMessage(e)}"
+      ), call = NULL)
+    }
+  )
+  valid_seasons <- games %>%
     dplyr::filter(.data$season >= 2006) %>%
     dplyr::group_by(.data$season) %>%
     dplyr::summarise() %>%
@@ -989,8 +1004,9 @@ load_mbb_player_core <- function(seasons = most_recent_mbb_season(), ...,
 #'
 #' @export
 #' @family hoopR Loader Functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # One season is a ~14 MB download.
 #' load_mbb_shots(seasons = most_recent_mbb_season())
 #' }
 load_mbb_shots <- function(seasons = most_recent_mbb_season(), ...,

@@ -72,7 +72,8 @@
 #'   try(cba_seasons())
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_seasons <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -103,7 +104,8 @@ cba_seasons <- function() {
 #'   try(cba_match_types())
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_match_types <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -136,7 +138,8 @@ cba_match_types <- function() {
 #'   try(cba_team_options(season = 2026))
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_team_options <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -169,7 +172,8 @@ cba_team_options <- function(season) {
 #'   try(cba_teams())
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_teams <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -201,7 +205,8 @@ cba_teams <- function() {
 #'   try(cba_schedule_month(month = 12, year = 2025))
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_schedule_month <- function(year, month) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -259,7 +264,8 @@ cba_schedule_month <- function(year, month) {
 #'   try(cba_schedule_day(day = "2025-12-12"))
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_schedule_day <- function(day) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -303,7 +309,8 @@ cba_schedule_day <- function(day) {
 #'   try(cba_game_info(schedule_id = 100105799))
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_game_info <- function(schedule_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -360,7 +367,8 @@ cba_game_info <- function(schedule_id) {
 #'   try(cba_player_box(schedule_id = 100105799))
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_player_box <- function(schedule_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -395,7 +403,8 @@ cba_player_box <- function(schedule_id) {
 #'   try(cba_period_scores(schedule_id = 100105799))
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_period_scores <- function(schedule_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -476,7 +485,8 @@ cba_period_scores <- function(schedule_id) {
 #'   try(cba_game_team_shots(schedule_id = 100105799))
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_game_team_shots <- function(schedule_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -546,7 +556,8 @@ cba_game_team_shots <- function(schedule_id) {
 #' | up_time | integer | Time on court in SECONDS (1692 = 28:12). |
 #' @eval .intl_details(.cba_seasons_details, "cba_player_advanced(schedule_id = 100105799)")
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_player_advanced <- function(schedule_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -583,7 +594,8 @@ cba_player_advanced <- function(schedule_id) {
 #' | up_time | integer | Time on court in SECONDS. |
 #' @eval .intl_details(.cba_seasons_details, "cba_player_extras(schedule_id = 100105799)")
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_player_extras <- function(schedule_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -653,7 +665,8 @@ cba_player_extras <- function(schedule_id) {
 #' | wine_average | double | League-average wins (field name sic); 0.0 in every sample. |
 #' @eval .intl_details(.cba_seasons_details, "cba_game_team_four(schedule_id = 100105799)")
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_game_team_four <- function(schedule_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -699,7 +712,8 @@ cba_game_team_four <- function(schedule_id) {
 #' | two_points_str | character | Two-point field goals as the string 'made/attempted' ('3/5'). |
 #' @eval .intl_details(.cba_seasons_details, "cba_best_player(schedule_id = 100105799)")
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_best_player <- function(schedule_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -736,7 +750,8 @@ cba_best_player <- function(schedule_id) {
 #' | type | integer | Side flag: 0 on home rows, 2 on visiting rows (differs from advance-count, where the visiting side is 1). |
 #' @eval .intl_details(.cba_seasons_details, "cba_best_stats(schedule_id = 100105799)")
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_best_stats <- function(schedule_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -805,7 +820,8 @@ cba_best_stats <- function(schedule_id) {
 #'   try(cba_rosters(schedule_id = 100105799))
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_rosters <- function(schedule_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -834,7 +850,8 @@ cba_rosters <- function(schedule_id) {
 #' | is_report | logical | True when the game report page exists (equals schedules/day isReport == 1 in every sample). |
 #' @eval .intl_details(.cba_seasons_details, "cba_report_status(schedule_id = 100105799)")
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_report_status <- function(schedule_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -883,10 +900,12 @@ cba_report_status <- function(schedule_id) {
 #' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
-#'   try(cba_pbp(schedule_id = 100105799))
+#'   # First quarter only; omit quarter_num for the whole game.
+#'   try(cba_pbp(schedule_id = 100105799, quarter_num = 1))
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_pbp <- function(schedule_id, quarter_num = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -916,7 +935,8 @@ cba_pbp <- function(schedule_id, quarter_num = NULL) {
 #' | value | integer | Number of teams in that match type in the requested season (inferred: 20 for key '1' in 2025, equal to the 2025 getTeam list length; the playoff count is smaller). |
 #' @eval .intl_details(.cba_seasons_details, "cba_team_counts(season = 2026)")
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_team_counts <- function(season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -981,7 +1001,8 @@ cba_team_counts <- function(season) {
 #'   try(cba_team_basic(team_id = 29128))
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_team_basic <- function(team_id, match_type_id = 1, statistical_dimension = 1, self_or_other = 1) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -1086,7 +1107,8 @@ cba_team_basic <- function(team_id, match_type_id = 1, statistical_dimension = 1
 #' | wine_average | double | League-average wins (field name sic); 0.0 in every sample. |
 #' @eval .intl_details(.cba_seasons_details, "cba_team_four(team_id = 29128)")
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_team_four <- function(team_id, match_type_id = 1) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -1135,7 +1157,8 @@ cba_team_four <- function(team_id, match_type_id = 1) {
 #' | win_rate | double | Win rate. A FRACTION 0-1 (the API sends a percent string such as '39.4%'). |
 #' @eval .intl_details(.cba_seasons_details, "cba_team_overview(team_id = 29128)")
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_team_overview <- function(team_id, match_type_id = 1, page_number = 1, page_size = 100) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -1216,7 +1239,8 @@ cba_team_overview <- function(team_id, match_type_id = 1, page_number = 1, page_
 #' | team_name | character | Team name (Chinese) in that season; changes with the sponsor. Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. |
 #' @eval .intl_details(.cba_seasons_details, "cba_team_shots(team_id = 29128)")
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_team_shots <- function(team_id, match_type_id = 1, page_number = 1, page_size = 100) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .cba_get(
@@ -1301,7 +1325,8 @@ cba_team_shots <- function(team_id, match_type_id = 1, page_number = 1, page_siz
 #'   try(cba_player_base(season = 2026, team_id = 29128))
 #' }
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_player_base <- function(season, match_type_id = 1, count_ranger = 1, player_ranger = 1, team_id = NULL,
                              page_number = 1, page_size = 100) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1385,7 +1410,8 @@ cba_player_base <- function(season, match_type_id = 1, count_ranger = 1, player_
 #' | turnovers_rate_sort | double | Unformatted numeric value behind the formatted string of the same metric (a fraction 0-1 for percentages), used by the site to sort the table. Metric: turnover rate: for a player, the share of his possession-ending plays that are turnovers; for a team, the share of the team's possessions ending in a turnover (site definitions). |
 #' @eval .intl_details(.cba_seasons_details, "cba_player_offensive(season = 2026, team_id = 29128)")
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_player_offensive <- function(season, match_type_id = 1, count_ranger = 1, player_ranger = 1, team_id =
                                   NULL, sort = 3, rank = 1, page_number = 1, page_size = 100) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1466,7 +1492,8 @@ cba_player_offensive <- function(season, match_type_id = 1, count_ranger = 1, pl
 #' | team_id | integer | teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. |
 #' @eval .intl_details(.cba_seasons_details, "cba_player_defensive(season = 2026, team_id = 29128)")
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_player_defensive <- function(season, match_type_id = 1, count_ranger = 1, player_ranger = 1, team_id =
                                   NULL, sort = 3, rank = 1, page_number = 1, page_size = 100) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1559,7 +1586,8 @@ cba_player_defensive <- function(season, match_type_id = 1, count_ranger = 1, pl
 #' | three_rate_sort | double | Unformatted numeric value behind the formatted string of the same metric (a fraction 0-1 for percentages), used by the site to sort the table. Metric: three-point frequency: three-point attempts per 100 possessions (site definition). |
 #' @eval .intl_details(.cba_seasons_details, "cba_player_shots(season = 2026, team_id = 29128)")
 #' @export
-#' @family CBA Functions
+#' @concept CBA Functions
+#' @seealso [family_cba] lists every function in this family.
 cba_player_shots <- function(season, match_type_id = 1, count_ranger = 1, player_ranger = 1, team_id = NULL,
                               sort = 3, rank = 1, page_number = 1, page_size = 100) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))

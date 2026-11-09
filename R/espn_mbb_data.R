@@ -24,7 +24,8 @@
 #' @import rvest
 #' @export
 #' @keywords MBB Game
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #'
 #' @examples
 #' \donttest{
@@ -162,10 +163,12 @@ espn_mbb_game_all <- function(game_id) {
 #' @import rvest
 #' @export
 #' @keywords MBB PBP
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # Same summary request as espn_mbb_game_all() above.
 #' try(espn_mbb_pbp(game_id = 401479672))
 #' }
 #'
@@ -233,10 +236,12 @@ espn_mbb_pbp <- function(game_id) {
 #' @import rvest
 #' @export
 #' @keywords MBB Team Box
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # Same summary request as espn_mbb_game_all() above.
 #' try(espn_mbb_team_box(game_id = 401479672))
 #' }
 espn_mbb_team_box <- function(game_id) {
@@ -302,10 +307,12 @@ espn_mbb_team_box <- function(game_id) {
 #' @import rvest
 #' @export
 #' @keywords MBB Player Box
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # Same summary request as espn_mbb_game_all() above.
 #' try(espn_mbb_player_box(game_id = 401479672))
 #' }
 espn_mbb_player_box <- function(game_id) {
@@ -445,10 +452,12 @@ espn_mbb_player_box <- function(game_id) {
 #' @import rvest
 #' @export
 #' @keywords MBB Game Roster
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # One request per athlete on both rosters.
 #' try(espn_mbb_game_rosters(game_id = 401256760))
 #' }
 espn_mbb_game_rosters <- function(game_id) {
@@ -695,7 +704,8 @@ espn_mbb_game_rosters <- function(game_id) {
 #' @import rvest
 #' @export
 #' @keywords MBB Conferences
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #'
 #' @examples
 #' \donttest{
@@ -796,7 +806,8 @@ espn_mbb_conferences <- function() {
 #' @import rvest
 #' @export
 #' @keywords MBB Teams
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #' try(espn_mbb_teams())
@@ -1013,7 +1024,8 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
 #' @import rvest
 #' @export
 #' @keywords MBB Team Roster
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #' try(espn_mbb_team_current_roster(team_id = 150))
@@ -1427,7 +1439,8 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
 #' @importFrom rlang .env
 #' @import rvest
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #'
 #' # Get schedule from date 2022-11-17
@@ -1567,7 +1580,8 @@ espn_mbb_scoreboard <- function(season) {
 #' @importFrom jsonlite fromJSON
 #' @importFrom tidyr unnest
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' # Get current AP and Coaches Poll rankings
 #' \donttest{
@@ -1747,7 +1761,8 @@ espn_mbb_rankings <- function() {
 #' @importFrom tidyr pivot_wider
 #' @export
 #' @keywords MBB Standings
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #' try(espn_mbb_standings(2021))
@@ -1974,7 +1989,8 @@ espn_mbb_standings <- function(year = most_recent_mbb_season()) {
 #' @importFrom data.table rbindlist
 #' @export
 #' @keywords MBB Betting
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #' try(espn_mbb_betting(game_id = 401256760))
@@ -2192,7 +2208,8 @@ espn_mbb_betting <- function(game_id) {
 #' @importFrom tidyr unnest unnest_wider everything
 #' @export
 #' @keywords MBB Team Stats
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #'
 #' @examples
 #' \donttest{
@@ -2504,7 +2521,8 @@ espn_mbb_team_stats <- function(team_id, year, season_type = "regular", total = 
 #'
 #' @export
 #' @keywords MBB Player Stats
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #' try(espn_mbb_player_stats(athlete_id = 4593919, year = 2021))

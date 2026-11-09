@@ -97,32 +97,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }\if{html}{\out{</div>}}
 }
 \seealso{
-Other Basketligaen Functions:
-\code{\link[=sportality_athlete_career]{sportality_athlete_career()}},
-\code{\link[=sportality_athlete_details]{sportality_athlete_details()}},
-\code{\link[=sportality_athlete_profile]{sportality_athlete_profile()}},
-\code{\link[=sportality_boxscore]{sportality_boxscore()}},
-\code{\link[=sportality_game_header]{sportality_game_header()}},
-\code{\link[=sportality_game_overview]{sportality_game_overview()}},
-\code{\link[=sportality_game_summary]{sportality_game_summary()}},
-\code{\link[=sportality_last_game_day]{sportality_last_game_day()}},
-\code{\link[=sportality_layout_info]{sportality_layout_info()}},
-\code{\link[=sportality_next_game_day]{sportality_next_game_day()}},
-\code{\link[=sportality_pbp]{sportality_pbp()}},
-\code{\link[=sportality_player_box]{sportality_player_box()}},
-\code{\link[=sportality_player_crosswalk]{sportality_player_crosswalk()}},
-\code{\link[=sportality_post_game_team_stats]{sportality_post_game_team_stats()}},
-\code{\link[=sportality_roster]{sportality_roster()}},
-\code{\link[=sportality_schedule]{sportality_schedule()}},
-\code{\link[=sportality_season_filter]{sportality_season_filter()}},
-\code{\link[=sportality_sites]{sportality_sites()}},
-\code{\link[=sportality_ssgt_provider]{sportality_ssgt_provider()}},
-\code{\link[=sportality_ssgt_uuid]{sportality_ssgt_uuid()}},
-\code{\link[=sportality_standings]{sportality_standings()}},
-\code{\link[=sportality_stats_info]{sportality_stats_info()}},
-\code{\link[=sportality_team]{sportality_team()}},
-\code{\link[=sportality_team_played_games]{sportality_team_played_games()}},
-\code{\link[=sportality_team_stats]{sportality_team_stats()}},
-\code{\link[=sportality_team_upcoming_games]{sportality_team_upcoming_games()}}
+\link{family_basketligaen} lists every function in this family.
 }
 \concept{Basketligaen Functions}

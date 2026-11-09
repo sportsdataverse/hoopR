@@ -22,7 +22,8 @@ unseen team ids (one seed per conference) and unions the results.
 }
 \examples{
 \donttest{
-  try(fox_mbb_teams_all())
+  # A 3-call sample; the defaults walk every conference.
+  try(fox_mbb_teams_all(max_calls = 3))
 }
 }
 \seealso{

@@ -44,7 +44,8 @@
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble
-#' @family RealGM Functions
+#' @concept RealGM Functions
+#' @seealso [family_realgm] lists every function in this family.
 #' @export
 #' @examples
 #' \dontrun{
@@ -69,7 +70,8 @@ realgm_coaches <- function() {
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble
-#' @family RealGM Functions
+#' @concept RealGM Functions
+#' @seealso [family_realgm] lists every function in this family.
 #' @export
 #' @examples
 #' \dontrun{

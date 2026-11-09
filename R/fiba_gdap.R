@@ -59,7 +59,8 @@
 #' | player_nationality | character | Awarded player's nationality, FIBA code. |
 #' | teams | character | Teams the awarded player played for in the competition. Stored as a JSON string. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_awards <- function(comp, discipline_format = NULL, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -114,7 +115,8 @@ fiba_gdap_awards <- function(comp, discipline_format = NULL, return_parsed = TRU
 #' | competition_marketing_name_marketing_name | character | Competition family name; slugified it is the `<histSlug>` of /en/history/ pages. |
 #' | competition_marketing_name_code | character | Family code; null in every sample. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -178,7 +180,8 @@ fiba_gdap_competition <- function(comp, return_parsed = TRUE) {
 #' | competition_marketing_name_marketing_name | character | Competition family name; slugified it is the `<histSlug>` of /en/history/ pages. |
 #' | competition_marketing_name_code | character | Family code; null in every sample. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -292,7 +295,8 @@ fiba_gdap_editions <- function(family_id, season = NULL, to_season = NULL, retur
 #' | team_a_from | character | How team A qualified for this slot ('Winner of Game 87', '1st of group C'); null in group play. |
 #' | team_b_from | character | How team B qualified for this slot ('Winner of Game 88', '2nd of group A'); null in group play. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_federation_games <- function(federation_id, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -330,7 +334,8 @@ fiba_gdap_federation_games <- function(federation_id, return_parsed = TRUE) {
 #' | world_rank_variation | integer | Change in world rank since the previous release (positive = up). |
 #' | comments | character | Ranking note; null in every sample. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_federation_ranking <- function(category = "men", zone_id = 1L, as_of_date = NULL, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -366,7 +371,8 @@ fiba_gdap_federation_ranking <- function(category = "men", zone_id = 1L, as_of_d
 #' | team_status_name | character | Team entry status label; always null in the samples, values unverified. |
 #' | team_organisation_id | integer | Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_`<id>`. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -446,7 +452,8 @@ fiba_gdap_final_standings <- function(comp, return_parsed = TRUE) {
 #' | window_code | character | Qualifier window code; null otherwise. |
 #' | window_name | character | Qualifier window name; null otherwise. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -484,7 +491,8 @@ fiba_gdap_game <- function(game_id, return_parsed = TRUE) {
 #' | default_nationality | character | FIBA code of the official's main nationality. |
 #' | license_nationality | character | FIBA code of the federation that licenses the official. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_game_officials <- function(game_id, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -515,7 +523,8 @@ fiba_gdap_game_officials <- function(game_id, return_parsed = TRUE) {
 #' | team_a_from | character | How team A qualified for this slot ('Winner of Game 87', '1st of group C'); null in group play. |
 #' | team_b_from | character | How team B qualified for this slot ('Winner of Game 88', '2nd of group A'); null in group play. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -629,7 +638,8 @@ fiba_gdap_game_periods <- function(game_id, return_parsed = TRUE) {
 #' | team_a_from | character | How team A qualified for this slot ('Winner of Game 87', '1st of group C'); null in group play. |
 #' | team_b_from | character | How team B qualified for this slot ('Winner of Game 88', '2nd of group A'); null in group play. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_games_between <- function(date_from, date_to, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -655,7 +665,8 @@ fiba_gdap_games_between <- function(date_from, date_to, return_parsed = TRUE) {
 #' |:---|:---|:---|
 #' | competition_id | integer | FIBA competition id (Int64, GDAP key space) of a competition that runs in the window. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_gateway_competition_ids <- function(start_date, end_date, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -696,7 +707,8 @@ fiba_gdap_gateway_competition_ids <- function(start_date, end_date, return_parse
 #' | organisation_id | integer | Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_`<id>`. |
 #' | organisation_status_code | character | Organisation status: ACT active. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_gateway_federation_ranking <- function(gender = "men", zone_id = 1L, as_of_date = NULL, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -733,7 +745,8 @@ fiba_gdap_gateway_federation_ranking <- function(gender = "men", zone_id = 1L, a
 #' | total_third_rank | integer | Number of bronze medals the federation has won in the competition family. |
 #' | total_participations | integer | Editions played. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_medal_count <- function(family_id, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -765,7 +778,8 @@ fiba_gdap_medal_count <- function(family_id, return_parsed = TRUE) {
 #' | organisation_status_code | character | Organisation status: ACT active. |
 #' | membership_status_code | character | FIBA membership status: ACT active. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_national_teams <- function(return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -806,7 +820,8 @@ fiba_gdap_national_teams <- function(return_parsed = TRUE) {
 #' | affiliated_national_federation_country_code | character | FIBA code of the federation the official is affiliated to. |
 #' | affiliated_national_federation_country_name | character | Country of the federation the official is affiliated to. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_nominations <- function(comp, level = "competition", return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -873,7 +888,8 @@ fiba_gdap_nominations <- function(comp, level = "competition", return_parsed = T
 #' | plus_minus | integer | Plus/minus (point differential while on court) in the game. |
 #' | efficiency | integer | Efficiency (FIBA EFF) in the game. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -933,7 +949,8 @@ fiba_gdap_player_game_stats <- function(player_id, comp, return_parsed = TRUE) {
 #' | social_media_youtube | character | YouTube handle; always null in the samples, values unverified. |
 #' | social_networks | character | Social-network handles. Stored as a JSON string. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_player_info <- function(player_id, comp, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1025,7 +1042,8 @@ fiba_gdap_player_info <- function(player_id, comp, return_parsed = TRUE) {
 #' | rank_rebounds_per_game | double | Rank in the competition by rebounds per game (1 = highest). |
 #' | rank_assists_per_game | double | Rank in the competition by assists per game (1 = highest). |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -1055,7 +1073,8 @@ fiba_gdap_player_stats <- function(player_id, comp, return_parsed = TRUE) {
 #' | code | character | Ranking zone code (W, AF, AM, AS, EU). |
 #' | official_name | character | Official name of the ranking zone (World, FIBA Europe, FIBA Americas...). |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_ranking_zones <- function(return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1105,7 +1124,8 @@ fiba_gdap_ranking_zones <- function(return_parsed = TRUE) {
 #' | is_player_free_agent | logical | True when the player had no club. |
 #' | final_roster_member_status_code | character | Roster entry status: VALID, PARTIAL (incomplete registration). |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -1156,7 +1176,8 @@ fiba_gdap_roster <- function(team_id, discipline_format = NULL, return_parsed = 
 #' | coach_license_country_code | character | FIBA code of the licensing federation's country. |
 #' | final_roster_member_status_code | character | Roster entry status: VALID, PARTIAL (incomplete registration). |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_roster_coaches <- function(team_id, discipline_format = NULL, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1207,7 +1228,8 @@ fiba_gdap_roster_coaches <- function(team_id, discipline_format = NULL, return_p
 #' | is_player_free_agent | logical | True when the player had no club. |
 #' | final_roster_member_status_code | character | Roster entry status: VALID, PARTIAL (incomplete registration). |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_roster_latest <- function(team_id, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1252,7 +1274,8 @@ fiba_gdap_roster_latest <- function(team_id, return_parsed = TRUE) {
 #' | round_round_order | integer | Display order of the round. |
 #' | gamedays | character | Game days of the round as a JSON string; empty (null) for the competitions sampled. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_round_gamedays <- function(comp, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1300,7 +1323,8 @@ fiba_gdap_round_gamedays <- function(comp, return_parsed = TRUE) {
 #' | draw_points | integer | Points for a draw (0); null when not applicable. |
 #' | group_game_results | character | This team's games in the group. Stored as a JSON string. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -1347,7 +1371,8 @@ fiba_gdap_round_standings <- function(comp, return_parsed = TRUE) {
 #' | qualified_team_information | character | Qualification note of the round; null in every sample. |
 #' | round_order | integer | Display order of the round. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -1462,7 +1487,8 @@ fiba_gdap_rounds <- function(comp, return_parsed = TRUE) {
 #' | team_a_from | character | How team A qualified for this slot ('Winner of Game 87', '1st of group C'); null in group play. |
 #' | team_b_from | character | How team B qualified for this slot ('Winner of Game 88', '2nd of group A'); null in group play. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -1569,7 +1595,8 @@ fiba_gdap_schedule <- function(comp, return_parsed = TRUE) {
 #' | game_result_status_code | character | Result validation status: VALID. |
 #' | game_result_additional_information | character | Free-text result note (forfeit, overtime remark); null when none. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -1664,7 +1691,8 @@ fiba_gdap_team_games <- function(team_id, return_parsed = TRUE) {
 #' | total_steals | integer | The player's total steals over the games played. |
 #' | rank | integer | Rank (1 = first). |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_team_player_stats <- function(team_id, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1706,7 +1734,8 @@ fiba_gdap_team_player_stats <- function(team_id, return_parsed = TRUE) {
 #' | coach_license_country_code | character | FIBA code of the licensing federation's country. |
 #' | final_roster_member_status_code | character | Roster entry status; always null in the samples, values unverified. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 fiba_gdap_team_staff <- function(comp, return_parsed = TRUE) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -1806,7 +1835,8 @@ fiba_gdap_team_staff <- function(comp, return_parsed = TRUE) {
 #' | bench_total_turnovers | integer | The bench players' total turnovers over the games played. |
 #' | bench_total_fouls | integer | The bench players' total personal fouls over the games played. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{
@@ -1864,7 +1894,8 @@ fiba_gdap_team_stats <- function(team_id, return_parsed = TRUE) {
 #' | status_name | character | Team entry status label (Approved). |
 #' | organisation_id | integer | Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_`<id>`. |
 #'
-#' @family FIBA Functions
+#' @concept FIBA Functions
+#' @seealso [family_fiba] lists every function in this family.
 #' @export
 #' @examples
 #' \donttest{

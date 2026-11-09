@@ -27,7 +27,8 @@ NULL
 #' @importFrom dplyr as_tibble any_of bind_rows
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_odds(event_id = "401256760")
@@ -63,7 +64,8 @@ NULL
 #' @importFrom dplyr as_tibble any_of bind_rows
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_probabilities(event_id = "401256760", limit = 50)
@@ -93,7 +95,8 @@ espn_mbb_game_probabilities <- function(event_id, limit = 200, ...) {
 #' @importFrom dplyr as_tibble any_of bind_rows
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_officials(event_id = "401256760")
@@ -122,7 +125,8 @@ espn_mbb_game_officials <- function(event_id, ...) {
 #' @importFrom dplyr as_tibble any_of bind_rows
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_broadcasts(event_id = "401256760")
@@ -151,7 +155,8 @@ espn_mbb_game_broadcasts <- function(event_id, ...) {
 #'
 #' @return A single-row tibble with timeouts + fouls for both teams.
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_situation(event_id = 401256760)
@@ -179,7 +184,8 @@ espn_mbb_game_situation <- function(event_id, ...) {
 #'
 #' @return A long tibble with rows for both home and away teams.
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_predictor(event_id = 401256760)
@@ -204,7 +210,8 @@ espn_mbb_game_predictor <- function(event_id, ...) {
 #'
 #' @return A tibble with one row per team-game power-index entry.
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_powerindex(event_id = 401256760)
@@ -236,7 +243,8 @@ espn_mbb_game_powerindex <- function(event_id, ...) {
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (athlete x prop type).
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_propbets(event_id = 401256760, provider_id = 58)
@@ -268,7 +276,8 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per period.
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_team_linescores(event_id = 401256760, team_id = 52)
@@ -296,7 +305,8 @@ espn_mbb_game_team_linescores <- function(event_id, team_id, ...) {
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (category x rank).
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_team_leaders(event_id = 401256760, team_id = 52)
@@ -324,7 +334,8 @@ espn_mbb_game_team_leaders <- function(event_id, team_id, ...) {
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per active athlete.
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_team_roster(event_id = 401256760, team_id = 52)
@@ -353,7 +364,8 @@ espn_mbb_game_team_roster <- function(event_id, team_id, ...) {
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (category x stat).
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_team_statistics(event_id = 401256760, team_id = 52)
@@ -381,7 +393,8 @@ espn_mbb_game_team_statistics <- function(event_id, team_id, ...) {
 #' @param ... Additional arguments; currently unused.
 #' @return A tibble with one row per record type.
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_team_records(event_id = 401256760, team_id = 52)
@@ -418,7 +431,8 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per (category x stat).
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_player_box(event_id = 401256760, team_id = 52,
@@ -457,7 +471,8 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_team_roster_entry(event_id = 401256760,
@@ -495,7 +510,8 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_play(event_id = 401256760, play_id = 401256760101805901)
@@ -528,7 +544,8 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble with one row per on-court athlete.
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_play_personnel(event_id = 401256760, play_id = 401256760101805901)
@@ -557,7 +574,8 @@ espn_mbb_game_play_personnel <- function(event_id, play_id, ...) {
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_team_score(event_id = 401256760, team_id = 52)
@@ -589,7 +607,8 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_game_official_detail(event_id = 401256760, order = 1)

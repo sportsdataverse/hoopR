@@ -55,7 +55,8 @@
 #'   try(scb_seasons())
 #' }
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_seasons <- function(league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -100,7 +101,8 @@ scb_seasons <- function(league = "bbl") {
 #'   try(scb_season_players(season = 2026))
 #' }
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_season_players <- function(season, league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -145,7 +147,8 @@ scb_season_players <- function(season, league = "bbl") {
 #'   try(scb_season_teams(season = 2026))
 #' }
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_season_teams <- function(season, league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -196,7 +199,8 @@ scb_season_teams <- function(season, league = "bbl") {
 #' | games | integer | Games of the series. |
 #' @eval .intl_details(.scb_seasons_details, "scb_playoff_series(season = 2026)")
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_playoff_series <- function(season, league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -244,7 +248,8 @@ scb_playoff_series <- function(season, league = "bbl") {
 #' | points_team_b | integer | Team B's points in the game. |
 #' @eval .intl_details(.scb_seasons_details, "scb_playoff_games(season = 2026)")
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_playoff_games <- function(season, league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -355,7 +360,8 @@ scb_playoff_games <- function(season, league = "bbl") {
 #'   try(scb_player_statistics(season = 2026))
 #' }
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_player_statistics <- function(season, league = "bbl", display_type = "MAIN_ROUND") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -454,7 +460,8 @@ scb_player_statistics <- function(season, league = "bbl", display_type = "MAIN_R
 #'   try(scb_team_statistics(season = 2026))
 #' }
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_team_statistics <- function(season, league = "bbl", display_type = "MAIN_ROUND") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -589,7 +596,8 @@ scb_team_statistics <- function(season, league = "bbl", display_type = "MAIN_ROU
 #'   try(scb_games())
 #' }
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_games <- function(league = "bbl", season = NULL, competition = NULL, game_type = NULL, team_id = NULL,
                       page_size = 500) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -721,7 +729,8 @@ scb_games <- function(league = "bbl", season = NULL, competition = NULL, game_ty
 #'   try(scb_games_recent())
 #' }
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_games_recent <- function(league = "bbl", slot_size = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -848,7 +857,8 @@ scb_games_recent <- function(league = "bbl", slot_size = NULL) {
 #'   try(scb_game(game_id = "2006920"))
 #' }
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_game <- function(game_id, league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -930,7 +940,8 @@ scb_game <- function(game_id, league = "bbl") {
 #'   try(scb_game_players(game_id = "2006920"))
 #' }
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_game_players <- function(game_id, league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -1030,7 +1041,8 @@ scb_game_players <- function(game_id, league = "bbl") {
 #'   try(scb_game_teams(game_id = "2006920"))
 #' }
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_game_teams <- function(game_id, league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -1087,7 +1099,8 @@ scb_game_teams <- function(game_id, league = "bbl") {
 #'   try(scb_game_actions(game_id = "2006920"))
 #' }
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_game_actions <- function(game_id, league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -1182,7 +1195,8 @@ scb_game_actions <- function(game_id, league = "bbl") {
 #'   try(scb_standings())
 #' }
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_standings <- function(league = "bbl", season = NULL, competition = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -1235,7 +1249,8 @@ scb_standings <- function(league = "bbl", season = NULL, competition = NULL) {
 #' | season_ids | character | Seasons (start years) with this player or club. |
 #' @eval .intl_details(.scb_seasons_details, 'scb_season_player(season_player_id = "56414")')
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_season_player <- function(season_player_id, league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -1277,7 +1292,8 @@ scb_season_player <- function(season_player_id, league = "bbl") {
 #' | best_achievements | character | Honours, German free text (Deutscher Meister = German champion, Pokalsieger = cup winner, Vizepokalsieger = cup runner-up). |
 #' @eval .intl_details(.scb_seasons_details, 'scb_team(team_id = "413")')
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_team <- function(team_id, league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -1317,7 +1333,8 @@ scb_team <- function(team_id, league = "bbl") {
 #' | is_cup_winner | logical | Won the cup that season. |
 #' @eval .intl_details(.scb_seasons_details, 'scb_team_seasons(team_id = "413")')
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_team_seasons <- function(team_id, league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -1352,7 +1369,8 @@ scb_team_seasons <- function(team_id, league = "bbl") {
 #' | year_joined_bbl | integer | Year the official joined the league. |
 #' @eval .intl_details(.scb_seasons_details, "scb_referees()")
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_referees <- function(page_size = 100) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .scb_get(
@@ -1388,7 +1406,8 @@ scb_referees <- function(page_size = 100) {
 #' | destination_team_name | character | Name of the club the player joined (the free-text field, else the short club name). |
 #' @eval .intl_details(.scb_seasons_details, "scb_transfers()")
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_transfers <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .scb_get(
@@ -1427,7 +1446,8 @@ scb_transfers <- function() {
 #' | destination_team_name | character | Name of the club the player joined (the free-text field, else the short club name). |
 #' @eval .intl_details(.scb_seasons_details, "scb_transfers_teams()")
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_transfers_teams <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .scb_get(
@@ -1469,7 +1489,8 @@ scb_transfers_teams <- function() {
 #' | is_young | logical | Young-player flag (German-trained youth rule; inferred). |
 #' @eval .intl_details(.scb_seasons_details, "scb_team_rosters()")
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_team_rosters <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .scb_get(
@@ -1522,7 +1543,8 @@ scb_team_rosters <- function() {
 #' | scheduled_time | character | Scheduled tip-off, ISO 8601 UTC. |
 #' @eval .intl_details(.scb_seasons_details, "scb_records_per_game(season = 2026)")
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_records_per_game <- function(season, league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)
@@ -1567,7 +1589,8 @@ scb_records_per_game <- function(season, league = "bbl") {
 #' | team_tlc | character | The player's team code. |
 #' @eval .intl_details(.scb_seasons_details, "scb_records_season_averages()")
 #' @export
-#' @family SCB Functions
+#' @concept SCB Functions
+#' @seealso [family_scb] lists every function in this family.
 scb_records_season_averages <- function(league = "bbl") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .scb_check_league(league)

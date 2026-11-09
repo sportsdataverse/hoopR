@@ -69,7 +69,8 @@ NULL
 #' @importFrom dplyr as_tibble select any_of
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_player_info(athlete_id = "4593919")
@@ -142,7 +143,8 @@ NULL
 #' @importFrom dplyr as_tibble select any_of
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_player_overview(athlete_id = "4593919", season = 2025)
@@ -178,7 +180,8 @@ espn_mbb_player_overview <- function(athlete_id,
 #' @importFrom dplyr as_tibble select any_of bind_rows
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_player_stats_v3(athlete_id = "4593919", season = 2025)
@@ -211,7 +214,8 @@ espn_mbb_player_stats_v3 <- function(athlete_id,
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_player_gamelog(athlete_id = "4593919", season = 2025)
@@ -245,7 +249,8 @@ espn_mbb_player_gamelog <- function(athlete_id,
 #' @importFrom dplyr as_tibble bind_rows select any_of
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_player_splits(athlete_id = "4593919", season = 2025)
@@ -282,7 +287,8 @@ espn_mbb_player_splits <- function(athlete_id,
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_player_eventlog(athlete_id = "4593919", season = 2025)
@@ -321,7 +327,8 @@ NULL
 #' @importFrom dplyr as_tibble select any_of
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_player_awards(athlete_id = "4593919")
@@ -359,7 +366,8 @@ espn_mbb_player_awards <- function(athlete_id, ...) {
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN MBB Functions
+#' @concept ESPN MBB Functions
+#' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_mbb_player_statisticslog(athlete_id = "4593919", season = 2025)

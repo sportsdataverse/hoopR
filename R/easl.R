@@ -60,7 +60,8 @@
 #' | timestamp | character | Server time, ISO 8601 with milliseconds and Z (UTC). |
 #' @eval .intl_details(.easl_health_details, full = TRUE, "easl_health()")
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_health <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- "/health"
@@ -107,7 +108,8 @@ easl_health <- function() {
 #'   try(easl_seasons())
 #' }
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_seasons <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- "/metadata/seasons"
@@ -180,7 +182,8 @@ easl_seasons <- function() {
 #'   try(easl_schedule(season = 2026))
 #' }
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_schedule <- function(season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- "/matches"
@@ -254,7 +257,8 @@ easl_schedule <- function(season = NULL) {
 #'   try(easl_game(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
 #' }
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_game <- function(fixture_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- paste0("/matches/", .easl_id_arg(fixture_id, "fixture_id"))
@@ -378,7 +382,8 @@ easl_game <- function(fixture_id) {
 #'   try(easl_player_box(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
 #' }
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_player_box <- function(fixture_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- paste0("/matches/", .easl_id_arg(fixture_id, "fixture_id"), "/boxscore")
@@ -446,7 +451,8 @@ easl_player_box <- function(fixture_id) {
 #'   try(easl_pbp(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
 #' }
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_pbp <- function(fixture_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- paste0("/matches/", .easl_id_arg(fixture_id, "fixture_id"), "/playbyplay")
@@ -581,7 +587,8 @@ easl_pbp <- function(fixture_id) {
 #'   try(easl_team_box(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
 #' }
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_team_box <- function(fixture_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- paste0("/matches/", .easl_id_arg(fixture_id, "fixture_id"), "/teamstats")
@@ -714,7 +721,8 @@ easl_team_box <- function(fixture_id) {
 #' | turnovers_team_against | integer | Opponent's figure in the same games: team turnovers not charged to a player (shot-clock and similar violations). Team total for the period. Absent on some rows. |
 #' @eval .intl_details(.easl_health_details, 'easl_team_box_by_period(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3")')
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_team_box_by_period <- function(fixture_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- paste0("/matches/", .easl_id_arg(fixture_id, "fixture_id"), "/teamstats/by/period")
@@ -779,7 +787,8 @@ easl_team_box_by_period <- function(fixture_id) {
 #'   try(easl_standings(season = 2026))
 #' }
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_standings <- function(season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- "/standings"
@@ -820,7 +829,8 @@ easl_standings <- function(season = NULL) {
 #' | team_code_local | character | Alternative three-letter club code (for example TPP); null for most clubs. A club may have only one of codeLatin / codeLocal. |
 #' @eval .intl_details(.easl_health_details, "easl_leaders(season = 2026)")
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_leaders <- function(season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- "/leaders"
@@ -868,7 +878,8 @@ easl_leaders <- function(season = NULL) {
 #'   try(easl_teams())
 #' }
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_teams <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- "/teams"
@@ -915,7 +926,8 @@ easl_teams <- function() {
 #' | updated_at | character | When the sync server last synced the row, ISO 8601 with milliseconds and Z (UTC). |
 #' @eval .intl_details(.easl_health_details, 'easl_team(team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184")')
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_team <- function(team_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- paste0("/teams/", .easl_id_arg(team_id, "team_id"))
@@ -986,7 +998,8 @@ easl_team <- function(team_id) {
 #' | away_draw | logical | Away team: true when the game has no winner YET or ever: true on every unplayed competitor, false on every finished one (a tie has never happened). |
 #' @eval .intl_details(.easl_health_details, 'easl_team_schedule(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184")')
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_team_schedule <- function(team_id, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- paste0("/teams/", .easl_id_arg(team_id, "team_id"), "/matches")
@@ -1176,7 +1189,8 @@ easl_team_schedule <- function(team_id, season = NULL) {
 #' | wins | integer | Games won (for a player: by his team while he is in the line). Season total of the team's finished games. |
 #' @eval .intl_details(.easl_health_details, 'easl_team_stats(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184")')
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_team_stats <- function(team_id, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- paste0("/teams/", .easl_id_arg(team_id, "team_id"), "/stats")
@@ -1219,7 +1233,8 @@ easl_team_stats <- function(team_id, season = NULL) {
 #' | team_code_local | character | Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (String). |
 #' @eval .intl_details(.easl_health_details, 'easl_team_leaders(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184")')
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_team_leaders <- function(team_id, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- paste0("/teams/", .easl_id_arg(team_id, "team_id"), "/leaders")
@@ -1271,7 +1286,8 @@ easl_team_leaders <- function(team_id, season = NULL) {
 #'   try(easl_players(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
 #' }
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_players <- function(season = NULL, team_id = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- "/players"
@@ -1313,7 +1329,8 @@ easl_players <- function(season = NULL, team_id = NULL) {
 #' | updated_at | character | When the sync server last synced the row, ISO 8601 with milliseconds and Z (UTC). |
 #' @eval .intl_details(.easl_health_details, 'easl_player(player_id = "85c99dab-9f67-11f0-8780-a731edb5aad5")')
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_player <- function(player_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- paste0("/players/", .easl_id_arg(player_id, "player_id"))
@@ -1441,7 +1458,8 @@ easl_player <- function(player_id) {
 #' | wins | integer | Games won (for a player: by his team while he is in the line). Total over the player's games. |
 #' @eval .intl_details(.easl_health_details, 'easl_player_stats(player_id = "85c99dab-9f67-11f0-8780-a731edb5aad5")')
 #' @export
-#' @family EASL Functions
+#' @concept EASL Functions
+#' @seealso [family_easl] lists every function in this family.
 easl_player_stats <- function(player_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   path <- paste0("/players/", .easl_id_arg(player_id, "player_id"), "/stats")

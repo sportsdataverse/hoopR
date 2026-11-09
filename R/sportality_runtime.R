@@ -657,7 +657,8 @@
 #'   'sportality_ssgt_uuid(season = 2026, game_type = "finals")'
 #' ))
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_ssgt_uuid <- function(season, game_type = "regular") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_season(season)
@@ -697,7 +698,8 @@ sportality_ssgt_uuid <- function(season, game_type = "regular") {
 #' | height | integer | Height in centimetres. |
 #' @eval .intl_details(.sportality_schedule_details, "sportality_player_crosswalk(season = 2026)")
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_player_crosswalk <- function(season, game_type = "regular") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_season(season)

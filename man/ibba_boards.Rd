@@ -34,22 +34,6 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }
 }
 \seealso{
-Other IBBA Functions:
-\code{\link[=ibba_boards_ex]{ibba_boards_ex()}},
-\code{\link[=ibba_box_score]{ibba_box_score()}},
-\code{\link[=ibba_coaches]{ibba_coaches()}},
-\code{\link[=ibba_configuration]{ibba_configuration()}},
-\code{\link[=ibba_games]{ibba_games()}},
-\code{\link[=ibba_games_by_team]{ibba_games_by_team()}},
-\code{\link[=ibba_games_ex]{ibba_games_ex()}},
-\code{\link[=ibba_leaders]{ibba_leaders()}},
-\code{\link[=ibba_player]{ibba_player()}},
-\code{\link[=ibba_player_stats]{ibba_player_stats()}},
-\code{\link[=ibba_players]{ibba_players()}},
-\code{\link[=ibba_segev_game_crosswalk]{ibba_segev_game_crosswalk()}},
-\code{\link[=ibba_stats_types]{ibba_stats_types()}},
-\code{\link[=ibba_team]{ibba_team()}},
-\code{\link[=ibba_team_stats]{ibba_team_stats()}},
-\code{\link[=ibba_teams]{ibba_teams()}}
+\link{family_ibba} lists every function in this family.
 }
 \concept{IBBA Functions}

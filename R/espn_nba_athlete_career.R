@@ -26,7 +26,8 @@ NULL
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   # LeBron James (1966): 23 career seasons
@@ -69,7 +70,8 @@ espn_nba_player_seasons <- function(athlete_id, ...) {
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   # LeBron James - regular + postseason combined
@@ -123,7 +125,8 @@ espn_nba_player_career_stats <- function(athlete_id,
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_draft_pick(season = 2024, round = 1, pick = 1)
@@ -157,7 +160,8 @@ NULL
 #' @return A tibble with one row per event appearance. See package source
 #'   for column schema.
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_player_eventlog_v2(athlete_id = 1966, season = 2025)
@@ -186,7 +190,8 @@ espn_nba_player_eventlog_v2 <- function(athlete_id,
 #'
 #' @return A tibble with one row per round.
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_draft_rounds(season = 2024)
@@ -210,7 +215,8 @@ espn_nba_draft_rounds <- function(season = most_recent_nba_season(), ...) {
 #'
 #' @return A tibble of athlete IDs + `$ref` URLs.
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_draft_athletes(season = 2024)
@@ -235,7 +241,8 @@ espn_nba_draft_athletes <- function(season = most_recent_nba_season(), ...) {
 #'
 #' @return A single-row tibble.
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_draft_status(season = 2024)
@@ -260,7 +267,8 @@ espn_nba_draft_status <- function(season = most_recent_nba_season(), ...) {
 #'
 #' @return A single-row tibble.
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_season_draft(season = 2024)
@@ -290,7 +298,8 @@ NULL
 #' @param athlete_id ESPN draftee identifier.
 #' @return A single-row tibble.
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_draft_athlete_detail(season = 2024, athlete_id = 1966)

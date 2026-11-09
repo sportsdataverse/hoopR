@@ -72,7 +72,8 @@
 #'   try(vtb_infobasket_seasons())
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_seasons <- function(tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -149,7 +150,8 @@ vtb_infobasket_seasons <- function(tag = "vtb") {
 #'   try(vtb_infobasket_calendar(season = 2026))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_calendar <- function(season, tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -241,7 +243,8 @@ vtb_infobasket_calendar <- function(season, tag = "vtb") {
 #'   try(vtb_infobasket_team_stats(season = 2026))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_team_stats <- function(season, tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -336,7 +339,8 @@ vtb_infobasket_team_stats <- function(season, tag = "vtb") {
 #'   try(vtb_infobasket_team_stats_players(season = 2026))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_team_stats_players <- function(season, tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -386,7 +390,8 @@ vtb_infobasket_team_stats_players <- function(season, tag = "vtb") {
 #' | person_gender | integer | Person gender: 1 on every sampled (male) person. |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_team_stats_coaches(season = 2026)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_team_stats_coaches <- function(season, tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -447,7 +452,8 @@ vtb_infobasket_team_stats_coaches <- function(season, tag = "vtb") {
 #' | is_same | logical | True when the row ties the previous one. |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_best_players(season = 2026)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_best_players <- function(season, count = 5, lang = "en", tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -501,7 +507,8 @@ vtb_infobasket_best_players <- function(season, count = 5, lang = "en", tag = "v
 #' | is_same | logical | True when the row ties the previous one. |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_best_teams(season = 2026)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_best_teams <- function(season, count = 5, lang = "en", tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -592,7 +599,8 @@ vtb_infobasket_best_teams <- function(season, count = 5, lang = "en", tag = "vtb
 #' | team_region_name_en | character | The the team's region or city in English (as the competition names it). |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_team_preview(game_id = 921391, season = 2026)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_team_preview <- function(game_id, season = NULL, tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -681,7 +689,8 @@ vtb_infobasket_team_preview <- function(game_id, season = NULL, tag = "vtb") {
 #'   try(vtb_infobasket_game(game_id = 921391))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_game <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -761,7 +770,8 @@ vtb_infobasket_game <- function(game_id) {
 #'   try(vtb_infobasket_box_score(game_id = 921391))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_box_score <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -839,7 +849,8 @@ vtb_infobasket_box_score <- function(game_id) {
 #'   try(vtb_infobasket_team_box_score(game_id = 921391))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_team_box_score <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -890,7 +901,8 @@ vtb_infobasket_team_box_score <- function(game_id) {
 #'   try(vtb_infobasket_pbp(game_id = 921391))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_pbp <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -930,7 +942,8 @@ vtb_infobasket_pbp <- function(game_id) {
 #' | country_code_ioc | character | Country code as the host sends it (ISO alpha-2 in most rows, IOC alpha-3 in some). |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_game_staff(game_id = 921391)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_game_staff <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -987,7 +1000,8 @@ vtb_infobasket_game_staff <- function(game_id) {
 #' | arena_full_name_en | character | Arena full name in English. |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_game_page(game_id = 921391)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_game_page <- function(game_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1035,7 +1049,8 @@ vtb_infobasket_game_page <- function(game_id) {
 #' | note_en | character | Unobserved: null in every sample, so its type and meaning are unconfirmed. |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_comp_issue(season = 2026)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_comp_issue <- function(season, tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1096,7 +1111,8 @@ vtb_infobasket_comp_issue <- function(season, tag = "vtb") {
 #'   try(vtb_infobasket_standings(comp_id = 50720))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_standings <- function(comp_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1139,7 +1155,8 @@ vtb_infobasket_standings <- function(comp_id) {
 #' | score2 | integer | Points of team 2, parsed from the 'a:b' score string. |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_cross_table(comp_id = 50720)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_cross_table <- function(comp_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1197,7 +1214,8 @@ vtb_infobasket_cross_table <- function(comp_id) {
 #'   try(vtb_infobasket_playoff(comp_id = 54281))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_playoff <- function(comp_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1247,7 +1265,8 @@ vtb_infobasket_playoff <- function(comp_id) {
 #'   try(vtb_infobasket_playoff_games(comp_id = 54281))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_playoff_games <- function(comp_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1278,7 +1297,8 @@ vtb_infobasket_playoff_games <- function(comp_id) {
 #' | name | character | Leader-category name, English (double spaces as sent). |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_best_player_parameters()")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_best_player_parameters <- function(lang = "en") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1310,7 +1330,8 @@ vtb_infobasket_best_player_parameters <- function(lang = "en") {
 #' | name | character | Leader-category name, English (double spaces as sent). |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_best_team_parameters()")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_best_team_parameters <- function(lang = "en") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1362,7 +1383,8 @@ vtb_infobasket_best_team_parameters <- function(lang = "en") {
 #'   try(vtb_infobasket_player(person_id = 423011))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_player <- function(person_id, tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1445,7 +1467,8 @@ vtb_infobasket_player <- function(person_id, tag = "vtb") {
 #'   try(vtb_infobasket_player_season_stats(person_id = 423011))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_player_season_stats <- function(person_id, tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1515,7 +1538,8 @@ vtb_infobasket_player_season_stats <- function(person_id, tag = "vtb") {
 #' | plus_minus | integer | Plus-minus: point differential while on the court. Null where the host sends none. |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_player_career_stats(person_id = 423011)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_player_career_stats <- function(person_id, tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1604,7 +1628,8 @@ vtb_infobasket_player_career_stats <- function(person_id, tag = "vtb") {
 #' | kpi | integer | Efficiency index (KPI, the platform's 'KPI'); formula unverified. |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_player_game_log(person_id = 423011, season = 2026, team = 2650)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_player_game_log <- function(person_id, season, team, filter = 1, tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1642,7 +1667,8 @@ vtb_infobasket_player_game_log <- function(person_id, season, team, filter = 1, 
 #' | person_status | integer | Person record status (1 active, 0 otherwise); meaning unverified. |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_coach(person_id = 131047)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_coach <- function(person_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1695,7 +1721,8 @@ vtb_infobasket_coach <- function(person_id) {
 #'   try(vtb_infobasket_team(team_id = 2650))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_team <- function(team_id, lang = "en", tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1733,7 +1760,8 @@ vtb_infobasket_team <- function(team_id, lang = "en", tag = "vtb") {
 #' | season_name | character | Season name in Russian ('Sezon 2026/2027' = 'Season 2026/2027'). |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_team_seasons(team_id = 2650)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_team_seasons <- function(team_id, lang = "en", tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1778,7 +1806,8 @@ vtb_infobasket_team_seasons <- function(team_id, lang = "en", tag = "vtb") {
 #' | parent_comp_id | integer | Unobserved: null in every sample, so its type and meaning are unconfirmed. |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_team_comps(season = 2026, team_id = 2650)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_team_comps <- function(team_id, season, lang = "en", tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1843,7 +1872,8 @@ vtb_infobasket_team_comps <- function(team_id, season, lang = "en", tag = "vtb")
 #'   try(vtb_infobasket_roster(season = 2026, team_id = 2650))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_roster <- function(team_id, season, lang = "en", tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1898,7 +1928,8 @@ vtb_infobasket_roster <- function(team_id, season, lang = "en", tag = "vtb") {
 #' | person_gender | integer | Person gender: 1 on every sampled (male) person. |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_roster_coaches(season = 2026, team_id = 2650)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_roster_coaches <- function(team_id, season, lang = "en", tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1983,7 +2014,8 @@ vtb_infobasket_roster_coaches <- function(team_id, season, lang = "en", tag = "v
 #'   try(vtb_infobasket_team_games(season = 2026, team_id = 2650))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_team_games <- function(team_id, season, tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -2075,7 +2107,8 @@ vtb_infobasket_team_games <- function(team_id, season, tag = "vtb") {
 #' | team_region_name_en | character | The the team's region or city in English (as the competition names it). |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_team_season_stats(season = 2026, team_id = 2650)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_team_season_stats <- function(team_id, season, lang = "en", tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -2171,7 +2204,8 @@ vtb_infobasket_team_season_stats <- function(team_id, season, lang = "en", tag =
 #' | player_position | integer | Player position code from the host (1 point guard, 2 shooting guard, 3 small forward ... 5 center; see position_id for the named position). |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_team_player_stats(season = 2026, team_id = 2650)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_team_player_stats <- function(team_id, season, lang = "en", tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -2226,7 +2260,8 @@ vtb_infobasket_team_player_stats <- function(team_id, season, lang = "en", tag =
 #' | person_gender | integer | Person gender: 1 on every sampled (male) person. |
 #' @eval .intl_details(.vtb_infobasket_seasons_details, "vtb_infobasket_team_coach_stats(season = 2026, team_id = 2650)")
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_infobasket_team_coach_stats <- function(team_id, season, lang = "en", tag = "vtb") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -2268,7 +2303,8 @@ vtb_infobasket_team_coach_stats <- function(team_id, season, lang = "en", tag = 
 #'   try(vtb_league_leagues())
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_league_leagues <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -2302,7 +2338,8 @@ vtb_league_leagues <- function() {
 #'   try(vtb_league_seasons(league_slug = "vtb"))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_league_seasons <- function(league_slug) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -2390,7 +2427,8 @@ vtb_league_seasons <- function(league_slug) {
 #'   try(vtb_league_matches(league_slug = "vtb", season = 2026))
 #' }
 #' @export
-#' @family VTB Functions
+#' @concept VTB Functions
+#' @seealso [family_vtb] lists every function in this family.
 vtb_league_matches <- function(league_slug, season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()

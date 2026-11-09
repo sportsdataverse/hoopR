@@ -46,7 +46,8 @@
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble
-#' @family RealGM Functions
+#' @concept RealGM Functions
+#' @seealso [family_realgm] lists every function in this family.
 #' @export
 #' @examples
 #' \dontrun{
@@ -101,7 +102,8 @@ realgm_player_stats <- function(season = most_recent_nba_season(),
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble
-#' @family RealGM Functions
+#' @concept RealGM Functions
+#' @seealso [family_realgm] lists every function in this family.
 #' @export
 #' @examples
 #' \dontrun{
@@ -150,7 +152,8 @@ realgm_team_stats <- function(season = most_recent_nba_season(),
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble
-#' @family RealGM Functions
+#' @concept RealGM Functions
+#' @seealso [family_realgm] lists every function in this family.
 #' @export
 #' @examples
 #' \dontrun{
@@ -193,7 +196,8 @@ realgm_individual_seasons <- function() {
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble
-#' @family RealGM Functions
+#' @concept RealGM Functions
+#' @seealso [family_realgm] lists every function in this family.
 #' @export
 #' @examples
 #' \dontrun{
@@ -237,7 +241,8 @@ realgm_individual_games <- function() {
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble
-#' @family RealGM Functions
+#' @concept RealGM Functions
+#' @seealso [family_realgm] lists every function in this family.
 #' @export
 #' @examples
 #' \dontrun{

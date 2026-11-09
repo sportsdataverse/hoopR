@@ -55,7 +55,8 @@
 #'   try(kzs_seasons())
 #' }
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_seasons <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -95,7 +96,8 @@ kzs_seasons <- function() {
 #'   try(kzs_competitions(season = 2026))
 #' }
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_competitions <- function(season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -136,7 +138,8 @@ kzs_competitions <- function(season = NULL) {
 #'   try(kzs_competition(competition_id = 579))
 #' }
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_competition <- function(competition_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -171,7 +174,8 @@ kzs_competition <- function(competition_id) {
 #' | wins_needed | integer | Wins needed to take a best-of series. |
 #' @eval .intl_details(.kzs_seasons_details, "kzs_phases(competition_id = 579)")
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_phases <- function(competition_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -200,7 +204,8 @@ kzs_phases <- function(competition_id) {
 #' | rounds | integer | Number of rounds in the phase. |
 #' @eval .intl_details(.kzs_seasons_details, "kzs_rounds(competition_id = 579)")
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_rounds <- function(competition_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -254,7 +259,8 @@ kzs_rounds <- function(competition_id) {
 #' | photo_uuid | character | Player photo: image file id, served at `https://api.kzs.si/public/images/{uuid}`. |
 #' @eval .intl_details(.kzs_seasons_details, "kzs_player_leaderboard(competition_id = 579)")
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_player_leaderboard <- function(competition_id, stats_category = "PTS", order_type = "AVERAGE", sort_by = "avg",
                                     sort = "DESC") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -310,7 +316,8 @@ kzs_player_leaderboard <- function(competition_id, stats_category = "PTS", order
 #' | max | double | Single-game best of the statsCategory. |
 #' @eval .intl_details(.kzs_seasons_details, "kzs_team_leaderboard(competition_id = 579)")
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_team_leaderboard <- function(competition_id, stats_category = "PTS", order_type = "AVERAGE", sort_by = "avg", sort
                                   = "DESC") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
@@ -421,7 +428,8 @@ kzs_team_leaderboard <- function(competition_id, stats_category = "PTS", order_t
 #'   ))
 #' }
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_matches <- function(competition_id, date_from = NULL, date_to = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -550,7 +558,8 @@ kzs_matches <- function(competition_id, date_from = NULL, date_to = NULL) {
 #'   try(kzs_match(match_id = 101839))
 #' }
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_match <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -583,7 +592,8 @@ kzs_match <- function(match_id) {
 #'   try(kzs_period_scores(match_id = 101839))
 #' }
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_period_scores <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -638,7 +648,8 @@ kzs_period_scores <- function(match_id) {
 #'   try(kzs_pbp(match_id = 101839))
 #' }
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_pbp <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -667,7 +678,8 @@ kzs_pbp <- function(match_id) {
 #' | last_name | character | The home player's (as in the feed) family name. |
 #' @eval .intl_details(.kzs_seasons_details, "kzs_pbp_players(match_id = 101839)")
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_pbp_players <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -756,7 +768,8 @@ kzs_pbp_players <- function(match_id) {
 #'   try(kzs_box_score(match_id = 101839))
 #' }
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_box_score <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -861,7 +874,8 @@ kzs_box_score <- function(match_id) {
 #'   try(kzs_team_box_score(match_id = 101839))
 #' }
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_team_box_score <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -890,7 +904,8 @@ kzs_team_box_score <- function(match_id) {
 #' | total_minutes | integer | Game length in minutes (40, 45 with one overtime). |
 #' @eval .intl_details(.kzs_seasons_details, "kzs_score_changes(match_id = 101839)")
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_score_changes <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -944,7 +959,8 @@ kzs_score_changes <- function(match_id) {
 #'   try(kzs_standings(competition_id = 579))
 #' }
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_standings <- function(competition_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -972,7 +988,8 @@ kzs_standings <- function(competition_id) {
 #' | no_of_games | integer | Matches on that day. |
 #' @eval .intl_details(.kzs_seasons_details, "kzs_playing_days(competition_id = 579)")
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_playing_days <- function(competition_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1021,7 +1038,8 @@ kzs_playing_days <- function(competition_id) {
 #'   try(kzs_teams(competition_id = 579))
 #' }
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_teams <- function(competition_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1075,7 +1093,8 @@ kzs_teams <- function(competition_id) {
 #' | competitions | character | Competitions of the team this season (id, name, rule, phases). |
 #' @eval .intl_details(.kzs_seasons_details, "kzs_team(team_id = 17551)")
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_team <- function(team_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1153,7 +1172,8 @@ kzs_team <- function(team_id) {
 #' | best_average_assists | double | That player's assists per game. |
 #' @eval .intl_details(.kzs_seasons_details, "kzs_team_general(competition_id = 579, team_id = 17551)")
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_team_general <- function(team_id, competition_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1200,7 +1220,8 @@ kzs_team_general <- function(team_id, competition_id) {
 #' | jersey_number | character | Shirt number worn, sent as a string ('1', '55'). |
 #' @eval .intl_details(.kzs_seasons_details, "kzs_roster(competition_id = 579, team_id = 17551)")
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_roster <- function(team_id, competition_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1241,7 +1262,8 @@ kzs_roster <- function(team_id, competition_id) {
 #' | positions | character | Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. |
 #' @eval .intl_details(.kzs_seasons_details, "kzs_player(player_id = 106285)")
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_player <- function(player_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()
@@ -1322,7 +1344,8 @@ kzs_player <- function(player_id) {
 #'   try(kzs_player_stats(player_id = 106285, season = 2026))
 #' }
 #' @export
-#' @family KZS Functions
+#' @concept KZS Functions
+#' @seealso [family_kzs] lists every function in this family.
 kzs_player_stats <- function(player_id, season) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   call <- rlang::current_env()

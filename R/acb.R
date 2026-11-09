@@ -84,7 +84,8 @@
 #'   try(acb_match_header(match_id = 105401))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_match_header <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/MatchHeader/match-header", list(matchId = match_id), call = rlang::current_env())
@@ -120,7 +121,8 @@ acb_match_header <- function(match_id) {
 #'   try(acb_period_scores(match_id = 105401))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_period_scores <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/MatchHeader/match-header", list(matchId = match_id), call = rlang::current_env())
@@ -193,7 +195,8 @@ acb_period_scores <- function(match_id) {
 #'   try(acb_player_box(match_id = 105401))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_player_box <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Result/boxscores", list(matchId = match_id), call = rlang::current_env())
@@ -256,7 +259,8 @@ acb_player_box <- function(match_id) {
 #'   try(acb_team_box(match_id = 105401))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_team_box <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Result/boxscores", list(matchId = match_id), call = rlang::current_env())
@@ -301,7 +305,8 @@ acb_team_box <- function(match_id) {
 #'   try(acb_box_info(match_id = 105401))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_box_info <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Result/boxscores", list(matchId = match_id), call = rlang::current_env())
@@ -376,7 +381,8 @@ acb_box_info <- function(match_id) {
 #'   try(acb_pbp(match_id = 105401))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_pbp <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/PlayByPlay/play-by-play", list(matchId = match_id), call = rlang::current_env())
@@ -437,7 +443,8 @@ acb_pbp <- function(match_id) {
 #'   try(acb_shots(match_id = 105401))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_shots <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/MatchShots/match-shots", list(matchId = match_id), call = rlang::current_env())
@@ -475,7 +482,8 @@ acb_shots <- function(match_id) {
 #' | margin | integer | Home score minus away score at that moment (positive = the home team leads). |
 #' @eval .intl_details(.acb_match_header_details, "acb_lead_tracker(match_id = 105401)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_lead_tracker <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Overview/lead-tracker", list(matchId = match_id), call = rlang::current_env())
@@ -510,7 +518,8 @@ acb_lead_tracker <- function(match_id) {
 #' | is_highlighted | logical | True for the side whose bar the site highlights as the better value. |
 #' @eval .intl_details(.acb_match_header_details, "acb_lead_stats(match_id = 105401)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_lead_stats <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Overview/lead-tracker", list(matchId = match_id), call = rlang::current_env())
@@ -561,7 +570,8 @@ acb_lead_stats <- function(match_id) {
 #' | rating | integer | ACB rating (valoracion) of the game. |
 #' @eval .intl_details(.acb_match_header_details, "acb_lineup(match_id = 105401)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_lineup <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Overview/lineup", list(matchId = match_id), call = rlang::current_env())
@@ -606,7 +616,8 @@ acb_lineup <- function(match_id) {
 #' | game_role | character | Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or '' in many rows |
 #' @eval .intl_details(.acb_match_header_details, "acb_match_leaders(match_id = 105401)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_match_leaders <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Overview/match-leaders", list(matchId = match_id), call = rlang::current_env())
@@ -647,7 +658,8 @@ acb_match_leaders <- function(match_id) {
 #' | away_is_highlighted | logical | True when the site highlights the away bar as the better value. |
 #' @eval .intl_details(.acb_match_header_details, "acb_team_comparison(match_id = 105401)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_team_comparison <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Overview/match-team-comparison", list(matchId = match_id), call = rlang::current_env())
@@ -700,7 +712,8 @@ acb_team_comparison <- function(match_id) {
 #' | current_quarter | integer | Current or last period of the game (4 for a finished regulation game). |
 #' @eval .intl_details(.acb_match_header_details, "acb_serie(match_id = 17718)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_serie <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Overview/serie", list(matchId = match_id), call = rlang::current_env())
@@ -740,7 +753,8 @@ acb_serie <- function(match_id) {
 #' | last_results | character | Recent results joined with '; ' (WIN / LOSS), in the order the API sends them. |
 #' @eval .intl_details(.acb_match_header_details, "acb_quickfacts(match_id = 105401)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_quickfacts <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Preview/quickfacts", list(matchId = match_id), call = rlang::current_env())
@@ -789,7 +803,8 @@ acb_quickfacts <- function(match_id) {
 #'   try(acb_season_leaders(match_id = 105401))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_season_leaders <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Preview/season-leaders", list(matchId = match_id), call = rlang::current_env())
@@ -836,7 +851,8 @@ acb_season_leaders <- function(match_id) {
 #' | loss_diff | double | Game value minus the losses value (lossDiff). |
 #' @eval .intl_details(.acb_match_header_details, "acb_match_advanced_stats(match_id = 105401)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_match_advanced_stats <- function(match_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/AdvancedStats/match-advanced-stats", list(matchId = match_id), call = rlang::current_env())
@@ -878,7 +894,8 @@ acb_match_advanced_stats <- function(match_id) {
 #' | loss_diff | double | Game value minus the losses value (lossDiff). |
 #' @eval .intl_details(.acb_match_header_details, "acb_player_advanced_stats(match_id = 105401, player_id = 20212243)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_player_advanced_stats <- function(match_id, player_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/AdvancedStats/player-advanced-stats", list(matchId = match_id, playerLicense = player_id), call = rlang::current_env())
@@ -947,7 +964,8 @@ acb_player_advanced_stats <- function(match_id, player_id) {
 #'   try(acb_matchlist(match_id = 105401))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_matchlist <- function(match_id, round_id = NULL, week_id = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Menu/matchlist", list(matchId = match_id, roundId = round_id, weekId = week_id), call = rlang::current_env())
@@ -985,7 +1003,8 @@ acb_matchlist <- function(match_id, round_id = NULL, week_id = NULL) {
 #'   try(acb_competition_editions())
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_competition_editions <- function(competition_ids = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Menu/competition-data", list(competitionIds = competition_ids), call = rlang::current_env())
@@ -1022,7 +1041,8 @@ acb_competition_editions <- function(competition_ids = NULL) {
 #'   try(acb_competition_rounds())
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_competition_rounds <- function(competition_ids = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Menu/competition-data", list(competitionIds = competition_ids), call = rlang::current_env())
@@ -1054,7 +1074,8 @@ acb_competition_rounds <- function(competition_ids = NULL) {
 #' | start_date | POSIXct | Monday the week starts (UTC midnight). |
 #' @eval .intl_details(.acb_match_header_details, "acb_competition_weeks()")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_competition_weeks <- function(competition_ids = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Menu/competition-data", list(competitionIds = competition_ids), call = rlang::current_env())
@@ -1100,7 +1121,8 @@ acb_competition_weeks <- function(competition_ids = NULL) {
 #'   try(acb_competition_current())
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_competition_current <- function(competition_ids = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/matchdata/Menu/competition-data", list(competitionIds = competition_ids), call = rlang::current_env())
@@ -1167,7 +1189,8 @@ acb_competition_current <- function(competition_ids = NULL) {
 #'   try(acb_round_matches(round_id = 6017, season = 2027))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_round_matches <- function(competition_id = NULL, season = NULL, round_id = NULL, week_id = NULL, is_round_selected = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/Competition/matches", list(competitionId = competition_id, season = season, roundId = round_id, weekId = week_id, isRoundSelected = is_round_selected), call = rlang::current_env())
@@ -1226,7 +1249,8 @@ acb_round_matches <- function(competition_id = NULL, season = NULL, round_id = N
 #'   try(acb_standings(season = 2027))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_standings <- function(competition_id = NULL, season = NULL, round_id = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/Competition/standings", list(competitionId = competition_id, season = season, roundId = round_id), call = rlang::current_env())
@@ -1271,7 +1295,8 @@ acb_standings <- function(competition_id = NULL, season = NULL, round_id = NULL)
 #' | match_id | integer | The team's game in this round. |
 #' @eval .intl_details(.acb_match_header_details, "acb_standings_rounds(season = 2027)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_standings_rounds <- function(competition_id = NULL, season = NULL, round_id = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/Competition/standings", list(competitionId = competition_id, season = season, roundId = round_id), call = rlang::current_env())
@@ -1324,7 +1349,8 @@ acb_standings_rounds <- function(competition_id = NULL, season = NULL, round_id 
 #'   try(acb_bracket(season = 2026))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_bracket <- function(competition_id = NULL, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/Competition/bracket", list(competitionId = competition_id, season = season), call = rlang::current_env())
@@ -1375,7 +1401,8 @@ acb_bracket <- function(competition_id = NULL, season = NULL) {
 #' | current_quarter | integer | Current or last quarter (5+ = overtime); not reliable after the match (1 in the 2017 series rows) |
 #' @eval .intl_details(.acb_match_header_details, "acb_bracket_games(season = 2026)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_bracket_games <- function(competition_id = NULL, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/Competition/bracket", list(competitionId = competition_id, season = season), call = rlang::current_env())
@@ -1434,7 +1461,8 @@ acb_bracket_games <- function(competition_id = NULL, season = NULL) {
 #'   try(acb_calendar(season = 2027))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_calendar <- function(competition_id = NULL, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/Calendar/season-calendar", list(competitionId = competition_id, season = season), call = rlang::current_env())
@@ -1472,7 +1500,8 @@ acb_calendar <- function(competition_id = NULL, season = NULL) {
 #' | points_scored | integer | Points scored from the zone, league-wide. |
 #' @eval .intl_details(.acb_match_header_details, "acb_league_zones(season = 2027)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_league_zones <- function(competition_id = NULL, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/ShotChart/league-zones", list(competitionId = competition_id, season = season), call = rlang::current_env())
@@ -1515,7 +1544,8 @@ acb_league_zones <- function(competition_id = NULL, season = NULL) {
 #'   try(acb_teams(season = 2027))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_teams <- function(competition_id = NULL, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/TeamProfile/teams", list(competitionId = competition_id, season = season), call = rlang::current_env())
@@ -1581,7 +1611,8 @@ acb_teams <- function(competition_id = NULL, season = NULL) {
 #'   try(acb_team_matches(club_id = 2, season = 2027))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_team_matches <- function(club_id, competition_id = NULL, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/TeamProfile/team-matches", list(clubId = club_id, competitionId = competition_id, season = season), call = rlang::current_env())
@@ -1645,7 +1676,8 @@ acb_team_matches <- function(club_id, competition_id = NULL, season = NULL) {
 #' | is_selected_local | logical | Not sent by this route (always null). |
 #' @eval .intl_details(.acb_match_header_details, "acb_next_matches(club_id = 2, number_of_matches = 5)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_next_matches <- function(club_id, number_of_matches = NULL, competition_id = NULL, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/TeamProfile/next-matches", list(clubId = club_id, numberOfMatches = number_of_matches, competitionId = competition_id, season = season), call = rlang::current_env())
@@ -1694,7 +1726,8 @@ acb_next_matches <- function(club_id, number_of_matches = NULL, competition_id =
 #' | temporary_roster | logical | True while the club's roster is provisional. |
 #' @eval .intl_details(.acb_match_header_details, "acb_club_data(club_id = 2)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_club_data <- function(club_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/TeamProfile/club-data", list(clubId = club_id), call = rlang::current_env())
@@ -1750,7 +1783,8 @@ acb_club_data <- function(club_id) {
 #'   try(acb_current_roster(club_id = 2, season = 2027))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_current_roster <- function(club_id, competition_id = NULL, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/TeamProfile/current-roster", list(clubId = club_id, competitionId = competition_id, season = season), call = rlang::current_env())
@@ -1801,7 +1835,8 @@ acb_current_roster <- function(club_id, competition_id = NULL, season = NULL) {
 #' | game_role | character | Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or '' in many rows |
 #' @eval .intl_details(.acb_match_header_details, "acb_team_leaders(club_id = 2, number_of_players = 3, season = 2027)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_team_leaders <- function(club_id, number_of_players, competition_id = NULL, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/TeamProfile/team-leaders", list(clubId = club_id, numberOfPlayers = number_of_players, competitionId = competition_id, season = season), call = rlang::current_env())
@@ -1936,7 +1971,8 @@ acb_team_leaders <- function(club_id, number_of_players, competition_id = NULL, 
 #'   try(acb_team_stats(club_id = 2, season = 2027))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_team_stats <- function(club_id, competition_id = NULL, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/TeamProfile/team-stats", list(clubId = club_id, competitionId = competition_id, season = season), call = rlang::current_env())
@@ -2060,7 +2096,8 @@ acb_team_stats <- function(club_id, competition_id = NULL, season = NULL) {
 #' | per40_losses | double | Per-40-minute rate of team losses in the counted games (meaning unverified). |
 #' @eval .intl_details(.acb_match_header_details, "acb_team_totals(club_id = 2, season = 2027)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_team_totals <- function(club_id, competition_id = NULL, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/TeamProfile/team-stats", list(clubId = club_id, competitionId = competition_id, season = season), call = rlang::current_env())
@@ -2106,7 +2143,8 @@ acb_team_totals <- function(club_id, competition_id = NULL, season = NULL) {
 #' | visitor_team_abbr | character | Away team abbreviation in the record game. |
 #' @eval .intl_details(.acb_match_header_details, "acb_team_records(club_id = 2)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_team_records <- function(club_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/TeamProfile/team-records", list(clubId = club_id), call = rlang::current_env())
@@ -2167,7 +2205,8 @@ acb_team_records <- function(club_id) {
 #'   try(acb_player_data(player_id = 20209407))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_player_data <- function(player_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/PlayerProfile/player-data", list(playerLicenceId = player_id), call = rlang::current_env())
@@ -2299,7 +2338,8 @@ acb_player_data <- function(player_id) {
 #'   try(acb_player_stats(player_id = 20209407))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_player_stats <- function(player_id, competition_id = NULL, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/PlayerProfile/player-stats", list(playerLicenceId = player_id, competitionId = competition_id, season = season), call = rlang::current_env())
@@ -2424,7 +2464,8 @@ acb_player_stats <- function(player_id, competition_id = NULL, season = NULL) {
 #' | per40_losses | double | Per-40-minute rate of team losses in the counted games (meaning unverified). |
 #' @eval .intl_details(.acb_match_header_details, "acb_player_totals(player_id = 20209407)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_player_totals <- function(player_id, competition_id = NULL, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/PlayerProfile/player-stats", list(playerLicenceId = player_id, competitionId = competition_id, season = season), call = rlang::current_env())
@@ -2461,7 +2502,8 @@ acb_player_totals <- function(player_id, competition_id = NULL, season = NULL) {
 #' | has_no_validated_data | logical | True when the stint has no validated data. |
 #' @eval .intl_details(.acb_match_header_details, "acb_career_stints(player_id = 20209407)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_career_stints <- function(player_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/PlayerProfile/career", list(playerLicenceId = player_id), call = rlang::current_env())
@@ -2491,7 +2533,8 @@ acb_career_stints <- function(player_id) {
 #' | times_runner_up | integer | Times the player was runner-up in the competition. |
 #' @eval .intl_details(.acb_match_header_details, "acb_career_trophies(player_id = 20209407)")
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_career_trophies <- function(player_id) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/PlayerProfile/career", list(playerLicenceId = player_id), call = rlang::current_env())
@@ -2568,7 +2611,8 @@ acb_career_trophies <- function(player_id) {
 #'   try(acb_player_matches(player_id = 20209407, season = 2027))
 #' }
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_player_matches <- function(player_id, season = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/PlayerProfile/matches", list(playerLicenceId = player_id, season = season), call = rlang::current_env())
@@ -2609,7 +2653,8 @@ acb_player_matches <- function(player_id, season = NULL) {
 #' | season | integer | Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. |
 #' @eval .intl_details(.acb_match_header_details, 'acb_search(limit = 5, search_term = "tavares")')
 #' @export
-#' @family ACB Functions
+#' @concept ACB Functions
+#' @seealso [family_acb] lists every function in this family.
 acb_search <- function(search_term, limit = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .acb_get("/seasondata/Search/search", list(searchTerm = search_term, limit = limit), call = rlang::current_env())

@@ -390,10 +390,24 @@
 #' dots and duplicates), for the 13 families whose sportsdataverse-py parsers name columns with
 #' it: acb, atrium, cba, dbl, easl, fiba_hub, ibba, kbl, kzs, lba, nbl_au, scb, vtb.
 #'
+#' The parsers call it once per JSON field of every row, so a one-name call is memoised: three
+#' perl regexes per field were most of a 300-row season table's parse time.
+#'
 #' @param x Character vector of names.
 #' @return Character vector.
 #' @noRd
 .intl_clean_names <- function(x) {
+  if (length(x) != 1L || is.na(x) || !nzchar(x)) return(.intl_underscore(x))
+  hit <- .intl_names_memo[[x]]
+  if (is.null(hit)) hit <- .intl_names_memo[[x]] <- .intl_underscore(x)
+  hit
+}
+
+# ponytail: unbounded, but it only ever holds the providers' field names (a few thousand at most).
+.intl_names_memo <- new.env(parent = emptyenv())
+
+#' @noRd
+.intl_underscore <- function(x) {
   x <- gsub("([A-Z]+)([A-Z][a-z])", "\\1_\\2", x, perl = TRUE)
   x <- gsub("([a-z0-9])([A-Z])", "\\1_\\2", x, perl = TRUE)
   tolower(gsub("-", "_", x, fixed = TRUE))

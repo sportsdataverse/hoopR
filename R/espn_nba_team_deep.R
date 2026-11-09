@@ -32,7 +32,8 @@ NULL
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_team_odds_records(team_id = 13, season = 2026)
@@ -82,7 +83,8 @@ espn_nba_team_odds_records <- function(team_id,
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_team_depthchart(team_id = 13, season = 2025)
@@ -120,7 +122,8 @@ espn_nba_team_depthchart <- function(team_id,
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_team_season_roster(team_id = 13, season = 2025)
@@ -156,7 +159,8 @@ espn_nba_team_season_roster <- function(team_id,
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_coach_season(coach_id = 52120, season = 2025)
@@ -192,7 +196,8 @@ NULL
 #' @param ... Additional arguments; currently unused.
 #' @return A long tibble.
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_team_record_detail(team_id = 13, season = 2024, record_id = 0)

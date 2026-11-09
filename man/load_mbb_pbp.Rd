@@ -443,21 +443,30 @@ schedules: \code{load_mbb_game_rosters()} casts \code{game_id}, and \code{load_m
 casts \code{athlete_id}, both of which the release publishes as character.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+# One season is a ~80 MB download.
 load_mbb_pbp(seasons = most_recent_mbb_season())
 }
+\dontshow{\}) # examplesIf}
 \donttest{
 load_mbb_team_box(seasons = most_recent_mbb_season())
 }
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+# One season is a ~7 MB download.
 load_mbb_player_box(seasons = most_recent_mbb_season())
 }
+\dontshow{\}) # examplesIf}
 \donttest{
 load_mbb_schedule(seasons = most_recent_mbb_season())
 }
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+# One season is a ~14 MB download.
 load_mbb_shots(seasons = most_recent_mbb_season())
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other hoopR Loader Functions:

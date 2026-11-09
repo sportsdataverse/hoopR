@@ -29,7 +29,8 @@ NULL
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_leaders(season = 2024, season_type = 2)
@@ -68,7 +69,8 @@ NULL
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_venues()
@@ -103,7 +105,8 @@ NULL
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_coaches(season = 2025)
@@ -142,7 +145,8 @@ NULL
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_athletes_index(season = 2025, limit = 50)
@@ -183,7 +187,8 @@ NULL
 #' @importFrom dplyr as_tibble any_of
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_seasons()
@@ -230,7 +235,8 @@ NULL
 #' @importFrom dplyr as_tibble any_of
 #' @importFrom janitor clean_names
 #' @export
-#' @family ESPN NBA Functions
+#' @concept ESPN NBA Functions
+#' @seealso [family_espn_nba] lists every function in this family.
 #' @examples
 #' \donttest{
 #'   espn_nba_season_info(season = 2025)

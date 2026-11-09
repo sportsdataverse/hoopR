@@ -51,7 +51,8 @@ test_that("loader floors match the first season each release publishes", {
   expect_no_error(load_mbb_officials(seasons = 2003))
   expect_match(env$urls, "(game_rosters_2010|officials_2003)[.]rds$")
   # the 2003-2024 seasons are parquet-only: the .rds miss reads the sibling
-  expect_match(env$parquet, "(game_rosters_2010|officials_2003)[.]parquet$")
+  expect_match(env$parquet, "game_rosters_2010[.]parquet$", all = FALSE)
+  expect_match(env$parquet, "officials_2003[.]parquet$", all = FALSE)
   expect_error(load_mbb_game_rosters(seasons = 2001), "Published seasons: 2002-")
   expect_error(load_mbb_schedule_crosswalk(seasons = 2007), "Published seasons: 2008-")
   expect_error(load_mbb_player_crosswalk(seasons = 2024), "Published seasons: 2025-")

@@ -66,7 +66,8 @@
 #' | info_team_id | integer | Genius team id (Genius key space; an integer here). |
 #' @eval .intl_details(.sportality_schedule_details, 'sportality_athlete_career(athlete_uuid = "dpu0901c0t", master_site_instance_id = "dbl1_dbl")')
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_athlete_career <- function(athlete_uuid, master_site_instance_id = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(athlete_uuid, "athlete_uuid")
@@ -114,7 +115,8 @@ sportality_athlete_career <- function(athlete_uuid, master_site_instance_id = NU
 #' | weight | integer | Weight of the player in kilograms. |
 #' @eval .intl_details(.sportality_schedule_details, 'sportality_athlete_details(athlete_uuid = "dpu0901c0t")')
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_athlete_details <- function(athlete_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(athlete_uuid, "athlete_uuid")
@@ -178,7 +180,8 @@ sportality_athlete_details <- function(athlete_uuid) {
 #' | media_focal_point | character | Focal point record (empty). |
 #' @eval .intl_details(.sportality_schedule_details, 'sportality_athlete_profile(athlete_uuid = "dpu0901c0t", master_site_instance_id = "dbl1_dbl")')
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_athlete_profile <- function(athlete_uuid, master_site_instance_id = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(athlete_uuid, "athlete_uuid")
@@ -247,7 +250,8 @@ sportality_athlete_profile <- function(athlete_uuid, master_site_instance_id = N
 #'   try(sportality_boxscore(game_uuid = "c4hh5nig6t"))
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_boxscore <- function(game_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(game_uuid, "game_uuid")
@@ -325,7 +329,8 @@ sportality_boxscore <- function(game_uuid) {
 #'   try(sportality_game_header(game_uuid = "c4hh5nig6t"))
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_game_header <- function(game_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(game_uuid, "game_uuid")
@@ -389,7 +394,8 @@ sportality_game_header <- function(game_uuid) {
 #'   try(sportality_game_overview(game_uuid = "c4hh5nig6t"))
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_game_overview <- function(game_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(game_uuid, "game_uuid")
@@ -431,7 +437,8 @@ sportality_game_overview <- function(game_uuid) {
 #'   try(sportality_game_summary(game_uuid = "c4hh5nig6t"))
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_game_summary <- function(game_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(game_uuid, "game_uuid")
@@ -506,7 +513,8 @@ sportality_game_summary <- function(game_uuid) {
 #'   try(sportality_last_game_day())
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_last_game_day <- function(season = NULL, game_type = "regular") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_choice(game_type, .SPORTALITY_GAME_TYPES, "game_type")
@@ -547,7 +555,8 @@ sportality_last_game_day <- function(season = NULL, game_type = "regular") {
 #' | game_type_uuid | character | Game type uuid (platform key space). |
 #' @eval .intl_details(.sportality_schedule_details, "sportality_layout_info()")
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_layout_info <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportality_get(
@@ -617,7 +626,8 @@ sportality_layout_info <- function() {
 #' | series_display_name | character | Series display name (Basketligaen). |
 #' @eval .intl_details(.sportality_schedule_details, "sportality_next_game_day()")
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_next_game_day <- function(season = NULL, game_type = "regular") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_choice(game_type, .SPORTALITY_GAME_TYPES, "game_type")
@@ -764,7 +774,8 @@ sportality_next_game_day <- function(season = NULL, game_type = "regular") {
 #'   try(sportality_pbp(game_uuid = "c4hh5nig6t"))
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_pbp <- function(game_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(game_uuid, "game_uuid")
@@ -833,7 +844,8 @@ sportality_pbp <- function(game_uuid) {
 #'   try(sportality_player_box(game_uuid = "c4hh5nig6t"))
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_player_box <- function(game_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(game_uuid, "game_uuid")
@@ -926,7 +938,8 @@ sportality_player_box <- function(game_uuid) {
 #'   ')'
 #' ))
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_player_h2h <- function(ssgt_uuid, home_team_uuid, away_team_uuid, game_uuid = NULL) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(ssgt_uuid, "ssgt_uuid")
@@ -983,7 +996,8 @@ sportality_player_h2h <- function(ssgt_uuid, home_team_uuid, away_team_uuid, gam
 #'   ')'
 #' ))
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_post_game_team_stats <- function(game_uuid, ssgt_uuid, home_team_uuid, away_team_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(game_uuid, "game_uuid")
@@ -1033,7 +1047,8 @@ sportality_post_game_team_stats <- function(game_uuid, ssgt_uuid, home_team_uuid
 #'   try(sportality_roster(team_uuid = "rfo82vr830"))
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_roster <- function(team_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(team_uuid, "team_uuid")
@@ -1138,7 +1153,8 @@ sportality_roster <- function(team_uuid) {
 #'   try(sportality_schedule(season = 2026))
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_schedule <- function(season, game_type = "regular") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_season(season)
@@ -1178,7 +1194,8 @@ sportality_schedule <- function(season, game_type = "regular") {
 #'   try(sportality_season_filter())
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_season_filter <- function() {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   raw <- .sportality_get(
@@ -1217,7 +1234,8 @@ sportality_season_filter <- function() {
 #'   try(sportality_sites(ssgt_uuid = "xs07bd3fmp"))
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_sites <- function(ssgt_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(ssgt_uuid, "ssgt_uuid")
@@ -1249,7 +1267,8 @@ sportality_sites <- function(ssgt_uuid) {
 #' | provider | character | Stats provider of the ssgt (genius-basketball, a Genius Sports LiveStats relay). |
 #' @eval .intl_details(.sportality_schedule_details, 'sportality_ssgt_provider(ssgt_uuid = "xs07bd3fmp")')
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_ssgt_provider <- function(ssgt_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(ssgt_uuid, "ssgt_uuid")
@@ -1297,7 +1316,8 @@ sportality_ssgt_provider <- function(ssgt_uuid) {
 #'   try(sportality_standings(ssgt_uuid = "xs07bd3fmp"))
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_standings <- function(ssgt_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(ssgt_uuid, "ssgt_uuid")
@@ -1508,7 +1528,8 @@ sportality_standings <- function(ssgt_uuid) {
 #' | ord | integer | Offensive rebounds allowed or the opponent's offensive rebounds (0 in every row seen; unverified). |
 #' @eval .intl_details(.sportality_schedule_details, 'sportality_stats_info(module = "players_summary", season = 2026)')
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_stats_info <- function(module, season, game_type = "regular") {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_choice(module, .SPORTALITY_MODULES, "module")
@@ -1561,7 +1582,8 @@ sportality_stats_info <- function(module, season, game_type = "regular") {
 #'   try(sportality_team(team_uuid = "rfo82vr830"))
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_team <- function(team_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(team_uuid, "team_uuid")
@@ -1633,7 +1655,8 @@ sportality_team <- function(team_uuid) {
 #' | series_display_name | character | Series display name (Basketligaen). |
 #' @eval .intl_details(.sportality_schedule_details, 'sportality_team_played_games(team_uuid = "rfo82vr830")')
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_team_played_games <- function(team_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(team_uuid, "team_uuid")
@@ -1687,7 +1710,8 @@ sportality_team_played_games <- function(team_uuid) {
 #'   try(sportality_team_stats(game_uuid = "c4hh5nig6t"))
 #' }
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_team_stats <- function(game_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(game_uuid, "game_uuid")
@@ -1759,7 +1783,8 @@ sportality_team_stats <- function(game_uuid) {
 #' | series_display_name | character | Series display name (Basketligaen). |
 #' @eval .intl_details(.sportality_schedule_details, 'sportality_team_upcoming_games(team_uuid = "rfo82vr830")')
 #' @export
-#' @family Basketligaen Functions
+#' @concept Basketligaen Functions
+#' @seealso [family_basketligaen] lists every function in this family.
 sportality_team_upcoming_games <- function(team_uuid) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))
   .sportality_check_id(team_uuid, "team_uuid")

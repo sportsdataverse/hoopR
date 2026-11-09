@@ -98,9 +98,12 @@ the season, and a missing conference reference raise an error of class
 \code{crosswalk_source_error}.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Builds from ESPN, Torvik and one Fox request per conference (about 30).
   try(mbb_team_crosswalk(season = 2025))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other MBB Crosswalk Functions:
