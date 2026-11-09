@@ -23,7 +23,7 @@ opts_template$set(stripfigure = list(fig.height = 8, out.width = "95%"))
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg?style=for-the-badge&logo=github)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://github.com/sportsdataverse/hoopR/blob/main/LICENSE.md)
 [![Contributors](https://img.shields.io/github/contributors/sportsdataverse/hoopR?style=for-the-badge)](https://github.com/sportsdataverse/hoopR/graphs/contributors)
-[![GitHub stars](https://img.shields.io/github/stars/sportsdataverse/hoopR?style=for-the-badge&logo=github)](https://github.com/sportsdataverse/hoopR/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/sportsdataverse/hoopR?style=for-the-badge&logo=github)](https://github.com/sportsdataverse/hoopR)
 [![X Follow](https://img.shields.io/twitter/follow/SportsDataverse?color=blue&label=%40SportsDataverse&logo=x&style=for-the-badge)](https://x.com/SportsDataverse)
 [![X Follow](https://img.shields.io/twitter/follow/saiemgilani?color=blue&label=%40saiemgilani&logo=x&style=for-the-badge)](https://x.com/saiemgilani)
 <!-- badges: end -->
@@ -67,7 +67,9 @@ You can install the development version of [**`hoopR`**](https://github.com/spor
 ```r
 if (!requireNamespace("pak", quietly = TRUE)) install.packages("pak")
 pak::pak("sportsdataverse/hoopR")
-# or: remotes::install_github("sportsdataverse/hoopR")
+# or, with remotes:
+# if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+# remotes::install_github("sportsdataverse/hoopR")
 ```
 
 ## **Quick start**
