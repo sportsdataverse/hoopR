@@ -48,6 +48,7 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }
 \examples{
 \donttest{
+  # First quarter only; omit quarter_num for the whole game.
   try(cba_pbp(schedule_id = 100105799, quarter_num = 1))
 }
 }

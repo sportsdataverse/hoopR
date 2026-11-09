@@ -883,6 +883,7 @@ cba_report_status <- function(schedule_id) {
 #' @eval .intl_details(.cba_seasons_details)
 #' @examples
 #' \donttest{
+#'   # First quarter only; omit quarter_num for the whole game.
 #'   try(cba_pbp(schedule_id = 100105799, quarter_num = 1))
 #' }
 #' @export
