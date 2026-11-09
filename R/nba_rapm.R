@@ -133,8 +133,9 @@ nba_rapm <- function(possessions, ...) {
   } else {
     # Guard: cv.glmnet needs at least 3 folds, and on a handful of
     # possessions a fold can be left with no usable lambda path. For those
-    # degenerate inputs fall back to a fixed-lambda fit, with a warning, so
-    # the function never errors.
+    # degenerate inputs fall back to a fixed-lambda fit so the function never
+    # errors: silently with fewer than 3 possessions, and with a warning when
+    # cv.glmnet() itself fails on 3 or more.
     if (n < 3L) {
       cf <- fit_fixed()
     } else {

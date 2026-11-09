@@ -140,9 +140,10 @@
   players, 0.83 for everyone), so earlier `nba_rapm()` output is not
   comparable. Constant `points` (including a single possession) now returns
   all-zero player values instead of an error, possessions with missing
-  `points` are dropped like those with a missing lineup slot, and a failed
-  cross-validation on tiny inputs falls back to a fixed `lambda` with a
-  warning.
+  `points` are dropped like those with a missing lineup slot, and tiny inputs
+  fall back to a fixed `lambda` instead of erroring: silently with fewer than
+  3 possessions (too few for cross-validation), and with a warning when
+  cross-validation fails on 3 or more.
 
 ### **New data loaders**
 
