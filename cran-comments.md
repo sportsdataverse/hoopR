@@ -12,8 +12,9 @@ full list of changes is in NEWS.md. The main additions:
 * NBA officiating reports from official.nba.com (`nba_l2m()`,
   `nba_l2m_games()`, `nba_referee_assignments()`), new `load_*()` loaders
   and new CollegeBasketballData endpoints.
-* Fixes for ESPN play-by-play, the NBA CDN and G League feeds, Torvik,
-  KenPom, `nba_gamerotation()` and `nba_pbp()` on-court players.
+* Fixes for ESPN play-by-play, game rosters and prop bets, ESPN wrappers
+  that a harmless parse warning emptied, Fox odds, the NBA CDN and G League
+  feeds, Torvik, KenPom, `nba_gamerotation()` and `nba_pbp()` on-court players.
   `build_mbb_db()` and `build_nba_db()` now stop, leaving the existing table
   as it was, when the games index cannot be read.
 * Dependencies: Rcpp and RcppParallel (unused; the package has no compiled
@@ -170,7 +171,9 @@ Every test that needs the network is off on CRAN. Each source has an opt-in
 environment variable (`ESPN_TESTS`, `NBA_STATS_TESTS`, ...) that CRAN does
 not set; most of those tests also call `skip_on_cran()`, and a few rely on
 the environment variable alone. The tests that run on CRAN read committed
-fixtures and mock the HTTP layer.
+fixtures and mock the HTTP layer. The recorded-response replay tests
+(`test-*_offline.R`) call `skip_on_cran()`, and their fixtures are not in the
+tarball.
 
 ## URLs
 
