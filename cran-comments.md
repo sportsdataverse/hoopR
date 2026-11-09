@@ -26,22 +26,25 @@ full list of changes is in NEWS.md. The main additions:
 
 * Local Windows 10 x64 (build 19045), R 4.6.0 (ucrt),
   `R CMD check --as-cran --timings --run-donttest` with the PDF manual, on
-  the tarball built from `git archive` of f02a9e62, 2026-11-09, with
+  the tarball built from `git archive` of c0501951, 2026-11-09, with
   `_R_CHECK_CRAN_INCOMING_REMOTE_=true` and an empty user `.Renviron` (no
   API keys; NOT_CRAN and every live-test variable unset).
-* The same tarball, `R CMD check --run-donttest --no-tests --no-manual` with
-  every request sent to a dead proxy (no network): no example errors.
-* GitHub Actions on f02a9e62: R release on Ubuntu, macOS and Windows,
-  R-devel and R oldrel-1 on Ubuntu; all passed.
+* The same package code, `R CMD check --run-donttest --no-tests --no-manual`
+  with every request sent to a dead proxy (no network): every example ran
+  and none errored.
+* GitHub Actions: R release on Ubuntu, macOS and Windows, R-devel and
+  R oldrel-1 on Ubuntu. All passed on f02a9e62, before the last three
+  commits (a README update, the past-season roster fix and the P. LEAGUE+
+  speed-up).
 * R-hub v2, 2026-11-06 (linux, macos, macos-arm64 and windows, all R-devel):
-  all passed. That run was on an earlier commit, 414571b2, not on f02a9e62.
+  all passed. That run was on an earlier commit, 414571b2, not on c0501951.
 * win-builder (devel and release): to be run before submission.
 
 ## R CMD check results
 
 0 errors | 0 warnings | 1 note
 
-Tests: 0 failures, 619 skips, 16,181 passes (223 s). The PDF and HTML
+Tests: 0 failures, 619 skips, 16,192 passes (174 s). The PDF and HTML
 manuals build.
 
 * checking examples ... NOTE
@@ -49,29 +52,20 @@ manuals build.
   ```
   Examples with CPU (user + system) or elapsed time > 5s
                          user system elapsed
-  pleague_pbp            4.55   0.04    5.37
-  load_nba_stats_coaches 0.79   0.13   10.89
+  load_nba_stats_coaches 0.67   0.12    9.46
   ```
 
-  Other checks shared this machine. Each example run on its own, twice,
-  with `example(..., run.donttest = TRUE)` from an installed build:
-
-  | example | CPU (s) | elapsed (s) |
-  |:--|--:|--:|
-  | `pleague_pbp` | 3.9 / 3.6 | 5.3 / 4.0 |
-  | `load_nba_stats_coaches` | 0.5 / 0.3 | 9.2 / 7.6 |
-
-  Both are `\donttest{}` examples. `?load_nba_stats_coaches` is one help
-  page for 16 one-season `load_nba_stats_*()` loaders, each downloading a
-  small public release file from GitHub, so its time is network wait (CPU
-  under 1 s). `pleague_pbp()` downloads one game and parses its 630 play
-  descriptions with regular expressions; it takes under 4 s of CPU on its
-  own.
+  Run on its own, twice, with `example(..., run.donttest = TRUE)` from an
+  installed build: 0.4 / 0.5 s CPU, 9.7 / 8.5 s elapsed. It is a
+  `\donttest{}` example, and its time is network wait (CPU under 1 s):
+  `?load_nba_stats_coaches` is one help page for 16 one-season
+  `load_nba_stats_*()` loaders, each downloading a small public release
+  file from GitHub.
 
 * checking installed package size ... INFO
 
   ```
-  installed size is 10.3Mb
+  installed size is 10.4Mb
   sub-directories of 1Mb or more:
     R      4.2Mb
     help   5.6Mb
@@ -82,7 +76,7 @@ manuals build.
   shared page and linked from the others, and the 22 largest families link
   to one family index page instead of listing every other member in each
   page's "See also" (n^2 links per family). The index pages alone took the
-  installed size from 11.5 MB to 10.3 MB (help 6.7 MB to 5.6 MB). What
+  installed size from 11.5 MB to 10.4 MB (help 6.7 MB to 5.6 MB). What
   remains is the documented return-column tables of those 1,300 functions
   and the R code itself.
 
