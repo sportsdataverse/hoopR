@@ -11,8 +11,9 @@
 #' @concept ESPN MBB Functions
 #' @seealso [family_espn_mbb] lists every function in this family.
 #'
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # Interactive only: parsing the whole game summary takes 2-4 s.
 #' try(espn_mbb_game_all(game_id = 401479672))
 #' }
 espn_mbb_game_all <- function(game_id) {

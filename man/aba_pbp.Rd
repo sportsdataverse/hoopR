@@ -59,9 +59,12 @@ game, season or league, an unfinished game, a helper that does not belong to the
 \code{hoopR_error}.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: parsing the play-by-play page takes 2-4 s.
   try(aba_pbp(game_no = 6, season = 2026))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other ABA Functions:

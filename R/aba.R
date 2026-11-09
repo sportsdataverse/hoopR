@@ -50,8 +50,9 @@
 #' `hoopR_error`.
 #' @family ABA Functions
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: aba-liga.com can take 20+ s to answer.
 #'   try(aba_game(game_no = 6, season = 2026))
 #' }
 aba_game <- function(game_no, season, league = "aba") {
@@ -270,8 +271,9 @@ aba_box_teams <- function(game_no, season, league = "aba") {
 #' `hoopR_error`.
 #' @family ABA Functions
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: parsing the play-by-play page takes 2-4 s.
 #'   try(aba_pbp(game_no = 6, season = 2026))
 #' }
 aba_pbp <- function(game_no, season, league = "aba") {

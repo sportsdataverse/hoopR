@@ -1210,9 +1210,12 @@ A named list of \code{hoopR_data} tibbles: \code{pickcenter}, \code{againstTheSp
 \strong{Get ESPN NBA's Betting information}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+# Interactive only: parsing the whole game summary takes 2-4 s.
 try(espn_mbb_game_all(game_id = 401479672))
 }
+\dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
 # Same summary request as espn_mbb_game_all() above.
