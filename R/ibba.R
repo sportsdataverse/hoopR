@@ -316,7 +316,7 @@ ibba_stats_types <- function() {
 #' @export
 #' @examples
 #' \donttest{
-#'   try(ibba_leaders(season = 2026, stat_type = pts))
+#'   try(ibba_leaders(season = 2026, stat_type = "pts"))
 #' }
 ibba_leaders <- function(stat_type, season, team_id = 0) {
   withr::local_options(list(scipen = 999, stringsAsFactors = FALSE))

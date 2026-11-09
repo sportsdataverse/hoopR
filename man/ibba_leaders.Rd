@@ -33,7 +33,7 @@ Source, terms of use, request pacing, seasons, ids, coverage and error classes o
 }
 \examples{
 \donttest{
-  try(ibba_leaders(season = 2026, stat_type = pts))
+  try(ibba_leaders(season = 2026, stat_type = "pts"))
 }
 }
 \seealso{

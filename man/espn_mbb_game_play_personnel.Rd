@@ -35,7 +35,7 @@ rows; the wrapper returns a typed empty tibble in that case.
 }
 \examples{
 \donttest{
-  espn_mbb_game_play_personnel(event_id = 401256760, play_id = 401256760101805901)
+  espn_mbb_game_play_personnel(event_id = 401256760, play_id = "401256760101805901")
 }
 \donttest{
   espn_nba_game_play_personnel(event_id = 401283399, play_id = 4012833994)

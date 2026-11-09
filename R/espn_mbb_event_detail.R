@@ -501,7 +501,7 @@ NULL
 #' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
-#'   espn_mbb_game_play(event_id = 401256760, play_id = 401256760101805901)
+#'   espn_mbb_game_play(event_id = 401256760, play_id = "401256760101805901")
 #' }
 espn_mbb_game_play <- function(event_id, play_id, ...) {
   .espn_basketball_event_play(league = "mens-college-basketball",
@@ -535,7 +535,7 @@ NULL
 #' @seealso [family_espn_mbb] lists every function in this family.
 #' @examples
 #' \donttest{
-#'   espn_mbb_game_play_personnel(event_id = 401256760, play_id = 401256760101805901)
+#'   espn_mbb_game_play_personnel(event_id = 401256760, play_id = "401256760101805901")
 #' }
 espn_mbb_game_play_personnel <- function(event_id, play_id, ...) {
   .espn_basketball_event_play_personnel(league = "mens-college-basketball",
