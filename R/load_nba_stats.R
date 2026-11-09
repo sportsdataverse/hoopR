@@ -157,8 +157,9 @@ load_nba_stats_draft <- function(seasons = most_recent_nba_stats_season(),
 #' @eval .returns_rd("load_nba_stats_game_lineups", unit = "play-by-play action")
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_game_lineups(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_game_lineups <- function(seasons = most_recent_nba_stats_season(),
@@ -214,8 +215,9 @@ load_nba_stats_game_lineups <- function(seasons = most_recent_nba_stats_season()
 #' @eval .returns_rd("load_nba_stats_game_rosters", unit = "inactive athlete-game pair")
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_game_rosters(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_game_rosters <- function(seasons = most_recent_nba_stats_season(),
@@ -274,8 +276,9 @@ load_nba_stats_game_rosters <- function(seasons = most_recent_nba_stats_season()
 #'   [load_nba_stats_leaguedash()] for the equivalent parameter-cube asset.
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_lineups(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_lineups <- function(seasons = most_recent_nba_stats_season(),
@@ -331,8 +334,9 @@ load_nba_stats_lineups <- function(seasons = most_recent_nba_stats_season(),
 #' @eval .returns_rd("load_nba_stats_officials", unit = "official-game pair")
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_officials(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_officials <- function(seasons = most_recent_nba_stats_season(),
@@ -443,8 +447,9 @@ load_nba_stats_pbp <- function(seasons = most_recent_nba_stats_season(),
 #' @eval .returns_rd("load_nba_stats_player_boxscores", unit = "athlete-game pair")
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_player_boxscores(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_player_boxscores <- function(seasons = most_recent_nba_stats_season(),
@@ -499,8 +504,9 @@ load_nba_stats_player_boxscores <- function(seasons = most_recent_nba_stats_seas
 #' @eval .returns_rd("load_nba_stats_player_game_logs", unit = "athlete-game pair")
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_player_game_logs(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_player_game_logs <- function(seasons = most_recent_nba_stats_season(),
@@ -562,8 +568,9 @@ load_nba_stats_player_game_logs <- function(seasons = most_recent_nba_stats_seas
 #'   the equivalent parameter-cube asset.
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_player_season_stats(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_player_season_stats <- function(seasons = most_recent_nba_stats_season(),
@@ -618,8 +625,9 @@ load_nba_stats_player_season_stats <- function(seasons = most_recent_nba_stats_s
 #' @eval .returns_rd("load_nba_stats_possessions", unit = "possession")
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_possessions(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_possessions <- function(seasons = most_recent_nba_stats_season(),
@@ -672,8 +680,9 @@ load_nba_stats_possessions <- function(seasons = most_recent_nba_stats_season(),
 #' @eval .returns_rd("load_nba_stats_rosters", unit = "athlete-team-season")
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_rosters(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_rosters <- function(seasons = most_recent_nba_stats_season(),
@@ -727,8 +736,9 @@ load_nba_stats_rosters <- function(seasons = most_recent_nba_stats_season(),
 #' @eval .returns_rd("load_nba_stats_schedule", unit = "game")
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_schedule(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_schedule <- function(seasons = most_recent_nba_stats_season(),
@@ -783,8 +793,9 @@ load_nba_stats_schedule <- function(seasons = most_recent_nba_stats_season(),
 #' @eval .returns_rd("load_nba_stats_shots", unit = "shot attempt")
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_shots(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_shots <- function(seasons = most_recent_nba_stats_season(),
@@ -842,8 +853,9 @@ load_nba_stats_shots <- function(seasons = most_recent_nba_stats_season(),
 #'   parameter-cube asset (same underlying `leaguestandingsv3` endpoint).
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_standings(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_standings <- function(seasons = most_recent_nba_stats_season(),
@@ -896,8 +908,9 @@ load_nba_stats_standings <- function(seasons = most_recent_nba_stats_season(),
 #' @eval .returns_rd("load_nba_stats_team_boxscores", unit = "team-game pair")
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_team_boxscores(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_team_boxscores <- function(seasons = most_recent_nba_stats_season(),
@@ -956,8 +969,9 @@ load_nba_stats_team_boxscores <- function(seasons = most_recent_nba_stats_season
 #'   [load_nba_stats_leaguedash()] for the equivalent parameter-cube asset.
 #' @export
 #' @family NBA Stats loader functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: this help page holds 17 loaders, each a download.
 #'   try(load_nba_stats_team_season_stats(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_team_season_stats <- function(seasons = most_recent_nba_stats_season(),

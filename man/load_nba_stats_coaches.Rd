@@ -671,54 +671,96 @@ measures, use \code{\link[=load_nba_stats_leaguedash]{load_nba_stats_leaguedash(
 \donttest{
   try(load_nba_stats_draft(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_game_lineups(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_game_rosters(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_lineups(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_officials(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
   # One season is a ~19 MB download.
   try(load_nba_stats_pbp(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_player_boxscores(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_player_game_logs(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_player_season_stats(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_possessions(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_rosters(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_schedule(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_shots(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_standings(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_team_boxscores(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: this help page holds 17 loaders, each a download.
   try(load_nba_stats_team_season_stats(seasons = most_recent_nba_stats_season()))
 }
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 Other NBA Stats loader functions:

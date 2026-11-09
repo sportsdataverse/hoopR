@@ -668,8 +668,9 @@ espn_mbb_conferences <- function() {
 #' @keywords MBB Teams
 #' @concept ESPN MBB Functions
 #' @seealso [family_espn_mbb] lists every function in this family.
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#' # Interactive only: ESPN's directory of about 360 teams takes ~7 s.
 #' try(espn_mbb_teams())
 #' }
 espn_mbb_teams <- function(year = most_recent_mbb_season()) {

@@ -66,9 +66,12 @@ A \code{hoopR_data} tibble with one row per team.
 \strong{Get ESPN NBA team names and IDs}
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+# Interactive only: ESPN's directory of about 360 teams takes ~7 s.
 try(espn_mbb_teams())
 }
+\dontshow{\}) # examplesIf}
 \donttest{
 try(espn_nba_teams())
 }
