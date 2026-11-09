@@ -181,10 +181,20 @@ csv_from_url <- function(...) {
     on.exit(unlink(tmp), add = TRUE)
     .download_url(u, tmp, method = "libcurl")
     if (!strict) return(csv_from_url(file = tmp, ...))
-    withCallingHandlers(
+    # Collect the warnings and raise after fread() returns: stopping inside
+    # its handler skips fread()'s cleanup, and the next fread() call warns.
+    warned <- character()
+    out <- withCallingHandlers(
       csv_from_url(file = tmp, ...),
-      warning = function(w) stop("fread() warned, so the table may be partial: ", conditionMessage(w), call. = FALSE)
+      warning = function(w) {
+        warned <<- c(warned, conditionMessage(w))
+        invokeRestart("muffleWarning")
+      }
     )
+    if (length(warned)) {
+      stop("fread() warned, so the table may be partial: ", paste(warned, collapse = "; "), call. = FALSE)
+    }
+    out
   }
   load <- .read_release_asset(url, read)
   if (inherits(load, "try-error")) stop(attr(load, "condition"))

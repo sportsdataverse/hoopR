@@ -190,6 +190,8 @@ test_that("a strict release csv read turns a fread() warning into an error", {
     suppressWarnings(.release_csv_from_url("https://x/games.csv", strict = TRUE)),
     "may be partial"
   )
+  # fread() finished its own cleanup, so the next read is clean
+  expect_no_warning(data.table::fread(text = "a,b\n1,2"))
 })
 
 test_that("build_*_db(rebuild = TRUE) aborts on a bad games index and keeps the table", {
