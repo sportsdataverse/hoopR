@@ -422,8 +422,9 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   `options(download.file.method = "curl")` it fetched the url through curl, which ignores
   R's `timeout` and saves an HTTP 503 error page as the csv. The index is now
   downloaded with libcurl to a temporary file and read from there, a `fread()` warning
-  on it is an error, and the rebuild stops with an error naming the index url before
-  anything is dropped, leaving the table unchanged.
+  on it is an error (not retried: the file is the same on every try), and the rebuild
+  stops with an error naming the index url before anything is dropped, leaving the
+  table unchanged.
 
 ### **Dependencies**
 
