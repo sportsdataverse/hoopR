@@ -151,7 +151,7 @@ espn_nba_game_all <- function(game_id) {
 #'
 #' @examplesIf interactive()
 #' \donttest{
-#' # Same summary request as espn_nba_game_all() above.
+#' # The same summary request espn_nba_game_all() makes.
 #' try(espn_nba_pbp(game_id = 401071880))
 #' }
 #'
@@ -223,7 +223,7 @@ espn_nba_pbp <- function(game_id) {
 #'
 #' @examplesIf interactive()
 #' \donttest{
-#' # Same summary request as espn_nba_game_all() above.
+#' # The same summary request espn_nba_game_all() makes.
 #' try(espn_nba_team_box(game_id = 401071880))
 #' }
 #'
@@ -292,7 +292,7 @@ espn_nba_team_box <- function(game_id) {
 #'
 #' @examplesIf interactive()
 #' \donttest{
-#' # Same summary request as espn_nba_game_all() above.
+#' # The same summary request espn_nba_game_all() makes.
 #' try(espn_nba_player_box(game_id = 401071880))
 #' }
 #'

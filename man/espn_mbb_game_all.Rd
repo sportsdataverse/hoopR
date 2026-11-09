@@ -372,19 +372,19 @@ try(espn_nba_game_all(game_id = 401283399))
 
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-# Same summary request as espn_nba_game_all() above.
+# The same summary request espn_nba_game_all() makes.
 try(espn_nba_pbp(game_id = 401071880))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-# Same summary request as espn_nba_game_all() above.
+# The same summary request espn_nba_game_all() makes.
 try(espn_nba_team_box(game_id = 401071880))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-# Same summary request as espn_nba_game_all() above.
+# The same summary request espn_nba_game_all() makes.
 try(espn_nba_player_box(game_id = 401071880))
 }
 \dontshow{\}) # examplesIf}
