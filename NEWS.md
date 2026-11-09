@@ -57,6 +57,9 @@
 * The international parsers name each JSON field once per session instead of once per row,
   so a 300-row SCB season table parses in about 1 s instead of 4.5 s (LBA, NBL and the other
   families that use the same naming helper speed up too).
+* The P. LEAGUE+ parsers trim and split each distinct cell text and class list once per
+  call instead of once per node, so `pleague_pbp()` for one game takes about 2 s of CPU
+  instead of 4 s. The output is unchanged.
 
 ### **EuroLeague and EuroCup (`euroleague_*`)**
 

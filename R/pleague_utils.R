@@ -53,6 +53,7 @@
 #' @noRd
 .pleague_clear_cache <- function() {
   rm(list = ls(.pleague_cache, all.names = TRUE), envir = .pleague_cache)
+  rm(list = ls(.pleague_memo, all.names = TRUE), envir = .pleague_memo)
   invisible()
 }
 
@@ -90,8 +91,30 @@
 .pleague_or <- function(x, y) if (is.null(x) || (length(x) == 1L && is.na(x))) y else x
 
 # Python re.sub(r"\s+", " ", s).strip() / str.strip()
-.pleague_squish <- function(x) trimws(gsub(.PLEAGUE_WS, " ", x, perl = TRUE), whitespace = "[\\h\\v]")
-.pleague_strip <- function(x) trimws(x, whitespace = "[\\h\\v]")
+.pleague_squish <- function(x) .pleague_memoised("q", x, function(s) {
+  trimws(gsub(.PLEAGUE_WS, " ", s, perl = TRUE), whitespace = "[\\h\\v]")
+})
+.pleague_strip <- function(x) .pleague_memoised("s", x, function(s) trimws(s, whitespace = "[\\h\\v]"))
+
+# One string -> f(string), cached per (kind, string): a game page repeats the same cell texts and class lists
+# thousands of times, and each trimws()/strsplit() call compiles its perl regex again (most of the parse's CPU).
+# Only short strings are cached (a key is a variable name, at most 10000 bytes; whole HTML bodies are not
+# repeated anyway). Keys are translated to the native encoding, so only native ("unknown") strings, or UTF-8
+# strings in a UTF-8 locale, are cached; latin1 and "bytes" strings are not.
+# ponytail: cleared when each exported pleague_*() call exits (.pleague_run) and by .pleague_clear_cache().
+.pleague_memo <- new.env(parent = emptyenv())
+.pleague_memoised <- function(kind, x, f) {
+  if (length(x) != 1L || is.na(x)) return(f(x))
+  enc <- Encoding(x)
+  if (enc == "bytes" || enc == "latin1" || nchar(x, type = "bytes") > 500L ||
+      (enc == "UTF-8" && !isTRUE(l10n_info()[["UTF-8"]]))) {
+    return(f(x))
+  }
+  key <- paste0(kind, ":", x)
+  hit <- .pleague_memo[[key]]
+  if (is.null(hit)) hit <- .pleague_memo[[key]] <- f(x)
+  hit
+}
 
 # re.search (`pattern` as given) / re.fullmatch: the match then its groups ("" when unset), or NULL
 .pleague_match <- function(pattern, x) {
@@ -255,7 +278,9 @@
 .pleague_attr <- function(node, name) xml2::xml_attr(node, name)
 .pleague_classes <- function(node) {
   cls <- .pleague_attr(node, "class")
-  if (is.na(cls)) character() else unique(strsplit(.pleague_strip(cls), "[\\h\\v]+", perl = TRUE)[[1]])
+  if (is.na(cls)) character() else .pleague_memoised("c", cls, function(s) {
+    unique(strsplit(.pleague_strip(s), "[\\h\\v]+", perl = TRUE)[[1]])
+  })
 }
 
 # sportsdataverse-py _Node.text(): text descendants outside <script> / <style>, <br> = " ", whitespace collapsed
@@ -1977,6 +2002,8 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
 
 # fetch + parse + class: the body of every exported wrapper
 .pleague_run <- function(short, p, call) {
+  # the text memo lives for one exported call: bounded by one page set, not the session
+  on.exit(rm(list = ls(.pleague_memo, all.names = TRUE), envir = .pleague_memo), add = TRUE)
   vendor <- startsWith(short, "preciser_")
   raw <- if (vendor) {
     kind <- c(preciser_shots = "shots", preciser_rotation = "rotation", preciser_injury = "injury")[short]
