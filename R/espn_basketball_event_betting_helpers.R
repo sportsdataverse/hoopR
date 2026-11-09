@@ -231,6 +231,12 @@
   rows <- list()
   page <- 1L
   page_count <- NA_integer_
+  # ESPN now nests each price as {value, open} (and the target as {value,
+  # displayValue}); as.numeric() on that list errored and emptied the result.
+  .pb_val <- function(x) {
+    if (is.list(x)) x <- x[["value"]]
+    if (length(x) == 0L) NA else x
+  }
   .try_catch(
     expr = {
       repeat {
@@ -263,11 +269,11 @@
             athlete_id      = aid,
             prop_type_id    = if (is.list(tp)) as.character(tp[["id"]] %||% NA) else NA_character_,
             prop_type_name  = if (is.list(tp)) tp[["name"]] %||% NA_character_ else NA_character_,
-            american        = if (is.list(odds)) as.character(odds[["american"]] %||% NA) else NA_character_,
-            decimal         = if (is.list(odds)) suppressWarnings(as.numeric(odds[["decimal"]] %||% NA)) else NA_real_,
-            fraction        = if (is.list(odds)) as.character(odds[["fraction"]] %||% NA) else NA_character_,
-            total           = if (is.list(odds)) suppressWarnings(as.numeric(odds[["total"]] %||% NA)) else NA_real_,
-            current_target  = if (is.list(cur)) suppressWarnings(as.numeric(cur[["target"]] %||% NA)) else NA_real_,
+            american        = if (is.list(odds)) as.character(.pb_val(odds[["american"]])) else NA_character_,
+            decimal         = if (is.list(odds)) suppressWarnings(as.numeric(.pb_val(odds[["decimal"]]))) else NA_real_,
+            fraction        = if (is.list(odds)) as.character(.pb_val(odds[["fraction"]])) else NA_character_,
+            total           = if (is.list(odds)) suppressWarnings(as.numeric(.pb_val(odds[["total"]]))) else NA_real_,
+            current_target  = if (is.list(cur)) suppressWarnings(as.numeric(.pb_val(cur[["target"]]))) else NA_real_,
             last_updated    = it[["lastUpdated"]] %||% NA_character_,
             athlete_ref     = aref
           )
