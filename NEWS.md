@@ -455,6 +455,10 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   code call them on normal code paths (both already arrive with dplyr, so nothing new is
   installed). arrow stays in Suggests; the parquet loaders now warn that arrow is needed and
   return an empty table when it is missing, instead of a misleading "Failed to read_parquet".
+* `ByteCompile: false`: the package is no longer byte-compiled at install. The compiled
+  code doubled the installed `R/` directory (4.2 MB, 1.7 MB without it); R's JIT compiler still
+  compiles each function the first time it is called, so only that first call is slower.
+  Lazy data is now xz-compressed (`LazyDataCompression: xz`).
 
 ### **Documentation**
 
@@ -465,6 +469,15 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
 * New article, "NBA Stats API Parameter Descriptions", and dataset `parameter_descriptions`:
   each query parameter the `nba_*()` stats.nba.com wrappers send, with its API name,
   description, accepted values, default and the functions that take it (#248).
+* New dataset `return_columns` and article "Return Columns": one row per column of every
+  data frame 959 hoopR functions return (function, list element, column name, type and
+  description), searchable on the site; `subset(return_columns, fn == "nba_pbp")` gives
+  one function's columns in R. The NBA and men's college basketball functions (`load_nba_*`,
+  `load_mbb_*`, `espn_nba_*`, `espn_mbb_*`, `nba_*`) keep their column tables in the help
+  page; the other 647 functions (the international families, `cbbd_*`, `fox_*`, `kp_*`,
+  `torvik_*`, `realgm_*`, `ncaa_mbb_*`, `nbagl_*`, `bref_*`, `euroleague_*`) now say what
+  one row is and point to the dataset and the article. Together with `ByteCompile: false`
+  this takes the installed size from 10.4 MB to 6.3 MB.
 * The `mbb_schedule_crosswalk()` and `mbb_player_crosswalk()` examples run only in
   interactive sessions: each builds a whole season from several sources (the player
   crosswalk fetches every team's roster) and took 1.5 to 2.5 minutes. The
@@ -477,10 +490,15 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   `mbb_team_crosswalk()` (one Fox request per conference, plus ESPN and Torvik), the
   `espn_*_game_rosters()` examples (one request per athlete), the `espn_*_pbp()`,
   `espn_*_team_box()` and `espn_*_player_box()` examples (the same summary request as
-  `espn_*_game_all()`, which still runs), and the release loaders whose one-season file
+  `espn_*_game_all()`; `espn_nba_game_all()` still runs), and the release loaders whose one-season file
   is 7-80 MB (`load_mbb_pbp()`, `load_mbb_player_box()`, `load_mbb_shots()`,
   `load_nba_stats_pbp()`, and the NCAA MBB pbp, shots, lineups, matchup-stints,
-  possessions and player-box loaders).
+  possessions and player-box loaders). `espn_mbb_teams()`, `torvik_game_schedule()`,
+  `torvik_game_stats()`, `espn_mbb_powerindex()`, `atrium_player_stats()`,
+  `espn_mbb_game_all()`, `aba_box_players()`, `aba_box_teams()`, `aba_calendar()`, `aba_game()`,
+  `aba_pbp()` and 15 of the 17
+  `load_nba_stats_*()` loaders on `?load_nba_stats_coaches` also run their examples
+  only interactively (`load_nba_stats_coaches()` and `load_nba_stats_draft()` still run).
 * The help pages of the 22 largest function families (ESPN MBB and NBA, and most international
   families) link to one family index page (`?family_espn_mbb`, `?family_acb`, ...) in
   "See also" instead of listing every other member. The lists repeated each family on every

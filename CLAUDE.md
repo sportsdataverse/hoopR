@@ -117,16 +117,7 @@ NULL
 #' @author Author Name
 #' @param game_id Game ID - 10-digit zero-padded ID (e.g., '0022200021')
 #' @param ... Additional arguments passed to the underlying function.
-#' @return Returns a named list of data frames: Component1, Component2
-#'
-#'    **Component1**
-#'
-#'
-#'    |col_name |types     |
-#'    |:--------|:---------|
-#'    |column1  |character |
-#'    |column2  |integer   |
-#'
+#' @eval .returns_rd("nba_functionname")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -544,6 +535,8 @@ shared internal engine in `R/crosswalk_basketball.R`.
 - V3 endpoints return different structures per endpoint -- always verify with the nba_api Python parsers in the companion repo.
 - `data.frame(list_of_items)` can produce unexpected column types when the API returns mixed `NULL`/value fields -- use `%||%` defaults.
 - The `@family` tag adds a "See also" list of every family member to every member, so it grows as n^2. The 22 large families in `R/families.R` (ESPN MBB/NBA and most international families) use `#' @concept <Family>` plus `#' @seealso [family_<slug>] lists every function in this family.` instead; their index page is built from the `@concept` tags by `.family_index()` at `devtools::document()` time. A new function in one of those families takes those two lines, not `@family`. Small families keep `@family`.
+- **Return columns live in `data-raw/return_columns.csv`, not in roxygen.** That CSV (one row per returned column: `fn`, `component`, `col_name`, `type`, `description`) is the source of the `return_columns` dataset (`Rscript data-raw/return_columns.R` rebuilds `data/return_columns.rda`) and of every `@return` column table. A function's `@return` is `#' @eval .returns_rd("fn")` (helper in `R/families.R`): the NBA/MBB families render their tables inline from the CSV at `devtools::document()` time; the others use `.returns_rd("fn", inline = FALSE, unit = "...")`, a pointer to the dataset and the return-columns article. Never hand-write a column table. A new function needs its CSV rows (then the rda rebuild and `document()`); `test-return_columns.R` fails for an exported data-returning function with neither a table nor rows. Notes a table cannot carry go in a second hand-written `@return` paragraph after the `@eval` line.
+- `DESCRIPTION` sets `ByteCompile: false` (the byte code was 4.3 MB of the installed size; the JIT compiles on first call) and `LazyDataCompression: xz`. Keep both while the size budget is tight.
 - V3-style leader endpoints (dunkscoreleaders, gravityleaders) return all values as mixed types -- coerce everything to `as.character()` with `%||% NA_character_` before building data frames.
 - IST Standings has dynamic game columns (gameId1, gameId2, etc.) -- tests should use `expect_true(all(core_cols %in% colnames()))` instead of exact match.
 - ESPN API columns change over time -- use `expect_in()` for subset validation in tests.
