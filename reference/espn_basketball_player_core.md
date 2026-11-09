@@ -109,25 +109,8 @@ verified.**
 
 ## See also
 
-Other Basketball Analytics Utilities:
-[`nba_add_advanced_metrics()`](https://hoopR.sportsdataverse.org/reference/nba_add_advanced_metrics.md),
-[`nba_assist_pct()`](https://hoopR.sportsdataverse.org/reference/nba_assist_pct.md),
-[`nba_assist_to_turnover()`](https://hoopR.sportsdataverse.org/reference/nba_assist_to_turnover.md),
-[`nba_defensive_rating()`](https://hoopR.sportsdataverse.org/reference/nba_defensive_rating.md),
-[`nba_effective_fg_pct()`](https://hoopR.sportsdataverse.org/reference/nba_effective_fg_pct.md),
-[`nba_four_factors()`](https://hoopR.sportsdataverse.org/reference/nba_four_factors.md),
-[`nba_ft_rate()`](https://hoopR.sportsdataverse.org/reference/nba_ft_rate.md),
-[`nba_game_score()`](https://hoopR.sportsdataverse.org/reference/nba_game_score.md),
-[`nba_net_rating()`](https://hoopR.sportsdataverse.org/reference/nba_net_rating.md),
-[`nba_offensive_rating()`](https://hoopR.sportsdataverse.org/reference/nba_offensive_rating.md),
-[`nba_oreb_pct()`](https://hoopR.sportsdataverse.org/reference/nba_oreb_pct.md),
-[`nba_pace()`](https://hoopR.sportsdataverse.org/reference/nba_pace.md),
-[`nba_per_minutes()`](https://hoopR.sportsdataverse.org/reference/nba_per_minutes.md),
-[`nba_per_possessions()`](https://hoopR.sportsdataverse.org/reference/nba_per_possessions.md),
-[`nba_possessions()`](https://hoopR.sportsdataverse.org/reference/nba_possessions.md),
-[`nba_true_shooting_pct()`](https://hoopR.sportsdataverse.org/reference/nba_true_shooting_pct.md),
-[`nba_turnover_pct()`](https://hoopR.sportsdataverse.org/reference/nba_turnover_pct.md),
-[`nba_usage_rate()`](https://hoopR.sportsdataverse.org/reference/nba_usage_rate.md)
+[family_basketball_analytics_utilities](https://hoopR.sportsdataverse.org/reference/family_basketball_analytics_utilities.md)
+lists every function in this family.
 
 ## Author
 
@@ -150,7 +133,7 @@ Saiem Gilani
   )
   espn_basketball_player_core(payload, athlete_id = 1966)
 #> ── ESPN Basketball Player Core from ESPN.com ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:18:52 UTC
+#> ℹ Data updated: 2026-11-09 12:03:33 UTC
 #> # A tibble: 1 × 35
 #>   athlete_id guid  uid   slug  type  first_name last_name full_name display_name
 #>        <int> <chr> <chr> <chr> <chr> <chr>      <chr>     <chr>     <chr>       

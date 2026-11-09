@@ -89,25 +89,8 @@ classes of this family: see the notes in
 
 ## See also
 
-Other P. LEAGUE+ Functions:
-[`pleague_box_teams()`](https://hoopR.sportsdataverse.org/reference/pleague_box_teams.md),
-[`pleague_game()`](https://hoopR.sportsdataverse.org/reference/pleague_game.md),
-[`pleague_officials()`](https://hoopR.sportsdataverse.org/reference/pleague_officials.md),
-[`pleague_pbp()`](https://hoopR.sportsdataverse.org/reference/pleague_pbp.md),
-[`pleague_periods()`](https://hoopR.sportsdataverse.org/reference/pleague_periods.md),
-[`pleague_player()`](https://hoopR.sportsdataverse.org/reference/pleague_player.md),
-[`pleague_player_seasons()`](https://hoopR.sportsdataverse.org/reference/pleague_player_seasons.md),
-[`pleague_preciser_injury()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_injury.md),
-[`pleague_preciser_lead_flow()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_lead_flow.md),
-[`pleague_preciser_rotation()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_rotation.md),
-[`pleague_preciser_score_log()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_score_log.md),
-[`pleague_preciser_shots()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_shots.md),
-[`pleague_preciser_summary_teams()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_summary_teams.md),
-[`pleague_preciser_win_probability()`](https://hoopR.sportsdataverse.org/reference/pleague_preciser_win_probability.md),
-[`pleague_schedule()`](https://hoopR.sportsdataverse.org/reference/pleague_schedule.md),
-[`pleague_standings()`](https://hoopR.sportsdataverse.org/reference/pleague_standings.md),
-[`pleague_stat_player()`](https://hoopR.sportsdataverse.org/reference/pleague_stat_player.md),
-[`pleague_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/pleague_team_crosswalk.md)
+[family_p_league](https://hoopR.sportsdataverse.org/reference/family_p_league.md)
+lists every function in this family.
 
 ## Examples
 
@@ -115,7 +98,7 @@ Other P. LEAGUE+ Functions:
 # \donttest{
   try(pleague_box_players(gid = 197))
 #> ── P. LEAGUE+ Player Box from pleagueofficial.com ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:24:41 UTC
+#> ℹ Data updated: 2026-11-09 12:08:08 UTC
 #> # A tibble: 26 × 47
 #>      gid side  player_id person_id       random_id name_zh jersey starter played
 #>    <int> <chr>     <int> <chr>           <chr>     <chr>   <chr>  <lgl>   <lgl> 

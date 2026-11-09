@@ -301,7 +301,7 @@ c(possessions = nrow(nba_poss), games = n_distinct(nba_poss$game_id))
 
 fit_time <- system.time(my_rapm <- nba_rapm(nba_poss))
 round(fit_time[["elapsed"]], 1)
-#> [1] 8.9
+#> [1] 10.9
 
 my_rapm |>
   summarise(players = n(),
@@ -311,7 +311,7 @@ my_rapm |>
 #> # A tibble: 1 × 3
 #>   players wmean_o_rapm wmean_d_rapm
 #>     <int>        <dbl>        <dbl>
-#> 1     582          0.3         0.07
+#> 1     582         0.28         0.07
 ```
 
 Two properties of this design show up immediately:
@@ -352,8 +352,8 @@ compare |>
 #> # A tibble: 2 × 3
 #>   floor              players r_with_published
 #>   <chr>                <int>            <dbl>
-#> 1 1,000+ possessions     384            0.986
-#> 2 under 1,000            198            0.992
+#> 1 1,000+ possessions     383            0.986
+#> 2 under 1,000            199            0.983
 ```
 
 ``` r

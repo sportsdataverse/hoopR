@@ -76,23 +76,8 @@ classes of this family: see the notes in
 
 ## See also
 
-Other IBBA Functions:
-[`ibba_boards()`](https://hoopR.sportsdataverse.org/reference/ibba_boards.md),
-[`ibba_boards_ex()`](https://hoopR.sportsdataverse.org/reference/ibba_boards_ex.md),
-[`ibba_box_score()`](https://hoopR.sportsdataverse.org/reference/ibba_box_score.md),
-[`ibba_coaches()`](https://hoopR.sportsdataverse.org/reference/ibba_coaches.md),
-[`ibba_configuration()`](https://hoopR.sportsdataverse.org/reference/ibba_configuration.md),
-[`ibba_games()`](https://hoopR.sportsdataverse.org/reference/ibba_games.md),
-[`ibba_games_by_team()`](https://hoopR.sportsdataverse.org/reference/ibba_games_by_team.md),
-[`ibba_games_ex()`](https://hoopR.sportsdataverse.org/reference/ibba_games_ex.md),
-[`ibba_leaders()`](https://hoopR.sportsdataverse.org/reference/ibba_leaders.md),
-[`ibba_player()`](https://hoopR.sportsdataverse.org/reference/ibba_player.md),
-[`ibba_player_stats()`](https://hoopR.sportsdataverse.org/reference/ibba_player_stats.md),
-[`ibba_players()`](https://hoopR.sportsdataverse.org/reference/ibba_players.md),
-[`ibba_segev_game_crosswalk()`](https://hoopR.sportsdataverse.org/reference/ibba_segev_game_crosswalk.md),
-[`ibba_stats_types()`](https://hoopR.sportsdataverse.org/reference/ibba_stats_types.md),
-[`ibba_team()`](https://hoopR.sportsdataverse.org/reference/ibba_team.md),
-[`ibba_teams()`](https://hoopR.sportsdataverse.org/reference/ibba_teams.md)
+[family_ibba](https://hoopR.sportsdataverse.org/reference/family_ibba.md)
+lists every function in this family.
 
 ## Examples
 
@@ -100,7 +85,7 @@ Other IBBA Functions:
 # \donttest{
   try(ibba_team_stats(season = 2026, team_id = 1109))
 #> ── IBBA team stats ────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:22:13 UTC
+#> ℹ Data updated: 2026-11-09 12:05:54 UTC
 #> # A tibble: 1 × 27
 #>   season team_id games minutes   pts  fg2m  fg2a fg2_pct  fg3m  fg3a fg3_pct
 #>    <int>   <int> <int>   <dbl> <dbl> <dbl> <dbl>   <dbl> <dbl> <dbl>   <dbl>

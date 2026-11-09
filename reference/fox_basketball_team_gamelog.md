@@ -46,20 +46,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_gamelog("1"))
 #> ── Fox Sports NBA gamelog ─────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:20:54 UTC
+#> ℹ Data updated: 2026-11-09 12:05:35 UTC
 #> # A tibble: 165 × 8
 #>    team_id season_type    category game_id game_date opponent stat         value
 #>    <chr>   <chr>          <chr>    <chr>   <chr>     <chr>    <chr>        <chr>
-#>  1 1       REGULAR SEASON scoring  106642  11/4      MIL      fgm          37   
-#>  2 1       REGULAR SEASON scoring  106642  11/4      MIL      fga          91   
-#>  3 1       REGULAR SEASON scoring  106642  11/4      MIL      fg_percent   40.7 
-#>  4 1       REGULAR SEASON scoring  106642  11/4      MIL      ftm          19   
-#>  5 1       REGULAR SEASON scoring  106642  11/4      MIL      fta          25   
-#>  6 1       REGULAR SEASON scoring  106642  11/4      MIL      ft_percent   76.0 
-#>  7 1       REGULAR SEASON scoring  106642  11/4      MIL      x3fgm        16   
-#>  8 1       REGULAR SEASON scoring  106642  11/4      MIL      x3fga        39   
-#>  9 1       REGULAR SEASON scoring  106642  11/4      MIL      x3fg_percent 41.0 
-#> 10 1       REGULAR SEASON scoring  106642  11/4      MIL      pts          109  
+#>  1 1       REGULAR SEASON scoring  106675  11/8      @MIL     fgm          45   
+#>  2 1       REGULAR SEASON scoring  106675  11/8      @MIL     fga          95   
+#>  3 1       REGULAR SEASON scoring  106675  11/8      @MIL     fg_percent   47.4 
+#>  4 1       REGULAR SEASON scoring  106675  11/8      @MIL     ftm          9    
+#>  5 1       REGULAR SEASON scoring  106675  11/8      @MIL     fta          14   
+#>  6 1       REGULAR SEASON scoring  106675  11/8      @MIL     ft_percent   64.3 
+#>  7 1       REGULAR SEASON scoring  106675  11/8      @MIL     x3fgm        18   
+#>  8 1       REGULAR SEASON scoring  106675  11/8      @MIL     x3fga        48   
+#>  9 1       REGULAR SEASON scoring  106675  11/8      @MIL     x3fg_percent 37.5 
+#> 10 1       REGULAR SEASON scoring  106675  11/8      @MIL     pts          117  
 #> # ℹ 155 more rows
 # }
 ```

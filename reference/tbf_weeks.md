@@ -81,38 +81,8 @@ time (`Europe/Istanbul`).
 
 ## See also
 
-Other TBF Functions:
-[`tbf_daily_matches()`](https://hoopR.sportsdataverse.org/reference/tbf_daily_matches.md),
-[`tbf_game_header()`](https://hoopR.sportsdataverse.org/reference/tbf_game_header.md),
-[`tbf_game_leaders()`](https://hoopR.sportsdataverse.org/reference/tbf_game_leaders.md),
-[`tbf_game_players()`](https://hoopR.sportsdataverse.org/reference/tbf_game_players.md),
-[`tbf_highlights()`](https://hoopR.sportsdataverse.org/reference/tbf_highlights.md),
-[`tbf_leaders_assists()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_assists.md),
-[`tbf_leaders_blocks()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_blocks.md),
-[`tbf_leaders_efficiency()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_efficiency.md),
-[`tbf_leaders_minutes()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_minutes.md),
-[`tbf_leaders_points()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_points.md),
-[`tbf_leaders_rebounds()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_rebounds.md),
-[`tbf_leaders_steals()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_steals.md),
-[`tbf_leaders_threes()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_threes.md),
-[`tbf_leaders_turnovers()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_turnovers.md),
-[`tbf_league_seasons()`](https://hoopR.sportsdataverse.org/reference/tbf_league_seasons.md),
-[`tbf_leagues()`](https://hoopR.sportsdataverse.org/reference/tbf_leagues.md),
-[`tbf_pbp()`](https://hoopR.sportsdataverse.org/reference/tbf_pbp.md),
-[`tbf_period_scores()`](https://hoopR.sportsdataverse.org/reference/tbf_period_scores.md),
-[`tbf_player_box()`](https://hoopR.sportsdataverse.org/reference/tbf_player_box.md),
-[`tbf_player_career()`](https://hoopR.sportsdataverse.org/reference/tbf_player_career.md),
-[`tbf_players()`](https://hoopR.sportsdataverse.org/reference/tbf_players.md),
-[`tbf_schedule()`](https://hoopR.sportsdataverse.org/reference/tbf_schedule.md),
-[`tbf_seasons()`](https://hoopR.sportsdataverse.org/reference/tbf_seasons.md),
-[`tbf_shots()`](https://hoopR.sportsdataverse.org/reference/tbf_shots.md),
-[`tbf_standings()`](https://hoopR.sportsdataverse.org/reference/tbf_standings.md),
-[`tbf_team_box()`](https://hoopR.sportsdataverse.org/reference/tbf_team_box.md),
-[`tbf_team_games()`](https://hoopR.sportsdataverse.org/reference/tbf_team_games.md),
-[`tbf_team_player_stats()`](https://hoopR.sportsdataverse.org/reference/tbf_team_player_stats.md),
-[`tbf_team_roster()`](https://hoopR.sportsdataverse.org/reference/tbf_team_roster.md),
-[`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
-[`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md)
+[family_tbf](https://hoopR.sportsdataverse.org/reference/family_tbf.md)
+lists every function in this family.
 
 ## Examples
 
@@ -120,7 +90,7 @@ Other TBF Functions:
 # \donttest{
   try(tbf_weeks(competition = "bsl", season = 2027))
 #> ── TBF Weeks ──────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:26:17 UTC
+#> ℹ Data updated: 2026-11-09 12:09:34 UTC
 #> # A tibble: 30 × 8
 #>    activity_id season competition week  phase phase_name label    is_current
 #>          <int>  <int> <chr>       <chr> <int> <chr>      <chr>    <lgl>     
@@ -129,8 +99,8 @@ Other TBF Functions:
 #>  3       22214   2027 bsl         3         1 NA         Hafta 3  FALSE     
 #>  4       22214   2027 bsl         4         1 NA         Hafta 4  FALSE     
 #>  5       22214   2027 bsl         5         1 NA         Hafta 5  FALSE     
-#>  6       22214   2027 bsl         6         1 NA         Hafta 6  TRUE      
-#>  7       22214   2027 bsl         7         1 NA         Hafta 7  FALSE     
+#>  6       22214   2027 bsl         6         1 NA         Hafta 6  FALSE     
+#>  7       22214   2027 bsl         7         1 NA         Hafta 7  TRUE      
 #>  8       22214   2027 bsl         8         1 NA         Hafta 8  FALSE     
 #>  9       22214   2027 bsl         9         1 NA         Hafta 9  FALSE     
 #> 10       22214   2027 bsl         10        1 NA         Hafta 10 FALSE     

@@ -108,7 +108,7 @@ Other MBB Crosswalk Functions:
 # \donttest{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-05 16:30:16 UTC
+#> ℹ Data updated: 2026-11-06 16:30:16 UTC
 #> # A tibble: 30 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name
 #>     <int>        <int> <chr>             <chr>                 <chr>          
@@ -133,7 +133,7 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-05 16:30:50 UTC
+#> ℹ Data updated: 2026-11-08 16:31:01 UTC
 #> # A tibble: 1,207 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
 #>     <int> <chr>       <date>                 <int>             <int>
@@ -156,8 +156,8 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-05 16:31:12 UTC
-#> # A tibble: 474 × 21
+#> ℹ Data updated: 2026-11-08 16:31:20 UTC
+#> # A tibble: 482 × 21
 #>    season espn_team_id team_abbreviation player_name         espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                         <int>
 #>  1   2027            1 ATL               aaron wiggins               4397183
@@ -167,10 +167,10 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #>  5   2027            1 ATL               dorian finney smith         2578185
 #>  6   2027            1 ATL               dyson daniels               4869342
 #>  7   2027            1 ATL               jalen johnson               4701230
-#>  8   2027            1 ATL               jock landale                3146557
-#>  9   2027            1 ATL               kingston flemings           5149077
-#> 10   2027            1 ATL               luguentz dort               4397020
-#> # ℹ 464 more rows
+#>  8   2027            1 ATL               jalen wilson                4431714
+#>  9   2027            1 ATL               jock landale                3146557
+#> 10   2027            1 ATL               kingston flemings           5149077
+#> # ℹ 472 more rows
 #> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, nba_player_id <chr>, nba_player_name <chr>,
 #> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,
@@ -181,8 +181,8 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 #> ── MBB team crosswalk (ESPN / Fox / Torvik / KenPom) ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-04 11:59:43 UTC
-#> # A tibble: 362 × 27
+#> ℹ Data updated: 2026-11-08 11:44:47 UTC
+#> # A tibble: 365 × 27
 #>    season espn_team_id espn_abbreviation espn_display_name       espn_short_name
 #>     <int>        <int> <chr>             <chr>                   <chr>          
 #>  1   2027         2000 ACU               Abilene Christian Wild… Abilene Chrstn 
@@ -195,7 +195,7 @@ load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 #>  8   2027           44 AMER              American University Ea… American       
 #>  9   2027         2026 APP               App State Mountaineers  App State      
 #> 10   2027            9 ASU               Arizona State Sun Devi… Arizona St     
-#> # ℹ 352 more rows
+#> # ℹ 355 more rows
 #> # ℹ 22 more variables: espn_location <chr>, espn_mascot <chr>,
 #> #   espn_conference <chr>, fox_team_id <chr>, fox_team_name <chr>,
 #> #   fox_section <chr>, bart_team <chr>, bart_conf <chr>, kp_team <chr>,
@@ -220,8 +220,8 @@ load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 # \donttest{
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #> ── MBB player crosswalk (ESPN / Fox) ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-05 12:02:27 UTC
-#> # A tibble: 5,514 × 18
+#> ℹ Data updated: 2026-11-08 15:01:41 UTC
+#> # A tibble: 5,565 × 18
 #>    season espn_team_id team_abbreviation player_name        espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                        <int>
 #>  1   2027         2000 ACU               evan boisdur               5313910
@@ -234,7 +234,7 @@ load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #>  8   2027         2000 ACU               isaiah neyhart             5314819
 #>  9   2027         2000 ACU               timeo pons                 5315586
 #> 10   2027         2000 ACU               yaniel rivera              5177702
-#> # ℹ 5,504 more rows
+#> # ℹ 5,555 more rows
 #> # ℹ 13 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, fox_athlete_id <chr>, fox_player <chr>,
 #> #   fox_jersey <chr>, fox_position_group <chr>, yahoo_player_id <chr>,

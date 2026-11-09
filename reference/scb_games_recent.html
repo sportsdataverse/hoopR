@@ -156,29 +156,7 @@ bucket. An empty valid answer raises <code>hoopR_no_data</code>; the columns are
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>Other SCB Functions:
-<code><a href="scb_game.html">scb_game()</a></code>,
-<code><a href="scb_game_actions.html">scb_game_actions()</a></code>,
-<code><a href="scb_game_players.html">scb_game_players()</a></code>,
-<code><a href="scb_game_teams.html">scb_game_teams()</a></code>,
-<code><a href="scb_games.html">scb_games()</a></code>,
-<code><a href="scb_player_statistics.html">scb_player_statistics()</a></code>,
-<code><a href="scb_playoff_games.html">scb_playoff_games()</a></code>,
-<code><a href="scb_playoff_series.html">scb_playoff_series()</a></code>,
-<code><a href="scb_records_per_game.html">scb_records_per_game()</a></code>,
-<code><a href="scb_records_season_averages.html">scb_records_season_averages()</a></code>,
-<code><a href="scb_referees.html">scb_referees()</a></code>,
-<code><a href="scb_season_player.html">scb_season_player()</a></code>,
-<code><a href="scb_season_players.html">scb_season_players()</a></code>,
-<code><a href="scb_season_teams.html">scb_season_teams()</a></code>,
-<code><a href="scb_seasons.html">scb_seasons()</a></code>,
-<code><a href="scb_standings.html">scb_standings()</a></code>,
-<code><a href="scb_team.html">scb_team()</a></code>,
-<code><a href="scb_team_rosters.html">scb_team_rosters()</a></code>,
-<code><a href="scb_team_seasons.html">scb_team_seasons()</a></code>,
-<code><a href="scb_team_statistics.html">scb_team_statistics()</a></code>,
-<code><a href="scb_transfers.html">scb_transfers()</a></code>,
-<code><a href="scb_transfers_teams.html">scb_transfers_teams()</a></code></p></div>
+    <div class="dont-index"><p><a href="family_scb.html">family_scb</a> lists every function in this family.</p></div>
     </div>
 
     <div class="section level2">
@@ -186,20 +164,20 @@ bucket. An empty valid answer raises <code>hoopR_no_data</code>; the columns are
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">scb_games_recent</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── BBL/DBBL Recent Games from the SCB API ─────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-06 07:25:03 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 12:08:31 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 27 × 91</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    league season season_id game_id competition stage status bucket game_progress</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006869 BBL         MAIN… OFFIC… past   E            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006894 BBL         MAIN… OFFIC… past   E            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006896 BBL         MAIN… OFFIC… past   E            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006895 BBL         MAIN… OFFIC… past   E            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006897 BBL         MAIN… OFFIC… past   E            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006908 BBL         MAIN… OFFIC… past   E            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006898 BBL         MAIN… OFFIC… past   E            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006899 BBL         MAIN… OFFIC… past   E            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2007035 BBL         MAIN… OFFIC… past   E            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006857 BBL         MAIN… PRE    prese… <span style="color: #BB0000;">NA</span>           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006897 BBL         MAIN… OFFIC… past   E            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006908 BBL         MAIN… OFFIC… past   E            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006898 BBL         MAIN… OFFIC… past   E            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2007035 BBL         MAIN… OFFIC… past   E            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006857 BBL         MAIN… OFFIC… past   E            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006858 BBL         MAIN… OFFIC… past   E            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006860 BBL         MAIN… OFFIC… past   E            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006856 BBL         MAIN… OFFIC… past   E            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006859 BBL         MAIN… OFFIC… past   E            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> bbl      <span style="text-decoration: underline;">2</span>027      <span style="text-decoration: underline;">2</span>026 2006861 BBL         MAIN… OFFIC… prese… E            </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 17 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 82 more variables: scheduled_time &lt;chr&gt;, match_day &lt;int&gt;, is_tbd &lt;lgl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   is_hidden &lt;lgl&gt;, home_team_id &lt;chr&gt;, home_season_team_id &lt;chr&gt;,</span></span>

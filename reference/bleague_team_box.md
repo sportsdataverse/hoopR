@@ -102,20 +102,8 @@ classes of this family: see the notes in
 
 ## See also
 
-Other B.LEAGUE Functions:
-[`bleague_game_info()`](https://hoopR.sportsdataverse.org/reference/bleague_game_info.md),
-[`bleague_leaders()`](https://hoopR.sportsdataverse.org/reference/bleague_leaders.md),
-[`bleague_pbp()`](https://hoopR.sportsdataverse.org/reference/bleague_pbp.md),
-[`bleague_period_scores()`](https://hoopR.sportsdataverse.org/reference/bleague_period_scores.md),
-[`bleague_player_box()`](https://hoopR.sportsdataverse.org/reference/bleague_player_box.md),
-[`bleague_schedule()`](https://hoopR.sportsdataverse.org/reference/bleague_schedule.md),
-[`bleague_schedule_clubs()`](https://hoopR.sportsdataverse.org/reference/bleague_schedule_clubs.md),
-[`bleague_schedule_days()`](https://hoopR.sportsdataverse.org/reference/bleague_schedule_days.md),
-[`bleague_schedule_events()`](https://hoopR.sportsdataverse.org/reference/bleague_schedule_events.md),
-[`bleague_score_track()`](https://hoopR.sportsdataverse.org/reference/bleague_score_track.md),
-[`bleague_shots()`](https://hoopR.sportsdataverse.org/reference/bleague_shots.md),
-[`bleague_standings()`](https://hoopR.sportsdataverse.org/reference/bleague_standings.md),
-[`bleague_team_summary()`](https://hoopR.sportsdataverse.org/reference/bleague_team_summary.md)
+[family_b_league](https://hoopR.sportsdataverse.org/reference/family_b_league.md)
+lists every function in this family.
 
 ## Examples
 
@@ -123,7 +111,7 @@ Other B.LEAGUE Functions:
 # \donttest{
   try(bleague_team_box(schedule_key = 504734))
 #> ── B.LEAGUE team box from b-league.s3.amazonaws.com ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:17:56 UTC
+#> ℹ Data updated: 2026-11-09 12:02:40 UTC
 #> # A tibble: 28 × 50
 #>    schedule_key season feed  team_side team_id category period_category
 #>           <int>  <int> <chr> <chr>     <chr>      <int>           <int>

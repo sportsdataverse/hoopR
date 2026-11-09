@@ -106,12 +106,10 @@ Other LKL Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
+  # Pages through the whole season, 10 games per request.
   try(lkl_results(season = 2026))
-#> Error in lkl_results(season = 2026) : 
-#>   lkl.lt/rezultatai answered HTTP 403: <!DOCTYPE html><html
-#> lang="en-US"><head><title>Just a moment...</title><meta
-#> http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta
-#> http-equiv="X-UA-Compatible" content="IE=Edge"><meta nam
 # }
+}
 ```

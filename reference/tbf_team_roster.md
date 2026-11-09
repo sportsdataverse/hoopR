@@ -96,38 +96,8 @@ time (`Europe/Istanbul`).
 
 ## See also
 
-Other TBF Functions:
-[`tbf_daily_matches()`](https://hoopR.sportsdataverse.org/reference/tbf_daily_matches.md),
-[`tbf_game_header()`](https://hoopR.sportsdataverse.org/reference/tbf_game_header.md),
-[`tbf_game_leaders()`](https://hoopR.sportsdataverse.org/reference/tbf_game_leaders.md),
-[`tbf_game_players()`](https://hoopR.sportsdataverse.org/reference/tbf_game_players.md),
-[`tbf_highlights()`](https://hoopR.sportsdataverse.org/reference/tbf_highlights.md),
-[`tbf_leaders_assists()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_assists.md),
-[`tbf_leaders_blocks()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_blocks.md),
-[`tbf_leaders_efficiency()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_efficiency.md),
-[`tbf_leaders_minutes()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_minutes.md),
-[`tbf_leaders_points()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_points.md),
-[`tbf_leaders_rebounds()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_rebounds.md),
-[`tbf_leaders_steals()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_steals.md),
-[`tbf_leaders_threes()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_threes.md),
-[`tbf_leaders_turnovers()`](https://hoopR.sportsdataverse.org/reference/tbf_leaders_turnovers.md),
-[`tbf_league_seasons()`](https://hoopR.sportsdataverse.org/reference/tbf_league_seasons.md),
-[`tbf_leagues()`](https://hoopR.sportsdataverse.org/reference/tbf_leagues.md),
-[`tbf_pbp()`](https://hoopR.sportsdataverse.org/reference/tbf_pbp.md),
-[`tbf_period_scores()`](https://hoopR.sportsdataverse.org/reference/tbf_period_scores.md),
-[`tbf_player_box()`](https://hoopR.sportsdataverse.org/reference/tbf_player_box.md),
-[`tbf_player_career()`](https://hoopR.sportsdataverse.org/reference/tbf_player_career.md),
-[`tbf_players()`](https://hoopR.sportsdataverse.org/reference/tbf_players.md),
-[`tbf_schedule()`](https://hoopR.sportsdataverse.org/reference/tbf_schedule.md),
-[`tbf_seasons()`](https://hoopR.sportsdataverse.org/reference/tbf_seasons.md),
-[`tbf_shots()`](https://hoopR.sportsdataverse.org/reference/tbf_shots.md),
-[`tbf_standings()`](https://hoopR.sportsdataverse.org/reference/tbf_standings.md),
-[`tbf_team_box()`](https://hoopR.sportsdataverse.org/reference/tbf_team_box.md),
-[`tbf_team_games()`](https://hoopR.sportsdataverse.org/reference/tbf_team_games.md),
-[`tbf_team_player_stats()`](https://hoopR.sportsdataverse.org/reference/tbf_team_player_stats.md),
-[`tbf_team_staff()`](https://hoopR.sportsdataverse.org/reference/tbf_team_staff.md),
-[`tbf_teams()`](https://hoopR.sportsdataverse.org/reference/tbf_teams.md),
-[`tbf_weeks()`](https://hoopR.sportsdataverse.org/reference/tbf_weeks.md)
+[family_tbf](https://hoopR.sportsdataverse.org/reference/family_tbf.md)
+lists every function in this family.
 
 ## Examples
 
@@ -135,8 +105,8 @@ Other TBF Functions:
 # \donttest{
   try(tbf_team_roster(season = 2027, team_process_id = 265995))
 #> ── TBF Team Roster ────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:26:15 UTC
-#> # A tibble: 17 × 13
+#> ℹ Data updated: 2026-11-09 12:09:32 UTC
+#> # A tibble: 18 × 13
 #>    season competition team_process_id person_id first_name last_name nationality
 #>     <int> <chr>                 <int>     <int> <chr>      <chr>     <chr>      
 #>  1   2027 bsl                  265995    395705 Berkay     Gönül     TÜRKİYE    
@@ -148,14 +118,15 @@ Other TBF Functions:
 #>  7   2027 bsl                  265995    381976 Karahan    Efeoğlu   TÜRKİYE    
 #>  8   2027 bsl                  265995    452216 Kerem      Çorumlul… TÜRKİYE    
 #>  9   2027 bsl                  265995    197570 Leon       Apaydın   TÜRKİYE    
-#> 10   2027 bsl                  265995    450092 Poyraz     Paşaoğlu  TÜRKİYE    
-#> 11   2027 bsl                  265995    227173 Sadık      Kabaca    TÜRKİYE    
-#> 12   2027 bsl                  265995    778399 Shavar     Reynolds… ABD        
-#> 13   2027 bsl                  265995    450651 Soykan     Bağadır   TÜRKİYE    
-#> 14   2027 bsl                  265995    485299 Terrell    Carter II ABD        
-#> 15   2027 bsl                  265995    736069 Tre'shawn  Thurman   ABD        
-#> 16   2027 bsl                  265995    196413 Yiğitcan   Saybir    TÜRKİYE    
-#> 17   2027 bsl                  265995    778402 Zach       Nutall    ABD        
+#> 10   2027 bsl                  265995    732657 MANTAS     RUBSTAVI… LİTVANYA   
+#> 11   2027 bsl                  265995    450092 Poyraz     Paşaoğlu  TÜRKİYE    
+#> 12   2027 bsl                  265995    227173 Sadık      Kabaca    TÜRKİYE    
+#> 13   2027 bsl                  265995    778399 Shavar     Reynolds… ABD        
+#> 14   2027 bsl                  265995    450651 Soykan     Bağadır   TÜRKİYE    
+#> 15   2027 bsl                  265995    485299 Terrell    Carter II ABD        
+#> 16   2027 bsl                  265995    736069 Tre'shawn  Thurman   ABD        
+#> 17   2027 bsl                  265995    196413 Yiğitcan   Saybir    TÜRKİYE    
+#> 18   2027 bsl                  265995    778402 Zach       Nutall    ABD        
 #> # ℹ 6 more variables: height_cm <int>, jersey_number <chr>, games <int>,
 #> #   seconds_played <int>, points_per_game <dbl>, efficiency_per_game <dbl>
 # }

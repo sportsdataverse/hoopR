@@ -167,56 +167,29 @@ empty valid answer raises <code>hoopR_no_data</code>; the columns are always the
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>Other BNXT League Functions:
-<code><a href="sportpress_club_seasons.html">sportpress_club_seasons()</a></code>,
-<code><a href="sportpress_competition_staff.html">sportpress_competition_staff()</a></code>,
-<code><a href="sportpress_competition_teams.html">sportpress_competition_teams()</a></code>,
-<code><a href="sportpress_game_box.html">sportpress_game_box()</a></code>,
-<code><a href="sportpress_game_film.html">sportpress_game_film()</a></code>,
-<code><a href="sportpress_game_find.html">sportpress_game_find()</a></code>,
-<code><a href="sportpress_game_leaders.html">sportpress_game_leaders()</a></code>,
-<code><a href="sportpress_game_overview.html">sportpress_game_overview()</a></code>,
-<code><a href="sportpress_game_periods.html">sportpress_game_periods()</a></code>,
-<code><a href="sportpress_game_slider.html">sportpress_game_slider()</a></code>,
-<code><a href="sportpress_game_team_box.html">sportpress_game_team_box()</a></code>,
-<code><a href="sportpress_game_top_performers.html">sportpress_game_top_performers()</a></code>,
-<code><a href="sportpress_nationality_codes.html">sportpress_nationality_codes()</a></code>,
-<code><a href="sportpress_phases.html">sportpress_phases()</a></code>,
-<code><a href="sportpress_player_career.html">sportpress_player_career()</a></code>,
-<code><a href="sportpress_player_games.html">sportpress_player_games()</a></code>,
-<code><a href="sportpress_referees.html">sportpress_referees()</a></code>,
-<code><a href="sportpress_roster_find.html">sportpress_roster_find()</a></code>,
-<code><a href="sportpress_schedule.html">sportpress_schedule()</a></code>,
-<code><a href="sportpress_season_roster.html">sportpress_season_roster()</a></code>,
-<code><a href="sportpress_standings.html">sportpress_standings()</a></code>,
-<code><a href="sportpress_team_find.html">sportpress_team_find()</a></code>,
-<code><a href="sportpress_team_games.html">sportpress_team_games()</a></code>,
-<code><a href="sportpress_team_player_averages.html">sportpress_team_player_averages()</a></code>,
-<code><a href="sportpress_team_rankings.html">sportpress_team_rankings()</a></code>,
-<code><a href="sportpress_team_roster.html">sportpress_team_roster()</a></code>,
-<code><a href="sportpress_ui_strings.html">sportpress_ui_strings()</a></code></p></div>
+    <div class="dont-index"><p><a href="family_bnxt_league.html">family_bnxt_league</a> lists every function in this family.</p></div>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportpress_player_rankings</span><span class="op">(</span>competition_id <span class="op">=</span> <span class="fl">24</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">sportpress_player_rankings</span><span class="op">(</span>competition_id <span class="op">=</span> <span class="fl">24</span>, limit <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── BNXT League Player Rankings from Sportpress ────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-06 07:25:53 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,414 × 15</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    competition_id category    rank roster_id player_id first_name last_name    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>             24 efficiency     1     <span style="text-decoration: underline;">10</span>885      <span style="text-decoration: underline;">5</span>403 Dante      Maddox Jr    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>             24 efficiency     2     <span style="text-decoration: underline;">10</span>361      <span style="text-decoration: underline;">3</span>002 Zaba       Bangala      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>             24 efficiency     3     <span style="text-decoration: underline;">10</span>681      <span style="text-decoration: underline;">5</span>287 Maks       Klanjscek    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>             24 efficiency     4     <span style="text-decoration: underline;">10</span>917      <span style="text-decoration: underline;">5</span>417 Shakael    Pryce        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>             24 efficiency     5     <span style="text-decoration: underline;">10</span>753      <span style="text-decoration: underline;">5</span>317 Noam       Yaacov       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>             24 efficiency     6     <span style="text-decoration: underline;">10</span>803      <span style="text-decoration: underline;">5</span>343 Dane       Erikstrup    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>             24 efficiency     7     <span style="text-decoration: underline;">10</span>663      <span style="text-decoration: underline;">5</span>277 Jalen      Blackmon     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>             24 efficiency     8     <span style="text-decoration: underline;">10</span>779      <span style="text-decoration: underline;">5</span>327 Rasheed    Bello        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>             24 efficiency     9     <span style="text-decoration: underline;">10</span>841      <span style="text-decoration: underline;">5</span>373 Tyreek     Scott-Grayson</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>             24 efficiency    10     <span style="text-decoration: underline;">10</span>381       219 Niels      Van Den Eynde</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1,404 more rows</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 12:09:10 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 45 × 15</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    competition_id category    rank roster_id player_id first_name last_name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>             24 efficiency     1     <span style="text-decoration: underline;">10</span>885      <span style="text-decoration: underline;">5</span>403 Dante      Maddox Jr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>             24 efficiency     2     <span style="text-decoration: underline;">10</span>361      <span style="text-decoration: underline;">3</span>002 Zaba       Bangala  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>             24 efficiency     3     <span style="text-decoration: underline;">10</span>681      <span style="text-decoration: underline;">5</span>287 Maks       Klanjscek</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>             24 efficiency     4     <span style="text-decoration: underline;">10</span>917      <span style="text-decoration: underline;">5</span>417 Shakael    Pryce    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>             24 efficiency     5     <span style="text-decoration: underline;">10</span>753      <span style="text-decoration: underline;">5</span>317 Noam       Yaacov   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>             24 points         1     <span style="text-decoration: underline;">10</span>885      <span style="text-decoration: underline;">5</span>403 Dante      Maddox Jr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>             24 points         2     <span style="text-decoration: underline;">10</span>663      <span style="text-decoration: underline;">5</span>277 Jalen      Blackmon </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>             24 points         3     <span style="text-decoration: underline;">10</span>681      <span style="text-decoration: underline;">5</span>287 Maks       Klanjscek</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>             24 points         4     <span style="text-decoration: underline;">10</span>917      <span style="text-decoration: underline;">5</span>417 Shakael    Pryce    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>             24 points         5     <span style="text-decoration: underline;">10</span>825      <span style="text-decoration: underline;">5</span>361 Reginald   Mesidor  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 35 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 8 more variables: nationality_code &lt;chr&gt;, birth_date &lt;date&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   competition_team_id &lt;int&gt;, team &lt;chr&gt;, team_short_name &lt;chr&gt;, value &lt;dbl&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   throw_made &lt;dbl&gt;, throw_attempted &lt;dbl&gt;</span></span>

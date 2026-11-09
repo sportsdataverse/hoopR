@@ -51,33 +51,8 @@ classes of this family: see the notes in
 
 ## See also
 
-Other Basketligaen Functions:
-[`sportality_athlete_career()`](https://hoopR.sportsdataverse.org/reference/sportality_athlete_career.md),
-[`sportality_athlete_details()`](https://hoopR.sportsdataverse.org/reference/sportality_athlete_details.md),
-[`sportality_athlete_profile()`](https://hoopR.sportsdataverse.org/reference/sportality_athlete_profile.md),
-[`sportality_boxscore()`](https://hoopR.sportsdataverse.org/reference/sportality_boxscore.md),
-[`sportality_game_header()`](https://hoopR.sportsdataverse.org/reference/sportality_game_header.md),
-[`sportality_game_overview()`](https://hoopR.sportsdataverse.org/reference/sportality_game_overview.md),
-[`sportality_game_summary()`](https://hoopR.sportsdataverse.org/reference/sportality_game_summary.md),
-[`sportality_last_game_day()`](https://hoopR.sportsdataverse.org/reference/sportality_last_game_day.md),
-[`sportality_layout_info()`](https://hoopR.sportsdataverse.org/reference/sportality_layout_info.md),
-[`sportality_next_game_day()`](https://hoopR.sportsdataverse.org/reference/sportality_next_game_day.md),
-[`sportality_pbp()`](https://hoopR.sportsdataverse.org/reference/sportality_pbp.md),
-[`sportality_player_box()`](https://hoopR.sportsdataverse.org/reference/sportality_player_box.md),
-[`sportality_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/sportality_player_crosswalk.md),
-[`sportality_player_h2h()`](https://hoopR.sportsdataverse.org/reference/sportality_player_h2h.md),
-[`sportality_post_game_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_post_game_team_stats.md),
-[`sportality_roster()`](https://hoopR.sportsdataverse.org/reference/sportality_roster.md),
-[`sportality_schedule()`](https://hoopR.sportsdataverse.org/reference/sportality_schedule.md),
-[`sportality_season_filter()`](https://hoopR.sportsdataverse.org/reference/sportality_season_filter.md),
-[`sportality_sites()`](https://hoopR.sportsdataverse.org/reference/sportality_sites.md),
-[`sportality_ssgt_provider()`](https://hoopR.sportsdataverse.org/reference/sportality_ssgt_provider.md),
-[`sportality_ssgt_uuid()`](https://hoopR.sportsdataverse.org/reference/sportality_ssgt_uuid.md),
-[`sportality_stats_info()`](https://hoopR.sportsdataverse.org/reference/sportality_stats_info.md),
-[`sportality_team()`](https://hoopR.sportsdataverse.org/reference/sportality_team.md),
-[`sportality_team_played_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_played_games.md),
-[`sportality_team_stats()`](https://hoopR.sportsdataverse.org/reference/sportality_team_stats.md),
-[`sportality_team_upcoming_games()`](https://hoopR.sportsdataverse.org/reference/sportality_team_upcoming_games.md)
+[family_basketligaen](https://hoopR.sportsdataverse.org/reference/family_basketligaen.md)
+lists every function in this family.
 
 ## Examples
 
@@ -85,22 +60,22 @@ Other Basketligaen Functions:
 # \donttest{
   try(sportality_standings(ssgt_uuid = "xs07bd3fmp"))
 #> ── Basketligaen Standings from basketligaen.dk ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:25:25 UTC
+#> ℹ Data updated: 2026-11-09 12:08:54 UTC
 #> # A tibble: 12 × 13
 #>    team_id team_uuid  team_code team_name     rank    gp     w     l    tp `for`
 #>      <int> <chr>      <chr>     <chr>        <int> <int> <int> <int> <int> <int>
-#>  1   22255 iutrlqp3ef TFN       Team FOG Næ…     1     9     9     0    18   925
-#>  2   22248 ktcu9aaala BAK       Bakken Bears     2     7     7     0    14   739
-#>  3   22249 hip2m60a45 HIC       Horsens IC       3     9     7     2    14   794
-#>  4   22256 kgmhwo9l5d SVE       Svendborg R…     4     8     6     2    12   729
-#>  5   22250 gvvuxe9ysw RAN       Randers Cim…     5     8     5     3    10   762
-#>  6  156486 ka7lusvmtn BCC       BC Copenhag…     6     8     5     3    10   666
-#>  7  153747 rfo82vr830 HOL       Holbæk-Sten…     7     9     4     5     8   693
-#>  8  199228 nuzzapynfd GLX       Gladsaxe Ba…     8     9     2     7     4   704
-#>  9  114932 ozojzoejir VBH       Værløse Blu…     9     9     2     7     4   721
-#> 10  187013 wv1lcxg0u2 BKV       BK Vejen        10     8     2     6     4   648
-#> 11  140898 kgejfzwwbd BMS       BMS Herlev      11     9     1     8     2   683
-#> 12  130088 swr1d65lew BAC       Bears Acade…    12     9     1     8     2   703
+#>  1   22255 iutrlqp3ef TFN       Team FOG Næ…     1    10    10     0    20  1005
+#>  2   22249 hip2m60a45 HIC       Horsens IC       2    10     8     2    16   892
+#>  3   22248 ktcu9aaala BAK       Bakken Bears     3     8     7     1    14   816
+#>  4   22256 kgmhwo9l5d SVE       Svendborg R…     4     9     7     2    14   815
+#>  5   22250 gvvuxe9ysw RAN       Randers Cim…     5     9     6     3    12   858
+#>  6  156486 ka7lusvmtn BCC       BC Copenhag…     6     9     5     4    10   756
+#>  7  153747 rfo82vr830 HOL       Holbæk-Sten…     7    10     4     6     8   771
+#>  8  199228 nuzzapynfd GLX       Gladsaxe Ba…     8    10     3     7     6   794
+#>  9  187013 wv1lcxg0u2 BKV       BK Vejen         9     9     3     6     6   728
+#> 10  114932 ozojzoejir VBH       Værløse Blu…    10    10     2     8     4   780
+#> 11  140898 kgejfzwwbd BMS       BMS Herlev      11    10     1     9     2   740
+#> 12  130088 swr1d65lew BAC       Bears Acade…    12    10     1     9     2   788
 #> # ℹ 3 more variables: ga <int>, plus_minus <int>, strk <int>
 # }
 ```

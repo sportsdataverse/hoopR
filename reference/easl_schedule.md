@@ -82,24 +82,8 @@ classes of this family: see the notes in
 
 ## See also
 
-Other EASL Functions:
-[`easl_game()`](https://hoopR.sportsdataverse.org/reference/easl_game.md),
-[`easl_health()`](https://hoopR.sportsdataverse.org/reference/easl_health.md),
-[`easl_leaders()`](https://hoopR.sportsdataverse.org/reference/easl_leaders.md),
-[`easl_pbp()`](https://hoopR.sportsdataverse.org/reference/easl_pbp.md),
-[`easl_player()`](https://hoopR.sportsdataverse.org/reference/easl_player.md),
-[`easl_player_box()`](https://hoopR.sportsdataverse.org/reference/easl_player_box.md),
-[`easl_player_stats()`](https://hoopR.sportsdataverse.org/reference/easl_player_stats.md),
-[`easl_players()`](https://hoopR.sportsdataverse.org/reference/easl_players.md),
-[`easl_seasons()`](https://hoopR.sportsdataverse.org/reference/easl_seasons.md),
-[`easl_standings()`](https://hoopR.sportsdataverse.org/reference/easl_standings.md),
-[`easl_team()`](https://hoopR.sportsdataverse.org/reference/easl_team.md),
-[`easl_team_box()`](https://hoopR.sportsdataverse.org/reference/easl_team_box.md),
-[`easl_team_box_by_period()`](https://hoopR.sportsdataverse.org/reference/easl_team_box_by_period.md),
-[`easl_team_leaders()`](https://hoopR.sportsdataverse.org/reference/easl_team_leaders.md),
-[`easl_team_schedule()`](https://hoopR.sportsdataverse.org/reference/easl_team_schedule.md),
-[`easl_team_stats()`](https://hoopR.sportsdataverse.org/reference/easl_team_stats.md),
-[`easl_teams()`](https://hoopR.sportsdataverse.org/reference/easl_teams.md)
+[family_easl](https://hoopR.sportsdataverse.org/reference/family_easl.md)
+lists every function in this family.
 
 ## Examples
 
@@ -107,7 +91,7 @@ Other EASL Functions:
 # \donttest{
   try(easl_schedule(season = 2026))
 #> ── EASL Schedule from easl.joshricha.com ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:18:47 UTC
+#> ℹ Data updated: 2026-11-09 12:03:29 UTC
 #> # A tibble: 42 × 44
 #>    season season_id   fixture_id fixture_number fixture_type status fixture_name
 #>     <int> <chr>       <chr>               <int> <chr>        <chr>  <chr>       

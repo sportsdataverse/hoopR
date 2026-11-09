@@ -849,123 +849,36 @@ Saiem Gilani
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
+  # One season is a ~80 MB download.
   try(load_ncaa_mbb_pbp(seasons = most_recent_mbb_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 119,867 × 87
-#>    game_date  home  away       period clock game_time game_seconds home_score
-#>    <chr>      <chr> <chr>       <int> <chr> <chr>            <int>      <int>
-#>  1 11/02/2026 TCU   Lindenwood      1 19:59 00:01                1          0
-#>  2 11/02/2026 TCU   Lindenwood      1 19:59 00:01                1          0
-#>  3 11/02/2026 TCU   Lindenwood      1 19:47 00:13               13          0
-#>  4 11/02/2026 TCU   Lindenwood      1 19:47 00:13               13          0
-#>  5 11/02/2026 TCU   Lindenwood      1 19:47 00:13               13          0
-#>  6 11/02/2026 TCU   Lindenwood      1 19:47 00:13               13          0
-#>  7 11/02/2026 TCU   Lindenwood      1 19:47 00:13               13          1
-#>  8 11/02/2026 TCU   Lindenwood      1 19:37 00:23               23          1
-#>  9 11/02/2026 TCU   Lindenwood      1 19:16 00:44               44          1
-#> 10 11/02/2026 TCU   Lindenwood      1 19:13 00:47               47          1
-#> # ℹ 119,857 more rows
-#> # ℹ 79 more variables: away_score <int>, event_team <chr>,
-#> #   event_description <chr>, player_1 <chr>, player_2 <chr>, event_type <chr>,
-#> #   event_result <chr>, shot_value <int>, event_length <int>, poss_num <int>,
-#> #   poss_team <chr>, poss_length <int>, is_transition <lgl>, home_1 <chr>,
-#> #   home_2 <chr>, home_3 <chr>, home_4 <chr>, home_5 <chr>, away_1 <chr>,
-#> #   away_2 <chr>, away_3 <chr>, away_4 <chr>, away_5 <chr>, status <chr>, …
 # }
+}
+if (FALSE) { # interactive()
 # \donttest{
+  # One season is a ~10 MB download.
   try(load_ncaa_mbb_shots(seasons = most_recent_mbb_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 27,604 × 19
-#>    season team_id    shooter_id shot_x shot_y dist_ft shot_zone  shot_type made 
-#>     <int> <chr>      <chr>       <dbl>  <dbl>   <dbl> <chr>      <chr>     <lgl>
-#>  1   2027 Lindenwood MaMason      23     6.28   23.8  corner3    unknown   TRUE 
-#>  2   2027 TCU        XaEdmonds    10     2.52   10.3  paint      unknown   FALSE
-#>  3   2027 TCU        XaEdmonds     0     1.58    1.58 rim        unknown   TRUE 
-#>  4   2027 Lindenwood ShGreen      -2     3.46    4.00 rim        unknown   FALSE
-#>  5   2027 Lindenwood DoClay      -12.5  14.7    19.3  mid        unknown   FALSE
-#>  6   2027 TCU        XaEdmonds    -1     1.58    1.87 rim        unknown   TRUE 
-#>  7   2027 Lindenwood ShGreen       1    16.6    16.7  mid        unknown   TRUE 
-#>  8   2027 TCU        TaToolson   -22.5   8.16   23.9  corner3    unknown   FALSE
-#>  9   2027 TCU        MiRobinson  -16    20.4    25.9  abovebrea… unknown   TRUE 
-#> 10   2027 Lindenwood DoClay        0    27.0    27.0  abovebrea… unknown   TRUE 
-#> # ℹ 27,594 more rows
-#> # ℹ 10 more variables: point_value <int>, period <int>, sec_left <dbl>,
-#> #   source <chr>, contest_id <chr>, ncaa_team_id <chr>, espn_team_id <int>,
-#> #   shooter_player_id <chr>, shooter_clean_name <chr>, espn_game_id <int>
 # }
+}
+if (FALSE) { # interactive()
 # \donttest{
+  # One season is a ~20 MB download.
   try(load_ncaa_mbb_lineups(seasons = most_recent_mbb_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 11,009 × 77
-#>    lineup_key   date  location_type team  team_year opponent lineup_id start_min
-#>    <chr>        <chr> <chr>         <chr>     <int> <chr>    <chr>         <dbl>
-#>  1 14316481fcb… 2026… Home          TCU        2026 Lindenw… BrHardin…      0   
-#>  2 d7eb1da3b7b… 2026… Home          TCU        2026 Lindenw… LuBamgbo…      2.63
-#>  3 7f5a39195bf… 2026… Home          TCU        2026 Lindenw… DjThomas…      3.95
-#>  4 0481ffb578d… 2026… Home          TCU        2026 Lindenw… BrHardin…     13.5 
-#>  5 fa361d8dd84… 2026… Home          TCU        2026 Lindenw… BrHardin…     14.2 
-#>  6 2f33c9364a6… 2026… Home          TCU        2026 Lindenw… BrHardin…     15.7 
-#>  7 e0a558bef0e… 2026… Home          TCU        2026 Lindenw… BrHardin…     16.9 
-#>  8 5446a126446… 2026… Home          TCU        2026 Lindenw… BrHardin…     16.9 
-#>  9 e0a558bef0e… 2026… Home          TCU        2026 Lindenw… BrHardin…     18.1 
-#> 10 2f33c9364a6… 2026… Home          TCU        2026 Lindenw… BrHardin…     18.2 
-#> # ℹ 10,999 more rows
-#> # ℹ 69 more variables: end_min <dbl>, duration_mins <dbl>, player_1 <chr>,
-#> #   player_2 <chr>, player_3 <chr>, player_4 <chr>, player_5 <chr>,
-#> #   players_in <chr>, players_out <chr>, start_scored <int>,
-#> #   start_allowed <int>, end_scored <int>, end_allowed <int>, start_diff <int>,
-#> #   end_diff <int>, player_count_error <???>, poss <int>, pts <int>,
-#> #   plus_minus <int>, fga <int>, fgm <int>, rima <int>, rimm <int>, …
 # }
+}
+if (FALSE) { # interactive()
 # \donttest{
+  # One season is a ~12 MB download.
   try(load_ncaa_mbb_matchup_stints(seasons = most_recent_mbb_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 8,059 × 33
-#>    contest_id season game_date  home  away   game_stint_num period start_seconds
-#>    <chr>       <int> <chr>      <chr> <chr>           <int>  <int>         <int>
-#>  1 6607592      2027 11/02/2026 TCU   Linde…              1      1             1
-#>  2 6607592      2027 11/02/2026 TCU   Linde…              2      1           182
-#>  3 6607592      2027 11/02/2026 TCU   Linde…              3      1           220
-#>  4 6607592      2027 11/02/2026 TCU   Linde…              4      1           252
-#>  5 6607592      2027 11/02/2026 TCU   Linde…              5      1           255
-#>  6 6607592      2027 11/02/2026 TCU   Linde…              6      1           312
-#>  7 6607592      2027 11/02/2026 TCU   Linde…              7      1           463
-#>  8 6607592      2027 11/02/2026 TCU   Linde…              8      1           503
-#>  9 6607592      2027 11/02/2026 TCU   Linde…              9      1           625
-#> 10 6607592      2027 11/02/2026 TCU   Linde…             10      1           656
-#> # ℹ 8,049 more rows
-#> # ℹ 25 more variables: end_seconds <int>, duration_seconds <int>,
-#> #   matchup_key <chr>, home_lineup_key <chr>, away_lineup_key <chr>,
-#> #   home_lineup <chr>, away_lineup <chr>, end_home_score <int>,
-#> #   end_away_score <int>, n_events <int>, n_possessions <int>,
-#> #   start_home_score <int>, start_away_score <int>, home_pts <int>,
-#> #   away_pts <int>, home_1 <chr>, home_2 <chr>, home_3 <chr>, home_4 <chr>, …
 # }
+}
+if (FALSE) { # interactive()
 # \donttest{
+  # One season is a ~17 MB download.
   try(load_ncaa_mbb_possessions(seasons = most_recent_mbb_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 33,326 × 56
-#>    game_date  home  away   period poss_num poss_team home_1 home_2 home_3 home_4
-#>    <chr>      <chr> <chr>   <int>    <int> <chr>     <chr>  <chr>  <chr>  <chr> 
-#>  1 11/02/2026 TCU   Linde…      1        1 TCU       BROCK… LUKE.… MICAH… TANNE…
-#>  2 11/02/2026 TCU   Linde…      1        2 Lindenwo… BROCK… LUKE.… MICAH… TANNE…
-#>  3 11/02/2026 TCU   Linde…      1        3 TCU       BROCK… LUKE.… MICAH… TANNE…
-#>  4 11/02/2026 TCU   Linde…      1        4 Lindenwo… BROCK… LUKE.… MICAH… TANNE…
-#>  5 11/02/2026 TCU   Linde…      1        5 TCU       BROCK… LUKE.… MICAH… TANNE…
-#>  6 11/02/2026 TCU   Linde…      1        6 Lindenwo… BROCK… LUKE.… MICAH… TANNE…
-#>  7 11/02/2026 TCU   Linde…      1        7 TCU       BROCK… LUKE.… MICAH… TANNE…
-#>  8 11/02/2026 TCU   Linde…      1        8 Lindenwo… BROCK… LUKE.… MICAH… TANNE…
-#>  9 11/02/2026 TCU   Linde…      1        9 TCU       BROCK… LUKE.… MICAH… TANNE…
-#> 10 11/02/2026 TCU   Linde…      1       10 Lindenwo… BROCK… LUKE.… MICAH… TANNE…
-#> # ℹ 33,316 more rows
-#> # ℹ 46 more variables: home_5 <chr>, away_1 <chr>, away_2 <chr>, away_3 <chr>,
-#> #   away_4 <chr>, away_5 <chr>, home_score <int>, away_score <int>, pts <int>,
-#> #   is_assisted <int>, is_transition <int>, is_garbage_time <int>,
-#> #   start_event_type <chr>, first_shot_time <int>, first_shot_type <chr>,
-#> #   last_event_time <int>, last_event_type <chr>, contest_id <chr>,
-#> #   home_ncaa_team_id <chr>, home_espn_team_id <int>, …
 # }
+}
 # \donttest{
   try(load_ncaa_mbb_rapm_within_team(seasons = most_recent_mbb_season()))
 #> Warning: Failed to read
@@ -994,47 +907,29 @@ Saiem Gilani
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
+if (FALSE) { # interactive()
 # \donttest{
+  # One season is a ~10 MB download.
   try(load_ncaa_mbb_player_box(seasons = most_recent_mbb_season()))
-#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 5,439 × 125
-#>    game_date  home  away      team  player   mins o_poss   pts   orb   drb   ast
-#>    <chr>      <chr> <chr>     <chr> <chr>   <dbl>  <dbl> <dbl> <dbl> <dbl> <dbl>
-#>  1 11/02/2026 TCU   Lindenwo… Lind… DEREK… 17.1       31     3     1     1     1
-#>  2 11/02/2026 TCU   Lindenwo… Lind… DOM.C… 22.4       41     3     2     1     0
-#>  3 11/02/2026 TCU   Lindenwo… Lind… MALEK… 27.9       55    18     2     6     4
-#>  4 11/02/2026 TCU   Lindenwo… Lind… MARKO…  7.28      14     0     0     0     0
-#>  5 11/02/2026 TCU   Lindenwo… Lind… MARSA… 22.7       44    10     3     4     0
-#>  6 11/02/2026 TCU   Lindenwo… Lind… MATAR… 20.9       37     2     3     2     0
-#>  7 11/02/2026 TCU   Lindenwo… Lind… MILES…  0.417      1     0     0     0     0
-#>  8 11/02/2026 TCU   Lindenwo… Lind… NOAH.… 24.9       50    12     1     2     1
-#>  9 11/02/2026 TCU   Lindenwo… Lind… PARKE… 11.6       24     0     0     3     1
-#> 10 11/02/2026 TCU   Lindenwo… Lind… RJ.CH…  0.417      1     1     0     0     0
-#> # ℹ 5,429 more rows
-#> # ℹ 114 more variables: stl <dbl>, blk <dbl>, tov <dbl>, pf <dbl>,
-#> #   ts_pct <dbl>, efg_pct <dbl>, fgm <dbl>, fga <dbl>, fg_pct <dbl>, tpm <dbl>,
-#> #   tpa <dbl>, tp_pct <dbl>, ftm <dbl>, fta <dbl>, ft_pct <dbl>, rimm <dbl>,
-#> #   rima <dbl>, rim_pct <dbl>, midm <dbl>, mida <dbl>, mid_pct <dbl>,
-#> #   pbackm <dbl>, pbacka <dbl>, pback_pct <dbl>, blk_rim <dbl>, blk_mid <dbl>,
-#> #   blk_three <dbl>, pct_fga_trans <dbl>, pct_tpa_trans <dbl>, …
 # }
+}
 # \donttest{
   try(load_ncaa_mbb_team_box(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 450 × 81
+#> # A tibble: 690 × 81
 #>    home   away  team   mins o_mins d_mins o_poss d_poss  ortg  drtg netrtg   pts
 #>    <chr>  <chr> <chr> <dbl>  <dbl>  <dbl>  <dbl>  <dbl> <dbl> <dbl>  <dbl> <dbl>
-#>  1 TCU    Lind… Lind…  39.6   21.0   18.7     75     77  78.7 127.   -48.6    59
-#>  2 TCU    Lind… TCU    39.6   18.7   21.0     77     75 127.   78.7   48.6    98
-#>  3 Calif… Nort… Cali…  39.5   22.2   17.3     76     76  82.9  93.4  -10.5    63
-#>  4 Calif… Nort… Nort…  39.5   17.3   22.2     76     76  93.4  82.9   10.5    71
-#>  5 Georg… Loyo… Geor…  39.7   18.5   21.2     67     67 119.   86.6   32.8    80
-#>  6 Georg… Loyo… Loyo…  39.7   21.2   18.5     67     67  86.6 119.   -32.8    58
-#>  7 Virgi… Copp… Copp…  39.6   20.6   19.1     75     72  72   122.   -50.2    54
-#>  8 Virgi… Copp… Virg…  39.6   19.1   20.6     72     75 122.   72     50.2    88
-#>  9 San D… Cal … Cal …  39.7   18.5   21.2     80     82  97.5 124.   -26.9    78
-#> 10 San D… Cal … San …  39.7   21.2   18.5     82     80 124.   97.5   26.9   102
-#> # ℹ 440 more rows
+#>  1 Linde… East… East…  39.4   25.4   13.9     73     72  60.3 160.   -99.4    44
+#>  2 Linde… East… Lind…  39.4   13.9   25.4     72     73 160.   60.3   99.4   115
+#>  3 TCU    Lind… Lind…  39.6   21.0   18.7     75     77  78.7 127.   -48.6    59
+#>  4 TCU    Lind… TCU    39.6   18.7   21.0     77     75 127.   78.7   48.6    98
+#>  5 Linde… Cent… Cent…  39.2   24.5   14.8     77     77  59.7 156.   -96.1    46
+#>  6 Linde… Cent… Lind…  39.2   14.8   24.5     77     77 156.   59.7   96.1   120
+#>  7 Calif… Nort… Cali…  39.5   22.2   17.3     76     76  82.9  93.4  -10.5    63
+#>  8 Calif… Nort… Nort…  39.5   17.3   22.2     76     76  93.4  82.9   10.5    71
+#>  9 Orego… Cali… Cali…  39.8   22.2   17.6     66     67 103.  143.   -40.3    68
+#> 10 Orego… Cali… Oreg…  39.8   17.6   22.2     67     66 143.  103.    40.3    96
+#> # ℹ 680 more rows
 #> # ℹ 69 more variables: d_pts <dbl>, fga <dbl>, d_fga <dbl>, fgm <dbl>,
 #> #   d_fgm <dbl>, tpa <dbl>, d_tpa <dbl>, tpm <dbl>, d_tpm <dbl>, fta <dbl>,
 #> #   d_fta <dbl>, ftm <dbl>, d_ftm <dbl>, rima <dbl>, d_rima <dbl>, rimm <dbl>,
@@ -1045,20 +940,20 @@ Saiem Gilani
 # \donttest{
   try(load_ncaa_mbb_rosters(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 5,210 × 4
+#> # A tibble: 5,738 × 4
 #>    season team               player                  games
 #>     <int> <chr>              <chr>                   <int>
-#>  1   2027 A&M-Corpus Christi BEAU.BILLINGSLEY            1
-#>  2   2027 A&M-Corpus Christi BINAEL.BASIL                1
-#>  3   2027 A&M-Corpus Christi BRYSON.WHEATFALL            1
-#>  4   2027 A&M-Corpus Christi CJ.WORSHAM                  1
-#>  5   2027 A&M-Corpus Christi DAMARION.WINSTON            1
-#>  6   2027 A&M-Corpus Christi DAN.MUKUNA                  1
-#>  7   2027 A&M-Corpus Christi DANIEL.MICHELINIJACKSON     1
-#>  8   2027 A&M-Corpus Christi DESMOND.KENT                1
-#>  9   2027 A&M-Corpus Christi ISAIAH.LEWIS                1
-#> 10   2027 A&M-Corpus Christi JORDAN.MIZELL               1
-#> # ℹ 5,200 more rows
+#>  1   2027 A&M-Corpus Christi BEAU.BILLINGSLEY            2
+#>  2   2027 A&M-Corpus Christi BINAEL.BASIL                2
+#>  3   2027 A&M-Corpus Christi BRYSON.WHEATFALL            2
+#>  4   2027 A&M-Corpus Christi CJ.WORSHAM                  2
+#>  5   2027 A&M-Corpus Christi DAMARION.WINSTON            2
+#>  6   2027 A&M-Corpus Christi DAN.MUKUNA                  2
+#>  7   2027 A&M-Corpus Christi DANIEL.MICHELINIJACKSON     2
+#>  8   2027 A&M-Corpus Christi DESMOND.KENT                2
+#>  9   2027 A&M-Corpus Christi ISAIAH.LEWIS                2
+#> 10   2027 A&M-Corpus Christi JORDAN.MIZELL               2
+#> # ℹ 5,728 more rows
 # }
 # \donttest{
   try(load_ncaa_mbb_team_rosters(seasons = most_recent_mbb_season()))
@@ -1083,20 +978,20 @@ Saiem Gilani
 # \donttest{
   try(load_ncaa_mbb_schedule(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 225 × 7
+#> # A tibble: 345 × 7
 #>    contest_id game_date  home               away    home_score away_score season
 #>    <chr>      <chr>      <chr>              <chr>        <int>      <int>  <int>
-#>  1 6607592    11/02/2026 TCU                Linden…         98         59   2027
-#>  2 6608198    11/03/2026 California Baptist North …         63         71   2027
-#>  3 6612138    11/02/2026 Georgetown         Loyola…         80         58   2027
-#>  4 6613745    11/03/2026 Virginia Tech      Coppin…         88         54   2027
-#>  5 6616203    11/03/2026 San Diego St.      Cal St…        102         78   2027
-#>  6 6616882    11/02/2026 Butler             Lafaye…         96         60   2027
-#>  7 6617968    11/02/2026 Mississippi St.    Tennes…        106         88   2027
-#>  8 6617989    11/02/2026 Louisiana          Akron           61         75   2027
-#>  9 6618544    11/04/2026 Butler             FDU             99         65   2027
-#> 10 6619661    11/02/2026 West Florida       Southe…        127         42   2027
-#> # ℹ 215 more rows
+#>  1 6607173    11/07/2026 Lindenwood         East-W…        115         44   2027
+#>  2 6607592    11/02/2026 TCU                Linden…         98         59   2027
+#>  3 6607633    11/05/2026 Lindenwood         Centra…        120         46   2027
+#>  4 6608198    11/03/2026 California Baptist North …         63         71   2027
+#>  5 6608199    11/06/2026 Oregon St.         Califo…         96         68   2027
+#>  6 6612138    11/02/2026 Georgetown         Loyola…         80         58   2027
+#>  7 6612140    11/06/2026 Mount St. Mary's   Loyola…         68         57   2027
+#>  8 6613745    11/03/2026 Virginia Tech      Coppin…         88         54   2027
+#>  9 6613746    11/06/2026 George Mason       Coppin…         68         51   2027
+#> 10 6616203    11/03/2026 San Diego St.      Cal St…        102         78   2027
+#> # ℹ 335 more rows
 # }
 # \donttest{
   try(load_ncaa_mbb_team_ids(seasons = most_recent_mbb_season()))

@@ -64,42 +64,18 @@ classes of this family: see the notes in
 
 ## See also
 
-Other CBA Functions:
-[`cba_best_player()`](https://hoopR.sportsdataverse.org/reference/cba_best_player.md),
-[`cba_best_stats()`](https://hoopR.sportsdataverse.org/reference/cba_best_stats.md),
-[`cba_game_info()`](https://hoopR.sportsdataverse.org/reference/cba_game_info.md),
-[`cba_game_team_four()`](https://hoopR.sportsdataverse.org/reference/cba_game_team_four.md),
-[`cba_game_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_game_team_shots.md),
-[`cba_match_types()`](https://hoopR.sportsdataverse.org/reference/cba_match_types.md),
-[`cba_period_scores()`](https://hoopR.sportsdataverse.org/reference/cba_period_scores.md),
-[`cba_player_advanced()`](https://hoopR.sportsdataverse.org/reference/cba_player_advanced.md),
-[`cba_player_base()`](https://hoopR.sportsdataverse.org/reference/cba_player_base.md),
-[`cba_player_box()`](https://hoopR.sportsdataverse.org/reference/cba_player_box.md),
-[`cba_player_defensive()`](https://hoopR.sportsdataverse.org/reference/cba_player_defensive.md),
-[`cba_player_extras()`](https://hoopR.sportsdataverse.org/reference/cba_player_extras.md),
-[`cba_player_offensive()`](https://hoopR.sportsdataverse.org/reference/cba_player_offensive.md),
-[`cba_player_shots()`](https://hoopR.sportsdataverse.org/reference/cba_player_shots.md),
-[`cba_report_status()`](https://hoopR.sportsdataverse.org/reference/cba_report_status.md),
-[`cba_rosters()`](https://hoopR.sportsdataverse.org/reference/cba_rosters.md),
-[`cba_schedule_day()`](https://hoopR.sportsdataverse.org/reference/cba_schedule_day.md),
-[`cba_schedule_month()`](https://hoopR.sportsdataverse.org/reference/cba_schedule_month.md),
-[`cba_seasons()`](https://hoopR.sportsdataverse.org/reference/cba_seasons.md),
-[`cba_team_basic()`](https://hoopR.sportsdataverse.org/reference/cba_team_basic.md),
-[`cba_team_counts()`](https://hoopR.sportsdataverse.org/reference/cba_team_counts.md),
-[`cba_team_four()`](https://hoopR.sportsdataverse.org/reference/cba_team_four.md),
-[`cba_team_options()`](https://hoopR.sportsdataverse.org/reference/cba_team_options.md),
-[`cba_team_overview()`](https://hoopR.sportsdataverse.org/reference/cba_team_overview.md),
-[`cba_team_shots()`](https://hoopR.sportsdataverse.org/reference/cba_team_shots.md),
-[`cba_teams()`](https://hoopR.sportsdataverse.org/reference/cba_teams.md)
+[family_cba](https://hoopR.sportsdataverse.org/reference/family_cba.md)
+lists every function in this family.
 
 ## Examples
 
 ``` r
 # \donttest{
-  try(cba_pbp(schedule_id = 100105799))
+  # First quarter only; omit quarter_num for the whole game.
+  try(cba_pbp(schedule_id = 100105799, quarter_num = 1))
 #> ── CBA Play-by-Play from data-server.cbaleague.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:18:07 UTC
-#> # A tibble: 319 × 19
+#> ℹ Data updated: 2026-11-09 12:02:48 UTC
+#> # A tibble: 74 × 19
 #>    schedule_id bt_textual_format    color distance home_color home_score minutes
 #>          <int> <chr>                <chr> <chr>    <chr>           <int>   <int>
 #>  1   100105799 刘传兴和卡尔顿跳球，山西汾酒队得到球权… #7E0… NA       #E0B71B             0      10
@@ -112,7 +88,7 @@ Other CBA Functions:
 #>  8   100105799 黑根斯失误，被卡尔顿断下…… #7E0… NA       #E0B71B             2       8
 #>  9   100105799 卡尔顿跳投，被刘传兴盖掉，刘传兴获得防… #E0B… NA       #E0B71B             2       8
 #> 10   100105799 迪亚洛失误，被布朗断下…… #7E0… NA       #E0B71B             2       8
-#> # ℹ 309 more rows
+#> # ℹ 64 more rows
 #> # ℹ 12 more variables: player_cn_names <chr>, player_fouls <chr>,
 #> #   player_score <chr>, quarter_num <int>, seconds <int>, team_cn_alias1 <chr>,
 #> #   team_cn_alias2 <chr>, team_cn_alias3 <chr>, textual_format <chr>,

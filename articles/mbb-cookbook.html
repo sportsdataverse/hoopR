@@ -375,14 +375,35 @@ an <code>athlete_id</code> straight off it, then walk the
 <span><span class="co">#&gt; $Draft</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 0 × 0</span></span></span>
 <span><span class="fu"><a href="../reference/espn_mbb_player_overview.html">espn_mbb_player_gamelog</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="va">athlete_id</span>, season <span class="op">=</span> <span class="fu"><a href="../reference/most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 0 × 0</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 25</span></span></span>
+<span><span class="co">#&gt;   id       week  at_vs game_date score home_team_id away_team_id home_team_score</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 4019095… 1     vs    2026-11-… 113-… 150          324          113            </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 17 more variables: away_team_score &lt;chr&gt;, game_result &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   league_name &lt;chr&gt;, league_abbreviation &lt;chr&gt;, league_short_name &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   team_id &lt;chr&gt;, team_uid &lt;chr&gt;, team_abbreviation &lt;chr&gt;, team_logo &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   team_is_all_star &lt;chr&gt;, opponent_id &lt;chr&gt;, opponent_uid &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   opponent_display_name &lt;chr&gt;, opponent_abbreviation &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   opponent_logo &lt;chr&gt;, opponent_logo_dark &lt;chr&gt;, event_id &lt;chr&gt;</span></span></span>
 <span><span class="fu"><a href="../reference/espn_mbb_player_career_stats.html">espn_mbb_player_career_stats</a></span><span class="op">(</span>athlete_id <span class="op">=</span> <span class="va">athlete_id</span><span class="op">)</span>    <span class="co"># career rollup, long format</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 0 × 17</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 17 variables: league &lt;chr&gt;, athlete_id &lt;chr&gt;, stat_type_id &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   split_id &lt;chr&gt;, split_name &lt;chr&gt;, split_type &lt;chr&gt;, category_name &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   category_display &lt;chr&gt;, category_short &lt;chr&gt;, category_abbrev &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   stat_name &lt;chr&gt;, stat_abbrev &lt;chr&gt;, stat_display &lt;chr&gt;, stat_short &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   description &lt;chr&gt;, value &lt;dbl&gt;, display_value &lt;chr&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 87 × 17</span></span></span>
+<span><span class="co">#&gt;    league   athlete_id stat_type_id split_id split_name split_type category_name</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> mens-co… 5454779    0            0        Season     season     defensive    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> mens-co… 5454779    0            0        Season     season     defensive    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> mens-co… 5454779    0            0        Season     season     defensive    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> mens-co… 5454779    0            0        Season     season     defensive    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> mens-co… 5454779    0            0        Season     season     defensive    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> mens-co… 5454779    0            0        Season     season     defensive    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> mens-co… 5454779    0            0        Season     season     defensive    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> mens-co… 5454779    0            0        Season     season     defensive    </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> mens-co… 5454779    0            0        Season     season     general      </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> mens-co… 5454779    0            0        Season     season     general      </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 77 more rows</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 10 more variables: category_display &lt;chr&gt;, category_short &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   category_abbrev &lt;chr&gt;, stat_name &lt;chr&gt;, stat_abbrev &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   stat_display &lt;chr&gt;, stat_short &lt;chr&gt;, description &lt;chr&gt;, value &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   display_value &lt;chr&gt;</span></span></span></code></pre></div>
 <p>That “pull the index, lift an ID, drill down” move is the single most
 useful habit in the whole package. <code>athlete_gamelog</code> in
 particular only has data for players <em>currently</em> on a roster –
@@ -629,16 +650,16 @@ with the <code>season_group</code> family.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 365 × 87</span></span></span>
 <span><span class="co">#&gt;    team_id team             conference avgpointsagainst avgpointsfor gamesbehind</span></span>
 <span><span class="co">#&gt;      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>     160 New Hampshire W… America E…             55           62.5           0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>     399 UAlbany Great D… America E…             67.5         73             0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>    <span style="text-decoration: underline;">2</span>349 UMass Lowell Ri… America E…             59           96             0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>    <span style="text-decoration: underline;">2</span>066 Binghamton Bear… America E…             70.5         59             1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>    <span style="text-decoration: underline;">2</span>803 Bryant Bulldogs  America E…             70.5         68             1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>     311 Maine Black Bea… America E…             77.5         65             1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>     261 Vermont Catamou… America E…             61.5         67             1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>    <span style="text-decoration: underline;">2</span>885 NJIT Highlanders America E…             80.5         53.5           2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>    <span style="text-decoration: underline;">2</span>378 UMBC Retrievers  America E…             85           67             2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>    <span style="text-decoration: underline;">2</span>429 Charlotte 49ers  American …             68.5         77.5           0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span>    <span style="text-decoration: underline;">2</span>349 UMass Lowell Ri… America E…             59.7         85           0  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span>    <span style="text-decoration: underline;">2</span>066 Binghamton Bear… America E…             68           64.3         1  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span>     160 New Hampshire W… America E…             63.7         67           1  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span>     399 UAlbany Great D… America E…             69.3         68.7         1  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span>    <span style="text-decoration: underline;">2</span>803 Bryant Bulldogs  America E…             69.7         65           2  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span>     311 Maine Black Bea… America E…             74.3         64           2  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span>    <span style="text-decoration: underline;">2</span>885 NJIT Highlanders America E…             71           53.7         2  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span>     261 Vermont Catamou… America E…             67.3         70           2  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span>    <span style="text-decoration: underline;">2</span>378 UMBC Retrievers  America E…             85           67           2.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span>    <span style="text-decoration: underline;">2</span>429 Charlotte 49ers  American …             68.5         77.5         0  </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 355 more rows</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 81 more variables: leaguewinpercent &lt;dbl&gt;, losses &lt;dbl&gt;, playoffseed &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   pointdifferential &lt;chr&gt;, pointsagainst &lt;dbl&gt;, pointsfor &lt;dbl&gt;,</span></span></span>

@@ -178,38 +178,7 @@ Timestamps are Turkey local time (<code>Europe/Istanbul</code>).</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>Other TBF Functions:
-<code><a href="tbf_daily_matches.html">tbf_daily_matches()</a></code>,
-<code><a href="tbf_game_header.html">tbf_game_header()</a></code>,
-<code><a href="tbf_game_leaders.html">tbf_game_leaders()</a></code>,
-<code><a href="tbf_game_players.html">tbf_game_players()</a></code>,
-<code><a href="tbf_highlights.html">tbf_highlights()</a></code>,
-<code><a href="tbf_leaders_assists.html">tbf_leaders_assists()</a></code>,
-<code><a href="tbf_leaders_blocks.html">tbf_leaders_blocks()</a></code>,
-<code><a href="tbf_leaders_efficiency.html">tbf_leaders_efficiency()</a></code>,
-<code><a href="tbf_leaders_minutes.html">tbf_leaders_minutes()</a></code>,
-<code><a href="tbf_leaders_points.html">tbf_leaders_points()</a></code>,
-<code><a href="tbf_leaders_rebounds.html">tbf_leaders_rebounds()</a></code>,
-<code><a href="tbf_leaders_steals.html">tbf_leaders_steals()</a></code>,
-<code><a href="tbf_leaders_threes.html">tbf_leaders_threes()</a></code>,
-<code><a href="tbf_leaders_turnovers.html">tbf_leaders_turnovers()</a></code>,
-<code><a href="tbf_league_seasons.html">tbf_league_seasons()</a></code>,
-<code><a href="tbf_leagues.html">tbf_leagues()</a></code>,
-<code><a href="tbf_pbp.html">tbf_pbp()</a></code>,
-<code><a href="tbf_period_scores.html">tbf_period_scores()</a></code>,
-<code><a href="tbf_player_box.html">tbf_player_box()</a></code>,
-<code><a href="tbf_player_career.html">tbf_player_career()</a></code>,
-<code><a href="tbf_players.html">tbf_players()</a></code>,
-<code><a href="tbf_schedule.html">tbf_schedule()</a></code>,
-<code><a href="tbf_seasons.html">tbf_seasons()</a></code>,
-<code><a href="tbf_shots.html">tbf_shots()</a></code>,
-<code><a href="tbf_standings.html">tbf_standings()</a></code>,
-<code><a href="tbf_team_box.html">tbf_team_box()</a></code>,
-<code><a href="tbf_team_games.html">tbf_team_games()</a></code>,
-<code><a href="tbf_team_player_stats.html">tbf_team_player_stats()</a></code>,
-<code><a href="tbf_team_staff.html">tbf_team_staff()</a></code>,
-<code><a href="tbf_teams.html">tbf_teams()</a></code>,
-<code><a href="tbf_weeks.html">tbf_weeks()</a></code></p></div>
+    <div class="dont-index"><p><a href="family_tbf.html">family_tbf</a> lists every function in this family.</p></div>
     </div>
 
     <div class="section level2">
@@ -217,8 +186,8 @@ Timestamps are Turkey local time (<code>Europe/Istanbul</code>).</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">tbf_team_roster</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2027</span>, team_process_id <span class="op">=</span> <span class="fl">265995</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── TBF Team Roster ────────────────────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-06 07:26:15 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 17 × 13</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 12:09:32 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 18 × 13</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season competition team_process_id person_id first_name last_name nationality</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">395</span>705 Berkay     Gönül     TÜRKİYE    </span>
@@ -230,14 +199,15 @@ Timestamps are Turkey local time (<code>Europe/Istanbul</code>).</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">381</span>976 Karahan    Efeoğlu   TÜRKİYE    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">452</span>216 Kerem      Çorumlul… TÜRKİYE    </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">197</span>570 Leon       Apaydın   TÜRKİYE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">450</span>092 Poyraz     Paşaoğlu  TÜRKİYE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">227</span>173 Sadık      Kabaca    TÜRKİYE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">778</span>399 Shavar     Reynolds… ABD        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">450</span>651 Soykan     Bağadır   TÜRKİYE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">485</span>299 Terrell    Carter II ABD        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">736</span>069 Tre'shawn  Thurman   ABD        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">196</span>413 Yiğitcan   Saybir    TÜRKİYE    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">778</span>402 Zach       Nutall    ABD        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">732</span>657 MANTAS     RUBSTAVI… LİTVANYA   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">450</span>092 Poyraz     Paşaoğlu  TÜRKİYE    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">227</span>173 Sadık      Kabaca    TÜRKİYE    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">778</span>399 Shavar     Reynolds… ABD        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">450</span>651 Soykan     Bağadır   TÜRKİYE    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">485</span>299 Terrell    Carter II ABD        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">736</span>069 Tre'shawn  Thurman   ABD        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">196</span>413 Yiğitcan   Saybir    TÜRKİYE    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span>   <span style="text-decoration: underline;">2</span>027 bsl                  <span style="text-decoration: underline;">265</span>995    <span style="text-decoration: underline;">778</span>402 Zach       Nutall    ABD        </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 6 more variables: height_cm &lt;int&gt;, jersey_number &lt;chr&gt;, games &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   seconds_played &lt;int&gt;, points_per_game &lt;dbl&gt;, efficiency_per_game &lt;dbl&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>

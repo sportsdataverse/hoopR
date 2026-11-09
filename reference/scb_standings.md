@@ -107,29 +107,8 @@ classes of this family: see the notes in
 
 ## See also
 
-Other SCB Functions:
-[`scb_game()`](https://hoopR.sportsdataverse.org/reference/scb_game.md),
-[`scb_game_actions()`](https://hoopR.sportsdataverse.org/reference/scb_game_actions.md),
-[`scb_game_players()`](https://hoopR.sportsdataverse.org/reference/scb_game_players.md),
-[`scb_game_teams()`](https://hoopR.sportsdataverse.org/reference/scb_game_teams.md),
-[`scb_games()`](https://hoopR.sportsdataverse.org/reference/scb_games.md),
-[`scb_games_recent()`](https://hoopR.sportsdataverse.org/reference/scb_games_recent.md),
-[`scb_player_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_player_statistics.md),
-[`scb_playoff_games()`](https://hoopR.sportsdataverse.org/reference/scb_playoff_games.md),
-[`scb_playoff_series()`](https://hoopR.sportsdataverse.org/reference/scb_playoff_series.md),
-[`scb_records_per_game()`](https://hoopR.sportsdataverse.org/reference/scb_records_per_game.md),
-[`scb_records_season_averages()`](https://hoopR.sportsdataverse.org/reference/scb_records_season_averages.md),
-[`scb_referees()`](https://hoopR.sportsdataverse.org/reference/scb_referees.md),
-[`scb_season_player()`](https://hoopR.sportsdataverse.org/reference/scb_season_player.md),
-[`scb_season_players()`](https://hoopR.sportsdataverse.org/reference/scb_season_players.md),
-[`scb_season_teams()`](https://hoopR.sportsdataverse.org/reference/scb_season_teams.md),
-[`scb_seasons()`](https://hoopR.sportsdataverse.org/reference/scb_seasons.md),
-[`scb_team()`](https://hoopR.sportsdataverse.org/reference/scb_team.md),
-[`scb_team_rosters()`](https://hoopR.sportsdataverse.org/reference/scb_team_rosters.md),
-[`scb_team_seasons()`](https://hoopR.sportsdataverse.org/reference/scb_team_seasons.md),
-[`scb_team_statistics()`](https://hoopR.sportsdataverse.org/reference/scb_team_statistics.md),
-[`scb_transfers()`](https://hoopR.sportsdataverse.org/reference/scb_transfers.md),
-[`scb_transfers_teams()`](https://hoopR.sportsdataverse.org/reference/scb_transfers_teams.md)
+[family_scb](https://hoopR.sportsdataverse.org/reference/family_scb.md)
+lists every function in this family.
 
 ## Examples
 
@@ -137,25 +116,25 @@ Other SCB Functions:
 # \donttest{
   try(scb_standings())
 #> ── BBL/DBBL Standings from the SCB API ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:25:10 UTC
+#> ℹ Data updated: 2026-11-09 12:08:38 UTC
 #> # A tibble: 18 × 55
 #>    league season standing_id season_team_id team_id team_name           team_tlc
 #>    <chr>   <int> <chr>       <chr>          <chr>   <chr>               <chr>   
 #>  1 bbl      2027 74719       486            486     FC Bayern München … FCB     
 #>  2 bbl      2027 74708       414            414     VET-CONCEPT Gladia… TRI     
 #>  3 bbl      2027 74714       428            428     SYNTAINICS MBC      MBC     
-#>  4 bbl      2027 74713       426            426     SKYLINERS           FRS     
-#>  5 bbl      2027 74720       540            540     Fitness First Würz… WUE     
-#>  6 bbl      2027 74716       433            433     MHP RIESEN Ludwigs… LUD     
-#>  7 bbl      2027 74722       551            551     ROSTOCK SEAWOLVES   HRO     
+#>  4 bbl      2027 74722       551            551     ROSTOCK SEAWOLVES   HRO     
+#>  5 bbl      2027 74709       415            415     Telekom Baskets Bo… BON     
+#>  6 bbl      2027 74713       426            426     SKYLINERS           FRS     
+#>  7 bbl      2027 74720       540            540     Fitness First Würz… WUE     
 #>  8 bbl      2027 74711       420            420     BMA365 Bamberg Bas… BAM     
-#>  9 bbl      2027 74709       415            415     Telekom Baskets Bo… BON     
-#> 10 bbl      2027 74707       413            413     ALBA Berlin         BER     
-#> 11 bbl      2027 74710       418            418     ratiopharm ulm      ULM     
+#>  9 bbl      2027 74715       430            430     EWE Baskets Oldenb… OLD     
+#> 10 bbl      2027 74716       433            433     MHP RIESEN Ludwigs… LUD     
+#> 11 bbl      2027 74707       413            413     ALBA Berlin         BER     
 #> 12 bbl      2027 74712       422            422     Basketball Löwen B… BRA     
-#> 13 bbl      2027 74715       430            430     EWE Baskets Oldenb… OLD     
-#> 14 bbl      2027 74717       483            483     Science City Jena   JEN     
-#> 15 bbl      2027 74721       541            541     RASTA Vechta        VEC     
+#> 13 bbl      2027 74721       541            541     RASTA Vechta        VEC     
+#> 14 bbl      2027 74710       418            418     ratiopharm ulm      ULM     
+#> 15 bbl      2027 74717       483            483     Science City Jena   JEN     
 #> 16 bbl      2027 74718       485            485     NINERS Chemnitz     CHE     
 #> 17 bbl      2027 74785       473            473     Phoenix Hagen       HAG     
 #> 18 bbl      2027 74723       554            554     Veolia Towers Hamb… HAM     

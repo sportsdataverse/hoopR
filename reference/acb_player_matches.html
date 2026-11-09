@@ -163,51 +163,7 @@ whole double is accepted.</p></dd>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
-    <div class="dont-index"><p>Other ACB Functions:
-<code><a href="acb_box_info.html">acb_box_info()</a></code>,
-<code><a href="acb_bracket.html">acb_bracket()</a></code>,
-<code><a href="acb_bracket_games.html">acb_bracket_games()</a></code>,
-<code><a href="acb_calendar.html">acb_calendar()</a></code>,
-<code><a href="acb_career_stints.html">acb_career_stints()</a></code>,
-<code><a href="acb_career_trophies.html">acb_career_trophies()</a></code>,
-<code><a href="acb_club_data.html">acb_club_data()</a></code>,
-<code><a href="acb_competition_current.html">acb_competition_current()</a></code>,
-<code><a href="acb_competition_editions.html">acb_competition_editions()</a></code>,
-<code><a href="acb_competition_rounds.html">acb_competition_rounds()</a></code>,
-<code><a href="acb_competition_weeks.html">acb_competition_weeks()</a></code>,
-<code><a href="acb_current_roster.html">acb_current_roster()</a></code>,
-<code><a href="acb_lead_stats.html">acb_lead_stats()</a></code>,
-<code><a href="acb_lead_tracker.html">acb_lead_tracker()</a></code>,
-<code><a href="acb_league_zones.html">acb_league_zones()</a></code>,
-<code><a href="acb_lineup.html">acb_lineup()</a></code>,
-<code><a href="acb_match_advanced_stats.html">acb_match_advanced_stats()</a></code>,
-<code><a href="acb_match_header.html">acb_match_header()</a></code>,
-<code><a href="acb_match_leaders.html">acb_match_leaders()</a></code>,
-<code><a href="acb_matchlist.html">acb_matchlist()</a></code>,
-<code><a href="acb_next_matches.html">acb_next_matches()</a></code>,
-<code><a href="acb_pbp.html">acb_pbp()</a></code>,
-<code><a href="acb_period_scores.html">acb_period_scores()</a></code>,
-<code><a href="acb_player_advanced_stats.html">acb_player_advanced_stats()</a></code>,
-<code><a href="acb_player_box.html">acb_player_box()</a></code>,
-<code><a href="acb_player_data.html">acb_player_data()</a></code>,
-<code><a href="acb_player_stats.html">acb_player_stats()</a></code>,
-<code><a href="acb_player_totals.html">acb_player_totals()</a></code>,
-<code><a href="acb_quickfacts.html">acb_quickfacts()</a></code>,
-<code><a href="acb_round_matches.html">acb_round_matches()</a></code>,
-<code><a href="acb_search.html">acb_search()</a></code>,
-<code><a href="acb_season_leaders.html">acb_season_leaders()</a></code>,
-<code><a href="acb_serie.html">acb_serie()</a></code>,
-<code><a href="acb_shots.html">acb_shots()</a></code>,
-<code><a href="acb_standings.html">acb_standings()</a></code>,
-<code><a href="acb_standings_rounds.html">acb_standings_rounds()</a></code>,
-<code><a href="acb_team_box.html">acb_team_box()</a></code>,
-<code><a href="acb_team_comparison.html">acb_team_comparison()</a></code>,
-<code><a href="acb_team_leaders.html">acb_team_leaders()</a></code>,
-<code><a href="acb_team_matches.html">acb_team_matches()</a></code>,
-<code><a href="acb_team_records.html">acb_team_records()</a></code>,
-<code><a href="acb_team_stats.html">acb_team_stats()</a></code>,
-<code><a href="acb_team_totals.html">acb_team_totals()</a></code>,
-<code><a href="acb_teams.html">acb_teams()</a></code></p></div>
+    <div class="dont-index"><p><a href="family_acb.html">family_acb</a> lists every function in this family.</p></div>
     </div>
 
     <div class="section level2">
@@ -215,8 +171,8 @@ whole double is accepted.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">acb_player_matches</span><span class="op">(</span>player_id <span class="op">=</span> <span class="fl">20209407</span>, season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ACB Player Matches from api2.acb.com ───────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-06 07:16:47 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 42</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-09 12:02:02 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 7 × 42</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   player_id match_id round_type round_number date                home_team_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  20<span style="text-decoration: underline;">209</span>407   <span style="text-decoration: underline;">105</span>383 LR                    1 2026-09-27 <span style="color: #949494;">17:00:00</span>         <span style="text-decoration: underline;">4</span>476</span>
@@ -225,6 +181,7 @@ whole double is accepted.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>  20<span style="text-decoration: underline;">209</span>407   <span style="text-decoration: underline;">105</span>407 LR                    4 2026-10-18 <span style="color: #949494;">10:30:00</span>         <span style="text-decoration: underline;">4</span>476</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>  20<span style="text-decoration: underline;">209</span>407   <span style="text-decoration: underline;">105</span>419 LR                    5 2026-10-25 <span style="color: #949494;">18:00:00</span>         <span style="text-decoration: underline;">4</span>465</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>  20<span style="text-decoration: underline;">209</span>407   <span style="text-decoration: underline;">105</span>425 LR                    6 2026-11-01 <span style="color: #949494;">11:30:00</span>         <span style="text-decoration: underline;">4</span>476</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span>  20<span style="text-decoration: underline;">209</span>407   <span style="text-decoration: underline;">105</span>437 LR                    7 2026-11-08 <span style="color: #949494;">18:00:00</span>         <span style="text-decoration: underline;">4</span>476</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 36 more variables: home_club_id &lt;int&gt;, home_team &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   home_team_abbr &lt;chr&gt;, away_team_id &lt;int&gt;, away_club_id &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   away_team &lt;chr&gt;, away_team_abbr &lt;chr&gt;, edition_id &lt;int&gt;, season &lt;int&gt;,</span></span>

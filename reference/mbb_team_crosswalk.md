@@ -121,9 +121,10 @@ Other MBB Crosswalk Functions:
 ## Examples
 
 ``` r
+if (FALSE) { # interactive()
 # \donttest{
+  # Builds from ESPN, Torvik and one Fox request per conference (about 30).
   try(mbb_team_crosswalk(season = 2025))
-#> Error in .bb_source_error(sprintf("Torvik %d: no team rows (%d rows, columns %s); a blocked or empty response must not ship as NA bart_* columns",  : 
-#>   Torvik 2025: no team rows (19 rows, columns doctype_html_public_w3c_dtd_html_4_01_transitional_en_http_www_w3_org_tr_html4_loose_dtd, year); a blocked or empty response must not ship as NA bart_* columns
 # }
+}
 ```

@@ -88,22 +88,8 @@ classes of this family: see the notes in
 
 ## See also
 
-Other TPBL Functions:
-[`tpbl_box_player_periods()`](https://hoopR.sportsdataverse.org/reference/tpbl_box_player_periods.md),
-[`tpbl_box_players()`](https://hoopR.sportsdataverse.org/reference/tpbl_box_players.md),
-[`tpbl_box_team_periods()`](https://hoopR.sportsdataverse.org/reference/tpbl_box_team_periods.md),
-[`tpbl_box_teams()`](https://hoopR.sportsdataverse.org/reference/tpbl_box_teams.md),
-[`tpbl_divisions()`](https://hoopR.sportsdataverse.org/reference/tpbl_divisions.md),
-[`tpbl_game()`](https://hoopR.sportsdataverse.org/reference/tpbl_game.md),
-[`tpbl_player_games()`](https://hoopR.sportsdataverse.org/reference/tpbl_player_games.md),
-[`tpbl_player_shots()`](https://hoopR.sportsdataverse.org/reference/tpbl_player_shots.md),
-[`tpbl_referees()`](https://hoopR.sportsdataverse.org/reference/tpbl_referees.md),
-[`tpbl_roster()`](https://hoopR.sportsdataverse.org/reference/tpbl_roster.md),
-[`tpbl_seasons()`](https://hoopR.sportsdataverse.org/reference/tpbl_seasons.md),
-[`tpbl_standings()`](https://hoopR.sportsdataverse.org/reference/tpbl_standings.md),
-[`tpbl_standings_against()`](https://hoopR.sportsdataverse.org/reference/tpbl_standings_against.md),
-[`tpbl_team_shots()`](https://hoopR.sportsdataverse.org/reference/tpbl_team_shots.md),
-[`tpbl_teams()`](https://hoopR.sportsdataverse.org/reference/tpbl_teams.md)
+[family_tpbl](https://hoopR.sportsdataverse.org/reference/family_tpbl.md)
+lists every function in this family.
 
 ## Examples
 
@@ -111,7 +97,7 @@ Other TPBL Functions:
 # \donttest{
   try(tpbl_games(season = 2026))
 #> ── TPBL Games from api.tpbl.basketball ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:26:25 UTC
+#> ℹ Data updated: 2026-11-09 12:09:42 UTC
 #> # A tibble: 150 × 34
 #>    season season_id game_id gohoops_game_id division_id gohoops_division_id
 #>     <int>     <int>   <int>           <int>       <int>               <int>

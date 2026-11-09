@@ -54,21 +54,8 @@ failure (another status, a transport error, a non-JSON body) is
 
 ## See also
 
-Other Euroleague:
-[`euroleague_clubs()`](https://hoopR.sportsdataverse.org/reference/euroleague_clubs.md),
-[`euroleague_competitions()`](https://hoopR.sportsdataverse.org/reference/euroleague_competitions.md),
-[`euroleague_game_boxscore()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_boxscore.md),
-[`euroleague_game_header()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_header.md),
-[`euroleague_game_pbp()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_pbp.md),
-[`euroleague_game_points()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_points.md),
-[`euroleague_game_report()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_report.md),
-[`euroleague_game_stats()`](https://hoopR.sportsdataverse.org/reference/euroleague_game_stats.md),
-[`euroleague_games()`](https://hoopR.sportsdataverse.org/reference/euroleague_games.md),
-[`euroleague_people()`](https://hoopR.sportsdataverse.org/reference/euroleague_people.md),
-[`euroleague_player_stats()`](https://hoopR.sportsdataverse.org/reference/euroleague_player_stats.md),
-[`euroleague_seasons()`](https://hoopR.sportsdataverse.org/reference/euroleague_seasons.md),
-[`euroleague_standings()`](https://hoopR.sportsdataverse.org/reference/euroleague_standings.md),
-[`euroleague_team_stats()`](https://hoopR.sportsdataverse.org/reference/euroleague_team_stats.md)
+[family_euroleague](https://hoopR.sportsdataverse.org/reference/family_euroleague.md)
+lists every function in this family.
 
 ## Examples
 
@@ -78,7 +65,7 @@ Other Euroleague:
     euroleague_rounds(competition_code = "E", season_code = "E2025")
   })
 #> ── EuroLeague rounds from api-live.euroleague.net ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:20:14 UTC
+#> ℹ Data updated: 2026-11-09 12:04:53 UTC
 #> # A tibble: 47 × 8
 #>    season_code phase_type_code round index name      min_game_start_date
 #>    <chr>       <chr>           <int> <int> <chr>     <chr>              

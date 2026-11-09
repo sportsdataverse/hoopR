@@ -198,14 +198,35 @@ espn_mbb_player_info(athlete_id = athlete_id)            # bio
 #> $Draft
 #> # A tibble: 0 × 0
 espn_mbb_player_gamelog(athlete_id = athlete_id, season = most_recent_mbb_season())
-#> # A tibble: 0 × 0
+#> # A tibble: 1 × 25
+#>   id       week  at_vs game_date score home_team_id away_team_id home_team_score
+#>   <chr>    <chr> <chr> <chr>     <chr> <chr>        <chr>        <chr>          
+#> 1 4019095… 1     vs    2026-11-… 113-… 150          324          113            
+#> # ℹ 17 more variables: away_team_score <chr>, game_result <chr>,
+#> #   league_name <chr>, league_abbreviation <chr>, league_short_name <chr>,
+#> #   team_id <chr>, team_uid <chr>, team_abbreviation <chr>, team_logo <chr>,
+#> #   team_is_all_star <chr>, opponent_id <chr>, opponent_uid <chr>,
+#> #   opponent_display_name <chr>, opponent_abbreviation <chr>,
+#> #   opponent_logo <chr>, opponent_logo_dark <chr>, event_id <chr>
 espn_mbb_player_career_stats(athlete_id = athlete_id)    # career rollup, long format
-#> # A tibble: 0 × 17
-#> # ℹ 17 variables: league <chr>, athlete_id <chr>, stat_type_id <chr>,
-#> #   split_id <chr>, split_name <chr>, split_type <chr>, category_name <chr>,
-#> #   category_display <chr>, category_short <chr>, category_abbrev <chr>,
-#> #   stat_name <chr>, stat_abbrev <chr>, stat_display <chr>, stat_short <chr>,
-#> #   description <chr>, value <dbl>, display_value <chr>
+#> # A tibble: 87 × 17
+#>    league   athlete_id stat_type_id split_id split_name split_type category_name
+#>    <chr>    <chr>      <chr>        <chr>    <chr>      <chr>      <chr>        
+#>  1 mens-co… 5454779    0            0        Season     season     defensive    
+#>  2 mens-co… 5454779    0            0        Season     season     defensive    
+#>  3 mens-co… 5454779    0            0        Season     season     defensive    
+#>  4 mens-co… 5454779    0            0        Season     season     defensive    
+#>  5 mens-co… 5454779    0            0        Season     season     defensive    
+#>  6 mens-co… 5454779    0            0        Season     season     defensive    
+#>  7 mens-co… 5454779    0            0        Season     season     defensive    
+#>  8 mens-co… 5454779    0            0        Season     season     defensive    
+#>  9 mens-co… 5454779    0            0        Season     season     general      
+#> 10 mens-co… 5454779    0            0        Season     season     general      
+#> # ℹ 77 more rows
+#> # ℹ 10 more variables: category_display <chr>, category_short <chr>,
+#> #   category_abbrev <chr>, stat_name <chr>, stat_abbrev <chr>,
+#> #   stat_display <chr>, stat_short <chr>, description <chr>, value <dbl>,
+#> #   display_value <chr>
 ```
 
 That “pull the index, lift an ID, drill down” move is the single most
@@ -467,16 +488,16 @@ espn_mbb_standings(year = season)
 #> # A tibble: 365 × 87
 #>    team_id team             conference avgpointsagainst avgpointsfor gamesbehind
 #>      <int> <chr>            <chr>                 <dbl>        <dbl>       <dbl>
-#>  1     160 New Hampshire W… America E…             55           62.5           0
-#>  2     399 UAlbany Great D… America E…             67.5         73             0
-#>  3    2349 UMass Lowell Ri… America E…             59           96             0
-#>  4    2066 Binghamton Bear… America E…             70.5         59             1
-#>  5    2803 Bryant Bulldogs  America E…             70.5         68             1
-#>  6     311 Maine Black Bea… America E…             77.5         65             1
-#>  7     261 Vermont Catamou… America E…             61.5         67             1
-#>  8    2885 NJIT Highlanders America E…             80.5         53.5           2
-#>  9    2378 UMBC Retrievers  America E…             85           67             2
-#> 10    2429 Charlotte 49ers  American …             68.5         77.5           0
+#>  1    2349 UMass Lowell Ri… America E…             59.7         85           0  
+#>  2    2066 Binghamton Bear… America E…             68           64.3         1  
+#>  3     160 New Hampshire W… America E…             63.7         67           1  
+#>  4     399 UAlbany Great D… America E…             69.3         68.7         1  
+#>  5    2803 Bryant Bulldogs  America E…             69.7         65           2  
+#>  6     311 Maine Black Bea… America E…             74.3         64           2  
+#>  7    2885 NJIT Highlanders America E…             71           53.7         2  
+#>  8     261 Vermont Catamou… America E…             67.3         70           2  
+#>  9    2378 UMBC Retrievers  America E…             85           67           2.5
+#> 10    2429 Charlotte 49ers  American …             68.5         77.5         0  
 #> # ℹ 355 more rows
 #> # ℹ 81 more variables: leaguewinpercent <dbl>, losses <dbl>, playoffseed <dbl>,
 #> #   pointdifferential <chr>, pointsagainst <dbl>, pointsfor <dbl>,

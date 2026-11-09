@@ -134,28 +134,8 @@ classes of this family: see the notes in
 
 ## See also
 
-Other NBL Rosetta Functions:
-[`nbl_rosetta_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match.md),
-[`nbl_rosetta_match_by_id()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_by_id.md),
-[`nbl_rosetta_match_pbp()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_pbp.md),
-[`nbl_rosetta_match_player_box()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_player_box.md),
-[`nbl_rosetta_match_player_period_box()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_player_period_box.md),
-[`nbl_rosetta_match_team_box()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_match_team_box.md),
-[`nbl_rosetta_matches()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_matches.md),
-[`nbl_rosetta_next_match()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_next_match.md),
-[`nbl_rosetta_next_match_team()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_next_match_team.md),
-[`nbl_rosetta_next_matches()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_next_matches.md),
-[`nbl_rosetta_outcomes()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_outcomes.md),
-[`nbl_rosetta_player_game_log()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_player_game_log.md),
-[`nbl_rosetta_players()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_players.md),
-[`nbl_rosetta_seasons()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_seasons.md),
-[`nbl_rosetta_seasons_current()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_seasons_current.md),
-[`nbl_rosetta_standings()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_standings.md),
-[`nbl_rosetta_stats_leaders()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_stats_leaders.md),
-[`nbl_rosetta_team_players()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_players.md),
-[`nbl_rosetta_team_stats()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats.md),
-[`nbl_rosetta_team_stats_leaders()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_team_stats_leaders.md),
-[`nbl_rosetta_teams()`](https://hoopR.sportsdataverse.org/reference/nbl_rosetta_teams.md)
+[family_nbl_rosetta](https://hoopR.sportsdataverse.org/reference/family_nbl_rosetta.md)
+lists every function in this family.
 
 ## Examples
 
@@ -163,14 +143,14 @@ Other NBL Rosetta Functions:
 # \donttest{
   try(nbl_rosetta_player_stats(org = "nbl", player_id = "7619d3ea-410d-11f0-9235-2902fc2f936f"))
 #> ── NBL Rosetta player_stats from prod.rosetta.nbl.com.au ──────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 07:24:33 UTC
-#> # A tibble: 3 × 92
+#> ℹ Data updated: 2026-11-09 12:07:58 UTC
+#> # A tibble: 3 × 91
 #>   org   assists_average blocks_average field_goals_attempted field_goals_made
 #>   <chr>           <dbl>          <dbl>                 <int>            <int>
 #> 1 nbl              1.57         0.243                    338              134
-#> 2 nbl              1.23         0.0645                   184               77
-#> 3 nbl             NA           NA                         NA               NA
-#> # ℹ 87 more variables: field_goals_attempted_average <dbl>,
+#> 2 nbl              2.36         0                        174               78
+#> 3 nbl              1.23         0.0645                   184               77
+#> # ℹ 86 more variables: field_goals_attempted_average <dbl>,
 #> #   field_goals_made_average <dbl>, field_goals_percentage <dbl>,
 #> #   fouls_average <dbl>, free_throws_attempted <int>, free_throws_made <int>,
 #> #   free_throws_attempted_average <dbl>, free_throws_made_average <dbl>,
