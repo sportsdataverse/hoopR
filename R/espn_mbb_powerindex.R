@@ -21,8 +21,9 @@ NULL
 #' @export
 #' @concept ESPN MBB Functions
 #' @seealso [family_espn_mbb] lists every function in this family.
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Interactive only: every team's power index for a season, 2-5 s.
 #'   espn_mbb_powerindex(season = 2025)
 #' }
 espn_mbb_powerindex <- function(season = most_recent_mbb_season(),

@@ -74,9 +74,12 @@ Auto-paginates through all teams. Backed by
 \code{sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/{season}/powerindex}.
 }
 \examples{
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
+  # Interactive only: every team's power index for a season, 2-5 s.
   espn_mbb_powerindex(season = 2025)
 }
+\dontshow{\}) # examplesIf}
 \donttest{
   espn_nba_powerindex(season = 2025)
 }
