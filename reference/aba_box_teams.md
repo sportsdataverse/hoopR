@@ -102,10 +102,21 @@ Other ABA Functions:
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
 # \donttest{
   # Interactive only: parsing the box-score page takes 2-4 s.
   try(aba_box_teams(game_no = 6, season = 2026))
+#> ── ABA League Team Box ────────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-09 19:50:43 UTC
+#> # A tibble: 2 × 34
+#>   game_no season league_id league side  team_id team_name  minutes points fg_pct
+#>     <int>  <int>     <int> <chr>  <chr>   <int> <chr>      <chr>    <int>  <dbl>
+#> 1       6   2026         1 aba    home       12 Budućnost… 225:00      93   42.3
+#> 2       6   2026         1 aba    away       91 Spartak O… 225:00      97   49.3
+#> # ℹ 24 more variables: fg2_made <int>, fg2_att <int>, fg2_pct <dbl>,
+#> #   fg3_made <int>, fg3_att <int>, fg3_pct <dbl>, ft_made <int>, ft_att <int>,
+#> #   ft_pct <dbl>, reb_def <int>, reb_off <int>, reb_tot <int>, assists <int>,
+#> #   steals <int>, turnovers <int>, blocks <int>, blocks_against <int>,
+#> #   fouls <int>, fouls_drawn <int>, pts_paint <int>, pts_second_chance <int>,
+#> #   pts_fast_break <int>, plus_minus <int>, valuation <int>
 # }
-}
 ```

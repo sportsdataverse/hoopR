@@ -94,7 +94,7 @@ lists every function in this family.
     euroleague_team_stats(competition_code = "E", season_code = "E2025", mode = "advanced")
   })
 #> ── EuroLeague advanced team stats from api-live.euroleague.net ── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:11:25 UTC
+#> ℹ Data updated: 2026-11-09 19:53:38 UTC
 #> # A tibble: 20 × 20
 #>    team_ranking games_played effective_field_goal_perce…¹ true_shooting_percen…²
 #>           <int>        <dbl> <chr>                        <chr>                 

@@ -78,7 +78,7 @@ Saiem Gilani
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
   try({
     df <- nba_shot_zones(game_id = "0022200001")

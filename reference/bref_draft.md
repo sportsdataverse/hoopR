@@ -45,7 +45,7 @@ Other Basketball-Reference Functions:
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
   try(bref_draft(season = 2024))
 # }

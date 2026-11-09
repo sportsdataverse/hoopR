@@ -67,7 +67,7 @@ lists every function in this family.
     euroleague_people(competition_code = "E", season_code = "E2025", limit = 50)
   })
 #> ── EuroLeague people from api-live.euroleague.net ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:11:24 UTC
+#> ℹ Data updated: 2026-11-09 19:53:36 UTC
 #> # A tibble: 50 × 48
 #>    type  type_name   active start_date end_date order dorsal dorsal_raw position
 #>    <chr> <chr>       <lgl>  <chr>      <chr>    <int> <chr>  <chr>         <int>

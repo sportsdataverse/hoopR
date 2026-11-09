@@ -36,7 +36,7 @@ Other KenPom Historical Functions:
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
   try(kp_pomeroy_archive_ratings(date='2018-11-22'))
 # }

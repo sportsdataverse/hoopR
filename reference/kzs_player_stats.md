@@ -51,7 +51,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_player_stats(player_id = 106285, season = 2026))
 #> ── KZS Player Season Stats from api.kzs.si ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:12:48 UTC
+#> ℹ Data updated: 2026-11-09 19:55:00 UTC
 #> # A tibble: 2 × 51
 #>   player_id season_id season competition_id    a1    a2    a3   pts   ass  blag
 #>       <int>     <int>  <int>          <int> <int> <int> <int> <int> <int> <int>

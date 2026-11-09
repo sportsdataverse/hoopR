@@ -40,7 +40,7 @@ Other NBA Combined Datasets:
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
   prof <- try(nba_tidy_player_profile(player_id = 201939))
 # }

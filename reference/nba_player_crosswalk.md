@@ -36,7 +36,7 @@ Other NBA Crosswalk Functions:
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
   try(nba_player_crosswalk())
 # }

@@ -112,12 +112,28 @@ Other Atrium Functions:
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
 # \donttest{
   # Interactive only: several stat tables of a whole competition, 2-6 s.
   try(atrium_player_stats(
     website_id = 12, season = 2026, competition_id = "3f4064bb-51ad-11f0-aaaf-2923c944b404"
   ))
+#> ── Atrium player stats from embed-api.eui.connect.sportradar.com ───────────────
+#> ℹ Data updated: 2026-11-09 19:51:21 UTC
+#> # A tibble: 10,212 × 13
+#>    website_id season_id    table_key table_label person_id person_name entity_id
+#>         <int> <chr>        <chr>     <chr>       <chr>     <chr>       <chr>    
+#>  1         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
+#>  2         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
+#>  3         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
+#>  4         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
+#>  5         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
+#>  6         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
+#>  7         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
+#>  8         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
+#>  9         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
+#> 10         12 df310a05-51… averages  Moyennes    01173036… Ismael Bako NA       
+#> # ℹ 10,202 more rows
+#> # ℹ 6 more variables: entity_name <chr>, stat_key <chr>, stat_name <chr>,
+#> #   stat_label <chr>, value <dbl>, value_text <chr>
 # }
-}
 ```

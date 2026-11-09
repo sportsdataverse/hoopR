@@ -102,10 +102,19 @@ Other ABA Functions:
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
 # \donttest{
   # Interactive only: aba-liga.com can take 20+ s to answer.
   try(aba_game(game_no = 6, season = 2026))
+#> ── ABA League Game ────────────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-09 19:50:45 UTC
+#> # A tibble: 1 × 27
+#>   game_no season league_id league season_label round   competition   group when 
+#>     <int>  <int>     <int> <chr>  <chr>        <chr>   <chr>         <chr> <chr>
+#> 1       6   2026         1 aba    2025/26      ROUND 1 AdmiralBet A… B     Sund…
+#> # ℹ 18 more variables: date <date>, date_to <date>, time <chr>,
+#> #   time_zone <chr>, local_time <chr>, local_place <chr>, attendance <int>,
+#> #   venue <chr>, home_team_id <int>, home_team <chr>, home_city <chr>,
+#> #   home_score <int>, away_team_id <int>, away_team <chr>, away_city <chr>,
+#> #   away_score <int>, commissioner <chr>, referees <chr>
 # }
-}
 ```

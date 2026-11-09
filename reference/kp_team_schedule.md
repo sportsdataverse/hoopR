@@ -120,49 +120,49 @@ article.
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
   try(kp_team_schedule(team = 'Florida St.', year = 2022))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
    try(kp_gameplan(team='Florida St.', year=2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
   try(kp_opptracker(team = 'Florida St.', year = 2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
   # \donttest{
     try(kp_team_players(team = 'Florida St.', year = 2024))
   # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
   # \donttest{
     try(kp_player_career(player_id = '41180'))
   # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
   # \donttest{
     try(kp_minutes_matrix(team = 'Florida St.', year = 2021))
   # }
 
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
   # \donttest{
     try(kp_team_player_stats(team = 'Florida St.', year = 2021))
   # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
   # \donttest{
     try(kp_team_depth_chart(team = 'Florida St.', year= 2021))
   # }
 
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
   # \donttest{
     try(kp_team_lineups(team = 'Florida St.', year = 2021))
   # }

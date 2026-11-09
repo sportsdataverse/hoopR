@@ -118,42 +118,42 @@ article.
 ``` r
 # \donttest{
   try(cbbd_plays_game(game_id = 5881))
-#> ✖ 2026-11-09 19:09:47.689667: Invalid arguments or no play data available for 5881!
+#> ✖ 2026-11-09 19:51:57.32986: Invalid arguments or no play data available for 5881!
 #> ✖ Args: game_id = 5881, shooting_plays_only = FALSE
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_plays_player(player_id = 160, season = 2024))
-#> ✖ 2026-11-09 19:09:47.70065: Invalid arguments or no play data available for player 160!
+#> ✖ 2026-11-09 19:51:57.339092: Invalid arguments or no play data available for player 160!
 #> ✖ Args: player_id = 160, season = 2024, shooting_plays_only = FALSE
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_plays_team(season = 2024, team = "Duke"))
-#> ✖ 2026-11-09 19:09:47.711489: Invalid arguments or no play data available for Duke!
+#> ✖ 2026-11-09 19:51:57.347787: Invalid arguments or no play data available for Duke!
 #> ✖ Args: season = 2024, team = "Duke", shooting_plays_only = FALSE
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_plays_date(date = "2024-04-09T00:00:00.000Z"))
-#> ✖ 2026-11-09 19:09:47.721968: Invalid arguments or no play data available for 2024-04-09T00:00:00.000Z!
+#> ✖ 2026-11-09 19:51:57.356508: Invalid arguments or no play data available for 2024-04-09T00:00:00.000Z!
 #> ✖ Args: date = "2024-04-09T00:00:00.000Z", shooting_plays_only = FALSE, utc_offset = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_plays_tournament(tournament = "CIT", season = 2024))
-#> ✖ 2026-11-09 19:09:47.733154: Invalid arguments or no play data available for CIT!
+#> ✖ 2026-11-09 19:51:57.38337: Invalid arguments or no play data available for CIT!
 #> ✖ Args: tournament = "CIT", season = 2024, shooting_plays_only = FALSE
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_play_types())
-#> ✖ 2026-11-09 19:09:47.743904: Invalid arguments or no play types available!
+#> ✖ 2026-11-09 19:51:57.391607: Invalid arguments or no play types available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

@@ -44,10 +44,12 @@ Other Torvik Functions:
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
 # \donttest{
   # Interactive only: a whole season's schedule, 3-5 s of parsing.
   try(torvik_game_schedule(year = 2024))
+#> ✖ 2026-11-09 19:58:11.242023: Invalid arguments or no schedule available for 2024!
+#> ✖ Args: year = 2024
+#> ✖ Error: lexical error: invalid char in json text.                                        <!DOCTYPE HTML PUBLIC "-//W3C//                      (right here) ------^ 
+#> data frame with 0 columns and 0 rows
 # }
-}
 ```

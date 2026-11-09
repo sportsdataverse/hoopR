@@ -161,47 +161,47 @@ article.
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_pomeroy_ratings(min_year = 2021, max_year = 2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_efficiency(min_year = 2021, max_year = 2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_fourfactors(min_year = 2021, max_year = 2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_pointdist(min_year = 2021, max_year = 2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_height(min_year = 2021, max_year = 2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_foul_trouble(min_year = 2021, max_year = 2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_teamstats(min_year = 2021, max_year = 2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_playerstats(metric = "eFG", conf_only = FALSE, year = 2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_kpoy(year = 2026))
 # }

@@ -94,10 +94,27 @@ Other ABA Functions:
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
 # \donttest{
   # Interactive only: the season calendar page can take 20+ s to answer.
   try(aba_calendar(season = 2026))
+#> ── ABA League Calendar ────────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-09 19:50:44 UTC
+#> # A tibble: 248 × 20
+#>    game_no season league_id league season_label  round group home_team away_team
+#>      <int>  <int>     <int> <chr>  <chr>         <chr> <chr> <chr>     <chr>    
+#>  1       3   2026         1 aba    Season 2025/… ROUN… A     Igokea m… FMP      
+#>  2       8   2026         1 aba    Season 2025/… ROUN… B     BC Vienna Perspekt…
+#>  3       4   2026         1 aba    Season 2025/… ROUN… A     SC Derby  Borac Mo…
+#>  4       7   2026         1 aba    Season 2025/… ROUN… B     Cedevita… Mega Sup…
+#>  5       6   2026         1 aba    Season 2025/… ROUN… B     Budućnos… Spartak …
+#>  6       2   2026         1 aba    Season 2025/… ROUN… A     Dubai Ba… Split    
+#>  7       1   2026         1 aba    Season 2025/… ROUN… A     Partizan… Krka     
+#>  8       5   2026         1 aba    Season 2025/… ROUN… B     Crvena z… Zadar    
+#>  9       9   2026         1 aba    Season 2025/… ROUN… A     Split     Partizan…
+#> 10      12   2026         1 aba    Season 2025/… ROUN… A     FMP       SC Derby 
+#> # ℹ 238 more rows
+#> # ℹ 11 more variables: home_abbr <chr>, away_abbr <chr>, home_score <int>,
+#> #   away_score <int>, when <chr>, date <date>, date_to <date>, time <chr>,
+#> #   time_zone <chr>, local_time <chr>, local_place <chr>
 # }
-}
 ```

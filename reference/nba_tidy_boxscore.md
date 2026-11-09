@@ -38,7 +38,7 @@ Other NBA Combined Datasets:
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
   try(nba_tidy_boxscore(game_id = "0022300061"))
 # }

@@ -83,7 +83,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:10:40 UTC
+#> ℹ Data updated: 2026-11-09 19:52:52 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -96,14 +96,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:10:40 UTC
+#> ℹ Data updated: 2026-11-09 19:52:52 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Story Monday'… "Andre Sne… 2026-11-… FALSE   Andre… https:/… 22000    
-#> 2  5.04e7 Head… Sources… "The NBA i… 2026-11-… FALSE   NA     https:/… 46       
-#> 3  5.04e7 Story Fantasy… "Steve Ale… 2026-11-… FALSE   Steve… https:/… 3090     
-#> 4  5.00e7 Story NBA buz… "The NBA i… 2026-11-… FALSE   ESPN … https:/… 46       
+#> 1  5.00e7 Story NBA buz… "The NBA i… 2026-11-… FALSE   ESPN … https:/… 46       
+#> 2  5.04e7 Story Monday'… "Andre Sne… 2026-11-… FALSE   Andre… https:/… 22000    
+#> 3  5.04e7 Head… Sources… "The NBA i… 2026-11-… FALSE   NA     https:/… 46       
+#> 4  5.04e7 Story Fantasy… "Steve Ale… 2026-11-… FALSE   Steve… https:/… 3090     
 #> 5  5.04e7 Head… Giannis… "Giannis A… 2026-11-… FALSE   NA     https:/… 46       
 # }
 ```

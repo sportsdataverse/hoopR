@@ -334,7 +334,7 @@ Saiem Gilani
   espn_mbb_team(team_id = "150", season = 2025)
 #> $Info
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Info from ESPN.com ───────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:11:03 UTC
+#> ℹ Data updated: 2026-11-09 19:53:13 UTC
 #> # A tibble: 1 × 13
 #>   id    uid    slug  abbreviation display_name short_display_name name  nickname
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -344,7 +344,7 @@ Saiem Gilani
 #> 
 #> $Record
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Record from ESPN.com ─────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:11:03 UTC
+#> ℹ Data updated: 2026-11-09 19:53:13 UTC
 #> # A tibble: 1 × 4
 #>   description    stats         summary type 
 #>   <chr>          <list>        <chr>   <chr>
@@ -355,7 +355,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Standing Summary from ESPN.com ────────────
-#> ℹ Data updated: 2026-11-09 19:11:03 UTC
+#> ℹ Data updated: 2026-11-09 19:53:13 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary
 #>   <chr>           
@@ -368,7 +368,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_roster(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Roster from ESPN.com player box scores ────
-#> ℹ Data updated: 2026-11-09 19:11:05 UTC
+#> ℹ Data updated: 2026-11-09 19:53:16 UTC
 #> # A tibble: 15 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
@@ -397,7 +397,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_season_profile(team_id = "150", season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Season Profile from ESPN.com ──────────────
-#> ℹ Data updated: 2026-11-09 19:11:05 UTC
+#> ℹ Data updated: 2026-11-09 19:53:16 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <chr>    <chr>        <chr>       
@@ -414,7 +414,7 @@ Saiem Gilani
   espn_nba_team(team_id = "13", season = 2025)
 #> $Info
 #> ── ESPN NBA Team Info from ESPN.com ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:11:06 UTC
+#> ℹ Data updated: 2026-11-09 19:53:16 UTC
 #> # A tibble: 1 × 12
 #>   id    uid    slug  abbreviation display_name short_display_name name  location
 #>   <chr> <chr>  <chr> <chr>        <chr>        <chr>              <chr> <chr>   
@@ -424,7 +424,7 @@ Saiem Gilani
 #> 
 #> $Record
 #> ── ESPN NBA Team Record from ESPN.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:11:06 UTC
+#> ℹ Data updated: 2026-11-09 19:53:16 UTC
 #> # A tibble: 3 × 4
 #>   description    stats         summary type 
 #>   <chr>          <list>        <chr>   <chr>
@@ -437,7 +437,7 @@ Saiem Gilani
 #> 
 #> $StandingSummary
 #> ── ESPN NBA Team Standing Summary from ESPN.com ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:11:06 UTC
+#> ℹ Data updated: 2026-11-09 19:53:16 UTC
 #> # A tibble: 1 × 1
 #>   standing_summary       
 #>   <chr>                  
@@ -450,7 +450,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_roster(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Roster from ESPN.com player box scores ───────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:11:07 UTC
+#> ℹ Data updated: 2026-11-09 19:53:17 UTC
 #> # A tibble: 26 × 15
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
@@ -475,7 +475,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_season_profile(team_id = "13", season = 2025)
 #> ── ESPN NBA Team Season Profile from ESPN.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:11:07 UTC
+#> ℹ Data updated: 2026-11-09 19:53:17 UTC
 #> # A tibble: 1 × 35
 #>   id    guid       uid   slug  location name  nickname abbreviation display_name
 #>   <chr> <chr>      <chr> <chr> <chr>    <chr> <lgl>    <chr>        <chr>       

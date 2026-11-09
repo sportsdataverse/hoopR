@@ -102,10 +102,30 @@ Other ABA Functions:
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
 # \donttest{
   # Interactive only: parsing the box-score page takes about 4 s.
   try(aba_box_players(game_no = 6, season = 2026))
+#> ── ABA League Player Box ──────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-09 19:50:41 UTC
+#> # A tibble: 24 × 39
+#>    game_no season league_id league side  team_id jersey player_id player_name  
+#>      <int>  <int>     <int> <chr>  <chr>   <int>  <int>     <int> <chr>        
+#>  1       6   2026         1 aba    home       12      1      4769 Sulaimon R.  
+#>  2       6   2026         1 aba    home       12      3      3737 Magee F.     
+#>  3       6   2026         1 aba    home       12      4      5117 Mays S.      
+#>  4       6   2026         1 aba    home       12      6      5140 Thompson J.  
+#>  5       6   2026         1 aba    home       12      7      2482 Slavković A. 
+#>  6       6   2026         1 aba    home       12     10      2627 Tanasković N.
+#>  7       6   2026         1 aba    home       12     11      4104 Ferrell Jr K.
+#>  8       6   2026         1 aba    home       12     13      3750 Jovanović Đ. 
+#>  9       6   2026         1 aba    home       12     15      4781 Morgan J.    
+#> 10       6   2026         1 aba    home       12     16      5053 Boutsiele J. 
+#> # ℹ 14 more rows
+#> # ℹ 30 more variables: starter <lgl>, on_court_at_end <lgl>, played <lgl>,
+#> #   minutes <chr>, points <int>, fg_pct <dbl>, fg2_made <int>, fg2_att <int>,
+#> #   fg2_pct <dbl>, fg3_made <int>, fg3_att <int>, fg3_pct <dbl>, ft_made <int>,
+#> #   ft_att <int>, ft_pct <dbl>, reb_def <int>, reb_off <int>, reb_tot <int>,
+#> #   assists <int>, steals <int>, turnovers <int>, blocks <int>,
+#> #   blocks_against <int>, fouls <int>, fouls_drawn <int>, pts_paint <int>, …
 # }
-}
 ```

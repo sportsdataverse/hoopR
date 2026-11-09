@@ -105,37 +105,37 @@ article.
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_trends())
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_officials(year = 2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_referee(referee = 714363, year = 2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_hca())
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_arenas(year = 2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_game_attrs(year = 2021, attr = "Excitement"))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_fanmatch(date = "2022-02-22"))
 # }

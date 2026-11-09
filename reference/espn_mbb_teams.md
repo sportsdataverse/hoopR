@@ -80,16 +80,36 @@ Saiem Gilani
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
 # \donttest{
 # Interactive only: ESPN's directory of about 360 teams takes ~7 s.
 try(espn_mbb_teams())
+#> ── ESPN MBB Teams Information from ESPN.com ───────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-09 19:53:26 UTC
+#> # A tibble: 365 × 32
+#>    abbreviation alternate_color color display_name team_id team  logo  logo_dark
+#>    <chr>        <chr>           <chr> <chr>          <int> <chr> <chr> <chr>    
+#>  1 ACU          b1b3b3          592d… Abilene Chr…    2000 Abil… http… https://…
+#>  2 AF           ffffff          0035… Air Force F…    2005 Air … http… https://…
+#>  3 AKR          c5b783          041e… Akron Zips      2006 Akron http… https://…
+#>  4 AAMU         ffffff          7900… Alabama A&M…    2010 Alab… http… https://…
+#>  5 ALA          ffffff          9e1b… Alabama Cri…     333 Alab… http… https://…
+#>  6 ALST         0a0a0a          e9a9… Alabama Sta…    2011 Alab… http… https://…
+#>  7 ALCN         46166a          4b00… Alcorn Stat…    2016 Alco… http… https://…
+#>  8 AMER         c8102e          c411… American Un…      44 Amer… http… https://…
+#>  9 APP          ffcd00          0000… App State M…    2026 App … http… https://…
+#> 10 ASU          8c1d40          ffc6… Arizona Sta…       9 Ariz… http… https://…
+#> # ℹ 355 more rows
+#> # ℹ 24 more variables: logos_href_3 <chr>, logos_href_4 <chr>,
+#> #   logos_href_5 <chr>, logos_href_6 <chr>, logos_href_7 <chr>,
+#> #   logos_href_8 <chr>, logos_href_9 <chr>, logos_href_10 <chr>,
+#> #   logos_href_11 <chr>, logos_href_12 <chr>, logos_href_13 <chr>,
+#> #   logos_href_14 <chr>, mascot <chr>, nickname <chr>, short_name <chr>,
+#> #   href <chr>, conference_url <chr>, group_id <int>, conference_name <chr>, …
 # }
-}
 # \donttest{
 try(espn_nba_teams())
 #> ── ESPN NBA Teams Information from ESPN.com ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:11:14 UTC
+#> ℹ Data updated: 2026-11-09 19:53:26 UTC
 #> # A tibble: 30 × 25
 #>    abbreviation alternate_color color display_name team_id team  logo  logo_dark
 #>    <chr>        <chr>           <chr> <chr>          <int> <chr> <chr> <chr>    

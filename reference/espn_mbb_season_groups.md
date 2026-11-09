@@ -80,7 +80,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_groups(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Groups Index ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:10:54 UTC
+#> ℹ Data updated: 2026-11-09 19:53:05 UTC
 #> # A tibble: 4 × 5
 #>   league                  season season_type group_id ref                       
 #>   <chr>                    <int>       <int> <chr>    <chr>                     
@@ -92,7 +92,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_groups(season = 2025)
 #> ── ESPN NBA Season Groups Index ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:10:55 UTC
+#> ℹ Data updated: 2026-11-09 19:53:06 UTC
 #> # A tibble: 4 × 5
 #>   league season season_type group_id ref                                        
 #>   <chr>   <int>       <int> <chr>    <chr>                                      

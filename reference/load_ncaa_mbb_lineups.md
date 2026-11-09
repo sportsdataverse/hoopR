@@ -343,36 +343,128 @@ Saiem Gilani
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
 # \donttest{
   # One season is a ~80 MB download.
   try(load_ncaa_mbb_pbp(seasons = most_recent_mbb_season()))
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
+#> # A tibble: 195,079 × 87
+#>    game_date  home       away     period clock game_time game_seconds home_score
+#>    <chr>      <chr>      <chr>     <int> <chr> <chr>            <int>      <int>
+#>  1 11/07/2026 Lindenwood East-We…      1 19:58 00:02                2          0
+#>  2 11/07/2026 Lindenwood East-We…      1 19:58 00:02                2          0
+#>  3 11/07/2026 Lindenwood East-We…      1 19:46 00:14               14          0
+#>  4 11/07/2026 Lindenwood East-We…      1 19:46 00:14               14          0
+#>  5 11/07/2026 Lindenwood East-We…      1 19:46 00:14               14          0
+#>  6 11/07/2026 Lindenwood East-We…      1 19:46 00:14               14          0
+#>  7 11/07/2026 Lindenwood East-We…      1 19:46 00:14               14          1
+#>  8 11/07/2026 Lindenwood East-We…      1 19:31 00:29               29          1
+#>  9 11/07/2026 Lindenwood East-We…      1 19:31 00:29               29          1
+#> 10 11/07/2026 Lindenwood East-We…      1 19:31 00:29               29          1
+#> # ℹ 195,069 more rows
+#> # ℹ 79 more variables: away_score <int>, event_team <chr>,
+#> #   event_description <chr>, player_1 <chr>, player_2 <chr>, event_type <chr>,
+#> #   event_result <chr>, shot_value <int>, event_length <int>, poss_num <int>,
+#> #   poss_team <chr>, poss_length <int>, is_transition <lgl>, home_1 <chr>,
+#> #   home_2 <chr>, home_3 <chr>, home_4 <chr>, home_5 <chr>, away_1 <chr>,
+#> #   away_2 <chr>, away_3 <chr>, away_4 <chr>, away_5 <chr>, status <chr>, …
 # }
-}
-if (FALSE) { # interactive()
 # \donttest{
   # One season is a ~10 MB download.
   try(load_ncaa_mbb_shots(seasons = most_recent_mbb_season()))
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
+#> # A tibble: 44,656 × 19
+#>    season team_id     shooter_id shot_x shot_y dist_ft shot_zone shot_type made 
+#>     <int> <chr>       <chr>       <dbl>  <dbl>   <dbl> <chr>     <chr>     <lgl>
+#>  1   2027 East-West … ChHammonds   -4   20.4     20.8  mid       unknown   TRUE 
+#>  2   2027 Lindenwood  MaArchie      4    4.4      5.95 paint     unknown   TRUE 
+#>  3   2027 Lindenwood  MaDiouf      -1    4.4      4.51 paint     unknown   FALSE
+#>  4   2027 Lindenwood  MaDiouf      -2    2.52     3.22 rim       unknown   TRUE 
+#>  5   2027 East-West … CaHarris      4.5  8.16     9.32 paint     unknown   FALSE
+#>  6   2027 East-West … DaGriffin    12   23.2     26.1  abovebre… unknown   FALSE
+#>  7   2027 Lindenwood  MaDiouf      -2.5  2.52     3.55 rim       unknown   TRUE 
+#>  8   2027 East-West … ChHammonds  -19.5 17.6     26.2  abovebre… unknown   TRUE 
+#>  9   2027 Lindenwood  MaDiouf       2.5  4.4      5.06 paint     unknown   TRUE 
+#> 10   2027 East-West … ChHammonds   22.5 -0.300   22.5  corner3   unknown   FALSE
+#> # ℹ 44,646 more rows
+#> # ℹ 10 more variables: point_value <int>, period <int>, sec_left <dbl>,
+#> #   source <chr>, contest_id <chr>, ncaa_team_id <chr>, espn_team_id <int>,
+#> #   shooter_player_id <chr>, shooter_clean_name <chr>, espn_game_id <int>
 # }
-}
-if (FALSE) { # interactive()
 # \donttest{
   # One season is a ~20 MB download.
   try(load_ncaa_mbb_lineups(seasons = most_recent_mbb_season()))
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
+#> # A tibble: 18,121 × 77
+#>    lineup_key   date  location_type team  team_year opponent lineup_id start_min
+#>    <chr>        <chr> <chr>         <chr>     <int> <chr>    <chr>         <dbl>
+#>  1 c9c6073aef5… 2026… Home          Lind…      2026 East-We… DoClay_M…     0    
+#>  2 c9c6073aef5… 2026… Home          Lind…      2026 East-We… DoClay_M…     0.483
+#>  3 e68f84014cd… 2026… Home          Lind…      2026 East-We… DeRollin…     5.13 
+#>  4 50063539c84… 2026… Home          Lind…      2026 East-We… DeRollin…     8.28 
+#>  5 93beea462b2… 2026… Home          Lind…      2026 East-We… DoClay_M…     9.2  
+#>  6 6397e30d24a… 2026… Home          Lind…      2026 East-We… DeRollin…    11.3  
+#>  7 8f54cd25ef3… 2026… Home          Lind…      2026 East-We… DeRollin…    11.9  
+#>  8 b1e6192a27c… 2026… Home          Lind…      2026 East-We… DeRollin…    14.4  
+#>  9 56c1bbf0645… 2026… Home          Lind…      2026 East-We… DoClay_K…    14.9  
+#> 10 e2b4c3cb2ef… 2026… Home          Lind…      2026 East-We… DoClay_M…    17.4  
+#> # ℹ 18,111 more rows
+#> # ℹ 69 more variables: end_min <dbl>, duration_mins <dbl>, player_1 <chr>,
+#> #   player_2 <chr>, player_3 <chr>, player_4 <chr>, player_5 <chr>,
+#> #   players_in <chr>, players_out <chr>, start_scored <int>,
+#> #   start_allowed <int>, end_scored <int>, end_allowed <int>, start_diff <int>,
+#> #   end_diff <int>, player_count_error <???>, poss <int>, pts <int>,
+#> #   plus_minus <int>, fga <int>, fgm <int>, rima <int>, rimm <int>, …
 # }
-}
-if (FALSE) { # interactive()
 # \donttest{
   # One season is a ~12 MB download.
   try(load_ncaa_mbb_matchup_stints(seasons = most_recent_mbb_season()))
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
+#> # A tibble: 13,261 × 33
+#>    contest_id season game_date  home   away  game_stint_num period start_seconds
+#>    <chr>       <int> <chr>      <chr>  <chr>          <int>  <int>         <int>
+#>  1 6607173      2027 11/07/2026 Linde… East…              1      1             2
+#>  2 6607173      2027 11/07/2026 Linde… East…              2      1            34
+#>  3 6607173      2027 11/07/2026 Linde… East…              3      1           325
+#>  4 6607173      2027 11/07/2026 Linde… East…              4      1           507
+#>  5 6607173      2027 11/07/2026 Linde… East…              5      1           563
+#>  6 6607173      2027 11/07/2026 Linde… East…              6      1           696
+#>  7 6607173      2027 11/07/2026 Linde… East…              7      1           744
+#>  8 6607173      2027 11/07/2026 Linde… East…              8      1           777
+#>  9 6607173      2027 11/07/2026 Linde… East…              9      1           878
+#> 10 6607173      2027 11/07/2026 Linde… East…             10      1           908
+#> # ℹ 13,251 more rows
+#> # ℹ 25 more variables: end_seconds <int>, duration_seconds <int>,
+#> #   matchup_key <chr>, home_lineup_key <chr>, away_lineup_key <chr>,
+#> #   home_lineup <chr>, away_lineup <chr>, end_home_score <int>,
+#> #   end_away_score <int>, n_events <int>, n_possessions <int>,
+#> #   start_home_score <int>, start_away_score <int>, home_pts <int>,
+#> #   away_pts <int>, home_1 <chr>, home_2 <chr>, home_3 <chr>, home_4 <chr>, …
 # }
-}
-if (FALSE) { # interactive()
 # \donttest{
   # One season is a ~17 MB download.
   try(load_ncaa_mbb_possessions(seasons = most_recent_mbb_season()))
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
+#> # A tibble: 53,964 × 56
+#>    game_date  home   away  period poss_num poss_team home_1 home_2 home_3 home_4
+#>    <chr>      <chr>  <chr>  <int>    <int> <chr>     <chr>  <chr>  <chr>  <chr> 
+#>  1 11/07/2026 Linde… East…      1        1 Lindenwo… MAKHA… MALEK… MATAR… SHAMI…
+#>  2 11/07/2026 Linde… East…      1        2 East-Wes… MAKHA… MALEK… MATAR… SHAMI…
+#>  3 11/07/2026 Linde… East…      1        3 Lindenwo… DOM.C… MAKHA… MALEK… MATAR…
+#>  4 11/07/2026 Linde… East…      1        4 East-Wes… DOM.C… MAKHA… MALEK… MATAR…
+#>  5 11/07/2026 Linde… East…      1        5 Lindenwo… DOM.C… MAKHA… MALEK… MATAR…
+#>  6 11/07/2026 Linde… East…      1        6 East-Wes… DOM.C… MAKHA… MALEK… MATAR…
+#>  7 11/07/2026 Linde… East…      1        7 Lindenwo… DOM.C… MAKHA… MALEK… MATAR…
+#>  8 11/07/2026 Linde… East…      1        8 East-Wes… DOM.C… MAKHA… MALEK… MATAR…
+#>  9 11/07/2026 Linde… East…      1        9 Lindenwo… DOM.C… MAKHA… MALEK… MATAR…
+#> 10 11/07/2026 Linde… East…      1       10 East-Wes… DOM.C… MAKHA… MALEK… MATAR…
+#> # ℹ 53,954 more rows
+#> # ℹ 46 more variables: home_5 <chr>, away_1 <chr>, away_2 <chr>, away_3 <chr>,
+#> #   away_4 <chr>, away_5 <chr>, home_score <int>, away_score <int>, pts <int>,
+#> #   is_assisted <int>, is_transition <int>, is_garbage_time <int>,
+#> #   start_event_type <chr>, first_shot_time <int>, first_shot_type <chr>,
+#> #   last_event_time <int>, last_event_type <chr>, contest_id <chr>,
+#> #   home_ncaa_team_id <chr>, home_espn_team_id <int>, …
 # }
-}
 # \donttest{
   try(load_ncaa_mbb_rapm_within_team(seasons = most_recent_mbb_season()))
 #> Warning: Failed to read
@@ -401,12 +493,31 @@ if (FALSE) { # interactive()
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 0 × 0
 # }
-if (FALSE) { # interactive()
 # \donttest{
   # One season is a ~10 MB download.
   try(load_ncaa_mbb_player_box(seasons = most_recent_mbb_season()))
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
+#> # A tibble: 8,726 × 125
+#>    game_date home  away  team  player  mins o_poss   pts   orb   drb   ast   stl
+#>    <chr>     <chr> <chr> <chr> <chr>  <dbl>  <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+#>  1 11/07/20… Lind… East… East… ALLEN…  6.5      12     2     0     0     1     2
+#>  2 11/07/20… Lind… East… East… AMARE…  5.43     11     0     0     0     0     0
+#>  3 11/07/20… Lind… East… East… ANDRE… 12.6      21     0     1     0     1     0
+#>  4 11/07/20… Lind… East… East… CALEB… 25.0      45     6     0     0     3     0
+#>  5 11/07/20… Lind… East… East… CAMER… 11.0      21     0     1     2     0     0
+#>  6 11/07/20… Lind… East… East… CHRIS… 39.8      73    25     0     3     0     2
+#>  7 11/07/20… Lind… East… East… DAYSH… 15.5      29     3     2     0     0     0
+#>  8 11/07/20… Lind… East… East… DIANT…  8.48     16     0     0     0     0     0
+#>  9 11/07/20… Lind… East… East… GEORG… 29.7      55     6     1     1     1     0
+#> 10 11/07/20… Lind… East… East… GODWI…  9.87     18     0     0     2     0     0
+#> # ℹ 8,716 more rows
+#> # ℹ 113 more variables: blk <dbl>, tov <dbl>, pf <dbl>, ts_pct <dbl>,
+#> #   efg_pct <dbl>, fgm <dbl>, fga <dbl>, fg_pct <dbl>, tpm <dbl>, tpa <dbl>,
+#> #   tp_pct <dbl>, ftm <dbl>, fta <dbl>, ft_pct <dbl>, rimm <dbl>, rima <dbl>,
+#> #   rim_pct <dbl>, midm <dbl>, mida <dbl>, mid_pct <dbl>, pbackm <dbl>,
+#> #   pbacka <dbl>, pback_pct <dbl>, blk_rim <dbl>, blk_mid <dbl>,
+#> #   blk_three <dbl>, pct_fga_trans <dbl>, pct_tpa_trans <dbl>, …
 # }
-}
 # \donttest{
   try(load_ncaa_mbb_team_box(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──

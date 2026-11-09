@@ -43,12 +43,12 @@ article.
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_box(game_id = 6, year = 2021))
 # }
 }
-if (FALSE) { # interactive()
+if (FALSE) { # interactive() && !nzchar(Sys.getenv("CI"))
 # \donttest{
 try(kp_winprob(game_id = 1238, year = 2020))
 # }

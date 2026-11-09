@@ -100,7 +100,7 @@ lists every function in this family.
 # \donttest{
   try(pleague_schedule(season = 2025))
 #> ── P. LEAGUE+ Schedule from pleagueofficial.com ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:14:22 UTC
+#> ℹ Data updated: 2026-11-09 19:56:55 UTC
 #> # A tibble: 48 × 23
 #>    season season_slug stage   gid date       weekday_zh time  starred game_label
 #>     <int> <chr>       <chr> <int> <date>     <chr>      <chr> <lgl>   <chr>     

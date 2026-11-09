@@ -518,12 +518,31 @@ Other hoopR Loader Functions:
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
 # \donttest{
 # One season is a ~80 MB download.
 load_mbb_pbp(seasons = most_recent_mbb_season())
+#> ── ESPN MBB pbp from hoopR data repository ────────────────────── hoopR 3.2.0 ──
+#> # A tibble: 237,034 × 63
+#>    game_play_number id        sequence_number type_id type_text text  away_score
+#>               <int> <chr>               <int>   <int> <chr>     <chr>      <int>
+#>  1                1 40190227…       120473789     615 Jumpball  "Sta…          0
+#>  2                2 40190227…       120473793     615 Jumpball  "Jum…          0
+#>  3                3 40190227…       120473795     615 Jumpball  "Jum…          0
+#>  4                4 40190227…       120474005     558 JumpShot  "Sha…          0
+#>  5                5 40190227…       120474009     618 Block Sh… "Dra…          0
+#>  6                6 40190227…       120474012     587 Defensiv… "Edu…          0
+#>  7                7 40190227…       120474014     558 JumpShot  "Edu…          0
+#>  8                8 40190227…       120474195     587 Defensiv… "Jas…          0
+#>  9                9 40190227…       120474436     598 Lost Bal… "Coo…          0
+#> 10               10 40190227…       120474439     607 Steal     "Jal…          0
+#> # ℹ 237,024 more rows
+#> # ℹ 56 more variables: home_score <int>, period_number <int>,
+#> #   period_display_value <chr>, clock_display_value <chr>, scoring_play <lgl>,
+#> #   score_value <int>, wallclock <chr>, shooting_play <lgl>,
+#> #   coordinate_x_raw <dbl>, coordinate_y_raw <dbl>, points_attempted <int>,
+#> #   short_description <chr>, team_id <int>, athlete_id_1 <int>,
+#> #   athlete_id_2 <int>, game_id <int>, season <int>, season_type <int>, …
 # }
-}
 # \donttest{
 load_mbb_team_box(seasons = most_recent_mbb_season())
 #> ── ESPN MBB team_box from hoopR data repository ───────────────── hoopR 3.2.0 ──
@@ -549,12 +568,32 @@ load_mbb_team_box(seasons = most_recent_mbb_season())
 #> #   team_score <int>, team_winner <lgl>, assists <int>, blocks <int>,
 #> #   defensive_rebounds <int>, fast_break_points <chr>, field_goal_pct <dbl>, …
 # }
-if (FALSE) { # interactive()
 # \donttest{
 # One season is a ~7 MB download.
 load_mbb_player_box(seasons = most_recent_mbb_season())
+#> ── ESPN MBB player_box from hoopR data repository ─────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-09 12:25:55 UTC
+#> # A tibble: 15,104 × 55
+#>      game_id season season_type game_date  game_date_time      athlete_id
+#>        <int>  <int>       <int> <date>     <dttm>                   <int>
+#>  1 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5185443
+#>  2 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5176136
+#>  3 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5165276
+#>  4 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5142729
+#>  5 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5060732
+#>  6 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5383766
+#>  7 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5222135
+#>  8 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5210978
+#>  9 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5142711
+#> 10 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5041952
+#> # ℹ 15,094 more rows
+#> # ℹ 49 more variables: athlete_display_name <chr>, team_id <int>,
+#> #   team_name <chr>, team_location <chr>, team_short_display_name <chr>,
+#> #   minutes <dbl>, field_goals_made <int>, field_goals_attempted <int>,
+#> #   three_point_field_goals_made <int>,
+#> #   three_point_field_goals_attempted <int>, free_throws_made <int>,
+#> #   free_throws_attempted <int>, offensive_rebounds <int>, …
 # }
-}
 # \donttest{
 load_mbb_schedule(seasons = most_recent_mbb_season())
 #> ── ESPN MBB schedules from hoopR data repository ──────────────── hoopR 3.2.0 ──
@@ -580,10 +619,29 @@ load_mbb_schedule(seasons = most_recent_mbb_season())
 #> #   venue_address_state <chr>, venue_indoor <lgl>, status_clock <dbl>,
 #> #   status_display_clock <chr>, status_period <dbl>, status_type_id <int>, …
 # }
-if (FALSE) { # interactive()
 # \donttest{
 # One season is a ~14 MB download.
 load_mbb_shots(seasons = most_recent_mbb_season())
+#> ── ESPN MBB shots from hoopR data repository ──────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-09 12:39:24 UTC
+#> # A tibble: 77,755 × 20
+#>      game_id season period_number clock_display_value team_id athlete_id_1
+#>        <int>  <int>         <int> <chr>                 <int>        <int>
+#>  1 401920424   2027             1 19:48                   258      5176232
+#>  2 401920424   2027             1 19:28                     8      5176136
+#>  3 401920424   2027             1 19:09                   258      5176232
+#>  4 401920424   2027             1 18:58                     8      5185443
+#>  5 401920424   2027             1 18:58                     8      5185443
+#>  6 401920424   2027             1 18:58                     8      5185443
+#>  7 401920424   2027             1 18:32                   258      5311846
+#>  8 401920424   2027             1 18:17                     8      5185443
+#>  9 401920424   2027             1 18:17                     8      5185443
+#> 10 401920424   2027             1 17:55                   258      5150404
+#> # ℹ 77,745 more rows
+#> # ℹ 14 more variables: athlete_id_2 <int>, type_id <int>, type_text <chr>,
+#> #   scoring_play <lgl>, score_value <int>, coordinate_x <dbl>,
+#> #   coordinate_y <dbl>, coordinate_x_raw <dbl>, coordinate_y_raw <dbl>,
+#> #   athlete_name_1 <chr>, athlete_name_2 <chr>, team_name <chr>,
+#> #   team_mascot <chr>, team_abbrev <chr>
 # }
-}
 ```

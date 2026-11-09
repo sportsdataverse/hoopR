@@ -101,10 +101,27 @@ Other ABA Functions:
 ## Examples
 
 ``` r
-if (FALSE) { # interactive()
 # \donttest{
   # Interactive only: parsing the play-by-play page takes 2-4 s.
   try(aba_pbp(game_no = 6, season = 2026))
+#> ── ABA League Play-by-Play ────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-09 19:50:46 UTC
+#> # A tibble: 659 × 18
+#>    game_no season league_id league   seq period clock seconds_left home_score
+#>      <int>  <int>     <int> <chr>  <int>  <int> <chr>        <int>      <int>
+#>  1       6   2026         1 aba        1      1 NA              NA         NA
+#>  2       6   2026         1 aba        2      1 NA              NA         NA
+#>  3       6   2026         1 aba        3      1 NA              NA         NA
+#>  4       6   2026         1 aba        4      1 NA              NA         NA
+#>  5       6   2026         1 aba        5      1 NA              NA         NA
+#>  6       6   2026         1 aba        6      1 NA              NA         NA
+#>  7       6   2026         1 aba        7      1 NA              NA         NA
+#>  8       6   2026         1 aba        8      1 NA              NA         NA
+#>  9       6   2026         1 aba        9      1 NA              NA         NA
+#> 10       6   2026         1 aba       10      1 NA              NA         NA
+#> # ℹ 649 more rows
+#> # ℹ 9 more variables: away_score <int>, side <chr>, team_id <int>,
+#> #   jersey <int>, player_id <int>, player_name <chr>, text <chr>, action <chr>,
+#> #   qualifier <chr>
 # }
-}
 ```
