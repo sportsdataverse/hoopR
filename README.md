@@ -24,7 +24,7 @@
 [![R-universe](https://img.shields.io/badge/dynamic/json?style=for-the-badge&color=success&label=r-universe&prefix=v&query=%24.Version&url=https%3A%2F%2Fsportsdataverse.r-universe.dev%2Fapi%2Fpackages%2FhoopR)](https://sportsdataverse.r-universe.dev/hoopR)
 [![Version-Number](https://img.shields.io/github/r-package/v/sportsdataverse/hoopR?label=hoopR&logo=R&style=for-the-badge)](https://github.com/sportsdataverse/hoopR/)
 [![R-CMD-check](https://img.shields.io/github/actions/workflow/status/sportsdataverse/hoopR/R-CMD-check.yaml?branch=main&label=R-CMD-Check&logo=R&logoColor=white&style=for-the-badge)](https://github.com/sportsdataverse/hoopR/actions/workflows/R-CMD-check.yaml)
-[![Codecov](https://img.shields.io/codecov/c/github/sportsdataverse/hoopR?logo=codecov&style=for-the-badge)](https://app.codecov.io/gh/sportsdataverse/hoopR)
+[![Codecov](https://img.shields.io/codecov/c/github/sportsdataverse/hoopR/main?logo=codecov&style=for-the-badge)](https://app.codecov.io/gh/sportsdataverse/hoopR/tree/main)
 [![pkgdown](https://img.shields.io/github/actions/workflow/status/sportsdataverse/hoopR/pkgdown.yaml?branch=main&label=pkgdown&logo=github&style=for-the-badge)](https://github.com/sportsdataverse/hoopR/actions/workflows/pkgdown.yaml)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg?style=for-the-badge&logo=github)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://github.com/sportsdataverse/hoopR/blob/main/LICENSE.md)
