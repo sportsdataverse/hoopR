@@ -159,7 +159,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_draft_pick(season = 2024, round = 1, pick = 1)
 #> ── ESPN NBA Draft Pick Detail ─────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:04:44 UTC
+#> ℹ Data updated: 2026-11-09 17:05:05 UTC
 #> # A tibble: 1 × 12
 #>   league season round  pick overall traded trade_note status  athlete_id team_id
 #>   <chr>   <int> <int> <int>   <int> <lgl>  <chr>      <chr>   <chr>      <chr>  
@@ -169,7 +169,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_draft_rounds(season = 2024)
 #> ── ESPN NBA Draft Rounds ──────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:04:44 UTC
+#> ℹ Data updated: 2026-11-09 17:05:05 UTC
 #> # A tibble: 2 × 7
 #>   league season round display_name short_display_name n_picks status   
 #>   <chr>   <int> <int> <chr>        <chr>                <int> <chr>    
@@ -179,7 +179,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_draft_athletes(season = 2024)
 #> ── ESPN NBA Draft Athletes ────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:04:44 UTC
+#> ℹ Data updated: 2026-11-09 17:05:05 UTC
 #> # A tibble: 102 × 4
 #>    league season athlete_id ref                                                 
 #>    <chr>   <int> <chr>      <chr>                                               
@@ -198,7 +198,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_draft_status(season = 2024)
 #> ── ESPN NBA Draft Status ──────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:04:44 UTC
+#> ℹ Data updated: 2026-11-09 17:05:05 UTC
 #> # A tibble: 1 × 7
 #>   league season round type_id type_name type_state description
 #>   <chr>   <int> <int> <chr>   <chr>     <chr>      <chr>      
@@ -207,7 +207,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_draft(season = 2024)
 #> ── ESPN NBA Season Draft (top-level) ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:04:44 UTC
+#> ℹ Data updated: 2026-11-09 17:05:05 UTC
 #> # A tibble: 1 × 10
 #>   league season  year uid       number_of_rounds display_name short_display_name
 #>   <chr>   <int> <int> <chr>                <int> <chr>        <chr>             
@@ -216,17 +216,17 @@ Saiem Gilani
 # }
 # \donttest{
   espn_nba_draft_athlete_detail(season = 2024, athlete_id = 1966)
-#> ✖ 2026-11-09 12:04:45.009931: Failed to retrieve ESPN nba draft athlete detail for season=2024, athlete_id=1966
+#> ✖ 2026-11-09 17:05:05.841132: Failed to retrieve ESPN nba draft athlete detail for season=2024, athlete_id=1966
 #> ✖ Args: league = "nba", season = 2024, athlete_id = 1966
 #> ✖ Error: The API returned an error
 #> ── ESPN NBA Draft Athlete Detail ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:04:44 UTC
+#> ℹ Data updated: 2026-11-09 17:05:05 UTC
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   espn_nba_draft(season = 2024)
 #> ── ESPN NBA Draft Picks from ESPN.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:04:45 UTC
+#> ℹ Data updated: 2026-11-09 17:05:05 UTC
 #> # A tibble: 58 × 11
 #>    season round  pick overall traded trade_note status    athlete_id athlete_ref
 #>     <int> <int> <int>   <int> <lgl>  <chr>      <chr>     <chr>      <chr>      

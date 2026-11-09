@@ -65,27 +65,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:03:57 UTC
-#> # A tibble: 5 × 8
-#>         id type    headline     description published premium link_web league_id
-#>      <int> <chr>   <chr>        <chr>       <chr>     <lgl>   <chr>    <chr>    
-#> 1 50431078 Preview Iona visits… Iona Gaels… 2026-11-… FALSE   http://… 41       
-#> 2 50431077 Preview Fairfield S… Fairfield … 2026-11-… FALSE   http://… 41       
-#> 3 50431073 Preview No. 24 Vand… Memphis Ti… 2026-11-… FALSE   http://… 41       
-#> 4 50431072 Preview McMillian l… Jackson St… 2026-11-… FALSE   http://… 41       
-#> 5 50431071 Preview Central Mic… Youngstown… 2026-11-… FALSE   http://… 41       
+#> ℹ Data updated: 2026-11-09 17:04:22 UTC
+#> # A tibble: 5 × 9
+#>        id type  headline description published premium byline link_web league_id
+#>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
+#> 1  5.04e7 Head… FSU hir… Florida St… 2026-11-… FALSE   Andre… https:/… 23       
+#> 2  5.04e7 Prev… Iona vi… Iona Gaels… 2026-11-… FALSE   NA     http://… 41       
+#> 3  5.04e7 Prev… Fairfie… Fairfield … 2026-11-… FALSE   NA     http://… 41       
+#> 4  5.04e7 Prev… No. 24 … Memphis Ti… 2026-11-… FALSE   NA     http://… 41       
+#> 5  5.04e7 Prev… McMilli… Jackson St… 2026-11-… FALSE   NA     http://… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:03:57 UTC
+#> ℹ Data updated: 2026-11-09 17:04:22 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Story Bobby M… With tax a… 2026-11-… FALSE   Bobby… https:/… 46       
-#> 2  5.04e7 Prev… Los Ang… Los Angele… 2026-11-… FALSE   NA     http://… 46       
-#> 3  5.04e7 Prev… Utah fa… Miami Heat… 2026-11-… FALSE   NA     http://… 46       
-#> 4  5.04e7 Prev… Golden … New Orlean… 2026-11-… FALSE   NA     http://… 46       
-#> 5  5.04e7 Prev… Washing… Washington… 2026-11-… FALSE   NA     http://… 46       
+#> 1  5.04e7 Story Fantasy… "Steve Ale… 2026-11-… FALSE   Steve… https:/… 3090     
+#> 2  5.00e7 Story NBA buz… "The NBA i… 2026-11-… FALSE   ESPN … https:/… 46       
+#> 3  5.04e7 Head… Giannis… "Giannis A… 2026-11-… FALSE   NA     https:/… 46       
+#> 4  5.04e7 Story Bobby M… "With tax … 2026-11-… FALSE   Bobby… https:/… 46       
+#> 5  5.04e7 Story What's … "At 4-6, t… 2026-11-… FALSE   Ramon… https:/… 46       
 # }
 ```

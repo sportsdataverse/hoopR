@@ -98,7 +98,7 @@ lists every function in this family.
 # \donttest{
   try(pleague_box_players(gid = 197))
 #> ── P. LEAGUE+ Player Box from pleagueofficial.com ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:08:08 UTC
+#> ℹ Data updated: 2026-11-09 17:08:14 UTC
 #> # A tibble: 26 × 47
 #>      gid side  player_id person_id       random_id name_zh jersey starter played
 #>    <int> <chr>     <int> <chr>           <chr>     <chr>   <chr>  <lgl>   <lgl> 

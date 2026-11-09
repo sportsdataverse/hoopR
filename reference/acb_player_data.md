@@ -81,7 +81,7 @@ lists every function in this family.
 # \donttest{
   try(acb_player_data(player_id = 20209407))
 #> ── ACB Player Data from api2.acb.com ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:02:01 UTC
+#> ℹ Data updated: 2026-11-09 17:02:34 UTC
 #> # A tibble: 1 × 28
 #>   player_id player_name first_name last_name shirt_number game_role
 #>       <int> <chr>       <chr>      <chr>     <chr>        <chr>    

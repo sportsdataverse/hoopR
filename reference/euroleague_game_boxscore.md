@@ -109,7 +109,7 @@ lists every function in this family.
     box[box$row_type == "player", c("team", "player", "minutes", "points", "valuation")]
   })
 #> ── EuroLeague game box score from live.euroleague.net ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:04:48 UTC
+#> ℹ Data updated: 2026-11-09 17:05:08 UTC
 #> # A tibble: 24 × 5
 #>    team  player                minutes points valuation
 #>    <chr> <chr>                 <chr>    <int>     <int>

@@ -105,7 +105,7 @@ lists every function in this family.
 # \donttest{
   try(kbl_seasons())
 #> ── KBL Seasons from api.kbl.or.kr ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:06:05 UTC
+#> ℹ Data updated: 2026-11-09 17:06:19 UTC
 #> # A tibble: 31 × 10
 #>    season season_code glkey  season_name season_name_full season_grade
 #>     <int>       <int> <chr>  <chr>       <chr>                   <int>

@@ -79,14 +79,14 @@ Other CBD Teams Functions:
 ``` r
 # \donttest{
   try(cbbd_teams(conference = "ACC"))
-#> ✖ 2026-11-09 12:03:01.986948: Invalid arguments or no teams data available!
+#> ✖ 2026-11-09 17:03:32.464005: Invalid arguments or no teams data available!
 #> ✖ Args: conference = "ACC", season = 2027
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_teams_roster(season = 2024, team = "Duke"))
-#> ✖ 2026-11-09 12:03:01.997449: Invalid arguments or no roster data available!
+#> ✖ 2026-11-09 17:03:32.472069: Invalid arguments or no roster data available!
 #> ✖ Args: season = 2024, team = "Duke"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

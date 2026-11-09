@@ -46,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(kbl_teams())
 #> ── KBL Teams from api.kbl.or.kr ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:06:09 UTC
+#> ℹ Data updated: 2026-11-09 17:06:23 UTC
 #> # A tibble: 10 × 6
 #>    team_code team_code_d team_name team_name_full team_name_en team_name_full_en
 #>    <chr>     <chr>       <chr>     <chr>          <chr>        <chr>            

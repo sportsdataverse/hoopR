@@ -91,7 +91,7 @@ lists every function in this family.
 # \donttest{
   try(lba_calendar(championship_id = 602, round = 1))
 #> ── LBA Calendar from legabasket.it ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:06:33 UTC
+#> ℹ Data updated: 2026-11-09 17:06:44 UTC
 #> # A tibble: 8 × 38
 #>   season game_id game_status championship_id championships_day_id  year number
 #>    <int>   <int> <chr>                 <int>                <int> <int>  <int>

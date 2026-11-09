@@ -54,7 +54,7 @@ lists every function in this family.
 # \donttest{
   try(lba_teams(season = 2027))
 #> ── LBA Teams from legabasket.it ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:06:49 UTC
+#> ℹ Data updated: 2026-11-09 17:07:00 UTC
 #> # A tibble: 16 × 8
 #>    season team_id name                year club_id club_code updated_at logo_key
 #>     <int>   <int> <chr>              <int>   <int> <chr>     <chr>      <chr>   

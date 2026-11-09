@@ -65,7 +65,7 @@ lists every function in this family.
 # \donttest{
   try(pleague_game(gid = 197))
 #> ── P. LEAGUE+ Game from pleagueofficial.com ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:08:08 UTC
+#> ℹ Data updated: 2026-11-09 17:08:14 UTC
 #> # A tibble: 1 × 17
 #>     gid uuid          status_zh finished date       time  venue_zh game_label_zh
 #>   <int> <chr>         <chr>     <lgl>    <date>     <chr> <chr>    <chr>        

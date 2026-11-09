@@ -86,7 +86,7 @@ lists every function in this family.
 # \donttest{
   try(nbl_rosetta_standings(org = "nbl", season = 2026))
 #> ── NBL Rosetta standings from prod.rosetta.nbl.com.au ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:08:02 UTC
+#> ℹ Data updated: 2026-11-09 17:08:09 UTC
 #> # A tibble: 10 × 24
 #>    org   rosetta_standing_id       position   won  lost played points_percentage
 #>    <chr> <chr>                        <int> <int> <int>  <int>             <dbl>

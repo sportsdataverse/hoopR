@@ -122,7 +122,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_team_box_score(match_id = 101839))
 #> ── KZS Team Box Score from api.kzs.si ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:06:28 UTC
+#> ℹ Data updated: 2026-11-09 17:06:40 UTC
 #> # A tibble: 2 × 77
 #>   match_id team_side team_id team_name minutes two_pm two_pa two_p_perc three_pm
 #>      <int> <chr>       <int> <chr>       <dbl>  <int>  <int>      <dbl>    <int>

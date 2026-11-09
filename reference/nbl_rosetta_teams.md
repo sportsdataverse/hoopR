@@ -75,7 +75,7 @@ lists every function in this family.
 # \donttest{
   try(nbl_rosetta_teams(org = "nbl"))
 #> ── NBL Rosetta teams from prod.rosetta.nbl.com.au ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:08:04 UTC
+#> ℹ Data updated: 2026-11-09 17:08:11 UTC
 #> # A tibble: 86 × 22
 #>    org   team_id          rosetta_team_id name  team_code established head_coach
 #>    <chr> <chr>            <chr>           <chr> <chr>     <chr>       <chr>     

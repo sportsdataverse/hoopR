@@ -62,7 +62,7 @@ lists every function in this family.
 # \donttest{
   try(scb_season_players(season = 2026))
 #> ── BBL/DBBL Season Players from the SCB API ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:08:35 UTC
+#> ℹ Data updated: 2026-11-09 17:08:49 UTC
 #> # A tibble: 376 × 8
 #>    league season season_id season_player_id real_player_id season_team_id
 #>    <chr>   <int>     <int> <chr>                     <int> <chr>         

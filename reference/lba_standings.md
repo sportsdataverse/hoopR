@@ -109,7 +109,7 @@ lists every function in this family.
 # \donttest{
   try(lba_standings(championship_id = 602, round = 3))
 #> ── LBA Standings from legabasket.it ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:06:45 UTC
+#> ℹ Data updated: 2026-11-09 17:06:56 UTC
 #> # A tibble: 16 × 57
 #>    season standing_id championships_day_id team_id position  wins defeats
 #>     <int>       <int>                <int>   <int>    <int> <int>   <int>

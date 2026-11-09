@@ -67,7 +67,7 @@ lists every function in this family.
 # \donttest{
   try(sportpress_team_rankings(competition_id = 24))
 #> ── BNXT League Team Rankings from Sportpress ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:09:16 UTC
+#> ℹ Data updated: 2026-11-09 17:09:28 UTC
 #> # A tibble: 162 × 7
 #>    competition_id category  rank competition_team_id team  team_short_name value
 #>             <int> <chr>    <int>               <int> <chr> <chr>           <dbl>

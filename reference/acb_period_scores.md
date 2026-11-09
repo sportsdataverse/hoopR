@@ -56,7 +56,7 @@ lists every function in this family.
 # \donttest{
   try(acb_period_scores(match_id = 105401))
 #> ── ACB Period Scores from api2.acb.com ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:01:59 UTC
+#> ℹ Data updated: 2026-11-09 17:02:32 UTC
 #> # A tibble: 4 × 4
 #>   match_id quarter home_score away_score
 #>      <int>   <int>      <int>      <int>

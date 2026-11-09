@@ -144,7 +144,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_match(match_id = 101839))
 #> ── KZS Match Header from api.kzs.si ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:06:18 UTC
+#> ℹ Data updated: 2026-11-09 17:06:31 UTC
 #> # A tibble: 1 × 98
 #>   match_id competition_id competition_name competition_type competition_phase_id
 #>      <int>          <int> <chr>            <chr>                           <int>

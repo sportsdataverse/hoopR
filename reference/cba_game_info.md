@@ -59,7 +59,7 @@ lists every function in this family.
 # \donttest{
   try(cba_game_info(schedule_id = 100105799))
 #> ── CBA Game Info from data-server.cbaleague.com ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:02:45 UTC
+#> ℹ Data updated: 2026-11-09 17:03:16 UTC
 #> # A tibble: 1 × 13
 #>   schedule_id count guest_color guest_score guest_team_id guest_team_logo       
 #>         <int> <int> <chr>             <int>         <int> <chr>                 

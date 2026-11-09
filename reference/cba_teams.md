@@ -41,7 +41,7 @@ lists every function in this family.
 # \donttest{
   try(cba_teams())
 #> ── CBA Teams from data-server.cbaleague.com ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:02:58 UTC
+#> ℹ Data updated: 2026-11-09 17:03:30 UTC
 #> # A tibble: 20 × 4
 #>    club  team_cn_alias   team_id team_logo                                      
 #>    <chr> <chr>             <int> <chr>                                          

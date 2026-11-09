@@ -133,7 +133,7 @@ lists every function in this family.
 # \donttest{
   try(scb_player_statistics(season = 2026))
 #> ── BBL/DBBL Season Player Statistics from the SCB API ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:08:33 UTC
+#> ℹ Data updated: 2026-11-09 17:08:48 UTC
 #> # A tibble: 316 × 72
 #>    league season display_type season_player_id real_player_id first_name 
 #>    <chr>   <int> <chr>        <chr>                     <int> <chr>      

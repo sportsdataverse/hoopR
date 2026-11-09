@@ -86,7 +86,7 @@ lists every function in this family.
 # \donttest{
   try(cba_rosters(schedule_id = 100105799))
 #> ── CBA Rosters from data-server.cbaleague.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:02:53 UTC
+#> ℹ Data updated: 2026-11-09 17:03:24 UTC
 #> # A tibble: 32 × 38
 #>    schedule_id side    age birth_date body_data   cn_alias cn_alias_show cn_name
 #>          <int> <chr> <int> <chr>      <chr>       <chr>    <chr>         <chr>  

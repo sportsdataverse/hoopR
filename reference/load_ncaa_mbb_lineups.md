@@ -916,7 +916,7 @@ if (FALSE) { # interactive()
 # \donttest{
   try(load_ncaa_mbb_team_box(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 690 × 81
+#> # A tibble: 736 × 81
 #>    home   away  team   mins o_mins d_mins o_poss d_poss  ortg  drtg netrtg   pts
 #>    <chr>  <chr> <chr> <dbl>  <dbl>  <dbl>  <dbl>  <dbl> <dbl> <dbl>  <dbl> <dbl>
 #>  1 Linde… East… East…  39.4   25.4   13.9     73     72  60.3 160.   -99.4    44
@@ -929,7 +929,7 @@ if (FALSE) { # interactive()
 #>  8 Calif… Nort… Nort…  39.5   17.3   22.2     76     76  93.4  82.9   10.5    71
 #>  9 Orego… Cali… Cali…  39.8   22.2   17.6     66     67 103.  143.   -40.3    68
 #> 10 Orego… Cali… Oreg…  39.8   17.6   22.2     67     66 143.  103.    40.3    96
-#> # ℹ 680 more rows
+#> # ℹ 726 more rows
 #> # ℹ 69 more variables: d_pts <dbl>, fga <dbl>, d_fga <dbl>, fgm <dbl>,
 #> #   d_fgm <dbl>, tpa <dbl>, d_tpa <dbl>, tpm <dbl>, d_tpm <dbl>, fta <dbl>,
 #> #   d_fta <dbl>, ftm <dbl>, d_ftm <dbl>, rima <dbl>, d_rima <dbl>, rimm <dbl>,
@@ -940,7 +940,7 @@ if (FALSE) { # interactive()
 # \donttest{
   try(load_ncaa_mbb_rosters(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 5,738 × 4
+#> # A tibble: 5,825 × 4
 #>    season team               player                  games
 #>     <int> <chr>              <chr>                   <int>
 #>  1   2027 A&M-Corpus Christi BEAU.BILLINGSLEY            2
@@ -953,7 +953,7 @@ if (FALSE) { # interactive()
 #>  8   2027 A&M-Corpus Christi DESMOND.KENT                2
 #>  9   2027 A&M-Corpus Christi ISAIAH.LEWIS                2
 #> 10   2027 A&M-Corpus Christi JORDAN.MIZELL               2
-#> # ℹ 5,728 more rows
+#> # ℹ 5,815 more rows
 # }
 # \donttest{
   try(load_ncaa_mbb_team_rosters(seasons = most_recent_mbb_season()))
@@ -978,7 +978,7 @@ if (FALSE) { # interactive()
 # \donttest{
   try(load_ncaa_mbb_schedule(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 345 × 7
+#> # A tibble: 368 × 7
 #>    contest_id game_date  home               away    home_score away_score season
 #>    <chr>      <chr>      <chr>              <chr>        <int>      <int>  <int>
 #>  1 6607173    11/07/2026 Lindenwood         East-W…        115         44   2027
@@ -990,8 +990,8 @@ if (FALSE) { # interactive()
 #>  7 6612140    11/06/2026 Mount St. Mary's   Loyola…         68         57   2027
 #>  8 6613745    11/03/2026 Virginia Tech      Coppin…         88         54   2027
 #>  9 6613746    11/06/2026 George Mason       Coppin…         68         51   2027
-#> 10 6616203    11/03/2026 San Diego St.      Cal St…        102         78   2027
-#> # ℹ 335 more rows
+#> 10 6615603    11/08/2026 NJIT               Saint …         54         52   2027
+#> # ℹ 358 more rows
 # }
 # \donttest{
   try(load_ncaa_mbb_team_ids(seasons = most_recent_mbb_season()))

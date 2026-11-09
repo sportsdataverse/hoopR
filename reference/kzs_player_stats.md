@@ -103,7 +103,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_player_stats(player_id = 106285, season = 2026))
 #> ── KZS Player Season Stats from api.kzs.si ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:06:25 UTC
+#> ℹ Data updated: 2026-11-09 17:06:36 UTC
 #> # A tibble: 2 × 51
 #>   player_id season_id season competition_id    a1    a2    a3   pts   ass  blag
 #>       <int>     <int>  <int>          <int> <int> <int> <int> <int> <int> <int>

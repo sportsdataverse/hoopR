@@ -91,7 +91,7 @@ lists every function in this family.
 # \donttest{
   try(tpbl_seasons())
 #> ── TPBL Seasons from api.tpbl.basketball ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:09:44 UTC
+#> ℹ Data updated: 2026-11-09 17:09:54 UTC
 #> # A tibble: 3 × 7
 #>   season season_id gohoops_season_id name           status   started_at ended_at
 #>    <int>     <int>             <int> <chr>          <chr>    <chr>      <chr>   

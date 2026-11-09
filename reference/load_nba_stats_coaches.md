@@ -703,7 +703,7 @@ Other NBA Stats loader functions:
 # \donttest{
   try(load_nba_stats_game_lineups(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 69,652 × 14
+#> # A tibble: 76,811 × 14
 #>    game_id    action_number period home_player_1 home_player_2 home_player_3
 #>    <chr>              <int>  <int>         <int>         <int>         <int>
 #>  1 0022600001             2      1       1628381       1629130       1630595
@@ -716,7 +716,7 @@ Other NBA Stats loader functions:
 #>  8 0022600001            13      1       1628381       1629130       1630595
 #>  9 0022600001            14      1       1628381       1629130       1630595
 #> 10 0022600001            15      1       1628381       1629130       1630595
-#> # ℹ 69,642 more rows
+#> # ℹ 76,801 more rows
 #> # ℹ 8 more variables: home_player_4 <int>, home_player_5 <int>,
 #> #   away_player_1 <int>, away_player_2 <int>, away_player_3 <int>,
 #> #   away_player_4 <int>, away_player_5 <int>, season <int>
@@ -863,7 +863,7 @@ if (FALSE) { # interactive()
 # \donttest{
   try(load_nba_stats_possessions(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 26,485 × 35
+#> # A tibble: 29,238 × 38
 #>    game_id    period possession_number offense_team_id defense_team_id
 #>    <chr>       <int>             <int>           <int>           <int>
 #>  1 0022600001      1                 1      1610612738      1610612765
@@ -876,8 +876,8 @@ if (FALSE) { # interactive()
 #>  8 0022600001      1                 8      1610612765      1610612738
 #>  9 0022600001      1                 9      1610612738      1610612765
 #> 10 0022600001      1                10      1610612765      1610612738
-#> # ℹ 26,475 more rows
-#> # ℹ 30 more variables: start_order_index <int>, end_order_index <int>,
+#> # ℹ 29,228 more rows
+#> # ℹ 33 more variables: start_order_index <int>, end_order_index <int>,
 #> #   start_seconds_remaining <dbl>, end_seconds_remaining <dbl>, points <int>,
 #> #   is_second_chance <lgl>, number_in_period <int>,
 #> #   possession_start_type <chr>, count_as_possession <lgl>, fg2a <int>,

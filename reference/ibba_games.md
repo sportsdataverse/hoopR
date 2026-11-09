@@ -103,7 +103,7 @@ lists every function in this family.
 # \donttest{
   try(ibba_games(board_id = 5, board_round = 1, season = 2026))
 #> ── IBBA games ─────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:05:47 UTC
+#> ℹ Data updated: 2026-11-09 17:06:02 UTC
 #> # A tibble: 7 × 30
 #>   game_id game_date  season home_team_id away_team_id home_team_he  away_team_he
 #>     <int> <date>      <int>        <int>        <int> <chr>         <chr>       

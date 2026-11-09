@@ -81,7 +81,7 @@ Other FEB Functions:
 # \donttest{
   try(feb_standings(group = 1, season = 2027))
 #> ── FEB standings from baloncestoenvivo.feb.es ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:05:07 UTC
+#> ℹ Data updated: 2026-11-09 17:05:25 UTC
 #> # A tibble: 18 × 17
 #>    group season competition comp_id table position team_id team     played   won
 #>    <int>  <int> <chr>         <int> <chr>    <int>   <int> <chr>     <int> <int>

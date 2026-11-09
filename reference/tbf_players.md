@@ -94,7 +94,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_players(competition = "bsl", season = 2027))
 #> ── TBF Players ────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:09:27 UTC
+#> ℹ Data updated: 2026-11-09 17:09:37 UTC
 #> # A tibble: 262 × 11
 #>    season competition person_id player_name nationality nationality_code club_id
 #>     <int> <chr>           <int> <chr>       <chr>       <chr>              <int>

@@ -35,7 +35,7 @@ lists every function in this family.
 # \donttest{
   pleague_team_crosswalk()
 #> ── P. LEAGUE+ Team Crosswalk ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:08:17 UTC
+#> ℹ Data updated: 2026-11-09 17:08:34 UTC
 #> # A tibble: 8 × 2
 #>   team_id team_uuid                           
 #>     <int> <chr>                               

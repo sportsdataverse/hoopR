@@ -110,7 +110,7 @@ lists every function in this family.
 # \donttest{
   try(lba_game(game_id = 25602))
 #> ── LBA Game from legabasket.it ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:06:37 UTC
+#> ℹ Data updated: 2026-11-09 17:06:48 UTC
 #> # A tibble: 1 × 62
 #>   season game_id game_status championship_id competition_name      
 #>    <int>   <int> <chr>                 <int> <chr>                 

@@ -76,7 +76,7 @@ lists every function in this family.
 # \donttest{
   try(sportality_game_overview(game_uuid = "c4hh5nig6t"))
 #> ── Basketligaen Game Overview from basketligaen.dk ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:08:43 UTC
+#> ℹ Data updated: 2026-11-09 17:08:56 UTC
 #> # A tibble: 1 × 29
 #>   game_uuid  home_team_game_source_id home_team_game_id home_team_team_id
 #>   <chr>                         <int>             <int>             <int>

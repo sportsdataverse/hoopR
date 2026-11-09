@@ -24,6 +24,11 @@
   instead of once per row, so a 300-row SCB season table parses in about
   1 s instead of 4.5 s (LBA, NBL and the other families that use the
   same naming helper speed up too).
+- The P. LEAGUE+ parsers trim and split each distinct cell text and
+  class list once per call instead of once per node, so
+  [`pleague_pbp()`](https://hoopR.sportsdataverse.org/reference/pleague_pbp.md)
+  for one game takes about 2 s of CPU instead of 4 s. The output is
+  unchanged.
 
 #### **EuroLeague and EuroCup (`euroleague_*`)**
 
@@ -267,10 +272,12 @@
   player box scores
   ([`load_mbb_player_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
   /
-  [`load_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)),
-  and error when none are published. ESPN’s roster endpoint ignores
-  `?season=`, so a past season used to return today’s roster under the
-  past season’s label, which also fed
+  [`load_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)).
+  When that season’s box scores cannot be read (none published, or no
+  network) they warn and return an empty roster, like the other ESPN
+  wrappers, instead of today’s roster or an error. ESPN’s roster
+  endpoint ignores `?season=`, so a past season used to return today’s
+  roster under the past season’s label, which also fed
   [`mbb_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_player_crosswalk.md)
   /
   [`nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_player_crosswalk.md).

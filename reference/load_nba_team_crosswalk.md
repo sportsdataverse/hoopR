@@ -133,7 +133,7 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-08 16:31:01 UTC
+#> ℹ Data updated: 2026-11-09 16:30:45 UTC
 #> # A tibble: 1,207 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
 #>     <int> <chr>       <date>                 <int>             <int>
@@ -156,7 +156,7 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-08 16:31:20 UTC
+#> ℹ Data updated: 2026-11-09 16:31:04 UTC
 #> # A tibble: 482 × 21
 #>    season espn_team_id team_abbreviation player_name         espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                         <int>
@@ -220,8 +220,8 @@ load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 # \donttest{
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #> ── MBB player crosswalk (ESPN / Fox) ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-08 15:01:41 UTC
-#> # A tibble: 5,565 × 18
+#> ℹ Data updated: 2026-11-09 12:59:11 UTC
+#> # A tibble: 5,566 × 18
 #>    season espn_team_id team_abbreviation player_name        espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                        <int>
 #>  1   2027         2000 ACU               evan boisdur               5313910
@@ -234,7 +234,7 @@ load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #>  8   2027         2000 ACU               isaiah neyhart             5314819
 #>  9   2027         2000 ACU               timeo pons                 5315586
 #> 10   2027         2000 ACU               yaniel rivera              5177702
-#> # ℹ 5,555 more rows
+#> # ℹ 5,556 more rows
 #> # ℹ 13 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, fox_athlete_id <chr>, fox_player <chr>,
 #> #   fox_jersey <chr>, fox_position_group <chr>, yahoo_player_id <chr>,

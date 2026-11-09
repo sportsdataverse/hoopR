@@ -92,7 +92,7 @@ lists every function in this family.
 # \donttest{
   try(easl_game(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
 #> ── EASL Game from easl.joshricha.com ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:03:20 UTC
+#> ℹ Data updated: 2026-11-09 17:03:48 UTC
 #> # A tibble: 1 × 44
 #>   season season_id fixture_id    fixture_number fixture_type status fixture_name
 #>    <int> <chr>     <chr>                  <int> <chr>        <chr>  <chr>       

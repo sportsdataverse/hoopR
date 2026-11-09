@@ -70,7 +70,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_standings(competition_id = 579))
 #> ── KZS Standings from api.kzs.si ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:06:27 UTC
+#> ℹ Data updated: 2026-11-09 17:06:39 UTC
 #> # A tibble: 24 × 25
 #>    competition_id phase_id phase_name phase_type group_id group_name position
 #>             <int>    <int> <chr>      <chr>         <int> <chr>         <int>
