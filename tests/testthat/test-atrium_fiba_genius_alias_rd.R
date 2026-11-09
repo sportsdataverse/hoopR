@@ -1,5 +1,5 @@
 # Every minted competition alias (atrium, fiba, genius) is named in its competition Rd's
-# \value with a link to the base wrapper, whose own Rd carries the returns table.
+# \value with a link to the base wrapper, whose columns are in return_columns.
 
 alias_rd_routes <- function() {
   ns <- asNamespace("hoopR")
@@ -34,26 +34,6 @@ alias_rd_parse <- local({
 rd_tag <- function(x) attr(x, "Rd_tag") %||% ""
 rd_text <- function(x) paste(unlist(x), collapse = "")
 
-# col_names (first cells, header row dropped) of an Rd \tabular node.
-rd_tabular_cols <- function(tab) {
-  out <- character()
-  cur <- ""
-  first <- TRUE
-  for (cell in tab[[2]]) {
-    tag <- rd_tag(cell)
-    if (tag == "\\tab") {
-      first <- FALSE
-    } else if (tag == "\\cr") {
-      out <- c(out, trimws(cur))
-      cur <- ""
-      first <- TRUE
-    } else if (first) {
-      cur <- paste0(cur, rd_text(cell))
-    }
-  }
-  out[-1]
-}
-
 rd_find <- function(x, tag) {
   if (rd_tag(x) == tag) return(list(x))
   if (is.list(x)) return(unlist(lapply(x, rd_find, tag = tag), recursive = FALSE))
@@ -66,9 +46,10 @@ test_that("every competition alias Rd links its base wrapper's returns table", {
   routes <- alias_rd_routes()
   expect_length(routes, 148L)
   for (r in routes) {
-    base_tabs <- rd_find(rd_value(alias_rd_parse(r$base)), "\\tabular")
-    expect_length(base_tabs, 1L)
-    expect_gt(length(rd_tabular_cols(base_tabs[[1]])), 0L)
+    # The base wrapper's columns live in return_columns; its \value links there.
+    expect_gt(sum(hoopR::return_columns$fn == r$base), 0L)
+    base_links <- vapply(rd_find(rd_value(alias_rd_parse(r$base)), "\\link"), rd_text, "")
+    expect_true("return_columns" %in% base_links, label = paste0(r$base, "() links return_columns"))
     value <- rd_value(alias_rd_parse(r$topic))
     links <- vapply(rd_find(value, "\\link"), function(x) attr(x, "Rd_option") %||% "", "")
     expect_true(paste0("=", r$base) %in% links, label = paste0(r$alias, "() links ", r$base, "()"))
