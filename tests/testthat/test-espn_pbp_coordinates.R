@@ -63,4 +63,19 @@ test_that("free throws sit on the line in the transformed pair, in both leagues"
   expect_identical(sum(ft), 39L)
   expect_true(all(mbb$coordinate_x_raw[ft] == 25 & mbb$coordinate_y_raw[ft] == 0))
   expect_true(all(abs(mbb$coordinate_x[ft]) == 28 & mbb$coordinate_y[ft] == 0))
+
+  # Same game with ESPN's "no location" sentinel on every MadeFreeThrow: the
+  # raw pair keeps the sentinel, the transformed pair is still on the line
+  game <- jsonlite::fromJSON(.raw("mbb_401830342"), simplifyVector = FALSE)
+  game$plays <- lapply(game$plays, function(play) {
+    if (identical(play$type$text, "MadeFreeThrow")) {
+      play$coordinate <- list(x = -214748340, y = -214748365)
+    }
+    play
+  })
+  mbb <- helper_espn_mbb_pbp(jsonlite::toJSON(game, auto_unbox = TRUE, null = "null", digits = NA))
+  ft <- mbb$type_text == "MadeFreeThrow"
+  expect_identical(sum(ft), 39L)
+  expect_true(all(mbb$coordinate_x_raw[ft] == -214748340 & mbb$coordinate_y_raw[ft] == -214748365))
+  expect_true(all(abs(mbb$coordinate_x[ft]) == 28 & mbb$coordinate_y[ft] == 0))
 })
