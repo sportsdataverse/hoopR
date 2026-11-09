@@ -112,6 +112,8 @@ navbar:
           href: articles/nba-cookbook.html
         - text: "NBA Stats API Parameter Descriptions"
           href: articles/parameter-descriptions.html
+        - text: "Return Columns"
+          href: articles/return-columns.html
         - text: "International Basketball Leagues"
           href: articles/international-basketball-leagues.html
         - text: --------------------------------
@@ -665,6 +667,7 @@ reference:
       - '`teams_links`'
       - '`mbb_team_names`'
       - '`parameter_descriptions`'
+      - '`return_columns`'
   - subtitle: hoopR Helper Functions
     desc: Internal functions used by hoopR
     contents:
