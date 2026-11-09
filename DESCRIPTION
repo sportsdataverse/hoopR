@@ -69,7 +69,10 @@ Suggests:
     stringdist (>= 0.9.0),
     testthat (>= 3.1.9),
     usethis (>= 1.6.0)
+ByteCompile: false
+Config/Needs/website: DT
 Config/roxygen2/version: 8.1.0
 Encoding: UTF-8
 LazyData: true
+LazyDataCompression: xz
 Roxygen: list(markdown = TRUE)
