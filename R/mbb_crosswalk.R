@@ -444,8 +444,9 @@ NULL
 #' @importFrom dplyr transmute left_join mutate select if_else case_when
 #' @export
 #' @family MBB Crosswalk Functions
-#' @examples
+#' @examplesIf interactive()
 #' \donttest{
+#'   # Builds from ESPN, Torvik and one Fox request per conference (about 30).
 #'   try(mbb_team_crosswalk(season = 2025))
 #' }
 mbb_team_crosswalk <- function(season = most_recent_mbb_season(),

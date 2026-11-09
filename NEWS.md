@@ -468,7 +468,8 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   NCAA tournament.
 * Faster examples: `cba_pbp()` asks for one quarter, `sportpress_player_rankings()` for
   the top 5 per category and `fox_mbb_teams_all()` for 3 seed calls. These run only in
-  interactive sessions: `lkl_results()` (it pages through a whole season), the
+  interactive sessions: `lkl_results()` (it pages through a whole season),
+  `mbb_team_crosswalk()` (one Fox request per conference, plus ESPN and Torvik), the
   `espn_*_game_rosters()` examples (one request per athlete), the `espn_*_pbp()`,
   `espn_*_team_box()` and `espn_*_player_box()` examples (the same summary request as
   `espn_*_game_all()`, which still runs), and the release loaders whose one-season file
