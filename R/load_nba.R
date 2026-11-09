@@ -457,6 +457,7 @@ update_nba_db <- function(dbdir = tools::R_user_dir("hoopR", "data"),
   message_completed("Database update completed", in_builder = TRUE)
   cli::cli_alert_info("{my_time()} | Path to your db: {.file {DBI::dbGetInfo(connection)$dbname}}")
   # rule_footer("DONE")
+  invisible(TRUE)
 }
 
 # this is a helper function to build hoopR database from Scratch

@@ -588,6 +588,7 @@ update_mbb_db <- function(
     "{my_time()} | Path to your db: {.file {DBI::dbGetInfo(connection)$dbname}}"
   )
   # rule_footer("DONE")
+  invisible(TRUE)
 }
 
 # this is a helper function to build hoopR database from Scratch
