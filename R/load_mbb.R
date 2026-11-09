@@ -535,6 +535,7 @@ update_mbb_db <- function(
       RSQLite::SQLite(),
       file.path(dbdir, dbname)
     )
+    on.exit(DBI::dbDisconnect(connection), add = TRUE)
   } else {
     connection <- db_connection
   }
@@ -586,7 +587,6 @@ update_mbb_db <- function(
   cli::cli_alert_info(
     "{my_time()} | Path to your db: {.file {DBI::dbGetInfo(connection)$dbname}}"
   )
-  if (is.null(db_connection)) DBI::dbDisconnect(connection)
   # rule_footer("DONE")
 }
 
@@ -606,7 +606,7 @@ build_mbb_db <- function(
     error = function(e) {
       cli::cli_abort(c(
         "{my_time()} | Could not read the games index {.url {(.mbb_games_index_url)}}.",
-        "i" = "The data table {.val {tblname}} was left unchanged.",
+        "i" = "Nothing was written to the data table {.val {tblname}}.",
         "x" = "{conditionMessage(e)}"
       ), call = NULL)
     }

@@ -222,3 +222,19 @@ test_that("build_*_db(rebuild = TRUE) aborts on a bad games index and keeps the 
     expect_equal(DBI::dbReadTable(con, b[[2]])$id, 1:2)
   }
 })
+
+test_that("update_*_db() closes the connection it opened when the games index is bad", {
+  skip_if_not_installed("RSQLite")
+  local_mocked_bindings(.download_url = malformed_index)
+  closed <- 0L
+  disconnect <- DBI::dbDisconnect
+  local_mocked_bindings(dbDisconnect = function(conn, ...) {
+    closed <<- closed + 1L
+    disconnect(conn, ...)
+  }, .package = "DBI")
+  dir <- withr::local_tempdir()
+  for (f in list(update_mbb_db, update_nba_db)) {
+    expect_error(suppressWarnings(f(dbdir = dir)), "games_in_data_repo.csv", fixed = TRUE)
+  }
+  expect_equal(closed, 2L)
+})

@@ -425,6 +425,7 @@ update_nba_db <- function(dbdir = tools::R_user_dir("hoopR", "data"),
 
   if (is.null(db_connection)) {
     connection <- DBI::dbConnect(RSQLite::SQLite(), file.path(dbdir, dbname))
+    on.exit(DBI::dbDisconnect(connection), add = TRUE)
   } else {
     connection <- db_connection
   }
@@ -455,7 +456,6 @@ update_nba_db <- function(dbdir = tools::R_user_dir("hoopR", "data"),
 
   message_completed("Database update completed", in_builder = TRUE)
   cli::cli_alert_info("{my_time()} | Path to your db: {.file {DBI::dbGetInfo(connection)$dbname}}")
-  if (is.null(db_connection)) DBI::dbDisconnect(connection)
   # rule_footer("DONE")
 }
 
@@ -471,7 +471,7 @@ build_nba_db <- function(tblname = "hoopR_nba_pbp", db_conn, rebuild = FALSE, sh
     error = function(e) {
       cli::cli_abort(c(
         "{my_time()} | Could not read the games index {.url {(.nba_games_index_url)}}.",
-        "i" = "The data table {.val {tblname}} was left unchanged.",
+        "i" = "Nothing was written to the data table {.val {tblname}}.",
         "x" = "{conditionMessage(e)}"
       ), call = NULL)
     }
