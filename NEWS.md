@@ -141,8 +141,9 @@
   from 0.960 to 0.989, and with `load_nba_player_impact()` RAPM from 0.955 to
   0.986. The player order is not the same as before (Spearman 0.94 for those
   players, 0.83 for everyone), so earlier `nba_rapm()` output is not
-  comparable. Constant `points` (including a single possession) now returns
-  all-zero player values instead of an error, possessions with missing
+  comparable. Constant `points` (including a single possession), or the same
+  ten players on every possession, now returns all-zero player values instead
+  of an error, possessions with missing
   `points` are dropped like those with a missing lineup slot, and tiny inputs
   fall back to a fixed `lambda` instead of erroring: silently with fewer than
   3 possessions (too few for cross-validation), and with a warning when

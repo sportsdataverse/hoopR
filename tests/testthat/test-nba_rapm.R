@@ -243,6 +243,22 @@ test_that("nba_rapm returns all-average players on constant points (never-raise)
   }
 })
 
+test_that("nba_rapm returns all-average players when one lineup plays every possession", {
+  skip_if_not_installed("glmnet")
+  skip_on_cran()
+  # Every predictor has zero variance; glmnet 4.1-1 refuses that design.
+  a <- list(off = c(1L, 2L, 3L, 7L, 8L), def = c(4L, 5L, 6L, 9L, 10L), pts = 0)
+  b <- a
+  b$pts <- 2
+  local_mocked_bindings(glmnet = function(...) stop("zero variance"),
+                        cv.glmnet = function(...) stop("zero variance"), .package = "glmnet")
+  for (rows in list(list(a, b), rep(list(a, b), 10L))) {
+    expect_no_warning(out <- nba_rapm(.poss_df(rows)))
+    expect_equal(nrow(out), 10L)
+    expect_true(all(out$o_rapm == 0 & out$d_rapm == 0 & out$rapm == 0))
+  }
+})
+
 # ---------------------------------------------------------------------------
 # Empty input — never-raise, returns 0-row frame with correct schema
 # ---------------------------------------------------------------------------
