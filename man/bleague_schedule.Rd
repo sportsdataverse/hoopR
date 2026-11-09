@@ -23,26 +23,10 @@ Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs,
 = the league competition of the tab (2 / 7 / 15).}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. \cr
-   tab \tab integer \tab Division tab: 1 = B1, 2 = B2, 3 = B3. \cr
-   event \tab integer \tab Competition type of the page: 2 B1 league, 3 B1 Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs, 11 B1-B2 promotion/relegation, 15 B3 league, 32 B3 playoffs. \cr
-   schedule_key \tab integer \tab B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The \{schedule_key\} every game wrapper takes and the schedule page's list-item id. \cr
-   date \tab Date \tab Local game date, derived from the requested month and day (September to June; months 7-12 fall in the season's START year). \cr
-   round_label \tab character \tab Round label as printed in Japanese, 'dai N setsu' (round N); playoffs print other labels. \cr
-   round \tab integer \tab Round number parsed from round_label; null when the label is not 'dai N setsu' (round N). \cr
-   home_team_id \tab character \tab Home club TeamID as text, mapped from the page's club filter. B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. \cr
-   home_team \tab character \tab Home club short name in Japanese as the page prints it (e.g. Osaka). \cr
-   home_score \tab integer \tab Home final score; null for a game without one. \cr
-   away_team_id \tab character \tab Away club TeamID as text, mapped from the page's club filter. B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. \cr
-   away_team \tab character \tab Away club short name in Japanese as the page prints it (e.g. San-en). \cr
-   away_score \tab integer \tab Away final score; null for a game without one. \cr
-   prefecture \tab character \tab Prefecture of the venue in Japanese (e.g. Osaka Prefecture); null when the page gives none. \cr
-   venue \tab character \tab Venue name in Japanese, abbreviated by the page (e.g. Ookini for Osaka Edion Arena). \cr
-   tip_time \tab character \tab Tip-off time 'HH:MM' in JST (no offset on the page); null when absent. \cr
-   state \tab character \tab Score-state label on the page (FINAL for a finished game); null when absent. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "bleague_schedule")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Games of one day of one B.LEAGUE competition and division: schedule keys, clubs,

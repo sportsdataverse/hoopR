@@ -12,22 +12,10 @@ season_code, game_code and game_no of kbl_schedule. Only final games are served;
 \code{hoopR_bad_request}.}
 }
 \value{
-A \code{hoopR_data} tibble: Lead tracker and score chart of a final game: home margin and both scores at eight
-checkpoints per period. The columns are always these, in this order (sportsdataverse-py \code{kbl_score_track}); an empty valid
-answer raises \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   gmkey \tab character \tab Game key \verb{S\{seasonCode\}G\{gameCode\}N\{gameNo\}} (e.g. S47G01N49): the id of every game route and game frame. \cr
-   season_code \tab integer \tab KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League). \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr
-   game_code \tab character \tab Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day. \cr
-   game_no \tab integer \tab Game number inside the competition (glkey): the N part of the gmkey. \cr
-   period \tab integer \tab Period number: 1-4 for the quarters, 5, 6, ... for the overtimes (the wire says X1 in the play-by-play, EQ1 in the match chart). \cr
-   period_label \tab character \tab Period label: Q1-Q4, then OT1, OT2, ... (normalised from the wire's X1 / EQ1 / eq1). \cr
-   checkpoint \tab integer \tab 1-based checkpoint inside the period: eight per period, evenly spaced is assumed (every 75 s of a quarter; unverified), the last at the period's end. \cr
-   home_margin \tab integer \tab Home margin (home minus away points) at the checkpoint. \cr
-   home_score \tab integer \tab Home team points: cumulative at the checkpoint on the score track, the final total (all periods summed) on a game row, the full-time score in the schedule. \cr
-   away_score \tab integer \tab Away team points: cumulative at the checkpoint on the score track, the final total (all periods summed) on a game row, the full-time score in the schedule. \cr
-}
+A \code{hoopR_data} tibble with one row per checkpoint of the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_score_track")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Lead tracker and score chart of a final game: home margin and both scores at eight checkpoints per period.

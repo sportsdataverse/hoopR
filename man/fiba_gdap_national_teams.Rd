@@ -10,19 +10,10 @@ fiba_gdap_national_teams(return_parsed = TRUE)
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   national_federation_id \tab integer \tab Federation organisation id (organisationId key space: 64 = Germany). \cr
-   display_name \tab character \tab English display name of the federation (the country), as the FIBA site shows it. \cr
-   official_name \tab character \tab Federation's official name. \cr
-   country_id \tab integer \tab FIBA country id (country table key space; not an organisationId). \cr
-   country_name \tab character \tab Country name in English. \cr
-   country_fiba_code \tab character \tab FIBA code of the federation's country. \cr
-   zone_id \tab integer \tab FIBA zone id (1 = World, 23 = Europe; zone table key space). \cr
-   zone_name \tab character \tab FIBA zone (Europe, Africa...). \cr
-   organisation_status_code \tab character \tab Organisation status: ACT active. \cr
-   membership_status_code \tab character \tab FIBA membership status: ACT active. \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_national_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every national federation FIBA lists.

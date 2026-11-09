@@ -11,20 +11,10 @@ ibba_segev_rosters(game_id)
 Aviv, 2025-26 round 1): \code{segev_game_id} in ibba_games.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Segev game id (key space: one flat sequence across seasons and competitions); equals the IBBA ibba_games segev_game_id from 2025-26. Not an IBBA game id. \cr
-   team_side \tab character \tab Side of the game: home or away (the feed's homeTeam / awayTeam; an action's parameters.team 1 = home, 2 = away). \cr
-   team_id \tab integer \tab Segev team id of the roster's side (stable across seasons). \cr
-   player_id \tab integer \tab Segev player id (key space: Segev players, stable across seasons: Jaylen Hoard = 1000 in games 50 and 419); null on team lines and on actions without a player. Not an IBBA player-season id. \cr
-   jersey_number \tab integer \tab Jersey number as an integer. \cr
-   first_name \tab character \tab First name in English, upper case. \cr
-   last_name \tab character \tab Last name in English, upper case. \cr
-   first_name_local \tab character \tab First name in Hebrew. \cr
-   last_name_local \tab character \tab Last name in Hebrew. \cr
-   in_roster \tab integer \tab Roster flag, 0 or 2 in the samples; meaning unverified. \cr
-   api_id \tab integer \tab External player id as an integer: null or equal to the Segev player_id (both occur within one game); its source is unverified. \cr
-}
+A \code{hoopR_data} tibble with one row per player on a game roster.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_segev_rosters")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Both teams' game rosters with Segev player ids and names in English and Hebrew.}

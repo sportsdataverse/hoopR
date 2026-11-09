@@ -11,25 +11,10 @@ pleague_player(player_page_id)
 \code{player_page_id} in pleague_stat_player, \code{random_id} in pleague_box_players from 2022-23 (unreliable before).}
 }
 \value{
-A \code{hoopR_data} tibble: One player's profile: names, club, jersey, position, height, weight and birthplace. An
-empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{pleague_player}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_page_id \tab character \tab The 8-character page id of /player/\{id\} (e.g. '1JbPozLB'). The box random_id on 2022-23+ rows; NOT the box player_id. \cr
-   player_id \tab integer \tab P. LEAGUE+ player-team membership id (the box player_id), read from the page's trackPlayer() call, e.g. 40 = Lai Ting-En. NOT the 8-character page id. \cr
-   name_zh \tab character \tab Player name as printed (Traditional Chinese, or a transliteration for foreign players). \cr
-   name_en \tab character \tab Player name in Latin letters. \cr
-   team_zh \tab character \tab Current team's short name in Traditional Chinese. \cr
-   team_en \tab character \tab Current team's English name. \cr
-   jersey \tab character \tab Shirt number as printed, a string ('0', '00' and '10' differ). \cr
-   position \tab character \tab Position letter: G guard, F forward, C centre. \cr
-   nickname \tab character \tab Nickname ((Chinese text)); null when blank. \cr
-   tenure \tab character \tab Years of service ((Chinese text)) as the page prints it, with a prime character ('0''). \cr
-   height_cm \tab double \tab Height in centimetres ((Chinese text)). \cr
-   weight_kg \tab double \tab Weight in kilograms ((Chinese text)). \cr
-   birthplace_zh \tab character \tab Birthplace in Traditional Chinese ((Chinese text); a country for foreign players). The date of birth is dropped on purpose. \cr
-   status_zh \tab character \tab Player status ((Chinese text)): (Chinese text) = import (foreign player), (Chinese text) = local (Taiwanese) player. \cr
-   education \tab character \tab Education lines ((Chinese text)) as printed, joined with '; '. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_player")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One player's profile: names, club, jersey, position, height, weight and birthplace.

@@ -15,41 +15,38 @@ and \code{fox_section}, or \code{NULL} (default) to fetch \code{season}'s Fox
 standings live. Pass an empty \code{data.frame()} to skip Fox.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per ESPN team:
+A \code{hoopR_data} tibble with one row per ESPN team.
 
 \if{html}{\tabular{lll}{
-     col_name \tab types \tab description \cr
-     season \tab integer \tab Season year. \cr
-     espn_team_id \tab integer \tab ESPN team id (canonical key). \cr
-     espn_abbreviation \tab character \tab ESPN abbreviation. \cr
-     espn_display_name \tab character \tab ESPN display name (school + mascot). \cr
-     espn_short_name \tab character \tab ESPN short name. \cr
-     espn_location \tab character \tab ESPN school/location only. \cr
-     espn_mascot \tab character \tab ESPN mascot/nickname. \cr
-     espn_conference \tab character \tab Conference that season, under that season's name (NA if not in a Division I conference). \cr
-     fox_team_id \tab character \tab Fox Bifrost team id (NA if unmatched). \cr
-     fox_team_name \tab character \tab Fox team name (NA if unmatched). \cr
-     fox_section \tab character \tab Fox conference that season (NA if unmatched or unconfirmed). \cr
-     bart_team \tab character \tab Torvik team name (NA if unmatched). \cr
-     bart_conf \tab character \tab Torvik conference abbreviation (NA if unmatched). \cr
-     kp_team \tab character \tab KenPom team name (NA if unmatched). \cr
-     kp_conf \tab character \tab KenPom conference abbreviation (NA if unmatched). \cr
-     ncaa_team \tab character \tab NCAA (stats.ncaa.org) team name; same for every season (NA if unknown). \cr
-     espn_pbp_name \tab character \tab Team name as ESPN play-by-play prints it; same for every season (NA if unknown). \cr
-     warren_nolan_team \tab character \tab Warren Nolan team name; same for every season (NA if unknown). \cr
-     team_247 \tab character \tab 247Sports team name; same for every season (NA if unknown). \cr
-     sref_slug \tab character \tab Sports-Reference school URL slug (`/cbb/schools/<slug>/`); same for every season (NA if unknown). \cr
-     sref_team \tab character \tab Sports-Reference school name; same for every season (NA if unknown). \cr
-     yahoo_team_id \tab character \tab Yahoo team id (NA placeholder). \cr
-     yahoo_team_name \tab character \tab Yahoo team name (NA placeholder). \cr
-     fox_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
-     bart_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
-     kp_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
-     match_method \tab character \tab Combination of matched sources, e.g. \cr
-      \tab  \tab "fox+bart+kp" / "fox+bart" / "bart+kp" / \cr
-      \tab  \tab "fox_only" / "bart_only" / "kp_only" / \cr
-      \tab  \tab "espn_only". \cr
-  }}
+  col_name \tab types \tab description \cr
+  season \tab integer \tab Season year. \cr
+  espn_team_id \tab integer \tab ESPN team id (canonical key). \cr
+  espn_abbreviation \tab character \tab ESPN abbreviation. \cr
+  espn_display_name \tab character \tab ESPN display name (school + mascot). \cr
+  espn_short_name \tab character \tab ESPN short name. \cr
+  espn_location \tab character \tab ESPN school/location only. \cr
+  espn_mascot \tab character \tab ESPN mascot/nickname. \cr
+  espn_conference \tab character \tab Conference that season, under that season's name (NA if not in a Division I conference). \cr
+  fox_team_id \tab character \tab Fox Bifrost team id (NA if unmatched). \cr
+  fox_team_name \tab character \tab Fox team name (NA if unmatched). \cr
+  fox_section \tab character \tab Fox conference that season (NA if unmatched or unconfirmed). \cr
+  bart_team \tab character \tab Torvik team name (NA if unmatched). \cr
+  bart_conf \tab character \tab Torvik conference abbreviation (NA if unmatched). \cr
+  kp_team \tab character \tab KenPom team name (NA if unmatched). \cr
+  kp_conf \tab character \tab KenPom conference abbreviation (NA if unmatched). \cr
+  ncaa_team \tab character \tab NCAA (stats.ncaa.org) team name; same for every season (NA if unknown). \cr
+  espn_pbp_name \tab character \tab Team name as ESPN play-by-play prints it; same for every season (NA if unknown). \cr
+  warren_nolan_team \tab character \tab Warren Nolan team name; same for every season (NA if unknown). \cr
+  team_247 \tab character \tab 247Sports team name; same for every season (NA if unknown). \cr
+  sref_slug \tab character \tab Sports-Reference school URL slug (\code{/cbb/schools/<slug>/}); same for every season (NA if unknown). \cr
+  sref_team \tab character \tab Sports-Reference school name; same for every season (NA if unknown). \cr
+  yahoo_team_id \tab character \tab Yahoo team id (NA placeholder). \cr
+  yahoo_team_name \tab character \tab Yahoo team name (NA placeholder). \cr
+  fox_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
+  bart_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
+  kp_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
+  match_method \tab character \tab Combination of matched sources, e.g. "fox+bart+kp" / "fox+bart" / "bart+kp" / "fox_only" / "bart_only" / "kp_only" / "espn_only". \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

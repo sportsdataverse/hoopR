@@ -11,34 +11,10 @@ pleague_player_seasons(player_page_id)
 \code{player_page_id} in pleague_stat_player, \code{random_id} in pleague_box_players from 2022-23 (unreliable before).}
 }
 \value{
-A \code{hoopR_data} tibble: One player's season totals and per-game averages, league and East Asia Super League, with
-a career row. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
-\code{pleague_player_seasons}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_page_id \tab character \tab The 8-character page id of /player/\{id\} (e.g. '1JbPozLB'). The box random_id on 2022-23+ rows; NOT the box player_id. \cr
-   competition \tab character \tab Table block: plg (the league's tables) or easl (the East Asia Super League block, present only for players with games there). \cr
-   table \tab character \tab totals (the (Chinese text) table: season totals) or averages (the (Chinese text) table: per game). \cr
-   season \tab integer \tab Season END year of the slug; null on the career row. \cr
-   season_slug \tab character \tab Season slug as printed ('2025-26'), or 'career' for the final totals / averages row. \cr
-   games \tab integer \tab Games played ((Chinese text)). \cr
-   minutes \tab character \tab Minutes 'mm:ss' (a season total in the totals table, a per-game average in the averages table). \cr
-   points \tab double \tab Points (total in the totals table, per game in the averages table; (Chinese text)). \cr
-   reb \tab double \tab Rebounds (total / per game; (Chinese text)). \cr
-   ast \tab double \tab Assists (total / per game; (Chinese text)). \cr
-   stl \tab double \tab Steals (total / per game; (Chinese text)). \cr
-   blk \tab double \tab Blocks (total / per game; (Chinese text)). \cr
-   tov \tab double \tab Turnovers (total / per game; (Chinese text)). \cr
-   pf \tab double \tab Personal fouls (total / per game; (Chinese text)). \cr
-   fg2_made \tab double \tab 2-point makes: the first number of the page's '56 - 103' cell (total / per game). \cr
-   fg2_att \tab double \tab 2-point attempts: the second number of the cell. \cr
-   fg2_pct \tab double \tab 2-point percentage 0-100 ('54.4 percent' -> 54.4). \cr
-   fg3_made \tab double \tab 3-point makes (total / per game). \cr
-   fg3_att \tab double \tab 3-point attempts (total / per game). \cr
-   fg3_pct \tab double \tab 3-point percentage 0-100. \cr
-   ft_made \tab double \tab Free-throw makes (total / per game). \cr
-   ft_att \tab double \tab Free-throw attempts (total / per game). \cr
-   ft_pct \tab double \tab Free-throw percentage 0-100. \cr
-}
+A \code{hoopR_data} tibble with one row per player-season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_player_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One player's season totals and per-game averages, league and East Asia Super League, with a career row.

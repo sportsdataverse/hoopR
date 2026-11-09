@@ -18,13 +18,37 @@ espn_nba_season_ranking(ranking_id, season = most_recent_nba_season(), ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per weekly snapshot.
+A \code{hoopR_data} tibble with one row per weekly snapshot.
 
-Columns as documented in the shared \link{espn_mbb_season_ranking_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  ranking_id \tab character \tab ESPN ranking id. \cr
+  name \tab character \tab Ranking name (e.g. "AP Top 25"). \cr
+  short_name \tab character \tab Short name (e.g. "AP Poll"). \cr
+  type \tab character \tab Ranking type code (e.g. "ap"). \cr
+  season_type \tab integer \tab Season-type id of this snapshot. \cr
+  week \tab integer \tab Week number of this snapshot. \cr
+  ref \tab character \tab \code{$ref} URL for the per-week ranking detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per weekly snapshot.
+A \code{hoopR_data} tibble with one row per weekly snapshot.
 
-Columns as documented in the shared \link{espn_mbb_season_ranking_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  ranking_id \tab character \tab ESPN ranking id. \cr
+  name \tab character \tab Ranking name (e.g. "AP Top 25"). \cr
+  short_name \tab character \tab Short name (e.g. "AP Poll"). \cr
+  type \tab character \tab Ranking type code (e.g. "ap"). \cr
+  season_type \tab integer \tab Season-type id of this snapshot. \cr
+  week \tab integer \tab Week number of this snapshot. \cr
+  ref \tab character \tab \code{$ref} URL for the per-week ranking detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Returns the per-week snapshot index for one ranking source (e.g. AP

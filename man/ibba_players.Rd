@@ -18,22 +18,10 @@ ibba_box_score.}
 unchanged.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows. \cr
-   jersey \tab character \tab Jersey number as a zero-padded string ('02'); a box score also uses '_TEAM' and 'TOTAL' for its two non-player lines. \cr
-   season \tab integer \tab Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. \cr
-   team_id \tab integer \tab Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. \cr
-   player_name_he \tab character \tab Player name in Hebrew, HTML-unescaped. \cr
-   player_name \tab character \tab Player name in English, HTML-unescaped. \cr
-   is_replaced \tab logical \tab True when the person was replaced during the season (left the roster or staff). \cr
-   is_local \tab logical \tab True for an Israeli (local) player; the isr_ leader categories count only these. \cr
-   photo_path \tab character \tab Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. \cr
-   height_m \tab double \tab Height in metres (1.93). \cr
-   position_he \tab character \tab Position in Hebrew. \cr
-   position \tab character \tab Position code: PG, G, G-F, F, F-C or C. \cr
-   birth_date \tab Date \tab Date of birth (public player bio); null when not published. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{The roster of a team-season: jersey, names, position, height and birth date.}

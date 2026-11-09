@@ -3,23 +3,7 @@
 #'
 #' @param game_id (*Integer* required): Game ID filter for querying a single game
 #'
-#' @return [espn_mbb_wp()] - A data frame with 9 variables:
-#'
-#' \if{html}{\tabular{lll}{
-#'    col_name \tab type \tab description \cr
-#'    \code{game_id} \tab character \tab Referencing game ID (should be same as \code{game_id} from other functions). \cr
-#'    \code{play_id} \tab character \tab Referencing play ID. \cr
-#'    \code{period} \tab integer \tab Clock (time) left in the game. \cr
-#'    \code{time_left} \tab character \tab Clock (time) left in the game. \cr
-#'    \code{period_seconds_left} \tab integer \tab Seconds left in the period. \cr
-#'    \code{game_seconds_left} \tab integer \tab Seconds left in the game. \cr
-#'    \code{home_win_percentage} \tab double \tab The probability of the home team winning the game. \cr
-#'    \code{away_win_percentage} \tab double \tab The probability of the away team winning the game (calculated as 1 - \code{home_win_percentage} - \code{tie_percentage}). \cr
-#'    \code{tie_percentage} \tab double \tab The probability of the game ending the final period in a tie. \cr
-#' }}
-#' \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'
+#' @eval .returns_rd("espn_mbb_wp", unit = "play")
 #' @importFrom jsonlite fromJSON
 #' @importFrom httr2 request req_headers req_timeout req_retry req_perform resp_body_string
 #' @importFrom utils URLencode URLdecode

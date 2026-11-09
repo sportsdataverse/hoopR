@@ -18,29 +18,10 @@ The top flight was named TBL until 2007-08 and is listed under bsl.}
 (31-33 in 2025-26). Default: the latest week for standings, every week for the schedule.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per team and group. Tie-break detail rows (\code{tiedRows}) are not included.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). \cr
-   competition \tab character \tab TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). \cr
-   group \tab character \tab Group name (grup); empty for a single-group league. \cr
-   activity_id \tab integer \tab Activity id (faaliyet = activity; key space: TBF league-SEASONS, new every season: BSL 2026-27 = 22214, BSL 2025-26 = 20728, TBL 2026-27 = 22215, KBSL 2026-27 = 22209). Cast to an integer from the 22214 / 22214.0 the API sends. \cr
-   team_process_id \tab integer \tab Team-season id (teamProcessId = takimIslemId, a team REGISTRATION; key space: TBF team registrations, a NEW id per club per league-season: Tofas = 265995 in BSL 2026-27). The team_process_id argument of the team wrappers; not the stable club_id. \cr
-   team_name \tab character \tab Team name as registered for that season, uppercase with Turkish letters (sponsor name: 'PIZZABULLS BORDO BANDIRMA'). \cr
-   week \tab integer \tab The week the table is computed after (hafta); equals the week argument, else the latest. \cr
-   rank \tab integer \tab League rank (sira) after that week. \cr
-   played \tab integer \tab Games played (o = oynanan). \cr
-   won \tab integer \tab Games won (g = galibiyet). \cr
-   lost \tab integer \tab Games lost (m = maglubiyet). \cr
-   points_for \tab integer \tab Points scored (a = atilan). \cr
-   points_against \tab integer \tab Points conceded (y = yenilen). \cr
-   points \tab integer \tab League points (puan): 2 for a win, 1 for a loss. \cr
-   head_to_head_points \tab integer \tab Head-to-head league points among teams tied on points (icP = ic puan). \cr
-   head_to_head_diff \tab integer \tab Head-to-head point difference among teams tied on points (icA = ic averaj). \cr
-   total_diff \tab integer \tab Total point difference over all games (toA = toplam averaj). \cr
-   excluded \tab integer \tab Exclusion marker (ihrac = expulsion); 0 for teams still in the league. \cr
-}
+A \code{hoopR_data} tibble with one row per team and group.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 League table of one league-season after a week (default the latest), one row per team and group.

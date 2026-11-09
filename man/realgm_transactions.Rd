@@ -7,14 +7,10 @@
 realgm_transactions()
 }
 \value{
-A \code{hoopR_data} tibble with one row per transaction:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      date \tab Date \tab Transaction date. \cr
-      transaction \tab character \tab Transaction description. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per transaction.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "realgm_transactions")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the NBA league transactions log from

@@ -11,58 +11,10 @@ vtb_infobasket_box_score(game_id)
 across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Player box score of a finished game (one row per player of each team, DNPs included). The
-columns are always these, in this order (sportsdataverse-py \code{vtb_infobasket_box_score}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Infobasket GameID of the game (the v2 matches' match_id); global across seasons. \cr
-   team_id \tab integer \tab Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id. \cr
-   is_home \tab logical \tab True for team 1, the team listed first (team A, the home side in the calendar); the body has no explicit home flag (unverified). \cr
-   person_id \tab integer \tab Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/\{personId\} (players) and /Widget/CoachPage/\{personId\} (coaches). \cr
-   team_number \tab integer \tab Side of the player's team: 1 team A (home), 2 team B (away). \cr
-   player_number \tab integer \tab Shirt number as an integer (-1 when none). \cr
-   display_number \tab character \tab Shirt number as displayed ('0' and '00' differ). \cr
-   last_name_ru \tab character \tab Last name in Russian. \cr
-   last_name_en \tab character \tab Last name in English. \cr
-   first_name_ru \tab character \tab First name in Russian. \cr
-   first_name_en \tab character \tab First name in English. \cr
-   person_name_ru \tab character \tab Name 'Last First' in Russian. \cr
-   person_name_en \tab character \tab Name 'Last First' in English. \cr
-   is_captain \tab logical \tab 1 for the team captain, else 0. \cr
-   birth_date \tab character \tab Birth date (ISO 8601 date) of a player: public bio, kept; coaches' and officials' birth data is never output. \cr
-   pos_id \tab integer \tab Position code: players 1 point guard, 2 shooting guard, 3 small forward, 4 power forward, 5 centre; coaches 1000 head coach, 1001 assistant; officials 101-103 referees, 104 commissioner, 111-123 table officials (exact roles unverified). \cr
-   country_code_ioc \tab character \tab Nationality code: ISO 3166 alpha-2 in most rows ('RU', 'US'), IOC alpha-3 in some ('BLR'). \cr
-   country_name_ru \tab character \tab Nationality code (same as CountryCodeIOC), not a name. \cr
-   country_name_en \tab character \tab Nationality code (same as CountryCodeIOC), not a name. \cr
-   rank_ru \tab character \tab Sporting title, Russian; empty or null in the samples. \cr
-   rank_en \tab character \tab Sporting title, English; empty or null in the samples. \cr
-   height \tab integer \tab Height in centimetres. \cr
-   weight \tab integer \tab Weight in kilograms. \cr
-   points \tab integer \tab Points. The wire's null is 0 here (null counts are filled). \cr
-   shot1 \tab integer \tab Free throws attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal1 \tab integer \tab Free throws made. The wire's null is 0 here (null counts are filled). \cr
-   shot1_percent \tab double \tab Free-throw percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   shot2 \tab integer \tab 2-point field goals attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal2 \tab integer \tab 2-point field goals made. The wire's null is 0 here (null counts are filled). \cr
-   shot2_percent \tab double \tab 2-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   shot3 \tab integer \tab 3-point field goals attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal3 \tab integer \tab 3-point field goals made. The wire's null is 0 here (null counts are filled). \cr
-   shot3_percent \tab double \tab 3-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   assist \tab integer \tab Assists. The wire's null is 0 here (null counts are filled). \cr
-   blocks \tab integer \tab Blocked shots. The wire's null is 0 here (null counts are filled). \cr
-   def_rebound \tab integer \tab Defensive rebounds. The wire's null is 0 here (null counts are filled). \cr
-   off_rebound \tab integer \tab Offensive rebounds. The wire's null is 0 here (null counts are filled). \cr
-   rebound \tab integer \tab Total rebounds. The wire's null is 0 here (null counts are filled). \cr
-   steal \tab integer \tab Steals. The wire's null is 0 here (null counts are filled). \cr
-   turnover \tab integer \tab Turnovers. The wire's null is 0 here (null counts are filled). \cr
-   foul \tab integer \tab Personal fouls committed. The wire's null is 0 here (null counts are filled). \cr
-   opponent_foul \tab integer \tab Fouls drawn. The wire's null is 0 here (null counts are filled). \cr
-   plus_minus \tab integer \tab Plus-minus: point differential while on the court. Null where the host sends none. \cr
-   seconds \tab integer \tab Playing time in seconds. \cr
-   played_time \tab character \tab Playing time as 'minutes:seconds' (team rows sum the five players: '200:00' = 40 minutes x 5). \cr
-   is_start \tab logical \tab True for a starter. \cr
-   start_mark \tab character \tab '+' for a starter, else empty. \cr
-}
+A \code{hoopR_data} tibble with one row per player of each team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_box_score")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player box score of a finished game (one row per player of each team, DNPs included).

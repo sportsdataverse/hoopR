@@ -10,22 +10,10 @@ lba_shots(game_id)
 \item{game_id}{(required) Game id (game_id in lba_calendar), e.g. 25602. Global across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Shooting by court zone per team for a final game (made / attempted aggregates; zone 7
-includes free throws). The columns are always these, in this order (sportsdataverse-py \code{lba_shots}); a column the site adds
-later is appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Game id (global across seasons); joins lba_calendar and lba_game. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   side \tab character \tab Which team of the game the row belongs to: home or visitor. \cr
-   team_id \tab integer \tab Team-season id (re-issued every season); join lba_teams for the stable club_id. \cr
-   zone \tab integer \tab Court zone 1-10 (the play-by-play side_area_code); zone 7 also holds the free throws. \cr
-   made \tab integer \tab Shots made in the zone, parsed from num. \cr
-   attempts \tab integer \tab Shots attempted in the zone, parsed from num. \cr
-   perc \tab double \tab Made / attempted x 100. \cr
-   precision \tab integer \tab Decimal places the site shows (1). \cr
-   num \tab character \tab Made/attempted as a string (\code{17/21}); zone \code{7} also counts free throws. \cr
-   opacity \tab integer \tab Heat-map shading for the site: \code{perc} floored, minimum 5. \cr
-}
+A \code{hoopR_data} tibble with one row per shooting zone.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_shots")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Shooting by court zone per team for a final game (made / attempted aggregates; zone 7 includes free throws).

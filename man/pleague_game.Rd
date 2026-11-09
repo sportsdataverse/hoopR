@@ -12,28 +12,10 @@ pleague_game(gid)
 are served.}
 }
 \value{
-A \code{hoopR_data} tibble: Header of one finished game: date, venue, both clubs with their score and the Preciser
-game uuid. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
-\code{pleague_game}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   gid \tab integer \tab P. LEAGUE+ game id on the site: ONE global integer sequence over every stage and season (1-12 = 2020-21 pre-season, 13 = the 2020-21 opener, 197 = the 2022-23 opener, 662 = the 2025-26 opener), with gaps; a row id, not a count. The \{gid\} of /game/\{gid\}. \cr
-   uuid \tab character \tab Preciser game uuid (key space: the analytics vendor's games, a version-1 uuid), embedded in the game page as getPlayByPlay('uuid'); keys the play-by-play and every pleague_preciser wrapper. Null before 2022-23 (the page embeds an empty string: no play-by-play or vendor data). \cr
-   status_zh \tab character \tab Status badge: (Chinese text) = finished. The only value the wrappers serve (anything else raises hoopR_asset_fetch). \cr
-   finished \tab logical \tab True when the status badge is (Chinese text) (finished); always true for a served game. \cr
-   date \tab Date \tab Game date from the header, Asia/Taipei (UTC+8) local time. \cr
-   time \tab character \tab Tip-off 'HH:MM' from the header, Asia/Taipei (UTC+8) local time. \cr
-   venue_zh \tab character \tab Venue (arena) name in Traditional Chinese. \cr
-   game_label_zh \tab character \tab Stage and game number as printed in the header: '(Chinese text)G1' = regular season game 1 ('(Chinese text)G01' on 2020-21 pages); (Chinese text) = playoffs, (Chinese text) = finals. \cr
-   away_name_zh \tab character \tab Away team's name on that date in Traditional Chinese (short or long form; (Chinese text) = Braves, (Chinese text) = Pilots, (Chinese text) = Lioneers, (Chinese text) = Dreamers, (Chinese text) = Steelers, (Chinese text) = Kings, (Chinese text) = Ghosthawks, (Chinese text) = Yankey Ark). Printed names change by season (short and long forms, renames): key on the id, not the name. \cr
-   away_name_en \tab character \tab Away team's English name on that date; renames change it. Null on 2020-21 game pages (no English name is printed). \cr
-   away_logo \tab character \tab Away team logo url as printed by the page: protocol-relative ('//d36fypkbmmogz6.cloudfront.net/upload/p_team/logo_\{team\}_\{epoch\}.png'); some game pages print a malformed 'https:////d36...'. The trailing number is the upload time. \cr
-   away_score \tab integer \tab Away team's final points (0 on a future game). \cr
-   home_name_zh \tab character \tab Home team's name on that date in Traditional Chinese (short or long form). Printed names change by season (short and long forms, renames): key on the id, not the name. \cr
-   home_name_en \tab character \tab Home team's English name on that date; renames change it. Null on 2020-21 game pages (no English name is printed). \cr
-   home_logo \tab character \tab Home team logo url as printed by the page: protocol-relative ('//d36fypkbmmogz6.cloudfront.net/upload/p_team/logo_\{team\}_\{epoch\}.png'); some game pages print a malformed 'https:////d36...'. The trailing number is the upload time. \cr
-   home_score \tab integer \tab Home team's final points (0 on a future game). \cr
-   overtimes \tab integer \tab Number of overtime periods played (overtime cells with points on the page). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_game")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Header of one finished game: date, venue, both clubs with their score and the Preciser game uuid.

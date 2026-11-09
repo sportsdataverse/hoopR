@@ -19,22 +19,10 @@ competitions.}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per \verb{(table_key, entity_name, stat_key)}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   season_id \tab character \tab Season UUID of the table; null for the competition-scoped routes (their bodies carry none). \cr
-   table_key \tab character \tab Statistics table the row is from: averages, shootingstatistics, totals, ... (the set is per site). \cr
-   table_label \tab character \tab The table's heading in the site's language (e.g. Moyennes). \cr
-   person_id \tab character \tab Player UUID decoded from the widget link beside the name (the tables carry names only); null when the link is missing or undecodable, and always null in team and competition bodies. \cr
-   person_name \tab character \tab Player name as the site prints it; null in team tables. \cr
-   entity_id \tab character \tab Team UUID decoded from the widget link (team tables only; player tables name the team but carry no id). \cr
-   entity_name \tab character \tab Team name as the site prints it; for player rows of a stat table it is the player's team. \cr
-   stat_key \tab character \tab Statistic key as the API names it (pointsPerGame, fieldGoalsMade, ...), unchanged from header key. \cr
-   stat_name \tab character \tab Short column heading the site shows for the statistic (PTS, REB), in the site's language. \cr
-   stat_label \tab character \tab Longer statistic label the site shows (code in the API), in the site's language. \cr
-   value \tab double \tab Numeric value of the statistic; null when the API sends a duration or text (see value_text). \cr
-   value_text \tab character \tab Non-numeric statistic value, e.g. an ISO 8601 duration such as PT12M2S for minutes per game. \cr
-}
+A \code{hoopR_data} tibble with one row per (\code{table_key}, \code{entity_name}, \code{stat_key}).
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_competition_team_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Team statistics of a competition in long form (names only: the bodies carry no

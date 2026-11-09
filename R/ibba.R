@@ -48,16 +48,7 @@
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
 #' @eval .intl_details(.ibba_configuration_details, full = TRUE, "ibba_configuration(season = 2026)")
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | season_label | character | Season label as 'YYYY-YY' ('2025-26', '2004-05'). |
-#' | red_line | integer | Standings position the site draws its cut line under (12 in 2025-26, 10 in 2004-05); meaning inferred. |
-#' | active_board_id | integer | Board id the site treats as the active competition (17 = final series in 2025-26, 5 = league in 2004-05); meaning inferred. |
-#' | next_round | integer | Next round (game number) to be played; meaning inferred. |
-#' | total_rounds | integer | Rounds in the regular season (32 in 2025-26, 22 in 2004-05); meaning inferred. |
+#' @eval .returns_rd("ibba_configuration", inline = FALSE, unit = "season")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -76,15 +67,7 @@ ibba_configuration <- function(season) {
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
 #' @eval .intl_details(.ibba_configuration_details)
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | board_id | integer | Competition (board) id: 5 league, 10 cup, 16 / 26 / 17 playoff quarterfinals / semifinals / final, 33 play-in, 34 Supercup, 11 the 2004-05 semifinal group; 1001+ external competitions (1001 EuroLeague, 1003 Champions League, 1005 pre-season, 1008 EuroBasket, 1012 EuroCup, 1013 State Cup). |
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | board_name_he | character | Competition name in Hebrew, HTML-unescaped. |
-#' | board_title_he | character | Sponsor-branded competition name in Hebrew (the Hebrew for 'Winner League'). |
-#' | category_he | character | Competition format in Hebrew: the Hebrew words for table, knockout or series. |
+#' @eval .returns_rd("ibba_boards", inline = FALSE, unit = "board")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -110,12 +93,7 @@ ibba_boards <- function(season) {
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
 #' @eval .intl_details(.ibba_configuration_details, "ibba_boards_ex(season = 2026, team_uid = 10)")
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | board_id | integer | Competition (board) id: 5 league, 10 cup, 16 / 26 / 17 playoff quarterfinals / semifinals / final, 33 play-in, 34 Supercup, 11 the 2004-05 semifinal group; 1001+ external competitions (1001 EuroLeague, 1003 Champions League, 1005 pre-season, 1008 EuroBasket, 1012 EuroCup, 1013 State Cup). |
-#' | board_name_he | character | Competition name in Hebrew, HTML-unescaped. |
+#' @eval .returns_rd("ibba_boards_ex", inline = FALSE, unit = "board")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -136,36 +114,7 @@ ibba_boards_ex <- function(team_uid, season) {
 #' @param board_id (*integer*, default `5`): Competition (board) id: 5 league, 10 cup, 16 / 26 / 17
 #'   playoff quarterfinals / semifinals / final, 33 play-in, 34 Supercup. Default 5.
 #' @eval .intl_details(.ibba_configuration_details)
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | team_uid | integer | IBBA CLUB id, stable across seasons (Maccabi Tel Aviv = 10): the team_uid parameter of the roster routes. Not the per-season team_id. |
-#' | team_id | integer | Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. |
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | team_name_he | character | Team name in Hebrew, HTML-unescaped. |
-#' | team_short_name_he | character | Short team name in Hebrew, HTML-unescaped. |
-#' | team_name | character | Team name in English as registered for the season. |
-#' | team_short_name | character | Short team name in English. |
-#' | board_id | integer | Competition (board) id: 5 league, 10 cup, 16 / 26 / 17 playoff quarterfinals / semifinals / final, 33 play-in, 34 Supercup, 11 the 2004-05 semifinal group; 1001+ external competitions (1001 EuroLeague, 1003 Champions League, 1005 pre-season, 1008 EuroBasket, 1012 EuroCup, 1013 State Cup). |
-#' | place | integer | Rank in the standings of the board (1 = first). |
-#' | games | integer | Games played (in the standings or in the season stats). |
-#' | wins | integer | Games won in the season so far (standings line). |
-#' | losses | integer | Games lost in the season so far (standings line). |
-#' | points_for | integer | Points scored over the games played. |
-#' | points_against | integer | Points conceded over the games played. |
-#' | table_points | integer | Standings points (2 per win, 1 per loss in the league table). |
-#' | logo_url | character | Absolute URL of the team logo. |
-#' | photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
-#' | address_he | character | Club address in Hebrew, HTML-unescaped. |
-#' | sponsors_he | character | Club sponsors in Hebrew, comma-separated. |
-#' | facebook_url | character | Club Facebook page URL; null when none. |
-#' | twitter_url | character | Club Twitter / X profile URL; null when none. |
-#' | instagram_url | character | Club Instagram profile URL; null when none. |
-#' | youtube_url | character | Club YouTube channel URL; null when none. |
-#' | ticket_url | character | Ticket-sales URL; null when none. |
-#' | subscribe_url | character | Season-ticket subscription URL; null when none. |
-#' | coaches_he | character | Coaching staff as one Hebrew text ('head coach: ..., assistant coach: ...', in Hebrew). |
+#' @eval .returns_rd("ibba_teams", inline = FALSE, unit = "team")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -193,43 +142,7 @@ ibba_teams <- function(season, board_id = 5) {
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
 #' @eval .intl_details(.ibba_configuration_details, "ibba_team(season = 2026, team_id = 1109, team_uid = 10)")
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | team_uid | integer | IBBA CLUB id, stable across seasons (Maccabi Tel Aviv = 10): the team_uid parameter of the roster routes. Not the per-season team_id. |
-#' | team_id | integer | Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. |
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | team_name_he | character | Team name in Hebrew, HTML-unescaped. |
-#' | team_short_name_he | character | Short team name in Hebrew, HTML-unescaped. |
-#' | team_name | character | Team name in English as registered for the season. |
-#' | team_short_name | character | Short team name in English. |
-#' | wins | integer | Games won in the season so far (standings line). |
-#' | losses | integer | Games lost in the season so far (standings line). |
-#' | points_for | integer | Points scored over the games played. |
-#' | points_against | integer | Points conceded over the games played. |
-#' | table_points | integer | Standings points (2 per win, 1 per loss in the league table). |
-#' | place | integer | Rank in the standings of the board (1 = first). |
-#' | website_url | character | Club website URL. |
-#' | photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
-#' | icon_path | character | Site-relative path of the small team icon. |
-#' | logo_url | character | Absolute URL of the team logo. |
-#' | icon3_path | character | Site-relative path of the third team icon variant. |
-#' | arena_id | integer | Home arena id in the IBBA site's own arena table (no arena route is modelled). |
-#' | address_he | character | Club address in Hebrew, HTML-unescaped. |
-#' | address | character | Club address in English, HTML-unescaped. |
-#' | colors_he | character | Team colours in Hebrew. |
-#' | colors | character | Team colours in English. |
-#' | sponsors_he | character | Club sponsors in Hebrew, comma-separated. |
-#' | sponsors | character | Club sponsors in English, comma-separated. |
-#' | about_he | character | Club profile in Hebrew as HTML markup (honours, history); not stripped. |
-#' | about | character | Club profile in English as HTML markup; null when the club has none. |
-#' | facebook_url | character | Club Facebook page URL; null when none. |
-#' | twitter_url | character | Club Twitter / X profile URL; null when none. |
-#' | instagram_url | character | Club Instagram profile URL; null when none. |
-#' | youtube_url | character | Club YouTube channel URL; null when none. |
-#' | subscribe_url | character | Season-ticket subscription URL; null when none. |
-#' | diary_url | character | Calendar-subscription (add-to-diary) URL of the club's fixtures. |
+#' @eval .returns_rd("ibba_team", inline = FALSE, unit = "team")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -253,23 +166,7 @@ ibba_team <- function(team_id, team_uid, season) {
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
 #' @eval .intl_details(.ibba_configuration_details)
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | player_id | integer | Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows. |
-#' | jersey | character | Jersey number as a zero-padded string ('02'); a box score also uses '_TEAM' and 'TOTAL' for its two non-player lines. |
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | team_id | integer | Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. |
-#' | player_name_he | character | Player name in Hebrew, HTML-unescaped. |
-#' | player_name | character | Player name in English, HTML-unescaped. |
-#' | is_replaced | logical | True when the person was replaced during the season (left the roster or staff). |
-#' | is_local | logical | True for an Israeli (local) player; the isr_ leader categories count only these. |
-#' | photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
-#' | height_m | double | Height in metres (1.93). |
-#' | position_he | character | Position in Hebrew. |
-#' | position | character | Position code: PG, G, G-F, F, F-C or C. |
-#' | birth_date | Date | Date of birth (public player bio); null when not published. |
+#' @eval .returns_rd("ibba_players", inline = FALSE, unit = "player")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -294,19 +191,7 @@ ibba_players <- function(team_id, team_uid, season) {
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
 #' @eval .intl_details(.ibba_configuration_details, "ibba_player(player_id = 21912, season = 2026)")
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | player_id | integer | Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows. |
-#' | jersey | character | Jersey number as a zero-padded string ('02'); a box score also uses '_TEAM' and 'TOTAL' for its two non-player lines. |
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | team_id | integer | Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. |
-#' | player_name_he | character | Player name in Hebrew, HTML-unescaped. |
-#' | player_name | character | Player name in English, HTML-unescaped. |
-#' | is_replaced | logical | True when the person was replaced during the season (left the roster or staff). |
-#' | is_local | logical | True for an Israeli (local) player; the isr_ leader categories count only these. |
-#' | photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
+#' @eval .returns_rd("ibba_player", inline = FALSE, unit = "player")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -330,19 +215,7 @@ ibba_player <- function(player_id, season) {
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
 #' @eval .intl_details(.ibba_configuration_details, "ibba_coaches(season = 2026, team_id = 1109, team_uid = 10)")
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | coach_id | integer | Coach id in the IBBA coach table (per team-season registration as far as the samples show; stability across seasons is unverified). |
-#' | coach_type | integer | Staff role code: 1 = head coach, 2 = assistant coach (inferred from the Maccabi Tel Aviv sample). |
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | team_id | integer | Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. |
-#' | coach_name_he | character | Coach name in Hebrew, HTML-unescaped. |
-#' | coach_name | character | Coach name in English. |
-#' | is_replaced | logical | True when the person was replaced during the season (left the roster or staff). |
-#' | photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
-#' | sort_order | integer | Display order of the coach within the staff list (mOrder). |
+#' @eval .returns_rd("ibba_coaches", inline = FALSE, unit = "staff member")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -363,43 +236,7 @@ ibba_coaches <- function(team_id, team_uid, season) {
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
 #' @eval .intl_details(.ibba_configuration_details)
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | player_id | integer | Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows. |
-#' | jersey | character | Jersey number as a zero-padded string ('02'); a box score also uses '_TEAM' and 'TOTAL' for its two non-player lines. |
-#' | team_id | integer | Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. |
-#' | game_id | integer | IBBA game id (key space: basket.co.il games). Joins ibba_games to ibba_box_score; in ibba_games_ex it is an EXTERNAL game id (the ig_ space, e.g. 8888 for a pre-season game). |
-#' | board_id | integer | Board id of the game (5 = league). |
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | round | integer | Round (game number) of the game within its board. |
-#' | starter | logical | True when the player started the game. |
-#' | minutes | integer | Minutes played, whole minutes; a TOTAL line holds the team's player-minutes (200 plus 25 per overtime). |
-#' | pts | integer | Points scored by the player or team (free throws included). |
-#' | fg2m | integer | Two-point field goals made. |
-#' | fg2a | integer | Two-point field goals attempted (verified equal to Segev made + missed). |
-#' | fg2_pct | double | Two-point field-goal percentage, 0-100. |
-#' | fg3m | integer | Three-point field goals made. |
-#' | fg3a | integer | Three-point field goals attempted. |
-#' | fg3_pct | double | Three-point field-goal percentage, 0-100. |
-#' | ftm | integer | Free throws made. |
-#' | fta | integer | Free throws attempted. |
-#' | ft_pct | double | Free-throw percentage, 0-100. |
-#' | dreb | integer | Defensive rebounds. |
-#' | oreb | integer | Offensive rebounds. |
-#' | reb | integer | Total rebounds. |
-#' | fouls_drawn | integer | Fouls DRAWN: fouls opponents committed against the player or team (the wire's fouls_against; verified equal to Segev f_drawn). |
-#' | fouls | integer | Fouls COMMITTED by the player or team (the wire's fouls_for; verified equal to Segev f). |
-#' | steals | integer | Steals made by the player or team. |
-#' | turnovers | integer | Turnovers (the wire's misspelt tournovers). |
-#' | assists | integer | Assists credited to the player or team. |
-#' | blocks | integer | Shots the player or team blocked. |
-#' | blocks_against | integer | Own shots that were blocked. |
-#' | val | integer | Efficiency rating (valuation; verified equal to Segev rate); -1 on 2004-05 team-credited lines. |
-#' | plus_minus | integer | Plus-minus; 0 on every line of the 2004-05 sample (not recorded then, inferred). |
-#' | dunks | integer | Dunks made by the player or team. |
-#' | row_type | character | Kind of box line: player, team (actions credited to the team: team rebounds and turnovers) or total (the team's TOTAL line, equal to players plus team lines). |
+#' @eval .returns_rd("ibba_box_score", inline = FALSE, unit = "player in the game")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -428,39 +265,7 @@ ibba_box_score <- function(game_id, season) {
 #' @param is_playoff (*logical*, default `FALSE`): True returns the playoff games only; False
 #'   (default) the regular season.
 #' @eval .intl_details(.ibba_configuration_details)
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | player_id | integer | Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows. |
-#' | jersey | character | Jersey number as a zero-padded string ('02'); a box score also uses '_TEAM' and 'TOTAL' for its two non-player lines. |
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | team_id | integer | Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. |
-#' | games | integer | Games played (in the standings or in the season stats). |
-#' | minutes | double | Minutes played, whole minutes; a TOTAL line holds the team's player-minutes (200 plus 25 per overtime). Season total, or the per-game average when is_averages is true. |
-#' | pts | double | Points scored by the player or team (free throws included). Season total, or the per-game average when is_averages is true. |
-#' | fg2m | double | Two-point field goals made. Season total, or the per-game average when is_averages is true. |
-#' | fg2a | double | Two-point field goals attempted (verified equal to Segev made + missed). Season total, or the per-game average when is_averages is true. |
-#' | fg2_pct | double | Two-point field-goal percentage, 0-100. Season total, or the per-game average when is_averages is true. |
-#' | fg3m | double | Three-point field goals made. Season total, or the per-game average when is_averages is true. |
-#' | fg3a | double | Three-point field goals attempted. Season total, or the per-game average when is_averages is true. |
-#' | fg3_pct | double | Three-point field-goal percentage, 0-100. Season total, or the per-game average when is_averages is true. |
-#' | ftm | double | Free throws made. Season total, or the per-game average when is_averages is true. |
-#' | fta | double | Free throws attempted. Season total, or the per-game average when is_averages is true. |
-#' | ft_pct | double | Free-throw percentage, 0-100. Season total, or the per-game average when is_averages is true. |
-#' | dreb | double | Defensive rebounds. Season total, or the per-game average when is_averages is true. |
-#' | oreb | double | Offensive rebounds. Season total, or the per-game average when is_averages is true. |
-#' | reb | double | Total rebounds. Season total, or the per-game average when is_averages is true. |
-#' | fouls_drawn | double | Fouls DRAWN: fouls opponents committed against the player or team (the wire's fouls_against; verified equal to Segev f_drawn). Season total, or the per-game average when is_averages is true. |
-#' | fouls | double | Fouls COMMITTED by the player or team (the wire's fouls_for; verified equal to Segev f). Season total, or the per-game average when is_averages is true. |
-#' | steals | double | Steals made by the player or team. Season total, or the per-game average when is_averages is true. |
-#' | turnovers | double | Turnovers (the wire's misspelt tournovers). Season total, or the per-game average when is_averages is true. |
-#' | assists | double | Assists credited to the player or team. Season total, or the per-game average when is_averages is true. |
-#' | blocks | double | Shots the player or team blocked. Season total, or the per-game average when is_averages is true. |
-#' | blocks_against | double | Own shots that were blocked. Season total, or the per-game average when is_averages is true. |
-#' | val | double | Efficiency rating (valuation; verified equal to Segev rate); -1 on 2004-05 team-credited lines. Season total, or the per-game average when is_averages is true. |
-#' | plus_minus | double | Plus-minus; 0 on every line of the 2004-05 sample (not recorded then, inferred). Season total, or the per-game average when is_averages is true. |
-#' | dunks | double | Dunks made by the player or team. Season total, or the per-game average when is_averages is true. |
+#' @eval .returns_rd("ibba_player_stats", inline = FALSE, unit = "player")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -481,12 +286,7 @@ ibba_player_stats <- function(player_id, season, is_averages = FALSE, is_playoff
 #'
 #' Endpoint: `GET https://basket.co.il/ws/ws.asmx/StatsTypes`
 #' @eval .intl_details(.ibba_configuration_details, "ibba_stats_types()")
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | stat_type | character | Stat category code to pass to ibba_leaders as stat_type (bracketed codes such as '\[OR\]' are literal). |
-#' | stat_name_he | character | Stat category name in Hebrew. |
+#' @eval .returns_rd("ibba_stats_types", inline = FALSE, unit = "statistic type")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -510,18 +310,7 @@ ibba_stats_types <- function() {
 #' @param team_id (*integer*, default `0`): Team-season id to restrict the list to one team; 0
 #'   (default) for all teams.
 #' @eval .intl_details(.ibba_configuration_details)
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | value | double | The leader's value in the requested category (per-game average, percentage or count). |
-#' | games | integer | Games the leader played. |
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | team_id | integer | Team-season id of the leader's team. |
-#' | jersey | character | The leader's jersey number as a zero-padded string. |
-#' | player_id | integer | Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows. |
-#' | player_name_he | character | Player name in Hebrew, HTML-unescaped. |
-#' | photo_path | character | Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. |
+#' @eval .returns_rd("ibba_leaders", inline = FALSE, unit = "leaderboard entry")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -551,37 +340,7 @@ ibba_leaders <- function(stat_type, season, team_id = 0) {
 #' @param is_playoff (*logical*, default `FALSE`): True returns the playoff games only; False
 #'   (default) the regular season.
 #' @eval .intl_details(.ibba_configuration_details)
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | team_id | integer | Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. |
-#' | games | integer | Games played (in the standings or in the season stats). |
-#' | minutes | double | Minutes played, whole minutes; a TOTAL line holds the team's player-minutes (200 plus 25 per overtime). Season total, or the per-game average when is_averages is true. |
-#' | pts | double | Points scored by the player or team (free throws included). Season total, or the per-game average when is_averages is true. |
-#' | fg2m | double | Two-point field goals made. Season total, or the per-game average when is_averages is true. |
-#' | fg2a | double | Two-point field goals attempted (verified equal to Segev made + missed). Season total, or the per-game average when is_averages is true. |
-#' | fg2_pct | double | Two-point field-goal percentage, 0-100. Season total, or the per-game average when is_averages is true. |
-#' | fg3m | double | Three-point field goals made. Season total, or the per-game average when is_averages is true. |
-#' | fg3a | double | Three-point field goals attempted. Season total, or the per-game average when is_averages is true. |
-#' | fg3_pct | double | Three-point field-goal percentage, 0-100. Season total, or the per-game average when is_averages is true. |
-#' | ftm | double | Free throws made. Season total, or the per-game average when is_averages is true. |
-#' | fta | double | Free throws attempted. Season total, or the per-game average when is_averages is true. |
-#' | ft_pct | double | Free-throw percentage, 0-100. Season total, or the per-game average when is_averages is true. |
-#' | dreb | double | Defensive rebounds. Season total, or the per-game average when is_averages is true. |
-#' | oreb | double | Offensive rebounds. Season total, or the per-game average when is_averages is true. |
-#' | reb | double | Total rebounds. Season total, or the per-game average when is_averages is true. |
-#' | fouls_drawn | double | Fouls DRAWN: fouls opponents committed against the player or team (the wire's fouls_against; verified equal to Segev f_drawn). Season total, or the per-game average when is_averages is true. |
-#' | fouls | double | Fouls COMMITTED by the player or team (the wire's fouls_for; verified equal to Segev f). Season total, or the per-game average when is_averages is true. |
-#' | steals | double | Steals made by the player or team. Season total, or the per-game average when is_averages is true. |
-#' | turnovers | double | Turnovers (the wire's misspelt tournovers). Season total, or the per-game average when is_averages is true. |
-#' | assists | double | Assists credited to the player or team. Season total, or the per-game average when is_averages is true. |
-#' | blocks | double | Shots the player or team blocked. Season total, or the per-game average when is_averages is true. |
-#' | blocks_against | double | Own shots that were blocked. Season total, or the per-game average when is_averages is true. |
-#' | val | double | Efficiency rating (valuation; verified equal to Segev rate); -1 on 2004-05 team-credited lines. Season total, or the per-game average when is_averages is true. |
-#' | plus_minus | double | Plus-minus; 0 on every line of the 2004-05 sample (not recorded then, inferred). Season total, or the per-game average when is_averages is true. |
-#' | dunks | double | Dunks made by the player or team. Season total, or the per-game average when is_averages is true. |
+#' @eval .returns_rd("ibba_team_stats", inline = FALSE, unit = "team")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -613,40 +372,7 @@ ibba_team_stats <- function(team_id, season, is_averages = FALSE, is_playoff = F
 #' @param team_uid (*integer*, default `0`): IBBA club id; 0 (default) for every club.
 #' @param game_id (*integer*, default `0`): IBBA game id; 0 (default) for every game.
 #' @eval .intl_details(.ibba_configuration_details)
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | game_id | integer | IBBA game id (key space: basket.co.il games). Joins ibba_games to ibba_box_score; in ibba_games_ex it is an EXTERNAL game id (the ig_ space, e.g. 8888 for a pre-season game). |
-#' | game_date | Date | Local Israel date of the game. |
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | home_team_id | integer | Home team-season id (team1 on the wire; verified home against Segev). On external boards (board_id >= 1001) an external-team id (the ig_team_ space), not a team-season. |
-#' | away_team_id | integer | Away team-season id (team2 on the wire). On external boards an external-team id. |
-#' | home_team_he | character | Home team name in Hebrew, HTML-unescaped. |
-#' | away_team_he | character | Away team name in Hebrew, HTML-unescaped. |
-#' | home_team | character | Home team name in English; null for external games, which carry Hebrew names only. |
-#' | away_team | character | Away team name in English; null for external games. |
-#' | home_logo_url | character | Absolute URL of the home team logo. |
-#' | away_logo_url | character | Absolute URL of the away team logo. |
-#' | home_score | integer | Home final score; 0 before the game is played. |
-#' | away_score | integer | Away final score; 0 before the game is played. |
-#' | board_id | integer | Competition (board) id: 5 league, 10 cup, 16 / 26 / 17 playoff quarterfinals / semifinals / final, 33 play-in, 34 Supercup, 11 the 2004-05 semifinal group; 1001+ external competitions (1001 EuroLeague, 1003 Champions League, 1005 pre-season, 1008 EuroBasket, 1012 EuroCup, 1013 State Cup). |
-#' | board_name_he | character | Competition name in Hebrew, HTML-unescaped. |
-#' | board_name | character | Competition name in English ('Winner League'); null for external boards. |
-#' | round | integer | Round (game number) within the board; null for external games. |
-#' | tip_off | character | Tip-off 'HH:MM', local Israel time, as text; null in 2004-05. It can disagree with Segev (game 26646: 20:15 here, 19:30 in Segev). |
-#' | venue_he | character | Venue in Hebrew, HTML-unescaped; null in 2004-05. |
-#' | venue | character | Venue in English, HTML-unescaped; null in 2004-05. |
-#' | referees_he | character | Referees' names in Hebrew, comma-separated; ', , ' when unknown. |
-#' | attendance | integer | Attendance; 0 when unknown. |
-#' | overtime | logical | True when the game went to overtime. |
-#' | overtimes | integer | Number of overtime periods played. |
-#' | home_score_by_period | character | Home points per period, pipe-separated ('18\|23\|30\|21'); null for external games. |
-#' | away_score_by_period | character | Away points per period, pipe-separated ('29\|26\|27\|22'); null for external games. |
-#' | tickets_url | character | Ticketing URL; null when none. |
-#' | external_id | character | The wire's ExternalID: the Segev game id (a string) for league games from 2025-26, a news URL for pre-season games, null before 2025-26. |
-#' | segev_game_id | integer | external_id read as an integer Segev game id (digits only), else null; joins ibba_segev_* game_id. Derived by the parser. |
-#' | is_external | logical | True when board_id >= 1001 (an external competition, whose team ids are not team-seasons). Derived by the parser. |
+#' @eval .returns_rd("ibba_games", inline = FALSE, unit = "game")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -674,26 +400,7 @@ ibba_games <- function(season, board_id = 0, board_round = 0, team_id = 0, team_
 #' @param board_id (*integer*, default `0`): External board id from ibba_boards_ex (1001 EuroLeague,
 #'   1003 Champions League, ...); 0 (default) for all.
 #' @eval .intl_details(.ibba_configuration_details, "ibba_games_ex(season = 2026, team_uid = 10)")
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | game_id | integer | IBBA game id (key space: basket.co.il games). Joins ibba_games to ibba_box_score; in ibba_games_ex it is an EXTERNAL game id (the ig_ space, e.g. 8888 for a pre-season game). |
-#' | game_date | Date | Local Israel date of the game. |
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | home_team_id | integer | Home team-season id (team1 on the wire; verified home against Segev). On external boards (board_id >= 1001) an external-team id (the ig_team_ space), not a team-season. |
-#' | away_team_id | integer | Away team-season id (team2 on the wire). On external boards an external-team id. |
-#' | home_team_he | character | Home team name in Hebrew, HTML-unescaped. |
-#' | away_team_he | character | Away team name in Hebrew, HTML-unescaped. |
-#' | home_logo_url | character | Absolute URL of the home team logo. |
-#' | away_logo_url | character | Absolute URL of the away team logo. |
-#' | home_score | integer | Home final score; 0 before the game is played. |
-#' | away_score | integer | Away final score; 0 before the game is played. |
-#' | board_id | integer | Competition (board) id: 5 league, 10 cup, 16 / 26 / 17 playoff quarterfinals / semifinals / final, 33 play-in, 34 Supercup, 11 the 2004-05 semifinal group; 1001+ external competitions (1001 EuroLeague, 1003 Champions League, 1005 pre-season, 1008 EuroBasket, 1012 EuroCup, 1013 State Cup). |
-#' | board_name_he | character | Competition name in Hebrew, HTML-unescaped. |
-#' | round | integer | Round (game number) within the board; null for external games. |
-#' | tip_off | character | Tip-off 'HH:MM', local Israel time, as text; null in 2004-05. It can disagree with Segev (game 26646: 20:15 here, 19:30 in Segev). |
-#' | venue_he | character | Venue in Hebrew, HTML-unescaped; null in 2004-05. |
+#' @eval .returns_rd("ibba_games_ex", inline = FALSE, unit = "game")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -714,40 +421,7 @@ ibba_games_ex <- function(team_uid, season, board_id = 0) {
 #' @param season (*integer* required): Season END year (2026 = 2025-26); sent to the host as `cYear`
 #'   unchanged.
 #' @eval .intl_details(.ibba_configuration_details, "ibba_games_by_team(season = 2026, team_uid = 10)")
-#' @return A `hoopR_data` tibble with these columns:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | game_id | integer | IBBA game id (key space: basket.co.il games). Joins ibba_games to ibba_box_score; in ibba_games_ex it is an EXTERNAL game id (the ig_ space, e.g. 8888 for a pre-season game). |
-#' | game_date | Date | Local Israel date of the game. |
-#' | season | integer | Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. |
-#' | home_team_id | integer | Home team-season id (team1 on the wire; verified home against Segev). On external boards (board_id >= 1001) an external-team id (the ig_team_ space), not a team-season. |
-#' | away_team_id | integer | Away team-season id (team2 on the wire). On external boards an external-team id. |
-#' | home_team_he | character | Home team name in Hebrew, HTML-unescaped. |
-#' | away_team_he | character | Away team name in Hebrew, HTML-unescaped. |
-#' | home_team | character | Home team name in English; null for external games, which carry Hebrew names only. |
-#' | away_team | character | Away team name in English; null for external games. |
-#' | home_logo_url | character | Absolute URL of the home team logo. |
-#' | away_logo_url | character | Absolute URL of the away team logo. |
-#' | home_score | integer | Home final score; 0 before the game is played. |
-#' | away_score | integer | Away final score; 0 before the game is played. |
-#' | board_id | integer | Competition (board) id: 5 league, 10 cup, 16 / 26 / 17 playoff quarterfinals / semifinals / final, 33 play-in, 34 Supercup, 11 the 2004-05 semifinal group; 1001+ external competitions (1001 EuroLeague, 1003 Champions League, 1005 pre-season, 1008 EuroBasket, 1012 EuroCup, 1013 State Cup). |
-#' | board_name_he | character | Competition name in Hebrew, HTML-unescaped. |
-#' | board_name | character | Competition name in English ('Winner League'); null for external boards. |
-#' | round | integer | Round (game number) within the board; null for external games. |
-#' | tip_off | character | Tip-off 'HH:MM', local Israel time, as text; null in 2004-05. It can disagree with Segev (game 26646: 20:15 here, 19:30 in Segev). |
-#' | venue_he | character | Venue in Hebrew, HTML-unescaped; null in 2004-05. |
-#' | venue | character | Venue in English, HTML-unescaped; null in 2004-05. |
-#' | referees_he | character | Referees' names in Hebrew, comma-separated; ', , ' when unknown. |
-#' | attendance | integer | Attendance; 0 when unknown. |
-#' | overtime | logical | True when the game went to overtime. |
-#' | overtimes | integer | Number of overtime periods played. |
-#' | home_score_by_period | character | Home points per period, pipe-separated ('18\|23\|30\|21'); null for external games. |
-#' | away_score_by_period | character | Away points per period, pipe-separated ('29\|26\|27\|22'); null for external games. |
-#' | tickets_url | character | Ticketing URL; null when none. |
-#' | external_id | character | The wire's ExternalID: the Segev game id (a string) for league games from 2025-26, a news URL for pre-season games, null before 2025-26. |
-#' | segev_game_id | integer | external_id read as an integer Segev game id (digits only), else null; joins ibba_segev_* game_id. Derived by the parser. |
-#' | is_external | logical | True when board_id >= 1001 (an external competition, whose team ids are not team-seasons). Derived by the parser. |
+#' @eval .returns_rd("ibba_games_by_team", inline = FALSE, unit = "game")
 #' @concept IBBA Functions
 #' @seealso [family_ibba] lists every function in this family.
 #' @export
@@ -768,12 +442,7 @@ ibba_games_by_team <- function(team_uid, season) {
 #' news links carry no Segev id and are dropped. The id types are checked (no float or string
 #' id casts) and the mapping must be one-to-one both ways.
 #' @param df A data frame from [ibba_games()] or [ibba_games_by_team()].
-#' @return A `hoopR_data` tibble, one row per game:
-#'
-#' | col_name | type | description |
-#' |:---|:---|:---|
-#' | game_id | integer | IBBA game id (key space: basket.co.il games): the `game_id` of [ibba_games()] and [ibba_box_score()]. |
-#' | segev_game_id | integer | The Segev game id of the same game: the `game_id` every `ibba_segev_*()` wrapper takes. |
+#' @eval .returns_rd("ibba_segev_game_crosswalk", inline = FALSE, unit = "game")
 #' @details
 #' Raises `hoopR_bad_request` when `df` is not a data frame, lacks a column, has an id
 #' column of the wrong type, or maps one id to two.

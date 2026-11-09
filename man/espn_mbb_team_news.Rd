@@ -15,13 +15,37 @@ espn_nba_team_news(team_id, limit = 25)
 \item{limit}{integer. Maximum number of articles to return. Default \code{25}.}
 }
 \value{
-Returns a tibble of team news articles.
+A \code{hoopR_data} tibble with one row per news article.
 
-Columns as documented in the shared \link{espn_mbb_news_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  type \tab character \tab Record type / category. \cr
+  headline \tab character \tab News headline. \cr
+  description \tab character \tab Long-form description text. \cr
+  published \tab character \tab Publication timestamp (ISO 8601). \cr
+  premium \tab logical \tab  \cr
+  byline \tab character \tab News article byline / author. \cr
+  link_web \tab character \tab Web link / URL. \cr
+  league_id \tab character \tab League identifier ('10' = WNBA). \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Returns a tibble of team news articles.
+A \code{hoopR_data} tibble with one row per news article.
 
-Columns as documented in the shared \link{espn_mbb_news_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  type \tab character \tab Record type / category. \cr
+  headline \tab character \tab News headline. \cr
+  description \tab character \tab Long-form description text. \cr
+  published \tab character \tab Publication timestamp (ISO 8601). \cr
+  premium \tab logical \tab  \cr
+  byline \tab character \tab News article byline / author. \cr
+  link_web \tab character \tab Web link / URL. \cr
+  league_id \tab character \tab League identifier ('10' = WNBA). \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get ESPN MBB Team News}

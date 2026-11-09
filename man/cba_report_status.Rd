@@ -11,12 +11,10 @@ cba_report_status(schedule_id)
 2025-26 round 1). Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble: One row with the is_report flag. An empty valid answer is a zero-row tibble with these
-columns, in this order (sportsdataverse-py \code{cba_report_status}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   schedule_id \tab integer \tab CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the \code{{scheduleId}} of every game route). Stamped by the runtime from the request; null on a body parsed without it. \cr
-   is_report \tab logical \tab True when the game report page exists (equals schedules/day isReport == 1 in every sample). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cba_report_status")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Whether the game report page exists for the game.

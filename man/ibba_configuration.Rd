@@ -11,15 +11,10 @@ ibba_configuration(season)
 unchanged.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. \cr
-   season_label \tab character \tab Season label as 'YYYY-YY' ('2025-26', '2004-05'). \cr
-   red_line \tab integer \tab Standings position the site draws its cut line under (12 in 2025-26, 10 in 2004-05); meaning inferred. \cr
-   active_board_id \tab integer \tab Board id the site treats as the active competition (17 = final series in 2025-26, 5 = league in 2004-05); meaning inferred. \cr
-   next_round \tab integer \tab Next round (game number) to be played; meaning inferred. \cr
-   total_rounds \tab integer \tab Rounds in the regular season (32 in 2025-26, 22 in 2004-05); meaning inferred. \cr
-}
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_configuration")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Season settings: the season label, round counters and the standings cut line.}

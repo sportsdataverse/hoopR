@@ -11,67 +11,10 @@ vtb_infobasket_game(game_id)
 across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Header of a finished game: stage, venue, rules, the two teams and their scores. The columns
-are always these, in this order (sportsdataverse-py \code{vtb_infobasket_game}); an empty valid answer raises \code{hoopR_no_data}, a
-valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   is_online \tab logical \tab True while the game is live; False for a completed game. \cr
-   game_status \tab integer \tab Game status: 0 planned, 1 completed, 2 live (the site's widget code). Samples are completed games. \cr
-   max_period \tab integer \tab Last period played (4 = regulation; 5+ = overtime). \cr
-   from_date \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   game_date \tab character \tab Game date (ISO), local. \cr
-   has_time \tab logical \tab True when a tip-off time is set. \cr
-   game_time \tab character \tab Tip-off time of day as 'HH.MM' (a dot, local time). \cr
-   game_time_msk \tab character \tab Tip-off time of day as 'HH.MM' in Moscow time. \cr
-   has_video \tab logical \tab True when a video embed is attached. \cr
-   tv_ru \tab character \tab TV channels, in Russian ('Match TV' = Match TV). \cr
-   tv_en \tab character \tab TV channels, in English. \cr
-   comp_name_ru \tab character \tab Stage name, Russian ('Regulyarnyy chempionat' = 'Regular Season'). \cr
-   comp_name_en \tab character \tab Stage name (e.g. 'Regular Season'), English. \cr
-   league_name_ru \tab character \tab League name, Russian ('Edinaya liga VTB' = 'VTB United League'). \cr
-   league_name_en \tab character \tab League name, English. \cr
-   league_short_name_ru \tab character \tab League short name, Russian. \cr
-   league_short_name_en \tab character \tab League short name, English. \cr
-   gender \tab integer \tab Competition gender code from the host (1 male, 0 unspecified). \cr
-   comp_id \tab integer \tab Stage CompID of the game (50720 = the 2025-26 regular season): a stage below the season. \cr
-   is3x3 \tab logical \tab True for a 3x3 competition (False in every sample). \cr
-   season_comp_id \tab integer \tab Season-level CompID of the game (the body calls it LeagueID). \cr
-   game_id \tab integer \tab Infobasket GameID of the game (the v2 matches' match_id); global across seasons. \cr
-   game_number \tab character \tab Game number within the competition, e.g. 'RS-002' (RS = regular season); playoff games use the series code. \cr
-   game_date_time \tab character \tab Tip-off as an ISO 8601 string in Moscow time (+03:00), from Online.GameTime. \cr
-   region_id \tab integer \tab Infobasket region (city) id of the venue. \cr
-   arena_id \tab integer \tab Infobasket arena id; equals the v2 API \code{venueId} (11687 = SK Basket-Hall, Krasnodar). \cr
-   venue_en \tab character \tab Venue, 'City, Arena', in English. \cr
-   venue_ru \tab character \tab Venue, 'City, Arena', in Russian. \cr
-   attendance \tab integer \tab Spectators at the game (null when not recorded). \cr
-   period_count \tab integer \tab Regulation periods (4). \cr
-   period_extra_seconds \tab integer \tab Overtime length in seconds (300 = 5 minutes). \cr
-   period_minutes \tab character \tab Period lengths in minutes, comma separated ('10,10,10,10'). \cr
-   intervals_minutes \tab character \tab Break lengths in minutes after each period, comma separated ('2,15,2,2'). \cr
-   personal_fouls \tab integer \tab Personal fouls that disqualify a player (5). \cr
-   team_fouls \tab character \tab Team-foul setting per period, comma separated (4 or 5 seen; exact meaning unverified). \cr
-   players_on_court \tab integer \tab Players per team on the court (5). \cr
-   free_throw_value \tab integer \tab Points for a made free throw (1). \cr
-   field_goal_value \tab integer \tab Points for a made 2-point shot (2). \cr
-   long_shot_value \tab integer \tab Points for a made 3-point shot (3). \cr
-   left_team_number \tab integer \tab Team number drawn on the left in the widget (1 in every sample). \cr
-   team_a_id \tab integer \tab Infobasket TeamID of team A, the team listed first (the home side in the calendar). \cr
-   score_a \tab integer \tab Final points of team A (listed first). \cr
-   team_a_short_name_ru \tab character \tab The team A (the home side in the calendar)'s short name in Russian (as the competition names it). \cr
-   team_a_short_name_en \tab character \tab The team A (the home side in the calendar)'s short name in English (as the competition names it). \cr
-   team_a_name_ru \tab character \tab The team A (the home side in the calendar)'s name in Russian (as the competition names it). \cr
-   team_a_name_en \tab character \tab The team A (the home side in the calendar)'s name in English (as the competition names it). \cr
-   team_a_region_name_ru \tab character \tab The team A (the home side in the calendar)'s region or city in Russian (as the competition names it). \cr
-   team_a_region_name_en \tab character \tab The team A (the home side in the calendar)'s region or city in English (as the competition names it). \cr
-   team_b_id \tab integer \tab Infobasket TeamID of team B, the team listed second (the away side). \cr
-   score_b \tab integer \tab Final points of team B. \cr
-   team_b_short_name_ru \tab character \tab The team B (the away side)'s short name in Russian (as the competition names it). \cr
-   team_b_short_name_en \tab character \tab The team B (the away side)'s short name in English (as the competition names it). \cr
-   team_b_name_ru \tab character \tab The team B (the away side)'s name in Russian (as the competition names it). \cr
-   team_b_name_en \tab character \tab The team B (the away side)'s name in English (as the competition names it). \cr
-   team_b_region_name_ru \tab character \tab The team B (the away side)'s region or city in Russian (as the competition names it). \cr
-   team_b_region_name_en \tab character \tab The team B (the away side)'s region or city in English (as the competition names it). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_game")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Header of a finished game: stage, venue, rules, the two teams and their scores.

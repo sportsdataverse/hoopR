@@ -15,31 +15,10 @@ team_id of easl_teams, easl_standings and the box scores. easl_team resolves the
 does not list. Needs season for a roster (jersey number and position). Default \code{NULL}: no team filter.}
 }
 \value{
-A \code{hoopR_data} tibble: Every EASL player of all seasons; with season and team_id a roster that adds jersey number
-and position. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{easl_players}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year of the filter, from the request; null when no season was passed. \cr
-   season_id \tab character \tab DataCore season UUID v1 of the filter; null when no season was passed. \cr
-   player_row_id \tab integer \tab The sync server's own integer row id of the player (not a DataCore id). \cr
-   player_id \tab character \tab playerId: DataCore person UUID v1 (key space: EASL persons, the same id as the box score's \code{personId}; joins /players, leaders and play-by-play players). Not a team id. \cr
-   name \tab character \tab Player display name in 'FAMILY Given' form with the family name upper-cased (OSAKABE Taiki), in Latin script. \cr
-   name_latin \tab character \tab Alternative name: equal to nameFullLocal for 257 of 552 players, otherwise null; never non-Latin in the observed data. \cr
-   name_abbreviated \tab character \tab Abbreviated name; null for 551 of 552 players (one empty string). \cr
-   nationality \tab character \tab ISO 3166-1 alpha-3 code of the player's nationality; 36 codes occur, KOR 119, USA 102, JPN 81, PHL 80, TWN 61, CHN 22, MNG 16, HKG 15, MAC 13 ('PHI' also appears once, a non-ISO spelling of PHL). \cr
-   gender \tab character \tab MALE on all 552 rows. \cr
-   dob \tab Date \tab Date of birth, 'YYYY-MM-DD' (a public biography field; 1980-10-05 to 2023-10-16 in the data, so the latest values are implausible); 5 players have none. Null on some rows. \cr
-   height_cm \tab integer \tab Height in centimetres; 43 of 552 players have none. Null on some rows. \cr
-   height_feet \tab character \tab Height in feet and inches as a string (6'9); null for most players. \cr
-   weight_kg \tab integer \tab Weight in kilograms; many players have none. Null on some rows. \cr
-   weight_lbs \tab integer \tab Weight in pounds; null for many players. \cr
-   status \tab character \tab Registration state of the player in the database: ACTIVE, INACTIVE or UNREGISTERED. \cr
-   jersey_number \tab character \tab Jersey number as a string. Present ONLY in the roster variant of /players (seasonId + teamId) and on \verb{/players/\{playerId\}}; missing from the unfiltered list. Absent on some rows. \cr
-   position \tab character \tab Playing position (G, F, C, PG, SG, SF, PF, GF). Present ONLY in the roster variant of /players (seasonId + teamId) and on \verb{/players/\{playerId\}}; missing from the unfiltered list. Absent on some rows. \cr
-   organization_id \tab character \tab DataCore organisation id: b1e0z (EASL). \cr
-   created_at \tab character \tab When the sync server inserted the row, 'YYYY-MM-DD HH:MM:SS' (a different format from updatedAt; zone unstated, UTC assumed). \cr
-   updated_at \tab character \tab When the sync server last synced the row, ISO 8601 with milliseconds and Z (UTC). \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "easl_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every EASL player of all seasons; with season and team_id a roster that adds jersey number and position.

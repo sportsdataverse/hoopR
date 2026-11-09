@@ -12,16 +12,10 @@ pleague_officials(gid)
 are served.}
 }
 \value{
-A \code{hoopR_data} tibble: The referee and the two umpires printed under the header of one finished game (names
-only). An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
-\code{pleague_officials}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   gid \tab integer \tab P. LEAGUE+ game id on the site: ONE global integer sequence over every stage and season (1-12 = 2020-21 pre-season, 13 = the 2020-21 opener, 197 = the 2022-23 opener, 662 = the 2025-26 opener), with gaps; a row id, not a count. The \{gid\} of /game/\{gid\}. \cr
-   official_no \tab integer \tab 1-based position of the official in the printed line (referee first). \cr
-   role \tab character \tab Role translated: referee ((Chinese text), the crew chief), first_umpire ((Chinese text), literally 'first inspector'), second_umpire ((Chinese text)). Null for a role this table does not know. \cr
-   role_zh \tab character \tab Official's role as printed: (Chinese text) = referee, (Chinese text) = first umpire, (Chinese text) = second umpire. \cr
-   name_zh \tab character \tab Official's name in Traditional Chinese. Names only: the page carries no ids or contact data. \cr
-}
+A \code{hoopR_data} tibble with one row per official.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_officials")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The referee and the two umpires printed under the header of one finished game (names only).

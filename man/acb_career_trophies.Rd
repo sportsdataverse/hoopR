@@ -12,14 +12,10 @@ shots, rosters). 20209407 = Edy Tavares, 20212243 = Olek Balcerowski. A whole nu
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_career_trophies}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab ACB licence number asked for. \cr
-   competition_id \tab integer \tab Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa (x-competitions) \cr
-   times_champion \tab integer \tab Times the player won the competition. \cr
-   times_runner_up \tab integer \tab Times the player was runner-up in the competition. \cr
-}
+A \code{hoopR_data} tibble with one row per competition.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_career_trophies")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A player's trophies, one row per competition.

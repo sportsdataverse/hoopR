@@ -16,26 +16,26 @@ espn_nba_season_types(season = most_recent_nba_season(), ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per season type.
+A \code{hoopR_data} tibble with one row per season type.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
-      season \tab integer \tab Season year. \cr
-      season_type \tab integer \tab Season-type id (1/2/3/4). \cr
-      ref \tab character \tab \verb{$ref} URL for the type detail. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id (1/2/3/4). \cr
+  ref \tab character \tab \code{$ref} URL for the type detail. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per season type.
+A \code{hoopR_data} tibble with one row per season type.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League slug (\code{"nba"}). \cr
-      season \tab integer \tab Season year. \cr
-      season_type \tab integer \tab Season-type id (1/2/3/4). \cr
-      ref \tab character \tab \verb{$ref} URL for the type detail. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug (\code{"nba"}). \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id (1/2/3/4). \cr
+  ref \tab character \tab \code{$ref} URL for the type detail. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

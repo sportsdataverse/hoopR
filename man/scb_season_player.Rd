@@ -15,31 +15,10 @@ api.basketball-bundesliga.de) or \code{dbbl} (women, Toyota Damen-Basketball-Bun
 api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).}
 }
 \value{
-A \code{hoopR_data} tibble: Player profile by season-player id: bio, position, club and previous clubs. An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{scb_season_player}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   season_player_id \tab character \tab Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move). Joins box-score lines, actions, records and \code{scb_season_player}. \cr
-   real_player_id \tab integer \tab Global person id: the same across clubs and seasons. Joins to \code{realPlayerId} everywhere. \cr
-   active_season_player_id \tab character \tab The player's current season-player id (his latest club engagement). Joins to \verb{/season-players/\{seasonPlayerId\}}. \cr
-   first_name \tab character \tab Player's given name. \cr
-   last_name \tab character \tab Player's family name. \cr
-   birth_date \tab character \tab Date of birth, YYYY-MM-DD. \cr
-   position \tab character \tab Position: POINT_GUARD, SHOOTING_GUARD, SMALL_FORWARD, POWER_FORWARD, CENTER. \cr
-   shirt_number \tab character \tab Jersey number. A number or a numeric string across rows. \cr
-   height \tab double \tab Height in metres (float32 noise: 1.77 arrives as 1.7699999809265137). \cr
-   weight \tab integer \tab Weight in kg; 0 when unknown. \cr
-   nationalities \tab character \tab Nationalities, ISO 3166-1 alpha-2 codes. \cr
-   is_all_star \tab logical \tab All-Star selection flag. \cr
-   is_young \tab logical \tab Young-player flag (German-trained youth rule; inferred). \cr
-   has_changed_teams \tab logical \tab Moved clubs during the season. \cr
-   bbl_games_played \tab integer \tab Career league games played (BBL host; 0 on DBBL). \cr
-   team_id \tab character \tab Club id, a string; equal to \code{season_team_id} in every sample. Joins to \code{scb_team} and \code{scb_season_teams}. \cr
-   team_name \tab character \tab Team name as listed that season (sponsor names included). \cr
-   previous_teams \tab character \tab Former clubs, free text (German names). \cr
-   season_ids \tab character \tab Seasons (start years) with this player or club. \cr
-}
+A \code{hoopR_data} tibble with one row per season-player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_season_player")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player profile by season-player id: bio, position, club and previous clubs.

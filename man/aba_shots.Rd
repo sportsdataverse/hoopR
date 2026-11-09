@@ -17,28 +17,10 @@ druga.aba-liga.com, lea=2). Both sites serve one database; the runtime asks the 
 \code{"aba"}.}
 }
 \value{
-A \code{hoopR_data} tibble.
-One row per field-goal attempt (no free throws), in the site's order. \code{x} and \code{y} are PERCENTAGES of the full
-court on the site's 1000x535 px image (court 28 x 15 m), cast to float (the site sends x as a string in one
-half of a game and a number in the other). x runs from the LEFT baseline (home shoots at x < 50, away at x >
-50). y is drawn upward from the bottom edge, 50 = the line through both baskets; whether "up" is the scorer's
-table side is unverified. \code{side} is \code{home} / \code{away} (the site's \code{ekipa} 1 / 2). \code{player_id} is cast from the
-site's string (null when the shooter was not recorded, id 0); join on it, not on the name. The chart can differ
-from the box score by one attempt per shooter.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_no \tab integer \tab Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The \{gameNo\} of the match route. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr
-   league_id \tab integer \tab League code, the site's lea: 1 = ABA League, 2 = ABA League 2. \cr
-   league \tab character \tab League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. \cr
-   side \tab character \tab Which team took the shot: home or away (the site's ekipa, a string '1' / '2'). \cr
-   x \tab double \tab Shot x as a PERCENTAGE (0-100) of the court LENGTH from the LEFT baseline of the site's 1000x535 px full-court image. Home shoots at x < 50 and away at x > 50. The site sends it as a string in one half of a game and a number in the other; cast to float. \cr
-   y \tab double \tab Shot y as a PERCENTAGE (0-100) of the court WIDTH, drawn upward from the bottom edge (the line through both baskets is 50). Whether 'up' is the scorer's table side is unverified. \cr
-   made \tab logical \tab True when the attempt was made (the site's koordinata_uspeh '1'), false when missed. \cr
-   player_id \tab integer \tab Shooter's ABA player id (global), cast from the site's string; null when the shooter was not recorded (id 0). Join to the box score on it, never on the name. \cr
-   player_name \tab character \tab Shooter's full name, 'First Last' (the box prints 'Last F.'); null when not recorded. \cr
-}
+A \code{hoopR_data} tibble with one row per field-goal attempt.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "aba_shots")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Shot chart of one finished game (2017-18 on): every field-goal attempt with its court position.

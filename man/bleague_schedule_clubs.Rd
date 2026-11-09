@@ -23,14 +23,10 @@ Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs,
 = the league competition of the tab (2 / 7 / 15).}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. \cr
-   tab \tab integer \tab Division tab: 1 = B1, 2 = B2, 3 = B3. \cr
-   event \tab integer \tab Competition type of the page: 2 B1 league, 3 B1 Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs, 11 B1-B2 promotion/relegation, 15 B3 league, 32 B3 playoffs. \cr
-   team_id \tab character \tab B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. \cr
-   name \tab character \tab Club short name in Japanese as the schedule page prints it (e.g. Hokkaido). \cr
-}
+A \code{hoopR_data} tibble with one row per club the page's filter lists.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "bleague_schedule_clubs")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{The club filter of the B.LEAGUE schedule page: every club of the season and

@@ -13,48 +13,10 @@ acb_pbp(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_pbp}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
-   edition_id \tab integer \tab Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, \code{season}. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   play_index \tab integer \tab 1-based position of the event in the feed (the feed's order key is not unique). \cr
-   order \tab integer \tab Event order key, ascending through the game (10, 301, 401, ...); not contiguous and not unique (the starting five share one). \cr
-   quarter \tab integer \tab Period of the event: 1-4 quarters, 5+ overtimes. \cr
-   minute \tab integer \tab Game clock left in the period, minutes part (10 at tip-off; overtimes are 5 minutes). \cr
-   second \tab integer \tab Game clock left in the period, seconds part. \cr
-   clock_seconds \tab integer \tab Game clock REMAINING in the period as whole seconds (minute x 60 + second; the clock counts down from 600, overtimes from 300). \cr
-   play_type \tab integer \tab Event code (acb_codes.PLAY_TYPES decodes it; 599 = starting lineup, one row per starter at 10:00). \cr
-   play_name \tab character \tab Bundle name of play_type (acb_codes.PLAY_TYPES, e.g. TWO_POINTER_MADE); null for a code outside the enum such as the minute marker 600. \cr
-   play_tag \tab integer \tab Turnover detail code on turnovers (acb_codes.PLAY_TAGS); null otherwise. \cr
-   turnover_type \tab character \tab Name of the turnover detail play_tag (acb_codes.PLAY_TAGS, e.g. BAD_PASS); null when there is no tag or the tag is unmapped. \cr
-   is_home \tab logical \tab True when the event belongs to the home team (the API's local); false for the away team and for neutral events. \cr
-   score_home \tab integer \tab Home score after the event. \cr
-   score_away \tab integer \tab Away score after the event. \cr
-   license_type \tab integer \tab Licence class of the player (202 on every player event); meaning unverified; null on team and clock events. \cr
-   player_id \tab integer \tab ACB licence number of the player; null on team and clock events. \cr
-   player_name \tab character \tab Player display name; null on team and clock events. \cr
-   shirt_number \tab character \tab Shirt number as a string; null on starting-lineup rows and on team events. \cr
-   run_points \tab integer \tab The acting player's running points AFTER this event (cumulative in the game). \cr
-   run_free_throws_made \tab integer \tab The acting player's running free throws made AFTER this event (cumulative in the game). \cr
-   run_free_throws_attempted \tab integer \tab The acting player's running free throws attempted AFTER this event (cumulative in the game). \cr
-   run_two_pointers_made \tab integer \tab The acting player's running two pointers made AFTER this event (cumulative in the game). \cr
-   run_two_pointers_attempted \tab integer \tab The acting player's running two pointers attempted AFTER this event (cumulative in the game). \cr
-   run_three_pointers_made \tab integer \tab The acting player's running three pointers made AFTER this event (cumulative in the game). \cr
-   run_three_pointers_attempted \tab integer \tab The acting player's running three pointers attempted AFTER this event (cumulative in the game). \cr
-   run_assists \tab integer \tab The acting player's running assists AFTER this event (cumulative in the game). \cr
-   run_off_rebounds \tab integer \tab The acting player's running off rebounds AFTER this event (cumulative in the game). \cr
-   run_def_rebounds \tab integer \tab The acting player's running def rebounds AFTER this event (cumulative in the game). \cr
-   run_total_rebounds \tab integer \tab The acting player's running total rebounds AFTER this event (cumulative in the game). \cr
-   run_steals \tab integer \tab The acting player's running steals AFTER this event (cumulative in the game). \cr
-   run_turnovers \tab integer \tab The acting player's running turnovers AFTER this event (cumulative in the game). \cr
-   run_blocks \tab integer \tab The acting player's running blocks AFTER this event (cumulative in the game). \cr
-   run_personal_fouls \tab integer \tab The acting player's running personal fouls AFTER this event (cumulative in the game). \cr
-   run_fouls_drawn \tab integer \tab The acting player's running fouls drawn AFTER this event (cumulative in the game). \cr
-   series_wins \tab integer \tab Home team's series wins, on the END_OF_GAME event of a 2016-17 playoff game only. \cr
-   series_losses \tab integer \tab Home team's series losses, on the same event. \cr
-}
+A \code{hoopR_data} tibble with one row per event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play of a game (2016-17 onward): every shot, rebound, foul, turnover, substitution and time-out.

@@ -515,129 +515,129 @@ nba_playercompare(
 \item{vs_player_id_list}{vs_player_id_list}
 }
 \value{
-Return a named list of data frames: PlayerIndex
+A named list of tibbles: \code{PlayerIndex}.
 
 \strong{PlayerIndex}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
-      PLAYER_LAST_NAME \tab character \tab  \cr
-      PLAYER_FIRST_NAME \tab character \tab  \cr
-      PLAYER_SLUG \tab character \tab URL-safe player identifier. \cr
-      TEAM_ID \tab character \tab Unique team identifier. \cr
-      TEAM_SLUG \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      IS_DEFUNCT \tab character \tab  \cr
-      TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-      JERSEY_NUMBER \tab character \tab  \cr
-      POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
-      HEIGHT \tab character \tab Player height (string e.g. '6-2' or inches). \cr
-      WEIGHT \tab character \tab Player weight in pounds. \cr
-      COLLEGE \tab character \tab College or school attended. \cr
-      COUNTRY \tab character \tab Country (full name or code). \cr
-      DRAFT_YEAR \tab character \tab Draft year (4-digit). \cr
-      DRAFT_ROUND \tab character \tab Round of the draft selection. \cr
-      DRAFT_NUMBER \tab character \tab  \cr
-      ROSTER_STATUS \tab character \tab  \cr
-      PTS \tab character \tab Points scored. \cr
-      REB \tab character \tab Total rebounds. \cr
-      AST \tab character \tab Assists. \cr
-      STATS_TIMEFRAME \tab character \tab  \cr
-      FROM_YEAR \tab character \tab  \cr
-      TO_YEAR \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+  PLAYER_LAST_NAME \tab character \tab  \cr
+  PLAYER_FIRST_NAME \tab character \tab  \cr
+  PLAYER_SLUG \tab character \tab URL-safe player identifier. \cr
+  TEAM_ID \tab character \tab Unique team identifier. \cr
+  TEAM_SLUG \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  IS_DEFUNCT \tab character \tab  \cr
+  TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+  JERSEY_NUMBER \tab character \tab  \cr
+  POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  HEIGHT \tab character \tab Player height (string e.g. '6-2' or inches). \cr
+  WEIGHT \tab character \tab Player weight in pounds. \cr
+  COLLEGE \tab character \tab College or school attended. \cr
+  COUNTRY \tab character \tab Country (full name or code). \cr
+  DRAFT_YEAR \tab character \tab Draft year (4-digit). \cr
+  DRAFT_ROUND \tab character \tab Round of the draft selection. \cr
+  DRAFT_NUMBER \tab character \tab  \cr
+  ROSTER_STATUS \tab character \tab  \cr
+  PTS \tab character \tab Points scored. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  STATS_TIMEFRAME \tab character \tab  \cr
+  FROM_YEAR \tab character \tab  \cr
+  TO_YEAR \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 Returns a url of the png for the player_id selected
 
-Return a named list of data frames: PlayerAwards
+A named list of tibbles: \code{PlayerAwards}.
 
 \strong{PlayerAwards}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
-      FIRST_NAME \tab character \tab Player's first name. \cr
-      LAST_NAME \tab character \tab Player's last name. \cr
-      TEAM \tab character \tab Team-side label or team identifier. \cr
-      DESCRIPTION \tab character \tab Long-form description text. \cr
-      ALL_NBA_TEAM_NUMBER \tab character \tab  \cr
-      SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-      MONTH \tab character \tab Month number. \cr
-      WEEK \tab character \tab Week number within the season. \cr
-      CONFERENCE \tab character \tab Conference. \cr
-      TYPE \tab character \tab Record type / category. \cr
-      SUBTYPE1 \tab character \tab  \cr
-      SUBTYPE2 \tab character \tab  \cr
-      SUBTYPE3 \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+  FIRST_NAME \tab character \tab Player's first name. \cr
+  LAST_NAME \tab character \tab Player's last name. \cr
+  TEAM \tab character \tab Team-side label or team identifier. \cr
+  DESCRIPTION \tab character \tab Long-form description text. \cr
+  ALL_NBA_TEAM_NUMBER \tab character \tab  \cr
+  SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+  MONTH \tab character \tab Month number. \cr
+  WEEK \tab character \tab Week number within the season. \cr
+  CONFERENCE \tab character \tab Conference. \cr
+  TYPE \tab character \tab Record type / category. \cr
+  SUBTYPE1 \tab character \tab  \cr
+  SUBTYPE2 \tab character \tab  \cr
+  SUBTYPE3 \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Return a named list of data frames: PlayerCareerByCollege
+A named list of tibbles: \code{PlayerCareerByCollege}.
 
 \strong{PlayerCareerByCollege}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      PLAYER_ID \tab character \tab Unique player identifier. \cr
-      PLAYER_NAME \tab character \tab Player name. \cr
-      COLLEGE \tab character \tab College or school attended. \cr
-      GP \tab character \tab Games played. \cr
-      MIN \tab character \tab Minutes played. \cr
-      FGM \tab character \tab Field goals made. \cr
-      FGA \tab character \tab Field goal attempts. \cr
-      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-      FG3M \tab character \tab Three-point field goals made. \cr
-      FG3A \tab character \tab Three-point field goal attempts. \cr
-      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-      FTM \tab character \tab Free throws made. \cr
-      FTA \tab character \tab Free throw attempts. \cr
-      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-      OREB \tab character \tab Offensive rebounds. \cr
-      DREB \tab character \tab Defensive rebounds. \cr
-      REB \tab character \tab Total rebounds. \cr
-      AST \tab character \tab Assists. \cr
-      TOV \tab character \tab Turnovers. \cr
-      STL \tab character \tab Steals. \cr
-      BLK \tab character \tab Blocks. \cr
-      PF \tab character \tab Personal fouls. \cr
-      PTS \tab character \tab Points scored. \cr
-   }}
+  col_name \tab types \tab description \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  PLAYER_NAME \tab character \tab Player name. \cr
+  COLLEGE \tab character \tab College or school attended. \cr
+  GP \tab character \tab Games played. \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  TOV \tab character \tab Turnovers. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  PF \tab character \tab Personal fouls. \cr
+  PTS \tab character \tab Points scored. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Return a named list of data frames: East, Midwest, South, West
+A named list of tibbles: \code{East}, \code{South}, \code{Midwest}, \code{West}.
 
 \strong{East}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      REGION \tab character \tab Region label. \cr
-      SEED \tab character \tab Tournament seed. \cr
-      COLLEGE \tab character \tab College or school attended. \cr
-      PLAYERS \tab character \tab  \cr
-      GP \tab character \tab Games played. \cr
-      MIN \tab character \tab Minutes played. \cr
-      FGM \tab character \tab Field goals made. \cr
-      FGA \tab character \tab Field goal attempts. \cr
-      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-      FG3M \tab character \tab Three-point field goals made. \cr
-      FG3A \tab character \tab Three-point field goal attempts. \cr
-      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-      FTM \tab character \tab Free throws made. \cr
-      FTA \tab character \tab Free throw attempts. \cr
-      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-      OREB \tab character \tab Offensive rebounds. \cr
-      DREB \tab character \tab Defensive rebounds. \cr
-      REB \tab character \tab Total rebounds. \cr
-      AST \tab character \tab Assists. \cr
-      STL \tab character \tab Steals. \cr
-      BLK \tab character \tab Blocks. \cr
-      TOV \tab character \tab Turnovers. \cr
-      PF \tab character \tab Personal fouls. \cr
-      PTS \tab character \tab Points scored. \cr
-   }}
+  col_name \tab types \tab description \cr
+  REGION \tab character \tab Region label. \cr
+  SEED \tab character \tab Tournament seed. \cr
+  COLLEGE \tab character \tab College or school attended. \cr
+  PLAYERS \tab character \tab  \cr
+  GP \tab character \tab Games played. \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  TOV \tab character \tab Turnovers. \cr
+  PF \tab character \tab Personal fouls. \cr
+  PTS \tab character \tab Points scored. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{South}
@@ -652,48 +652,76 @@ Same columns as the \strong{East} table above.
 
 Same columns as the \strong{East} table above.
 
-Return a named list of data frames: CareerTotalsAllStarSeason,
-CareerTotalsCollegeSeason, CareerTotalsPostSeason,
-CareerTotalsRegularSeason, SeasonRankingsPostSeason,
-SeasonRankingsRegularSeason, SeasonTotalsAllStarSeason, SeasonTotalsCollegeSeason,
-SeasonTotalsPostSeason, SeasonTotalsRegularSeason
+A named list of tibbles: \code{SeasonTotalsRegularSeason}, \code{CareerTotalsRegularSeason}, \code{SeasonTotalsPostSeason}, \code{CareerTotalsPostSeason}, \code{SeasonTotalsAllStarSeason}, \code{CareerTotalsAllStarSeason}, \code{SeasonRankingsRegularSeason}, \code{SeasonRankingsPostSeason}.
 
 \strong{SeasonTotalsRegularSeason}
 
-Columns as documented in the shared \link{nba_playercareerstats_seasontotalsregularseason_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  SEASON_ID \tab character \tab Unique season identifier. \cr
+  LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+  TEAM_ID \tab character \tab Unique team identifier. \cr
+  TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+  PLAYER_AGE \tab character \tab  \cr
+  GP \tab character \tab Games played. \cr
+  GS \tab character \tab Games started. \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  TOV \tab character \tab Turnovers. \cr
+  PF \tab character \tab Personal fouls. \cr
+  PTS \tab character \tab Points scored. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{CareerTotalsRegularSeason}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   Team_ID \tab character \tab Unique team identifier. \cr
-   GP \tab character \tab Games played. \cr
-   GS \tab character \tab Games started. \cr
-   MIN \tab character \tab Minutes played. \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   STL \tab character \tab Steals. \cr
-   BLK \tab character \tab Blocks. \cr
-   TOV \tab character \tab Turnovers. \cr
-   PF \tab character \tab Personal fouls. \cr
-   PTS \tab character \tab Points scored. \cr
-}
+\strong{CareerTotalsRegularSeason}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+  Team_ID \tab character \tab Unique team identifier. \cr
+  GP \tab character \tab Games played. \cr
+  GS \tab character \tab Games started. \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  TOV \tab character \tab Turnovers. \cr
+  PF \tab character \tab Personal fouls. \cr
+  PTS \tab character \tab Points scored. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{SeasonTotalsPostSeason}
 
-Columns as documented in the shared \link{nba_playercareerstats_seasontotalsregularseason_schema} table.
+Same columns as the \strong{SeasonTotalsRegularSeason} table above.
 
 \strong{CareerTotalsPostSeason}
 
@@ -701,109 +729,131 @@ Same columns as the \strong{CareerTotalsRegularSeason} table above.
 
 \strong{SeasonTotalsAllStarSeason}
 
-Columns as documented in the shared \link{nba_playercareerstats_seasontotalsregularseason_schema} table.
+Same columns as the \strong{SeasonTotalsRegularSeason} table above.
 
 \strong{CareerTotalsAllStarSeason}
 
 Same columns as the \strong{CareerTotalsRegularSeason} table above.
 
-\strong{SeasonTotalsCollegeSeason}
-
-\strong{CareerTotalsCollegeSeason}
-
-\strong{SeasonTotalsShowcaseSeason}
-
-\strong{CareerTotalsShowcaseSeason}
-
 \strong{SeasonRankingsRegularSeason}
 
-Columns as documented in the shared \link{nba_playercareerstats_seasonrankingsregularseason_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  SEASON_ID \tab character \tab Unique season identifier. \cr
+  LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+  TEAM_ID \tab character \tab Unique team identifier. \cr
+  TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+  PLAYER_AGE \tab character \tab  \cr
+  GP \tab character \tab Games played. \cr
+  GS \tab character \tab Games started. \cr
+  RANK_MIN \tab character \tab  \cr
+  RANK_FGM \tab character \tab  \cr
+  RANK_FGA \tab character \tab  \cr
+  RANK_FG_PCT \tab character \tab  \cr
+  RANK_FG3M \tab character \tab  \cr
+  RANK_FG3A \tab character \tab  \cr
+  RANK_FG3_PCT \tab character \tab  \cr
+  RANK_FTM \tab character \tab  \cr
+  RANK_FTA \tab character \tab  \cr
+  RANK_FT_PCT \tab character \tab  \cr
+  RANK_OREB \tab character \tab  \cr
+  RANK_DREB \tab character \tab  \cr
+  RANK_REB \tab character \tab  \cr
+  RANK_AST \tab character \tab  \cr
+  RANK_STL \tab character \tab  \cr
+  RANK_BLK \tab character \tab  \cr
+  RANK_TOV \tab character \tab  \cr
+  RANK_PTS \tab character \tab  \cr
+  RANK_EFF \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{SeasonRankingsPostSeason}
 
-Columns as documented in the shared \link{nba_playercareerstats_seasonrankingsregularseason_schema} table.
+Same columns as the \strong{SeasonRankingsRegularSeason} table above.
 
-Return a named list of data frames: FanDuelPlayer
+A named list of tibbles: \code{FanDuelPlayer}.
 
 \strong{FanDuelPlayer}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      PLAYER_ID \tab character \tab Unique player identifier. \cr
-      PLAYER_NAME \tab character \tab Player name. \cr
-      TEAM_ID \tab character \tab Unique team identifier. \cr
-      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-      JERSEY_NUM \tab character \tab Jersey number worn by the player. \cr
-      PLAYER_POSITION \tab character \tab  \cr
-      LOCATION \tab character \tab Location. \cr
-      FAN_DUEL_PTS \tab character \tab  \cr
-      NBA_FANTASY_PTS \tab character \tab  \cr
-      USG_PCT \tab character \tab Usage percentage (0-1). \cr
-      MIN \tab character \tab Minutes played. \cr
-      FGM \tab character \tab Field goals made. \cr
-      FGA \tab character \tab Field goal attempts. \cr
-      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-      FG3M \tab character \tab Three-point field goals made. \cr
-      FG3A \tab character \tab Three-point field goal attempts. \cr
-      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-      FTM \tab character \tab Free throws made. \cr
-      FTA \tab character \tab Free throw attempts. \cr
-      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-      OREB \tab character \tab Offensive rebounds. \cr
-      DREB \tab character \tab Defensive rebounds. \cr
-      REB \tab character \tab Total rebounds. \cr
-      AST \tab character \tab Assists. \cr
-      TOV \tab character \tab Turnovers. \cr
-      STL \tab character \tab Steals. \cr
-      BLK \tab character \tab Blocks. \cr
-      BLKA \tab character \tab  \cr
-      PF \tab character \tab Personal fouls. \cr
-      PFD \tab character \tab  \cr
-      PTS \tab character \tab Points scored. \cr
-      PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-   }}
+  col_name \tab types \tab description \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  PLAYER_NAME \tab character \tab Player name. \cr
+  TEAM_ID \tab character \tab Unique team identifier. \cr
+  TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+  JERSEY_NUM \tab character \tab Jersey number worn by the player. \cr
+  PLAYER_POSITION \tab character \tab  \cr
+  LOCATION \tab character \tab Location. \cr
+  FAN_DUEL_PTS \tab character \tab  \cr
+  NBA_FANTASY_PTS \tab character \tab  \cr
+  USG_PCT \tab character \tab Usage percentage (0-1). \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  TOV \tab character \tab Turnovers. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  BLKA \tab character \tab  \cr
+  PF \tab character \tab Personal fouls. \cr
+  PFD \tab character \tab  \cr
+  PTS \tab character \tab Points scored. \cr
+  PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Return a named list of data frames: DaysRestModified, LastNGames, Location, Opponent, Overall
+A named list of tibbles: \code{Overall}, \code{Location}, \code{LastNGames}, \code{DaysRestModified}, \code{Opponent}.
 
 \strong{Overall}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      GROUP_SET \tab character \tab  \cr
-      GROUP_VALUE \tab character \tab  \cr
-      GP \tab character \tab Games played. \cr
-      W \tab character \tab Wins. \cr
-      L \tab character \tab Losses. \cr
-      W_PCT \tab character \tab  \cr
-      MIN \tab character \tab Minutes played. \cr
-      FGM \tab character \tab Field goals made. \cr
-      FGA \tab character \tab Field goal attempts. \cr
-      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-      FG3M \tab character \tab Three-point field goals made. \cr
-      FG3A \tab character \tab Three-point field goal attempts. \cr
-      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-      FTM \tab character \tab Free throws made. \cr
-      FTA \tab character \tab Free throw attempts. \cr
-      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-      OREB \tab character \tab Offensive rebounds. \cr
-      DREB \tab character \tab Defensive rebounds. \cr
-      REB \tab character \tab Total rebounds. \cr
-      AST \tab character \tab Assists. \cr
-      TOV \tab character \tab Turnovers. \cr
-      STL \tab character \tab Steals. \cr
-      BLK \tab character \tab Blocks. \cr
-      BLKA \tab character \tab  \cr
-      PF \tab character \tab Personal fouls. \cr
-      PFD \tab character \tab  \cr
-      PTS \tab character \tab Points scored. \cr
-      PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-      DD2 \tab character \tab  \cr
-      TD3 \tab character \tab  \cr
-      FAN_DUEL_PTS \tab character \tab  \cr
-      NBA_FANTASY_PTS \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  GROUP_SET \tab character \tab  \cr
+  GROUP_VALUE \tab character \tab  \cr
+  GP \tab character \tab Games played. \cr
+  W \tab character \tab Wins. \cr
+  L \tab character \tab Losses. \cr
+  W_PCT \tab character \tab  \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  TOV \tab character \tab Turnovers. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  BLKA \tab character \tab  \cr
+  PF \tab character \tab Personal fouls. \cr
+  PFD \tab character \tab  \cr
+  PTS \tab character \tab Points scored. \cr
+  PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+  DD2 \tab character \tab  \cr
+  TD3 \tab character \tab  \cr
+  FAN_DUEL_PTS \tab character \tab  \cr
+  NBA_FANTASY_PTS \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{Location}
@@ -817,309 +867,339 @@ Same columns as the \strong{Overall} table above.
 \strong{DaysRestModified}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      GROUP_SET \tab character \tab  \cr
-      GROUP_VALUE \tab character \tab  \cr
-      SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
-      GP \tab character \tab Games played. \cr
-      W \tab character \tab Wins. \cr
-      L \tab character \tab Losses. \cr
-      W_PCT \tab character \tab  \cr
-      MIN \tab character \tab Minutes played. \cr
-      FGM \tab character \tab Field goals made. \cr
-      FGA \tab character \tab Field goal attempts. \cr
-      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-      FG3M \tab character \tab Three-point field goals made. \cr
-      FG3A \tab character \tab Three-point field goal attempts. \cr
-      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-      FTM \tab character \tab Free throws made. \cr
-      FTA \tab character \tab Free throw attempts. \cr
-      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-      OREB \tab character \tab Offensive rebounds. \cr
-      DREB \tab character \tab Defensive rebounds. \cr
-      REB \tab character \tab Total rebounds. \cr
-      AST \tab character \tab Assists. \cr
-      TOV \tab character \tab Turnovers. \cr
-      STL \tab character \tab Steals. \cr
-      BLK \tab character \tab Blocks. \cr
-      BLKA \tab character \tab  \cr
-      PF \tab character \tab Personal fouls. \cr
-      PFD \tab character \tab  \cr
-      PTS \tab character \tab Points scored. \cr
-      PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-      DD2 \tab character \tab  \cr
-      TD3 \tab character \tab  \cr
-      FAN_DUEL_PTS \tab character \tab  \cr
-      NBA_FANTASY_PTS \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  GROUP_SET \tab character \tab  \cr
+  GROUP_VALUE \tab character \tab  \cr
+  SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
+  GP \tab character \tab Games played. \cr
+  W \tab character \tab Wins. \cr
+  L \tab character \tab Losses. \cr
+  W_PCT \tab character \tab  \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  TOV \tab character \tab Turnovers. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  BLKA \tab character \tab  \cr
+  PF \tab character \tab Personal fouls. \cr
+  PFD \tab character \tab  \cr
+  PTS \tab character \tab Points scored. \cr
+  PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+  DD2 \tab character \tab  \cr
+  TD3 \tab character \tab  \cr
+  FAN_DUEL_PTS \tab character \tab  \cr
+  NBA_FANTASY_PTS \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{Opponent}
 
 Same columns as the \strong{Overall} table above.
 
-Return a named list of data frames: LastFiveGamesAvg, SeasonAvg
+A named list of tibbles: \code{SeasonAvg}, \code{LastFiveGamesAvg}.
 
 \strong{SeasonAvg}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      PLAYER_ID \tab character \tab Unique player identifier. \cr
-      PLAYER_NAME \tab character \tab Player name. \cr
-      TEAM_ID \tab character \tab Unique team identifier. \cr
-      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-      FAN_DUEL_PTS \tab character \tab  \cr
-      NBA_FANTASY_PTS \tab character \tab  \cr
-      PTS \tab character \tab Points scored. \cr
-      REB \tab character \tab Total rebounds. \cr
-      AST \tab character \tab Assists. \cr
-      FG3M \tab character \tab Three-point field goals made. \cr
-      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-      STL \tab character \tab Steals. \cr
-      BLK \tab character \tab Blocks. \cr
-      TOV \tab character \tab Turnovers. \cr
-      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   }}
+  col_name \tab types \tab description \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  PLAYER_NAME \tab character \tab Player name. \cr
+  TEAM_ID \tab character \tab Unique team identifier. \cr
+  TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+  FAN_DUEL_PTS \tab character \tab  \cr
+  NBA_FANTASY_PTS \tab character \tab  \cr
+  PTS \tab character \tab Points scored. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  TOV \tab character \tab Turnovers. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{LastFiveGamesAvg}
 
 Same columns as the \strong{SeasonAvg} table above.
 
-Return a named list of data frames: PlayerEstimatedMetrics
+A named list of tibbles: \code{PlayerEstimatedMetrics}.
 
 \strong{PlayerEstimatedMetrics}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      PLAYER_ID \tab character \tab Unique player identifier. \cr
-      PLAYER_NAME \tab character \tab Player name. \cr
-      GP \tab character \tab Games played. \cr
-      W \tab character \tab Wins. \cr
-      L \tab character \tab Losses. \cr
-      W_PCT \tab character \tab  \cr
-      MIN \tab character \tab Minutes played. \cr
-      E_OFF_RATING \tab character \tab  \cr
-      E_DEF_RATING \tab character \tab  \cr
-      E_NET_RATING \tab character \tab  \cr
-      E_AST_RATIO \tab character \tab  \cr
-      E_OREB_PCT \tab character \tab  \cr
-      E_DREB_PCT \tab character \tab  \cr
-      E_REB_PCT \tab character \tab  \cr
-      E_TOV_PCT \tab character \tab  \cr
-      E_USG_PCT \tab character \tab  \cr
-      E_PACE \tab character \tab  \cr
-      GP_RANK \tab character \tab  \cr
-      W_RANK \tab character \tab  \cr
-      L_RANK \tab character \tab  \cr
-      W_PCT_RANK \tab character \tab  \cr
-      MIN_RANK \tab character \tab  \cr
-      E_OFF_RATING_RANK \tab character \tab  \cr
-      E_DEF_RATING_RANK \tab character \tab  \cr
-      E_NET_RATING_RANK \tab character \tab  \cr
-      E_AST_RATIO_RANK \tab character \tab  \cr
-      E_OREB_PCT_RANK \tab character \tab  \cr
-      E_DREB_PCT_RANK \tab character \tab  \cr
-      E_REB_PCT_RANK \tab character \tab  \cr
-      E_TOV_PCT_RANK \tab character \tab  \cr
-      E_USG_PCT_RANK \tab character \tab  \cr
-      E_PACE_RANK \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  PLAYER_NAME \tab character \tab Player name. \cr
+  GP \tab character \tab Games played. \cr
+  W \tab character \tab Wins. \cr
+  L \tab character \tab Losses. \cr
+  W_PCT \tab character \tab  \cr
+  MIN \tab character \tab Minutes played. \cr
+  E_OFF_RATING \tab character \tab  \cr
+  E_DEF_RATING \tab character \tab  \cr
+  E_NET_RATING \tab character \tab  \cr
+  E_AST_RATIO \tab character \tab  \cr
+  E_OREB_PCT \tab character \tab  \cr
+  E_DREB_PCT \tab character \tab  \cr
+  E_REB_PCT \tab character \tab  \cr
+  E_TOV_PCT \tab character \tab  \cr
+  E_USG_PCT \tab character \tab  \cr
+  E_PACE \tab character \tab  \cr
+  GP_RANK \tab character \tab  \cr
+  W_RANK \tab character \tab  \cr
+  L_RANK \tab character \tab  \cr
+  W_PCT_RANK \tab character \tab  \cr
+  MIN_RANK \tab character \tab  \cr
+  E_OFF_RATING_RANK \tab character \tab  \cr
+  E_DEF_RATING_RANK \tab character \tab  \cr
+  E_NET_RATING_RANK \tab character \tab  \cr
+  E_AST_RATIO_RANK \tab character \tab  \cr
+  E_OREB_PCT_RANK \tab character \tab  \cr
+  E_DREB_PCT_RANK \tab character \tab  \cr
+  E_REB_PCT_RANK \tab character \tab  \cr
+  E_TOV_PCT_RANK \tab character \tab  \cr
+  E_USG_PCT_RANK \tab character \tab  \cr
+  E_PACE_RANK \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Return a named list of data frames: PlayerGameLog
+A named list of tibbles: \code{PlayerGameLog}.
 
 \strong{PlayerGameLog}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      SEASON_ID \tab character \tab Unique season identifier. \cr
-      Player_ID \tab character \tab Unique player identifier. \cr
-      Game_ID \tab character \tab Unique game identifier. \cr
-      GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
-      MATCHUP \tab character \tab Matchup. \cr
-      WL \tab character \tab Wl. \cr
-      MIN \tab character \tab Minutes played. \cr
-      FGM \tab character \tab Field goals made. \cr
-      FGA \tab character \tab Field goal attempts. \cr
-      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-      FG3M \tab character \tab Three-point field goals made. \cr
-      FG3A \tab character \tab Three-point field goal attempts. \cr
-      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-      FTM \tab character \tab Free throws made. \cr
-      FTA \tab character \tab Free throw attempts. \cr
-      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-      OREB \tab character \tab Offensive rebounds. \cr
-      DREB \tab character \tab Defensive rebounds. \cr
-      REB \tab character \tab Total rebounds. \cr
-      AST \tab character \tab Assists. \cr
-      STL \tab character \tab Steals. \cr
-      BLK \tab character \tab Blocks. \cr
-      TOV \tab character \tab Turnovers. \cr
-      PF \tab character \tab Personal fouls. \cr
-      PTS \tab character \tab Points scored. \cr
-      PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-      VIDEO_AVAILABLE \tab character \tab Video available. \cr
-   }}
+  col_name \tab types \tab description \cr
+  SEASON_ID \tab character \tab Unique season identifier. \cr
+  Player_ID \tab character \tab Unique player identifier. \cr
+  Game_ID \tab character \tab Unique game identifier. \cr
+  GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+  MATCHUP \tab character \tab Matchup. \cr
+  WL \tab character \tab Wl. \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  TOV \tab character \tab Turnovers. \cr
+  PF \tab character \tab Personal fouls. \cr
+  PTS \tab character \tab Points scored. \cr
+  PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+  VIDEO_AVAILABLE \tab character \tab Video available. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Return a named list of data frames: PlayerGameLogs
+A named list of tibbles: \code{PlayerGameLogs}.
 
 \strong{PlayerGameLogs}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
-      PLAYER_ID \tab character \tab Unique player identifier. \cr
-      PLAYER_NAME \tab character \tab Player name. \cr
-      NICKNAME \tab character \tab Team or athlete nickname. \cr
-      TEAM_ID \tab character \tab Unique team identifier. \cr
-      TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      GAME_ID \tab character \tab Unique game identifier. \cr
-      GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
-      MATCHUP \tab character \tab Matchup. \cr
-      WL \tab character \tab Wl. \cr
-      MIN \tab character \tab Minutes played. \cr
-      FGM \tab character \tab Field goals made. \cr
-      FGA \tab character \tab Field goal attempts. \cr
-      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-      FG3M \tab character \tab Three-point field goals made. \cr
-      FG3A \tab character \tab Three-point field goal attempts. \cr
-      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-      FTM \tab character \tab Free throws made. \cr
-      FTA \tab character \tab Free throw attempts. \cr
-      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-      OREB \tab character \tab Offensive rebounds. \cr
-      DREB \tab character \tab Defensive rebounds. \cr
-      REB \tab character \tab Total rebounds. \cr
-      AST \tab character \tab Assists. \cr
-      TOV \tab character \tab Turnovers. \cr
-      STL \tab character \tab Steals. \cr
-      BLK \tab character \tab Blocks. \cr
-      BLKA \tab character \tab  \cr
-      PF \tab character \tab Personal fouls. \cr
-      PFD \tab character \tab  \cr
-      PTS \tab character \tab Points scored. \cr
-      PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-      NBA_FANTASY_PTS \tab character \tab  \cr
-      DD2 \tab character \tab  \cr
-      TD3 \tab character \tab  \cr
-      WNBA_FANTASY_PTS \tab character \tab  \cr
-      GP_RANK \tab character \tab  \cr
-      W_RANK \tab character \tab  \cr
-      L_RANK \tab character \tab  \cr
-      W_PCT_RANK \tab character \tab  \cr
-      MIN_RANK \tab character \tab  \cr
-      FGM_RANK \tab character \tab  \cr
-      FGA_RANK \tab character \tab  \cr
-      FG_PCT_RANK \tab character \tab  \cr
-      FG3M_RANK \tab character \tab  \cr
-      FG3A_RANK \tab character \tab  \cr
-      FG3_PCT_RANK \tab character \tab  \cr
-      FTM_RANK \tab character \tab  \cr
-      FTA_RANK \tab character \tab  \cr
-      FT_PCT_RANK \tab character \tab  \cr
-      OREB_RANK \tab character \tab  \cr
-      DREB_RANK \tab character \tab  \cr
-      REB_RANK \tab character \tab  \cr
-      AST_RANK \tab character \tab  \cr
-      TOV_RANK \tab character \tab  \cr
-      STL_RANK \tab character \tab  \cr
-      BLK_RANK \tab character \tab  \cr
-      BLKA_RANK \tab character \tab  \cr
-      PF_RANK \tab character \tab  \cr
-      PFD_RANK \tab character \tab  \cr
-      PTS_RANK \tab character \tab  \cr
-      PLUS_MINUS_RANK \tab character \tab  \cr
-      NBA_FANTASY_PTS_RANK \tab character \tab  \cr
-      DD2_RANK \tab character \tab  \cr
-      TD3_RANK \tab character \tab  \cr
-      WNBA_FANTASY_PTS_RANK \tab character \tab  \cr
-      VIDEO_AVAILABLE_FLAG \tab character \tab Video available flag. \cr
-   }}
+  col_name \tab types \tab description \cr
+  SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  PLAYER_NAME \tab character \tab Player name. \cr
+  NICKNAME \tab character \tab Team or athlete nickname. \cr
+  TEAM_ID \tab character \tab Unique team identifier. \cr
+  TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+  TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  GAME_ID \tab character \tab Unique game identifier. \cr
+  GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+  MATCHUP \tab character \tab Matchup. \cr
+  WL \tab character \tab Wl. \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  TOV \tab character \tab Turnovers. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  BLKA \tab character \tab  \cr
+  PF \tab character \tab Personal fouls. \cr
+  PFD \tab character \tab  \cr
+  PTS \tab character \tab Points scored. \cr
+  PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+  NBA_FANTASY_PTS \tab character \tab  \cr
+  DD2 \tab character \tab  \cr
+  TD3 \tab character \tab  \cr
+  WNBA_FANTASY_PTS \tab character \tab  \cr
+  GP_RANK \tab character \tab  \cr
+  W_RANK \tab character \tab  \cr
+  L_RANK \tab character \tab  \cr
+  W_PCT_RANK \tab character \tab  \cr
+  MIN_RANK \tab character \tab  \cr
+  FGM_RANK \tab character \tab  \cr
+  FGA_RANK \tab character \tab  \cr
+  FG_PCT_RANK \tab character \tab  \cr
+  FG3M_RANK \tab character \tab  \cr
+  FG3A_RANK \tab character \tab  \cr
+  FG3_PCT_RANK \tab character \tab  \cr
+  FTM_RANK \tab character \tab  \cr
+  FTA_RANK \tab character \tab  \cr
+  FT_PCT_RANK \tab character \tab  \cr
+  OREB_RANK \tab character \tab  \cr
+  DREB_RANK \tab character \tab  \cr
+  REB_RANK \tab character \tab  \cr
+  AST_RANK \tab character \tab  \cr
+  TOV_RANK \tab character \tab  \cr
+  STL_RANK \tab character \tab  \cr
+  BLK_RANK \tab character \tab  \cr
+  BLKA_RANK \tab character \tab  \cr
+  PF_RANK \tab character \tab  \cr
+  PFD_RANK \tab character \tab  \cr
+  PTS_RANK \tab character \tab  \cr
+  PLUS_MINUS_RANK \tab character \tab  \cr
+  NBA_FANTASY_PTS_RANK \tab character \tab  \cr
+  DD2_RANK \tab character \tab  \cr
+  TD3_RANK \tab character \tab  \cr
+  WNBA_FANTASY_PTS_RANK \tab character \tab  \cr
+  VIDEO_AVAILABLE_FLAG \tab character \tab Video available flag. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Return a named list of data frames: PlayerGameStreakFinderResults
+A named list of tibbles: \code{PlayerGameStreakFinderResults}.
 
 \strong{PlayerGameStreakFinderResults}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      PLAYER_NAME_LAST_FIRST \tab character \tab  \cr
-      PLAYER_ID \tab character \tab Unique player identifier. \cr
-      GAMESTREAK \tab character \tab  \cr
-      STARTDATE \tab character \tab  \cr
-      ENDDATE \tab character \tab  \cr
-      ACTIVESTREAK \tab character \tab  \cr
-      NUMSEASONS \tab character \tab  \cr
-      LASTSEASON \tab character \tab  \cr
-      FIRSTSEASON \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  PLAYER_NAME_LAST_FIRST \tab character \tab  \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  GAMESTREAK \tab character \tab  \cr
+  STARTDATE \tab character \tab  \cr
+  ENDDATE \tab character \tab  \cr
+  ACTIVESTREAK \tab character \tab  \cr
+  NUMSEASONS \tab character \tab  \cr
+  LASTSEASON \tab character \tab  \cr
+  FIRSTSEASON \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Return a named list of data frames: NextNGames
+A named list of tibbles: \code{NextNGames}.
 
 \strong{NextNGames}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      GAME_ID \tab character \tab Unique game identifier. \cr
-      GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
-      HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
-      VISITOR_TEAM_ID \tab character \tab  \cr
-      HOME_TEAM_NAME \tab character \tab Home team name. \cr
-      VISITOR_TEAM_NAME \tab character \tab  \cr
-      HOME_TEAM_ABBREVIATION \tab character \tab  \cr
-      VISITOR_TEAM_ABBREVIATION \tab character \tab  \cr
-      HOME_TEAM_NICKNAME \tab character \tab  \cr
-      VISITOR_TEAM_NICKNAME \tab character \tab  \cr
-      GAME_TIME \tab character \tab Game start time. \cr
-      HOME_WL \tab character \tab  \cr
-      VISITOR_WL \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  GAME_ID \tab character \tab Unique game identifier. \cr
+  GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+  HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
+  VISITOR_TEAM_ID \tab character \tab  \cr
+  HOME_TEAM_NAME \tab character \tab Home team name. \cr
+  VISITOR_TEAM_NAME \tab character \tab  \cr
+  HOME_TEAM_ABBREVIATION \tab character \tab  \cr
+  VISITOR_TEAM_ABBREVIATION \tab character \tab  \cr
+  HOME_TEAM_NICKNAME \tab character \tab  \cr
+  VISITOR_TEAM_NICKNAME \tab character \tab  \cr
+  GAME_TIME \tab character \tab Game start time. \cr
+  HOME_WL \tab character \tab  \cr
+  VISITOR_WL \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Return a named list of data frames: CareerHighs, CareerTotalsAllStarSeason, CareerTotalsCollegeSeason, CareerTotalsPostSeason, CareerTotalsPreseason,
-CareerTotalsRegularSeason, NextGame, SeasonHighs, SeasonRankingsPostSeason, SeasonRankingsRegularSeason, SeasonTotalsAllStarSeason, SeasonTotalsCollegeSeason,
-SeasonTotalsPostSeason, SeasonTotalsPreseason, SeasonTotalsRegularSeason
+A named list of tibbles: \code{SeasonTotalsRegularSeason}, \code{CareerTotalsRegularSeason}, \code{SeasonTotalsPostSeason}, \code{CareerTotalsPostSeason}, \code{SeasonTotalsAllStarSeason}, \code{CareerTotalsAllStarSeason}, \code{SeasonTotalsPreseason}, \code{CareerTotalsPreseason}, \code{SeasonRankingsRegularSeason}, \code{SeasonRankingsPostSeason}, \code{SeasonHighs}, \code{CareerHighs}, \code{NextGame}.
 
 \strong{SeasonTotalsRegularSeason}
 
-Columns as documented in the shared \link{nba_playercareerstats_seasontotalsregularseason_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  SEASON_ID \tab character \tab Unique season identifier. \cr
+  LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+  TEAM_ID \tab character \tab Unique team identifier. \cr
+  TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+  PLAYER_AGE \tab character \tab  \cr
+  GP \tab character \tab Games played. \cr
+  GS \tab character \tab Games started. \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  TOV \tab character \tab Turnovers. \cr
+  PF \tab character \tab Personal fouls. \cr
+  PTS \tab character \tab Points scored. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{CareerTotalsRegularSeason}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-   TEAM_ID \tab character \tab Unique team identifier. \cr
-   GP \tab character \tab Games played. \cr
-   GS \tab character \tab Games started. \cr
-   MIN \tab character \tab Minutes played. \cr
-   FGM \tab character \tab Field goals made. \cr
-   FGA \tab character \tab Field goal attempts. \cr
-   FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   FG3M \tab character \tab Three-point field goals made. \cr
-   FG3A \tab character \tab Three-point field goal attempts. \cr
-   FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-   FTM \tab character \tab Free throws made. \cr
-   FTA \tab character \tab Free throw attempts. \cr
-   FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-   OREB \tab character \tab Offensive rebounds. \cr
-   DREB \tab character \tab Defensive rebounds. \cr
-   REB \tab character \tab Total rebounds. \cr
-   AST \tab character \tab Assists. \cr
-   STL \tab character \tab Steals. \cr
-   BLK \tab character \tab Blocks. \cr
-   TOV \tab character \tab Turnovers. \cr
-   PF \tab character \tab Personal fouls. \cr
-   PTS \tab character \tab Points scored. \cr
-}
+\strong{CareerTotalsRegularSeason}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+  TEAM_ID \tab character \tab Unique team identifier. \cr
+  GP \tab character \tab Games played. \cr
+  GS \tab character \tab Games started. \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  TOV \tab character \tab Turnovers. \cr
+  PF \tab character \tab Personal fouls. \cr
+  PTS \tab character \tab Points scored. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{SeasonTotalsPostSeason}
 
-Columns as documented in the shared \link{nba_playercareerstats_seasontotalsregularseason_schema} table.
+Same columns as the \strong{SeasonTotalsRegularSeason} table above.
 
 \strong{CareerTotalsPostSeason}
 
@@ -1127,19 +1207,15 @@ Same columns as the \strong{CareerTotalsRegularSeason} table above.
 
 \strong{SeasonTotalsAllStarSeason}
 
-Columns as documented in the shared \link{nba_playercareerstats_seasontotalsregularseason_schema} table.
+Same columns as the \strong{SeasonTotalsRegularSeason} table above.
 
 \strong{CareerTotalsAllStarSeason}
 
 Same columns as the \strong{CareerTotalsRegularSeason} table above.
 
-\strong{SeasonTotalsCollegeSeason}
-
-\strong{CareerTotalsCollegeSeason}
-
 \strong{SeasonTotalsPreseason}
 
-Columns as documented in the shared \link{nba_playercareerstats_seasontotalsregularseason_schema} table.
+Same columns as the \strong{SeasonTotalsRegularSeason} table above.
 
 \strong{CareerTotalsPreseason}
 
@@ -1147,159 +1223,192 @@ Same columns as the \strong{CareerTotalsRegularSeason} table above.
 
 \strong{SeasonRankingsRegularSeason}
 
-Columns as documented in the shared \link{nba_playercareerstats_seasonrankingsregularseason_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  SEASON_ID \tab character \tab Unique season identifier. \cr
+  LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
+  TEAM_ID \tab character \tab Unique team identifier. \cr
+  TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+  PLAYER_AGE \tab character \tab  \cr
+  GP \tab character \tab Games played. \cr
+  GS \tab character \tab Games started. \cr
+  RANK_MIN \tab character \tab  \cr
+  RANK_FGM \tab character \tab  \cr
+  RANK_FGA \tab character \tab  \cr
+  RANK_FG_PCT \tab character \tab  \cr
+  RANK_FG3M \tab character \tab  \cr
+  RANK_FG3A \tab character \tab  \cr
+  RANK_FG3_PCT \tab character \tab  \cr
+  RANK_FTM \tab character \tab  \cr
+  RANK_FTA \tab character \tab  \cr
+  RANK_FT_PCT \tab character \tab  \cr
+  RANK_OREB \tab character \tab  \cr
+  RANK_DREB \tab character \tab  \cr
+  RANK_REB \tab character \tab  \cr
+  RANK_AST \tab character \tab  \cr
+  RANK_STL \tab character \tab  \cr
+  RANK_BLK \tab character \tab  \cr
+  RANK_TOV \tab character \tab  \cr
+  RANK_PTS \tab character \tab  \cr
+  RANK_EFF \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{SeasonRankingsPostSeason}
 
-Columns as documented in the shared \link{nba_playercareerstats_seasonrankingsregularseason_schema} table.
+Same columns as the \strong{SeasonRankingsRegularSeason} table above.
 
-\strong{SeasonHighs}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   PLAYER_ID \tab character \tab Unique player identifier. \cr
-   GAME_ID \tab character \tab Unique game identifier. \cr
-   GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
-   VS_TEAM_ID \tab character \tab  \cr
-   VS_TEAM_CITY \tab character \tab  \cr
-   VS_TEAM_NAME \tab character \tab  \cr
-   VS_TEAM_ABBREVIATION \tab character \tab  \cr
-   STAT \tab character \tab Stat. \cr
-   STAT_VALUE \tab character \tab  \cr
-   STAT_ORDER \tab character \tab  \cr
-   DATE_EST \tab character \tab  \cr
-}
+\strong{SeasonHighs}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  GAME_ID \tab character \tab Unique game identifier. \cr
+  GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+  VS_TEAM_ID \tab character \tab  \cr
+  VS_TEAM_CITY \tab character \tab  \cr
+  VS_TEAM_NAME \tab character \tab  \cr
+  VS_TEAM_ABBREVIATION \tab character \tab  \cr
+  STAT \tab character \tab Stat. \cr
+  STAT_VALUE \tab character \tab  \cr
+  STAT_ORDER \tab character \tab  \cr
+  DATE_EST \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{CareerHighs}
 
 Same columns as the \strong{SeasonHighs} table above.
 
-\strong{NextGame}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   GAME_ID \tab character \tab Unique game identifier. \cr
-   GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
-   GAME_TIME \tab character \tab Game start time. \cr
-   LOCATION \tab character \tab Location. \cr
-   PLAYER_TEAM_ID \tab character \tab  \cr
-   PLAYER_TEAM_CITY \tab character \tab  \cr
-   PLAYER_TEAM_NICKNAME \tab character \tab  \cr
-   PLAYER_TEAM_ABBREVIATION \tab character \tab  \cr
-   VS_TEAM_ID \tab character \tab  \cr
-   VS_TEAM_CITY \tab character \tab  \cr
-   VS_TEAM_NICKNAME \tab character \tab  \cr
-   VS_TEAM_ABBREVIATION \tab character \tab  \cr
-}
+\strong{NextGame}
 
-Return a named list of data frames: OnOffCourt, Overall, PlayerInfo, ShotAreaOffCourt,
-ShotAreaOnCourt, ShotAreaOverall, ShotDistanceOffCourt, ShotDistanceOnCourt,
-ShotDistanceOverall, VsPlayerInfo
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  GAME_ID \tab character \tab Unique game identifier. \cr
+  GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
+  GAME_TIME \tab character \tab Game start time. \cr
+  LOCATION \tab character \tab Location. \cr
+  PLAYER_TEAM_ID \tab character \tab  \cr
+  PLAYER_TEAM_CITY \tab character \tab  \cr
+  PLAYER_TEAM_NICKNAME \tab character \tab  \cr
+  PLAYER_TEAM_ABBREVIATION \tab character \tab  \cr
+  VS_TEAM_ID \tab character \tab  \cr
+  VS_TEAM_CITY \tab character \tab  \cr
+  VS_TEAM_NICKNAME \tab character \tab  \cr
+  VS_TEAM_ABBREVIATION \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A named list of tibbles: \code{Overall}, \code{OnOffCourt}, \code{ShotDistanceOverall}, \code{ShotDistanceOnCourt}, \code{ShotDistanceOffCourt}, \code{ShotAreaOverall}, \code{ShotAreaOnCourt}, \code{ShotAreaOffCourt}, \code{PlayerInfo}, \code{VsPlayerInfo}.
 
 \strong{Overall}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      GROUP_SET \tab character \tab  \cr
-      GROUP_VALUE \tab character \tab  \cr
-      PLAYER_ID \tab character \tab Unique player identifier. \cr
-      PLAYER_NAME \tab character \tab Player name. \cr
-      GP \tab character \tab Games played. \cr
-      W \tab character \tab Wins. \cr
-      L \tab character \tab Losses. \cr
-      W_PCT \tab character \tab  \cr
-      MIN \tab character \tab Minutes played. \cr
-      FGM \tab character \tab Field goals made. \cr
-      FGA \tab character \tab Field goal attempts. \cr
-      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-      FG3M \tab character \tab Three-point field goals made. \cr
-      FG3A \tab character \tab Three-point field goal attempts. \cr
-      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-      FTM \tab character \tab Free throws made. \cr
-      FTA \tab character \tab Free throw attempts. \cr
-      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-      OREB \tab character \tab Offensive rebounds. \cr
-      DREB \tab character \tab Defensive rebounds. \cr
-      REB \tab character \tab Total rebounds. \cr
-      AST \tab character \tab Assists. \cr
-      TOV \tab character \tab Turnovers. \cr
-      STL \tab character \tab Steals. \cr
-      BLK \tab character \tab Blocks. \cr
-      BLKA \tab character \tab  \cr
-      PF \tab character \tab Personal fouls. \cr
-      PFD \tab character \tab  \cr
-      PTS \tab character \tab Points scored. \cr
-      PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-      NBA_FANTASY_PTS \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  GROUP_SET \tab character \tab  \cr
+  GROUP_VALUE \tab character \tab  \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  PLAYER_NAME \tab character \tab Player name. \cr
+  GP \tab character \tab Games played. \cr
+  W \tab character \tab Wins. \cr
+  L \tab character \tab Losses. \cr
+  W_PCT \tab character \tab  \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  TOV \tab character \tab Turnovers. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  BLKA \tab character \tab  \cr
+  PF \tab character \tab Personal fouls. \cr
+  PFD \tab character \tab  \cr
+  PTS \tab character \tab Points scored. \cr
+  PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+  NBA_FANTASY_PTS \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{OnOffCourt}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      GROUP_SET \tab character \tab  \cr
-      PLAYER_ID \tab character \tab Unique player identifier. \cr
-      PLAYER_NAME \tab character \tab Player name. \cr
-      VS_PLAYER_ID \tab character \tab  \cr
-      VS_PLAYER_NAME \tab character \tab  \cr
-      COURT_STATUS \tab character \tab  \cr
-      GP \tab character \tab Games played. \cr
-      W \tab character \tab Wins. \cr
-      L \tab character \tab Losses. \cr
-      W_PCT \tab character \tab  \cr
-      MIN \tab character \tab Minutes played. \cr
-      FGM \tab character \tab Field goals made. \cr
-      FGA \tab character \tab Field goal attempts. \cr
-      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-      FG3M \tab character \tab Three-point field goals made. \cr
-      FG3A \tab character \tab Three-point field goal attempts. \cr
-      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-      FTM \tab character \tab Free throws made. \cr
-      FTA \tab character \tab Free throw attempts. \cr
-      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-      OREB \tab character \tab Offensive rebounds. \cr
-      DREB \tab character \tab Defensive rebounds. \cr
-      REB \tab character \tab Total rebounds. \cr
-      AST \tab character \tab Assists. \cr
-      TOV \tab character \tab Turnovers. \cr
-      STL \tab character \tab Steals. \cr
-      BLK \tab character \tab Blocks. \cr
-      BLKA \tab character \tab  \cr
-      PF \tab character \tab Personal fouls. \cr
-      PFD \tab character \tab  \cr
-      PTS \tab character \tab Points scored. \cr
-      PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-      NBA_FANTASY_PTS \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  GROUP_SET \tab character \tab  \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  PLAYER_NAME \tab character \tab Player name. \cr
+  VS_PLAYER_ID \tab character \tab  \cr
+  VS_PLAYER_NAME \tab character \tab  \cr
+  COURT_STATUS \tab character \tab  \cr
+  GP \tab character \tab Games played. \cr
+  W \tab character \tab Wins. \cr
+  L \tab character \tab Losses. \cr
+  W_PCT \tab character \tab  \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  TOV \tab character \tab Turnovers. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  BLKA \tab character \tab  \cr
+  PF \tab character \tab Personal fouls. \cr
+  PFD \tab character \tab  \cr
+  PTS \tab character \tab Points scored. \cr
+  PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+  NBA_FANTASY_PTS \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{ShotDistanceOverall}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      GROUP_SET \tab character \tab  \cr
-      GROUP_VALUE \tab character \tab  \cr
-      PLAYER_ID \tab character \tab Unique player identifier. \cr
-      PLAYER_NAME \tab character \tab Player name. \cr
-      FGM \tab character \tab Field goals made. \cr
-      FGA \tab character \tab Field goal attempts. \cr
-      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   }}
+  col_name \tab types \tab description \cr
+  GROUP_SET \tab character \tab  \cr
+  GROUP_VALUE \tab character \tab  \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  PLAYER_NAME \tab character \tab Player name. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{ShotDistanceOnCourt}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      GROUP_SET \tab character \tab  \cr
-      PLAYER_ID \tab character \tab Unique player identifier. \cr
-      PLAYER_NAME \tab character \tab Player name. \cr
-      VS_PLAYER_ID \tab character \tab  \cr
-      VS_PLAYER_NAME \tab character \tab  \cr
-      COURT_STATUS \tab character \tab  \cr
-      GROUP_VALUE \tab character \tab  \cr
-      FGM \tab character \tab Field goals made. \cr
-      FGA \tab character \tab Field goal attempts. \cr
-      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-   }}
+  col_name \tab types \tab description \cr
+  GROUP_SET \tab character \tab  \cr
+  PLAYER_ID \tab character \tab Unique player identifier. \cr
+  PLAYER_NAME \tab character \tab Player name. \cr
+  VS_PLAYER_ID \tab character \tab  \cr
+  VS_PLAYER_NAME \tab character \tab  \cr
+  COURT_STATUS \tab character \tab  \cr
+  GROUP_VALUE \tab character \tab  \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{ShotDistanceOffCourt}
@@ -1321,55 +1430,55 @@ Same columns as the \strong{ShotDistanceOnCourt} table above.
 \strong{PlayerInfo}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
-      FIRST_NAME \tab character \tab Player's first name. \cr
-      LAST_NAME \tab character \tab Player's last name. \cr
-      DISPLAY_FIRST_LAST \tab character \tab  \cr
-      DISPLAY_LAST_COMMA_FIRST \tab character \tab  \cr
-      DISPLAY_FI_LAST \tab character \tab  \cr
-      BIRTHDATE \tab character \tab  \cr
-      SCHOOL \tab character \tab Player's school / college (when distinct from 'college'). \cr
-      COUNTRY \tab character \tab Country (full name or code). \cr
-      LAST_AFFILIATION \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+  FIRST_NAME \tab character \tab Player's first name. \cr
+  LAST_NAME \tab character \tab Player's last name. \cr
+  DISPLAY_FIRST_LAST \tab character \tab  \cr
+  DISPLAY_LAST_COMMA_FIRST \tab character \tab  \cr
+  DISPLAY_FI_LAST \tab character \tab  \cr
+  BIRTHDATE \tab character \tab  \cr
+  SCHOOL \tab character \tab Player's school / college (when distinct from 'college'). \cr
+  COUNTRY \tab character \tab Country (full name or code). \cr
+  LAST_AFFILIATION \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{VsPlayerInfo}
 
 Same columns as the \strong{PlayerInfo} table above.
 
-Return a named list of data frames: Individual, OverallCompare
+A named list of tibbles: \code{OverallCompare}, \code{Individual}.
 
 \strong{OverallCompare}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      GROUP_SET \tab character \tab  \cr
-      DESCRIPTION \tab character \tab Long-form description text. \cr
-      MIN \tab character \tab Minutes played. \cr
-      FGM \tab character \tab Field goals made. \cr
-      FGA \tab character \tab Field goal attempts. \cr
-      FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-      FG3M \tab character \tab Three-point field goals made. \cr
-      FG3A \tab character \tab Three-point field goal attempts. \cr
-      FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-      FTM \tab character \tab Free throws made. \cr
-      FTA \tab character \tab Free throw attempts. \cr
-      FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-      OREB \tab character \tab Offensive rebounds. \cr
-      DREB \tab character \tab Defensive rebounds. \cr
-      REB \tab character \tab Total rebounds. \cr
-      AST \tab character \tab Assists. \cr
-      TOV \tab character \tab Turnovers. \cr
-      STL \tab character \tab Steals. \cr
-      BLK \tab character \tab Blocks. \cr
-      BLKA \tab character \tab  \cr
-      PF \tab character \tab Personal fouls. \cr
-      PFD \tab character \tab  \cr
-      PTS \tab character \tab Points scored. \cr
-      PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-   }}
+  col_name \tab types \tab description \cr
+  GROUP_SET \tab character \tab  \cr
+  DESCRIPTION \tab character \tab Long-form description text. \cr
+  MIN \tab character \tab Minutes played. \cr
+  FGM \tab character \tab Field goals made. \cr
+  FGA \tab character \tab Field goal attempts. \cr
+  FG_PCT \tab character \tab Field goal percentage (0-1). \cr
+  FG3M \tab character \tab Three-point field goals made. \cr
+  FG3A \tab character \tab Three-point field goal attempts. \cr
+  FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
+  FTM \tab character \tab Free throws made. \cr
+  FTA \tab character \tab Free throw attempts. \cr
+  FT_PCT \tab character \tab Free throw percentage (0-1). \cr
+  OREB \tab character \tab Offensive rebounds. \cr
+  DREB \tab character \tab Defensive rebounds. \cr
+  REB \tab character \tab Total rebounds. \cr
+  AST \tab character \tab Assists. \cr
+  TOV \tab character \tab Turnovers. \cr
+  STL \tab character \tab Steals. \cr
+  BLK \tab character \tab Blocks. \cr
+  BLKA \tab character \tab  \cr
+  PF \tab character \tab Personal fouls. \cr
+  PFD \tab character \tab  \cr
+  PTS \tab character \tab Points scored. \cr
+  PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{Individual}

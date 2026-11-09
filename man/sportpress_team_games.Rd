@@ -11,59 +11,10 @@ sportpress_team_games(competition_team_id)
 (e.g. 541 = Antwerp in 2026-27); from \code{\link[=sportpress_competition_teams]{sportpress_competition_teams()}}.}
 }
 \value{
-A \code{hoopR_data} tibble: Every finished game of a competition team with that team's totals. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_team_games}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_team_id \tab integer \tab Competition-team id the games were asked for (the team the totals belong to). \cr
-   game_id \tab integer \tab Game id (key space: sportpress games), unique across seasons: the key of every game route. \cr
-   game_time \tab POSIXct \tab Tip-off as a naive datetime. The source carries no offset; the league's local time is assumed and unverified. POSIXct in Europe/Brussels (league local time). \cr
-   status \tab character \tab Game status: finished, or ready for an upcoming game. \cr
-   competition_id \tab integer \tab Competition id (key space: sportpress competitions): ONE season of the league (24 = 2025-26, 25 = 2026-27). Not the season number. The key of the standings, ranking, slider and box routes. \cr
-   season \tab integer \tab Season END year of the game's competition. \cr
-   phase_id \tab integer \tab Phase id (key space: sportpress phases), a stage of one competition such as the regular season or the playoffs; new every season. \cr
-   phase_name \tab character \tab Phase name as entered in the CMS ('Regular season 2026-27'). \cr
-   round_name \tab character \tab Round label as entered in the CMS; often empty. \cr
-   round_priority \tab integer \tab Sort order of the round within the phase (provider's priority); meaning of the values is unverified. \cr
-   period_name \tab character \tab Name of the period the game is in or ended in; 'Extra2' means the second overtime. \cr
-   arena \tab character \tab Name of the arena where the game is played. \cr
-   home_competition_team_id \tab integer \tab Home side. Competition-team id (key space: sportpress competition teams): a team in ONE competition, so the same club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). Joins competitors, rosters, box scores, film and standings. The stable club key across seasons is \code{uu_team_id}. \cr
-   home_team \tab character \tab Home side. Display name incl. the sponsor. Teams of the playoff phases carry a ' playoff' suffix (2025-26), and standings names vary with X-Localization ('Partena Professional Okapi Aalst Playoff' (en) vs 'Okapi Aalst Playoff' (nl, fr)): never join on it. \cr
-   home_team_short_name \tab character \tab Home side. Three-letter club code (CHA, OOS, ANT, MON, LIM, ...), stable across seasons in the samples. \cr
-   home_score \tab integer \tab Home side. Final points of the side, including overtime. \cr
-   away_competition_team_id \tab integer \tab Away side. Competition-team id (key space: sportpress competition teams): a team in ONE competition, so the same club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). Joins competitors, rosters, box scores, film and standings. The stable club key across seasons is \code{uu_team_id}. \cr
-   away_team \tab character \tab Away side. Display name incl. the sponsor. Teams of the playoff phases carry a ' playoff' suffix (2025-26), and standings names vary with X-Localization ('Partena Professional Okapi Aalst Playoff' (en) vs 'Okapi Aalst Playoff' (nl, fr)): never join on it. \cr
-   away_team_short_name \tab character \tab Away side. Three-letter club code (CHA, OOS, ANT, MON, LIM, ...), stable across seasons in the samples. \cr
-   away_score \tab integer \tab Away side. Final points of the side, including overtime. \cr
-   minute \tab integer \tab The team's own minutes played; for a team total, the sum over its players (200 + 25 per overtime). \cr
-   foul \tab integer \tab The team's own personal fouls committed. \cr
-   defensive_foul \tab integer \tab The team's own fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. \cr
-   dunk_made \tab integer \tab The team's own dunks made (a subset of the two-point field goals). \cr
-   dunk_all \tab integer \tab The team's own dunks attempted. \cr
-   dunk_percent \tab double \tab The team's own dunk percentage 0-100; 0 when none were attempted. \cr
-   two_point_made \tab integer \tab The team's own two-point field goals made. \cr
-   two_point_all \tab integer \tab The team's own two-point field goals attempted. \cr
-   two_point_percent \tab double \tab The team's own two-point percentage 0-100. \cr
-   three_point_made \tab integer \tab The team's own three-point field goals made. \cr
-   three_point_all \tab integer \tab The team's own three-point field goals attempted. \cr
-   three_point_percent \tab double \tab The team's own three-point percentage 0-100. \cr
-   throw_made \tab integer \tab The team's own all field goals made, two- plus three-pointers (the provider calls them 'throw'). \cr
-   throw_all \tab integer \tab The team's own all field goals attempted, two- plus three-pointers (the provider calls them 'throw'). \cr
-   throw_percent \tab double \tab The team's own field-goal percentage 0-100. \cr
-   free_throw_made \tab integer \tab The team's own free throws made. \cr
-   free_throw_all \tab integer \tab The team's own free throws attempted. \cr
-   free_throw_percent \tab double \tab The team's own free-throw percentage 0-100. \cr
-   offensive_rebound \tab integer \tab The team's own offensive rebounds. \cr
-   defensive_rebound \tab integer \tab The team's own defensive rebounds. \cr
-   total_rebound \tab integer \tab The team's own total rebounds (offensive plus defensive). \cr
-   block \tab integer \tab The team's own shots blocked by the player. \cr
-   block_against \tab integer \tab The team's own own shots blocked by an opponent. \cr
-   turnover \tab integer \tab The team's own turnovers committed. \cr
-   steal \tab integer \tab The team's own steals (balls taken from an opponent). \cr
-   assist \tab integer \tab The team's own assists (passes leading directly to a made basket). \cr
-   points \tab integer \tab The team's own points scored (2 x two-pointers + 3 x three-pointers + free throws). \cr
-   value \tab integer \tab The team's own efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. \cr
-   plusminus \tab integer \tab The team's own plus/minus: the score margin while the player (or team) was on court; for a team total it is the game margin. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_team_games")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every finished game of a competition team with that team's totals.

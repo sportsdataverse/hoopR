@@ -17,36 +17,36 @@ espn_nba_award(award_id, season = most_recent_nba_season(), ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per winner.
+A \code{hoopR_data} tibble with one row per winner.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League slug. \cr
-      season \tab integer \tab Season year. \cr
-      award_id \tab character \tab ESPN award identifier. \cr
-      name \tab character \tab Award name. \cr
-      description \tab character \tab Award description. \cr
-      athlete_id \tab character \tab ESPN athlete id of winner. \cr
-      team_id \tab character \tab ESPN team id. \cr
-      athlete_ref \tab character \tab \verb{$ref} to winner's per-season athlete resource. \cr
-      team_ref \tab character \tab \verb{$ref} to winner's per-season team resource. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  award_id \tab character \tab ESPN award identifier. \cr
+  name \tab character \tab Award name. \cr
+  description \tab character \tab Award description. \cr
+  athlete_id \tab character \tab ESPN athlete id of winner. \cr
+  team_id \tab character \tab ESPN team id. \cr
+  athlete_ref \tab character \tab \code{$ref} to winner's per-season athlete resource. \cr
+  team_ref \tab character \tab \code{$ref} to winner's per-season team resource. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per winner.
+A \code{hoopR_data} tibble with one row per winner.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League slug (\code{"nba"}). \cr
-      season \tab integer \tab Season year. \cr
-      award_id \tab character \tab ESPN award identifier. \cr
-      name \tab character \tab Award name (e.g. "MVP"). \cr
-      description \tab character \tab Award description. \cr
-      athlete_id \tab character \tab ESPN athlete id of winner (parsed from \code{athlete_ref}). \cr
-      team_id \tab character \tab ESPN team id (parsed from \code{team_ref}). \cr
-      athlete_ref \tab character \tab \verb{$ref} to winner's per-season athlete resource. \cr
-      team_ref \tab character \tab \verb{$ref} to winner's per-season team resource. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug (\code{"nba"}). \cr
+  season \tab integer \tab Season year. \cr
+  award_id \tab character \tab ESPN award identifier. \cr
+  name \tab character \tab Award name (e.g. "MVP"). \cr
+  description \tab character \tab Award description. \cr
+  athlete_id \tab character \tab ESPN athlete id of winner (parsed from \code{athlete_ref}). \cr
+  team_id \tab character \tab ESPN team id (parsed from \code{team_ref}). \cr
+  athlete_ref \tab character \tab \code{$ref} to winner's per-season athlete resource. \cr
+  team_ref \tab character \tab \code{$ref} to winner's per-season team resource. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

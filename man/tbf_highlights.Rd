@@ -11,18 +11,10 @@ tbf_highlights(match_id)
 sequence across leagues and seasons. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per statistic with the home and away value.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. \cr
-   title \tab character \tab Statistic name in Turkish (Ribaund = rebounds, Asist = assists, Top Kaybi = turnovers). \cr
-   category \tab character \tab Statistic code (leaderCategory), e.g. PointsFromPaint, LeadChanges, TimeLeading. \cr
-   home_value \tab character \tab Home value exactly as sent (a string: '90', or '28:38' for TimeLeading). \cr
-   away_value \tab character \tab Away value exactly as sent (a string: '89', or '8:19' for TimeLeading). \cr
-   home_number \tab double \tab Home value as a number; null for a time value such as TimeLeading. \cr
-   away_number \tab double \tab Away value as a number; null for a time value such as TimeLeading. \cr
-}
+A \code{hoopR_data} tibble with one row per statistic with the home and away value.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_highlights")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team comparison of a finished game: rebounds, paint points, fast-break points, lead changes and more.

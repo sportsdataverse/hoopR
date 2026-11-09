@@ -13,38 +13,10 @@ sportpress_standings(competition_id, phase_id)
 \item{phase_id}{(required) Phase id (integer) of the competition, from \code{\link[=sportpress_phases]{sportpress_phases()}} (\code{phase_id}).}
 }
 \value{
-A \code{hoopR_data} tibble: Standings of one phase of a competition: record, points, home/away split, last five and
-streak. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{sportpress_standings}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id (key space: sportpress competitions): ONE season of the league (24 = 2025-26, 25 = 2026-27). Not the season number. The key of the standings, ranking, slider and box routes. \cr
-   phase_id \tab integer \tab Phase id (key space: sportpress phases), a stage of one competition such as the regular season or the playoffs; new every season. \cr
-   competition_team_id \tab integer \tab Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. \cr
-   team \tab character \tab Team display name including the sponsor; varies with language and playoff suffixes: never join on it. \cr
-   team_short_name \tab character \tab Three-letter club code (ANT, MON, ...), stable across seasons in the samples. \cr
-   club_id \tab integer \tab Country of the team (key space: sportpress clubs): 1 = Belgium, 2 = Netherlands. The provider calls the country a club. \cr
-   club_name \tab character \tab Country name in English, Belgium or Netherlands. \cr
-   position \tab integer \tab Rank in the table, 1 = first. \cr
-   played \tab integer \tab Games played in the phase (win + loss + even). \cr
-   win \tab integer \tab Games won in the phase. \cr
-   loss \tab integer \tab Games lost in the phase. \cr
-   even \tab integer \tab Games drawn; 0 in every sample (basketball has no draws). \cr
-   score \tab integer \tab Points scored in the phase. \cr
-   against \tab integer \tab Points conceded in the phase. \cr
-   score_difference \tab integer \tab score - against. \cr
-   percent \tab double \tab Win percentage 0-100, rounded to 1 decimal. \cr
-   point \tab integer \tab League points: 2 per win plus 1 per loss. \cr
-   point_percent \tab double \tab Share of the possible league points won, 0-1 rounded to 2 decimals. \cr
-   home_win \tab integer \tab Wins in home games. \cr
-   home_loss \tab integer \tab Losses in home games. \cr
-   away_win \tab integer \tab Wins in away games. \cr
-   away_loss \tab integer \tab Losses in away games. \cr
-   last5_win \tab integer \tab Wins among the last five games. \cr
-   last5_loss \tab integer \tab Losses among the last five games. \cr
-   streak_is_win \tab logical \tab True for a winning streak, false for a losing one. \cr
-   streak_count \tab integer \tab Length of the current streak in games. \cr
-   group \tab character \tab Group label for split phases; null in every sample. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Standings of one phase of a competition: record, points, home/away split, last five and streak.

@@ -11,13 +11,10 @@ vtb_infobasket_best_player_parameters(lang = "en")
 labels follow it.}
 }
 \value{
-A \code{hoopR_data} tibble: Player leader categories (a code table). The columns are always these, in this order (sportsdataverse-py
-\code{vtb_infobasket_best_player_parameters}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows
-for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   param \tab integer \tab Leader-category id; pass it as \code{param} to /Widget/BestPlayers or /Widget/BestTeams. \cr
-   name \tab character \tab Leader-category name, English (double spaces as sent). \cr
-}
+A \code{hoopR_data} tibble with one row per leader category.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_best_player_parameters")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player leader categories (a code table).

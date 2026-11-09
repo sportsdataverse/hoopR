@@ -16,26 +16,10 @@ Copa de Espana, 74 Liga U. A group is not a competition id (see
 sent to the site as its START-year key \code{t = season - 1}.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   group \tab integer \tab The site's menu group (1 Primera FEB, 2 Segunda FEB, 4 Liga Femenina Endesa); not a competition id. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27), the site's START-year key plus one. \cr
-   competition \tab character \tab Competition name on the page header ('PRIMERA FEB'). \cr
-   comp_id \tab integer \tab Competition id (CompID) read from the page; ties the site group to the API (group 1 -> 115, 2 -> 118, 4 -> 210). \cr
-   section \tab character \tab Which table the row comes from: results (the latest round) or next_round (the following fixtures). \cr
-   round_title \tab character \tab Title of the table as printed ('Resultados Jornada 3(09/10/2026)'). \cr
-   game_id \tab integer \tab FEB game id (one global sequence): the \{gameId\} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request. \cr
-   home_team_id \tab integer \tab Home team-season id (new every season; joins feb_overview and the game wrappers). \cr
-   home_team \tab character \tab Home team name, uppercase. \cr
-   away_team_id \tab integer \tab Away team-season id (new every season). \cr
-   away_team \tab character \tab Away team name, uppercase. \cr
-   result_text \tab character \tab Result cell verbatim: 'home-away' points when played; before the game the calendar shows the Spanish weekday, date and time and the results page shows '\emph{-}'. \cr
-   home_score \tab integer \tab Home points; null before the game. \cr
-   away_score \tab integer \tab Away points; null before the game. \cr
-   status \tab character \tab played when the result cell holds a score, scheduled otherwise. \cr
-   date \tab Date \tab Game date; null for played games on the schedule page (use round_date). \cr
-   time \tab character \tab Tip-off 'HH:MM', Spanish local time; null for played games on the schedule page. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "feb_results")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Latest round's results and the next round's fixtures of a FEB competition

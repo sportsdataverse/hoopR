@@ -12,52 +12,11 @@ nbagl_live_boxscore(game_id, ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a named list of data frames: game_details, arena, officials, home_team_boxscore,
-away_team_boxscore, home_team_player_boxscore, away_team_player_boxscore, home_team_linescores,
-away_team_linescores
-
-\strong{game_details}
-
-Columns as documented in the shared \link{nba_live_boxscore_game_details_schema} table.
-
-\strong{arena}
-
-Columns as documented in the shared \link{nba_live_boxscore_arena_schema} table.
-
-\strong{officials}
-
-Columns as documented in the shared \link{nba_live_boxscore_officials_schema} table.
-
-\strong{home_team_boxscore}
-
-Columns as documented in the shared \link{nba_live_boxscore_home_team_boxscore_schema} table.
-
-\strong{away_team_boxscore}
-
-Columns as documented in the shared \link{nba_live_boxscore_home_team_boxscore_schema} table.
-
-\strong{home_team_player_boxscore}
-
-Columns as documented in the shared \link{nba_live_boxscore_home_team_player_boxscore_schema} table.
-
-\strong{away_team_player_boxscore}
-
-Columns as documented in the shared \link{nba_live_boxscore_home_team_player_boxscore_schema} table.
-
-\strong{home_team_linescores}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-   period_type \tab character \tab Period type. \cr
-   score \tab integer \tab Final score. \cr
-}
-
-
-\strong{away_team_linescores}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-   period_type \tab character \tab Period type. \cr
-   score \tab integer \tab Final score. \cr
-}
+A named list of \code{hoopR_data} tibbles: \code{game_details}, \code{arena}, \code{officials}, \code{home_team_boxscore}, \code{away_team_boxscore}, \code{home_team_player_boxscore}, \code{away_team_player_boxscore}, \code{home_team_linescores}, \code{away_team_linescores}.
+Their column names and types are in \link{return_columns}, e.g.
+\code{subset(return_columns, fn == "nbagl_live_boxscore")}, and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns}
+article.
 }
 \description{
 \strong{Get NBA G-League Stats API Live Boxscore}

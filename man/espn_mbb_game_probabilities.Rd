@@ -19,13 +19,39 @@ Defaults to \code{200}. Pagination is handled internally.}
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per play-level win-probability entry.
+A \code{hoopR_data} tibble with one row per play-level win-probability entry.
 
-Columns as documented in the shared \link{espn_mbb_game_probabilities_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  event_id \tab character \tab Unique event / game identifier (ESPN). \cr
+  sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
+  play_id \tab character \tab Unique play identifier within a game. \cr
+  period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+  clock \tab character \tab Game clock value. \cr
+  home_win_percentage \tab numeric \tab Home win percentage (0-1 decimal). \cr
+  away_win_percentage \tab numeric \tab Away win percentage (0-1 decimal). \cr
+  tie_percentage \tab numeric \tab Tie percentage (0-1 decimal). \cr
+  secs_to_end_of_period \tab numeric \tab  \cr
+  secs_to_end_of_game \tab numeric \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per play-level win-probability entry.
+A \code{hoopR_data} tibble with one row per play-level win-probability entry.
 
-Columns as documented in the shared \link{espn_mbb_game_probabilities_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  event_id \tab character \tab Unique event / game identifier (ESPN). \cr
+  sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
+  play_id \tab character \tab Unique play identifier within a game. \cr
+  period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+  clock \tab character \tab Game clock value. \cr
+  home_win_percentage \tab numeric \tab Home win percentage (0-1 decimal). \cr
+  away_win_percentage \tab numeric \tab Away win percentage (0-1 decimal). \cr
+  tie_percentage \tab numeric \tab Tie percentage (0-1 decimal). \cr
+  secs_to_end_of_period \tab numeric \tab  \cr
+  secs_to_end_of_game \tab numeric \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get ESPN Women's College Basketball Event Win Probabilities}

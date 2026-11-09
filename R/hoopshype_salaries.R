@@ -12,26 +12,7 @@
 #' roster in its `__NEXT_DATA__` payload. This function iterates the 30 team
 #' pages and stitches them together (~30 requests per call) using a team-by-team
 #' approach.
-#' @return A `hoopR_data` tibble with one row per player-season:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       player_id \tab character \tab HoopsHype player id. \cr
-#'       player \tab character \tab Player name. \cr
-#'       first_name \tab character \tab Player first name. \cr
-#'       last_name \tab character \tab Player last name. \cr
-#'       team_id \tab character \tab HoopsHype team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       season \tab integer \tab Contract season (4-digit ending year). \cr
-#'       salary \tab numeric \tab Salary for the season (USD). \cr
-#'       cap_allocation \tab numeric \tab Cap allocation for the season (USD). \cr
-#'       team_option \tab logical \tab Whether the season is a team option. \cr
-#'       player_option \tab logical \tab Whether the season is a player option. \cr
-#'       two_way \tab logical \tab Whether it is a two-way contract. \cr
-#'       qualifying_offer \tab logical \tab Whether it is a qualifying offer. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("hoopshype_salaries", inline = FALSE, unit = "player-season")
 #' @keywords Salaries
 #' @importFrom dplyr as_tibble
 #' @importFrom data.table rbindlist

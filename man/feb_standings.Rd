@@ -16,26 +16,10 @@ Copa de Espana, 74 Liga U. A group is not a competition id (see
 sent to the site as its START-year key \code{t = season - 1}.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   group \tab integer \tab The site's menu group (1 Primera FEB, 2 Segunda FEB, 4 Liga Femenina Endesa); not a competition id. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27), the site's START-year key plus one. \cr
-   competition \tab character \tab Competition name on the page header ('PRIMERA FEB'). \cr
-   comp_id \tab integer \tab Competition id (CompID) read from the page; ties the site group to the API (group 1 -> 115, 2 -> 118, 4 -> 210). \cr
-   table \tab character \tab live = the in-season league table; final = the final classification once the season is over. \cr
-   position \tab integer \tab Rank in the table (Po). \cr
-   team_id \tab integer \tab Team-season id (new every season; joins the schedule and game wrappers). \cr
-   team \tab character \tab Team name as printed in the table (sponsor name, uppercase). \cr
-   played \tab integer \tab Games played (PJ); null in the final classification. \cr
-   won \tab integer \tab Games won (PG); null in the final classification. \cr
-   lost \tab integer \tab Games lost (PP); null in the final classification. \cr
-   points_for \tab integer \tab Points scored (PF); null in the final classification. \cr
-   points_against \tab integer \tab Points conceded (PC); null in the final classification. \cr
-   point_diff \tab integer \tab Point difference (DIF), signed; null in the final classification. \cr
-   win_pct \tab double \tab Win percentage, 0-100 (the page's '100,0\%', decimal comma converted). \cr
-   streak \tab integer \tab Current streak as a signed integer: +3 = three wins in a row, -2 = two losses. \cr
-   streak_text \tab character \tab The streak cell verbatim ('+3'). \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "feb_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{League table of a FEB competition season (live standings, or the final

@@ -20,10 +20,7 @@ NULL
 #' @param season Season year. Defaults to most recent MBB season.
 #' @param season_type Season-type id (2 = regular (default), 3 = postseason).
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per week.
-#'
-#'    Columns as documented in the shared [espn_mbb_season_weeks_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_season_weeks", unit = "week")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -57,10 +54,7 @@ espn_mbb_season_weeks <- function(season = most_recent_mbb_season(),
 #' @param season Season year. Defaults to most recent MBB season.
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
-#' @return A single-row tibble.
-#'
-#'    Columns as documented in the shared [espn_mbb_season_week_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_season_week", unit = "week")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -97,10 +91,7 @@ espn_mbb_season_week <- function(week,
 #' @param season Season year. Defaults to most recent MBB season.
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per ranking source.
-#'
-#'    Columns as documented in the shared [espn_mbb_week_rankings_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_week_rankings", unit = "ranking source")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -137,10 +128,7 @@ espn_mbb_week_rankings <- function(week,
 #' @param season Season year. Defaults to most recent MBB season.
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per ranked team (typically 25).
-#'
-#'    Columns as documented in the shared [espn_mbb_week_ranking_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_week_ranking", unit = "ranked team")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export

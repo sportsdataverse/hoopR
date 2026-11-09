@@ -6,10 +6,7 @@ NULL
 #' @rdname espn_mbb_news
 #' @author Saiem Gilani
 #' @param limit integer. Maximum number of articles to return. Default `50`.
-#' @return Returns a tibble of news articles.
-#'
-#'    Columns as documented in the shared [espn_mbb_news_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_news", unit = "news article")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr select as_tibble
 #' @importFrom janitor clean_names
@@ -41,10 +38,7 @@ NULL
 #' @author Saiem Gilani
 #' @param team_id character or integer. ESPN team ID (e.g. `2509` for UConn).
 #' @param limit integer. Maximum number of articles to return. Default `25`.
-#' @return Returns a tibble of team news articles.
-#'
-#'    Columns as documented in the shared [espn_mbb_news_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_team_news", unit = "news article")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr select as_tibble
 #' @importFrom janitor clean_names

@@ -12,58 +12,10 @@ pleague_box_players(gid)
 are served.}
 }
 \value{
-A \code{hoopR_data} tibble: Player box score of one finished game: minutes, points, shooting splits, rebounds,
-assists, plus/minus, and the ratings from 2022-23; did-not-play rows included. An empty valid answer is a
-zero-row tibble with these columns, in this order (sportsdataverse-py \code{pleague_box_players}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   gid \tab integer \tab P. LEAGUE+ game id on the site: ONE global integer sequence over every stage and season (1-12 = 2020-21 pre-season, 13 = the 2020-21 opener, 197 = the 2022-23 opener, 662 = the 2025-26 opener), with gaps; a row id, not a count. The \{gid\} of /game/\{gid\}. \cr
-   side \tab character \tab Which team the row belongs to: home or away. The box lists home first, the play-by-play and the schedule list away first. \cr
-   player_id \tab integer \tab P. LEAGUE+ player-team membership id on the site (key space: the member id the player page passes to trackPlayer(), e.g. 40 = Lai Ting-En), cast to an integer. NOT the 8-character page id. Join box rows on it, never on the printed name. \cr
-   person_id \tab character \tab Preciser person uuid (key space: the analytics vendor's persons): the join between a box row and a pleague_preciser_shots row. Present on played rows from 2022-23; null on 2020-21 and 2021-22 rows and did-not-play rows (the refs notes report some 2025-26 finals boxes without it; gid 716 has it). \cr
-   random_id \tab character \tab The 8-character page id of /player/\{id\} (same space as player_page_id). Reliable from 2022-23 only: on 2020-21 and 2021-22 rows it is wrong for most players (gid 13 gives Lai Ting-En the page of Kao Kuo-Hao), so never join across eras on it. \cr
-   name_zh \tab character \tab Player name as printed (Traditional Chinese, or a transliteration for foreign players). \cr
-   jersey \tab character \tab Shirt number as printed, a string ('0', '00' and '10' differ). \cr
-   starter \tab logical \tab True for a starter (the site's '(Chinese text)' marker). Null on did-not-play rows. \cr
-   played \tab logical \tab True when the player has court time; false on a 'DNP' (did not play) row, whose statistics are null. \cr
-   minutes \tab character \tab Minutes played 'mm:ss'. Null on did-not-play rows. \cr
-   seconds \tab integer \tab Playing time in whole seconds: the site's seconds column in 2020-21 and 2021-22, derived from minutes from 2022-23. Null on did-not-play rows. \cr
-   points \tab integer \tab Points scored. Null on did-not-play rows. \cr
-   reb_off \tab integer \tab Offensive rebounds. Null on did-not-play rows. \cr
-   reb_def \tab integer \tab Defensive rebounds. Null on did-not-play rows. \cr
-   reb \tab integer \tab Total rebounds (offensive plus defensive). Null on did-not-play rows. \cr
-   ast \tab integer \tab Assists. Null on did-not-play rows. \cr
-   stl \tab integer \tab Steals. Null on did-not-play rows. \cr
-   blk \tab integer \tab Blocks made. Null on did-not-play rows. \cr
-   tov \tab integer \tab Turnovers committed. Null on did-not-play rows. \cr
-   pf \tab integer \tab Personal fouls committed. Null on did-not-play rows. \cr
-   plus_minus \tab integer \tab Plus/minus: the team's points minus the opponent's while the player was on court (signed). Null on did-not-play rows. \cr
-   eff \tab integer \tab Efficiency: points + rebounds + assists + steals + blocks - missed field goals - missed free throws - turnovers (verified on every 2020-21 and 2021-22 row). Null on did-not-play rows. \cr
-   fg2_made \tab integer \tab 2-point field goals made, from the site's 'made-attempted' string. Null on did-not-play rows. \cr
-   fg2_att \tab integer \tab 2-point field goals attempted, from the site's 'made-attempted' string. Null on did-not-play rows. \cr
-   fg2_pct \tab double \tab 2-point field-goal percentage, 0-100 (the site sends a number or a string). Null on did-not-play rows. \cr
-   fg3_made \tab integer \tab 3-point field goals made, from the site's 'made-attempted' string. Null on did-not-play rows. \cr
-   fg3_att \tab integer \tab 3-point field goals attempted, from the site's 'made-attempted' string. Null on did-not-play rows. \cr
-   fg3_pct \tab double \tab 3-point field-goal percentage, 0-100. Null on did-not-play rows. \cr
-   ft_made \tab integer \tab Free throws made, from the site's 'made-attempted' string. Null on did-not-play rows. \cr
-   ft_att \tab integer \tab Free throws attempted, from the site's 'made-attempted' string. Null on did-not-play rows. \cr
-   ft_pct \tab double \tab Free-throw percentage, 0-100. Null on did-not-play rows. \cr
-   efg_pct \tab double \tab Effective field-goal percentage 0-100, (FGM + 0.5 x 3PM) / FGA x 100 (verified). 2020-21 and 2021-22 rows only; null from 2022-23. \cr
-   ts_pct \tab double \tab True-shooting percentage 0-100, PTS / (2 x (FGA + 0.44 x FTA)) x 100 (verified). 2020-21 and 2021-22 rows only; null from 2022-23. \cr
-   usage_pct \tab double \tab Usage percentage as the site prints it, 0-100; the standard usage formula reproduces it on only 685 of 3,932 rows, so the formula is unverified. 2020-21 and 2021-22 rows only. \cr
-   position \tab character \tab Position code on some 2020-21 and 2021-22 rows ('G' guard, 'F' forward, 'C' centre); null on the rest and from 2022-23. \cr
-   ortg \tab double \tab Offensive rating: the team's points scored per 100 offensive possessions while the player was on court (2022-23 on; null before). Null on did-not-play rows. \cr
-   drtg \tab double \tab Defensive rating: the opponent's points per 100 of its possessions while the player was on court, lower is better (2022-23 on). Null on did-not-play rows. \cr
-   netrtg \tab double \tab Net rating, ortg minus drtg (exact on every checked row; 2022-23 on). Null on did-not-play rows. \cr
-   pace \tab double \tab Pace: 48 x the team's offensive possessions / minutes on court, the team's possessions per 48 minutes with this player on court (verified on 1,124 of 1,149 rows; 2022-23 on). Null on did-not-play rows. \cr
-   ast_ratio \tab double \tab Assist ratio 0-100: assists per 100 of the player's own plays. The common formula AST / (FGA + 0.5 x FTA + AST + TOV) reproduces it on 919 of 1,174 rows, so the exact formula is unverified (2022-23 on). \cr
-   to_ratio \tab double \tab Turnover ratio 0-100: turnovers per 100 of the player's own plays; same unverified formula family as ast_ratio (917 of 1,174 rows; 2022-23 on). \cr
-   off_possessions \tab integer \tab The team's offensive possessions while the player was on court (the base of ortg; 2022-23 on). Null on did-not-play rows. \cr
-   opp_off_possessions \tab integer \tab The opponent's offensive possessions while the player was on court (the base of drtg; 2022-23 on). Null on did-not-play rows. \cr
-   opp_pts_second_chance \tab integer \tab Opponent second-chance points while the player was on court (2022-23 on). Null on did-not-play rows. \cr
-   opp_pts_fast_break \tab integer \tab Opponent fast-break points while the player was on court (2022-23 on). Null on did-not-play rows. \cr
-   opp_pts_off_turnover \tab integer \tab Opponent points off turnovers while the player was on court (2022-23 on). Null on did-not-play rows. \cr
-   opp_pts_paint \tab integer \tab Opponent points in the paint while the player was on court (2022-23 on). Null on did-not-play rows. \cr
-}
+A \code{hoopR_data} tibble with one row per player in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_box_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player box score of one finished game: minutes, points, shooting splits, rebounds, assists, plus/minus, and the

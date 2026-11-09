@@ -15,30 +15,10 @@ page record (a list): \code{data.json} as served plus \verb{_request} (the ids a
 record parsed from an HTML page.}
 }
 \value{
-A \code{hoopR_data} tibble (a zero-row tibble with these columns when Genius answers
-an empty valid page), or the raw list when \code{return_parsed = FALSE}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league_id \tab integer \tab Genius league id of the org (ESAKE = 115); the leagueId column of the hosted chooser \cr
-   competition_id \tab integer \tab Genius competition id (compId): one per org competition-season; the \{compId\} of hosted and data/competition paths \cr
-   match_id \tab integer \tab Genius match id: the \{matchId\} of data.json and /u/; one global sequence across every Genius customer (~0.3 M in 2016, ~2.9 M in Oct 2026) \cr
-   match_status \tab character \tab Match status: COMPLETE, SCHEDULED, IN_PROGRESS, ... (upper case) \cr
-   match_time \tab character \tab Local tip-off time, 'YYYY-MM-DD HH:MM:SS' (venue time zone, not stated) \cr
-   match_time_utc \tab character \tab Tip-off time in UTC, 'YYYY-MM-DD HH:MM:SS' \cr
-   live \tab integer \tab 1 while the game is live, else 0 \cr
-   period \tab integer \tab Current period of a live or finished game (present on some rows only) \cr
-   period_type \tab character \tab Current period type: REGULAR or OVERTIME (present on some rows only) \cr
-   clock \tab character \tab Period clock of a live or finished game, 'mm:ss' remaining (present on some rows only) \cr
-   home_team_id \tab integer \tab Home team: Genius team id (warehouse key space, global across orgs and seasons; the /team/\{id\} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code \cr
-   home_name \tab character \tab Home team full name, in the competition's own script when the org enters one. \cr
-   home_name_international \tab character \tab Home team name in Latin script \cr
-   home_code \tab character \tab Home team short code, in the competition's own script when the org enters one. \cr
-   home_score \tab integer \tab Home points: a string on most rows, an integer on some ('' before tip-off); cast it \cr
-   away_team_id \tab integer \tab Away team: Genius team id (warehouse key space, global across orgs and seasons; the /team/\{id\} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code \cr
-   away_name \tab character \tab Away team full name, in the competition's own script when the org enters one. \cr
-   away_name_international \tab character \tab Away team name in Latin script \cr
-   away_code \tab character \tab Away team short code, in the competition's own script when the org enters one. \cr
-   away_score \tab integer \tab Away points: a string on most rows, an integer on some ('' before tip-off); cast it \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "genius_competition_games")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The recent-games window of a competition, with the global Genius team ids.

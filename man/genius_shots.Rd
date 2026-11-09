@@ -15,23 +15,10 @@ page record (a list): \code{data.json} as served plus \verb{_request} (the ids a
 record parsed from an HTML page.}
 }
 \value{
-A \code{hoopR_data} tibble (a zero-row tibble with these columns when Genius answers
-an empty valid page), or the raw list when \code{return_parsed = FALSE}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab Genius match id of the game. data.json does not carry it: it is the match_id asked for, stamped by the runtime (the global match sequence shared by every Genius customer). \cr
-   tno \tab integer \tab Team number within this game: 1 = the team listed first (home on the hosted schedule and widget), 2 = the other, 0 = no team. In-game only: not a team id. \cr
-   pno \tab integer \tab Player number within this game, the key of the team's player map; 0 = no player. In-game only: not a person id and not the shirt number. \cr
-   action_number \tab integer \tab Action sequence number, unique within the game (gaps where actions were deleted); a shot joins its play-by-play row on it. Null in the 2014-15 feed. \cr
-   period \tab integer \tab Period number; restarts at 1 for the first overtime (read it with period_type). \cr
-   period_type \tab character \tab Period type: REGULAR or OVERTIME. \cr
-   action_type \tab character \tab Shot value: 2pt or 3pt \cr
-   sub_type \tab character \tab Shot type (layup, drivinglayup, jumpshot, pullupjumpshot, dunk, ...) \cr
-   result \tab integer \tab Shot result: 1 = made, 0 = missed. \cr
-   x \tab double \tab Court x, PERCENT of the full court length (0-100, float), along the long axis. Not normalised to one basket: a team attacks one end in periods 1-2 and the other end in periods 3-4 (ESAKE 2902690: team 1 mean x 90 and 86 in P1-P2, 11 and 19 in P3-P4). Which end x = 0 is, and which end team 1 starts at, are unverified \cr
-   y \tab double \tab Court y, PERCENT of the full court width (0-100, float), across the court (observed 1.7-97.2). Origin side unverified \cr
-   player \tab character \tab Shooter's display name as the org enters it, in the local script when it uses one. \cr
-   shirt_number \tab character \tab Shooter's shirt number (string) \cr
-}
+A \code{hoopR_data} tibble with one row per shot.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "genius_shots")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Shot chart of a finished game: court x/y (percent of the full court), result and shooter.

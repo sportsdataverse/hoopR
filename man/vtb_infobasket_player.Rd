@@ -14,27 +14,10 @@ vtb_infobasket_player(person_id, tag = "vtb")
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: Player profile: names, birth date, height, weight, position. The columns are always these, in
-this order (sportsdataverse-py \code{vtb_infobasket_player}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no
-rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   person_id \tab integer \tab Infobasket PersonID: one person across clubs and seasons; players, coaches and officials share the space. \cr
-   person_last_name_ru \tab character \tab Last name, Russian. \cr
-   person_first_name_ru \tab character \tab First name, Russian. \cr
-   person_last_name_en \tab character \tab Last name, English. \cr
-   person_first_name_en \tab character \tab First name, English. \cr
-   person_gender \tab integer \tab Person gender: 1 on every sampled (male) person. \cr
-   birth_date \tab character \tab Birth date (ISO 8601 date) of a player: public bio, kept; coaches' and officials' birth data is never output. \cr
-   person_height \tab integer \tab Height in centimetres. \cr
-   person_weight \tab integer \tab Weight in kilograms. \cr
-   person_status \tab integer \tab Person record status (1 active, 0 otherwise); meaning unverified. \cr
-   player_position \tab integer \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   player_hand \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   is_naturalized \tab logical \tab True for naturalised players. \cr
-   position_id \tab integer \tab Position id of the player (PosID), with its names in position_name_ru / position_name_en. \cr
-   position_name_ru \tab character \tab Position name in Russian. \cr
-   position_name_en \tab character \tab Position name in English. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_player")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player profile: names, birth date, height, weight, position.

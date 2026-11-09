@@ -11,52 +11,10 @@ sportality_team_upcoming_games(team_uuid)
 space: platform team uuids (not the numeric Genius team id).}
 }
 \value{
-A \code{hoopR_data} tibble: A team's next games (current season view). An empty valid answer raises
-\code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py \code{sportality_team_upcoming_games}),
-then any column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   date \tab character \tab Game date, 'D mon YY' in English. \cr
-   time \tab character \tab Local start time 'HH:MM' (Europe/Copenhagen). \cr
-   game_uuid \tab character \tab Platform game uuid (c4hh5nig6t); every gameday route takes it. \cr
-   start_date_time \tab character \tab Scheduled start. On the schedule route this is the LOCAL (Europe/Copenhagen) wall time 'YYYY-MM-DD HH:MM:SS' with no zone; on the other routes it is ISO 8601 UTC with milliseconds (compare rawStartDateTime). \cr
-   state \tab character \tab Game state. Schedule and day views: pre-game or post-game (hyphen). sports-v2 game-info: post_game (underscore). Gameday overview: GameEnded. Values: \code{pre-game} = not yet played (schedule, day views). \cr
-   overtime \tab logical \tab Whether the game went to overtime. \cr
-   shootout \tab character \tab Unobserved: null in every sample and every full body. When filled: Whether the game was decided by a shootout (null on every game seen; basketball has none). \cr
-   ssgt_uuid \tab character \tab ssgt uuid (platform key space: one season + series + game type); joins /statistics-v2/layout-info \verb{seasonSeriesGameTypeTeams[].ssgtUuid} and every route keyed by ssgt. \cr
-   home_team_status \tab character \tab WIN or LOSE for the home team once the game is played; absent or empty before. Values: \code{N/A} = no result yet / not applicable. \cr
-   home_team_uuid \tab character \tab Home team uuid (platform key space); joins \verb{/sports-v2/teams/\{team_uuid\}}. \cr
-   home_team_owner_instance_id \tab character \tab Site instance id of the club that owns the team (platform key space, e.g. hol2_hol). \cr
-   home_team_code \tab character \tab Three-letter code of the home team. \cr
-   home_team_names_code \tab character \tab Three-letter team code (HOL, RAN ...); codes changed between seasons for some clubs (BAK in 2026, BKA in 2025 for Bakken Bears). \cr
-   home_team_names_short \tab character \tab Short name of the team. \cr
-   home_team_names_long \tab character \tab Long name of the team. \cr
-   home_team_names_full \tab character \tab Full name of the team. \cr
-   home_team_names_code_site \tab character \tab Team code as the club's own site shows it. \cr
-   home_team_names_short_site \tab character \tab Short team name as the club's own site shows it. \cr
-   home_team_names_full_site \tab character \tab Full team name as the club's own site shows it. \cr
-   home_team_names_long_site \tab character \tab Long team name as the club's own site shows it. \cr
-   home_team_score \tab integer \tab Home points; null before the game is played. \cr
-   home_team_icon \tab character \tab Home team logo URL. \cr
-   away_team_status \tab character \tab WIN or LOSE for the away team once the game is played; absent or empty before. Values: \code{N/A} = no result yet / not applicable. \cr
-   away_team_uuid \tab character \tab Away team uuid (platform key space); joins \verb{/sports-v2/teams/\{team_uuid\}}. \cr
-   away_team_owner_instance_id \tab character \tab Site instance id of the club that owns the team (platform key space, e.g. hol2_hol). \cr
-   away_team_code \tab character \tab Three-letter code of the away team. \cr
-   away_team_names_code \tab character \tab Three-letter team code (HOL, RAN ...); codes changed between seasons for some clubs (BAK in 2026, BKA in 2025 for Bakken Bears). \cr
-   away_team_names_short \tab character \tab Short name of the team. \cr
-   away_team_names_long \tab character \tab Long name of the team. \cr
-   away_team_names_full \tab character \tab Full name of the team. \cr
-   away_team_names_code_site \tab character \tab Team code as the club's own site shows it. \cr
-   away_team_names_short_site \tab character \tab Short team name as the club's own site shows it. \cr
-   away_team_names_full_site \tab character \tab Full team name as the club's own site shows it. \cr
-   away_team_names_long_site \tab character \tab Long team name as the club's own site shows it. \cr
-   away_team_score \tab integer \tab Away points; null before the game is played. \cr
-   away_team_icon \tab character \tab Away team logo URL. \cr
-   venue_uuid \tab character \tab Venue uuid (platform key space). \cr
-   venue_name \tab character \tab Venue name; absent when unknown. \cr
-   series_uuid \tab character \tab Series uuid (platform key space). \cr
-   series_code \tab character \tab Series display name (Basketligaen; NOT the DBL code). \cr
-   series_display_name \tab character \tab Series display name (Basketligaen). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_team_upcoming_games")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A team's next games (current season view).

@@ -15,35 +15,10 @@ page record (a list): \code{data.json} as served plus \verb{_request} (the ids a
 record parsed from an HTML page.}
 }
 \value{
-A \code{hoopR_data} tibble (a zero-row tibble with these columns when Genius answers
-an empty valid page), or the raw list when \code{return_parsed = FALSE}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab Genius match id of the game. data.json does not carry it: it is the match_id asked for, stamped by the runtime (the global match sequence shared by every Genius customer). \cr
-   row_index \tab integer \tab Position of the action in the feed order, 0 = the newest action by game time (normally the game end row). The feed is not strictly sorted by action_number, so sort on action_number for entry order. \cr
-   action_number \tab integer \tab Action sequence number, unique within the game (gaps where actions were deleted); a shot joins its play-by-play row on it. Null in the 2014-15 feed. \cr
-   previous_action \tab integer \tab action_number of the linked earlier action (the shot an assist or rebound belongs to); null when the feed sends an empty string. \cr
-   period \tab integer \tab Period number; restarts at 1 for the first overtime (read it with period_type). \cr
-   period_type \tab character \tab Period type: REGULAR or OVERTIME. \cr
-   gt \tab character \tab Game clock, 'mm:ss' remaining in the period \cr
-   clock \tab character \tab Game clock with hundredths, 'mm:ss:cc' remaining in the period; absent in older feeds (the 2014-15 WBBL sample has gt only) \cr
-   tno \tab integer \tab Team number within this game: 1 = the team listed first (home on the hosted schedule and widget), 2 = the other, 0 = no team. In-game only: not a team id. \cr
-   pno \tab integer \tab Player number within this game, the key of the team's player map; 0 = no player. In-game only: not a person id and not the shirt number. \cr
-   player \tab character \tab Player display name; '' when no player \cr
-   shirt_number \tab character \tab Player shirt number (string); '' when no player \cr
-   first_name \tab character \tab Given name in the competition's own script and spelling (Greek, Hebrew, Czech, ... as entered) \cr
-   family_name \tab character \tab Family name in the competition's own script \cr
-   international_first_name \tab character \tab Given name in Latin script \cr
-   international_family_name \tab character \tab Family name in Latin script (often upper case) \cr
-   scoreboard_name \tab character \tab Short display name ('T. Nichols'), in the local script when the org enters one \cr
-   action_type \tab character \tab Action type: 2pt, 3pt, freethrow, rebound, assist, turnover, steal, block, foul, foulon (foul drawn), substitution, timeout, jumpball, period, game, headcoachchallenge \cr
-   sub_type \tab character \tab Action subtype, free-text code per actionType: shot type for 2pt/3pt (layup, drivinglayup, jumpshot, pullupjumpshot, turnaroundjumpshot, ...), 'in'/'out' for substitutions, 'start'/'end' for period and game, foul kind for fouls; empty string when none \cr
-   qualifier \tab character \tab Qualifier codes of the action joined with commas (pointsinthepaint, fromturnover, 2ndchance, fastbreak, blocked, ...); null when none. \cr
-   success \tab integer \tab 1 = made / successful, 0 = missed (shots, free throws); 1 for other actions \cr
-   scoring \tab integer \tab 1 when the action is a scoring attempt (shot or free throw), else 0 \cr
-   score_1 \tab integer \tab Team 1 score after the action, always an integer (the feed sends a string in most games). \cr
-   score_2 \tab integer \tab Team 2 score after the action, always an integer (the feed sends a string in most games). \cr
-   lead \tab integer \tab Score margin after the action, team 1 minus team 2 (negative when team 2 leads) \cr
-}
+A \code{hoopR_data} tibble with one row per play-by-play event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "genius_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play of a finished game, newest action first, with the running score and lead.

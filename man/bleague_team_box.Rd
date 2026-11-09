@@ -16,59 +16,10 @@ belong to; a context whose \code{Year} differs raises \code{hoopR_asset_fetch}. 
 (default) = no check (the key alone selects the game).}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   schedule_key \tab integer \tab B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The \{schedule_key\} every game wrapper takes and the schedule page's list-item id. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. \cr
-   feed \tab character \tab Source feed of the row: v2 (v2_genius_contexts, B1/B2 from 2020-21) or v1 (v1_contexts: B3, B1/B2 2018-2020, and the 2016-17 / 2017-18 game-page embed). The feeds differ in id types, dates and some codes. \cr
-   team_side \tab character \tab Side of the game the row belongs to: home or away. \cr
-   team_id \tab character \tab B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. \cr
-   category \tab integer \tab Row category: 1 = player, 2 = team / coaches row (team-credited stats; on v1 it names the head coach), 3 = team totals. One row per (category, player, period category). \cr
-   period_category \tab integer \tab Period category: 1-4 = quarters 1-4, 15 = first half, 16 = second half, 18 = whole game. Overtime codes are unverified. \cr
-   team_name_j \tab character \tab Team name in Japanese (official name, e.g. Alvark Tokyo). \cr
-   team_name_e \tab character \tab Team name in English, uppercase ('ALVARK TOKYO'). \cr
-   player_id \tab character \tab B.LEAGUE PlayerID as text (key space: B.LEAGUE persons, stable across seasons and clubs: Makoto Hiejima = '8589'). A string on v2, an integer on v1; both are text here. Null where the row names no player. \cr
-   player_no \tab character \tab Shirt number as text, so '00' and '0' stay distinct; null on team and game-level rows. \cr
-   player_name_j \tab character \tab Player name in Japanese (katakana for foreign players); null on team and game-level rows. \cr
-   player_name_e \tab character \tab Player name in English ('Makoto Hiejima'); null on team and totals rows. \cr
-   play_time \tab character \tab Minutes played as the feed's 'mm:ss'; 'DNP' = did not play. Totals rows hold 5 x the period length ('200:00' for the game). \cr
-   on_court \tab logical \tab True for the five players on court when the context was last written (for a final game, at the final buzzer); the same value on every period row of the player. Null on v2 team and totals rows. \cr
-   display_order \tab integer \tab Display order of the row (v1 only), integer; null on v2. \cr
-   starter \tab logical \tab True when the player started; false for the bench; null on team and totals rows. (The feed sends 1 / null on v2 and a boolean on v1.) \cr
-   seconds_played \tab integer \tab Time on court in seconds, parsed from play_time (50:00 = 3000); null for DNP and blank. \cr
-   points \tab integer \tab Points scored. The v2 feed sends '' (a placeholder, not 0) on the team row of quarters; null here. \cr
-   fg3_made \tab integer \tab Three-point field goals made (v2 placeholder '' on quarter team rows becomes null). \cr
-   fg3_attempted \tab integer \tab Three-point field goals attempted. \cr
-   fg2_made \tab integer \tab Two-point field goals made. \cr
-   fg2_attempted \tab integer \tab Two-point field goals attempted. \cr
-   ft_made \tab integer \tab Free throws made. \cr
-   ft_attempted \tab integer \tab Free throws attempted. \cr
-   fouls \tab integer \tab Personal fouls committed (F). \cr
-   fouls_drawn \tab integer \tab Fouls drawn (FD). \cr
-   reb_off \tab integer \tab Offensive rebounds (OR). \cr
-   reb_def \tab integer \tab Defensive rebounds (DR). \cr
-   reb \tab integer \tab Total rebounds. \cr
-   turnovers \tab integer \tab Turnovers (TO). \cr
-   assists \tab integer \tab Assists credited to the player or team (AS). \cr
-   steals \tab integer \tab Steals credited to the player or team (ST). \cr
-   blocks \tab integer \tab Blocks made (BS). \cr
-   blocks_received \tab integer \tab Shots of this player or team that were blocked (BSON). \cr
-   ptfb \tab integer \tab Fast-break figure; equals the summary's fast-break points on the one game checked, but whether it counts points or baskets is unverified. \cr
-   pt2in \tab integer \tab Inside-the-paint figure: on v2 a COUNT of made inside-the-paint 2PT (the summary holds 2x that in points); on v1 points in the paint (0 on B3, whose 2PT shots are never split by paint). \cr
-   pt2nd \tab integer \tab Second-chance figure; smaller than the summary's second-chance points, so likely made baskets; unverified. \cr
-   ptpft \tab integer \tab Points off turnovers; v1 box rows only, null on v2. \cr
-   dunks \tab integer \tab Dunks made (PT2DUNK); v1 box rows only, null on v2. \cr
-   efficiency \tab integer \tab Efficiency rating (kokendo), era-dependent: v2 = points + rebounds + assists + steals + blocks + fouls drawn - missed FG - missed FT - turnovers - fouls - shots blocked (PIR); v1 omits fouls drawn, fouls and shots blocked. \cr
-   plus_minus \tab integer \tab Plus/minus: team point difference while on court. v2 from 2022-23 only; null on totals and half rows. \cr
-   ast_to \tab double \tab Assist-to-turnover ratio (0 when no turnovers). v2 from 2022-23 only; null on half rows. \cr
-   efg \tab double \tab Effective field-goal percentage as a FRACTION 0-1 (3PT weighted 1.5x); the site multiplies by 100. v2 from 2022-23 only. \cr
-   ts \tab double \tab True-shooting percentage as a FRACTION 0-1; the site multiplies by 100. v2 from 2022-23 only. \cr
-   usg \tab double \tab Usage rate in PERCENT 0-100. v2 from 2022-23 only; absent on totals rows. \cr
-   off_rtg \tab double \tab Offensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. \cr
-   def_rtg \tab double \tab Defensive rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. \cr
-   net_rtg \tab double \tab Net rating. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. \cr
-   poss \tab double \tab Possessions. v2 from 2022-23 only; on team and totals rows 0 in every sample, never filled. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "bleague_team_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Team rows of the box score of one B.LEAGUE game: the team / coaches row and the

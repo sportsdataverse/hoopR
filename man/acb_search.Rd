@@ -14,22 +14,10 @@ refused.}
 double is accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_search}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   kind \tab character \tab player, team or coach. \cr
-   person_id \tab integer \tab ACB licence number (players, coaches) or the team entry id (teams). \cr
-   name \tab character \tab Display name (nickname) of a player or coach; the team name of a team. \cr
-   short_name \tab character \tab Short display name ('T. Martin'). \cr
-   first_name \tab character \tab Legal first name(s) \cr
-   last_name \tab character \tab Legal last name(s) \cr
-   shirt_number \tab character \tab Shirt number, a string ('' or null when unknown) \cr
-   game_role \tab character \tab Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or '' in many rows \cr
-   is_license_active \tab logical \tab The licence is active in the current season \cr
-   club_id \tab integer \tab Stable club id of a team hit; null for players. \cr
-   edition_id \tab integer \tab Season id of the record; null in search results. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-}
+A \code{hoopR_data} tibble with one row per hit.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_search")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Search players, teams and coaches by name.

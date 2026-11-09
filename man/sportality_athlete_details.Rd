@@ -11,26 +11,10 @@ sportality_athlete_details(athlete_uuid)
 athlete uuids (not the Genius person id).}
 }
 \value{
-A \code{hoopR_data} tibble: Player bio plus playerExtIds (the Genius person id). An empty valid answer raises
-\code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py \code{sportality_athlete_details}),
-then any column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   athlete_uuid \tab character \tab Platform athlete uuid (rosters and athlete routes key on it); not the Genius person id; null where the site has none. \cr
-   player_id \tab integer \tab Genius person id (Int64). A string key in the players maps, an integer in play-by-play and box-score rows; cast here so the frames join, and join the genius family. \cr
-   created_at \tab character \tab Creation timestamp. \cr
-   created_by \tab character \tab Creating site instance. \cr
-   creator_site \tab character \tab Unobserved: null in every sample and every full body. When filled: Creating site (null). \cr
-   height \tab integer \tab Height of the player in centimetres. \cr
-   deleted \tab logical \tab Soft-delete flag. \cr
-   first_name \tab character \tab Given (first) name(s) of the player. \cr
-   gender \tab character \tab Gender of the person as recorded by the site (male in every row seen). \cr
-   last_modified \tab character \tab Last-modified timestamp. \cr
-   last_name \tab character \tab Family name (surname) of the player. \cr
-   metadata \tab character \tab Free metadata (always empty). \cr
-   nationality \tab character \tab ISO 3166-1 alpha-2 country code. \cr
-   shoots \tab character \tab Shooting hand (''). \cr
-   weight \tab integer \tab Weight of the player in kilograms. \cr
-}
+A \code{hoopR_data} tibble with one row per athlete.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_athlete_details")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player bio plus playerExtIds (the Genius person id).

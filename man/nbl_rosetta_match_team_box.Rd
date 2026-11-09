@@ -10,47 +10,10 @@ nbl_rosetta_match_team_box(match_id)
 \item{match_id}{(\emph{character} required): DataCore fixture id of the match (match_id of nbl_rosetta_matches), a UUID, e.g. b217a699-4bef-11f0-bc08-933162362355.}
 }
 \value{
-A \code{hoopR_data} tibble (one row per team and period):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab character \tab DataCore fixture id of the match (UUID v1): the \code{{match_id}} route key and fixtureId in play-by-play. Join on it. \cr
-   match_status \tab character \tab Status of the match in Rosetta's words (complete for a finished game): box score and play-by-play of any other status are partial. \cr
-   stat_line_id \tab character \tab Provider record hash of this statistics row (64 hex characters) \cr
-   rosetta_stat_line_id \tab character \tab Rosetta id of this statistics row (UUID v4) \cr
-   assists \tab integer \tab Assists in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   blocks \tab integer \tab Blocks in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   defensive_rebounds \tab integer \tab Defensive rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   field_goals_attempted \tab integer \tab Field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   field_goals_made \tab integer \tab Field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   field_goals_percentage \tab double \tab Field goals made / attempted, a 0-1 FRACTION. \cr
-   fouls \tab integer \tab Fouls committed (personal + technical + others) in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   free_throws_attempted \tab integer \tab Free throws attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   free_throws_made \tab integer \tab Free throws made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   free_throws_percentage \tab double \tab Free throws made / attempted, a 0-1 FRACTION. \cr
-   minutes \tab double \tab Minutes played: "MM:SS" string in player_match_statistics, decimal minutes in calculated_player_statistics, player-minutes (integer, 5 x period length) in team rows; "00:00" or 0 where not recorded. \cr
-   offensive_rebounds \tab integer \tab Offensive rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   period \tab integer \tab Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) \cr
-   period_type \tab character \tab Period type: regular (overtime unobserved) \cr
-   personal_fouls \tab integer \tab Personal fouls in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   points \tab integer \tab Points in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   rebounds \tab integer \tab Total rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   steals \tab integer \tab Steals in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   technical_fouls \tab integer \tab Technical fouls in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   three_points_attempted \tab integer \tab Three-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   three_points_made \tab integer \tab Three-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   three_points_percentage \tab double \tab Three-point field goals made / attempted, a 0-1 FRACTION. \cr
-   turnovers \tab integer \tab Turnovers in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   two_points_attempted \tab integer \tab Two-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   two_points_made \tab integer \tab Two-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   two_points_percentage \tab double \tab Two-point field goals made / attempted, a 0-1 FRACTION. \cr
-   rosetta_match_id \tab character \tab Rosetta's match RECORD id (UUID v4) as carried by box-score and play-by-play rows; no route accepts it. Join on match_id. \cr
-   team_id \tab character \tab DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. \cr
-   team_code \tab character \tab Team code, e.g. PER (the \code{{team_code}} path value) \cr
-   team_name \tab character \tab Name of the team as Rosetta spells it, e.g. Perth Wildcats. \cr
-   timeouts \tab integer \tab Timeouts taken in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per team and period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_match_team_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One match's team box score by period, one row per team and period (0 = whole game).

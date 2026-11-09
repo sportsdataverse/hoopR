@@ -18,35 +18,10 @@ competition.competitionId of any game row (208182 = World Cup 2023, 208722 = Par
 game-page objects \code{game}, \code{playByPlay}, \code{gameDetails}, \code{playersTeamA}, \code{playersTeamB}).}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab FIBA game id (Int64), global across competitions: gdapGameId, the \verb{<gameId>} of a game-page URL. \cr
-   competition_id \tab integer \tab FIBA competition id (Int64) of the game's edition; the comp argument. \cr
-   statistic_system \tab character \tab Live-stats system of the game: OVR (World Cup, Olympics) or FLS (club competitions, most qualifiers); they differ in the play-by-play action ids, order and text. \cr
-   period \tab character \tab Period name: Q1..Q4, then OT1, OT2... \cr
-   period_number \tab integer \tab 1-based position of the period in the game. \cr
-   action_id \tab character \tab Action id (String): '\verb{<n>}:\verb{<seq>}' in OVR games (3:0015), a sequence number in FLS games; unique within the game. \cr
-   order \tab integer \tab Sort key within the period (OVR: 1, 2, ...; FLS: 1000, 2000, ...); null on some period events. \cr
-   clock \tab character \tab Game clock: time REMAINING in the period, 'm:ss', counting down from 10:00 (5:00 in overtime). \cr
-   clock_seconds \tab integer \tab Seconds remaining in the period, derived from clock. \cr
-   wall_time_ms \tab double \tab Wall-clock time of the action, Unix epoch milliseconds. (Int64 in sportsdataverse-py; numeric here, the values exceed R's 32-bit integer range) \cr
-   score_a \tab integer \tab Team A score after the action. \cr
-   score_b \tab integer \tab Team B score after the action. \cr
-   action_code \tab character \tab Action code: P2 two-point shot, P3 three-point shot, FT free throw, REB rebound, TREB team rebound, ASS assist, ST steal, BS block, TO turnover, TTO team turnover, FOUL foul, RFOUL foul drawn, SUBST substitution, TIMO timeout, plus period events (STARTG, STARTP, ENDP, ENDG). \cr
-   action_family \tab character \tab Action family: shot, subst, timeout, periods, and 'unknwown' (FIBA's spelling) for every other action. \cr
-   description \tab character \tab English action text ('3pt jump shot missed', 'defensive rebound'); null on most OVR actions. \cr
-   organisation_id \tab integer \tab Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T_\verb{<id>} and the play-by-play oId. NOT the per-competition team_id. \cr
-   team_side \tab character \tab A or B: whether the row is the schedule's team A or team B (null when the page does not say). \cr
-   player_id \tab integer \tab FIBA person id (Int64), global across competitions and roles: the page's P_\verb{<id>}, play-by-play pId, roster personId and fiba_gdap_roster.player_id. \cr
-   player2_id \tab integer \tab FIBA person id (Int64) of the second player on a substitution; null when the game does not record it (the refs note FLS only, but the Paris 2024 final, an OVR game, carries it and the FLS games sampled leave it null). \cr
-   sub_direction \tab character \tab Substitution direction: IN or OUT; null on other actions. \cr
-   made \tab logical \tab True when the shot went in (two-pointers, three-pointers and free throws only; null otherwise). \cr
-   points_attempted \tab integer \tab Points the attempt was worth (2, 3 or 1), made or not; null on other actions. \cr
-   shot_type \tab character \tab Shot type derived from action_code: 2PT, 3PT or FT; null on other actions. \cr
-   shot_x \tab integer \tab Shot x, integer pixels on a half-court image across the court width (observed 0-278, basket near x = 139). Present only on shots; free throws are 0. Which sideline is x = 0 and the scale are UNVERIFIED. \cr
-   shot_y \tab integer \tab Shot y, integer pixels from the baseline (y = 0) towards midcourt (observed 0-224, basket near y = 25); both teams' shots are drawn on one basket. Free throws are 0. Scale UNVERIFIED. \cr
-   has_location \tab logical \tab True when shot_x / shot_y locate the shot (two- and three-pointers); False for free throws (always 0, 0); null on other actions. \cr
-}
+A \code{hoopR_data} tibble with one row per play-by-play event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gamepage_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play of one FIBA game: every action with period, clock, running score, actor and shot x/y.

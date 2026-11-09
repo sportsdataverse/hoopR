@@ -34,15 +34,10 @@ sent; with neither \code{season} nor \code{season_id} the API filters by it.}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per \verb{(season_id, entity_id)}; \code{entity_id} is
-stable across seasons:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   season_id \tab character \tab Season UUID of the team list. \cr
-   entity_id \tab character \tab Team UUID (entity): one id per club across seasons, shared by every site that shows the team. \cr
-   name \tab character \tab Team name in the site's language. \cr
-   image_url \tab character \tab URL of the Sportradar-hosted image (400 px). \cr
-}
+A \code{hoopR_data} tibble with one row per (\code{season_id}, \code{entity_id}).
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{The teams of a season.}

@@ -12,33 +12,10 @@ results id and a standings id, neither a year); the runtime reads them from the 
 \verb{YYYY-YYYY m. sezonas}. A year the selects do not list raises \code{hoopR_no_data}.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per played game, in the site's order (newest first). \code{season_end_year} is the
-END year of the season (2026 = 2025-26) and \code{season_id} the site's opaque results-season id (from 2016-17 it is the
-Genius LiveStats competition id). Teams are given by slug, code and name only (no team id); map a slug to \code{team_id}
-with \code{lkl_game_info}. \code{time} is the Lithuanian local tip-off \code{HH:MM}. \code{winner_highlighted} is the side whose score
-the page shows in bold. Played games only; the unplayed schedule is not wrapped. A record without games gives a
-zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season_id \tab integer \tab Results season id (key space: lkl.lt championships; LKL 2026-27 = 49436). From 2016-17 it is the Genius LiveStats competition id (leagueId 110). \cr
-   season_end_year \tab integer \tab Season END year (2026 = 2025-26), read from the season label 'YYYY-YYYY m. sezonas'. \cr
-   game_id \tab integer \tab lkl.lt game id (key space: LKL games; the \code{{gameId}} of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under \verb{_request}). \cr
-   date \tab Date \tab Game date from the site's Lithuanian day header; checked to fall in the season (Aug 1 - Jul 31). \cr
-   weekday \tab character \tab Weekday of the header, translated to English ('sestadienis' -> 'Saturday'). \cr
-   time \tab character \tab Tip-off 'HH:MM', Europe/Vilnius. \cr
-   arena \tab character \tab Arena name ('Arena dar nezinoma' = arena not yet known, on some 2007-08 games). \cr
-   city \tab character \tab City, from 'Arena , City'; null when the venue line has no city (2007-08 'Arena dar nezinoma'). \cr
-   home_slug \tab character \tab Home team: Team slug (key space: lkl.lt clubs; the \code{{slug}} of https://lkl.lt/komandos/\code{{slug}}; one per club, stable across renamings: 'rytas' for Lietuvos Rytas / Rytas). The results and standings rows carry only this; the game page teams_info gives slug + id. \cr
-   home_code \tab character \tab Home three-letter team code ('LIE'). \cr
-   home_name \tab character \tab Home team name as printed (the logo alt text; the CURRENT club name even on old games: 2007-08 'Rytas'). \cr
-   home_score \tab integer \tab Home team points in the game (the final score). \cr
-   away_slug \tab character \tab Away team: Team slug (key space: lkl.lt clubs; the \code{{slug}} of https://lkl.lt/komandos/\code{{slug}}; one per club, stable across renamings: 'rytas' for Lietuvos Rytas / Rytas). The results and standings rows carry only this; the game page teams_info gives slug + id. \cr
-   away_code \tab character \tab Away three-letter team code. \cr
-   away_name \tab character \tab Away team name as printed. \cr
-   away_score \tab integer \tab Away team points in the game (the final score). \cr
-   winner_highlighted \tab character \tab Which side's score the page sets in bold: home or away (the winner). \cr
-}
+A \code{hoopR_data} tibble with one row per played game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lkl_results")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every played game of one LKL season (all pages of the site's results list, merged), newest first.

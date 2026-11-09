@@ -22,65 +22,10 @@ Directory: \verb{/statistics-v2/layout-info} \verb{seasonSeriesGameTypeTeams[].s
 \item{game_uuid}{(default \code{NULL}) Game uuid; selects the game whose box-score lines the head-to-head carries.}
 }
 \value{
-A \code{hoopR_data} tibble: Player head-to-head of a matchup with per-game and season lines. An empty valid
-answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
-\code{sportality_player_h2h}), then any column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   uuid \tab character \tab Athlete uuid (platform key space). \cr
-   first_name \tab character \tab Given (first) name(s) of the player. \cr
-   last_name \tab character \tab Family name (surname) of the player. \cr
-   full_name \tab character \tab Full display name of the player. \cr
-   nationality \tab character \tab ISO 3166-1 alpha-2 country code. \cr
-   gender \tab character \tab Gender of the person as recorded by the site (male in every row seen). \cr
-   jersey_number \tab integer \tab Jersey (shirt) number of the player. \cr
-   position \tab character \tab Position name (Guard, Forward, Center ...). \cr
-   position_code \tab character \tab Position code. Values: \code{C} = center; \code{G} = guard; \code{N/A} = not applicable (career rows); \code{PF} = power forward; \code{PG} = point guard; \code{SF} = small forward; \code{SG} = shooting guard. \cr
-   age_value \tab integer \tab Age in whole years. \cr
-   age_format \tab character \tab Unit of the value (years). Values: \code{years} = years. \cr
-   height_value \tab integer \tab Height of the player in centimetres. \cr
-   height_format \tab character \tab Unit of the value (cm). Values: \code{cm} = centimetres. \cr
-   weight_value \tab integer \tab Weight of the player in kilograms. \cr
-   weight_format \tab character \tab Unit of the value (kg). Values: \code{kg} = kilograms. \cr
-   team_uuid \tab character \tab Platform team uuid. \cr
-   team_instance_id \tab character \tab Site instance id of the club (platform key space). \cr
-   team_name \tab character \tab Name of the team. \cr
-   team_code \tab character \tab Platform team code (HOL, RAN). \cr
-   team_media \tab character \tab URL of the team logo image. \cr
-   media_url \tab character \tab Portrait image URL (imgix CDN). \cr
-   media_alt \tab character \tab Image alt text (''). \cr
-   media_srcset \tab character \tab Responsive image set (imgix CDN URLs with widths). \cr
-   season_stats \tab character \tab Season totals as field/value pairs (absent for some players). \cr
-   career_stats \tab character \tab Career totals as field/value pairs (absent for some players). \cr
-   match_stats_nr \tab integer \tab Jersey (shirt) number of the player. \cr
-   match_stats_pos \tab character \tab Playing position code of the player (G, F, C, ...). \cr
-   match_stats_team_number \tab integer \tab Team number in the game. \cr
-   match_stats_pno \tab integer \tab Genius shirt-table number. \cr
-   match_stats_mins \tab character \tab Minutes played 'MM:SS'. \cr
-   match_stats_pts \tab integer \tab Number of points scored. \cr
-   match_stats_fg \tab character \tab Field goals 'made-attempted'. \cr
-   match_stats_fg_perc \tab double \tab Field-goal percentage, 0-100. \cr
-   match_stats_2_p \tab character \tab Two-pointers 'made-attempted'. \cr
-   match_stats_2_p_perc \tab double \tab Two-point percentage, 0-100. \cr
-   match_stats_3_p \tab character \tab Three-pointers 'made-attempted'. \cr
-   match_stats_3_p_perc \tab double \tab Three-point percentage, 0-100. \cr
-   match_stats_ft \tab character \tab Free throws 'made-attempted'. \cr
-   match_stats_ft_perc \tab double \tab Free-throw percentage, 0-100. \cr
-   match_stats_off \tab integer \tab Offensive rebounds. \cr
-   match_stats_def \tab integer \tab Defensive rebounds. \cr
-   match_stats_reb \tab integer \tab Total rebounds. \cr
-   match_stats_ast \tab integer \tab Number of assists credited. \cr
-   match_stats_to \tab integer \tab Number of turnovers committed. \cr
-   match_stats_stl \tab integer \tab Number of steals. \cr
-   match_stats_blk \tab integer \tab Number of blocked shots made. \cr
-   match_stats_blkr \tab integer \tab Blocks received. \cr
-   match_stats_pf \tab integer \tab Personal fouls. \cr
-   match_stats_f_on \tab integer \tab Fouls on (fouls drawn). \cr
-   match_stats_plus_minus \tab integer \tab Plus/minus while on court. \cr
-   season_avg_stats \tab character \tab The player's season averages (an object keyed by stat). \cr
-   statistics_provider \tab character \tab Stats provider (genius-basketball). \cr
-   is_in_squad \tab logical \tab Whether the player is in the squad. \cr
-   effective_ssgt_uuid \tab character \tab The ssgt the head-to-head was computed for: the CURRENT season, whatever the path asked. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_player_h2h")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player head-to-head of a matchup with per-game and season lines.

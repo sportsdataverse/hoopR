@@ -20,17 +20,7 @@ NULL
 #' whether that type carries groups, standings, or legs.
 #'
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per season type.
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       league \tab character \tab League slug (\code{"nba"}). \cr
-#'       season \tab integer \tab Season year. \cr
-#'       season_type \tab integer \tab Season-type id (1/2/3/4). \cr
-#'       ref \tab character \tab \verb{$ref} URL for the type detail. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_nba_season_types", unit = "season type")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -62,10 +52,7 @@ espn_nba_season_types <- function(season = most_recent_nba_season(), ...) {
 #' @param season_type Season-type id (1 = preseason, 2 = regular (default),
 #'   3 = postseason, 4 = off-season).
 #' @param ... Additional arguments; currently unused.
-#' @return A single-row tibble.
-#'
-#'    Columns as documented in the shared [espn_mbb_season_type_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_season_type", unit = "season type")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -99,10 +86,7 @@ espn_nba_season_type <- function(season_type = 2L,
 #'
 #' @param season_type Season-type id (2 = regular (default), 3 = postseason).
 #' @param ... Additional arguments; currently unused.
-#' @return A long tibble with one row per (category x leader).
-#'
-#'    Columns as documented in the shared [espn_mbb_season_leaders_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_season_leaders", unit = "category and leader")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -136,17 +120,7 @@ espn_nba_season_leaders <- function(season = most_recent_nba_season(),
 #' `espn_wbb_season_rankings()`.
 #'
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per ranking source.
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       league \tab character \tab League slug. \cr
-#'       season \tab integer \tab Season year. \cr
-#'       ranking_id \tab character \tab ESPN ranking id. \cr
-#'       ref \tab character \tab \verb{$ref} URL for the ranking detail. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_nba_season_rankings", unit = "ranking source")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -178,10 +152,7 @@ espn_nba_season_rankings <- function(season = most_recent_nba_season(), ...) {
 #'
 #' @param ranking_id ESPN ranking identifier (character or numeric).
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per weekly snapshot.
-#'
-#'    Columns as documented in the shared [espn_mbb_season_ranking_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_season_ranking", unit = "weekly snapshot")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export

@@ -20,16 +20,7 @@ NULL
 #' ID and the `$ref` URL.
 #'
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per tournament.
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       tournament_id \tab character \tab ESPN tournament identifier. \cr
-#'       ref \tab character \tab Full \verb{$ref} URL for the detail. \cr
-#'       league \tab character \tab League slug (\code{"nba"}). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_nba_tournaments", unit = "tournament")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -62,17 +53,7 @@ NULL
 #'
 #' @param tournament_id ESPN tournament identifier.
 #' @param ... Additional arguments; currently unused.
-#' @return A single-row tibble.
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       tournament_id \tab character \tab ESPN tournament identifier. \cr
-#'       display_name \tab character \tab Human-readable tournament name. \cr
-#'       seasons_ref \tab character \tab \verb{$ref} to the seasons-list endpoint. \cr
-#'       league \tab character \tab League slug (\code{"nba"}). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_nba_tournament", unit = "tournament")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -104,17 +85,7 @@ NULL
 #'
 #' @param tournament_id ESPN tournament identifier.
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per season.
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       league \tab character \tab League slug (\code{"nba"}). \cr
-#'       tournament_id \tab character \tab ESPN tournament identifier. \cr
-#'       season \tab integer \tab Season year. \cr
-#'       ref \tab character \tab Full \verb{$ref} URL for that season. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_nba_tournament_seasons", unit = "season")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export

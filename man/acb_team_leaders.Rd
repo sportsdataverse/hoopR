@@ -28,24 +28,10 @@ accepted.}
 whole double is accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_team_leaders}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   club_id \tab integer \tab Stable club id asked for. \cr
-   competition_id \tab integer \tab Competition of the selected edition. \cr
-   edition_id \tab integer \tab Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, \code{season}. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   scope \tab character \tab all_time = club record holders (the API's leaders); edition = the selected season (seasonLeaders). The assignment is inferred from the values (689 games for J.C. Navarro is a career figure). \cr
-   metric \tab character \tab Category in snake_case; avg_* are per-game averages, the rest totals. \cr
-   rank \tab integer \tab Place in the category list, 1 = the leader, in the order the feed lists them. \cr
-   value \tab double \tab The player's value in the category (a total or an average depending on the metric). \cr
-   player_id \tab integer \tab ACB licence number: the person id everywhere. A player's box-score \code{player.id}, his play-by-play and shot \code{playerLicenseId} and the \code{playerLicenceId} / \code{playerLicense} request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... \cr
-   player_name \tab character \tab Display (sporting) name ('Edy Tavares') \cr
-   first_name \tab character \tab Legal first name(s) \cr
-   last_name \tab character \tab Legal last name(s) \cr
-   shirt_number \tab character \tab Shirt number, a string ('' or null when unknown) \cr
-   game_role \tab character \tab Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or '' in many rows \cr
-}
+A \code{hoopR_data} tibble with one row per scope, statistic and rank.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_team_leaders")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A club's statistical leaders for an edition and all-time.

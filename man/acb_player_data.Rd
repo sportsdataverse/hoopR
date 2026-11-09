@@ -12,38 +12,10 @@ shots, rosters). 20209407 = Edy Tavares, 20212243 = Olek Balcerowski. A whole nu
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_player_data}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab ACB licence number of the player. \cr
-   player_name \tab character \tab Display (sporting) name ('Edy Tavares') \cr
-   first_name \tab character \tab Legal first name(s) \cr
-   last_name \tab character \tab Legal last name(s) \cr
-   shirt_number \tab character \tab Shirt number, a string ('' or null when unknown) \cr
-   game_role \tab character \tab Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or '' in many rows \cr
-   is_license_active \tab logical \tab True when the licence is active in the current season. \cr
-   licensing \tab character \tab Licence code (for example EUR, JFL); meaning unverified. \cr
-   birth_date \tab Date \tab Birth date (the API sends DD-MM-YYYY). \cr
-   birth_place \tab character \tab Birth place (town or city) as sent. \cr
-   birth_country \tab character \tab Birth country as sent, a Spanish name. \cr
-   birth_country_iso \tab character \tab ISO 3166-1 alpha-2 code of the birth country; null for an unseen name. \cr
-   nationality \tab character \tab Nationality as sent, a Spanish country name. \cr
-   nationality_iso \tab character \tab ISO 3166-1 alpha-2 code of nationality; null for an unseen name. \cr
-   height_m \tab double \tab Height in metres (the API sends '2,20', a decimal comma). \cr
-   player_number \tab integer \tab Current shirt number (integer). \cr
-   team_id \tab integer \tab Current team's season-team entry id. \cr
-   club_id \tab integer \tab Current team's stable club id. \cr
-   team \tab character \tab Current team name for the edition. \cr
-   team_abbr \tab character \tab Current team abbreviation. \cr
-   edition_id \tab integer \tab Season id the player record was read for (START year - 1935). \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   instagram \tab character \tab Instagram handle; null when none. \cr
-   twitter \tab character \tab X / Twitter handle; null when none. \cr
-   facebook \tab character \tab Facebook handle; null when none. \cr
-   youtube \tab character \tab YouTube handle; null when none. \cr
-   tiktok \tab character \tab TikTok handle; null when none. \cr
-   pronunciation_url \tab character \tab URL of an audio clip of the name; null when none. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_player_data")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player biography: birth, nationality, height, current team and social links.

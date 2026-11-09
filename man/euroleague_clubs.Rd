@@ -14,32 +14,10 @@ euroleague_clubs(competition_code, season_code)
 e.g. \code{E2025} for 2025-26.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per club:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      code \tab character \tab EuroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). \cr
-      name \tab character \tab Display name. \cr
-      abbreviated_name \tab character \tab Abbreviated display name. \cr
-      editorial_name \tab character \tab Editorial (long-form) display name. \cr
-      tv_code \tab character \tab Three-letter broadcast abbreviation of the club. \cr
-      is_virtual \tab logical \tab Whether the club is a placeholder rather than a real club. \cr
-      sponsor \tab character \tab Club sponsor. \cr
-      club_permanent_name \tab character \tab Permanent club name independent of sponsor naming. \cr
-      club_permanent_alias \tab character \tab Permanent club alias independent of sponsor naming. \cr
-      address \tab character \tab Street address. \cr
-      website \tab character \tab Official website URL. \cr
-      tickets_url \tab character \tab Ticketing URL. \cr
-      twitter_account \tab character \tab Twitter / X handle. \cr
-      venue_code \tab character \tab Code of the venue the club or game plays at (Utf8 join key). \cr
-      city \tab character \tab City the club is based in. \cr
-      president \tab character \tab Club president. \cr
-      phone \tab character \tab Contact phone number. \cr
-      images_crest \tab character \tab URL of the club crest image. \cr
-      country_code \tab character \tab ISO country code. \cr
-      country_name \tab character \tab Country name. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per club.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "euroleague_clubs")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the clubs in a season.}

@@ -11,39 +11,10 @@ vtb_infobasket_standings(comp_id)
 (Regular Season 2025-26) or 54281 (Playoff 2025-26).}
 }
 \value{
-A \code{hoopR_data} tibble: Standings of one stage (a round-robin stage such as the regular season), one row per team.
-The columns are always these, in this order (sportsdataverse-py \code{vtb_infobasket_standings}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   comp_id \tab integer \tab Stage CompID the request asked for (50720 = the 2025-26 regular season): a stage below the season, not an END year. \cr
-   comp_team_id \tab integer \tab Infobasket competition-team id: one team's registration in one competition stage (a different key space from TeamID). \cr
-   team_id \tab integer \tab Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team*/\{teamId\} and equals the v2 API \code{teamId}. \cr
-   place \tab integer \tab Current place in the standings. \cr
-   start_place \tab integer \tab Place before the latest round (unverified). \cr
-   games \tab integer \tab Games played in the stage (top-level copy of standing_game). \cr
-   won \tab integer \tab Games won in the stage (top-level copy of standing_win). \cr
-   lost \tab integer \tab Games lost in the stage (top-level copy of standing_lose). \cr
-   standing_game \tab integer \tab Games played in the stage. \cr
-   standing_win \tab integer \tab Games won in the stage. \cr
-   standing_draw \tab character \tab Draws; null in basketball. \cr
-   standing_lose \tab integer \tab Games lost in the stage. \cr
-   standing_forfeit \tab integer \tab Games lost by forfeit in the stage. \cr
-   standing_points \tab integer \tab League points (2 per win, 1 per loss). \cr
-   standing_goal_plus \tab integer \tab Points scored in the stage. \cr
-   standing_goal_minus \tab integer \tab Points conceded in the stage. \cr
-   standing_goal_difference \tab integer \tab Point difference (scored minus conceded). \cr
-   standing_penalty \tab integer \tab Points deducted. \cr
-   standing_is_play \tab logical \tab True while the team is still playing in the stage. \cr
-   victory_percent \tab double \tab Win percentage as a number (83 = 83 percent). \cr
-   avg_goal_plus \tab double \tab Average points scored per game. \cr
-   avg_goal_minus \tab double \tab Average points conceded per game. \cr
-   team_short_name_ru \tab character \tab The the team's short name in Russian (as the competition names it). \cr
-   team_short_name_en \tab character \tab The the team's short name in English (as the competition names it). \cr
-   team_name_ru \tab character \tab The the team's name in Russian (as the competition names it). \cr
-   team_name_en \tab character \tab The the team's name in English (as the competition names it). \cr
-   team_region_name_ru \tab character \tab The the team's region or city in Russian (as the competition names it). \cr
-   team_region_name_en \tab character \tab The the team's region or city in English (as the competition names it). \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Standings of one stage (a round-robin stage such as the regular season), one row per team.

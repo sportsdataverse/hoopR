@@ -31,39 +31,10 @@ for every round.}
 \item{game_id}{(\emph{integer}, default \code{0}): IBBA game id; 0 (default) for every game.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab IBBA game id (key space: basket.co.il games). Joins ibba_games to ibba_box_score; in ibba_games_ex it is an EXTERNAL game id (the ig_ space, e.g. 8888 for a pre-season game). \cr
-   game_date \tab Date \tab Local Israel date of the game. \cr
-   season \tab integer \tab Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. \cr
-   home_team_id \tab integer \tab Home team-season id (team1 on the wire; verified home against Segev). On external boards (board_id >= 1001) an external-team id (the ig_team_ space), not a team-season. \cr
-   away_team_id \tab integer \tab Away team-season id (team2 on the wire). On external boards an external-team id. \cr
-   home_team_he \tab character \tab Home team name in Hebrew, HTML-unescaped. \cr
-   away_team_he \tab character \tab Away team name in Hebrew, HTML-unescaped. \cr
-   home_team \tab character \tab Home team name in English; null for external games, which carry Hebrew names only. \cr
-   away_team \tab character \tab Away team name in English; null for external games. \cr
-   home_logo_url \tab character \tab Absolute URL of the home team logo. \cr
-   away_logo_url \tab character \tab Absolute URL of the away team logo. \cr
-   home_score \tab integer \tab Home final score; 0 before the game is played. \cr
-   away_score \tab integer \tab Away final score; 0 before the game is played. \cr
-   board_id \tab integer \tab Competition (board) id: 5 league, 10 cup, 16 / 26 / 17 playoff quarterfinals / semifinals / final, 33 play-in, 34 Supercup, 11 the 2004-05 semifinal group; 1001+ external competitions (1001 EuroLeague, 1003 Champions League, 1005 pre-season, 1008 EuroBasket, 1012 EuroCup, 1013 State Cup). \cr
-   board_name_he \tab character \tab Competition name in Hebrew, HTML-unescaped. \cr
-   board_name \tab character \tab Competition name in English ('Winner League'); null for external boards. \cr
-   round \tab integer \tab Round (game number) within the board; null for external games. \cr
-   tip_off \tab character \tab Tip-off 'HH:MM', local Israel time, as text; null in 2004-05. It can disagree with Segev (game 26646: 20:15 here, 19:30 in Segev). \cr
-   venue_he \tab character \tab Venue in Hebrew, HTML-unescaped; null in 2004-05. \cr
-   venue \tab character \tab Venue in English, HTML-unescaped; null in 2004-05. \cr
-   referees_he \tab character \tab Referees' names in Hebrew, comma-separated; ', , ' when unknown. \cr
-   attendance \tab integer \tab Attendance; 0 when unknown. \cr
-   overtime \tab logical \tab True when the game went to overtime. \cr
-   overtimes \tab integer \tab Number of overtime periods played. \cr
-   home_score_by_period \tab character \tab Home points per period, pipe-separated ('18|23|30|21'); null for external games. \cr
-   away_score_by_period \tab character \tab Away points per period, pipe-separated ('29|26|27|22'); null for external games. \cr
-   tickets_url \tab character \tab Ticketing URL; null when none. \cr
-   external_id \tab character \tab The wire's ExternalID: the Segev game id (a string) for league games from 2025-26, a news URL for pre-season games, null before 2025-26. \cr
-   segev_game_id \tab integer \tab external_id read as an integer Segev game id (digits only), else null; joins ibba_segev_* game_id. Derived by the parser. \cr
-   is_external \tab logical \tab True when board_id >= 1001 (an external competition, whose team ids are not team-seasons). Derived by the parser. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_games")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Games (schedule and results) of a season filtered by board, round, team and game; 0 means

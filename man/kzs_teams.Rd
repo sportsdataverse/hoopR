@@ -11,29 +11,10 @@ kzs_teams(competition_id)
 season, e.g. 579 (men's first league 2025/26).}
 }
 \value{
-A \code{hoopR_data} tibble: Teams entered in a competition. An empty valid answer raises \code{hoopR_no_data}; the columns
-are always these, in this order (sportsdataverse-py \code{kzs_teams}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). \cr
-   team_id \tab integer \tab Team-application id: the team's registration (entry) for the season; play-by-play \code{teamApplicationId} is the same key space. \cr
-   team_application_id \tab integer \tab Team-application id: the team's registration (entry) for the season; play-by-play \code{teamApplicationId} is the same key space. \cr
-   club_id \tab integer \tab Club id: the club across seasons and categories (Ilirija = 16). No captured route is keyed by it. \cr
-   club_member \tab logical \tab True when the club is a KZS member (false on nested copies that omit it). \cr
-   team_internal_ranking \tab character \tab The club's internal team letter for the category (A = first team, B = second team). \cr
-   category \tab character \tab Age category: ABSOLUTE (senior) or U8-U23 / ANY (code table in kzs-returns.md). \cr
-   rank \tab character \tab Tier: FIRST-FOURTH or TOURNAMENT (code table). \cr
-   gender \tab character \tab MALE or FEMALE. \cr
-   sport_hall_id \tab integer \tab Sport hall (venue) id. \verb{/sportHalls/\{id\}} is in the site bundle, not captured. \cr
-   sport_hall_name \tab character \tab Name of the venue (sports hall) where the game is played or the team is based. \cr
-   name \tab character \tab Team name for the season (sponsor name included). \cr
-   code \tab character \tab Team 3-letter code. \cr
-   home_jersey_color \tab character \tab Home jersey colour, hex '#RRGGBB'. \cr
-   guest_jersey_color \tab character \tab Away jersey colour, hex. \cr
-   logo_uuid \tab character \tab Team logo: image file id, served at \verb{https://api.kzs.si/public/images/\{uuid\}}. \cr
-   home_team_color \tab character \tab Home colour, hex. \cr
-   guest_team_color \tab character \tab Away colour, hex. \cr
-   short_name \tab character \tab Team short name ('' when none). \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Teams entered in a competition.

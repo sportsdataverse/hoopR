@@ -15,32 +15,10 @@ api.basketball-bundesliga.de) or \code{dbbl} (women, Toyota Damen-Basketball-Bun
 api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).}
 }
 \value{
-A \code{hoopR_data} tibble: Single-game records: the season's and the all-time ones, one row per record. An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{scb_records_per_game}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the sdv key; the API's \code{season_id} plus one. \cr
-   season_id \tab integer \tab The API's own season key, the START year (2025 = 2025-26); \code{season} minus one. \cr
-   scope \tab character \tab \code{season} for the requested season's records, \code{all_time} for the all-time list. \cr
-   stat \tab character \tab The record's stat: points, rebounds, assists, steals, blocks, turnovers, efficiency, free_throws_made, three_point_shots_made or free_throws_success_percentage. \cr
-   place \tab integer \tab Rank within the list (1 = best); 0 on some rows. \cr
-   all_time_place \tab integer \tab Rank on the all-time list; null when not on it. \cr
-   order_id \tab integer \tab Sort order within the list. \cr
-   all_time_order_id \tab integer \tab Sort order on the all-time list; null when not on it. \cr
-   value \tab double \tab The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages. \cr
-   ratio \tab double \tab [made, attempted] as strings, on percentage records only; null otherwise. \cr
-   season_player_id \tab character \tab Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score \code{seasonPlayer.id}, action \code{seasonPlayerId} and \verb{/season-players/\{seasonPlayerId\}}. \cr
-   real_player_id \tab integer \tab Global person id: the same across clubs and seasons. Joins to \code{realPlayerId} everywhere. \cr
-   first_name \tab character \tab Player's given name. \cr
-   last_name \tab character \tab Player's family name. \cr
-   team_name \tab character \tab Team name as listed that season (sponsor names included). \cr
-   team_tlc \tab character \tab The player's team code. \cr
-   home_tlc \tab character \tab Three-letter code of the home team of the record game. \cr
-   guest_tlc \tab character \tab Three-letter code of the guest team of the record game. \cr
-   game_id \tab character \tab Game id, a string. Joins to \verb{/games/\{gameId\}}. \cr
-   scheduled_time \tab character \tab Scheduled tip-off, ISO 8601 UTC. \cr
-}
+A \code{hoopR_data} tibble with one row per single-game record.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_records_per_game")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Single-game records: the season's and the all-time ones, one row per record.

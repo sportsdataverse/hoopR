@@ -10,14 +10,9 @@ NULL
 #'   attached as a constant column on the returned tibble for downstream joins.
 #'   Defaults to `most_recent_mbb_season()`.
 #' @param ... Currently unused; reserved for future argument threading.
-#' @return Returns a tibble of league-wide MBB injury records. ESPN's MBB
-#'   injury data is typically sparse; the function returns an empty tibble
-#'   (zero rows) when no injuries are reported.
-#'
-#'    **Injuries**
-#'
-#'    Columns as documented in the shared [espn_mbb_injuries_injuries_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_injuries")
+#' @return ESPN's MBB injury data is typically sparse.
+#'   An empty tibble (zero rows) when no injuries are reported.
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows mutate
 #' @importFrom janitor clean_names
@@ -47,14 +42,8 @@ NULL
 #' @param team_id ESPN team identifier (character or numeric; passed as-is).
 #'   Use `espn_mbb_teams()` to look up team IDs. Example: `"2509"` (UConn).
 #' @param ... Currently unused; reserved for future argument threading.
-#' @return Returns a tibble of injury records for the specified MBB team.
-#'   Returns an empty tibble (zero rows) when the team has no reported
-#'   injuries.
-#'
-#'    **Injuries**
-#'
-#'    Columns as documented in the shared [espn_mbb_team_injuries_injuries_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_team_injuries")
+#' @return An empty tibble (zero rows) when no injuries are reported.
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows
 #' @importFrom janitor clean_names

@@ -18,25 +18,25 @@ attempts to enrich \code{kp_game_id} via per-team \code{kp_team_schedule()} call
 Default \code{FALSE}.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per game:
+A \code{hoopR_data} tibble with one row per game.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab integer \tab Season year. \cr
-      game_date \tab Date \tab ET game date. \cr
-      home_espn_team_id \tab integer \tab ESPN home team id (NA for bart-only rows). \cr
-      away_espn_team_id \tab integer \tab ESPN away team id (NA for bart-only rows). \cr
-      espn_game_id \tab character \tab ESPN game id (NA for bart-only rows). \cr
-      bart_muid \tab character \tab Torvik muid (NA for espn-only rows). \cr
-      bart_team1 \tab character \tab Torvik team1 name (NA for espn-only rows). \cr
-      bart_team2 \tab character \tab Torvik team2 name (NA for espn-only rows). \cr
-      bart_winner \tab character \tab Torvik winner name (NA for espn-only rows). \cr
-      kp_game_id \tab character \tab KenPom game id (NA unless kenpom enabled). \cr
-      fox_game_id \tab character \tab Fox game id (NA placeholder). \cr
-      yahoo_game_id \tab character \tab Yahoo game id (NA placeholder). \cr
-      match_method \tab character \tab "both"/"espn_only"/"bart_only". \cr
-      match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
-   }}
+  col_name \tab types \tab description \cr
+  season \tab integer \tab Season year. \cr
+  game_date \tab Date \tab ET game date. \cr
+  home_espn_team_id \tab integer \tab ESPN home team id (NA for bart-only rows). \cr
+  away_espn_team_id \tab integer \tab ESPN away team id (NA for bart-only rows). \cr
+  espn_game_id \tab character \tab ESPN game id (NA for bart-only rows). \cr
+  bart_muid \tab character \tab Torvik muid (NA for espn-only rows). \cr
+  bart_team1 \tab character \tab Torvik team1 name (NA for espn-only rows). \cr
+  bart_team2 \tab character \tab Torvik team2 name (NA for espn-only rows). \cr
+  bart_winner \tab character \tab Torvik winner name (NA for espn-only rows). \cr
+  kp_game_id \tab character \tab KenPom game id (NA unless kenpom enabled). \cr
+  fox_game_id \tab character \tab Fox game id (NA placeholder). \cr
+  yahoo_game_id \tab character \tab Yahoo game id (NA placeholder). \cr
+  match_method \tab character \tab "both"/"espn_only"/"bart_only". \cr
+  match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

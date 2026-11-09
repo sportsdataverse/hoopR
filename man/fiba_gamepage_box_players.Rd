@@ -18,52 +18,10 @@ competition.competitionId of any game row (208182 = World Cup 2023, 208722 = Par
 game-page objects \code{game}, \code{playByPlay}, \code{gameDetails}, \code{playersTeamA}, \code{playersTeamB}).}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab FIBA game id (Int64), global across competitions: gdapGameId, the \verb{<gameId>} of a game-page URL. \cr
-   competition_id \tab integer \tab FIBA competition id (Int64) of the game's edition; the comp argument. \cr
-   team_side \tab character \tab A or B: whether the row is the schedule's team A or team B (null when the page does not say). \cr
-   organisation_id \tab integer \tab Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T_\verb{<id>} and the play-by-play oId. NOT the per-competition team_id. \cr
-   player_id \tab integer \tab FIBA person id (Int64), global across competitions and roles: the page's P_\verb{<id>}, play-by-play pId, roster personId and fiba_gdap_roster.player_id. \cr
-   first_name \tab character \tab Given name(s) as registered with FIBA. \cr
-   last_name \tab character \tab Last name as registered with FIBA. \cr
-   jersey \tab character \tab Jersey number as a string. \cr
-   position \tab character \tab Playing position code from the lineup card (PG, SG, SF, PF, C). \cr
-   is_captain \tab logical \tab True for the team captain. \cr
-   is_starter \tab logical \tab True for the starting five. \cr
-   has_played \tab logical \tab True when the player got on the court. \cr
-   minutes \tab character \tab Minutes played as an 'm:ss' string ('0:0' = did not play). \cr
-   seconds_played \tab integer \tab Seconds played, derived from minutes. \cr
-   points \tab integer \tab Points scored in the game. \cr
-   fg_made \tab integer \tab Field goals made (2 + 3 points). \cr
-   fg_attempted \tab integer \tab Field goals attempted (2 + 3 points). \cr
-   fg_pct \tab double \tab Field-goal percentage, 0-100. \cr
-   fg2_made \tab integer \tab Two-point field goals made. \cr
-   fg2_attempted \tab integer \tab Two-point field goals attempted. \cr
-   fg2_pct \tab double \tab Two-point field-goal percentage, 0-100. \cr
-   fg3_made \tab integer \tab Three-point field goals made. \cr
-   fg3_attempted \tab integer \tab Three-point field goals attempted. \cr
-   fg3_pct \tab double \tab Three-point field-goal percentage, 0-100. \cr
-   ft_made \tab integer \tab Free throws made. \cr
-   ft_attempted \tab integer \tab Free throws attempted. \cr
-   ft_pct \tab double \tab Free-throw percentage, 0-100. \cr
-   reb_offensive \tab integer \tab Offensive rebounds. \cr
-   reb_defensive \tab integer \tab Defensive rebounds. \cr
-   reb_total \tab integer \tab Total rebounds (a team row includes the team rebounds team_reb_total). \cr
-   assists \tab integer \tab Assists credited in the game. \cr
-   steals \tab integer \tab Steals credited in the game. \cr
-   blocks \tab integer \tab Blocked shots (blocks made). \cr
-   blocks_received \tab integer \tab Own shots blocked by the opponent (blocks received). \cr
-   turnovers \tab integer \tab Turnovers (a team row includes the team turnovers team_turnovers). \cr
-   fouls \tab integer \tab Personal fouls (a team row includes the team fouls team_fouls). \cr
-   fouls_drawn \tab integer \tab Fouls drawn in the game. \cr
-   paint_fg_made \tab integer \tab Field goals made in the paint (team points_in_paint = 2 x paint_fg_made on every sampled game). \cr
-   paint_fg_attempted \tab integer \tab Field goals attempted in the paint. \cr
-   paint_fg_pct \tab double \tab Field-goal percentage in the paint, 0-100. \cr
-   efficiency \tab integer \tab Efficiency (FIBA EFF: points + rebounds + assists + steals + blocks - missed field goals - missed free throws - turnovers). \cr
-   plus_minus \tab integer \tab Plus/minus: the team's point differential while the player was on the court. \cr
-   cb \tab logical \tab Boolean flag, false on every sampled player; meaning unverified. \cr
-}
+A \code{hoopR_data} tibble with one row per player in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gamepage_box_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player box score of one FIBA game.

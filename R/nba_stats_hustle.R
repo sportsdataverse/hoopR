@@ -33,44 +33,7 @@ NULL
 #' @param vs_division vs_division
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: HustleStatsPlayer
-#'
-#'    **HustleStatsPlayer**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
-#'       PLAYER_NAME \tab character \tab Player name. \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       AGE \tab character \tab Player age (in years). \cr
-#'       G \tab character \tab Games played. \cr
-#'       MIN \tab character \tab Minutes played. \cr
-#'       CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
-#'       CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
-#'       CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
-#'       DEFLECTIONS \tab character \tab Defensive deflections. \cr
-#'       CHARGES_DRAWN \tab character \tab Charges drawn. \cr
-#'       SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
-#'       SCREEN_AST_PTS \tab character \tab  \cr
-#'       OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
-#'       DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
-#'       LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
-#'       PCT_LOOSE_BALLS_RECOVERED_OFF \tab character \tab  \cr
-#'       PCT_LOOSE_BALLS_RECOVERED_DEF \tab character \tab  \cr
-#'       OFF_BOXOUTS \tab character \tab  \cr
-#'       DEF_BOXOUTS \tab character \tab  \cr
-#'       BOX_OUT_PLAYER_TEAM_REBS \tab character \tab  \cr
-#'       BOX_OUT_PLAYER_REBS \tab character \tab  \cr
-#'       BOX_OUTS \tab character \tab Box-outs executed. \cr
-#'       PCT_BOX_OUTS_OFF \tab character \tab  \cr
-#'       PCT_BOX_OUTS_DEF \tab character \tab  \cr
-#'       PCT_BOX_OUTS_TEAM_REB \tab character \tab  \cr
-#'       PCT_BOX_OUTS_REB \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_leaguehustlestatsplayer", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -208,100 +171,7 @@ nba_leaguehustlestatsplayer <- function(
 #' @param vs_division vs_division
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: PlayerChargesDrawnLeaders,
-#'  PlayerContestedShotsLeaders, PlayerDeflectionsLeaders, PlayerLooseBallLeaders,
-#'  PlayerScreenAssistLeaders, Table5
-#'
-#'    **PlayerContestedShotsLeaders**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
-#'       PLAYER_NAME \tab character \tab Player name. \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       AGE \tab character \tab Player age (in years). \cr
-#'       RANK \tab character \tab Rank. \cr
-#'       CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **PlayerChargesDrawnLeaders**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
-#'       PLAYER_NAME \tab character \tab Player name. \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       AGE \tab character \tab Player age (in years). \cr
-#'       RANK \tab character \tab Rank. \cr
-#'       CHARGES_DRAWN \tab character \tab Charges drawn. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **PlayerDeflectionsLeaders**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
-#'       PLAYER_NAME \tab character \tab Player name. \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       AGE \tab character \tab Player age (in years). \cr
-#'       RANK \tab character \tab Rank. \cr
-#'       DEFLECTIONS \tab character \tab Defensive deflections. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **PlayerLooseBallLeaders**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
-#'       PLAYER_NAME \tab character \tab Player name. \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       AGE \tab character \tab Player age (in years). \cr
-#'       RANK \tab character \tab Rank. \cr
-#'       LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **PlayerScreenAssistLeaders**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
-#'       PLAYER_NAME \tab character \tab Player name. \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       AGE \tab character \tab Player age (in years). \cr
-#'       RANK \tab character \tab Rank. \cr
-#'       SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **Table5**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
-#'       PLAYER_NAME \tab character \tab Player name. \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       AGE \tab character \tab Player age (in years). \cr
-#'       RANK \tab character \tab Rank. \cr
-#'       BOX_OUTS \tab character \tab Box-outs executed. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_leaguehustlestatsplayerleaders", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -436,36 +306,7 @@ nba_leaguehustlestatsplayerleaders <- function(
 #' @param vs_division vs_division
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: HustleStatsTeam
-#'
-#'    **HustleStatsTeam**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       MIN \tab character \tab Minutes played. \cr
-#'       CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
-#'       CONTESTED_SHOTS_2PT \tab character \tab Contested two-point shots. \cr
-#'       CONTESTED_SHOTS_3PT \tab character \tab Contested three-point shots. \cr
-#'       DEFLECTIONS \tab character \tab Defensive deflections. \cr
-#'       CHARGES_DRAWN \tab character \tab Charges drawn. \cr
-#'       SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
-#'       SCREEN_AST_PTS \tab character \tab  \cr
-#'       OFF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
-#'       DEF_LOOSE_BALLS_RECOVERED \tab character \tab  \cr
-#'       LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
-#'       PCT_LOOSE_BALLS_RECOVERED_OFF \tab character \tab  \cr
-#'       PCT_LOOSE_BALLS_RECOVERED_DEF \tab character \tab  \cr
-#'       OFF_BOXOUTS \tab character \tab  \cr
-#'       DEF_BOXOUTS \tab character \tab  \cr
-#'       BOX_OUTS \tab character \tab Box-outs executed. \cr
-#'       PCT_BOX_OUTS_OFF \tab character \tab  \cr
-#'       PCT_BOX_OUTS_DEF \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_leaguehustlestatsteam", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -600,91 +441,7 @@ nba_leaguehustlestatsteam <- function(
 #' @param vs_division vs_division
 #' @param weight weight
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: Table5, Table6, TeamChargesDrawnLeaders, TeamContestedShotsLeaders, TeamDeflectionsLeaders,  TeamLooseBallLeaders, TeamScreenAssistLeaders
-#'
-#'    **TeamContestedShotsLeaders**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       RANK \tab character \tab Rank. \cr
-#'       CONTESTED_SHOTS \tab character \tab Defensively contested shots. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **TeamChargesDrawnLeaders**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       RANK \tab character \tab Rank. \cr
-#'       CHARGES_DRAWN \tab character \tab Charges drawn. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **TeamDeflectionsLeaders**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       RANK \tab character \tab Rank. \cr
-#'       DEFLECTIONS \tab character \tab Defensive deflections. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **TeamLooseBallLeaders**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       RANK \tab character \tab Rank. \cr
-#'       LOOSE_BALLS_RECOVERED \tab character \tab Loose balls recovered. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **TeamScreenAssistLeaders**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       RANK \tab character \tab Rank. \cr
-#'       SCREEN_ASSISTS \tab character \tab Screen assists (resulting in a basket). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **Table5**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       RANK \tab character \tab Rank. \cr
-#'       BOX_OUTS \tab character \tab Box-outs executed. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **Table6**
-#'
-#'
-#'    Same columns as the **Table5** table above.
-#'
+#' @eval .returns_rd("nba_leaguehustlestatsteamleaders", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest

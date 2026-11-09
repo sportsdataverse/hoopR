@@ -15,16 +15,10 @@ preseason, regular season, playoffs, postseason challenge, finals; 8, 9, 11, 12,
 Not the GoHoops person id and not the roster id.}
 }
 \value{
-A \code{hoopR_data} tibble: Every field-goal attempt of one player in one division with its court position. An empty
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{tpbl_player_shots}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   division_id \tab integer \tab TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the \code{{division_id}} of every division route. Not the GoHoops division id. \cr
-   player_id \tab integer \tab TPBL player id (key space: TPBL players; one per person across seasons and teams): the \code{{player_id}} of the player routes. Not the GoHoops person id and not the roster id. \cr
-   is_made \tab logical \tab True when the shot went in. \cr
-   point_x \tab integer \tab Shot position in MILLIMETRES, 0-28000 along the court length (a 28 m court). The hoops sit at x = 1575 (offense_basket 0) and x = 26425 (offense_basket 1), y = 7500. Same frame as the team list, where it was verified; here it is only checked to stay on the court. \cr
-   point_y \tab integer \tab Shot position in MILLIMETRES, 0-15000 across the court (a 15 m court). The hoops sit at x = 1575 (offense_basket 0) and x = 26425 (offense_basket 1), y = 7500. The direction of y is unverified. \cr
-   offense_basket \tab integer \tab Basket the player's team attacked: 0 = the hoop at x = 1575, 1 = the hoop at x = 26425. \cr
-}
+A \code{hoopR_data} tibble with one row per shot.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tpbl_player_shots")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every field-goal attempt of one player in one division with its court position.

@@ -25,36 +25,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: FantasyWidgetResult
-#'
-#'    **FantasyWidgetResult**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
-#'       PLAYER_NAME \tab character \tab Player name. \cr
-#'       PLAYER_POSITION \tab character \tab  \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       GP \tab character \tab Games played. \cr
-#'       MIN \tab character \tab Minutes played. \cr
-#'       FAN_DUEL_PTS \tab character \tab  \cr
-#'       NBA_FANTASY_PTS \tab character \tab  \cr
-#'       PTS \tab character \tab Points scored. \cr
-#'       REB \tab character \tab Total rebounds. \cr
-#'       AST \tab character \tab Assists. \cr
-#'       BLK \tab character \tab Blocks. \cr
-#'       STL \tab character \tab Steals. \cr
-#'       TOV \tab character \tab Turnovers. \cr
-#'       FG3M \tab character \tab Three-point field goals made. \cr
-#'       FGA \tab character \tab Field goal attempts. \cr
-#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-#'       FTA \tab character \tab Free throw attempts. \cr
-#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_fantasywidget", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -171,73 +142,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: Lineups
-#'
-#'  **Lineups**
-#'
-#'
-#'  \if{html}{\tabular{lll}{
-#'     col_name \tab types \tab description \cr
-#'     GROUP_SET \tab character \tab  \cr
-#'     GROUP_ID \tab character \tab Group identifier (e.g. conference group_id). \cr
-#'     GROUP_NAME \tab character \tab Group name. \cr
-#'     TEAM_ID \tab character \tab Unique team identifier. \cr
-#'     TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'     GP \tab character \tab Games played. \cr
-#'     W \tab character \tab Wins. \cr
-#'     L \tab character \tab Losses. \cr
-#'     W_PCT \tab character \tab  \cr
-#'     MIN \tab character \tab Minutes played. \cr
-#'     FGM \tab character \tab Field goals made. \cr
-#'     FGA \tab character \tab Field goal attempts. \cr
-#'     FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-#'     FG3M \tab character \tab Three-point field goals made. \cr
-#'     FG3A \tab character \tab Three-point field goal attempts. \cr
-#'     FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-#'     FTM \tab character \tab Free throws made. \cr
-#'     FTA \tab character \tab Free throw attempts. \cr
-#'     FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-#'     OREB \tab character \tab Offensive rebounds. \cr
-#'     DREB \tab character \tab Defensive rebounds. \cr
-#'     REB \tab character \tab Total rebounds. \cr
-#'     AST \tab character \tab Assists. \cr
-#'     TOV \tab character \tab Turnovers. \cr
-#'     STL \tab character \tab Steals. \cr
-#'     BLK \tab character \tab Blocks. \cr
-#'     BLKA \tab character \tab  \cr
-#'     PF \tab character \tab Personal fouls. \cr
-#'     PFD \tab character \tab  \cr
-#'     PTS \tab character \tab Points scored. \cr
-#'     PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-#'     GP_RANK \tab character \tab  \cr
-#'     W_RANK \tab character \tab  \cr
-#'     L_RANK \tab character \tab  \cr
-#'     W_PCT_RANK \tab character \tab  \cr
-#'     MIN_RANK \tab character \tab  \cr
-#'     FGM_RANK \tab character \tab  \cr
-#'     FGA_RANK \tab character \tab  \cr
-#'     FG_PCT_RANK \tab character \tab  \cr
-#'     FG3M_RANK \tab character \tab  \cr
-#'     FG3A_RANK \tab character \tab  \cr
-#'     FG3_PCT_RANK \tab character \tab  \cr
-#'     FTM_RANK \tab character \tab  \cr
-#'     FTA_RANK \tab character \tab  \cr
-#'     FT_PCT_RANK \tab character \tab  \cr
-#'     OREB_RANK \tab character \tab  \cr
-#'     DREB_RANK \tab character \tab  \cr
-#'     REB_RANK \tab character \tab  \cr
-#'     AST_RANK \tab character \tab  \cr
-#'     TOV_RANK \tab character \tab  \cr
-#'     STL_RANK \tab character \tab  \cr
-#'     BLK_RANK \tab character \tab  \cr
-#'     BLKA_RANK \tab character \tab  \cr
-#'     PF_RANK \tab character \tab  \cr
-#'     PFD_RANK \tab character \tab  \cr
-#'     PTS_RANK \tab character \tab  \cr
-#'     PLUS_MINUS_RANK \tab character \tab  \cr
-#'  }}
-#'  \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_leaguedashlineups", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -371,40 +276,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: LeagueLineupViz
-#'
-#'    **LeagueLineupViz**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       GROUP_ID \tab character \tab Group identifier (e.g. conference group_id). \cr
-#'       GROUP_NAME \tab character \tab Group name. \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       MIN \tab character \tab Minutes played. \cr
-#'       OFF_RATING \tab character \tab Offensive rating (points produced per 100 possessions). \cr
-#'       DEF_RATING \tab character \tab Defensive rating (points allowed per 100 possessions). \cr
-#'       NET_RATING \tab character \tab Net rating (off rating - def rating). \cr
-#'       PACE \tab character \tab Possessions per 48 minutes. \cr
-#'       TS_PCT \tab character \tab True shooting percentage (0-1). \cr
-#'       FTA_RATE \tab character \tab Free throw attempt rate (FTA / FGA). \cr
-#'       TM_AST_PCT \tab character \tab  \cr
-#'       PCT_FGA_2PT \tab character \tab  \cr
-#'       PCT_FGA_3PT \tab character \tab  \cr
-#'       PCT_PTS_2PT_MR \tab character \tab  \cr
-#'       PCT_PTS_FB \tab character \tab  \cr
-#'       PCT_PTS_FT \tab character \tab  \cr
-#'       PCT_PTS_PAINT \tab character \tab  \cr
-#'       PCT_AST_FGM \tab character \tab  \cr
-#'       PCT_UAST_FGM \tab character \tab  \cr
-#'       OPP_FG3_PCT \tab character \tab  \cr
-#'       OPP_EFG_PCT \tab character \tab  \cr
-#'       OPP_FTA_RATE \tab character \tab  \cr
-#'       OPP_TOV_PCT \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_leaguelineupviz", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -536,13 +408,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: PlayersOnCourtLeaguePlayerDetails
-#'
-#'    **PlayersOnCourtLeaguePlayerDetails**
-#'
-#'
-#'    Columns as documented in the shared [nba_leagueplayerondetails_playersoncourtleagueplayerdetails_schema] table.
-#'
+#' @eval .returns_rd("nba_leagueplayerondetails", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -650,43 +516,7 @@ NULL
 #' @param season season
 #' @param season_type season_type
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: SeasonMatchups
-#'
-#'    **SeasonMatchups**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       SEASON_ID \tab character \tab Unique season identifier. \cr
-#'       OFF_PLAYER_ID \tab character \tab  \cr
-#'       OFF_PLAYER_NAME \tab character \tab  \cr
-#'       DEF_PLAYER_ID \tab character \tab  \cr
-#'       DEF_PLAYER_NAME \tab character \tab  \cr
-#'       GP \tab character \tab Games played. \cr
-#'       MATCHUP_MIN \tab character \tab  \cr
-#'       PARTIAL_POSS \tab character \tab  \cr
-#'       PLAYER_PTS \tab character \tab  \cr
-#'       TEAM_PTS \tab character \tab  \cr
-#'       MATCHUP_AST \tab character \tab  \cr
-#'       MATCHUP_TOV \tab character \tab  \cr
-#'       MATCHUP_BLK \tab character \tab  \cr
-#'       MATCHUP_FGM \tab character \tab  \cr
-#'       MATCHUP_FGA \tab character \tab  \cr
-#'       MATCHUP_FG_PCT \tab character \tab  \cr
-#'       MATCHUP_FG3M \tab character \tab  \cr
-#'       MATCHUP_FG3A \tab character \tab  \cr
-#'       MATCHUP_FG3_PCT \tab character \tab  \cr
-#'       HELP_BLK \tab character \tab  \cr
-#'       HELP_FGM \tab character \tab  \cr
-#'       HELP_FGA \tab character \tab  \cr
-#'       HELP_FG_PERC \tab character \tab  \cr
-#'       MATCHUP_FTM \tab character \tab  \cr
-#'       MATCHUP_FTA \tab character \tab  \cr
-#'       SFL \tab character \tab  \cr
-#'       MATCHUP_TIME_SEC \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_leagueseasonmatchups", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -768,38 +598,7 @@ NULL
 #' @param season season
 #' @param season_type season_type
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: MatchupsRollup
-#'
-#'    **MatchupsRollup**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       SEASON_ID \tab character \tab Unique season identifier. \cr
-#'       POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
-#'       PERCENT_OF_TIME \tab character \tab  \cr
-#'       DEF_PLAYER_ID \tab character \tab  \cr
-#'       DEF_PLAYER_NAME \tab character \tab  \cr
-#'       GP \tab character \tab Games played. \cr
-#'       MATCHUP_MIN \tab character \tab  \cr
-#'       PARTIAL_POSS \tab character \tab  \cr
-#'       PLAYER_PTS \tab character \tab  \cr
-#'       TEAM_PTS \tab character \tab  \cr
-#'       MATCHUP_AST \tab character \tab  \cr
-#'       MATCHUP_TOV \tab character \tab  \cr
-#'       MATCHUP_BLK \tab character \tab  \cr
-#'       MATCHUP_FGM \tab character \tab  \cr
-#'       MATCHUP_FGA \tab character \tab  \cr
-#'       MATCHUP_FG_PCT \tab character \tab  \cr
-#'       MATCHUP_FG3M \tab character \tab  \cr
-#'       MATCHUP_FG3A \tab character \tab  \cr
-#'       MATCHUP_FG3_PCT \tab character \tab  \cr
-#'       MATCHUP_FTM \tab character \tab  \cr
-#'       MATCHUP_FTA \tab character \tab  \cr
-#'       SFL \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_matchupsrollup", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest

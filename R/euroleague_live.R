@@ -50,31 +50,7 @@
 #'   the `game_code` column of [euroleague_games()]).
 #' @param season_code (*character* required): Competition code + start year:
 #'   `E2025` (EuroLeague 2025-26), `U2025` (EuroCup).
-#' @return A `hoopR_data` tibble with one row per shot:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       num_anot \tab integer \tab Sequence number of the scoring annotation within the game. \cr
-#'       team \tab character \tab EuroLeague club code of the team (Utf8 join key; space padding stripped). \cr
-#'       id_player \tab character \tab EuroLeague player code (Utf8 join key; space padding stripped). \cr
-#'       player \tab character \tab Player display name (SURNAME, GIVEN NAME). \cr
-#'       id_action \tab character \tab Shot type code: 2FGM / 2FGA / 3FGM / 3FGA (made / attempted field goal) or FTM (made free throw). \cr
-#'       action \tab character \tab Shot type label (Two Pointer, Three Pointer, Free Throw In, ...). \cr
-#'       points \tab integer \tab Points the shot is worth (1, 2 or 3). \cr
-#'       coord_x \tab integer \tab Shot x in integer centimeters from the hoop, signed left/right of it (-683 to 696 cm measured): both teams are mapped onto one basket; 3-point zone H is x < 0 and I is x > 0; which sideline is positive (from the shooter's view or from the scorer's table) is UNVERIFIED from the data alone. Made free throws (FTM) carry the -1 sentinel. \cr
-#'       coord_y \tab integer \tab Shot y in integer centimeters from the hoop, growing away from the baseline toward the court (-6 to 865 cm measured; 3FG rows at 414-865): both teams are mapped onto one basket, negative y is behind the hoop. Made free throws (FTM) carry the -1 sentinel. \cr
-#'       zone \tab character \tab Court zone letter: A rim, B/C close left/right, D/E mid, F/G long two, H/I three; blank on free throws. \cr
-#'       fastbreak \tab character \tab Whether the shot came on a fast break (0 / 1 as a string). \cr
-#'       second_chance \tab character \tab Whether the shot was a second-chance attempt (0 / 1 as a string). \cr
-#'       points_off_turnover \tab character \tab Whether the shot came off a turnover (0 / 1 as a string). \cr
-#'       minute \tab integer \tab Game minute of the event (1-based; 41+ in overtime). \cr
-#'       console \tab character \tab Game clock at the event (mm:ss remaining in the period). \cr
-#'       points_a \tab integer \tab Running score of team A (= the home side, measured on one game) after the event. \cr
-#'       points_b \tab integer \tab Running score of team B (= the away side, measured on one game) after the event. \cr
-#'       utc \tab character \tab UTC timestamp of the event (yyyymmddHHMMSS). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("euroleague_game_points", inline = FALSE, unit = "shot")
 #' @concept Euroleague
 #' @seealso [family_euroleague] lists every function in this family.
 #' @export
@@ -106,32 +82,7 @@ euroleague_game_points <- function(game_code, season_code) {
 #' game.
 #' @inherit euroleague_game_header details
 #' @inheritParams euroleague_game_points
-#' @return A `hoopR_data` tibble with one row per play:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       quarter \tab integer \tab Period of the play: 1-4, or 5 for every overtime period. \cr
-#'       team_a \tab character \tab Display name of team A (= the home side, measured on one game). \cr
-#'       team_b \tab character \tab Display name of team B (= the away side, measured on one game). \cr
-#'       code_team_a \tab character \tab EuroLeague club code of team A (= the home side, measured on one game); Utf8 join key. \cr
-#'       code_team_b \tab character \tab EuroLeague club code of team B (= the away side, measured on one game); Utf8 join key. \cr
-#'       type \tab integer \tab Play type (engine integer). \cr
-#'       numberofplay \tab integer \tab Sequence number of the play within the game. \cr
-#'       codeteam \tab character \tab EuroLeague club code of the team on the play (Utf8 join key; blank on administrative plays). \cr
-#'       player_id \tab character \tab EuroLeague player code (Utf8 join key; space padding stripped; blank on team rows). \cr
-#'       playtype \tab character \tab Play type code (BP = begin period, 2FGM, 3FGA, FTM, AS = assist, TO, RV, CM, ...). \cr
-#'       player \tab character \tab Player display name (SURNAME, GIVEN NAME). \cr
-#'       team \tab character \tab Display name of the team on the play (null on administrative plays). \cr
-#'       dorsal \tab character \tab Jersey number as displayed. \cr
-#'       minute \tab integer \tab Game minute of the event (1-based; 41+ in overtime). \cr
-#'       markertime \tab character \tab Game clock at the play (mm:ss remaining in the period). \cr
-#'       points_a \tab integer \tab Running score of team A (= the home side, measured on one game) after the event. \cr
-#'       points_b \tab integer \tab Running score of team B (= the away side, measured on one game) after the event. \cr
-#'       comment \tab character \tab Free-text annotation of the play. \cr
-#'       playinfo \tab character \tab Play description. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("euroleague_game_pbp", inline = FALSE, unit = "play")
 #' @concept Euroleague
 #' @seealso [family_euroleague] lists every function in this family.
 #' @export
@@ -165,52 +116,7 @@ euroleague_game_pbp <- function(game_code, season_code) {
 #' (`end_of_quarter_q1` ...).
 #' @inherit euroleague_game_header details
 #' @inheritParams euroleague_game_points
-#' @return A `hoopR_data` tibble with one row per player plus two per side:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       row_type \tab character \tab Row kind: player, team (team-only rebounds) or total (side totals). \cr
-#'       team_name \tab character \tab Club display name. \cr
-#'       coach \tab character \tab Head coach name. \cr
-#'       attendance \tab character \tab Attendance, as reported by the box score (repeated on every row). \cr
-#'       referees \tab character \tab Referees of the game, comma-separated SURNAME, GIVEN NAME (repeated on every row). \cr
-#'       by_quarter_q1 \tab integer \tab Points the row's team scored in quarter 1 (from the box score's ByQuarter block). \cr
-#'       by_quarter_q2 \tab integer \tab Points the row's team scored in quarter 2 (from the box score's ByQuarter block). \cr
-#'       by_quarter_q3 \tab integer \tab Points the row's team scored in quarter 3 (from the box score's ByQuarter block). \cr
-#'       by_quarter_q4 \tab integer \tab Points the row's team scored in quarter 4 (from the box score's ByQuarter block). \cr
-#'       end_of_quarter_q1 \tab integer \tab Score of the row's team at the end of quarter 1 (cumulative; from the box score's EndOfQuarter block). \cr
-#'       end_of_quarter_q2 \tab integer \tab Score of the row's team at the end of quarter 2 (cumulative; from the box score's EndOfQuarter block). \cr
-#'       end_of_quarter_q3 \tab integer \tab Score of the row's team at the end of quarter 3 (cumulative; from the box score's EndOfQuarter block). \cr
-#'       end_of_quarter_q4 \tab integer \tab Score of the row's team at the end of quarter 4 (cumulative; from the box score's EndOfQuarter block). \cr
-#'       player_id \tab character \tab EuroLeague player code (Utf8 join key; space padding stripped; blank on team rows). \cr
-#'       is_starter \tab integer \tab Whether the player started (1 / 0). \cr
-#'       is_playing \tab integer \tab Whether the player appeared in the game (1 / 0). \cr
-#'       team \tab character \tab EuroLeague club code of the team (Utf8 join key; space padding stripped). \cr
-#'       dorsal \tab character \tab Jersey number as displayed. \cr
-#'       player \tab character \tab Player display name (SURNAME, GIVEN NAME). \cr
-#'       minutes \tab character \tab Minutes played (mm:ss). \cr
-#'       points \tab integer \tab Points. \cr
-#'       field_goals_made2 \tab integer \tab Two-point field goals made. \cr
-#'       field_goals_attempted2 \tab integer \tab Two-point field goals attempted. \cr
-#'       field_goals_made3 \tab integer \tab Three-point field goals made. \cr
-#'       field_goals_attempted3 \tab integer \tab Three-point field goals attempted. \cr
-#'       free_throws_made \tab integer \tab Free throws made. \cr
-#'       free_throws_attempted \tab integer \tab Free throws attempted. \cr
-#'       offensive_rebounds \tab integer \tab Offensive rebounds. \cr
-#'       defensive_rebounds \tab integer \tab Defensive rebounds. \cr
-#'       total_rebounds \tab integer \tab Total rebounds. \cr
-#'       assistances \tab integer \tab Assists. \cr
-#'       steals \tab integer \tab Steals. \cr
-#'       turnovers \tab integer \tab Turnovers. \cr
-#'       blocks_favour \tab integer \tab Blocks made. \cr
-#'       blocks_against \tab integer \tab Shots blocked by the opponent. \cr
-#'       fouls_commited \tab integer \tab Personal fouls committed. \cr
-#'       fouls_received \tab integer \tab Fouls drawn. \cr
-#'       valuation \tab integer \tab Performance index rating (PIR). \cr
-#'       plusminus \tab numeric \tab Plus/minus. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("euroleague_game_boxscore", inline = FALSE, unit = "player, plus two team rows per side")
 #' @concept Euroleague
 #' @seealso [family_euroleague] lists every function in this family.
 #' @export
@@ -251,57 +157,7 @@ euroleague_game_boxscore <- function(game_code, season_code) {
 #' `hoopR_invalid_request`, any other failure `hoopR_fetch_error` (all inherit
 #' `hoopR_error`).
 #' @inheritParams euroleague_game_points
-#' @return A `hoopR_data` tibble with one row (the game):
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       live \tab logical \tab Whether the game is in progress. \cr
-#'       round \tab character \tab Round label (e.g. Round 1). \cr
-#'       date \tab character \tab Game date (venue local, dd/mm/yyyy). \cr
-#'       hour \tab character \tab Scheduled tip-off time (venue local, HH:MM). \cr
-#'       stadium \tab character \tab Venue name. \cr
-#'       capacity \tab character \tab Capacity as reported by the API (equals the box score's attendance on the captured game; semantics unverified). \cr
-#'       team_a \tab character \tab Display name of team A (= the home side, measured on one game). \cr
-#'       team_b \tab character \tab Display name of team B (= the away side, measured on one game). \cr
-#'       code_team_a \tab character \tab EuroLeague club code of team A (= the home side, measured on one game); Utf8 join key. \cr
-#'       tv_code_a \tab character \tab Three-letter broadcast abbreviation of team A. \cr
-#'       code_team_b \tab character \tab EuroLeague club code of team B (= the away side, measured on one game); Utf8 join key. \cr
-#'       tv_code_b \tab character \tab Three-letter broadcast abbreviation of team B. \cr
-#'       im_a \tab character \tab Crest image file name of team A. \cr
-#'       im_b \tab character \tab Crest image file name of team B. \cr
-#'       score_a \tab character \tab Score of team A (= the home side, measured on one game). \cr
-#'       score_b \tab character \tab Score of team B (= the away side, measured on one game). \cr
-#'       coach_a \tab character \tab Head coach of team A. \cr
-#'       coach_b \tab character \tab Head coach of team B. \cr
-#'       game_time \tab character \tab Elapsed game time (mm:ss). \cr
-#'       remaining_partial_time \tab character \tab Time remaining in the current period (mm:ss). \cr
-#'       wid \tab character \tab Live-feed widget identifier of the game. \cr
-#'       quarter \tab character \tab Current period of the game. \cr
-#'       foults_a \tab character \tab Team fouls of team A in the current period (sic: the API spells it this way). \cr
-#'       foults_b \tab character \tab Team fouls of team B in the current period (sic: the API spells it this way). \cr
-#'       timeouts_a \tab character \tab Timeouts used by team A. \cr
-#'       timeouts_b \tab character \tab Timeouts used by team B. \cr
-#'       score_quarter1_a \tab integer \tab Score of team A at the end of quarter 1 (cumulative). \cr
-#'       score_quarter2_a \tab integer \tab Score of team A at the end of quarter 2 (cumulative). \cr
-#'       score_quarter3_a \tab integer \tab Score of team A at the end of quarter 3 (cumulative). \cr
-#'       score_quarter4_a \tab integer \tab Score of team A at the end of quarter 4 (cumulative). \cr
-#'       score_extra_time_a \tab integer \tab Points scored by team A in overtime (0 when none). \cr
-#'       score_quarter1_b \tab integer \tab Score of team B at the end of quarter 1 (cumulative). \cr
-#'       score_quarter2_b \tab integer \tab Score of team B at the end of quarter 2 (cumulative). \cr
-#'       score_quarter3_b \tab integer \tab Score of team B at the end of quarter 3 (cumulative). \cr
-#'       score_quarter4_b \tab integer \tab Score of team B at the end of quarter 4 (cumulative). \cr
-#'       score_extra_time_b \tab integer \tab Points scored by team B in overtime (0 when none). \cr
-#'       phase \tab character \tab Phase name (Regular Season, Playoffs, ...). \cr
-#'       phase_reduced_name \tab character \tab Short phase name. \cr
-#'       competition \tab character \tab Competition name. \cr
-#'       competition_reduced_name \tab character \tab Short competition name. \cr
-#'       pcom \tab character \tab Competition code of the live feed (E = EuroLeague, U = EuroCup). \cr
-#'       referee1 \tab character \tab First referee. \cr
-#'       referee2 \tab character \tab Second referee. \cr
-#'       referee3 \tab character \tab Third referee. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("euroleague_game_header", inline = FALSE, unit = "game")
 #' @concept Euroleague
 #' @seealso [family_euroleague] lists every function in this family.
 #' @export

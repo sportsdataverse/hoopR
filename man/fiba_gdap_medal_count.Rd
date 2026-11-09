@@ -14,18 +14,10 @@ World Cup, 112 = BCL tier 1, 211 = EuroLeague Women.}
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_name \tab character \tab Team name (country or club). \cr
-   organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
-   fiba_code \tab character \tab FIBA three-letter country code (GER, USA; historic URS, YUG). \cr
-   team_zone_code \tab character \tab Zone code of the team (E Europe, NAM Americas north...). \cr
-   rank \tab integer \tab Rank (1 = first). \cr
-   total_first_rank \tab integer \tab Gold medals (first places). \cr
-   total_second_rank \tab integer \tab Number of silver medals the federation has won in the competition family. \cr
-   total_third_rank \tab integer \tab Number of bronze medals the federation has won in the competition family. \cr
-   total_participations \tab integer \tab Editions played. \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_medal_count")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 All-time medal table of a competition family.

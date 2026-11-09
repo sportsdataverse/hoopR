@@ -1,23 +1,7 @@
 #' **Get ESPN men's college basketball data (Pbp, Team and Player Box)**
 #' @author Saiem Gilani
 #' @param game_id Game ID
-#' @return A named list of data frames: Plays, Team, Player
-#'
-#'    **Plays**
-#'
-#'
-#'    Columns as documented in the shared [espn_mbb_game_all_plays_schema] table.
-#'
-#'    **Team**
-#'
-#'
-#'    Columns as documented in the shared [espn_mbb_game_all_team_schema] table.
-#'
-#'    **Player**
-#'
-#'
-#'    Columns as documented in the shared [espn_mbb_game_all_player_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_game_all")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -150,13 +134,7 @@ espn_mbb_game_all <- function(game_id) {
 #' @rdname espn_mbb_game_all
 #' @author Saiem Gilani
 #' @param game_id Game ID
-#' @return A play-by-play data frame.
-#'
-#'    **Plays**
-#'
-#'
-#'    Columns as documented in the shared [espn_mbb_game_all_plays_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_pbp")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -223,13 +201,7 @@ espn_mbb_pbp <- function(game_id) {
 #' @rdname espn_mbb_game_all
 #' @author Saiem Gilani
 #' @param game_id Game ID
-#' @return A team boxscore data frame
-#'
-#'    **Team**
-#'
-#'
-#'    Columns as documented in the shared [espn_mbb_game_all_team_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_team_box")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -294,13 +266,7 @@ espn_mbb_team_box <- function(game_id) {
 #' @rdname espn_mbb_game_all
 #' @author Saiem Gilani
 #' @param game_id Game ID
-#' @return A player boxscore data frame
-#'
-#'    **Player**
-#'
-#'
-#'    Columns as documented in the shared [espn_mbb_game_all_player_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_player_box")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -368,84 +334,7 @@ espn_mbb_player_box <- function(game_id) {
 #' @rdname espn_mbb_game_all
 #' @author Saiem Gilani
 #' @param game_id Game ID
-#' @return A game rosters data frame
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       athlete_id \tab integer \tab Unique athlete identifier (ESPN). \cr
-#'       athlete_uid \tab character \tab ESPN athlete UID (universal identifier). \cr
-#'       athlete_guid \tab character \tab ESPN athlete GUID. \cr
-#'       athlete_type \tab character \tab Athlete type / class. \cr
-#'       sdr \tab integer \tab Sdr. \cr
-#'       first_name \tab character \tab Player's first name. \cr
-#'       last_name \tab character \tab Player's last name. \cr
-#'       full_name \tab character \tab Player's full name. \cr
-#'       athlete_display_name \tab character \tab Athlete display name (full). \cr
-#'       short_name \tab character \tab Short display name. \cr
-#'       weight \tab integer \tab Player weight in pounds. \cr
-#'       display_weight \tab character \tab Player weight in display format (e.g. '180 lbs'). \cr
-#'       height \tab integer \tab Player height (string e.g. '6-2' or inches). \cr
-#'       display_height \tab character \tab Player height in display format (e.g. '6-2'). \cr
-#'       age \tab integer \tab Player age (in years). \cr
-#'       date_of_birth \tab character \tab Date of birth (YYYY-MM-DD). \cr
-#'       birth_place_city \tab character \tab Birth place city. \cr
-#'       birth_place_state \tab character \tab Birth place state. \cr
-#'       birth_place_country \tab character \tab Birth place country. \cr
-#'       slug \tab character \tab URL-safe identifier. \cr
-#'       headshot_href \tab character \tab Headshot image URL. \cr
-#'       headshot_alt \tab character \tab Alternative-text label for the headshot. \cr
-#'       jersey \tab character \tab Jersey number worn by the player. \cr
-#'       hand_type \tab character \tab Hand type. \cr
-#'       hand_abbreviation \tab character \tab Hand abbreviation. \cr
-#'       hand_display_value \tab character \tab Hand display value. \cr
-#'       position_id \tab integer \tab Unique position identifier. \cr
-#'       position_name \tab character \tab Listed roster position ('Guard', 'Forward', 'Center'). \cr
-#'       position_display_name \tab character \tab Position display name. \cr
-#'       position_abbreviation \tab character \tab Position abbreviation ('G' / 'F' / 'C'). \cr
-#'       position_leaf \tab logical \tab Position leaf. \cr
-#'       linked \tab logical \tab TRUE if the record is linked to a related entity. \cr
-#'       experience_years \tab integer \tab Experience years. \cr
-#'       experience_display_value \tab character \tab Experience display value. \cr
-#'       experience_abbreviation \tab character \tab Experience abbreviation. \cr
-#'       active \tab logical \tab TRUE if the row represents an active record (player / team / season). \cr
-#'       draft_display_text \tab character \tab Draft display text. \cr
-#'       draft_round \tab integer \tab Round of the draft selection. \cr
-#'       draft_year \tab integer \tab Draft year (4-digit). \cr
-#'       draft_selection \tab integer \tab Draft selection. \cr
-#'       status_id \tab integer \tab Status identifier. \cr
-#'       status_name \tab character \tab Status label. \cr
-#'       status_type \tab character \tab Status type. \cr
-#'       status_abbreviation \tab character \tab Status abbreviation. \cr
-#'       starter \tab logical \tab TRUE if the player was in the starting lineup; FALSE otherwise. \cr
-#'       valid \tab logical \tab Valid. \cr
-#'       did_not_play \tab logical \tab TRUE if the player did not appear in the game. \cr
-#'       display_name \tab character \tab Display name. \cr
-#'       ejected \tab logical \tab TRUE if the player was ejected from the game. \cr
-#'       team_id \tab integer \tab Unique team identifier. \cr
-#'       team_guid \tab character \tab ESPN team GUID. \cr
-#'       team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
-#'       team_sdr \tab integer \tab ESPN team SDR identifier. \cr
-#'       team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-#'       team_location \tab character \tab Team city or location string. \cr
-#'       team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       team_nickname \tab character \tab Team nickname. \cr
-#'       team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       team_display_name \tab character \tab Full team display name. \cr
-#'       team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
-#'       team_color \tab character \tab Team primary color (hex without leading '#'). \cr
-#'       team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
-#'       is_active \tab logical \tab Is active. \cr
-#'       is_all_star \tab logical \tab Is all star. \cr
-#'       logo_href \tab character \tab Team or league logo URL. \cr
-#'       logo_dark_href \tab character \tab Logo URL for dark backgrounds. \cr
-#'       game_id \tab integer \tab Unique game identifier. \cr
-#'       order \tab integer \tab Display order within the result set. \cr
-#'       home_away \tab character \tab Game venue label ('home' or 'away'). \cr
-#'       winner \tab logical \tab Winner. \cr
-#'       roster_href \tab character \tab URL for roster. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_mbb_game_rosters", unit = "athlete on a game roster")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -694,10 +583,7 @@ espn_mbb_game_rosters <- function(game_id) {
 
 #' **Get ESPN conference names and IDs**
 #' @author Saiem Gilani
-#' @return A conferences data frame
-#'
-#'    Columns as documented in the shared [espn_mbb_conferences_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_conferences", unit = "conference")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -772,33 +658,7 @@ espn_mbb_conferences <- function() {
 #' **Get ESPN men's college basketball team names and IDs**
 #' @author Saiem Gilani
 #' @param year Either numeric or character (YYYY)
-#' @return A teams data frame
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       team_id \tab integer \tab Unique team identifier. \cr
-#'       abbreviation \tab character \tab Short abbreviation. \cr
-#'       display_name \tab character \tab Display name. \cr
-#'       short_name \tab character \tab Short display name. \cr
-#'       mascot \tab character \tab Team mascot. \cr
-#'       nickname \tab character \tab Team or athlete nickname. \cr
-#'       team \tab character \tab Team-side label or team identifier. \cr
-#'       color \tab character \tab Primary color (hex without leading '#'). \cr
-#'       alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
-#'       logo \tab character \tab Team or league logo URL. \cr
-#'       logo_dark \tab character \tab Logo dark. \cr
-#'       href \tab character \tab Link / page URL. \cr
-#'       conference_url \tab character \tab URL for conference. \cr
-#'       group_id \tab integer \tab Group identifier (e.g. conference group_id). \cr
-#'       conference_short_name \tab character \tab Conference short name (e.g. 'ACC'). \cr
-#'       conference_uid \tab character \tab ESPN universal conference identifier. \cr
-#'       conference_name \tab character \tab Full conference name. \cr
-#'       conference_logo \tab character \tab Logo image URL for conference. \cr
-#'       parent_group_id \tab integer \tab Unique identifier for parent group. \cr
-#'       conference_id \tab integer \tab Conference identifier. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_mbb_teams", unit = "team")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows row_number group_by mutate as_tibble ungroup
 #' @importFrom tidyr unnest unnest_wider everything pivot_wider
@@ -1390,47 +1250,7 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
 #' **Get ESPN men's college basketball schedule for a specific year**
 #'
 #' @param season Either numeric or character
-#' @return Returns a tibble
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       matchup \tab character \tab Matchup. \cr
-#'       matchup_short \tab character \tab Matchup short. \cr
-#'       season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-#'       season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
-#'       season_slug \tab character \tab Season slug. \cr
-#'       game_id \tab integer \tab Unique game identifier. \cr
-#'       game_uid \tab character \tab Game uid. \cr
-#'       game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
-#'       attendance \tab integer \tab Reported attendance. \cr
-#'       status_name \tab character \tab Status label. \cr
-#'       broadcast_market \tab character \tab Broadcast market label (e.g. 'national', 'home'). \cr
-#'       broadcast_name \tab character \tab Broadcast name. \cr
-#'       start_date \tab character \tab Start date (YYYY-MM-DD). \cr
-#'       game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
-#'       home_team_name \tab character \tab Home team name. \cr
-#'       home_team_logo \tab character \tab Home team logo URL. \cr
-#'       home_team_abb \tab character \tab Home team's team abb. \cr
-#'       home_team_id \tab integer \tab Unique identifier for the home team. \cr
-#'       home_team_location \tab character \tab Home team's team location. \cr
-#'       home_team_full_name \tab character \tab Full home team name (e.g. 'Las Vegas Aces'). \cr
-#'       home_team_color \tab character \tab Home team primary color (hex). \cr
-#'       home_score \tab integer \tab Home team score at the time of the play. \cr
-#'       home_win \tab integer \tab Home team's win. \cr
-#'       home_record \tab character \tab Home win-loss record. \cr
-#'       away_team_name \tab character \tab Away team name. \cr
-#'       away_team_logo \tab character \tab Away team logo URL. \cr
-#'       away_team_abb \tab character \tab Away team's team abb. \cr
-#'       away_team_id \tab integer \tab Unique identifier for the away team. \cr
-#'       away_team_location \tab character \tab Away team's team location. \cr
-#'       away_team_full_name \tab character \tab Full away team name (e.g. 'Las Vegas Aces'). \cr
-#'       away_team_color \tab character \tab Away team primary color (hex). \cr
-#'       away_score \tab integer \tab Away team score at the time of the play. \cr
-#'       away_win \tab integer \tab Away team's win. \cr
-#'       away_record \tab character \tab Away win-loss record. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_mbb_scoreboard", unit = "game")
 #' @import utils
 #' @importFrom dplyr select rename any_of mutate
 #' @importFrom jsonlite fromJSON
@@ -1532,50 +1352,7 @@ espn_mbb_scoreboard <- function(season) {
 #' **Get men's college basketball AP and Coaches Poll rankings from ESPN**
 #'
 #' @author Saiem Gilani
-#' @return Returns a tibble
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       id \tab integer \tab Id. \cr
-#'       name \tab character \tab Display name. \cr
-#'       short_name \tab character \tab Short display name. \cr
-#'       type \tab character \tab Record type / category. \cr
-#'       headline \tab character \tab News headline. \cr
-#'       short_headline \tab character \tab Short news headline. \cr
-#'       current \tab integer \tab Current. \cr
-#'       previous \tab integer \tab Previous. \cr
-#'       points \tab numeric \tab Points scored. \cr
-#'       first_place_votes \tab integer \tab First place votes. \cr
-#'       trend \tab character \tab Trend. \cr
-#'       date \tab character \tab Date in YYYY-MM-DD format. \cr
-#'       last_updated \tab character \tab Last updated. \cr
-#'       record_summary \tab character \tab Win-loss record summary string. \cr
-#'       team_id \tab integer \tab Unique team identifier. \cr
-#'       team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
-#'       team_location \tab character \tab Team city or location string. \cr
-#'       team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       team_nickname \tab character \tab Team nickname. \cr
-#'       team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       team_color \tab character \tab Team primary color (hex without leading '#'). \cr
-#'       team_logo \tab character \tab Team logo image URL. \cr
-#'       occurrence_number \tab integer \tab Occurrence number. \cr
-#'       occurrence_type \tab character \tab Occurrence type. \cr
-#'       occurrence_last \tab logical \tab Occurrence last. \cr
-#'       occurrence_value \tab character \tab Occurrence value. \cr
-#'       occurrence_display_value \tab character \tab Occurrence display value. \cr
-#'       season_year \tab integer \tab Season year string ('YYYY-YY' format). \cr
-#'       season_start_date \tab character \tab Date in YYYY-MM-DD format. \cr
-#'       season_end_date \tab character \tab Date in YYYY-MM-DD format. \cr
-#'       season_display_name \tab character \tab Season display label. \cr
-#'       season_type_type \tab integer \tab Season type type. \cr
-#'       season_type_name \tab character \tab Season type name. \cr
-#'       season_type_abbreviation \tab character \tab Season type abbreviation. \cr
-#'       season_futures_ref \tab character \tab Season futures ref. \cr
-#'       first_occurrence_type \tab character \tab First occurrence type. \cr
-#'       first_occurrence_value \tab character \tab First occurrence value. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_mbb_rankings", unit = "ranked team")
 #' @importFrom dplyr %>%  bind_rows arrange
 #' @importFrom jsonlite fromJSON
 #' @importFrom tidyr unnest
@@ -1673,88 +1450,7 @@ espn_mbb_rankings <- function() {
 #' **Get ESPN men's college basketball standings**
 #'
 #' @param year Either numeric or character (YYYY)
-#' @return A standings data frame
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       team_id \tab integer \tab Unique team identifier. \cr
-#'       team \tab character \tab Team-side label or team identifier. \cr
-#'       conference \tab character \tab Conference group name from ESPN standings. \cr
-#'       avgpointsagainst \tab numeric \tab Avgpointsagainst. \cr
-#'       avgpointsfor \tab numeric \tab Avgpointsfor. \cr
-#'       gamesbehind \tab numeric \tab Gamesbehind. \cr
-#'       leaguewinpercent \tab numeric \tab Leaguewinpercent. \cr
-#'       losses \tab numeric \tab Total losses. \cr
-#'       playoffseed \tab numeric \tab Playoffseed. \cr
-#'       pointsagainst \tab numeric \tab Pointsagainst. \cr
-#'       pointsfor \tab numeric \tab Pointsfor. \cr
-#'       streak \tab numeric \tab Current streak (e.g. 'W3' for three-game win streak). \cr
-#'       winpercent \tab numeric \tab Winpercent. \cr
-#'       wins \tab numeric \tab Total wins. \cr
-#'       total \tab character \tab Total. \cr
-#'       home_avgpointsagainst \tab numeric \tab Home team's avgpointsagainst. \cr
-#'       home_avgpointsfor \tab numeric \tab Home team's avgpointsfor. \cr
-#'       home_gamesbehind \tab numeric \tab Home team's gamesbehind. \cr
-#'       home_leaguewinpercent \tab numeric \tab Home team's leaguewinpercent. \cr
-#'       home_losses \tab numeric \tab Home team's losses. \cr
-#'       home_playoffseed \tab numeric \tab Home team's playoffseed. \cr
-#'       home_pointsagainst \tab numeric \tab Home team's pointsagainst. \cr
-#'       home_pointsfor \tab numeric \tab Home team's pointsfor. \cr
-#'       home_streak \tab numeric \tab Home team's streak. \cr
-#'       home_winpercent \tab numeric \tab Home team's winpercent. \cr
-#'       home_wins \tab numeric \tab Home team's wins. \cr
-#'       home \tab character \tab Home. \cr
-#'       road_avgpointsagainst \tab numeric \tab Road avgpointsagainst. \cr
-#'       road_avgpointsfor \tab numeric \tab Road avgpointsfor. \cr
-#'       road_gamesbehind \tab numeric \tab Road gamesbehind. \cr
-#'       road_leaguewinpercent \tab numeric \tab Road leaguewinpercent. \cr
-#'       road_losses \tab numeric \tab Road losses. \cr
-#'       road_playoffseed \tab numeric \tab Road playoffseed. \cr
-#'       road_pointsagainst \tab numeric \tab Road pointsagainst. \cr
-#'       road_pointsfor \tab numeric \tab Road pointsfor. \cr
-#'       road_streak \tab numeric \tab Road streak. \cr
-#'       road_winpercent \tab numeric \tab Road winpercent. \cr
-#'       road_wins \tab numeric \tab Road wins. \cr
-#'       road \tab character \tab Road. \cr
-#'       vsaprankedteams_avgpointsagainst \tab numeric \tab Vsaprankedteams avgpointsagainst. \cr
-#'       vsaprankedteams_avgpointsfor \tab numeric \tab Vsaprankedteams avgpointsfor. \cr
-#'       vsaprankedteams_gamesbehind \tab numeric \tab Vsaprankedteams gamesbehind. \cr
-#'       vsaprankedteams_leaguewinpercent \tab numeric \tab Vsaprankedteams leaguewinpercent. \cr
-#'       vsaprankedteams_losses \tab numeric \tab Vsaprankedteams losses. \cr
-#'       vsaprankedteams_playoffseed \tab numeric \tab Vsaprankedteams playoffseed. \cr
-#'       vsaprankedteams_pointsagainst \tab numeric \tab Vsaprankedteams pointsagainst. \cr
-#'       vsaprankedteams_pointsfor \tab numeric \tab Vsaprankedteams pointsfor. \cr
-#'       vsaprankedteams_streak \tab numeric \tab Vsaprankedteams streak. \cr
-#'       vsaprankedteams_winpercent \tab numeric \tab Vsaprankedteams winpercent. \cr
-#'       vsaprankedteams_wins \tab numeric \tab Vsaprankedteams wins. \cr
-#'       vsaprankedteams \tab character \tab Vsaprankedteams. \cr
-#'       vsusarankedteams_avgpointsagainst \tab numeric \tab Vsusarankedteams avgpointsagainst. \cr
-#'       vsusarankedteams_avgpointsfor \tab numeric \tab Vsusarankedteams avgpointsfor. \cr
-#'       vsusarankedteams_gamesbehind \tab numeric \tab Vsusarankedteams gamesbehind. \cr
-#'       vsusarankedteams_leaguewinpercent \tab numeric \tab Vsusarankedteams leaguewinpercent. \cr
-#'       vsusarankedteams_losses \tab numeric \tab Vsusarankedteams losses. \cr
-#'       vsusarankedteams_playoffseed \tab numeric \tab Vsusarankedteams playoffseed. \cr
-#'       vsusarankedteams_pointsagainst \tab numeric \tab Vsusarankedteams pointsagainst. \cr
-#'       vsusarankedteams_pointsfor \tab numeric \tab Vsusarankedteams pointsfor. \cr
-#'       vsusarankedteams_streak \tab numeric \tab Vsusarankedteams streak. \cr
-#'       vsusarankedteams_winpercent \tab numeric \tab Vsusarankedteams winpercent. \cr
-#'       vsusarankedteams_wins \tab numeric \tab Vsusarankedteams wins. \cr
-#'       vsusarankedteams \tab character \tab Vsusarankedteams. \cr
-#'       vsconf_avgpointsagainst \tab numeric \tab Vsconf avgpointsagainst. \cr
-#'       vsconf_avgpointsfor \tab numeric \tab Vsconf avgpointsfor. \cr
-#'       vsconf_gamesbehind \tab numeric \tab Vsconf gamesbehind. \cr
-#'       vsconf_leaguewinpercent \tab numeric \tab Vsconf leaguewinpercent. \cr
-#'       vsconf_losses \tab numeric \tab Vsconf losses. \cr
-#'       vsconf_playoffseed \tab numeric \tab Vsconf playoffseed. \cr
-#'       vsconf_pointsagainst \tab numeric \tab Vsconf pointsagainst. \cr
-#'       vsconf_pointsfor \tab numeric \tab Vsconf pointsfor. \cr
-#'       vsconf_streak \tab numeric \tab Vsconf streak. \cr
-#'       vsconf_winpercent \tab numeric \tab Vsconf winpercent. \cr
-#'       vsconf_wins \tab numeric \tab Vsconf wins. \cr
-#'       vsconf \tab character \tab Vsconf. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_mbb_standings", unit = "team in the standings")
 #' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr select rename
@@ -1965,23 +1661,7 @@ espn_mbb_standings <- function(year = most_recent_mbb_season()) {
 #'
 #' @rdname espn_mbb_game_all
 #' @param game_id  Game ID
-#' @returns Returns a named list of data frames: pickcenter, againstTheSpread, predictor
-#'
-#'    **pickcenter**
-#'
-#'
-#'    Columns as documented in the shared [espn_mbb_betting_pickcenter_schema] table.
-#'
-#'    **againstTheSpread**
-#'
-#'
-#'    Columns as documented in the shared [espn_mbb_betting_againstthespread_schema] table.
-#'
-#'    **predictor**
-#'
-#'
-#'    Columns as documented in the shared [espn_mbb_betting_predictor_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_betting")
 #' @importFrom rlang .data
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr select rename
@@ -2103,106 +1783,7 @@ espn_mbb_betting <- function(game_id) {
 #' @param year Year
 #' @param season_type (character, default: regular): Season type - regular or postseason
 #' @param total (boolean, default: FALSE): Totals
-#' @return Returns a tibble with the team stats data
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       team_id \tab character \tab Unique team identifier. \cr
-#'       team_guid \tab character \tab ESPN team GUID. \cr
-#'       team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
-#'       team_sdr \tab character \tab ESPN team SDR identifier. \cr
-#'       team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-#'       team_location \tab character \tab Team city or location string. \cr
-#'       team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       team_nickname \tab character \tab Team nickname. \cr
-#'       team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       team_display_name \tab character \tab Full team display name. \cr
-#'       team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
-#'       team_color \tab character \tab Team primary color (hex without leading '#'). \cr
-#'       team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
-#'       is_active \tab logical \tab Is active. \cr
-#'       is_all_star \tab logical \tab Is all star. \cr
-#'       logo_href \tab character \tab Team or league logo URL. \cr
-#'       logo_dark_href \tab character \tab Logo URL for dark backgrounds. \cr
-#'       defensive_blocks \tab numeric \tab Short for blocked shot, number of times when a defensive player legally deflects a field goal attempt from an offensive player. \cr
-#'       defensive_defensive_rebounds \tab numeric \tab The number of times when the defense obtains the possession of the ball after a missed shot by the offense. \cr
-#'       defensive_steals \tab numeric \tab The number of times a defensive player forced a turnover by intercepting or deflecting a pass or a dribble of an offensive player. \cr
-#'       defensive_turnover_points \tab numeric \tab The amount of points resulting from the possession following a turnover. \cr
-#'       defensive_avg_defensive_rebounds \tab numeric \tab The average defensive rebounds per game. \cr
-#'       defensive_avg_blocks \tab numeric \tab The average blocks per game. \cr
-#'       defensive_avg_steals \tab numeric \tab The average steals per game. \cr
-#'       general_disqualifications \tab numeric \tab The number of times a player reached the foul limit. \cr
-#'       general_flagrant_fouls \tab numeric \tab The number of fouls that the officials thought were unnecessary or excessive. \cr
-#'       general_fouls \tab numeric \tab The number of times a player had illegal contact with the opponent. \cr
-#'       general_ejections \tab numeric \tab The number of times a player or coach is removed from the game as a result of a serious offense. \cr
-#'       general_technical_fouls \tab numeric \tab The number of times an player or coach was called for a technical foul (unsportsmanlike conduct or violations). \cr
-#'       general_rebounds \tab numeric \tab The total number of rebounds (offensive and defensive). \cr
-#'       general_minutes \tab numeric \tab The total number of minutes played. \cr
-#'       general_avg_minutes \tab numeric \tab The average number of minutes per game. \cr
-#'       general_fantasy_rating \tab numeric \tab The Fantasy Rating of a player. \cr
-#'       general_avg_rebounds \tab numeric \tab The average rebounds per game. \cr
-#'       general_avg_fouls \tab numeric \tab The average fouls committed per game. \cr
-#'       general_avg_flagrant_fouls \tab numeric \tab The average number of flagrant fouls per game. \cr
-#'       general_avg_technical_fouls \tab numeric \tab The average number of technical fouls per game. \cr
-#'       general_avg_ejections \tab numeric \tab The average ejections per game. \cr
-#'       general_avg_disqualifications \tab numeric \tab The average number of disqualifications per game. \cr
-#'       general_assist_turnover_ratio \tab numeric \tab The average number of assists a player or team records per turnover. \cr
-#'       general_steal_foul_ratio \tab numeric \tab The average number of steals a player or team records per foul committed. \cr
-#'       general_block_foul_ratio \tab numeric \tab The average number of blocks a player or record per foul committed. \cr
-#'       general_avg_team_rebounds \tab numeric \tab The average number of rebounds for a team per game. \cr
-#'       general_total_rebounds \tab numeric \tab The total number of rebounds for a team or player. \cr
-#'       general_total_technical_fouls \tab numeric \tab The total number of technical fouls for a team or player. \cr
-#'       general_team_assist_turnover_ratio \tab numeric \tab The number of assists per turnover for a team. \cr
-#'       general_team_rebounds \tab numeric \tab The total number of rebounds for a team. \cr
-#'       general_steal_turnover_ratio \tab numeric \tab The number of steals per turnover. \cr
-#'       general_games_played \tab numeric \tab Games Played. \cr
-#'       general_games_started \tab numeric \tab The number of games started by an athlete. \cr
-#'       general_double_double \tab numeric \tab The number of times double digit values were accumulated in 2 of the following categories: points, rebounds, assists, steals, and blocked shots. \cr
-#'       general_triple_double \tab numeric \tab The number of times double digit values were accumulated in 3 of the following categories: points, rebounds, assists, steals, and blocked shots. \cr
-#'       offensive_assists \tab numeric \tab The number of times a player who passes the ball to a teammate in a way that leads to a score by field goal, meaning that he or she was "assisting" in the basket. There is some judgment involved in deciding whether a passer should be credited with an assist. \cr
-#'       offensive_field_goals \tab numeric \tab Field Goal makes and attempts. \cr
-#'       offensive_field_goals_attempted \tab numeric \tab The number of times a 2pt field goal was attempted. \cr
-#'       offensive_field_goals_made \tab numeric \tab The number of times a 2pt field goal was made. \cr
-#'       offensive_field_goal_pct \tab numeric \tab The ratio of field goals made to field goals attempted: FGM / FGA. \cr
-#'       offensive_free_throws \tab numeric \tab Free Throw makes and attempts. \cr
-#'       offensive_free_throw_pct \tab numeric \tab The ratio of free throws made to free throws attempted: FTM / FTA. \cr
-#'       offensive_free_throws_attempted \tab numeric \tab The number of times a free throw was attempted. \cr
-#'       offensive_free_throws_made \tab numeric \tab The number of times a free throw was made. \cr
-#'       offensive_offensive_rebounds \tab numeric \tab The number of times when the offense obtains the possession of the ball after a missed shot. \cr
-#'       offensive_points \tab numeric \tab The number of points scored. \cr
-#'       offensive_turnovers \tab numeric \tab The number of times a player loses possession to the other team. \cr
-#'       offensive_three_point_field_goals_attempted \tab numeric \tab The number of times a 3pt field goal was attempted. \cr
-#'       offensive_three_point_field_goals_made \tab numeric \tab The number of times a 3pt field goal was made. \cr
-#'       offensive_team_turnovers \tab numeric \tab The number of turnovers for the team. \cr
-#'       offensive_total_turnovers \tab numeric \tab The number of turnovers plus team turnovers for the team. \cr
-#'       offensive_fast_break_points \tab numeric \tab The number of points scored on fast breaks. \cr
-#'       offensive_avg_field_goals_made \tab numeric \tab The average field goals made per game. \cr
-#'       offensive_avg_field_goals_attempted \tab numeric \tab The average field goals attempted per game. \cr
-#'       offensive_avg_three_point_field_goals_made \tab numeric \tab The average three point field goals made per game. \cr
-#'       offensive_avg_three_point_field_goals_attempted \tab numeric \tab The average three point field goals attempted per game. \cr
-#'       offensive_avg_free_throws_made \tab numeric \tab The average free throw shots made per game. \cr
-#'       offensive_avg_free_throws_attempted \tab numeric \tab The average free throw shots attempted per game. \cr
-#'       offensive_avg_points \tab numeric \tab The average number of points scored per game. \cr
-#'       offensive_avg_offensive_rebounds \tab numeric \tab The average offensive rebounds per game. \cr
-#'       offensive_avg_assists \tab numeric \tab The average assists per game. \cr
-#'       offensive_avg_turnovers \tab numeric \tab The average turnovers committed per game. \cr
-#'       offensive_offensive_rebound_pct \tab numeric \tab The percentage of the number of times they obtain the possession of the ball after a missed shot. \cr
-#'       offensive_estimated_possessions \tab numeric \tab An estimation of the number of possessions for a team or player. \cr
-#'       offensive_avg_estimated_possessions \tab numeric \tab The average number of estimated possessions per game for a team or player. \cr
-#'       offensive_points_per_estimated_possessions \tab numeric \tab The number of points per estimated possession for a team or player. \cr
-#'       offensive_avg_team_turnovers \tab numeric \tab The average number of turnovers for a team per game. \cr
-#'       offensive_avg_total_turnovers \tab numeric \tab The average number of total turnovers for a team per game. \cr
-#'       offensive_three_point_field_goal_pct \tab numeric \tab The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA. \cr
-#'       offensive_two_point_field_goals_made \tab numeric \tab The number of 2-point field goals made for a team or player. \cr
-#'       offensive_two_point_field_goals_attempted \tab numeric \tab The number of 2-point field goals attempted for a team or player. \cr
-#'       offensive_avg_two_point_field_goals_made \tab numeric \tab The number of 2-point field goals made per game for a team or player. \cr
-#'       offensive_avg_two_point_field_goals_attempted \tab numeric \tab The number of 2-point field goals attempted per game for a team or player. \cr
-#'       offensive_two_point_field_goal_pct \tab numeric \tab The percentage of 2-points fields goals made by a team or player. \cr
-#'       offensive_shooting_efficiency \tab numeric \tab The efficiency with which a team or player shoots the basketball. \cr
-#'       offensive_scoring_efficiency \tab numeric \tab The efficiency with which a team or player scores the basketball. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_mbb_team_stats", unit = "team")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows
 #' @importFrom tidyr unnest unnest_wider everything
@@ -2378,147 +1959,7 @@ espn_mbb_team_stats <- function(team_id, year, season_type = "regular", total = 
 #' @param year Year
 #' @param season_type (character, default: regular): Season type - regular or postseason
 #' @param total (boolean, default: FALSE): Totals
-#' @return Returns a tibble with the player stats data
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       athlete_id \tab integer \tab Unique athlete identifier (ESPN). \cr
-#'       athlete_uid \tab character \tab ESPN athlete UID (universal identifier). \cr
-#'       athlete_guid \tab character \tab ESPN athlete GUID. \cr
-#'       athlete_type \tab character \tab Athlete type / class. \cr
-#'       sdr \tab integer \tab Sdr. \cr
-#'       first_name \tab character \tab Player's first name. \cr
-#'       last_name \tab character \tab Player's last name. \cr
-#'       full_name \tab character \tab Player's full name. \cr
-#'       display_name \tab character \tab Display name. \cr
-#'       short_name \tab character \tab Short display name. \cr
-#'       weight \tab numeric \tab Player weight in pounds. \cr
-#'       display_weight \tab character \tab Player weight in display format (e.g. '180 lbs'). \cr
-#'       height \tab numeric \tab Player height (string e.g. '6-2' or inches). \cr
-#'       display_height \tab character \tab Player height in display format (e.g. '6-2'). \cr
-#'       age \tab integer \tab Player age (in years). \cr
-#'       date_of_birth \tab character \tab Date of birth (YYYY-MM-DD). \cr
-#'       birth_place_city \tab character \tab Birth place city. \cr
-#'       birth_place_state \tab character \tab Birth place state. \cr
-#'       birth_place_country \tab character \tab Birth place country. \cr
-#'       slug \tab character \tab URL-safe identifier. \cr
-#'       headshot_href \tab character \tab Headshot image URL. \cr
-#'       headshot_alt \tab character \tab Alternative-text label for the headshot. \cr
-#'       jersey \tab character \tab Jersey number worn by the player. \cr
-#'       position_id \tab integer \tab Unique position identifier. \cr
-#'       position_name \tab character \tab Listed roster position ('Guard', 'Forward', 'Center'). \cr
-#'       position_display_name \tab character \tab Position display name. \cr
-#'       position_abbreviation \tab character \tab Position abbreviation ('G' / 'F' / 'C'). \cr
-#'       position_leaf \tab logical \tab Position leaf. \cr
-#'       linked \tab logical \tab TRUE if the record is linked to a related entity. \cr
-#'       experience_years \tab integer \tab Experience years. \cr
-#'       experience_display_value \tab character \tab Experience display value. \cr
-#'       experience_abbreviation \tab character \tab Experience abbreviation. \cr
-#'       active \tab logical \tab TRUE if the row represents an active record (player / team / season). \cr
-#'       draft_display_text \tab character \tab Draft display text. \cr
-#'       draft_round \tab integer \tab Round of the draft selection. \cr
-#'       draft_year \tab integer \tab Draft year (4-digit). \cr
-#'       draft_selection \tab integer \tab Draft selection. \cr
-#'       status_id \tab integer \tab Status identifier. \cr
-#'       status_name \tab character \tab Status label. \cr
-#'       status_type \tab character \tab Status type. \cr
-#'       status_abbreviation \tab character \tab Status abbreviation. \cr
-#'       defensive_blocks \tab numeric \tab Short for blocked shot, number of times when a defensive player legally deflects a field goal attempt from an offensive player. \cr
-#'       defensive_defensive_rebounds \tab numeric \tab The number of times when the defense obtains the possession of the ball after a missed shot by the offense. \cr
-#'       defensive_steals \tab numeric \tab The number of times a defensive player forced a turnover by intercepting or deflecting a pass or a dribble of an offensive player. \cr
-#'       defensive_turnover_points \tab numeric \tab The amount of points resulting from the possession following a turnover. \cr
-#'       defensive_avg_defensive_rebounds \tab numeric \tab The average defensive rebounds per game. \cr
-#'       defensive_avg_blocks \tab numeric \tab The average blocks per game. \cr
-#'       defensive_avg_steals \tab numeric \tab The average steals per game. \cr
-#'       general_disqualifications \tab numeric \tab The number of times a player reached the foul limit. \cr
-#'       general_flagrant_fouls \tab numeric \tab The number of fouls that the officials thought were unnecessary or excessive. \cr
-#'       general_fouls \tab numeric \tab The number of times a player had illegal contact with the opponent. \cr
-#'       general_per \tab numeric \tab A numerical value for each of a player's accomplishments per-minute and is pace-adjusted for the team they play on. The league average in PER to 15.00 every season. \cr
-#'       general_ejections \tab numeric \tab The number of times a player or coach is removed from the game as a result of a serious offense. \cr
-#'       general_technical_fouls \tab numeric \tab The number of times an player or coach was called for a technical foul (unsportsmanlike conduct or violations). \cr
-#'       general_rebounds \tab numeric \tab The total number of rebounds (offensive and defensive). \cr
-#'       general_minutes \tab numeric \tab The total number of minutes played. \cr
-#'       general_avg_minutes \tab numeric \tab The average number of minutes per game. \cr
-#'       general_fantasy_rating \tab numeric \tab The Fantasy Rating of a player. \cr
-#'       general_plus_minus \tab numeric \tab A player's estimated on-court impact on team performance measured in point differential per 100 possessions. \cr
-#'       general_avg_rebounds \tab numeric \tab The average rebounds per game. \cr
-#'       general_avg_fouls \tab numeric \tab The average fouls committed per game. \cr
-#'       general_avg_flagrant_fouls \tab numeric \tab The average number of flagrant fouls per game. \cr
-#'       general_avg_technical_fouls \tab numeric \tab The average number of technical fouls per game. \cr
-#'       general_avg_ejections \tab numeric \tab The average ejections per game. \cr
-#'       general_avg_disqualifications \tab numeric \tab The average number of disqualifications per game. \cr
-#'       general_assist_turnover_ratio \tab numeric \tab The average number of assists a player or team records per turnover. \cr
-#'       general_steal_foul_ratio \tab numeric \tab The average number of steals a player or team records per foul committed. \cr
-#'       general_block_foul_ratio \tab numeric \tab The average number of blocks a player or record per foul committed. \cr
-#'       general_avg_team_rebounds \tab numeric \tab The average number of rebounds for a team per game. \cr
-#'       general_total_rebounds \tab numeric \tab The total number of rebounds for a team or player. \cr
-#'       general_total_technical_fouls \tab numeric \tab The total number of technical fouls for a team or player. \cr
-#'       general_steal_turnover_ratio \tab numeric \tab The number of steals per turnover. \cr
-#'       general_games_played \tab numeric \tab Games Played. \cr
-#'       general_games_started \tab numeric \tab The number of games started by an athlete. \cr
-#'       general_double_double \tab numeric \tab The number of times double digit values were accumulated in 2 of the following categories: points, rebounds, assists, steals, and blocked shots. \cr
-#'       general_triple_double \tab numeric \tab The number of times double digit values were accumulated in 3 of the following categories: points, rebounds, assists, steals, and blocked shots. \cr
-#'       offensive_assists \tab numeric \tab The number of times a player who passes the ball to a teammate in a way that leads to a score by field goal, meaning that he or she was "assisting" in the basket. There is some judgment involved in deciding whether a passer should be credited with an assist. \cr
-#'       offensive_field_goals \tab numeric \tab Field Goal makes and attempts. \cr
-#'       offensive_field_goals_attempted \tab numeric \tab The number of times a 2pt field goal was attempted. \cr
-#'       offensive_field_goals_made \tab numeric \tab The number of times a 2pt field goal was made. \cr
-#'       offensive_field_goal_pct \tab numeric \tab The ratio of field goals made to field goals attempted: FGM / FGA. \cr
-#'       offensive_free_throws \tab numeric \tab Free Throw makes and attempts. \cr
-#'       offensive_free_throw_pct \tab numeric \tab The ratio of free throws made to free throws attempted: FTM / FTA. \cr
-#'       offensive_free_throws_attempted \tab numeric \tab The number of times a free throw was attempted. \cr
-#'       offensive_free_throws_made \tab numeric \tab The number of times a free throw was made. \cr
-#'       offensive_offensive_rebounds \tab numeric \tab The number of times when the offense obtains the possession of the ball after a missed shot. \cr
-#'       offensive_points \tab numeric \tab The number of points scored. \cr
-#'       offensive_turnovers \tab numeric \tab The number of times a player loses possession to the other team. \cr
-#'       offensive_three_point_field_goals_attempted \tab numeric \tab The number of times a 3pt field goal was attempted. \cr
-#'       offensive_three_point_field_goals_made \tab numeric \tab The number of times a 3pt field goal was made. \cr
-#'       offensive_total_turnovers \tab numeric \tab The number of turnovers plus team turnovers for the team. \cr
-#'       offensive_points_in_paint \tab numeric \tab The amount of points scored in the area known as "the Paint"(the rectangle between the foul line and the baseline). \cr
-#'       offensive_fast_break_points \tab numeric \tab The number of points scored on fast breaks. \cr
-#'       offensive_avg_field_goals_made \tab numeric \tab The average field goals made per game. \cr
-#'       offensive_avg_field_goals_attempted \tab numeric \tab The average field goals attempted per game. \cr
-#'       offensive_avg_three_point_field_goals_made \tab numeric \tab The average three point field goals made per game. \cr
-#'       offensive_avg_three_point_field_goals_attempted \tab numeric \tab The average three point field goals attempted per game. \cr
-#'       offensive_avg_free_throws_made \tab numeric \tab The average free throw shots made per game. \cr
-#'       offensive_avg_free_throws_attempted \tab numeric \tab The average free throw shots attempted per game. \cr
-#'       offensive_avg_points \tab numeric \tab The average number of points scored per game. \cr
-#'       offensive_avg_offensive_rebounds \tab numeric \tab The average offensive rebounds per game. \cr
-#'       offensive_avg_assists \tab numeric \tab The average assists per game. \cr
-#'       offensive_avg_turnovers \tab numeric \tab The average turnovers committed per game. \cr
-#'       offensive_offensive_rebound_pct \tab numeric \tab The percentage of the number of times they obtain the possession of the ball after a missed shot. \cr
-#'       offensive_estimated_possessions \tab numeric \tab An estimation of the number of possessions for a team or player. \cr
-#'       offensive_avg_estimated_possessions \tab numeric \tab The average number of estimated possessions per game for a team or player. \cr
-#'       offensive_points_per_estimated_possessions \tab numeric \tab The number of points per estimated possession for a team or player. \cr
-#'       offensive_avg_team_turnovers \tab numeric \tab The average number of turnovers for a team per game. \cr
-#'       offensive_avg_total_turnovers \tab numeric \tab The average number of total turnovers for a team per game. \cr
-#'       offensive_three_point_field_goal_pct \tab numeric \tab The ratio of 3pt field goals made to 3pt field goals attempted: 3PM / 3PA. \cr
-#'       offensive_two_point_field_goals_made \tab numeric \tab The number of 2-point field goals made for a team or player. \cr
-#'       offensive_two_point_field_goals_attempted \tab numeric \tab The number of 2-point field goals attempted for a team or player. \cr
-#'       offensive_avg_two_point_field_goals_made \tab numeric \tab The number of 2-point field goals made per game for a team or player. \cr
-#'       offensive_avg_two_point_field_goals_attempted \tab numeric \tab The number of 2-point field goals attempted per game for a team or player. \cr
-#'       offensive_two_point_field_goal_pct \tab numeric \tab The percentage of 2-points fields goals made by a team or player. \cr
-#'       offensive_shooting_efficiency \tab numeric \tab The efficiency with which a team or player shoots the basketball. \cr
-#'       offensive_scoring_efficiency \tab numeric \tab The efficiency with which a team or player scores the basketball. \cr
-#'       team_id \tab integer \tab Unique team identifier. \cr
-#'       team_guid \tab character \tab ESPN team GUID. \cr
-#'       team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
-#'       team_sdr \tab integer \tab ESPN team SDR identifier. \cr
-#'       team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-#'       team_location \tab character \tab Team city or location string. \cr
-#'       team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       team_nickname \tab character \tab Team nickname. \cr
-#'       team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       team_display_name \tab character \tab Full team display name. \cr
-#'       team_short_display_name \tab character \tab Short team display name (e.g. 'Aces'). \cr
-#'       team_color \tab character \tab Team primary color (hex without leading '#'). \cr
-#'       team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
-#'       is_active \tab logical \tab Is active. \cr
-#'       is_all_star \tab logical \tab Is all star. \cr
-#'       logo_href \tab character \tab Team or league logo URL. \cr
-#'       logo_dark_href \tab character \tab Logo URL for dark backgrounds. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_mbb_player_stats", unit = "player")
 #' @export
 #' @keywords MBB Player Stats
 #' @concept ESPN MBB Functions
@@ -2724,7 +2165,8 @@ espn_mbb_player_stats <- function(athlete_id, year, season_type = "regular", tot
 
 #'  **Parse ESPN MBB PBP, helper function**
 #' @param resp Response object from the ESPN MBB game summary endpoint
-#' @return For `helper_espn_mbb_pbp()`: a tibble with the columns of [espn_mbb_game_all_plays_schema], or `NULL`
+#' @eval .returns_rd("helper_espn_mbb_pbp", unit = "play-by-play event")
+#' @return These are the columns of `helper_espn_mbb_pbp()`, which returns `NULL`
 #'   when the game has no play-by-play. `home_score` / `away_score` are rebuilt from the
 #'   scoring plays when that reproduces the header's official final, otherwise they are
 #'   ESPN's per-play values; the last column, `score_source` (`"rebuilt"` / `"espn"`), says which.

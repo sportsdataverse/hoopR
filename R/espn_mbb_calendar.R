@@ -7,10 +7,7 @@ NULL
 #' @author Saiem Gilani
 #' @param season integer or character. Four-digit season year (e.g. `2025`).
 #'   Defaults to `most_recent_mbb_season()`.
-#' @return Returns a tibble of calendar entries.
-#'
-#'    Columns as documented in the shared [espn_mbb_calendar_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_calendar", unit = "calendar entry")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @importFrom janitor clean_names

@@ -11,27 +11,10 @@ acb_competition_current(competition_ids = NULL)
 the API's default competition. One or more whole numbers (a vector repeats \code{competitionIds} in the query).}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_competition_current}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition the site opens by default. \cr
-   edition_id \tab integer \tab Edition (season) the site opens by default. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   week_id \tab integer \tab Week the site opens by default. \cr
-   round_id \tab integer \tab Round the site opens by default. \cr
-   match_grouping \tab character \tab round or week (current pointers) \cr
-   match_id \tab integer \tab The current match (the featured game). \cr
-   status \tab character \tab State of the current match. \cr
-   start \tab POSIXct \tab Tip-off instant (UTC) of the current match. \cr
-   home_team_id \tab integer \tab Home season-team entry id of the current match. \cr
-   home_club_id \tab integer \tab Home stable club id of the current match. \cr
-   home_team \tab character \tab Home team name of the current match. \cr
-   home_team_abbr \tab character \tab Home team abbreviation of the current match. \cr
-   away_team_id \tab integer \tab Away season-team entry id of the current match. \cr
-   away_club_id \tab integer \tab Away stable club id of the current match. \cr
-   away_team \tab character \tab Away team name of the current match. \cr
-   away_team_abbr \tab character \tab Away team abbreviation of the current match. \cr
-}
+A \code{hoopR_data} tibble with one row per game of the current round.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_competition_current")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The API's current pointers: competition, edition, week, round and match.

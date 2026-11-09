@@ -29,13 +29,35 @@ espn_nba_season_week(
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A single-row tibble.
+A \code{hoopR_data} tibble with one row per week.
 
-Columns as documented in the shared \link{espn_mbb_season_week_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  week \tab integer \tab Week number. \cr
+  text \tab character \tab Display label (e.g. "Week 5"). \cr
+  start_date \tab character \tab ISO 8601 week start. \cr
+  end_date \tab character \tab ISO 8601 week end. \cr
+  rankings_ref \tab character \tab \code{$ref} to the per-week rankings endpoint. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A single-row tibble.
+A \code{hoopR_data} tibble with one row per week.
 
-Columns as documented in the shared \link{espn_mbb_season_week_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  week \tab integer \tab Week number. \cr
+  text \tab character \tab Display label (e.g. "Week 5"). \cr
+  start_date \tab character \tab ISO 8601 week start. \cr
+  end_date \tab character \tab ISO 8601 week end. \cr
+  rankings_ref \tab character \tab \code{$ref} to the per-week rankings endpoint. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Returns metadata for one week (number, start / end dates, text label,

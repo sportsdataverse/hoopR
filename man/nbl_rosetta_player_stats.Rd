@@ -12,103 +12,10 @@ nbl_rosetta_player_stats(player_id, org = "nbl")
 \item{org}{(\emph{character} default \code{"nbl"}): Organisation: nbl (men's NBL), wnbl (women's) or nbl1 (the second tier, men's and women's conferences). One of \code{"nbl"}, \code{"wnbl"}, \code{"nbl1"}.}
 }
 \value{
-A \code{hoopR_data} tibble (one row per season and period):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   org \tab character \tab Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. \cr
-   assists_average \tab double \tab Assists per game. \cr
-   blocks_average \tab double \tab Blocks per game. \cr
-   field_goals_attempted \tab integer \tab Field goals attempted, season total. \cr
-   field_goals_made \tab integer \tab Field goals made, season total. \cr
-   field_goals_attempted_average \tab double \tab Field goals attempted per game. \cr
-   field_goals_made_average \tab double \tab Field goals made per game. \cr
-   field_goals_percentage \tab double \tab Field goals made / attempted, a 0-1 FRACTION. \cr
-   fouls_average \tab double \tab Fouls committed (personal + technical + others) per game. \cr
-   free_throws_attempted \tab integer \tab Free throws attempted, season total. \cr
-   free_throws_made \tab integer \tab Free throws made, season total. \cr
-   free_throws_attempted_average \tab double \tab Free throws attempted per game. \cr
-   free_throws_made_average \tab double \tab Free throws made per game. \cr
-   free_throws_percentage \tab double \tab Free throws made / attempted, a 0-1 FRACTION. \cr
-   games \tab integer \tab Games played in the season (in the period rows, by the player or team). \cr
-   games_started \tab integer \tab Games in the starting five. \cr
-   offensive_rebounds \tab integer \tab Offensive rebounds, season total. \cr
-   fouls \tab integer \tab Fouls committed (personal + technical + others), season total. \cr
-   personal_fouls \tab integer \tab Personal fouls, season total. \cr
-   technical_fouls \tab integer \tab Technical fouls, season total. \cr
-   period \tab integer \tab Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) \cr
-   three_points_attempted \tab integer \tab Three-point field goals attempted, season total. \cr
-   three_points_attempted_average \tab double \tab Three-point field goals attempted per game. \cr
-   three_points_made \tab integer \tab Three-point field goals made, season total. \cr
-   three_points_made_average \tab double \tab Three-point field goals made per game. \cr
-   three_points_percentage \tab double \tab Three-point field goals made / attempted, a 0-1 FRACTION. \cr
-   turnovers_average \tab double \tab Turnovers per game. \cr
-   turnovers \tab integer \tab Turnovers, season total. \cr
-   two_points_attempted \tab integer \tab Two-point field goals attempted, season total. \cr
-   two_points_attempted_average \tab double \tab Two-point field goals attempted per game. \cr
-   two_points_made \tab integer \tab Two-point field goals made, season total. \cr
-   two_points_made_average \tab double \tab Two-point field goals made per game. \cr
-   two_points_percentage \tab double \tab Two-point field goals made / attempted, a 0-1 FRACTION. \cr
-   minutes \tab double \tab Minutes played, decimal minutes. \cr
-   minutes_average \tab double \tab Minutes per game, decimal minutes. \cr
-   points \tab integer \tab Points, season total. \cr
-   rebounds \tab integer \tab Total rebounds, season total. \cr
-   assists \tab integer \tab Assists, season total. \cr
-   blocks \tab integer \tab Blocks, season total. \cr
-   steals \tab integer \tab Steals, season total. \cr
-   plus_minus \tab integer \tab Point differential while on court, season total. \cr
-   plus_minus_average \tab double \tab Point differential while on court per game. \cr
-   efficiency \tab integer \tab Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV), season total. \cr
-   efficiency_average \tab double \tab Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) per game. \cr
-   points_average \tab double \tab Points per game. \cr
-   rebounds_average \tab double \tab Total rebounds per game. \cr
-   steals_average \tab double \tab Steals per game. \cr
-   player_id \tab character \tab DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. \cr
-   rosetta_player_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the player; routes that take this entity accept it as well as the DataCore id. \cr
-   player_first_name \tab character \tab The player's given name, e.g. Elijah. \cr
-   player_jersey_number \tab character \tab Jersey number, a STRING. \cr
-   player_last_name \tab character \tab The player's family name, e.g. Pepper. \cr
-   player_playing_position \tab character \tab Playing position code (G, F, C, PG, SF, FC, ...); null when not recorded. \cr
-   team_id \tab character \tab DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. \cr
-   rosetta_team_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the team; routes that take this entity accept it as well as the DataCore id. \cr
-   team_name \tab character \tab Name of the team as Rosetta spells it, e.g. Perth Wildcats. \cr
-   team_code \tab character \tab Team code, e.g. PER (the \code{{team_code}} path value) \cr
-   season_id \tab character \tab DataCore id (UUID v1, Sportradar) of the season; stable across seasons and the id to join on across routes. \cr
-   rosetta_season_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the season; routes that take this entity accept it as well as the DataCore id. \cr
-   season_year \tab integer \tab Rosetta's year of the season: the START year for the NBL and WNBL from 1998-99 (2025 = 2025-26), the calendar year for NBL1 and the 1979-1997 winter seasons. See season_end_year for the sdv key. \cr
-   season_type \tab character \tab Season type: regular (includes finals), preseason, in_season (cups, blitz, exhibition), test. \cr
-   season_competition_division \tab character \tab NBL1 divisions (conference x gender); empty for NBL and WNBL. \cr
-   sc_total_score \tab integer \tab SuperCoach score including double-double / triple-double bonuses. \cr
-   sc_total_score_without_dd_and_td \tab integer \tab SuperCoach score without those bonuses. \cr
-   sc_breakdown_points_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_points_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   sc_breakdown_rebounds_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_rebounds_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   sc_breakdown_assists_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_assists_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   sc_breakdown_blocks_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_blocks_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   sc_breakdown_steals_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_steals_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   sc_breakdown_turnovers_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_turnovers_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   sc_breakdown_triple_double_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_triple_double_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   sc_double_figure_count \tab integer \tab Stats in double figures (for the double-double / triple-double bonus) \cr
-   season_end_year \tab integer \tab sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. \cr
-   sc_breakdown_double_double_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_double_double_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   season_start_date \tab character \tab First day of the season, ISO date-time without offset. \cr
-   player_full_name \tab character \tab Given and family name. \cr
-   player_active \tab logical \tab Player record is active. \cr
-   player_date_of_birth \tab character \tab Date of birth, ISO date. \cr
-   player_nationality \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   player_height \tab double \tab Height in centimetres. \cr
-   player_weight \tab double \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   team_gender \tab character \tab Gender (MALE/FEMALE upper case on seasons and players, male/female lower case on competitions and divisions; UNKNOWN seen) \cr
-   synthetic_from_roster \tab logical \tab Row built from the roster because the player has no season statistics (all stats 0) \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per season and period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_player_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A player's season totals and averages for every season, by period.

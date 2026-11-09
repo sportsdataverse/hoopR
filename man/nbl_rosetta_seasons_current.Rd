@@ -10,24 +10,10 @@ nbl_rosetta_seasons_current(org = "nbl")
 \item{org}{(\emph{character} default \code{"nbl"}): Organisation: nbl (men's NBL), wnbl (women's) or nbl1 (the second tier, men's and women's conferences). One of \code{"nbl"}, \code{"wnbl"}, \code{"nbl1"}.}
 }
 \value{
-A \code{hoopR_data} tibble (one row: the season in progress):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   org \tab character \tab Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. \cr
-   season_id \tab character \tab DataCore season id (UUID v1); accepted as \code{{season_id}}. \cr
-   rosetta_season_id \tab character \tab Rosetta season id (UUID v4; v5 on NBL1); the \code{{season_id}} route key. \cr
-   name \tab character \tab Season name as Rosetta spells it (NBL26, WNBL 2024/25); names drift, key on season_year. \cr
-   season_year \tab integer \tab Rosetta's year of the season: the START year for the NBL and WNBL from 1998-99 (2025 = 2025-26), the calendar year for NBL1 and the 1979-1997 winter seasons. See season_end_year for the sdv key. \cr
-   season_type \tab character \tab Season type: regular (includes finals), preseason, in_season (cups, blitz, exhibition), test. \cr
-   start_date \tab character \tab First day of the season, ISO date-time without offset. \cr
-   end_date \tab character \tab Last day of the season, ISO date-time without offset; null on older seasons. \cr
-   competition_name \tab character \tab Name of the competition the season belongs to (e.g. NBL). \cr
-   competition_age_group \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   next_match_start_datetime \tab character \tab Tip-off of the season's next match, UTC; null when none. \cr
-   season_end_year \tab integer \tab sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_seasons_current")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The season in progress (empty between seasons: \code{hoopR_no_data}).

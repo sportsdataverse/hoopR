@@ -12,18 +12,10 @@ preseason, regular season, playoffs, postseason challenge, finals; 8, 9, 11, 12,
 2026-27); \code{division_id} in tpbl_divisions. Not the GoHoops division id.}
 }
 \value{
-A \code{hoopR_data} tibble: Head-to-head record of every team against every other team in one division. An empty
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{tpbl_standings_against}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   division_id \tab integer \tab TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the \code{{division_id}} of every division route. Not the GoHoops division id. \cr
-   team_id \tab integer \tab TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the \code{{team_id}} of the division team routes. Not the GoHoops franchise id and not the squad id. The ranked team. \cr
-   opponent_team_id \tab integer \tab TPBL team id of the opponent (franchise, 2-8). Joins team_id. \cr
-   opponent_gohoops_team_id \tab integer \tab GoHoops franchise id (key space: GoHoops franchises, 940-946; stable across seasons; = the TPBL team id + 938). The opponent. \cr
-   opponent \tab character \tab Opponent name. Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). \cr
-   won \tab integer \tab Games the ranked team won against this opponent in the division. \cr
-   lost \tab integer \tab Games the ranked team lost against this opponent in the division. \cr
-   drawn \tab integer \tab Games drawn against this opponent (always 0). \cr
-}
+A \code{hoopR_data} tibble with one row per team and opponent.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tpbl_standings_against")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Head-to-head record of every team against every other team in one division.

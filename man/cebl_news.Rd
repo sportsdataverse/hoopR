@@ -12,17 +12,10 @@ cebl_news(language, team_source_id = NULL)
 \item{team_source_id}{(default \code{NULL}) CEBL team id: only that team's articles.}
 }
 \value{
-A \code{hoopR_data} tibble: News articles in one language. The API answered an empty list on every probe, so this
-raises \code{hoopR_no_data}. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this
-order (sportsdataverse-py \code{cebl_news}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   news_id \tab integer \tab CEBL news article id; null when the API gives none. Unobserved: the route answered an empty list on every probe. \cr
-   language \tab character \tab Language code of the request ('en'); the body does not echo it. \cr
-   title \tab character \tab Article headline (upstream schema; unobserved, the route answered an empty list on every probe). \cr
-   published_at_utc \tab POSIXct \tab Publication time in UTC (upstream schema; unobserved, no article was ever served). \cr
-   image_url \tab character \tab Article image URL (upstream schema; unobserved, no article was ever served). \cr
-   html_content \tab character \tab Article body as HTML (upstream schema; unobserved, no article was ever served). \cr
-}
+A \code{hoopR_data} tibble with one row per news article.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cebl_news")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 News articles in one language. The API answered an empty list on every probe, so this raises \code{hoopR_no_data}.

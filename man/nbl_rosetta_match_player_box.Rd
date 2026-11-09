@@ -10,60 +10,10 @@ nbl_rosetta_match_player_box(match_id)
 \item{match_id}{(\emph{character} required): DataCore fixture id of the match (match_id of nbl_rosetta_matches), a UUID, e.g. b217a699-4bef-11f0-bc08-933162362355.}
 }
 \value{
-A \code{hoopR_data} tibble (one row per player line):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab character \tab DataCore fixture id of the match (UUID v1): the \code{{match_id}} route key and fixtureId in play-by-play. Join on it. \cr
-   match_status \tab character \tab Status of the match in Rosetta's words (complete for a finished game): box score and play-by-play of any other status are partial. \cr
-   stat_line_id \tab character \tab Provider record hash of this statistics row (64 hex characters) \cr
-   rosetta_stat_line_id \tab character \tab Rosetta id of this statistics row (UUID v4) \cr
-   assists \tab integer \tab Assists in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   blocks \tab integer \tab Blocks in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   defensive_rebounds \tab integer \tab Defensive rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   efficiency \tab integer \tab Efficiency rating (PTS + REB + AST + STL + BLK - missed FG - missed FT - TOV) in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   field_goals_attempted \tab integer \tab Field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   field_goals_made \tab integer \tab Field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   field_goals_percentage \tab double \tab Field goals made / attempted, a 0-1 FRACTION. \cr
-   fouls \tab integer \tab Fouls committed (personal + technical + others) in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   free_throws_attempted \tab integer \tab Free throws attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   free_throws_made \tab integer \tab Free throws made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   free_throws_percentage \tab double \tab Free throws made / attempted, a 0-1 FRACTION. \cr
-   jersey_number \tab character \tab Jersey number, a STRING. \cr
-   minutes \tab double \tab Minutes played: "MM:SS" string in player_match_statistics, decimal minutes in calculated_player_statistics, player-minutes (integer, 5 x period length) in team rows; "00:00" or 0 where not recorded. \cr
-   minutes_string \tab character \tab Minutes played as an ISO 8601 duration (PT30M32S); null on NBL1. \cr
-   offensive_rebounds \tab integer \tab Offensive rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   participated \tab logical \tab Player took part in the game. \cr
-   period \tab integer \tab Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) \cr
-   period_type \tab character \tab Period type: regular (overtime unobserved) \cr
-   personal_fouls \tab integer \tab Personal fouls in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   playing_position \tab character \tab Playing position code (G, F, C, PG, SF, FC, ...); null when not recorded. \cr
-   plus_minus \tab integer \tab Point differential while on court in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   points \tab integer \tab Points in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   rebounds \tab integer \tab Total rebounds in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   starter \tab logical \tab Player started the game. \cr
-   steals \tab integer \tab Steals in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   technical_fouls \tab integer \tab Technical fouls in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   three_points_attempted \tab integer \tab Three-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   three_points_made \tab integer \tab Three-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   three_points_percentage \tab double \tab Three-point field goals made / attempted, a 0-1 FRACTION. \cr
-   turnovers \tab integer \tab Turnovers in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   two_points_attempted \tab integer \tab Two-point field goals attempted in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   two_points_made \tab integer \tab Two-point field goals made in the match, or in the period on period rows; 0 where the era did not record it (results-only seasons before pbp) \cr
-   two_points_percentage \tab double \tab Two-point field goals made / attempted, a 0-1 FRACTION. \cr
-   rosetta_match_id \tab character \tab Rosetta's match RECORD id (UUID v4) as carried by box-score and play-by-play rows; no route accepts it. Join on match_id. \cr
-   player_id \tab character \tab DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. \cr
-   player_first_name \tab character \tab The player's given name, e.g. Elijah. \cr
-   player_last_name \tab character \tab The player's family name, e.g. Pepper. \cr
-   player_full_name \tab character \tab Given and family name. \cr
-   player_jersey_number \tab character \tab Jersey number, a STRING. \cr
-   player_playing_position \tab character \tab Playing position code (G, F, C, PG, SF, FC, ...); null when not recorded. \cr
-   team_id \tab character \tab DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. \cr
-   team_code \tab character \tab Team code, e.g. PER (the \code{{team_code}} path value) \cr
-   team_name \tab character \tab Name of the team as Rosetta spells it, e.g. Perth Wildcats. \cr
-   sc \tab integer \tab NBL SuperCoach fantasy score for the game. \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per player line.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_match_player_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One match's official player box score, one row per player line (period 0 = whole game).

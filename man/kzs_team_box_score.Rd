@@ -10,87 +10,10 @@ kzs_team_box_score(match_id)
 \item{match_id}{(required) Match id (match_id in kzs_matches), e.g. 101839. Global across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Team totals of a final game's box score, one row per side. An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_team_box_score}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab Match id: the federation key of a game, global across seasons (joins kzs_matches and kzs_match). \cr
-   team_side \tab character \tab Which side of the match the row belongs to: home (the organiser, firstTeam on the wire) or away. \cr
-   team_id \tab integer \tab Team id: one club team in one season (joins kzs_teams); not the match-team id and not the club id. \cr
-   team_name \tab character \tab Name of the team for the season, sponsor included. \cr
-   minutes \tab double \tab Team minutes: the sum of its players (200.0 = 5 x 40; 0.0 on 2015-16 team lines). \cr
-   two_pm \tab integer \tab The team's two-point field goals made. \cr
-   two_pa \tab integer \tab The team's two-point field goals attempted. \cr
-   two_p_perc \tab double \tab The team's two-point percentage, 0-100. \cr
-   three_pm \tab integer \tab The team's three-point field goals made. \cr
-   three_pa \tab integer \tab The team's three-point field goals attempted. \cr
-   three_p_perc \tab double \tab The team's three-point percentage, 0-100. \cr
-   f_tm \tab integer \tab The team's free throws made. \cr
-   f_ta \tab integer \tab The team's free throws attempted. \cr
-   f_t_perc \tab double \tab The team's free-throw percentage, 0-100. \cr
-   fg_m \tab integer \tab The team's field goals made. \cr
-   fg_a \tab integer \tab The team's field goals attempted. \cr
-   fg_perc \tab double \tab The team's field-goal percentage, 0-100. \cr
-   offensive_rebounds \tab integer \tab The team's offensive rebounds. \cr
-   defensive_rebounds \tab integer \tab The team's defensive rebounds. \cr
-   total_rebounds \tab integer \tab The team's total rebounds. \cr
-   assists \tab integer \tab The team's assists. \cr
-   steals \tab integer \tab The team's steals. \cr
-   turnovers \tab integer \tab The team's turnovers. \cr
-   blocks_in_favor \tab integer \tab The team's shots blocked (blocks made). \cr
-   blocks_against \tab integer \tab The team's own shots that were blocked. \cr
-   foul_commited \tab integer \tab The team's fouls committed. \cr
-   foul_received \tab integer \tab The team's fouls drawn. \cr
-   p_ir \tab integer \tab The team's PIR, performance index rating ((points + rebounds + assists + steals + blocks + fouls drawn) - (missed field goals + missed free throws + turnovers + shots blocked + fouls committed)). \cr
-   plus_minus \tab integer \tab The team's plus-minus: points scored minus allowed while on court (team line: the final margin). \cr
-   assists_turnover_ratio \tab double \tab The team's assist-to-turnover ratio (0 in every sample: not computed). \cr
-   defensive_rating \tab double \tab The team's defensive rating (0 in every sample: not computed). \cr
-   efficiency \tab integer \tab Team efficiency (PIR); -1 on 2015-16 team lines (not computed). \cr
-   points \tab integer \tab The team's points. \cr
-   efficiency_custom \tab double \tab The team's custom efficiency as the federation computes it (equal to \code{efficiency} on player rows; 0 on team lines). \cr
-   efficiency_game_score \tab double \tab The team's game score (0 in every sample: not computed). \cr
-   fast_break_points_attempted \tab integer \tab The team's fast-break attempts (0 in every sample: not computed). \cr
-   fast_break_points_made \tab integer \tab The team's fast-break makes (0 in every sample: not computed). \cr
-   usage_percentage \tab double \tab The team's usage percentage (0 in every sample: not computed). \cr
-   m_vp_votes \tab integer \tab The team's MVP votes (0 in every sample). \cr
-   minus \tab integer \tab The team's points allowed on court (0 in every sample: not computed). \cr
-   offensive_rating \tab double \tab The team's offensive rating (0 in every sample: not computed). \cr
-   p_er \tab double \tab The team's PER (0 in every sample: not computed). \cr
-   plus \tab integer \tab The team's points scored on court (0 in every sample: not computed). \cr
-   points_fast_break \tab integer \tab The team's fast-break points. \cr
-   points_in_the_paint \tab integer \tab The team's points in the paint. \cr
-   points_in_the_paint_attempted \tab integer \tab The team's paint attempts (0 in every sample: not computed). \cr
-   points_in_the_paint_made \tab integer \tab The team's paint makes (0 in every sample: not computed). \cr
-   points_second_chance \tab integer \tab The team's second-chance points. \cr
-   second_chance_points_attempted \tab integer \tab The team's second-chance attempts (0 in every sample: not computed). \cr
-   second_chance_points_made \tab integer \tab The team's second-chance makes (0 in every sample: not computed). \cr
-   true_shooting_attempts \tab integer \tab The team's true-shooting attempts (0 in every sample: not computed). \cr
-   true_shooting_percentage \tab double \tab The team's true-shooting percentage (0 in every sample: not computed). \cr
-   bench_points \tab integer \tab Points by players who did not start. \cr
-   biggest_lead \tab integer \tab Biggest lead, points. \cr
-   biggest_scoring_run \tab integer \tab Biggest unanswered scoring run, points. \cr
-   fouls_bench_technical \tab integer \tab Technical fouls charged to the bench (not the coach). \cr
-   fouls_coach_disqualifying \tab integer \tab Disqualifying fouls charged to the head coach. \cr
-   fouls_coach_technical \tab integer \tab Technical fouls charged to the head coach. \cr
-   fouls_disqualifying \tab integer \tab Disqualifying fouls by players (ejections). \cr
-   fouls_offensive \tab integer \tab Offensive (charging) fouls by players. \cr
-   fouls_on \tab integer \tab Fouls drawn by the team. \cr
-   fouls_personal \tab integer \tab Personal fouls by players, all kinds that count toward fouling out. \cr
-   fouls_team \tab integer \tab Team fouls (0 in every sample). \cr
-   fouls_technical \tab integer \tab Technical fouls by players. \cr
-   fouls_technical_other \tab integer \tab Other technical fouls (0 in every sample). \cr
-   fouls_throw_in \tab integer \tab Throw-in fouls (0 in every sample). \cr
-   fouls_total \tab integer \tab All fouls committed. \cr
-   fouls_unsportsmanlike \tab integer \tab Unsportsmanlike (flagrant) fouls by players. \cr
-   fouled_out \tab integer \tab Players fouled out (0 in every sample). \cr
-   lead_changes \tab integer \tab Lead changes in the game. \cr
-   points_from_turnovers \tab integer \tab Points off opponent turnovers. \cr
-   time_leading \tab double \tab Time the team led, decimal minutes. \cr
-   times_scores_level \tab integer \tab Times the score was tied. \cr
-   rebounds_team \tab integer \tab Team rebounds (not credited to a player). \cr
-   rebounds_team_defensive \tab integer \tab Defensive rebounds credited to the team, not a player. \cr
-   rebounds_team_offensive \tab integer \tab Offensive rebounds credited to the team, not a player. \cr
-   turnovers_team \tab integer \tab Team turnovers (not credited to a player). \cr
-}
+A \code{hoopR_data} tibble with one row per side.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_team_box_score")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team totals of a final game's box score, one row per side.

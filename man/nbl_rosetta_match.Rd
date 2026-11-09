@@ -10,64 +10,10 @@ nbl_rosetta_match(match_id)
 \item{match_id}{(\emph{character} required): DataCore fixture id of the match (match_id of nbl_rosetta_matches), a UUID, e.g. b217a699-4bef-11f0-bc08-933162362355.}
 }
 \value{
-A \code{hoopR_data} tibble (one row):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   org \tab character \tab Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. \cr
-   match_id \tab character \tab DataCore fixture id (UUID v1); equal to \code{id}. \cr
-   match_status \tab character \tab Status of the match in Rosetta's words (complete for a finished game): box score and play-by-play of any other status are partial. \cr
-   start_time_datetime \tab character \tab Tip-off, UTC; same value as start_time. \cr
-   match_type \tab character \tab Match type: regular, final (FINAL upper case seen) \cr
-   attendance \tab integer \tab Attendance, a STRING; null when not recorded. \cr
-   clock \tab character \tab Game clock of the latest event, HH:MM:SS remaining in the period. \cr
-   current_period \tab integer \tab Latest period number as a STRING; null on older matches. \cr
-   clock_running \tab logical \tab Game clock is running. \cr
-   home_score \tab integer \tab Home final score, a STRING; null before tip-off. \cr
-   away_score \tab integer \tab Away final score, a STRING; null before tip-off. \cr
-   round \tab character \tab Round label: a number as a string in the regular season ("13"), words in the finals ("SEMI FINAL SERIES 1", "CHAMPIONSHIP") \cr
-   start_time \tab character \tab Tip-off, UTC, with no offset or a Z suffix (ESPN dates the same Perth v SE Melbourne game 2025-12-18T10:30Z; Rosetta says 2025-12-18T10:30:00) \cr
-   status \tab character \tab Provider fixture status: CONFIRMED, SCHEDULED. \cr
-   external_media_id \tab character \tab Media id. Through NBL25 (2024-25): the Genius Sports match id (7 digits, e.g. 2636769; 6 or fewer in older seasons). From NBL26: mostly an 8-digit number of unverified origin (e.g. 61386925), date-like codes on some games (05042026 = DDMMYYYY on the 2026 Championship game, 1409252 = DDMMYY + n on the Blitz), null on many preseason games. NBL1 and WNBL 2025 carry 8-digit numbers. \cr
-   match_slug \tab character \tab URL slug of the match page on nbl.com.au. \cr
-   match_title \tab character \tab Match title ("\verb{<home>} v \verb{<away>} \verb{<men/women>} DD-MM-YYYY") \cr
-   secondary_external_id \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   live_exclusive \tab logical \tab Match is a live-stream exclusive. \cr
-   season_id \tab character \tab DataCore id (UUID v1, Sportradar) of the season; stable across seasons and the id to join on across routes. \cr
-   rosetta_season_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the season; routes that take this entity accept it as well as the DataCore id. \cr
-   season_year \tab integer \tab Rosetta's year of the season: the START year for the NBL and WNBL from 1998-99 (2025 = 2025-26), the calendar year for NBL1 and the 1979-1997 winter seasons. See season_end_year for the sdv key. \cr
-   season_type \tab character \tab Season type: regular (includes finals), preseason, in_season (cups, blitz, exhibition), test. \cr
-   season_competition_id \tab character \tab Rosetta competition id (UUID v4) \cr
-   season_competition_name \tab character \tab Name of the competition the season belongs to (e.g. NBL, WNBL, NBL1 North Men). \cr
-   season_competition_gender \tab character \tab Gender (MALE/FEMALE upper case on seasons and players, male/female lower case on competitions and divisions; UNKNOWN seen) \cr
-   season_competition_league_name \tab character \tab Name of the league the competition belongs to (NBL, WNBL or NBL1). \cr
-   season_competition_division \tab character \tab NBL1 divisions (conference x gender); empty for NBL and WNBL. \cr
-   venue_id \tab character \tab DataCore id (UUID v1, Sportradar) of the venue; stable across seasons and the id to join on across routes. \cr
-   rosetta_venue_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the venue; routes that take this entity accept it as well as the DataCore id. \cr
-   venue_name \tab character \tab Name of the venue (arena), e.g. RAC Arena. \cr
-   venue_address \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_capacity \tab integer \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_timezone \tab character \tab IANA time zone of the venue, e.g. Australia/Sydney. \cr
-   venue_code \tab character \tab Venue code; often null. \cr
-   venue_state \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_suburb \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_latitude \tab double \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_longitude \tab double \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_country \tab character \tab Country; often null. \cr
-   home_team_id \tab character \tab DataCore id (UUID v1, Sportradar) of the home team; stable across seasons and the id to join on across routes. \cr
-   home_team_name \tab character \tab Display name of the team. \cr
-   home_team_external_team_name \tab character \tab Team name as DataCore spells it. \cr
-   home_team_code \tab character \tab Team code of the home team, e.g. PER or SYD. \cr
-   away_team_id \tab character \tab DataCore id (UUID v1, Sportradar) of the away team; stable across seasons and the id to join on across routes. \cr
-   away_team_name \tab character \tab Display name of the team. \cr
-   away_team_external_team_name \tab character \tab Team name as DataCore spells it. \cr
-   away_team_code \tab character \tab Team code of the away team, e.g. PER or SYD. \cr
-   data_source \tab character \tab Backend that built the body: nexus-api or lambda-cache (observed). It varies between requests for the same match (the NBL 2025-26 sample game came back lambda-cache from /live/all and nexus-api from /match/\code{{match_id}} minutes apart, with identical play-by-play), so it says nothing about the data. \cr
-   match_status_string \tab character \tab Status banner text, e.g. FINAL. \cr
-   play_by_play_updated_datetime \tab character \tab Last play-by-play update, ISO 8601 UTC. \cr
-   season_end_year \tab integer \tab sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per match.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_match")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One match's header: status, scores, clock, venue, season and teams. Box score and play-by-play: the \verb{match_*} frames.

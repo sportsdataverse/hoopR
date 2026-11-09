@@ -10,47 +10,10 @@ lba_pbp(game_id)
 \item{game_id}{(required) Game id (game_id in lba_calendar), e.g. 25602. Global across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Play-by-play of a final game (2017-18 on), one row per action with x/y; coordinate frame
-by era. The columns are always these, in this order (sportsdataverse-py \code{lba_pbp}); a column the site adds later is
-appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Game id (global across seasons); joins lba_calendar and lba_game. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   home_team_id \tab integer \tab Home team-season id of the game (the play-by-play ht_id). \cr
-   visitor_team_id \tab integer \tab Visitor team-season id of the game (the play-by-play vt_id). \cr
-   team_side \tab character \tab Side of the acting team, home or visitor; null for a clock action without a team. \cr
-   home_score \tab integer \tab Home points after the action, parsed from the score text (2021-22 on; else null). \cr
-   visitor_score \tab integer \tab Visitor points after the action, parsed from the score text (2021-22 on; else null). \cr
-   coord_frame \tab character \tab Frame of x and y: half_court_px (2017-18 and 2018-19 image pixels) or court_pct (2019-20 on, 0-100). \cr
-   action_id \tab integer \tab Action id within the game (ascending in time from 2021-22; not ordered before). \cr
-   description \tab character \tab Action type in Italian, e.g. \verb{2 punti segnato} (2-pointer made); full translation table in the Divergence notes. \cr
-   player_id \tab integer \tab Player id (null for team and clock actions). \cr
-   team_id \tab integer \tab Team id (team-season) of the actor. \cr
-   home_club \tab integer \tab 1 = the home team acted, 0 = the away team; null for clock actions, and on every action in 2018-19 and 2019-20 (use \code{side} there). \cr
-   in_area \tab logical \tab True on shots from the paint (zone \code{3}). \cr
-   dunk \tab integer \tab 1 = dunk, 0 otherwise. \cr
-   seconds \tab integer \tab Elapsed seconds within \code{minute} (0-59); 0 before 2019-20. Elapsed = minute x 60 + seconds; \code{print_time} = period length minus that. \cr
-   minute \tab integer \tab Elapsed minute of the period (2019-20 on: 0-9, with \code{seconds}); 2017-18 / 2018-19: 1-10, the minute in progress, \code{seconds} 0. \cr
-   period \tab integer \tab Period: 1-4, 5+ = overtime. \cr
-   order \tab integer \tab Sort key; \code{sort=asc} orders by it. \cr
-   side \tab integer \tab Basket the row's side_area_zone is measured from, as sent: 0 = the basket at x = 0, 1 = the one at x = 100 (zone A is that basket's half: x < 50 for 0, x >= 50 for 1). It is NOT the team of the game (that is team_side): on shots, assists, fouls committed, turnovers and offensive rebounds it is the actor's attacking basket, which changes at half-time; on defensive rebounds, steals, blocks and fouls drawn it is the opponent's. \cr
-   x \tab integer \tab Court x; frame by era (see the coordinates section): 2019-20 on, 0-100 \% of the 28 m length; 2017-18 / 2018-19, half-court image pixels; null (2019-20 on) or 0 (earlier) when unlocated. \cr
-   y \tab integer \tab Court y; 2019-20 on, 0-100 \% of the 15 m width; 2017-18 / 2018-19, image pixels (see the coordinates section). \cr
-   score \tab character \tab Score after the action, \code{home - away} string (\code{0 - 0}); 2020-21 on scoring actions only, null before. \cr
-   linked_action_id \tab integer \tab \code{action_id} of the related action: the shot an assist or rebound belongs to, the foul a drawn foul answers, the player swapped in a substitution. \cr
-   print_time \tab character \tab Game clock remaining, \code{MM:SS} (10:00 at a period start); null before 2021-22. \cr
-   action_1_qualifier_code \tab character \tab First qualifier code, number sent as a string (shot type, turnover type, foul type; see \code{legend}). \cr
-   action_2_qualifier_code \tab character \tab Second qualifier code (fast break \code{500}, blocked \code{1005}, tip-ins \code{1001}-\code{1004}, ...). \cr
-   action_1_qualifier_description \tab character \tab \code{legend} label of \code{action_1_qualifier_code}, Italian. \cr
-   action_2_qualifier_description \tab character \tab \code{legend} label of \code{action_2_qualifier_code}, Italian. \cr
-   side_area_zone \tab character \tab \code{A} = in the actor's attacking half, \code{D} = its defensive half (2021-22 on). \cr
-   side_area_code \tab character \tab Court zone \code{1}-\code{10}, number sent as a string (see the coordinates section; 2021-22 on). \cr
-   player_name \tab character \tab Given name of the acting player. \cr
-   player_surname \tab character \tab Family name of the acting player. \cr
-   player_number \tab character \tab Jersey number, number sent as a string. \cr
-   team_name \tab character \tab Team name in that season, with its sponsor (\verb{Nutribullet Treviso Basket}); changes with the sponsor. \cr
-   id \tab integer \tab Always null (not a key). \cr
-}
+A \code{hoopR_data} tibble with one row per action with x/y.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play of a final game (2017-18 on), one row per action with x/y; coordinate frame by era.

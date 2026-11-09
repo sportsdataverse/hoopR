@@ -14,24 +14,24 @@ espn_nba_tournaments(...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per tournament.
+A \code{hoopR_data} tibble with one row per tournament.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      tournament_id \tab character \tab ESPN tournament identifier. \cr
-      ref \tab character \tab Full \verb{$ref} URL for the detail. \cr
-      league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
-   }}
+  col_name \tab types \tab description \cr
+  tournament_id \tab character \tab ESPN tournament identifier. \cr
+  ref \tab character \tab Full \code{$ref} URL for the detail. \cr
+  league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per tournament.
+A \code{hoopR_data} tibble with one row per tournament.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      tournament_id \tab character \tab ESPN tournament identifier. \cr
-      ref \tab character \tab Full \verb{$ref} URL for the detail. \cr
-      league \tab character \tab League slug (\code{"nba"}). \cr
-   }}
+  col_name \tab types \tab description \cr
+  tournament_id \tab character \tab ESPN tournament identifier. \cr
+  ref \tab character \tab Full \code{$ref} URL for the detail. \cr
+  league \tab character \tab League slug (\code{"nba"}). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

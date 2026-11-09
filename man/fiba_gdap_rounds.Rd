@@ -14,27 +14,10 @@ competition.competitionId of any game row (208182 = World Cup 2023, 208722 = Par
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_system \tab character \tab Pairing system label (Single, Home and Away, Best of 3). \cr
-   game_system_code \tab character \tab Pairing system code: S single game, HA home and away, BOF3 best of three. \cr
-   parent_round_id \tab integer \tab roundId of the round this one belongs to; null for a top-level round. \cr
-   round_code \tab character \tab Round code (GP group phase, QF, SF, F final, RS regular season, CL17-32 classification...). \cr
-   round_id \tab integer \tab Round id (GDAP key space, unique across competitions); the first segment of gameName. \cr
-   round_name \tab character \tab Round label (Group Phase, Quarter-Finals, Final...). \cr
-   round_number \tab integer \tab Round number within the competition (1-based). \cr
-   round_type \tab character \tab Round type label: Group Round, Non Group Round, Super Round (getgdapgamesbycompetitionid uses the code G/NG here). \cr
-   round_type_code \tab character \tab Round type code: G group, NG non-group (knockout), S super round. \cr
-   round_status_code \tab character \tab Round status: COMPL completed, PROGR in progress, CLOS closed. \cr
-   start_date \tab character \tab Round start, local date-time. \cr
-   end_date \tab character \tab Round end, local date-time (23:59:59.9999999 on the last day). \cr
-   has_teams_assigned \tab logical \tab True once the round's teams are known. \cr
-   round_kind \tab character \tab Standard Round or Qualifiers. \cr
-   standing_header_code \tab character \tab Code of the standings table the round feeds. \cr
-   standing_header_name \tab character \tab Name of the standings table the round feeds. \cr
-   qualified_team_information \tab character \tab Qualification note of the round; null in every sample. \cr
-   round_order \tab integer \tab Display order of the round. \cr
-}
+A \code{hoopR_data} tibble with one row per round.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_rounds")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Rounds of a competition (group stage, knockout rounds).

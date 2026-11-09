@@ -32,35 +32,10 @@ List them with \code{acb_competition_weeks}. A whole number; a whole double is a
 true resolves the week to one round. \code{TRUE} or \code{FALSE}, sent as \code{true} / \code{false}.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_round_matches}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa. \cr
-   edition_id \tab integer \tab Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, \code{season}. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   round_id \tab integer \tab Global round id (6017 = Liga 2026-27 round 3); not the round number. \cr
-   round_number \tab integer \tab Round number within the phase, looked up from the body's round list. \cr
-   subphase_id \tab integer \tab Sub-phase id of the round (playoff stages); null in the regular season. \cr
-   subphase_number \tab integer \tab Sub-phase number of the round; null in the regular season. \cr
-   week_id \tab integer \tab Week selected in the request (the API's selectedFilters.week); null when none. \cr
-   match_id \tab integer \tab Match id. Legacy ids (seasons up to 2019-20) sit below about 20000 (12559 = 2005-06 final, 17718 = 2016-17 final); from 2020-21 they start at about 100000 (102920 in 2021-22, 105401 in 2026-27). One key space across competitions: the matchId param of every matchdata route. \cr
-   home_team_id \tab integer \tab Home season-team entry id (new every season; joins the body's team list). \cr
-   away_team_id \tab integer \tab Away season-team entry id (new every season; joins the body's team list). \cr
-   home_score \tab integer \tab Home points (null before the match) \cr
-   away_score \tab integer \tab Away points (null before the match) \cr
-   start \tab POSIXct \tab Tip-off, ISO 8601 UTC \cr
-   status \tab character \tab Match state (x-match-statuses) \cr
-   is_on_half_time \tab logical \tab At half time (live) \cr
-   current_quarter \tab integer \tab Current or last quarter (5+ = overtime); not reliable after the match (1 in the 2017 series rows) \cr
-   home_club_id \tab integer \tab Stable club id of the home team (looked up in the body's team list). \cr
-   home_team \tab character \tab Home team name for the season (looked up in the body's team list). \cr
-   home_team_abbr \tab character \tab Home team three-letter abbreviation (looked up in the body's team list). \cr
-   away_club_id \tab integer \tab Stable club id of the away team (looked up in the body's team list). \cr
-   away_team \tab character \tab Away team name for the season (looked up in the body's team list). \cr
-   away_team_abbr \tab character \tab Away team three-letter abbreviation (looked up in the body's team list). \cr
-   ticketing_link \tab character \tab Ticket shop URL; null when none. \cr
-   broadcasters \tab character \tab Broadcast channel names of the game joined with '; ' (the first is the primary). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_round_matches")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Games of one round (or week) with scores, status and broadcasters.

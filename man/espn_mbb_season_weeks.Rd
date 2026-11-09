@@ -25,13 +25,29 @@ espn_nba_season_weeks(
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per week.
+A \code{hoopR_data} tibble with one row per week.
 
-Columns as documented in the shared \link{espn_mbb_season_weeks_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  week \tab integer \tab Week number (1-based). \cr
+  ref \tab character \tab \code{$ref} URL for the week detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per week.
+A \code{hoopR_data} tibble with one row per week.
 
-Columns as documented in the shared \link{espn_mbb_season_weeks_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  week \tab integer \tab Week number (1-based). \cr
+  ref \tab character \tab \code{$ref} URL for the week detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Returns the list of week IDs for one (MBB season x season-type). MBB

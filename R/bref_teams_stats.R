@@ -12,21 +12,7 @@
 #' @param table (*character* optional): Which team table to return. One of
 #'   `per_game` (default, team per-game), `totals`, `per_poss` (per 100 poss),
 #'   `advanced`, or `opponent` (opponent per-game).
-#' @return A `hoopR_data` tibble with one row per team (columns vary by `table`;
-#'   common identifying columns shown -- names are Basketball-Reference
-#'   `data-stat` keys):
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       ranker \tab integer \tab Row rank. \cr
-#'       team \tab character \tab Team name. \cr
-#'       g \tab integer \tab Games played. \cr
-#'       mp \tab numeric \tab Minutes played. \cr
-#'       pts \tab numeric \tab Points (scaled to the chosen \code{table}). \cr
-#'       season \tab integer \tab Season (echoes the \code{season} argument). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("bref_teams_stats", inline = FALSE, unit = "team")
 #' @keywords Basketball-Reference
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble rename any_of

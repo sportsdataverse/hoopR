@@ -15,26 +15,10 @@ api.basketball-bundesliga.de) or \code{dbbl} (women, Toyota Damen-Basketball-Bun
 api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).}
 }
 \value{
-A \code{hoopR_data} tibble: Every playoff game of a season with its series and the points of each series team.
-An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{scb_playoff_games}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the sdv key; the API's \code{season_id} plus one. \cr
-   season_id \tab integer \tab The API's own season key, the START year (2025 = 2025-26); \code{season} minus one. \cr
-   round \tab character \tab Round of the bracket: \code{quarter_finals}, \code{semi_finals} or \code{finals}. \cr
-   series \tab integer \tab 1-based position of the game's series within its round, in the order the API lists them. \cr
-   game_id \tab character \tab Game id, a string (the playoff tree sends an integer); joins \code{scb_games.game_id}. \cr
-   scheduled_time \tab character \tab Scheduled tip-off, ISO 8601 UTC. \cr
-   timestamp \tab integer \tab Tip-off, Unix seconds. \cr
-   game_winner_id \tab character \tab Season-team id of the game winner, a string (the playoff tree sends an integer). \cr
-   home_team_id \tab character \tab Season-team id of the home team, a string (the playoff tree sends an integer). \cr
-   guest_team_id \tab character \tab Season-team id of the guest (away) team, a string (the playoff tree sends an integer). \cr
-   team_a_id \tab character \tab Season-team id of the series' team A (the higher seed); \code{points_team_a} is its score, whichever side hosted. \cr
-   team_b_id \tab character \tab Season-team id of the series' team B; \code{points_team_b} is its score, whichever side hosted. \cr
-   points_team_a \tab integer \tab Team A's points in the game. \cr
-   points_team_b \tab integer \tab Team B's points in the game. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_playoff_games")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every playoff game of a season with its series and the points of each series team.

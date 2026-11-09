@@ -15,13 +15,10 @@ and box (cached) and checks the vendor body against them (uuid, final score, mad
 the uuid must be the game page's. Without it only the checks the body allows by itself run.}
 }
 \value{
-A \code{hoopR_data} tibble: The vendor's home-team win probability by minute for one finished game. An empty valid
-answer is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{pleague_preciser_win_probability}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_uuid \tab character \tab Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; \code{uuid} of pleague_game. \cr
-   minute \tab integer \tab Minute mark: 0 is the tip-off (50 percent); 49 entries for a 48-minute game. \cr
-   home_win_pct \tab double \tab The home team's win probability in percent (0-100) at that minute; the vendor documents no method. \cr
-}
+A \code{hoopR_data} tibble with one row per minute.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_preciser_win_probability")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The vendor's home-team win probability by minute for one finished game.

@@ -38,21 +38,10 @@ or any fixture row).}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per \verb{(season_id, stat_key, rank)}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   season_id \tab character \tab Season UUID of the leaders. \cr
-   stat_key \tab character \tab Statistic the leader is ranked in (points, pointsPerGame, efficiency, doubleDouble, ...). \cr
-   stat_name \tab character \tab Short column heading the site shows for the statistic (PTS, REB), in the site's language. \cr
-   stat_label \tab character \tab Longer statistic label the site shows (code in the API), in the site's language. \cr
-   rank \tab integer \tab Position of the leader within the statistic, 1-based (the API lists the top 5). \cr
-   entity_id \tab character \tab Team UUID of the leader's team. \cr
-   entity_name \tab character \tab Name of the leader's team. \cr
-   person_id \tab character \tab Player UUID of the leader. \cr
-   person_name \tab character \tab Name of the leader. \cr
-   value \tab double \tab Numeric value of the statistic; null when the API sends a duration or text (see value_text). \cr
-   value_text \tab character \tab Non-numeric statistic value, e.g. an ISO 8601 duration such as PT12M2S for minutes per game. \cr
-}
+A \code{hoopR_data} tibble with one row per (\code{season_id}, \code{stat_key}, \code{rank}).
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_leaders")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Season leaders per statistic (top 5 each), with their player and team ids.}

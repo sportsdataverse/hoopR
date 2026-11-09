@@ -11,37 +11,10 @@ cba_schedule_day(day)
 the next game day) and refuses rows on another date.}
 }
 \value{
-A \code{hoopR_data} tibble: One row per game: ids, teams, status, score, round and the data flags. An empty valid
-answer is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{cba_schedule_day}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   home_team_id \tab integer \tab teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. \cr
-   home_team_logo \tab character \tab Absolute URL of the home team logo (300x300 png). \cr
-   home_team_lose \tab integer \tab Home team's cumulative losses after this game. An integer (the API sends it as digit text). \cr
-   home_team_name \tab character \tab Home team name (Chinese) as of the game's season; changes with the sponsor. Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. \cr
-   home_team_score \tab integer \tab Home team final points (a game not yet played has no score; a scheduled 2026-27 game outside the samples showed null). \cr
-   home_team_win \tab integer \tab Home team's cumulative wins after this game in the match type. An integer (the API sends it as digit text). \cr
-   is_events \tab integer \tab Play-by-play flag: 1 = play-by-play exists (2017-18 and later in the samples), 2 = none (the 2009-10 sample answers empty pages). \cr
-   is_report \tab integer \tab Game-report flag: 1 = a game report page exists (every sample). \cr
-   match_order \tab integer \tab Sequence number of the game within its season and match type (1-based). \cr
-   match_type_id \tab integer \tab Match type id (1 regular season, 2 playoffs, 3 preseason, 4 all-star, 9 relegation; see getMatchType). \cr
-   minutes \tab integer \tab Regulation length of the game in minutes: 40 (4 x 10) in the 2025-26 sample, 48 (4 x 12) in the 2009-10 and 2017-18 samples. \cr
-   quarter \tab integer \tab Number of periods played (4 = no overtime; 5 and up would be overtime periods). \cr
-   round \tab integer \tab Round number within the match type (1-based). \cr
-   round_desc \tab character \tab Unobserved: null in every sample, so no meaning is claimed beyond its name (round description). \cr
-   schedule_id \tab integer \tab CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the \code{{scheduleId}} of every game route). Stamped by the runtime from the request; null on a body parsed without it. \cr
-   schedule_num \tab integer \tab Unobserved: null in every sample on this route (the game count is filled on schedules/month). Typed Int64 like the family's other routes. \cr
-   schedule_time \tab character \tab Tip-off as 'YYYY-MM-DD HH:MM:SS' (China local time, no zone). \cr
-   schedule_type_name \tab character \tab Round label (Chinese), e.g. (Chinese text)1regular season, round 1. \cr
-   season \tab integer \tab Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. \cr
-   seconds \tab double \tab Unobserved: null in every sample (the clock seconds of a live game, by its name). Typed Float64 like the family's other routes. \cr
-   status \tab integer \tab Game status: 4 = finished (every sampled game). 1 = not started and 2 = in progress are inferred from the site's polling logic; 3 is unobserved. See the code table. \cr
-   visiting_team_id \tab integer \tab teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. \cr
-   visiting_team_logo \tab character \tab Absolute URL of the visiting team logo (300x300 png). \cr
-   visiting_team_lose \tab integer \tab Visiting team's cumulative losses after this game. An integer (the API sends it as digit text). \cr
-   visiting_team_name \tab character \tab Visiting team name (Chinese) as of the game's season; changes with the sponsor. Names change with the sponsor, the id does not; teamId -> English glossary in cba_glossary.yaml. \cr
-   visiting_team_score \tab integer \tab Visiting team final points. \cr
-   visiting_team_win \tab integer \tab Visiting team's cumulative wins after this game. An integer (the API sends it as digit text). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cba_schedule_day")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The games of one day: ids, teams, status, score, round and the data flags.

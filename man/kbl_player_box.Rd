@@ -12,82 +12,10 @@ season_code, game_code and game_no of kbl_schedule. Only final games are served;
 \code{hoopR_bad_request}.}
 }
 \value{
-A \code{hoopR_data} tibble: Player box score of a final game with the vendor's advanced rates, one row per player of
-both teams. The columns are always these, in this order (sportsdataverse-py \code{kbl_player_box}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   gmkey \tab character \tab Game key \verb{S\{seasonCode\}G\{gameCode\}N\{gameNo\}} (e.g. S47G01N49): the id of every game route and game frame. \cr
-   season_code \tab integer \tab KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League). \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr
-   game_code \tab character \tab Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day. \cr
-   game_no \tab integer \tab Game number inside the competition (glkey): the N part of the gmkey. \cr
-   team_code \tab character \tab KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList \code{teamCode}, game \code{tcodeH}/\code{tcodeA}, \code{t} in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (\code{teamCodeD}). \cr
-   home_away \tab character \tab Side (string): '1' home, '2' away; '3' on both teams' rows in the 1997-98 sample, so join on \code{player.tcode} instead. \cr
-   started \tab integer \tab 1 when the player started the game, else 0. \cr
-   pcode \tab character \tab KBL player code (6-digit string). Joins to \code{pcode} on every route and to \code{playerNo} in /league/round-mvp. \cr
-   player_name \tab character \tab Player name in Korean (foreign players in Hangul transliteration). \cr
-   player_name_en \tab character \tab Player name in English / romanized (sometimes Hangul for former players). \cr
-   team_name \tab character \tab Team short name (Korean, e.g. Changwon LG), as it was at the time. English names: /common/teamList \code{teamNameEn} / \code{teamNameFullEn}, joined on the team code. \cr
-   back_num \tab character \tab Jersey number (string). \cr
-   pos \tab character \tab Position code (string): C center, FD forward, GD guard, FC forward-center, GF guard-forward; table in the returns md. \cr
-   player_flag \tab character \tab Player type (string): '0' domestic, '1' foreign import, '2' Asian-quota player. \cr
-   score \tab integer \tab Points. This game. \cr
-   fg \tab integer \tab Two-point field goals made, dunks included: 201 + 207 rows (score = 2\emph{fg + 3}threep + ft holds on every sampled box). This game. \cr
-   fg_a \tab integer \tab Two-point field-goal attempts, made + missed, dunks included: 201 + 202 + 207 + 208 rows (checked per team on S47G01N49). This game. \cr
-   fgt \tab integer \tab Field goals made, two- and three-point (fg + threep). This game. \cr
-   fgt_a \tab integer \tab Field-goal attempts, two- and three-point (fgA + threepA). This game. \cr
-   threep \tab integer \tab Three-point field goals made (action 205). This game. \cr
-   threep_a \tab integer \tab Three-point attempts, made + missed (205 + 206). This game. \cr
-   ft \tab integer \tab Free throws made (action 203). This game. \cr
-   ft_a \tab integer \tab Free-throw attempts, made + missed (203 + 204). This game. \cr
-   dk \tab integer \tab Dunks made (action 207); included in \code{fg}. This game. \cr
-   dk_a \tab integer \tab Dunk attempts (made + missed, actions 207 + 208). This game. \cr
-   rb \tab integer \tab Total rebounds (offr + defr; team rebounds are \code{teamR}). This game. \cr
-   offr \tab integer \tab Offensive rebounds (action 209). This game. \cr
-   defr \tab integer \tab Defensive rebounds (action 210). This game. \cr
-   ast \tab integer \tab Assists (action 211). This game. \cr
-   stl \tab integer \tab Steals (action 212). This game. \cr
-   bs \tab integer \tab Blocked shots (action 213). This game. \cr
-   to \tab integer \tab Turnovers (action 214). This game. \cr
-   foul \tab integer \tab Personal fouls (wft + woft). This game. \cr
-   wft \tab integer \tab Fouls that awarded free throws (action 215). This game. \cr
-   woft \tab integer \tab Fouls that awarded no free throws (action 216). This game. \cr
-   pp \tab integer \tab Field goals made in the paint. This game. \cr
-   pp_a \tab integer \tab Field-goal attempts in the paint. This game. \cr
-   pscore \tab integer \tab Points in the paint (2 * pp). This game. \cr
-   sast \tab integer \tab Screen assists (action 226; tracked in recent seasons only, 0 before). This game. \cr
-   dfl \tab integer \tab Deflections (action 227; tracked in recent seasons only, 0 before). This game. \cr
-   gd \tab integer \tab Good-defense plays (action 221). This game. \cr
-   idf \tab integer \tab Illegal-defense violations (action 219; an early-KBL rule, so non-zero only in old seasons). This game. \cr
-   fb \tab integer \tab Fast breaks credited to the player (action 217 rows that name a player, as in 1997-98); 0 in recent seasons, where fast breaks are team rows (\code{tfb}). This game. \cr
-   ef \tab integer \tab Meaning unverified (0 in every game sample; non-zero in some season totals). This game. \cr
-   tf \tab integer \tab Probably technical fouls (unverified; 0 in most rows). This game. \cr
-   inout \tab integer \tab Times the player entered the game, the start included (checked on the 2025-26 sample game); a team row sums its players. This game. \cr
-   inout1 \tab integer \tab Times the player was substituted out before the end (checked on the 2025-26 sample game); a team row sums its players. This game. \cr
-   play_min \tab integer \tab Minutes of playing time; add \code{playSec} seconds. This game. \cr
-   play_sec \tab integer \tab Seconds part of the playing time (0-59), added to \code{playMin}. This game. \cr
-   fo \tab integer \tab Fouls drawn (the player rows of a team sum to the opponent's \code{foul}, checked on the 2025-26 sample game). This game. \cr
-   margin_cn \tab integer \tab Plus-minus: the point margin while the player was on court. This game. \cr
-   offrtg \tab double \tab Offensive rating: points scored per 100 possessions (estimated). This game. \cr
-   defrtg \tab double \tab Defensive rating: points allowed per 100 possessions (estimated). This game. \cr
-   netrtg \tab double \tab Net rating: offrtg - defrtg. This game. \cr
-   efg_rt \tab double \tab Effective field-goal percentage, 0-100. This game. \cr
-   ts_rt \tab double \tab True-shooting percentage, 0-100. This game. \cr
-   ast_rt \tab double \tab Assist rate: share of teammates' field goals assisted while on court, 0-100. This game. \cr
-   ast_to \tab double \tab Assist-to-turnover ratio. This game. \cr
-   ast_ratio \tab double \tab Assist ratio: assists per 100 possessions used. This game. \cr
-   oreb_rt \tab double \tab Offensive-rebound percentage, 0-100. This game. \cr
-   dreb_rt \tab double \tab Defensive-rebound percentage, 0-100. This game. \cr
-   reb_rt \tab double \tab Total-rebound percentage, 0-100. This game. \cr
-   pace \tab double \tab Possessions per 40 minutes (estimated; a player row covers his minutes on court). This game. \cr
-   tov_rt \tab double \tab Turnover rate: turnovers per 100 possessions, 0-100. This game. \cr
-   poss \tab double \tab Possessions (estimated). This game. \cr
-   per \tab double \tab Player efficiency rating (KBL's formula; scale unverified). This game. \cr
-   pie \tab double \tab Player impact estimate: share of the game's positive events, as a percentage. This game. \cr
-   usg_rt \tab double \tab Usage rate: share of team possessions used while on court, 0-100. This game. \cr
-   to_ratio \tab double \tab Turnover ratio: turnovers per 100 possessions used. This game. \cr
-   minutes_played \tab double \tab Playing time in minutes (play_min + play_sec / 60), derived. \cr
-}
+A \code{hoopR_data} tibble with one row per player of both teams.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_player_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player box score of a final game with the vendor's advanced rates, one row per player of both teams.

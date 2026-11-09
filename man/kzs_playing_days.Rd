@@ -11,13 +11,10 @@ kzs_playing_days(competition_id)
 season, e.g. 579 (men's first league 2025/26).}
 }
 \value{
-A \code{hoopR_data} tibble: Match days of a competition and the number of games on each. An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_playing_days}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). \cr
-   date \tab character \tab Calendar date of the match day, 'YYYY-MM-DD'. \cr
-   no_of_games \tab integer \tab Matches on that day. \cr
-}
+A \code{hoopR_data} tibble with one row per match day.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_playing_days")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Match days of a competition and the number of games on each.

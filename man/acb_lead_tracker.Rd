@@ -13,20 +13,10 @@ acb_lead_tracker(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_lead_tracker}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
-   edition_id \tab integer \tab Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, \code{season}. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   quarter \tab integer \tab Period: 1-4, 5+ overtime \cr
-   minute \tab integer \tab Game clock left in the period, minutes part. \cr
-   second \tab integer \tab Game clock left in the period, seconds part. \cr
-   clock_seconds \tab integer \tab Game clock REMAINING in the period as whole seconds (minute x 60 + second; the clock counts down from 600, overtimes from 300). \cr
-   home_score \tab integer \tab Home score at that moment. \cr
-   away_score \tab integer \tab Away score at that moment. \cr
-   margin \tab integer \tab Home score minus away score at that moment (positive = the home team leads). \cr
-}
+A \code{hoopR_data} tibble with one row per scoring moment.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_lead_tracker")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Score through a game, one row per scoring moment, with the margin.

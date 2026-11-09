@@ -41,72 +41,72 @@ the season data into a database.}
 \item{tablename}{The name of the data table within the database}
 }
 \value{
-Returns a \code{hoopR_data} tibble with one row per player-team-season.
+A \code{hoopR_data} tibble with one row per player-team-season.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      player_id \tab integer \tab Unique NBA Stats player identifier. \cr
-      player_name \tab character \tab Player display name. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_abbreviation \tab character \tab Team abbreviation. \cr
-      team_name \tab character \tab Full team display name. \cr
-      teams \tab character \tab Team abbreviation(s) the player appeared for this season. \cr
-      season \tab integer \tab Season identifier (4-digit year). \cr
-      season_type \tab character \tab Season portion (e.g. 'Regular Season'). \cr
-      o_rapm \tab numeric \tab Offensive regularized adjusted plus-minus. \cr
-      d_rapm \tab numeric \tab Defensive regularized adjusted plus-minus. \cr
-      rapm \tab numeric \tab Net regularized adjusted plus-minus (o_rapm + d_rapm). \cr
-      off_poss \tab integer \tab Offensive possessions used in the RAPM fit. \cr
-      def_poss \tab integer \tab Defensive possessions used in the RAPM fit. \cr
-      o_adj_rapm \tab numeric \tab Offensive RAPM adjusted for minutes/possession stability. \cr
-      d_adj_rapm \tab numeric \tab Defensive RAPM adjusted for minutes/possession stability. \cr
-      adj_rapm \tab numeric \tab Net adjusted RAPM (o_adj_rapm + d_adj_rapm). \cr
-      ospm \tab numeric \tab Offensive statistical plus-minus (box-score component). \cr
-      dspm \tab numeric \tab Defensive statistical plus-minus (box-score component). \cr
-      spm \tab numeric \tab Net statistical plus-minus. \cr
-      min \tab numeric \tab Minutes played. \cr
-      gp \tab integer \tab Games played. \cr
-      obpm \tab numeric \tab Offensive box plus-minus. \cr
-      dbpm \tab numeric \tab Defensive box plus-minus. \cr
-      bpm \tab numeric \tab Net box plus-minus. \cr
-      war \tab numeric \tab Wins above replacement. \cr
-      darko_filtered_skill \tab numeric \tab DARKO-style filtered skill rating. \cr
-      darko_projected_rating \tab numeric \tab DARKO-style forward-looking projected rating. \cr
-      darko_projected_sd \tab numeric \tab Standard deviation of the DARKO-style projected rating. \cr
-   }}
+  col_name \tab types \tab description \cr
+  player_id \tab integer \tab Unique NBA Stats player identifier. \cr
+  player_name \tab character \tab Player display name. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_abbreviation \tab character \tab Team abbreviation. \cr
+  team_name \tab character \tab Full team display name. \cr
+  teams \tab character \tab Team abbreviation(s) the player appeared for this season. \cr
+  season \tab integer \tab Season identifier (4-digit year). \cr
+  season_type \tab character \tab Season portion (e.g. 'Regular Season'). \cr
+  o_rapm \tab numeric \tab Offensive regularized adjusted plus-minus. \cr
+  d_rapm \tab numeric \tab Defensive regularized adjusted plus-minus. \cr
+  rapm \tab numeric \tab Net regularized adjusted plus-minus (o_rapm + d_rapm). \cr
+  off_poss \tab integer \tab Offensive possessions used in the RAPM fit. \cr
+  def_poss \tab integer \tab Defensive possessions used in the RAPM fit. \cr
+  o_adj_rapm \tab numeric \tab Offensive RAPM adjusted for minutes/possession stability. \cr
+  d_adj_rapm \tab numeric \tab Defensive RAPM adjusted for minutes/possession stability. \cr
+  adj_rapm \tab numeric \tab Net adjusted RAPM (o_adj_rapm + d_adj_rapm). \cr
+  ospm \tab numeric \tab Offensive statistical plus-minus (box-score component). \cr
+  dspm \tab numeric \tab Defensive statistical plus-minus (box-score component). \cr
+  spm \tab numeric \tab Net statistical plus-minus. \cr
+  min \tab numeric \tab Minutes played. \cr
+  gp \tab integer \tab Games played. \cr
+  obpm \tab numeric \tab Offensive box plus-minus. \cr
+  dbpm \tab numeric \tab Defensive box plus-minus. \cr
+  bpm \tab numeric \tab Net box plus-minus. \cr
+  war \tab numeric \tab Wins above replacement. \cr
+  darko_filtered_skill \tab numeric \tab DARKO-style filtered skill rating. \cr
+  darko_projected_rating \tab numeric \tab DARKO-style forward-looking projected rating. \cr
+  darko_projected_sd \tab numeric \tab Standard deviation of the DARKO-style projected rating. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Returns a \code{hoopR_data} tibble with one row per player-team-season.
+A \code{hoopR_data} tibble with one row per player-team-season.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      player_id \tab character \tab stats.ncaa.org player identifier. \cr
-      player \tab character \tab Player display name (title-cased). \cr
-      season \tab integer \tab Season identifier (4-digit season-ending year). \cr
-      team_id \tab character \tab Unique team identifier. \cr
-      min \tab numeric \tab Minutes played. \cr
-      box_obpm \tab numeric \tab Box-score offensive box plus-minus. \cr
-      box_dbpm \tab numeric \tab Box-score defensive box plus-minus. \cr
-      box_bpm \tab numeric \tab Box-score net box plus-minus (box_obpm + box_dbpm). \cr
-   }}
+  col_name \tab types \tab description \cr
+  player_id \tab character \tab stats.ncaa.org player identifier. \cr
+  player \tab character \tab Player display name (title-cased). \cr
+  season \tab integer \tab Season identifier (4-digit season-ending year). \cr
+  team_id \tab character \tab Unique team identifier. \cr
+  min \tab numeric \tab Minutes played. \cr
+  box_obpm \tab numeric \tab Box-score offensive box plus-minus. \cr
+  box_dbpm \tab numeric \tab Box-score defensive box plus-minus. \cr
+  box_bpm \tab numeric \tab Box-score net box plus-minus (box_obpm + box_dbpm). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Returns a \code{hoopR_data} tibble with one row per team-season.
+A \code{hoopR_data} tibble with one row per team-season.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab integer \tab Season identifier (4-digit season-ending year). \cr
-      team_id \tab character \tab Unique team identifier. \cr
-      adj_o \tab numeric \tab Adjusted offensive efficiency (points per 100 possessions, opponent-adjusted). \cr
-      adj_d \tab numeric \tab Adjusted defensive efficiency (points allowed per 100 possessions, opponent-adjusted). \cr
-      adj_em \tab numeric \tab Adjusted efficiency margin (adj_o minus adj_d). \cr
-      adj_tempo \tab numeric \tab Adjusted possessions per 40 minutes. \cr
-      raw_o \tab numeric \tab Unadjusted (raw) offensive efficiency. \cr
-      raw_d \tab numeric \tab Unadjusted (raw) defensive efficiency. \cr
-      games \tab integer \tab Games played (season total). \cr
-      rank \tab integer \tab National rank by adj_em. \cr
-      adj_em_z \tab numeric \tab Z-score of adj_em relative to the season's team distribution. \cr
-   }}
+  col_name \tab types \tab description \cr
+  season \tab integer \tab Season identifier (4-digit season-ending year). \cr
+  team_id \tab character \tab Unique team identifier. \cr
+  adj_o \tab numeric \tab Adjusted offensive efficiency (points per 100 possessions, opponent-adjusted). \cr
+  adj_d \tab numeric \tab Adjusted defensive efficiency (points allowed per 100 possessions, opponent-adjusted). \cr
+  adj_em \tab numeric \tab Adjusted efficiency margin (adj_o minus adj_d). \cr
+  adj_tempo \tab numeric \tab Adjusted possessions per 40 minutes. \cr
+  raw_o \tab numeric \tab Unadjusted (raw) offensive efficiency. \cr
+  raw_d \tab numeric \tab Unadjusted (raw) defensive efficiency. \cr
+  games \tab integer \tab Games played (season total). \cr
+  rank \tab integer \tab National rank by adj_em. \cr
+  adj_em_z \tab numeric \tab Z-score of adj_em relative to the season's team distribution. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

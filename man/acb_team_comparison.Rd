@@ -13,21 +13,10 @@ acb_team_comparison(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_team_comparison}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
-   quarter \tab integer \tab Period of the bar: 0 = the whole game, 1-4 quarters. \cr
-   stat \tab character \tab Compared statistic (free_throws, two_pointers, three_pointers, field_goals, rebounds, assists, steals, turnovers, personal_fouls, time_outs, points_off_turnover, paint_points, second_chance_points, fast_break_points, bench_points ...). \cr
-   home_value \tab double \tab Home value of the bar: a percentage 0-100 for the shooting statistics (the API's \code{'79,17\%'} decimal comma parsed), a count otherwise. \cr
-   away_value \tab double \tab Away value of the bar, same units as home_value. \cr
-   home_made \tab integer \tab Home shots made, from the 'made/attempted' subtitle; null for the non-shooting statistics. \cr
-   home_attempted \tab integer \tab Home shots attempted, from the subtitle; null for the non-shooting statistics. \cr
-   away_made \tab integer \tab Away shots made, from the subtitle; null for the non-shooting statistics. \cr
-   away_attempted \tab integer \tab Away shots attempted, from the subtitle; null for the non-shooting statistics. \cr
-   home_is_highlighted \tab logical \tab True when the site highlights the home bar as the better value. \cr
-   away_is_highlighted \tab logical \tab True when the site highlights the away bar as the better value. \cr
-}
+A \code{hoopR_data} tibble with one row per period and statistic.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_team_comparison")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team-versus-team comparison bars of a game per period.

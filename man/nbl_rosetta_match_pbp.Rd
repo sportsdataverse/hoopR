@@ -10,41 +10,10 @@ nbl_rosetta_match_pbp(match_id)
 \item{match_id}{(\emph{character} required): DataCore fixture id of the match (match_id of nbl_rosetta_matches), a UUID, e.g. b217a699-4bef-11f0-bc08-933162362355.}
 }
 \value{
-A \code{hoopR_data} tibble (one row per event, sorted on action_id):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab character \tab DataCore fixture id of the match (UUID v1): the \code{{match_id}} route key and fixtureId in play-by-play. Join on it. \cr
-   rosetta_match_id \tab character \tab Rosetta's match RECORD id (UUID v4) as carried by box-score and play-by-play rows; no route accepts it. Join on match_id. \cr
-   match_status \tab character \tab Status of the match in Rosetta's words (complete for a finished game): box score and play-by-play of any other status are partial. \cr
-   action_id \tab integer \tab Event sequence number within the match (ascending in feed time) \cr
-   period \tab integer \tab Period number, an INTEGER here (1-4 = quarters) \cr
-   period_type \tab character \tab Period type: regular (overtime unobserved) \cr
-   clock \tab character \tab Game clock at the event, MM:SS remaining in the period; null on some feed-control events. \cr
-   clock_seconds \tab double \tab Game clock at the event as seconds (parsed from clock, MM:SS); null for events without a clock. \cr
-   shot_clock \tab character \tab Shot clock at the event, MM:SS; in Genius-era matches it repeats the game clock (no shot-clock data) \cr
-   shot_clock_seconds \tab double \tab Shot clock at the event as seconds (parsed from shot_clock); in Genius-era backfills it repeats the game clock. \cr
-   score_home \tab integer \tab Home team's running score after the event (score_1 in the body). \cr
-   score_away \tab integer \tab Away team's running score after the event (score_2 in the body). \cr
-   action_type \tab character \tab Event type: 2pt, 3pt, freeThrow, rebound, assist, steal, block, turnover, foul, substitution, timeOut, jumpBall, possession, possessionArrow, period, fixture, main (clock start/stop) \cr
-   sub_type \tab character \tab Event detail (shot type, foul type, "1Of2" free throw, In/Out...); absent when the event has none. Two vocabularies: Title Case ("Jump Shot") in NBL/WNBL 2025-26 feeds (events carry fixtureId), camelCase ("jumpShot") in older backfills and NBL1. \cr
-   sub_type_key \tab character \tab sub_type folded to snake_case, so the Title Case 2025-26 spelling and the camelCase backfill spelling match. \cr
-   success \tab logical \tab Shot or free throw made (true) or missed (false). DataCore-era feeds (events with fixtureId) and NBL1 carry it only on shots and free throws (absent elsewhere); older backfills carry it on every event, true on non-shot events. \cr
-   team_id \tab character \tab DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. \cr
-   team_code \tab character \tab Team code, e.g. PER (the \code{{team_code}} path value) \cr
-   team_name \tab character \tab Name of the team as Rosetta spells it, e.g. Perth Wildcats. \cr
-   is_home \tab logical \tab True when the event's team is the match's home team; null when the event has no team. \cr
-   player_id \tab character \tab DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. \cr
-   player_name \tab character \tab Full name of the player the event belongs to; null for events no player owns (team rebounds, period starts). \cr
-   jersey_number \tab character \tab Jersey number of the player at the event, as text (a WNBL backfill writes 6.0). \cr
-   x \tab double \tab Shot or event position along the court length, percent 0-100, in game orientation (each team's shots sit at x > 50 for two periods and x < 50 for the others). Unverified: which end is x = 0; DataCore-era free-throw, foul and turnover coordinates are not at the free-throw line. Null where none was recorded. \cr
-   y \tab double \tab Shot or event position across the court width, percent 0-100 (free throws and close shots cluster near 50). Unverified: which sideline is y = 0. Null where none was recorded. \cr
-   readable_action_type \tab character \tab Human-readable event label, e.g. "Game - Game completed". \cr
-   system_action_type \tab character \tab Machine event label, e.g. game_game_completed. \cr
-   timestamp \tab character \tab Wall-clock time of the event, ISO 8601 without offset (UTC) \cr
-   feed \tab character \tab Feed shape: datacore (NBL and WNBL 2025-26: events carry fixtureId, arrive newest first, Title Case sub_type, a real shot clock) or backfill (older seasons and NBL1 2025: no fixtureId, oldest first, camelCase sub_type, shot_clock repeating the game clock). \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_match_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One match's play-by-play with shot x/y, oldest first (NBL 2025-26 included, which ESPN's nbl feed lacks).

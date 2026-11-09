@@ -15,29 +15,7 @@
 #' @param table (*character* optional): Which stat table to return. One of
 #'   `per_game` (default), `totals`, `advanced`, `per_minute` (per 36 minutes),
 #'   or `per_poss` (per 100 possessions).
-#' @return A `hoopR_data` tibble with one row per player (columns vary by
-#'   `table`; common identifying columns shown -- column names are
-#'   Basketball-Reference `data-stat` keys):
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       ranker \tab integer \tab Row rank. \cr
-#'       player \tab character \tab Player name. \cr
-#'       age \tab integer \tab Player age on Feb 1 of the season. \cr
-#'       team_id \tab character \tab Team abbreviation (\code{TOT} for players on >1 team). \cr
-#'       pos \tab character \tab Position. \cr
-#'       g \tab integer \tab Games played. \cr
-#'       gs \tab integer \tab Games started. \cr
-#'       mp_per_g \tab numeric \tab Minutes (per_game table) / \code{mp} total (totals table). \cr
-#'       pts_per_g \tab numeric \tab Points (scaled to the chosen \code{table}). \cr
-#'       season \tab integer \tab Season (echoes the \code{season} argument). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'   The `advanced` table adds `per`, `ts_pct`, `usg_pct`, `ws`, `bpm`, `vorp`,
-#'   etc.; `totals`/`per_minute`/`per_poss` return the same box categories scaled
-#'   accordingly.
-#'
+#' @eval .returns_rd("bref_players_stats", inline = FALSE, unit = "player")
 #' @keywords Basketball-Reference
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble rename any_of

@@ -16,52 +16,10 @@ accepted.}
 whole double is accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_player_matches}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab ACB licence number asked for. \cr
-   match_id \tab integer \tab ACB match id of the game. \cr
-   round_type \tab character \tab Phase code of the game (LR regular season, PO playoff). \cr
-   round_number \tab integer \tab Round number within the phase. \cr
-   date \tab POSIXct \tab Tip-off instant (UTC). \cr
-   home_team_id \tab integer \tab Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every \code{homeTeamId} / \code{awayTeamId} / \code{teamId} / \code{teamEditionId}. Not the club id. \cr
-   home_club_id \tab integer \tab Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the \code{clubId} request param and every \code{homeClubId} / \code{awayClubId}. \cr
-   home_team \tab character \tab Team name that season (sponsor names change) \cr
-   home_team_abbr \tab character \tab Three-letter abbreviation (BAR, RMB) \cr
-   away_team_id \tab integer \tab Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every \code{homeTeamId} / \code{awayTeamId} / \code{teamId} / \code{teamEditionId}. Not the club id. \cr
-   away_club_id \tab integer \tab Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the \code{clubId} request param and every \code{homeClubId} / \code{awayClubId}. \cr
-   away_team \tab character \tab Team name that season (sponsor names change) \cr
-   away_team_abbr \tab character \tab Three-letter abbreviation (BAR, RMB) \cr
-   edition_id \tab integer \tab Season id read from the home team entry (START year - 1935). \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   is_selected_local \tab logical \tab True when the player's team played at home. \cr
-   has_won \tab logical \tab True when the player's team won the game. \cr
-   play_time \tab character \tab Time on court as 'mm:ss'. \cr
-   seconds_played \tab integer \tab Time on court in whole seconds (play_time parsed). \cr
-   points \tab integer \tab Points (player game-log row) \cr
-   three_pointers_made \tab integer \tab Three-point field goals made \cr
-   three_pointers_attempted \tab integer \tab Three-point field goals attempted \cr
-   three_pointers_percentage \tab double \tab Three-point percentage, 0-100 with one decimal; 0 when there was no attempt \cr
-   two_pointers_made \tab integer \tab Two-point field goals made \cr
-   two_pointers_attempted \tab integer \tab Two-point field goals attempted \cr
-   two_pointers_percentage \tab double \tab Two-point percentage, 0-100 with one decimal; 0 when there was no attempt \cr
-   free_throws_made \tab integer \tab Free throws the player made in that match (a count, not a season total). \cr
-   free_throws_attempted \tab integer \tab Free throws the player attempted in that match (a count, not a season total). \cr
-   free_throws_percentage \tab double \tab Free-throw percentage, 0-100 with one decimal; 0 when there was no attempt \cr
-   rebounds \tab integer \tab Total rebounds in the game. \cr
-   offensive_rebounds \tab integer \tab Offensive rebounds the player took in that match (a count; part of the total rebounds). \cr
-   defensive_rebounds \tab integer \tab Defensive rebounds the player took in that match (a count; part of the total rebounds). \cr
-   assists \tab integer \tab Assists (player game-log row) \cr
-   steals \tab integer \tab Steals (player game-log row) \cr
-   turnovers \tab integer \tab Turnovers (player game-log row) \cr
-   blocks \tab integer \tab Shots blocked (player game-log row) \cr
-   shots_rejected \tab integer \tab Shots of the player that were blocked. \cr
-   dunks \tab integer \tab Dunks (player game-log row) \cr
-   personal_fouls \tab integer \tab Fouls committed \cr
-   fouls_received \tab integer \tab Fouls drawn by the player in the game. \cr
-   rating \tab integer \tab ACB rating (valoracion) of the game. \cr
-   plus_minus \tab integer \tab Point differential while on court (+/-) \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_player_matches")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A player's game log for an edition (default: the current one).

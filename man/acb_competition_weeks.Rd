@@ -11,16 +11,10 @@ acb_competition_weeks(competition_ids = NULL)
 the API's default competition. One or more whole numbers (a vector repeats \code{competitionIds} in the query).}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_competition_weeks}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa. \cr
-   edition_id \tab integer \tab Season id the week belongs to (START year - 1935). \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   week_id \tab integer \tab Week id: global across seasons (2989 = the week of 2026-10-10) \cr
-   description \tab character \tab Spanish week label ('Semana 1'). \cr
-   start_date \tab POSIXct \tab Monday the week starts (UTC midnight). \cr
-}
+A \code{hoopR_data} tibble with one row per edition and week.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_competition_weeks")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The weeks of every competition edition: the week ids to crawl.

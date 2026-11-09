@@ -11,24 +11,10 @@ tbf_pbp(match_id)
 sequence across leagues and seasons. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per event. Games before 2025-26 raise \code{hoopR_no_data}. The feed has no player id.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. \cr
-   action_number \tab integer \tab Play sequence number (actionNumber); gaps are deleted or hidden actions. Rows are in the API's game order, and a period-end line can carry a LOWER number than the last play of the period (884 after 885 in the sample), so sort by period and clock, not by this number. \cr
-   period \tab integer \tab Period number (quarterNumber): 1-4; overtime numbering is unverified. \cr
-   period_type \tab integer \tab Period type code: 1 = regulation, 2 = overtime (from the app code; no overtime game in the samples). \cr
-   clock \tab character \tab Game clock REMAINING in the period as 'mm:ss' (counts down from 10:00). \cr
-   seconds_remaining \tab integer \tab Game clock remaining in the period, in seconds. \cr
-   home_score \tab integer \tab Running home score after the play (the home half of the 'home-away' score text). \cr
-   away_score \tab integer \tab Running away score after the play (the away half of the score text). \cr
-   side \tab character \tab Side of the acting team (isHome); null on game events (period start / end, game end). \cr
-   player_name \tab character \tab Acting player's name; null on game events. The feed carries no player id. \cr
-   jersey_number \tab character \tab Shirt number as a string, so '0' and '00' stay distinct. \cr
-   action \tab character \tab Play type in Turkish exactly as TBF sends it (77 values seen). \cr
-   action_en \tab character \tab English gloss of the Turkish action, from the refs action vocabulary; null for an action not in it. \cr
-}
+A \code{hoopR_data} tibble with one row per event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play of a finished game (2025-26 onward), in game order, with the running score and an English

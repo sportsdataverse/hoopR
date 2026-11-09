@@ -6,18 +6,7 @@
 #'   Defaults to `most_recent_mbb_season()`.
 #' @param team (*character* optional): Team name filter (e.g. `Duke`).
 #' @param conference (*character* optional): Conference abbreviation filter.
-#' @return A `hoopR_data` tibble with one row per team-season:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       team_id \tab integer \tab CollegeBasketballData team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conference \tab character \tab Conference name. \cr
-#'       rating \tab numeric \tab Simple Rating System (SRS) value. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_ratings_srs", inline = FALSE, unit = "team-season")
 #' @keywords CBD Ratings
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -59,21 +48,7 @@ cbbd_ratings_srs <- function(season = most_recent_mbb_season(), team = NULL, con
 #' @param season (*integer* optional): Season, 4-digit ending-year (e.g. `2024`).
 #'   Defaults to `most_recent_mbb_season()`.
 #' @param conference (*character* optional): Conference abbreviation filter.
-#' @return A `hoopR_data` tibble with one row per team-season. `rankings_*`
-#'   columns are flattened from the nested `rankings` object:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       team_id \tab integer \tab CollegeBasketballData team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conference \tab character \tab Conference name. \cr
-#'       offensive_rating \tab numeric \tab Adjusted offensive efficiency rating. \cr
-#'       defensive_rating \tab numeric \tab Adjusted defensive efficiency rating. \cr
-#'       net_rating \tab numeric \tab Adjusted net efficiency rating. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_ratings_adjusted", inline = FALSE, unit = "team-season")
 #' @keywords CBD Ratings
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -115,18 +90,7 @@ cbbd_ratings_adjusted <- function(season = most_recent_mbb_season(), team = NULL
 #' @param season (*integer* optional): Season, 4-digit ending-year (e.g. `2024`).
 #'   Defaults to `most_recent_mbb_season()`.
 #' @param conference (*character* optional): Conference abbreviation filter.
-#' @return A `hoopR_data` tibble with one row per team-season:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       team_id \tab integer \tab CollegeBasketballData team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conference \tab character \tab Conference name. \cr
-#'       elo \tab integer \tab End-of-season Elo rating. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_ratings_elo", inline = FALSE, unit = "team-season")
 #' @keywords CBD Ratings
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names

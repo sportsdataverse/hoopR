@@ -14,68 +14,10 @@ wbc (WINLINE Basket Cup).}
 earlier years answer no rows.}
 }
 \value{
-A \code{hoopR_data} tibble: Every match of one league-season (schedule, scores, quarter points, venue), in one request.
-The columns are always these, in this order (sportsdataverse-py \code{vtb_league_matches}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab Match id; equals the Infobasket GameID (/Widget/GetOnline/\{gameId\}). \cr
-   league \tab character \tab League slug, echoed. \cr
-   season \tab integer \tab Season END year, echoed. \cr
-   competition \tab character \tab Competition slug: 'vtb' (league games), 'vtb-supercup', 'vtb-allstars', 'wbc'. \cr
-   phase_id \tab integer \tab v2 phase id of the stage (not an Infobasket CompID). \cr
-   phase_name_en \tab character \tab The stage name in English. \cr
-   phase_name_ru \tab character \tab The stage name in Russian. \cr
-   match_number \tab character \tab Game number ('1/2-2' = semi-final 2; regular-season numbers otherwise). \cr
-   match_type \tab character \tab Game type: REGULAR, FINALS (any playoff or cup knockout game), ALLSTARS. \cr
-   match_status \tab character \tab Status: SCHEDULED, IN_PROGRESS, COMPLETE, POSTPONED, CANCELLED, UNKNOWN (the site filters on the first four). \cr
-   match_time \tab character \tab Tip-off in venue local time, ISO 8601 with offset. \cr
-   match_time_msk \tab character \tab Tip-off in Moscow time (UTC+3), ISO 8601. \cr
-   match_time_utc \tab character \tab Tip-off in UTC, ISO 8601. \cr
-   is_time_set \tab logical \tab True when the tip-off time is fixed. \cr
-   time_actual \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   time_end_actual \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   duration \tab integer \tab Game duration; 0 in every sample (unverified). \cr
-   periods \tab integer \tab Periods played (4 in regulation). \cr
-   extra_periods_used \tab logical \tab True when the game went to overtime. \cr
-   attendance \tab integer \tab Spectators (null when not recorded). \cr
-   hosting_team_id \tab integer \tab Home team id (Infobasket TeamID). \cr
-   venue_id \tab integer \tab Venue id; equals the Infobasket arena id (ArenaId). \cr
-   venue_name_en \tab character \tab The venue name in English. \cr
-   venue_name_ru \tab character \tab The venue name in Russian. \cr
-   venue_region_name_en \tab character \tab The venue city in English. \cr
-   venue_region_name_ru \tab character \tab The venue city in Russian. \cr
-   home_team_id \tab integer \tab Infobasket TeamID of the home team. \cr
-   home_score \tab integer \tab Final points of the home team (an integer; 0 for a cancelled match). \cr
-   home_team_name_en \tab character \tab The home team's name in English. \cr
-   home_team_name_ru \tab character \tab The home team's name in Russian. \cr
-   home_team_code_en \tab character \tab The home team's short code in English. \cr
-   home_team_code_ru \tab character \tab The home team's short code in Russian. \cr
-   home_region_name_en \tab character \tab Region or city of the home team in English. \cr
-   home_region_name_ru \tab character \tab Region or city of the home team in Russian. \cr
-   away_team_id \tab integer \tab Infobasket TeamID of the away team. \cr
-   away_score \tab integer \tab Final points of the away team (an integer; 0 for a cancelled match). \cr
-   away_team_name_en \tab character \tab The away team's name in English. \cr
-   away_team_name_ru \tab character \tab The away team's name in Russian. \cr
-   away_team_code_en \tab character \tab The away team's short code in English. \cr
-   away_team_code_ru \tab character \tab The away team's short code in Russian. \cr
-   away_region_name_en \tab character \tab Region or city of the away team in English. \cr
-   away_region_name_ru \tab character \tab Region or city of the away team in Russian. \cr
-   subtitle_en \tab character \tab The site subtitle of the match in English. \cr
-   subtitle_ru \tab character \tab The site subtitle of the match in Russian. \cr
-   necessary_label_en \tab character \tab The site label of the match in English. \cr
-   necessary_label_ru \tab character \tab The site label of the match in Russian. \cr
-   points_by_quarters \tab character \tab Points per period as \verb{[home, away]} pairs; null before the game. The home team (isHomeCompetitor true) is listed first in \code{competitors} on every probed row (vtb seasons 2025 and 2026, wbc 2026: 620 of 620), and the first value of each pair summed to that team's score on every finished one. \cr
-   home_q1 \tab integer \tab Points of the home team in period 1. \cr
-   away_q1 \tab integer \tab Points of the away team in period 1. \cr
-   home_q2 \tab integer \tab Points of the home team in period 2. \cr
-   away_q2 \tab integer \tab Points of the away team in period 2. \cr
-   home_q3 \tab integer \tab Points of the home team in period 3. \cr
-   away_q3 \tab integer \tab Points of the away team in period 3. \cr
-   home_q4 \tab integer \tab Points of the home team in period 4. \cr
-   away_q4 \tab integer \tab Points of the away team in period 4. \cr
-   home_ot \tab integer \tab Points of the home team in all overtimes together (null without overtime). \cr
-   away_ot \tab integer \tab Points of the away team in all overtimes together (null without overtime). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_league_matches")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every match of one league-season (schedule, scores, quarter points, venue), in one request.

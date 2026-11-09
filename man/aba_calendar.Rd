@@ -14,37 +14,10 @@ druga.aba-liga.com, lea=2). Both sites serve one database; the runtime asks the 
 \code{"aba"}.}
 }
 \value{
-A \code{hoopR_data} tibble.
-One row per game in page order (one accordion panel per \code{round}), keyed by (\code{game_no}, \code{season}, \code{league_id}).
-Scores are null for a game not played yet. The calendar carries club NAMES and three-letter codes only (no team
-ids): join to the box score on \code{game_no}. \code{when} is the cell verbatim; \code{date} / \code{date_to} / \code{time} are split
-from it (null for \code{TBA} or a date window). \code{time_zone} is \code{CET} (Central European wall-clock time including
-summer time) or \code{local} (ABA League 2). \code{group} is the group letter, null after the groups and absent on
-seasons without a Group column.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_no \tab integer \tab Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The \{gameNo\} of the match route. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr
-   league_id \tab integer \tab League code, the site's lea: 1 = ABA League, 2 = ABA League 2. \cr
-   league \tab character \tab League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. \cr
-   season_label \tab character \tab Season label as the page prints it ('2025/26' on the match page, 'Season 2025/26' on the calendar and standings pages). \cr
-   round \tab character \tab Round or phase label, the accordion panel title ('ROUND 1', 'Top8 - R1', 'Quarter-finals, Round 1', 'Finals, Round 4'). \cr
-   group \tab character \tab Group letter ('A', 'B') from the Group column, which exists only in seasons with groups; null after the groups (Top8, Play-out, playoffs) and where the page has no Group column. \cr
-   home_team \tab character \tab Home club name as the site prints it now (see the match page's game.home_team). Null while a playoff pairing is not set (' : '): seen on the live 2026-27 page (122 of 302 games), which is NOT banked, so no committed sample shows it. \cr
-   away_team \tab character \tab Away club name; null like home_team while a pairing is not set (live 2026-27 page, not banked). \cr
-   home_abbr \tab character \tab Home club's three-letter code ('PAR', 'CZV'), from the mobile copy of the cell. \cr
-   away_abbr \tab character \tab Away club's three-letter code. \cr
-   home_score \tab integer \tab Home final score. Null for a game not played yet (empty Result cell): seen on the live 2026-27 page (282 of 302 games), which is NOT banked. \cr
-   away_score \tab integer \tab Away final score; null like home_score for a game not played yet (live 2026-27 page, not banked). \cr
-   when \tab character \tab Date and Time cell verbatim: 'Monday, 06.10.2025 18:00 CET', with '(19:00 Dubai local time)' for arenas outside Central Europe, 'Local time' on ABA League 2, a date window or 'TBA' before scheduling. \cr
-   date \tab Date \tab Game date, from the date-and-time line (the first date of a window); null for 'TBA'. \cr
-   date_to \tab Date \tab Last date of a 'dd.mm.yyyy - dd.mm.yyyy' window printed before a game is scheduled; null on a game with a single date. \cr
-   time \tab character \tab Tip-off 'hh:mm' in time_zone. Null when only a date window or 'TBA' is printed (live 2026-27 page, NOT banked). \cr
-   time_zone \tab character \tab 'CET' = Central European wall-clock time INCLUDING summer time (CET in winter, CEST in summer; the label never changes); 'local' = arena local time ('Local time', ABA League 2). Null with a date window or 'TBA' (live 2026-27 page, NOT banked). \cr
-   local_time \tab character \tab Arena-local tip-off 'hh:mm' when the arena is outside Central Europe ('(19:00 Dubai local time)'); null otherwise. \cr
-   local_place \tab character \tab City of local_time ('Dubai', 'Cluj-Napoca'); null when the arena is in Central Europe. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "aba_calendar")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Full schedule and results of one season of one league: every round and game.

@@ -14,31 +14,10 @@ druga.aba-liga.com, lea=2). Both sites serve one database; the runtime asks the 
 \code{"aba"}.}
 }
 \value{
-A \code{hoopR_data} tibble.
-One row per team per table, in page order. A season has several tables: \code{table} is the phase heading (\verb{Regular Season 2025/26}, \verb{Top 8 Season 2025/26}, \verb{Play-out Season 2025/26}) and \code{group} the group under it (\verb{Group A},
-null without one). \code{standing_points} are table points, 2 per win and 1 per loss. \code{points_for} /
-\code{points_against} are the two sides of the page's \code{Overall} column; Top 8 and Play-out tables carry points over
-from the regular season.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr
-   league_id \tab integer \tab League code, the site's lea: 1 = ABA League, 2 = ABA League 2. \cr
-   league \tab character \tab League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. \cr
-   season_label \tab character \tab Season label as the page prints it ('2025/26' on the match page, 'Season 2025/26' on the calendar and standings pages). \cr
-   table \tab character \tab Title of the table's phase heading (h2): 'Top 8 Season 2025/26', 'Play-out Season 2025/26', 'Regular Season 2025/26'. \cr
-   group \tab character \tab Group heading under the phase ('Group A', 'Group B'); null when the table has no group heading. \cr
-   rank \tab integer \tab Position in this table (#). \cr
-   team_id \tab integer \tab ABA club id (global: the same id in every season and in both leagues, e.g. Partizan = 22 in 2008-09 and 2025-26). Joins every frame that carries it; the calendar has club names only. \cr
-   team_name \tab character \tab Club name as the site prints it now (see the match page's game.home_team). \cr
-   games \tab integer \tab Games played (GP). \cr
-   wins \tab integer \tab Games won in this table (the W column). \cr
-   losses \tab integer \tab Games lost in this table (the L column). \cr
-   points_for \tab integer \tab Points scored (left side of 'Overall' 'for:against'). \cr
-   points_against \tab integer \tab Points allowed (right side of 'Overall'). \cr
-   point_diff \tab integer \tab Point difference (Diff), points_for - points_against. \cr
-   standing_points \tab integer \tab Standings points (Points): 2 per win and 1 per loss (FIBA), e.g. 21-3 = 45. \cr
-}
+A \code{hoopR_data} tibble with one row per team in each table.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "aba_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Standings tables of one season of one league: regular season groups, Top 8 and Play-out.

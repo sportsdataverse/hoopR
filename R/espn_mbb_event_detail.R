@@ -18,11 +18,7 @@ NULL
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
-#' @return A tibble with one row per odds provider (typically empty for MBB
-#'   because ESPN does not carry NCAA basketball betting lines).
-#'
-#'    Columns as documented in the shared [espn_mbb_game_odds_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_game_odds", unit = "odds provider")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble any_of bind_rows
 #' @importFrom janitor clean_names
@@ -56,10 +52,7 @@ NULL
 #' @param limit integer. Maximum number of probability rows to return.
 #'   Defaults to `200`. Pagination is handled internally.
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per play-level win-probability entry.
-#'
-#'    Columns as documented in the shared [espn_mbb_game_probabilities_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_game_probabilities", unit = "play-level win-probability entry")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble any_of bind_rows
 #' @importFrom janitor clean_names
@@ -87,10 +80,7 @@ espn_mbb_game_probabilities <- function(event_id, limit = 200, ...) {
 #' **Get ESPN Women's College Basketball Event Officials**
 #' @rdname espn_mbb_game_odds
 #' @author Saiem Gilani
-#' @return A tibble with one row per official assigned to the game.
-#'
-#'    Columns as documented in the shared [espn_mbb_game_officials_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_game_officials", unit = "official assigned to the game")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble any_of bind_rows
 #' @importFrom janitor clean_names
@@ -117,10 +107,7 @@ espn_mbb_game_officials <- function(event_id, ...) {
 #' **Get ESPN Women's College Basketball Event Broadcasts**
 #' @rdname espn_mbb_game_odds
 #' @author Saiem Gilani
-#' @return A tibble with one row per broadcast outlet for the game.
-#'
-#'    Columns as documented in the shared [espn_mbb_game_broadcasts_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_game_broadcasts", unit = "broadcast outlet for the game")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble any_of bind_rows
 #' @importFrom janitor clean_names

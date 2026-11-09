@@ -10,72 +10,10 @@ lba_game(game_id)
 \item{game_id}{(required) Game id (game_id in lba_calendar), e.g. 25602. Global across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Game header: teams, venue, quarter scores, coaches, referees and broadcasters. The columns
-are always these, in this order (sportsdataverse-py \code{lba_game}); a column the site adds later is appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   game_id \tab integer \tab Game id (global across seasons); joins lba_calendar and lba_game. \cr
-   game_status \tab character \tab Game status, number sent as a string: \code{0} scheduled, \code{1} live, \code{2} final (per the OSS client; only \code{2} sampled). \cr
-   championship_id \tab integer \tab Championship id (season + phase) of the game. \cr
-   competition_name \tab character \tab Championship full name, e.g. \verb{Regular Season 2026/27}. \cr
-   championships_day_id \tab integer \tab Round id (\code{championships_day_id} key space: one round of one championship; joins \verb{filters.days[].id} and standings \code{championships_day_id}; not the \code{d} param). \cr
-   year \tab integer \tab Season START year (2026 = 2026-27); sdv END year = year + 1. \cr
-   number \tab integer \tab Round number of the game, equal to \code{day_serial} (the \code{d} echo the capture checks). \cr
-   match_datetime \tab character \tab Tip-off, ISO-8601 with the Italian offset (1995-96: midnight, no time kept). \cr
-   match_hh \tab integer \tab Tip-off hour, local time. \cr
-   match_mm \tab integer \tab Tip-off minute, local time. \cr
-   target_score \tab character \tab Null in every sample (meaning unverified). \cr
-   home_final_score \tab integer \tab Final points of the home team. \cr
-   visitor_final_score \tab integer \tab Final points of the away team. \cr
-   q1_hs \tab integer \tab Home points in the 1st quarter (null in the 1995-96 sample: no period scores then). \cr
-   q1_vs \tab integer \tab Away points in the 1st quarter. \cr
-   q2_hs \tab integer \tab Home points in the 2nd quarter. \cr
-   q2_vs \tab integer \tab Away points in the 2nd quarter. \cr
-   q3_hs \tab integer \tab Home points in the 3rd quarter (0 in the 1995-96 sample: a placeholder, not a score). \cr
-   q3_vs \tab integer \tab Away points in the 3rd quarter (0 placeholder in 1995-96). \cr
-   q4_hs \tab integer \tab Home points in the 4th quarter (0 placeholder in 1995-96). \cr
-   q4_vs \tab integer \tab Away points in the 4th quarter (0 placeholder in 1995-96). \cr
-   ot_hs \tab integer \tab Home overtime points (0 without overtime). \cr
-   ot_vs \tab integer \tab Away overtime points. \cr
-   home_coach_id \tab integer \tab Home head coach id. \cr
-   home_coach_code \tab character \tab Home head coach code \code{SURNAME3-NAME3}. \cr
-   home_coach_fullname \tab character \tab Home head coach, \verb{Surname Name}. \cr
-   visitor_coach_id \tab integer \tab Away head coach id. \cr
-   visitor_coach_code \tab character \tab Away head coach code. \cr
-   visitor_coach_fullname \tab character \tab Away head coach, \verb{Surname Name}. \cr
-   additional_time \tab integer \tab Overtime periods played (0 in every sample; reading inferred). \cr
-   plant_id \tab integer \tab Arena id (arena key space; joins nothing specced). \cr
-   websocket_match_id \tab integer \tab Live-feed game id, number sent as a string; separate from the game id. \cr
-   has_streaming \tab integer \tab 1 when a stream exists, else 0. \cr
-   live_match_data \tab character \tab Null in every sample (meaning unverified). \cr
-   quarter \tab character \tab Last period played, number sent as a string (\code{4}; \code{5} = overtime). \cr
-   ticketing_url \tab character \tab Ticket shop URL (null for old games). \cr
-   match_serie \tab character \tab All-time head-to-head as \verb{home wins-away wins} (\code{6-18}; inferred from \code{match_hw} / \code{match_vw}). \cr
-   match_hw \tab integer \tab All-time head-to-head wins of the home club (inferred). \cr
-   match_vw \tab integer \tab All-time head-to-head wins of the away club (inferred). \cr
-   updated_at \tab character \tab Timestamp, ISO-8601 with the Italian offset. Last update of the game row. \cr
-   h_team_id \tab integer \tab Home team id (team-season). \cr
-   h_team_name \tab character \tab Home team name (sponsor name of that season). \cr
-   h_team_enabled \tab logical \tab Home team page enabled on the site. \cr
-   home_logo_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-   v_team_id \tab integer \tab Away team id (team-season). \cr
-   v_team_name \tab character \tab Visitor team name (the sponsor name of that season). \cr
-   v_team_enabled \tab logical \tab Away team page enabled on the site. \cr
-   v_logo_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-   plant_name \tab character \tab Name of the arena where the game is played. \cr
-   day_code \tab character \tab Round code (\code{1}, \code{2}, ...; string in game rows, integer in standings). \cr
-   day_serial \tab integer \tab Round number (\code{event_serial}, the \code{d} param). \cr
-   day_name \tab character \tab Round name, Italian: \verb{1o Giornata} = matchday 1. \cr
-   competition_type_id \tab integer \tab Phase type id: 4 = Regular Season, 2 = Play Off. \cr
-   competition_type_code \tab character \tab Phase type code: \code{RS} / \code{PO}. \cr
-   competition_type \tab character \tab Phase type name: \verb{Regular Season} / \verb{Play Off}. \cr
-   competition_serie_id \tab integer \tab Series id, 1 = Serie A. \cr
-   competition_serie \tab character \tab Series name, \verb{Serie A}. \cr
-   day_phase_id \tab integer \tab Phase id: 1 = \code{Andata} (first half of the season), 2 = \code{Ritorno} (second half). \cr
-   spectators \tab integer \tab Attendance: spectators at the game. \cr
-   referees \tab character \tab JSON list of the game's referees (id, name, surname); null when the site lists none. \cr
-   broadcasters \tab character \tab JSON list of the game's broadcasters (name, logo key); null when the site lists none. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_game")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Game header: teams, venue, quarter scores, coaches, referees and broadcasters.

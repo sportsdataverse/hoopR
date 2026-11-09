@@ -7,21 +7,10 @@
 kbl_seasons()
 }
 \value{
-A \code{hoopR_data} tibble: Every KBL regular season (1997 to the next one) with its competition key and date range,
-newest first. The columns are always these, in this order (sportsdataverse-py \code{kbl_seasons}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr
-   season_code \tab integer \tab KBL season code: sequential over every season and D-League edition (2 = 1997-98, 47 = 2025-26); the crosswalk to the sdv END year is in the README. \cr
-   glkey \tab character \tab Competition key \verb{S\{seasonCode\}G\{gameCode\}} (e.g. S47G01 = 2025-26 regular season): the id of the /leagues and /league/rank routes. \cr
-   season_name \tab character \tab Season label: 'YYYY-YYYY' for a KBL season (e.g. '2025-2026'), '1997' for the inaugural season. \cr
-   season_name_full \tab character \tab Division label in Korean: the first-team (top-division) season. \cr
-   season_grade \tab integer \tab Division: 1 = the KBL itself, 2 = the KBL D-League (reserve league). \cr
-   season_category \tab character \tab Category code of the competition: R regular season, PO playoffs, CP final, D1/D2 D-League stages, AS All-Star, EG/CU cups, EA EASL, OM Open Match Day (table below). \cr
-   game_code \tab character \tab Competition type within the season: 01 regular season (the only value the list returns). \cr
-   start_date \tab Date \tab First date of the season, YYYYMMDD. \cr
-   end_date \tab Date \tab Last date of the season, YYYYMMDD. \cr
-}
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every KBL regular season (1997 to the next one) with its competition key and date range, newest first.

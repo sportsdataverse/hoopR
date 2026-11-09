@@ -18,19 +18,10 @@ D-League edition), '03' playoffs, '04' championship final, '07' EASL, '08' D-Lea
 '11'/'13' cups, '14' Open Match Day. Only '01' was probed live.}
 }
 \value{
-A \code{hoopR_data} tibble: Each team's standing after every game of the season, one row per team and game. The columns
-are always these, in this order (sportsdataverse-py \code{kbl_team_tracks}); an empty valid answer raises \code{hoopR_no_data}, a valid
-body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr
-   season_code \tab integer \tab KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League). \cr
-   game_code \tab character \tab Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day. \cr
-   glkey \tab character \tab Competition key \verb{S\{seasonCode\}G\{gameCode\}} (e.g. S47G01 = 2025-26 regular season): the id of the season routes. \cr
-   team_code \tab character \tab KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList \code{teamCode}, game \code{tcodeH}/\code{tcodeA}, \code{t} in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (\code{teamCodeD}). \cr
-   team_name \tab character \tab Team short name in English (e.g. 'KT'). \cr
-   game_number \tab integer \tab 1-based game number in the team's season: the n-th entry of the team's rank track. \cr
-   rank \tab integer \tab Standing (1 = first): after the game_number-th game on the rank track, the current rank on the standings routes. \cr
-}
+A \code{hoopR_data} tibble with one row per team and game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_team_tracks")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Each team's standing after every game of the season, one row per team and game.

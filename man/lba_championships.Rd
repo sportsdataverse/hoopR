@@ -10,25 +10,10 @@ lba_championships(season = NULL)
 \item{season}{Season END year (2027 = 2026-27). Omitted = every season (310 championships).}
 }
 \value{
-A \code{hoopR_data} tibble: Championships of a season, one per phase (Regular Season, Play Off); every season when
-none is given. The columns are always these, in this order (sportsdataverse-py \code{lba_championships}); a column the site adds
-later is appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   championship_id \tab integer \tab Championship id (one season and phase). \cr
-   year \tab integer \tab Season START year (2026 = 2026-27); sdv END year = year + 1. \cr
-   name \tab character \tab Championship name, e.g. \verb{Regular Season A}, \verb{Play Off A1}. \cr
-   status \tab integer \tab Championship status: 1 = in progress, 2 = finished (inferred from the 2026-27 and past samples). \cr
-   championship_type_id \tab integer \tab Phase type id: 4 = Regular Season, 2 = Play Off. \cr
-   championship_series_id \tab integer \tab Series id, 1 = Serie A. \cr
-   full_name \tab character \tab Name with the season, e.g. \verb{Regular Season A 2017}. \cr
-   focus_on \tab logical \tab Highlighted on the site. \cr
-   ctype_code \tab character \tab Phase type code: \code{RS} / \code{PO}. \cr
-   ctype_name \tab character \tab Phase type name, as sent in English: \verb{Regular Season}, \verb{Play Off}. \cr
-   cserie_code \tab character \tab Series code, \code{A1} = Serie A. \cr
-   cserie_name \tab character \tab Name of the championship series, e.g. Serie A. \cr
-   logo_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-}
+A \code{hoopR_data} tibble with one row per championship (phase).
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_championships")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Championships of a season, one per phase (Regular Season, Play Off); every season when none is given.

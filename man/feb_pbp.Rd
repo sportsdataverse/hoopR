@@ -11,36 +11,10 @@ feb_pbp(game_id)
 \code{game_id} column of \code{\link[=feb_schedule]{feb_schedule()}}, \code{\link[=feb_results]{feb_results()}} and \code{\link[=feb_overview]{feb_overview()}}.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab FEB game id (one global sequence): the \{gameId\} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request. \cr
-   play_num \tab integer \tab Play sequence number, 1 = the first play of the game; unique per game. The parser sorts by it (the feed lists newest first). \cr
-   period \tab integer \tab Period number of the play. \cr
-   clock \tab character \tab Game clock REMAINING in the period as 'mm:ss' (it counts down from 10:00). \cr
-   clock_seconds \tab integer \tab The clock as whole seconds remaining in the period (08:34 = 514), derived by the parser. \cr
-   team_side \tab character \tab Side of the acting team: home (feed code 1) or away (2); null on period lines. \cr
-   team_id \tab integer \tab Team-season id of the acting team (new every season); null on period lines and 2020-21 games. \cr
-   player_id \tab integer \tab FEB person id of the actor (stable across seasons); null on team, period and 2020-21 lines. \cr
-   license_id \tab integer \tab Per-season player licence id of the actor (changes when the player re-registers; A. Jorda Rodriguez = 10901171 in 2025-26, 11266668 in 2026-27). Null on team and period lines and 2020-21 games. \cr
-   action \tab character \tab Action code: shoot, fthrow, rebound, assist, recovery (steal), lose (turnover), blockshot, foul, subst, timeout, period. Null on 2020-21 games. \cr
-   text \tab character \tab Play description in Spanish: '(TEAM) I. SURNAME: ACTION (running count)'; 2020-21 games use older wording and are text only. \cr
-   score_home \tab integer \tab Home score AFTER the play; filled on scoring plays only. \cr
-   score_away \tab integer \tab Away score AFTER the play; filled on scoring plays only. \cr
-   x \tab double \tab Court x position of a shoot line: percent (0-100) of the length of a horizontal full-court image, origin top-left (the same scale as feb_shots). Null when the action has none and on 2020-21 games. \cr
-   y \tab double \tab Court y position of a shoot line: percent (0-100) of the width from the top edge (the same scale as feb_shots). Null when the action has none and on 2020-21 games. \cr
-   log_param1 \tab character \tab Action parameter 1 (string). Team and player actions: a pseudo-GUID '00000000-0000-000\{side\}-0000-\{game id, 12 digits\}' (side 1 home, 2 away); period lines: the period number. \cr
-   log_param2 \tab character \tab Action parameter 2 (string). The actor's licence id on shoot, fthrow, foul, rebound, assist, recovery and blockshot lines; period lines: '0' start, '1' end; lose: '0' or '1' (meaning unverified). \cr
-   log_param3 \tab character \tab Action parameter 3 (string). fthrow: '1' made, '0' missed; subst: the outgoing player's licence; foul: a foul-type code. Others unverified. \cr
-   log_param4 \tab character \tab Action parameter 4 (string). shoot and fthrow: '1' made, '0' missed; foul: the licence of the fouled player; lose: a licence (role unverified). \cr
-   log_param5 \tab character \tab Action parameter 5 (string); action-dependent, meaning unverified. \cr
-   log_param6 \tab character \tab Action parameter 6 (string). shoot: shot value '2' or '3'; fthrow: '1'; foul: free throws awarded. \cr
-   log_param7 \tab character \tab Action parameter 7 (string); action-dependent, meaning unverified. \cr
-   log_param8 \tab character \tab Action parameter 8 (string): a small integer on shoot, foul and lose lines (by distribution a zone or sub-type code); unverified. \cr
-   log_param9 \tab character \tab Action parameter 9 (string); blank or null in every sampled game. \cr
-   log_param10 \tab character \tab Action parameter 10 (string): '1' on almost every foul; meaning unverified. \cr
-   log_time \tab POSIXct \tab Wall-clock time the play was logged, Spanish local time (POSIXct, tz Europe/Madrid). NA on 2020-21 games. \cr
-   log_time_utc \tab POSIXct \tab The log time in UTC (POSIXct, tz UTC). NA on 2020-21 games. \cr
-}
+A \code{hoopR_data} tibble with one row per play-by-play event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "feb_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Play-by-play of one FEB game (KeyFacts): every shot, rebound, foul,

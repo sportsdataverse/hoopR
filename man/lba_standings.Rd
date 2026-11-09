@@ -14,67 +14,10 @@ carries standings).}
 sends none (NoDataError).}
 }
 \value{
-A \code{hoopR_data} tibble: Standings of a championship after a round, one row per team. The columns are always these,
-in this order (sportsdataverse-py \code{lba_standings}); a column the site adds later is appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   standing_id \tab integer \tab Standings row id (one team after one round; joins nothing else). \cr
-   championships_day_id \tab integer \tab Round id the standings are after. \cr
-   team_id \tab integer \tab Team id (team-season). \cr
-   position \tab integer \tab Rank in the standings. \cr
-   wins \tab integer \tab Games the team has won through the round. \cr
-   defeats \tab integer \tab Games the team has lost through the round. \cr
-   points_made \tab integer \tab Points the team has scored through the round. \cr
-   points_suffered \tab integer \tab Points allowed. \cr
-   qp \tab integer \tab Tie-break quotient (\verb{quoziente punti}?); 1 in the samples (unverified). \cr
-   lv \tab character \tab Null in every sample (meaning unverified). \cr
-   lp \tab character \tab Null in every sample (meaning unverified). \cr
-   lpf \tab character \tab Null in every sample (meaning unverified). \cr
-   lps \tab character \tab Null in every sample (meaning unverified). \cr
-   lqp \tab character \tab Null in every sample (meaning unverified). \cr
-   updated_at \tab character \tab Timestamp, ISO-8601 with the Italian offset. \cr
-   points \tab integer \tab Standings points (2 per win). \cr
-   penalty_points \tab integer \tab Points deducted (0 or null). \cr
-   game_played \tab integer \tab Games the team has played through the round. \cr
-   home_game_played \tab integer \tab Home games played. \cr
-   home_wins \tab integer \tab Home games won. \cr
-   home_defeats \tab integer \tab Home games the team has lost through the round. \cr
-   away_game_played \tab integer \tab Away games played. \cr
-   away_wins \tab integer \tab Away games won. \cr
-   away_defeats \tab integer \tab Away games the team has lost through the round. \cr
-   avg_points_made \tab double \tab Points scored per game. \cr
-   avg_points_suffered \tab double \tab Points allowed per game. \cr
-   home_points_made \tab integer \tab Points scored at home. \cr
-   home_points_suffered \tab integer \tab Points allowed at home. \cr
-   home_avg_points_made \tab double \tab Points scored per home game. \cr
-   home_avg_points_suffered \tab double \tab Points allowed per home game. \cr
-   away_points_made \tab integer \tab Points scored away. \cr
-   away_points_suffered \tab integer \tab Points allowed away. \cr
-   away_avg_points_made \tab double \tab Points scored per away game. \cr
-   away_avg_points_suffered \tab double \tab Points allowed per away game. \cr
-   year \tab integer \tab Season START year (2026 = 2026-27); sdv END year = year + 1. \cr
-   ties \tab integer \tab Ties (0 or null; basketball has none). \cr
-   home_ties \tab integer \tab Home ties (null). \cr
-   away_ties \tab integer \tab Away ties (null). \cr
-   play_off_qualified \tab logical \tab Clinched a play-off place (null in old seasons). \cr
-   relegation \tab logical \tab Relegated (null in old seasons). \cr
-   movement \tab character \tab Position change since the previous round, signed string (\code{+2}, \code{-1}; null for finished seasons). \cr
-   wins_percent \tab double \tab Win percentage as a string with \verb{\%} (\verb{100\%}). \cr
-   home_wins_percent \tab double \tab Home win percentage, string with \verb{\%}. \cr
-   away_wins_percent \tab double \tab Away win percentage, string with \verb{\%}. \cr
-   max_points_made \tab integer \tab Most points scored in a game. \cr
-   home_max_points_made \tab integer \tab Most points scored in a home game. \cr
-   away_max_points_made \tab integer \tab Most points scored in an away game. \cr
-   day_code \tab integer \tab Round code the standings are after (integer). \cr
-   day_name \tab character \tab Round name, Italian (\verb{4a Giornata - 2o fase} = matchday 4 of the 2nd phase). \cr
-   team_name \tab character \tab Team name in that season, with its sponsor (\verb{Nutribullet Treviso Basket}); changes with the sponsor. \cr
-   club_code \tab character \tab Club code (\code{TVB}, \code{TS}); whether it is stable across seasons is unverified. \cr
-   logo_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-   ctp \tab integer \tab Classification marker; 0 or null in the samples (unverified). \cr
-   ctp_symbol \tab character \tab Null in every sample (meaning unverified). \cr
-   ctp_description \tab character \tab Null in every sample (meaning unverified). \cr
-   season_start_year \tab integer \tab The wire season field: the season START year (2026 = 2026-27), same as year. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Standings of a championship after a round, one row per team.

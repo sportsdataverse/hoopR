@@ -12,56 +12,10 @@ sportality_athlete_career(athlete_uuid, master_site_instance_id = NULL)
 \item{master_site_instance_id}{(default \code{NULL}) Site instance (dbl1_dbl). No effect in the drop-one probe.}
 }
 \value{
-A \code{hoopR_data} tibble: Player career totals, one row per ssgt. An empty valid answer raises \code{hoopR_no_data};
-the documented columns come first, in this order (sportsdataverse-py \code{sportality_athlete_career}), then any column the
-API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   g \tab integer \tab Games played in the ssgt. \cr
-   gps \tab integer \tab Games started (0 on every row seen). \cr
-   mpg \tab double \tab Minutes per game, 'M.m' string. \cr
-   ppg \tab double \tab Points per game. \cr
-   drpg \tab double \tab Defensive rebounds per game. \cr
-   orpg \tab double \tab Offensive rebounds per game. \cr
-   rpg \tab double \tab Rebounds per game. \cr
-   apg \tab double \tab Assists per game. \cr
-   stpg \tab double \tab Steals per game. \cr
-   blkpg \tab double \tab Blocks per game. \cr
-   pfpg \tab double \tab Personal fouls per game. \cr
-   2_p_perc \tab double \tab Two-point percentage, 0-100. \cr
-   3_pm \tab integer \tab Three-pointers made (total). \cr
-   3_pa \tab double \tab Three-pointers attempted (total, or a percentage string in the checked rows; unverified). \cr
-   3_p_perc \tab double \tab Three-point percentage, 0-100. \cr
-   ft_perc \tab double \tab Free-throw percentage, 0-100. \cr
-   topg \tab double \tab Turnovers per game. \cr
-   plus_minus_pg \tab double \tab Plus/minus per game. \cr
-   info_uuid \tab character \tab Athlete uuid on player tables, team uuid on team tables (platform key space). \cr
-   info_full_name \tab character \tab Full display name of the player. \cr
-   info_first_name \tab character \tab Given (first) name(s) of the player. \cr
-   info_last_name \tab character \tab Family name (surname) of the player. \cr
-   info_nationality \tab character \tab ISO 3166-1 alpha-2 country code. \cr
-   info_gender \tab character \tab Gender of the person as recorded by the site (male in every row seen). \cr
-   info_age_value \tab integer \tab Age in whole years. \cr
-   info_age_format \tab character \tab Unit of the value (years). Values: \code{years} = years. \cr
-   info_weight_value \tab integer \tab Weight of the player in kilograms. \cr
-   info_weight_format \tab character \tab Unit of the value (kg). Values: \code{kg} = kilograms. \cr
-   info_height_value \tab integer \tab Height of the player in centimetres. \cr
-   info_height_format \tab character \tab Unit of the value (cm). Values: \code{cm} = centimetres. \cr
-   info_jersey_number \tab character \tab Jersey number ('N/A' on career rows). \cr
-   info_position \tab character \tab Position code (G, F, C, SG, SF ...). \cr
-   info_position_code \tab character \tab Position code ('N/A' on career rows). Values: \code{N/A} = not applicable (career rows). \cr
-   info_shoots \tab character \tab Shooting hand (null). \cr
-   info_team_uuid \tab character \tab Team uuid (platform key space); joins \verb{/sports-v2/teams/\{team_uuid\}}. \cr
-   info_team_instance_id \tab character \tab Site instance id of the club (platform key space). \cr
-   info_team_name \tab character \tab Name of the team. \cr
-   info_team_code \tab character \tab Three-letter team code. \cr
-   info_season_stats \tab character \tab Season totals (always empty here). \cr
-   info_career_stats \tab character \tab Career totals (always empty here). \cr
-   info_statistics_provider \tab character \tab Stats provider of the data (genius-basketball = Genius Sports LiveStats). \cr
-   info_is_in_squad \tab logical \tab Whether the player is in the team's current squad. \cr
-   info_player_id \tab integer \tab Genius person id (Genius key space; an integer). \cr
-   info_ssgt_uuid \tab character \tab ssgt uuid of the career row (platform key space). \cr
-   info_team_id \tab integer \tab Genius team id (Genius key space; an integer here). \cr
-}
+A \code{hoopR_data} tibble with one row per ssgt.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_athlete_career")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player career totals, one row per ssgt.

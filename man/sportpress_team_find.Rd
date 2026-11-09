@@ -11,22 +11,10 @@ sportpress_team_find(competition_team_id)
 (e.g. 541 = Antwerp in 2026-27); from \code{\link[=sportpress_competition_teams]{sportpress_competition_teams()}}.}
 }
 \value{
-A \code{hoopR_data} tibble: One competition team with its season scoring averages. An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_team_find}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id (key space: sportpress competitions): ONE season of the league (24 = 2025-26, 25 = 2026-27). Not the season number. The key of the standings, ranking, slider and box routes. \cr
-   season \tab integer \tab Season END year of the team's competition. \cr
-   competition_name \tab character \tab Competition name, 'BNXT League 2026-2027'. \cr
-   uu_team_id \tab integer \tab Stable club key across seasons (key space: sportpress clubs-as-teams); competition_team_id changes every season, this does not. \cr
-   competition_team_id \tab integer \tab Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. \cr
-   team \tab character \tab Team display name including the sponsor; varies with language and playoff suffixes: never join on it. \cr
-   team_short_name \tab character \tab Three-letter club code (ANT, MON, ...), stable across seasons in the samples. \cr
-   club_id \tab integer \tab Country of the team (key space: sportpress clubs): 1 = Belgium, 2 = Netherlands. The provider calls the country a club. \cr
-   club_name \tab character \tab Country name in English, Belgium or Netherlands. \cr
-   average_score_for \tab double \tab Points scored per game by the team over the season; null for a team with no statistics. \cr
-   average_score_against \tab double \tab Points conceded per game; null for a team with no statistics. \cr
-   field_goal_percent \tab double \tab Team field-goal percentage 0-100; null for a team with no statistics. \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_team_find")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One competition team with its season scoring averages.

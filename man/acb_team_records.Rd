@@ -12,29 +12,10 @@ Real Madrid, 13 = Valencia Basket). Not the season-team \code{team_id}. A whole 
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_team_records}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   club_id \tab integer \tab Stable club id asked for. \cr
-   stat \tab character \tab Record category in snake_case (rating, points, rebounds, assists, steals, ...). \cr
-   value \tab double \tab The record value (a count; Float64 so every category fits). \cr
-   game_id \tab integer \tab Match id of the record game (legacy sequence for old games). \cr
-   game_date \tab POSIXct \tab Date of the record game (UTC midnight). \cr
-   player_id \tab integer \tab ACB licence number: the person id everywhere. A player's box-score \code{player.id}, his play-by-play and shot \code{playerLicenseId} and the \code{playerLicenceId} / \code{playerLicense} request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... \cr
-   player_name \tab character \tab Display (sporting) name ('Edy Tavares') \cr
-   first_name \tab character \tab Legal first name(s) \cr
-   last_name \tab character \tab Legal last name(s) \cr
-   shirt_number \tab character \tab Shirt number, a string ('' or null when unknown) \cr
-   game_role \tab character \tab Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or '' in many rows \cr
-   local_team_id \tab integer \tab Home season-team entry of the record game. \cr
-   local_club_id \tab integer \tab Home stable club id of the record game. \cr
-   local_team \tab character \tab Home team name in the record game. \cr
-   local_team_abbr \tab character \tab Home team abbreviation in the record game. \cr
-   visitor_team_id \tab integer \tab Away season-team entry of the record game. \cr
-   visitor_club_id \tab integer \tab Away stable club id of the record game. \cr
-   visitor_team \tab character \tab Away team name in the record game. \cr
-   visitor_team_abbr \tab character \tab Away team abbreviation in the record game. \cr
-}
+A \code{hoopR_data} tibble with one row per statistic.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_team_records")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A club's single-game records (best performance per statistic).

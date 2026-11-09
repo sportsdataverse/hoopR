@@ -17,57 +17,10 @@ e.g. \code{E2025} for 2025-26.}
 the \code{game_code} column of \code{\link[=euroleague_games]{euroleague_games()}}).}
 }
 \value{
-A \code{hoopR_data} tibble with one row (the game):
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_code \tab character \tab Game number within the season (1-based; Utf8 join key). \cr
-      round \tab integer \tab Round number within the season. \cr
-      round_alias \tab character \tab Short alias of the round. \cr
-      round_name \tab character \tab Display name of the round. \cr
-      played \tab logical \tab Whether the game has been played. \cr
-      date \tab character \tab Scheduled tip-off (ISO 8601, venue local time). \cr
-      confirmed_date \tab logical \tab Whether the game date is confirmed. \cr
-      confirmed_hour \tab logical \tab Whether the tip-off time is confirmed. \cr
-      local_time_zone \tab integer \tab UTC offset of the venue, in hours. \cr
-      local_date \tab character \tab Scheduled tip-off in venue local time (ISO 8601). \cr
-      utc_date \tab character \tab Scheduled tip-off in UTC (ISO 8601). \cr
-      local_last5_form \tab character \tab Home side: results of the last five games, oldest first (W / L), JSON-encoded. \cr
-      road_last5_form \tab character \tab Away side: results of the last five games, oldest first (W / L), JSON-encoded. \cr
-      season_name \tab character \tab Season: display name. \cr
-      season_code \tab character \tab Season code: competition code + start year, e.g. E2025 for 2025-26 (Utf8 join key). \cr
-      season_alias \tab character \tab Season: short display alias. \cr
-      season_competition_code \tab character \tab Season: competition code (E = EuroLeague, U = EuroCup; Utf8 join key). \cr
-      season_year \tab integer \tab Season: start year of the season. \cr
-      season_start_date \tab character \tab Season: start date (ISO 8601). \cr
-      group_id \tab character \tab Group: provider identifier for the entity (Utf8 join key). \cr
-      group_order \tab integer \tab Group: display order within the roster. \cr
-      group_name \tab character \tab Group: display name. \cr
-      group_raw_name \tab character \tab Group: group name as stored by the engine. \cr
-      phase_type_code \tab character \tab Phase type code (RS = regular season, PO = playoffs, ...). \cr
-      phase_type_alias \tab character \tab Phase type: short display alias. \cr
-      phase_type_name \tab character \tab Phase type: display name. \cr
-      phase_type_is_group_phase \tab logical \tab Phase type: whether the phase is played in groups. \cr
-      local_club_code \tab character \tab Home side: club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). \cr
-      local_club_name \tab character \tab Home side: club: display name. \cr
-      local_club_abbreviated_name \tab character \tab Home side: club: abbreviated display name. \cr
-      local_club_editorial_name \tab character \tab Home side: club: editorial (long-form) display name. \cr
-      local_club_tv_code \tab character \tab Home side: club: three-letter broadcast abbreviation of the club. \cr
-      local_club_is_virtual \tab logical \tab Home side: club: whether the club is a placeholder rather than a real club. \cr
-      local_club_images_crest \tab character \tab Home side: club: URL of the club crest image. \cr
-      local_score \tab integer \tab Home side: final score of the side. \cr
-      local_standings_score \tab integer \tab Home side: score of the side as counted for the standings. \cr
-      road_club_code \tab character \tab Away side: club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). \cr
-      road_club_name \tab character \tab Away side: club: display name. \cr
-      road_club_abbreviated_name \tab character \tab Away side: club: abbreviated display name. \cr
-      road_club_editorial_name \tab character \tab Away side: club: editorial (long-form) display name. \cr
-      road_club_tv_code \tab character \tab Away side: club: three-letter broadcast abbreviation of the club. \cr
-      road_club_is_virtual \tab logical \tab Away side: club: whether the club is a placeholder rather than a real club. \cr
-      road_club_images_crest \tab character \tab Away side: club: URL of the club crest image. \cr
-      road_score \tab integer \tab Away side: final score of the side. \cr
-      road_standings_score \tab integer \tab Away side: score of the side as counted for the standings. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "euroleague_game_report")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the report of one game: date, round, phase, both clubs with score and

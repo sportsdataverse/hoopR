@@ -12,25 +12,10 @@ api.basketball-bundesliga.de) or \code{dbbl} (women, Toyota Damen-Basketball-Bun
 api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).}
 }
 \value{
-A \code{hoopR_data} tibble: All-time season-average records (points, rebounds, assists, ...), one row per
-record. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{scb_records_season_averages}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   stat \tab character \tab The record's stat list: assist_average, block_average, efficiency_average, foul_average, free_throws_success_percentage, points_average, rebound_average, steal_average, three_point_shot_average or turnover_average. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the sdv key; the API's \code{season_id} plus one. \cr
-   season_id \tab integer \tab Season, START year (2026 = 2026-27). \cr
-   place \tab integer \tab Rank within the list (1 = best); 0 on some rows. \cr
-   order_id \tab integer \tab Sort order within the list. \cr
-   value \tab double \tab The record value. A STRING in /records/per-game ('52'); a number in /records/season-averages. \cr
-   ratio \tab double \tab [made, attempted] as strings, on percentage records only; null otherwise. \cr
-   season_player_id \tab character \tab Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score \code{seasonPlayer.id}, action \code{seasonPlayerId} and \verb{/season-players/\{seasonPlayerId\}}. \cr
-   real_player_id \tab integer \tab Global person id: the same across clubs and seasons. Joins to \code{realPlayerId} everywhere. \cr
-   first_name \tab character \tab Player's given name. \cr
-   last_name \tab character \tab Player's family name. \cr
-   team_name \tab character \tab Team name as listed that season (sponsor names included). \cr
-   team_tlc \tab character \tab The player's team code. \cr
-}
+A \code{hoopR_data} tibble with one row per season-average record.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_records_season_averages")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 All-time season-average records (points, rebounds, assists, ...), one row per record.

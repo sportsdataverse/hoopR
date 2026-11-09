@@ -15,31 +15,10 @@ page record (a list): \code{data.json} as served plus \verb{_request} (the ids a
 record parsed from an HTML page.}
 }
 \value{
-A \code{hoopR_data} tibble (a zero-row tibble with these columns when Genius answers
-an empty valid page), or the raw list when \code{return_parsed = FALSE}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab Genius match id of the game. data.json does not carry it: it is the match_id asked for, stamped by the runtime (the global match sequence shared by every Genius customer). \cr
-   period \tab integer \tab Current (or last) period number; restarts at 1 in overtime \cr
-   period_type \tab character \tab Current period type: REGULAR or OVERTIME \cr
-   in_ot \tab integer \tab 1 when the game is (or ended) in overtime, else 0 \cr
-   clock \tab character \tab Clock of the current period at capture time, 'mm:ss' remaining ('00:00' once the game is over) \cr
-   periods_max \tab integer \tab Number of regulation periods (4) \cr
-   period_length_regular \tab integer \tab Length of a regulation period, minutes (10 under FIBA rules, 12 in some leagues) \cr
-   period_length_overtime \tab integer \tab Length of an overtime period, minutes \cr
-   attendance \tab integer \tab Attendance as entered by the org; 0 when not entered \cr
-   disable_match \tab integer \tab 1 when the org disabled the public feed for this game, else 0 \cr
-   total_time_added \tab integer \tab Clock time added by corrections, seconds (unverified; 0 in every sample) \cr
-   team1_name \tab character \tab Full name of team 1, the team listed first (the home team on the hosted schedule and widget). \cr
-   team1_code \tab character \tab Short code of team 1, in the competition's own script when the org enters one. \cr
-   team1_score \tab integer \tab Final points of team 1 (cast to an integer; the 2014-15 feed sends a string). \cr
-   team2_name \tab character \tab Full name of team 2, the team listed second. \cr
-   team2_code \tab character \tab Short code of team 2, in the competition's own script when the org enters one. \cr
-   team2_score \tab integer \tab Final points of team 2 (cast to an integer; the 2014-15 feed sends a string). \cr
-   referee1 \tab character \tab First referee's name, from officials.referee1 (international form) or the flat officials_referee1 text. \cr
-   referee2 \tab character \tab Second referee's name, from officials.referee2 (international form) or the flat officials_referee2 text. \cr
-   referee3 \tab character \tab Third referee's name when the feed lists one; null otherwise. \cr
-   commissioner \tab character \tab Commissioner (game supervisor) name when the feed lists one; null otherwise. \cr
-}
+A \code{hoopR_data} tibble with one row per finished game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "genius_game")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One row per finished game: period and clock state, both teams' names, codes and scores, officials.

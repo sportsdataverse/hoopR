@@ -9,22 +9,7 @@
 #' the formatted strings RealGM publishes (e.g. `"$140,588,000"`).
 #'
 #' **Requires a headless browser** (see [realgm_players()]).
-#' @return A `hoopR_data` tibble with one row per season:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab character \tab Season (e.g. \code{2025-2026}). \cr
-#'       salary_cap \tab character \tab Salary cap. \cr
-#'       luxury_tax \tab character \tab Luxury-tax threshold. \cr
-#'       x1st_apron \tab character \tab First apron. \cr
-#'       x2nd_apron \tab character \tab Second apron. \cr
-#'       bae \tab character \tab Bi-annual exception. \cr
-#'       non_taxpayer_mle \tab character \tab Non-taxpayer mid-level exception. \cr
-#'       taxpayer_mle \tab character \tab Taxpayer mid-level exception. \cr
-#'       team_room_mle \tab character \tab Room mid-level exception. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("realgm_salary_cap", inline = FALSE, unit = "season")
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names

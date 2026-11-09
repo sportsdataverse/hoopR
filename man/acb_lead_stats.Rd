@@ -13,16 +13,10 @@ acb_lead_stats(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_lead_stats}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
-   stat \tab character \tab Statistic: best_score_run, max_difference, time_ahead or lead_changes. \cr
-   side \tab character \tab Side the value belongs to: home or away. \cr
-   value \tab character \tab Display value as sent: a count, or 'mm:ss' for time_ahead. \cr
-   bar_progress \tab double \tab Length of the site's comparison bar (a drawing value, not a statistic). \cr
-   is_highlighted \tab logical \tab True for the side whose bar the site highlights as the better value. \cr
-}
+A \code{hoopR_data} tibble with one row per statistic and side.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_lead_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Lead statistics of a game (best run, maximum lead, time ahead, lead changes) per side.

@@ -20,41 +20,10 @@ last) round. A whole number; a whole double is accepted.}
 List them with \code{acb_competition_weeks}. A whole number; a whole double is accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_matchlist}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab Match id. Legacy ids (seasons up to 2019-20) sit below about 20000 (12559 = 2005-06 final, 17718 = 2016-17 final); from 2020-21 they start at about 100000 (102920 in 2021-22, 105401 in 2026-27). One key space across competitions: the matchId param of every matchdata route. \cr
-   round_type \tab character \tab Phase code: LR = Liga Regular (regular season), PO = playoffs (a bundle value, not in the samples); null on every row of /Menu/competition-data and /TeamProfile/next-matches \cr
-   round_id \tab integer \tab Round id: global across seasons, not the round number (6017 = Liga 2026-27 round 3; 2600 = 2016-17 round 1) \cr
-   round_number \tab integer \tab Round number within the phase \cr
-   group_id \tab integer \tab Group id in group-stage competitions \cr
-   subphase_id \tab integer \tab Sub-phase id inside a phase (a playoff round or a cup round, e.g. 291, 292, 293); null in the regular season \cr
-   subphase_number \tab integer \tab Sub-phase number \cr
-   week_id \tab integer \tab Week id: global across seasons (2989 = the week of 2026-10-10) \cr
-   status \tab character \tab Match state (x-match-statuses) \cr
-   is_on_half_time \tab logical \tab At half time (live) \cr
-   current_quarter \tab integer \tab Current or last quarter (0 before the match and in some finished rows) \cr
-   home_score \tab integer \tab Home points (null before the match) \cr
-   away_score \tab integer \tab Away points (null before the match) \cr
-   start \tab POSIXct \tab Tip-off, ISO 8601 UTC \cr
-   home_wins \tab integer \tab Home team's series wins before the game (playoff series only). \cr
-   home_losses \tab integer \tab Home team's series losses before the game (playoff series only). \cr
-   away_wins \tab integer \tab Away team's series wins before the game (playoff series only). \cr
-   away_losses \tab integer \tab Away team's series losses before the game (playoff series only). \cr
-   home_team_id \tab integer \tab Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every \code{homeTeamId} / \code{awayTeamId} / \code{teamId} / \code{teamEditionId}. Not the club id. \cr
-   home_club_id \tab integer \tab Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the \code{clubId} request param and every \code{homeClubId} / \code{awayClubId}. \cr
-   home_team \tab character \tab Team name that season (sponsor names change) \cr
-   home_team_abbr \tab character \tab Three-letter abbreviation (BAR, RMB) \cr
-   away_team_id \tab integer \tab Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every \code{homeTeamId} / \code{awayTeamId} / \code{teamId} / \code{teamEditionId}. Not the club id. \cr
-   away_club_id \tab integer \tab Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the \code{clubId} request param and every \code{homeClubId} / \code{awayClubId}. \cr
-   away_team \tab character \tab Team name that season (sponsor names change) \cr
-   away_team_abbr \tab character \tab Three-letter abbreviation (BAR, RMB) \cr
-   competition_id \tab integer \tab Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa (x-competitions) \cr
-   edition_id \tab integer \tab Season id (\code{editionId}) = season START year - 1935 (91 = 2026-27, 81 = 2016-17, 70 = 2005-06, 48 = 1983-84, the first). The sdv season (END year) is editionId + 1936. Season lists also carry \code{seasonStartYear} / \code{seasonEndYear} \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   is_selected_local \tab logical \tab Null in this list (set only in a club's game list). \cr
-   match_grouping \tab character \tab How the list was grouped: round or week. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_matchlist")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The games of the round (or week) around a game.

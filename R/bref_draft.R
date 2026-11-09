@@ -10,28 +10,7 @@
 #' `Sys.sleep()`.
 #' @param season (*integer* required): Draft year (e.g. `2024`). Defaults to
 #'   `most_recent_nba_season()`.
-#' @return A `hoopR_data` tibble with one row per draft pick (career columns
-#'   shown -- column names are Basketball-Reference `data-stat` keys):
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       pick_overall \tab integer \tab Overall draft pick number. \cr
-#'       round \tab integer \tab Draft round. \cr
-#'       team \tab character \tab Drafting team abbreviation. \cr
-#'       player \tab character \tab Player name. \cr
-#'       college_name \tab character \tab College / pre-draft team. \cr
-#'       seasons \tab integer \tab NBA seasons played. \cr
-#'       g \tab integer \tab Career games. \cr
-#'       pts \tab numeric \tab Career points. \cr
-#'       trb \tab numeric \tab Career total rebounds. \cr
-#'       ast \tab numeric \tab Career assists. \cr
-#'       ws \tab numeric \tab Career win shares. \cr
-#'       bpm \tab numeric \tab Career box plus/minus. \cr
-#'       vorp \tab numeric \tab Career value over replacement player. \cr
-#'       season \tab integer \tab Draft year (echoes the \code{season} argument). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("bref_draft", inline = FALSE, unit = "draft pick")
 #' @keywords Basketball-Reference
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble rename any_of

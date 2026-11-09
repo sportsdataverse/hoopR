@@ -11,36 +11,10 @@ vtb_infobasket_playoff(comp_id)
 (Regular Season 2025-26) or 54281 (Playoff 2025-26).}
 }
 \value{
-A \code{hoopR_data} tibble: Playoff bracket of a playoff stage, one row per series. The columns are always these, in this
-order (sportsdataverse-py \code{vtb_infobasket_playoff}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows
-for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   comp_id \tab integer \tab Stage CompID the request asked for (50720 = the 2025-26 regular season): a stage below the season, not an END year. \cr
-   tree \tab integer \tab Bracket tree number (1 = the main bracket). \cr
-   round \tab integer \tab Round as the number of series in it (4 = quarter-finals, 2 = semi-finals, 1 = final). \cr
-   is_current_round \tab logical \tab True for the round in progress. \cr
-   sort \tab integer \tab Series order within the round. \cr
-   round_name_ru \tab character \tab Round name, Russian. \cr
-   round_name_en \tab character \tab Round name, English. \cr
-   score1 \tab integer \tab Series wins of side 1. \cr
-   score2 \tab integer \tab Series wins of side 2. \cr
-   is_final \tab logical \tab True for a final (decided) result. \cr
-   winner \tab integer \tab Series winner: 1 side 1, 2 side 2. \cr
-   team1_id \tab integer \tab Infobasket TeamID of team 1. \cr
-   team1_short_name_ru \tab character \tab The team 1 of the series's short name in Russian (as the competition names it). \cr
-   team1_short_name_en \tab character \tab The team 1 of the series's short name in English (as the competition names it). \cr
-   team1_name_ru \tab character \tab The team 1 of the series's name in Russian (as the competition names it). \cr
-   team1_name_en \tab character \tab The team 1 of the series's name in English (as the competition names it). \cr
-   team1_region_name_ru \tab character \tab The team 1 of the series's region or city in Russian (as the competition names it). \cr
-   team1_region_name_en \tab character \tab The team 1 of the series's region or city in English (as the competition names it). \cr
-   team2_id \tab integer \tab Infobasket TeamID of team 2. \cr
-   team2_short_name_ru \tab character \tab The team 2 of the series's short name in Russian (as the competition names it). \cr
-   team2_short_name_en \tab character \tab The team 2 of the series's short name in English (as the competition names it). \cr
-   team2_name_ru \tab character \tab The team 2 of the series's name in Russian (as the competition names it). \cr
-   team2_name_en \tab character \tab The team 2 of the series's name in English (as the competition names it). \cr
-   team2_region_name_ru \tab character \tab The team 2 of the series's region or city in Russian (as the competition names it). \cr
-   team2_region_name_en \tab character \tab The team 2 of the series's region or city in English (as the competition names it). \cr
-}
+A \code{hoopR_data} tibble with one row per series.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_playoff")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Playoff bracket of a playoff stage, one row per series.

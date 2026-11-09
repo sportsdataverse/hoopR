@@ -8,25 +8,7 @@
 #' @param team (*character* required): Team name (e.g. `Duke`).
 #' @param start_date_range (*character* optional): ISO 8601 start of date range.
 #' @param end_date_range (*character* optional): ISO 8601 end of date range.
-#' @return A `hoopR_data` tibble with one row per lineup. The `athletes` column
-#'   is a list of lineup members; `team_stats`/`opponent_stats` are flattened
-#'   into prefixed columns. Key identifying columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       team_id \tab integer \tab Team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conference \tab character \tab Conference name. \cr
-#'       id_hash \tab character \tab Unique hash identifying the lineup. \cr
-#'       athletes \tab list \tab List of athletes in the lineup. \cr
-#'       total_seconds \tab numeric \tab Total seconds the lineup played. \cr
-#'       pace \tab numeric \tab Lineup pace (possessions). \cr
-#'       offense_rating \tab numeric \tab Lineup offensive rating. \cr
-#'       defense_rating \tab numeric \tab Lineup defensive rating. \cr
-#'       net_rating \tab numeric \tab Lineup net rating. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_lineups_team", inline = FALSE, unit = "lineup")
 #' @keywords CBD Lineups
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names

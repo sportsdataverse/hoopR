@@ -12,34 +12,10 @@ season_code, game_code and game_no of kbl_schedule. Only final games are served;
 \code{hoopR_bad_request}.}
 }
 \value{
-A \code{hoopR_data} tibble: Play-by-play (the site's text cast) of a final game, one row per event, from 1997-98 on. The
-columns are always these, in this order (sportsdataverse-py \code{kbl_pbp}); an empty valid answer raises \code{hoopR_no_data}, a valid
-body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   gmkey \tab character \tab Game key \verb{S\{seasonCode\}G\{gameCode\}N\{gameNo\}} (e.g. S47G01N49): the id of every game route and game frame. \cr
-   season_code \tab integer \tab KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League). \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr
-   game_code \tab character \tab Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day. \cr
-   game_no \tab integer \tab Game number inside the competition (glkey): the N part of the gmkey. \cr
-   action_number \tab integer \tab 1-based position of the event in the feed, which is in game order (the wire's n is 0 on every row of some games). \cr
-   event_number \tab integer \tab Sequence number of the event in the game (1-based); 0 on every row of some games (e.g. S45G01N95), so order by array position. \cr
-   period \tab integer \tab Period number: 1-4 for the quarters, 5, 6, ... for the overtimes (the wire says X1 in the play-by-play, EQ1 in the match chart). \cr
-   period_label \tab character \tab Period label: Q1-Q4, then OT1, OT2, ... (normalised from the wire's X1 / EQ1 / eq1). \cr
-   minutes_left \tab integer \tab Minutes remaining in the period (10-minute quarters, 5-minute overtimes). \cr
-   seconds_left \tab integer \tab Seconds part of the time remaining (0-59). \cr
-   clock_seconds_left \tab integer \tab Seconds left in the period (minutes_left * 60 + seconds_left); quarters are 10 minutes, overtimes 5. \cr
-   team_code \tab character \tab Team code of the acting team (the KBL team code, as \code{tcodeH}/\code{tcodeA}); '' (or ' ' in 1997-98) on game events such as period start/end. \cr
-   player_name \tab character \tab Player name in Korean; absent on team and game events. \cr
-   player_name_en \tab character \tab Player name in English / romanized; absent on team and game events. \cr
-   action_code \tab character \tab Action code (string, e.g. '201'); table in the returns md. \cr
-   action \tab character \tab English meaning of action_code (kbl_codes.ACTIONS), translated from the site's Korean label; null for an unknown code. \cr
-   action_ko \tab character \tab The site's own Korean label of action_code (Hangul, e.g. the label for two-point field goal made). \cr
-   points \tab integer \tab Points the event scored: 2 for a made two-point shot or dunk (201, 207), 3 for a made three (205), 1 for a made free throw (203); null otherwise. \cr
-   substitution_code \tab character \tab Substitution sub-type code on substitution-out (102) rows (e.g. '101_0'); table in the returns md. \cr
-   substitution \tab character \tab English meaning of substitution_code on substitution-out rows (e.g. 106_1 = fouled out, five fouls); null otherwise. \cr
-   foul_code \tab character \tab Foul type code (the site reads an f field; no sampled row carries it): PNF personal, TCF technical, FRF unsportsmanlike, FTF fighting, PCF punching, EBF elbow. \cr
-   foul \tab character \tab English meaning of foul_code (e.g. TCF = technical foul). No sampled row carries a foul code, so this is unverified. \cr
-}
+A \code{hoopR_data} tibble with one row per event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play (the site's text cast) of a final game, one row per event, from 1997-98 on.

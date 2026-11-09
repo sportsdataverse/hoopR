@@ -38,32 +38,10 @@ or any fixture row).}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per \code{fixture_id}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   season_id \tab character \tab Season UUID of the game. \cr
-   season_name \tab character \tab Name of the season / competition the game belongs to. \cr
-   fixture_id \tab character \tab Game UUID (fixture); the key of every game frame and of the fixture_detail routes. \cr
-   series \tab character \tab Playoff series the game belongs to as sent (JSON text when an object); null outside a series. \cr
-   stage_name \tab character \tab Name of the stage; null in every body seen. \cr
-   status \tab character \tab Status code of the game, e.g. CONFIRMED. \cr
-   status_label \tab character \tab Status of the game as the site words it in its own language (e.g. Termine, Final). \cr
-   is_final \tab logical \tab True when the game is over. \cr
-   is_live \tab logical \tab True while the game is being played. \cr
-   times_unconfirmed \tab logical \tab True while the start time is not final. \cr
-   start_time_utc \tab POSIXct \tab Scheduled start, naive datetime in UTC (the API sends no offset). \cr
-   start_time_local \tab character \tab The ribbon's fixture date as the API sends it: a local wall-clock time (no offset; the zone is not given). \cr
-   home_entity_id \tab character \tab Team UUID of the home team. \cr
-   home_name \tab character \tab Name of the home team. \cr
-   home_score \tab integer \tab Points scored by the home team (the API sends a string; Int64 here). \cr
-   home_result_status \tab character \tab Result status of the home team's score, e.g. CONFIRMED. \cr
-   home_is_leading \tab logical \tab True while the home team leads (ribbon rows). \cr
-   away_entity_id \tab character \tab Team UUID of the away team. \cr
-   away_name \tab character \tab Name of the away team. \cr
-   away_score \tab integer \tab Points scored by the away team (the API sends a string; Int64 here). \cr
-   away_result_status \tab character \tab Result status of the away team's score, e.g. CONFIRMED. \cr
-   away_is_leading \tab logical \tab True while the away team leads (ribbon rows). \cr
-}
+A \code{hoopR_data} tibble with one row per fixture.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_fixtures_ribbon")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{The fixtures ribbon: recent and upcoming games across the site's competitions

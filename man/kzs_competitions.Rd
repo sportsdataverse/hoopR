@@ -11,22 +11,10 @@ kzs_competitions(season = NULL)
 season (627 competitions).}
 }
 \value{
-A \code{hoopR_data} tibble: Competitions of a season (leagues, cups, youth, 3x3, national teams), or of every season. An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{kzs_competitions}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id: one per competition per season (men's top league 2025-26 = 579, 2026-27 = 608). Joins to \verb{/competitions/\{competitionId\}} and the \code{competitionId} query params. \cr
-   name \tab character \tab Competition name, Slovenian; the sponsor name changes over the years (glossary in kzs-returns.md). \cr
-   gender \tab character \tab MALE or FEMALE. \cr
-   category \tab character \tab Age category: ABSOLUTE (senior) or U8-U23 / ANY (code table in kzs-returns.md). \cr
-   rank \tab character \tab Tier: FIRST-FOURTH or TOURNAMENT (code table). \cr
-   season_id \tab integer \tab Season id: OPAQUE, not a year (1 = 2000/2001 ... 27 = 2026/2027, 31 = 1991/1992). The season \code{name} is 'START/END'; the sdv season is the END year (the second half of \code{name}). \cr
-   season_name \tab character \tab Season, 'START/END' (2025/2026); sdv season = the END year. \cr
-   season_is_active \tab logical \tab True for the current season only (2026/2027 on 2026-10-12). \cr
-   season_active \tab logical \tab Same as \code{isActive}. \cr
-   type \tab character \tab Competition type (code table); absent on 2 competitions. \cr
-   season \tab integer \tab The competition's season. \cr
-}
+A \code{hoopR_data} tibble with one row per competition.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_competitions")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Competitions of a season (leagues, cups, youth, 3x3, national teams), or of every season.

@@ -10,37 +10,10 @@ kzs_pbp(match_id)
 \item{match_id}{(required) Match id (match_id in kzs_matches), e.g. 101839. Global across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Play-by-play of a final game (2015/16 on, with gaps), one row per action with shot x/y. An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_pbp}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab Match id: the federation key of a game, global across seasons (joins kzs_matches and kzs_match). \cr
-   action_number \tab integer \tab 1-based position of the action in the feed, which is in game order. \cr
-   team_side \tab character \tab Which side of the match the row belongs to: home (the organiser, firstTeam on the wire) or away. \cr
-   source \tab character \tab Feed the action came from: GENIUS_SPORTS in every sample. \cr
-   clock \tab character \tab Time remaining in the period, 'MM:SS:CC' (minutes, seconds, hundredths): '09:56:00' = 9:56 left. \cr
-   action_type \tab character \tab Action type (code table). \cr
-   sub_type \tab character \tab Action subtype ('' when none; code table). \cr
-   qualifiers \tab character \tab Semicolon-separated qualifiers ('' when none; code table). \cr
-   x \tab double \tab Location along the court length, 0-100 percent (see the coordinate section): shots, and from 2020-21 fouls and turnovers; 0.0 when the row has no location. \cr
-   y \tab double \tab Location across the court width, 0-100 percent (see the coordinate section); 0.0 when the row has no location. \cr
-   area \tab character \tab Court zone of the action (code table): set on shots, and from 2020-21 on located fouls and turnovers; '' on rows without a location and on every shot of early 2015-16 games. \cr
-   side \tab character \tab Basket end: LEFT (x~0) or RIGHT (x~100). Absent on non-shot rows before 2020-21 and on some 2020-21 rows (read absent on a shot as LEFT). \cr
-   success \tab logical \tab True when the shot / free throw was made (true on non-shot rows). \cr
-   score1 \tab integer \tab First (home) team score after the action, a numeric STRING. \cr
-   score2 \tab integer \tab Second (away) team score after the action, a numeric STRING. \cr
-   period \tab integer \tab Period number; overtime restarts at 1 with periodType OVERTIME. \cr
-   period_type \tab character \tab REGULAR or OVERTIME. \cr
-   part \tab character \tab Period label: QUARTER1-QUARTER4, then OT1 (OT2 and on by the same pattern, unobserved). \cr
-   match_team_player_id \tab integer \tab Match-player id: the player's entry in this one match; NOT the player id. No captured route is keyed by it: join on \code{playerId} on the same row. \cr
-   player_id \tab integer \tab Player id (KZS player registry). Joins to \verb{/players/\{playerId\}}, box-score and play-by-play \code{playerId}. \cr
-   match_team_player_first_name \tab character \tab The acting player's given name, as entered for this match. \cr
-   match_team_player_last_name \tab character \tab The acting player's family name, as entered for this match. \cr
-   team_application_id \tab integer \tab Team-application id: the team's registration (entry) for the season; play-by-play \code{teamApplicationId} is the same key space. \cr
-   team_name \tab character \tab Team name for the season, sponsor included (e.g. 'Perspektiva Ilirija'). \cr
-   match_team_id \tab integer \tab Match-team id: this team's entry in this one match (unique per match and side). Joins to play-by-play \code{matchTeamId}; NOT a team id. \cr
-   player_photo_uuid \tab character \tab Player photo: image file id, served at \verb{https://api.kzs.si/public/images/\{uuid\}}. \cr
-   shirt_number \tab character \tab Shirt number worn by the acting player, sent as a string. \cr
-}
+A \code{hoopR_data} tibble with one row per action with shot x/y.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play of a final game (2015/16 on, with gaps), one row per action with shot x/y.

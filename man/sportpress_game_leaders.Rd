@@ -10,23 +10,10 @@ sportpress_game_leaders(game_id)
 \item{game_id}{(required) Game id (integer), unique across seasons; from \code{\link[=sportpress_schedule]{sportpress_schedule()}} (\code{game_id}).}
 }
 \value{
-A \code{hoopR_data} tibble: The game leader of each side in every statistic (one row per side and statistic). An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{sportpress_game_leaders}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Game id the overview was asked for (the body does not echo it). \cr
-   team_side \tab character \tab Side of the game the row belongs to: home or away (the provider's is_home, or side 1 / 2). \cr
-   competition_team_id \tab integer \tab Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. \cr
-   team \tab character \tab Team display name including the sponsor; varies with language and playoff suffixes: never join on it. \cr
-   team_short_name \tab character \tab Three-letter club code (ANT, MON, ...), stable across seasons in the samples. \cr
-   stat \tab character \tab Statistic the leader leads, in the provider's column name (points, total_rebound, value, ...). \cr
-   player_id \tab integer \tab Player id (key space: sportpress persons): stable across seasons and teams, distinct from roster_id. Not a Genius or FIBA person id. \cr
-   first_name \tab character \tab Given name of the player as entered in the CMS. \cr
-   last_name \tab character \tab Family name of the player as entered in the CMS. \cr
-   nationality_code \tab character \tab Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining. \cr
-   birth_date \tab Date \tab Date of birth as shown on the public player page; null when unknown. \cr
-   value \tab double \tab The leader's count (or percentage) in that statistic in this game. \cr
-}
+A \code{hoopR_data} tibble with one row per side and statistic.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_game_leaders")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The game leader of each side in every statistic (one row per side and statistic).

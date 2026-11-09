@@ -10,18 +10,10 @@ lba_teams(season = NULL)
 \item{season}{Season END year (2027 = 2026-27). Omitted = the site's default season (unverified).}
 }
 \value{
-A \code{hoopR_data} tibble: Teams of a season, one row per team-season with the stable club id. The columns are always
-these, in this order (sportsdataverse-py \code{lba_teams}); a column the site adds later is appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   team_id \tab integer \tab Team id (one team-season). \cr
-   name \tab character \tab Team name of that season (sponsor name). \cr
-   year \tab integer \tab Season START year (2026 = 2026-27); sdv END year = year + 1. \cr
-   club_id \tab integer \tab Club id: the cross-season join key for team ids (only here and in the \code{team} headers); stability across seasons is unverified. \cr
-   club_code \tab character \tab Club code (\code{TVB}, \code{TS}); whether it is stable across seasons is unverified. \cr
-   updated_at \tab character \tab Timestamp, ISO-8601 with the Italian offset. \cr
-   logo_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-}
+A \code{hoopR_data} tibble with one row per team-season with the stable club id.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Teams of a season, one row per team-season with the stable club id.

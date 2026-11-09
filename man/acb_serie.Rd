@@ -13,32 +13,10 @@ acb_serie(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_serie}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   requested_match_id \tab integer \tab The match asked for (any game of the series); every row of the series repeats it. \cr
-   phase_id \tab integer \tab Phase id of the series (111 = Play Off Titulo). \cr
-   subphase_id \tab integer \tab Sub-phase id of the series (the playoff stage). \cr
-   series_home_team_id \tab integer \tab Season-team entry of the series' home-court team (new every season). \cr
-   series_home_club_id \tab integer \tab Stable club id of the series' home-court team. \cr
-   series_away_team_id \tab integer \tab Season-team entry of the other team of the series. \cr
-   series_away_club_id \tab integer \tab Stable club id of the other team of the series. \cr
-   series_home_wins \tab integer \tab Games won by the home-court team in the series (the API's homeScore). \cr
-   series_away_wins \tab integer \tab Games won by the other team in the series (the API's awayScore). \cr
-   series_finished \tab logical \tab True once the series is decided. \cr
-   best_of \tab integer \tab Series length (best of N) as sent; 0 in the 2016-17 final sample, so read 0 as unknown. \cr
-   edition_id \tab integer \tab Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, \code{season}. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   match_id \tab integer \tab ACB match id of this game of the series. \cr
-   home_team_id \tab integer \tab Home season-team entry of THIS game (the series' home-court team is series_home_team_id). \cr
-   away_team_id \tab integer \tab Away season-team entry of THIS game. \cr
-   home_score \tab integer \tab Home points of this game. \cr
-   away_score \tab integer \tab Away points of this game. \cr
-   start \tab POSIXct \tab Tip-off instant (UTC). \cr
-   status \tab character \tab Game state: FINALIZED once over. \cr
-   is_on_half_time \tab logical \tab True during the half-time break of a live game. \cr
-   current_quarter \tab integer \tab Current or last period of the game (4 for a finished regulation game). \cr
-}
+A \code{hoopR_data} tibble with one row per game of the series.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_serie")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The playoff series a game belongs to, one row per game of the series (HTTP 204 outside a series).

@@ -13,26 +13,10 @@ lba_players_leaderboard(season = NULL, category = "points")
 filters.categories).}
 }
 \value{
-A \code{hoopR_data} tibble: Season player leaderboard for one category (per-game average). The columns are always
-these, in this order (sportsdataverse-py \code{lba_players_leaderboard}); a column the site adds later is appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   category \tab character \tab Category of this row (the \code{cat} param, e.g. \code{points}). \cr
-   player_id \tab integer \tab Player id (global, one per career). \cr
-   name \tab character \tab Given name (players) / team name (teams). \cr
-   surname \tab character \tab Player's family name. \cr
-   team_name \tab character \tab Team name in that season, with its sponsor (\verb{Nutribullet Treviso Basket}); changes with the sponsor. \cr
-   tv_name \tab character \tab Short team name for TV graphics. \cr
-   year \tab integer \tab Season START year (2026 = 2026-27); sdv END year = year + 1. \cr
-   category_filter_total \tab integer \tab Season total in the category. \cr
-   attempts \tab integer \tab Shots attempted in the zone, parsed from num. \cr
-   presences \tab integer \tab Games the player appeared in, counted for the leaderboard. \cr
-   minutes \tab double \tab Minutes per game (players: decimal string \code{28.67}) / total minutes (teams: integer). \cr
-   score_40_min \tab double \tab Value per 40 minutes. \cr
-   score \tab double \tab Value in the category under the \code{ob} order (default \code{avg} = per game); players send a decimal string, teams a number. \cr
-   team_id \tab integer \tab Team id (team-season). \cr
-   player_photo_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_players_leaderboard")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Season player leaderboard for one category (per-game average).

@@ -13,14 +13,10 @@ acb_period_scores(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_period_scores}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
-   quarter \tab integer \tab Period number: 1-4 quarters, 5+ overtimes (a finished game lists every period played). \cr
-   home_score \tab integer \tab Points the home team scored IN this period (not cumulative). \cr
-   away_score \tab integer \tab Points the away team scored IN this period (not cumulative). \cr
-}
+A \code{hoopR_data} tibble with one row per period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_period_scores")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Points each team scored in each period of a game.

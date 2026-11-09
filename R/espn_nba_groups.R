@@ -10,10 +10,7 @@ NULL
 #' **Get ESPN NBA Conferences**
 #' @rdname espn_mbb_conferences
 #' @author Saiem Gilani
-#' @return A `hoopR_data` tibble with one row per conference:
-#'
-#'    Columns as documented in the shared [espn_mbb_conferences_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_conferences", unit = "conference")
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
 #' @importFrom dplyr select filter mutate rename

@@ -11,39 +11,10 @@ ibba_segev_pbp(game_id)
 Aviv, 2025-26 round 1): \code{segev_game_id} in ibba_games.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Segev game id (key space: one flat sequence across seasons and competitions); equals the IBBA ibba_games segev_game_id from 2025-26. Not an IBBA game id. \cr
-   action_id \tab integer \tab Action id (key space: Segev actions; unique and increasing within one game, 500001 ... for game 50). \cr
-   parent_action_id \tab integer \tab Id of the action this one follows from (rebound -> missed shot, steal -> turnover, assist or block -> shot); null when none. \cr
-   period \tab integer \tab Period number (1-4 regulation, 5+ overtime). \cr
-   clock \tab character \tab Game clock remaining in the period as 'mm:ss', counting down from 10:00. \cr
-   user_time_utc \tab character \tab Wall-clock time the scorer logged the action, 'HH:MM:SS', UTC (inferred: game 50 tipped at 18:40 Israel time and its first tick reads 15:42). \cr
-   type \tab character \tab Action type: game, quarter, clock, substitution, shot, freeThrow, rebound, assist, steal, turnover, block, deflection, foul, foul-drawn or timeout. \cr
-   subtype \tab character \tab Subtype by type: shot jump-shot / lay-up / dunk; rebound offensive / defensive; turnover bad-pass, ball-handling, travelling, ...; foul personal / technical / unsportsmanlike; start-of-game, end-of-quarter, ... \cr
-   team_id \tab integer \tab Segev team id of the acting side (stable across seasons); null on game-level actions. \cr
-   player_id \tab integer \tab Segev player id (key space: Segev players, stable across seasons: Jaylen Hoard = 1000 in games 50 and 419); null on team lines and on actions without a player. Not an IBBA player-season id. \cr
-   team_side \tab character \tab Side of the game: home or away (the feed's homeTeam / awayTeam; an action's parameters.team 1 = home, 2 = away). \cr
-   jersey \tab character \tab Jersey number (a string, not an id) of the acting player; null when none (team rebound, timeout). \cr
-   score_away \tab integer \tab Away running score after a scoring action (the feed's score reads away-home); null otherwise. \cr
-   score_home \tab integer \tab Home running score after a scoring action; null otherwise. \cr
-   player_points \tab integer \tab The scorer's running points after a scoring action; null otherwise. \cr
-   points \tab integer \tab Shot value, 2 or 3; null on other actions. \cr
-   made \tab character \tab Shot or free-throw result: made, missed, or blocked (shots only). \cr
-   x \tab double \tab Shot x: across the half court, sideline to sideline, 0-1470, basket near 735; which sideline is 0 and the metric scale are unverified. \cr
-   y \tab double \tab Shot y: distance out from the baseline, rim near 112-140, deepest observed 1176; metric scale unverified. \cr
-   fast_break \tab logical \tab True when the shot or free throw came on a fast break. \cr
-   second_chance \tab logical \tab True when the attempt followed an offensive rebound. \cr
-   points_from_turnover \tab logical \tab True when the attempt came off an opponent turnover. \cr
-   free_throw_number \tab integer \tab Which free throw of the set (1, 2, 3). \cr
-   free_throws_awarded \tab integer \tab Free throws in the set. \cr
-   foul_kind \tab character \tab Foul kind, shooting or offensive; absent on some fouls. 'shooting' also appears on technical and offensive-unsportsmanlike fouls, so it does not prove a shooting foul. \cr
-   fouled_on_jersey \tab character \tab Jersey number (string) of the fouled player. \cr
-   foul_free_throws \tab integer \tab Free throws the foul awards (the feed sends a string when non-zero, 0 otherwise). \cr
-   is_coach_foul \tab logical \tab True on a foul charged to the coach or bench (player_id null); null otherwise. \cr
-   player_in_jersey \tab character \tab Substitution: jersey of the player coming in; null on the row that records the player going out. \cr
-   player_out_jersey \tab character \tab Substitution: jersey of the player going out; null on the row that records the player coming in. \cr
-}
+A \code{hoopR_data} tibble with one row per play-by-play event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_segev_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Play-by-play of a finished game: every action with shot coordinates, running scores and jersey

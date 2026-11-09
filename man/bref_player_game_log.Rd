@@ -15,32 +15,10 @@ the id in the player's BREF URL (\verb{/players/j/jokicni01.html}).}
 (e.g. \code{2024}). Defaults to \code{most_recent_nba_season()}.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per regular-season game (column
-names are Basketball-Reference \code{data-stat} keys):
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      ranker \tab integer \tab Season game number. \cr
-      player_game_num_career \tab integer \tab Career game number. \cr
-      date \tab character \tab Game date. \cr
-      team \tab character \tab Team abbreviation. \cr
-      location \tab character \tab \code{@} for away games, empty for home. \cr
-      opp \tab character \tab Opponent abbreviation. \cr
-      result \tab character \tab Result with final score (e.g. \code{W (+12)}). \cr
-      is_starter \tab integer \tab 1 if the player started. \cr
-      mp \tab character \tab Minutes played. \cr
-      pts \tab numeric \tab Points. \cr
-      trb \tab numeric \tab Total rebounds. \cr
-      ast \tab numeric \tab Assists. \cr
-      game_score \tab numeric \tab Hollinger game score. \cr
-      plus_minus \tab numeric \tab Plus/minus. \cr
-      player_id \tab character \tab Player id (echoes the \code{player_id} argument). \cr
-      season \tab integer \tab Season (echoes the \code{season} argument). \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-Full shooting / box columns (\code{fg}, \code{fga}, \code{fg_pct}, \code{fg3}, \code{ft}, \code{orb},
-\code{drb}, \code{stl}, \code{blk}, \code{tov}, \code{pf}, ...) are also returned.
+A \code{hoopR_data} tibble with one row per regular-season game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "bref_player_game_log")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get a player's game-by-game log for a season from

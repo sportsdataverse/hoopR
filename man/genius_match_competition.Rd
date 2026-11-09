@@ -17,16 +17,10 @@ page record (a list): \code{data.json} as served plus \verb{_request} (the ids a
 record parsed from an HTML page.}
 }
 \value{
-A \code{hoopR_data} tibble (a zero-row tibble with these columns when Genius answers
-an empty valid page), or the raw list when \code{return_parsed = FALSE}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab Match id from the page's hidden input #matchId (equals the \{matchId\} asked for). Genius match id: the \{matchId\} of data.json and /u/; one global sequence across every Genius customer (~0.3 M in 2016, ~2.9 M in Oct 2026) \cr
-   comp_id \tab integer \tab Competition id from the hidden input #compId. Genius competition id (compId): one per org competition-season; the \{compId\} of hosted and data/competition paths. The way to map a data.json game to its competition and season \cr
-   competition_name \tab character \tab Competition label from #competitionName, free text ('Stoiximan GBL 2026-2027'); carries the season only when the org writes it in \cr
-   org_label \tab character \tab First item of og:description: the org's display code (ESAKE) \cr
-   og_description \tab character \tab The page's og:description: \verb{<ORG> , <competition>, Check out the full statistics here} \cr
-   org \tab character \tab ORG code the request used (the hosted ORG, or the LiveStats ORG for the /u/ shell). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "genius_match_competition")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The competition (comp_id and name) a game belongs to, from its LiveStats HTML shell.

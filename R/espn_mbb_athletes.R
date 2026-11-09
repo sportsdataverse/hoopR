@@ -18,53 +18,7 @@ NULL
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
-#' @return A named list of data frames: `Bio`, `Team`, `Position`,
-#'   `Status`, `College`, `Draft`.
-#'
-#'    **Bio**
-#'
-#'    Columns as documented in the shared [espn_mbb_player_info_bio_schema] table.
-#'
-#'    **Team**
-#'
-#'    |col_name     |types     |description         |
-#'    |:------------|:---------|:-------------------|
-#'    |id           |character |Id.                 |
-#'    |abbreviation |character |Short abbreviation. |
-#'    |display_name |character |Display name.       |
-#'
-#'    **Position**
-#'
-#'    |col_name     |types     |description         |
-#'    |:------------|:---------|:-------------------|
-#'    |id           |character |Id.                 |
-#'    |name         |character |Display name.       |
-#'    |abbreviation |character |Short abbreviation. |
-#'
-#'    **Status**
-#'
-#'    |col_name |types     |description             |
-#'    |:--------|:---------|:-----------------------|
-#'    |id       |character |Id.                     |
-#'    |name     |character |Display name.           |
-#'    |type     |character |Record type / category. |
-#'
-#'    **College**
-#'
-#'    |col_name |types     |description   |
-#'    |:--------|:---------|:-------------|
-#'    |id       |character |Id.           |
-#'    |name     |character |Display name. |
-#'    |mascot   |character |Team mascot.  |
-#'
-#'    **Draft**
-#'
-#'    |col_name  |types     |description                 |
-#'    |:---------|:---------|:---------------------------|
-#'    |year      |character |4-digit year.               |
-#'    |round     |character |Tournament / playoff round. |
-#'    |selection |character |                            |
-#'
+#' @eval .returns_rd("espn_mbb_player_info")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble select any_of
 #' @importFrom janitor clean_names
@@ -97,48 +51,7 @@ NULL
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent MBB season.
 #' @param ... Additional arguments; currently unused.
-#' @return A named list of data frames: `Statistics`, `NextGame`,
-#'   `Last5Games`, `Headlines`, `FantasyOutlook`.
-#'
-#'    **Statistics**
-#'
-#'    |col_name |types     |description |
-#'    |:--------|:---------|:-----------|
-#'    |(varies) |character |            |
-#'
-#'    **NextGame**
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       id \tab character \tab Id. \cr
-#'       date \tab character \tab Date in YYYY-MM-DD format. \cr
-#'       name \tab character \tab Display name. \cr
-#'       short_name \tab character \tab Short display name. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **Last5Games**
-#'
-#'    |col_name |types     |description |
-#'    |:--------|:---------|:-----------|
-#'    |(varies) |character |            |
-#'
-#'    **Headlines**
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       headline \tab character \tab News headline. \cr
-#'       description \tab character \tab Long-form description text. \cr
-#'       published \tab character \tab Publication timestamp (ISO 8601). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **FantasyOutlook**
-#'
-#'    |col_name |types     |description |
-#'    |:--------|:---------|:-----------|
-#'    |(varies) |character |            |
-#'
+#' @eval .returns_rd("espn_mbb_player_overview")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble select any_of
 #' @importFrom janitor clean_names
@@ -276,13 +189,10 @@ espn_mbb_player_splits <- function(athlete_id,
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param ... Additional arguments; currently unused.
-#' @return A single tibble. Per-event `statistics.$ref` URLs from the ESPN
-#'   core-v2 API are returned as the character column `statistics_ref` and
-#'   are NOT resolved. Similarly, `event_ref`, `competition_ref`, and
-#'   `team_ref` are returned as character columns.
-#'
-#'    Columns as documented in the shared [espn_mbb_player_eventlog_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_player_eventlog", unit = "event appearance")
+#' @return Per-event `statistics.$ref` URLs from the ESPN core-v2 API are returned as
+#'   the character column `statistics_ref` and are NOT resolved. Similarly,
+#'   `event_ref`, `competition_ref`, and `team_ref` are returned as character columns.
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
@@ -317,12 +227,9 @@ NULL
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param ... Additional arguments; currently unused.
-#' @return A single tibble. This endpoint is sparse; many athletes have no
-#'   award data, in which case an empty tibble with canonical columns is
-#'   returned.
-#'
-#'    Columns as documented in the shared [espn_mbb_player_awards_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_player_awards", unit = "award")
+#' @return This endpoint is sparse; many athletes have no award data, in which case an
+#'   empty tibble with canonical columns is returned.
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble select any_of
 #' @importFrom janitor clean_names
@@ -351,17 +258,10 @@ espn_mbb_player_awards <- function(athlete_id, ...) {
 #' @author Saiem Gilani
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param ... Additional arguments; currently unused.
-#' @return A single tibble. When resolved, each row corresponds to one
-#'   statistical entry in the core-v2 statistics log, with `event_ref` and
-#'   `statistics_ref` character columns pointing to resolvable ESPN endpoints.
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       event_ref \tab character \tab Reference link to the originating event. \cr
-#'       statistics_ref \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_mbb_player_statisticslog", unit = "statistics entry")
+#' @return When resolved, each row corresponds to one statistical entry in the core-v2
+#'   statistics log, with `event_ref` and `statistics_ref` character columns pointing
+#'   to resolvable ESPN endpoints.
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names

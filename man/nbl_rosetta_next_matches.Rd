@@ -12,28 +12,10 @@ nbl_rosetta_next_matches(season, org = "nbl")
 \item{org}{(\emph{character} default \code{"nbl"}): Organisation: nbl (men's NBL), wnbl (women's) or nbl1 (the second tier, men's and women's conferences). One of \code{"nbl"}, \code{"wnbl"}, \code{"nbl1"}.}
 }
 \value{
-A \code{hoopR_data} tibble (one row per team and upcoming match):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   org \tab character \tab Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. \cr
-   rosetta_team_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the team; routes that take this entity accept it as well as the DataCore id. \cr
-   team_name \tab character \tab Name of the team as Rosetta spells it, e.g. Perth Wildcats. \cr
-   team_code \tab character \tab Team code, e.g. PER (the \code{{team_code}} path value) \cr
-   division \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   conference \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   match_slug \tab character \tab URL slug of the upcoming match, e.g. sydney-kings-v-nz-breakers-men-14-10-2026. \cr
-   match_title \tab character \tab Title of the upcoming match, e.g. Sydney Kings v NZ Breakers men 14-10-2026. \cr
-   start_time_datetime \tab character \tab Start of the upcoming match, UTC, ISO 8601 text without an offset. \cr
-   is_home \tab logical \tab True when the row's team is the home team of the upcoming match. \cr
-   opponent_name \tab character \tab Name of the opponent in the upcoming match. \cr
-   venue \tab character \tab Name of the venue (arena) of the upcoming match. \cr
-   match_id \tab character \tab DataCore fixture id of the match (UUID v1): the \code{{match_id}} route key and fixtureId in play-by-play. Join on it. \cr
-   rosetta_match_id \tab character \tab Rosetta's match RECORD id (UUID v4) as carried by box-score and play-by-play rows; no route accepts it. Join on match_id. \cr
-   rosetta_opponent_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the opponent; routes that take this entity accept it as well as the DataCore id. \cr
-   season_end_year \tab integer \tab sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per team and upcoming match.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_next_matches")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Each team's next matches: opponent, venue and start time.

@@ -7,28 +7,10 @@
 kbl_current_standings()
 }
 \value{
-A \code{hoopR_data} tibble: Current standings of the active season (no parameter): record, games behind, streaks,
-splits. The columns are always these, in this order (sportsdataverse-py \code{kbl_current_standings}); an empty valid answer
-raises \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   rank \tab integer \tab Standing (1 = first). \cr
-   team_code \tab character \tab KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList \code{teamCode}, game \code{tcodeH}/\code{tcodeA}, \code{t} in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (\code{teamCodeD}). \cr
-   team_name \tab character \tab Team short name (Korean, e.g. Changwon LG), as it was at the time. English names: /common/teamList \code{teamNameEn} / \code{teamNameFullEn}, joined on the team code. \cr
-   team_name_full \tab character \tab Team full name (Korean, e.g. Changwon LG Sakers). \cr
-   wins \tab integer \tab Wins (a count on this route; on \verb{/league/rank/\{glkey\}} win is a boolean about the latest game). \cr
-   losses \tab integer \tab Losses (a count on this route). \cr
-   draws \tab integer \tab Draws (always 0 in basketball). \cr
-   win_diff \tab double \tab Games behind the leader. \cr
-   home_wins \tab integer \tab Wins in the team's home games. \cr
-   home_losses \tab integer \tab Losses in the team's home games. \cr
-   away_wins \tab integer \tab Wins in the team's away games. \cr
-   away_losses \tab integer \tab Losses in the team's away games. \cr
-   conti_win \tab integer \tab Current winning streak (0 when the last game was a loss). \cr
-   conti_loss \tab integer \tab Current losing streak (0 when the last game was a win). \cr
-   max_win \tab integer \tab Longest winning streak of the season. \cr
-   max_loss \tab integer \tab Longest losing streak of the season. \cr
-   last_five \tab character \tab The last five results as a comma-separated string, most recent first: 1 win, 0 loss. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_current_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Current standings of the active season (no parameter): record, games behind, streaks, splits.

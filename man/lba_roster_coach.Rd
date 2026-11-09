@@ -11,25 +11,10 @@ lba_roster_coach(team_id)
 season.}
 }
 \value{
-A \code{hoopR_data} tibble: Head coach of one team-season. The columns are always these, in this order (sportsdataverse-py
-\code{lba_roster_coach}); a column the site adds later is appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Team-season id (re-issued every season); join lba_teams for the stable club_id. \cr
-   club_id \tab integer \tab Club id: the cross-season join key for team ids (only here and in the \code{team} headers); stability across seasons is unverified. \cr
-   club_code \tab character \tab Club code (\code{TVB}, \code{TS}); whether it is stable across seasons is unverified. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   coach_id \tab integer \tab Coach id (global coach key space; joins the game header \code{home_coach_id} / \code{visitor_coach_id}). \cr
-   name \tab character \tab Coach's given name. \cr
-   surname \tab character \tab Coach's family name. \cr
-   birth_date \tab character \tab Birth date, Date \code{YYYY-MM-DD}. \cr
-   place_of_birth \tab character \tab Birthplace (Italian spelling, e.g. \code{Londra}). \cr
-   coach_type_id \tab integer \tab Coach role id (1 = head coach). \cr
-   coach_type_description \tab character \tab Coach role, Italian: \code{Allenatore} = head coach. \cr
-   coach_type_code \tab character \tab Coach role code, number sent as a string. \cr
-   team_name \tab character \tab Team, short name. \cr
-   coach_picture_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-   team_logo_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-}
+A \code{hoopR_data} tibble with one row per head coach.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_roster_coach")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Head coach of one team-season.

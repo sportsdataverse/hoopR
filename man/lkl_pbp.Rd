@@ -11,37 +11,10 @@ lkl_pbp(game_id)
 before 2018-19. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per play, chronological (the site lists them newest first, per period).
-\code{event_num} is a 1-based sequence the parser assigns. \code{period} of a regulation line is its quarter; the site gives
-overtime lines as one merged list without a period, so the parser DERIVES the overtime number (the oldest overtime
-is 5; each \code{period} / \code{end} line closes one): checked on a one-overtime game only, so a multi-overtime game's
-numbering is unverified. \code{clock} is the time REMAINING (\code{mm:ss}) and \code{clock_seconds} the same in seconds. \code{type} /
-\code{subtype} are English codes, \code{description} the site's Lithuanian phrase. \code{score_home} / \code{score_away} are the running
-score AFTER the play on every line. Team, period and game lines have no player. \code{player_id} is resolved through the
-game roster the runtime stamps. The site charts play-by-play from 2024-25 on. A body without plays gives a zero-row
-tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab lkl.lt game id (key space: LKL games; the \code{{gameId}} of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under \verb{_request}). \cr
-   event_num \tab integer \tab Play sequence number the parser assigns, 1 = the first play of the game (the site lists plays newest first per period, with no id). \cr
-   period \tab integer \tab Period of the play. Regulation lines carry it in the site's body; overtime lines come as one merged list without it, so the parser derives it (oldest overtime = 5, each period-end line closes one): checked on a one-overtime game only, so multi-overtime numbering is unverified. \cr
-   period_type \tab character \tab regular for periods 1-4, overtime from period 5. \cr
-   clock \tab character \tab Game clock REMAINING in the period as 'mm:ss' (it counts down from 10:00, from 05:00 in overtime). \cr
-   clock_seconds \tab integer \tab The clock REMAINING as whole seconds (08:34 = 514), derived by the parser. \cr
-   team_side \tab character \tab Side of the acting team (the line's is_home flag): home or away. \cr
-   team_id \tab integer \tab lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body. \cr
-   player \tab character \tab Player name as the site prints it in this route (the box score short form 'I. Surname', other routes the full name). \cr
-   player_slug \tab character \tab lkl.lt player slug (key space: lkl.lt persons; the \code{{slug}} of lkl.lt/zaidejai/\code{{slug}}, stable across seasons). Join key to lkl_game_players.slug. \cr
-   player_id \tab integer \tab lkl.lt player id (key space: lkl.lt persons, stable across seasons). Resolved from the player slug through the game roster the runtime stamps from the game page; null on a bare body or a slug the roster lacks. \cr
-   type \tab character \tab Event type (English code): 2pt, 3pt, freethrow, rebound, assist, steal, block, turnover, foul, foulon (foul drawn), substitution, timeout, jumpball, headcoachchallenge, period, game. \cr
-   subtype \tab character \tab Event subtype (English code; '' when none). 2pt/3pt: shot kind (jumpshot, layup, drivinglayup, reverselayup, dunk, alleyoop, alleyoopdunk, tipinlayup, tipindunk, hookshot, fadeaway, floatingjumpshot, pullupjumpshot, stepbackjumpshot, turnaroundjumpshot, eurostep). freethrow: 'NofM' = attempt N of M (1of1, 1of2, 2of2, 1of3, 2of3, 3of3). rebound: offensive / defensive. foul: personal, offensive, technical, benchTechnical. turnover: badpass, ballhandling, offensive, outofbounds, travel, backcourt (backcourt violation), 3sec, 24sec. substitution: in / out. timeout: full (team), officials. jumpball: startperiod, won, lost, heldball. headcoachchallenge: the challenged call (foul, outofbounds). period / game: start, end. \cr
-   description \tab character \tab Event text in Lithuanian, one fixed phrase per type and subtype ('3 tasku metimas pataikytas' = 3-point shot made). \cr
-   success \tab logical \tab Shots and free throws: true = made. Every other type: always true. \cr
-   is_points_info \tab logical \tab True on lines that changed the score (made shots and free throws). \cr
-   score_home \tab integer \tab Home points after the play (on every line, not only scoring lines). \cr
-   score_away \tab integer \tab Away points after the play (on every line, not only scoring lines). \cr
-}
+A \code{hoopR_data} tibble with one row per play.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lkl_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play of a finished game (2024-25 onward), oldest first, with the running score and the lkl.lt player id.

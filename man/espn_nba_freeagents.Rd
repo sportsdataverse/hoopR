@@ -15,21 +15,21 @@ forward compatibility. Proxy configuration should use
 \code{options(hoopR.proxy = ...)}.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per free agent:
+A \code{hoopR_data} tibble with one row per free agent.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-      athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
-      athlete_name \tab character \tab Athlete display name (ESPN). \cr
-      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
-      prior_team_id \tab character \tab  \cr
-      status \tab character \tab Status label. \cr
-      signed_team_id \tab character \tab  \cr
-      signed_date \tab character \tab  \cr
-      contract_value \tab character \tab  \cr
-      contract_term_years \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+  athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
+  athlete_name \tab character \tab Athlete display name (ESPN). \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  prior_team_id \tab character \tab  \cr
+  status \tab character \tab Status label. \cr
+  signed_team_id \tab character \tab  \cr
+  signed_date \tab character \tab  \cr
+  contract_value \tab character \tab  \cr
+  contract_term_years \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

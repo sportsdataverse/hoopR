@@ -13,79 +13,10 @@ whole career.}
 \item{season}{Season END year (2027 = 2026-27). Omitted = the site's default season (unverified).}
 }
 \value{
-A \code{hoopR_data} tibble: A player's game log for one season, one row per game. The columns are always these, in
-this order (sportsdataverse-py \code{lba_game_log}); a column the site adds later is appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   stat_line_id \tab integer \tab Id of the player's stat line for the game (one per player and game). \cr
-   championship_id \tab integer \tab Championship id of the game. \cr
-   championships_match_id \tab integer \tab Game id (global across seasons); joins lba_calendar and lba_game. \cr
-   player_id \tab integer \tab Player id (global, one per career). \cr
-   team_id \tab integer \tab Team id (team-season) of the player. \cr
-   number \tab integer \tab Jersey number the player wore in the game. \cr
-   played_minutes \tab integer \tab Minutes played, in that game. \cr
-   points \tab integer \tab Points, in that game. \cr
-   suffered_fouls \tab integer \tab Fouls drawn, in that game. \cr
-   done_fouls \tab integer \tab Fouls committed, in that game. \cr
-   shots_2p_realized \tab integer \tab 2-point field goals made, in that game. \cr
-   shots_2p_total \tab integer \tab 2-point field goals attempted, in that game. \cr
-   shots_3p_realized \tab integer \tab 3-point field goals made, in that game. \cr
-   shots_3p_total \tab integer \tab 3-point field goals attempted, in that game. \cr
-   free_throws_realized \tab integer \tab Free throws made, in that game. \cr
-   free_throws_total \tab integer \tab Free throws attempted, in that game. \cr
-   restricted_area_p1 \tab character \tab Null in every sample (meaning unverified). \cr
-   restricted_area_p2 \tab character \tab Null in every sample (meaning unverified). \cr
-   restricted_area_p3 \tab character \tab Null in every sample (meaning unverified). \cr
-   slam_dunk \tab integer \tab Dunks, in that game. \cr
-   offensive_rebound \tab integer \tab Offensive rebounds, in that game. \cr
-   defensive_rebound \tab integer \tab Defensive rebounds, in that game. \cr
-   ball_stop_given \tab integer \tab Blocks, in that game. \cr
-   ball_stop_received \tab integer \tab Own shots blocked, in that game. \cr
-   lost_balls \tab integer \tab Turnovers, in that game. \cr
-   regain_balls \tab integer \tab Steals, in that game. \cr
-   assists \tab integer \tab Assists, in that game. \cr
-   technical_fouls \tab character \tab Technical fouls (null in old seasons). \cr
-   minute5_fouls \tab integer \tab Minute of the fifth foul (0 = did not foul out; inferred, unverified). \cr
-   time5_fouls \tab integer \tab Game time of the fifth foul (0 = did not foul out; inferred, unverified). \cr
-   rating_lega \tab integer \tab LBA efficiency rating (\code{valutazione}), in that game. \cr
-   quintet \tab integer \tab Starts (in the starting five), in that game. \cr
-   rating_oer \tab double \tab OER (points / (FGA + turnovers + FTA / 2)), in that game. \cr
-   avg_points \tab integer \tab The player's plus-minus in the game (the site's name is misleading). \cr
-   wp_id \tab integer \tab Null in every sample (meaning unverified). \cr
-   deleted_at \tab character \tab Null in every sample (meaning unverified). \cr
-   created_at \tab character \tab Timestamp, ISO-8601 with the Italian offset. \cr
-   updated_at \tab character \tab Timestamp, ISO-8601 with the Italian offset. \cr
-   player_role_id \tab integer \tab Position id (position key space: the id behind \code{player_role}; joins the \code{r_id} filter). \cr
-   order \tab integer \tab Row order in the box score. \cr
-   captain \tab logical \tab Team captain in that game. \cr
-   shots_2p_perc \tab integer \tab 2-point field-goal percentage, 0-100, in that game. \cr
-   shots_3p_perc \tab integer \tab 3-point field-goal percentage, 0-100, in that game. \cr
-   free_throws_perc \tab integer \tab Free-throw percentage, 0-100, in that game. \cr
-   total_rebound \tab integer \tab Total rebounds, in that game. \cr
-   ext_code \tab character \tab \verb{<websocket_match_id>\|<team code>\|<player code>} (\verb{1674778\|TVU\|CAP-ALE-95}). \cr
-   fouls_first_category \tab integer \tab Category-1 technical fouls (null in old seasons; reading inferred). \cr
-   fouls_flagrant \tab integer \tab Unsportsmanlike / flagrant fouls. \cr
-   championship_day_name \tab character \tab Round code, number sent as a string. \cr
-   home_score \tab integer \tab Home points after the action, parsed from the score text (2021-22 on; else null). \cr
-   visitor_score \tab integer \tab Visitor points after the action, parsed from the score text (2021-22 on; else null). \cr
-   match_date \tab character \tab Tip-off in UTC, ISO-8601 \code{Z} (local time in \code{match_hh} / \code{match_mm}). \cr
-   match_hh \tab integer \tab Tip-off hour, local time. \cr
-   match_mm \tab integer \tab Tip-off minute, local time. \cr
-   championship_match_id \tab integer \tab Game id (repeated). \cr
-   player_team_id \tab integer \tab Team id (team-season) of the player (repeated). \cr
-   player_team_name \tab character \tab Short name of the player's team in the game (without the season sponsor). \cr
-   player_team_code \tab character \tab \verb{<season>\|<team code>} (\verb{1995\|BOF}). \cr
-   visitor_team_id \tab integer \tab Visitor team-season id of the game (the play-by-play vt_id). \cr
-   visitor_team_name \tab character \tab Away team short name. \cr
-   visitor_team_logo_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-   home_team_id \tab integer \tab Home team-season id of the game (the play-by-play ht_id). \cr
-   home_team_name \tab character \tab Home team short name. \cr
-   home_team_logo_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-   phase_description \tab character \tab Phase code: \code{And} (Andata, 1st half of the season) / \code{Rit} (Ritorno). \cr
-   match_adp \tab integer \tab The player's plus-minus in the game (the site's name is misleading). \cr
-   home_match_result \tab character \tab \code{w} / \code{l} for the home team when the player was on it, else null. \cr
-   visitor_match_result \tab character \tab \code{w} / \code{l} for the away team when the player was on it, else null. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_game_log")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A player's game log for one season, one row per game.

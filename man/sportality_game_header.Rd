@@ -11,54 +11,10 @@ sportality_game_header(game_uuid)
 platform game uuids; the Genius match id is \code{extId} / \code{gameSourceId} in the body.}
 }
 \value{
-A \code{hoopR_data} tibble: Game header: Genius match id (extId), arena, state, teams, scores. An empty valid
-answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
-\code{sportality_game_header}), then any column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   instance_context_site_team_is_in_game \tab logical \tab Whether the requesting site's own team plays in the game. \cr
-   instance_context_site_team_is_home_team \tab logical \tab Whether the requesting site's own team is the home team. \cr
-   instance_context_site_team_is_away_team \tab logical \tab Whether the requesting site's own team is the away team. \cr
-   game_info_game_uuid \tab character \tab Game uuid (platform key space). \cr
-   game_info_ext_id \tab integer \tab Genius match id (Int64; the same number as gameday game_source_id). \cr
-   game_info_start_date_time \tab character \tab Scheduled start, ISO 8601 UTC with milliseconds. \cr
-   game_info_arena_name \tab character \tab Name of the arena (venue). \cr
-   game_info_state \tab character \tab Game state, underscore form: post_game once played. Values: \code{post_game} = played (sports-v2 game-info). \cr
-   game_info_overtime \tab logical \tab Whether the game went to overtime. \cr
-   game_info_shootout \tab character \tab Unobserved: null in every sample and every full body. When filled: Shootout flag (null on every game seen). \cr
-   game_info_series_code \tab character \tab Series code (DBL). \cr
-   game_info_series_name \tab character \tab Series name (Basketligaen). \cr
-   game_info_round_number \tab integer \tab Round number (0). \cr
-   game_info_round_label \tab character \tab Round label (''). \cr
-   game_info_series_display_name \tab character \tab Series display name (Basketligaen). \cr
-   home_team_names_code \tab character \tab Three-letter team code (HOL, RAN ...); codes changed between seasons for some clubs (BAK in 2026, BKA in 2025 for Bakken Bears). \cr
-   home_team_names_short \tab character \tab Short name of the team. \cr
-   home_team_names_long \tab character \tab Long name of the team. \cr
-   home_team_names_full \tab character \tab Full name of the team. \cr
-   home_team_names_code_site \tab character \tab Team code as the club's own site shows it. \cr
-   home_team_names_short_site \tab character \tab Short team name as the club's own site shows it. \cr
-   home_team_names_full_site \tab character \tab Full team name as the club's own site shows it. \cr
-   home_team_names_long_site \tab character \tab Long team name as the club's own site shows it. \cr
-   home_team_uuid \tab character \tab Home team uuid (platform key space); joins \verb{/sports-v2/teams/\{team_uuid\}}. \cr
-   home_team_instance_id \tab character \tab Site instance id of the home club (platform key space). \cr
-   home_team_founded_on \tab character \tab Year the club was founded ('' when unknown). \cr
-   home_team_icon \tab character \tab Home team logo URL. \cr
-   home_team_score \tab integer \tab Points scored by the home team. \cr
-   away_team_names_code \tab character \tab Three-letter team code (HOL, RAN ...); codes changed between seasons for some clubs (BAK in 2026, BKA in 2025 for Bakken Bears). \cr
-   away_team_names_short \tab character \tab Short name of the team. \cr
-   away_team_names_long \tab character \tab Long name of the team. \cr
-   away_team_names_full \tab character \tab Full name of the team. \cr
-   away_team_names_code_site \tab character \tab Team code as the club's own site shows it. \cr
-   away_team_names_short_site \tab character \tab Short team name as the club's own site shows it. \cr
-   away_team_names_full_site \tab character \tab Full team name as the club's own site shows it. \cr
-   away_team_names_long_site \tab character \tab Long team name as the club's own site shows it. \cr
-   away_team_uuid \tab character \tab Away team uuid (platform key space); joins \verb{/sports-v2/teams/\{team_uuid\}}. \cr
-   away_team_instance_id \tab character \tab Site instance id of the away club (platform key space). \cr
-   away_team_founded_on \tab character \tab Year the club was founded ('' when unknown). \cr
-   away_team_icon \tab character \tab Away team logo URL. \cr
-   away_team_score \tab integer \tab Points scored by the away team. \cr
-   ssgt_uuid \tab character \tab ssgt uuid (platform key space: one season + series + game type); joins /statistics-v2/layout-info \verb{seasonSeriesGameTypeTeams[].ssgtUuid} and every route keyed by ssgt. \cr
-   series_uuid \tab character \tab Series uuid (platform key space; Basketligaen = m1ay3mpa4t, the only series on this host). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_game_header")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Game header: Genius match id (extId), arena, state, teams, scores.

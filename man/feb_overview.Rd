@@ -7,34 +7,10 @@
 feb_overview()
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   comp_id \tab integer \tab Competition id (constant across seasons): 115 Primera FEB (LEB Oro), 118 Segunda FEB, 210 Liga Femenina Endesa, 214 LF Challenge, 218 LF-2, 111 Tercera FEB. Not the site's menu group. \cr
-   comp_code \tab integer \tab Season-specific competition edition code (e.g. 23473 = Primera FEB 2026-27). \cr
-   competition \tab character \tab Competition name as printed that season, uppercase ('PRIMERA FEB'; 2020-21 'LIGA LEB ORO'). \cr
-   game_id \tab integer \tab FEB game id (one global sequence): the \{gameId\} of every LiveStats route. \cr
-   round_id \tab integer \tab Round id; 0 in every sample (the route does not fill it). \cr
-   stage \tab character \tab Stage code as a string; '0' in every sample (meaning unverified). \cr
-   venue \tab character \tab Name of the venue (pabellon) where the game is played. \cr
-   start_time \tab POSIXct \tab Tip-off in Spanish local time (POSIXct, tz Europe/Madrid; the source has no offset). \cr
-   start_time_utc \tab POSIXct \tab Tip-off in UTC (POSIXct, tz UTC). \cr
-   period \tab integer \tab Current or last period (4 when finished). \cr
-   clock \tab character \tab 'FINAL' once finished, else the game clock ('00:00' before tip-off). \cr
-   status \tab integer \tab Game state code: 3 = finished, 1 = scheduled (seen 2026-10-12); the live codes are unverified. \cr
-   home_team_id \tab integer \tab Home team-season id (new every season; joins the schedule pages). \cr
-   home_team \tab character \tab Home team name for the season. \cr
-   home_team_code \tab character \tab Home federation team code, 8 digits as a string. \cr
-   home_club_code \tab character \tab Home federation club code, 6 digits as a string. \cr
-   home_abbreviation \tab character \tab Home team three-letter abbreviation ('PAL'). \cr
-   home_score \tab integer \tab Home points (0 before tip-off). \cr
-   away_team_id \tab integer \tab Away team-season id (new every season; joins the schedule pages). \cr
-   away_team \tab character \tab Away team name for the season. \cr
-   away_team_code \tab character \tab Away federation team code, 8 digits as a string. \cr
-   away_club_code \tab character \tab Away federation club code, 6 digits as a string. \cr
-   away_abbreviation \tab character \tab Away team three-letter abbreviation. \cr
-   away_score \tab integer \tab Away points (0 before tip-off). \cr
-   period_scores \tab character \tab Points per period as 'home-away' pairs joined by ';' ('16-16;19-16;10-21;14-14'); null before tip-off. \cr
-}
+A \code{hoopR_data} tibble with one row per game across the competitions with games in the window.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "feb_overview")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Today's (or the latest) games of every live FEB competition, with scores

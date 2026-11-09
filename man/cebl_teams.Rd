@@ -7,19 +7,10 @@
 cebl_teams()
 }
 \value{
-A \code{hoopR_data} tibble: Every franchise identity, past and present (15 team ids; a relocated franchise has a
-second id). An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{cebl_teams}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab CEBL team id (its own key space; not a Genius id). Joins /teams/ \code{id}, the games' \code{home_team_id} / \code{away_team_id}, \code{team_id} in player rows and the \code{team_id} / \code{vs_team_id} params. A relocated or renamed franchise has a second id: the Stats Hub groups 15+56 (Saskatchewan Rattlers, Saskatoon Mamba), 17+53 (Calgary Surge, Guelph Nighthawks), 19+55 (Brampton, Hamilton Honey Badgers) and 16+54 (Vancouver, Fraser Valley Bandits). \cr
-   name_en \tab character \tab Team full name in English ('Niagara River Lions'). \cr
-   short_name_en \tab character \tab Team short name in English, usually the city ('Niagara'). \cr
-   name_fr \tab character \tab Team full name in French ('River Lions de Niagara'). \cr
-   short_name_fr \tab character \tab Team short name in French, usually the city. \cr
-   is_active \tab logical \tab True for a team in the current league; false for a former identity (Guelph Nighthawks, Hamilton Honey Badgers, Fraser Valley Bandits, Saskatchewan Rattlers, Newfoundland Growlers). \cr
-   logo_url \tab character \tab Team logo URL (icon with the team name; upstream: 'Should include the icon and team name'). \cr
-   icon_url \tab character \tab Team icon URL (upstream: 'Should not include the team name'). \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cebl_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every franchise identity, past and present (15 team ids; a relocated franchise has a second id).

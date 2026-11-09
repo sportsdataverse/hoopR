@@ -11,20 +11,10 @@ tbf_game_leaders(match_id)
 sequence across leagues and seasons. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per leader, best first within a category.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. \cr
-   category \tab character \tab Leader category code (leaderCategory), e.g. VerimlilikPuani = efficiency rating. \cr
-   category_label \tab character \tab Leader category label in Turkish (leaderCategoryDescription), e.g. Verimlilik Puani. \cr
-   rank \tab integer \tab Position in the category's list, 1 = best (top five per category). \cr
-   side \tab character \tab Side of the leader's team (isHome). \cr
-   player_id \tab integer \tab TBF person id of the leader (key space: TBF persons; equals the box score player_id). \cr
-   player_name \tab character \tab Player name as TBF prints it for that route (title case, Turkish letters kept). \cr
-   jersey_number \tab character \tab Shirt number as a string, so '0' and '00' stay distinct. \cr
-   value \tab double \tab The leader's value in the category (points, rebounds, ...). \cr
-}
+A \code{hoopR_data} tibble with one row per leader.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_game_leaders")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Game leaders of a finished game per statistic category (top five each).

@@ -13,51 +13,51 @@ espn_nba_teams()
 \item{year}{Either numeric or character (YYYY)}
 }
 \value{
-A teams data frame
+A \code{hoopR_data} tibble with one row per team.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      abbreviation \tab character \tab Short abbreviation. \cr
-      display_name \tab character \tab Display name. \cr
-      short_name \tab character \tab Short display name. \cr
-      mascot \tab character \tab Team mascot. \cr
-      nickname \tab character \tab Team or athlete nickname. \cr
-      team \tab character \tab Team-side label or team identifier. \cr
-      color \tab character \tab Primary color (hex without leading '#'). \cr
-      alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
-      logo \tab character \tab Team or league logo URL. \cr
-      logo_dark \tab character \tab Logo dark. \cr
-      href \tab character \tab Link / page URL. \cr
-      conference_url \tab character \tab URL for conference. \cr
-      group_id \tab integer \tab Group identifier (e.g. conference group_id). \cr
-      conference_short_name \tab character \tab Conference short name (e.g. 'ACC'). \cr
-      conference_uid \tab character \tab ESPN universal conference identifier. \cr
-      conference_name \tab character \tab Full conference name. \cr
-      conference_logo \tab character \tab Logo image URL for conference. \cr
-      parent_group_id \tab integer \tab Unique identifier for parent group. \cr
-      conference_id \tab integer \tab Conference identifier. \cr
-   }}
+  col_name \tab types \tab description \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  abbreviation \tab character \tab Short abbreviation. \cr
+  display_name \tab character \tab Display name. \cr
+  short_name \tab character \tab Short display name. \cr
+  mascot \tab character \tab Team mascot. \cr
+  nickname \tab character \tab Team or athlete nickname. \cr
+  team \tab character \tab Team-side label or team identifier. \cr
+  color \tab character \tab Primary color (hex without leading '#'). \cr
+  alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
+  logo \tab character \tab Team or league logo URL. \cr
+  logo_dark \tab character \tab Logo dark. \cr
+  href \tab character \tab Link / page URL. \cr
+  conference_url \tab character \tab URL for conference. \cr
+  group_id \tab integer \tab Group identifier (e.g. conference group_id). \cr
+  conference_short_name \tab character \tab Conference short name (e.g. 'ACC'). \cr
+  conference_uid \tab character \tab ESPN universal conference identifier. \cr
+  conference_name \tab character \tab Full conference name. \cr
+  conference_logo \tab character \tab Logo image URL for conference. \cr
+  parent_group_id \tab integer \tab Unique identifier for parent group. \cr
+  conference_id \tab integer \tab Conference identifier. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A teams data frame
+A \code{hoopR_data} tibble with one row per team.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      abbreviation \tab character \tab Short abbreviation. \cr
-      display_name \tab character \tab Display name. \cr
-      short_name \tab character \tab Short display name. \cr
-      mascot \tab character \tab Team mascot. \cr
-      nickname \tab character \tab Team or athlete nickname. \cr
-      team \tab character \tab Team-side label or team identifier. \cr
-      color \tab character \tab Primary color (hex without leading '#'). \cr
-      alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
-      logo \tab character \tab Team or league logo URL. \cr
-      logo_dark \tab character \tab Logo dark. \cr
-      logos_href_3 \tab character \tab Logos href 3. \cr
-      logos_href_4 \tab character \tab Logos href 4. \cr
-   }}
+  col_name \tab types \tab description \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  abbreviation \tab character \tab Short abbreviation. \cr
+  display_name \tab character \tab Display name. \cr
+  short_name \tab character \tab Short display name. \cr
+  mascot \tab character \tab Team mascot. \cr
+  nickname \tab character \tab Team or athlete nickname. \cr
+  team \tab character \tab Team-side label or team identifier. \cr
+  color \tab character \tab Primary color (hex without leading '#'). \cr
+  alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
+  logo \tab character \tab Team or league logo URL. \cr
+  logo_dark \tab character \tab Logo dark. \cr
+  logos_href_3 \tab character \tab Logos href 3. \cr
+  logos_href_4 \tab character \tab Logos href 4. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

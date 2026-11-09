@@ -14,10 +14,10 @@ fiba_gdap_gateway_competition_ids(start_date, end_date, return_parsed = TRUE)
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab FIBA competition id (Int64, GDAP key space) of a competition that runs in the window. \cr
-}
+A \code{hoopR_data} tibble with one row per competition.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_gateway_competition_ids")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Ids of the competitions that run in a date window.

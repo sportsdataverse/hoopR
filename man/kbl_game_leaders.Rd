@@ -12,25 +12,10 @@ season_code, game_code and game_no of kbl_schedule. Only final games are served;
 \code{hoopR_bad_request}.}
 }
 \value{
-A \code{hoopR_data} tibble: Each team's leader per category (points, rebounds, assists, steals, blocks) in a final game.
-The columns are always these, in this order (sportsdataverse-py \code{kbl_game_leaders}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   gmkey \tab character \tab Game key \verb{S\{seasonCode\}G\{gameCode\}N\{gameNo\}} (e.g. S47G01N49): the id of every game route and game frame. \cr
-   season_code \tab integer \tab KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League). \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr
-   game_code \tab character \tab Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day. \cr
-   game_no \tab integer \tab Game number inside the competition (glkey): the N part of the gmkey. \cr
-   part \tab character \tab Category code: score points, rb rebounds, ast assists, stl steals, bs blocks. \cr
-   side \tab character \tab Side of the leader: home or away. \cr
-   pcode \tab character \tab KBL player code (six-digit string) of the team's leader in the category. \cr
-   player_name \tab character \tab Leader's name in Korean (foreign players in Hangul transliteration). \cr
-   player_name_en \tab character \tab Leader's name in English / romanized. \cr
-   team_name \tab character \tab The leader's team short name (Korean). \cr
-   value \tab double \tab The leader's total in the category in this game. \cr
-   play_min \tab integer \tab Minutes the leader played this game; add play_sec seconds. \cr
-   play_sec \tab integer \tab Seconds part of the leader's playing time (0-59). \cr
-}
+A \code{hoopR_data} tibble with one row per leaderboard entry.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_game_leaders")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Each team's leader per category (points, rebounds, assists, steals, blocks) in a final game.

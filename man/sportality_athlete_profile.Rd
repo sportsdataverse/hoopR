@@ -12,44 +12,10 @@ sportality_athlete_profile(athlete_uuid, master_site_instance_id = NULL)
 \item{master_site_instance_id}{(default \code{NULL}) Site instance (dbl1_dbl). No effect in the drop-one probe.}
 }
 \value{
-A \code{hoopR_data} tibble: Player profile: age, height, position, season and career totals. An empty valid
-answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
-\code{sportality_athlete_profile}), then any column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   uuid \tab character \tab Platform uuid of this record (10-character lowercase key space of its record type; joins the route that serves it). \cr
-   full_name \tab character \tab Full display name of the player. \cr
-   first_name \tab character \tab Given (first) name(s) of the player. \cr
-   last_name \tab character \tab Family name (surname) of the player. \cr
-   nationality \tab character \tab ISO 3166-1 alpha-2 country code. \cr
-   gender \tab character \tab Gender of the team or player: male or female (every record on this host is male). \cr
-   age_value \tab integer \tab Age in whole years. \cr
-   age_format \tab character \tab Unit of the value (years). Values: \code{years} = years. \cr
-   weight_value \tab integer \tab Weight of the player in kilograms. \cr
-   weight_format \tab character \tab Unit of the value (kg). Values: \code{kg} = kilograms. \cr
-   height_value \tab integer \tab Height of the player in centimetres. \cr
-   height_format \tab character \tab Unit of the value (cm). Values: \code{cm} = centimetres. \cr
-   jersey_number \tab integer \tab Jersey (shirt) number of the player. \cr
-   position \tab character \tab Playing position. \cr
-   position_code \tab character \tab Position code (G, F, C, or a finer code such as SG on the profile route). Values: \code{G} = guard. \cr
-   shoots \tab character \tab Shooting hand (empty or null for every player seen). \cr
-   team_uuid \tab character \tab Platform team uuid. \cr
-   team_instance_id \tab character \tab Site instance id of the club (platform key space). \cr
-   team_name \tab character \tab Name of the team. \cr
-   team_code \tab character \tab Platform team code (HOL, RAN). \cr
-   team_media \tab character \tab URL of the team logo image. \cr
-   season_stats \tab character \tab The player's current-season totals as field/value pairs (GP, PAvg, ...). \cr
-   career_stats \tab character \tab The player's career totals as field/value pairs. \cr
-   statistics_provider \tab character \tab Stats provider of the data (genius-basketball = Genius Sports LiveStats). \cr
-   is_in_squad \tab logical \tab Whether the player is in the team's current squad. \cr
-   media_url \tab character \tab Portrait image URL (imgix CDN). \cr
-   media_alt \tab character \tab Image alt text (''). \cr
-   media_srcset \tab character \tab Responsive image set (imgix CDN URLs with widths). \cr
-   media_url_img_original_proportion \tab character \tab Portrait URL at its original proportions. \cr
-   media_url_placeholder_image \tab character \tab Placeholder image URL (''). \cr
-   media_videourl \tab character \tab Video URL (''). \cr
-   media_photographer \tab character \tab Photographer credit (''). \cr
-   media_focal_point \tab character \tab Focal point record (empty). \cr
-}
+A \code{hoopR_data} tibble with one row per athlete.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_athlete_profile")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player profile: age, height, position, season and career totals.

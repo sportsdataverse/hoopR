@@ -11,17 +11,10 @@ scb_referees(page_size = 100)
 that needs more pages is refused.}
 }
 \value{
-A \code{hoopR_data} tibble: Current referees and commissioners (BBL only). An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{scb_referees}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   referee_id \tab character \tab Official id (\code{refId}, equal to the API's \code{id}); joins \code{referee1_id} .. \code{commissioner_id} of \code{scb_games}. \cr
-   first_name \tab character \tab Official's given name. \cr
-   last_name \tab character \tab Official's family name. \cr
-   official_function \tab character \tab REFEREE or COMMISSIONER. \cr
-   participations \tab integer \tab League games officiated. \cr
-   year_joined_bbl \tab integer \tab Year the official joined the league. \cr
-}
+A \code{hoopR_data} tibble with one row per official.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_referees")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Current referees and commissioners (BBL only).

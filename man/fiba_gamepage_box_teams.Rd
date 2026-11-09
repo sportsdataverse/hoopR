@@ -18,66 +18,10 @@ competition.competitionId of any game row (208182 = World Cup 2023, 208722 = Par
 game-page objects \code{game}, \code{playByPlay}, \code{gameDetails}, \code{playersTeamA}, \code{playersTeamB}).}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab FIBA game id (Int64), global across competitions: gdapGameId, the \verb{<gameId>} of a game-page URL. \cr
-   competition_id \tab integer \tab FIBA competition id (Int64) of the game's edition; the comp argument. \cr
-   statistic_system \tab character \tab Live-stats system of the game: OVR (World Cup, Olympics) or FLS (club competitions, most qualifiers); they differ in the play-by-play action ids, order and text. \cr
-   team_side \tab character \tab A or B: whether the row is the schedule's team A or team B (null when the page does not say). \cr
-   organisation_id \tab integer \tab Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T_\verb{<id>} and the play-by-play oId. NOT the per-competition team_id. \cr
-   score \tab integer \tab Team final score. \cr
-   points \tab integer \tab Points scored in the game. \cr
-   fg_made \tab integer \tab Field goals made (2 + 3 points). \cr
-   fg_attempted \tab integer \tab Field goals attempted (2 + 3 points). \cr
-   fg_pct \tab double \tab Field-goal percentage, 0-100. \cr
-   fg2_made \tab integer \tab Two-point field goals made. \cr
-   fg2_attempted \tab integer \tab Two-point field goals attempted. \cr
-   fg2_pct \tab double \tab Two-point field-goal percentage, 0-100. \cr
-   fg3_made \tab integer \tab Three-point field goals made. \cr
-   fg3_attempted \tab integer \tab Three-point field goals attempted. \cr
-   fg3_pct \tab double \tab Three-point field-goal percentage, 0-100. \cr
-   ft_made \tab integer \tab Free throws made. \cr
-   ft_attempted \tab integer \tab Free throws attempted. \cr
-   ft_pct \tab double \tab Free-throw percentage, 0-100. \cr
-   reb_offensive \tab integer \tab Offensive rebounds. \cr
-   reb_defensive \tab integer \tab Defensive rebounds. \cr
-   reb_total \tab integer \tab Total rebounds (a team row includes the team rebounds team_reb_total). \cr
-   assists \tab integer \tab Assists credited in the game. \cr
-   steals \tab integer \tab Steals credited in the game. \cr
-   blocks \tab integer \tab Blocked shots (blocks made). \cr
-   blocks_received \tab integer \tab Own shots blocked by the opponent (blocks received). \cr
-   turnovers \tab integer \tab Turnovers (a team row includes the team turnovers team_turnovers). \cr
-   fouls \tab integer \tab Personal fouls (a team row includes the team fouls team_fouls). \cr
-   fouls_drawn \tab integer \tab Fouls drawn in the game. \cr
-   paint_fg_made \tab integer \tab Field goals made in the paint (team points_in_paint = 2 x paint_fg_made on every sampled game). \cr
-   paint_fg_attempted \tab integer \tab Field goals attempted in the paint. \cr
-   paint_fg_pct \tab double \tab Field-goal percentage in the paint, 0-100. \cr
-   efficiency \tab integer \tab Efficiency (FIBA EFF: points + rebounds + assists + steals + blocks - missed field goals - missed free throws - turnovers). \cr
-   biggest_lead \tab integer \tab Biggest lead, points. \cr
-   biggest_lead_score \tab character \tab Score when the biggest lead was reached, 'A-B' string (spacing varies; empty when the team never led). \cr
-   biggest_run \tab integer \tab Biggest scoring run, points. \cr
-   biggest_run_score \tab character \tab Score of the biggest scoring run, 'x-y' string; exact meaning unverified. \cr
-   fast_break_points \tab integer \tab Fast-break points. \cr
-   points_off_turnovers \tab integer \tab Points scored after turnovers. \cr
-   bench_points \tab integer \tab Points from the bench (the sum of the non-starters' points). \cr
-   points_in_paint \tab integer \tab Points in the paint (2 x paint_fg_made). \cr
-   second_chance_points \tab integer \tab Second-chance points. \cr
-   a_act \tab integer \tab Always 0 in the samples; meaning unverified (FIBA stat code A_ACT). \cr
-   a_foul \tab integer \tab Always 0 in the samples; meaning unverified (FIBA stat code A_FOUL). \cr
-   a_tod \tab integer \tab Always 0 in the samples; meaning unverified (FIBA stat code A_TOD). \cr
-   a_tot \tab integer \tab Always 0 in the samples; meaning unverified (FIBA stat code A_TOT). \cr
-   team_reb_offensive \tab integer \tab Team offensive rebounds, credited to no player. \cr
-   team_reb_defensive \tab integer \tab Team defensive rebounds, credited to no player. \cr
-   team_reb_total \tab integer \tab Team rebounds (total rebounds minus the players' sum). \cr
-   team_fouls \tab integer \tab Team (bench/coach) fouls (personal fouls minus the players' sum). \cr
-   team_turnovers \tab integer \tab Team turnovers (turnovers minus the players' sum). \cr
-   team_bench_points_flag \tab integer \tab Bench points in FLS games (equal to bench_points); 0 in OVR games (FIBA stat code T_PFB). \cr
-   time_led \tab character \tab Time the team led, 'mm:ss' string. \cr
-   lead_changes \tab integer \tab Lead changes in the game (game-level; repeats on both team rows). \cr
-   times_tied \tab integer \tab Times the score was tied (game-level; repeats on both team rows). \cr
-   duration \tab character \tab Game duration as an 'h:mm' string (game-level; repeats on both team rows). \cr
-   attendance \tab integer \tab Attendance (game-level; repeats on both team rows). \cr
-}
+A \code{hoopR_data} tibble with one row per team in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gamepage_box_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team box score of one FIBA game, with the game-level figures.

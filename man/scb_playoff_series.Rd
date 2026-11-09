@@ -15,29 +15,10 @@ api.basketball-bundesliga.de) or \code{dbbl} (women, Toyota Damen-Basketball-Bun
 api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).}
 }
 \value{
-A \code{hoopR_data} tibble: Playoff bracket of a season: one row per series (quarter-finals, semi-finals,
-finals). An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order
-(sportsdataverse-py \code{scb_playoff_series}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the sdv key; the API's \code{season_id} plus one. \cr
-   season_id \tab integer \tab Season, START year (2026 = 2026-27). \cr
-   round \tab character \tab Round of the bracket: \code{quarter_finals}, \code{semi_finals} or \code{finals}. \cr
-   series \tab integer \tab 1-based position of the series within its round, in the order the API lists them. \cr
-   match_winner_id \tab character \tab Season-team id of the series winner, a string (the playoff tree sends an integer). \cr
-   is_match_finished \tab logical \tab The series is decided. \cr
-   team_a_id \tab character \tab Season-team id of series team A (the higher seed is A), a string (the playoff tree sends it as an integer); equals the club team id. \cr
-   team_a_name \tab character \tab Name of series team A (the higher seed is A) as listed that season. \cr
-   team_a_tlc \tab character \tab Three-letter club code of series team A (the higher seed is A). \cr
-   team_a_rank \tab integer \tab Regular-season table position (the seed) of series team A (the higher seed is A). \cr
-   team_a_victories \tab integer \tab Series wins of team A. \cr
-   team_b_id \tab character \tab Season-team id of series team B (the higher seed is A), a string (the playoff tree sends it as an integer); equals the club team id. \cr
-   team_b_name \tab character \tab Name of series team B (the higher seed is A) as listed that season. \cr
-   team_b_tlc \tab character \tab Three-letter club code of series team B (the higher seed is A). \cr
-   team_b_rank \tab integer \tab Regular-season table position (the seed) of series team B (the higher seed is A). \cr
-   team_b_victories \tab integer \tab Series wins of team B. \cr
-   games \tab integer \tab Games of the series. \cr
-}
+A \code{hoopR_data} tibble with one row per series.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_playoff_series")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Playoff bracket of a season: one row per series (quarter-finals, semi-finals, finals).

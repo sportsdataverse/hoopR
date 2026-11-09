@@ -13,49 +13,10 @@ acb_player_box(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_player_box}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
-   edition_id \tab integer \tab Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, \code{season}. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   team_side \tab character \tab Side of the game the team played: home or away (the feed lists the home team first). \cr
-   team_id \tab integer \tab Season-team entry id: one club in one competition edition, NEW every season (Barca = 4467 in Liga 2026-27). Not the club: use club_id to follow a club across seasons. \cr
-   club_id \tab integer \tab Stable ACB club id (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the same across seasons and sponsor names, and the club_id request argument. \cr
-   team \tab character \tab Team name as registered for that season (sponsor names change; the club id does not). \cr
-   team_abbr \tab character \tab Three-letter team abbreviation (BAR, RMB, VBC). \cr
-   quarter \tab integer \tab Period of the row: 0 = the whole game, 1-4 quarters, 5+ overtimes. \cr
-   player_id \tab integer \tab ACB licence number: the person id everywhere. A player's box-score \code{player.id}, his play-by-play and shot \code{playerLicenseId} and the \code{playerLicenceId} / \code{playerLicense} request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... \cr
-   player_name \tab character \tab Display (sporting) name ('Edy Tavares') \cr
-   first_name \tab character \tab Legal first name(s) \cr
-   last_name \tab character \tab Legal last name(s) \cr
-   shirt_number \tab character \tab Shirt number, a string ('' or null when unknown) \cr
-   game_role \tab character \tab Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or '' in many rows \cr
-   on_court \tab logical \tab True while the player is on court (false once the game is over). \cr
-   play_time \tab character \tab Time on court as 'mm:ss' in the row's period. \cr
-   seconds_played \tab integer \tab Time on court in whole seconds (play_time parsed). \cr
-   is_starter \tab logical \tab True when the player started the game (the API's isStarted). \cr
-   points \tab integer \tab Points (player box-score row) \cr
-   free_throws_made \tab integer \tab Free throws the player made in the row's period (a count; quarter 0 is the whole game). \cr
-   free_throws_attempted \tab integer \tab Free throws the player attempted in the row's period (a count; quarter 0 is the whole game). \cr
-   two_pointers_made \tab integer \tab Two-point field goals made \cr
-   two_pointers_attempted \tab integer \tab Two-point field goals attempted \cr
-   three_pointers_made \tab integer \tab Three-point field goals made \cr
-   three_pointers_attempted \tab integer \tab Three-point field goals attempted \cr
-   assists \tab integer \tab Assists (player box-score row) \cr
-   off_rebounds \tab integer \tab Offensive rebounds \cr
-   def_rebounds \tab integer \tab Defensive rebounds \cr
-   total_rebounds \tab integer \tab Total rebounds (player box-score row) \cr
-   steals \tab integer \tab Steals (player box-score row) \cr
-   turnovers \tab integer \tab Turnovers (player box-score row) \cr
-   blocks \tab integer \tab Shots blocked (by this player or team) \cr
-   received_blocks \tab integer \tab Own shots blocked by an opponent \cr
-   dunks \tab integer \tab Dunks (player box-score row) \cr
-   personal_fouls \tab integer \tab Fouls committed \cr
-   fouls_drawn \tab integer \tab Fouls received (player box-score row) \cr
-   plus_minus \tab integer \tab Point differential while on court (+/-) \cr
-   rating \tab integer \tab Valoracion: ACB's efficiency rating (PIR) = points + rebounds + assists + steals + blocks + fouls received - missed field goals - missed free throws - turnovers - shots blocked by an opponent - fouls committed \cr
-}
+A \code{hoopR_data} tibble with one row per player and period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_player_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Per-player box score of a game, per period (quarter 0 = the whole game).

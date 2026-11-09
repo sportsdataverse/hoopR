@@ -19,51 +19,10 @@ competitions.}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row for the game:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   fixture_id \tab character \tab Game UUID (fixture); the key of every game frame and of the fixture_detail routes. \cr
-   season_id \tab character \tab Season UUID of the game. \cr
-   competition_name \tab character \tab Name of the competition, in the site's language. \cr
-   name \tab character \tab Fixture name; null on LNBP. \cr
-   fixture_type \tab character \tab Kind of game as sent: REGULAR, PLAYOFF, ... (the set is open). \cr
-   age_group \tab character \tab Age group of the competition, e.g. SENIOR. \cr
-   status \tab character \tab Status code of the game, e.g. CONFIRMED (final), as sent. \cr
-   status_label \tab character \tab Status of the game as the site words it in its own language (e.g. Termine, Final). \cr
-   start_time_utc \tab POSIXct \tab Scheduled start, naive datetime in UTC (the API sends no offset). \cr
-   start_time_local \tab character \tab Scheduled start in the venue's local time, as the API sends it (\code{YYYY-MM-DDTHH:MM:SS}, no offset; timezone gives the zone, which varies per row). \cr
-   timezone \tab character \tab IANA time zone of the venue (e.g. Europe/Paris, Mexico/General) that start_time_local is in. \cr
-   venue \tab character \tab Name of the arena where the game is played. \cr
-   venue_id \tab character \tab Venue UUID; joins no other route. \cr
-   attendance \tab integer \tab Spectators at the game; null when not reported. \cr
-   external_id \tab character \tab The league's own match number (LNB: the lnb.fr number); null elsewhere. \cr
-   updated \tab POSIXct \tab When the record was last updated, naive datetime (no offset; zone unverified). \cr
-   live_data_available \tab logical \tab True when live data feeds are enabled for the game. \cr
-   live_video_available \tab logical \tab True when a live video stream is attached. \cr
-   discipline \tab character \tab Discipline label of the game; null in every body seen. \cr
-   series \tab character \tab Playoff series the game belongs to as sent (JSON text when an object); null outside a series. \cr
-   number_of_periods \tab integer \tab Regulation periods in the game (4). \cr
-   period_length \tab integer \tab Length of a regulation period, in minutes. \cr
-   overtime_allowed \tab logical \tab True when the game may go to overtime. \cr
-   overtime_length \tab integer \tab Length of an overtime period, in minutes. \cr
-   shot_clock \tab integer \tab Shot clock length, in seconds. \cr
-   max_fouls_personal \tab integer \tab Personal fouls that disqualify a player. \cr
-   fouls_before_bonus \tab integer \tab Team fouls in a period before the bonus applies. \cr
-   maximum_players_on_court \tab integer \tab Players a team has on court at once. \cr
-   maximum_roster_size \tab integer \tab Largest roster a team may enter for the game. \cr
-   home_entity_id \tab character \tab Team UUID of the home team. \cr
-   home_code \tab character \tab Short code of the home team (e.g. PAB). \cr
-   home_name \tab character \tab Name of the home team. \cr
-   home_score \tab integer \tab Points scored by the home team (the API sends a string; Int64 here). \cr
-   home_result_status \tab character \tab Result status of the home team's score, e.g. CONFIRMED. \cr
-   away_entity_id \tab character \tab Team UUID of the away team. \cr
-   away_code \tab character \tab Short code of the away team (e.g. PAB). \cr
-   away_name \tab character \tab Name of the away team. \cr
-   away_score \tab integer \tab Points scored by the away team (the API sends a string; Int64 here). \cr
-   away_result_status \tab character \tab Result status of the away team's score, e.g. CONFIRMED. \cr
-   home_captain_person_id \tab character \tab Person UUID of the home team's captain; null when the body names none. \cr
-   away_captain_person_id \tab character \tab Person UUID of the away team's captain; null when the body names none. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_fixture")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{One game's header: teams, score, venue, status, rules (periods, overtime, shot

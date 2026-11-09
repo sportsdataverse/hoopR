@@ -14,32 +14,7 @@
 #' @param status (*character* optional): One of `scheduled`, `in_progress`,
 #'   `final`, `postponed`, `cancelled`.
 #' @param tournament (*character* optional): Tournament filter.
-#' @return A `hoopR_data` tibble with one row per game (key columns; period-point
-#'   arrays are returned as list-columns):
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       id \tab integer \tab CollegeBasketballData game id. \cr
-#'       source_id \tab character \tab Source (ESPN) game id. \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       season_type \tab character \tab Season type. \cr
-#'       start_date \tab character \tab Game start date (ISO 8601). \cr
-#'       neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
-#'       conference_game \tab logical \tab Whether the game was a conference game. \cr
-#'       status \tab character \tab Game status. \cr
-#'       home_team_id \tab integer \tab Home team id. \cr
-#'       home_team \tab character \tab Home team name. \cr
-#'       home_points \tab integer \tab Home team points. \cr
-#'       home_winner \tab logical \tab Whether the home team won. \cr
-#'       away_team_id \tab integer \tab Away team id. \cr
-#'       away_team \tab character \tab Away team name. \cr
-#'       away_points \tab integer \tab Away team points. \cr
-#'       away_winner \tab logical \tab Whether the away team won. \cr
-#'       venue_id \tab integer \tab Venue id. \cr
-#'       venue \tab character \tab Venue name. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_games", inline = FALSE, unit = "game")
 #' @keywords CBD Games
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -82,25 +57,7 @@ cbbd_games <- function(season = most_recent_mbb_season(), season_type = NULL, te
 #' **CBD Game Media**
 #' @description
 #' **Get game broadcast media information from the CollegeBasketballData API.**
-#' @return A `hoopR_data` tibble with one row per game. The `broadcasts` column is
-#'   a nested list of broadcast outlets:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       game_id \tab integer \tab CollegeBasketballData game id. \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       season_type \tab character \tab Season type. \cr
-#'       start_date \tab character \tab Game start date (ISO 8601). \cr
-#'       home_team_id \tab integer \tab Home team id. \cr
-#'       home_team \tab character \tab Home team name. \cr
-#'       away_team_id \tab integer \tab Away team id. \cr
-#'       away_team \tab character \tab Away team name. \cr
-#'       neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
-#'       conference_game \tab logical \tab Whether the game was a conference game. \cr
-#'       broadcasts \tab list \tab Nested list of broadcast outlets. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_games_media", inline = FALSE, unit = "game")
 #' @keywords CBD Games
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -143,27 +100,7 @@ cbbd_games_media <- function(season = most_recent_mbb_season(), season_type = NU
 #' **CBD Team Box Scores**
 #' @description
 #' **Get team box score statistics from the CollegeBasketballData API.**
-#' @return A `hoopR_data` tibble with one row per team-game. Per-team statistic
-#'   objects (`team_stats`, `opponent_stats`) are flattened into `team_stats_*` /
-#'   `opponent_stats_*` columns. Key identifying columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       game_id \tab integer \tab CollegeBasketballData game id. \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       start_date \tab character \tab Game start date (ISO 8601). \cr
-#'       team_id \tab integer \tab Team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conference \tab character \tab Team conference. \cr
-#'       opponent_id \tab integer \tab Opponent team id. \cr
-#'       opponent \tab character \tab Opponent team name. \cr
-#'       is_home \tab logical \tab Whether the team was home. \cr
-#'       neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
-#'       game_minutes \tab numeric \tab Total team minutes. \cr
-#'       pace \tab numeric \tab Game pace (possessions). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_games_teams", inline = FALSE, unit = "team-game")
 #' @keywords CBD Games
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -206,26 +143,7 @@ cbbd_games_teams <- function(season = most_recent_mbb_season(), season_type = NU
 #' **CBD Player Box Scores**
 #' @description
 #' **Get player box score statistics from the CollegeBasketballData API.**
-#' @return A `hoopR_data` tibble with one row per team-game. The `players` column
-#'   is a nested list of per-player box scores. Key identifying columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       game_id \tab integer \tab CollegeBasketballData game id. \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       start_date \tab character \tab Game start date (ISO 8601). \cr
-#'       team_id \tab integer \tab Team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conference \tab character \tab Team conference. \cr
-#'       opponent_id \tab integer \tab Opponent team id. \cr
-#'       opponent \tab character \tab Opponent team name. \cr
-#'       is_home \tab logical \tab Whether the team was home. \cr
-#'       game_minutes \tab numeric \tab Total team minutes. \cr
-#'       game_pace \tab numeric \tab Game pace (possessions). \cr
-#'       players \tab list \tab Nested list of per-player box scores. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_games_players", inline = FALSE, unit = "team-game")
 #' @keywords CBD Games
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -269,24 +187,7 @@ cbbd_games_players <- function(season = most_recent_mbb_season(), season_type = 
 #' @description
 #' **Get the current scoreboard from the CollegeBasketballData API.**
 #' @param conference (*character* optional): Conference abbreviation filter.
-#' @return A `hoopR_data` tibble with one row per game. The `home_team`,
-#'   `away_team` and `betting` objects are flattened into `home_team_*`,
-#'   `away_team_*` and `betting_*` columns. Key identifying columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       id \tab integer \tab CollegeBasketballData game id. \cr
-#'       start_date \tab character \tab Game start date (ISO 8601). \cr
-#'       tv \tab character \tab Broadcast TV network. \cr
-#'       neutral_site \tab logical \tab Whether the game is at a neutral site. \cr
-#'       conference_game \tab logical \tab Whether the game is a conference game. \cr
-#'       status \tab character \tab Game status. \cr
-#'       period \tab integer \tab Current period. \cr
-#'       clock \tab character \tab Game clock. \cr
-#'       venue \tab character \tab Venue name. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_scoreboard", inline = FALSE, unit = "game")
 #' @keywords CBD Games
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names

@@ -10,71 +10,10 @@ kzs_box_score(match_id)
 \item{match_id}{(required) Match id (match_id in kzs_matches), e.g. 101839. Global across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Box score of a final game (2015/16 on): one row per player of both teams. An empty valid
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_box_score}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab Match id: the federation key of a game, global across seasons (joins kzs_matches and kzs_match). \cr
-   team_side \tab character \tab Which side of the match the row belongs to: home (the organiser, firstTeam on the wire) or away. \cr
-   team_id \tab integer \tab Team id: one club team in one season (joins kzs_teams); not the match-team id and not the club id. \cr
-   team_name \tab character \tab Name of the team for the season, sponsor included. \cr
-   minutes \tab double \tab The player's minutes played, decimal minutes (39.67 = 39 min 40 s); the team line sums its players (225.0 = 5 x 45 with overtime). \cr
-   two_pm \tab integer \tab The player's two-point field goals made. \cr
-   two_pa \tab integer \tab The player's two-point field goals attempted. \cr
-   two_p_perc \tab double \tab The player's two-point percentage, 0-100. \cr
-   three_pm \tab integer \tab The player's three-point field goals made. \cr
-   three_pa \tab integer \tab The player's three-point field goals attempted. \cr
-   three_p_perc \tab double \tab The player's three-point percentage, 0-100. \cr
-   f_tm \tab integer \tab The player's free throws made. \cr
-   f_ta \tab integer \tab The player's free throws attempted. \cr
-   f_t_perc \tab double \tab The player's free-throw percentage, 0-100. \cr
-   fg_m \tab integer \tab The player's field goals made. \cr
-   fg_a \tab integer \tab The player's field goals attempted. \cr
-   fg_perc \tab double \tab The player's field-goal percentage, 0-100. \cr
-   offensive_rebounds \tab integer \tab The player's offensive rebounds. \cr
-   defensive_rebounds \tab integer \tab The player's defensive rebounds. \cr
-   total_rebounds \tab integer \tab The player's total rebounds. \cr
-   assists \tab integer \tab The player's assists. \cr
-   steals \tab integer \tab The player's steals. \cr
-   turnovers \tab integer \tab The player's turnovers. \cr
-   blocks_in_favor \tab integer \tab The player's shots blocked (blocks made). \cr
-   blocks_against \tab integer \tab The player's own shots that were blocked. \cr
-   foul_commited \tab integer \tab The player's fouls committed. \cr
-   foul_received \tab integer \tab The player's fouls drawn. \cr
-   p_ir \tab integer \tab The player's PIR, performance index rating ((points + rebounds + assists + steals + blocks + fouls drawn) - (missed field goals + missed free throws + turnovers + shots blocked + fouls committed)). \cr
-   plus_minus \tab integer \tab The player's plus-minus: points scored minus allowed while on court (team line: the final margin). \cr
-   assists_turnover_ratio \tab double \tab The player's assist-to-turnover ratio (0 in every sample: not computed). \cr
-   defensive_rating \tab double \tab The player's defensive rating (0 in every sample: not computed). \cr
-   efficiency \tab integer \tab The player's efficiency as the feed computes it (equal to \code{pIR} on 2025-26 team lines). \cr
-   points \tab integer \tab The player's points. \cr
-   efficiency_custom \tab double \tab The player's custom efficiency as the federation computes it (equal to \code{efficiency} on player rows; 0 on team lines). \cr
-   efficiency_game_score \tab double \tab The player's game score (0 in every sample: not computed). \cr
-   fast_break_points_attempted \tab integer \tab The player's fast-break attempts (0 in every sample: not computed). \cr
-   fast_break_points_made \tab integer \tab The player's fast-break makes (0 in every sample: not computed). \cr
-   usage_percentage \tab double \tab The player's usage percentage (0 in every sample: not computed). \cr
-   m_vp_votes \tab integer \tab The player's MVP votes (0 in every sample). \cr
-   minus \tab integer \tab The player's points allowed on court (0 in every sample: not computed). \cr
-   offensive_rating \tab double \tab The player's offensive rating (0 in every sample: not computed). \cr
-   p_er \tab double \tab The player's PER (0 in every sample: not computed). \cr
-   plus \tab integer \tab The player's points scored on court (0 in every sample: not computed). \cr
-   points_fast_break \tab integer \tab The player's fast-break points. \cr
-   points_in_the_paint \tab integer \tab The player's points in the paint. \cr
-   points_in_the_paint_attempted \tab integer \tab The player's paint attempts (0 in every sample: not computed). \cr
-   points_in_the_paint_made \tab integer \tab The player's paint makes (0 in every sample: not computed). \cr
-   points_second_chance \tab integer \tab The player's second-chance points. \cr
-   second_chance_points_attempted \tab integer \tab The player's second-chance attempts (0 in every sample: not computed). \cr
-   second_chance_points_made \tab integer \tab The player's second-chance makes (0 in every sample: not computed). \cr
-   true_shooting_attempts \tab integer \tab The player's true-shooting attempts (0 in every sample: not computed). \cr
-   true_shooting_percentage \tab double \tab The player's true-shooting percentage (0 in every sample: not computed). \cr
-   player_id \tab integer \tab Player id (KZS player registry). Joins to \verb{/players/\{playerId\}}, box-score and play-by-play \code{playerId}. \cr
-   photo_uuid \tab character \tab Player photo: image file id, served at \verb{https://api.kzs.si/public/images/\{uuid\}}. \cr
-   match_team_player_firstname \tab character \tab The player's given name, as entered for this match (lower-case n in this route). \cr
-   match_team_player_lastname \tab character \tab The player's family name, as entered for this match (lower-case n in this route). \cr
-   match_team_player_year_of_birth \tab character \tab Birth year from the match entry, sent as a string ('2002'); the profile \code{person.yearOfBirth} is an integer. \cr
-   jersey_number \tab character \tab Shirt number worn, sent as a string ('1', '55'). \cr
-   starting_lineup \tab logical \tab True when the player started. \cr
-   captain \tab logical \tab Games as captain. \cr
-   played \tab logical \tab True when the player got on court. \cr
-}
+A \code{hoopR_data} tibble with one row per player of both teams.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_box_score")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Box score of a final game (2015/16 on): one row per player of both teams.

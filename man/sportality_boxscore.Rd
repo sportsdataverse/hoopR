@@ -11,43 +11,10 @@ sportality_boxscore(game_uuid)
 platform game uuids; the Genius match id is \code{extId} / \code{gameSourceId} in the body.}
 }
 \value{
-A \code{hoopR_data} tibble: Player box score and team rows of both sides (2023/24 on). An empty valid answer
-raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py \code{sportality_boxscore}),
-then any column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_side \tab character \tab home or away: the side the row belongs to. \cr
-   row_type \tab character \tab Kind of row: player, team_coach (the bench row: team rebounds, turnovers and fouls charged to the team or coach) or team_totals. \cr
-   player_id \tab integer \tab Genius person id (Int64). A string key in the players maps, an integer in play-by-play and box-score rows; cast here so the frames join, and join the genius family. \cr
-   team_id \tab integer \tab Genius team id (Int64): in gameday bodies, an integer in standings and stats tables. \cr
-   team_name \tab character \tab Name of the team. \cr
-   period \tab integer \tab Period of the line: 0 = the whole game (the only value seen). \cr
-   full_name \tab character \tab Full display name of the player. \cr
-   first_name \tab character \tab Given (first) name(s) of the player. \cr
-   last_name \tab character \tab Family name (surname) of the player. \cr
-   nr \tab integer \tab Jersey number (null on the bench and totals rows). \cr
-   pos \tab character \tab Position code of the line (G, F, C; null on the bench and totals rows). \cr
-   mins \tab character \tab Minutes played as 'MM:SS' (null on the bench and totals rows). \cr
-   pts \tab integer \tab Number of points scored. \cr
-   fg \tab character \tab Field goals as 'made-attempted'. \cr
-   fg_perc \tab double \tab Field-goal percentage, 0-100. \cr
-   2_p \tab character \tab Two-pointers as 'made-attempted'. \cr
-   2_p_perc \tab double \tab Two-point percentage, 0-100. \cr
-   3_p \tab character \tab Three-pointers as 'made-attempted'. \cr
-   3_p_perc \tab double \tab Three-point percentage, 0-100. \cr
-   ft \tab character \tab Free throws as 'made-attempted'. \cr
-   ft_perc \tab double \tab Free-throw percentage, 0-100. \cr
-   off \tab integer \tab Offensive rebounds. \cr
-   def \tab integer \tab Defensive rebounds. \cr
-   reb \tab integer \tab Total rebounds. \cr
-   ast \tab integer \tab Number of assists credited. \cr
-   to \tab integer \tab Number of turnovers committed. \cr
-   stl \tab integer \tab Number of steals. \cr
-   blk \tab integer \tab Number of blocked shots made. \cr
-   blkr \tab integer \tab Blocks received (shots of the player that were blocked). \cr
-   pf \tab integer \tab Personal fouls. \cr
-   f_on \tab integer \tab Fouls on (fouls drawn). \cr
-   plus_minus \tab integer \tab Plus/minus while on court. \cr
-}
+A \code{hoopR_data} tibble with one row per player or team row, per side.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_boxscore")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player box score and team rows of both sides (2023/24 on).

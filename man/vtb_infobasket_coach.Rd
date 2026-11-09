@@ -11,20 +11,10 @@ vtb_infobasket_coach(person_id)
 423011.}
 }
 \value{
-A \code{hoopR_data} tibble: Coach profile: names, height, weight (no birth data). The columns are always these, in this
-order (sportsdataverse-py \code{vtb_infobasket_coach}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for
-this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   person_id \tab integer \tab Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/\{personId\} (players) and /Widget/CoachPage/\{personId\} (coaches). The scope check compares it with the request. \cr
-   person_last_name_ru \tab character \tab Last name, Russian. \cr
-   person_first_name_ru \tab character \tab First name, Russian. \cr
-   person_last_name_en \tab character \tab Last name, English. \cr
-   person_first_name_en \tab character \tab First name, English. \cr
-   person_gender \tab integer \tab Person gender: 1 on every sampled (male) person. \cr
-   person_height \tab integer \tab Height in centimetres. \cr
-   person_weight \tab integer \tab Weight in kilograms. \cr
-   person_status \tab integer \tab Person record status (1 active, 0 otherwise); meaning unverified. \cr
-}
+A \code{hoopR_data} tibble with one row per coach.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_coach")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Coach profile: names, height, weight (no birth data).

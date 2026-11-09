@@ -14,21 +14,10 @@ api.basketball-bundesliga.de) or \code{dbbl} (women, Toyota Damen-Basketball-Bun
 api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).}
 }
 \value{
-A \code{hoopR_data} tibble: Club profile: names, code, home page, ticket shop, year joined and honours. An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{scb_team}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   team_id \tab character \tab Club id, a string; equal to \code{season_team_id} in every sample. Joins to \code{scb_team} and \code{scb_season_teams}. \cr
-   tlc \tab character \tab Three-letter club code. \cr
-   name_full \tab character \tab Full club name as the API lists it today. \cr
-   name_short \tab character \tab Short name (often the city); null on DBBL. \cr
-   mascot \tab character \tab Club mascot name (null when none). \cr
-   homepage_url \tab character \tab Club website address as sent (it can lack the scheme). \cr
-   ticket_url \tab character \tab Ticket shop URL. \cr
-   year_joined_bbl \tab integer \tab Year the club joined the league. \cr
-   order_id \tab integer \tab Display order of the club on the site; null on some clubs. \cr
-   best_achievements \tab character \tab Honours, German free text (Deutscher Meister = German champion, Pokalsieger = cup winner, Vizepokalsieger = cup runner-up). \cr
-}
+A \code{hoopR_data} tibble with one row per club.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_team")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Club profile: names, code, home page, ticket shop, year joined and honours.

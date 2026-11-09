@@ -12,11 +12,10 @@ genius_game_crosswalk(df, source)
 \item{source}{One of \code{"sportpress"}, \code{"cebl"}, \code{"tbf"}, \code{"kzs"}, \code{"sportality"}.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per game:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_key \tab integer or character \tab Provider's own game key: the BNXT, CEBL, TBF or KZS integer game id, or the Sportality platform game uuid (a string) for source sportality. \cr
-   genius_match_id \tab integer \tab Genius Sports LiveStats match id of the same game (the match_id every genius_* wrapper takes). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "genius_game_crosswalk")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Provider game key <-> Genius LiveStats match id, from a frame that carries both.

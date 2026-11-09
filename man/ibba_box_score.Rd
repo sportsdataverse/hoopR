@@ -13,42 +13,10 @@ ibba_box_score(game_id, season)
 unchanged.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows. \cr
-   jersey \tab character \tab Jersey number as a zero-padded string ('02'); a box score also uses '_TEAM' and 'TOTAL' for its two non-player lines. \cr
-   team_id \tab integer \tab Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. \cr
-   game_id \tab integer \tab IBBA game id (key space: basket.co.il games). Joins ibba_games to ibba_box_score; in ibba_games_ex it is an EXTERNAL game id (the ig_ space, e.g. 8888 for a pre-season game). \cr
-   board_id \tab integer \tab Board id of the game (5 = league). \cr
-   season \tab integer \tab Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. \cr
-   round \tab integer \tab Round (game number) of the game within its board. \cr
-   starter \tab logical \tab True when the player started the game. \cr
-   minutes \tab integer \tab Minutes played, whole minutes; a TOTAL line holds the team's player-minutes (200 plus 25 per overtime). \cr
-   pts \tab integer \tab Points scored by the player or team (free throws included). \cr
-   fg2m \tab integer \tab Two-point field goals made. \cr
-   fg2a \tab integer \tab Two-point field goals attempted (verified equal to Segev made + missed). \cr
-   fg2_pct \tab double \tab Two-point field-goal percentage, 0-100. \cr
-   fg3m \tab integer \tab Three-point field goals made. \cr
-   fg3a \tab integer \tab Three-point field goals attempted. \cr
-   fg3_pct \tab double \tab Three-point field-goal percentage, 0-100. \cr
-   ftm \tab integer \tab Free throws made. \cr
-   fta \tab integer \tab Free throws attempted. \cr
-   ft_pct \tab double \tab Free-throw percentage, 0-100. \cr
-   dreb \tab integer \tab Defensive rebounds. \cr
-   oreb \tab integer \tab Offensive rebounds. \cr
-   reb \tab integer \tab Total rebounds. \cr
-   fouls_drawn \tab integer \tab Fouls DRAWN: fouls opponents committed against the player or team (the wire's fouls_against; verified equal to Segev f_drawn). \cr
-   fouls \tab integer \tab Fouls COMMITTED by the player or team (the wire's fouls_for; verified equal to Segev f). \cr
-   steals \tab integer \tab Steals made by the player or team. \cr
-   turnovers \tab integer \tab Turnovers (the wire's misspelt tournovers). \cr
-   assists \tab integer \tab Assists credited to the player or team. \cr
-   blocks \tab integer \tab Shots the player or team blocked. \cr
-   blocks_against \tab integer \tab Own shots that were blocked. \cr
-   val \tab integer \tab Efficiency rating (valuation; verified equal to Segev rate); -1 on 2004-05 team-credited lines. \cr
-   plus_minus \tab integer \tab Plus-minus; 0 on every line of the 2004-05 sample (not recorded then, inferred). \cr
-   dunks \tab integer \tab Dunks made by the player or team. \cr
-   row_type \tab character \tab Kind of box line: player, team (actions credited to the team: team rebounds and turnovers) or total (the team's TOTAL line, equal to players plus team lines). \cr
-}
+A \code{hoopR_data} tibble with one row per player in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_box_score")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Box score of a finished game: player lines, a team-credited line per side and the TOTAL line

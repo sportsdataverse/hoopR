@@ -11,28 +11,10 @@ easl_player(player_id)
 easl_players, the box scores, leaders and play-by-play. A malformed id is \code{hoopR_bad_request}.}
 }
 \value{
-A \code{hoopR_data} tibble: One player's biography: names, nationality, birth date, height, weight. An empty answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{easl_player}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_row_id \tab integer \tab The sync server's own integer row id of the player (not a DataCore id). \cr
-   player_id \tab character \tab playerId: DataCore person UUID v1 (key space: EASL persons, the same id as the box score's \code{personId}; joins /players, leaders and play-by-play players). Not a team id. \cr
-   name \tab character \tab Player display name in 'FAMILY Given' form with the family name upper-cased (OSAKABE Taiki), in Latin script. \cr
-   name_latin \tab character \tab Alternative name: equal to nameFullLocal for 257 of 552 players, otherwise null; never non-Latin in the observed data. \cr
-   name_abbreviated \tab character \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (String). \cr
-   nationality \tab character \tab ISO 3166-1 alpha-3 code of the player's nationality; 36 codes occur, KOR 119, USA 102, JPN 81, PHL 80, TWN 61, CHN 22, MNG 16, HKG 15, MAC 13 ('PHI' also appears once, a non-ISO spelling of PHL). \cr
-   gender \tab character \tab MALE on all 552 rows. \cr
-   dob \tab Date \tab Date of birth, 'YYYY-MM-DD' (a public biography field; 1980-10-05 to 2023-10-16 in the data, so the latest values are implausible); 5 players have none. \cr
-   height_cm \tab integer \tab Height in centimetres; 43 of 552 players have none. \cr
-   height_feet \tab character \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (String). \cr
-   weight_kg \tab integer \tab Weight in kilograms; many players have none. \cr
-   weight_lbs \tab integer \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (Int64). \cr
-   status \tab character \tab Registration state of the player in the database: ACTIVE, INACTIVE or UNREGISTERED. \cr
-   jersey_number \tab character \tab Jersey number as a string. Present ONLY in the roster variant of /players (seasonId + teamId) and on \verb{/players/\{playerId\}}; missing from the unfiltered list. Absent on some rows. \cr
-   position \tab character \tab Playing position (G, F, C, PG, SG, SF, PF, GF). Present ONLY in the roster variant of /players (seasonId + teamId) and on \verb{/players/\{playerId\}}; missing from the unfiltered list. Absent on some rows. \cr
-   organization_id \tab character \tab DataCore organisation id: b1e0z (EASL). \cr
-   created_at \tab character \tab When the sync server inserted the row, 'YYYY-MM-DD HH:MM:SS' (a different format from updatedAt; zone unstated, UTC assumed). \cr
-   updated_at \tab character \tab When the sync server last synced the row, ISO 8601 with milliseconds and Z (UTC). \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "easl_player")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One player's biography: names, nationality, birth date, height, weight.

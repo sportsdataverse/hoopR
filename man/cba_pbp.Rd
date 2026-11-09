@@ -14,29 +14,10 @@ cba_pbp(schedule_id, quarter_num = NULL)
 request; the runtime fetches them all and checks the set).}
 }
 \value{
-A \code{hoopR_data} tibble: One row per play, oldest first, all periods. An empty valid answer is a zero-row tibble
-with these columns, in this order (sportsdataverse-py \code{cba_pbp}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   schedule_id \tab integer \tab CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the \code{{scheduleId}} of every game route). Stamped by the runtime from the request; null on a body parsed without it. \cr
-   bt_textual_format \tab character \tab Second copy of the description; equal to textualFormat on every sampled row (unverified difference). \cr
-   color \tab character \tab Hex colour of the acting team (homeColor or visitingColor). \cr
-   distance \tab character \tab Unobserved: null in every sample (a shot distance slot). The API has NO shot x/y coordinates. \cr
-   home_color \tab character \tab Home team colour '#RRGGBB'. \cr
-   home_score \tab integer \tab Home team points after the play. NOT monotone row by row: a substitution row can carry a stale score (2017 game, Q1 0:40); the game's final score is the maximum. \cr
-   minutes \tab integer \tab Game clock, minutes REMAINING in the period (counts down: 10 or 12 at the start, depending on the era). \cr
-   player_cn_names \tab character \tab Names (Chinese surnames/short names) of the players in textualFormat, in order of mention (shooter or fouler first, then assister, rebounder or fouled player). 0-3 names. There are NO player ids in the play-by-play. \cr
-   player_fouls \tab character \tab Unobserved: null in every sample (a player's fouls slot). \cr
-   player_score \tab character \tab Unobserved: null in every sample (a player's points slot). \cr
-   quarter_num \tab integer \tab Period of the row (1-4; 5+ would be overtime). Equals the request's quarterNum on every row. \cr
-   seconds \tab integer \tab Game clock, seconds remaining within the minute. \cr
-   team_cn_alias1 \tab character \tab Unobserved: null in every sample (a team-name slot). \cr
-   team_cn_alias2 \tab character \tab Unobserved: null in every sample (a team-name slot). \cr
-   team_cn_alias3 \tab character \tab Unobserved: null in every sample (a team-name slot). \cr
-   textual_format \tab character \tab Play description sentence (Chinese) naming the players; the phrase glossary translates every form seen. Team names inside it can be a different era's name than the game header (a 2025-26 text reads (Chinese text)). Sentence forms (\code{{P}} a player, \code{{T}} a team): \verb{\{T\}``\{T\}} substitution, \code{{P}} replaces \code{{P}}; \code{{P}} three-point jump shot, misses, \code{{P}} gets the defensive rebound; \code{{P}} layup (driving), scores; \code{{P}} takes two free throws, free throw 2 made; (Chinese text) (Chinese text) = \code{{P}} shooting foul on the opponent's shot (drawn by an unnamed player); \code{{P}} receives an assist from \code{{P}}, jump shot, three-pointer made; the full glossary is in cba_glossary.yaml. \cr
-   type \tab integer \tab Team the play belongs to: 1 = home, 2 = visiting (checked on all 667 rows of two games: color equals homeColor when 1 and visitingColor when 2). See the code table. \cr
-   visiting_color \tab character \tab Visiting team colour '#RRGGBB'. \cr
-   visitor_score \tab integer \tab Visiting team points after the play (same caveat as homeScore). \cr
-}
+A \code{hoopR_data} tibble with one row per play.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cba_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play of a finished game, every period merged, oldest first (Chinese text; no player or team ids).

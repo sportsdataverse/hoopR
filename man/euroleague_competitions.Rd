@@ -7,14 +7,10 @@
 euroleague_competitions()
 }
 \value{
-A \code{hoopR_data} tibble with one row per competition:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      name \tab character \tab Display name. \cr
-      code \tab character \tab EuroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per competition.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "euroleague_competitions")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the competitions of the EuroLeague Competition Engine (EuroLeague \code{E},

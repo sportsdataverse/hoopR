@@ -16,21 +16,49 @@ Use \code{espn_mbb_teams()} to look up team IDs. Example: \code{"2509"} (UConn).
 \item{...}{Currently unused; reserved for future argument threading.}
 }
 \value{
-Returns a tibble of injury records for the specified MBB team.
-Returns an empty tibble (zero rows) when the team has no reported
-injuries.
+A named list of \code{hoopR_data} tibbles: \code{Injuries}.
 
 \strong{Injuries}
 
-Columns as documented in the shared \link{espn_mbb_team_injuries_injuries_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  team_id \tab character \tab Unique team identifier. \cr
+  athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
+  athlete_name \tab character \tab Athlete display name (ESPN). \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  status \tab character \tab Status label. \cr
+  date \tab character \tab Date in YYYY-MM-DD format. \cr
+  type \tab character \tab Record type / category. \cr
+  side \tab character \tab Side label (e.g. 'home', 'away', or 'overUnder'). \cr
+  returns_at \tab character \tab  \cr
+  short_comment \tab character \tab  \cr
+  long_comment \tab character \tab Long-form play / event comment. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Returns a tibble of injury records for the specified NBA team.
-Returns an empty tibble (zero rows) when the team has no reported
-injuries.
+An empty tibble (zero rows) when no injuries are reported.
+
+A named list of \code{hoopR_data} tibbles: \code{Injuries}.
 
 \strong{Injuries}
 
-Columns as documented in the shared \link{espn_mbb_team_injuries_injuries_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  team_id \tab character \tab Unique team identifier. \cr
+  athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
+  athlete_name \tab character \tab Athlete display name (ESPN). \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  status \tab character \tab Status label. \cr
+  date \tab character \tab Date in YYYY-MM-DD format. \cr
+  type \tab character \tab Record type / category. \cr
+  side \tab character \tab Side label (e.g. 'home', 'away', or 'overUnder'). \cr
+  returns_at \tab character \tab  \cr
+  short_comment \tab character \tab  \cr
+  long_comment \tab character \tab Long-form play / event comment. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+An empty tibble (zero rows) when no injuries are reported.
 }
 \description{
 \strong{Get ESPN Women's College Basketball Team Injuries}

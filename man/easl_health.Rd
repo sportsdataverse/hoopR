@@ -7,14 +7,10 @@
 easl_health()
 }
 \value{
-A \code{hoopR_data} tibble: Liveness probe of the unofficial sync server: status, message and the server's own
-timestamp. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{easl_health}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   status \tab character \tab Server status: 'OK'. \cr
-   message \tab character \tab Human-readable status text ('EASL Basketball API is running'). \cr
-   timestamp \tab character \tab Server time, ISO 8601 with milliseconds and Z (UTC). \cr
-}
+A \code{hoopR_data} tibble with one row per health check.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "easl_health")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Liveness probe of the unofficial sync server: status, message and the server's own timestamp.

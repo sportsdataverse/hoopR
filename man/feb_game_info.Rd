@@ -11,33 +11,10 @@ feb_game_info(game_id)
 \code{game_id} column of \code{\link[=feb_schedule]{feb_schedule()}}, \code{\link[=feb_results]{feb_results()}} and \code{\link[=feb_overview]{feb_overview()}}.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab FEB game id (one global sequence): the \{gameId\} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request. \cr
-   comp_id \tab integer \tab Competition id (constant across seasons): 115 Primera FEB (LEB Oro), 118 Segunda FEB, 210 Liga Femenina Endesa, 214 LF Challenge, 218 LF-2, 111 Tercera FEB. Not the site's menu group. \cr
-   competition \tab character \tab Competition name as printed that season, uppercase ('PRIMERA FEB'; 2020-21 'LIGA LEB ORO'). \cr
-   group_label \tab character \tab The game's group (grupo) label, trimmed: 'Unico' = the single group, '"A"' = group A. It is the page's group label, not the site's menu group number. \cr
-   period \tab integer \tab Current or last period number; 4 for a finished regulation game. \cr
-   clock \tab character \tab 'FINAL' once the game is over, else the game clock 'mm:ss' remaining in the period. \cr
-   start_time \tab POSIXct \tab Tip-off in Spanish local time (POSIXct, tz Europe/Madrid): the source carries no offset, so the zone is assumed. \cr
-   venue \tab character \tab Venue (pabellon) name. \cr
-   address \tab character \tab Venue street address, free text. \cr
-   referee1 \tab character \tab Crew chief (arbitro principal), 'SURNAMES, NAME'. \cr
-   referee2 \tab character \tab First umpire (arbitro auxiliar 1), 'SURNAMES, NAME'. \cr
-   referee3 \tab character \tab Second umpire (arbitro auxiliar 2), 'SURNAMES, NAME'; null when the game had two referees. \cr
-   status \tab integer \tab Game state code: 3 = finished (status_text FINISHED). Null on 2020-21 games. \cr
-   status_text \tab character \tab Game state label in English ('FINISHED'). Null on 2020-21 games. \cr
-   home_team_id \tab integer \tab Home team-season id (key space: FEB team registrations, new every season). \cr
-   home_team \tab character \tab Home team name for the season (sponsor name, uppercase). \cr
-   home_team_code \tab character \tab Home federation team code, 8 digits as a string. Null on 2020-21 games. \cr
-   home_club_code \tab character \tab Home federation club code, 6 digits as a string. Null on 2020-21 games. \cr
-   home_score \tab integer \tab Home points: the final score when clock is FINAL, else the live score. \cr
-   away_team_id \tab integer \tab Away team-season id (key space: FEB team registrations, new every season). \cr
-   away_team \tab character \tab Away team name for the season (sponsor name, uppercase). \cr
-   away_team_code \tab character \tab Away federation team code, 8 digits as a string. Null on 2020-21 games. \cr
-   away_club_code \tab character \tab Away federation club code, 6 digits as a string. Null on 2020-21 games. \cr
-   away_score \tab integer \tab Away points: the final score when clock is FINAL, else the live score. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "feb_game_info")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Game header of one FEB game: competition, tip-off, venue, officials,

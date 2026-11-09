@@ -12,33 +12,10 @@ pleague_box_teams(gid)
 are served.}
 }
 \value{
-A \code{hoopR_data} tibble: Team totals of one finished game: the box score's total row, home then away. An empty
-valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{pleague_box_teams}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   gid \tab integer \tab P. LEAGUE+ game id on the site: ONE global integer sequence over every stage and season (1-12 = 2020-21 pre-season, 13 = the 2020-21 opener, 197 = the 2022-23 opener, 662 = the 2025-26 opener), with gaps; a row id, not a count. The \{gid\} of /game/\{gid\}. \cr
-   side \tab character \tab Which team the row belongs to: home or away. The box lists home first, the play-by-play and the schedule list away first. \cr
-   minutes \tab character \tab Team minutes 'mm:ss' ('240:00' = 5 players x 48 min; more with overtime). \cr
-   seconds \tab integer \tab Team seconds on court (14400 = 240 minutes): the site's value in 2020-21 and 2021-22, derived from minutes from 2022-23. \cr
-   points \tab integer \tab Team points; equals the final score (the runtime checks it). \cr
-   fg2_made \tab integer \tab Team 2-point field goals made. \cr
-   fg2_att \tab integer \tab Team 2-point field goals attempted. \cr
-   fg2_pct \tab double \tab Team 2-point percentage, 0-100. \cr
-   fg3_made \tab integer \tab Team 3-point field goals made. \cr
-   fg3_att \tab integer \tab Team 3-point field goals attempted. \cr
-   fg3_pct \tab double \tab Team 3-point percentage, 0-100. \cr
-   ft_made \tab integer \tab Team free throws made. \cr
-   ft_att \tab integer \tab Team free throws attempted. \cr
-   ft_pct \tab double \tab Team free-throw percentage, 0-100. \cr
-   reb \tab integer \tab Team total rebounds, including team rebounds that no player row carries (so it can exceed the sum of the player rows). \cr
-   reb_off \tab integer \tab Team offensive rebounds. \cr
-   reb_def \tab integer \tab Team defensive rebounds. \cr
-   ast \tab integer \tab Team assists in the game (the total row). \cr
-   stl \tab integer \tab Team steals in the game. \cr
-   blk \tab integer \tab Team blocks made in the game. \cr
-   tov \tab integer \tab Team turnovers. \cr
-   pf \tab integer \tab Team personal fouls. \cr
-   plus_minus \tab integer \tab Sum of the players' plus/minus (2020-21 and 2021-22 only; null from 2022-23). \cr
-}
+A \code{hoopR_data} tibble with one row per team in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_box_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team totals of one finished game: the box score's total row, home then away.

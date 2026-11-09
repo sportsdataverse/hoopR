@@ -11,52 +11,10 @@ tpbl_box_team_periods(game_id)
 = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble: Per-quarter team lines of both teams: points scored and conceded in the quarter, running
-totals and stats. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{tpbl_box_team_periods}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab TPBL game id (key space: TPBL games on api.tpbl.basketball): the \code{{game_id}} of the game routes. Not sequential by date (2024-25 = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). The box score echoes no game id, so a box frame parsed without the request stamp has a null game_id. \cr
-   side \tab character \tab Side of the game: home or away (the API lists the home team first and never infers it from the venue). \cr
-   team_id \tab integer \tab TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the \code{{team_id}} of the division team routes. Not the GoHoops franchise id and not the squad id. \cr
-   team \tab character \tab Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). \cr
-   gohoops_squad_id \tab integer \tab GoHoops squad id (key space: GoHoops squads = one team in one season: 8209-8215 in 2024-25, 11931-11937 in 2025-26, 15536-15542 in 2026-27; it changes every season). \cr
-   period \tab integer \tab Quarter number of the row: 1-4 regulation, 5 = the first overtime, 6 = the second. \cr
-   won_score \tab integer \tab Team-row field: points the team scored in this quarter alone. Player stat lines carry no value for it. \cr
-   time_on_court \tab integer \tab Seconds on court by the team in this quarter (436 = 7:16). A team quarter sums its five players: 3600 = 5 x 720 s (12-minute quarter), 1500 = 5 x 300 s (5-minute overtime). \cr
-   lost_score \tab integer \tab Team-row field: points the team conceded in this quarter alone. Not a player stat. \cr
-   total_won_score \tab integer \tab Team-row field: points the team has scored up to and including this quarter (the last quarter's value is the final score). Not a player stat. \cr
-   total_lost_score \tab integer \tab Team-row field: points the team has conceded up to and including this quarter. Not a player stat. \cr
-   field_goals_made \tab integer \tab Field goals made by the team in this quarter. \cr
-   field_goals_missed \tab integer \tab Field goals missed by the team in this quarter. \cr
-   field_goals_attempted \tab integer \tab Field goals attempted by the team in this quarter. \cr
-   field_goals_percentage \tab double \tab Field goals percentage by the team in this quarter, 0-100 as a string with one decimal ('57.1'); '0.0' without attempts. \cr
-   two_pointers_made \tab integer \tab 2-point field goals made by the team in this quarter. \cr
-   two_pointers_missed \tab integer \tab 2-point field goals missed by the team in this quarter. \cr
-   two_pointers_attempted \tab integer \tab 2-point field goals attempted by the team in this quarter. \cr
-   two_pointers_percentage \tab double \tab 2-point field goals percentage by the team in this quarter, 0-100 as a string with one decimal ('57.1'); '0.0' without attempts. \cr
-   three_pointers_made \tab integer \tab 3-point field goals made by the team in this quarter. \cr
-   three_pointers_missed \tab integer \tab 3-point field goals missed by the team in this quarter. \cr
-   three_pointers_attempted \tab integer \tab 3-point field goals attempted by the team in this quarter. \cr
-   three_pointers_percentage \tab double \tab 3-point field goals percentage by the team in this quarter, 0-100 as a string with one decimal ('57.1'); '0.0' without attempts. \cr
-   free_throws_made \tab integer \tab Free throws made by the team in this quarter. \cr
-   free_throws_missed \tab integer \tab Free throws missed by the team in this quarter. \cr
-   free_throws_attempted \tab integer \tab Free throws attempted by the team in this quarter. \cr
-   free_throws_percentage \tab double \tab Free throws percentage by the team in this quarter, 0-100 as a string with one decimal ('57.1'); '0.0' without attempts. \cr
-   rebounds \tab integer \tab Total rebounds by the team in this quarter (offensive + defensive). \cr
-   defensive_rebounds \tab integer \tab Defensive rebounds by the team in this quarter. \cr
-   offensive_rebounds \tab integer \tab Offensive rebounds by the team in this quarter. \cr
-   defensive_fouls \tab integer \tab Fouls committed on defense by the team in this quarter. \cr
-   offensive_fouls \tab integer \tab Fouls committed on offense by the team in this quarter. \cr
-   personal_fouls \tab integer \tab Personal fouls by the team in this quarter (excludes technical, unsportsmanlike and disqualifying fouls). \cr
-   fouls \tab integer \tab Fouls charged by the team in this quarter: personal + technical + unsportsmanlike + disqualifying; equals defensive_fouls + offensive_fouls (checked on 4,237 played player lines of 189 games). \cr
-   assists \tab integer \tab Assists by the team in this quarter. \cr
-   steals \tab integer \tab Steals by the team in this quarter. \cr
-   blocks \tab integer \tab Blocked shots by the team in this quarter. \cr
-   turnovers \tab integer \tab Turnovers committed by the team in this quarter; equals the sum of the \verb{*_turnovers} type columns (checked on 4,237 played player lines of 189 games). \cr
-   points_in_paint \tab integer \tab Points scored in the paint by the team in this quarter. \cr
-   second_chance_points \tab integer \tab Points scored on second chances (after an offensive rebound) by the team in this quarter. \cr
-   fast_break_points \tab integer \tab Points scored on the fast break by the team in this quarter. \cr
-}
+A \code{hoopR_data} tibble with one row per team and period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tpbl_box_team_periods")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Per-quarter team lines of both teams: points scored and conceded in the quarter, running totals and stats.

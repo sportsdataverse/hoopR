@@ -18,13 +18,31 @@ forward compatibility. Proxy configuration should use
 \code{options(hoopR.proxy = ...)} -- see \code{?hoopR} for details.}
 }
 \value{
-A single \code{hoopR_data} tibble with one row per coach.
+A \code{hoopR_data} tibble with one row per coach.
 
-Columns as documented in the shared \link{espn_mbb_coaches_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  coach_id \tab character \tab  \cr
+  first_name \tab character \tab Player's first name. \cr
+  last_name \tab character \tab Player's last name. \cr
+  full_name \tab character \tab Player's full name. \cr
+  experience \tab integer \tab Years of professional experience. \cr
+  team_id \tab character \tab Unique team identifier. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A single \code{hoopR_data} tibble with one row per coach.
+A \code{hoopR_data} tibble with one row per coach.
 
-Columns as documented in the shared \link{espn_mbb_coaches_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  coach_id \tab character \tab  \cr
+  first_name \tab character \tab Player's first name. \cr
+  last_name \tab character \tab Player's last name. \cr
+  full_name \tab character \tab Player's full name. \cr
+  experience \tab integer \tab Years of professional experience. \cr
+  team_id \tab character \tab Unique team identifier. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get ESPN Women's College Basketball Coaches}

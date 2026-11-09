@@ -17,36 +17,10 @@ druga.aba-liga.com, lea=2). Both sites serve one database; the runtime asks the 
 \code{"aba"}.}
 }
 \value{
-A \code{hoopR_data} tibble.
-One row per event, \code{seq} 1-based in game order (the page lists each period newest first). \code{period} is 1-4 for
-the quarters and 5 for every overtime together; \code{clock} is \code{mm:ss} REMAINING (10:00 per quarter, 05:00 in
-overtime) and null on starting-lineup and period markers. The score is printed only on scoring events, so
-\code{home_score} / \code{away_score} are null elsewhere (carry them forward for a running score). \code{text} is the English
-event; \code{action} is the text without its parenthesised \code{qualifier} (shot type, rebound side, \verb{n of m} free
-throw, foul or turnover type). Team-only rows print just the qualifier, so \code{action} is null there. Empty before
-2017-18 (the page has no play-by-play tab).
-Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_no \tab integer \tab Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The \{gameNo\} of the match route. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr
-   league_id \tab integer \tab League code, the site's lea: 1 = ABA League, 2 = ABA League 2. \cr
-   league \tab character \tab League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. \cr
-   seq \tab integer \tab 1-based position in game order across the whole game (after the reversal). \cr
-   period \tab integer \tab 1-4 = quarters, 5 = overtime (the #q5 tab; every overtime of the game). \cr
-   clock \tab character \tab Clock in the period, 'mm:ss' REMAINING (counts down from 10:00; overtime from 05:00). Null on the starting-lineup rows and on game / period start and end markers. \cr
-   seconds_left \tab integer \tab The clock as whole seconds REMAINING in the period (08:34 = 514), derived by the parser; null where the clock is. \cr
-   home_score \tab integer \tab Home score after this event: only set on scoring events (the page prints the score only there); null otherwise. Carry it forward for a running score. \cr
-   away_score \tab integer \tab Away score after this event, as home_score. \cr
-   side \tab character \tab Which column the event sits in: 'home', 'away', or null for game/period markers and bare-clock rows. A timeout row gets the side of its team badge. \cr
-   team_id \tab integer \tab ABA club id (global: the same id in every season and in both leagues, e.g. Partizan = 22 in 2008-09 and 2025-26). Joins every frame that carries it; the calendar has club names only. \cr
-   jersey \tab integer \tab Jersey number as printed; the play-by-play omits it on some rows (all starting-lineup rows and many home rows), so it is null there. \cr
-   player_id \tab integer \tab ABA player id (global: one person keeps one id across seasons and both leagues, e.g. Carlik Jones = 4807), cast to an integer. Join on it, never on the printed name. \cr
-   player_name \tab character \tab Name as the play-by-play prints it: 'SURNAME I' upper case (the trailing '.' belongs to the event text on the page and is dropped). \cr
-   text \tab character \tab Event text in English after the player's name: \verb{<action> (<qualifier>)}, 'in starting lineup', or the whole text of a team / game row ('(defensive)', 'Timeout', 'start of 1. quarter'). Null on bare-clock rows ('10:00' with nothing else, opening some periods). \cr
-   action \tab character \tab text without its parenthesised qualifier; see the action table below the route. Null on team rows (they print only '(qualifier)') and bare-clock rows. \cr
-   qualifier \tab character \tab The parenthesised part of text (shot type, rebound side, free-throw 'n of m', foul or turnover type); see the qualifier table. Null when the text has none. \cr
-}
+A \code{hoopR_data} tibble with one row per event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "aba_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play of one finished game (2017-18 on), in game order: shots, rebounds, fouls, substitutions, timeouts

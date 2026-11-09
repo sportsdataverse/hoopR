@@ -11,17 +11,10 @@ acb_competition_editions(competition_ids = NULL)
 the API's default competition. One or more whole numbers (a vector repeats \code{competitionIds} in the query).}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_competition_editions}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa. \cr
-   competition_name \tab character \tab The API's competition name ('Liga Nacional' for the Liga). \cr
-   edition_id \tab integer \tab Season id (START year - 1935). \cr
-   season_start_year \tab integer \tab Calendar year the season starts (2026 for 2026-27). \cr
-   season \tab integer \tab Season END year (2027 for 2026-27) = seasonEndYear. \cr
-   n_rounds \tab integer \tab Rounds the edition lists. \cr
-   n_weeks \tab integer \tab Weeks the edition lists. \cr
-}
+A \code{hoopR_data} tibble with one row per edition.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_competition_editions")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every competition edition (season) the API knows, one row per edition.

@@ -6,10 +6,7 @@ NULL
 #' **Get ESPN NBA Calendar**
 #' @rdname espn_mbb_calendar
 #' @author Saiem Gilani
-#' @return Returns a tibble of calendar entries.
-#'
-#'    Columns as documented in the shared [espn_mbb_calendar_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_calendar", unit = "calendar entry")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @importFrom janitor clean_names

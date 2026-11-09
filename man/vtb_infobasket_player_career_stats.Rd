@@ -14,50 +14,10 @@ vtb_infobasket_player_career_stats(person_id, tag = "vtb")
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: A player's career totals in the competition tag. The columns are always these, in this order
-(sportsdataverse-py \code{vtb_infobasket_player_career_stats}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no
-rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   person_id \tab integer \tab Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/\{personId\} (players) and /Widget/CoachPage/\{personId\} (coaches). The scope check compares it with the request. \cr
-   game_count \tab integer \tab Games in the totals. \cr
-   in_game_count \tab integer \tab Games actually played (on the court). \cr
-   start_count \tab integer \tab Games the person started. \cr
-   has_more_seasons \tab logical \tab True when the host holds more seasons than listed (False in every sample). \cr
-   points \tab integer \tab Points. The wire's null is 0 here (null counts are filled). \cr
-   shot1 \tab integer \tab Free throws attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal1 \tab integer \tab Free throws made. The wire's null is 0 here (null counts are filled). \cr
-   shot2 \tab integer \tab 2-point field goals attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal2 \tab integer \tab 2-point field goals made. The wire's null is 0 here (null counts are filled). \cr
-   shot3 \tab integer \tab 3-point field goals attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal3 \tab integer \tab 3-point field goals made. The wire's null is 0 here (null counts are filled). \cr
-   shot1_percent \tab double \tab Free-throw percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   shot2_percent \tab double \tab 2-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   shot3_percent \tab double \tab 3-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   assist \tab integer \tab Assists. The wire's null is 0 here (null counts are filled). \cr
-   blocks \tab integer \tab Blocked shots. The wire's null is 0 here (null counts are filled). \cr
-   def_rebound \tab integer \tab Defensive rebounds. The wire's null is 0 here (null counts are filled). \cr
-   off_rebound \tab integer \tab Offensive rebounds. The wire's null is 0 here (null counts are filled). \cr
-   rebound \tab integer \tab Total rebounds. The wire's null is 0 here (null counts are filled). \cr
-   steal \tab integer \tab Steals. The wire's null is 0 here (null counts are filled). \cr
-   turnover \tab integer \tab Turnovers. The wire's null is 0 here (null counts are filled). \cr
-   foul \tab integer \tab Personal fouls committed. The wire's null is 0 here (null counts are filled). \cr
-   opponent_foul \tab integer \tab Fouls drawn. The wire's null is 0 here (null counts are filled). \cr
-   avg_points \tab double \tab Per-game average of: points; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_assist \tab double \tab Per-game average of: assists; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_blocks \tab double \tab Per-game average of: blocked shots; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_def_rebound \tab double \tab Per-game average of: defensive rebounds; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_off_rebound \tab double \tab Per-game average of: offensive rebounds; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_rebound \tab double \tab Per-game average of: total rebounds; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_steal \tab double \tab Per-game average of: steals; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_turnover \tab double \tab Per-game average of: turnovers; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_foul \tab double \tab Per-game average of: personal fouls committed; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_opponent_foul \tab double \tab Per-game average of: fouls drawn; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_plus_minus \tab double \tab Per-game average of: plus-minus: point differential while on the court; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   seconds \tab integer \tab Playing time in seconds. \cr
-   played_time \tab character \tab Playing time as 'minutes:seconds' (team rows sum the five players: '200:00' = 40 minutes x 5). \cr
-   avg_played_time \tab character \tab Average playing time per game as 'minutes:seconds'. \cr
-   plus_minus \tab integer \tab Plus-minus: point differential while on the court. Null where the host sends none. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_player_career_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A player's career totals in the competition tag.

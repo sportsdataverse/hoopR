@@ -17,45 +17,45 @@ espn_nba_player_contract(athlete_id, season = most_recent_nba_season(), ...)
 \item{season}{Season year (numeric). Defaults to the most recent NBA season.}
 }
 \value{
-A tibble with one row per contract year.
+A \code{hoopR_data} tibble with one row per contract year.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      athlete_id \tab character \tab ESPN athlete identifier. \cr
-      season \tab integer \tab Contract season year. \cr
-      ref \tab character \tab Full \verb{$ref} URL for the contract detail. \cr
-      league \tab character \tab League slug (\code{"nba"}). \cr
-   }}
+  col_name \tab types \tab description \cr
+  athlete_id \tab character \tab ESPN athlete identifier. \cr
+  season \tab integer \tab Contract season year. \cr
+  ref \tab character \tab Full \code{$ref} URL for the contract detail. \cr
+  league \tab character \tab League slug (\code{"nba"}). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A single-row tibble.
+A \code{hoopR_data} tibble with one row per contract.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      athlete_id \tab character \tab ESPN athlete identifier. \cr
-      season \tab integer \tab Contract season year. \cr
-      bird_status \tab integer \tab Bird-rights tier (0 = Non, 1 = Early, 2 = Full). \cr
-      salary \tab numeric \tab Total cap-counting salary for the season ($). \cr
-      salary_remaining \tab numeric \tab Remaining salary owed. \cr
-      years_remaining \tab integer \tab Years left on the contract. \cr
-      incoming_trade_value \tab numeric \tab Trade value if receiving this contract ($). \cr
-      outgoing_trade_value \tab numeric \tab Trade value if sending out this contract ($). \cr
-      option_type \tab integer \tab Option type code (e.g. team / player option). \cr
-      minimum_salary_exception \tab logical \tab Signed under the minimum-salary exception. \cr
-      trade_restriction \tab logical \tab Whether a trade restriction is active. \cr
-      unsigned_foreign_pick \tab logical \tab Unsigned-foreign-pick flag. \cr
-      active \tab logical \tab Whether the contract is currently active. \cr
-      base_year_compensation_active \tab logical \tab Base-year-compensation rule active. \cr
-      poison_pill_provision_active \tab logical \tab Poison-pill provision active. \cr
-      trade_kicker_active \tab logical \tab Trade kicker active. \cr
-      trade_kicker_percentage \tab numeric \tab Trade kicker percentage of salary. \cr
-      trade_kicker_value \tab numeric \tab Trade kicker dollar value. \cr
-      trade_kicker_trade_value \tab numeric \tab Trade kicker post-trade dollar value. \cr
-      season_ref \tab character \tab \verb{$ref} to the season resource. \cr
-      team_ref \tab character \tab \verb{$ref} to the team-in-season resource. \cr
-      team_id \tab character \tab ESPN team id parsed from \code{team_ref}. \cr
-      league \tab character \tab League slug (\code{"nba"}). \cr
-   }}
+  col_name \tab types \tab description \cr
+  athlete_id \tab character \tab ESPN athlete identifier. \cr
+  season \tab integer \tab Contract season year. \cr
+  bird_status \tab integer \tab Bird-rights tier (0 = Non, 1 = Early, 2 = Full). \cr
+  salary \tab numeric \tab Total cap-counting salary for the season ($). \cr
+  salary_remaining \tab numeric \tab Remaining salary owed. \cr
+  years_remaining \tab integer \tab Years left on the contract. \cr
+  incoming_trade_value \tab numeric \tab Trade value if receiving this contract ($). \cr
+  outgoing_trade_value \tab numeric \tab Trade value if sending out this contract ($). \cr
+  option_type \tab integer \tab Option type code (e.g. team / player option). \cr
+  minimum_salary_exception \tab logical \tab Signed under the minimum-salary exception. \cr
+  trade_restriction \tab logical \tab Whether a trade restriction is active. \cr
+  unsigned_foreign_pick \tab logical \tab Unsigned-foreign-pick flag. \cr
+  active \tab logical \tab Whether the contract is currently active. \cr
+  base_year_compensation_active \tab logical \tab Base-year-compensation rule active. \cr
+  poison_pill_provision_active \tab logical \tab Poison-pill provision active. \cr
+  trade_kicker_active \tab logical \tab Trade kicker active. \cr
+  trade_kicker_percentage \tab numeric \tab Trade kicker percentage of salary. \cr
+  trade_kicker_value \tab numeric \tab Trade kicker dollar value. \cr
+  trade_kicker_trade_value \tab numeric \tab Trade kicker post-trade dollar value. \cr
+  season_ref \tab character \tab \code{$ref} to the season resource. \cr
+  team_ref \tab character \tab \code{$ref} to the team-in-season resource. \cr
+  team_id \tab character \tab ESPN team id parsed from \code{team_ref}. \cr
+  league \tab character \tab League slug (\code{"nba"}). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

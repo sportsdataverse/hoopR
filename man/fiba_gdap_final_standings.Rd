@@ -14,18 +14,10 @@ competition.competitionId of any game row (208182 = World Cup 2023, 208722 = Par
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab FIBA competition id (Int64) the final ranking belongs to; the comp argument. \cr
-   final_rank \tab integer \tab Final rank in the competition. \cr
-   team_team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
-   team_team_code \tab character \tab Team abbreviation (FIBA country code or club abbreviation). \cr
-   team_short_name \tab character \tab Short team name: the country code for a national team, the club's short name for a club. \cr
-   team_profile \tab character \tab Team profile; null in this route. \cr
-   team_status_code \tab character \tab Team entry status; always null in the samples, values unverified. \cr
-   team_status_name \tab character \tab Team entry status label; always null in the samples, values unverified. \cr
-   team_organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_final_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Final ranking of a competition.

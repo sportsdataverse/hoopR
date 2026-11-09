@@ -372,63 +372,14 @@ NULL
 #'   named list of [httr2::req_proxy()] arguments (`url`, `port`, `username`,
 #'   `password`, `auth`). `NULL` (the default) falls back to `getOption("hoopR.proxy")`, then the
 #'   `http_proxy`/`https_proxy` environment variables.
-#' @return Named list of `hoopR_data` tibbles:
-#'
-#'    **calls** -- one row per graded play. `decision` is normalized to
-#'    `CC`/`CNC`/`IC`/`INC` (`NCC`->`CNC`, `NCI`->`INC`, trailing `*`
-#'    stripped; a real `INC` stays `INC`, while a blank or `"Undetectable"`
-#'    grade becomes `NA` and is never counted as `INC`). `game_id` is a
-#'    10-char zero-padded string. Player and team names are kept verbatim
-#'    (no ASCII folding).
-#'
-#'    |col_name          |types     |description                                                                       |
-#'    |:-----------------|:---------|:---------------------------------------------------------------------------------|
-#'    |game_id           |character |10-digit zero-padded game id; joins to game and stats.                            |
-#'    |period            |integer   |Period number from period_name (4 = fourth quarter, 5+ = overtime).               |
-#'    |period_name       |character |Raw period label, e.g. Q4, or Q5 for the first overtime.                          |
-#'    |pc_time           |character |Raw game clock string, MM:SS or MM:SS.t.                                          |
-#'    |seconds_remaining |double    |Seconds left in the period, parsed from pc_time.                                  |
-#'    |call_type         |character |Raw "Call: Type" label, whitespace untouched.                                     |
-#'    |call              |character |Upper-cased part of call_type before the colon, e.g. FOUL.                        |
-#'    |type              |character |Upper-cased part of call_type after the colon, e.g. SHOOTING.                     |
-#'    |committing        |character |Player, team or coach committing the graded action.                               |
-#'    |disadvantaged     |character |Player or team disadvantaged by the graded action.                                |
-#'    |decision          |character |Normalized grade: CC, CNC, IC or INC.                                             |
-#'    |decision_raw      |character |Raw grading code before normalization.                                            |
-#'    |comment           |character |Grader's free-text explanation of the ruling.                                     |
-#'    |difficulty        |character |Grader's difficulty rating, e.g. Observable or Difficult.                         |
-#'    |video_event_id    |character |Report video event id (source field VideolLink); not a play-by-play event number. |
-#'    |pos_id            |integer   |Report possession id; rows sharing it belong to one possession.                   |
-#'    |pos_start         |character |Game clock at the start of the possession.                                        |
-#'    |pos_end           |character |Game clock at the end of the possession.                                          |
-#'    |pos_team_id       |integer   |NBA team id of the team in possession.                                            |
-#'
-#'    **game** -- one row of game metadata.
-#'
-#'    |col_name       |types     |description                                                  |
-#'    |:--------------|:---------|:------------------------------------------------------------|
-#'    |game_id        |character |10-digit zero-padded game id; joins to calls and stats.      |
-#'    |game_date      |Date      |Game date from the report's local tip-off timestamp.         |
-#'    |season_type    |character |Season type from the third digit of game_id, e.g. playoffs.  |
-#'    |home_team_id   |integer   |NBA team id of the home team.                                |
-#'    |away_team_id   |integer   |NBA team id of the away team.                                |
-#'    |home_team_abbr |character |Home team three-letter abbreviation.                         |
-#'    |away_team_abbr |character |Away team three-letter abbreviation.                         |
-#'    |home_team_name |character |Home team nickname as published in the report.               |
-#'    |away_team_name |character |Away team nickname as published in the report.               |
-#'    |home_score     |integer   |Home team final score.                                       |
-#'    |away_score     |integer   |Away team final score.                                       |
-#'    |l2m_comments   |character |Report-level note from the league; NA for almost every game. |
-#'
-#'    **stats** -- 3 rows of error-count stats (`Calls`, `Errors in Favor`,
-#'    `Possessions in Favor`).
-#'
-#'    |col_name  |types     |description                                                |
-#'    |:---------|:---------|:----------------------------------------------------------|
-#'    |game_id   |character |10-digit zero-padded game id; joins to calls and game.     |
-#'    |stat_name |character |Statistic: Calls, Errors in Favor or Possessions in Favor. |
-#'    |home      |integer   |Value of stat_name for the home team.                      |
-#'    |away      |integer   |Value of stat_name for the away team.                      |
+#' @eval .returns_rd("nba_l2m")
+#' @return `calls`: one row per graded play. `decision` is normalized to
+#'   `CC`/`CNC`/`IC`/`INC` (`NCC`->`CNC`, `NCI`->`INC`, trailing `*`
+#'   stripped; a real `INC` stays `INC`, while a blank or `"Undetectable"`
+#'   grade becomes `NA` and is never counted as `INC`). `game_id` is a
+#'   10-char zero-padded string. Player and team names are kept verbatim
+#'   (no ASCII folding). `game`: one row of game metadata. `stats`: 3 rows of
+#'   error-count stats (`Calls`, `Errors in Favor`, `Possessions in Favor`).
 #' @section Errors:
 #' Raises a classed condition instead of returning on failure. Both classes
 #' inherit from `hoopR_error`, so one handler can catch either:
@@ -565,14 +516,7 @@ NULL
 #' @param proxy Optional proxy: a URL string (e.g. `"http://host:port"`) or a
 #'   named list of [httr2::req_proxy()] arguments. `NULL` (the default) falls back to `getOption("hoopR.proxy")`, then the
 #'   `http_proxy`/`https_proxy` environment variables.
-#' @return A `hoopR_data` tibble, one row per unique game id in page order:
-#'
-#'    |col_name    |types     |description                                                 |
-#'    |:-----------|:---------|:-----------------------------------------------------------|
-#'    |game_id     |character |10-digit zero-padded game id from the report link.          |
-#'    |season      |integer   |Season end year passed in, stamped on every row.            |
-#'    |season_type |character |Season type from the third digit of game_id, e.g. playoffs. |
-#'    |label       |character |Matchup label text of the report link, edges trimmed.       |
+#' @eval .returns_rd("nba_l2m_games", unit = "game")
 #' @section Errors:
 #' Raises a classed condition instead of returning on failure. Both classes
 #' inherit from `hoopR_error`, so one handler can catch either:
@@ -756,47 +700,18 @@ NULL
 #' @param proxy Optional proxy: a URL string (e.g. `"http://host:port"`) or a
 #'   named list of [httr2::req_proxy()] arguments. `NULL` (the default) falls back to `getOption("hoopR.proxy")`, then the
 #'   `http_proxy`/`https_proxy` environment variables.
-#' @return Named list of `hoopR_data` tibbles:
-#'
-#'    **officials** -- one row per game x filled crew slot. A slot whose
-#'    official's name is absent, null or empty is skipped. A field sent as
-#'    null, an array or an object reads as NA, never as a dropped or
-#'    duplicated row: an array or object name keeps its row, and the
-#'    official's id, with an NA `official_name`.
-#'
-#'    |col_name       |types     |description                                                      |
-#'    |:--------------|:---------|:----------------------------------------------------------------|
-#'    |league         |character |League: nba, gl (G League) or wnba.                              |
-#'    |game_id        |character |10-digit zero-padded game id.                                    |
-#'    |game_date      |Date      |Game date, parsed from the feed's MM/DD/YYYY.                    |
-#'    |season         |integer   |Season end year (start year + 1 for nba/gl, unchanged for wnba). |
-#'    |season_type    |character |Season type from the first digit of the feed's season code.      |
-#'    |game_code      |character |League game code, YYYYMMDD/AWYHOM.                               |
-#'    |home_team_id   |integer   |Team id of the home team.                                        |
-#'    |home_team_abbr |character |Home team three-letter abbreviation.                             |
-#'    |away_team_id   |integer   |Team id of the away team.                                        |
-#'    |away_team_abbr |character |Away team three-letter abbreviation.                             |
-#'    |crew_position  |integer   |Feed slot order (1-4); slot 1 is the inferred crew chief.        |
-#'    |official_id    |integer   |Official's person id from the feed.                              |
-#'    |official_name  |character |Official's display name.                                         |
-#'    |jersey_num     |character |Official's jersey number, as a string.                           |
-#'
-#'    **replay_center** -- the replay-center officials on duty that date, one
-#'    row per official. The rows are per date, not tied to a game or a league:
-#'    the feed can repeat the same rows in every league block (`league` only
-#'    records which block was read), and they can be present when the league
-#'    has no games.
-#'
-#'    |col_name      |types     |description                                                                |
-#'    |:-------------|:---------|:--------------------------------------------------------------------------|
-#'    |league        |character |League block the row was read from (nba, gl or wnba); not league-specific. |
-#'    |game_date     |Date      |Date the replay-center official worked (not tied to one game).             |
-#'    |official_id   |integer   |Replay-center official's person id from the feed.                          |
-#'    |official_name |character |Replay-center official's display name.                                     |
-#'
-#'    A date with no games for the league is not an error: `officials` comes
-#'    back zero-row rather than raising, while `replay_center` can still hold
-#'    that date's replay-center officials.
+#' @eval .returns_rd("nba_referee_assignments")
+#' @return `officials`: one row per game x filled crew slot. A slot whose
+#'   official's name is absent, null or empty is skipped. A field sent as
+#'   null, an array or an object reads as NA, never as a dropped or
+#'   duplicated row: an array or object name keeps its row, and the
+#'   official's id, with an NA `official_name`. `replay_center`: the replay-center
+#'   officials on duty that date, one row per official. The rows are per date, not
+#'   tied to a game or a league: the feed can repeat the same rows in every league
+#'   block (`league` only records which block was read), and they can be present
+#'   when the league has no games. A date with no games for the league is not an
+#'   error: `officials` comes back zero-row rather than raising, while
+#'   `replay_center` can still hold that date's replay-center officials.
 #' @section Errors:
 #' Raises a classed condition instead of returning on failure. Both classes
 #' inherit from `hoopR_error`, so one handler can catch either:

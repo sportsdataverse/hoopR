@@ -15,22 +15,10 @@ A year the list lacks raises \code{hoopR_no_data}.}
 The top flight was named TBL until 2007-08 and is listed under bsl.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per registered player. Birth dates are not returned.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year of the request. \cr
-   competition \tab character \tab League prefix the row reports (bsl, tbl or kbsl); equals the request's competition. \cr
-   person_id \tab integer \tab TBF person id (kisiID; key space: TBF persons, stable across seasons and clubs). \cr
-   player_name \tab character \tab Player name as TBF prints it for that route (title case, Turkish letters kept). \cr
-   nationality \tab character \tab Nationality as a TURKISH country name (ABD = United States); see the nationality_code. \cr
-   nationality_code \tab character \tab Nationality code (tabiyetKisa), ISO 3166-1 alpha-3 except GB for the United Kingdom. \cr
-   club_id \tab integer \tab Stable club id (takimID / teamId of the team lists; key space: TBF clubs, the same across seasons and leagues: Tofas = 13). Not the team-season id (team_process_id). \cr
-   team_name \tab character \tab Team name for that season, uppercase with Turkish letters. \cr
-   jersey_number \tab character \tab Shirt number as a string, so '0' and '00' stay distinct. \cr
-   prefix \tab character \tab League prefix of the row (bsl, tbl, kbsl); the runtime refuses any other than the request's. \cr
-   season_id \tab integer \tab Internal TBF season id (key space: TBF seasons, global across leagues: 174 = 2026-2027, 172 = 2025-2026; the odd ids are international UA- seasons). Never an sdv key: use season (END year). \cr
-}
+A \code{hoopR_data} tibble with one row per registered player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every player registered in one league-season (birth dates are not returned).

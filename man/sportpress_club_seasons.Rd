@@ -7,11 +7,10 @@
 sportpress_club_seasons()
 }
 \value{
-A \code{hoopR_data} tibble: Seasons (END years) in which Belgian and Dutch clubs have teams. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_club_seasons}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year in which the clubs (countries) have teams; includes 2021 = 2020-21. \cr
-}
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_club_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Seasons (END years) in which Belgian and Dutch clubs have teams.

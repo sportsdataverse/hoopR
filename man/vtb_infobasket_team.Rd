@@ -17,27 +17,10 @@ labels follow it.}
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: Club profile: names, region, country, status. The columns are always these, in this order
-(sportsdataverse-py \code{vtb_infobasket_team}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for this
-frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team*/\{teamId\} and equals the v2 API \code{teamId}. The scope check compares it with the request. \cr
-   team_type \tab integer \tab Team type code: 1 on the club record. \cr
-   team_name_ru \tab character \tab Club name, Russian. \cr
-   team_name_en \tab character \tab Club name, English. \cr
-   team_short_name_ru \tab character \tab Club short name, Russian. \cr
-   team_short_name_en \tab character \tab Club short name, English. \cr
-   team_abc_name_ru \tab character \tab Club abbreviation, Russian (the full name in the sample). \cr
-   team_abc_name_en \tab character \tab Club abbreviation, English. \cr
-   team_gender \tab integer \tab Team gender code: 0 on every sample (men). \cr
-   team_region \tab integer \tab Infobasket region id of the club's city. \cr
-   team_country \tab integer \tab Country id of the club (1 = Russia, unverified). \cr
-   team_logo \tab integer \tab Logo flag; 0 in the samples. \cr
-   team_uniform1 \tab integer \tab First uniform colour code. \cr
-   team_uniform2 \tab integer \tab Second uniform colour code. \cr
-   team_status \tab integer \tab Club record status (1 active). \cr
-   team_record_id \tab integer \tab Id of the club-record name (CurrentTeamName.TeamID, 2259 for team 2650): a different key space from team_id. \cr
-}
+A \code{hoopR_data} tibble with one row per club.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_team")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Club profile: names, region, country, status.

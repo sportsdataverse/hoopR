@@ -12,20 +12,10 @@ season and activity ids; the runtime reads them from the league's season list by
 A year the list lacks raises \code{hoopR_no_data}.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per league: BSL, TBL, KBSL, TKBL, TB2L and the youth leagues with their \code{activity_id}.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   activity_id \tab integer \tab Activity id (faaliyet = activity; key space: TBF league-SEASONS, new every season: BSL 2026-27 = 22214, BSL 2025-26 = 20728, TBL 2026-27 = 22215, KBSL 2026-27 = 22209). Cast to an integer from the 22214 / 22214.0 the API sends. \cr
-   name \tab character \tab Activity name '\verb{<LEAGUE>} YYYY-YYYY' ('BSL 2026-2027'). \cr
-   display_name \tab character \tab League short name ('BSL', 'KBSL', 'TBL', 'TKBL', 'TB2L', 'BGL', 'BGLK', 'KBBL'). \cr
-   competition \tab character \tab TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). \cr
-   gender \tab character \tab Gender in Turkish: 'Erkek' = men, 'Kadin' = women. \cr
-   season_id \tab integer \tab Internal TBF season id (key space: TBF seasons, global across leagues: 174 = 2026-2027, 172 = 2025-2026; the odd ids are international UA- seasons). Never an sdv key: use season (END year). \cr
-   season_label \tab character \tab Season label as TBF writes it, 'YYYY-YYYY' (start and end year). \cr
-   season \tab integer \tab Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). \cr
-   sort \tab integer \tab Display order in the app (integer, 1 = first: BSL). \cr
-}
+A \code{hoopR_data} tibble with one row per league.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_leagues")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The featured leagues (league-season activities) of one TBF season: BSL, TBL, KBSL and the others.

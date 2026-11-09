@@ -17,23 +17,23 @@ espn_nba_coach(coach_id, ...)
 \value{
 A single-row tibble. See \code{\link[=espn_nba_coach]{espn_nba_coach()}} for column schema.
 
-A single-row tibble.
+A \code{hoopR_data} tibble with one row per coach.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      coach_id \tab character \tab ESPN coach identifier. \cr
-      uid \tab character \tab ESPN UID string. \cr
-      first_name \tab character \tab First name. \cr
-      last_name \tab character \tab Last name. \cr
-      date_of_birth \tab character \tab Date of birth (ISO 8601). \cr
-      birth_city \tab character \tab Birth city. \cr
-      birth_state \tab character \tab Birth state / region. \cr
-      n_career_records \tab integer \tab Count of career-records entries. \cr
-      n_coach_seasons \tab integer \tab Count of seasons coached. \cr
-      college_ref \tab character \tab \verb{$ref} to the coach's college. \cr
-      team_ref \tab character \tab \verb{$ref} to the coach's current team. \cr
-      league \tab character \tab League slug (\code{"nba"}). \cr
-   }}
+  col_name \tab types \tab description \cr
+  coach_id \tab character \tab ESPN coach identifier. \cr
+  uid \tab character \tab ESPN UID string. \cr
+  first_name \tab character \tab First name. \cr
+  last_name \tab character \tab Last name. \cr
+  date_of_birth \tab character \tab Date of birth (ISO 8601). \cr
+  birth_city \tab character \tab Birth city. \cr
+  birth_state \tab character \tab Birth state / region. \cr
+  n_career_records \tab integer \tab Count of career-records entries. \cr
+  n_coach_seasons \tab integer \tab Count of seasons coached. \cr
+  college_ref \tab character \tab \code{$ref} to the coach's college. \cr
+  team_ref \tab character \tab \code{$ref} to the coach's current team. \cr
+  league \tab character \tab League slug (\code{"nba"}). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

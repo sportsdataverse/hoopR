@@ -18,42 +18,10 @@ ibba_box_score.}
 unchanged.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_uid \tab integer \tab IBBA CLUB id, stable across seasons (Maccabi Tel Aviv = 10): the team_uid parameter of the roster routes. Not the per-season team_id. \cr
-   team_id \tab integer \tab Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. \cr
-   season \tab integer \tab Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. \cr
-   team_name_he \tab character \tab Team name in Hebrew, HTML-unescaped. \cr
-   team_short_name_he \tab character \tab Short team name in Hebrew, HTML-unescaped. \cr
-   team_name \tab character \tab Team name in English as registered for the season. \cr
-   team_short_name \tab character \tab Short team name in English. \cr
-   wins \tab integer \tab Games won in the season so far (standings line). \cr
-   losses \tab integer \tab Games lost in the season so far (standings line). \cr
-   points_for \tab integer \tab Points scored over the games played. \cr
-   points_against \tab integer \tab Points conceded over the games played. \cr
-   table_points \tab integer \tab Standings points (2 per win, 1 per loss in the league table). \cr
-   place \tab integer \tab Rank in the standings of the board (1 = first). \cr
-   website_url \tab character \tab Club website URL. \cr
-   photo_path \tab character \tab Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. \cr
-   icon_path \tab character \tab Site-relative path of the small team icon. \cr
-   logo_url \tab character \tab Absolute URL of the team logo. \cr
-   icon3_path \tab character \tab Site-relative path of the third team icon variant. \cr
-   arena_id \tab integer \tab Home arena id in the IBBA site's own arena table (no arena route is modelled). \cr
-   address_he \tab character \tab Club address in Hebrew, HTML-unescaped. \cr
-   address \tab character \tab Club address in English, HTML-unescaped. \cr
-   colors_he \tab character \tab Team colours in Hebrew. \cr
-   colors \tab character \tab Team colours in English. \cr
-   sponsors_he \tab character \tab Club sponsors in Hebrew, comma-separated. \cr
-   sponsors \tab character \tab Club sponsors in English, comma-separated. \cr
-   about_he \tab character \tab Club profile in Hebrew as HTML markup (honours, history); not stripped. \cr
-   about \tab character \tab Club profile in English as HTML markup; null when the club has none. \cr
-   facebook_url \tab character \tab Club Facebook page URL; null when none. \cr
-   twitter_url \tab character \tab Club Twitter / X profile URL; null when none. \cr
-   instagram_url \tab character \tab Club Instagram profile URL; null when none. \cr
-   youtube_url \tab character \tab Club YouTube channel URL; null when none. \cr
-   subscribe_url \tab character \tab Season-ticket subscription URL; null when none. \cr
-   diary_url \tab character \tab Calendar-subscription (add-to-diary) URL of the club's fixtures. \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_team")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{One team-season: standings line and club profile (colours, sponsors, social links, arena id).}

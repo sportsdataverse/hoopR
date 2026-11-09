@@ -17,97 +17,137 @@ forward compatibility. Proxy configuration should use
 \code{options(hoopR.proxy = ...)} -- see \code{?hoopR} for details.}
 }
 \value{
-A named list of data frames: \code{Bio}, \code{Team}, \code{Position},
-\code{Status}, \code{College}, \code{Draft}.
+A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Position}, \code{Status}, \code{College}, \code{Draft}.
 
 \strong{Bio}
 
-Columns as documented in the shared \link{espn_mbb_player_info_bio_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  full_name \tab character \tab Player's full name. \cr
+  display_name \tab character \tab Display name. \cr
+  jersey \tab character \tab Jersey number worn by the player. \cr
+  age \tab character \tab Player age (in years). \cr
+  date_of_birth \tab character \tab Date of birth (YYYY-MM-DD). \cr
+  headshot_href \tab character \tab Headshot image URL. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Team}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab character \tab Id. \cr
-   abbreviation \tab character \tab Short abbreviation. \cr
-   display_name \tab character \tab Display name. \cr
-}
+\strong{Team}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  abbreviation \tab character \tab Short abbreviation. \cr
+  display_name \tab character \tab Display name. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Position}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab character \tab Id. \cr
-   name \tab character \tab Display name. \cr
-   abbreviation \tab character \tab Short abbreviation. \cr
-}
+\strong{Position}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  name \tab character \tab Display name. \cr
+  abbreviation \tab character \tab Short abbreviation. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Status}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab character \tab Id. \cr
-   name \tab character \tab Display name. \cr
-   type \tab character \tab Record type / category. \cr
-}
+\strong{Status}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  name \tab character \tab Display name. \cr
+  type \tab character \tab Record type / category. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{College}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab character \tab Id. \cr
-   name \tab character \tab Display name. \cr
-   mascot \tab character \tab Team mascot. \cr
-}
+\strong{College}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  name \tab character \tab Display name. \cr
+  mascot \tab character \tab Team mascot. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Draft}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   year \tab character \tab 4-digit year. \cr
-   round \tab character \tab Tournament / playoff round. \cr
-   selection \tab character \tab  \cr
-}
+\strong{Draft}
 
-A named list of data frames: \code{Bio}, \code{Team}, \code{Position},
-\code{Status}, \code{College}, \code{Draft}.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  year \tab character \tab 4-digit year. \cr
+  round \tab character \tab Tournament / playoff round. \cr
+  selection \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A named list of \code{hoopR_data} tibbles: \code{Bio}, \code{Team}, \code{Position}, \code{Status}, \code{College}, \code{Draft}.
 
 \strong{Bio}
 
-Columns as documented in the shared \link{espn_mbb_player_info_bio_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  full_name \tab character \tab Player's full name. \cr
+  display_name \tab character \tab Display name. \cr
+  jersey \tab character \tab Jersey number worn by the player. \cr
+  age \tab character \tab Player age (in years). \cr
+  date_of_birth \tab character \tab Date of birth (YYYY-MM-DD). \cr
+  headshot_href \tab character \tab Headshot image URL. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Team}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab character \tab Id. \cr
-   abbreviation \tab character \tab Short abbreviation. \cr
-   display_name \tab character \tab Display name. \cr
-}
+\strong{Team}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  abbreviation \tab character \tab Short abbreviation. \cr
+  display_name \tab character \tab Display name. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Position}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab character \tab Id. \cr
-   name \tab character \tab Display name. \cr
-   abbreviation \tab character \tab Short abbreviation. \cr
-}
+\strong{Position}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  name \tab character \tab Display name. \cr
+  abbreviation \tab character \tab Short abbreviation. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Status}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab character \tab Id. \cr
-   name \tab character \tab Display name. \cr
-   type \tab character \tab Record type / category. \cr
-}
+\strong{Status}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  name \tab character \tab Display name. \cr
+  type \tab character \tab Record type / category. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{College}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab character \tab Id. \cr
-   name \tab character \tab Display name. \cr
-   mascot \tab character \tab Team mascot. \cr
-}
+\strong{College}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  name \tab character \tab Display name. \cr
+  mascot \tab character \tab Team mascot. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Draft}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   year \tab character \tab 4-digit year. \cr
-   round \tab character \tab Tournament / playoff round. \cr
-   selection \tab character \tab  \cr
-}
+\strong{Draft}
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  year \tab character \tab 4-digit year. \cr
+  round \tab character \tab Tournament / playoff round. \cr
+  selection \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get ESPN Women's College Basketball Athlete Info}

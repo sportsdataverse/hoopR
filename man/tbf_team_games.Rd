@@ -19,32 +19,10 @@ stable club_id.}
 The top flight was named TBL until 2007-08 and is listed under bsl.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per game of the team (scheduled games included).
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). \cr
-   competition \tab character \tab TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). \cr
-   team_process_id \tab integer \tab Team-season id of the request (key space: TBF team registrations). \cr
-   match_id \tab integer \tab TBF game id (key space: TBF games, one global sequence). \cr
-   match_code \tab character \tab TBF short game code. \cr
-   tipoff \tab POSIXct \tab Tip-off as a naive timestamp in Turkey local time (tarih). \cr
-   week \tab character \tab Week label (formattedWeek), e.g. '1. Hafta'. \cr
-   city \tab character \tab City of the venue (sehir), uppercase Turkish. \cr
-   venue \tab character \tab Venue name (salon). \cr
-   home_team_process_id \tab integer \tab Home team-season id (takimAId; key space: TBF team registrations). \cr
-   home_team \tab character \tab Home team name (takimA). \cr
-   home_score \tab integer \tab Home points (skorA); null before the game. \cr
-   away_team_process_id \tab integer \tab Away team-season id (takimBId). \cr
-   away_team \tab character \tab Away team name (takimB). \cr
-   away_score \tab integer \tab Away points (skorB); null before the game. \cr
-   team_is_home \tab logical \tab True when the asked team was the home side (isHome). \cr
-   team_won \tab logical \tab True when the asked team won (isWin); false for a loss or an unplayed game. \cr
-   is_played \tab logical \tab True once the game has been played (isPlayed). \cr
-   status \tab character \tab Game status text in Turkish: Oynandi = played, Oynanmadi = not played (durum). \cr
-   status_id \tab integer \tab Game status code (durumId): 1 = played, 4 = not played. \cr
-   has_overtime \tab logical \tab Overtime flag (uzatma = overtime). Reliability unverified: false on every one of 64 BSL 2025-26 games checked. \cr
-}
+A \code{hoopR_data} tibble with one row per game of the team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_team_games")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Games and results of one team-season, scheduled games included.

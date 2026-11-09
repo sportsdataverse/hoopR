@@ -11,19 +11,10 @@ lkl_period_scores(game_id)
 before 2018-19. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per team and period (home first, periods ascending). \code{points} is the points
-scored IN the period, not cumulative. \code{period} 1-4 is regulation (\code{period_type} \code{regular}); 5 is the first overtime,
-6 the second (\code{overtime}). A body without period scores gives a zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab lkl.lt game id (key space: LKL games; the \code{{gameId}} of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under \verb{_request}). \cr
-   team_id \tab integer \tab lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body. \cr
-   team_side \tab character \tab Side of the game the row belongs to: home or away (the game page's teams_info side; the box score, leaders and plays say home / away, and gameStatistics is keyed by team id so the runtime supplies the side). \cr
-   period \tab integer \tab Period number: 1-4 regulation, 5 the first overtime, 6 the second. \cr
-   period_type \tab character \tab regular for periods 1-4, overtime from period 5. \cr
-   points \tab integer \tab Points the team scored IN this period (not cumulative); keyed by period in the site's quarter_scores. \cr
-}
+A \code{hoopR_data} tibble with one row per team and period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lkl_period_scores")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Points each team scored in each period of a game, overtime included.

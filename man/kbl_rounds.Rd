@@ -18,18 +18,10 @@ D-League edition), '03' playoffs, '04' championship final, '07' EASL, '08' D-Lea
 '11'/'13' cups, '14' Open Match Day. Only '01' was probed live.}
 }
 \value{
-A \code{hoopR_data} tibble: The season's round calendar (the KBL plays six rounds) with each round's first and last
-date. The columns are always these, in this order (sportsdataverse-py \code{kbl_rounds}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr
-   season_code \tab integer \tab KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League). \cr
-   game_code \tab character \tab Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day. \cr
-   glkey \tab character \tab Competition key \verb{S\{seasonCode\}G\{gameCode\}} (e.g. S47G01 = 2025-26 regular season): the id of the season routes. \cr
-   round \tab integer \tab Round number of the season (the KBL plays six rounds). \cr
-   from_date \tab Date \tab First date of the round, YYYYMMDD. \cr
-   to_date \tab Date \tab Last date of the round, YYYYMMDD. \cr
-}
+A \code{hoopR_data} tibble with one row per round.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_rounds")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The season's round calendar (the KBL plays six rounds) with each round's first and last date.

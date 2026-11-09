@@ -12,34 +12,10 @@ nbl_rosetta_teams(org = "nbl", limit = NULL)
 \item{limit}{(\emph{integer} default \code{NULL}): Rows to return. Omitted = a page large enough for the whole list (a short page cut by Rosetta's path cache is refused).}
 }
 \value{
-A \code{hoopR_data} tibble (one row per team record):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   org \tab character \tab Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. \cr
-   team_id \tab character \tab DataCore team id (UUID v1); stable across seasons. \cr
-   rosetta_team_id \tab character \tab Rosetta team id (UUID v4; v5 on NBL1); stable across seasons; accepted as \code{{team_id}}. \cr
-   name \tab character \tab Team name as Rosetta spells it, e.g. Perth Wildcats. \cr
-   team_code \tab character \tab Team code, e.g. PER (the \code{{team_code}} path value) \cr
-   established \tab character \tab Year the club was founded; often null. \cr
-   head_coach \tab character \tab Head coach; often null. \cr
-   championships \tab character \tab Championships won; often null. \cr
-   website \tab character \tab Club website URL. \cr
-   external_media_competitor_id \tab character \tab Team id on the media/OTT service; often null. \cr
-   conference \tab character \tab NBL1 conference of the team (name); null for NBL and WNBL teams. \cr
-   division \tab character \tab NBL1 division of the team (name); null for NBL and WNBL teams. \cr
-   venue_name \tab character \tab Name of the venue (arena), e.g. RAC Arena. \cr
-   venue_address \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_state \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_country \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_timezone \tab character \tab IANA time zone of the venue, e.g. Australia/Sydney. \cr
-   venue_latitude \tab double \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_longitude \tab double \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   venue_capacity \tab integer \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   conference_name \tab character \tab Name of the NBL1 conference the team plays in (e.g. North, South); null outside NBL1. \cr
-   division_name \tab character \tab Division name (NBL1 conference + gender) \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per team record.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every team record of an organisation: current, defunct, exhibition and development sides.

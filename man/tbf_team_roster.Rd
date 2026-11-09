@@ -19,24 +19,10 @@ stable club_id.}
 The top flight was named TBL until 2007-08 and is listed under bsl.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per rostered person. Birth dates are not returned.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). \cr
-   competition \tab character \tab TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). \cr
-   team_process_id \tab integer \tab Team-season id of the request (key space: TBF team registrations). \cr
-   person_id \tab integer \tab TBF person id (personId; key space: TBF persons). \cr
-   first_name \tab character \tab Given name as registered with TBF, mixed case ('Yigitcan'). \cr
-   last_name \tab character \tab Family name as registered with TBF, mixed case ('Saybir'). \cr
-   nationality \tab character \tab Nationality as a TURKISH country name (country); there is no code on this route. \cr
-   height_cm \tab integer \tab Height in centimetres; null when TBF has none. \cr
-   jersey_number \tab character \tab Shirt number as a string, so '0' and '00' stay distinct. \cr
-   games \tab integer \tab Games played (macSayisi = game count). \cr
-   seconds_played \tab integer \tab Season time on court in seconds (sure 'hh:mm:ss'). \cr
-   points_per_game \tab double \tab Points per game (sayi). \cr
-   efficiency_per_game \tab double \tab Efficiency rating per game (verimlilikPuani). \cr
-}
+A \code{hoopR_data} tibble with one row per rostered person.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_team_roster")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Roster of one team-season with games, minutes and per-game points and efficiency (birth dates dropped).

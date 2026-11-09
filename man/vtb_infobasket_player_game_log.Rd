@@ -28,64 +28,10 @@ Required: the body is the player's games for that club.}
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: A player's game log for one season and one team, one row per game. The columns are always
-these, in this order (sportsdataverse-py \code{vtb_infobasket_player_game_log}); an empty valid answer raises \code{hoopR_no_data}, a
-valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   person_id \tab integer \tab 0 on every game row (the player is the body's PersonID). \cr
-   game_id \tab integer \tab Infobasket game id (GameID); equals the v2 API \code{matchId}. Joins to /Widget/GetOnline/\{gameId\} and /Widget/GamePage/\{gameId\}. \cr
-   game_number \tab character \tab Game number within the competition, e.g. 'RS-002' (RS = regular season); playoff games use the series code. \cr
-   game_status \tab integer \tab Game status in the game-record code set: 21 completed. \cr
-   team_id \tab integer \tab Infobasket TeamID the player played for in that game. \cr
-   team_a_id \tab integer \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   team_b_id \tab integer \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   score_a \tab integer \tab Final points of team A (listed first). \cr
-   score_b \tab integer \tab Final points of team B (listed second). \cr
-   team_a_short_name_ru \tab character \tab The team A (the home side in the calendar)'s short name in Russian (as the competition names it). \cr
-   team_a_short_name_en \tab character \tab The team A (the home side in the calendar)'s short name in English (as the competition names it). \cr
-   team_a_name_ru \tab character \tab The team A (the home side in the calendar)'s name in Russian (as the competition names it). \cr
-   team_a_name_en \tab character \tab The team A (the home side in the calendar)'s name in English (as the competition names it). \cr
-   team_a_region_name_ru \tab character \tab The team A (the home side in the calendar)'s region or city in Russian (as the competition names it). \cr
-   team_a_region_name_en \tab character \tab The team A (the home side in the calendar)'s region or city in English (as the competition names it). \cr
-   team_b_short_name_ru \tab character \tab The team B (the away side)'s short name in Russian (as the competition names it). \cr
-   team_b_short_name_en \tab character \tab The team B (the away side)'s short name in English (as the competition names it). \cr
-   team_b_name_ru \tab character \tab The team B (the away side)'s name in Russian (as the competition names it). \cr
-   team_b_name_en \tab character \tab The team B (the away side)'s name in English (as the competition names it). \cr
-   team_b_region_name_ru \tab character \tab The team B (the away side)'s region or city in Russian (as the competition names it). \cr
-   team_b_region_name_en \tab character \tab The team B (the away side)'s region or city in English (as the competition names it). \cr
-   game_date \tab character \tab Game date as an ISO 8601 date (YYYY-MM-DD); the wire sends DD.MM.YYYY. \cr
-   team_number \tab integer \tab Side (1 or 2) the player's team had in the game. \cr
-   player_number \tab integer \tab Shirt number as an integer (-1 when none). \cr
-   display_number \tab character \tab Shirt number as displayed ('0' and '00' differ). \cr
-   points \tab integer \tab Points. The wire's null is 0 here (null counts are filled). \cr
-   shot1 \tab integer \tab Free throws attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal1 \tab integer \tab Free throws made. The wire's null is 0 here (null counts are filled). \cr
-   shot2 \tab integer \tab 2-point field goals attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal2 \tab integer \tab 2-point field goals made. The wire's null is 0 here (null counts are filled). \cr
-   shot3 \tab integer \tab 3-point field goals attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal3 \tab integer \tab 3-point field goals made. The wire's null is 0 here (null counts are filled). \cr
-   shot23 \tab integer \tab Field goals (2 + 3 points) attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal23 \tab integer \tab Field goals (2 + 3 points) made. The wire's null is 0 here (null counts are filled). \cr
-   shot1_percent \tab double \tab Free-throw percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   shot2_percent \tab double \tab 2-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   shot3_percent \tab double \tab 3-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   shot23_percent \tab double \tab Field-goal percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   assist \tab integer \tab Assists. The wire's null is 0 here (null counts are filled). \cr
-   blocks \tab integer \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   def_rebound \tab integer \tab Defensive rebounds. The wire's null is 0 here (null counts are filled). \cr
-   off_rebound \tab integer \tab Offensive rebounds. The wire's null is 0 here (null counts are filled). \cr
-   rebound \tab integer \tab Total rebounds. The wire's null is 0 here (null counts are filled). \cr
-   steal \tab integer \tab Steals. The wire's null is 0 here (null counts are filled). \cr
-   turnover \tab integer \tab Turnovers. The wire's null is 0 here (null counts are filled). \cr
-   foul \tab integer \tab Personal fouls committed. The wire's null is 0 here (null counts are filled). \cr
-   opponent_foul \tab integer \tab Fouls drawn. The wire's null is 0 here (null counts are filled). \cr
-   seconds \tab integer \tab Playing time in seconds. \cr
-   played_time \tab character \tab Playing time as 'minutes:seconds' (team rows sum the five players: '200:00' = 40 minutes x 5). \cr
-   plus_minus \tab integer \tab Plus-minus: point differential while on the court. Null where the host sends none. \cr
-   is_start \tab logical \tab True for a starter. \cr
-   start_mark \tab character \tab '+' for a starter, else empty. \cr
-   kpi \tab integer \tab Efficiency index (KPI, the platform's 'KPI'); formula unverified. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_player_game_log")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A player's game log for one season and one team, one row per game.

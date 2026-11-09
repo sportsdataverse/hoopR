@@ -11,17 +11,10 @@ lkl_game_score(game_id)
 before 2018-19. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. One row: the two scores and the clock text. The clock is NOT a state flag: an old
-game keeps \code{'1 KELINYS - 10:00'} after the final, and a finished overtime game reads \code{'1 pratesimas - 00:00'}. A
-body without scores gives a zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab lkl.lt game id (key space: LKL games; the \code{{gameId}} of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under \verb{_request}). \cr
-   home_score \tab integer \tab Home team points on the score line. \cr
-   away_score \tab integer \tab Away team points on the score line. \cr
-   clock \tab character \tab Clock text, NOT a state flag: an old game keeps '1 KELINYS - 10:00' after the final; a finished overtime game reads '1 pratesimas - 00:00'. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lkl_game_score")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Score line of a game: both scores and the clock text.

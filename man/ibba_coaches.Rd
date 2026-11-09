@@ -18,18 +18,10 @@ ibba_box_score.}
 unchanged.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   coach_id \tab integer \tab Coach id in the IBBA coach table (per team-season registration as far as the samples show; stability across seasons is unverified). \cr
-   coach_type \tab integer \tab Staff role code: 1 = head coach, 2 = assistant coach (inferred from the Maccabi Tel Aviv sample). \cr
-   season \tab integer \tab Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. \cr
-   team_id \tab integer \tab Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. \cr
-   coach_name_he \tab character \tab Coach name in Hebrew, HTML-unescaped. \cr
-   coach_name \tab character \tab Coach name in English. \cr
-   is_replaced \tab logical \tab True when the person was replaced during the season (left the roster or staff). \cr
-   photo_path \tab character \tab Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. \cr
-   sort_order \tab integer \tab Display order of the coach within the staff list (mOrder). \cr
-}
+A \code{hoopR_data} tibble with one row per staff member.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_coaches")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{The coaching staff of a team-season (birth dates are dropped).}

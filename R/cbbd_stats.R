@@ -10,24 +10,7 @@
 #' @param conference (*character* optional): Conference abbreviation filter.
 #' @param start_date_range (*character* optional): ISO 8601 start of date range.
 #' @param end_date_range (*character* optional): ISO 8601 end of date range.
-#' @return A `hoopR_data` tibble with one row per team-season. The `team_stats`
-#'   and `opponent_stats` objects are flattened into `team_stats_*` /
-#'   `opponent_stats_*` columns. Key identifying columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       team_id \tab integer \tab Team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conference \tab character \tab Conference name. \cr
-#'       games \tab integer \tab Games played. \cr
-#'       wins \tab numeric \tab Wins. \cr
-#'       losses \tab numeric \tab Losses. \cr
-#'       total_minutes \tab numeric \tab Total minutes played. \cr
-#'       pace \tab numeric \tab Average pace (possessions). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_stats_team_season", inline = FALSE, unit = "team-season")
 #' @keywords CBD Stats
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -71,19 +54,7 @@ cbbd_stats_team_season <- function(season = most_recent_mbb_season(), season_typ
 #' **Get the team statistics leaderboard from the CollegeBasketballData API.**
 #' @param team (*character* optional): Team name filter.
 #' @param conference (*character* optional): Conference abbreviation filter.
-#' @return A `hoopR_data` tibble with one row per team. Nested statistic objects
-#'   (`record`, `summary`, `team_stats`, `opponent_stats`, `shot_profile`,
-#'   `adjusted_efficiency`) are flattened into prefixed columns. Key identifying
-#'   columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       team_id \tab integer \tab Team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_stats_team_leaderboard", inline = FALSE, unit = "team")
 #' @keywords CBD Stats
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -128,22 +99,7 @@ cbbd_stats_team_leaderboard <- function(season = most_recent_mbb_season(), team 
 #' @param conference (*character* optional): Conference abbreviation filter.
 #' @param start_date_range (*character* optional): ISO 8601 start of date range.
 #' @param end_date_range (*character* optional): ISO 8601 end of date range.
-#' @return A `hoopR_data` tibble with one row per team-season. Shot-type objects
-#'   (`dunks`, `layups`, `tip_ins`, `two_point_jumpers`, `three_point_jumpers`,
-#'   `free_throws`, `attempts_breakdown`) are flattened into prefixed columns.
-#'   Key identifying columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       team_id \tab integer \tab Team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conference \tab character \tab Conference name. \cr
-#'       tracked_shots \tab integer \tab Number of tracked shots. \cr
-#'       assisted_pct \tab numeric \tab Assisted field-goal percentage. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_stats_team_shooting_season", inline = FALSE, unit = "team-season")
 #' @keywords CBD Stats
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -191,26 +147,7 @@ cbbd_stats_team_shooting_season <- function(season = most_recent_mbb_season(), s
 #' @param conference (*character* optional): Conference abbreviation filter.
 #' @param start_date_range (*character* optional): ISO 8601 start of date range.
 #' @param end_date_range (*character* optional): ISO 8601 end of date range.
-#' @return A `hoopR_data` tibble with one row per player-season. Nested
-#'   statistic objects (`field_goals`, `two_point_field_goals`,
-#'   `three_point_field_goals`, `free_throws`, `rebounds`, `win_shares`) are
-#'   flattened into prefixed columns. Key identifying columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       team_id \tab integer \tab Team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conference \tab character \tab Conference name. \cr
-#'       athlete_id \tab integer \tab Athlete id. \cr
-#'       name \tab character \tab Player name. \cr
-#'       position \tab character \tab Player position. \cr
-#'       games \tab numeric \tab Games played. \cr
-#'       minutes \tab numeric \tab Minutes played. \cr
-#'       points \tab numeric \tab Total points. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_stats_player_season", inline = FALSE, unit = "player-season")
 #' @keywords CBD Stats
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -252,22 +189,7 @@ cbbd_stats_player_season <- function(season = most_recent_mbb_season(), season_t
 #' **CBD Player Shooting Stats**
 #' @description
 #' **Get player season shooting statistics from the CollegeBasketballData API.**
-#' @return A `hoopR_data` tibble with one row per player-season. Shot-type
-#'   objects are flattened into prefixed columns. Key identifying columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       team_id \tab integer \tab Team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conference \tab character \tab Conference name. \cr
-#'       athlete_id \tab integer \tab Athlete id. \cr
-#'       athlete_name \tab character \tab Player name. \cr
-#'       tracked_shots \tab integer \tab Number of tracked shots. \cr
-#'       assisted_pct \tab numeric \tab Assisted field-goal percentage. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_stats_player_shooting_season", inline = FALSE, unit = "player-season")
 #' @keywords CBD Stats
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names

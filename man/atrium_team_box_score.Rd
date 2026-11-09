@@ -19,58 +19,10 @@ competitions.}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per \verb{(fixture_id, entity_id)}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   fixture_id \tab character \tab Game UUID (fixture); the key of every game frame and of the fixture_detail routes. \cr
-   season_id \tab character \tab Season UUID of the game. \cr
-   entity_id \tab character \tab Team UUID (from the fixture's isHome flag). \cr
-   side \tab character \tab Side of the game the row belongs to: home or away (from the fixture's isHome flag). \cr
-   minutes \tab character \tab Time played as an ISO 8601 duration (PT7M23S); a team's is the sum over its players (PT200M) (team, this game). \cr
-   seconds_played \tab integer \tab Time played in whole seconds, parsed from minutes (team, this game). \cr
-   points \tab integer \tab Points scored (team, this game). \cr
-   rebounds \tab integer \tab Total rebounds (team, this game). \cr
-   rebounds_offensive \tab integer \tab Offensive rebounds (team, this game). \cr
-   rebounds_defensive \tab integer \tab Defensive rebounds (team, this game). \cr
-   assists \tab integer \tab Assists (team, this game). \cr
-   steals \tab integer \tab Steals (team, this game). \cr
-   blocks \tab integer \tab Shots blocked (team, this game). \cr
-   blocks_received \tab integer \tab Own shots blocked by an opponent (LNB only) (team, this game). \cr
-   turnovers \tab integer \tab Turnovers (team, this game). \cr
-   fouls_total \tab integer \tab Fouls committed (team, this game). \cr
-   fouls_drawn \tab integer \tab Fouls drawn (committed against the player or team; LNBP only) (team, this game). \cr
-   plus_minus \tab integer \tab Plus/minus, the point differential while on court (LNB only; null in some team lines) (team, this game). \cr
-   efficiency \tab integer \tab Efficiency rating, from the site's own formula (team, this game). \cr
-   field_goals_made \tab integer \tab Field goals made, two- and three-pointers together (LNBP only) (team, this game). \cr
-   field_goals_attempted \tab integer \tab Field goals attempted (LNBP only) (team, this game). \cr
-   field_goals_percentage \tab double \tab Field-goal percentage, 0-100 (LNBP only) (team, this game). \cr
-   points_two_made \tab integer \tab Two-point field goals made (team, this game). \cr
-   points_two_attempted \tab integer \tab Two-point field goals attempted (team, this game). \cr
-   points_two_percentage \tab double \tab Two-point percentage, 0-100 (team, this game). \cr
-   points_three_made \tab integer \tab Three-point field goals made (team, this game). \cr
-   points_three_attempted \tab integer \tab Three-point field goals attempted (team, this game). \cr
-   points_three_percentage \tab double \tab Three-point percentage, 0-100 (team, this game). \cr
-   free_throws_made \tab integer \tab Free throws made (team, this game). \cr
-   free_throws_attempted \tab integer \tab Free throws attempted (team, this game). \cr
-   free_throws_percentage \tab double \tab Free-throw percentage, 0-100 (team, this game). \cr
-   points_fast_break \tab integer \tab Fast-break points (LNBP only) (team, this game). \cr
-   extra_fouls_total \tab integer \tab Fouls committed (team, credited to the team rather than a player). \cr
-   extra_rebounds \tab integer \tab Total rebounds (team, credited to the team rather than a player). \cr
-   extra_rebounds_defensive \tab integer \tab Defensive rebounds (team, credited to the team rather than a player). \cr
-   extra_rebounds_offensive \tab integer \tab Offensive rebounds (team, credited to the team rather than a player). \cr
-   extra_turnovers \tab integer \tab Turnovers (team, credited to the team rather than a player). \cr
-   total_biggest_lead \tab integer \tab Biggest lead of the game, in points (team, game total). \cr
-   total_biggest_scoring_run \tab integer \tab Longest unanswered scoring run of the game, in points (team, game total). \cr
-   total_field_goals_percentage \tab double \tab Field-goal percentage, 0-100 (LNBP only) (team, game total). \cr
-   total_free_throws_percentage \tab double \tab Free-throw percentage, 0-100 (team, game total). \cr
-   total_lead_changes \tab integer \tab Number of lead changes in the game (team, game total). \cr
-   total_points_fast_break \tab integer \tab Fast-break points (LNBP only) (team, game total). \cr
-   total_points_from_bench \tab integer \tab Points scored by non-starters (LNBP only) (team, game total). \cr
-   total_points_from_turnover \tab integer \tab Points scored off opponent turnovers (LNBP only) (team, game total). \cr
-   total_time_in_lead \tab character \tab Time the team led, as an ISO 8601 duration (PT36M11S) (team, game total). \cr
-   total_time_in_lead_seconds \tab integer \tab Time the team led, in whole seconds (team, game total). \cr
-   total_turnovers \tab integer \tab Turnovers (team, game total). \cr
-}
+A \code{hoopR_data} tibble with one row per (\code{fixture_id}, \code{entity_id}).
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_team_box_score")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{One game's team lines: the team totals, the team-level counts and the game

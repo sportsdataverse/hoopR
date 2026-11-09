@@ -38,48 +38,10 @@ sent; with neither \code{season} nor \code{season_id} the API filters by it.}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per game:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   person_id \tab character \tab Player UUID (person), shared across seasons and sites. \cr
-   season_id \tab character \tab Season UUID the log is for (the season asked, else the site's default). \cr
-   date \tab character \tab Local start of the game as the API sends it (\code{YYYY-MM-DDTHH:MM:SS}, no offset; the zone is not given): the field the ribbon's start_time_local reads. \cr
-   opponent_entity_id \tab character \tab Team UUID of the opponent. \cr
-   opponent_name \tab character \tab Name of the opponent. \cr
-   result \tab character \tab Result for the player's team: W or L. \cr
-   result_label \tab character \tab Result label in the site's language (V, D). \cr
-   score \tab character \tab Final score as the site's text (e.g. 88 - 91); which side is listed first is unverified, so it is not split. \cr
-   minutes \tab character \tab Time played as an ISO 8601 duration (PT7M23S); a team's is the sum over its players (PT200M) (player, that game). \cr
-   seconds_played \tab integer \tab Time played in whole seconds, parsed from minutes (player, that game). \cr
-   points \tab integer \tab Points scored (player, that game). \cr
-   rebounds \tab integer \tab Total rebounds (player, that game). \cr
-   rebounds_offensive \tab integer \tab Offensive rebounds (player, that game). \cr
-   rebounds_defensive \tab integer \tab Defensive rebounds (player, that game). \cr
-   assists \tab integer \tab Assists (player, that game). \cr
-   steals \tab integer \tab Steals (player, that game). \cr
-   blocks \tab integer \tab Shots blocked (player, that game). \cr
-   blocks_received \tab integer \tab Own shots blocked by an opponent (LNB only) (player, that game). \cr
-   turnovers \tab integer \tab Turnovers (player, that game). \cr
-   fouls_total \tab integer \tab Fouls committed (player, that game). \cr
-   fouls_drawn \tab integer \tab Fouls drawn (committed against the player or team; LNBP only) (player, that game). \cr
-   plus_minus \tab integer \tab Plus/minus, the point differential while on court (LNB only; null in some team lines) (player, that game). \cr
-   efficiency \tab integer \tab Efficiency rating, from the site's own formula (player, that game). \cr
-   field_goals_made \tab integer \tab Field goals made, two- and three-pointers together (LNBP only) (player, that game). \cr
-   field_goals_attempted \tab integer \tab Field goals attempted (LNBP only) (player, that game). \cr
-   field_goals_percentage \tab double \tab Field-goal percentage, 0-100 (LNBP only) (player, that game). \cr
-   points_two_made \tab integer \tab Two-point field goals made (player, that game). \cr
-   points_two_attempted \tab integer \tab Two-point field goals attempted (player, that game). \cr
-   points_two_percentage \tab double \tab Two-point percentage, 0-100 (player, that game). \cr
-   points_three_made \tab integer \tab Three-point field goals made (player, that game). \cr
-   points_three_attempted \tab integer \tab Three-point field goals attempted (player, that game). \cr
-   points_three_percentage \tab double \tab Three-point percentage, 0-100 (player, that game). \cr
-   free_throws_made \tab integer \tab Free throws made (player, that game). \cr
-   free_throws_attempted \tab integer \tab Free throws attempted (player, that game). \cr
-   free_throws_percentage \tab double \tab Free-throw percentage, 0-100 (player, that game). \cr
-   points_fast_break \tab integer \tab Fast-break points (LNBP only) (player, that game). \cr
-   dunks \tab integer \tab Dunks (player, that game). \cr
-   fouls_personal \tab integer \tab Personal fouls (player, that game). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_player_game_log")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{A player's game log: one row per game with the opponent, result and the

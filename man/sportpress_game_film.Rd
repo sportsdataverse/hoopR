@@ -13,34 +13,10 @@ sportpress_game_film(competition_id, game_id)
 \item{game_id}{(required) Game id (integer), unique across seasons; from \code{\link[=sportpress_schedule]{sportpress_schedule()}} (\code{game_id}).}
 }
 \value{
-A \code{hoopR_data} tibble: Play-by-play ('film') of a finished game with court x/y (2021-22 and 2026-27 only). An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_game_film}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Game id the film was asked for (the body does not echo it). \cr
-   competition_id \tab integer \tab Competition id the film was asked for; checked against the game. \cr
-   order \tab integer \tab Event sequence number in the game, strictly increasing from 0. \cr
-   period \tab integer \tab Period of the event: 1-4 quarters, 5 and up overtimes. \cr
-   minute \tab integer \tab Whole minutes ELAPSED in the period (not clock remaining). \cr
-   second \tab integer \tab Seconds elapsed within that minute. \cr
-   team_side \tab character \tab Side of the game the row belongs to: home or away (the provider's is_home, or side 1 / 2). \cr
-   competition_team_id \tab integer \tab Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. \cr
-   team \tab character \tab Team display name including the sponsor; varies with language and playoff suffixes: never join on it. \cr
-   team_short_name \tab character \tab Three-letter club code (ANT, MON, ...), stable across seasons in the samples. \cr
-   event_code \tab integer \tab Provider event code: 1000 made shot, 1001 missed shot, 1002 defensive rebound, 1003 offensive rebound, 1004 steal, 1005 turnover, 1006 foul drawn, 1007 foul committed, 1008 assist, 1009 block, 1011 substitution, 1101 period marker; 2xxx team events (meaning unverified). \cr
-   event_subcode \tab integer \tab Provider sub-type of the event: for shots 1, 2 and 5 = two-pointer, 3 = three-pointer, 4 = free throw; turnover and foul sub-types are unnamed by the provider. \cr
-   x \tab integer \tab Court x position of the event in the provider's integer court coordinates (0 on events with none); the coordinate system and orientation are unverified. \cr
-   y \tab integer \tab Court y position of the event in the provider's integer court coordinates (0 on events with none); the coordinate system and orientation are unverified. \cr
-   home_score \tab integer \tab Running home score AFTER the event; the maximum is the final score. \cr
-   away_score \tab integer \tab Running away score AFTER the event; the maximum is the final score. \cr
-   player_id \tab integer \tab Player id of the actor; null on team events and period markers. \cr
-   first_name \tab character \tab Given name of the player as entered in the CMS. \cr
-   last_name \tab character \tab Family name of the player as entered in the CMS. \cr
-   nationality_code \tab character \tab Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining. \cr
-   birth_date \tab Date \tab Date of birth as shown on the public player page; null when unknown. \cr
-   player2_id \tab integer \tab Player id of the second player; filled on substitutions only. \cr
-   player2_first_name \tab character \tab Given name of the second player; substitutions only. \cr
-   player2_last_name \tab character \tab Family name of the second player; substitutions only. \cr
-}
+A \code{hoopR_data} tibble with one row per play-by-play event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_game_film")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play ('film') of a finished game with court x/y (2021-22 and 2026-27 only).

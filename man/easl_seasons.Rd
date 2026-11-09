@@ -7,31 +7,10 @@
 easl_seasons()
 }
 \value{
-A \code{hoopR_data} tibble: Every configured EASL season (the four editions 2023-24 to 2026-27) with its DataCore
-season id and END year. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order
-(sportsdataverse-py \code{easl_seasons}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = EASL 25-26), derived as year + 1. \cr
-   season_id \tab character \tab seasonId: DataCore season UUID v1 (key space: EASL seasons; one per edition: 57cefc32... is 2024-25). Joins the \code{seasonId} query parameter of /matches, /standings, /leaders, /players and the \verb{/teams/\{teamId\}} routes, the \code{seasonId} of every fixture and leader row, and the season half of a team-fixture \code{stage.id}. \cr
-   season_row_id \tab integer \tab The sync server's own integer row id (1 = 2024-25, 2 = 2025-26, 3 = 2023-24, 4 = 2026-27: insertion order, not chronological). Not a DataCore id. \cr
-   year \tab integer \tab START year of the season (2024 = EASL 24-25, which runs 2024-10 to 2025-03). sdv season (END year) = year + 1. \cr
-   name \tab character \tab Season label ('EASL 24-25' = 2024-25). \cr
-   name_latin \tab character \tab Season label in Latin script; null on some seasons. \cr
-   status \tab character \tab COMPLETE for a finished season, ACTIVE for the current one (the default of every season route). \cr
-   start_date \tab Date \tab First day of the season, local date YYYY-MM-DD. \cr
-   end_date \tab Date \tab Last scheduled day of the season, local date YYYY-MM-DD. \cr
-   competition_id \tab character \tab DataCore competition UUID v1 (key space: competitions); the same 77a790d8-ad01-11ed-8355-01b87a3904c0 on all four seasons: EASL is one competition with one season per edition. \cr
-   profile_id \tab character \tab DataCore profile UUID v1 of the competition (joins nothing in this API). \cr
-   organization_id \tab character \tab DataCore organisation id of the league: b1e0z (EASL) on every row. \cr
-   age_group \tab character \tab Age group of the competition: SENIOR. \cr
-   event_type \tab character \tab DataCore event type: FIXTURE (a game schedule). \cr
-   gender \tab character \tab MALE (EASL is a men's competition). \cr
-   representation \tab character \tab CLUB (club teams, not national teams). \cr
-   season_type \tab character \tab DataCore season type: SEASON. \cr
-   standard \tab character \tab Competition standard: ELITE. \cr
-   created_at \tab character \tab When the sync server inserted the row, 'YYYY-MM-DD HH:MM:SS' (a different format from updatedAt; zone unstated, UTC assumed). \cr
-   updated_at \tab character \tab When the sync server last synced the row, ISO 8601 with milliseconds and Z (UTC). \cr
-}
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "easl_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every configured EASL season (the four editions 2023-24 to 2026-27) with its DataCore season id and END year.

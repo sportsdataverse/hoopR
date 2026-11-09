@@ -11,48 +11,10 @@ cba_rosters(schedule_id)
 2025-26 round 1). Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble: One row per registered player (season registration, not the game box). An empty valid
-answer is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{cba_rosters}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   schedule_id \tab integer \tab CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the \code{{scheduleId}} of every game route). Stamped by the runtime from the request; null on a body parsed without it. \cr
-   side \tab character \tab Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block). \cr
-   age \tab integer \tab Age in years as registered (0 on every sampled row: not maintained). \cr
-   birth_date \tab character \tab Date of birth 'YYYY-MM-DD'. A public player bio field of the roster (kept; officials' and coaches' dates would be redacted by the capture). \cr
-   body_data \tab character \tab JSON string of physical-testing results as the league stores it (wingspan, standing reach, vertical reach, hand size); null where not tested. \cr
-   cn_alias \tab character \tab Player short name (Chinese). \cr
-   cn_alias_show \tab character \tab Display name (Chinese); '---' for a placeholder row. \cr
-   cn_name \tab character \tab Player full name (Chinese; may include a first-name form for foreigners). \cr
-   created_date \tab character \tab Audit field: row creation time 'YYYY-MM-DD HH:MM:SS'. \cr
-   first_name \tab character \tab Given name in Latin letters as registered, in capitals (e.g. 'CAI S.L.S.'). \cr
-   height \tab integer \tab Height in cm (integer). \cr
-   id \tab character \tab Internal row id of the (player, team, season) registration, a 19-digit integer beyond 2^53: read it as a string/int64, never as a JS number. Not the playerId. \cr
-   is_captain \tab logical \tab Team captain flag (false on every sampled row). \cr
-   is_delete \tab logical \tab Soft-delete flag (false on every sampled row). \cr
-   is_injury \tab logical \tab Injury flag (false on every sampled row). \cr
-   is_three \tab integer \tab Flag, 2 on every sampled row; meaning unverified. \cr
-   last_modified_date \tab character \tab Audit field: last modification time; null on rows never modified. \cr
-   last_name \tab character \tab Family name in Latin letters; '' when none, and null on some older rows. \cr
-   match_type_id \tab integer \tab Match type id (1 = regular season) of the registration. \cr
-   nationality \tab character \tab Nationality (Chinese country name; see the nationality code table for every value seen and its English name). Chinese country names seen: China; United States; Canada; France; Chinese Taipei; Iran; Nigeria; Jordan. \cr
-   number \tab character \tab Jersey number as a string. \cr
-   player_cba_id \tab integer \tab A registration id from the league's own system (e.g. 502672); 0 when unset (27 of 101 sampled rows). Not the playerId (unverified beyond that). \cr
-   player_id \tab integer \tab playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. \cr
-   player_pic \tab character \tab Absolute URL of the player's photo; null when there is none. \cr
-   position \tab character \tab Position code as registered: SG, SF, PG, PF, C and their '/' pairs, or the coarse G (guard) / F (forward) on older rows (see positionDescription). Label glosses: C = (Chinese text); C/PF = (Chinese text); F = (Chinese text); G = (Chinese text); PF = (Chinese text); PF/C = (Chinese text); PF/SF = (Chinese text); PG = (Chinese text); PG/SG = (Chinese text); SF = (Chinese text); SF/PF = (Chinese text); SF/SG = (Chinese text); SG = (Chinese text); SG/PG = (Chinese text); SG/SF = (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text). \cr
-   position_description \tab character \tab Position label (Chinese). Eras differ: coarse (Chinese text) (guard) / (Chinese text) (forward) / (Chinese text) (center) in older seasons, five-way (Chinese text) (point guard) / (Chinese text) (shooting guard) / (Chinese text) (small forward) / (Chinese text) (power forward) / (Chinese text) (center) in newer ones; dual positions are joined with '/' (e.g. (Chinese text)). Label glosses: C = (Chinese text); C/PF = (Chinese text); F = (Chinese text); G = (Chinese text); PF = (Chinese text); PF/C = (Chinese text); PF/SF = (Chinese text); PG = (Chinese text); PG/SG = (Chinese text); SF = (Chinese text); SF/PF = (Chinese text); SF/SG = (Chinese text); SG = (Chinese text); SG/PG = (Chinese text); SG/SF = (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text); (Chinese text). \cr
-   position_string \tab character \tab Unobserved: null in every sample. \cr
-   season \tab integer \tab Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. \cr
-   season_id \tab integer \tab Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. Same value as season. \cr
-   season_name \tab character \tab Unobserved: null in every sample. \cr
-   season_year \tab character \tab Unobserved: null in every sample. \cr
-   team_cba_id \tab integer \tab teamId again as an integer (29128); meaning unverified beyond equalling team_id in the sample. \cr
-   team_cn_alias \tab character \tab Team short name (Chinese) in that season. \cr
-   team_cn_name \tab character \tab Team full legal name (Chinese), e.g. 'Zhejiang Guangsha Lions Club Zheshang Securities basketball team'. \cr
-   team_en_alias \tab character \tab Team code or English city name as registered: a three-letter code on recent rows ('ZGL', 'SBW'), an English city name on older ones ('Guangdong', 'Sichuan'), '' when none. \cr
-   team_en_name \tab character \tab Team English name as the league registers it (the sample reads 'GUANG SHA'). \cr
-   team_id \tab integer \tab teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. \cr
-   weight \tab integer \tab Weight in kg (integer). \cr
-}
+A \code{hoopR_data} tibble with one row per registered player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cba_rosters")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Registered rosters of both sides with player bio fields (the season registration, not the game box).

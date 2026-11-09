@@ -55,29 +55,7 @@ nba_team_logo_url <- function(team_id, variant = "primary") {
 #'   `year_to_season(most_recent_nba_season() - 2)` (the current season rolls
 #'   over in October).
 #' @param ... Additional arguments passed to [nba_playerindex()] (e.g. `proxy`).
-#' @return A `hoopR_data` tibble with one row per player:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       player_id \tab character \tab Player id (\code{PERSON_ID}). \cr
-#'       player_name \tab character \tab Full name. \cr
-#'       player_slug \tab character \tab URL-safe player slug. \cr
-#'       team_id \tab character \tab Team id. \cr
-#'       team_abbreviation \tab character \tab Team abbreviation. \cr
-#'       team_name \tab character \tab Full team name. \cr
-#'       position \tab character \tab Listed position. \cr
-#'       jersey_number \tab character \tab Jersey number. \cr
-#'       height \tab character \tab Listed height. \cr
-#'       weight \tab character \tab Listed weight. \cr
-#'       country \tab character \tab Country. \cr
-#'       draft_year \tab character \tab Draft year. \cr
-#'       from_year \tab character \tab First season. \cr
-#'       to_year \tab character \tab Most recent season. \cr
-#'       headshot_url \tab character \tab NBA CDN headshot URL. \cr
-#'       season \tab character \tab Season (echoes the \code{season} argument). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_player_dict", unit = "player")
 #' @keywords NBA Dictionary
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble tibble
@@ -139,21 +117,7 @@ nba_player_dict <- function(season = year_to_season(most_recent_nba_season() - 2
 #'   `year_to_season(most_recent_nba_season() - 2)` (the current season rolls
 #'   over in October).
 #' @param ... Additional arguments passed to [nba_playerindex()] (e.g. `proxy`).
-#' @return A `hoopR_data` tibble with one row per team:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       team_id \tab character \tab Team id. \cr
-#'       team_abbreviation \tab character \tab Team abbreviation. \cr
-#'       team_city \tab character \tab Team city / region. \cr
-#'       team_name \tab character \tab Team nickname. \cr
-#'       team_full \tab character \tab Full team name. \cr
-#'       conference \tab character \tab Conference (\code{Eastern} / \code{Western}). \cr
-#'       division \tab character \tab Division. \cr
-#'       logo_url \tab character \tab NBA CDN primary logo URL. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_team_dict", unit = "team")
 #' @keywords NBA Dictionary
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble distinct left_join

@@ -7,37 +7,7 @@ NULL
 #' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a data frame with the following columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       league_id \tab character \tab League identifier ('10' = WNBA). \cr
-#'       season_id \tab character \tab Unique season identifier. \cr
-#'       team_id \tab character \tab Unique team identifier. \cr
-#'       team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-#'       team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-#'       conference \tab character \tab Conference. \cr
-#'       division \tab character \tab Team division. \cr
-#'       team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       team_name_full \tab character \tab Team name full. \cr
-#'       season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-#'       espn_team_id \tab integer \tab Unique identifier for espn team. \cr
-#'       abbreviation \tab character \tab Short abbreviation. \cr
-#'       display_name \tab character \tab Display name. \cr
-#'       mascot \tab character \tab Team mascot. \cr
-#'       nickname \tab character \tab Team or athlete nickname. \cr
-#'       team \tab character \tab Team-side label or team identifier. \cr
-#'       color \tab character \tab Primary color (hex without leading '#'). \cr
-#'       alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
-#'       logo \tab character \tab Team or league logo URL. \cr
-#'       logo_dark \tab character \tab Logo dark. \cr
-#'       logos_href_3 \tab character \tab Logos href 3. \cr
-#'       logos_href_4 \tab character \tab Logos href 4. \cr
-#'       nba_logo_svg \tab character \tab Nba logo svg. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_teams", unit = "team", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -132,96 +102,7 @@ NULL
 #' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: TeamAwardsChampionships,
-#' TeamAwardsConf, TeamAwardsDiv, TeamBackground,
-#' TeamHistory, TeamHof, TeamRetired, TeamSocialSites
-#'
-#'    **TeamBackground**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       ABBREVIATION \tab character \tab Short abbreviation. \cr
-#'       NICKNAME \tab character \tab Team or athlete nickname. \cr
-#'       YEARFOUNDED \tab character \tab  \cr
-#'       CITY \tab character \tab City. \cr
-#'       ARENA \tab character \tab Arena. \cr
-#'       ARENACAPACITY \tab character \tab  \cr
-#'       OWNER \tab character \tab  \cr
-#'       GENERALMANAGER \tab character \tab  \cr
-#'       HEADCOACH \tab character \tab  \cr
-#'       DLEAGUEAFFILIATION \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **TeamHistory**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       CITY \tab character \tab City. \cr
-#'       NICKNAME \tab character \tab Team or athlete nickname. \cr
-#'       YEARFOUNDED \tab character \tab  \cr
-#'       YEARACTIVETILL \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **TeamSocialSites**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       ACCOUNTTYPE \tab character \tab  \cr
-#'       WEBSITE_LINK \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **TeamAwardsChampionships**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       YEARAWARDED \tab character \tab  \cr
-#'       OPPOSITETEAM \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **TeamAwardsConf**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       YEARAWARDED \tab integer \tab  \cr
-#'       OPPOSITETEAM \tab integer \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **TeamAwardsDiv**
-#'
-#'
-#'    Same columns as the **TeamAwardsConf** table above.
-#'
-#'    **TeamHof**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       PLAYERID \tab character \tab Playerid. \cr
-#'       PLAYER \tab character \tab Player. \cr
-#'       POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
-#'       JERSEY \tab character \tab Jersey number worn by the player. \cr
-#'       SEASONSWITHTEAM \tab character \tab  \cr
-#'       YEAR \tab character \tab 4-digit year. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **TeamRetired**
-#'
-#'
-#'    Same columns as the **TeamHof** table above.
-#'
+#' @eval .returns_rd("nba_teamdetails", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -274,46 +155,7 @@ NULL
 #' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: TeamEstimatedMetrics
-#'
-#'    **TeamEstimatedMetrics**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       GP \tab character \tab Games played. \cr
-#'       W \tab character \tab Wins. \cr
-#'       L \tab character \tab Losses. \cr
-#'       W_PCT \tab character \tab  \cr
-#'       MIN \tab character \tab Minutes played. \cr
-#'       E_OFF_RATING \tab character \tab  \cr
-#'       E_DEF_RATING \tab character \tab  \cr
-#'       E_NET_RATING \tab character \tab  \cr
-#'       E_PACE \tab character \tab  \cr
-#'       E_AST_RATIO \tab character \tab  \cr
-#'       E_OREB_PCT \tab character \tab  \cr
-#'       E_DREB_PCT \tab character \tab  \cr
-#'       E_REB_PCT \tab character \tab  \cr
-#'       E_TM_TOV_PCT \tab character \tab  \cr
-#'       GP_RANK \tab character \tab  \cr
-#'       W_RANK \tab character \tab  \cr
-#'       L_RANK \tab character \tab  \cr
-#'       W_PCT_RANK \tab character \tab  \cr
-#'       MIN_RANK \tab character \tab  \cr
-#'       E_OFF_RATING_RANK \tab character \tab  \cr
-#'       E_DEF_RATING_RANK \tab character \tab  \cr
-#'       E_NET_RATING_RANK \tab character \tab  \cr
-#'       E_AST_RATIO_RANK \tab character \tab  \cr
-#'       E_OREB_PCT_RANK \tab character \tab  \cr
-#'       E_DREB_PCT_RANK \tab character \tab  \cr
-#'       E_REB_PCT_RANK \tab character \tab  \cr
-#'       E_TM_TOV_PCT_RANK \tab character \tab  \cr
-#'       E_PACE_RANK \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_teamestimatedmetrics", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -384,43 +226,7 @@ NULL
 #' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: TeamGameLog
-#'
-#'    **TeamGameLog**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       Team_ID \tab character \tab Unique team identifier. \cr
-#'       Game_ID \tab character \tab Unique game identifier. \cr
-#'       GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
-#'       MATCHUP \tab character \tab Matchup. \cr
-#'       WL \tab character \tab Wl. \cr
-#'       W \tab character \tab Wins. \cr
-#'       L \tab character \tab Losses. \cr
-#'       W_PCT \tab character \tab  \cr
-#'       MIN \tab character \tab Minutes played. \cr
-#'       FGM \tab character \tab Field goals made. \cr
-#'       FGA \tab character \tab Field goal attempts. \cr
-#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-#'       FG3M \tab character \tab Three-point field goals made. \cr
-#'       FG3A \tab character \tab Three-point field goal attempts. \cr
-#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-#'       FTM \tab character \tab Free throws made. \cr
-#'       FTA \tab character \tab Free throw attempts. \cr
-#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-#'       OREB \tab character \tab Offensive rebounds. \cr
-#'       DREB \tab character \tab Defensive rebounds. \cr
-#'       REB \tab character \tab Total rebounds. \cr
-#'       AST \tab character \tab Assists. \cr
-#'       STL \tab character \tab Steals. \cr
-#'       BLK \tab character \tab Blocks. \cr
-#'       TOV \tab character \tab Turnovers. \cr
-#'       PF \tab character \tab Personal fouls. \cr
-#'       PTS \tab character \tab Points scored. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_teamgamelog", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -488,72 +294,7 @@ NULL
 #' @param po_round po_round
 #' @param player_id Player ID
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: TeamGameLogs
-#'
-#'    **TeamGameLogs**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       GAME_ID \tab character \tab Unique game identifier. \cr
-#'       GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
-#'       MATCHUP \tab character \tab Matchup. \cr
-#'       WL \tab character \tab Wl. \cr
-#'       MIN \tab character \tab Minutes played. \cr
-#'       FGM \tab character \tab Field goals made. \cr
-#'       FGA \tab character \tab Field goal attempts. \cr
-#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-#'       FG3M \tab character \tab Three-point field goals made. \cr
-#'       FG3A \tab character \tab Three-point field goal attempts. \cr
-#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-#'       FTM \tab character \tab Free throws made. \cr
-#'       FTA \tab character \tab Free throw attempts. \cr
-#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-#'       OREB \tab character \tab Offensive rebounds. \cr
-#'       DREB \tab character \tab Defensive rebounds. \cr
-#'       REB \tab character \tab Total rebounds. \cr
-#'       AST \tab character \tab Assists. \cr
-#'       TOV \tab character \tab Turnovers. \cr
-#'       STL \tab character \tab Steals. \cr
-#'       BLK \tab character \tab Blocks. \cr
-#'       BLKA \tab character \tab  \cr
-#'       PF \tab character \tab Personal fouls. \cr
-#'       PFD \tab character \tab  \cr
-#'       PTS \tab character \tab Points scored. \cr
-#'       PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-#'       GP_RANK \tab character \tab  \cr
-#'       W_RANK \tab character \tab  \cr
-#'       L_RANK \tab character \tab  \cr
-#'       W_PCT_RANK \tab character \tab  \cr
-#'       MIN_RANK \tab character \tab  \cr
-#'       FGM_RANK \tab character \tab  \cr
-#'       FGA_RANK \tab character \tab  \cr
-#'       FG_PCT_RANK \tab character \tab  \cr
-#'       FG3M_RANK \tab character \tab  \cr
-#'       FG3A_RANK \tab character \tab  \cr
-#'       FG3_PCT_RANK \tab character \tab  \cr
-#'       FTM_RANK \tab character \tab  \cr
-#'       FTA_RANK \tab character \tab  \cr
-#'       FT_PCT_RANK \tab character \tab  \cr
-#'       OREB_RANK \tab character \tab  \cr
-#'       DREB_RANK \tab character \tab  \cr
-#'       REB_RANK \tab character \tab  \cr
-#'       AST_RANK \tab character \tab  \cr
-#'       TOV_RANK \tab character \tab  \cr
-#'       STL_RANK \tab character \tab  \cr
-#'       BLK_RANK \tab character \tab  \cr
-#'       BLKA_RANK \tab character \tab  \cr
-#'       PF_RANK \tab character \tab  \cr
-#'       PFD_RANK \tab character \tab  \cr
-#'       PTS_RANK \tab character \tab  \cr
-#'       PLUS_MINUS_RANK \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_teamgamelogs", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -655,33 +396,7 @@ NULL
 #' @author Saiem Gilani
 #' @param season_id season_id
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: CareerLeadersByTeam
-#'
-#'    **CareerLeadersByTeam**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       PTS \tab character \tab Points scored. \cr
-#'       PTS_PERSON_ID \tab character \tab  \cr
-#'       PTS_PLAYER \tab character \tab  \cr
-#'       AST \tab character \tab Assists. \cr
-#'       AST_PERSON_ID \tab character \tab  \cr
-#'       AST_PLAYER \tab character \tab  \cr
-#'       REB \tab character \tab Total rebounds. \cr
-#'       REB_PERSON_ID \tab character \tab  \cr
-#'       REB_PLAYER \tab character \tab  \cr
-#'       BLK \tab character \tab Blocks. \cr
-#'       BLK_PERSON_ID \tab character \tab  \cr
-#'       BLK_PLAYER \tab character \tab  \cr
-#'       STL \tab character \tab Steals. \cr
-#'       STL_PERSON_ID \tab character \tab  \cr
-#'       STL_PLAYER \tab character \tab  \cr
-#'       SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_teamhistoricalleaders", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -745,59 +460,7 @@ NULL
 #' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: AvailableSeasons, TeamInfoCommon,
-#' TeamSeasonRanks
-#'
-#'    **TeamInfoCommon**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       SEASON_YEAR \tab character \tab Season year string ('YYYY-YY' format). \cr
-#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       TEAM_CONFERENCE \tab character \tab  \cr
-#'       TEAM_DIVISION \tab character \tab  \cr
-#'       TEAM_CODE \tab character \tab  \cr
-#'       TEAM_SLUG \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-#'       W \tab character \tab Wins. \cr
-#'       L \tab character \tab Losses. \cr
-#'       PCT \tab character \tab Pct. \cr
-#'       CONF_RANK \tab character \tab  \cr
-#'       DIV_RANK \tab character \tab  \cr
-#'       MIN_YEAR \tab character \tab  \cr
-#'       MAX_YEAR \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **TeamSeasonRanks**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-#'       SEASON_ID \tab character \tab Unique season identifier. \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       PTS_RANK \tab character \tab  \cr
-#'       PTS_PG \tab character \tab  \cr
-#'       REB_RANK \tab character \tab  \cr
-#'       REB_PG \tab character \tab  \cr
-#'       AST_RANK \tab character \tab  \cr
-#'       AST_PG \tab character \tab  \cr
-#'       OPP_PTS_RANK \tab character \tab  \cr
-#'       OPP_PTS_PG \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **AvailableSeasons**
-#'
-#'
-#'    |col_name  |types     |description               |
-#'    |:---------|:---------|:-------------------------|
-#'    |SEASON_ID |character |Unique season identifier. |
-#'
+#' @eval .returns_rd("nba_teaminfocommon", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -881,24 +544,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: OverallTeamPlayerOnOffDetails,
-#' PlayersOffCourtTeamPlayerOnOffDetails, PlayersOnCourtTeamPlayerOnOffDetails
-#'
-#'    **OverallTeamPlayerOnOffDetails**
-#'
-#'
-#'    Columns as documented in the shared [nba_teamplayeronoffdetails_overallteamplayeronoffdetails_schema] table.
-#'
-#'    **PlayersOnCourtTeamPlayerOnOffDetails**
-#'
-#'
-#'    Columns as documented in the shared [nba_leagueplayerondetails_playersoncourtleagueplayerdetails_schema] table.
-#'
-#'    **PlayersOffCourtTeamPlayerOnOffDetails**
-#'
-#'
-#'    Columns as documented in the shared [nba_leagueplayerondetails_playersoncourtleagueplayerdetails_schema] table.
-#'
+#' @eval .returns_rd("nba_teamplayeronoffdetails", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -994,38 +640,7 @@ nba_teamplayeronoffdetails <- function(
 #' @author Saiem Gilani
 #' @param po_round po_round
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: OverallTeamPlayerOnOffSummary,
-#' PlayersOffCourtTeamPlayerOnOffSummary, PlayersOnCourtTeamPlayerOnOffSummary
-#'
-#'    **OverallTeamPlayerOnOffSummary**
-#'
-#'
-#'    Columns as documented in the shared [nba_teamplayeronoffdetails_overallteamplayeronoffdetails_schema] table.
-#'
-#'    **PlayersOnCourtTeamPlayerOnOffSummary**
-#'
-#'
-#'    |col_name          |types     |description                                             |
-#'    |:-----------------|:---------|:-------------------------------------------------------|
-#'    |GROUP_SET         |character |                                                        |
-#'    |TEAM_ID           |character |Unique team identifier.                                 |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').                   |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces').         |
-#'    |VS_PLAYER_ID      |character |                                                        |
-#'    |VS_PLAYER_NAME    |character |                                                        |
-#'    |COURT_STATUS      |character |                                                        |
-#'    |GP                |character |Games played.                                           |
-#'    |MIN               |character |Minutes played.                                         |
-#'    |PLUS_MINUS        |character |Plus/minus point differential while on court.           |
-#'    |OFF_RATING        |character |Offensive rating (points produced per 100 possessions). |
-#'    |DEF_RATING        |character |Defensive rating (points allowed per 100 possessions).  |
-#'    |NET_RATING        |character |Net rating (off rating - def rating).                   |
-#'
-#'    **PlayersOffCourtTeamPlayerOnOffSummary**
-#'
-#'
-#'    Same columns as the **PlayersOnCourtTeamPlayerOnOffSummary** table above.
-#'
+#' @eval .returns_rd("nba_teamplayeronoffsummary", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1122,144 +737,7 @@ nba_teamplayeronoffsummary <- function(
 #' @author Saiem Gilani
 #' @param po_round po_round
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: PlayersSeasonTotals, TeamOverall
-#'
-#'    **TeamOverall**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       GROUP_SET \tab character \tab  \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       GROUP_VALUE \tab character \tab  \cr
-#'       GP \tab character \tab Games played. \cr
-#'       W \tab character \tab Wins. \cr
-#'       L \tab character \tab Losses. \cr
-#'       W_PCT \tab character \tab  \cr
-#'       MIN \tab character \tab Minutes played. \cr
-#'       FGM \tab character \tab Field goals made. \cr
-#'       FGA \tab character \tab Field goal attempts. \cr
-#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-#'       FG3M \tab character \tab Three-point field goals made. \cr
-#'       FG3A \tab character \tab Three-point field goal attempts. \cr
-#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-#'       FTM \tab character \tab Free throws made. \cr
-#'       FTA \tab character \tab Free throw attempts. \cr
-#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-#'       OREB \tab character \tab Offensive rebounds. \cr
-#'       DREB \tab character \tab Defensive rebounds. \cr
-#'       REB \tab character \tab Total rebounds. \cr
-#'       AST \tab character \tab Assists. \cr
-#'       TOV \tab character \tab Turnovers. \cr
-#'       STL \tab character \tab Steals. \cr
-#'       BLK \tab character \tab Blocks. \cr
-#'       BLKA \tab character \tab  \cr
-#'       PF \tab character \tab Personal fouls. \cr
-#'       PFD \tab character \tab  \cr
-#'       PTS \tab character \tab Points scored. \cr
-#'       PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-#'       GP_RANK \tab character \tab  \cr
-#'       W_RANK \tab character \tab  \cr
-#'       L_RANK \tab character \tab  \cr
-#'       W_PCT_RANK \tab character \tab  \cr
-#'       MIN_RANK \tab character \tab  \cr
-#'       FGM_RANK \tab character \tab  \cr
-#'       FGA_RANK \tab character \tab  \cr
-#'       FG_PCT_RANK \tab character \tab  \cr
-#'       FG3M_RANK \tab character \tab  \cr
-#'       FG3A_RANK \tab character \tab  \cr
-#'       FG3_PCT_RANK \tab character \tab  \cr
-#'       FTM_RANK \tab character \tab  \cr
-#'       FTA_RANK \tab character \tab  \cr
-#'       FT_PCT_RANK \tab character \tab  \cr
-#'       OREB_RANK \tab character \tab  \cr
-#'       DREB_RANK \tab character \tab  \cr
-#'       REB_RANK \tab character \tab  \cr
-#'       AST_RANK \tab character \tab  \cr
-#'       TOV_RANK \tab character \tab  \cr
-#'       STL_RANK \tab character \tab  \cr
-#'       BLK_RANK \tab character \tab  \cr
-#'       BLKA_RANK \tab character \tab  \cr
-#'       PF_RANK \tab character \tab  \cr
-#'       PFD_RANK \tab character \tab  \cr
-#'       PTS_RANK \tab character \tab  \cr
-#'       PLUS_MINUS_RANK \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **PlayersSeasonTotals**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       GROUP_SET \tab character \tab  \cr
-#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
-#'       PLAYER_NAME \tab character \tab Player name. \cr
-#'       NICKNAME \tab character \tab Team or athlete nickname. \cr
-#'       GP \tab character \tab Games played. \cr
-#'       W \tab character \tab Wins. \cr
-#'       L \tab character \tab Losses. \cr
-#'       W_PCT \tab character \tab  \cr
-#'       MIN \tab character \tab Minutes played. \cr
-#'       FGM \tab character \tab Field goals made. \cr
-#'       FGA \tab character \tab Field goal attempts. \cr
-#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-#'       FG3M \tab character \tab Three-point field goals made. \cr
-#'       FG3A \tab character \tab Three-point field goal attempts. \cr
-#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-#'       FTM \tab character \tab Free throws made. \cr
-#'       FTA \tab character \tab Free throw attempts. \cr
-#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-#'       OREB \tab character \tab Offensive rebounds. \cr
-#'       DREB \tab character \tab Defensive rebounds. \cr
-#'       REB \tab character \tab Total rebounds. \cr
-#'       AST \tab character \tab Assists. \cr
-#'       TOV \tab character \tab Turnovers. \cr
-#'       STL \tab character \tab Steals. \cr
-#'       BLK \tab character \tab Blocks. \cr
-#'       BLKA \tab character \tab  \cr
-#'       PF \tab character \tab Personal fouls. \cr
-#'       PFD \tab character \tab  \cr
-#'       PTS \tab character \tab Points scored. \cr
-#'       PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-#'       NBA_FANTASY_PTS \tab character \tab  \cr
-#'       DD2 \tab character \tab  \cr
-#'       TD3 \tab character \tab  \cr
-#'       WNBA_FANTASY_PTS \tab character \tab  \cr
-#'       GP_RANK \tab character \tab  \cr
-#'       W_RANK \tab character \tab  \cr
-#'       L_RANK \tab character \tab  \cr
-#'       W_PCT_RANK \tab character \tab  \cr
-#'       MIN_RANK \tab character \tab  \cr
-#'       FGM_RANK \tab character \tab  \cr
-#'       FGA_RANK \tab character \tab  \cr
-#'       FG_PCT_RANK \tab character \tab  \cr
-#'       FG3M_RANK \tab character \tab  \cr
-#'       FG3A_RANK \tab character \tab  \cr
-#'       FG3_PCT_RANK \tab character \tab  \cr
-#'       FTM_RANK \tab character \tab  \cr
-#'       FTA_RANK \tab character \tab  \cr
-#'       FT_PCT_RANK \tab character \tab  \cr
-#'       OREB_RANK \tab character \tab  \cr
-#'       DREB_RANK \tab character \tab  \cr
-#'       REB_RANK \tab character \tab  \cr
-#'       AST_RANK \tab character \tab  \cr
-#'       TOV_RANK \tab character \tab  \cr
-#'       STL_RANK \tab character \tab  \cr
-#'       BLK_RANK \tab character \tab  \cr
-#'       BLKA_RANK \tab character \tab  \cr
-#'       PF_RANK \tab character \tab  \cr
-#'       PFD_RANK \tab character \tab  \cr
-#'       PTS_RANK \tab character \tab  \cr
-#'       PLUS_MINUS_RANK \tab character \tab  \cr
-#'       NBA_FANTASY_PTS_RANK \tab character \tab  \cr
-#'       DD2_RANK \tab character \tab  \cr
-#'       TD3_RANK \tab character \tab  \cr
-#'       WNBA_FANTASY_PTS_RANK \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_teamplayerdashboard", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1359,50 +837,7 @@ NULL
 #' @rdname nba_teamplayeronoffdetails
 #' @author Saiem Gilani
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: TeamStats
-#'
-#'    **TeamStats**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       YEAR \tab character \tab 4-digit year. \cr
-#'       GP \tab character \tab Games played. \cr
-#'       WINS \tab character \tab Total wins. \cr
-#'       LOSSES \tab character \tab Total losses. \cr
-#'       WIN_PCT \tab character \tab  \cr
-#'       CONF_RANK \tab character \tab  \cr
-#'       DIV_RANK \tab character \tab  \cr
-#'       PO_WINS \tab character \tab  \cr
-#'       PO_LOSSES \tab character \tab  \cr
-#'       CONF_COUNT \tab character \tab  \cr
-#'       DIV_COUNT \tab character \tab  \cr
-#'       NBA_FINALS_APPEARANCE \tab character \tab  \cr
-#'       FGM \tab character \tab Field goals made. \cr
-#'       FGA \tab character \tab Field goal attempts. \cr
-#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-#'       FG3M \tab character \tab Three-point field goals made. \cr
-#'       FG3A \tab character \tab Three-point field goal attempts. \cr
-#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-#'       FTM \tab character \tab Free throws made. \cr
-#'       FTA \tab character \tab Free throw attempts. \cr
-#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-#'       OREB \tab character \tab Offensive rebounds. \cr
-#'       DREB \tab character \tab Defensive rebounds. \cr
-#'       REB \tab character \tab Total rebounds. \cr
-#'       AST \tab character \tab Assists. \cr
-#'       PF \tab character \tab Personal fouls. \cr
-#'       STL \tab character \tab Steals. \cr
-#'       TOV \tab character \tab Turnovers. \cr
-#'       BLK \tab character \tab Blocks. \cr
-#'       PTS \tab character \tab Points scored. \cr
-#'       PTS_RANK \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_teamyearbyyearstats", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1468,197 +903,7 @@ NULL
 #' @param player_id Player ID
 #' @param vs_player_id vs_player_id
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: OnOffCourt, Overall, ShotAreaOffCourt,
-#' ShotAreaOnCourt, ShotAreaOverall, ShotDistanceOffCourt, ShotDistanceOnCourt,
-#' ShotDistanceOverall, vsPlayerOverall
-#'
-#'    **Overall**
-#'
-#'
-#'    |col_name          |types     |description                                   |
-#'    |:-----------------|:---------|:---------------------------------------------|
-#'    |GROUP_SET         |character |                                              |
-#'    |GROUP_VALUE       |character |                                              |
-#'    |TEAM_ID           |character |Unique team identifier.                       |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').         |
-#'    |GP                |character |Games played.                                 |
-#'    |W                 |character |Wins.                                         |
-#'    |L                 |character |Losses.                                       |
-#'    |W_PCT             |character |                                              |
-#'    |MIN               |character |Minutes played.                               |
-#'    |FGM               |character |Field goals made.                             |
-#'    |FGA               |character |Field goal attempts.                          |
-#'    |FG_PCT            |character |Field goal percentage (0-1).                  |
-#'    |FG3M              |character |Three-point field goals made.                 |
-#'    |FG3A              |character |Three-point field goal attempts.              |
-#'    |FG3_PCT           |character |Three-point field goal percentage (0-1).      |
-#'    |FTM               |character |Free throws made.                             |
-#'    |FTA               |character |Free throw attempts.                          |
-#'    |FT_PCT            |character |Free throw percentage (0-1).                  |
-#'    |OREB              |character |Offensive rebounds.                           |
-#'    |DREB              |character |Defensive rebounds.                           |
-#'    |REB               |character |Total rebounds.                               |
-#'    |AST               |character |Assists.                                      |
-#'    |TOV               |character |Turnovers.                                    |
-#'    |STL               |character |Steals.                                       |
-#'    |BLK               |character |Blocks.                                       |
-#'    |BLKA              |character |                                              |
-#'    |PF                |character |Personal fouls.                               |
-#'    |PFD               |character |                                              |
-#'    |PTS               |character |Points scored.                                |
-#'    |PLUS_MINUS        |character |Plus/minus point differential while on court. |
-#'    |GP_RANK           |character |                                              |
-#'    |W_RANK            |character |                                              |
-#'    |L_RANK            |character |                                              |
-#'    |W_PCT_RANK        |character |                                              |
-#'    |MIN_RANK          |character |                                              |
-#'    |FGM_RANK          |character |                                              |
-#'    |FGA_RANK          |character |                                              |
-#'    |FG_PCT_RANK       |character |                                              |
-#'    |FG3M_RANK         |character |                                              |
-#'    |FG3A_RANK         |character |                                              |
-#'    |FG3_PCT_RANK      |character |                                              |
-#'    |FTM_RANK          |character |                                              |
-#'    |FTA_RANK          |character |                                              |
-#'    |FT_PCT_RANK       |character |                                              |
-#'    |OREB_RANK         |character |                                              |
-#'    |DREB_RANK         |character |                                              |
-#'    |REB_RANK          |character |                                              |
-#'    |AST_RANK          |character |                                              |
-#'    |TOV_RANK          |character |                                              |
-#'    |STL_RANK          |character |                                              |
-#'    |BLK_RANK          |character |                                              |
-#'    |BLKA_RANK         |character |                                              |
-#'    |PF_RANK           |character |                                              |
-#'    |PFD_RANK          |character |                                              |
-#'    |PTS_RANK          |character |                                              |
-#'    |PLUS_MINUS_RANK   |character |                                              |
-#'
-#'    **vsPlayerOverall**
-#'
-#'
-#'    |col_name              |types     |description                                   |
-#'    |:---------------------|:---------|:---------------------------------------------|
-#'    |GROUP_SET             |character |                                              |
-#'    |GROUP_VALUE           |character |                                              |
-#'    |PLAYER_ID             |character |Unique player identifier.                     |
-#'    |GP                    |character |Games played.                                 |
-#'    |W                     |character |Wins.                                         |
-#'    |L                     |character |Losses.                                       |
-#'    |W_PCT                 |character |                                              |
-#'    |MIN                   |character |Minutes played.                               |
-#'    |FGM                   |character |Field goals made.                             |
-#'    |FGA                   |character |Field goal attempts.                          |
-#'    |FG_PCT                |character |Field goal percentage (0-1).                  |
-#'    |FG3M                  |character |Three-point field goals made.                 |
-#'    |FG3A                  |character |Three-point field goal attempts.              |
-#'    |FG3_PCT               |character |Three-point field goal percentage (0-1).      |
-#'    |FTM                   |character |Free throws made.                             |
-#'    |FTA                   |character |Free throw attempts.                          |
-#'    |FT_PCT                |character |Free throw percentage (0-1).                  |
-#'    |OREB                  |character |Offensive rebounds.                           |
-#'    |DREB                  |character |Defensive rebounds.                           |
-#'    |REB                   |character |Total rebounds.                               |
-#'    |AST                   |character |Assists.                                      |
-#'    |TOV                   |character |Turnovers.                                    |
-#'    |STL                   |character |Steals.                                       |
-#'    |BLK                   |character |Blocks.                                       |
-#'    |BLKA                  |character |                                              |
-#'    |PF                    |character |Personal fouls.                               |
-#'    |PFD                   |character |                                              |
-#'    |PTS                   |character |Points scored.                                |
-#'    |PLUS_MINUS            |character |Plus/minus point differential while on court. |
-#'    |NBA_FANTASY_PTS       |character |                                              |
-#'    |DD2                   |character |                                              |
-#'    |TD3                   |character |                                              |
-#'    |WNBA_FANTASY_PTS      |character |                                              |
-#'    |GP_RANK               |character |                                              |
-#'    |W_RANK                |character |                                              |
-#'    |L_RANK                |character |                                              |
-#'    |W_PCT_RANK            |character |                                              |
-#'    |MIN_RANK              |character |                                              |
-#'    |FGM_RANK              |character |                                              |
-#'    |FGA_RANK              |character |                                              |
-#'    |FG_PCT_RANK           |character |                                              |
-#'    |FG3M_RANK             |character |                                              |
-#'    |FG3A_RANK             |character |                                              |
-#'    |FG3_PCT_RANK          |character |                                              |
-#'    |FTM_RANK              |character |                                              |
-#'    |FTA_RANK              |character |                                              |
-#'    |FT_PCT_RANK           |character |                                              |
-#'    |OREB_RANK             |character |                                              |
-#'    |DREB_RANK             |character |                                              |
-#'    |REB_RANK              |character |                                              |
-#'    |AST_RANK              |character |                                              |
-#'    |TOV_RANK              |character |                                              |
-#'    |STL_RANK              |character |                                              |
-#'    |BLK_RANK              |character |                                              |
-#'    |BLKA_RANK             |character |                                              |
-#'    |PF_RANK               |character |                                              |
-#'    |PFD_RANK              |character |                                              |
-#'    |PTS_RANK              |character |                                              |
-#'    |PLUS_MINUS_RANK       |character |                                              |
-#'    |NBA_FANTASY_PTS_RANK  |character |                                              |
-#'    |DD2_RANK              |character |                                              |
-#'    |TD3_RANK              |character |                                              |
-#'    |WNBA_FANTASY_PTS_RANK |character |                                              |
-#'
-#'    **OnOffCourt**
-#'
-#'
-#'    Columns as documented in the shared [nba_leagueplayerondetails_playersoncourtleagueplayerdetails_schema] table.
-#'
-#'    **ShotDistanceOverall**
-#'
-#'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |GROUP_SET         |character |                                                |
-#'    |GROUP_VALUE       |character |                                                |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |FGM               |character |Field goals made.                               |
-#'    |FGA               |character |Field goal attempts.                            |
-#'    |FG_PCT            |character |Field goal percentage (0-1).                    |
-#'
-#'    **ShotDistanceOnCourt**
-#'
-#'
-#'    |col_name          |types     |description                                     |
-#'    |:-----------------|:---------|:-----------------------------------------------|
-#'    |GROUP_SET         |character |                                                |
-#'    |TEAM_ID           |character |Unique team identifier.                         |
-#'    |TEAM_ABBREVIATION |character |Short team abbreviation (e.g. 'LAS').           |
-#'    |TEAM_NAME         |character |Full team display name (e.g. 'Las Vegas Aces'). |
-#'    |VS_PLAYER_ID      |character |                                                |
-#'    |VS_PLAYER_NAME    |character |                                                |
-#'    |COURT_STATUS      |character |                                                |
-#'    |GROUP_VALUE       |character |                                                |
-#'    |FGM               |character |Field goals made.                               |
-#'    |FGA               |character |Field goal attempts.                            |
-#'    |FG_PCT            |character |Field goal percentage (0-1).                    |
-#'
-#'    **ShotDistanceOffCourt**
-#'
-#'
-#'    Same columns as the **ShotDistanceOnCourt** table above.
-#'
-#'    **ShotAreaOverall**
-#'
-#'
-#'    Same columns as the **ShotDistanceOverall** table above.
-#'
-#'    **ShotAreaOnCourt**
-#'
-#'
-#'    Same columns as the **ShotDistanceOnCourt** table above.
-#'
-#'    **ShotAreaOffCourt**
-#'
-#'
-#'    Same columns as the **ShotDistanceOnCourt** table above.
-#'
+#' @eval .returns_rd("nba_teamvsplayer", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -1774,91 +1019,7 @@ NULL
 #' @param conference Conference filter - 'East', 'West', or ''
 #' @param division Division filter
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: PlayersVsPlayers,
-#'  TeamPlayersVsPlayersOff, TeamPlayersVsPlayersOn, TeamVsPlayers, TeamVsPlayersOff
-#'
-#'    **PlayersVsPlayers**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       GROUP_SET \tab character \tab  \cr
-#'       TITLE_DESCRIPTION \tab character \tab  \cr
-#'       DESCRIPTION \tab character \tab Long-form description text. \cr
-#'       MIN \tab character \tab Minutes played. \cr
-#'       FGM \tab character \tab Field goals made. \cr
-#'       FGA \tab character \tab Field goal attempts. \cr
-#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-#'       FG3M \tab character \tab Three-point field goals made. \cr
-#'       FG3A \tab character \tab Three-point field goal attempts. \cr
-#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-#'       FTM \tab character \tab Free throws made. \cr
-#'       FTA \tab character \tab Free throw attempts. \cr
-#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-#'       OREB \tab character \tab Offensive rebounds. \cr
-#'       DREB \tab character \tab Defensive rebounds. \cr
-#'       REB \tab character \tab Total rebounds. \cr
-#'       AST \tab character \tab Assists. \cr
-#'       TOV \tab character \tab Turnovers. \cr
-#'       STL \tab character \tab Steals. \cr
-#'       BLK \tab character \tab Blocks. \cr
-#'       BLKA \tab character \tab  \cr
-#'       PF \tab character \tab Personal fouls. \cr
-#'       PFD \tab character \tab  \cr
-#'       PTS \tab character \tab Points scored. \cr
-#'       PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **TeamPlayersVsPlayersOn**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       GROUP_SET \tab character \tab  \cr
-#'       TITLE_DESCRIPTION \tab character \tab  \cr
-#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
-#'       PLAYER_NAME \tab character \tab Player name. \cr
-#'       MIN \tab character \tab Minutes played. \cr
-#'       FGM \tab character \tab Field goals made. \cr
-#'       FGA \tab character \tab Field goal attempts. \cr
-#'       FG_PCT \tab character \tab Field goal percentage (0-1). \cr
-#'       FG3M \tab character \tab Three-point field goals made. \cr
-#'       FG3A \tab character \tab Three-point field goal attempts. \cr
-#'       FG3_PCT \tab character \tab Three-point field goal percentage (0-1). \cr
-#'       FTM \tab character \tab Free throws made. \cr
-#'       FTA \tab character \tab Free throw attempts. \cr
-#'       FT_PCT \tab character \tab Free throw percentage (0-1). \cr
-#'       OREB \tab character \tab Offensive rebounds. \cr
-#'       DREB \tab character \tab Defensive rebounds. \cr
-#'       REB \tab character \tab Total rebounds. \cr
-#'       AST \tab character \tab Assists. \cr
-#'       TOV \tab character \tab Turnovers. \cr
-#'       STL \tab character \tab Steals. \cr
-#'       BLK \tab character \tab Blocks. \cr
-#'       BLKA \tab character \tab  \cr
-#'       PF \tab character \tab Personal fouls. \cr
-#'       PFD \tab character \tab  \cr
-#'       PTS \tab character \tab Points scored. \cr
-#'       PLUS_MINUS \tab character \tab Plus/minus point differential while on court. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **TeamPlayersVsPlayersOff**
-#'
-#'
-#'    Same columns as the **TeamPlayersVsPlayersOn** table above.
-#'
-#'    **TeamVsPlayers**
-#'
-#'
-#'    Same columns as the **PlayersVsPlayers** table above.
-#'
-#'    **TeamVsPlayersOff**
-#'
-#'
-#'    Same columns as the **PlayersVsPlayers** table above.
-#'
+#' @eval .returns_rd("nba_teamandplayersvsplayers", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -2171,26 +1332,7 @@ NULL
 #' @param wrs_opp_stl wrs_opp_stl
 #' @param wrs_opp_tov wrs_opp_tov
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: TeamGameStreakFinderParametersResults
-#'
-#'    **TeamGameStreakFinderParametersResults**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       GAMESTREAK \tab character \tab  \cr
-#'       STARTDATE \tab character \tab  \cr
-#'       ENDDATE \tab character \tab  \cr
-#'       ACTIVESTREAK \tab character \tab  \cr
-#'       NUMSEASONS \tab character \tab  \cr
-#'       LASTSEASON \tab character \tab  \cr
-#'       FIRSTSEASON \tab character \tab  \cr
-#'       ABBREVIATION \tab character \tab Short abbreviation. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_teamgamestreakfinder", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest

@@ -14,20 +14,10 @@ euroleague_rounds(competition_code, season_code)
 e.g. \code{E2025} for 2025-26.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per round:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season_code \tab character \tab Season code: competition code + start year, e.g. E2025 for 2025-26 (Utf8 join key). \cr
-      phase_type_code \tab character \tab Phase type code (RS = regular season, PO = playoffs, ...). \cr
-      round \tab integer \tab Round number within the season. \cr
-      index \tab integer \tab Ordinal position of the round within the season. \cr
-      name \tab character \tab Display name. \cr
-      min_game_start_date \tab character \tab Earliest game start in the round (ISO 8601). \cr
-      max_game_start_date \tab character \tab Latest game start in the round (ISO 8601). \cr
-      dates_formmated \tab character \tab Human-readable date range of the round (sic: the API spells it this way). \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per round.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "euroleague_rounds")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the rounds of a season.}

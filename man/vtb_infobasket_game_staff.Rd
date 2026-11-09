@@ -11,22 +11,10 @@ vtb_infobasket_game_staff(game_id)
 across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: The coaches and officials of a finished game (names and roles only). The columns are always
-these, in this order (sportsdataverse-py \code{vtb_infobasket_game_staff}); an empty valid answer raises \code{hoopR_no_data}, a valid
-body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Infobasket GameID of the game (the v2 matches' match_id); global across seasons. \cr
-   team_number \tab integer \tab Side: 1 team A (home), 2 team B (away), 0 neither (officials, the placeholder row). \cr
-   team_id \tab integer \tab Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id. \cr
-   start_id \tab integer \tab Line-up slot id within this game; not a person id. \cr
-   start_type \tab integer \tab Line-up row type: 3 coach, 4 official. \cr
-   role \tab character \tab English role of the person: head coach, assistant coach, referee, commissioner, table official (from start_type and pos_id). \cr
-   pos_id \tab integer \tab Position code of the coach or official (coach 1000 head / 1001 assistant; referees 101-103, commissioner 104, table officials 111-123). \cr
-   person_id \tab integer \tab Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/\{personId\} (players) and /Widget/CoachPage/\{personId\} (coaches). 0 on team and placeholder rows. \cr
-   person_name_en \tab character \tab Name in English, as 'Last First'. \cr
-   person_name_ru \tab character \tab Name in Russian, as 'Last First'. \cr
-   country_code_ioc \tab character \tab Country code as the host sends it (ISO alpha-2 in most rows, IOC alpha-3 in some). \cr
-}
+A \code{hoopR_data} tibble with one row per staff member.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_game_staff")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The coaches and officials of a finished game (names and roles only).

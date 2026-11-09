@@ -17,62 +17,71 @@ named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments (\code
 \code{http_proxy}/\code{https_proxy} environment variables.}
 }
 \value{
-Named list of \code{hoopR_data} tibbles:
+A named list of \code{hoopR_data} tibbles: \code{calls}, \code{game}, \code{stats}.
 
-\strong{calls} -- one row per graded play. \code{decision} is normalized to
+\strong{calls}
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab 10-digit zero-padded game id; joins to game and stats. \cr
+  period \tab integer \tab Period number from period_name (4 = fourth quarter, 5+ = overtime). \cr
+  period_name \tab character \tab Raw period label, e.g. Q4, or Q5 for the first overtime. \cr
+  pc_time \tab character \tab Raw game clock string, MM:SS or MM:SS.t. \cr
+  seconds_remaining \tab double \tab Seconds left in the period, parsed from pc_time. \cr
+  call_type \tab character \tab Raw "Call: Type" label, whitespace untouched. \cr
+  call \tab character \tab Upper-cased part of call_type before the colon, e.g. FOUL. \cr
+  type \tab character \tab Upper-cased part of call_type after the colon, e.g. SHOOTING. \cr
+  committing \tab character \tab Player, team or coach committing the graded action. \cr
+  disadvantaged \tab character \tab Player or team disadvantaged by the graded action. \cr
+  decision \tab character \tab Normalized grade: CC, CNC, IC or INC. \cr
+  decision_raw \tab character \tab Raw grading code before normalization. \cr
+  comment \tab character \tab Grader's free-text explanation of the ruling. \cr
+  difficulty \tab character \tab Grader's difficulty rating, e.g. Observable or Difficult. \cr
+  video_event_id \tab character \tab Report video event id (source field VideolLink); not a play-by-play event number. \cr
+  pos_id \tab integer \tab Report possession id; rows sharing it belong to one possession. \cr
+  pos_start \tab character \tab Game clock at the start of the possession. \cr
+  pos_end \tab character \tab Game clock at the end of the possession. \cr
+  pos_team_id \tab integer \tab NBA team id of the team in possession. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{game}
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab 10-digit zero-padded game id; joins to calls and stats. \cr
+  game_date \tab Date \tab Game date from the report's local tip-off timestamp. \cr
+  season_type \tab character \tab Season type from the third digit of game_id, e.g. playoffs. \cr
+  home_team_id \tab integer \tab NBA team id of the home team. \cr
+  away_team_id \tab integer \tab NBA team id of the away team. \cr
+  home_team_abbr \tab character \tab Home team three-letter abbreviation. \cr
+  away_team_abbr \tab character \tab Away team three-letter abbreviation. \cr
+  home_team_name \tab character \tab Home team nickname as published in the report. \cr
+  away_team_name \tab character \tab Away team nickname as published in the report. \cr
+  home_score \tab integer \tab Home team final score. \cr
+  away_score \tab integer \tab Away team final score. \cr
+  l2m_comments \tab character \tab Report-level note from the league; NA for almost every game. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{stats}
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab 10-digit zero-padded game id; joins to calls and game. \cr
+  stat_name \tab character \tab Statistic: Calls, Errors in Favor or Possessions in Favor. \cr
+  home \tab integer \tab Value of stat_name for the home team. \cr
+  away \tab integer \tab Value of stat_name for the away team. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\code{calls}: one row per graded play. \code{decision} is normalized to
 \code{CC}/\code{CNC}/\code{IC}/\code{INC} (\code{NCC}->\code{CNC}, \code{NCI}->\code{INC}, trailing \code{*}
 stripped; a real \code{INC} stays \code{INC}, while a blank or \code{"Undetectable"}
 grade becomes \code{NA} and is never counted as \code{INC}). \code{game_id} is a
 10-char zero-padded string. Player and team names are kept verbatim
-(no ASCII folding).\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab character \tab 10-digit zero-padded game id; joins to game and stats. \cr
-   period \tab integer \tab Period number from period_name (4 = fourth quarter, 5+ = overtime). \cr
-   period_name \tab character \tab Raw period label, e.g. Q4, or Q5 for the first overtime. \cr
-   pc_time \tab character \tab Raw game clock string, MM:SS or MM:SS.t. \cr
-   seconds_remaining \tab double \tab Seconds left in the period, parsed from pc_time. \cr
-   call_type \tab character \tab Raw "Call: Type" label, whitespace untouched. \cr
-   call \tab character \tab Upper-cased part of call_type before the colon, e.g. FOUL. \cr
-   type \tab character \tab Upper-cased part of call_type after the colon, e.g. SHOOTING. \cr
-   committing \tab character \tab Player, team or coach committing the graded action. \cr
-   disadvantaged \tab character \tab Player or team disadvantaged by the graded action. \cr
-   decision \tab character \tab Normalized grade: CC, CNC, IC or INC. \cr
-   decision_raw \tab character \tab Raw grading code before normalization. \cr
-   comment \tab character \tab Grader's free-text explanation of the ruling. \cr
-   difficulty \tab character \tab Grader's difficulty rating, e.g. Observable or Difficult. \cr
-   video_event_id \tab character \tab Report video event id (source field VideolLink); not a play-by-play event number. \cr
-   pos_id \tab integer \tab Report possession id; rows sharing it belong to one possession. \cr
-   pos_start \tab character \tab Game clock at the start of the possession. \cr
-   pos_end \tab character \tab Game clock at the end of the possession. \cr
-   pos_team_id \tab integer \tab NBA team id of the team in possession. \cr
-}
-
-
-\strong{game} -- one row of game metadata.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab character \tab 10-digit zero-padded game id; joins to calls and stats. \cr
-   game_date \tab Date \tab Game date from the report's local tip-off timestamp. \cr
-   season_type \tab character \tab Season type from the third digit of game_id, e.g. playoffs. \cr
-   home_team_id \tab integer \tab NBA team id of the home team. \cr
-   away_team_id \tab integer \tab NBA team id of the away team. \cr
-   home_team_abbr \tab character \tab Home team three-letter abbreviation. \cr
-   away_team_abbr \tab character \tab Away team three-letter abbreviation. \cr
-   home_team_name \tab character \tab Home team nickname as published in the report. \cr
-   away_team_name \tab character \tab Away team nickname as published in the report. \cr
-   home_score \tab integer \tab Home team final score. \cr
-   away_score \tab integer \tab Away team final score. \cr
-   l2m_comments \tab character \tab Report-level note from the league; NA for almost every game. \cr
-}
-
-
-\strong{stats} -- 3 rows of error-count stats (\code{Calls}, \verb{Errors in Favor},
-\verb{Possessions in Favor}).\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab character \tab 10-digit zero-padded game id; joins to calls and game. \cr
-   stat_name \tab character \tab Statistic: Calls, Errors in Favor or Possessions in Favor. \cr
-   home \tab integer \tab Value of stat_name for the home team. \cr
-   away \tab integer \tab Value of stat_name for the away team. \cr
-}
+(no ASCII folding). \code{game}: one row of game metadata. \code{stats}: 3 rows of
+error-count stats (\code{Calls}, \verb{Errors in Favor}, \verb{Possessions in Favor}).
 }
 \description{
 Retrieves and parses the Last Two Minute officiating report for a single

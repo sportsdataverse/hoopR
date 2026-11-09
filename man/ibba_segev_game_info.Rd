@@ -11,24 +11,10 @@ ibba_segev_game_info(game_id)
 Aviv, 2025-26 round 1): \code{segev_game_id} in ibba_games.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Segev game id (key space: one flat sequence across seasons and competitions); equals the IBBA ibba_games segev_game_id from 2025-26. Not an IBBA game id. \cr
-   start_time \tab POSIXct \tab Scheduled tip-off in Israel local time as a naive datetime (the feed has no offset; it can differ from the IBBA tip_off by minutes). \cr
-   competition \tab character \tab Competition name ('Winner League', 'Winner Cup', 'Women', 'Leumit', 'Noar', 'School', 'Preparation Games'): the reliable men's / women's discriminator. \cr
-   home_team_id \tab integer \tab Home Segev team id (key space: Segev teams, stable across seasons and competitions; Maccabi Tel Aviv = 2). Not an IBBA team-season id. \cr
-   home_team \tab character \tab Home team name in English, upper case; some women's teams end in ' (W)', not all. \cr
-   home_team_local \tab character \tab Home team name in Hebrew (Latin sponsor words kept). \cr
-   home_short_name \tab character \tab Home team short name in English, upper case. \cr
-   away_team_id \tab integer \tab Away Segev team id (key space: Segev teams, stable across seasons and competitions). \cr
-   away_team \tab character \tab Away team name in English, upper case. \cr
-   away_team_local \tab character \tab Away team name in Hebrew (Latin sponsor words kept). \cr
-   away_short_name \tab character \tab Away team short name in English, upper case. \cr
-   periods \tab integer \tab Regulation periods in the game (4). \cr
-   finished \tab logical \tab True once the game is final (the wrappers read finished games only). \cr
-   current_period \tab integer \tab Current period, the last one played for a finished game (5+ means overtime). \cr
-   clock \tab character \tab Game clock remaining as 'mm:ss' ('00:00' for a finished game). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_segev_game_info")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Game header: tip-off, competition, both teams and the game state (scores are in the box

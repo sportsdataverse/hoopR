@@ -12,51 +12,10 @@ season_code, game_code and game_no of kbl_schedule. Only final games are served;
 \code{hoopR_bad_request}.}
 }
 \value{
-A \code{hoopR_data} tibble: Game header of a final game: teams, final score, overtimes, venue, attendance, officials and
-coaches. The columns are always these, in this order (sportsdataverse-py \code{kbl_game}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   gmkey \tab character \tab Game key \verb{S\{seasonCode\}G\{gameCode\}N\{gameNo\}} (e.g. S47G01N49): the id of every \verb{/match/\{gmkey\}} route. \cr
-   glkey \tab character \tab Competition key \verb{S\{seasonCode\}G\{gameCode\}} (e.g. S47G01 = 2025-26 regular season): the id of the /leagues and /league/rank routes. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr
-   season_code \tab integer \tab KBL season code: sequential over every season and D-League edition (2 = 1997-98, 47 = 2025-26); the crosswalk to the sdv END year is in the README. \cr
-   season_name \tab character \tab Season label: 'YYYY-YYYY' for a KBL season (e.g. '2025-2026'), '1997' for the 1997 inaugural season, or the D-League edition name (e.g. '2010KBLWINTER'). \cr
-   season_grade \tab integer \tab Division: 1 = the KBL itself, 2 = the KBL D-League (reserve league). \cr
-   game_code \tab character \tab Competition type within the season (2-digit string; code table in the README and below): 01 regular season, 03 playoffs, 04 final, ... \cr
-   game_no \tab integer \tab Game number within the competition (glkey); the N part of the gmkey. \cr
-   season_category_name \tab character \tab Category name in Korean (regular season, playoffs, championship final, D-League stage 1 / 2, All-Star Game, cups, 'KBL' Cup, 'EASL', 'OPEN MATCH DAY'). \cr
-   game_date \tab Date \tab Game date (KST). \cr
-   week_day \tab character \tab Day of the week in Korean (one Hangul syllable, Monday to Sunday). \cr
-   game_start \tab character \tab Tip-off time, HHMM (KST). \cr
-   game_end \tab character \tab End time, HHMM (KST); '0000' or blanks when not recorded. \cr
-   game_time \tab integer \tab Duration of the game in minutes. \cr
-   home_team_code \tab character \tab Home team code. KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList \code{teamCode}, game \code{tcodeH}/\code{tcodeA}, \code{t} in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (\code{teamCodeD}). \cr
-   away_team_code \tab character \tab Away team code. KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList \code{teamCode}, game \code{tcodeH}/\code{tcodeA}, \code{t} in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (\code{teamCodeD}). \cr
-   home_team_name \tab character \tab Home team short name (Korean, e.g. Goyang Sono). English names: /common/teamList \code{teamNameEn} / \code{teamNameFullEn}, joined on the team code. \cr
-   away_team_name \tab character \tab Away team short name (Korean, e.g. Changwon LG). English names: /common/teamList \code{teamNameEn} / \code{teamNameFullEn}, joined on the team code. \cr
-   home_team_name_full \tab character \tab Home team full name (Korean). \cr
-   away_team_name_full \tab character \tab Away team full name (Korean). \cr
-   home_score \tab integer \tab Home team final points, summed from the period scores (the header carries no totals). \cr
-   away_score \tab integer \tab Away team final points, summed from the period scores (the header carries no totals). \cr
-   overtimes \tab integer \tab Number of overtime periods played (0 for a game decided in regulation). \cr
-   is_started \tab integer \tab 1 when the game has started. Unreliable for old games (0 on finished 1997-2006 games in /match/list). \cr
-   is_ended \tab integer \tab 1 when the game is over. Unreliable: 0 on every finished game through 2005-06 and on some later ones (e.g. S45G01N95's header); the capture treats a past-dated game with scores as final. \cr
-   playing_quarter \tab character \tab Period in progress: 'X' when none (before or after the game), else e.g. 'Q4' or 'EQ1'. Can stay stale after the game (the overtime sample says 'EQ1'). \cr
-   stadium_name \tab character \tab Venue short name (Korean). \cr
-   stadium_name_full \tab character \tab Venue full name (Korean). \cr
-   stadium_name_en \tab character \tab Venue name in English; an empty string, or the Korean name, for some old venues. \cr
-   crowds \tab integer \tab Attendance of the game (spectators). \cr
-   tv \tab character \tab Broadcaster name(s), e.g. 'tvN SPORTS', 'SPOTV2 / SPOTV ON'. \cr
-   tv_code \tab character \tab Broadcaster code(s), comma-separated (e.g. 'T24,T25'); the site uses it instead of \code{tv} from seasonCode 45. \cr
-   detail_url \tab character \tab Path of the game page on www.kbl.or.kr. \cr
-   highlight_url \tab character \tab URL of the game's page on Naver Sports. \cr
-   referee_main \tab character \tab Crew chief's name (officials appear by name only). \cr
-   referees_sub \tab character \tab JSON list of the umpires' names (officials appear by name only). \cr
-   home_manager \tab character \tab Home head coach's name (officials and coaches appear by name only). \cr
-   away_manager \tab character \tab Away head coach's name (officials and coaches appear by name only). \cr
-   home_coaches \tab character \tab JSON list of the home assistant coaches' names (staff appear by name only). \cr
-   away_coaches \tab character \tab JSON list of the away assistant coaches' names (staff appear by name only). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_game")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Game header of a final game: teams, final score, overtimes, venue, attendance, officials and coaches.

@@ -14,65 +14,10 @@ nbl_rosetta_team_stats(season, org = "nbl", limit = NULL)
 \item{limit}{(\emph{integer} default \code{NULL}): Rows to return. Omitted = a page large enough for the whole list (a short page cut by Rosetta's path cache is refused).}
 }
 \value{
-A \code{hoopR_data} tibble (one row per team and period):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   org \tab character \tab Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. \cr
-   assists \tab integer \tab Assists, team season total (in that period on period rows) \cr
-   assists_average \tab double \tab Assists per game. \cr
-   blocks \tab integer \tab Blocks, team season total (in that period on period rows) \cr
-   blocks_average \tab double \tab Blocks per game. \cr
-   defensive_rebounds \tab integer \tab Defensive rebounds, team season total (in that period on period rows) \cr
-   field_goals_attempted \tab integer \tab Field goals attempted, team season total (in that period on period rows) \cr
-   field_goals_attempted_average \tab double \tab Field goals attempted per game. \cr
-   field_goals_made \tab integer \tab Field goals made, team season total (in that period on period rows) \cr
-   field_goals_made_average \tab double \tab Field goals made per game. \cr
-   field_goals_percentage \tab double \tab Field goals made / attempted, a 0-1 FRACTION. \cr
-   fouls \tab integer \tab Fouls committed (personal + technical + others), team season total (in that period on period rows) \cr
-   fouls_average \tab double \tab Fouls committed (personal + technical + others) per game. \cr
-   free_throws_attempted \tab integer \tab Free throws attempted, team season total (in that period on period rows) \cr
-   free_throws_attempted_average \tab double \tab Free throws attempted per game. \cr
-   free_throws_made \tab integer \tab Free throws made, team season total (in that period on period rows) \cr
-   free_throws_made_average \tab double \tab Free throws made per game. \cr
-   free_throws_percentage \tab double \tab Free throws made / attempted, a 0-1 FRACTION. \cr
-   games \tab integer \tab Games played in the season (in the period rows, by the player or team). \cr
-   minutes \tab double \tab Player-minutes played (5 x game minutes) \cr
-   offensive_rebounds \tab integer \tab Offensive rebounds, team season total (in that period on period rows) \cr
-   offensive_rebounds_average \tab double \tab Offensive rebounds per game. \cr
-   period \tab integer \tab Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) \cr
-   personal_fouls_average \tab double \tab Personal fouls per game. \cr
-   points \tab integer \tab Points, team season total (in that period on period rows) \cr
-   points_average \tab double \tab Points per game. \cr
-   rebounds \tab integer \tab Total rebounds, team season total (in that period on period rows) \cr
-   rebounds_average \tab double \tab Total rebounds per game. \cr
-   results_string \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   steals \tab integer \tab Steals, team season total (in that period on period rows) \cr
-   steals_average \tab double \tab Steals per game. \cr
-   three_points_attempted \tab integer \tab Three-point field goals attempted, team season total (in that period on period rows) \cr
-   three_points_attempted_average \tab double \tab Three-point field goals attempted per game. \cr
-   three_points_made \tab integer \tab Three-point field goals made, team season total (in that period on period rows) \cr
-   three_points_made_average \tab double \tab Three-point field goals made per game. \cr
-   three_points_percentage \tab double \tab Three-point field goals made / attempted, a 0-1 FRACTION. \cr
-   turnovers \tab integer \tab Turnovers, team season total (in that period on period rows) \cr
-   turnovers_average \tab double \tab Turnovers per game. \cr
-   two_points_attempted \tab integer \tab Two-point field goals attempted, team season total (in that period on period rows) \cr
-   two_points_attempted_average \tab double \tab Two-point field goals attempted per game. \cr
-   two_points_made \tab integer \tab Two-point field goals made, team season total (in that period on period rows) \cr
-   two_points_made_average \tab double \tab Two-point field goals made per game. \cr
-   two_points_percentage \tab double \tab Two-point field goals made / attempted, a 0-1 FRACTION. \cr
-   team_id \tab character \tab DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. \cr
-   rosetta_team_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the team; routes that take this entity accept it as well as the DataCore id. \cr
-   team_name \tab character \tab Name of the team as Rosetta spells it, e.g. Perth Wildcats. \cr
-   team_code \tab character \tab Team code, e.g. PER (the \code{{team_code}} path value) \cr
-   season_id \tab character \tab DataCore id (UUID v1, Sportradar) of the season; stable across seasons and the id to join on across routes. \cr
-   rosetta_season_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the season; routes that take this entity accept it as well as the DataCore id. \cr
-   season_year \tab integer \tab Rosetta's year of the season: the START year for the NBL and WNBL from 1998-99 (2025 = 2025-26), the calendar year for NBL1 and the 1979-1997 winter seasons. See season_end_year for the sdv key. \cr
-   season_type \tab character \tab Season type: regular (includes finals), preseason, in_season (cups, blitz, exhibition), test. \cr
-   season_competition_division \tab character \tab NBL1 divisions (conference x gender); empty for NBL and WNBL. \cr
-   season_end_year \tab integer \tab sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per team and period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_team_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team season totals and averages by period (0 = whole game, 1-4 quarters, 5 and up overtime).

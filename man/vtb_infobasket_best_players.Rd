@@ -19,38 +19,10 @@ labels follow it.}
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: Player leaders of a season for the first \code{count} leader categories. The columns are always
-these, in this order (sportsdataverse-py \code{vtb_infobasket_best_players}); an empty valid answer raises \code{hoopR_no_data}, a valid
-body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. \cr
-   param_id \tab integer \tab Leader-category id (the \code{param} of the parameter lists). \cr
-   param_name \tab character \tab Leader category name (ParamName), e.g. 'Points'. \cr
-   param_short_name \tab character \tab Leader category short label, e.g. 'Points in a game'. \cr
-   param_label \tab character \tab Leader category label in the requested language (lang). \cr
-   param_group \tab integer \tab Category group; 0 in the samples. \cr
-   rank \tab integer \tab Rank in the leader list. \cr
-   team_id \tab integer \tab Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id. \cr
-   team_short_name_ru \tab character \tab The the team's short name in Russian (as the competition names it). \cr
-   team_short_name_en \tab character \tab The the team's short name in English (as the competition names it). \cr
-   team_name_ru \tab character \tab The the team's name in Russian (as the competition names it). \cr
-   team_name_en \tab character \tab The the team's name in English (as the competition names it). \cr
-   team_region_name_ru \tab character \tab The the team's region or city in Russian (as the competition names it). \cr
-   team_region_name_en \tab character \tab The the team's region or city in English (as the competition names it). \cr
-   person_id \tab integer \tab Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/\{personId\} (players) and /Widget/CoachPage/\{personId\} (coaches). \cr
-   person_last_name_ru \tab character \tab Last name, Russian. \cr
-   person_last_name_en \tab character \tab Last name, English. \cr
-   person_first_name_ru \tab character \tab First name, Russian. \cr
-   person_first_name_en \tab character \tab First name, English. \cr
-   person_full_name_ru \tab character \tab Full name, 'Last First', Russian. \cr
-   person_full_name_en \tab character \tab Full name, 'Last First', English. \cr
-   person_gender \tab integer \tab Person gender: 1 on every sampled (male) person. \cr
-   game_id \tab integer \tab Infobasket GameID of the game (the v2 matches' match_id); global across seasons. \cr
-   game_count \tab integer \tab Games the value is averaged over. \cr
-   res \tab double \tab The leader's value (a per-game average for 'in a game' categories). \cr
-   pre_res \tab character \tab The value as displayed, a string (e.g. '1070' for 10.70 without separator; format unverified). \cr
-   is_same \tab logical \tab True when the row ties the previous one. \cr
-}
+A \code{hoopR_data} tibble with one row per ranked player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_best_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player leaders of a season for the first \code{count} leader categories.

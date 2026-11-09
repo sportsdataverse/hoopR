@@ -23,14 +23,10 @@ Championship, 4 B1 relegation playoffs, 5 all-star, 7 B2 league, 8 B2 playoffs,
 = the league competition of the tab (2 / 7 / 15).}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. \cr
-   tab \tab integer \tab Division tab: 1 = B1, 2 = B2, 3 = B3. \cr
-   event_id \tab integer \tab Competition type code (see event); the page's event filter value. \cr
-   label \tab character \tab Competition label in Japanese (e.g. B1 league, all-star game, B1 Championship). \cr
-   selected \tab logical \tab True for the competition the page was asked for. \cr
-}
+A \code{hoopR_data} tibble with one row per competition type.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "bleague_schedule_events")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{The competitions the B.LEAGUE schedule page offers for one season and division (the

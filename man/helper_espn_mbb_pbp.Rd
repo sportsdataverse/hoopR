@@ -16,7 +16,81 @@ helper_espn_mbb_player_box(resp)
 \item{resp}{Response object from the ESPN MBB game summary endpoint}
 }
 \value{
-For \code{helper_espn_mbb_pbp()}: a tibble with the columns of \link{espn_mbb_game_all_plays_schema}, or \code{NULL}
+A \code{hoopR_data} tibble with one row per play-by-play event.
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab ESPN play id. Character so the 18-digit MBB ids stay exact (a double cannot hold them). \cr
+  sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
+  text \tab character \tab Text description of the play / record. \cr
+  away_score \tab integer \tab Away team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). \cr
+  home_score \tab integer \tab Home team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). \cr
+  scoring_play \tab logical \tab TRUE if the play resulted in points scored. \cr
+  score_value \tab integer \tab Point value of the play (2 / 3 / 1). \cr
+  wallclock \tab character \tab Wallclock. \cr
+  shooting_play \tab logical \tab TRUE if the play was a shooting attempt. \cr
+  type_id \tab integer \tab Type identifier (numeric). \cr
+  type_text \tab character \tab Display text for the type field. \cr
+  period_number \tab integer \tab Numeric period (1-4 for quarters; 5+ for OT). \cr
+  period_display_value \tab character \tab Period display label (e.g. '1st Quarter', 'OT'). \cr
+  clock_display_value \tab character \tab Game clock display string (e.g. '8:32'). \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  coordinate_x_raw \tab numeric \tab X coordinate as returned by the API before any adjustment. \cr
+  coordinate_y_raw \tab numeric \tab Y coordinate as returned by the API before any adjustment. \cr
+  coordinate_x \tab numeric \tab X coordinate on the court (half-court layout). \cr
+  coordinate_y \tab numeric \tab Y coordinate on the court (half-court layout). \cr
+  play_id \tab character \tab Unique play identifier within a game. \cr
+  athlete_id_1 \tab integer \tab Primary athlete identifier (e.g. shooter). \cr
+  athlete_id_2 \tab integer \tab Secondary athlete identifier (e.g. assister / fouler). \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  home_team_mascot \tab character \tab Home team mascot. \cr
+  home_team_name \tab character \tab Home team name. \cr
+  home_team_abbrev \tab character \tab Home team three-letter abbreviation. \cr
+  home_team_logo \tab character \tab Home team logo URL. \cr
+  home_team_logo_dark \tab character \tab Home team logo URL for dark backgrounds. \cr
+  home_team_full_name \tab character \tab Full home team name (e.g. 'Las Vegas Aces'). \cr
+  home_team_color \tab character \tab Home team primary color (hex). \cr
+  home_team_alternate_color \tab character \tab Home team alternate color (hex). \cr
+  home_team_score \tab integer \tab Home team's score. \cr
+  home_team_winner \tab logical \tab TRUE if the home team won this game. \cr
+  home_team_record \tab character \tab Home team's win-loss record. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  away_team_mascot \tab character \tab Away team mascot. \cr
+  away_team_name \tab character \tab Away team name. \cr
+  away_team_abbrev \tab character \tab Away team three-letter abbreviation. \cr
+  away_team_logo \tab character \tab Away team logo URL. \cr
+  away_team_logo_dark \tab character \tab Away team logo URL for dark backgrounds. \cr
+  away_team_full_name \tab character \tab Full away team name (e.g. 'Las Vegas Aces'). \cr
+  away_team_color \tab character \tab Away team primary color (hex). \cr
+  away_team_alternate_color \tab character \tab Away team alternate color (hex). \cr
+  away_team_score \tab integer \tab Away team's score. \cr
+  away_team_winner \tab logical \tab TRUE if the away team won this game. \cr
+  away_team_record \tab character \tab Away team's win-loss record. \cr
+  game_id \tab integer \tab Unique game identifier. \cr
+  season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+  season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+  game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
+  game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
+  game_play_number \tab integer \tab 1-based position of the play in the game's play array. \cr
+  home_timeout_called \tab logical \tab TRUE on a team timeout the home team called (the play's team_id; a play without one, a home team name as a whole word in the text). \cr
+  away_timeout_called \tab logical \tab TRUE on a team timeout the away team called (the play's team_id; a play without one, an away team name as a whole word in the text). \cr
+  half \tab integer \tab Half (the period number; 3+ is overtime). \cr
+  time \tab character \tab Game clock display string, as ESPN ships it. \cr
+  clock_minutes \tab integer \tab Minutes on the game clock. \cr
+  clock_seconds \tab integer \tab Whole seconds on the game clock. \cr
+  lag_period \tab integer \tab Previous play's period number. \cr
+  lead_period \tab integer \tab Next play's period number. \cr
+  lag_half \tab integer \tab Previous play's half. \cr
+  lead_half \tab integer \tab Next play's half. \cr
+  start_period_seconds_remaining \tab integer \tab Seconds left in the period at the start of the play. \cr
+  start_game_seconds_remaining \tab integer \tab Seconds left in regulation at the start of the play (overtime: in the period). \cr
+  end_period_seconds_remaining \tab integer \tab Seconds left in the period at the end of the play (the next play's start; 0 on a period's last play, NA on the game's last). \cr
+  end_game_seconds_remaining \tab integer \tab Seconds left in regulation at the end of the play (the next play's start; NA on the game's last). \cr
+  score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+These are the columns of \code{helper_espn_mbb_pbp()}, which returns \code{NULL}
 when the game has no play-by-play. \code{home_score} / \code{away_score} are rebuilt from the
 scoring plays when that reproduces the header's official final, otherwise they are
 ESPN's per-play values; the last column, \code{score_source} (\code{"rebuilt"} / \code{"espn"}), says which.

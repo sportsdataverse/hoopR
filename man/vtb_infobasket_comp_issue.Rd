@@ -14,28 +14,10 @@ vtb_infobasket_seasons (one extra request per tag, cached).}
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: Stage tree of a season (regular season, playoff, series): the stage ids the standings
-wrappers take. The columns are always these, in this order (sportsdataverse-py \code{vtb_infobasket_comp_issue}); an empty valid
-answer raises \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. \cr
-   season_comp_id \tab integer \tab Season-level Infobasket CompID of the season (50714 = 2025-26): the id every season-keyed route takes. \cr
-   level \tab integer \tab Depth in the stage tree: 1 = a stage of the season, 2 = a series or group below it. \cr
-   comp_id \tab integer \tab Stage CompID (the id vtb_infobasket_standings, _cross_table and _playoff take). \cr
-   parent_comp_id \tab integer \tab CompID of the parent stage (0 at the top). \cr
-   comp_type \tab integer \tab Stage type code: 0 season, regular season or group; 10 playoff container; 5 and 7 playoff series; -5 seen in season lists. Meanings inferred from the stage names, unverified. \cr
-   comp_sort \tab integer \tab Sort order among sibling stages. \cr
-   comp_round \tab integer \tab Playoff round as the number of series in it (4 = quarter-finals, 2 = semi-finals, 1 = final); 0 outside the playoff. \cr
-   comp_short_name_ru \tab character \tab Stage name, Russian. \cr
-   comp_short_name_en \tab character \tab Stage name, English. \cr
-   comp_abc_name_ru \tab character \tab Stage abbreviation ('1/4-1' = quarter-final 1), Russian. \cr
-   comp_abc_name_en \tab character \tab Stage abbreviation ('1/4-1' = quarter-final 1), English. \cr
-   comp_gender \tab integer \tab Competition gender: 0 on every sample (men). \cr
-   comp_state \tab integer \tab Stage state code: 0 or 2 seen (2 on finished stages, but some finished stages show 0); unverified. \cr
-   is_public \tab logical \tab True when the site shows the stage. \cr
-   note_ru \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   note_en \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-}
+A \code{hoopR_data} tibble with one row per stage.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_comp_issue")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Stage tree of a season (regular season, playoff, series): the stage ids the standings wrappers take.

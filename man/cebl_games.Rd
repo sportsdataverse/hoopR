@@ -14,38 +14,10 @@ cebl_games(season, team_id = NULL)
 echo it.}
 }
 \value{
-A \code{hoopR_data} tibble: Schedule and results of one season (regular season and finals), with the Genius match id
-that joins play-by-play and shots; optionally one team's games. An empty valid answer raises \code{hoopR_no_data};
-the columns are always these, in this order (sportsdataverse-py \code{cebl_games}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season of the game: the year of start_time_utc (the calendar year = the sdv END year). \cr
-   game_id \tab integer \tab CEBL game id (its own key space: 568 in 2019, 8 digits from 2025, e.g. 14708701). No route is keyed by it; the Genius match id is in \code{stats_url_en}. \cr
-   genius_match_id \tab integer \tab Genius LiveStats match id parsed from the stats URL (the join to the genius family, organisation CEBL, where play-by-play and shots live). Derived from the URL, not fetched; null when the URL is absent. \cr
-   start_time_utc \tab POSIXct \tab Scheduled tip-off, ISO 8601 in UTC ('2025-05-11T22:00:00Z'). \cr
-   competition \tab character \tab REGULAR (regular season) or FINALS (playoffs). \cr
-   status \tab character \tab Game status. Observed: COMPLETE (final) and CANELLED (sic: cancelled; 1 game in 2025, 2 in 2026). The Stats Hub also knows SCHEDULED, IN_PROGRESS, DELAYED and FINISHED. \cr
-   period \tab integer \tab Last period played when the API sets it (seen only on a cancelled game, which carried period 3); null on a finished game. \cr
-   venue_name \tab character \tab Arena name ('Edmonton EXPO Centre'). \cr
-   home_team_id \tab integer \tab CEBL team id (its own key space; not a Genius id). Joins /teams/ \code{id}, the games' \code{home_team_id} / \code{away_team_id}, \code{team_id} in player rows and the \code{team_id} / \code{vs_team_id} params. A relocated or renamed franchise has a second id: the Stats Hub groups 15+56 (Saskatchewan Rattlers, Saskatoon Mamba), 17+53 (Calgary Surge, Guelph Nighthawks), 19+55 (Brampton, Hamilton Honey Badgers) and 16+54 (Vancouver, Fraser Valley Bandits). The home team. \cr
-   home_team_name \tab character \tab Home team full English name. \cr
-   home_team_score \tab integer \tab Home team final score. On the 3 cancelled games: null, 0 or a partial score; before tip-off unobserved. \cr
-   away_team_id \tab integer \tab CEBL team id (its own key space; not a Genius id). Joins /teams/ \code{id}, the games' \code{home_team_id} / \code{away_team_id}, \code{team_id} in player rows and the \code{team_id} / \code{vs_team_id} params. A relocated or renamed franchise has a second id: the Stats Hub groups 15+56 (Saskatchewan Rattlers, Saskatoon Mamba), 17+53 (Calgary Surge, Guelph Nighthawks), 19+55 (Brampton, Hamilton Honey Badgers) and 16+54 (Vancouver, Fraser Valley Bandits). The away team. \cr
-   away_team_name \tab character \tab Away team full English name. \cr
-   away_team_score \tab integer \tab Away team final score. On the 3 cancelled games: null, 0 or a partial score; before tip-off unobserved. \cr
-   home_team_logo_url \tab character \tab URL of the home team's logo image as the games feed lists it (a team-level asset, the same on every game of that team in the season). \cr
-   home_team_stats_url_en \tab character \tab Home team's cebl.ca stats page (English). \cr
-   home_team_stats_url_fr \tab character \tab Home team's cebl.ca stats page (French). \cr
-   away_team_logo_url \tab character \tab URL of the away team's logo image as the games feed lists it (a team-level asset, the same on every game of that team in the season). \cr
-   away_team_stats_url_en \tab character \tab Away team's cebl.ca stats page (English). \cr
-   away_team_stats_url_fr \tab character \tab Away team's cebl.ca stats page (French). \cr
-   stats_url_en \tab character \tab Genius LiveStats box-score page, \verb{https://fibalivestats.dcd.shared.geniussports.com/u/CEBL/\{matchId\}/}. The segment after \verb{/u/CEBL/} is the Genius match id: the join to genius-livestats/ (org CEBL), whose \code{data/{matchId}/data.json} holds the box score, play-by-play and shot chart. Only match 2600563 is banked there; the others are derived, and cancelled (CANELLED) games carry a filled-in URL whose \code{data.json} is unverified. \cr
-   stats_url_fr \tab character \tab The same Genius LiveStats page in French (\code{.../u/CEBL/{matchId}/index_fr_FR.html}). \cr
-   cebl_stats_url_en \tab character \tab The game page on cebl.ca, \verb{https://www.cebl.ca/game?id=\{matchId\}}: \code{id} is the Genius match id, not this row's \code{id}. \cr
-   cebl_stats_url_fr \tab character \tab The French cebl.ca game page (\verb{https://www.cebl.ca/fr-ca/game?id=\{matchId\}}). \cr
-   tickets_url_en \tab character \tab Ticket-sales page for the game (English). \cr
-   tickets_url_fr \tab character \tab Ticket-sales page for the game (French). \cr
-   broadcast_partner_logo_urls \tab character \tab Logo URLs of the game's broadcasters (TSN+, CEBL+, ...); 2 to 7 per game. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cebl_games")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Schedule and results of one season (regular season and finals), with the Genius match id that joins play-by-play

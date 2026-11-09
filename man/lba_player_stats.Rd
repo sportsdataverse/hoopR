@@ -11,44 +11,10 @@ lba_player_stats(player_id)
 whole career.}
 }
 \value{
-A \code{hoopR_data} tibble: A player's career by championship: per-game averages, single-game highs and totals. The
-columns are always these, in this order (sportsdataverse-py \code{lba_player_stats}); a column the site adds later is appended
-after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab Player id (global: one id for a whole career); the request's player. \cr
-   stat_type \tab character \tab Statistic of the row: avg (per game), max (single-game high) or sum (total). \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   championship_year \tab integer \tab Season START year (2026 = 2026-27); sdv END year = year + 1. \cr
-   championship_position \tab integer \tab Display order of the competition within the season (1 = Regular Season; inferred). \cr
-   championship_name \tab character \tab Competition name (\verb{Regular Season}, \verb{Play Off}, \verb{Coppa Italia}, ...). \cr
-   team_name \tab character \tab Team name in that season, with its sponsor (\verb{Nutribullet Treviso Basket}); changes with the sponsor. \cr
-   quintet \tab integer \tab Per-game average of starts (in the starting five) in that season, competition and team. \cr
-   points \tab double \tab Per-game average of points in that season, competition and team. \cr
-   played_minutes \tab double \tab Per-game average of minutes played in that season, competition and team. \cr
-   played_matches \tab integer \tab Games played in that season, competition and team: a count, the same in the avg, max and sum rows. \cr
-   total_matches \tab integer \tab Team games while the player was listed (a player with 3 of 21 shows 21; inferred) in that season, competition and team: a count, the same in the avg, max and sum rows. \cr
-   done_fouls \tab integer \tab Per-game average of fouls committed in that season, competition and team. \cr
-   suffered_fouls \tab integer \tab Per-game average of fouls drawn in that season, competition and team. \cr
-   shots_2p_realized \tab double \tab Per-game average of 2-point field goals made in that season, competition and team. \cr
-   shots_2p_total \tab integer \tab Per-game average of 2-point field goals attempted in that season, competition and team. \cr
-   slam_dunk \tab integer \tab Per-game average of dunks in that season, competition and team. \cr
-   shots_3p_realized \tab integer \tab Per-game average of 3-point field goals made in that season, competition and team. \cr
-   shots_3p_total \tab integer \tab Per-game average of 3-point field goals attempted in that season, competition and team. \cr
-   free_throws_realized \tab integer \tab Per-game average of free throws made in that season, competition and team. \cr
-   free_throws_total \tab integer \tab Per-game average of free throws attempted in that season, competition and team. \cr
-   offensive_rebound \tab integer \tab Per-game average of offensive rebounds in that season, competition and team. \cr
-   defensive_rebound \tab integer \tab Per-game average of defensive rebounds in that season, competition and team. \cr
-   total_rebound \tab integer \tab Per-game average of total rebounds in that season, competition and team. \cr
-   ball_stop_given \tab integer \tab Per-game average of blocks in that season, competition and team. \cr
-   ball_stop_received \tab integer \tab Per-game average of own shots blocked in that season, competition and team. \cr
-   lost_balls \tab integer \tab Per-game average of turnovers in that season, competition and team. \cr
-   regain_balls \tab integer \tab Per-game average of steals in that season, competition and team. \cr
-   assists \tab integer \tab Per-game average of assists in that season, competition and team. \cr
-   rating_lega \tab integer \tab Per-game average of LBA efficiency rating (\code{valutazione}) in that season, competition and team. \cr
-   rating_oer \tab double \tab Per-game average of OER (points / (FGA + turnovers + FTA / 2)) in that season, competition and team. \cr
-   avg_points \tab double \tab Per-game average of plus-minus, despite the name (see the game-log row, where it equals the box score \code{plus_minus}) in that season, competition and team. \cr
-   aplus_dp \tab integer \tab Per-game average of \code{aplus_dp}, an unverified metric (not plus-minus or assists: Macura 2026-27 has 9 against plus-minus 8 and 3 assists) in that season, competition and team. \cr
-}
+A \code{hoopR_data} tibble with one row per statistic type, season and championship.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_player_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A player's career by championship: per-game averages, single-game highs and totals.

@@ -11,47 +11,10 @@ sportpress_team_player_averages(competition_team_id)
 (e.g. 541 = Antwerp in 2026-27); from \code{\link[=sportpress_competition_teams]{sportpress_competition_teams()}}.}
 }
 \value{
-A \code{hoopR_data} tibble: Per-game averages of each player of a competition team. An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_team_player_averages}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_team_id \tab integer \tab Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. \cr
-   roster_id \tab integer \tab Roster id (key space: sportpress roster entries): one player on one competition team in one season, so a player has a new roster_id for every team and season. player_id is the person. \cr
-   player_id \tab integer \tab Player id (key space: sportpress persons): stable across seasons and teams, distinct from roster_id. Not a Genius or FIBA person id. \cr
-   first_name \tab character \tab Given name of the player as entered in the CMS. \cr
-   last_name \tab character \tab Family name of the player as entered in the CMS. \cr
-   nationality_code \tab character \tab Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining. \cr
-   birth_date \tab Date \tab Date of birth as shown on the public player page; null when unknown. \cr
-   played_games \tab integer \tab Games the player played in the season. \cr
-   games_started \tab integer \tab Games started (a count, not a mean). \cr
-   minute \tab double \tab Minutes played; for a team total, the sum over its players (200 + 25 per overtime). Per-game mean over the games played (fractional). \cr
-   foul \tab double \tab Personal fouls committed. Per-game mean over the games played (fractional). \cr
-   defensive_foul \tab double \tab Fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. Per-game mean over the games played (fractional). \cr
-   dunk_made \tab double \tab Dunks made (a subset of the two-point field goals). Per-game mean over the games played (fractional). \cr
-   dunk_all \tab double \tab Dunks attempted. Per-game mean over the games played (fractional). \cr
-   dunk_percent \tab double \tab Dunk percentage 0-100; 0 when none were attempted. Per-game mean over the games played (fractional). \cr
-   two_point_made \tab double \tab Two-point field goals made. Per-game mean over the games played (fractional). \cr
-   two_point_all \tab double \tab Two-point field goals attempted. Per-game mean over the games played (fractional). \cr
-   two_point_percent \tab double \tab Two-point percentage 0-100. Per-game mean over the games played (fractional). \cr
-   three_point_made \tab double \tab Three-point field goals made. Per-game mean over the games played (fractional). \cr
-   three_point_all \tab double \tab Three-point field goals attempted. Per-game mean over the games played (fractional). \cr
-   three_point_percent \tab double \tab Three-point percentage 0-100. Per-game mean over the games played (fractional). \cr
-   throw_made \tab double \tab All field goals made, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). \cr
-   throw_all \tab double \tab All field goals attempted, two- plus three-pointers (the provider calls them 'throw'). Per-game mean over the games played (fractional). \cr
-   throw_percent \tab double \tab Field-goal percentage 0-100. Per-game mean over the games played (fractional). \cr
-   free_throw_made \tab double \tab Free throws made. Per-game mean over the games played (fractional). \cr
-   free_throw_all \tab double \tab Free throws attempted. Per-game mean over the games played (fractional). \cr
-   free_throw_percent \tab double \tab Free-throw percentage 0-100. Per-game mean over the games played (fractional). \cr
-   offensive_rebound \tab double \tab Offensive rebounds. Per-game mean over the games played (fractional). \cr
-   defensive_rebound \tab double \tab Defensive rebounds. Per-game mean over the games played (fractional). \cr
-   total_rebound \tab double \tab Total rebounds (offensive plus defensive). Per-game mean over the games played (fractional). \cr
-   block \tab double \tab Shots blocked by the player. Per-game mean over the games played (fractional). \cr
-   block_against \tab double \tab Own shots blocked by an opponent. Per-game mean over the games played (fractional). \cr
-   turnover \tab double \tab Turnovers committed. Per-game mean over the games played (fractional). \cr
-   steal \tab double \tab Steals (balls taken from an opponent). Per-game mean over the games played (fractional). \cr
-   assist \tab double \tab Assists (passes leading directly to a made basket). Per-game mean over the games played (fractional). \cr
-   points \tab double \tab Points scored (2 x two-pointers + 3 x three-pointers + free throws). Per-game mean over the games played (fractional). \cr
-   value \tab double \tab Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. Per-game mean over the games played (fractional). \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_team_player_averages")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Per-game averages of each player of a competition team.

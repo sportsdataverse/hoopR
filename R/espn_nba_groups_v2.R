@@ -22,10 +22,7 @@ NULL
 #'
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per group.
-#'
-#'    Columns as documented in the shared [espn_mbb_season_groups_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_season_groups", unit = "group")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -58,10 +55,7 @@ espn_nba_season_groups <- function(season = most_recent_nba_season(),
 #'
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
-#' @return A single-row tibble.
-#'
-#'    Columns as documented in the shared [espn_mbb_season_group_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_season_group", unit = "group")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -95,10 +89,7 @@ espn_nba_season_group <- function(group_id,
 #'
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per child group.
-#'
-#'    Columns as documented in the shared [espn_mbb_season_group_children_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_season_group_children", unit = "child group")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -132,10 +123,7 @@ espn_nba_season_group_children <- function(group_id,
 #'
 #' @param season_type Season-type id (2 = regular (default)).
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per team in the group.
-#'
-#'    Columns as documented in the shared [espn_mbb_season_group_teams_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_season_group_teams", unit = "team in the group")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export

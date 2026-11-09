@@ -10,13 +10,10 @@ sportpress_nationality_codes(season)
 \item{season}{(required) Season END year (2026 = 2025-26), the API's own key; no mapping is applied.}
 }
 \value{
-A \code{hoopR_data} tibble: Distinct player nationality codes of a season (dirty: lower case, pairs, empty). An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{sportpress_nationality_codes}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year the codes were asked for. \cr
-   nationality_code \tab character \tab A distinct nationality code of the season's players, as served (dirty). \cr
-}
+A \code{hoopR_data} tibble with one row per nationality code.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_nationality_codes")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Distinct player nationality codes of a season (dirty: lower case, pairs, empty).

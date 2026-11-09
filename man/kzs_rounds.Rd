@@ -11,13 +11,10 @@ kzs_rounds(competition_id)
 season, e.g. 579 (men's first league 2025/26).}
 }
 \value{
-A \code{hoopR_data} tibble: Number of rounds of each phase of a competition. An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_rounds}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). \cr
-   phase_id \tab integer \tab Competition-phase id. Joins to \verb{competitions[].competitionPhaseId} on matches and \verb{/competitions/\{competitionId\}} \verb{phases[].id}. \cr
-   rounds \tab integer \tab Number of rounds in the phase. \cr
-}
+A \code{hoopR_data} tibble with one row per round.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_rounds")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Number of rounds of each phase of a competition.

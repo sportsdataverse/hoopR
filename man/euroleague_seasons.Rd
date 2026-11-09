@@ -11,28 +11,10 @@ euroleague_seasons(competition_code)
 (see \code{\link[=euroleague_competitions]{euroleague_competitions()}}).}
 }
 \value{
-A \code{hoopR_data} tibble with one row per season:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      name \tab character \tab Display name. \cr
-      code \tab character \tab EuroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). \cr
-      alias \tab character \tab Short display alias. \cr
-      competition_code \tab character \tab Competition code (E = EuroLeague, U = EuroCup; Utf8 join key). \cr
-      year \tab integer \tab Start year of the season. \cr
-      start_date \tab character \tab Start date (ISO 8601). \cr
-      activation_date \tab character \tab Date the season was activated in the engine (ISO 8601). \cr
-      end_date \tab character \tab End date (ISO 8601). \cr
-      winner \tab numeric \tab Winning club of the season (null while in progress). \cr
-      winner_code \tab character \tab Winning club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). \cr
-      winner_name \tab character \tab Winning club: display name. \cr
-      winner_abbreviated_name \tab character \tab Winning club: abbreviated display name. \cr
-      winner_editorial_name \tab character \tab Winning club: editorial (long-form) display name. \cr
-      winner_tv_code \tab character \tab Winning club: three-letter broadcast abbreviation of the club. \cr
-      winner_is_virtual \tab character \tab Winning club: whether the club is a placeholder rather than a real club. \cr
-      winner_images_crest \tab character \tab Winning club: URL of the club crest image. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "euroleague_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the seasons of a competition.}

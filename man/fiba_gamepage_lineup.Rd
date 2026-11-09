@@ -18,19 +18,10 @@ competition.competitionId of any game row (208182 = World Cup 2023, 208722 = Par
 game-page objects \code{game}, \code{playByPlay}, \code{gameDetails}, \code{playersTeamA}, \code{playersTeamB}).}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab FIBA game id (Int64), global across competitions: gdapGameId, the \verb{<gameId>} of a game-page URL. \cr
-   competition_id \tab integer \tab FIBA competition id (Int64) of the game's edition; the comp argument. \cr
-   team_side \tab character \tab A or B: whether the row is the schedule's team A or team B (null when the page does not say). \cr
-   organisation_id \tab integer \tab Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T_\verb{<id>} and the play-by-play oId. NOT the per-competition team_id. \cr
-   player_id \tab integer \tab FIBA person id (Int64), global across competitions and roles: the page's P_\verb{<id>}, play-by-play pId, roster personId and fiba_gdap_roster.player_id. \cr
-   first_name \tab character \tab Given name(s) as registered with FIBA. \cr
-   last_name \tab character \tab Last name as registered with FIBA. \cr
-   jersey \tab character \tab Jersey number as a string. \cr
-   position \tab character \tab Playing position code from the lineup card (PG, SG, SF, PF, C). \cr
-   is_captain \tab logical \tab True for the team captain. \cr
-}
+A \code{hoopR_data} tibble with one row per player in the lineup.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gamepage_lineup")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Lineup card (the players who were registered for the game) of both teams of one FIBA game.

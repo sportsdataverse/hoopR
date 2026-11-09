@@ -10,12 +10,10 @@ lba_pbp_legend(game_id)
 \item{game_id}{(required) Game id (game_id in lba_calendar), e.g. 25602. Global across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: The play-by-play qualifier code table (59 codes) with its Italian labels. The columns are
-always these, in this order (sportsdataverse-py \code{lba_pbp_legend}); a column the site adds later is appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   code \tab integer \tab Qualifier code, the value of action_1_qualifier_code / action_2_qualifier_code on the actions. \cr
-   label \tab character \tab Italian label of the qualifier code, as sent. \cr
-}
+A \code{hoopR_data} tibble with one row per play-by-play code.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_pbp_legend")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The play-by-play qualifier code table (59 codes) with its Italian labels.

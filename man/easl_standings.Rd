@@ -11,47 +11,10 @@ easl_standings(season = NULL)
 easl_seasons and maps it to the DataCore seasonId. Default \code{NULL}: the ACTIVE season.}
 }
 \value{
-A \code{hoopR_data} tibble: Group-stage standings of one season: rank within the pool, record, splits, points and the
-last five results. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{easl_standings}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = EASL 25-26), from the request. \cr
-   season_id \tab character \tab DataCore season UUID v1, from the request (the standings rows carry none). \cr
-   standing_id \tab character \tab Standings row id: a DataCore UUID v1 for the (season, pool, team) row (joins nothing else). \cr
-   position \tab integer \tab Rank within the pool, 1-4. \cr
-   team_id \tab character \tab teamId: DataCore team (entity) UUID v1 (key space: EASL teams, the same id as \code{entityId}; joins /teams, /standings team.id, fixture competitors, box and play-by-play teams). Not a player id. \cr
-   team_name \tab character \tab Display name. Despite the field name this is the English / Latin-script name used on the league site. \cr
-   team_code \tab character \tab Three-letter club code; null for some clubs. \cr
-   pool_id \tab character \tab Pool id: a 30-character hex string (equals a fixture's poolCode). \cr
-   pool_name \tab character \tab Pool name: 'Group A', 'Group B' or 'Group C'. \cr
-   pool_abb \tab character \tab Pool abbreviation: A, B or C. Null on some rows. \cr
-   live \tab logical \tab True while the standing is recomputed live during games (false on all six snapshots checked). \cr
-   latest \tab logical \tab True on the newest standings snapshot (false on all six snapshots checked, including the active season's). \cr
-   game_played \tab integer \tab Games played (group stage only: playoff games are not counted, although lastFiveMatches includes them). \cr
-   game_played_home \tab integer \tab Games played at home. \cr
-   game_played_away \tab integer \tab Games played away. \cr
-   wins \tab integer \tab Wins: all group-stage games on the standings route, all games on the season statistics routes. \cr
-   wins_home \tab integer \tab Wins in the team's home games. \cr
-   wins_away \tab integer \tab Wins in the team's away games. \cr
-   losses \tab integer \tab Losses: all group-stage games on the standings route, all games on the season statistics routes. \cr
-   losses_home \tab integer \tab Losses in the team's home games. \cr
-   losses_away \tab integer \tab Losses in the team's away games. \cr
-   draws \tab integer \tab Draws (0: basketball has none). \cr
-   draws_home \tab integer \tab Home draws (0). \cr
-   draws_away \tab integer \tab Away draws (0). \cr
-   win_percentage \tab double \tab Winning share as a 0-1 ratio rounded to 2 decimals (0.83 = 5-1), NOT a percentage. \cr
-   win_percentage_home \tab double \tab Home winning share, 0-1 ratio. \cr
-   win_percentage_away \tab double \tab Away winning share, 0-1 ratio. \cr
-   points_for \tab integer \tab Points the team scored over its group-stage games (points_against is the points it conceded). \cr
-   points_against \tab integer \tab Points allowed. \cr
-   point_difference \tab integer \tab Points for minus points against. \cr
-   point_difference_home \tab integer \tab Point difference in home games. \cr
-   point_difference_away \tab integer \tab Point difference in away games. \cr
-   steak \tab integer \tab Current winning streak in games (the key is misspelled 'steak'); 0 after a loss. Never negative: losing streaks are not tracked. \cr
-   streak_home \tab integer \tab Current winning streak in home games; 0 after a loss. \cr
-   streak_away \tab integer \tab Current winning streak in away games; 0 after a loss. \cr
-   last_five \tab character \tab Results of the team's last five games as a comma-separated string, most recent first (W win, L loss). \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "easl_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Group-stage standings of one season: rank within the pool, record, splits, points and the last five results.

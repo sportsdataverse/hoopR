@@ -11,31 +11,10 @@ pleague_standings(season)
 two digits of season). The first season is 2020-21 (\code{season=2021}); earlier slugs redirect.}
 }
 \value{
-A \code{hoopR_data} tibble: Regular-season standings of one season: record, scoring averages, home / away and recent
-form. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
-\code{pleague_standings}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2025 = the site's slug '2024-25'): the first year of the slug plus one. \cr
-   season_slug \tab character \tab The site's season slug as printed: the START year, then the END year's last two digits ('2024-25'). \cr
-   rank \tab integer \tab Rank on the page (1 = best); ties are not shared. \cr
-   team_id \tab integer \tab P. LEAGUE+ club id on the site (stable across seasons AND renames): 1 = Taipei Fubon Braves, 2 = Taoyuan Pauian Pilots, 3 = Hsinchu Jko / Toplus Lioneers, 4 = Formosa Taishin Dreamers, 5 = Kaohsiung 17LIVE Steelers, 6 = New Taipei Kings, 7 = TSG Ghosthawks, 8 = Yankey Ark. NOT a Preciser team uuid (that joins through the standings team_uuid). \cr
-   team_zh \tab character \tab Team short name in Traditional Chinese. \cr
-   team_uuid \tab character \tab Preciser team uuid cut from the logo url (photonew.preciser.io/plg/teams/\{uuid\}.png): the join between the site team_id and the vendor's home_id / away_id / team_id. Clubs: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark). \cr
-   team_logo \tab character \tab Team logo url (photonew.preciser.io/plg/teams/\{team uuid\}.png). \cr
-   games_played \tab integer \tab Games played ((Chinese text) GP). \cr
-   wins \tab integer \tab Games won so far this season ((Chinese text) W). \cr
-   losses \tab integer \tab Games lost so far this season ((Chinese text) L). \cr
-   win_pct \tab double \tab Win percentage 0-100 as a whole percent ('68 percent' -> 68.0; (Chinese text) PCT). \cr
-   games_behind \tab double \tab Games behind the leader ((Chinese text)). \cr
-   points_for_avg \tab double \tab Points scored per game ((Chinese text)). \cr
-   points_against_avg \tab double \tab Points allowed per game ((Chinese text)). \cr
-   point_diff_avg \tab double \tab Average point margin ((Chinese text)). \cr
-   home_record \tab character \tab Home record 'W-L' ((Chinese text)). \cr
-   away_record \tab character \tab Away record 'W-L' ((Chinese text)). \cr
-   streak \tab character \tab Current streak: W\{n\} wins or L\{n\} losses ((Chinese text)). \cr
-   last_n \tab integer \tab Games in the 'last games' column ((Chinese text)10(Chinese text) = the last 10), read from the header. \cr
-   last_n_record \tab character \tab Record 'W-L' over the last last_n games ((Chinese text)N(Chinese text)). \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Regular-season standings of one season: record, scoring averages, home / away and recent form.

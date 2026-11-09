@@ -13,22 +13,10 @@ sportality_player_crosswalk(season, game_type = "regular")
 playoffs, Slutspil).}
 }
 \value{
-A \code{hoopR_data} tibble, one row per player. sportsdataverse-py documents no fixed schema for this frame: the
-columns after the first two are the fields the \code{players} map carries (the 2025/26 map is shown);
-birth dates are dropped.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab Genius person id (the map key); joins play-by-play, box scores, stats tables and the genius family. \cr
-   athlete_uuid \tab character \tab Platform athlete uuid (NA where the site has none, common before about 2005); joins rosters and the athlete routes. \cr
-   first_name \tab character \tab Given (first) name(s) of the player. \cr
-   last_name \tab character \tab Family name (surname) of the player. \cr
-   shoots \tab character \tab Shooting hand (empty or NA for every player seen). \cr
-   ep_url \tab character \tab Profile URL on an external site (empty for every player seen). \cr
-   full_name \tab character \tab Full display name of the player. \cr
-   nationality \tab character \tab ISO 3166-1 alpha-2 country code. \cr
-   gender \tab character \tab Gender as recorded by the site (\code{male}, or empty). \cr
-   weight \tab integer \tab Weight in kilograms. \cr
-   height \tab integer \tab Height in centimetres. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_player_crosswalk")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Genius person id -> athlete uuid for every player of a Basketligaen season, from one stats-info

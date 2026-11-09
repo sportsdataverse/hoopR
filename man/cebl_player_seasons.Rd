@@ -24,45 +24,10 @@ career row.}
 \item{competition}{(default \code{NULL}) REGULAR (regular season) or FINALS (the playoffs). \code{NULL} = both.}
 }
 \value{
-A \code{hoopR_data} tibble: One player's per-season rows and career row (totals or per game). An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{cebl_player_seasons}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   mode \tab character \tab Table mode of the request: TOTALS (sums over the selected games) or PER_GAME (per-game averages); the body does not echo it. \cr
-   competition \tab character \tab Competition filter of the request: REGULAR or FINALS; null when both were asked. The body does not echo it. \cr
-   player_id \tab integer \tab CEBL player id: the \code{player_id} of the request, on every row. Joins /players/\{player_id\}/ and \code{id} in the other player rows. Genius LiveStats \code{data.json} carries no person id, so the join to Genius play-by-play is by name, team and jersey number (unverified). \cr
-   season \tab integer \tab Season (calendar year = sdv END year); null on the career row. \cr
-   is_career \tab logical \tab True on the career row (null season): the sum or average over every season and team; false on a per-season row. \cr
-   team_id \tab integer \tab CEBL team id (its own key space; not a Genius id). Joins /teams/ \code{id}, the games' \code{home_team_id} / \code{away_team_id}, \code{team_id} in player rows and the \code{team_id} / \code{vs_team_id} params. A relocated or renamed franchise has a second id: the Stats Hub groups 15+56 (Saskatchewan Rattlers, Saskatoon Mamba), 17+53 (Calgary Surge, Guelph Nighthawks), 19+55 (Brampton, Hamilton Honey Badgers) and 16+54 (Vancouver, Fraser Valley Bandits). The player's team that season (on the career row, his latest). \cr
-   team_name_en \tab character \tab Full English name of the player's team. \cr
-   team_short_name_en \tab character \tab Short English name (city) of the player's team. \cr
-   team_name_fr \tab character \tab Full French name of the player's team. \cr
-   team_short_name_fr \tab character \tab Short French name (city) of the player's team. \cr
-   team_logo_url \tab character \tab Logo URL (icon with the name) of the player's team. \cr
-   played \tab integer \tab Games played (a count in both modes). \cr
-   started \tab integer \tab Games started (a count in both modes). \cr
-   minutes \tab double \tab Minutes played, decimal minutes (not mm:ss). TOTALS: the sum ('1281.7'); PER_GAME: the per-game average ('29.5'). A string. \cr
-   points \tab double \tab Points scored. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   field_goals_made \tab double \tab Field goals made (2- and 3-pointers). TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   field_goals_attempted \tab double \tab Field goals attempted (2- and 3-pointers). TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   field_goal_percentage \tab double \tab Field-goal percentage, 0-100 with 1 decimal ('44.7'): made / attempted over the selected games (the same in both modes). A string. \cr
-   three_points_made \tab double \tab Three-pointers made. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   three_points_attempted \tab double \tab Three-pointers attempted. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   three_point_percentage \tab double \tab Three-point percentage, 0-100 with 1 decimal ('44.7'): made / attempted over the selected games (the same in both modes). A string. \cr
-   free_throws_made \tab double \tab Free throws made. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   free_throws_attempted \tab double \tab Free throws attempted. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   free_throw_percentage \tab double \tab Free-throw percentage, 0-100 with 1 decimal ('44.7'): made / attempted over the selected games (the same in both modes). A string. \cr
-   offensive_rebounds \tab double \tab Offensive rebounds. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   defensive_rebounds \tab double \tab Defensive rebounds. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   rebounds \tab double \tab Total rebounds (offensive + defensive). TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   assists \tab double \tab Assists. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   turn_overs \tab double \tab Turnovers. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   steals \tab double \tab Steals. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   blocks \tab double \tab Shots blocked. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   fouls \tab double \tab Personal fouls committed. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   double_doubles \tab double \tab Double-doubles: games with 10 or more in two of points, rebounds, assists, steals, blocks. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   triple_doubles \tab double \tab Triple-doubles: games with 10 or more in three of those. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   target_scores \tab double \tab Target-score baskets: games in which the player made the basket that reached the Elam Ending target score and ended the game (CEBL has used the Elam Ending since 2020, so 2019 is 0). TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-}
+A \code{hoopR_data} tibble with one row per player-season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cebl_player_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One player's per-season rows and career row (totals or per game).

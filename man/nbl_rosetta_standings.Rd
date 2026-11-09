@@ -14,36 +14,10 @@ nbl_rosetta_standings(season, org = "nbl", limit = NULL)
 \item{limit}{(\emph{integer} default \code{NULL}): Rows to return. Omitted = a page large enough for the whole list (a short page cut by Rosetta's path cache is refused).}
 }
 \value{
-A \code{hoopR_data} tibble (one row per ladder entry):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   org \tab character \tab Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. \cr
-   rosetta_standing_id \tab character \tab Rosetta's id of this ladder row (UUID v4); not an entity id. \cr
-   position \tab integer \tab Ladder position (1 = top) \cr
-   won \tab integer \tab Wins in the season. \cr
-   lost \tab integer \tab Losses in the season. \cr
-   played \tab integer \tab Games played in the season (wins plus losses). \cr
-   points_percentage \tab double \tab points_for / points_against, a RATIO (1.1379 = 113.79 \%) \cr
-   win_percentage \tab double \tab Won / played, a 0-1 FRACTION. \cr
-   last_5 \tab character \tab Results string, W/L oldest first. Despite the name it can hold the whole season (33 characters in NBL 2025-26) \cr
-   streak \tab integer \tab Current streak length (the type is the last letter of last_5) \cr
-   points_for \tab integer \tab Points scored by the team in the season. \cr
-   points_against \tab integer \tab Points conceded. \cr
-   away_losses \tab integer \tab Away losses in the season. \cr
-   away_wins \tab integer \tab Away wins in the season. \cr
-   home_losses \tab integer \tab Home losses in the season. \cr
-   home_wins \tab integer \tab Home wins in the season. \cr
-   team_id \tab character \tab DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. \cr
-   rosetta_team_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the team; routes that take this entity accept it as well as the DataCore id. \cr
-   team_code \tab character \tab Team code, e.g. PER (the \code{{team_code}} path value) \cr
-   team_name \tab character \tab Name of the team as Rosetta spells it, e.g. Perth Wildcats. \cr
-   season_year \tab integer \tab Rosetta's year of the season: the START year for the NBL and WNBL from 1998-99 (2025 = 2025-26), the calendar year for NBL1 and the 1979-1997 winter seasons. See season_end_year for the sdv key. \cr
-   season_type \tab character \tab Season type: regular (includes finals), preseason, in_season (cups, blitz, exhibition), test. \cr
-   season_competition_division \tab character \tab NBL1 divisions (conference x gender); empty for NBL and WNBL. \cr
-   season_end_year \tab integer \tab sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per ladder entry.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Regular-season ladder: position, record, points for and against, home and away splits and form.

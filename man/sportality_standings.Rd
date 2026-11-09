@@ -11,24 +11,10 @@ sportality_standings(ssgt_uuid)
 Directory: \verb{/statistics-v2/layout-info} \verb{seasonSeriesGameTypeTeams[].ssgtUuid}.}
 }
 \value{
-A \code{hoopR_data} tibble: Standings of an ssgt (gameday widget). An empty valid answer raises \code{hoopR_no_data};
-the documented columns come first, in this order (sportsdataverse-py \code{sportality_standings}), then any column the API
-added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Genius team id (Int64): in gameday bodies, an integer in standings and stats tables. \cr
-   team_uuid \tab character \tab Platform team uuid. \cr
-   team_code \tab character \tab Platform team code (HOL, RAN). \cr
-   team_name \tab character \tab Name of the team. \cr
-   rank \tab integer \tab Rank in the standings table, 1 = first. \cr
-   gp \tab integer \tab Number of games played. \cr
-   w \tab integer \tab Number of wins. \cr
-   l \tab integer \tab Number of losses. \cr
-   tp \tab integer \tab League table points (2 per win). \cr
-   for \tab integer \tab Points scored by the team (points for). \cr
-   ga \tab integer \tab Points conceded. \cr
-   plus_minus \tab integer \tab Point difference. \cr
-   strk \tab integer \tab Current streak as a signed integer: positive = wins in a row, negative = losses in a row. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Standings of an ssgt (gameday widget).

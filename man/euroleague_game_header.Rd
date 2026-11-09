@@ -14,56 +14,10 @@ the \code{game_code} column of \code{\link[=euroleague_games]{euroleague_games()
 \code{E2025} (EuroLeague 2025-26), \code{U2025} (EuroCup).}
 }
 \value{
-A \code{hoopR_data} tibble with one row (the game):
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      live \tab logical \tab Whether the game is in progress. \cr
-      round \tab character \tab Round label (e.g. Round 1). \cr
-      date \tab character \tab Game date (venue local, dd/mm/yyyy). \cr
-      hour \tab character \tab Scheduled tip-off time (venue local, HH:MM). \cr
-      stadium \tab character \tab Venue name. \cr
-      capacity \tab character \tab Capacity as reported by the API (equals the box score's attendance on the captured game; semantics unverified). \cr
-      team_a \tab character \tab Display name of team A (= the home side, measured on one game). \cr
-      team_b \tab character \tab Display name of team B (= the away side, measured on one game). \cr
-      code_team_a \tab character \tab EuroLeague club code of team A (= the home side, measured on one game); Utf8 join key. \cr
-      tv_code_a \tab character \tab Three-letter broadcast abbreviation of team A. \cr
-      code_team_b \tab character \tab EuroLeague club code of team B (= the away side, measured on one game); Utf8 join key. \cr
-      tv_code_b \tab character \tab Three-letter broadcast abbreviation of team B. \cr
-      im_a \tab character \tab Crest image file name of team A. \cr
-      im_b \tab character \tab Crest image file name of team B. \cr
-      score_a \tab character \tab Score of team A (= the home side, measured on one game). \cr
-      score_b \tab character \tab Score of team B (= the away side, measured on one game). \cr
-      coach_a \tab character \tab Head coach of team A. \cr
-      coach_b \tab character \tab Head coach of team B. \cr
-      game_time \tab character \tab Elapsed game time (mm:ss). \cr
-      remaining_partial_time \tab character \tab Time remaining in the current period (mm:ss). \cr
-      wid \tab character \tab Live-feed widget identifier of the game. \cr
-      quarter \tab character \tab Current period of the game. \cr
-      foults_a \tab character \tab Team fouls of team A in the current period (sic: the API spells it this way). \cr
-      foults_b \tab character \tab Team fouls of team B in the current period (sic: the API spells it this way). \cr
-      timeouts_a \tab character \tab Timeouts used by team A. \cr
-      timeouts_b \tab character \tab Timeouts used by team B. \cr
-      score_quarter1_a \tab integer \tab Score of team A at the end of quarter 1 (cumulative). \cr
-      score_quarter2_a \tab integer \tab Score of team A at the end of quarter 2 (cumulative). \cr
-      score_quarter3_a \tab integer \tab Score of team A at the end of quarter 3 (cumulative). \cr
-      score_quarter4_a \tab integer \tab Score of team A at the end of quarter 4 (cumulative). \cr
-      score_extra_time_a \tab integer \tab Points scored by team A in overtime (0 when none). \cr
-      score_quarter1_b \tab integer \tab Score of team B at the end of quarter 1 (cumulative). \cr
-      score_quarter2_b \tab integer \tab Score of team B at the end of quarter 2 (cumulative). \cr
-      score_quarter3_b \tab integer \tab Score of team B at the end of quarter 3 (cumulative). \cr
-      score_quarter4_b \tab integer \tab Score of team B at the end of quarter 4 (cumulative). \cr
-      score_extra_time_b \tab integer \tab Points scored by team B in overtime (0 when none). \cr
-      phase \tab character \tab Phase name (Regular Season, Playoffs, ...). \cr
-      phase_reduced_name \tab character \tab Short phase name. \cr
-      competition \tab character \tab Competition name. \cr
-      competition_reduced_name \tab character \tab Short competition name. \cr
-      pcom \tab character \tab Competition code of the live feed (E = EuroLeague, U = EuroCup). \cr
-      referee1 \tab character \tab First referee. \cr
-      referee2 \tab character \tab Second referee. \cr
-      referee3 \tab character \tab Third referee. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "euroleague_game_header")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the header of one game from the live API: teams, codes, coaches, score

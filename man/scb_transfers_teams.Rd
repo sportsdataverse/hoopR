@@ -7,24 +7,10 @@
 scb_transfers_teams()
 }
 \value{
-A \code{hoopR_data} tibble: Per club, the players joining and leaving, one row per move with its direction (BBL
-only). An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{scb_transfers_teams}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab character \tab Club id, a string; equal to \code{season_team_id} in every sample. Joins to \code{scb_team} and \code{scb_season_teams}. \cr
-   direction \tab character \tab \code{joining} or \code{leaving}: whether \code{team_id} is the destination or the source of the move. \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   transfer_date \tab character \tab Date of the transfer, YYYY-MM-DD (the API's \code{sortingDate}). \cr
-   season_player_id \tab character \tab Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move). Joins box-score lines, actions, records and \code{scb_season_player}. \cr
-   real_player_id \tab integer \tab Global person id (integer): the same player across clubs and seasons. Join players across seasons on this. \cr
-   first_name \tab character \tab Player's given name. \cr
-   last_name \tab character \tab Player's family name. \cr
-   position \tab character \tab Position: POINT_GUARD, SHOOTING_GUARD, SMALL_FORWARD, POWER_FORWARD, CENTER. \cr
-   source_team_id \tab character \tab Club id the player left; null when the source is not a league club. \cr
-   source_team_name \tab character \tab Name of the club the player left (the free-text field, else the short club name). \cr
-   destination_team_id \tab character \tab Club id the player joined; null when the destination is not a league club. \cr
-   destination_team_name \tab character \tab Name of the club the player joined (the free-text field, else the short club name). \cr
-}
+A \code{hoopR_data} tibble with one row per move with its direction.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_transfers_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Per club, the players joining and leaving, one row per move with its direction (BBL only).

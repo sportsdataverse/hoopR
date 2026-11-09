@@ -20,24 +20,7 @@ NULL
 #'
 #' @param season Season year (numeric). Defaults to the most recent MBB season.
 #' @param ... Additional arguments; currently unused.
-#' @return A long-format tibble.
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season year. \cr
-#'       league \tab character \tab League slug. \cr
-#'       market_id \tab character \tab ESPN futures-market identifier. \cr
-#'       market_name \tab character \tab Internal market name. \cr
-#'       market_type \tab character \tab Market type code. \cr
-#'       market_display \tab character \tab Human-readable market name. \cr
-#'       provider_id \tab character \tab Sportsbook provider identifier. \cr
-#'       provider_name \tab character \tab Sportsbook provider name. \cr
-#'       team_id \tab character \tab ESPN team id. \cr
-#'       odds_value \tab character \tab American odds for the team. \cr
-#'       team_ref \tab character \tab \verb{$ref} to the per-season team resource. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_mbb_futures", unit = "futures market entry")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export

@@ -15,34 +15,10 @@ two digits of season). The first season is 2020-21 (\code{season=2021}); earlier
 hoopR_no_data.}
 }
 \value{
-A \code{hoopR_data} tibble: Schedule and results of one season and stage (pre-season, regular season, playoffs or
-finals): one row per game, away team first. An empty valid answer is a zero-row tibble with these columns, in
-this order (sportsdataverse-py \code{pleague_schedule}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2025 = the site's slug '2024-25'): the first year of the slug plus one. \cr
-   season_slug \tab character \tab The site's season slug as printed: the START year, then the END year's last two digits ('2024-25'). \cr
-   stage \tab character \tab Stage slug: pre-season ((Chinese text), exhibition games before the season), regular-season ((Chinese text)), playoffs ((Chinese text)) or finals ((Chinese text), the championship series). \cr
-   gid \tab integer \tab P. LEAGUE+ game id on the site: ONE global integer sequence over every stage and season (1-12 = 2020-21 pre-season, 13 = the 2020-21 opener, 197 = the 2022-23 opener, 662 = the 2025-26 opener), with gaps; a row id, not a count. The \{gid\} of /game/\{gid\}. Cross-checked with the page's trackGame() call. \cr
-   date \tab Date \tab Game date, Asia/Taipei (UTC+8) local time. \cr
-   weekday_zh \tab character \tab Weekday as one Chinese character: (Chinese text) Sun, (Chinese text) Mon, (Chinese text) Tue, (Chinese text) Wed, (Chinese text) Thu, (Chinese text) Fri, (Chinese text) Sat. \cr
-   time \tab character \tab Scheduled tip-off 'HH:MM', Asia/Taipei (UTC+8) local time. \cr
-   starred \tab logical \tab True when the date cell carries the site's star icon (a highlighted game). \cr
-   game_label \tab character \tab Game label as printed: 'G01' = game 1 of the stage, 'PLAYOFFS Game1' / 'PLAYOFFS A G1' = playoff game (series A / B), 'FINALS G1' / 'Final Game1' = finals game, '(Chinese text)G1' = game 1 of the first 'stop' ((Chinese text), a round-robin hub weekend; 2020-21). \cr
-   venue_zh \tab character \tab Venue (arena) name in Traditional Chinese. \cr
-   attendance \tab integer \tab Spectators: the first number of the page's 'N / M' seat cell; 0 on future games. \cr
-   capacity \tab integer \tab Seats: the second number of the 'N / M' seat cell (the venue capacity as the site records it); 0 on future games. \cr
-   phase \tab character \tab Row state from the page's CSS class: before_today = the date is past (the score is the result), is_future = not yet played (both scores 0), is_today. A past game printing 0-0 may be a series game that was never played: check the game page's status. \cr
-   away_team_id \tab integer \tab P. LEAGUE+ club id on the site (stable across seasons AND renames): 1 = Taipei Fubon Braves, 2 = Taoyuan Pauian Pilots, 3 = Hsinchu Jko / Toplus Lioneers, 4 = Formosa Taishin Dreamers, 5 = Kaohsiung 17LIVE Steelers, 6 = New Taipei Kings, 7 = TSG Ghosthawks, 8 = Yankey Ark. NOT a Preciser team uuid (that joins through the standings team_uuid). \cr
-   away_name_zh \tab character \tab Away team's name on that date in Traditional Chinese (short or long form; (Chinese text) = Braves, (Chinese text) = Pilots, (Chinese text) = Lioneers, (Chinese text) = Dreamers, (Chinese text) = Steelers, (Chinese text) = Kings, (Chinese text) = Ghosthawks, (Chinese text) = Yankey Ark). Printed names change by season (short and long forms, renames): key on the id, not the name. \cr
-   away_name_en \tab character \tab Away team's English name on that date; renames change it. Null on 2020-21 game pages (no English name is printed). \cr
-   away_logo \tab character \tab Away team logo url as printed by the page: protocol-relative ('//d36fypkbmmogz6.cloudfront.net/upload/p_team/logo_\{team\}_\{epoch\}.png'); some game pages print a malformed 'https:////d36...'. The trailing number is the upload time. \cr
-   away_score \tab integer \tab Away team's final points (0 on a future game). \cr
-   home_team_id \tab integer \tab P. LEAGUE+ club id on the site (stable across seasons AND renames): 1 = Taipei Fubon Braves, 2 = Taoyuan Pauian Pilots, 3 = Hsinchu Jko / Toplus Lioneers, 4 = Formosa Taishin Dreamers, 5 = Kaohsiung 17LIVE Steelers, 6 = New Taipei Kings, 7 = TSG Ghosthawks, 8 = Yankey Ark. NOT a Preciser team uuid (that joins through the standings team_uuid). \cr
-   home_name_zh \tab character \tab Home team's name on that date in Traditional Chinese (short or long form). Printed names change by season (short and long forms, renames): key on the id, not the name. \cr
-   home_name_en \tab character \tab Home team's English name on that date; renames change it. Null on 2020-21 game pages (no English name is printed). \cr
-   home_logo \tab character \tab Home team logo url as printed by the page: protocol-relative ('//d36fypkbmmogz6.cloudfront.net/upload/p_team/logo_\{team\}_\{epoch\}.png'); some game pages print a malformed 'https:////d36...'. The trailing number is the upload time. \cr
-   home_score \tab integer \tab Home team's final points (0 on a future game). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_schedule")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Schedule and results of one season and stage (pre-season, regular season, playoffs or finals): one row per game,

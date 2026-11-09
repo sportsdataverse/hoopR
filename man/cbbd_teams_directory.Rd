@@ -12,29 +12,11 @@ cbbd_teams_directory(season = most_recent_mbb_season())
 \code{most_recent_mbb_season()}.}
 }
 \value{
-A named list of two \code{hoopR_data} tibbles, \code{teams} and \code{conferences}.
-Both carry the season as attributes: \code{season} (integer) and
-\code{season_label} (character, the upstream season label).
-
-\strong{teams: one row per team}\tabular{lll}{
-   col_name \tab type \tab description \cr
-   id \tab integer \tab CollegeBasketballData team id. \cr
-   source_id \tab character \tab Source (ESPN) team id. \cr
-   school \tab character \tab School name. \cr
-   mascot \tab character \tab Team mascot. \cr
-   abbreviation \tab character \tab Team abbreviation. \cr
-   display_name \tab character \tab Full display name (school and mascot). \cr
-   short_display_name \tab character \tab Short display name. \cr
-   conference_id \tab integer \tab Conference id for the season; joins to \code{id} in \code{conferences}. \cr
-}
-
-
-\strong{conferences: one row per conference}\tabular{lll}{
-   col_name \tab type \tab description \cr
-   id \tab integer \tab Conference id. \cr
-   name \tab character \tab Conference name. \cr
-   abbreviation \tab character \tab Conference abbreviation. \cr
-}
+A named list of \code{hoopR_data} tibbles: \code{teams}, \code{conferences}.
+Their column names and types are in \link{return_columns}, e.g.
+\code{subset(return_columns, fn == "cbbd_teams_directory")}, and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns}
+article.
 }
 \description{
 \strong{Get the full team directory and conference metadata for a season from the CollegeBasketballData API.}

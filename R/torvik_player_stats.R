@@ -18,50 +18,7 @@
 #' the documented names cannot be placed reliably.
 #' @param year (*integer* required): Season, in 4-digit ending-year format
 #'   (e.g. `2024`). Defaults to `most_recent_mbb_season()`.
-#' @return A `hoopR_data` tibble with one row per player (key columns shown):
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       player_name \tab character \tab Player name. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conf \tab character \tab Conference abbreviation. \cr
-#'       games \tab integer \tab Games played. \cr
-#'       min_pct \tab numeric \tab Percentage of available minutes played. \cr
-#'       o_rtg \tab numeric \tab Offensive rating (points produced per 100 poss). \cr
-#'       usage \tab numeric \tab Usage rate. \cr
-#'       e_fg \tab numeric \tab Effective field goal percentage. \cr
-#'       ts_pct \tab numeric \tab True shooting percentage. \cr
-#'       orb_pct \tab numeric \tab Offensive rebound percentage. \cr
-#'       drb_pct \tab numeric \tab Defensive rebound percentage. \cr
-#'       ast_pct \tab numeric \tab Assist percentage. \cr
-#'       to_pct \tab numeric \tab Turnover percentage. \cr
-#'       ft_pct \tab numeric \tab Free-throw percentage. \cr
-#'       two_p_pct \tab numeric \tab Two-point field goal percentage. \cr
-#'       three_p_pct \tab numeric \tab Three-point field goal percentage. \cr
-#'       blk_pct \tab numeric \tab Block percentage. \cr
-#'       stl_pct \tab numeric \tab Steal percentage. \cr
-#'       ftr \tab numeric \tab Free-throw rate. \cr
-#'       class \tab character \tab Class (Fr/So/Jr/Sr). \cr
-#'       height \tab character \tab Listed height. \cr
-#'       porpag \tab numeric \tab Points over replacement per adjusted game. \cr
-#'       adj_oe \tab numeric \tab Adjusted offensive efficiency. \cr
-#'       year \tab integer \tab Season (4-digit ending-year). \cr
-#'       player_id \tab integer \tab Bart Torvik player id. \cr
-#'       hometown \tab character \tab Player hometown. \cr
-#'       bpm \tab numeric \tab Box plus/minus. \cr
-#'       obpm \tab numeric \tab Offensive box plus/minus. \cr
-#'       dbpm \tab numeric \tab Defensive box plus/minus. \cr
-#'       role \tab character \tab Bart Torvik player role/position label. \cr
-#'       pts \tab numeric \tab Points per game. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'   Additional made/attempt splits (`ftm`/`fta`, `two_pm`/`two_pa`,
-#'   `three_pm`/`three_pa`), rim/mid/dunk shooting splits, defensive ratings
-#'   (`drtg`, `adrtg`, `stops`), and game-box averages (`oreb`, `dreb`, `ast`,
-#'   `stl`, `blk`) are also returned, followed by any undocumented trailing
-#'   fields as `v68`, `v69`, and so on.
-#'
+#' @eval .returns_rd("torvik_player_stats", inline = FALSE, unit = "player")
 #' @keywords Torvik
 #' @importFrom data.table fread
 #' @importFrom janitor clean_names

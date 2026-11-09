@@ -15,25 +15,7 @@ NULL
 #'
 #' @param coach_id ESPN coach identifier (character or numeric).
 #' @param ... Additional arguments; currently unused.
-#' @return A single-row tibble.
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       coach_id \tab character \tab ESPN coach identifier. \cr
-#'       uid \tab character \tab ESPN UID string. \cr
-#'       first_name \tab character \tab First name. \cr
-#'       last_name \tab character \tab Last name. \cr
-#'       date_of_birth \tab character \tab Date of birth (ISO 8601). \cr
-#'       birth_city \tab character \tab Birth city. \cr
-#'       birth_state \tab character \tab Birth state / region. \cr
-#'       n_career_records \tab integer \tab Count of career-records entries. \cr
-#'       n_coach_seasons \tab integer \tab Count of seasons coached. \cr
-#'       college_ref \tab character \tab \verb{$ref} to the coach's college. \cr
-#'       team_ref \tab character \tab \verb{$ref} to the coach's current team. \cr
-#'       league \tab character \tab League slug (\code{"nba"}). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_nba_coach", unit = "coach")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export

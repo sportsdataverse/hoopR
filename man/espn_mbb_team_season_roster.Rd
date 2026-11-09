@@ -17,13 +17,29 @@ espn_nba_team_season_roster(team_id, season = most_recent_nba_season(), ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per athlete on the season roster.
+A \code{hoopR_data} tibble with one row per athlete on the season roster.
 
-Columns as documented in the shared \link{espn_mbb_team_season_roster_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  team_id \tab character \tab ESPN team id. \cr
+  season \tab integer \tab Season year. \cr
+  athlete_id \tab character \tab ESPN athlete id. \cr
+  ref \tab character \tab \code{$ref} URL to athlete-in-season detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per athlete on the season roster.
+A \code{hoopR_data} tibble with one row per athlete on the season roster.
 
-Columns as documented in the shared \link{espn_mbb_team_season_roster_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  team_id \tab character \tab ESPN team id. \cr
+  season \tab integer \tab Season year. \cr
+  athlete_id \tab character \tab ESPN athlete id. \cr
+  ref \tab character \tab \code{$ref} URL to athlete-in-season detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Returns the per-season team roster as a tibble of athlete IDs from

@@ -15,74 +15,10 @@ api.basketball-bundesliga.de) or \code{dbbl} (women, Toyota Damen-Basketball-Bun
 api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).}
 }
 \value{
-A \code{hoopR_data} tibble: Box score of a finished game: one row per team, with the head coach and the team
-line. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{scb_game_teams}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   game_id \tab character \tab Game id, a string. Joins to \verb{/games/\{gameId\}}. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the sdv key; the API's \code{season_id} plus one. \cr
-   side \tab character \tab \code{home} or \code{guest} (the away side), for the team the row belongs to. \cr
-   team_id \tab character \tab Club id; equal to \code{seasonTeamId} in every sample. Joins to \verb{/teams/\{teamId\}}. \cr
-   head_coach_name \tab character \tab Name of the team's head coach. \cr
-   status \tab character \tab Game status: PRE (scheduled), LIVE, POST (ended, not yet official) or OFFICIAL (final). \cr
-   scheduled_time \tab character \tab Scheduled tip-off, ISO 8601 UTC. \cr
-   season_team_id \tab character \tab Season-team id; equal to the club \code{teamId} in every sample (BBL 2005-2026, DBBL 2024-2026). \cr
-   season_id \tab integer \tab Season, START year (2026 = 2026-27). \cr
-   team_name \tab character \tab Team name as listed that season (sponsor names included, e.g. 'EWE Baskets Oldenburg'). \cr
-   team_tlc \tab character \tab Three-letter club code. \cr
-   competition \tab character \tab Competition: BBL, BBL_CUP (Pokal), ALLSTAR, CHAMPIONS_CUP on the BBL host; DBBL, DBBL_CUP on the DBBL host. \cr
-   stage \tab character \tab Stage: MAIN_ROUND (Hauptrunde, regular season), PLAYINS, FIRST_ROUND, SECOND_ROUND, ROUND_OF_16 (Achtelfinale), ROUND_OF_8 (Viertelfinale), SEMI_FINALS, FINALS, THIRD_PLACE_GAME, QUALIFICATION, GROUP_STAGE. \cr
-   seconds_played \tab integer \tab The team's playing time in SECONDS in the game (players plus the team line) (12000 = 5 x 40 min). \cr
-   points \tab integer \tab The team's points in the game (players plus the team line). \cr
-   two_point_shots_made \tab integer \tab The team's 2-point field goals made in the game (players plus the team line). \cr
-   two_point_shots_attempted \tab integer \tab The team's 2-point field goals attempted in the game (players plus the team line). \cr
-   two_point_shot_success_percent \tab double \tab The team's 2-point field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. \cr
-   three_point_shots_made \tab integer \tab The team's 3-point field goals made in the game (players plus the team line). \cr
-   three_point_shots_attempted \tab integer \tab The team's 3-point field goals attempted in the game (players plus the team line). \cr
-   three_point_shot_success_percent \tab double \tab The team's 3-point field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. \cr
-   field_goals_made \tab integer \tab The team's field goals made in the game (players plus the team line). \cr
-   field_goals_attempted \tab integer \tab The team's field goals attempted in the game (players plus the team line). \cr
-   field_goals_success_percent \tab double \tab The team's field-goal percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. \cr
-   free_throws_made \tab integer \tab The team's free throws made in the game (players plus the team line). \cr
-   free_throws_attempted \tab integer \tab The team's free throws attempted in the game (players plus the team line). \cr
-   free_throws_success_percent \tab double \tab The team's free-throw percentage in the game (players plus the team line), 0-100 (one decimal); 0 when no attempts. \cr
-   offensive_rebounds \tab integer \tab The team's offensive rebounds in the game (players plus the team line). \cr
-   defensive_rebounds \tab integer \tab The team's defensive rebounds in the game (players plus the team line). \cr
-   total_rebounds \tab integer \tab The team's rebounds (offensive + defensive) in the game (players plus the team line). \cr
-   assists \tab integer \tab The team's assists in the game (players plus the team line). \cr
-   steals \tab integer \tab The team's steals in the game (players plus the team line). \cr
-   turnovers \tab integer \tab The team's turnovers in the game (players plus the team line). \cr
-   blocks \tab integer \tab The team's blocked shots in the game (players plus the team line). \cr
-   fouls_committed \tab integer \tab The team's fouls committed in the game (players plus the team line). \cr
-   efficiency \tab integer \tab The team's efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score) in the game (players plus the team line). \cr
-   plus_minus \tab integer \tab The team's point margin in the game. \cr
-   team_line_seconds_played \tab integer \tab Team-line playing time in SECONDS (not credited to a player). \cr
-   team_line_points \tab integer \tab Team-line points (not credited to a player). \cr
-   team_line_two_point_shots_made \tab integer \tab Team-line 2-point field goals made (not credited to a player). \cr
-   team_line_two_point_shots_attempted \tab integer \tab Team-line 2-point field goals attempted (not credited to a player). \cr
-   team_line_two_point_shot_success_percent \tab double \tab Team-line 2-point field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. \cr
-   team_line_three_point_shots_made \tab integer \tab Team-line 3-point field goals made (not credited to a player). \cr
-   team_line_three_point_shots_attempted \tab integer \tab Team-line 3-point field goals attempted (not credited to a player). \cr
-   team_line_three_point_shot_success_percent \tab double \tab Team-line 3-point field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. \cr
-   team_line_field_goals_made \tab integer \tab Team-line field goals made (not credited to a player). \cr
-   team_line_field_goals_attempted \tab integer \tab Team-line field goals attempted (not credited to a player). \cr
-   team_line_field_goals_success_percent \tab double \tab Team-line field-goal percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. \cr
-   team_line_free_throws_made \tab integer \tab Team-line free throws made (not credited to a player). \cr
-   team_line_free_throws_attempted \tab integer \tab Team-line free throws attempted (not credited to a player). \cr
-   team_line_free_throws_success_percent \tab double \tab Team-line free-throw percentage (not credited to a player), 0-100 (one decimal); 0 when no attempts. \cr
-   team_line_offensive_rebounds \tab integer \tab Team-line offensive rebounds (not credited to a player). \cr
-   team_line_defensive_rebounds \tab integer \tab Team-line defensive rebounds (not credited to a player). \cr
-   team_line_total_rebounds \tab integer \tab Team-line rebounds (offensive + defensive) (not credited to a player). \cr
-   team_line_assists \tab integer \tab Team-line assists (not credited to a player). \cr
-   team_line_steals \tab integer \tab Team-line steals (not credited to a player). \cr
-   team_line_turnovers \tab integer \tab Team-line turnovers (not credited to a player). \cr
-   team_line_blocks \tab integer \tab Team-line blocked shots (not credited to a player). \cr
-   team_line_fouls_committed \tab integer \tab Team-line fouls committed (not credited to a player). \cr
-   team_line_efficiency \tab integer \tab Team-line efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score) (not credited to a player). \cr
-   team_line_plus_minus \tab integer \tab Team-line plus-minus: the team line has no court time, so this is not a margin. \cr
-   field_goals_recomputed \tab logical \tab True when the API's field-goal totals disagreed with its 2-point plus 3-point parts (2005-06 box scores) and were recomputed from the parts. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_game_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Box score of a finished game: one row per team, with the head coach and the team line.

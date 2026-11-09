@@ -33,22 +33,22 @@ the data into a database.}
 \item{tablename}{The name of the data table within the database}
 }
 \value{
-Returns a \code{hoopR_data} tibble with one row per team-season.
+A \code{hoopR_data} tibble with one row per team-season.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League key: \code{mbb} or \code{nba}. \cr
-      season \tab integer \tab Season (ending year; 2025 = 2024-25). \cr
-      team_id \tab character \tab ESPN team id. \cr
-      team_id_source \tab character \tab Id system of \code{team_id}: \code{espn}. \cr
-      team_name \tab character \tab Team name as of that season. \cr
-      subdivision_id \tab character \tab SDV group id of the subdivision (\code{mbb:d1}); \code{NA} for the NBA. \cr
-      conference_id \tab character \tab SDV group id of the conference. \cr
-      division_id \tab character \tab SDV group id of the division; \code{NA} where the league or conference had none. \cr
-      source \tab character \tab Source the membership came from: \code{espn_standings}, \code{espn_core_groups} or \code{kenpom} (MBB); \code{nba_stats} or \code{curated} (NBA). \cr
-      sources_agree \tab logical \tab Whether a second source agrees; \code{NA} when only one source covers the season. \cr
-      notes \tab character \tab Membership caveats. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League key: \code{mbb} or \code{nba}. \cr
+  season \tab integer \tab Season (ending year; 2025 = 2024-25). \cr
+  team_id \tab character \tab ESPN team id. \cr
+  team_id_source \tab character \tab Id system of \code{team_id}: \code{espn}. \cr
+  team_name \tab character \tab Team name as of that season. \cr
+  subdivision_id \tab character \tab SDV group id of the subdivision (\code{mbb:d1}); \code{NA} for the NBA. \cr
+  conference_id \tab character \tab SDV group id of the conference. \cr
+  division_id \tab character \tab SDV group id of the division; \code{NA} where the league or conference had none. \cr
+  source \tab character \tab Source the membership came from: \code{espn_standings}, \code{espn_core_groups} or \code{kenpom} (MBB); \code{nba_stats} or \code{curated} (NBA). \cr
+  sources_agree \tab logical \tab Whether a second source agrees; \code{NA} when only one source covers the season. \cr
+  notes \tab character \tab Membership caveats. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

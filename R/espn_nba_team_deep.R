@@ -25,10 +25,7 @@ NULL
 #' @param season_type Season-type id. ESPN populates odds-records mostly
 #'   under `season_type = 0` (all-types aggregate), so that is the default.
 #' @param ... Additional arguments; currently unused.
-#' @return A long tibble with one row per (category x stat).
-#'
-#'    Columns as documented in the shared [espn_mbb_team_odds_records_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_team_odds_records", unit = "category and statistic")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -63,23 +60,7 @@ espn_nba_team_odds_records <- function(team_id,
 #' @param team_id ESPN team identifier.
 #' @param season Season year. Defaults to most recent NBA season.
 #' @param ... Additional arguments; currently unused.
-#' @return A long tibble with one row per athlete depth entry.
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       league \tab character \tab League slug. \cr
-#'       team_id \tab character \tab ESPN team id. \cr
-#'       season \tab integer \tab Season year. \cr
-#'       depthchart_id \tab character \tab Depth chart id (typically "1"). \cr
-#'       depthchart_name \tab character \tab Depth chart name. \cr
-#'       position \tab character \tab Position code (\code{pg}/\code{sg}/\code{sf}/\code{pf}/\code{c}). \cr
-#'       rank \tab integer \tab Depth rank (1 = starter). \cr
-#'       athlete_id \tab character \tab ESPN athlete id. \cr
-#'       athlete_ref \tab character \tab \verb{$ref} URL to athlete-in-season. \cr
-#'       position_ref \tab character \tab \verb{$ref} URL to position resource. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_nba_team_depthchart", unit = "athlete depth entry")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -115,10 +96,7 @@ espn_nba_team_depthchart <- function(team_id,
 #'
 #' @param team_id ESPN team identifier.
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per athlete on the season roster.
-#'
-#'    Columns as documented in the shared [espn_mbb_team_season_roster_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_team_season_roster", unit = "athlete on the season roster")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -152,10 +130,7 @@ espn_nba_team_season_roster <- function(team_id,
 #'
 #' @param coach_id ESPN coach identifier.
 #' @param ... Additional arguments; currently unused.
-#' @return A single-row tibble.
-#'
-#'    Columns as documented in the shared [espn_mbb_coach_season_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_coach_season", unit = "coach-season")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export

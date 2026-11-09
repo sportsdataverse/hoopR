@@ -7,11 +7,10 @@
 pleague_team_crosswalk()
 }
 \value{
-A \code{hoopR_data} tibble of eight rows (sportsdataverse-py \code{pleague_team_crosswalk}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab P. LEAGUE+ site team id (1-8), stable across seasons and renames. \cr
-   team_uuid \tab character \tab Preciser team uuid of the same club (team_uuid of the pleague_preciser frames). \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_team_crosswalk")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 P. LEAGUE+ site \code{team_id} (1-8) to Preciser team uuid, for every club ever listed. The site's \code{team_id} is

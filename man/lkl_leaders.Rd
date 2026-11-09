@@ -11,25 +11,10 @@ lkl_leaders(game_id)
 before 2018-19. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per team, category and ranked player. \code{category} is points, total_rebounds,
-assists, efficiency, steals or blocks; \code{category_label} the site's Lithuanian label. \code{rank} 1 is the category leader
-and 2 and up are the runners-up, in the order the site lists them (up to 4 a side). \code{player_slug} is the site's key
-and \code{player_id} is resolved through the game roster the runtime stamps (null on a body without the stamp). A body
-without leaders gives a zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab lkl.lt game id (key space: LKL games; the \code{{gameId}} of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under \verb{_request}). \cr
-   category \tab character \tab Leader category: points, total_rebounds, assists, efficiency, steals or blocks. \cr
-   category_label \tab character \tab Category label in Lithuanian ('Pelnomi taskai' = points scored, 'Naudingumas' = efficiency rating). \cr
-   team_side \tab character \tab Side of the game the row belongs to: home or away (the game page's teams_info side; the box score, leaders and plays say home / away, and gameStatistics is keyed by team id so the runtime supplies the side). \cr
-   team_id \tab integer \tab lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body. \cr
-   rank \tab integer \tab Place in the team's category list: 1 = the category leader, 2 and up = the runners-up in the order the site lists them (up to 4). \cr
-   player \tab character \tab Player name as the site prints it in this route (the box score short form 'I. Surname', other routes the full name). \cr
-   player_slug \tab character \tab lkl.lt player slug (key space: lkl.lt persons; the \code{{slug}} of lkl.lt/zaidejai/\code{{slug}}, stable across seasons). Join key to lkl_game_players.slug. \cr
-   player_id \tab integer \tab lkl.lt player id (key space: lkl.lt persons, stable across seasons). Resolved from the player slug through the game roster the runtime stamps from the game page; null on a bare body or a slug the roster lacks. \cr
-   value \tab integer \tab The player's count in the row's category. \cr
-}
+A \code{hoopR_data} tibble with one row per statistic, team and rank.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lkl_leaders")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Leaders tab: each team's top players in points, rebounds, assists, efficiency, steals and blocks.

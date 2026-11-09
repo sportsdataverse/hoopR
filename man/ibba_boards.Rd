@@ -11,14 +11,10 @@ ibba_boards(season)
 unchanged.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   board_id \tab integer \tab Competition (board) id: 5 league, 10 cup, 16 / 26 / 17 playoff quarterfinals / semifinals / final, 33 play-in, 34 Supercup, 11 the 2004-05 semifinal group; 1001+ external competitions (1001 EuroLeague, 1003 Champions League, 1005 pre-season, 1008 EuroBasket, 1012 EuroCup, 1013 State Cup). \cr
-   season \tab integer \tab Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. \cr
-   board_name_he \tab character \tab Competition name in Hebrew, HTML-unescaped. \cr
-   board_title_he \tab character \tab Sponsor-branded competition name in Hebrew (the Hebrew for 'Winner League'). \cr
-   category_he \tab character \tab Competition format in Hebrew: the Hebrew words for table, knockout or series. \cr
-}
+A \code{hoopR_data} tibble with one row per board.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_boards")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Competitions (boards) of a season: league, cup, playoff rounds, play-in, Supercup.}

@@ -20,30 +20,10 @@ labels follow it.}
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: Technical fouls and games of every coach of a club in one season. The columns are always
-these, in this order (sportsdataverse-py \code{vtb_infobasket_team_coach_stats}); an empty valid answer raises \code{hoopR_no_data}, a
-valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. \cr
-   team_id \tab integer \tab Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id. \cr
-   person_id \tab integer \tab Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/\{personId\} (players) and /Widget/CoachPage/\{personId\} (coaches). \cr
-   player_number \tab integer \tab Coach order (1 head coach). \cr
-   display_number \tab character \tab Coach order (1 head coach). \cr
-   is_active \tab logical \tab True while the person is on the current roster. \cr
-   active_status \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   foul_c \tab integer \tab Technical fouls on the head coach for his own conduct (scoresheet 'C'). \cr
-   foul_b \tab integer \tab Technical fouls on the head coach for bench conduct (scoresheet 'B'). \cr
-   foul_d \tab integer \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   foul \tab integer \tab Personal fouls committed. The wire's null is 0 here (null counts are filled). \cr
-   game_count \tab integer \tab Games in the totals (the whole competition, all stages, for the season-level CompID). \cr
-   person_last_name_ru \tab character \tab Last name, Russian. \cr
-   person_last_name_en \tab character \tab Last name, English. \cr
-   person_first_name_ru \tab character \tab First name, Russian. \cr
-   person_first_name_en \tab character \tab First name, English. \cr
-   person_full_name_ru \tab character \tab Full name, 'Last First', Russian. \cr
-   person_full_name_en \tab character \tab Full name, 'Last First', English. \cr
-   person_gender \tab integer \tab Person gender: 1 on every sampled (male) person. \cr
-}
+A \code{hoopR_data} tibble with one row per coach of the club.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_team_coach_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Technical fouls and games of every coach of a club in one season.

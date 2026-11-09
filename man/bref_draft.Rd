@@ -11,27 +11,10 @@ bref_draft(season = most_recent_nba_season())
 \code{most_recent_nba_season()}.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per draft pick (career columns
-shown -- column names are Basketball-Reference \code{data-stat} keys):
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      pick_overall \tab integer \tab Overall draft pick number. \cr
-      round \tab integer \tab Draft round. \cr
-      team \tab character \tab Drafting team abbreviation. \cr
-      player \tab character \tab Player name. \cr
-      college_name \tab character \tab College / pre-draft team. \cr
-      seasons \tab integer \tab NBA seasons played. \cr
-      g \tab integer \tab Career games. \cr
-      pts \tab numeric \tab Career points. \cr
-      trb \tab numeric \tab Career total rebounds. \cr
-      ast \tab numeric \tab Career assists. \cr
-      ws \tab numeric \tab Career win shares. \cr
-      bpm \tab numeric \tab Career box plus/minus. \cr
-      vorp \tab numeric \tab Career value over replacement player. \cr
-      season \tab integer \tab Draft year (echoes the \code{season} argument). \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per draft pick.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "bref_draft")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get NBA draft results with career stats from

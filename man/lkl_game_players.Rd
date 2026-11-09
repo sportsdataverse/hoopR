@@ -11,20 +11,10 @@ lkl_game_players(game_id)
 before 2018-19. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per rostered player. \code{player_id} (lkl.lt persons, stable across seasons) and
-\code{slug} are the two keys: this frame is the slug -> id map for the box score, leaders and play-by-play, which carry
-the slug only. \code{jersey} is a string. An empty or unrecognised input gives a zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab lkl.lt game id (key space: LKL games; the \code{{gameId}} of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under \verb{_request}). \cr
-   team_side \tab character \tab Side of the game the row belongs to: home or away (the game page's teams_info side; the box score, leaders and plays say home / away, and gameStatistics is keyed by team id so the runtime supplies the side). \cr
-   team_id \tab integer \tab lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body. \cr
-   player_id \tab integer \tab lkl.lt player id (key space: lkl.lt persons, stable across seasons). Joins the shot chart's player_id; the box score, leaders and play-by-play carry the slug, which this frame maps. \cr
-   player \tab character \tab Full player name as the game page prints it. \cr
-   jersey \tab character \tab Shirt number as a string (so '00' and '0' stay distinct). \cr
-   slug \tab character \tab Player slug (key space: lkl.lt persons; the \code{{slug}} of lkl.lt/zaidejai/\code{{slug}}). Join key to the player_slug of the box score, leaders and play-by-play. \cr
-}
+A \code{hoopR_data} tibble with one row per rostered player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lkl_game_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Game roster from the game page: every player on either team sheet with the lkl.lt player id and slug.

@@ -19,13 +19,51 @@ espn_nba_season_type(season_type = 2L, season = most_recent_nba_season(), ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A single-row tibble.
+A \code{hoopR_data} tibble with one row per season type.
 
-Columns as documented in the shared \link{espn_mbb_season_type_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  type \tab integer \tab Numeric type code. \cr
+  name \tab character \tab Display name (e.g. "Regular Season"). \cr
+  abbreviation \tab character \tab Short code (e.g. "reg"). \cr
+  year \tab integer \tab Year stamp. \cr
+  start_date \tab character \tab ISO 8601 start date. \cr
+  end_date \tab character \tab ISO 8601 end date. \cr
+  has_groups \tab logical \tab Whether groups exist for this type. \cr
+  has_standings \tab logical \tab Whether standings exist. \cr
+  has_legs \tab logical \tab Whether playoff legs exist. \cr
+  slug \tab character \tab URL slug. \cr
+  groups_ref \tab character \tab \code{$ref} to the groups endpoint. \cr
+  weeks_ref \tab character \tab \code{$ref} to the weeks endpoint. \cr
+  leaders_ref \tab character \tab \code{$ref} to the leaders endpoint. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A single-row tibble.
+A \code{hoopR_data} tibble with one row per season type.
 
-Columns as documented in the shared \link{espn_mbb_season_type_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  type \tab integer \tab Numeric type code. \cr
+  name \tab character \tab Display name (e.g. "Regular Season"). \cr
+  abbreviation \tab character \tab Short code (e.g. "reg"). \cr
+  year \tab integer \tab Year stamp. \cr
+  start_date \tab character \tab ISO 8601 start date. \cr
+  end_date \tab character \tab ISO 8601 end date. \cr
+  has_groups \tab logical \tab Whether groups exist for this type. \cr
+  has_standings \tab logical \tab Whether standings exist. \cr
+  has_legs \tab logical \tab Whether playoff legs exist. \cr
+  slug \tab character \tab URL slug. \cr
+  groups_ref \tab character \tab \code{$ref} to the groups endpoint. \cr
+  weeks_ref \tab character \tab \code{$ref} to the weeks endpoint. \cr
+  leaders_ref \tab character \tab \code{$ref} to the leaders endpoint. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Returns metadata for one season-type within an MBB season: name,

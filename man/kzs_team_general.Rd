@@ -14,61 +14,10 @@ match-team id nor the club id.}
 season, e.g. 579 (men's first league 2025/26).}
 }
 \value{
-A \code{hoopR_data} tibble: A team's record, form and best players in one competition (the body echoes neither id). An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{kzs_team_general}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Team id: one club team in one season (joins kzs_teams); not the match-team id and not the club id. \cr
-   competition_id \tab integer \tab Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). \cr
-   won \tab integer \tab Wins in the competition (all phases). \cr
-   lost \tab integer \tab Losses in the competition. \cr
-   last_games \tab character \tab Recent results, 'W' or 'L' per game (order unverified). \cr
-   best_points_player_id \tab integer \tab Player id (KZS player registry). Joins to \verb{/players/\{playerId\}}, box-score and play-by-play \code{playerId}. \cr
-   best_points_player_identification_number \tab integer \tab Player's KZS registration (licence) number; a different key space from the player id, used by no captured route. \cr
-   best_points_player_person_id \tab integer \tab Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. \cr
-   best_points_player_person_first_name \tab character \tab The player's given name. \cr
-   best_points_player_person_last_name \tab character \tab The player's family name. \cr
-   best_points_player_person_year_of_birth \tab integer \tab Year of birth (players: public bio). \cr
-   best_points_player_nationality_id \tab integer \tab Country id (FMS internal; use the ISO codes). \cr
-   best_points_player_nationality_alpha2_code \tab character \tab ISO 3166-1 alpha-2 country code. \cr
-   best_points_player_nationality_alpha3_code \tab character \tab ISO 3166-1 alpha-3 country code. \cr
-   best_points_player_nationality_name \tab character \tab Country name in Slovenian (e.g. 'Zdruzene drzave' = United States); use \code{engName} or the ISO codes. \cr
-   best_points_player_nationality_eng_name \tab character \tab Country name in English. \cr
-   best_points_player_homegrown \tab logical \tab True when the player counts as homegrown (domaci igralec) for roster limits. \cr
-   best_points_player_photo_uuid \tab character \tab Player photo: image file id, served at \verb{https://api.kzs.si/public/images/\{uuid\}}. \cr
-   best_points_player_positions \tab character \tab Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. \cr
-   best_average_points \tab double \tab That player's points per game. \cr
-   best_rebounds_player_id \tab integer \tab Player id (KZS player registry). Joins to \verb{/players/\{playerId\}}, box-score and play-by-play \code{playerId}. \cr
-   best_rebounds_player_identification_number \tab integer \tab Player's KZS registration (licence) number; a different key space from the player id, used by no captured route. \cr
-   best_rebounds_player_person_id \tab integer \tab Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. \cr
-   best_rebounds_player_person_first_name \tab character \tab The player's given name. \cr
-   best_rebounds_player_person_last_name \tab character \tab The player's family name. \cr
-   best_rebounds_player_person_year_of_birth \tab integer \tab Year of birth (players: public bio). \cr
-   best_rebounds_player_nationality_id \tab integer \tab Country id (FMS internal; use the ISO codes). \cr
-   best_rebounds_player_nationality_alpha2_code \tab character \tab ISO 3166-1 alpha-2 country code. \cr
-   best_rebounds_player_nationality_alpha3_code \tab character \tab ISO 3166-1 alpha-3 country code. \cr
-   best_rebounds_player_nationality_name \tab character \tab Country name in Slovenian (e.g. 'Zdruzene drzave' = United States); use \code{engName} or the ISO codes. \cr
-   best_rebounds_player_nationality_eng_name \tab character \tab Country name in English. \cr
-   best_rebounds_player_homegrown \tab logical \tab True when the player counts as homegrown (domaci igralec) for roster limits. \cr
-   best_rebounds_player_photo_uuid \tab character \tab Player photo: image file id, served at \verb{https://api.kzs.si/public/images/\{uuid\}}. \cr
-   best_rebounds_player_positions \tab character \tab Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. \cr
-   best_average_rebounds \tab double \tab That player's rebounds per game. \cr
-   best_assists_player_id \tab integer \tab Player id (KZS player registry). Joins to \verb{/players/\{playerId\}}, box-score and play-by-play \code{playerId}. \cr
-   best_assists_player_identification_number \tab integer \tab Player's KZS registration (licence) number; a different key space from the player id, used by no captured route. \cr
-   best_assists_player_person_id \tab integer \tab Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. \cr
-   best_assists_player_person_first_name \tab character \tab The player's given name. \cr
-   best_assists_player_person_last_name \tab character \tab The player's family name. \cr
-   best_assists_player_person_year_of_birth \tab integer \tab Year of birth (players: public bio). \cr
-   best_assists_player_nationality_id \tab integer \tab Country id (FMS internal; use the ISO codes). \cr
-   best_assists_player_nationality_alpha2_code \tab character \tab ISO 3166-1 alpha-2 country code. \cr
-   best_assists_player_nationality_alpha3_code \tab character \tab ISO 3166-1 alpha-3 country code. \cr
-   best_assists_player_nationality_name \tab character \tab Country name in Slovenian (e.g. 'Zdruzene drzave' = United States); use \code{engName} or the ISO codes. \cr
-   best_assists_player_nationality_eng_name \tab character \tab Country name in English. \cr
-   best_assists_player_homegrown \tab logical \tab True when the player counts as homegrown (domaci igralec) for roster limits. \cr
-   best_assists_player_photo_uuid \tab character \tab Player photo: image file id, served at \verb{https://api.kzs.si/public/images/\{uuid\}}. \cr
-   best_assists_player_positions \tab character \tab Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. \cr
-   best_average_assists \tab double \tab That player's assists per game. \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_team_general")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A team's record, form and best players in one competition (the body echoes neither id).

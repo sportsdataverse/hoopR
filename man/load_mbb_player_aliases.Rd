@@ -18,25 +18,27 @@ the data into a database.}
 \item{tablename}{The name of the data table within the database}
 }
 \value{
-Returns a \code{hoopR_data} tibble with one row per player alias, or \code{NULL} after
-appending the rows to \code{tablename} when \code{dbConnection} and \code{tablename} are both given.
+A \code{hoopR_data} tibble with one row per player alias.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League key: \code{mbb} or \code{nba}. \cr
-      athlete_id \tab character \tab ESPN athlete id. \cr
-      athlete_id_source \tab character \tab Id system of \code{athlete_id}: \code{espn}. \cr
-      source \tab character \tab Source of the player id: \code{ncaa}, \code{fox}, \code{yahoo} or \code{kenpom} (MBB); \code{nba_stats}, \code{fox} or \code{yahoo} (NBA). \cr
-      source_player_id \tab character \tab The source's own player id (e.g. \code{nba.p.5637}, \code{76284}). \cr
-      team_id \tab character \tab ESPN team id of the team the athlete was on when matched. \cr
-      source_team_id \tab character \tab The source's own team id when it gives one (the season's stats.ncaa.org team id), else \code{NA}. \cr
-      valid_from \tab integer \tab First season (ending year) the id is on that team, inclusive. \cr
-      valid_to \tab integer \tab Last season (ending year) the id is on that team, inclusive; a gap or a change of match method splits the window into two rows. \cr
-      match_method \tab character \tab How the id was matched: the source leg's own method (\code{exact_name}, \code{fuzzy_jw}; NCAA \code{name_jersey}, \code{name}, \code{last_jersey}, \code{jaro_winkler}), \code{crosswalk} (a leg that names none), \code{propagated} (carried from the same id's match in another season) or \code{override} (a hand-verified fix). \cr
-      match_confidence \tab numeric \tab The leg's own confidence where it gives one (the lowest in the window; NCAA tiers score 1, 0.95, 0.9 and 0.85), else \code{NA}. \cr
-      evidence \tab character \tab The asset or file the row came from. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League key: \code{mbb} or \code{nba}. \cr
+  athlete_id \tab character \tab ESPN athlete id. \cr
+  athlete_id_source \tab character \tab Id system of \code{athlete_id}: \code{espn}. \cr
+  source \tab character \tab Source of the player id: \code{ncaa}, \code{fox}, \code{yahoo} or \code{kenpom} (MBB); \code{nba_stats}, \code{fox} or \code{yahoo} (NBA). \cr
+  source_player_id \tab character \tab The source's own player id (e.g. \code{nba.p.5637}, \code{76284}). \cr
+  team_id \tab character \tab ESPN team id of the team the athlete was on when matched. \cr
+  source_team_id \tab character \tab The source's own team id when it gives one (the season's stats.ncaa.org team id), else \code{NA}. \cr
+  valid_from \tab integer \tab First season (ending year) the id is on that team, inclusive. \cr
+  valid_to \tab integer \tab Last season (ending year) the id is on that team, inclusive; a gap or a change of match method splits the window into two rows. \cr
+  match_method \tab character \tab How the id was matched: the source leg's own method (\code{exact_name}, \code{fuzzy_jw}; NCAA \code{name_jersey}, \code{name}, \code{last_jersey}, \code{jaro_winkler}), \code{crosswalk} (a leg that names none), \code{propagated} (carried from the same id's match in another season) or \code{override} (a hand-verified fix). \cr
+  match_confidence \tab numeric \tab The leg's own confidence where it gives one (the lowest in the window; NCAA tiers score 1, 0.95, 0.9 and 0.85), else \code{NA}. \cr
+  evidence \tab character \tab The asset or file the row came from. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\code{NULL} instead, after appending the rows to \code{tablename}, when \code{dbConnection} and
+\code{tablename} are both given.
 }
 \description{
 Loads every player id another source uses for an ESPN

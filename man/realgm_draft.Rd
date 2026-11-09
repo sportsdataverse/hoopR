@@ -11,26 +11,10 @@ realgm_draft(year = most_recent_nba_season() - 1L)
 the most recently completed draft (\code{most_recent_nba_season() - 1}).}
 }
 \value{
-A \code{hoopR_data} tibble carrying \code{draft_year} and \code{round} columns:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      pick \tab integer \tab Overall pick number (\code{NA} for undrafted). \cr
-      player \tab character \tab Player name. \cr
-      team \tab character \tab Drafting team abbreviation. \cr
-      draft_trades \tab character \tab Draft-night trade note, if any. \cr
-      pos \tab character \tab Position. \cr
-      ht \tab character \tab Listed height. \cr
-      wt \tab integer \tab Listed weight (lbs). \cr
-      age \tab numeric \tab Age at draft. \cr
-      yos \tab integer \tab Years of service since. \cr
-      pre_draft_team \tab character \tab Pre-draft team / school / club. \cr
-      class \tab character \tab College class / draft eligibility note. \cr
-      nationality \tab character \tab Player nationality. \cr
-      round \tab integer \tab Draft round (\code{1}, \code{2}, or \code{NA} undrafted). \cr
-      draft_year \tab numeric \tab Draft year (echoes \code{year}). \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per selection.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "realgm_draft")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the results of a past NBA draft from

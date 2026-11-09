@@ -38,40 +38,10 @@ sent; with neither \code{season} nor \code{season_id} the API filters by it.}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row for the team:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   entity_id \tab character \tab Team UUID, decoded from the page's tab links (the body does not echo it elsewhere). \cr
-   name \tab character \tab Team name from the page banner. \cr
-   color \tab character \tab Team colour from the banner, hex string with its #. \cr
-   logo_url \tab character \tab URL of the banner's team logo. \cr
-   previous_fixture_id \tab character \tab Game UUID of the last played game shown on the team page. \cr
-   previous_round \tab character \tab Round of the last played game as the site words it (e.g. 30). \cr
-   previous_status \tab character \tab Status code of the last played game, e.g. CONFIRMED. \cr
-   previous_start_time_utc \tab POSIXct \tab Start of the last played game, naive UTC datetime. \cr
-   previous_start_time_local \tab character \tab Start of the last played game in venue-local time, as the API sends it (no offset). \cr
-   previous_venue \tab character \tab Arena of the last played game. \cr
-   previous_attendance \tab integer \tab Spectators at the last played game; null when not reported. \cr
-   previous_home_entity_id \tab character \tab Team UUID of the last played game's home team. \cr
-   previous_home_name \tab character \tab Name of the last played game's home team. \cr
-   previous_home_score \tab integer \tab Home team's points in the last played game. \cr
-   previous_away_entity_id \tab character \tab Team UUID of the last played game's away team. \cr
-   previous_away_name \tab character \tab Name of the last played game's away team. \cr
-   previous_away_score \tab integer \tab Away team's points in the last played game. \cr
-   next_fixture_id \tab character \tab Game UUID of the next scheduled game shown on the team page. \cr
-   next_round \tab character \tab Round of the next scheduled game as the site words it (e.g. 30). \cr
-   next_status \tab character \tab Status code of the next scheduled game, e.g. CONFIRMED. \cr
-   next_start_time_utc \tab POSIXct \tab Start of the next scheduled game, naive UTC datetime. \cr
-   next_start_time_local \tab character \tab Start of the next scheduled game in venue-local time, as the API sends it (no offset). \cr
-   next_venue \tab character \tab Arena of the next scheduled game. \cr
-   next_attendance \tab integer \tab Spectators at the next scheduled game; null when not reported. \cr
-   next_home_entity_id \tab character \tab Team UUID of the next scheduled game's home team. \cr
-   next_home_name \tab character \tab Name of the next scheduled game's home team. \cr
-   next_home_score \tab integer \tab Home team's points in the next scheduled game. \cr
-   next_away_entity_id \tab character \tab Team UUID of the next scheduled game's away team. \cr
-   next_away_name \tab character \tab Name of the next scheduled game's away team. \cr
-   next_away_score \tab integer \tab Away team's points in the next scheduled game. \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_team")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{A team page (summary tab): the team and its last and next game.}

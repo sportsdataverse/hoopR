@@ -13,48 +13,10 @@ season.}
 \item{season}{Season END year (2027 = 2026-27) of the team id. Omitted = the site's default (unverified).}
 }
 \value{
-A \code{hoopR_data} tibble: Season totals of each player of a team-season. The columns are always these, in this order
-(sportsdataverse-py \code{lba_team_players_stats}); a column the site adds later is appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Team-season id (re-issued every season); join lba_teams for the stable club_id. \cr
-   club_id \tab integer \tab Club id: the cross-season join key for team ids (only here and in the \code{team} headers); stability across seasons is unverified. \cr
-   club_code \tab character \tab Club code (\code{TVB}, \code{TS}); whether it is stable across seasons is unverified. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   player_id \tab integer \tab Player id (global, one per career). \cr
-   player_name \tab character \tab Player's given name. \cr
-   player_surname \tab character \tab Player's family name. \cr
-   player_season \tab integer \tab Season START year (2026 = 2026-27); sdv END year = year + 1. \cr
-   player_photo_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-   played_matches \tab integer \tab Games the player appeared in, in the request's championship series. \cr
-   total_matches \tab integer \tab Team games while the player was listed (inferred). \cr
-   start_formation \tab integer \tab Games the player started, in the request's championship series. \cr
-   points_sum \tab integer \tab Season total of points. \cr
-   played_minutes_sum \tab integer \tab Season total of minutes played. \cr
-   rating_lega_sum \tab integer \tab Season total of LBA efficiency rating (\code{valutazione}). \cr
-   rating_oer_sum \tab double \tab Sum of the per-game OER values (3.34 over 3 games), not a season OER. \cr
-   offensive_rebound_sum \tab integer \tab Season total of offensive rebounds. \cr
-   defensive_rebound_sum \tab integer \tab Season total of defensive rebounds. \cr
-   total_rebound_sum \tab integer \tab Season total of total rebounds. \cr
-   assists_sum \tab integer \tab Season total of assists. \cr
-   regain_balls_sum \tab integer \tab Season total of steals. \cr
-   lost_balls_sum \tab integer \tab Season total of turnovers. \cr
-   ball_stop_given_sum \tab integer \tab Season total of blocks. \cr
-   ball_stop_received_sum \tab integer \tab Season total of own shots blocked. \cr
-   done_fouls_sum \tab integer \tab Season total of fouls committed. \cr
-   suffered_fouls_sum \tab integer \tab Season total of fouls drawn. \cr
-   plus_minus_sum \tab integer \tab Season total of plus-minus. \cr
-   aplus_dp_sum \tab integer \tab Season total of \code{aplus_dp}, an unverified metric (not plus-minus or assists: Macura 2026-27 has 9 against plus-minus 8 and 3 assists). \cr
-   slam_dunk_sum \tab integer \tab Season total of dunks. \cr
-   shots_2p_realized_sum \tab integer \tab Season total of 2-point field goals made. \cr
-   shots_2p_total_sum \tab integer \tab Season total of 2-point field goals attempted. \cr
-   shots_2p_perc_sum \tab double \tab Season 2-point percentage, 0-100 (a rate despite \verb{_sum}). \cr
-   shots_3p_realized_sum \tab integer \tab Season total of 3-point field goals made. \cr
-   shots_3p_total_sum \tab integer \tab Season total of 3-point field goals attempted. \cr
-   shots_3p_perc_sum \tab double \tab Season 3-point percentage, 0-100 (a rate despite \verb{_sum}). \cr
-   free_throws_realized_sum \tab integer \tab Season total of free throws made. \cr
-   free_throws_total_sum \tab integer \tab Season total of free throws attempted. \cr
-   free_throws_perc_sum \tab double \tab Season free-throw percentage, 0-100 (a rate despite \verb{_sum}). \cr
-}
+A \code{hoopR_data} tibble with one row per player of the team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_team_players_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Season totals of each player of a team-season.

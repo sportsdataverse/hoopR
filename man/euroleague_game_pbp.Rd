@@ -14,31 +14,10 @@ the \code{game_code} column of \code{\link[=euroleague_games]{euroleague_games()
 \code{E2025} (EuroLeague 2025-26), \code{U2025} (EuroCup).}
 }
 \value{
-A \code{hoopR_data} tibble with one row per play:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      quarter \tab integer \tab Period of the play: 1-4, or 5 for every overtime period. \cr
-      team_a \tab character \tab Display name of team A (= the home side, measured on one game). \cr
-      team_b \tab character \tab Display name of team B (= the away side, measured on one game). \cr
-      code_team_a \tab character \tab EuroLeague club code of team A (= the home side, measured on one game); Utf8 join key. \cr
-      code_team_b \tab character \tab EuroLeague club code of team B (= the away side, measured on one game); Utf8 join key. \cr
-      type \tab integer \tab Play type (engine integer). \cr
-      numberofplay \tab integer \tab Sequence number of the play within the game. \cr
-      codeteam \tab character \tab EuroLeague club code of the team on the play (Utf8 join key; blank on administrative plays). \cr
-      player_id \tab character \tab EuroLeague player code (Utf8 join key; space padding stripped; blank on team rows). \cr
-      playtype \tab character \tab Play type code (BP = begin period, 2FGM, 3FGA, FTM, AS = assist, TO, RV, CM, ...). \cr
-      player \tab character \tab Player display name (SURNAME, GIVEN NAME). \cr
-      team \tab character \tab Display name of the team on the play (null on administrative plays). \cr
-      dorsal \tab character \tab Jersey number as displayed. \cr
-      minute \tab integer \tab Game minute of the event (1-based; 41+ in overtime). \cr
-      markertime \tab character \tab Game clock at the play (mm:ss remaining in the period). \cr
-      points_a \tab integer \tab Running score of team A (= the home side, measured on one game) after the event. \cr
-      points_b \tab integer \tab Running score of team B (= the away side, measured on one game) after the event. \cr
-      comment \tab character \tab Free-text annotation of the play. \cr
-      playinfo \tab character \tab Play description. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per play.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "euroleague_game_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the play-by-play of one game from the live API, one row per play.}

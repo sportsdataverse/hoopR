@@ -12,31 +12,10 @@ results id and a standings id, neither a year); the runtime reads them from the 
 \verb{YYYY-YYYY m. sezonas}. A year the selects do not list raises \code{hoopR_no_data}.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per team and table. \code{table} is \code{full} (overall: with \code{win_pct} and \code{streak}),
-\code{home} and \code{away} (the same record split by venue) or \code{final} (the final ranking: position and team only, empty
-until the season is over and for old seasons). \code{win_pct} is 0-100, null when the site shows \code{-} (2007-08). \code{streak}
-is a signed integer as the site prints it; its sign convention is unverified. \code{points_for_avg} /
-\code{points_against_avg} are per-game averages. \code{last5} is the last results as \code{W} / \code{L} letters in the order rendered
-(oldest first, unverified). \code{season_id} is the site's standings-season id, a different key space from the results
-id. Team slugs join \code{lkl_results}. A record without tables gives a zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season_id \tab integer \tab STANDINGS season id (a separate small key space: 35 = 2026-27, 1 = 2016-17, 24 = 1993-94); NOT the results season id. \cr
-   season_end_year \tab integer \tab Season END year (2026 = 2025-26), read from the season label 'YYYY-YYYY m. sezonas'. \cr
-   table \tab character \tab Which table the row comes from: full (overall), home, away or final (the final ranking). \cr
-   position \tab integer \tab Rank in the table (Poz.); in the final table the final place. \cr
-   team_slug \tab character \tab Team slug (key space: lkl.lt clubs; the \code{{slug}} of https://lkl.lt/komandos/\code{{slug}}; one per club, stable across renamings: 'rytas' for Lietuvos Rytas / Rytas). The results and standings rows carry only this; the game page teams_info gives slug + id. \cr
-   team_name \tab character \tab Team name as printed for that season ('Lietuvos Rytas' in 2007-08). \cr
-   played \tab integer \tab Games played (Rng., rungtynes); null in the final table. \cr
-   won \tab integer \tab Wins (Per., pergales); null in the final table. \cr
-   lost \tab integer \tab Losses (Pr., pralaimejimai); null in the final table. \cr
-   win_pct \tab double \tab Win percentage 0-100 (Laim.\%); null in the home, away and final tables and when the site prints '-' (2007-08). \cr
-   streak \tab integer \tab Current streak (Serija) as a signed integer: 27 = 27 wins in a row, -1 = one loss. Null outside the full table. \cr
-   points_for_avg \tab double \tab Points scored per game (first number of Tsk. vid.); null in the final table. \cr
-   points_against_avg \tab double \tab Points allowed per game (second number of Tsk. vid.); null in the final table. \cr
-   last5 \tab character \tab Last five results (Paskutines 5) as W / L letters in the order the page renders them, left to right; fewer than five early in a season; null in the final table. \cr
-}
+A \code{hoopR_data} tibble with one row per team and table.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lkl_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 League table of one LKL season: overall, home and away records, and the final ranking once it is set.

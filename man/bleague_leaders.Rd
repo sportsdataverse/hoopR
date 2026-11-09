@@ -16,26 +16,10 @@ belong to; a context whose \code{Year} differs raises \code{hoopR_asset_fetch}. 
 (default) = no check (the key alone selects the game).}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   schedule_key \tab integer \tab B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The \{schedule_key\} every game wrapper takes and the schedule page's list-item id. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. \cr
-   feed \tab character \tab Source feed of the row: v2 (v2_genius_contexts, B1/B2 from 2020-21) or v1 (v1_contexts: B3, B1/B2 2018-2020, and the 2016-17 / 2017-18 game-page embed). The feeds differ in id types, dates and some codes. \cr
-   period_category \tab integer \tab Period category: 1-4 = quarters 1-4, 15 = first half, 16 = second half, 18 = whole game. Overtime codes are unverified. \cr
-   category \tab integer \tab Leader category code, decoded by matching count to the box score: 1 points, 2 assists, 3 steals, 4 blocks, 5 rebounds, 8 shots blocked. \cr
-   category_name \tab character \tab English name of category (points, assists, steals, blocks, rebounds, blocks_received); null for an unknown code. \cr
-   rank \tab integer \tab Rank within the team for the category (1 = best; ties share a rank). \cr
-   tie_order \tab integer \tab Order within a tied rank (1 = first listed). \cr
-   team_side \tab character \tab Side of the game the row belongs to: home or away. \cr
-   team_id \tab character \tab B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. \cr
-   team_name_j \tab character \tab Team name in Japanese (official name, e.g. Alvark Tokyo). \cr
-   player_id \tab character \tab B.LEAGUE PlayerID as text (key space: B.LEAGUE persons, stable across seasons and clubs: Makoto Hiejima = '8589'). A string on v2, an integer on v1; both are text here. Null where the row names no player. \cr
-   player_no \tab character \tab Shirt number as text, so '00' and '0' stay distinct; null on team and game-level rows. \cr
-   player_name_j \tab character \tab Player name in Japanese (katakana for foreign players); null on team and game-level rows. \cr
-   count \tab integer \tab The player's value in the category for the period category. \cr
-   reb_off_count \tab integer \tab Offensive-rebound count carried on the row (filled for the rebounds category). \cr
-   reb_def_count \tab integer \tab Defensive-rebound count carried on the row (filled for the rebounds category). \cr
-}
+A \code{hoopR_data} tibble with one row per period, statistic and rank.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "bleague_leaders")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Team leaders of one B.LEAGUE game per statistic and period category (v1 feed

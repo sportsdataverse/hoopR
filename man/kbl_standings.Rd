@@ -18,75 +18,10 @@ D-League edition), '03' playoffs, '04' championship final, '07' EASL, '08' D-Lea
 '11'/'13' cups, '14' Open Match Day. Only '01' was probed live.}
 }
 \value{
-A \code{hoopR_data} tibble: Standings of one competition with each team's season totals. The columns are always these,
-in this order (sportsdataverse-py \code{kbl_standings}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows
-for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr
-   season_code \tab integer \tab KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League). \cr
-   game_code \tab character \tab Competition type within the season (2-digit string; code table in the README and below): 01 regular season, 03 playoffs, 04 final, ... \cr
-   rank \tab integer \tab Standing (1 = first). \cr
-   team_code \tab character \tab Team code: the KBL club in that season (two-digit string with a leading zero, e.g. '50' = Changwon LG). Joins kbl_teams team_code; not stable across ownership changes (the Anyang club is '40' in 1997-98, '70' today). \cr
-   team_name \tab character \tab Team short name (Korean, e.g. Wonju DB). English names: /common/teamList \code{teamNameEn} / \code{teamNameFullEn}, joined on the team code. \cr
-   team_name_full \tab character \tab Team full name (Korean). \cr
-   game_count \tab integer \tab Games played (this season or competition). \cr
-   wins \tab integer \tab Season wins of the team (the wire's TWin). \cr
-   losses \tab integer \tab Season losses of the team (the wire's TLoss). \cr
-   draws \tab integer \tab Draws (TDraw, always 0). \cr
-   win_rate \tab double \tab Win fraction, 0-1. \cr
-   win_diff \tab double \tab Games behind the leader. \cr
-   home_wins \tab integer \tab Wins in the team's home games. \cr
-   home_losses \tab integer \tab Losses in the team's home games. \cr
-   away_wins \tab integer \tab Wins in the team's away games. \cr
-   away_losses \tab integer \tab Losses in the team's away games. \cr
-   conti_win \tab integer \tab Current winning streak (0 when the last game was a loss). \cr
-   conti_loss \tab integer \tab Current losing streak (0 when the last game was a win). \cr
-   conti_date \tab Date \tab Date (YYYYMMDD) the current streak started (inferred; unverified). \cr
-   max_win \tab integer \tab Longest winning streak of the season. \cr
-   max_loss \tab integer \tab Longest losing streak of the season. \cr
-   last_game_date \tab Date \tab Date of the latest game counted in the row, YYYYMMDD. \cr
-   last_five \tab character \tab The last five results as a comma-separated string, most recent first: 1 win, 0 loss (the name is cut short in the API). \cr
-   last_game_won \tab logical \tab True when the team's latest game was a win (the wire's win; a boolean, not a count). \cr
-   last_game_lost \tab logical \tab True when the team's latest game was a loss (inferred from conti_loss). \cr
-   last_game_drawn \tab logical \tab True when the team's latest game was a draw (always false). \cr
-   game_flag \tab logical \tab Boolean flag in the standings row; meaning unverified (true in the sample). \cr
-   updated_at \tab character \tab When the standings row was written (ISO 8601 UTC timestamp). \cr
-   score \tab integer \tab Points. Team season total for the competition (glkey). \cr
-   fg \tab integer \tab Two-point field goals made, dunks included: 201 + 207 rows (score = 2\emph{fg + 3}threep + ft holds on every sampled box). Team season total for the competition (glkey). \cr
-   fg_a \tab integer \tab Two-point field-goal attempts, made + missed, dunks included: 201 + 202 + 207 + 208 rows (checked per team on S47G01N49). Team season total for the competition (glkey). \cr
-   threep \tab integer \tab Three-point field goals made (action 205). Team season total for the competition (glkey). \cr
-   threep_a \tab integer \tab Three-point attempts, made + missed (205 + 206). Team season total for the competition (glkey). \cr
-   ft \tab integer \tab Free throws made (action 203). Team season total for the competition (glkey). \cr
-   ft_a \tab integer \tab Free-throw attempts, made + missed (203 + 204). Team season total for the competition (glkey). \cr
-   dk \tab integer \tab Dunks made (action 207); included in \code{fg}. Team season total for the competition (glkey). \cr
-   dk_a \tab integer \tab Dunk attempts (made + missed, actions 207 + 208). Team season total for the competition (glkey). \cr
-   ast \tab integer \tab Assists. Team season total for the competition (glkey). \cr
-   bs \tab integer \tab Blocked shots. Team season total for the competition (glkey). \cr
-   defr \tab integer \tab Defensive rebounds. Team season total for the competition (glkey). \cr
-   offr \tab integer \tab Offensive rebounds. Team season total for the competition (glkey). \cr
-   stl \tab integer \tab Steals. Team season total for the competition (glkey). \cr
-   to \tab integer \tab Turnovers. Team season total for the competition (glkey). \cr
-   team_r \tab integer \tab Team rebounds (action 218), unverified against \code{teamR}. Team season total for the competition (glkey). \cr
-   pp \tab integer \tab Paint field goals made: 0 in every sampled row (see PScore). \cr
-   pp_a \tab integer \tab Paint field-goal attempts: 0 in every sampled row (see PScore). \cr
-   pscore \tab integer \tab Points in the paint (pp/ppA are 0 on this route in every sampled row). Team season total for the competition (glkey). \cr
-   wft \tab integer \tab Fouls that awarded free throws (action 215). Team season total for the competition (glkey). \cr
-   woft \tab integer \tab Fouls that awarded no free throws (action 216). Team season total for the competition (glkey). \cr
-   foul_total \tab integer \tab Personal fouls over the season (foulTot). \cr
-   tfb \tab integer \tab Team fast breaks (action 217). Team season total for the competition (glkey). \cr
-   tto \tab integer \tab Team turnovers (action 223). Team season total for the competition (glkey). \cr
-   tf \tab integer \tab Probably technical fouls (unverified; 0 in most rows). Team season total for the competition (glkey). \cr
-   fb \tab integer \tab Fast breaks credited to the player (action 217 rows that name a player, as in 1997-98); 0 in recent seasons, where fast breaks are team rows (\code{tfb}). Team season total for the competition (glkey). \cr
-   ef \tab integer \tab Meaning unverified (0 in every game sample; non-zero in some season totals). Team season total for the competition (glkey). \cr
-   bf \tab integer \tab Meaning unverified (probably bench fouls; 0 in every game sample). Team season total for the competition (glkey). \cr
-   gd \tab integer \tab Good-defense plays (action 221). Team season total for the competition (glkey). \cr
-   idf \tab integer \tab Illegal-defense violations (action 219; an early-KBL rule, so non-zero only in old seasons). Team season total for the competition (glkey). \cr
-   inout \tab integer \tab Times the player entered the game, the start included (checked on the 2025-26 sample game); a team row sums its players. Team season total for the competition (glkey). \cr
-   inout1 \tab integer \tab Times the player was substituted out before the end (checked on the 2025-26 sample game); a team row sums its players. Team season total for the competition (glkey). \cr
-   foulout \tab integer \tab Players fouled out (unverified). Team season total for the competition (glkey). \cr
-   play_min \tab integer \tab Minutes of playing time; add \code{playSec} seconds. Team season total for the competition (glkey). \cr
-   play_sec \tab integer \tab Seconds part of the playing time (0-59), added to \code{playMin}. Team season total for the competition (glkey). \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Standings of one competition with each team's season totals.

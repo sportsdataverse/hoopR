@@ -10,43 +10,10 @@ lba_team_box_score(game_id)
 \item{game_id}{(required) Game id (game_id in lba_calendar), e.g. 25602. Global across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Team lines of a final game's box score: the team-booked stats and the totals of each side.
-The columns are always these, in this order (sportsdataverse-py \code{lba_team_box_score}); a column the site adds later is
-appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Game id (global across seasons); joins lba_calendar and lba_game. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   side \tab character \tab Which team of the game the row belongs to: home or visitor. \cr
-   team_id \tab integer \tab Team-season id (re-issued every season); join lba_teams for the stable club_id. \cr
-   row_type \tab character \tab team = stats booked to the team itself (team rebounds, team turnovers); totals = the whole side. \cr
-   pun \tab integer \tab Points (\code{punti}). (team totals (players + team row)) \cr
-   falli_c \tab integer \tab Fouls committed (\verb{falli commessi}). (team totals (players + team row)) \cr
-   falli_sf \tab integer \tab Fouls drawn (\verb{falli subiti}). (team totals (players + team row)) \cr
-   falli_tc1 \tab integer \tab Technical fouls (\verb{falli tecnici}; reading \code{tc1} as category-1 technicals is inferred). (team totals (players + team row)) \cr
-   falli_fla \tab integer \tab Unsportsmanlike / flagrant fouls (\verb{falli antisportivi}). (team totals (players + team row)) \cr
-   rimbalzi_o \tab integer \tab Offensive rebounds (\verb{rimbalzi offensivi}). (team totals (players + team row)) \cr
-   rimbalzi_d \tab integer \tab Defensive rebounds (\verb{rimbalzi difensivi}). (team totals (players + team row)) \cr
-   rimbalzi_t \tab integer \tab Total rebounds (\verb{rimbalzi totali}). (team totals (players + team row)) \cr
-   palle_p \tab integer \tab Turnovers (\verb{palle perse}). (team totals (players + team row)) \cr
-   palle_r \tab integer \tab Steals (\verb{palle recuperate}). (team totals (players + team row)) \cr
-   val_lega \tab integer \tab LBA efficiency rating (\verb{valutazione Lega}). (team totals (players + team row)) \cr
-   min \tab integer \tab Minutes played, whole minutes (\code{minuti}); 200 in \code{totals} = 5 x 40. (team totals (players + team row)) \cr
-   sec \tab integer \tab Seconds played (\code{secondi}) = \code{min} x 60 in every sample. (team totals (players + team row)) \cr
-   t2_r \tab integer \tab 2-point field goals made (\verb{tiri da 2 realizzati}). (team totals (players + team row)) \cr
-   t2_t \tab integer \tab 2-point field goals attempted (\verb{tiri da 2 tentati}). (team totals (players + team row)) \cr
-   t2_perc \tab double \tab 2-point field-goal percentage, 0-100 (number; 0 when no attempt). (team totals (players + team row)) \cr
-   sc \tab integer \tab Dunks (\code{schiacciate}). (team totals (players + team row)) \cr
-   t3_r \tab integer \tab 3-point field goals made. (team totals (players + team row)) \cr
-   t3_t \tab integer \tab 3-point field goals attempted. (team totals (players + team row)) \cr
-   t3_perc \tab double \tab 3-point field-goal percentage, 0-100. (team totals (players + team row)) \cr
-   tl_r \tab integer \tab Free throws made (\verb{tiri liberi realizzati}). (team totals (players + team row)) \cr
-   tl_t \tab integer \tab Free throws attempted (\verb{tiri liberi tentati}). (team totals (players + team row)) \cr
-   tl_perc \tab double \tab Free-throw percentage, 0-100. (team totals (players + team row)) \cr
-   stoppate_dat \tab integer \tab Blocks (\verb{stoppate date}). (team totals (players + team row)) \cr
-   stoppate_sub \tab integer \tab Own shots blocked (\verb{stoppate subite}). (team totals (players + team row)) \cr
-   ass \tab integer \tab Assists. (team totals (players + team row)) \cr
-   val_oer \tab double \tab OER = points / (FGA + turnovers + FTA / 2); verified on every 2026-27 sample row. (team totals (players + team row)) \cr
-}
+A \code{hoopR_data} tibble with one row per team in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_team_box_score")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team lines of a final game's box score: the team-booked stats and the totals of each side.

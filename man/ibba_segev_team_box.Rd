@@ -11,53 +11,10 @@ ibba_segev_team_box(game_id)
 Aviv, 2025-26 round 1): \code{segev_game_id} in ibba_games.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Segev game id (key space: one flat sequence across seasons and competitions); equals the IBBA ibba_games segev_game_id from 2025-26. Not an IBBA game id. \cr
-   team_side \tab character \tab Side of the game: home or away (the feed's homeTeam / awayTeam; an action's parameters.team 1 = home, 2 = away). \cr
-   team_id \tab integer \tab Segev team id of the side (key space: Segev teams, stable across seasons). Not an IBBA team-season id; null on game-level actions. \cr
-   score \tab integer \tab Final score of the side (homeScore / awayScore). \cr
-   timeouts \tab integer \tab Timeouts the side took (the feed's homeTimeOut / awayTimeOut). \cr
-   time_leading \tab character \tab Time the side led as 'mm:ss'. \cr
-   biggest_lead \tab integer \tab The side's biggest lead in points. \cr
-   times_tied \tab integer \tab Times the score was tied (same value for both sides). \cr
-   lead_changes \tab integer \tab Lead changes (same value for both sides). \cr
-   fg2m \tab integer \tab Two-point field goals made. \cr
-   fg2_missed \tab integer \tab Two-point field goals MISSED (not attempted; attempts = made + missed, verified against the IBBA box score). \cr
-   fg3m \tab integer \tab Three-point field goals made. \cr
-   fg3_missed \tab integer \tab Three-point field goals MISSED (not attempted). \cr
-   ftm \tab integer \tab Free throws made. \cr
-   ft_missed \tab integer \tab Free throws MISSED (not attempted). \cr
-   dreb \tab integer \tab Defensive rebounds. \cr
-   oreb \tab integer \tab Offensive rebounds. \cr
-   fouls \tab integer \tab Fouls committed (the feed's f; equals the IBBA fouls). \cr
-   fouls_drawn \tab integer \tab Fouls drawn (the feed's f_drawn; equals the IBBA fouls_drawn). \cr
-   steals \tab integer \tab Steals made by the player or team. \cr
-   turnovers \tab integer \tab Turnovers committed by the player or team. \cr
-   assists \tab integer \tab Assists credited to the player or team. \cr
-   blocks \tab integer \tab Shots the player or team blocked. \cr
-   blocks_against \tab integer \tab Own shots that were blocked. \cr
-   fast_break_pts \tab integer \tab Fast-break points; for a team total it equals the P of the feed's 'P of N' fast-break stat. \cr
-   second_chance_pts \tab integer \tab Second-chance points (scored after an offensive rebound). \cr
-   pts \tab integer \tab Points scored by the player or side (free throws included). \cr
-   val \tab integer \tab Efficiency rating (the feed's rate; equals the IBBA VAL). \cr
-   deflections \tab integer \tab Deflections (count of deflection actions). \cr
-   recoveries \tab integer \tab The feed's rec count; unverified, probably loose-ball recoveries. \cr
-   dunks \tab integer \tab Dunks made by the player or side. \cr
-   offensive_fouls_drawn \tab integer \tab Offensive fouls drawn (charges taken); inferred. \cr
-   and_ones \tab integer \tab And-one plays (a made basket plus a foul); inferred. \cr
-   vps \tab double \tab The feed's vps ratio with two decimals; its definition is unverified (it matches neither points per shot nor rate per minute). \cr
-   fg2a \tab integer \tab Two-point field goals attempted, derived as made + missed. \cr
-   fg3a \tab integer \tab Three-point field goals attempted, derived as made + missed. \cr
-   fta \tab integer \tab Free throws attempted, derived as made + missed. \cr
-   pts_from_turnovers \tab integer \tab Points scored off opponent turnovers (the feed renamed the key in 2026-27). \cr
-   pts_in_paint \tab integer \tab Points scored in the paint (the feed renamed the key in 2026-27). \cr
-   starting_points \tab integer \tab Points scored by the starting five. \cr
-   bench_points \tab integer \tab Points scored by the bench. \cr
-   fast_break_possessions \tab integer \tab The N of the feed's 'P of N' fast-break stat (fast-break possessions or attempts); unverified. Null before 2026-27 where the key differs. \cr
-   defensive_stops \tab integer \tab Defensive stops; the feed adds it in 2026-27, null before. \cr
-   biggest_scoring_run \tab character \tab Biggest scoring run as the feed prints it ('23-0 (36-6)'); 2026-27 on, null before. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_segev_team_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Team totals of both sides: final score, timeouts, lead stats, shooting, rebounds and team game

@@ -11,25 +11,10 @@ vtb_infobasket_cross_table(comp_id)
 (Regular Season 2025-26) or 54281 (Playoff 2025-26).}
 }
 \value{
-A \code{hoopR_data} tibble: Head-to-head results grid of a round-robin stage (every game twice, once from each side). The
-columns are always these, in this order (sportsdataverse-py \code{vtb_infobasket_cross_table}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   comp_id \tab integer \tab Stage CompID the request asked for (50720 = the 2025-26 regular season): a stage below the season, not an END year. \cr
-   game_id \tab integer \tab Infobasket game id (GameID); equals the v2 API \code{matchId}. Joins to /Widget/GetOnline/\{gameId\} and /Widget/GamePage/\{gameId\}. \cr
-   game_status \tab integer \tab Game status in the game-record code set: 21 on every completed game sampled (not the calendar's 0/1/2). \cr
-   score \tab character \tab Final score 'row team:opponent'. Every game appears twice, once from each side. \cr
-   plus_minus \tab integer \tab Point difference from the row team's side. \cr
-   game_date \tab character \tab Day and month of the game as the host sends them ('04.04.'): there is no year in this route. \cr
-   team1_id \tab integer \tab TeamID of the row team. Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team*/\{teamId\} and equals the v2 API \code{teamId}. \cr
-   team2_id \tab integer \tab TeamID of the opponent. Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team*/\{teamId\} and equals the v2 API \code{teamId}. \cr
-   team1_place \tab integer \tab Standings place of the row team. \cr
-   team2_place \tab integer \tab Standings place of the opponent. \cr
-   home_team \tab integer \tab Which side was at home: 1 the row team, 2 the opponent. \cr
-   win_team \tab integer \tab Which side won: 1 the row team, 2 the opponent. \cr
-   score1 \tab integer \tab Points of team 1, parsed from the 'a:b' score string. \cr
-   score2 \tab integer \tab Points of team 2, parsed from the 'a:b' score string. \cr
-}
+A \code{hoopR_data} tibble with one row per game in the cross table.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_cross_table")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Head-to-head results grid of a round-robin stage (every game twice, once from each side).

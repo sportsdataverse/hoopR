@@ -11,15 +11,10 @@ ibba_segev_period_scores(game_id)
 Aviv, 2025-26 round 1): \code{segev_game_id} in ibba_games.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Segev game id (key space: one flat sequence across seasons and competitions); equals the IBBA ibba_games segev_game_id from 2025-26. Not an IBBA game id. \cr
-   period \tab integer \tab Period number (1-4 regulation, 5+ overtime). \cr
-   home_points \tab integer \tab Points the home side scored IN this period (not cumulative). \cr
-   away_points \tab integer \tab Points the away side scored IN this period (not cumulative). \cr
-   home_fouls \tab integer \tab Team fouls the home side committed in this period. \cr
-   away_fouls \tab integer \tab Team fouls the away side committed in this period. \cr
-}
+A \code{hoopR_data} tibble with one row per team and period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_segev_period_scores")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Points and team fouls in each period of a finished game.}

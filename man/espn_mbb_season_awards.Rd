@@ -15,26 +15,26 @@ espn_nba_season_awards(season = most_recent_nba_season(), ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per award.
+A \code{hoopR_data} tibble with one row per award.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab integer \tab Season year. \cr
-      award_id \tab character \tab ESPN award identifier. \cr
-      ref \tab character \tab Full \verb{$ref} URL for the award detail. \cr
-      league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
-   }}
+  col_name \tab types \tab description \cr
+  season \tab integer \tab Season year. \cr
+  award_id \tab character \tab ESPN award identifier. \cr
+  ref \tab character \tab Full \code{$ref} URL for the award detail. \cr
+  league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per award.
+A \code{hoopR_data} tibble with one row per award.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab integer \tab Season year. \cr
-      award_id \tab character \tab ESPN award identifier. \cr
-      ref \tab character \tab Full \verb{$ref} URL for the award detail. \cr
-      league \tab character \tab League slug (\code{"nba"}). \cr
-   }}
+  col_name \tab types \tab description \cr
+  season \tab integer \tab Season year. \cr
+  award_id \tab character \tab ESPN award identifier. \cr
+  ref \tab character \tab Full \code{$ref} URL for the award detail. \cr
+  league \tab character \tab League slug (\code{"nba"}). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

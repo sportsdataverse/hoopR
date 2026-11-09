@@ -11,17 +11,10 @@ acb_competition_rounds(competition_ids = NULL)
 the API's default competition. One or more whole numbers (a vector repeats \code{competitionIds} in the query).}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_competition_rounds}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa. \cr
-   edition_id \tab integer \tab Season id the round belongs to (START year - 1935). \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   round_id \tab integer \tab Round id: global across seasons, not the round number (6017 = Liga 2026-27 round 3; 2600 = 2016-17 round 1) \cr
-   round_number \tab integer \tab Round number within the phase \cr
-   subphase_id \tab integer \tab Sub-phase id inside a phase (a playoff round or a cup round, e.g. 291, 292, 293); null in the regular season \cr
-   subphase_number \tab integer \tab Sub-phase number; null in the regular season \cr
-}
+A \code{hoopR_data} tibble with one row per edition and round.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_competition_rounds")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The rounds of every competition edition: the round ids to crawl.

@@ -11,13 +11,10 @@ cba_team_options(season)
 (2025), so cba_runtime sends season - 1.}
 }
 \value{
-A \code{hoopR_data} tibble: One row per team: id (key) and display name. An empty valid answer is a zero-row tibble
-with these columns, in this order (sportsdataverse-py \code{cba_team_options}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   is_default \tab integer \tab Default-selection flag: 2 = not the default on every row (the site prepends its own 'all teams' row, which this route does not send). \cr
-   key \tab character \tab Team display name (Chinese) in the requested season; names change with the sponsor, the teamId does not. \cr
-   value \tab character \tab teamId (key space: CBA clubs; 5 digits 29115-29140 for the long-standing clubs, 9 digits for newer ones (100074683 = Ningbo); stable across seasons and club renames, but the display name changes with the sponsor: 29128 = 'Zhejiang Guangsha' under many sponsor names, (Chinese text) in 2025-26). Joins getTeam / teamList and the team and player routes. Not a player or schedule id. Here a string of digits. \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cba_team_options")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The teams of one season as a select list: team id and the season's display name.

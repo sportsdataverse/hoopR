@@ -18,56 +18,10 @@ e.g. \code{E2025} for 2025-26.}
 \item{offset}{(\emph{integer} optional): Row offset into the full list.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per person-club registration:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      type \tab character \tab Person type code (J = player, E = coach, ...). \cr
-      type_name \tab character \tab Person type name. \cr
-      active \tab logical \tab Whether the record is currently active. \cr
-      start_date \tab character \tab Start date (ISO 8601). \cr
-      end_date \tab character \tab End date (ISO 8601). \cr
-      order \tab integer \tab Display order within the roster. \cr
-      dorsal \tab character \tab Jersey number as displayed. \cr
-      dorsal_raw \tab character \tab Jersey number as stored by the engine. \cr
-      position \tab integer \tab Position code of the player (engine integer). \cr
-      position_name \tab character \tab Position name of the player. \cr
-      last_team \tab character \tab Previous club of the person. \cr
-      external_id \tab character \tab External (statistics-provider) identifier of the person (Utf8 join key). \cr
-      person_code \tab character \tab Person: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). \cr
-      person_name \tab character \tab Person: display name. \cr
-      person_alias \tab character \tab Person: short display alias. \cr
-      person_alias_raw \tab character \tab Person: short alias as stored by the engine. \cr
-      person_passport_name \tab character \tab Person: given name as on the passport. \cr
-      person_passport_surname \tab character \tab Person: surname as on the passport. \cr
-      person_jersey_name \tab character \tab Person: name printed on the jersey. \cr
-      person_abbreviated_name \tab character \tab Person: abbreviated display name. \cr
-      person_country_code \tab character \tab Person: ISO country code. \cr
-      person_country_name \tab character \tab Person: country name. \cr
-      person_height \tab integer \tab Person: height in centimetres. \cr
-      person_weight \tab integer \tab Person: weight in kilograms. \cr
-      person_birth_date \tab character \tab Person: date of birth (ISO 8601). \cr
-      person_birth_country_code \tab character \tab Person: birth country: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). \cr
-      person_birth_country_name \tab character \tab Person: birth country: display name. \cr
-      person_twitter_account \tab character \tab Person: twitter / X handle. \cr
-      person_instagram_account \tab character \tab Person: instagram handle. \cr
-      person_facebook_account \tab character \tab Person: facebook handle. \cr
-      person_is_referee \tab logical \tab Person: whether the person is a referee. \cr
-      club_code \tab character \tab Club: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). \cr
-      club_name \tab character \tab Club: display name. \cr
-      club_abbreviated_name \tab character \tab Club: abbreviated display name. \cr
-      club_editorial_name \tab character \tab Club: editorial (long-form) display name. \cr
-      club_tv_code \tab character \tab Club: three-letter broadcast abbreviation of the club. \cr
-      club_is_virtual \tab logical \tab Club: whether the club is a placeholder rather than a real club. \cr
-      club_images_crest \tab character \tab Club: URL of the club crest image. \cr
-      season_name \tab character \tab Season: display name. \cr
-      season_code \tab character \tab Season code: competition code + start year, e.g. E2025 for 2025-26 (Utf8 join key). \cr
-      season_alias \tab character \tab Season: short display alias. \cr
-      season_competition_code \tab character \tab Season: competition code (E = EuroLeague, U = EuroCup; Utf8 join key). \cr
-      season_year \tab integer \tab Season: start year of the season. \cr
-      season_start_date \tab character \tab Season: start date (ISO 8601). \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per person-club registration.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "euroleague_people")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the people (players, coaches) in a season.}

@@ -12,20 +12,10 @@ shots, rosters). 20209407 = Edy Tavares, 20212243 = Olek Balcerowski. A whole nu
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_career_stints}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab ACB licence number asked for. \cr
-   initial_year \tab integer \tab Year the stint starts. \cr
-   end_year \tab integer \tab Year the stint ends (the season's END year). \cr
-   team_id \tab integer \tab Team entry of the stint's latest edition. \cr
-   club_id \tab integer \tab Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the \code{clubId} request param and every \code{homeClubId} / \code{awayClubId}. \cr
-   team \tab character \tab Team name that season (sponsor names change) \cr
-   team_abbr \tab character \tab Three-letter abbreviation (BAR, RMB) \cr
-   edition_id \tab integer \tab Season id of the stint's team entry (START year - 1935). \cr
-   n_editions \tab integer \tab Editions the stint spans. \cr
-   has_no_validated_data \tab logical \tab True when the stint has no validated data. \cr
-}
+A \code{hoopR_data} tibble with one row per stint.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_career_stints")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A player's club stints, one row per stint.

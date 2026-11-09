@@ -36,78 +36,10 @@ captured (other values unverified).}
 \item{offset}{(\emph{integer} optional): Row offset into the full list.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per player. The columns depend on
-\code{mode}:
-
-\strong{\code{mode = "traditional"}}
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      player_ranking \tab integer \tab Rank of the player on the requested statistic mode. \cr
-      games_played \tab numeric \tab Games played. \cr
-      games_started \tab numeric \tab Games started. \cr
-      minutes_played \tab numeric \tab Minutes played. \cr
-      points_scored \tab numeric \tab Points scored. \cr
-      two_pointers_made \tab numeric \tab Two-point field goals made. \cr
-      two_pointers_attempted \tab numeric \tab Two-point field goals attempted. \cr
-      two_pointers_percentage \tab character \tab Two-point field-goal percentage, formatted. \cr
-      three_pointers_made \tab numeric \tab Three-point field goals made. \cr
-      three_pointers_attempted \tab numeric \tab Three-point field goals attempted. \cr
-      three_pointers_percentage \tab character \tab Three-point field-goal percentage, formatted. \cr
-      free_throws_made \tab numeric \tab Free throws made. \cr
-      free_throws_attempted \tab numeric \tab Free throws attempted. \cr
-      free_throws_percentage \tab character \tab Free-throw percentage, formatted. \cr
-      offensive_rebounds \tab numeric \tab Offensive rebounds. \cr
-      defensive_rebounds \tab numeric \tab Defensive rebounds. \cr
-      total_rebounds \tab numeric \tab Total rebounds. \cr
-      assists \tab numeric \tab Assists. \cr
-      steals \tab numeric \tab Steals. \cr
-      turnovers \tab numeric \tab Turnovers. \cr
-      blocks \tab numeric \tab Blocks made. \cr
-      blocks_against \tab numeric \tab Shots blocked by the opponent. \cr
-      fouls_commited \tab numeric \tab Personal fouls committed. \cr
-      fouls_drawn \tab numeric \tab Fouls drawn. \cr
-      pir \tab numeric \tab Performance index rating (PIR). \cr
-      player_code \tab character \tab Player: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). \cr
-      player_name \tab character \tab Player: display name. \cr
-      player_age \tab integer \tab Age of the player in years. \cr
-      player_image_url \tab character \tab Player: URL of the image. \cr
-      player_team_code \tab character \tab Player: euroLeague club code (Utf8 join key). \cr
-      player_team_tv_codes \tab character \tab Player: three-letter broadcast abbreviation(s) of the club. \cr
-      player_team_name \tab character \tab Player: club display name. \cr
-      player_team_image_url \tab character \tab Player: URL of the club crest image. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-\strong{\code{mode = "advanced"}}
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      player_ranking \tab integer \tab Rank of the player on the requested statistic mode. \cr
-      games_played \tab numeric \tab Games played. \cr
-      minutes_played \tab numeric \tab Minutes played. \cr
-      effective_field_goal_percentage \tab character \tab Effective field-goal percentage, formatted. \cr
-      true_shooting_percentage \tab character \tab True shooting percentage, formatted. \cr
-      offensive_rebounds_percentage \tab character \tab Offensive rebound percentage, formatted. \cr
-      defensive_rebounds_percentage \tab character \tab Defensive rebound percentage, formatted. \cr
-      rebounds_percentage \tab character \tab Total rebound percentage, formatted. \cr
-      assists_to_turnovers_ratio \tab numeric \tab Assist-to-turnover ratio. \cr
-      assists_ratio \tab character \tab Assist ratio (assists per 100 possessions used), formatted. \cr
-      turnovers_ratio \tab character \tab Turnover ratio (turnovers per 100 possessions used), formatted. \cr
-      two_point_attempts_ratio \tab character \tab Share of field-goal attempts that are two-pointers, formatted. \cr
-      three_point_attempts_ratio \tab character \tab Share of field-goal attempts that are three-pointers, formatted. \cr
-      free_throws_rate \tab character \tab Free-throw rate (free-throw attempts per field-goal attempt), formatted. \cr
-      possesions \tab numeric \tab Possessions (sic: the API spells it this way). \cr
-      player_code \tab character \tab Player: euroLeague code of the entity (competition, season, club, person or venue; Utf8 join key). \cr
-      player_name \tab character \tab Player: display name. \cr
-      player_age \tab integer \tab Age of the player in years. \cr
-      player_image_url \tab character \tab Player: URL of the image. \cr
-      player_team_code \tab character \tab Player: euroLeague club code (Utf8 join key). \cr
-      player_team_tv_codes \tab character \tab Player: three-letter broadcast abbreviation(s) of the club. \cr
-      player_team_name \tab character \tab Player: club display name. \cr
-      player_team_image_url \tab character \tab Player: URL of the club crest image. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per player. Its columns depend on \code{mode}: \code{"traditional"}, \code{"advanced"}.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "euroleague_player_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get season player stats, traditional (box-score totals or per-game

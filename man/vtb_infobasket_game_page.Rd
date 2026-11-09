@@ -11,39 +11,10 @@ vtb_infobasket_game_page(game_id)
 across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Thin header of a finished game (use vtb_infobasket_game for teams, box score and plays). The
-columns are always these, in this order (sportsdataverse-py \code{vtb_infobasket_game_page}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   comp_name_ru \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   comp_name_en \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   league_name_ru \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   league_name_en \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   league_short_name_ru \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   league_short_name_en \tab character \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   gender \tab integer \tab Competition gender: 0 on every VTB sample (men). Other values unverified. \cr
-   comp_id \tab integer \tab Always 0 on this thin header; use vtb_infobasket_game for the stage. \cr
-   league_id \tab integer \tab Season-level competition id of the game (50714 = VTB 2025-26); 0 in GamePage. \cr
-   game_id \tab integer \tab Infobasket game id (GameID); equals the v2 API \code{matchId}. Joins to /Widget/GetOnline/\{gameId\} and /Widget/GamePage/\{gameId\}. The scope check compares it with the request. \cr
-   game_date \tab character \tab Game date as an ISO 8601 string in Moscow time (+03:00), midnight. \cr
-   game_time \tab character \tab Tip-off as an ISO 8601 string in Moscow time (+03:00). \cr
-   game_date_time \tab character \tab Tip-off as an ISO 8601 string in Moscow time (+03:00). \cr
-   game_number \tab character \tab Game number within the competition, e.g. 'RS-002' (RS = regular season); playoff games use the series code. \cr
-   game_region \tab integer \tab Region (city) id of the game. \cr
-   game_arena \tab integer \tab Arena id of the game. Infobasket arena id; equals the v2 API \code{venueId} (11687 = SK Basket-Hall, Krasnodar). \cr
-   game_rules \tab integer \tab Rules code (1 in the samples; unverified). \cr
-   game_forfeit \tab integer \tab 1 when the game was forfeited, else 0. \cr
-   game_attendance \tab integer \tab Spectators at the game (null when not recorded). \cr
-   game_status \tab integer \tab Game status: 0 planned, 1 completed, 2 live (the site's widget code). Samples are completed games. \cr
-   game_stats_status \tab integer \tab Stats status of the game; 0 in the samples. \cr
-   game_time_moscow_string \tab character \tab Tip-off time in Moscow time, 'HH:MM'. \cr
-   region_name_ru \tab character \tab City or region in Russian. \cr
-   region_name_en \tab character \tab City or region in English. \cr
-   arena_name_ru \tab character \tab Arena name in Russian. \cr
-   arena_name_en \tab character \tab Arena name in English. \cr
-   arena_full_name_ru \tab character \tab Arena full name in Russian. \cr
-   arena_full_name_en \tab character \tab Arena full name in English. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_game_page")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Thin header of a finished game (use vtb_infobasket_game for teams, box score and plays).

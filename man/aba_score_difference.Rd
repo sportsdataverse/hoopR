@@ -17,20 +17,10 @@ druga.aba-liga.com, lea=2). Both sites serve one database; the runtime asks the 
 \code{"aba"}.}
 }
 \value{
-A \code{hoopR_data} tibble.
-One row per minute with the cumulative \code{home_score} / \code{away_score}, as :func:\code{parse_aba_score_flow}; for a
-played game the two routes carry the same rows.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_no \tab integer \tab Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The \{gameNo\} of the match route. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr
-   league_id \tab integer \tab League code, the site's lea: 1 = ABA League, 2 = ABA League 2. \cr
-   league \tab character \tab League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. \cr
-   minute \tab integer \tab Elapsed game minute: 0 (tip-off) to 40, then 41-45 per overtime; every minute once, in order. \cr
-   home_score \tab integer \tab Home cumulative score at the end of that minute (the site sends a numeric string). The last row equals the final score. \cr
-   away_score \tab integer \tab Away cumulative score at the end of that minute (the site sends a numeric string). The last row equals the final score. \cr
-}
+A \code{hoopR_data} tibble with one row per minute with the cumulative home_score / away_score.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "aba_score_difference")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Score after every whole minute of one finished game, from the Score difference chart (2017-18 on); the same rows

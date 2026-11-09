@@ -11,16 +11,10 @@ tpbl_referees(game_id)
 = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble: The officiating crew of one finished game, chief referee first (names only). An empty
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{tpbl_referees}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab TPBL game id (key space: TPBL games on api.tpbl.basketball): the \code{{game_id}} of the game routes. Not sequential by date (2024-25 = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). The box score echoes no game id, so a box frame parsed without the request stamp has a null game_id. \cr
-   sequence \tab integer \tab Position in the crew as the API lists it: 1 = the chief referee. \cr
-   referee_id \tab integer \tab TPBL referee id (key space: TPBL referees on api.tpbl.basketball). Not the GoHoops referee id. \cr
-   gohoops_referee_id \tab integer \tab GoHoops referee id (key space: GoHoops referees). Not the TPBL referee id. \cr
-   name \tab character \tab Referee name in Traditional Chinese. Names only: no contact or birth data is published. \cr
-   role \tab character \tab Crew role enum: BASKETBALL_CHIEF_REFEREE = crew chief, BASKETBALL_FIRST_ASSISTANT_REFEREE = first assistant (umpire 1), BASKETBALL_SECOND_ASSISTANT_REFEREE = second assistant (umpire 2). \cr
-}
+A \code{hoopR_data} tibble with one row per official.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tpbl_referees")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The officiating crew of one finished game, chief referee first (names only).

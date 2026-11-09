@@ -19,26 +19,10 @@ page record (a list): \code{data.json} as served plus \verb{_request} (the ids a
 record parsed from an HTML page.}
 }
 \value{
-A \code{hoopR_data} tibble (a zero-row tibble with these columns when Genius answers
-an empty valid page), or the raw list when \code{return_parsed = FALSE}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab From the block id \verb{extfix_<id>}. Genius match id: the \{matchId\} of data.json and /u/; one global sequence across every Genius customer (~0.3 M in 2016, ~2.9 M in Oct 2026) \cr
-   link_match_id \tab integer \tab Match id of the block's \verb{/match/<id>/summary} link; equals match_id (the capture refuses a page where it does not); null when the org hides match pages (FFBB) \cr
-   comp_id \tab integer \tab CompId of the match link, or of the team links when the org hides match pages (FFBB); equals the \{compId\} asked for. A 'To be determined' slot (no team or match link) takes the \{compId\} the page's other blocks prove \cr
-   org \tab character \tab ORG code of the match link (or the team links, as comp_id) \cr
-   status \tab character \tab Status from the block class STATUS_*: COMPLETE, SCHEDULED, POSTPONED, ... \cr
-   date_time \tab character \tab Tip-off as displayed, 'Mon D, YYYY, h:mm AM' (local time, zone not stated); null when unscheduled \cr
-   venue_id \tab integer \tab Genius venue id (the /venue/\{id\} of hosted pages); null when the venue is plain text (FFBB) \cr
-   venue_name \tab character \tab Venue name as entered (local script) \cr
-   home_team_id \tab integer \tab Home team: Genius team id (warehouse key space, global across orgs and seasons; the /team/\{id\} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code \cr
-   home_team_name \tab character \tab Home team full name \cr
-   home_team_code \tab character \tab Home team code (local script possible) \cr
-   home_score \tab integer \tab Home points; null before tip-off (typed integer only on a route whose 3 sampled rows were all played) \cr
-   away_team_id \tab integer \tab Away team: Genius team id (warehouse key space, global across orgs and seasons; the /team/\{id\} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code \cr
-   away_team_name \tab character \tab Away team full name \cr
-   away_team_code \tab character \tab Away team code (local script possible) \cr
-   away_score \tab integer \tab Away points; null before tip-off (typed integer only on a route whose 3 sampled rows were all played) \cr
-}
+A \code{hoopR_data} tibble with one row per match in page order.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "genius_schedule")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every match of a competition (hosted WebStats): ids, status, venue, teams and scores.

@@ -14,31 +14,15 @@ cbbd_conferences_history(conference = NULL)
 (e.g. \code{B1G}). See \code{\link[=cbbd_conferences]{cbbd_conferences()}} for valid values.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per conference:
+A \code{hoopR_data} tibble with one row per conference.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_conferences")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab integer \tab CollegeBasketballData conference id. \cr
-      source_id \tab character \tab Source (ESPN) conference id. \cr
-      name \tab character \tab Conference name (e.g. \verb{Big Ten}). \cr
-      abbreviation \tab character \tab Conference abbreviation (e.g. \code{B1G}). \cr
-      short_name \tab character \tab Conference short name. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-A \code{hoopR_data} tibble with one row per conference. The \code{teams} column
-is a nested list of per-team membership spans:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab integer \tab CollegeBasketballData conference id. \cr
-      source_id \tab character \tab Source (ESPN) conference id. \cr
-      name \tab character \tab Conference name. \cr
-      abbreviation \tab character \tab Conference abbreviation. \cr
-      short_name \tab character \tab Conference short name. \cr
-      teams \tab list \tab Nested list of member-team membership spans. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per conference.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_conferences_history")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get college basketball conferences from the CollegeBasketballData API.}

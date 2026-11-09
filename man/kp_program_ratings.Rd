@@ -7,29 +7,10 @@
 kp_program_ratings()
 }
 \value{
-A data frame with 17 columns:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      rk \tab numeric \tab Rk. \cr
-      team \tab character \tab Team-side label or team identifier. \cr
-      conf \tab character \tab character. \cr
-      rtg \tab numeric \tab Rtg. \cr
-      best_rk \tab numeric \tab Best rk. \cr
-      best_yr \tab numeric \tab Best yr. \cr
-      worst_rk \tab numeric \tab Worst rk. \cr
-      worst_yr \tab numeric \tab Worst yr. \cr
-      kp_median \tab numeric \tab Kp median. \cr
-      top10 \tab numeric \tab Top10. \cr
-      top25 \tab numeric \tab Top25. \cr
-      top50 \tab numeric \tab Top50. \cr
-      ch \tab numeric \tab Ch. \cr
-      f4 \tab numeric \tab F4. \cr
-      s16 \tab numeric \tab S16. \cr
-      r1 \tab numeric \tab R1. \cr
-      chg \tab numeric \tab Chg. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A data frame with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kp_program_ratings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get KenPom's program ratings}

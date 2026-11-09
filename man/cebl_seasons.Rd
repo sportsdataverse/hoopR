@@ -7,14 +7,10 @@
 cebl_seasons()
 }
 \value{
-A \code{hoopR_data} tibble: Every CEBL season (2019 on), with the active and live flags. An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{cebl_seasons}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season_id \tab integer \tab CEBL season row id (1 = 2019 ... 8 = 2026). No route takes it: routes take \code{year}. \cr
-   season \tab integer \tab Season: the calendar year it is played in (May-August) = the sdv END year. The key every route's \code{season} param takes. \cr
-   is_active \tab logical \tab True for the current season (one row: 2026 on 2026-10-12). \cr
-   is_live \tab logical \tab True while the current season is in progress or open for live data (true for 2026 on 2026-10-12, after its last game: the exact meaning is unverified). \cr
-}
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cebl_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every CEBL season (2019 on), with the active and live flags.

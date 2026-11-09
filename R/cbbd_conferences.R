@@ -2,18 +2,7 @@
 #' **CBD Conferences**
 #' @description
 #' **Get college basketball conferences from the CollegeBasketballData API.**
-#' @return A `hoopR_data` tibble with one row per conference:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       id \tab integer \tab CollegeBasketballData conference id. \cr
-#'       source_id \tab character \tab Source (ESPN) conference id. \cr
-#'       name \tab character \tab Conference name (e.g. \verb{Big Ten}). \cr
-#'       abbreviation \tab character \tab Conference abbreviation (e.g. \code{B1G}). \cr
-#'       short_name \tab character \tab Conference short name. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_conferences", inline = FALSE, unit = "conference")
 #' @keywords CBD Conferences
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -54,20 +43,7 @@ cbbd_conferences <- function() {
 #' **Get historical conference membership from the CollegeBasketballData API.**
 #' @param conference (*character* optional): Conference abbreviation filter
 #'   (e.g. `B1G`). See [cbbd_conferences()] for valid values.
-#' @return A `hoopR_data` tibble with one row per conference. The `teams` column
-#'   is a nested list of per-team membership spans:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       id \tab integer \tab CollegeBasketballData conference id. \cr
-#'       source_id \tab character \tab Source (ESPN) conference id. \cr
-#'       name \tab character \tab Conference name. \cr
-#'       abbreviation \tab character \tab Conference abbreviation. \cr
-#'       short_name \tab character \tab Conference short name. \cr
-#'       teams \tab list \tab Nested list of member-team membership spans. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_conferences_history", inline = FALSE, unit = "conference")
 #' @keywords CBD Conferences
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names

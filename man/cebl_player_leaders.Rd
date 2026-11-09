@@ -30,27 +30,10 @@ season combined (the Stats Hub's All-Time). An unknown year answers \code{hoopR_
 echo it.}
 }
 \value{
-A \code{hoopR_data} tibble: Top five players per requested statistic (long frame, one row per statistic and leader).
-An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{cebl_player_leaders}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   statistic \tab character \tab Statistic this leader row ranks, the body's key for the list: POINTS, REBOUNDS, ASSISTS, TARGET_SCORES and the other names the request asked for. \cr
-   ranking \tab integer \tab Rank in this statistic, 1 = best; ties share a rank and skip the next (1, 1, 1, 4). The list is the top 5 rows, no more. \cr
-   season \tab integer \tab Season: the calendar year it is played in (May to August) = the sdv END year (2025). Taken from the request (the body does not echo it); null for the all-time table and for a bare body. \cr
-   mode \tab character \tab Table mode of the request: TOTALS (sums over the selected games) or PER_GAME (per-game averages); the body does not echo it. \cr
-   competition \tab character \tab Competition filter of the request: REGULAR or FINALS; null when both were asked. The body does not echo it. \cr
-   player_id \tab integer \tab CEBL player id (its own key space). Joins /players/\{player_id\}/ and \code{id} in the other player rows. Genius LiveStats \code{data.json} carries no person id, so the join to Genius play-by-play is by name, team and jersey number (unverified). \cr
-   full_name \tab character \tab Player's full name. \cr
-   team_id \tab integer \tab CEBL team id (its own key space; not a Genius id). Joins /teams/ \code{id}, the games' \code{home_team_id} / \code{away_team_id}, \code{team_id} in player rows and the \code{team_id} / \code{vs_team_id} params. A relocated or renamed franchise has a second id: the Stats Hub groups 15+56 (Saskatchewan Rattlers, Saskatoon Mamba), 17+53 (Calgary Surge, Guelph Nighthawks), 19+55 (Brampton, Hamilton Honey Badgers) and 16+54 (Vancouver, Fraser Valley Bandits). \cr
-   team_name_en \tab character \tab Full English name of the player's team. \cr
-   team_short_name_en \tab character \tab Short English name (city) of the player's team. \cr
-   team_name_fr \tab character \tab Full French name of the player's team. \cr
-   team_short_name_fr \tab character \tab Short French name (city) of the player's team. \cr
-   team_abbreviated_name \tab character \tab Three-letter code of the player's team ('OTT', 'VAN'). \cr
-   team_logo_url \tab character \tab Logo URL (icon with the name) of the player's team. \cr
-   value \tab double \tab The player's figure for the statistic this list is keyed by, in the requested mode (TOTALS sum or PER_GAME average; percentages 0-100). A decimal string ('25.9'). \cr
-   photo_url \tab character \tab Player headshot URL on the Genius Sports image CDN (images.statsengine.playbyplay.api.geniussports.com). \cr
-}
+A \code{hoopR_data} tibble with one row per statistic and leader.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cebl_player_leaders")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Top five players per requested statistic (long frame, one row per statistic and leader).

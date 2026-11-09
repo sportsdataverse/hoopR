@@ -12,23 +12,10 @@ nbl_rosetta_seasons(org = "nbl", limit = NULL)
 \item{limit}{(\emph{integer} default \code{NULL}): Rows to return. Omitted = a page large enough for the whole list (a short page cut by Rosetta's path cache is refused).}
 }
 \value{
-A \code{hoopR_data} tibble (one row per season):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   org \tab character \tab Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. \cr
-   season_id \tab character \tab DataCore season id (UUID v1); accepted as \code{{season_id}}. \cr
-   rosetta_season_id \tab character \tab Rosetta season id (UUID v4; v5 on NBL1); the \code{{season_id}} route key. \cr
-   name \tab character \tab Season name as Rosetta spells it (NBL26, WNBL 2024/25, 2025 South Men); names drift, key on season_year. \cr
-   season_year \tab integer \tab Rosetta's year of the season: the START year for the NBL and WNBL from 1998-99 (2025 = 2025-26), the calendar year for NBL1 and the 1979-1997 winter seasons. See season_end_year for the sdv key. \cr
-   season_type \tab character \tab Season type: regular (includes finals), preseason, in_season (cups, blitz, exhibition), test. \cr
-   start_date \tab character \tab First day of the season, ISO date-time without offset. \cr
-   end_date \tab character \tab Last day of the season, ISO date-time without offset; null on older seasons. \cr
-   competition_league_name \tab character \tab Name of the league the season's competition belongs to (NBL, WNBL or NBL1). \cr
-   competition_division \tab character \tab NBL1 divisions (conference x gender); empty for NBL and WNBL. \cr
-   season_end_year \tab integer \tab sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every season of an organisation: regular, preseason, in-season cups and test seasons, with dates.

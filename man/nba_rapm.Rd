@@ -16,17 +16,17 @@ on that possession).}
 \item{...}{Reserved for future keyword arguments (currently ignored).}
 }
 \value{
-Returns a \code{data.frame} with one row per player:
+A \code{hoopR_data} tibble with one row per player.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      player_id \tab integer \tab NBA Stats person ID. Rows are sorted ascending by player_id. \cr
-      o_rapm \tab numeric \tab Offensive RAPM (per-100-possession points added on offense). Positive = better offensive player. \cr
-      d_rapm \tab numeric \tab Defensive RAPM (per-100-possession points saved on defense). Positive = better defensive player (sign is flipped so good defense is positive). \cr
-      rapm \tab numeric \tab Total RAPM = o_rapm + d_rapm. Positive = net positive impact. \cr
-      off_poss \tab integer \tab Number of possessions the player appeared on offense. \cr
-      def_poss \tab integer \tab Number of possessions the player appeared on defense. \cr
-   }}
+  col_name \tab types \tab description \cr
+  player_id \tab integer \tab NBA Stats person ID. Rows are sorted ascending by player_id. \cr
+  o_rapm \tab numeric \tab Offensive RAPM (per-100-possession points added on offense). Positive = better offensive player. \cr
+  d_rapm \tab numeric \tab Defensive RAPM (per-100-possession points saved on defense). Positive = better defensive player (sign is flipped so good defense is positive). \cr
+  rapm \tab numeric \tab Total RAPM = o_rapm + d_rapm. Positive = net positive impact. \cr
+  off_poss \tab integer \tab Number of possessions the player appeared on offense. \cr
+  def_poss \tab integer \tab Number of possessions the player appeared on defense. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 Returns a 0-row frame with the same schema when input is empty or all

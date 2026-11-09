@@ -12,32 +12,10 @@ Brex): the team_id of easl_teams, easl_standings and the box scores. easl_team r
 easl_teams does not list.}
 }
 \value{
-A \code{hoopR_data} tibble: One team's directory entry; resolves the historical teams easl_teams does not list. An
-empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{easl_team}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_row_id \tab integer \tab The sync server's own integer row id of the team (not a DataCore id; inactive teams interleave, so ids of /teams rows have gaps). \cr
-   team_id \tab character \tab teamId: DataCore team (entity) UUID v1 (key space: EASL teams, the same id as \code{entityId}; joins /teams, /standings team.id, fixture competitors, box and play-by-play teams). Not a player id. \cr
-   name \tab character \tab Display name. Despite the field name this is the English / Latin-script name used on the league site. \cr
-   name_native \tab character \tab Alternative name: the native-script name of some Japanese clubs (for example the Japanese-script name of Utsunomiya Brex), blank for most clubs; for players it usually equals nameFullLocal. Despite the field name it is not always Latin script. \cr
-   code_latin \tab character \tab Three-letter club code (for example BRE); null or empty for some clubs. \cr
-   code_local \tab character \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (String). \cr
-   standard \tab character \tab Competition standard: ELITE. \cr
-   age_group \tab character \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (String). \cr
-   gender \tab character \tab Competition gender of the team: MALE (the EASL is a men's competition). \cr
-   status \tab character \tab ACTIVE for teams in the current season (the only ones /teams lists), INACTIVE for historical teams (only via \verb{/teams/\{teamId\}}). \cr
-   primary_color \tab character \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (String). \cr
-   secondary_color \tab character \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (String). \cr
-   tertiary_color \tab character \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (String). \cr
-   logo \tab character \tab Club logo URL on the Sportradar DataCore asset CDN (images.dc.connect.sportradar.com/b1e0z/...). \cr
-   website \tab character \tab Club website URL; most clubs have none. \cr
-   facebook_username \tab character \tab Club Facebook handle; most clubs have none. \cr
-   twitter_username \tab character \tab Club X / Twitter handle; most clubs have none. \cr
-   instagram_username \tab character \tab Club Instagram handle; some clubs have none. \cr
-   wikipedia_url \tab character \tab Club Wikipedia URL (DataCore column); empty for every ACTIVE team. \cr
-   organization_id \tab character \tab DataCore organisation id: b1e0z (EASL). \cr
-   created_at \tab character \tab When the sync server inserted the row, 'YYYY-MM-DD HH:MM:SS' (a different format from updatedAt; zone unstated, UTC assumed). \cr
-   updated_at \tab character \tab When the sync server last synced the row, ISO 8601 with milliseconds and Z (UTC). \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "easl_team")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One team's directory entry; resolves the historical teams easl_teams does not list.

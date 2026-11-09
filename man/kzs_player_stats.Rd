@@ -13,61 +13,10 @@ id.}
 \item{season}{(required) Season END year (2027 = 2026/2027); the wrapper maps it to KZS' opaque season id.}
 }
 \value{
-A \code{hoopR_data} tibble: A player's totals and per-game averages in each competition of one season. An empty valid
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_player_stats}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab Player registry id of the request (the body does not echo it). \cr
-   season_id \tab integer \tab Opaque KZS season id (27 = 2026/2027); the sdv season is the END year in season. \cr
-   season \tab integer \tab Season END year (2026/2027 = 2027), from the row's own season name or id, else from the request. \cr
-   competition_id \tab integer \tab Competition id: one per competition per season (men's top league 2025-26 = 579, 2026-27 = 608). Joins to \verb{/competitions/\{competitionId\}} and the \code{competitionId} query params. \cr
-   a1 \tab integer \tab Season total: free throws attempted. \cr
-   a2 \tab integer \tab Season total: two-pointers attempted. \cr
-   a3 \tab integer \tab Season total: three-pointers attempted. \cr
-   pts \tab integer \tab Season total: points. \cr
-   ass \tab integer \tab Season total: assists. \cr
-   blag \tab integer \tab Season total: own shots blocked (blocks against). \cr
-   blfv \tab integer \tab Season total: blocks made (blocks in favour). \cr
-   captain \tab integer \tab Games as captain. \cr
-   m1 \tab integer \tab Season total: free throws made. \cr
-   m2 \tab integer \tab Season total: two-pointers made. \cr
-   m3 \tab integer \tab Season total: three-pointers made. \cr
-   mins \tab double \tab Season total: minutes played (decimal minutes). \cr
-   pfcm \tab integer \tab Season total: fouls committed. \cr
-   pfrv \tab integer \tab Season total: fouls received. \cr
-   rd \tab integer \tab Season total: defensive rebounds. \cr
-   ro \tab integer \tab Season total: offensive rebounds. \cr
-   st \tab integer \tab Season total: steals. \cr
-   startinglineup \tab integer \tab Games the player started in the competition. \cr
-   tov \tab integer \tab Season total: turnovers. \cr
-   played \tab integer \tab Games the player played in the competition. \cr
-   plus_minus \tab integer \tab Season total: the team's point difference while the player was on court. \cr
-   efficiency \tab integer \tab Season total: efficiency (PIR). \cr
-   avgpts \tab double \tab Per game: points. \cr
-   avga1 \tab double \tab Per game: free throws attempted. \cr
-   avga2 \tab double \tab Per game: two-pointers attempted. \cr
-   avga3 \tab double \tab Per game: three-pointers attempted. \cr
-   avgass \tab double \tab Per game: assists. \cr
-   avgblag \tab double \tab Per game: own shots blocked (blocks against). \cr
-   avgblfv \tab double \tab Per game: blocks made (blocks in favour). \cr
-   avgm1 \tab double \tab Per game: free throws made. \cr
-   avgm2 \tab double \tab Per game: two-pointers made. \cr
-   avgm3 \tab double \tab Per game: three-pointers made. \cr
-   avgmins \tab double \tab Per game: minutes played (decimal minutes). \cr
-   avgpfcm \tab double \tab Per game: fouls committed. \cr
-   avgpfrv \tab double \tab Per game: fouls received. \cr
-   avgrd \tab double \tab Per game: defensive rebounds. \cr
-   avgro \tab double \tab Per game: offensive rebounds. \cr
-   avgsecs \tab integer \tab Per game: seconds (0 in every sample: unused). \cr
-   avgst \tab double \tab Per game: steals. \cr
-   avgtov \tab double \tab Per game: turnovers. \cr
-   avgplus_minus \tab double \tab Per game: the team's point difference while the player was on court. \cr
-   avgefficiency \tab double \tab Per game: efficiency (PIR). \cr
-   live_stats \tab logical \tab True when the competition has live stats. \cr
-   competition_name \tab character \tab Competition name, Slovenian (e.g. 'Liga OTP banka', 'Pokal Spar'). \cr
-   competition_rank \tab character \tab Tier of the competition (code table). \cr
-   competition_category \tab character \tab Category of the competition (code table). \cr
-   competition_gender \tab character \tab MALE or FEMALE competition. \cr
-}
+A \code{hoopR_data} tibble with one row per competition.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_player_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A player's totals and per-game averages in each competition of one season.

@@ -35,13 +35,35 @@ forward compatibility. Proxy configuration should use
 \code{options(hoopR.proxy = ...)} -- see \code{?hoopR} for details.}
 }
 \value{
-A single \code{hoopR_data} tibble with one row per athlete.
+A \code{hoopR_data} tibble with one row per athlete.
 
-Columns as documented in the shared \link{espn_mbb_athletes_index_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
+  full_name \tab character \tab Player's full name. \cr
+  jersey \tab character \tab Jersey number worn by the player. \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  team_id \tab character \tab Unique team identifier. \cr
+  headshot \tab character \tab Headshot image URL. \cr
+  status \tab character \tab Status label. \cr
+  link \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A single \code{hoopR_data} tibble with one row per athlete.
+A \code{hoopR_data} tibble with one row per athlete.
 
-Columns as documented in the shared \link{espn_mbb_athletes_index_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
+  full_name \tab character \tab Player's full name. \cr
+  jersey \tab character \tab Jersey number worn by the player. \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  team_id \tab character \tab Unique team identifier. \cr
+  headshot \tab character \tab Headshot image URL. \cr
+  status \tab character \tab Status label. \cr
+  link \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get ESPN Women's College Basketball Athletes Index}

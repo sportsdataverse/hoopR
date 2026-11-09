@@ -12,18 +12,10 @@ lba_players(season = NULL, page = NULL)
 \item{page}{Page number, 1-based. Omitted = the first page.}
 }
 \value{
-A \code{hoopR_data} tibble: Players of a season, 50 per page (walk the pages with page). The columns are always these,
-in this order (sportsdataverse-py \code{lba_players}); a column the site adds later is appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   player_id \tab integer \tab Player id (global). \cr
-   name \tab character \tab Player's given name. \cr
-   surname \tab character \tab Player's family name. \cr
-   code \tab character \tab Player code \code{SURNAME3-NAME3-YY}. \cr
-   team_name \tab character \tab Team name in that season, with its sponsor (\verb{Nutribullet Treviso Basket}); changes with the sponsor. \cr
-   year \tab integer \tab Season START year (2026 = 2026-27); sdv END year = year + 1. The season of the team the row places the player on. \cr
-   player_picture_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Players of a season, 50 per page (walk the pages with page).

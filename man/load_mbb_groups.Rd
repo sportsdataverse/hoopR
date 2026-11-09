@@ -18,17 +18,17 @@ the data into a database.}
 \item{tablename}{The name of the data table within the database}
 }
 \value{
-Returns a \code{hoopR_data} tibble with one row per group lineage.
+A \code{hoopR_data} tibble with one row per group lineage.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League key: \code{mbb} or \code{nba}. \cr
-      group_id \tab character \tab SDV group id, \code{\{league\}:\{slug\}} (e.g. \code{mbb:big-east}, \code{nba:atlantic}); one id per lineage across renames. \cr
-      level \tab character \tab Group level: \code{league} (NBA), \code{subdivision} (MBB Division I), \code{conference}, or \code{division}. \cr
-      first_season \tab integer \tab First season (ending year) with at least one member. \cr
-      last_season \tab integer \tab Last season (ending year) with at least one member. \cr
-      notes \tab character \tab Lineage decisions and source caveats. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League key: \code{mbb} or \code{nba}. \cr
+  group_id \tab character \tab SDV group id, \code{\{league\}:\{slug\}} (e.g. \code{mbb:big-east}, \code{nba:atlantic}); one id per lineage across renames. \cr
+  level \tab character \tab Group level: \code{league} (NBA), \code{subdivision} (MBB Division I), \code{conference}, or \code{division}. \cr
+  first_season \tab integer \tab First season (ending year) with at least one member. \cr
+  last_season \tab integer \tab Last season (ending year) with at least one member. \cr
+  notes \tab character \tab Lineage decisions and source caveats. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

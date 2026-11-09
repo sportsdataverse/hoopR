@@ -14,102 +14,10 @@ api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (le
 \item{slot_size}{(default \code{NULL}) Games per bucket (past, present, future); the API's default is 9.}
 }
 \value{
-A \code{hoopR_data} tibble: Recent, live and upcoming games, one row per game with its past / present / future
-bucket. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{scb_games_recent}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the sdv key; the API's \code{season_id} plus one. \cr
-   season_id \tab integer \tab Season, START year (2026 = 2026-27). \cr
-   game_id \tab character \tab Game id, a string; unique within a league only (BBL and DBBL overlap), and not chronological. \cr
-   competition \tab character \tab Competition: BBL, BBL_CUP (Pokal), ALLSTAR, CHAMPIONS_CUP on the BBL host; DBBL, DBBL_CUP on the DBBL host. \cr
-   stage \tab character \tab Stage: MAIN_ROUND (Hauptrunde, regular season), PLAYINS, FIRST_ROUND, SECOND_ROUND, ROUND_OF_16 (Achtelfinale), ROUND_OF_8 (Viertelfinale), SEMI_FINALS, FINALS, THIRD_PLACE_GAME, QUALIFICATION, GROUP_STAGE. \cr
-   status \tab character \tab Game status: PRE (scheduled), LIVE, POST (ended, not yet official), OFFICIAL (final). \cr
-   bucket \tab character \tab Which list of \verb{/games/recent} the game came from: \code{past} (finished), \code{present} (today or live) or \code{future} (scheduled). \cr
-   game_progress \tab character \tab Live progress code: E (ended), empty or null before the game. Meaning inferred. \cr
-   scheduled_time \tab character \tab Scheduled tip-off, ISO 8601 UTC. \cr
-   match_day \tab integer \tab Round number within the stage (Spieltag). \cr
-   is_tbd \tab logical \tab Date or time not yet fixed. \cr
-   is_hidden \tab logical \tab True when the API hides the game (0/1 on /games, a boolean on the header). \cr
-   home_team_id \tab character \tab Club id; equal to \code{seasonTeamId} in every sample. Joins to \verb{/teams/\{teamId\}}. \cr
-   home_season_team_id \tab character \tab Season-team id; equal to the club \code{teamId} in every sample (BBL 2005-2026, DBBL 2024-2026). \cr
-   home_team_name \tab character \tab Team name as listed that season (sponsor names included, e.g. 'EWE Baskets Oldenburg'). \cr
-   home_tlc \tab character \tab Three-letter club code. \cr
-   home_is_foreign \tab logical \tab The team is not in this league (cup opponents from the ProA / ProB). \cr
-   home_rank \tab integer \tab The team's current table position. \cr
-   home_streak \tab character \tab Current streak: W or L; empty when none. \cr
-   home_streak_count \tab integer \tab Length of the current streak. \cr
-   home_last10_victories \tab integer \tab Wins in the last 10 games. \cr
-   home_last10_losses \tab integer \tab Losses in the last 10 games. \cr
-   home_total_games \tab integer \tab Games the home team has played so far (the API sends it as a string). \cr
-   guest_team_id \tab character \tab Club id; equal to \code{seasonTeamId} in every sample. Joins to \verb{/teams/\{teamId\}}. \cr
-   guest_season_team_id \tab character \tab Season-team id; equal to the club \code{teamId} in every sample (BBL 2005-2026, DBBL 2024-2026). \cr
-   guest_team_name \tab character \tab Team name as listed that season (sponsor names included, e.g. 'EWE Baskets Oldenburg'). \cr
-   guest_tlc \tab character \tab Three-letter club code. \cr
-   guest_is_foreign \tab logical \tab The team is not in this league (cup opponents from the ProA / ProB). \cr
-   guest_rank \tab integer \tab The team's current table position. \cr
-   guest_streak \tab character \tab Current streak: W or L; empty when none. \cr
-   guest_streak_count \tab integer \tab Length of the current streak. \cr
-   guest_last10_victories \tab integer \tab Wins in the last 10 games. \cr
-   guest_last10_losses \tab integer \tab Losses in the last 10 games. \cr
-   guest_total_games \tab integer \tab Games the guest team has played so far (the API sends it as a string). \cr
-   home_score \tab integer \tab Home team final score. \cr
-   guest_score \tab integer \tab Guest team final score. \cr
-   latest_period \tab integer \tab Number of the last period played (4 = Q4, 5 = OT1, ...); the API sends \code{Q4} on /games and 4 on /games/recent. Null before the game. \cr
-   spectators \tab integer \tab Attendance; 0 when not recorded. \cr
-   home_q1_score \tab integer \tab Home team points in quarter 1; 0 when quarter scores were not recorded. \cr
-   home_q2_score \tab integer \tab Home team points in quarter 2; 0 when quarter scores were not recorded. \cr
-   home_q3_score \tab integer \tab Home team points in quarter 3; 0 when quarter scores were not recorded. \cr
-   home_q4_score \tab integer \tab Home team points in quarter 4; 0 when quarter scores were not recorded. \cr
-   home_ot1_score \tab integer \tab Home team points in overtime 1; 0 when not played (null from OT5 on in old seasons). \cr
-   home_ot2_score \tab integer \tab Home team points in overtime 2; 0 when not played (null from OT5 on in old seasons). \cr
-   home_ot3_score \tab integer \tab Home team points in overtime 3; 0 when not played (null from OT5 on in old seasons). \cr
-   home_ot4_score \tab integer \tab Home team points in overtime 4; 0 when not played (null from OT5 on in old seasons). \cr
-   home_ot5_score \tab integer \tab Home team points in overtime 5; 0 when not played (null from OT5 on in old seasons). \cr
-   home_ot6_score \tab integer \tab Home team points in overtime 6; 0 when not played (null from OT5 on in old seasons). \cr
-   home_ot7_score \tab integer \tab Home team points in overtime 7; 0 when not played (null from OT5 on in old seasons). \cr
-   home_ot8_score \tab integer \tab Home team points in overtime 8; 0 when not played (null from OT5 on in old seasons). \cr
-   home_ot9_score \tab integer \tab Home team points in overtime 9; 0 when not played (null from OT5 on in old seasons). \cr
-   guest_q1_score \tab integer \tab Guest team points in quarter 1; 0 when quarter scores were not recorded. \cr
-   guest_q2_score \tab integer \tab Guest team points in quarter 2; 0 when quarter scores were not recorded. \cr
-   guest_q3_score \tab integer \tab Guest team points in quarter 3; 0 when quarter scores were not recorded. \cr
-   guest_q4_score \tab integer \tab Guest team points in quarter 4; 0 when quarter scores were not recorded. \cr
-   guest_ot1_score \tab integer \tab Guest team points in overtime 1; 0 when not played (null from OT5 on in old seasons). \cr
-   guest_ot2_score \tab integer \tab Guest team points in overtime 2; 0 when not played (null from OT5 on in old seasons). \cr
-   guest_ot3_score \tab integer \tab Guest team points in overtime 3; 0 when not played (null from OT5 on in old seasons). \cr
-   guest_ot4_score \tab integer \tab Guest team points in overtime 4; 0 when not played (null from OT5 on in old seasons). \cr
-   guest_ot5_score \tab integer \tab Guest team points in overtime 5; 0 when not played (null from OT5 on in old seasons). \cr
-   guest_ot6_score \tab integer \tab Guest team points in overtime 6; 0 when not played (null from OT5 on in old seasons). \cr
-   guest_ot7_score \tab integer \tab Guest team points in overtime 7; 0 when not played (null from OT5 on in old seasons). \cr
-   guest_ot8_score \tab integer \tab Guest team points in overtime 8; 0 when not played (null from OT5 on in old seasons). \cr
-   guest_ot9_score \tab integer \tab Guest team points in overtime 9; 0 when not played (null from OT5 on in old seasons). \cr
-   referee1_id \tab character \tab Official id; joins to /referees \code{refId} (= its \code{id}). /referees lists only the current officials (44), so older games' officials can be missing there: all 40 of 2026-27's matched, 6 of 10 of 2008-09's. \cr
-   referee1_first_name \tab character \tab Official's given name. \cr
-   referee1_last_name \tab character \tab Official's family name. \cr
-   referee2_id \tab character \tab Official id; joins to /referees \code{refId} (= its \code{id}). /referees lists only the current officials (44), so older games' officials can be missing there: all 40 of 2026-27's matched, 6 of 10 of 2008-09's. \cr
-   referee2_first_name \tab character \tab Official's given name. \cr
-   referee2_last_name \tab character \tab Official's family name. \cr
-   referee3_id \tab character \tab Official id; joins to /referees \code{refId} (= its \code{id}). /referees lists only the current officials (44), so older games' officials can be missing there: all 40 of 2026-27's matched, 6 of 10 of 2008-09's. \cr
-   referee3_first_name \tab character \tab Official's given name. \cr
-   referee3_last_name \tab character \tab Official's family name. \cr
-   commissioner_id \tab character \tab Official id; joins to /referees \code{refId} (= its \code{id}). /referees lists only the current officials (44), so older games' officials can be missing there: all 40 of 2026-27's matched, 6 of 10 of 2008-09's. \cr
-   commissioner_first_name \tab character \tab Official's given name. \cr
-   commissioner_last_name \tab character \tab Official's family name. \cr
-   venue_id \tab character \tab Arena id, stable across seasons (Uber Arena = 2 in both 2025-26 and 2026-27); a different key space from /teams \code{seasonVenues.id}, and no captured route is keyed by it. A string in /games and \verb{/games/\{gameId\}}, an integer in /games/recent. \cr
-   venue_name \tab character \tab Name of the arena the game is played in; \code{venue_id} is its stable arena id. \cr
-   venue_address \tab character \tab Postal address, German. \cr
-   venue_capacity \tab integer \tab Arena capacity, spectators. \cr
-   venue_is_main \tab logical \tab The club's main arena. \cr
-   tv_channel \tab character \tab TV channel(s) showing the game, comma-joined (a list on some routes, an empty string when none). \cr
-   tv_type \tab character \tab TV coverage type; empty or null in every sample. \cr
-   is_free_tv \tab logical \tab Shown on free-to-air TV. \cr
-   live_stream_url \tab character \tab Live-stream link (DBBL games link YouTube); empty when none. \cr
-   top_score \tab integer \tab Points of the game's top scorer; null before the game. \cr
-   top_scorer_season_player_id \tab character \tab Season-player id. BBL: a string equal to \code{id}. DBBL: an INTEGER that matches \verb{/seasons/\{seasonId\}} \code{seasonPlayerId} (5 of 5 rows checked, 2026-27). Joins to \verb{/season-players/\{seasonPlayerId\}}. \cr
-   top_scorer_real_player_id \tab character \tab Global person id: the same across clubs and seasons. Joins to \code{realPlayerId} everywhere. \cr
-   top_scorer_first_name \tab character \tab Player's given name. \cr
-   top_scorer_last_name \tab character \tab Player's family name. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_games_recent")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Recent, live and upcoming games, one row per game with its past / present / future bucket.

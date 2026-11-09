@@ -14,38 +14,10 @@ competition.competitionId of any game row (208182 = World Cup 2023, 208722 = Par
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
-   team_code \tab character \tab Team abbreviation (FIBA country code or club abbreviation). \cr
-   short_name \tab character \tab Short team name: the country code for a national team, the club's short name for a club. \cr
-   profile_team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
-   profile_organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
-   profile_name \tab character \tab Team name as registered for the competition. \cr
-   profile_code \tab character \tab Team code (FIBA country code or club abbreviation). \cr
-   profile_country_name \tab character \tab Country of the team, in English. \cr
-   profile_country_code \tab character \tab Country FIBA code. \cr
-   profile_gender \tab character \tab Men or Women: the gender of the team's competition. \cr
-   profile_facebook \tab character \tab Facebook handle or URL; always null in the samples, values unverified. \cr
-   profile_twitter \tab character \tab X/Twitter handle; always null in the samples, values unverified. \cr
-   profile_instagram \tab character \tab Instagram handle; always null in the samples, values unverified. \cr
-   profile_website \tab character \tab The team's website address. \cr
-   profile_you_tube \tab character \tab YouTube handle; always null in the samples, values unverified. \cr
-   profile_final_ranking \tab integer \tab Final rank in the competition. \cr
-   profile_points_per_game \tab double \tab The team's average points per game played. \cr
-   profile_rebounds_per_game \tab double \tab The team's average rebounds per game played. \cr
-   profile_assists_per_game \tab double \tab The team's average assists per game played. \cr
-   profile_rank_points_per_game \tab double \tab Rank in the competition by points per game (1 = highest). \cr
-   profile_rank_rebounds_per_game \tab double \tab Rank in the competition by rebounds per game (1 = highest). \cr
-   profile_rank_assists_per_game \tab double \tab Rank in the competition by assists per game (1 = highest). \cr
-   profile_total_games_won \tab integer \tab The team's total games won over the games played. \cr
-   profile_total_games_lost \tab integer \tab The team's total games lost over the games played. \cr
-   profile_social_networks \tab character \tab Social-network handles. Stored as a JSON string. \cr
-   profile_competition_id \tab integer \tab FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. \cr
-   status_code \tab character \tab Team entry status: APPR approved. \cr
-   status_name \tab character \tab Team entry status label (Approved). \cr
-   organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Teams of a competition with their profile (final ranking, per-game averages).

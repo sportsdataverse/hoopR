@@ -7,23 +7,10 @@
 realgm_players()
 }
 \value{
-A \code{hoopR_data} tibble with one row per active player:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      number \tab integer \tab Row number. \cr
-      player \tab character \tab Player name. \cr
-      pos \tab character \tab Position. \cr
-      ht \tab character \tab Listed height. \cr
-      wt \tab integer \tab Listed weight (lbs). \cr
-      age \tab numeric \tab Age. \cr
-      current_team \tab character \tab Current NBA team. \cr
-      yos \tab integer \tab Years of service. \cr
-      pre_draft_team \tab character \tab Pre-draft team / school. \cr
-      draft_status \tab character \tab Draft pick / undrafted status. \cr
-      nationality \tab character \tab Player nationality. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per active player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "realgm_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the active NBA player index from

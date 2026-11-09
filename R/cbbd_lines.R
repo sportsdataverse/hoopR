@@ -8,27 +8,7 @@
 #' @param conference (*character* optional): Conference abbreviation filter.
 #' @param start_date_range (*character* optional): ISO 8601 start of date range.
 #' @param end_date_range (*character* optional): ISO 8601 end of date range.
-#' @return A `hoopR_data` tibble with one row per game. The `lines` column is a
-#'   nested list of per-provider lines:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       game_id \tab integer \tab CollegeBasketballData game id. \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       season_type \tab character \tab Season type. \cr
-#'       start_date \tab character \tab Game start date (ISO 8601). \cr
-#'       home_team_id \tab integer \tab Home team id. \cr
-#'       home_team \tab character \tab Home team name. \cr
-#'       home_conference \tab character \tab Home team conference. \cr
-#'       home_score \tab numeric \tab Home team final score. \cr
-#'       away_team_id \tab integer \tab Away team id. \cr
-#'       away_team \tab character \tab Away team name. \cr
-#'       away_conference \tab character \tab Away team conference. \cr
-#'       away_score \tab numeric \tab Away team final score. \cr
-#'       lines \tab list \tab Nested list of per-provider betting lines. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_lines", inline = FALSE, unit = "game")
 #' @keywords CBD Lines
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -70,15 +50,7 @@ cbbd_lines <- function(season = most_recent_mbb_season(), team = NULL, conferenc
 #' @rdname cbbd_lines
 #' @description
 #' **Get betting line providers from the CollegeBasketballData API.**
-#' @return A `hoopR_data` tibble with one row per line provider:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       id \tab integer \tab Line provider id. \cr
-#'       name \tab character \tab Line provider name. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_lines_providers", inline = FALSE, unit = "line provider")
 #' @keywords CBD Lines
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names

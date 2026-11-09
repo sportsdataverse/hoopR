@@ -20,32 +20,10 @@ the round number (6017 = Liga 2026-27 round 3). List them with \code{acb_competi
 Omitted = the current (or last) round. A whole number; a whole double is accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_standings}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa. \cr
-   edition_id \tab integer \tab Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, \code{season}. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   round_id \tab integer \tab Round the table is as of (the selected round). \cr
-   total_rounds \tab integer \tab Rounds in the phase. \cr
-   team_id \tab integer \tab Season-team entry id (new every season). \cr
-   club_id \tab integer \tab Stable ACB club id (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the same across seasons and sponsor names, and the club_id request argument. \cr
-   team \tab character \tab Team name as registered for that season (sponsor names change; the club id does not). \cr
-   team_abbr \tab character \tab Three-letter team abbreviation (BAR, RMB, VBC). \cr
-   position \tab integer \tab Table position (standings row) \cr
-   position_trend \tab integer \tab Change in position since the previous round: positive = up (meaning of the sign unverified). \cr
-   played \tab integer \tab Games played (standings row) \cr
-   wins \tab integer \tab Wins (standings row) \cr
-   losses \tab integer \tab Losses (the key is misspelt by the API) \cr
-   win_pct \tab double \tab Win percentage, 0-100. \cr
-   points_for \tab integer \tab Points scored (standings row) \cr
-   points_against \tab integer \tab Points allowed (standings row) \cr
-   plus_minus \tab integer \tab Point differential (points for minus points against). \cr
-   home_wins \tab integer \tab Wins at home (the API's localBalanceWins). \cr
-   home_losses \tab integer \tab Losses at home. \cr
-   away_wins \tab integer \tab Wins away from home (the API's awayBalanceWins). \cr
-   away_losses \tab integer \tab Losses away from home (the API's awayBalanceLosses). \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 League table after a round (default: the current round).

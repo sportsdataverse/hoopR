@@ -11,26 +11,10 @@ cebl_player(player_id)
 \code{player_id} in cebl_player_stats.}
 }
 \value{
-A \code{hoopR_data} tibble: One player's profile and current team: name, nationality, birth date, position, jersey. An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{cebl_player}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab CEBL player id (its own key space). Joins /players/\{player_id\}/ and \code{id} in the other player rows. Genius LiveStats \code{data.json} carries no person id, so the join to Genius play-by-play is by name, team and jersey number (unverified). \cr
-   full_name \tab character \tab Player's full name. \cr
-   nationality \tab character \tab Nationality: an upper-case English country name ('CANADA', 'UNITED STATES', 'SOUTH SUDAN'); null when unknown. \cr
-   birth_date \tab Date \tab Date of birth, YYYY-MM-DD (players' public bio field); null when unknown. \cr
-   age \tab integer \tab Age in whole years on the day of the request (computed by the API); null when the birth date is unknown. \cr
-   position \tab character \tab Playing position: G (guard), F (forward), C (center), or a combination such as 'C/F'; null when unknown. \cr
-   jersey_number \tab character \tab Jersey number, as a string of up to 2 characters ('0', '00' and '1' are distinct); null when unknown. \cr
-   team_id \tab integer \tab CEBL team id (its own key space; not a Genius id). Joins /teams/ \code{id}, the games' \code{home_team_id} / \code{away_team_id}, \code{team_id} in player rows and the \code{team_id} / \code{vs_team_id} params. A relocated or renamed franchise has a second id: the Stats Hub groups 15+56 (Saskatchewan Rattlers, Saskatoon Mamba), 17+53 (Calgary Surge, Guelph Nighthawks), 19+55 (Brampton, Hamilton Honey Badgers) and 16+54 (Vancouver, Fraser Valley Bandits). The player's latest team. \cr
-   team_name_en \tab character \tab Full English name of the player's team. \cr
-   team_short_name_en \tab character \tab Short English name (city) of the player's team. \cr
-   team_name_fr \tab character \tab Full French name of the player's team. \cr
-   team_short_name_fr \tab character \tab Short French name (city) of the player's team. \cr
-   team_icon_url \tab character \tab Icon URL (without the name) of the player's team. \cr
-   team_stats_url_en \tab character \tab cebl.ca stats page of the player's team (English). \cr
-   team_stats_url_fr \tab character \tab cebl.ca stats page of the player's team (French). \cr
-   photo_url \tab character \tab Player headshot URL on the Genius Sports image CDN (images.statsengine.playbyplay.api.geniussports.com). \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cebl_player")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One player's profile and current team: name, nationality, birth date, position, jersey.

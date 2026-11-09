@@ -17,25 +17,10 @@ the same as omitting it (verified on awards and rosters)}
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. \cr
-   competition_end_date \tab character \tab Last day of the competition, YYYY-MM-DD. \cr
-   award_date \tab character \tab Date awarded, YYYY-MM-DD. \cr
-   competition_season \tab integer \tab Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the package season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029). \cr
-   competition_official_name \tab character \tab Official name of the competition edition the award was given in. \cr
-   award_name \tab character \tab Award name (All-Star 5, MVP...). \cr
-   award_code \tab character \tab Award code (ALLSTAR, MVP...). \cr
-   award_level_id \tab integer \tab Id of the object the award is attached to: the competitionId when awardLevel is Competition. \cr
-   award_level \tab character \tab Level the award is given at: Competition. \cr
-   award_label \tab character \tab Extra label; null in every sample. \cr
-   player_id \tab integer \tab FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P_\verb{<id>} = gdapPlayerId. \cr
-   player_first_name \tab character \tab Awarded player's first name. \cr
-   player_last_name \tab character \tab Awarded player's last name. \cr
-   player_date_of_birth \tab character \tab Awarded player's date of birth, YYYY-MM-DD. \cr
-   player_nationality \tab character \tab Awarded player's nationality, FIBA code. \cr
-   teams \tab character \tab Teams the awarded player played for in the competition. Stored as a JSON string. \cr
-}
+A \code{hoopR_data} tibble with one row per award.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_awards")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Awards of a competition (MVP, All-Star Five...).

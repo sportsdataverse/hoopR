@@ -18,19 +18,19 @@ the data into a database.}
 \item{tablename}{The name of the data table within the database}
 }
 \value{
-Returns a \code{hoopR_data} tibble with one row per alias.
+A \code{hoopR_data} tibble with one row per alias.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League key: \code{mbb} or \code{nba}. \cr
-      group_id \tab character \tab SDV group id, \code{\{league\}:\{slug\}}. \cr
-      source \tab character \tab Source that uses the alias: \code{espn}, \code{ncaa}, \code{kenpom} or \code{sdv} (MBB); \code{espn}, \code{nba_stats} or \code{sdv} (NBA). \cr
-      source_id \tab character \tab The source's own id for the group (e.g. ESPN group id, NCAA conference id), when it has one. \cr
-      name_kind \tab character \tab Kind of alias: \code{name}, \code{short_name}, \code{abbreviation}, \code{slug}, or \code{code}. \cr
-      value \tab character \tab The alias itself. \cr
-      valid_from \tab integer \tab First season (ending year) the alias applies, inclusive; \code{NA} means unbounded. \cr
-      valid_to \tab integer \tab Last season (ending year) the alias applies, inclusive; \code{NA} means unbounded. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League key: \code{mbb} or \code{nba}. \cr
+  group_id \tab character \tab SDV group id, \code{\{league\}:\{slug\}}. \cr
+  source \tab character \tab Source that uses the alias: \code{espn}, \code{ncaa}, \code{kenpom} or \code{sdv} (MBB); \code{espn}, \code{nba_stats} or \code{sdv} (NBA). \cr
+  source_id \tab character \tab The source's own id for the group (e.g. ESPN group id, NCAA conference id), when it has one. \cr
+  name_kind \tab character \tab Kind of alias: \code{name}, \code{short_name}, \code{abbreviation}, \code{slug}, or \code{code}. \cr
+  value \tab character \tab The alias itself. \cr
+  valid_from \tab integer \tab First season (ending year) the alias applies, inclusive; \code{NA} means unbounded. \cr
+  valid_to \tab integer \tab Last season (ending year) the alias applies, inclusive; \code{NA} means unbounded. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

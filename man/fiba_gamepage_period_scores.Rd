@@ -18,17 +18,10 @@ competition.competitionId of any game row (208182 = World Cup 2023, 208722 = Par
 game-page objects \code{game}, \code{playByPlay}, \code{gameDetails}, \code{playersTeamA}, \code{playersTeamB}).}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab FIBA game id (Int64), global across competitions: gdapGameId, the \verb{<gameId>} of a game-page URL. \cr
-   competition_id \tab integer \tab FIBA competition id (Int64) of the game's edition; the comp argument. \cr
-   team_side \tab character \tab A or B: whether the row is the schedule's team A or team B (null when the page does not say). \cr
-   organisation_id \tab integer \tab Stable federation or club id (Int64) of the team, the same in every competition (64 = Germany); the page's T_\verb{<id>} and the play-by-play oId. NOT the per-competition team_id. \cr
-   period \tab character \tab Period name: Q1..Q4, then OT1, OT2... \cr
-   period_number \tab integer \tab 1-based position of the period in the game. \cr
-   points \tab integer \tab Points the team scored in the period. \cr
-   points_first_five_min \tab integer \tab Points the team scored in the first five minutes of the period (matches the play-by-play except free throws on the 5:00 boundary); null when absent. \cr
-}
+A \code{hoopR_data} tibble with one row per team and period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gamepage_period_scores")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Points by period of both teams of one FIBA game.

@@ -38,28 +38,10 @@ sent; with neither \code{season} nor \code{season_id} the API filters by it.}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per \verb{(person_id, season_name, team_id)}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   person_id \tab character \tab Player UUID (person), shared across seasons and sites. \cr
-   season_name \tab character \tab Competition-season the line is for, in the site's language (Betclic ELITE - Playoffs 2025). \cr
-   season_year \tab integer \tab The site's own year of that season (START year on LNB). \cr
-   season_end_year \tab integer \tab Season END year of that season (sdv key); null when the site is unmapped. \cr
-   team_id \tab character \tab Team UUID the player played for in that season. \cr
-   team_name \tab character \tab Name of the team the player played for in that season. \cr
-   minutes_per_game \tab character \tab Minutes per game as an ISO 8601 duration (player, that competition-season). \cr
-   points_per_game \tab double \tab Points per game (player, that competition-season). \cr
-   rebounds_per_game \tab double \tab Rebounds per game (player, that competition-season). \cr
-   rebounds_offensive_per_game \tab double \tab Offensive rebounds per game (player, that competition-season). \cr
-   rebounds_defensive_per_game \tab double \tab Defensive rebounds per game (player, that competition-season). \cr
-   assists_per_game \tab double \tab Assists per game (player, that competition-season). \cr
-   steals_per_game \tab double \tab Steals per game (player, that competition-season). \cr
-   blocks_per_game \tab double \tab Blocks per game (player, that competition-season). \cr
-   turnovers_per_game \tab double \tab Turnovers per game (player, that competition-season). \cr
-   fouls_personal_per_game \tab double \tab Personal fouls per game (player, that competition-season). \cr
-   dunks_per_game \tab double \tab Dunks per game (player, that competition-season). \cr
-   efficiency \tab integer \tab Efficiency rating, from the site's own formula (player, that competition-season). \cr
-}
+A \code{hoopR_data} tibble with one row per (\code{person_id}, \code{season_name}, \code{team_id}).
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_player_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{A player's per-game averages, one row per competition-season.}

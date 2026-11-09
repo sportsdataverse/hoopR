@@ -10,15 +10,10 @@ kzs_pbp_players(match_id)
 \item{match_id}{(required) Match id (match_id in kzs_matches), e.g. 101839. Global across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: The players the play-by-play feed lists for each side of a final game. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_pbp_players}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab Match id: the federation key of a game, global across seasons (joins kzs_matches and kzs_match). \cr
-   team_side \tab character \tab Which side of the match the row belongs to: home (the organiser, firstTeam on the wire) or away. \cr
-   player_id \tab integer \tab Player id (KZS player registry). Joins to \verb{/players/\{playerId\}}, box-score and play-by-play \code{playerId}. Players listed here are the first (home) team. \cr
-   first_name \tab character \tab The home player's (as in the feed) given name. \cr
-   last_name \tab character \tab The home player's (as in the feed) family name. \cr
-}
+A \code{hoopR_data} tibble with one row per player in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_pbp_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The players the play-by-play feed lists for each side of a final game.

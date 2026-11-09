@@ -34,37 +34,10 @@ sent; with neither \code{season} nor \code{season_id} the API filters by it.}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per \verb{(season_id, group, entity_id)}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   season_id \tab character \tab Season UUID of the table. \cr
-   season_end_year \tab integer \tab Season END year (the sdv key): the site's year + 1 on LNB (site 12), the calendar year on the other registered sites; null when the site is unregistered, lists no seasons or the body has no season list. \cr
-   group \tab character \tab Label of the table when the standings hold several groups; null for a single table. \cr
-   position \tab integer \tab League table position (1 = first). \cr
-   entity_id \tab character \tab Team UUID of the row. \cr
-   team_name \tab character \tab Team name as the site prints it. \cr
-   is_current_team \tab logical \tab True for the team the page was opened for (team context); false on a plain standings request. \cr
-   logo_url \tab character \tab URL of the team logo image. \cr
-   wins \tab integer \tab Games won; -1 for two teams in the 2025-26 LNB table (an administrative ranking, unverified), kept as sent (team, this table). \cr
-   losses \tab integer \tab Games lost (team, this table). \cr
-   played \tab integer \tab Games played (LNBP and the compact standings) (team, this table). \cr
-   standing_points \tab integer \tab League table points (LNBP) (team, this table). \cr
-   win_percentage \tab double \tab Share of games won as a 0-1 fraction (not 0-100) (team, this table). \cr
-   scored_for \tab integer \tab Points scored over the season (team, this table). \cr
-   scored_against \tab integer \tab Points conceded over the season (team, this table). \cr
-   point_difference \tab integer \tab Point differential over the season (team, this table). \cr
-   result_string_home \tab character \tab Home results as a string of result letters in the site's language, one per game (order and letters per locale; unverified) (team, this table). \cr
-   scored_for_home \tab integer \tab Points scored in home games (team, this table). \cr
-   scored_against_home \tab integer \tab Points conceded in home games (team, this table). \cr
-   point_difference_home \tab integer \tab Point differential in home games (team, this table). \cr
-   result_string_away \tab character \tab Away results as a string of result letters in the site's language, one per game (order and letters per locale; unverified) (team, this table). \cr
-   scored_for_away \tab integer \tab Points scored in away games (team, this table). \cr
-   scored_against_away \tab integer \tab Points conceded in away games (team, this table). \cr
-   point_difference_away \tab integer \tab Point differential in away games (team, this table). \cr
-   streak \tab integer \tab Length of the current run of results (the win / loss sign convention is unverified) (team, this table). \cr
-   streak_home \tab integer \tab Length of the current run of home results (sign convention unverified) (team, this table). \cr
-   streak_away \tab integer \tab Length of the current run of away results (sign convention unverified) (team, this table). \cr
-}
+A \code{hoopR_data} tibble with one row per (\code{season_id}, \code{group}, \code{entity_id}).
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_standings_summary")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Compact standings of a season: position, wins, losses and games played.}

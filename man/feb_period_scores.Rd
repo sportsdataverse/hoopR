@@ -11,13 +11,10 @@ feb_period_scores(game_id)
 \code{game_id} column of \code{\link[=feb_schedule]{feb_schedule()}}, \code{\link[=feb_results]{feb_results()}} and \code{\link[=feb_overview]{feb_overview()}}.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab FEB game id (one global sequence): the \{gameId\} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request. \cr
-   period \tab integer \tab Period number (1-4 regulation; overtime numbering is unverified, no overtime game is in the samples). \cr
-   home_points \tab integer \tab Points the home team scored IN this period (not cumulative). \cr
-   away_points \tab integer \tab Points the away team scored IN this period (not cumulative). \cr
-}
+A \code{hoopR_data} tibble with one row per period played.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "feb_period_scores")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Points each team scored in each period of one FEB game.}

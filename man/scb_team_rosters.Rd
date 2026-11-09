@@ -7,27 +7,10 @@
 scb_team_rosters()
 }
 \value{
-A \code{hoopR_data} tibble: Per club, the current roster, one row per player (BBL only). An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{scb_team_rosters}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   team_id \tab character \tab Club id, a string; equal to \code{season_team_id} in every sample. Joins to \code{scb_team} and \code{scb_season_teams}. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the sdv key; the API's \code{season_id} plus one. \cr
-   season_id \tab integer \tab Season, START year (2026 = 2026-27). \cr
-   season_team_id \tab character \tab Season-team id; equal to the club \code{teamId} in every sample (BBL 2005-2026, DBBL 2024-2026). \cr
-   season_player_id \tab character \tab Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move). Joins box-score lines, actions, records and \code{scb_season_player}. \cr
-   real_player_id \tab integer \tab Global person id: the same across clubs and seasons. Joins to \code{realPlayerId} everywhere. \cr
-   first_name \tab character \tab Player's given name. \cr
-   last_name \tab character \tab Player's family name. \cr
-   birth_date \tab character \tab Date of birth, YYYY-MM-DD. \cr
-   position \tab character \tab Position: POINT_GUARD, SHOOTING_GUARD, SMALL_FORWARD, POWER_FORWARD, CENTER. \cr
-   shirt_number \tab character \tab Jersey number as sent (a string: it can be \code{00}). \cr
-   height \tab double \tab Height in metres (float32 noise: 1.77 arrives as 1.7699999809265137). \cr
-   weight \tab integer \tab Weight in kg; 0 when unknown. \cr
-   nationalities \tab character \tab Nationalities, ISO 3166-1 alpha-2 codes. \cr
-   is_all_star \tab logical \tab All-Star selection flag. \cr
-   is_young \tab logical \tab Young-player flag (German-trained youth rule; inferred). \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_team_rosters")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Per club, the current roster, one row per player (BBL only).

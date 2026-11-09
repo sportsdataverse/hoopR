@@ -27,43 +27,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: LeagueAverages, Shot_Chart_Detail
-#'
-#'    **Shot_Chart_Detail**
-#'
-#'
-#'    |col_name            |types     |description                                                           |
-#'    |:-------------------|:---------|:---------------------------------------------------------------------|
-#'    |GRID_TYPE           |character |                                                                      |
-#'    |GAME_ID             |character |Unique game identifier.                                               |
-#'    |GAME_EVENT_ID       |character |                                                                      |
-#'    |PLAYER_ID           |character |Unique player identifier.                                             |
-#'    |PLAYER_NAME         |character |Player name.                                                          |
-#'    |TEAM_ID             |character |Unique team identifier.                                               |
-#'    |TEAM_NAME           |character |Full team display name (e.g. 'Las Vegas Aces').                       |
-#'    |PERIOD              |character |Period of the game (1-4 quarters; 5+ for OT).                         |
-#'    |MINUTES_REMAINING   |character |                                                                      |
-#'    |SECONDS_REMAINING   |character |Seconds remaining in the period.                                      |
-#'    |EVENT_TYPE          |character |Event / play type code (V2 PBP).                                      |
-#'    |ACTION_TYPE         |character |Action type label (e.g. 'Made Shot', 'Substitution').                 |
-#'    |SHOT_TYPE           |character |Shot type label (e.g. 'Jump Shot', 'Layup').                          |
-#'    |SHOT_ZONE_BASIC     |character |Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3'). |
-#'    |SHOT_ZONE_AREA      |character |Shot zone area ('Left Side', 'Right Side', 'Center').                 |
-#'    |SHOT_ZONE_RANGE     |character |Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.).   |
-#'    |SHOT_DISTANCE       |character |Shot distance from the basket, in feet.                               |
-#'    |LOC_X               |character |X coordinate on the court (units of inches; 0 = basket center).       |
-#'    |LOC_Y               |character |Y coordinate on the court (units of inches; baseline at 0).           |
-#'    |SHOT_ATTEMPTED_FLAG |character |1 if a shot was attempted on this event.                              |
-#'    |SHOT_MADE_FLAG      |character |1 if the shot was made; 0 if missed.                                  |
-#'    |GAME_DATE           |character |Game date (YYYY-MM-DD).                                               |
-#'    |HTM                 |character |                                                                      |
-#'    |VTM                 |character |                                                                      |
-#'
-#'    **LeagueAverages**
-#'
-#'
-#'    Columns as documented in the shared [nba_shotchartdetail_leagueaverages_schema] table.
-#'
+#' @eval .returns_rd("nba_shotchartdetail", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -162,13 +126,7 @@ NULL
 #' @author Saiem Gilani
 #' @param season season
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: League_Wide
-#'
-#'    **League_Wide**
-#'
-#'
-#'    Columns as documented in the shared [nba_shotchartdetail_leagueaverages_schema] table.
-#'
+#' @eval .returns_rd("nba_shotchartleaguewide", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -280,45 +238,7 @@ NULL
 #' @param vs_player_id5 vs_player_id5
 #' @param vs_team_id vs_team_id
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: ShotChartLineupDetail, ShotChartLineupLeagueAverage
-#'
-#'    **ShotChartLineupDetail**
-#'
-#'
-#'    |col_name            |types     |description                                                           |
-#'    |:-------------------|:---------|:---------------------------------------------------------------------|
-#'    |GRID_TYPE           |character |                                                                      |
-#'    |GAME_ID             |character |Unique game identifier.                                               |
-#'    |GAME_EVENT_ID       |character |                                                                      |
-#'    |GROUP_ID            |character |Group identifier (e.g. conference group_id).                          |
-#'    |GROUP_NAME          |character |Group name.                                                           |
-#'    |PLAYER_ID           |character |Unique player identifier.                                             |
-#'    |PLAYER_NAME         |character |Player name.                                                          |
-#'    |TEAM_ID             |character |Unique team identifier.                                               |
-#'    |TEAM_NAME           |character |Full team display name (e.g. 'Las Vegas Aces').                       |
-#'    |PERIOD              |character |Period of the game (1-4 quarters; 5+ for OT).                         |
-#'    |MINUTES_REMAINING   |character |                                                                      |
-#'    |SECONDS_REMAINING   |character |Seconds remaining in the period.                                      |
-#'    |EVENT_TYPE          |character |Event / play type code (V2 PBP).                                      |
-#'    |ACTION_TYPE         |character |Action type label (e.g. 'Made Shot', 'Substitution').                 |
-#'    |SHOT_TYPE           |character |Shot type label (e.g. 'Jump Shot', 'Layup').                          |
-#'    |SHOT_ZONE_BASIC     |character |Shot zone (e.g. 'Restricted Area', 'Mid-Range', 'Above the Break 3'). |
-#'    |SHOT_ZONE_AREA      |character |Shot zone area ('Left Side', 'Right Side', 'Center').                 |
-#'    |SHOT_ZONE_RANGE     |character |Shot zone range ('Less Than 8 ft.', '8-16 ft.', '16-24 ft.', etc.).   |
-#'    |SHOT_DISTANCE       |character |Shot distance from the basket, in feet.                               |
-#'    |LOC_X               |character |X coordinate on the court (units of inches; 0 = basket center).       |
-#'    |LOC_Y               |character |Y coordinate on the court (units of inches; baseline at 0).           |
-#'    |SHOT_ATTEMPTED_FLAG |character |1 if a shot was attempted on this event.                              |
-#'    |SHOT_MADE_FLAG      |character |1 if the shot was made; 0 if missed.                                  |
-#'    |GAME_DATE           |character |Game date (YYYY-MM-DD).                                               |
-#'    |HTM                 |character |                                                                      |
-#'    |VTM                 |character |                                                                      |
-#'
-#'    **ShotChartLineupLeagueAverage**
-#'
-#'
-#'    Columns as documented in the shared [nba_shotchartdetail_leagueaverages_schema] table.
-#'
+#' @eval .returns_rd("nba_shotchartlineupdetail", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest

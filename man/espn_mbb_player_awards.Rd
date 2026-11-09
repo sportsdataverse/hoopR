@@ -15,17 +15,37 @@ espn_nba_player_awards(athlete_id, ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A single tibble. This endpoint is sparse; many athletes have no
-award data, in which case an empty tibble with canonical columns is
-returned.
+A \code{hoopR_data} tibble with one row per award.
 
-Columns as documented in the shared \link{espn_mbb_player_awards_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+  award_id \tab character \tab  \cr
+  name \tab character \tab Display name. \cr
+  description \tab character \tab Long-form description text. \cr
+  date \tab character \tab Date in YYYY-MM-DD format. \cr
+  type \tab character \tab Record type / category. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A single tibble. This endpoint is sparse; many athletes have no
-award data, in which case an empty tibble with canonical columns is
-returned.
+This endpoint is sparse; many athletes have no award data, in which case an
+empty tibble with canonical columns is returned.
 
-Columns as documented in the shared \link{espn_mbb_player_awards_schema} table.
+A \code{hoopR_data} tibble with one row per award.
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  season \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+  award_id \tab character \tab  \cr
+  name \tab character \tab Display name. \cr
+  description \tab character \tab Long-form description text. \cr
+  date \tab character \tab Date in YYYY-MM-DD format. \cr
+  type \tab character \tab Record type / category. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+This endpoint is sparse; many athletes have no award data, in which case an
+empty tibble with canonical columns is returned.
 }
 \description{
 \strong{Get ESPN Women's College Basketball Athlete Awards}

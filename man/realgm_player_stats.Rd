@@ -22,21 +22,10 @@ Defaults to \code{most_recent_nba_season()}.}
 \code{"Playoffs"}, \code{"Preseason"} or \code{"Summer_League"}.}
 }
 \value{
-A \code{hoopR_data} tibble (one row per qualified player) carrying the
-requested \code{season}, \code{stat_type} and \code{season_type} as columns. Columns vary
-by \code{stat_type}; for \code{"Averages"}:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      player \tab character \tab Player name. \cr
-      team \tab character \tab Team abbreviation. \cr
-      gp \tab integer \tab Games played. \cr
-      mpg \tab numeric \tab Minutes per game. \cr
-      ppg \tab numeric \tab Points per game. \cr
-      rpg \tab numeric \tab Rebounds per game. \cr
-      apg \tab numeric \tab Assists per game. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per qualified player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "realgm_player_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get season player statistics leaders from

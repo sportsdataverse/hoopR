@@ -7,11 +7,10 @@
 ibba_stats_types()
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   stat_type \tab character \tab Stat category code to pass to ibba_leaders as stat_type (bracketed codes such as '[OR]' are literal). \cr
-   stat_name_he \tab character \tab Stat category name in Hebrew. \cr
-}
+A \code{hoopR_data} tibble with one row per statistic type.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_stats_types")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{The stat categories ibba_leaders accepts (the stat_type codes) with their Hebrew names.}

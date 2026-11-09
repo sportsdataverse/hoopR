@@ -11,29 +11,10 @@ cba_best_player(schedule_id)
 2025-26 round 1). Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble: One row per side with the star player's line. An empty valid answer is a zero-row tibble
-with these columns, in this order (sportsdataverse-py \code{cba_best_player}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   schedule_id \tab integer \tab CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the \code{{scheduleId}} of every game route). Stamped by the runtime from the request; null on a body parsed without it. \cr
-   side \tab character \tab Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block). \cr
-   assists \tab integer \tab Assists by the player in this game. \cr
-   blocked \tab integer \tab Blocks by the player in this game. \cr
-   fouls \tab integer \tab Personal fouls by the player in this game. \cr
-   free_throw_str \tab character \tab Free throws as the string 'made/attempted'. \cr
-   minutes \tab integer \tab Minutes played (whole minutes). \cr
-   number \tab character \tab Jersey number as a string. \cr
-   player_img \tab character \tab Absolute URL of the player's photo; null when there is none. \cr
-   player_name \tab character \tab Full player name (Chinese, may include the first name: (Chinese text)). Null on some rows (the short name is in playerNameStr). \cr
-   player_name_str \tab character \tab Short display name (Chinese surname form: (Chinese text)). \cr
-   points \tab integer \tab Points scored by the player in this game. \cr
-   real_point_rate \tab double \tab true-shooting percentage. A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
-   rebounds \tab integer \tab Total rebounds by the player in this game. \cr
-   steals \tab integer \tab Steals by the player in this game. \cr
-   three_points_str \tab character \tab Three-point field goals as the string 'made/attempted'. \cr
-   turn_share \tab double \tab possession share (see advance-count turnShare). A FRACTION 0-1 (the API sends a percent string such as '39.4\%'). \cr
-   turnovers \tab integer \tab Turnovers by the player in this game. \cr
-   two_points_str \tab character \tab Two-point field goals as the string 'made/attempted' ('3/5'). \cr
-}
+A \code{hoopR_data} tibble with one row per side with the star player's line.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cba_best_player")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The best player of each side in the game report.

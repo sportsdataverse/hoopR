@@ -18,10 +18,7 @@ NULL
 #'
 #' @param athlete_id ESPN athlete identifier (character or numeric).
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per career season.
-#'
-#'    Columns as documented in the shared [espn_mbb_player_seasons_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_player_seasons", unit = "career season")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -62,10 +59,7 @@ espn_mbb_player_seasons <- function(athlete_id, ...) {
 #'   Pass a vector like `c(0L, 1L, 2L)` to bind multiple types via a
 #'   `stat_type_id` column; non-existent variants are silently skipped.
 #' @param ... Additional arguments; currently unused.
-#' @return A long tibble (one row per stat_type x split x category x stat).
-#'
-#'    Columns as documented in the shared [espn_mbb_player_career_stats_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_player_career_stats", unit = "stat_type x split x category x stat")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export

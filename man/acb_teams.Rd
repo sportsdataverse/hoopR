@@ -16,19 +16,10 @@ accepted.}
 whole double is accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_teams}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Season-team entry of the selected edition (new every season). \cr
-   club_id \tab integer \tab Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the \code{clubId} request param and every \code{homeClubId} / \code{awayClubId}. \cr
-   team \tab character \tab Team name that season (sponsor names change) \cr
-   team_abbr \tab character \tab Three-letter abbreviation (BAR, RMB) \cr
-   competition_id \tab integer \tab Competition of the selected entry. \cr
-   edition_id \tab integer \tab Season id of the selected entry (START year - 1935). \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   latest_team_id \tab integer \tab The club's most recent season-team entry. \cr
-   latest_team \tab character \tab The club's most recent team name. \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Teams entered in a competition edition.

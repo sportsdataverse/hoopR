@@ -8,40 +8,7 @@
 #' file). No API key is required. Data is available from 2008 to present.
 #' @param year (*integer* required): Season, in 4-digit ending-year format
 #'   (e.g. `2024` for the 2023-24 season). Defaults to `most_recent_mbb_season()`.
-#' @return A `hoopR_data` tibble with one row per team:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       rank \tab integer \tab Overall T-Rank (barthag) rank. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conf \tab character \tab Conference abbreviation. \cr
-#'       record \tab character \tab Overall win-loss record. \cr
-#'       adjoe \tab numeric \tab Adjusted offensive efficiency (pts/100 poss). \cr
-#'       oe_rank \tab integer \tab National rank of adjusted offensive efficiency. \cr
-#'       adjde \tab numeric \tab Adjusted defensive efficiency (pts/100 poss). \cr
-#'       de_rank \tab integer \tab National rank of adjusted defensive efficiency. \cr
-#'       barthag \tab numeric \tab Power rating: win probability vs. an average team. \cr
-#'       proj_w \tab numeric \tab Projected wins. \cr
-#'       proj_l \tab numeric \tab Projected losses. \cr
-#'       pro_con_w \tab numeric \tab Projected conference wins. \cr
-#'       pro_con_l \tab numeric \tab Projected conference losses. \cr
-#'       con_rec \tab character \tab Conference record. \cr
-#'       sos \tab numeric \tab Strength of schedule. \cr
-#'       ncsos \tab numeric \tab Non-conference strength of schedule. \cr
-#'       consos \tab numeric \tab Conference strength of schedule. \cr
-#'       qual_o \tab numeric \tab Quality-adjusted offensive efficiency. \cr
-#'       qual_d \tab numeric \tab Quality-adjusted defensive efficiency. \cr
-#'       qual_barthag \tab numeric \tab Quality-adjusted power rating. \cr
-#'       wab \tab numeric \tab Wins above bubble. \cr
-#'       wab_rk \tab integer \tab National rank of wins above bubble. \cr
-#'       adjt \tab numeric \tab Adjusted tempo (possessions per 40 minutes). \cr
-#'       year \tab integer \tab Season (4-digit ending-year; echoes the \code{year} argument). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'   Additional projected / opponent / conference split columns (`proj_sos`,
-#'   `opp_oe`, `con_adj_oe`, `con_pf`, `fun`, ...) are also returned.
-#'
+#' @eval .returns_rd("torvik_ratings", inline = FALSE, unit = "team")
 #' @keywords Torvik
 #' @importFrom data.table fread
 #' @importFrom janitor clean_names

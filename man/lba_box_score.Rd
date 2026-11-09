@@ -10,50 +10,10 @@ lba_box_score(game_id)
 \item{game_id}{(required) Game id (game_id in lba_calendar), e.g. 25602. Global across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Box score of a final game: one row per player of both teams (Italian-named stat columns).
-The columns are always these, in this order (sportsdataverse-py \code{lba_box_score}); a column the site adds later is appended
-after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Game id (global across seasons); joins lba_calendar and lba_game. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   side \tab character \tab Which team of the game the row belongs to: home or visitor. \cr
-   team_id \tab integer \tab Team-season id (re-issued every season); join lba_teams for the stable club_id. \cr
-   player_id \tab integer \tab Player id (global). \cr
-   player_num \tab integer \tab Jersey number the player wore in the game. \cr
-   player_surname \tab character \tab Family name, upper case. \cr
-   player_name \tab character \tab Player's given name. \cr
-   player_code \tab character \tab Player code \code{SURNAME3-NAME3-YY}. \cr
-   player_p_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-   pun \tab integer \tab Points (\code{punti}). \cr
-   min \tab integer \tab Minutes played, whole minutes (\code{minuti}); 200 in \code{totals} = 5 x 40. \cr
-   sec \tab integer \tab Seconds played (\code{secondi}) = \code{min} x 60 in every sample. \cr
-   sf \tab character \tab Starter flag (\verb{starting five}), number sent as a string: \code{1} = started. \cr
-   falli_c \tab integer \tab Fouls committed (\verb{falli commessi}). \cr
-   falli_sf \tab integer \tab Fouls drawn (\verb{falli subiti}). \cr
-   falli_tc1 \tab integer \tab Technical fouls (\verb{falli tecnici}; reading \code{tc1} as category-1 technicals is inferred). \cr
-   falli_fla \tab integer \tab Unsportsmanlike / flagrant fouls (\verb{falli antisportivi}). \cr
-   t2_r \tab integer \tab 2-point field goals made (\verb{tiri da 2 realizzati}). \cr
-   t2_t \tab integer \tab 2-point field goals attempted (\verb{tiri da 2 tentati}). \cr
-   t2_perc \tab double \tab 2-point field-goal percentage, 0-100 (number; 0 when no attempt). \cr
-   sc \tab integer \tab Dunks (\code{schiacciate}). \cr
-   t3_r \tab integer \tab 3-point field goals made. \cr
-   t3_t \tab integer \tab 3-point field goals attempted. \cr
-   t3_perc \tab double \tab 3-point field-goal percentage, 0-100. \cr
-   tl_r \tab integer \tab Free throws made (\verb{tiri liberi realizzati}). \cr
-   tl_t \tab integer \tab Free throws attempted (\verb{tiri liberi tentati}). \cr
-   tl_perc \tab double \tab Free-throw percentage, 0-100. \cr
-   rimbalzi_o \tab integer \tab Offensive rebounds (\verb{rimbalzi offensivi}). \cr
-   rimbalzi_d \tab integer \tab Defensive rebounds (\verb{rimbalzi difensivi}). \cr
-   rimbalzi_t \tab integer \tab Total rebounds (\verb{rimbalzi totali}). \cr
-   stoppate_dat \tab integer \tab Blocks (\verb{stoppate date}). \cr
-   stoppate_sub \tab integer \tab Own shots blocked (\verb{stoppate subite}). \cr
-   palle_p \tab integer \tab Turnovers (\verb{palle perse}). \cr
-   palle_r \tab integer \tab Steals (\verb{palle recuperate}). \cr
-   ass \tab integer \tab Assists credited to the player in the game. \cr
-   val_lega \tab integer \tab LBA efficiency rating (\verb{valutazione Lega}). \cr
-   val_oer \tab double \tab OER = points / (FGA + turnovers + FTA / 2); verified on every 2026-27 sample row. \cr
-   plus_minus \tab integer \tab Plus-minus: point margin while on court. \cr
-}
+A \code{hoopR_data} tibble with one row per player of both teams.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_box_score")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Box score of a final game: one row per player of both teams (Italian-named stat columns).

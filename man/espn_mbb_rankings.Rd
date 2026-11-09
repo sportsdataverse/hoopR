@@ -7,48 +7,48 @@
 espn_mbb_rankings()
 }
 \value{
-Returns a tibble
+A \code{hoopR_data} tibble with one row per ranked team.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab integer \tab Id. \cr
-      name \tab character \tab Display name. \cr
-      short_name \tab character \tab Short display name. \cr
-      type \tab character \tab Record type / category. \cr
-      headline \tab character \tab News headline. \cr
-      short_headline \tab character \tab Short news headline. \cr
-      current \tab integer \tab Current. \cr
-      previous \tab integer \tab Previous. \cr
-      points \tab numeric \tab Points scored. \cr
-      first_place_votes \tab integer \tab First place votes. \cr
-      trend \tab character \tab Trend. \cr
-      date \tab character \tab Date in YYYY-MM-DD format. \cr
-      last_updated \tab character \tab Last updated. \cr
-      record_summary \tab character \tab Win-loss record summary string. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
-      team_location \tab character \tab Team city or location string. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_nickname \tab character \tab Team nickname. \cr
-      team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-      team_color \tab character \tab Team primary color (hex without leading '#'). \cr
-      team_logo \tab character \tab Team logo image URL. \cr
-      occurrence_number \tab integer \tab Occurrence number. \cr
-      occurrence_type \tab character \tab Occurrence type. \cr
-      occurrence_last \tab logical \tab Occurrence last. \cr
-      occurrence_value \tab character \tab Occurrence value. \cr
-      occurrence_display_value \tab character \tab Occurrence display value. \cr
-      season_year \tab integer \tab Season year string ('YYYY-YY' format). \cr
-      season_start_date \tab character \tab Date in YYYY-MM-DD format. \cr
-      season_end_date \tab character \tab Date in YYYY-MM-DD format. \cr
-      season_display_name \tab character \tab Season display label. \cr
-      season_type_type \tab integer \tab Season type type. \cr
-      season_type_name \tab character \tab Season type name. \cr
-      season_type_abbreviation \tab character \tab Season type abbreviation. \cr
-      season_futures_ref \tab character \tab Season futures ref. \cr
-      first_occurrence_type \tab character \tab First occurrence type. \cr
-      first_occurrence_value \tab character \tab First occurrence value. \cr
-   }}
+  col_name \tab types \tab description \cr
+  id \tab integer \tab Id. \cr
+  name \tab character \tab Display name. \cr
+  short_name \tab character \tab Short display name. \cr
+  type \tab character \tab Record type / category. \cr
+  headline \tab character \tab News headline. \cr
+  short_headline \tab character \tab Short news headline. \cr
+  current \tab integer \tab Current. \cr
+  previous \tab integer \tab Previous. \cr
+  points \tab numeric \tab Points scored. \cr
+  first_place_votes \tab integer \tab First place votes. \cr
+  trend \tab character \tab Trend. \cr
+  date \tab character \tab Date in YYYY-MM-DD format. \cr
+  last_updated \tab character \tab Last updated. \cr
+  record_summary \tab character \tab Win-loss record summary string. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_uid \tab character \tab ESPN universal team identifier (UID format 's:40~l:...~t:...'). \cr
+  team_location \tab character \tab Team city or location string. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_nickname \tab character \tab Team nickname. \cr
+  team_abbreviation \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
+  team_color \tab character \tab Team primary color (hex without leading '#'). \cr
+  team_logo \tab character \tab Team logo image URL. \cr
+  occurrence_number \tab integer \tab Occurrence number. \cr
+  occurrence_type \tab character \tab Occurrence type. \cr
+  occurrence_last \tab logical \tab Occurrence last. \cr
+  occurrence_value \tab character \tab Occurrence value. \cr
+  occurrence_display_value \tab character \tab Occurrence display value. \cr
+  season_year \tab integer \tab Season year string ('YYYY-YY' format). \cr
+  season_start_date \tab character \tab Date in YYYY-MM-DD format. \cr
+  season_end_date \tab character \tab Date in YYYY-MM-DD format. \cr
+  season_display_name \tab character \tab Season display label. \cr
+  season_type_type \tab integer \tab Season type type. \cr
+  season_type_name \tab character \tab Season type name. \cr
+  season_type_abbreviation \tab character \tab Season type abbreviation. \cr
+  season_futures_ref \tab character \tab Season futures ref. \cr
+  first_occurrence_type \tab character \tab First occurrence type. \cr
+  first_occurrence_value \tab character \tab First occurrence value. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

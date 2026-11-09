@@ -11,35 +11,10 @@ kzs_standings(competition_id)
 season, e.g. 579 (men's first league 2025/26).}
 }
 \value{
-A \code{hoopR_data} tibble: Standings of a competition, one row per team in each phase (and group). An empty valid
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_standings}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). \cr
-   phase_id \tab integer \tab Competition-phase id. Joins to \verb{competitions[].competitionPhaseId} on matches and \verb{/competitions/\{competitionId\}} \verb{phases[].id}. \cr
-   phase_name \tab character \tab Phase name, Slovenian (see \verb{phases[].name}). \cr
-   phase_type \tab character \tab Phase format (code table). \cr
-   group_id \tab integer \tab Group id inside the phase (null when the table is the phase's own). \cr
-   group_name \tab character \tab Group name inside the phase (null when the table is the phase's own). \cr
-   position \tab integer \tab 1-based position of the row in its table, in the order the API lists it (the wire has no rank column). \cr
-   team_id \tab integer \tab Team id: one club team in one season (Ilirija 2025-26 = 17551). Joins to \verb{/teams/\{teamId\}}, standings \code{teamId}, box-score \code{teamId} and the \code{teamId} query params. \cr
-   team_name \tab character \tab Team name for the season, sponsor included. \cr
-   club_code \tab character \tab Club 3-letter code. \cr
-   logo_uuid \tab character \tab Team logo: image file id, served at \verb{https://api.kzs.si/public/images/\{uuid\}}. \cr
-   games_played \tab integer \tab Games played in the phase. \cr
-   won \tab integer \tab Wins in the phase. \cr
-   lost \tab integer \tab Losses in the phase. \cr
-   pts_plus \tab integer \tab Points scored by the team through its games played. \cr
-   pts_minus \tab integer \tab Points allowed. \cr
-   home_won \tab integer \tab Home games the team has won. \cr
-   home_lost \tab integer \tab Home games the team has lost. \cr
-   away_won \tab integer \tab Away games the team has won. \cr
-   away_lost \tab integer \tab Away games the team has lost. \cr
-   points \tab integer \tab Table points: 2 per win, 1 per loss (Krka 26-1 = 53). \cr
-   draws \tab integer \tab Draws (0: basketball has none). \cr
-   lost_points \tab integer \tab Table points deducted (0 in every sample). \cr
-   tie_break_position \tab integer \tab Final position after tie-breaks (absent on playoff-phase rows). \cr
-   pts_difference \tab integer \tab Point differential (scored - allowed). \cr
-}
+A \code{hoopR_data} tibble with one row per team in each phase.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Standings of a competition, one row per team in each phase (and group).

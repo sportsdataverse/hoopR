@@ -25,10 +25,7 @@ NULL
 #' @param season_type Season-type id. ESPN populates odds-records mostly
 #'   under `season_type = 0` (all-types aggregate), so that is the default.
 #' @param ... Additional arguments; currently unused.
-#' @return A long tibble with one row per (category x stat).
-#'
-#'    Columns as documented in the shared [espn_mbb_team_odds_records_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_team_odds_records", unit = "category and statistic")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -66,10 +63,7 @@ espn_mbb_team_odds_records <- function(team_id,
 #' @param team_id ESPN team identifier.
 #' @param season Season year. Defaults to most recent MBB season.
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per athlete on the season roster.
-#'
-#'    Columns as documented in the shared [espn_mbb_team_season_roster_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_team_season_roster", unit = "athlete on the season roster")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -104,10 +98,7 @@ espn_mbb_team_season_roster <- function(team_id,
 #' @param coach_id ESPN coach identifier.
 #' @param season Season year. Defaults to most recent MBB season.
 #' @param ... Additional arguments; currently unused.
-#' @return A single-row tibble.
-#'
-#'    Columns as documented in the shared [espn_mbb_coach_season_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_coach_season", unit = "coach-season")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export

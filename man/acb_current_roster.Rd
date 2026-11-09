@@ -20,27 +20,10 @@ accepted.}
 whole double is accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_current_roster}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   club_id \tab integer \tab Stable club id asked for (the body names no club). \cr
-   role \tab character \tab player or staff (head coach and assistants). \cr
-   person_id \tab integer \tab ACB licence number of the person; a player's player_id elsewhere. \cr
-   person_name \tab character \tab Display name as the site shows it. \cr
-   first_name \tab character \tab First name(s); null when the API does not send it. \cr
-   last_name \tab character \tab Last name(s); null when the API does not send it. \cr
-   shirt_number \tab character \tab Shirt number as a string; null for staff. \cr
-   game_role \tab character \tab Position or staff role in Spanish (Base, Escolta, Alero, Ala-pivot, Pivot; Entrenador, Segundo Entrenador). \cr
-   licensing \tab character \tab Licence code (for example EUR, JFL, CRE); meaning unverified. \cr
-   age \tab integer \tab Age in years as sent by the roster route. \cr
-   nationality \tab character \tab Nationality as sent, a Spanish country name ('Serbia', 'EE.UU.'). \cr
-   nationality_iso \tab character \tab ISO 3166-1 alpha-2 code of nationality, from the 31 observed names; null for an unseen name. \cr
-   height_cm \tab integer \tab Height in centimetres (players only). \cr
-   is_license_active \tab logical \tab True when the licence is active in the current season. \cr
-   edition_id \tab integer \tab Season id the person record was read for (START year - 1935). \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   temporary_roster \tab logical \tab True while the roster is provisional. \cr
-}
+A \code{hoopR_data} tibble with one row per person.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_current_roster")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A club's players and staff for an edition (default: the current one).

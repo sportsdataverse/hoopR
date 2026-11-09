@@ -15,30 +15,10 @@ preseason, regular season, playoffs, postseason challenge, finals; 8, 9, 11, 12,
 the GoHoops id.}
 }
 \value{
-A \code{hoopR_data} tibble: The registered roster of one team in one division (birth dates omitted). An empty answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{tpbl_roster}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   division_id \tab integer \tab TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the \code{{division_id}} of every division route. Not the GoHoops division id. \cr
-   team_id \tab integer \tab TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the \code{{team_id}} of the division team routes. Not the GoHoops franchise id and not the squad id. \cr
-   team \tab character \tab Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). \cr
-   player_id \tab integer \tab TPBL player id (key space: TPBL players; one per person across seasons and teams): the \code{{player_id}} of the player routes. Not the GoHoops person id and not the roster id. \cr
-   gohoops_person_id \tab integer \tab GoHoops person id (key space: GoHoops persons; one per human). Not the TPBL player id and not the roster id. \cr
-   gohoops_roster_id \tab integer \tab GoHoops roster id (key space: GoHoops rosters = one player registered with one squad in one season; it changes when the player changes season or team). The key of the box score players: join tpbl_box_players to tpbl_roster on it. Not the TPBL player id and not the person id. \cr
-   gohoops_squad_id \tab integer \tab GoHoops squad id (key space: GoHoops squads = one team in one season: 8209-8215 in 2024-25, 11931-11937 in 2025-26, 15536-15542 in 2026-27; it changes every season). \cr
-   gohoops_event_id \tab integer \tab GoHoops event id (key space: GoHoops events, one per TPBL season; 319 = 2024-25, 490 = 2025-26, 613 = 2026-27). Not the TPBL season id and not the GoHoops season id. \cr
-   gohoops_season_id \tab integer \tab GoHoops season id (key space: GoHoops seasons, the id system the API echoes beside its own; 101 = 2024-25, 213 = 2025-26, 275 = 2026-27). Not the TPBL season id. \cr
-   player \tab character \tab Player name (Traditional Chinese, or a transliteration for foreign players). \cr
-   alt_name \tab character \tab Romanized name (e.g. 'Chian Kuang-Chien'); '' when none. \cr
-   number \tab character \tab Jersey number as text (so '0' and '00' stay distinct). \cr
-   position \tab character \tab Playing position as a PascalCase enum: PointGuard, ShootingGuard, SmallForward, PowerForward, Center, and the combinations PointGuardAndShootingGuard, ShootingGuardAndSmallForward, SmallForwardAndPowerForward and PowerForwardAndCenter; '' when unset. \cr
-   height_cm \tab integer \tab Height in centimetres. \cr
-   weight_kg \tab double \tab Weight in kilograms (a number; fractions possible). \cr
-   nationality \tab character \tab Nationality text: 'Local' for a Taiwan-born player, '' when unset. \cr
-   national_identity \tab character \tab Player category: 'Local' (Taiwanese), '' when unset (foreign and naturalized categories use other strings). \cr
-   national_identity_detail \tab character \tab Free-text detail on the category; '' in every sample. \cr
-   registered \tab logical \tab True when the player is registered with the squad. \cr
-   is_listing \tab logical \tab True when the player is shown on the team's public roster page. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tpbl_roster")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The registered roster of one team in one division (birth dates omitted).

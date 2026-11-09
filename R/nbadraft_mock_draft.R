@@ -7,22 +7,7 @@
 #' API key is required.
 #' @param year (*integer* optional): Draft year (e.g. `2025`). Defaults to the
 #'   site's current mock; older years use the `/{year}/` path when available.
-#' @return A `hoopR_data` tibble with one row per mock-draft pick:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       round \tab integer \tab Draft round (1 or 2). \cr
-#'       pick \tab integer \tab Pick number within the round. \cr
-#'       team \tab character \tab Projected team (\code{*} traded-pick marker stripped). \cr
-#'       player \tab character \tab Projected player. \cr
-#'       height \tab character \tab Player height. \cr
-#'       weight \tab character \tab Player weight. \cr
-#'       position \tab character \tab Player position. \cr
-#'       school \tab character \tab Player school / pre-draft team. \cr
-#'       class \tab character \tab Player class / draft eligibility. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nbadraft_mock_draft", inline = FALSE, unit = "mock-draft pick")
 #' @keywords Salaries
 #' @importFrom rvest html_elements html_table
 #' @importFrom janitor clean_names

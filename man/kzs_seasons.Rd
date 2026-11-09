@@ -7,15 +7,10 @@
 kzs_seasons()
 }
 \value{
-A \code{hoopR_data} tibble: Every season (39: 1991/1992 to 2029/2030) with its opaque id and the sdv END year. An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_seasons}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season_id \tab integer \tab Season id: OPAQUE, not a year (1 = 2000/2001 ... 27 = 2026/2027, 31 = 1991/1992). The season \code{name} is 'START/END'; the sdv season is the END year (the second half of \code{name}). \cr
-   name \tab character \tab Season, 'START/END' (2025/2026); the sdv season is the END year. \cr
-   is_active \tab logical \tab True for the current season only (2026/2027 on 2026-10-12). \cr
-   active \tab logical \tab Same as \code{isActive}. \cr
-   season \tab integer \tab Season END year (2026/2027 = 2027), from the row's own season name or id, else from the request. \cr
-}
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every season (39: 1991/1992 to 2029/2030) with its opaque id and the sdv END year.

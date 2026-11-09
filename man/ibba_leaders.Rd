@@ -18,17 +18,10 @@ unchanged.}
 (default) for all teams.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   value \tab double \tab The leader's value in the requested category (per-game average, percentage or count). \cr
-   games \tab integer \tab Games the leader played. \cr
-   season \tab integer \tab Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. \cr
-   team_id \tab integer \tab Team-season id of the leader's team. \cr
-   jersey \tab character \tab The leader's jersey number as a zero-padded string. \cr
-   player_id \tab integer \tab Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows. \cr
-   player_name_he \tab character \tab Player name in Hebrew, HTML-unescaped. \cr
-   photo_path \tab character \tab Site-relative path of the photo (team or player picture); prefix with https://www.basket.co.il. \cr
-}
+A \code{hoopR_data} tibble with one row per leaderboard entry.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_leaders")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{The top five players of a season in one stat category, for all teams or one team.}

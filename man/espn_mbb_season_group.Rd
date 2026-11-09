@@ -61,29 +61,101 @@ espn_nba_season_group_teams(
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A single-row tibble.
+A \code{hoopR_data} tibble with one row per group.
 
-Columns as documented in the shared \link{espn_mbb_season_group_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  group_id \tab character \tab ESPN group id. \cr
+  uid \tab character \tab ESPN UID string. \cr
+  name \tab character \tab Full name (e.g. "Eastern Conference"). \cr
+  abbreviation \tab character \tab Short code (e.g. "EAST"). \cr
+  short_name \tab character \tab Short name. \cr
+  midsize_name \tab character \tab Mid-size display name. \cr
+  is_conference \tab logical \tab Whether this group is a conference. \cr
+  slug \tab character \tab URL slug. \cr
+  parent_ref \tab character \tab \code{$ref} to parent group (if any). \cr
+  children_ref \tab character \tab \code{$ref} to child-groups endpoint. \cr
+  teams_ref \tab character \tab \code{$ref} to teams-in-group endpoint. \cr
+  standings_ref \tab character \tab \code{$ref} to standings endpoint. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per child group.
+A \code{hoopR_data} tibble with one row per child group.
 
-Columns as documented in the shared \link{espn_mbb_season_group_children_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  parent_group_id \tab character \tab Parent group id (queried). \cr
+  child_group_id \tab character \tab Child group id. \cr
+  ref \tab character \tab \code{$ref} to child group detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per team in the group.
+A \code{hoopR_data} tibble with one row per team in the group.
 
-Columns as documented in the shared \link{espn_mbb_season_group_teams_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  group_id \tab character \tab ESPN group id. \cr
+  team_id \tab character \tab ESPN team id. \cr
+  ref \tab character \tab \code{$ref} URL to the team-in-season entry. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A single-row tibble.
+A \code{hoopR_data} tibble with one row per group.
 
-Columns as documented in the shared \link{espn_mbb_season_group_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  group_id \tab character \tab ESPN group id. \cr
+  uid \tab character \tab ESPN UID string. \cr
+  name \tab character \tab Full name (e.g. "Eastern Conference"). \cr
+  abbreviation \tab character \tab Short code (e.g. "EAST"). \cr
+  short_name \tab character \tab Short name. \cr
+  midsize_name \tab character \tab Mid-size display name. \cr
+  is_conference \tab logical \tab Whether this group is a conference. \cr
+  slug \tab character \tab URL slug. \cr
+  parent_ref \tab character \tab \code{$ref} to parent group (if any). \cr
+  children_ref \tab character \tab \code{$ref} to child-groups endpoint. \cr
+  teams_ref \tab character \tab \code{$ref} to teams-in-group endpoint. \cr
+  standings_ref \tab character \tab \code{$ref} to standings endpoint. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per child group.
+A \code{hoopR_data} tibble with one row per child group.
 
-Columns as documented in the shared \link{espn_mbb_season_group_children_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  parent_group_id \tab character \tab Parent group id (queried). \cr
+  child_group_id \tab character \tab Child group id. \cr
+  ref \tab character \tab \code{$ref} to child group detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per team in the group.
+A \code{hoopR_data} tibble with one row per team in the group.
 
-Columns as documented in the shared \link{espn_mbb_season_group_teams_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  group_id \tab character \tab ESPN group id. \cr
+  team_id \tab character \tab ESPN team id. \cr
+  ref \tab character \tab \code{$ref} URL to the team-in-season entry. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Returns metadata for one group (conference or division) in one

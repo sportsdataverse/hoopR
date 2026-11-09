@@ -11,47 +11,10 @@ feb_player_box(game_id)
 \code{game_id} column of \code{\link[=feb_schedule]{feb_schedule()}}, \code{\link[=feb_results]{feb_results()}} and \code{\link[=feb_overview]{feb_overview()}}.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab FEB game id (one global sequence): the \{gameId\} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request. \cr
-   team_side \tab character \tab Side of the game the row belongs to: home or away (the feed's TEAM[0] / TEAM[1], or its 1/2 and 0/1 side codes, normalised). \cr
-   team_id \tab integer \tab Team-season id (key space: FEB team registrations; a NEW id every season, e.g. HLA Alicante = 979989 in 2025-26 and 1008687 in 2026-27). Joins the schedule's home_team_id / away_team_id; not a club or player id. \cr
-   team \tab character \tab Team name as registered for the season (sponsor name, uppercase: 'HLA ALICANTE'). \cr
-   player_id \tab integer \tab FEB person id: stable across seasons and clubs (A. Jorda Rodriguez = 1676991 in 2025-26 and 2026-27). Joins the box score, play-by-play, shots and leaders; not the per-season licence_id. \cr
-   shirt_number \tab character \tab Shirt number (dorsal) as a string, so '00' and '0' stay distinct. The shot feed names the shooter by this number. \cr
-   player \tab character \tab Player name as 'I. SURNAME(S)', uppercase ('V. AGUILAR HERNANDEZ'). \cr
-   starter \tab logical \tab True when the player was in the starting five (the page's I column), false when on the bench. \cr
-   captain \tab logical \tab True for the team captain. Null on 2020-21 games, where the feed does not send it. \cr
-   seconds_played \tab integer \tab Seconds on court (the feed's min, an integer count of seconds: 1064 = 17:44; a team row sums its players, 12000 = 200:00). Null on /TeamStats rows. \cr
-   min_formatted \tab character \tab Time played as 'mm:ss'. \cr
-   pts \tab integer \tab Points scored (the team's points on team rows; the final score when the clock is FINAL, else live). \cr
-   p1m \tab integer \tab Free throws made (tiros libres; integer as a string). \cr
-   p1a \tab integer \tab Free throws attempted (integer as a string). \cr
-   p1p \tab double \tab Free-throw percentage, 0-100, as a string with a DECIMAL COMMA ('77,3'); '0,0' when no attempts. \cr
-   p2m \tab integer \tab Two-point field goals made (integer as a string). \cr
-   p2a \tab integer \tab Two-point field goals attempted (integer as a string). \cr
-   p2p \tab double \tab Two-point percentage, 0-100, string with a decimal comma ('54,1'). \cr
-   p3m \tab integer \tab Three-point field goals made (integer as a string). \cr
-   p3a \tab integer \tab Three-point field goals attempted (integer as a string). \cr
-   p3p \tab double \tab Three-point percentage, 0-100, string with a decimal comma ('47,6'). \cr
-   fgm \tab integer \tab Field goals made, 2PT + 3PT (tiros de campo; integer as a string). \cr
-   fga \tab integer \tab Field goals attempted, 2PT + 3PT (integer as a string). \cr
-   fgp \tab double \tab Field-goal percentage, 0-100, string with a decimal comma ('51,7'). \cr
-   ro \tab integer \tab Offensive rebounds (rebotes ofensivos; integer as a string). \cr
-   rd \tab integer \tab Defensive rebounds (rebotes defensivos; integer as a string). \cr
-   rt \tab integer \tab Total rebounds (rebotes totales; integer as a string). \cr
-   reb \tab integer \tab Total rebounds (the same count as rt). \cr
-   assist \tab integer \tab Assists (asistencias; integer as a string). \cr
-   st \tab integer \tab Steals (balones robados, page column BR; integer as a string). \cr
-   to \tab integer \tab Turnovers (balones perdidos, page column BP; integer as a string). \cr
-   bs \tab integer \tab Blocks made (tapones a favor, page column TF; integer as a string). \cr
-   tc \tab integer \tab Shots of this player/team that were blocked (tapones en contra / recibidos, page column TC; integer as a string). \cr
-   mt \tab integer \tab Dunks (mates, page column MT; integer as a string). \cr
-   pf \tab integer \tab Personal fouls committed (faltas cometidas, page column FC; integer as a string). \cr
-   rf \tab integer \tab Fouls received / drawn (faltas recibidas, page column FR; integer as a string). \cr
-   pllss \tab integer \tab Plus/minus while the player was on court (balance, page column +/-), signed integer. \cr
-   val \tab integer \tab FEB efficiency rating (valoracion): points + rebounds + assists + steals + blocks + fouls drawn - missed shots - turnovers - shots blocked - fouls committed. \cr
-}
+A \code{hoopR_data} tibble with one row per player and team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "feb_player_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Per-player box score of one FEB game: minutes, points, shooting splits,

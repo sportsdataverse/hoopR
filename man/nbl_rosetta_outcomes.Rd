@@ -14,20 +14,10 @@ nbl_rosetta_outcomes(season, org = "nbl", season_type = "regular")
 \item{season_type}{(\emph{character} default \code{"regular"}): Season type: all (every type of the year), regular (includes finals), preseason, in_season (cups, Blitz, NBAxNBL, All-Star) or test. One of \code{"all"}, \code{"regular"}, \code{"preseason"}, \code{"in_season"}, \code{"test"}.}
 }
 \value{
-A \code{hoopR_data} tibble (one row per team name):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   org \tab character \tab Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. \cr
-   team_name \tab character \tab Name of the team, the key of Rosetta's outcomes map (the body carries no team id). \cr
-   wins \tab integer \tab Wins of the team in the season type asked for. \cr
-   losses \tab integer \tab Losses of the team in the season type asked for. \cr
-   last10 \tab character \tab Results of the team's last 10 games as a W/L string, oldest first. \cr
-   last5 \tab character \tab Results of the team's last 5 games as a W/L string, oldest first. \cr
-   last3 \tab character \tab Results of the team's last 3 games as a W/L string, oldest first. \cr
-   season_end_year \tab integer \tab sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per team name.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_outcomes")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Win-loss record and last 10, 5 and 3 results per team, keyed by team name.

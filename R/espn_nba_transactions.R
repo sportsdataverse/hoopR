@@ -20,28 +20,7 @@ NULL
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)`.
-#' @return A `hoopR_data` tibble with one row per draft pick:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-#'       round \tab integer \tab Tournament / playoff round. \cr
-#'       pick \tab integer \tab  \cr
-#'       overall \tab integer \tab Overall. \cr
-#'       traded \tab logical \tab  \cr
-#'       trade_note \tab character \tab  \cr
-#'       status \tab character \tab Status label. \cr
-#'       athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
-#'       athlete_ref \tab character \tab  \cr
-#'       team_id \tab character \tab Unique team identifier. \cr
-#'       team_ref \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    Athlete and team details (name, position, college, abbreviation) are not
-#'    inlined in the draft response; resolve them via `espn_nba_player_info()`
-#'    or `espn_nba_team()` using the returned IDs.
-#'
+#' @eval .returns_rd("espn_nba_draft", unit = "draft pick")
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble mutate
@@ -165,23 +144,7 @@ NULL
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)`.
-#' @return A `hoopR_data` tibble with one row per free agent:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-#'       athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
-#'       athlete_name \tab character \tab Athlete display name (ESPN). \cr
-#'       position \tab character \tab Listed roster position (G, F, C, etc.). \cr
-#'       prior_team_id \tab character \tab  \cr
-#'       status \tab character \tab Status label. \cr
-#'       signed_team_id \tab character \tab  \cr
-#'       signed_date \tab character \tab  \cr
-#'       contract_value \tab character \tab  \cr
-#'       contract_term_years \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_nba_freeagents", unit = "free agent")
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble
@@ -345,22 +308,7 @@ NULL
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)`.
-#' @return A `hoopR_data` tibble with one row per transaction:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       transaction_id \tab character \tab  \cr
-#'       date \tab character \tab Date in YYYY-MM-DD format. \cr
-#'       type \tab character \tab Record type / category. \cr
-#'       description \tab character \tab Long-form description text. \cr
-#'       team_id \tab character \tab Unique team identifier. \cr
-#'       athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
-#'       athlete_name \tab character \tab Athlete display name (ESPN). \cr
-#'       from_team_id \tab character \tab  \cr
-#'       to_team_id \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_nba_transactions", unit = "transaction")
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble

@@ -12,31 +12,10 @@ easl_pbp(fixture_id)
 malformed id is \code{hoopR_bad_request}.}
 }
 \value{
-A \code{hoopR_data} tibble: Play-by-play of a finished game in delivered order, with the running score and the points
-each event scored. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{easl_pbp}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   fixture_id \tab character \tab DataCore fixture (game) UUID v1 from the request. \cr
-   event_number \tab integer \tab 1-based position of the event in the delivered array, which is the only usable order (sequence is not monotonic). \cr
-   sequence \tab integer \tab Event sequence number from the scorer's system: NOT in game order (the delivered array order is), and not always unique within a game (35 of 106 games repeat values). \cr
-   period_id \tab integer \tab Period: 1-4 regulation, 11 = first overtime (12 = second overtime appears in team totals). \cr
-   period_label \tab character \tab Q1-Q4 for periods 1-4; OT1, OT2 ... for overtimes (the server numbers the first overtime 11 in team totals; periods 5-10 are read as \verb{OT\{n-4\}}, unverified). \cr
-   event_time \tab character \tab When the event was logged, wall-clock 'YYYY-MM-DDTHH:MM:SS.mmm' in UTC with no zone marker. There is NO game clock (time remaining) in this feed. \cr
-   received_time \tab double \tab When the event was received upstream, Unix epoch MILLISECONDS (UTC): a median 1.6 s after eventTime (5th to 95th percentile -0.6 s to +55 s over 30,874 events); meaning unverified. \cr
-   description \tab character \tab Event text. Shots read \verb{<2pt/3pt> <shot type> missed[ (modifier)]} for EVERY field-goal attempt, made or not: the word 'missed' is always there and the result is the change of \code{scores} (see the divergence notes). Free throws read 'Free throw K of M made' (M = 1, 2 or 3) for every attempt, also always 'made'. The shot types, modifiers and other events are listed under "Event descriptions". \cr
-   team_id \tab character \tab DataCore team UUID v1 of the acting team; null on events with no team. \cr
-   player_id \tab character \tab DataCore person UUID v1 of the acting player; null for team events (team rebounds, timeouts). \cr
-   player_name \tab character \tab Player display name in 'FAMILY Given' form with the family name upper-cased (OSAKABE Taiki), in Latin script. Absent on some rows. \cr
-   player_name_latin \tab character \tab Alternative name: equal to nameFullLocal for 257 of 552 players, otherwise null; never non-Latin in the observed data. Absent on some rows. \cr
-   jersey_number \tab character \tab Jersey number as a string; null on one event. Absent on some rows. \cr
-   team_score \tab integer \tab The event team's running score as of this event (the running score lags the true score on a minority of events); null on events with no team. \cr
-   opponent_score \tab integer \tab The other team's running score as of this event; null on events with no team. \cr
-   points_scored \tab integer \tab Points the event team gained since the previous event (change of its running score): the made shot's value. The description always says 'missed', so count points here, not strings; the running score lags on some games, which shifts points to a later event. \cr
-   team1_id \tab character \tab First team of the body's teams array (the fixture's competitors order, arbitrary home/away); team1_score belongs to it. \cr
-   team1_score \tab integer \tab Running score of team1_id as of this event. \cr
-   team2_id \tab character \tab Second team of the body's teams array; team2_score belongs to it. \cr
-   team2_score \tab integer \tab Running score of team2_id as of this event. \cr
-}
+A \code{hoopR_data} tibble with one row per play-by-play event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "easl_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play of a finished game in delivered order, with the running score and the points each event scored.

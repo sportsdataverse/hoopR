@@ -17,15 +17,10 @@ labels follow it.}
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: The seasons a club has data for (END year and the club's competition id). The columns are
-always these, in this order (sportsdataverse-py \code{vtb_infobasket_team_seasons}); an empty valid answer raises \code{hoopR_no_data},
-a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id. \cr
-   season \tab integer \tab Season END year of the club's season entry (2027 = 2026/2027). \cr
-   comp_id \tab integer \tab Competition id of the season in the club's rfb tag (56293 for 2027), not the VTB tag's season CompID. \cr
-   season_name \tab character \tab Season name in Russian ('Sezon 2026/2027' = 'Season 2026/2027'). \cr
-}
+A \code{hoopR_data} tibble with one row per team-season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_team_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The seasons a club has data for (END year and the club's competition id).

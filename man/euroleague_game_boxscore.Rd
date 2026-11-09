@@ -14,51 +14,10 @@ the \code{game_code} column of \code{\link[=euroleague_games]{euroleague_games()
 \code{E2025} (EuroLeague 2025-26), \code{U2025} (EuroCup).}
 }
 \value{
-A \code{hoopR_data} tibble with one row per player plus two per side:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      row_type \tab character \tab Row kind: player, team (team-only rebounds) or total (side totals). \cr
-      team_name \tab character \tab Club display name. \cr
-      coach \tab character \tab Head coach name. \cr
-      attendance \tab character \tab Attendance, as reported by the box score (repeated on every row). \cr
-      referees \tab character \tab Referees of the game, comma-separated SURNAME, GIVEN NAME (repeated on every row). \cr
-      by_quarter_q1 \tab integer \tab Points the row's team scored in quarter 1 (from the box score's ByQuarter block). \cr
-      by_quarter_q2 \tab integer \tab Points the row's team scored in quarter 2 (from the box score's ByQuarter block). \cr
-      by_quarter_q3 \tab integer \tab Points the row's team scored in quarter 3 (from the box score's ByQuarter block). \cr
-      by_quarter_q4 \tab integer \tab Points the row's team scored in quarter 4 (from the box score's ByQuarter block). \cr
-      end_of_quarter_q1 \tab integer \tab Score of the row's team at the end of quarter 1 (cumulative; from the box score's EndOfQuarter block). \cr
-      end_of_quarter_q2 \tab integer \tab Score of the row's team at the end of quarter 2 (cumulative; from the box score's EndOfQuarter block). \cr
-      end_of_quarter_q3 \tab integer \tab Score of the row's team at the end of quarter 3 (cumulative; from the box score's EndOfQuarter block). \cr
-      end_of_quarter_q4 \tab integer \tab Score of the row's team at the end of quarter 4 (cumulative; from the box score's EndOfQuarter block). \cr
-      player_id \tab character \tab EuroLeague player code (Utf8 join key; space padding stripped; blank on team rows). \cr
-      is_starter \tab integer \tab Whether the player started (1 / 0). \cr
-      is_playing \tab integer \tab Whether the player appeared in the game (1 / 0). \cr
-      team \tab character \tab EuroLeague club code of the team (Utf8 join key; space padding stripped). \cr
-      dorsal \tab character \tab Jersey number as displayed. \cr
-      player \tab character \tab Player display name (SURNAME, GIVEN NAME). \cr
-      minutes \tab character \tab Minutes played (mm:ss). \cr
-      points \tab integer \tab Points. \cr
-      field_goals_made2 \tab integer \tab Two-point field goals made. \cr
-      field_goals_attempted2 \tab integer \tab Two-point field goals attempted. \cr
-      field_goals_made3 \tab integer \tab Three-point field goals made. \cr
-      field_goals_attempted3 \tab integer \tab Three-point field goals attempted. \cr
-      free_throws_made \tab integer \tab Free throws made. \cr
-      free_throws_attempted \tab integer \tab Free throws attempted. \cr
-      offensive_rebounds \tab integer \tab Offensive rebounds. \cr
-      defensive_rebounds \tab integer \tab Defensive rebounds. \cr
-      total_rebounds \tab integer \tab Total rebounds. \cr
-      assistances \tab integer \tab Assists. \cr
-      steals \tab integer \tab Steals. \cr
-      turnovers \tab integer \tab Turnovers. \cr
-      blocks_favour \tab integer \tab Blocks made. \cr
-      blocks_against \tab integer \tab Shots blocked by the opponent. \cr
-      fouls_commited \tab integer \tab Personal fouls committed. \cr
-      fouls_received \tab integer \tab Fouls drawn. \cr
-      valuation \tab integer \tab Performance index rating (PIR). \cr
-      plusminus \tab numeric \tab Plus/minus. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per player, plus two team rows per side.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "euroleague_game_boxscore")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the box score of one game from the live API: one row per player plus

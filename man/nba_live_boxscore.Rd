@@ -48,102 +48,474 @@ floor belongs to the data.nba.com / cdn.nba.com liveData feed served by \code{nb
 \item{nest_data}{If TRUE returns nested data by game}
 }
 \value{
-Returns a named list of data frames: PlayByPlay, AvailableVideo
+A named list of \code{hoopR_data} tibbles: \code{PlayByPlay}, \code{AvailableVideo}.
 
 \strong{PlayByPlay}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      action_number \tab integer \tab Sequential action number within a game (V3 PBP). \cr
-      clock \tab character \tab Game clock value. \cr
-      period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-      player_name \tab character \tab Player name. \cr
-      player_name_i \tab character \tab Player name i. \cr
-      x_legacy \tab integer \tab V2-format X coordinate (preserved for V3-to-V2 compatibility). \cr
-      y_legacy \tab integer \tab V2-format Y coordinate (preserved for V3-to-V2 compatibility). \cr
-      shot_distance \tab numeric \tab Shot distance from the basket, in feet. \cr
-      shot_result \tab character \tab Shot result ('Made' / 'Missed'). \cr
-      is_field_goal \tab integer \tab 1 if the action was a field goal; 0 otherwise. \cr
-      score_home \tab character \tab Score home. \cr
-      score_away \tab character \tab Score away. \cr
-      points_total \tab integer \tab Running total of points scored. \cr
-      location \tab character \tab Location. \cr
-      description \tab character \tab Long-form description text. \cr
-      action_type \tab character \tab Action type label (e.g. 'Made Shot', 'Substitution'). \cr
-      sub_type \tab character \tab Action sub-type label. \cr
-      video_available \tab integer \tab Video available. \cr
-      shot_value \tab integer \tab Point value of the shot (2 or 3). \cr
-      action_id \tab integer \tab Unique action identifier within a game (V3 PBP). \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  action_number \tab integer \tab Sequential action number within a game (V3 PBP). \cr
+  clock \tab character \tab Game clock value. \cr
+  period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  player_name \tab character \tab Player name. \cr
+  player_name_i \tab character \tab Player name i. \cr
+  x_legacy \tab integer \tab V2-format X coordinate (preserved for V3-to-V2 compatibility). \cr
+  y_legacy \tab integer \tab V2-format Y coordinate (preserved for V3-to-V2 compatibility). \cr
+  shot_distance \tab numeric \tab Shot distance from the basket, in feet. \cr
+  shot_result \tab character \tab Shot result ('Made' / 'Missed'). \cr
+  is_field_goal \tab integer \tab 1 if the action was a field goal; 0 otherwise. \cr
+  score_home \tab character \tab Score home. \cr
+  score_away \tab character \tab Score away. \cr
+  points_total \tab integer \tab Running total of points scored. \cr
+  location \tab character \tab Location. \cr
+  description \tab character \tab Long-form description text. \cr
+  action_type \tab character \tab Action type label (e.g. 'Made Shot', 'Substitution'). \cr
+  sub_type \tab character \tab Action sub-type label. \cr
+  video_available \tab integer \tab Video available. \cr
+  shot_value \tab integer \tab Point value of the shot (2 or 3). \cr
+  action_id \tab integer \tab Unique action identifier within a game (V3 PBP). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{AvailableVideo}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   video_available \tab integer \tab Video available. \cr
-}
+\strong{AvailableVideo}
 
-Returns a data frame: PlayByPlay
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  video_available \tab integer \tab Video available. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Columns as documented in the shared \link{nba_pbp_schema} table.
+A \code{hoopR_data} tibble with one row per play-by-play event.
 
-Returns a data frame: PlayByPlay
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  event_num \tab character \tab Sequential event number within the game (V2 PBP). \cr
+  event_type \tab character \tab Event / play type code (V2 PBP). \cr
+  event_action_type \tab character \tab Numeric event-action-type code (V2 PBP). \cr
+  period \tab numeric \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+  clock \tab character \tab Game clock value. \cr
+  minute_game \tab numeric \tab Minute game. \cr
+  time_remaining \tab numeric \tab Time remaining. \cr
+  wc_time_string \tab character \tab Wc time string. \cr
+  time_quarter \tab character \tab Time quarter. \cr
+  minute_remaining_quarter \tab numeric \tab Minute remaining quarter. \cr
+  seconds_remaining_quarter \tab numeric \tab Seconds remaining quarter. \cr
+  action_type \tab character \tab Action type label (e.g. 'Made Shot', 'Substitution'). \cr
+  sub_type \tab character \tab Action sub-type label. \cr
+  home_description \tab character \tab Home team's description. \cr
+  neutral_description \tab character \tab Neutral description. \cr
+  visitor_description \tab character \tab Visitor description. \cr
+  description \tab character \tab Long-form description text. \cr
+  location \tab character \tab Location. \cr
+  score \tab character \tab Final score. \cr
+  away_score \tab numeric \tab Away team score at the time of the play. \cr
+  home_score \tab numeric \tab Home team score at the time of the play. \cr
+  score_margin \tab character \tab Score margin. \cr
+  person1type \tab character \tab Person1type. \cr
+  player1_id \tab character \tab V2 PBP primary player ID (e.g. shooter / fouler). \cr
+  player1_name \tab character \tab V2 PBP primary player name. \cr
+  player1_team_id \tab character \tab Team ID of player1. \cr
+  player1_team_city \tab character \tab Player1 team city. \cr
+  player1_team_nickname \tab character \tab Player1 team nickname. \cr
+  player1_team_abbreviation \tab character \tab Player1 team abbreviation. \cr
+  person2type \tab character \tab Person2type. \cr
+  player2_id \tab character \tab V2 PBP secondary player ID (e.g. assister / fouled-by). \cr
+  player2_name \tab character \tab V2 PBP secondary player name. \cr
+  player2_team_id \tab character \tab Team ID of player2. \cr
+  player2_team_city \tab character \tab Player2 team city. \cr
+  player2_team_nickname \tab character \tab Player2 team nickname. \cr
+  player2_team_abbreviation \tab character \tab Player2 team abbreviation. \cr
+  person3type \tab character \tab Person3type. \cr
+  player3_id \tab character \tab V2 PBP tertiary player ID (e.g. blocker). \cr
+  player3_name \tab character \tab V2 PBP tertiary player name. \cr
+  player3_team_id \tab character \tab Team ID of player3. \cr
+  player3_team_city \tab character \tab Player3 team city. \cr
+  player3_team_nickname \tab character \tab Player3 team nickname. \cr
+  player3_team_abbreviation \tab character \tab Player3 team abbreviation. \cr
+  video_available_flag \tab character \tab Video available flag. \cr
+  team_leading \tab character \tab Team leading. \cr
+  x_legacy \tab integer \tab V2-format X coordinate (preserved for V3-to-V2 compatibility). \cr
+  y_legacy \tab integer \tab V2-format Y coordinate (preserved for V3-to-V2 compatibility). \cr
+  shot_distance \tab numeric \tab Shot distance from the basket, in feet. \cr
+  shot_result \tab character \tab Shot result ('Made' / 'Missed'). \cr
+  is_field_goal \tab integer \tab 1 if the action was a field goal; 0 otherwise. \cr
+  points_total \tab integer \tab Running total of points scored. \cr
+  shot_value \tab integer \tab Point value of the shot (2 or 3). \cr
+  away_player1 \tab numeric \tab Away team's player1. \cr
+  away_player2 \tab numeric \tab Away team's player2. \cr
+  away_player3 \tab numeric \tab Away team's player3. \cr
+  away_player4 \tab numeric \tab Away team's player4. \cr
+  away_player5 \tab numeric \tab Away team's player5. \cr
+  home_player1 \tab numeric \tab Home team's player1. \cr
+  home_player2 \tab numeric \tab Home team's player2. \cr
+  home_player3 \tab numeric \tab Home team's player3. \cr
+  home_player4 \tab numeric \tab Home team's player4. \cr
+  home_player5 \tab numeric \tab Home team's player5. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Columns as documented in the shared \link{nba_pbp_schema} table.
+A tibble with one row per play-by-play event.
 
-Returns a data frame: PlayByPlay
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  event_num \tab character \tab Sequential event number within the game (V2 PBP). \cr
+  event_type \tab character \tab Event / play type code (V2 PBP). \cr
+  event_action_type \tab character \tab Numeric event-action-type code (V2 PBP). \cr
+  period \tab numeric \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+  clock \tab character \tab Game clock value. \cr
+  minute_game \tab numeric \tab Minute game. \cr
+  time_remaining \tab numeric \tab Time remaining. \cr
+  wc_time_string \tab character \tab Wc time string. \cr
+  time_quarter \tab character \tab Time quarter. \cr
+  minute_remaining_quarter \tab numeric \tab Minute remaining quarter. \cr
+  seconds_remaining_quarter \tab numeric \tab Seconds remaining quarter. \cr
+  action_type \tab character \tab Action type label (e.g. 'Made Shot', 'Substitution'). \cr
+  sub_type \tab character \tab Action sub-type label. \cr
+  home_description \tab character \tab Home team's description. \cr
+  neutral_description \tab character \tab Neutral description. \cr
+  visitor_description \tab character \tab Visitor description. \cr
+  description \tab character \tab Long-form description text. \cr
+  location \tab character \tab Location. \cr
+  score \tab character \tab Final score. \cr
+  away_score \tab numeric \tab Away team score at the time of the play. \cr
+  home_score \tab numeric \tab Home team score at the time of the play. \cr
+  score_margin \tab character \tab Score margin. \cr
+  person1type \tab character \tab Person1type. \cr
+  player1_id \tab character \tab V2 PBP primary player ID (e.g. shooter / fouler). \cr
+  player1_name \tab character \tab V2 PBP primary player name. \cr
+  player1_team_id \tab character \tab Team ID of player1. \cr
+  player1_team_city \tab character \tab Player1 team city. \cr
+  player1_team_nickname \tab character \tab Player1 team nickname. \cr
+  player1_team_abbreviation \tab character \tab Player1 team abbreviation. \cr
+  person2type \tab character \tab Person2type. \cr
+  player2_id \tab character \tab V2 PBP secondary player ID (e.g. assister / fouled-by). \cr
+  player2_name \tab character \tab V2 PBP secondary player name. \cr
+  player2_team_id \tab character \tab Team ID of player2. \cr
+  player2_team_city \tab character \tab Player2 team city. \cr
+  player2_team_nickname \tab character \tab Player2 team nickname. \cr
+  player2_team_abbreviation \tab character \tab Player2 team abbreviation. \cr
+  person3type \tab character \tab Person3type. \cr
+  player3_id \tab character \tab V2 PBP tertiary player ID (e.g. blocker). \cr
+  player3_name \tab character \tab V2 PBP tertiary player name. \cr
+  player3_team_id \tab character \tab Team ID of player3. \cr
+  player3_team_city \tab character \tab Player3 team city. \cr
+  player3_team_nickname \tab character \tab Player3 team nickname. \cr
+  player3_team_abbreviation \tab character \tab Player3 team abbreviation. \cr
+  video_available_flag \tab character \tab Video available flag. \cr
+  team_leading \tab character \tab Team leading. \cr
+  x_legacy \tab integer \tab V2-format X coordinate (preserved for V3-to-V2 compatibility). \cr
+  y_legacy \tab integer \tab V2-format Y coordinate (preserved for V3-to-V2 compatibility). \cr
+  shot_distance \tab numeric \tab Shot distance from the basket, in feet. \cr
+  shot_result \tab character \tab Shot result ('Made' / 'Missed'). \cr
+  is_field_goal \tab integer \tab 1 if the action was a field goal; 0 otherwise. \cr
+  points_total \tab integer \tab Running total of points scored. \cr
+  shot_value \tab integer \tab Point value of the shot (2 or 3). \cr
+  away_player1 \tab numeric \tab Away team's player1. \cr
+  away_player2 \tab numeric \tab Away team's player2. \cr
+  away_player3 \tab numeric \tab Away team's player3. \cr
+  away_player4 \tab numeric \tab Away team's player4. \cr
+  away_player5 \tab numeric \tab Away team's player5. \cr
+  home_player1 \tab numeric \tab Home team's player1. \cr
+  home_player2 \tab numeric \tab Home team's player2. \cr
+  home_player3 \tab numeric \tab Home team's player3. \cr
+  home_player4 \tab numeric \tab Home team's player4. \cr
+  home_player5 \tab numeric \tab Home team's player5. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Columns as documented in the shared \link{nba_live_pbp_schema} table.
+A \code{hoopR_data} tibble with one row per play-by-play event.
 
-Returns a named list of data frames: game_details, arena, officials, home_team_boxscore,
-away_team_boxscore, home_team_player_boxscore, away_team_player_boxscore, home_team_linescores,
-away_team_linescores
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  event_num \tab integer \tab Sequential event number within the game (V2 PBP). \cr
+  clock \tab character \tab Game clock value. \cr
+  time_actual \tab character \tab Time actual. \cr
+  period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+  period_type \tab character \tab Period type. \cr
+  action_type \tab character \tab Action type label (e.g. 'Made Shot', 'Substitution'). \cr
+  sub_type \tab character \tab Action sub-type label. \cr
+  qualifiers \tab list \tab Qualifiers. \cr
+  player1_id \tab integer \tab V2 PBP primary player ID (e.g. shooter / fouler). \cr
+  x \tab numeric \tab X. \cr
+  y \tab numeric \tab Y. \cr
+  offense_team_id \tab integer \tab Unique identifier for offense team. \cr
+  home_score \tab character \tab Home team score at the time of the play. \cr
+  away_score \tab character \tab Away team score at the time of the play. \cr
+  edited \tab character \tab Edited. \cr
+  order \tab integer \tab Display order within the result set. \cr
+  is_target_score_last_period \tab logical \tab Is target score last period. \cr
+  x_legacy \tab integer \tab V2-format X coordinate (preserved for V3-to-V2 compatibility). \cr
+  y_legacy \tab integer \tab V2-format Y coordinate (preserved for V3-to-V2 compatibility). \cr
+  is_field_goal \tab integer \tab 1 if the action was a field goal; 0 otherwise. \cr
+  side \tab character \tab Side label (e.g. 'home', 'away', or 'overUnder'). \cr
+  description \tab character \tab Long-form description text. \cr
+  person_ids_filter \tab list \tab Person ids filter. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  descriptor \tab character \tab Descriptor. \cr
+  jump_ball_recovered_name \tab character \tab Jump ball recovered name. \cr
+  jump_ball_recoverd_person_id \tab integer \tab Unique identifier for jump ball recoverd person. \cr
+  player_name \tab character \tab Player name. \cr
+  player_name_i \tab character \tab Player name i. \cr
+  jump_ball_won_player_name \tab character \tab Jump ball won player name. \cr
+  jump_ball_won_person_id \tab integer \tab Unique identifier for jump ball won person. \cr
+  jump_ball_lost_player_name \tab character \tab Jump ball lost player name. \cr
+  jump_ball_lost_person_id \tab integer \tab Unique identifier for jump ball lost person. \cr
+  area \tab character \tab Area. \cr
+  area_detail \tab character \tab Area detail. \cr
+  shot_distance \tab numeric \tab Shot distance from the basket, in feet. \cr
+  shot_result \tab character \tab Shot result ('Made' / 'Missed'). \cr
+  points_total \tab integer \tab Running total of points scored. \cr
+  assist_player_name_initial \tab character \tab Assist player name initial. \cr
+  assist_person_id \tab integer \tab Unique identifier for assist person. \cr
+  assist_total \tab integer \tab Assist total. \cr
+  shot_action_number \tab integer \tab Shot action number. \cr
+  rebound_total \tab integer \tab Rebound total. \cr
+  rebound_defensive_total \tab integer \tab Rebound defensive total. \cr
+  rebound_offensive_total \tab integer \tab Rebound offensive total. \cr
+  official_id \tab integer \tab Unique official / referee identifier. \cr
+  foul_personal_total \tab integer \tab Foul personal total. \cr
+  foul_technical_total \tab integer \tab Foul technical total. \cr
+  foul_drawn_player_name \tab character \tab Foul drawn player name. \cr
+  foul_drawn_person_id \tab integer \tab Unique identifier for foul drawn person. \cr
+  block_player_name \tab character \tab Block player name. \cr
+  block_person_id \tab integer \tab Unique identifier for block person. \cr
+  turnover_total \tab integer \tab Turnover total. \cr
+  steal_player_name \tab character \tab Steal player name. \cr
+  steal_person_id \tab integer \tab Unique identifier for steal person. \cr
+  player2_id \tab integer \tab V2 PBP secondary player ID (e.g. assister / fouled-by). \cr
+  player3_id \tab integer \tab V2 PBP tertiary player ID (e.g. blocker). \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A named list of \code{hoopR_data} tibbles: \code{game_details}, \code{arena}, \code{officials}, \code{home_team_boxscore}, \code{away_team_boxscore}, \code{home_team_player_boxscore}, \code{away_team_player_boxscore}, \code{home_team_linescores}, \code{away_team_linescores}.
 
 \strong{game_details}
 
-Columns as documented in the shared \link{nba_live_boxscore_game_details_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  game_time_local \tab character \tab Game time local. \cr
+  game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
+  game_time_home \tab character \tab Game time home. \cr
+  game_time_away \tab character \tab Game time away. \cr
+  game_et \tab character \tab Game et. \cr
+  duration \tab integer \tab Duration. \cr
+  game_code \tab character \tab ESPN game code (numeric identifier). \cr
+  game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+  game_status \tab integer \tab Game status label. \cr
+  regulation_periods \tab integer \tab Regulation periods. \cr
+  period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+  game_clock \tab character \tab Game clock. \cr
+  attendance \tab integer \tab Reported attendance. \cr
+  sellout \tab character \tab Sellout. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  home_team_name \tab character \tab Home team name. \cr
+  home_team_city \tab character \tab Home team city / location. \cr
+  home_team_tricode \tab character \tab Home team three-letter code. \cr
+  home_team_score \tab integer \tab Home team's score. \cr
+  home_team_in_bonus \tab character \tab Home team's team in bonus. \cr
+  home_team_timeouts_remaining \tab integer \tab Home team's team timeouts remaining. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  away_team_name \tab character \tab Away team name. \cr
+  away_team_city \tab character \tab Away team city / location. \cr
+  away_team_tricode \tab character \tab Away team three-letter code. \cr
+  away_team_score \tab integer \tab Away team's score. \cr
+  away_team_in_bonus \tab character \tab Away team's team in bonus. \cr
+  away_team_timeouts_remaining \tab integer \tab Away team's team timeouts remaining. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{arena}
 
-Columns as documented in the shared \link{nba_live_boxscore_arena_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  arena_id \tab integer \tab Unique identifier for arena. \cr
+  arena_name \tab character \tab Arena name. \cr
+  arena_city \tab character \tab Arena city. \cr
+  arena_state \tab character \tab Arena state. \cr
+  arena_country \tab character \tab Arena country. \cr
+  arena_timezone \tab character \tab Arena timezone. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{officials}
 
-Columns as documented in the shared \link{nba_live_boxscore_officials_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  name \tab character \tab Display name. \cr
+  name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+  assignment \tab character \tab Assignment. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{home_team_boxscore}
 
-Columns as documented in the shared \link{nba_live_boxscore_home_team_boxscore_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_score \tab integer \tab Team's score / final score. \cr
+  team_in_bonus \tab character \tab Team in bonus. \cr
+  team_timeouts_remaining \tab integer \tab Team timeouts remaining. \cr
+  assists \tab integer \tab Total assists. \cr
+  assists_turnover_ratio \tab numeric \tab Assists turnover ratio. \cr
+  bench_points \tab integer \tab Points scored by the bench. \cr
+  biggest_lead \tab integer \tab Biggest lead. \cr
+  biggest_lead_score \tab character \tab Biggest lead score. \cr
+  biggest_scoring_run \tab integer \tab Biggest scoring run. \cr
+  biggest_scoring_run_score \tab character \tab Biggest scoring run score. \cr
+  blocks \tab integer \tab Total blocks. \cr
+  blocks_received \tab integer \tab Shots blocked by opponents while attempting. \cr
+  fast_break_points_attempted \tab integer \tab Number of fast break points attempted. \cr
+  fast_break_points_made \tab integer \tab Number of fast break points made. \cr
+  fast_break_points_percentage \tab numeric \tab Fast break points percentage (0-1 decimal). \cr
+  field_goals_attempted \tab integer \tab Field goal attempts (2-pt + 3-pt). \cr
+  field_goals_effective_adjusted \tab numeric \tab Field goals effective adjusted. \cr
+  field_goals_made \tab integer \tab Field goals made (2-pt + 3-pt). \cr
+  field_goals_percentage \tab numeric \tab Field goal percentage (0-1 decimal). \cr
+  fouls_offensive \tab integer \tab Offensive fouls. \cr
+  fouls_drawn \tab integer \tab Personal fouls drawn (by opponent's actions). \cr
+  fouls_personal \tab integer \tab Personal fouls. \cr
+  fouls_team \tab integer \tab Fouls team. \cr
+  fouls_technical \tab integer \tab Technical fouls. \cr
+  fouls_team_technical \tab integer \tab Fouls team technical. \cr
+  free_throws_attempted \tab integer \tab Free throw attempts. \cr
+  free_throws_made \tab integer \tab Free throws made. \cr
+  free_throws_percentage \tab numeric \tab Free throw percentage (0-1 decimal). \cr
+  lead_changes \tab integer \tab Lead changes. \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  minutes_calculated \tab character \tab Minutes calculated from game-clock differences. \cr
+  points \tab integer \tab Points scored. \cr
+  points_against \tab integer \tab Points allowed. \cr
+  points_fast_break \tab integer \tab Fast-break points scored. \cr
+  points_from_turnovers \tab integer \tab Points from turnovers. \cr
+  points_in_the_paint \tab integer \tab Points in the paint. \cr
+  points_in_the_paint_attempted \tab integer \tab Number of points in the paint attempted. \cr
+  points_in_the_paint_made \tab integer \tab Number of points in the paint made. \cr
+  points_in_the_paint_percentage \tab numeric \tab Points in the paint percentage (0-1 decimal). \cr
+  points_second_chance \tab integer \tab Second-chance points scored. \cr
+  rebounds_defensive \tab integer \tab Defensive rebounds. \cr
+  rebounds_offensive \tab integer \tab Offensive rebounds. \cr
+  rebounds_personal \tab integer \tab Rebounds personal. \cr
+  rebounds_team \tab integer \tab Rebounds team. \cr
+  rebounds_team_defensive \tab integer \tab Rebounds team defensive. \cr
+  rebounds_team_offensive \tab integer \tab Rebounds team offensive. \cr
+  rebounds_total \tab integer \tab Total rebounds. \cr
+  second_chance_points_attempted \tab integer \tab Number of second chance points attempted. \cr
+  second_chance_points_made \tab integer \tab Number of second chance points made. \cr
+  second_chance_points_percentage \tab numeric \tab Second chance points percentage (0-1 decimal). \cr
+  steals \tab integer \tab Total steals. \cr
+  three_pointers_attempted \tab integer \tab Three-point field goal attempts. \cr
+  three_pointers_made \tab integer \tab Three-point field goals made. \cr
+  three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1 decimal). \cr
+  time_leading \tab character \tab Time leading. \cr
+  times_tied \tab integer \tab Times tied. \cr
+  true_shooting_attempts \tab numeric \tab Number of true shooting attempted. \cr
+  true_shooting_percentage \tab numeric \tab True shooting percentage (0-1). \cr
+  turnovers \tab integer \tab Total turnovers. \cr
+  turnovers_team \tab integer \tab Turnovers team. \cr
+  turnovers_total \tab integer \tab Turnovers total. \cr
+  two_pointers_attempted \tab integer \tab Number of two pointers attempted. \cr
+  two_pointers_made \tab integer \tab Number of two pointers made. \cr
+  two_pointers_percentage \tab numeric \tab Two pointers percentage (0-1 decimal). \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_boxscore}
 
-Columns as documented in the shared \link{nba_live_boxscore_home_team_boxscore_schema} table.
+Same columns as the \strong{home_team_boxscore} table above.
 
 \strong{home_team_player_boxscore}
 
-Columns as documented in the shared \link{nba_live_boxscore_home_team_player_boxscore_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_score \tab integer \tab Team's score / final score. \cr
+  team_in_bonus \tab character \tab Team in bonus. \cr
+  team_timeouts_remaining \tab integer \tab Team timeouts remaining. \cr
+  status \tab character \tab Status label. \cr
+  order \tab integer \tab Display order within the result set. \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  starter \tab character \tab TRUE if the player was in the starting lineup; FALSE otherwise. \cr
+  oncourt \tab character \tab Oncourt. \cr
+  played \tab character \tab Played. \cr
+  assists \tab integer \tab Total assists. \cr
+  blocks \tab integer \tab Total blocks. \cr
+  blocks_received \tab integer \tab Shots blocked by opponents while attempting. \cr
+  field_goals_attempted \tab integer \tab Field goal attempts (2-pt + 3-pt). \cr
+  field_goals_made \tab integer \tab Field goals made (2-pt + 3-pt). \cr
+  field_goals_percentage \tab numeric \tab Field goal percentage (0-1 decimal). \cr
+  fouls_offensive \tab integer \tab Offensive fouls. \cr
+  fouls_drawn \tab integer \tab Personal fouls drawn (by opponent's actions). \cr
+  fouls_personal \tab integer \tab Personal fouls. \cr
+  fouls_technical \tab integer \tab Technical fouls. \cr
+  free_throws_attempted \tab integer \tab Free throw attempts. \cr
+  free_throws_made \tab integer \tab Free throws made. \cr
+  free_throws_percentage \tab numeric \tab Free throw percentage (0-1 decimal). \cr
+  minus \tab numeric \tab Minus. \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  minutes_calculated \tab character \tab Minutes calculated from game-clock differences. \cr
+  plus \tab numeric \tab Plus. \cr
+  plus_minus_points \tab numeric \tab Plus/minus point differential while on court. \cr
+  points \tab integer \tab Points scored. \cr
+  points_fast_break \tab integer \tab Fast-break points scored. \cr
+  points_in_the_paint \tab integer \tab Points in the paint. \cr
+  points_second_chance \tab integer \tab Second-chance points scored. \cr
+  rebounds_defensive \tab integer \tab Defensive rebounds. \cr
+  rebounds_offensive \tab integer \tab Offensive rebounds. \cr
+  rebounds_total \tab integer \tab Total rebounds. \cr
+  steals \tab integer \tab Total steals. \cr
+  three_pointers_attempted \tab integer \tab Three-point field goal attempts. \cr
+  three_pointers_made \tab integer \tab Three-point field goals made. \cr
+  three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1 decimal). \cr
+  turnovers \tab integer \tab Total turnovers. \cr
+  two_pointers_attempted \tab integer \tab Number of two pointers attempted. \cr
+  two_pointers_made \tab integer \tab Number of two pointers made. \cr
+  two_pointers_percentage \tab numeric \tab Two pointers percentage (0-1 decimal). \cr
+  name \tab character \tab Display name. \cr
+  name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  not_playing_reason \tab character \tab Not playing reason. \cr
+  not_playing_description \tab character \tab Not playing description. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_player_boxscore}
 
-Columns as documented in the shared \link{nba_live_boxscore_home_team_player_boxscore_schema} table.
+Same columns as the \strong{home_team_player_boxscore} table above.
 
-\strong{home_team_linescores}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-   period_type \tab character \tab Period type. \cr
-   score \tab integer \tab Final score. \cr
-}
+\strong{home_team_linescores}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+  period_type \tab character \tab Period type. \cr
+  score \tab integer \tab Final score. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{away_team_linescores}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-   period_type \tab character \tab Period type. \cr
-   score \tab integer \tab Final score. \cr
-}
+\strong{away_team_linescores}
+
+Same columns as the \strong{home_team_linescores} table above.
 }
 \description{
 \strong{Get NBA Stats API Play-by-Play V3}

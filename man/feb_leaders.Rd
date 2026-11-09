@@ -11,21 +11,10 @@ feb_leaders(game_id)
 \code{game_id} column of \code{\link[=feb_schedule]{feb_schedule()}}, \code{\link[=feb_results]{feb_results()}} and \code{\link[=feb_overview]{feb_overview()}}.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab FEB game id (one global sequence): the \{gameId\} of every LiveStats route and the p= of Partido.aspx. Game bodies do not print it, so it comes from the request. \cr
-   team_side \tab character \tab Side of the game the row belongs to: home or away (the feed's TEAM[0] / TEAM[1], or its 1/2 and 0/1 side codes, normalised). \cr
-   team_id \tab integer \tab Team-season id (key space: FEB team registrations; a NEW id every season, e.g. HLA Alicante = 979989 in 2025-26 and 1008687 in 2026-27). Joins the schedule's home_team_id / away_team_id; not a club or player id. \cr
-   team \tab character \tab Team name as registered for the season (sponsor name, uppercase: 'HLA ALICANTE'). \cr
-   category \tab character \tab Leader category: points, rebounds, assists or fouls (the feed's Puntos, Rebotes, Asistencias, Faltas). \cr
-   rank \tab integer \tab Place in the team's category list, 1 = the leader, in the order the feed lists them. \cr
-   player_id \tab integer \tab FEB person id: stable across seasons and clubs (A. Jorda Rodriguez = 1676991 in 2025-26 and 2026-27). Joins the box score, play-by-play, shots and leaders; not the per-season licence_id. \cr
-   shirt_number \tab character \tab Shirt number (dorsal) as a string, so '00' and '0' stay distinct. The shot feed names the shooter by this number. \cr
-   player \tab character \tab Player name as 'I. SURNAME(S)', uppercase ('V. AGUILAR HERNANDEZ'). \cr
-   starter \tab logical \tab True when the player was in the starting five (the page's I column), false when on the bench. \cr
-   captain \tab logical \tab True for the team captain. Null on 2020-21 games, where the feed does not send it. \cr
-   value \tab integer \tab The player's count in the row's category (points, rebounds, assists or personal fouls). \cr
-}
+A \code{hoopR_data} tibble with one row per team, statistic and rank.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "feb_leaders")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Each team's top players of one FEB game by points, rebounds, assists and

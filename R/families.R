@@ -37,6 +37,100 @@
     paste0("* [", fns, "()]"))
 }
 
+# Return-column tables.
+#
+# Every function's returned columns live in data-raw/return_columns.csv (the
+# source of the `return_columns` dataset). `@eval .returns_rd("fn")` renders a
+# function's `@return` from it at document() time: the column tables inline,
+# or, with `inline = FALSE`, a short pointer to the dataset and the article.
+
+.returns_cache <- new.env(parent = emptyenv())
+
+#' Roxygen `@return` lines for one function, built from
+#' data-raw/return_columns.csv (roxygen `@eval`, run by `devtools::document()`
+#' from the package root).
+#'
+#' @param fn Function name, as in the CSV's `fn` column.
+#' @param inline `TRUE` renders the column tables; `FALSE` points to the
+#'   `return_columns` dataset and the return-columns article instead.
+#' @param unit What one row is ("player", "game", ...), for a single data
+#'   frame.
+#' @param class `"hoopR_data"` (default), `"tibble"` or `"data frame"`.
+#' @return Character vector of roxygen lines.
+#' @noRd
+.returns_rd <- function(fn, inline = TRUE, unit = NULL, class = "hoopR_data") {
+  if (is.null(.returns_cache$rc)) {
+    .returns_cache$rc <- utils::read.csv("data-raw/return_columns.csv", stringsAsFactors = FALSE,
+                                          na.strings = "", colClasses = "character", encoding = "UTF-8")
+  }
+  rc <- .returns_cache$rc
+  rows <- rc[rc$fn == fn, , drop = FALSE]
+  if (!nrow(rows)) stop("no return_columns rows for `", fn, "`", call. = FALSE)
+  noun <- switch(class, hoopR_data = "`hoopR_data` tibble", tibble = "tibble", "data frame" = "data frame",
+                 stop("unknown class ", class, call. = FALSE))
+  comps <- unique(rows$component)
+  variant <- all(grepl("^`\\w+ = .*`$", comps))
+  per <- if (is.null(unit)) "" else paste0(" with one row per ", unit)
+  if (anyNA(comps)) {
+    lead <- paste0("A ", noun, per, ".")
+  } else if (variant) {
+    arg <- unique(sub("^`(\\w+) = .*$", "\\1", comps))
+    lead <- paste0("A ", noun, per, ". Its columns depend on `", arg, "`: ",
+                   paste(sub("^`\\w+ = (.*)`$", "`\\1`", comps), collapse = ", "), ".")
+  } else {
+    elems <- trimws(unlist(strsplit(comps, " / ", fixed = TRUE)))
+    lead <- paste0("A named list of ", noun, "s: ", paste0("`", elems, "`", collapse = ", "), ".")
+  }
+  if (!inline) {
+    sub_call <- paste0("`subset(return_columns, fn == \"", fn, "\")`")
+    article <- "[return columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)"
+    ptr <- if (!anyNA(comps) && !variant) {
+      c("Their column names and types are in [return_columns], e.g.",
+        paste0(sub_call, ", and in the searchable"), article, "article.")
+    } else {
+      c("Its columns are listed in [return_columns]",
+        paste0("(", sub_call, ") and in the searchable"), paste(article, "article."))
+    }
+    return(c(paste("@return", lead), paste0("  ", ptr)))
+  }
+  out <- c(paste("@return", lead), "")
+  seen <- list()
+  for (cp in comps) {
+    df <- rows[if (is.na(cp)) is.na(rows$component) else rows$component %in% cp, c("col_name", "type", "description")]
+    rownames(df) <- NULL
+    if (!is.na(cp)) out <- c(out, paste0("**", cp, "**"), "")
+    same <- names(Filter(function(x) identical(x, df), seen))
+    if (length(same)) {
+      out <- c(out, paste0("Same columns as the **", same[1], "** table above."), "")
+      next
+    }
+    if (!is.na(cp)) seen[[cp]] <- df
+    cell <- function(x) vapply(x, .returns_rd_text, "")
+    out <- c(out,
+             "\\if{html}{\\tabular{lll}{",
+             "  col_name \\tab types \\tab description \\cr",
+             paste0("  ", cell(df$col_name), " \\tab ", cell(df$type), " \\tab ", cell(df$description), " \\cr"),
+             "}}",
+             "\\if{latex}{See the HTML help or pkgdown reference for the column table.}",
+             "")
+  }
+  out
+}
+
+# One CSV cell as Rd: `code` -> \code{}, [fn()] -> a function link, Rd
+# specials escaped.
+.returns_rd_text <- function(x) {
+  if (is.na(x) || !nzchar(x)) return("")
+  esc <- function(s) gsub("([%{}])", "\\\\\\1", gsub("\\\\", "\\\\\\\\", s))
+  parts <- regmatches(x, gregexpr("`[^`]*`", x), invert = NA)[[1]]
+  vapply(parts, function(p) {
+    if (startsWith(p, "`") && endsWith(p, "`") && nchar(p) >= 2L) {
+      return(paste0("\\code{", esc(substr(p, 2L, nchar(p) - 1L)), "}"))
+    }
+    gsub("\\[([A-Za-z.][A-Za-z0-9._]*)\\(\\)\\]", "\\\\code{\\\\link[=\\1]{\\1()}}", esc(p))
+  }, "", USE.NAMES = FALSE) |> paste(collapse = "")
+}
+
 #' ESPN MBB Functions: family index
 #'
 #' @name family_espn_mbb

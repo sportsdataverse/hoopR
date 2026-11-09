@@ -13,113 +13,113 @@ espn_nba_standings(year)
 \item{year}{Either numeric or character (YYYY)}
 }
 \value{
-A standings data frame
+A \code{hoopR_data} tibble with one row per team in the standings.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team \tab character \tab Team-side label or team identifier. \cr
-      conference \tab character \tab Conference group name from ESPN standings. \cr
-      avgpointsagainst \tab numeric \tab Avgpointsagainst. \cr
-      avgpointsfor \tab numeric \tab Avgpointsfor. \cr
-      gamesbehind \tab numeric \tab Gamesbehind. \cr
-      leaguewinpercent \tab numeric \tab Leaguewinpercent. \cr
-      losses \tab numeric \tab Total losses. \cr
-      playoffseed \tab numeric \tab Playoffseed. \cr
-      pointsagainst \tab numeric \tab Pointsagainst. \cr
-      pointsfor \tab numeric \tab Pointsfor. \cr
-      streak \tab numeric \tab Current streak (e.g. 'W3' for three-game win streak). \cr
-      winpercent \tab numeric \tab Winpercent. \cr
-      wins \tab numeric \tab Total wins. \cr
-      total \tab character \tab Total. \cr
-      home_avgpointsagainst \tab numeric \tab Home team's avgpointsagainst. \cr
-      home_avgpointsfor \tab numeric \tab Home team's avgpointsfor. \cr
-      home_gamesbehind \tab numeric \tab Home team's gamesbehind. \cr
-      home_leaguewinpercent \tab numeric \tab Home team's leaguewinpercent. \cr
-      home_losses \tab numeric \tab Home team's losses. \cr
-      home_playoffseed \tab numeric \tab Home team's playoffseed. \cr
-      home_pointsagainst \tab numeric \tab Home team's pointsagainst. \cr
-      home_pointsfor \tab numeric \tab Home team's pointsfor. \cr
-      home_streak \tab numeric \tab Home team's streak. \cr
-      home_winpercent \tab numeric \tab Home team's winpercent. \cr
-      home_wins \tab numeric \tab Home team's wins. \cr
-      home \tab character \tab Home. \cr
-      road_avgpointsagainst \tab numeric \tab Road avgpointsagainst. \cr
-      road_avgpointsfor \tab numeric \tab Road avgpointsfor. \cr
-      road_gamesbehind \tab numeric \tab Road gamesbehind. \cr
-      road_leaguewinpercent \tab numeric \tab Road leaguewinpercent. \cr
-      road_losses \tab numeric \tab Road losses. \cr
-      road_playoffseed \tab numeric \tab Road playoffseed. \cr
-      road_pointsagainst \tab numeric \tab Road pointsagainst. \cr
-      road_pointsfor \tab numeric \tab Road pointsfor. \cr
-      road_streak \tab numeric \tab Road streak. \cr
-      road_winpercent \tab numeric \tab Road winpercent. \cr
-      road_wins \tab numeric \tab Road wins. \cr
-      road \tab character \tab Road. \cr
-      vsaprankedteams_avgpointsagainst \tab numeric \tab Vsaprankedteams avgpointsagainst. \cr
-      vsaprankedteams_avgpointsfor \tab numeric \tab Vsaprankedteams avgpointsfor. \cr
-      vsaprankedteams_gamesbehind \tab numeric \tab Vsaprankedteams gamesbehind. \cr
-      vsaprankedteams_leaguewinpercent \tab numeric \tab Vsaprankedteams leaguewinpercent. \cr
-      vsaprankedteams_losses \tab numeric \tab Vsaprankedteams losses. \cr
-      vsaprankedteams_playoffseed \tab numeric \tab Vsaprankedteams playoffseed. \cr
-      vsaprankedteams_pointsagainst \tab numeric \tab Vsaprankedteams pointsagainst. \cr
-      vsaprankedteams_pointsfor \tab numeric \tab Vsaprankedteams pointsfor. \cr
-      vsaprankedteams_streak \tab numeric \tab Vsaprankedteams streak. \cr
-      vsaprankedteams_winpercent \tab numeric \tab Vsaprankedteams winpercent. \cr
-      vsaprankedteams_wins \tab numeric \tab Vsaprankedteams wins. \cr
-      vsaprankedteams \tab character \tab Vsaprankedteams. \cr
-      vsusarankedteams_avgpointsagainst \tab numeric \tab Vsusarankedteams avgpointsagainst. \cr
-      vsusarankedteams_avgpointsfor \tab numeric \tab Vsusarankedteams avgpointsfor. \cr
-      vsusarankedteams_gamesbehind \tab numeric \tab Vsusarankedteams gamesbehind. \cr
-      vsusarankedteams_leaguewinpercent \tab numeric \tab Vsusarankedteams leaguewinpercent. \cr
-      vsusarankedteams_losses \tab numeric \tab Vsusarankedteams losses. \cr
-      vsusarankedteams_playoffseed \tab numeric \tab Vsusarankedteams playoffseed. \cr
-      vsusarankedteams_pointsagainst \tab numeric \tab Vsusarankedteams pointsagainst. \cr
-      vsusarankedteams_pointsfor \tab numeric \tab Vsusarankedteams pointsfor. \cr
-      vsusarankedteams_streak \tab numeric \tab Vsusarankedteams streak. \cr
-      vsusarankedteams_winpercent \tab numeric \tab Vsusarankedteams winpercent. \cr
-      vsusarankedteams_wins \tab numeric \tab Vsusarankedteams wins. \cr
-      vsusarankedteams \tab character \tab Vsusarankedteams. \cr
-      vsconf_avgpointsagainst \tab numeric \tab Vsconf avgpointsagainst. \cr
-      vsconf_avgpointsfor \tab numeric \tab Vsconf avgpointsfor. \cr
-      vsconf_gamesbehind \tab numeric \tab Vsconf gamesbehind. \cr
-      vsconf_leaguewinpercent \tab numeric \tab Vsconf leaguewinpercent. \cr
-      vsconf_losses \tab numeric \tab Vsconf losses. \cr
-      vsconf_playoffseed \tab numeric \tab Vsconf playoffseed. \cr
-      vsconf_pointsagainst \tab numeric \tab Vsconf pointsagainst. \cr
-      vsconf_pointsfor \tab numeric \tab Vsconf pointsfor. \cr
-      vsconf_streak \tab numeric \tab Vsconf streak. \cr
-      vsconf_winpercent \tab numeric \tab Vsconf winpercent. \cr
-      vsconf_wins \tab numeric \tab Vsconf wins. \cr
-      vsconf \tab character \tab Vsconf. \cr
-   }}
+  col_name \tab types \tab description \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team \tab character \tab Team-side label or team identifier. \cr
+  conference \tab character \tab Conference group name from ESPN standings. \cr
+  avgpointsagainst \tab numeric \tab Avgpointsagainst. \cr
+  avgpointsfor \tab numeric \tab Avgpointsfor. \cr
+  gamesbehind \tab numeric \tab Gamesbehind. \cr
+  leaguewinpercent \tab numeric \tab Leaguewinpercent. \cr
+  losses \tab numeric \tab Total losses. \cr
+  playoffseed \tab numeric \tab Playoffseed. \cr
+  pointsagainst \tab numeric \tab Pointsagainst. \cr
+  pointsfor \tab numeric \tab Pointsfor. \cr
+  streak \tab numeric \tab Current streak (e.g. 'W3' for three-game win streak). \cr
+  winpercent \tab numeric \tab Winpercent. \cr
+  wins \tab numeric \tab Total wins. \cr
+  total \tab character \tab Total. \cr
+  home_avgpointsagainst \tab numeric \tab Home team's avgpointsagainst. \cr
+  home_avgpointsfor \tab numeric \tab Home team's avgpointsfor. \cr
+  home_gamesbehind \tab numeric \tab Home team's gamesbehind. \cr
+  home_leaguewinpercent \tab numeric \tab Home team's leaguewinpercent. \cr
+  home_losses \tab numeric \tab Home team's losses. \cr
+  home_playoffseed \tab numeric \tab Home team's playoffseed. \cr
+  home_pointsagainst \tab numeric \tab Home team's pointsagainst. \cr
+  home_pointsfor \tab numeric \tab Home team's pointsfor. \cr
+  home_streak \tab numeric \tab Home team's streak. \cr
+  home_winpercent \tab numeric \tab Home team's winpercent. \cr
+  home_wins \tab numeric \tab Home team's wins. \cr
+  home \tab character \tab Home. \cr
+  road_avgpointsagainst \tab numeric \tab Road avgpointsagainst. \cr
+  road_avgpointsfor \tab numeric \tab Road avgpointsfor. \cr
+  road_gamesbehind \tab numeric \tab Road gamesbehind. \cr
+  road_leaguewinpercent \tab numeric \tab Road leaguewinpercent. \cr
+  road_losses \tab numeric \tab Road losses. \cr
+  road_playoffseed \tab numeric \tab Road playoffseed. \cr
+  road_pointsagainst \tab numeric \tab Road pointsagainst. \cr
+  road_pointsfor \tab numeric \tab Road pointsfor. \cr
+  road_streak \tab numeric \tab Road streak. \cr
+  road_winpercent \tab numeric \tab Road winpercent. \cr
+  road_wins \tab numeric \tab Road wins. \cr
+  road \tab character \tab Road. \cr
+  vsaprankedteams_avgpointsagainst \tab numeric \tab Vsaprankedteams avgpointsagainst. \cr
+  vsaprankedteams_avgpointsfor \tab numeric \tab Vsaprankedteams avgpointsfor. \cr
+  vsaprankedteams_gamesbehind \tab numeric \tab Vsaprankedteams gamesbehind. \cr
+  vsaprankedteams_leaguewinpercent \tab numeric \tab Vsaprankedteams leaguewinpercent. \cr
+  vsaprankedteams_losses \tab numeric \tab Vsaprankedteams losses. \cr
+  vsaprankedteams_playoffseed \tab numeric \tab Vsaprankedteams playoffseed. \cr
+  vsaprankedteams_pointsagainst \tab numeric \tab Vsaprankedteams pointsagainst. \cr
+  vsaprankedteams_pointsfor \tab numeric \tab Vsaprankedteams pointsfor. \cr
+  vsaprankedteams_streak \tab numeric \tab Vsaprankedteams streak. \cr
+  vsaprankedteams_winpercent \tab numeric \tab Vsaprankedteams winpercent. \cr
+  vsaprankedteams_wins \tab numeric \tab Vsaprankedteams wins. \cr
+  vsaprankedteams \tab character \tab Vsaprankedteams. \cr
+  vsusarankedteams_avgpointsagainst \tab numeric \tab Vsusarankedteams avgpointsagainst. \cr
+  vsusarankedteams_avgpointsfor \tab numeric \tab Vsusarankedteams avgpointsfor. \cr
+  vsusarankedteams_gamesbehind \tab numeric \tab Vsusarankedteams gamesbehind. \cr
+  vsusarankedteams_leaguewinpercent \tab numeric \tab Vsusarankedteams leaguewinpercent. \cr
+  vsusarankedteams_losses \tab numeric \tab Vsusarankedteams losses. \cr
+  vsusarankedteams_playoffseed \tab numeric \tab Vsusarankedteams playoffseed. \cr
+  vsusarankedteams_pointsagainst \tab numeric \tab Vsusarankedteams pointsagainst. \cr
+  vsusarankedteams_pointsfor \tab numeric \tab Vsusarankedteams pointsfor. \cr
+  vsusarankedteams_streak \tab numeric \tab Vsusarankedteams streak. \cr
+  vsusarankedteams_winpercent \tab numeric \tab Vsusarankedteams winpercent. \cr
+  vsusarankedteams_wins \tab numeric \tab Vsusarankedteams wins. \cr
+  vsusarankedteams \tab character \tab Vsusarankedteams. \cr
+  vsconf_avgpointsagainst \tab numeric \tab Vsconf avgpointsagainst. \cr
+  vsconf_avgpointsfor \tab numeric \tab Vsconf avgpointsfor. \cr
+  vsconf_gamesbehind \tab numeric \tab Vsconf gamesbehind. \cr
+  vsconf_leaguewinpercent \tab numeric \tab Vsconf leaguewinpercent. \cr
+  vsconf_losses \tab numeric \tab Vsconf losses. \cr
+  vsconf_playoffseed \tab numeric \tab Vsconf playoffseed. \cr
+  vsconf_pointsagainst \tab numeric \tab Vsconf pointsagainst. \cr
+  vsconf_pointsfor \tab numeric \tab Vsconf pointsfor. \cr
+  vsconf_streak \tab numeric \tab Vsconf streak. \cr
+  vsconf_winpercent \tab numeric \tab Vsconf winpercent. \cr
+  vsconf_wins \tab numeric \tab Vsconf wins. \cr
+  vsconf \tab character \tab Vsconf. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A standings data frame
+A \code{hoopR_data} tibble with one row per team in the standings.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team \tab character \tab Team-side label or team identifier. \cr
-      avgpointsagainst \tab numeric \tab Avgpointsagainst. \cr
-      avgpointsfor \tab numeric \tab Avgpointsfor. \cr
-      clincher \tab numeric \tab Clincher. \cr
-      differential \tab numeric \tab Differential. \cr
-      divisionwinpercent \tab numeric \tab Divisionwinpercent. \cr
-      gamesbehind \tab numeric \tab Gamesbehind. \cr
-      leaguewinpercent \tab numeric \tab Leaguewinpercent. \cr
-      losses \tab numeric \tab Total losses. \cr
-      playoffseed \tab numeric \tab Playoffseed. \cr
-      streak \tab numeric \tab Current streak (e.g. 'W3' for three-game win streak). \cr
-      winpercent \tab numeric \tab Winpercent. \cr
-      wins \tab numeric \tab Total wins. \cr
-      leaguestandings \tab character \tab Leaguestandings. \cr
-      home \tab character \tab Home. \cr
-      road \tab character \tab Road. \cr
-      vsdiv \tab character \tab Vsdiv. \cr
-      vsconf \tab character \tab Vsconf. \cr
-      lasttengames \tab character \tab Lasttengames. \cr
-   }}
+  col_name \tab types \tab description \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team \tab character \tab Team-side label or team identifier. \cr
+  avgpointsagainst \tab numeric \tab Avgpointsagainst. \cr
+  avgpointsfor \tab numeric \tab Avgpointsfor. \cr
+  clincher \tab numeric \tab Clincher. \cr
+  differential \tab numeric \tab Differential. \cr
+  divisionwinpercent \tab numeric \tab Divisionwinpercent. \cr
+  gamesbehind \tab numeric \tab Gamesbehind. \cr
+  leaguewinpercent \tab numeric \tab Leaguewinpercent. \cr
+  losses \tab numeric \tab Total losses. \cr
+  playoffseed \tab numeric \tab Playoffseed. \cr
+  streak \tab numeric \tab Current streak (e.g. 'W3' for three-game win streak). \cr
+  winpercent \tab numeric \tab Winpercent. \cr
+  wins \tab numeric \tab Total wins. \cr
+  leaguestandings \tab character \tab Leaguestandings. \cr
+  home \tab character \tab Home. \cr
+  road \tab character \tab Road. \cr
+  vsdiv \tab character \tab Vsdiv. \cr
+  vsconf \tab character \tab Vsconf. \cr
+  lasttengames \tab character \tab Lasttengames. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

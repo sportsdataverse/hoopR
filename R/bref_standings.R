@@ -8,24 +8,7 @@
 #' (~20 requests/minute) -- space repeated calls with `Sys.sleep()`.
 #' @param season (*integer* required): Season, in 4-digit ending-year format
 #'   (e.g. `2024`). Defaults to `most_recent_nba_season()`.
-#' @return A `hoopR_data` tibble with one row per team:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       conference \tab character \tab Conference (\code{E} or \code{W}). \cr
-#'       team \tab character \tab Team name (with playoff-seed marker stripped). \cr
-#'       wins \tab integer \tab Wins. \cr
-#'       losses \tab integer \tab Losses. \cr
-#'       win_loss_pct \tab numeric \tab Win-loss percentage. \cr
-#'       gb \tab character \tab Games behind the conference leader. \cr
-#'       pts_per_g \tab numeric \tab Points scored per game. \cr
-#'       opp_pts_per_g \tab numeric \tab Opponent points per game. \cr
-#'       srs \tab numeric \tab Simple Rating System (point margin + SOS). \cr
-#'       playoffs \tab logical \tab \code{TRUE} if the team made the playoffs (\code{*} marker). \cr
-#'       season \tab integer \tab Season (echoes the \code{season} argument). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("bref_standings", inline = FALSE, unit = "team")
 #' @keywords Basketball-Reference
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble rename any_of bind_rows

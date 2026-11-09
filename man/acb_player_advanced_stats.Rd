@@ -17,21 +17,10 @@ shots, rosters). 20209407 = Edy Tavares, 20212243 = Olek Balcerowski. A whole nu
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_player_advanced_stats}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
-   player_id \tab integer \tab ACB licence number: the person id everywhere (box score, play-by-play, shots, rosters, the player routes). Taken from the request when the body does not name the player. \cr
-   group \tab character \tab Statistic group in snake_case (four_factors, game_rhythm, ball_handling, shooting, points, ratings, rebounds). \cr
-   stat \tab character \tab Statistic in snake_case (efg_pct, ts_pct, ast_pct, usage-style ratios, pace ...). \cr
-   match_value \tab double \tab The statistic in this game (the API's partido). \cr
-   season_value \tab double \tab The player's value over the season (temporada). \cr
-   win_value \tab double \tab The player's value in his team's wins. \cr
-   loss_value \tab double \tab The player's value in his team's losses. \cr
-   season_diff \tab double \tab Game value minus season value (temporadaDiff). \cr
-   win_diff \tab double \tab Game value minus the wins value (winDiff). \cr
-   loss_diff \tab double \tab Game value minus the losses value (lossDiff). \cr
-}
+A \code{hoopR_data} tibble with one row per statistic group and statistic.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_player_advanced_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One player's advanced statistics in a game against his season and win/loss splits.

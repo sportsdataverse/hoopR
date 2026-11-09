@@ -11,41 +11,10 @@ cebl_standings(season)
 2025 season). The CEBL's first season is 2019. A season with no data answers \code{hoopR_no_data}.}
 }
 \value{
-A \code{hoopR_data} tibble: Standings of one season, one row per team: record, home/away splits, games behind, streak.
-An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{cebl_standings}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season: the calendar year it is played in (May to August) = the sdv END year (2025). Taken from the request (the body does not echo it); null for the all-time table and for a bare body. \cr
-   team_id \tab integer \tab CEBL team id (its own key space; not a Genius id). Joins /teams/ \code{id}, the games' \code{home_team_id} / \code{away_team_id}, \code{team_id} in player rows and the \code{team_id} / \code{vs_team_id} params. A relocated or renamed franchise has a second id: the Stats Hub groups 15+56 (Saskatchewan Rattlers, Saskatoon Mamba), 17+53 (Calgary Surge, Guelph Nighthawks), 19+55 (Brampton, Hamilton Honey Badgers) and 16+54 (Vancouver, Fraser Valley Bandits). \cr
-   name_en \tab character \tab Team full name in English ('Niagara River Lions'). \cr
-   short_name_en \tab character \tab Team short name in English, usually the city ('Niagara'). \cr
-   name_fr \tab character \tab Team full name in French ('River Lions de Niagara'). \cr
-   short_name_fr \tab character \tab Team short name in French, usually the city. \cr
-   conference \tab character \tab Conference: EAST or WEST. \cr
-   position \tab integer \tab Rank in the team's conference standings (1 = first), not a playing position. \cr
-   played \tab integer \tab Regular-season games played (24 a team in 2025). \cr
-   wins \tab integer \tab Regular-season games won. \cr
-   win_percentage \tab double \tab Win fraction, 0-1 (0.583), not a percentage; the API sends a decimal string. \cr
-   home_wins \tab integer \tab Regular-season home games won. \cr
-   away_wins \tab integer \tab Regular-season away games won. \cr
-   losses \tab integer \tab Regular-season games lost. \cr
-   home_losses \tab integer \tab Regular-season home games lost. \cr
-   away_losses \tab integer \tab Regular-season away games lost. \cr
-   games_behind \tab double \tab Games behind the conference leader; the API sends a decimal string ('0.0'). \cr
-   points_difference \tab integer \tab Points scored minus points allowed over the season. An integer. \cr
-   last_five \tab character \tab Record in the last 5 games, 'W-L' ('4-1'). \cr
-   streak \tab character \tab Current streak: W or L and its length ('W4', 'L1'). \cr
-   logo_url \tab character \tab Team logo URL (icon with the team name) on Google Cloud Storage. \cr
-   icon_url \tab character \tab Team icon URL (without the team name) on Google Cloud Storage. \cr
-   tickets_url_en \tab character \tab Ticket-sales page for the team's home games (English). \cr
-   tickets_url_fr \tab character \tab Ticket-sales page for the team's home games (French). \cr
-   website_url_en \tab character \tab The team's own website (English). \cr
-   website_url_fr \tab character \tab The team's own website (French). \cr
-   shop_url_en \tab character \tab The team's merchandise shop (English). \cr
-   shop_url_fr \tab character \tab The team's merchandise shop (French). \cr
-   stats_url_en \tab character \tab The team's stats page on cebl.ca (\verb{https://cebl.ca/stats/\{slug\}}). \cr
-   stats_url_fr \tab character \tab The team's stats page on the French cebl.ca (\verb{https://cebl.ca/fr-ca/stats/\{slug\}}). \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cebl_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Standings of one season, one row per team: record, home/away splits, games behind, streak.

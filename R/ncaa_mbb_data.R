@@ -56,22 +56,7 @@ ncaa_mbb_NET_rankings <- function() {
 #' @param year The season for which data should be returned, in the form of "YYYY". Years currently available: 2002 onward.
 #' @param division Division - 1, 2, 3
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return A data frame with the following variables
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       team_id \tab character \tab Franchise team id (legacy \verb{/team/\{id\}/...} urls). \cr
-#'       team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       team_url \tab character \tab URL for team. \cr
-#'       conference_id \tab character \tab Conference identifier. \cr
-#'       conference \tab character \tab Conference. \cr
-#'       division \tab numeric \tab Team division. \cr
-#'       year \tab numeric \tab 4-digit year. \cr
-#'       season_id \tab character \tab Season id (legacy urls). \cr
-#'       season_team_id \tab character \tab Season-team id (modern \verb{/teams/\{id\}} urls). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("ncaa_mbb_teams", inline = FALSE, unit = "team")
 #' @import dplyr
 #' @import rvest
 #' @importFrom stringr str_split

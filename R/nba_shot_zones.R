@@ -56,35 +56,19 @@ NULL
 #'   game identifier (e.g. \code{"0022200001"} for the first game of the
 #'   2022-23 regular season).
 #' @param ... Reserved for future keyword arguments (currently ignored).
-#' @return Returns a \code{data.frame} containing the full V3 play-by-play for
-#'   \code{game_id} with an appended \code{shot_zone} column:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       event_type \tab character \tab Play event type code. \code{"1"} = MadeShot, \code{"2"} = MissedShot, \code{"3"} = FreeThrow, etc. \cr
-#'       shot_value \tab integer \tab Point value of the shot attempt (2 or 3); 0 for non-FGA events. \cr
-#'       x_legacy \tab numeric \tab Horizontal court coordinate (legacy units). Negative = left side of the court. \cr
-#'       y_legacy \tab numeric \tab Vertical court coordinate (legacy units). Values near 0 = baseline. \cr
-#'       shot_distance \tab numeric \tab Distance from the basket in feet. \cr
-#'       shot_zone \tab character \tab Shot-zone classification. One of \code{"corner_3"}, \code{"above_the_break_3"}, \code{"restricted_area"}, \code{"in_the_paint_non_ra"}, \code{"mid_range"}. \code{NA} on non-field-goal rows. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'   All other columns from the V3 PBP schema (\code{nba_pbp()}) are also
-#'   present.  Returns a 0-row frame when the game cannot be fetched (never-raise).
+#' @eval .returns_rd("nba_shot_zones", unit = "play-by-play event")
+#' @return The table lists the shot columns; all other columns from the V3 PBP schema
+#'   ([nba_pbp()]) are also present. Returns a 0-row frame when the game cannot be
+#'   fetched (never-raise).
 #'
 #'   **Shot zone definitions (pbpstats-core aligned):**
-#'   \itemize{
-#'     \item \code{"corner_3"} - three-point attempt with
-#'       \code{abs(x_legacy) >= 220} and \code{y_legacy <= 87.5}
-#'       (baseline corner area).
-#'     \item \code{"above_the_break_3"} - all other three-point attempts.
-#'     \item \code{"restricted_area"} - two-point attempt within 4 ft of the basket.
-#'     \item \code{"in_the_paint_non_ra"} - two-point attempt 4-8 ft from
-#'       the basket and within 80 legacy units of the paint center
-#'       (\code{abs(x_legacy) <= 80}).
-#'     \item \code{"mid_range"} - all remaining two-point attempts.
-#'   }
+#'   * `"corner_3"` - three-point attempt with `abs(x_legacy) >= 220` and
+#'     `y_legacy <= 87.5` (baseline corner area).
+#'   * `"above_the_break_3"` - all other three-point attempts.
+#'   * `"restricted_area"` - two-point attempt within 4 ft of the basket.
+#'   * `"in_the_paint_non_ra"` - two-point attempt 4-8 ft from the basket and
+#'     within 80 legacy units of the paint center (`abs(x_legacy) <= 80`).
+#'   * `"mid_range"` - all remaining two-point attempts.
 #' @keywords NBA Lineup Functions
 #' @family NBA Lineup Functions
 #' @export

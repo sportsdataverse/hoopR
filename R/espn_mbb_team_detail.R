@@ -19,45 +19,7 @@ NULL
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
-#' @return A named list of data frames: `Info`, `Record`, `NextEvent`,
-#'   `StandingSummary`, `Coaches`.
-#'
-#'    **Info**
-#'
-#'    Columns as documented in the shared [espn_mbb_team_info_schema] table.
-#'
-#'    **Record**
-#'
-#'    |col_name |types     |description             |
-#'    |:--------|:---------|:-----------------------|
-#'    |type     |character |Record type / category. |
-#'    |summary  |character |                        |
-#'    |stats    |list      |                        |
-#'
-#'    **NextEvent**
-#'
-#'    |col_name   |types     |description                |
-#'    |:----------|:---------|:--------------------------|
-#'    |id         |character |Id.                        |
-#'    |date       |character |Date in YYYY-MM-DD format. |
-#'    |name       |character |Display name.              |
-#'    |short_name |character |Short display name.        |
-#'
-#'    **StandingSummary**
-#'
-#'    |col_name         |types     |description |
-#'    |:----------------|:---------|:-----------|
-#'    |standing_summary |character |            |
-#'
-#'    **Coaches**
-#'
-#'    |col_name   |types     |description                       |
-#'    |:----------|:---------|:---------------------------------|
-#'    |id         |character |Id.                               |
-#'    |first_name |character |Player's first name.              |
-#'    |last_name  |character |Player's last name.               |
-#'    |experience |integer   |Years of professional experience. |
-#'
+#' @eval .returns_rd("espn_mbb_team")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble select any_of bind_rows
 #' @importFrom janitor clean_names
@@ -88,14 +50,11 @@ espn_mbb_team <- function(team_id,
 #' @rdname espn_mbb_team
 #' @author Saiem Gilani
 #' @param team_id ESPN team identifier (character or numeric).
-#' @return A single tibble with one row per athlete.
-#'
-#'    Columns as documented in the shared [espn_mbb_team_roster_schema] table.
-#'    ESPN's roster endpoint ignores the season, so a season before the current
-#'    one is built from that season's published player box scores (name, jersey,
-#'    position and headshot from the athlete's last game; bio columns `NA`), and
-#'    errors when none are published.
-#'
+#' @eval .returns_rd("espn_mbb_team_roster", unit = "athlete")
+#' @return ESPN's roster endpoint ignores the season, so a season before the current
+#'   one is built from that season's published player box scores (name, jersey,
+#'   position and headshot from the athlete's last game; bio columns `NA`), and
+#'   errors when none are published.
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
@@ -133,10 +92,7 @@ NULL
 #' @param season_type Integer season type: 1 = preseason, 2 = regular (default),
 #'   3 = postseason.
 #' @param ... Additional arguments; currently unused.
-#' @return A single tibble with one row per event.
-#'
-#'    Columns as documented in the shared [espn_mbb_team_schedule_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_team_schedule", unit = "event")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
@@ -169,10 +125,7 @@ espn_mbb_team_schedule <- function(team_id,
 #' @rdname espn_mbb_team
 #' @author Saiem Gilani
 #' @param team_id ESPN team identifier (character or numeric).
-#' @return A single long-format tibble (one row per category-rank-athlete).
-#'
-#'    Columns as documented in the shared [espn_mbb_team_leaders_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_team_leaders", unit = "category-rank-athlete")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
@@ -213,36 +166,8 @@ espn_mbb_team_leaders <- function(team_id,
 #' fewer `$ref` keys; missing refs become `NA`.
 #'
 #' @param team_id ESPN team identifier (character or numeric).
-#' @return A single-row tibble with team identity scalars and `_ref` URL
-#'   columns. Selected columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       id \tab character \tab ESPN team identifier. \cr
-#'       guid \tab character \tab Stable cross-league team GUID. \cr
-#'       uid \tab character \tab ESPN UID string. \cr
-#'       slug \tab character \tab URL-safe identifier. \cr
-#'       location \tab character \tab School/program location (e.g. "Duke"). \cr
-#'       name \tab character \tab Team name (e.g. "Blue Devils"). \cr
-#'       nickname \tab character \tab Common nickname (often same as location). \cr
-#'       abbreviation \tab character \tab Short abbreviation (e.g. "DUKE"). \cr
-#'       display_name \tab character \tab Full display name. \cr
-#'       short_display_name \tab character \tab Short display name. \cr
-#'       color \tab character \tab Primary color (hex, no leading '#'). \cr
-#'       alternate_color \tab character \tab Alternate color (hex, no leading '#'). \cr
-#'       is_active \tab logical \tab Whether the team was active in this season. \cr
-#'       season \tab integer \tab Season year. \cr
-#'       logo \tab character \tab Primary logo URL. \cr
-#'       logo_dark \tab character \tab Dark-mode logo URL. \cr
-#'       record_ref \tab character \tab \verb{$ref} to team record resource. \cr
-#'       statistics_ref \tab character \tab \verb{$ref} to team statistics resource. \cr
-#'       athletes_ref \tab character \tab \verb{$ref} to team roster resource (college-only). \cr
-#'       college_ref \tab character \tab \verb{$ref} to college (institution) resource. \cr
-#'       coaches_ref \tab character \tab \verb{$ref} to team coaches resource. \cr
-#'       franchise_ref \tab character \tab \verb{$ref} to franchise resource. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_mbb_team_season_profile", unit = "team-season")
+#' @return The table lists selected columns: team identity scalars and `_ref` URL columns.
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @importFrom janitor clean_names

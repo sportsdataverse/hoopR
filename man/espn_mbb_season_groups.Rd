@@ -25,13 +25,29 @@ espn_nba_season_groups(
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per group.
+A \code{hoopR_data} tibble with one row per group.
 
-Columns as documented in the shared \link{espn_mbb_season_groups_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  group_id \tab character \tab ESPN group id. \cr
+  ref \tab character \tab \code{$ref} URL for the group detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per group.
+A \code{hoopR_data} tibble with one row per group.
 
-Columns as documented in the shared \link{espn_mbb_season_groups_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  group_id \tab character \tab ESPN group id. \cr
+  ref \tab character \tab \code{$ref} URL for the group detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Returns the list of group IDs (conferences / divisions) for one

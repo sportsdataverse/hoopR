@@ -13,16 +13,10 @@ the \verb{<gameId>} of a game page URL}
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab FIBA game id (Int64) of the game the period belongs to. \cr
-   name \tab character \tab Period name ('Q1'...'OT1'). \cr
-   number \tab integer \tab Period number (1-based). \cr
-   team_a_score \tab integer \tab Team A points in the period. \cr
-   team_b_score \tab integer \tab Team B points in the period. \cr
-   team_a_from \tab character \tab How team A qualified for this slot ('Winner of Game 87', '1st of group C'); null in group play. \cr
-   team_b_from \tab character \tab How team B qualified for this slot ('Winner of Game 88', '2nd of group A'); null in group play. \cr
-}
+A \code{hoopR_data} tibble with one row per period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_game_periods")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Period scores of one game.

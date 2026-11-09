@@ -17,48 +17,10 @@ competition.competitionId of any game row (208182 = World Cup 2023, 208722 = Par
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab FIBA person id (Int64), global; the player_id argument. \cr
-   competition_id \tab integer \tab FIBA competition id (Int64) the game log belongs to; the comp argument. \cr
-   game_id \tab integer \tab FIBA game id, global across competitions (GDAP key space): gdapGameId, the \verb{<gameId>} of a game-page URL. \cr
-   game_day \tab integer \tab Game day number within the round. \cr
-   round_id \tab integer \tab Round id (GDAP key space, unique across competitions); the first segment of gameName. \cr
-   round_code \tab character \tab Round code (GP group phase, QF, SF, F final, RS regular season, CL17-32 classification...). \cr
-   round_name \tab character \tab Round label (Group Phase, Quarter-Finals, Final...). \cr
-   team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
-   team_name \tab character \tab Player's team name. \cr
-   team_code \tab character \tab Player's team code. \cr
-   team_organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
-   versus_team_id \tab integer \tab Opponent's competition team id (see teamId). \cr
-   versus_team_name \tab character \tab Opponent's name. \cr
-   versus_team_code \tab character \tab Opponent's code. \cr
-   versus_team_organisation_id \tab integer \tab Opponent's organisation id (see organisationId). \cr
-   play_duration_in_seconds \tab integer \tab Playing time in seconds in the game. \cr
-   points \tab integer \tab Points in the game. \cr
-   field_goals_made \tab integer \tab Field goals made in the game. \cr
-   field_goals_attempted \tab integer \tab Field goals attempted in the game. \cr
-   field_goals_percentage \tab double \tab Field-goal percentage, 0-100 (in the game; full float precision in averages). \cr
-   two_points_made \tab integer \tab Two-point field goals made in the game. \cr
-   two_points_attempted \tab integer \tab Two-point field goals attempted in the game. \cr
-   two_points_percentage \tab double \tab Two-point field-goal percentage, 0-100 (in the game; full float precision in averages). \cr
-   three_points_made \tab integer \tab Three-point field goals made in the game. \cr
-   three_points_attempted \tab integer \tab Three-point field goals attempted in the game. \cr
-   three_points_percentage \tab double \tab Three-point field-goal percentage, 0-100 (in the game; full float precision in averages). \cr
-   free_throws_made \tab integer \tab Free throws made in the game. \cr
-   free_throws_attempted \tab integer \tab Free throws attempted in the game. \cr
-   free_throws_percentage \tab double \tab Free-throw percentage, 0-100 (in the game; full float precision in averages). \cr
-   offensive_rebounds \tab integer \tab Offensive rebounds in the game. \cr
-   defensive_rebounds \tab integer \tab Defensive rebounds in the game. \cr
-   rebounds \tab integer \tab Rebounds in the game. \cr
-   assists \tab integer \tab Assists in the game. \cr
-   personal_fouls \tab integer \tab Personal fouls in the game. \cr
-   turnovers \tab integer \tab Turnovers in the game. \cr
-   steals \tab integer \tab Steals in the game. \cr
-   blocked_shots \tab integer \tab Blocked shots in the game. \cr
-   plus_minus \tab integer \tab Plus/minus (point differential while on court) in the game. \cr
-   efficiency \tab integer \tab Efficiency (FIBA EFF) in the game. \cr
-}
+A \code{hoopR_data} tibble with one row per player in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_player_game_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A player's game log (full box lines) at a competition.

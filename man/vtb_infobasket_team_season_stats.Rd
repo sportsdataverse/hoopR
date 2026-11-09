@@ -20,68 +20,10 @@ labels follow it.}
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: A club's season totals in one season. The columns are always these, in this order (sportsdataverse-py
-\code{vtb_infobasket_team_season_stats}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for
-this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. \cr
-   team_id \tab integer \tab Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team*/\{teamId\} and equals the v2 API \code{teamId}. The scope check compares it with the request. \cr
-   game_count \tab integer \tab Games in the totals (the whole competition, all stages, for the season-level CompID). \cr
-   points \tab integer \tab Points. The wire's null is 0 here (null counts are filled). \cr
-   shot1 \tab integer \tab Free throws attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal1 \tab integer \tab Free throws made. The wire's null is 0 here (null counts are filled). \cr
-   shot2 \tab integer \tab 2-point field goals attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal2 \tab integer \tab 2-point field goals made. The wire's null is 0 here (null counts are filled). \cr
-   shot3 \tab integer \tab 3-point field goals attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal3 \tab integer \tab 3-point field goals made. The wire's null is 0 here (null counts are filled). \cr
-   shot23 \tab integer \tab Field goals (2 + 3 points) attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal23 \tab integer \tab Field goals (2 + 3 points) made. The wire's null is 0 here (null counts are filled). \cr
-   shot1_percent \tab double \tab Free-throw percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   shot2_percent \tab double \tab 2-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   shot3_percent \tab double \tab 3-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   shot23_percent \tab double \tab Field-goal percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   assist \tab integer \tab Assists. The wire's null is 0 here (null counts are filled). \cr
-   blocks \tab integer \tab Blocked shots. The wire's null is 0 here (null counts are filled). \cr
-   def_rebound \tab integer \tab Defensive rebounds. The wire's null is 0 here (null counts are filled). \cr
-   off_rebound \tab integer \tab Offensive rebounds. The wire's null is 0 here (null counts are filled). \cr
-   rebound \tab integer \tab Total rebounds. The wire's null is 0 here (null counts are filled). \cr
-   steal \tab integer \tab Steals. The wire's null is 0 here (null counts are filled). \cr
-   turnover \tab integer \tab Turnovers. The wire's null is 0 here (null counts are filled). \cr
-   team_def_rebound \tab integer \tab Team defensive rebounds (not credited to a player). The wire's null is 0 here (null counts are filled). \cr
-   team_off_rebound \tab integer \tab Team offensive rebounds (not credited to a player). The wire's null is 0 here (null counts are filled). \cr
-   team_rebound \tab integer \tab Team rebounds (not credited to a player). The wire's null is 0 here (null counts are filled). \cr
-   team_steal \tab integer \tab Team steals (not credited to a player). The wire's null is 0 here (null counts are filled). \cr
-   team_turnover \tab integer \tab Team turnovers (not credited to a player, e.g. shot-clock violations). The wire's null is 0 here (null counts are filled). \cr
-   kpi \tab integer \tab Efficiency index (KPI, the platform's 'KPI'); formula unverified. \cr
-   avg_points \tab double \tab Per-game average of: points; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_assist \tab double \tab Per-game average of: assists; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_blocks \tab double \tab Per-game average of: blocked shots; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_def_rebound \tab double \tab Per-game average of: defensive rebounds; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_off_rebound \tab double \tab Per-game average of: offensive rebounds; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_rebound \tab double \tab Per-game average of: total rebounds; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_steal \tab double \tab Per-game average of: steals; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_turnover \tab double \tab Per-game average of: turnovers; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_foul \tab double \tab Per-game average of: personal fouls committed; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_opponent_foul \tab double \tab Per-game average of: fouls drawn; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_plus_minus \tab double \tab Per-game average of: plus-minus: point differential while on the court; parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_team_def_rebound \tab double \tab Per-game average of: team defensive rebounds (not credited to a player); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_team_off_rebound \tab double \tab Per-game average of: team offensive rebounds (not credited to a player); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_team_rebound \tab double \tab Per-game average of: team rebounds (not credited to a player); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_team_steal \tab double \tab Per-game average of: team steals (not credited to a player); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   avg_team_turnover \tab double \tab Per-game average of: team turnovers (not credited to a player, e.g. shot-clock violations); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   foul \tab integer \tab Personal fouls committed. The wire's null is 0 here (null counts are filled). \cr
-   opponent_foul \tab integer \tab Fouls drawn. The wire's null is 0 here (null counts are filled). \cr
-   seconds \tab integer \tab Playing time in seconds. \cr
-   played_time \tab character \tab Playing time as 'minutes:seconds' (team rows sum the five players: '200:00' = 40 minutes x 5). \cr
-   avg_played_time \tab character \tab Average playing time per game as 'minutes:seconds'. \cr
-   plus_minus \tab integer \tab Plus-minus: point differential while on the court. Null where the host sends none. \cr
-   team_short_name_ru \tab character \tab The the team's short name in Russian (as the competition names it). \cr
-   team_short_name_en \tab character \tab The the team's short name in English (as the competition names it). \cr
-   team_name_ru \tab character \tab The the team's name in Russian (as the competition names it). \cr
-   team_name_en \tab character \tab The the team's name in English (as the competition names it). \cr
-   team_region_name_ru \tab character \tab The the team's region or city in Russian (as the competition names it). \cr
-   team_region_name_en \tab character \tab The the team's region or city in English (as the competition names it). \cr
-}
+A \code{hoopR_data} tibble with one row per club-season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_team_season_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A club's season totals in one season.

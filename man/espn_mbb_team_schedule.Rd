@@ -31,13 +31,61 @@ espn_nba_team_schedule(
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A single tibble with one row per event.
+A \code{hoopR_data} tibble with one row per event.
 
-Columns as documented in the shared \link{espn_mbb_team_schedule_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  event_id \tab character \tab Unique event / game identifier (ESPN). \cr
+  season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+  season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+  week \tab integer \tab Week number within the season. \cr
+  date \tab character \tab Date in YYYY-MM-DD format. \cr
+  name \tab character \tab Display name. \cr
+  short_name \tab character \tab Short display name. \cr
+  opponent_id \tab character \tab Unique identifier for opponent. \cr
+  opponent_abbrev \tab character \tab Abbreviation for opponent. \cr
+  home_away \tab character \tab Game venue label ('home' or 'away'). \cr
+  neutral_site \tab logical \tab Neutral site. \cr
+  conference_competition \tab logical \tab Conference competition. \cr
+  venue_id \tab character \tab Unique venue identifier. \cr
+  venue_name \tab character \tab Venue name. \cr
+  venue_city \tab character \tab Venue city. \cr
+  venue_state \tab character \tab Venue state / region. \cr
+  broadcast \tab character \tab Broadcast information string. \cr
+  result \tab character \tab Result. \cr
+  team_score \tab character \tab Team's score / final score. \cr
+  opponent_score \tab character \tab Opponent score. \cr
+  winner \tab logical \tab Winner. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A single tibble with one row per event.
+A \code{hoopR_data} tibble with one row per event.
 
-Columns as documented in the shared \link{espn_mbb_team_schedule_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  event_id \tab character \tab Unique event / game identifier (ESPN). \cr
+  season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+  season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
+  week \tab integer \tab Week number within the season. \cr
+  date \tab character \tab Date in YYYY-MM-DD format. \cr
+  name \tab character \tab Display name. \cr
+  short_name \tab character \tab Short display name. \cr
+  opponent_id \tab character \tab Unique identifier for opponent. \cr
+  opponent_abbrev \tab character \tab Abbreviation for opponent. \cr
+  home_away \tab character \tab Game venue label ('home' or 'away'). \cr
+  neutral_site \tab logical \tab Neutral site. \cr
+  conference_competition \tab logical \tab Conference competition. \cr
+  venue_id \tab character \tab Unique venue identifier. \cr
+  venue_name \tab character \tab Venue name. \cr
+  venue_city \tab character \tab Venue city. \cr
+  venue_state \tab character \tab Venue state / region. \cr
+  broadcast \tab character \tab Broadcast information string. \cr
+  result \tab character \tab Result. \cr
+  team_score \tab character \tab Team's score / final score. \cr
+  opponent_score \tab character \tab Opponent score. \cr
+  winner \tab logical \tab Winner. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get ESPN Women's College Basketball Team Schedule}

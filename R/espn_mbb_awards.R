@@ -20,17 +20,7 @@ NULL
 #'
 #' @param season Season year (numeric). Defaults to the most recent MBB season.
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per award.
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season year. \cr
-#'       award_id \tab character \tab ESPN award identifier. \cr
-#'       ref \tab character \tab Full \verb{$ref} URL for the award detail. \cr
-#'       league \tab character \tab League slug (\code{"mens-college-basketball"}). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_mbb_season_awards", unit = "award")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export
@@ -62,22 +52,7 @@ NULL
 #' @param award_id ESPN award identifier (character or numeric).
 #' @param season Season year (numeric). Defaults to the most recent MBB season.
 #' @param ... Additional arguments; currently unused.
-#' @return A tibble with one row per winner.
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       league \tab character \tab League slug. \cr
-#'       season \tab integer \tab Season year. \cr
-#'       award_id \tab character \tab ESPN award identifier. \cr
-#'       name \tab character \tab Award name. \cr
-#'       description \tab character \tab Award description. \cr
-#'       athlete_id \tab character \tab ESPN athlete id of winner. \cr
-#'       team_id \tab character \tab ESPN team id. \cr
-#'       athlete_ref \tab character \tab \verb{$ref} to winner's per-season athlete resource. \cr
-#'       team_ref \tab character \tab \verb{$ref} to winner's per-season team resource. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_mbb_award", unit = "winner")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble
 #' @export

@@ -12,9 +12,10 @@ nbagl_live_pbp(game_id, ...)
 \item{...}{Additional arguments passed to an underlying function like httr.}
 }
 \value{
-Returns a data frame: PlayByPlay
-
-Columns as documented in the shared \link{nba_live_pbp_schema} table.
+A \code{hoopR_data} tibble with one row per play-by-play event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbagl_live_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get NBA G-League Stats API Live play-by-play}

@@ -14,32 +14,10 @@ competition.competitionId of any game row (208182 = World Cup 2023, 208722 = Par
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   round_id \tab integer \tab Round id (Int64) the group belongs to. \cr
-   round_name \tab character \tab Round name (Preliminary Round, Final Round...). \cr
-   round_code \tab character \tab Round code (a short code such as G or F). \cr
-   group_name \tab character \tab Group name within the round (A, B...). \cr
-   group_status_code \tab character \tab Group status code (COMPL when the group is complete). \cr
-   rank \tab integer \tab Rank in the group. \cr
-   team_team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
-   team_organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
-   team_code \tab character \tab Team code (FIBA country code or club abbreviation). \cr
-   team_official_name \tab character \tab Official team name (the country for a national team, the club for a club team). \cr
-   team_short_name \tab character \tab Short team name: the country code for a national team, the club's short name for a club. \cr
-   games_played \tab integer \tab Games played in the group. \cr
-   games_lost \tab integer \tab Losses in the group. \cr
-   games_won \tab integer \tab Wins in the group. \cr
-   points \tab integer \tab Standing points (2 per win, 1 per loss). \cr
-   points_against \tab integer \tab Points conceded. \cr
-   points_for \tab integer \tab Points the team scored in the group's games. \cr
-   starting_position \tab integer \tab Seed / draw position in the group. \cr
-   final_position \tab integer \tab Final position in the group. \cr
-   plus_minus \tab integer \tab Point differential (pointsFor - pointsAgainst). \cr
-   penalty_points \tab integer \tab Standing points deducted. \cr
-   draw_points \tab integer \tab Points for a draw (0); null when not applicable. \cr
-   group_game_results \tab character \tab This team's games in the group. Stored as a JSON string. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_round_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Group standings of every round of a competition.

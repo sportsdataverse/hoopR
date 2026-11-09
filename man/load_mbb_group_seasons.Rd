@@ -18,20 +18,20 @@ the data into a database.}
 \item{tablename}{The name of the data table within the database}
 }
 \value{
-Returns a \code{hoopR_data} tibble with one row per group-season.
+A \code{hoopR_data} tibble with one row per group-season.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League key: \code{mbb} or \code{nba}. \cr
-      group_id \tab character \tab SDV group id, \code{\{league\}:\{slug\}}. \cr
-      season \tab integer \tab Season (ending year; 2025 = 2024-25). \cr
-      level \tab character \tab Group level: \code{league}, \code{subdivision}, \code{conference}, or \code{division}. \cr
-      name \tab character \tab Group name as of that season. \cr
-      short_name \tab character \tab Group short name as of that season. \cr
-      abbreviation \tab character \tab Group abbreviation as of that season. \cr
-      parent_group_id \tab character \tab Parent group id as of that season (division to conference to subdivision or league). \cr
-      n_teams \tab integer \tab Number of member teams that season. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League key: \code{mbb} or \code{nba}. \cr
+  group_id \tab character \tab SDV group id, \code{\{league\}:\{slug\}}. \cr
+  season \tab integer \tab Season (ending year; 2025 = 2024-25). \cr
+  level \tab character \tab Group level: \code{league}, \code{subdivision}, \code{conference}, or \code{division}. \cr
+  name \tab character \tab Group name as of that season. \cr
+  short_name \tab character \tab Group short name as of that season. \cr
+  abbreviation \tab character \tab Group abbreviation as of that season. \cr
+  parent_group_id \tab character \tab Parent group id as of that season (division to conference to subdivision or league). \cr
+  n_teams \tab integer \tab Number of member teams that season. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

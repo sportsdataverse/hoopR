@@ -15,13 +15,16 @@ named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments. \code
 \code{http_proxy}/\code{https_proxy} environment variables.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per unique game id in page order:\tabular{lll}{
-   col_name \tab types \tab description \cr
-   game_id \tab character \tab 10-digit zero-padded game id from the report link. \cr
-   season \tab integer \tab Season end year passed in, stamped on every row. \cr
-   season_type \tab character \tab Season type from the third digit of game_id, e.g. playoffs. \cr
-   label \tab character \tab Matchup label text of the report link, edges trimmed. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab 10-digit zero-padded game id from the report link. \cr
+  season \tab integer \tab Season end year passed in, stamped on every row. \cr
+  season_type \tab character \tab Season type from the third digit of game_id, e.g. playoffs. \cr
+  label \tab character \tab Matchup label text of the report link, edges trimmed. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Scrapes official.nba.com's season index page. JSON L2M reports exist only

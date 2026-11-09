@@ -10,28 +10,10 @@ sportpress_roster_find(roster_id)
 \item{roster_id}{(required) Roster id (integer): one player on one team in one season; from the roster frames.}
 }
 \value{
-A \code{hoopR_data} tibble: One roster entry with its player, team and season. An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_roster_find}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   roster_id \tab integer \tab Roster id (key space: sportpress roster entries): one player on one competition team in one season, so a player has a new roster_id for every team and season. player_id is the person. \cr
-   competition_team_id \tab integer \tab Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. \cr
-   jersey \tab character \tab Shirt number as text; the box score sends it as an integer, so a zero-padded '00' is already lost there. \cr
-   weight \tab integer \tab Weight in kg; null when unknown. \cr
-   height \tab integer \tab Height in cm; null when unknown. \cr
-   active \tab logical \tab True for a current roster entry; former entries are false. \cr
-   position_id \tab integer \tab Position id (key space: sportpress positions; 3 = small_forward). \cr
-   position \tab character \tab Position code: point_guard, shooting_guard, small_forward, power_forward, center, and the hybrids point_guard-shooting_guard, shooting_guard-small_forward, small_forward-power_forward, power_forward-center. \cr
-   player_id \tab integer \tab Player id (key space: sportpress persons): stable across seasons and teams, distinct from roster_id. Not a Genius or FIBA person id. \cr
-   first_name \tab character \tab Given name of the player as entered in the CMS. \cr
-   last_name \tab character \tab Family name of the player as entered in the CMS. \cr
-   nationality_code \tab character \tab Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining. \cr
-   birth_date \tab Date \tab Date of birth as shown on the public player page; null when unknown. \cr
-   uu_team_id \tab integer \tab Stable club key across seasons of the team. \cr
-   team \tab character \tab Team display name including the sponsor. \cr
-   team_short_name \tab character \tab Three-letter club code of the team. \cr
-   competition_id \tab integer \tab Competition id the roster entry's team plays in. \cr
-   season \tab integer \tab Season END year of the roster entry's competition. \cr
-}
+A \code{hoopR_data} tibble with one row per roster entry.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_roster_find")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One roster entry with its player, team and season.

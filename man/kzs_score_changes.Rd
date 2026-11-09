@@ -10,15 +10,10 @@ kzs_score_changes(match_id)
 \item{match_id}{(required) Match id (match_id in kzs_matches), e.g. 101839. Global across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: The score at the end of each minute of a final game. An empty valid answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_score_changes}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab KZS match id. Joins to \verb{/matches/\{matchId\}} (and its /playByPlay, /stats) and stats \code{matchId}. \cr
-   minute \tab integer \tab Game minute (1-40, then overtime minutes). \cr
-   score1 \tab integer \tab First (home) team score at the end of the minute, an integer. \cr
-   score2 \tab integer \tab Second (away) team score at the end of the minute, an integer. \cr
-   total_minutes \tab integer \tab Game length in minutes (40, 45 with one overtime). \cr
-}
+A \code{hoopR_data} tibble with one row per minute.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_score_changes")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The score at the end of each minute of a final game.

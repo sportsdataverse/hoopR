@@ -16,28 +16,10 @@ accepted.}
 whole double is accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_bracket}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   stage \tab character \tab Bracket stage: quarter_finals, semifinals, final (other_positions when present). \cr
-   phase_id \tab integer \tab Phase id of the series (111 = Play Off Titulo). \cr
-   subphase_id \tab integer \tab Sub-phase id (the playoff stage). \cr
-   home_team_id \tab integer \tab Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every \code{homeTeamId} / \code{awayTeamId} / \code{teamId} / \code{teamEditionId}. Not the club id. \cr
-   home_club_id \tab integer \tab Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the \code{clubId} request param and every \code{homeClubId} / \code{awayClubId}. \cr
-   home_team \tab character \tab Team name that season (sponsor names change) \cr
-   home_team_abbr \tab character \tab Three-letter abbreviation (BAR, RMB) \cr
-   away_team_id \tab integer \tab Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every \code{homeTeamId} / \code{awayTeamId} / \code{teamId} / \code{teamEditionId}. Not the club id. \cr
-   away_club_id \tab integer \tab Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the \code{clubId} request param and every \code{homeClubId} / \code{awayClubId}. \cr
-   away_team \tab character \tab Team name that season (sponsor names change) \cr
-   away_team_abbr \tab character \tab Three-letter abbreviation (BAR, RMB) \cr
-   home_wins \tab integer \tab Games won by the home-court team in the series. \cr
-   away_wins \tab integer \tab Games won by the other team in the series. \cr
-   finished \tab logical \tab True once the series is decided. \cr
-   best_of \tab integer \tab Series length (best of N). \cr
-   n_games \tab integer \tab Games listed for the series. \cr
-   edition_id \tab integer \tab Season id (\code{editionId}) = season START year - 1935 (91 = 2026-27, 81 = 2016-17, 70 = 2005-06, 48 = 1983-84, the first). The sdv season (END year) is editionId + 1936. Season lists also carry \code{seasonStartYear} / \code{seasonEndYear} \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-}
+A \code{hoopR_data} tibble with one row per series.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_bracket")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Playoff bracket: one row per series (quarter-final, semifinal, final).

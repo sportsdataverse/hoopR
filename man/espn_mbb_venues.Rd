@@ -15,13 +15,37 @@ forward compatibility. Proxy configuration should use
 \code{options(hoopR.proxy = ...)} -- see \code{?hoopR} for details.}
 }
 \value{
-A single \code{hoopR_data} tibble with one row per venue.
+A \code{hoopR_data} tibble with one row per venue.
 
-Columns as documented in the shared \link{espn_mbb_venues_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  venue_id \tab character \tab Unique venue identifier. \cr
+  name \tab character \tab Display name. \cr
+  full_name \tab character \tab Player's full name. \cr
+  address_city \tab character \tab  \cr
+  address_state \tab character \tab  \cr
+  capacity \tab integer \tab  \cr
+  indoor \tab logical \tab  \cr
+  grass \tab logical \tab  \cr
+  images_url \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A single \code{hoopR_data} tibble with one row per venue.
+A \code{hoopR_data} tibble with one row per venue.
 
-Columns as documented in the shared \link{espn_mbb_venues_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  venue_id \tab character \tab Unique venue identifier. \cr
+  name \tab character \tab Display name. \cr
+  full_name \tab character \tab Player's full name. \cr
+  address_city \tab character \tab  \cr
+  address_state \tab character \tab  \cr
+  capacity \tab integer \tab  \cr
+  indoor \tab logical \tab  \cr
+  grass \tab logical \tab  \cr
+  images_url \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get ESPN Women's College Basketball Venues}

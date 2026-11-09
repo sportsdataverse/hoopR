@@ -20,45 +20,10 @@ equal the matches of its own standings (one extra request per division; a divisi
 checked against the team-filtered lists instead). A mismatch raises \code{hoopR_asset_fetch}.}
 }
 \value{
-A \code{hoopR_data} tibble: Every game of one season, all divisions, played and scheduled, with teams, venue, status
-and score. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{tpbl_games}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = the 2025-26 season), the year asked for. Null when the body was parsed without the request stamp. \cr
-   season_id \tab integer \tab TPBL season id (key space: TPBL seasons on api.tpbl.basketball; 1 = 2024-25, 2 = 2025-26, 3 = 2026-27): the \code{{season_id}} of the season game list and, equal to it, the \code{{event_id}} of \verb{/events/\{event_id\}/*}. Not the GoHoops season id. Null when the body was parsed without the request stamp. \cr
-   game_id \tab integer \tab TPBL game id (key space: TPBL games on api.tpbl.basketball): the \code{{game_id}} of the game routes. Not sequential by date (2024-25 = 1-1367, 2025-26 = 1371-8641, 2026-27 = 27535-27667). The box score echoes no game id, so a box frame parsed without the request stamp has a null game_id. \cr
-   gohoops_game_id \tab integer \tab GoHoops game id (key space: GoHoops games; 1242 for TPBL game 6). Not the TPBL game id. \cr
-   division_id \tab integer \tab TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the \code{{division_id}} of every division route. Not the GoHoops division id. \cr
-   gohoops_division_id \tab integer \tab GoHoops division id (key space: GoHoops divisions; e.g. 64 = the 2024-25 preseason, 65 = the 2024-25 regular season). Not the TPBL division id. \cr
-   gohoops_season_id \tab integer \tab GoHoops season id (key space: GoHoops seasons, the id system the API echoes beside its own; 101 = 2024-25, 213 = 2025-26, 275 = 2026-27). Not the TPBL season id. Read from the home team. \cr
-   gohoops_event_id \tab integer \tab GoHoops event id (key space: GoHoops events, one per TPBL season; 319 = 2024-25, 490 = 2025-26, 613 = 2026-27). Not the TPBL season id and not the GoHoops season id. Read from the home team. \cr
-   code \tab character \tab Game code inside the division: the game number as text in the regular season ('1' ... '42'), a series label in the playoffs ('AG1' = series A game 1, 'G7' = finals game 7), '' for preseason games. \cr
-   status \tab character \tab Game status. Observed: COMPLETED (finished) and NOT_STARTED (scheduled). A game in progress has is_live true. \cr
-   is_live \tab logical \tab True while the game is being played; false for finished and scheduled games. \cr
-   periods \tab integer \tab Number of quarters played: 4 for a regulation game, 5 for one overtime, 6 for two; 0 before tip-off. \cr
-   game_date \tab Date \tab Game date (Taiwan local date). \cr
-   game_day_of_week \tab character \tab Traditional Chinese weekday in parentheses: Mon, Tue, Wed, Thu, Fri, Sat, Sun. \cr
-   game_time \tab character \tab Scheduled tip-off 'HH:MM:SS'. Taiwan local date and time (UTC+8 by every tip-off seen; the API sends no zone). \cr
-   tipoff \tab POSIXct \tab Scheduled tip-off as a naive timestamp (no zone). Taiwan local date and time (UTC+8 by every tip-off seen; the API sends no zone). \cr
-   venue \tab character \tab Venue name in Traditional Chinese (Xinzhuang Gymnasium, Heping Basketball Gymnasium, Taichung Intercontinental Mini Dome, Hsinchu County Gymnasium, Kaohsiung Arena, Taoyuan Arena). \cr
-   attendance \tab integer \tab Attendance as an integer, parsed from the API's visitors string; null before the game, when the API sends none or on a postponed game. \cr
-   home_team_id \tab integer \tab Home TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the \code{{team_id}} of the division team routes. Not the GoHoops franchise id and not the squad id. \cr
-   home_gohoops_team_id \tab integer \tab Home GoHoops franchise id (key space: GoHoops franchises, 940-946; stable across seasons; = the TPBL team id + 938). \cr
-   home_gohoops_squad_id \tab integer \tab Home GoHoops squad id (key space: GoHoops squads = one team in one season: 8209-8215 in 2024-25, 11931-11937 in 2025-26, 15536-15542 in 2026-27; it changes every season). \cr
-   home_team \tab character \tab Home team name. Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). \cr
-   home_alt_name \tab character \tab Home team slug. Lowercase English slug of the team: aquas, dreamers, lioneers, leopards, dea, kings, mars. \cr
-   home_score \tab integer \tab Home team final score (points scored); null before tip-off. \cr
-   away_team_id \tab integer \tab Away TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the \code{{team_id}} of the division team routes. Not the GoHoops franchise id and not the squad id. \cr
-   away_gohoops_team_id \tab integer \tab Away GoHoops franchise id (key space: GoHoops franchises, 940-946; stable across seasons; = the TPBL team id + 938). \cr
-   away_gohoops_squad_id \tab integer \tab Away GoHoops squad id (key space: GoHoops squads = one team in one season: 8209-8215 in 2024-25, 11931-11937 in 2025-26, 15536-15542 in 2026-27; it changes every season). \cr
-   away_team \tab character \tab Away team name. Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). \cr
-   away_alt_name \tab character \tab Away team slug. Lowercase English slug of the team: aquas, dreamers, lioneers, leopards, dea, kings, mars. \cr
-   away_score \tab integer \tab Away team final score (points scored); null before tip-off. \cr
-   recap_url \tab character \tab YouTube recap URL; null when the game has none (the list can omit it, the game detail carries it). \cr
-   live_stream_url \tab character \tab YouTube live-stream URL of the game; null when the API omits it. \cr
-   judgement_report_url \tab character \tab URL of the referees' judgement report (a Google Drive file); null when none. \cr
-   ticket_url \tab character \tab URL of the ticket page; null on most rows. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tpbl_games")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every game of one season, all divisions, played and scheduled, with teams, venue, status and score.

@@ -13,17 +13,10 @@ number): the runtime reads /seasons once and sends that id, so the example URL s
 lacks raises \code{hoopR_no_data}.}
 }
 \value{
-A \code{hoopR_data} tibble: The teams of one season (bracket placeholders flagged). An empty answer raises
-\code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{tpbl_teams}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = the 2025-26 season), the year asked for. Null when the body was parsed without the request stamp. \cr
-   season_id \tab integer \tab TPBL season id (key space: TPBL seasons on api.tpbl.basketball; 1 = 2024-25, 2 = 2025-26, 3 = 2026-27): the \code{{season_id}} of the season game list and, equal to it, the \code{{event_id}} of \verb{/events/\{event_id\}/*}. Not the GoHoops season id. Null when the body was parsed without the request stamp. \cr
-   team_id \tab integer \tab TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the \code{{team_id}} of the division team routes. Not the GoHoops franchise id and not the squad id. \cr
-   gohoops_team_id \tab integer \tab GoHoops franchise id (key space: GoHoops franchises, 940-946; stable across seasons; = the TPBL team id + 938). \cr
-   name \tab character \tab Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). \cr
-   is_real_team \tab logical \tab True for a real club; false for a bracket placeholder (67 higher-seed team, 68 lower-seed team in 2025-26). \cr
-   status \tab character \tab Team status. 'ACTIVE' is the only value seen in every sampled route; the full set of statuses is unknown. \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tpbl_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The teams of one season (bracket placeholders flagged).

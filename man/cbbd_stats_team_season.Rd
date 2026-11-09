@@ -66,88 +66,30 @@ Defaults to \code{most_recent_mbb_season()}.}
 \item{end_date_range}{(\emph{character} optional): ISO 8601 end of date range.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per team-season. The \code{team_stats}
-and \code{opponent_stats} objects are flattened into \verb{team_stats_*} /
-\verb{opponent_stats_*} columns. Key identifying columns:
+A \code{hoopR_data} tibble with one row per team-season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_stats_team_season")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab integer \tab Season (4-digit ending-year). \cr
-      team_id \tab integer \tab Team id. \cr
-      team \tab character \tab Team name. \cr
-      conference \tab character \tab Conference name. \cr
-      games \tab integer \tab Games played. \cr
-      wins \tab numeric \tab Wins. \cr
-      losses \tab numeric \tab Losses. \cr
-      total_minutes \tab numeric \tab Total minutes played. \cr
-      pace \tab numeric \tab Average pace (possessions). \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_stats_team_leaderboard")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-A \code{hoopR_data} tibble with one row per team. Nested statistic objects
-(\code{record}, \code{summary}, \code{team_stats}, \code{opponent_stats}, \code{shot_profile},
-\code{adjusted_efficiency}) are flattened into prefixed columns. Key identifying
-columns:
+A \code{hoopR_data} tibble with one row per team-season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_stats_team_shooting_season")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab integer \tab Season (4-digit ending-year). \cr
-      team_id \tab integer \tab Team id. \cr
-      team \tab character \tab Team name. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per player-season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_stats_player_season")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-A \code{hoopR_data} tibble with one row per team-season. Shot-type objects
-(\code{dunks}, \code{layups}, \code{tip_ins}, \code{two_point_jumpers}, \code{three_point_jumpers},
-\code{free_throws}, \code{attempts_breakdown}) are flattened into prefixed columns.
-Key identifying columns:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab integer \tab Season (4-digit ending-year). \cr
-      team_id \tab integer \tab Team id. \cr
-      team \tab character \tab Team name. \cr
-      conference \tab character \tab Conference name. \cr
-      tracked_shots \tab integer \tab Number of tracked shots. \cr
-      assisted_pct \tab numeric \tab Assisted field-goal percentage. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-A \code{hoopR_data} tibble with one row per player-season. Nested
-statistic objects (\code{field_goals}, \code{two_point_field_goals},
-\code{three_point_field_goals}, \code{free_throws}, \code{rebounds}, \code{win_shares}) are
-flattened into prefixed columns. Key identifying columns:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab integer \tab Season (4-digit ending-year). \cr
-      team_id \tab integer \tab Team id. \cr
-      team \tab character \tab Team name. \cr
-      conference \tab character \tab Conference name. \cr
-      athlete_id \tab integer \tab Athlete id. \cr
-      name \tab character \tab Player name. \cr
-      position \tab character \tab Player position. \cr
-      games \tab numeric \tab Games played. \cr
-      minutes \tab numeric \tab Minutes played. \cr
-      points \tab numeric \tab Total points. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-A \code{hoopR_data} tibble with one row per player-season. Shot-type
-objects are flattened into prefixed columns. Key identifying columns:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab integer \tab Season (4-digit ending-year). \cr
-      team_id \tab integer \tab Team id. \cr
-      team \tab character \tab Team name. \cr
-      conference \tab character \tab Conference name. \cr
-      athlete_id \tab integer \tab Athlete id. \cr
-      athlete_name \tab character \tab Player name. \cr
-      tracked_shots \tab integer \tab Number of tracked shots. \cr
-      assisted_pct \tab numeric \tab Assisted field-goal percentage. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per player-season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_stats_player_shooting_season")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get team season statistics from the CollegeBasketballData API.}

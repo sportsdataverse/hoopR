@@ -13,32 +13,10 @@ acb_lineup(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_lineup}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
-   edition_id \tab integer \tab Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, \code{season}. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   team_side \tab character \tab Side of the game the team played: home or away (the feed lists the home team first). \cr
-   team_id \tab integer \tab Season-team entry id: one club in one competition edition, NEW every season (Barca = 4467 in Liga 2026-27). Not the club: use club_id to follow a club across seasons. \cr
-   club_id \tab integer \tab Stable ACB club id (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the same across seasons and sponsor names, and the club_id request argument. \cr
-   team \tab character \tab Team name as registered for that season (sponsor names change; the club id does not). \cr
-   team_abbr \tab character \tab Three-letter team abbreviation (BAR, RMB, VBC). \cr
-   lineup_order \tab integer \tab 1-based position of the player in the team's list (the feed lists the starters first, then the bench). \cr
-   player_id \tab integer \tab ACB licence number of the player. \cr
-   player_name \tab character \tab Display (sporting) name ('Edy Tavares') \cr
-   short_name \tab character \tab Short display name ('T. Martin'). \cr
-   shirt_number \tab character \tab Shirt number, a string ('' or null when unknown) \cr
-   play_time \tab character \tab Time on court in the game as 'mm:ss'. \cr
-   seconds_played \tab integer \tab Time on court in whole seconds (play_time parsed). \cr
-   is_playing \tab logical \tab True while the player is on court (false once the game is over). \cr
-   points \tab integer \tab Points scored in the game. \cr
-   rebounds \tab integer \tab Total rebounds in the game. \cr
-   assists \tab integer \tab Assists in the game. \cr
-   fouls \tab integer \tab Personal fouls committed in the game. \cr
-   differential \tab integer \tab Point differential while the player was on court (plus/minus). \cr
-   rating \tab integer \tab ACB rating (valoracion) of the game. \cr
-}
+A \code{hoopR_data} tibble with one row per team and player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_lineup")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Players of a game with their game line, starters first.

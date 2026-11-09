@@ -15,135 +15,17 @@ kp_winprob(game_id, year)
 \item{year}{Year of game to pull}
 }
 \value{
-Returns a tibble of game box scores with names: away_team, home_team,
-linescore, officials
+A named list of tibbles: \code{away_team}, \code{home_team}, \code{linescore}, \code{officials}.
+Their column names and types are in \link{return_columns}, e.g.
+\code{subset(return_columns, fn == "kp_box")}, and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns}
+article.
 
-\strong{away_team}
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      hgt \tab character \tab Hgt. \cr
-      wgt \tab numeric \tab Wgt. \cr
-      yr \tab character \tab Yr. \cr
-      number \tab numeric \tab Number. \cr
-      player \tab character \tab Player. \cr
-      min \tab numeric \tab Minutes played. \cr
-      o_rtg \tab numeric \tab O rtg. \cr
-      percent_ps \tab numeric \tab Percent ps. \cr
-      pts \tab numeric \tab Points scored. \cr
-      fgm_2 \tab numeric \tab Fgm 2. \cr
-      fga_2 \tab numeric \tab Fga 2. \cr
-      fgm_3 \tab numeric \tab Fgm 3. \cr
-      fga_3 \tab numeric \tab Fga 3. \cr
-      ftm \tab numeric \tab Free throws made. \cr
-      fta \tab numeric \tab Free throw attempts. \cr
-      or \tab numeric \tab Or. \cr
-      dr \tab numeric \tab Dr. \cr
-      a \tab numeric \tab A. \cr
-      to \tab numeric \tab To. \cr
-      blk \tab numeric \tab Blocks. \cr
-      stl \tab numeric \tab Steals. \cr
-      pf \tab numeric \tab Personal fouls. \cr
-      team \tab character \tab Team-side label or team identifier. \cr
-      wp_note \tab character \tab Wp note. \cr
-      game_id \tab numeric \tab Unique game identifier. \cr
-      year \tab numeric \tab 4-digit year. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-\strong{home_team}
-
-Same columns as the \strong{away_team} table above.
-
-\strong{linescore}
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      team \tab character \tab Team-side label or team identifier. \cr
-      q1 \tab integer \tab Q1. \cr
-      q2 \tab integer \tab Q2. \cr
-      q3 \tab integer \tab Q3. \cr
-      q4 \tab integer \tab Q4. \cr
-      t \tab integer \tab T. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-\strong{officials}
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      official_id \tab character \tab Unique official / referee identifier. \cr
-      official_name \tab character \tab Official name. \cr
-      game_id \tab numeric \tab Unique game identifier. \cr
-      year \tab numeric \tab 4-digit year. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-Returns a named list of tibbles: winprob_dataset, game_data, runs
-
-\strong{winprob_dataset}
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-      wp \tab numeric \tab Wp. \cr
-      time_left \tab numeric \tab Time left. \cr
-      visitor_score \tab integer \tab Visitor score. \cr
-      home_score \tab integer \tab Home team score at the time of the play. \cr
-      visitor_scoring \tab integer \tab Visitor scoring. \cr
-      home_scoring \tab integer \tab Home team's scoring. \cr
-      possession_team \tab character \tab Possession team. \cr
-      possession_number \tab character \tab Possession number. \cr
-      game_id \tab numeric \tab Unique game identifier. \cr
-      year \tab numeric \tab 4-digit year. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-\strong{game_data}
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      year \tab integer \tab 4-digit year. \cr
-      full_date \tab character \tab Date in YYYY-MM-DD format. \cr
-      date \tab character \tab Date in YYYY-MM-DD format. \cr
-      game_time \tab character \tab Game start time. \cr
-      venue \tab character \tab Venue name. \cr
-      city \tab character \tab City. \cr
-      team1 \tab character \tab Team1. \cr
-      team1score \tab integer \tab Team1score. \cr
-      team1_rk \tab character \tab Team1 rk. \cr
-      team2 \tab character \tab Team2. \cr
-      team2score \tab integer \tab Team2score. \cr
-      team2_rk \tab character \tab Team2 rk. \cr
-      dominance_season_rk \tab character \tab Dominance season rk. \cr
-      tension_season_rk \tab character \tab Tension season rk. \cr
-      excitement_season_rk \tab character \tab Excitement season rk. \cr
-      lead_changes_season_rk \tab character \tab Lead changes season rk. \cr
-      minimum_wp_season_rk \tab character \tab Minimum wp season rk. \cr
-      dominance_rk \tab character \tab Dominance rk. \cr
-      tension_rk \tab character \tab Tension rk. \cr
-      excitement_rk \tab character \tab Excitement rk. \cr
-      lead_changes_rk \tab character \tab Lead changes rk. \cr
-      minimum_wp_rk \tab character \tab Minimum wp rk. \cr
-      dominance \tab character \tab Dominance. \cr
-      tension \tab character \tab Tension. \cr
-      excitement \tab character \tab Excitement. \cr
-      favchg \tab character \tab Favchg. \cr
-      min_wp \tab character \tab Min wp. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-\strong{runs}
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      start \tab numeric \tab Start. \cr
-      end \tab numeric \tab End. \cr
-      visitor \tab integer \tab Visitor. \cr
-      home \tab integer \tab Home. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A named list of tibbles: \code{winprob_dataset}, \code{game_data}, \code{runs}.
+Their column names and types are in \link{return_columns}, e.g.
+\code{subset(return_columns, fn == "kp_winprob")}, and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns}
+article.
 }
 \description{
 \strong{Get KenPom Game Box Score}

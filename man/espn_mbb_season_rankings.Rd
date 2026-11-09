@@ -16,26 +16,26 @@ espn_nba_season_rankings(season = most_recent_nba_season(), ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per ranking source.
+A \code{hoopR_data} tibble with one row per ranking source.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League slug. \cr
-      season \tab integer \tab Season year. \cr
-      ranking_id \tab character \tab ESPN ranking id. \cr
-      ref \tab character \tab \verb{$ref} URL for the ranking detail. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  ranking_id \tab character \tab ESPN ranking id. \cr
+  ref \tab character \tab \code{$ref} URL for the ranking detail. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per ranking source.
+A \code{hoopR_data} tibble with one row per ranking source.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League slug. \cr
-      season \tab integer \tab Season year. \cr
-      ranking_id \tab character \tab ESPN ranking id. \cr
-      ref \tab character \tab \verb{$ref} URL for the ranking detail. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  ranking_id \tab character \tab ESPN ranking id. \cr
+  ref \tab character \tab \code{$ref} URL for the ranking detail. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

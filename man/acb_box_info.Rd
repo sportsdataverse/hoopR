@@ -13,23 +13,10 @@ acb_box_info(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_box_info}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
-   edition_id \tab integer \tab Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, \code{season}. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   team_side \tab character \tab Side of the game the team played: home or away (the feed lists the home team first). \cr
-   team_id \tab integer \tab Season-team entry id: one club in one competition edition, NEW every season (Barca = 4467 in Liga 2026-27). Not the club: use club_id to follow a club across seasons. \cr
-   club_id \tab integer \tab Stable ACB club id (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the same across seasons and sponsor names, and the club_id request argument. \cr
-   team \tab character \tab Team name as registered for that season (sponsor names change; the club id does not). \cr
-   team_abbr \tab character \tab Three-letter team abbreviation (BAR, RMB, VBC). \cr
-   head_coach \tab character \tab Head coach's name. \cr
-   assistant_coaches \tab character \tab Assistant coaches' names joined with '; '. \cr
-   arena \tab character \tab Arena where the game was played; repeats on both team rows. \cr
-   attendance \tab integer \tab Announced attendance; repeats on both team rows. \cr
-   referees \tab character \tab Referees' names joined with '; '; repeats on both team rows. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_box_info")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Coaches and game facts per team: head coach, assistants, arena, attendance, referees.

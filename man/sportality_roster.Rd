@@ -11,22 +11,10 @@ sportality_roster(team_uuid)
 space: platform team uuids (not the numeric Genius team id).}
 }
 \value{
-A \code{hoopR_data} tibble: Current roster of a team, grouped by position. An empty valid answer raises
-\code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py \code{sportality_roster}), then any
-column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   position \tab character \tab Playing position. \cr
-   position_code \tab character \tab Position code (G, F, C, or a finer code such as SG on the profile route). Values: \code{C} = center; \code{F} = forward; \code{G} = guard. \cr
-   player_type \tab character \tab Record type (athlete). Values: \code{athlete} = a player. \cr
-   gender \tab character \tab Gender of the person as recorded by the site (male in every row seen). \cr
-   uuid \tab character \tab Athlete uuid (platform key space). \cr
-   first_name \tab character \tab Given (first) name(s) of the player. \cr
-   last_name \tab character \tab Family name (surname) of the player. \cr
-   full_name \tab character \tab Full display name of the player. \cr
-   nationality \tab character \tab ISO 3166-1 alpha-2 country code. \cr
-   jersey_number \tab integer \tab Jersey (shirt) number of the player. \cr
-   portrait_url \tab character \tab URL of the player's latest rendered portrait. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_roster")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Current roster of a team, grouped by position.

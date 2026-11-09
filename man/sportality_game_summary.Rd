@@ -11,18 +11,10 @@ sportality_game_summary(game_uuid)
 platform game uuids; the Genius match id is \code{extId} / \code{gameSourceId} in the body.}
 }
 \value{
-A \code{hoopR_data} tibble: Points per period, team comparison and best scorers (2023/24 on). An empty valid
-answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
-\code{sportality_game_summary}), then any column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_head2_head \tab character \tab Team comparison rows (2P, 3P, FT, rebounds, ...), home and away side by side. \cr
-   team_period_caption \tab character \tab Column caption of the table (G = goals/points). Values: \code{G} = goals/points column. \cr
-   team_period_overtime \tab logical \tab Whether the game went to overtime. \cr
-   team_period_shootout \tab logical \tab Whether the game was decided by a shootout (false). \cr
-   team_period_stats \tab character \tab One row per period. \cr
-   best_scorers \tab character \tab The game's top scorers, one per side (or the two best). \cr
-   statistics_provider \tab character \tab Stats provider of the data (genius-basketball = Genius Sports LiveStats). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_game_summary")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Points per period, team comparison and best scorers (2023/24 on).

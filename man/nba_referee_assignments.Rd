@@ -19,47 +19,51 @@ named list of \code{\link[httr2:req_proxy]{httr2::req_proxy()}} arguments. \code
 \code{http_proxy}/\code{https_proxy} environment variables.}
 }
 \value{
-Named list of \code{hoopR_data} tibbles:
+A named list of \code{hoopR_data} tibbles: \code{officials}, \code{replay_center}.
 
-\strong{officials} -- one row per game x filled crew slot. A slot whose
+\strong{officials}
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League: nba, gl (G League) or wnba. \cr
+  game_id \tab character \tab 10-digit zero-padded game id. \cr
+  game_date \tab Date \tab Game date, parsed from the feed's MM/DD/YYYY. \cr
+  season \tab integer \tab Season end year (start year + 1 for nba/gl, unchanged for wnba). \cr
+  season_type \tab character \tab Season type from the first digit of the feed's season code. \cr
+  game_code \tab character \tab League game code, YYYYMMDD/AWYHOM. \cr
+  home_team_id \tab integer \tab Team id of the home team. \cr
+  home_team_abbr \tab character \tab Home team three-letter abbreviation. \cr
+  away_team_id \tab integer \tab Team id of the away team. \cr
+  away_team_abbr \tab character \tab Away team three-letter abbreviation. \cr
+  crew_position \tab integer \tab Feed slot order (1-4); slot 1 is the inferred crew chief. \cr
+  official_id \tab integer \tab Official's person id from the feed. \cr
+  official_name \tab character \tab Official's display name. \cr
+  jersey_num \tab character \tab Official's jersey number, as a string. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\strong{replay_center}
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League block the row was read from (nba, gl or wnba); not league-specific. \cr
+  game_date \tab Date \tab Date the replay-center official worked (not tied to one game). \cr
+  official_id \tab integer \tab Replay-center official's person id from the feed. \cr
+  official_name \tab character \tab Replay-center official's display name. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\code{officials}: one row per game x filled crew slot. A slot whose
 official's name is absent, null or empty is skipped. A field sent as
 null, an array or an object reads as NA, never as a dropped or
 duplicated row: an array or object name keeps its row, and the
-official's id, with an NA \code{official_name}.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   league \tab character \tab League: nba, gl (G League) or wnba. \cr
-   game_id \tab character \tab 10-digit zero-padded game id. \cr
-   game_date \tab Date \tab Game date, parsed from the feed's MM/DD/YYYY. \cr
-   season \tab integer \tab Season end year (start year + 1 for nba/gl, unchanged for wnba). \cr
-   season_type \tab character \tab Season type from the first digit of the feed's season code. \cr
-   game_code \tab character \tab League game code, YYYYMMDD/AWYHOM. \cr
-   home_team_id \tab integer \tab Team id of the home team. \cr
-   home_team_abbr \tab character \tab Home team three-letter abbreviation. \cr
-   away_team_id \tab integer \tab Team id of the away team. \cr
-   away_team_abbr \tab character \tab Away team three-letter abbreviation. \cr
-   crew_position \tab integer \tab Feed slot order (1-4); slot 1 is the inferred crew chief. \cr
-   official_id \tab integer \tab Official's person id from the feed. \cr
-   official_name \tab character \tab Official's display name. \cr
-   jersey_num \tab character \tab Official's jersey number, as a string. \cr
-}
-
-
-\strong{replay_center} -- the replay-center officials on duty that date, one
-row per official. The rows are per date, not tied to a game or a league:
-the feed can repeat the same rows in every league block (\code{league} only
-records which block was read), and they can be present when the league
-has no games.\tabular{lll}{
-   col_name \tab types \tab description \cr
-   league \tab character \tab League block the row was read from (nba, gl or wnba); not league-specific. \cr
-   game_date \tab Date \tab Date the replay-center official worked (not tied to one game). \cr
-   official_id \tab integer \tab Replay-center official's person id from the feed. \cr
-   official_name \tab character \tab Replay-center official's display name. \cr
-}
-
-
-A date with no games for the league is not an error: \code{officials} comes
-back zero-row rather than raising, while \code{replay_center} can still hold
-that date's replay-center officials.
+official's id, with an NA \code{official_name}. \code{replay_center}: the replay-center
+officials on duty that date, one row per official. The rows are per date, not
+tied to a game or a league: the feed can repeat the same rows in every league
+block (\code{league} only records which block was read), and they can be present
+when the league has no games. A date with no games for the league is not an
+error: \code{officials} comes back zero-row rather than raising, while
+\code{replay_center} can still hold that date's replay-center officials.
 }
 \description{
 Retrieves referee crew assignments and replay-center officials for every

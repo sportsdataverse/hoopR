@@ -36,138 +36,40 @@ kp_fanmatch(date)
 \item{date}{Date of games to pull (YYYY-MM-DD)}
 }
 \value{
-A data frame with the following columns:
+A data frame with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kp_trends")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab numeric \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-      efficiency \tab numeric \tab Efficiency. \cr
-      tempo \tab numeric \tab Tempo. \cr
-      e_fg_pct \tab numeric \tab E field goals percentage (0-1 decimal). \cr
-      to_pct \tab numeric \tab To percentage (0-1 decimal). \cr
-      or_pct \tab numeric \tab Or percentage (0-1 decimal). \cr
-      ft_rate \tab numeric \tab Ft rate. \cr
-      fg_2_pct \tab numeric \tab Field goals 2 percentage (0-1 decimal). \cr
-      fg_3_pct \tab numeric \tab Field goals 3 percentage (0-1 decimal). \cr
-      fg_3a_pct \tab numeric \tab Field goals 3a percentage (0-1 decimal). \cr
-      ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
-      a_pct \tab numeric \tab A percentage (0-1 decimal). \cr
-      blk_pct \tab numeric \tab Blocks percentage (0-1 decimal). \cr
-      stl_pct \tab numeric \tab Steals percentage (0-1 decimal). \cr
-      non_stl_pct \tab numeric \tab Non steals percentage (0-1 decimal). \cr
-      avg_hgt \tab numeric \tab Avg hgt. \cr
-      continuity \tab numeric \tab Continuity. \cr
-      home_win_pct \tab numeric \tab Home win percentage (0-1 decimal). \cr
-      ppg \tab numeric \tab Points per game. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A data frame with one row per official.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kp_officials")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-A data frame with the following columns:
+A data frame with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kp_referee")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      rk \tab integer \tab Rk. \cr
-      official_name \tab character \tab Official name. \cr
-      ref_rating \tab numeric \tab Ref rating. \cr
-      gms \tab numeric \tab Gms. \cr
-      last_game \tab character \tab Last game date or score string. \cr
-      last_game_1 \tab character \tab Last game 1. \cr
-      year \tab numeric \tab 4-digit year. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A data frame with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kp_hca")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-A data frame with the following columns:
+A data frame with one row per venue.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kp_arenas")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_number \tab integer \tab Game number. \cr
-      date \tab character \tab Date in YYYY-MM-DD format. \cr
-      time_et \tab character \tab Time et. \cr
-      game \tab character \tab Game. \cr
-      location \tab character \tab Location. \cr
-      venue \tab character \tab Venue name. \cr
-      conference \tab character \tab Conference. \cr
-      thrill_score \tab numeric \tab Thrill score. \cr
-      referee_name \tab character \tab Referee name. \cr
-      ref_rank \tab numeric \tab League/season rank for ref. \cr
-      year \tab numeric \tab 4-digit year. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kp_game_attrs")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-A data frame with the following columns:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      team \tab character \tab Team-side label or team identifier. \cr
-      conf \tab character \tab character. \cr
-      hca \tab numeric \tab Hca. \cr
-      hca_rk \tab numeric \tab Hca rk. \cr
-      pf \tab numeric \tab Personal fouls. \cr
-      pf_rk \tab numeric \tab Pf rk. \cr
-      pts \tab numeric \tab Points scored. \cr
-      pts_rk \tab numeric \tab Pts rk. \cr
-      nst \tab numeric \tab Nst. \cr
-      nst_rk \tab numeric \tab Nst rk. \cr
-      blk \tab numeric \tab Blocks. \cr
-      blk_rk \tab numeric \tab Blk rk. \cr
-      elev \tab numeric \tab Elev. \cr
-      elev_rk \tab numeric \tab Elev rk. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-A data frame with the following columns:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      rk \tab numeric \tab Rk. \cr
-      team \tab character \tab Team-side label or team identifier. \cr
-      conf \tab character \tab character. \cr
-      arena \tab character \tab Arena. \cr
-      alternate \tab character \tab Alternate. \cr
-      year \tab numeric \tab 4-digit year. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-Returns a tibble with game attributes
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      rk \tab integer \tab Rk. \cr
-      data \tab character \tab Data. \cr
-      game \tab character \tab Game. \cr
-      location \tab character \tab Location. \cr
-      conf \tab character \tab character. \cr
-      excitement \tab numeric \tab Excitement. \cr
-      year \tab numeric \tab 4-digit year. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-A data frame with the following columns:
-
-\if{html}{\tabular{lll}{
-    col_name \tab types \tab description \cr
-    prediction \tab character \tab Prediction. \cr
-    time_et \tab character \tab Time et. \cr
-    location \tab character \tab Location. \cr
-    thrill_score \tab numeric \tab Thrill score. \cr
-    comeback \tab numeric \tab Comeback. \cr
-    excitement \tab numeric \tab Excitement. \cr
-    road_rk \tab numeric \tab Road rk. \cr
-    road_team \tab character \tab Road team. \cr
-    home_rk \tab numeric \tab Home team's rk. \cr
-    home_team \tab character \tab Home team's team. \cr
-    win_rk \tab numeric \tab Win rk. \cr
-    win_team \tab character \tab Win team. \cr
-    win_score \tab numeric \tab Win score. \cr
-    loss_rk \tab numeric \tab Loss rk. \cr
-    loss_team \tab character \tab Loss team. \cr
-    loss_score \tab numeric \tab Loss score. \cr
-    poss \tab numeric \tab Poss. \cr
-    mvp \tab character \tab Mvp. \cr
-    event \tab character \tab Event. \cr
-    date \tab character \tab Date in YYYY-MM-DD format. \cr
- }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A data frame with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kp_fanmatch")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get Division-I statistical trends}

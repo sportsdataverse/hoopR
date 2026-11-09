@@ -11,23 +11,10 @@ kbl_round_mvps(season)
 maps it to the KBL seasonCode (47 = 2025-26).}
 }
 \value{
-A \code{hoopR_data} tibble: The round MVPs of a season with their totals over the round. The columns are always these,
-in this order (sportsdataverse-py \code{kbl_round_mvps}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows
-for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr
-   season_code \tab integer \tab KBL season code: sequential over every season and D-League edition (2 = 1997-98, 47 = 2025-26); the crosswalk to the sdv END year is in the README. \cr
-   round \tab integer \tab Round number of the season (the KBL plays six rounds). \cr
-   pcode \tab character \tab KBL player code (six-digit string) of the round MVP (the wire's playerNo). \cr
-   team_code \tab character \tab KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList \code{teamCode}, game \code{tcodeH}/\code{tcodeA}, \code{t} in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (\code{teamCodeD}). \cr
-   player_name \tab character \tab Round MVP's name in Korean (kname). \cr
-   player_name_en \tab character \tab Player name in English / romanized (sometimes Hangul for former players). \cr
-   game_count \tab integer \tab Games played in the round. \cr
-   total_seconds \tab integer \tab Playing time over the round in seconds (totalHour * 3600 + totalMinute * 60 + totalSecond; only the seconds part is non-zero in the samples). \cr
-   total_score \tab integer \tab Points over the round. \cr
-   total_rebound \tab integer \tab Rebounds over the round. \cr
-   total_assist \tab integer \tab Assists over the round. \cr
-}
+A \code{hoopR_data} tibble with one row per round MVP.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_round_mvps")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The round MVPs of a season with their totals over the round.

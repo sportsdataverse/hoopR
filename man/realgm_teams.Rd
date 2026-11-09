@@ -7,15 +7,10 @@
 realgm_teams()
 }
 \value{
-A \code{hoopR_data} tibble with one row per team:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      team \tab character \tab Team name. \cr
-      division \tab character \tab Division (e.g. \code{Atlantic}). \cr
-      conference \tab character \tab \code{Eastern} or \code{Western}. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "realgm_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the NBA team index, with division and conference, from

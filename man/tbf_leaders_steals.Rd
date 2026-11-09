@@ -15,22 +15,10 @@ A year the list lacks raises \code{hoopR_no_data}.}
 The top flight was named TBL until 2007-08 and is listed under bsl.}
 }
 \value{
-A \code{hoopR_data} tibble. Up to 20 rows per \code{kind} (\code{total} and \code{average}), best first.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). \cr
-   competition \tab character \tab TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). \cr
-   category \tab character \tab Statistic of the wrapper: points, assists, blocks, rebounds, steals, minutes, threes, turnovers or efficiency. \cr
-   kind \tab character \tab total = the server's top 20 by season TOTAL; average = the top 20 by PER-GAME average. \cr
-   rank \tab integer \tab Rank in the list, 1 = best (the API's order). \cr
-   person_id \tab integer \tab TBF person id (oyuncuKodu, sent as a string; key space: TBF persons). \cr
-   player_name \tab character \tab Player name as TBF prints it for that route (title case, Turkish letters kept). \cr
-   team_process_id \tab integer \tab Team-season id (takimKodu, sent as a string; key space: TBF team registrations; despite the name NOT the club id). \cr
-   team_name \tab character \tab Team name as registered for that season, uppercase with Turkish letters (sponsor name: 'PIZZABULLS BORDO BANDIRMA'). \cr
-   games \tab integer \tab Games played (macSayisi, sent as a string). \cr
-   value \tab double \tab The ranked statistic: the season total for kind total, the per-game average for kind average (the API names the field grup and sends it as a string). \cr
-}
+A \code{hoopR_data} tibble with one row per leader and \code{kind}.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_leaders_steals")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Season leaders in steals: the server's top 20 by season total and by per-game average.

@@ -14,57 +14,10 @@ vtb_infobasket_seasons (one extra request per tag, cached). Required.}
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: Every game of a season (finished, live and planned): teams, scores, date, venue, attendance.
-The columns are always these, in this order (sportsdataverse-py \code{vtb_infobasket_calendar}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. \cr
-   comp_id \tab integer \tab Season-level Infobasket CompID of the season (50714 = 2025-26): the id every season-keyed route takes. \cr
-   game_id \tab integer \tab Infobasket game id (GameID); equals the v2 API \code{matchId}. Joins to /Widget/GetOnline/\{gameId\} and /Widget/GamePage/\{gameId\}. \cr
-   game_number \tab character \tab Game number within the competition, e.g. 'RS-002' (RS = regular season); playoff games use the series code. \cr
-   game_date \tab character \tab Game date as an ISO 8601 date (YYYY-MM-DD); the wire sends DD.MM.YYYY. \cr
-   has_time \tab logical \tab True when a tip-off time is set. \cr
-   game_time \tab character \tab Tip-off local time, 'HH:MM'. \cr
-   game_time_msk \tab character \tab Tip-off time in Moscow time ('HH:MM' on calendar rows, 'HH.MM' in GetOnline). \cr
-   game_date_time \tab character \tab Tip-off instant as an ISO 8601 string in Moscow time with its +03:00 offset (the wire sends a .NET /Date(ms)/ value). \cr
-   game_date_time_moscow \tab character \tab Tip-off instant as an ISO 8601 string in Moscow time with its +03:00 offset (the wire's second .NET date; equal to game_date_time in every sample). \cr
-   game_status \tab integer \tab Game status in the calendar code set: 0 planned, 1 completed, 2 live. \cr
-   team_a_id \tab integer \tab Team A (home) TeamID. Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team*/\{teamId\} and equals the v2 API \code{teamId}. \cr
-   team_b_id \tab integer \tab Team B (away) TeamID. Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team*/\{teamId\} and equals the v2 API \code{teamId}. \cr
-   short_team_name_aru \tab character \tab Team short name of team A (home), Russian. \cr
-   short_team_name_bru \tab character \tab Team short name of team B (away), Russian. \cr
-   team_name_aru \tab character \tab Team name with city in brackets of team A (home), Russian. \cr
-   team_name_bru \tab character \tab Team name with city in brackets of team B (away), Russian. \cr
-   comp_team_name_aru \tab character \tab Team name as registered in the competition of team A (home), Russian. \cr
-   comp_team_name_bru \tab character \tab Team name as registered in the competition of team B (away), Russian. \cr
-   region_team_name_aru \tab character \tab Team's city or region of team A (home), Russian. \cr
-   region_team_name_bru \tab character \tab Team's city or region of team B (away), Russian. \cr
-   short_team_name_aen \tab character \tab Team short name of team A (home), English. \cr
-   short_team_name_ben \tab character \tab Team short name of team B (away), English. \cr
-   team_name_aen \tab character \tab Team name with city in brackets of team A (home), English. \cr
-   team_name_ben \tab character \tab Team name with city in brackets of team B (away), English. \cr
-   comp_team_name_aen \tab character \tab Team name as registered in the competition of team A (home), English. \cr
-   comp_team_name_ben \tab character \tab Team name as registered in the competition of team B (away), English. \cr
-   region_team_name_aen \tab character \tab Team's city or region of team A (home), English. \cr
-   region_team_name_ben \tab character \tab Team's city or region of team B (away), English. \cr
-   score_a \tab integer \tab Final score of team A (home). \cr
-   score_b \tab integer \tab Final score of team B (away). \cr
-   tv_ru \tab character \tab TV channels, in Russian. \cr
-   tv_en \tab character \tab TV channels, in English. \cr
-   region_ru \tab character \tab City or region of the game's venue in Russian. \cr
-   region_en \tab character \tab City or region of the game's venue in English. \cr
-   arena_en \tab character \tab Arena name, English. \cr
-   arena_ru \tab character \tab Arena, Russian ('SK' = sports complex). \cr
-   arena_id \tab integer \tab Infobasket arena id; equals the v2 API \code{venueId} (11687 = SK Basket-Hall, Krasnodar). \cr
-   game_attendance \tab integer \tab Spectators at the game (null when not recorded). \cr
-   comp_name_ru \tab character \tab Stage name, Russian ('Regulyarnyy chempionat' = 'Regular Season', 'Gruppa A' = 'Group A'). \cr
-   comp_name_en \tab character \tab Stage name (e.g. 'Regular Season'), English. \cr
-   league_name_ru \tab character \tab League name, Russian ('Edinaya liga VTB' / 'Chempionat Edinoy ligi VTB' = 'VTB United League' / 'VTB United League Championship'). \cr
-   league_name_en \tab character \tab League name, English. \cr
-   league_short_name_ru \tab character \tab League short name, Russian ('VTB' = 'VTB'). \cr
-   league_short_name_en \tab character \tab League short name, English. \cr
-   gender \tab integer \tab Competition gender: 0 on every VTB sample (men). Other values unverified. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_calendar")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every game of a season (finished, live and planned): teams, scores, date, venue, attendance.

@@ -11,44 +11,10 @@ tbf_team_box(match_id)
 sequence across leagues and seasons. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. Two rows: home, then away. Minutes are the players' summed seconds.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. \cr
-   side \tab character \tab Side of the game the row belongs to: home or away (from the route's isHome flag or home / away block). \cr
-   team_process_id \tab integer \tab Team-season id of the side (from the game header; key space: TBF team registrations). \cr
-   seconds_played \tab integer \tab Time on court in seconds, parsed from the 'mm:ss' or 'hh:mm:ss' text the API sends (team totals sum their players, so 200:00 = 12000). \cr
-   points \tab integer \tab Points scored in the game (or season) the row covers. \cr
-   fg_made \tab integer \tab Team field goals made, 2PT + 3PT. \cr
-   fg_attempted \tab integer \tab Team field goals attempted, 2PT + 3PT. \cr
-   fg_pct \tab integer \tab Team field-goal percentage 0-100, rounded to an integer by the API. \cr
-   fg2_made \tab integer \tab Team two-point field goals MADE (the API calls it twoPointShots). \cr
-   fg2_attempted \tab integer \tab Team two-point field goals attempted. \cr
-   fg2_pct \tab integer \tab Team two-point percentage 0-100, an integer. \cr
-   fg3_made \tab integer \tab Team three-point field goals MADE (the API calls it threePointShots). \cr
-   fg3_attempted \tab integer \tab Team three-point field goals attempted. \cr
-   fg3_pct \tab integer \tab Team three-point percentage 0-100, an integer. \cr
-   ft_made \tab integer \tab Team free throws MADE. \cr
-   ft_attempted \tab integer \tab Team free throws attempted. \cr
-   ft_pct \tab integer \tab Team free-throw percentage 0-100, an integer. \cr
-   off_rebounds \tab integer \tab Offensive rebounds (hucum ribaundu). \cr
-   def_rebounds \tab integer \tab Defensive rebounds (savunma ribaundu). \cr
-   rebounds \tab integer \tab Total rebounds (toplam ribaund). \cr
-   assists \tab integer \tab Assists in this game (asist). \cr
-   steals \tab integer \tab Steals in this game (top calma). \cr
-   blocks \tab integer \tab Shots this player blocked in this game (blok). \cr
-   turnovers \tab integer \tab Turnovers committed in this game (top kaybi). \cr
-   fouls \tab integer \tab Personal fouls committed (faul). \cr
-   fouls_drawn \tab integer \tab Fouls drawn by the team (rivalFoul). \cr
-   blocks_received \tab integer \tab Team shots blocked by the opponent. \cr
-   efficiency \tab integer \tab Team efficiency rating (verimlilik puani): the players' ratings summed; a number on team rows. \cr
-   team_off_rebounds \tab integer \tab Team offensive rebounds not credited to a player (homeTeamStats). \cr
-   team_def_rebounds \tab integer \tab Team defensive rebounds not credited to a player. \cr
-   team_rebounds \tab integer \tab Team rebounds not credited to a player (offensive + defensive). \cr
-   team_turnovers \tab integer \tab Team turnovers not credited to a player. \cr
-   team_fouls \tab integer \tab Team fouls not credited to a player (bench / coach technicals); 0 in the samples. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_team_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team totals of a finished game with the team-credited rebounds, turnovers and fouls.

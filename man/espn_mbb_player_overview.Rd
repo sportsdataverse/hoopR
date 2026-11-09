@@ -55,46 +55,44 @@ espn_nba_player_statisticslog(
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A named list of data frames: \code{Statistics}, \code{NextGame},
-\code{Last5Games}, \code{Headlines}, \code{FantasyOutlook}.
+A named list of \code{hoopR_data} tibbles: \code{Statistics}, \code{NextGame}, \code{Last5Games}, \code{Headlines}, \code{FantasyOutlook}.
 
-\strong{Statistics}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   (varies) \tab character \tab  \cr
-}
+\strong{Statistics}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  (varies) \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{NextGame}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab character \tab Id. \cr
-      date \tab character \tab Date in YYYY-MM-DD format. \cr
-      name \tab character \tab Display name. \cr
-      short_name \tab character \tab Short display name. \cr
-   }}
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  date \tab character \tab Date in YYYY-MM-DD format. \cr
+  name \tab character \tab Display name. \cr
+  short_name \tab character \tab Short display name. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Last5Games}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   (varies) \tab character \tab  \cr
-}
+\strong{Last5Games}
 
+Same columns as the \strong{Statistics} table above.
 
 \strong{Headlines}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      headline \tab character \tab News headline. \cr
-      description \tab character \tab Long-form description text. \cr
-      published \tab character \tab Publication timestamp (ISO 8601). \cr
-   }}
+  col_name \tab types \tab description \cr
+  headline \tab character \tab News headline. \cr
+  description \tab character \tab Long-form description text. \cr
+  published \tab character \tab Publication timestamp (ISO 8601). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{FantasyOutlook}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   (varies) \tab character \tab  \cr
-}
+\strong{FantasyOutlook}
+
+Same columns as the \strong{Statistics} table above.
 
 A named list of per-category tibbles. Default category names are
 \code{General}, \code{Offensive}, \code{Defensive}, \code{Rebounding}, \code{Shooting}, \code{Misc}.
@@ -109,64 +107,72 @@ A single long-format tibble. When data are present, columns include
 at minimum \code{category} and \code{split_name}, plus per-stat columns driven by
 ESPN labels.
 
-A single tibble. Per-event \code{statistics.$ref} URLs from the ESPN
-core-v2 API are returned as the character column \code{statistics_ref} and
-are NOT resolved. Similarly, \code{event_ref}, \code{competition_ref}, and
-\code{team_ref} are returned as character columns.
-
-Columns as documented in the shared \link{espn_mbb_player_eventlog_schema} table.
-
-A single tibble. When resolved, each row corresponds to one
-statistical entry in the core-v2 statistics log, with \code{event_ref} and
-\code{statistics_ref} character columns pointing to resolvable ESPN endpoints.
+A \code{hoopR_data} tibble with one row per event appearance.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      event_ref \tab character \tab Reference link to the originating event. \cr
-      statistics_ref \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  event_ref \tab character \tab Reference link to the originating event. \cr
+  competition_ref \tab character \tab  \cr
+  team_ref \tab character \tab  \cr
+  statistics_ref \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A named list of data frames: \code{Statistics}, \code{NextGame},
-\code{Last5Games}, \code{Headlines}, \code{FantasyOutlook}.
+Per-event \code{statistics.$ref} URLs from the ESPN core-v2 API are returned as
+the character column \code{statistics_ref} and are NOT resolved. Similarly,
+\code{event_ref}, \code{competition_ref}, and \code{team_ref} are returned as character columns.
 
-\strong{Statistics}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   (varies) \tab character \tab  \cr
-}
+A \code{hoopR_data} tibble with one row per statistics entry.
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  event_ref \tab character \tab Reference link to the originating event. \cr
+  statistics_ref \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+When resolved, each row corresponds to one statistical entry in the core-v2
+statistics log, with \code{event_ref} and \code{statistics_ref} character columns pointing
+to resolvable ESPN endpoints.
+
+A named list of \code{hoopR_data} tibbles: \code{Statistics}, \code{NextGame}, \code{Last5Games}, \code{Headlines}, \code{FantasyOutlook}.
+
+\strong{Statistics}
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  (varies) \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{NextGame}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab character \tab Id. \cr
-      date \tab character \tab Date in YYYY-MM-DD format. \cr
-      name \tab character \tab Display name. \cr
-      short_name \tab character \tab Short display name. \cr
-   }}
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  date \tab character \tab Date in YYYY-MM-DD format. \cr
+  name \tab character \tab Display name. \cr
+  short_name \tab character \tab Short display name. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Last5Games}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   (varies) \tab character \tab  \cr
-}
+\strong{Last5Games}
 
+Same columns as the \strong{Statistics} table above.
 
 \strong{Headlines}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      headline \tab character \tab News headline. \cr
-      description \tab character \tab Long-form description text. \cr
-      published \tab character \tab Publication timestamp (ISO 8601). \cr
-   }}
+  col_name \tab types \tab description \cr
+  headline \tab character \tab News headline. \cr
+  description \tab character \tab Long-form description text. \cr
+  published \tab character \tab Publication timestamp (ISO 8601). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{FantasyOutlook}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   (varies) \tab character \tab  \cr
-}
+\strong{FantasyOutlook}
+
+Same columns as the \strong{Statistics} table above.
 
 A named list of per-category tibbles. Default category names are
 \code{General}, \code{Offensive}, \code{Defensive}, \code{Rebounding}, \code{Shooting}, \code{Misc}.
@@ -181,23 +187,33 @@ A single long-format tibble. When data are present, columns include
 at minimum \code{category} and \code{split_name}, plus per-stat columns driven by
 ESPN labels.
 
-A single tibble. Per-event \code{statistics.$ref} URLs from the ESPN
-core-v2 API are returned as the character column \code{statistics_ref} and
-are NOT resolved. Similarly, \code{event_ref}, \code{competition_ref}, and
-\code{team_ref} are returned as character columns.
-
-Columns as documented in the shared \link{espn_mbb_player_eventlog_schema} table.
-
-A single tibble. When resolved, each row corresponds to one
-statistical entry in the core-v2 statistics log, with \code{event_ref} and
-\code{statistics_ref} character columns pointing to resolvable ESPN endpoints.
+A \code{hoopR_data} tibble with one row per event appearance.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      event_ref \tab character \tab Reference link to the originating event. \cr
-      statistics_ref \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  event_ref \tab character \tab Reference link to the originating event. \cr
+  competition_ref \tab character \tab  \cr
+  team_ref \tab character \tab  \cr
+  statistics_ref \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+Per-event \code{statistics.$ref} URLs from the ESPN core-v2 API are returned as
+the character column \code{statistics_ref} and are NOT resolved. Similarly,
+\code{event_ref}, \code{competition_ref}, and \code{team_ref} are returned as character columns.
+
+A \code{hoopR_data} tibble with one row per statistics entry.
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  event_ref \tab character \tab Reference link to the originating event. \cr
+  statistics_ref \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+When resolved, each row corresponds to one statistical entry in the core-v2
+statistics log, with \code{event_ref} and \code{statistics_ref} character columns pointing
+to resolvable ESPN endpoints.
 }
 \description{
 \strong{Get ESPN Women's College Basketball Athlete Overview}

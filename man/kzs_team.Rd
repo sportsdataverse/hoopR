@@ -11,39 +11,10 @@ kzs_team(team_id)
 match-team id nor the club id.}
 }
 \value{
-A \code{hoopR_data} tibble: Team profile: club, home hall, colours and the competitions the team entered. An empty valid
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_team}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Team-application id: the team's registration (entry) for the season; play-by-play \code{teamApplicationId} is the same key space. \cr
-   team_application_id \tab integer \tab Team-application id: the team's registration (entry) for the season; play-by-play \code{teamApplicationId} is the same key space. \cr
-   club_id \tab integer \tab Club id: the club across seasons and categories (Ilirija = 16). No captured route is keyed by it. \cr
-   club_member \tab logical \tab True when the club is a KZS member (false on nested copies that omit it). \cr
-   category \tab character \tab Age category: ABSOLUTE (senior) or U8-U23 / ANY (code table in kzs-returns.md). \cr
-   rank \tab character \tab Tier: FIRST-FOURTH or TOURNAMENT (code table). \cr
-   gender \tab character \tab MALE or FEMALE. \cr
-   sport_hall_id \tab integer \tab Sport hall (venue) id. \verb{/sportHalls/\{id\}} is in the site bundle, not captured. \cr
-   sport_hall_name \tab character \tab Name of the venue (sports hall) where the game is played or the team is based. \cr
-   sport_hall_address_id \tab integer \tab Id of the venue's address record. \cr
-   sport_hall_address_post_office_id \tab integer \tab Post-office id (FMS internal). \cr
-   sport_hall_address_post_office_zip_code \tab character \tab Postal code (REDACTED under a club \code{addresses[]} row; kept for venues). \cr
-   sport_hall_address_post_office_name \tab character \tab Post-office town. \cr
-   sport_hall_address_post_office_municipality \tab character \tab Municipality, upper case. \cr
-   sport_hall_address_post_office_country \tab character \tab Country, ISO 3166-1 alpha-2 (SI). \cr
-   sport_hall_address_street \tab character \tab Venue street (a public sports hall). \cr
-   sport_hall_address_house_number \tab character \tab Venue house number, a string ('6 A'). \cr
-   name \tab character \tab Team name for the season (sponsor name included). \cr
-   code \tab character \tab Team 3-letter code. \cr
-   season_id \tab integer \tab Season id: OPAQUE, not a year (1 = 2000/2001 ... 27 = 2026/2027, 31 = 1991/1992). The season \code{name} is 'START/END'; the sdv season is the END year (the second half of \code{name}). \cr
-   season_name \tab character \tab Season, 'START/END' (2025/2026); sdv season = the END year. \cr
-   season_is_active \tab logical \tab True for the current season only (2026/2027 on 2026-10-12). \cr
-   season_active \tab logical \tab Same as \code{isActive}. \cr
-   short_name \tab character \tab Team short name ('' when none). \cr
-   home_jersey_color \tab character \tab Home jersey colour, hex '#RRGGBB'. \cr
-   guest_jersey_color \tab character \tab Away jersey colour, hex. \cr
-   logo_uuid \tab character \tab Logo: image file id, served at \verb{https://api.kzs.si/public/images/\{uuid\}}. \cr
-   season \tab integer \tab Season of the registration. \cr
-   competitions \tab character \tab Competitions of the team this season (id, name, rule, phases). \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_team")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team profile: club, home hall, colours and the competitions the team entered.

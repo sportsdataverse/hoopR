@@ -16,19 +16,10 @@ competitions.}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per \code{season_id}; \code{is_default_season} marks
-the season the site serves by default:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   season_id \tab character \tab Season UUID; pass it as season_id to any season-scoped wrapper. \cr
-   competition_id \tab character \tab Competition UUID; pass it as competition_id to pick one of several seasons of an END year. \cr
-   competition_name \tab character \tab Competition name in the site's language; the same name can appear for several years. \cr
-   season_name \tab character \tab Season name in the site's language, e.g. Betclic ELITE 2025. \cr
-   abbreviation_local \tab character \tab Local abbreviation of the season; null in every body seen. \cr
-   year \tab integer \tab The site's own year of the season: the START year on LNB (site 12), the calendar year elsewhere. \cr
-   season_end_year \tab integer \tab Season END year (the sdv key): the site's year + 1 on LNB (site 12), the calendar year on the other registered sites; null when the site is unregistered, lists no seasons or the body has no season list. \cr
-   is_default_season \tab logical \tab True for the season the body is about (the site's default when none was asked). \cr
-}
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Every season (competition and year) a site lists, with the sdv END year of each.}

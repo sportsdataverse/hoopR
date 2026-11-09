@@ -7,16 +7,10 @@
 bref_injuries()
 }
 \value{
-A \code{hoopR_data} tibble with one row per injured player:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      player \tab character \tab Player name. \cr
-      team_name \tab character \tab Team name. \cr
-      date_update \tab character \tab Date the status was last updated. \cr
-      note \tab character \tab Injury status and description. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per injured player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "bref_injuries")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the current NBA injury report from

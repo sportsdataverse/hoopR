@@ -11,33 +11,7 @@
 #'   the id in the player's BREF URL (`/players/j/jokicni01.html`).
 #' @param season (*integer* required): Season, in 4-digit ending-year format
 #'   (e.g. `2024`). Defaults to `most_recent_nba_season()`.
-#' @return A `hoopR_data` tibble with one row per regular-season game (column
-#'   names are Basketball-Reference `data-stat` keys):
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       ranker \tab integer \tab Season game number. \cr
-#'       player_game_num_career \tab integer \tab Career game number. \cr
-#'       date \tab character \tab Game date. \cr
-#'       team \tab character \tab Team abbreviation. \cr
-#'       location \tab character \tab \code{@} for away games, empty for home. \cr
-#'       opp \tab character \tab Opponent abbreviation. \cr
-#'       result \tab character \tab Result with final score (e.g. \code{W (+12)}). \cr
-#'       is_starter \tab integer \tab 1 if the player started. \cr
-#'       mp \tab character \tab Minutes played. \cr
-#'       pts \tab numeric \tab Points. \cr
-#'       trb \tab numeric \tab Total rebounds. \cr
-#'       ast \tab numeric \tab Assists. \cr
-#'       game_score \tab numeric \tab Hollinger game score. \cr
-#'       plus_minus \tab numeric \tab Plus/minus. \cr
-#'       player_id \tab character \tab Player id (echoes the \code{player_id} argument). \cr
-#'       season \tab integer \tab Season (echoes the \code{season} argument). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'   Full shooting / box columns (`fg`, `fga`, `fg_pct`, `fg3`, `ft`, `orb`,
-#'   `drb`, `stl`, `blk`, `tov`, `pf`, ...) are also returned.
-#'
+#' @eval .returns_rd("bref_player_game_log", inline = FALSE, unit = "regular-season game")
 #' @keywords Basketball-Reference
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble rename any_of

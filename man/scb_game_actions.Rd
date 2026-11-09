@@ -15,31 +15,10 @@ api.basketball-bundesliga.de) or \code{dbbl} (women, Toyota Damen-Basketball-Bun
 api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (league, game_id).}
 }
 \value{
-A \code{hoopR_data} tibble: Play-by-play of a finished game with shot x/y (BBL 2008-09 on, DBBL 2024-25 on). An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{scb_game_actions}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   game_id \tab character \tab Game id, a string; unique within a league only (BBL and DBBL overlap), and not chronological. \cr
-   action_id \tab integer \tab Action id, an integer unique across games of a league. \cr
-   order_id \tab integer \tab Chronological sequence of the action within the game. \cr
-   action_identifier \tab character \tab Provider action key \verb{<n>:<seq>} (opaque; the first part is not the period). \cr
-   period \tab integer \tab Period: 1-4 quarters, 5+ overtimes. \cr
-   game_time \tab character \tab Game clock as HH:MM:SS: in an action, the time LEFT in the period (00:10:00 at the start of a 10-minute quarter); in a game header, 00:00:00 in every sample. \cr
-   seconds_left \tab integer \tab Seconds left in the period at the action: \code{game_time} as seconds. \cr
-   real_time \tab character \tab Wall-clock time of the action, ISO 8601 UTC. Pre-2011 games carry a placeholder: local midnight of the game day (23:00 UTC the day before) on every row. \cr
-   type \tab character \tab Action type; see the action-type table. Records and videos use their own \code{type} (see those routes). \cr
-   qualifiers \tab character \tab Action qualifiers (shot kind, rebound side, foul kind, turnover kind); see the qualifier table. \cr
-   is_successful \tab logical \tab Made / successful (shots, free throws); for other types see the action-type table. \cr
-   season_team_id \tab character \tab Season-team id; equal to the club \code{teamId} in every sample (BBL 2005-2026, DBBL 2024-2026). \cr
-   side \tab character \tab \code{home} or \code{guest} (the away side), for the team the row belongs to. \cr
-   season_player_id \tab character \tab Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score \code{seasonPlayer.id}, action \code{seasonPlayerId} and \verb{/season-players/\{seasonPlayerId\}}. Null on team and period rows. \cr
-   assisting_season_player_id \tab character \tab Season-player id of the assisting player; only on assisted made shots. Joins to box-score \code{seasonPlayer.id} and action \code{seasonPlayerId}. \cr
-   shot_x \tab integer \tab Shot x on the site's half-court chart (0-280 across, 140 through the rim); null without a location. Scale and orientation unverified. \cr
-   shot_y \tab integer \tab Shot y along the court from behind the baseline (rim near 45, arc top near 147); null without a location. Scale and orientation unverified. \cr
-   home_team_points \tab integer \tab Home score after this action; only on scoring actions. \cr
-   guest_team_points \tab integer \tab Guest score after this action; only on scoring actions. \cr
-}
+A \code{hoopR_data} tibble with one row per play-by-play event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_game_actions")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play of a finished game with shot x/y (BBL 2008-09 on, DBBL 2024-25 on).

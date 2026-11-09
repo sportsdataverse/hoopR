@@ -7,22 +7,7 @@
 #' counts and average age for a season. No API key is required.
 #' @param season (*integer* required): Season, in 4-digit ending-year format
 #'   (e.g. `2024`). Defaults to `most_recent_nba_season()`.
-#' @return A `hoopR_data` tibble with one row per team (columns reflect Spotrac's
-#'   table; dollar figures are returned as numeric):
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       rank \tab integer \tab Spotrac cap rank. \cr
-#'       team \tab character \tab Team abbreviation. \cr
-#'       record \tab character \tab Win-loss record. \cr
-#'       players_active \tab integer \tab Number of active players. \cr
-#'       avg_age_team \tab numeric \tab Average roster age. \cr
-#'       total_cap_allocations \tab numeric \tab Total cap allocations (USD). \cr
-#'       cap_space_all \tab numeric \tab Cap space / over-the-cap amount (USD). \cr
-#'       season \tab integer \tab Season (echoes the \code{season} argument). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("spotrac_team_cap", inline = FALSE, unit = "team")
 #' @keywords Salaries
 #' @importFrom rvest html_element html_table
 #' @importFrom janitor clean_names

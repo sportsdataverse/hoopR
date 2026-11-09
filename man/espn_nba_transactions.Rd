@@ -18,20 +18,20 @@ forward compatibility. Proxy configuration should use
 \code{options(hoopR.proxy = ...)}.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per transaction:
+A \code{hoopR_data} tibble with one row per transaction.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      transaction_id \tab character \tab  \cr
-      date \tab character \tab Date in YYYY-MM-DD format. \cr
-      type \tab character \tab Record type / category. \cr
-      description \tab character \tab Long-form description text. \cr
-      team_id \tab character \tab Unique team identifier. \cr
-      athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
-      athlete_name \tab character \tab Athlete display name (ESPN). \cr
-      from_team_id \tab character \tab  \cr
-      to_team_id \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  transaction_id \tab character \tab  \cr
+  date \tab character \tab Date in YYYY-MM-DD format. \cr
+  type \tab character \tab Record type / category. \cr
+  description \tab character \tab Long-form description text. \cr
+  team_id \tab character \tab Unique team identifier. \cr
+  athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
+  athlete_name \tab character \tab Athlete display name (ESPN). \cr
+  from_team_id \tab character \tab  \cr
+  to_team_id \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

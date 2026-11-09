@@ -24,26 +24,10 @@ phase.}
 categories.}
 }
 \value{
-A \code{hoopR_data} tibble: Qualified-player per-game leaders in nine categories (one row per player and category). An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{sportpress_player_rankings}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id (key space: sportpress competitions): ONE season of the league (24 = 2025-26, 25 = 2026-27). Not the season number. The key of the standings, ranking, slider and box routes. \cr
-   category \tab character \tab Ranking category: efficiency, points, total_rebound, block, assist, steal, two_point_percent, three_point_percent or free_throw_percent. \cr
-   rank \tab integer \tab Place in the category list, 1 = the leader (the list is sorted best first). \cr
-   roster_id \tab integer \tab Roster id (key space: sportpress roster entries): one player on one competition team in one season, so a player has a new roster_id for every team and season. player_id is the person. \cr
-   player_id \tab integer \tab Player id (key space: sportpress persons): stable across seasons and teams, distinct from roster_id. Not a Genius or FIBA person id. \cr
-   first_name \tab character \tab Given name of the player as entered in the CMS. \cr
-   last_name \tab character \tab Family name of the player as entered in the CMS. \cr
-   nationality_code \tab character \tab Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining. \cr
-   birth_date \tab Date \tab Date of birth as shown on the public player page; null when unknown. \cr
-   competition_team_id \tab integer \tab Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. \cr
-   team \tab character \tab Team display name including the sponsor; varies with language and playoff suffixes: never join on it. \cr
-   team_short_name \tab character \tab Three-letter club code (ANT, MON, ...), stable across seasons in the samples. \cr
-   value \tab double \tab The player's per-game mean (or percentage 0-100) in the row's category. \cr
-   throw_made \tab double \tab Field goals made per game; filled in the three percentage categories only. \cr
-   throw_attempted \tab double \tab Field goals attempted per game; filled in the three percentage categories only. \cr
-}
+A \code{hoopR_data} tibble with one row per player and category.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_player_rankings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Qualified-player per-game leaders in nine categories (one row per player and category).

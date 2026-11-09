@@ -11,17 +11,10 @@ sportpress_competition_staff(competition_id)
 (\code{\link[=sportpress_phases]{sportpress_phases()}} maps a season to it).}
 }
 \value{
-A \code{hoopR_data} tibble: Coaching staff (head coach, assistants) of every competition team of one competition. An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{sportpress_competition_staff}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id of the team the staff member works for. \cr
-   competition_team_id \tab integer \tab Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. \cr
-   staff_id \tab integer \tab Staff member id (key space: sportpress staff). \cr
-   name \tab character \tab Staff member name 'First Last' (free text). \cr
-   title_id \tab integer \tab Staff title id: 1 = Head coach; Assistant coach has its own id. \cr
-   title_name \tab character \tab Staff title in English: Head coach or Assistant coach. \cr
-}
+A \code{hoopR_data} tibble with one row per staff member.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_competition_staff")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Coaching staff (head coach, assistants) of every competition team of one competition.

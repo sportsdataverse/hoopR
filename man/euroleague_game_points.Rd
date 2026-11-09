@@ -14,30 +14,10 @@ the \code{game_code} column of \code{\link[=euroleague_games]{euroleague_games()
 \code{E2025} (EuroLeague 2025-26), \code{U2025} (EuroCup).}
 }
 \value{
-A \code{hoopR_data} tibble with one row per shot:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      num_anot \tab integer \tab Sequence number of the scoring annotation within the game. \cr
-      team \tab character \tab EuroLeague club code of the team (Utf8 join key; space padding stripped). \cr
-      id_player \tab character \tab EuroLeague player code (Utf8 join key; space padding stripped). \cr
-      player \tab character \tab Player display name (SURNAME, GIVEN NAME). \cr
-      id_action \tab character \tab Shot type code: 2FGM / 2FGA / 3FGM / 3FGA (made / attempted field goal) or FTM (made free throw). \cr
-      action \tab character \tab Shot type label (Two Pointer, Three Pointer, Free Throw In, ...). \cr
-      points \tab integer \tab Points the shot is worth (1, 2 or 3). \cr
-      coord_x \tab integer \tab Shot x in integer centimeters from the hoop, signed left/right of it (-683 to 696 cm measured): both teams are mapped onto one basket; 3-point zone H is x < 0 and I is x > 0; which sideline is positive (from the shooter's view or from the scorer's table) is UNVERIFIED from the data alone. Made free throws (FTM) carry the -1 sentinel. \cr
-      coord_y \tab integer \tab Shot y in integer centimeters from the hoop, growing away from the baseline toward the court (-6 to 865 cm measured; 3FG rows at 414-865): both teams are mapped onto one basket, negative y is behind the hoop. Made free throws (FTM) carry the -1 sentinel. \cr
-      zone \tab character \tab Court zone letter: A rim, B/C close left/right, D/E mid, F/G long two, H/I three; blank on free throws. \cr
-      fastbreak \tab character \tab Whether the shot came on a fast break (0 / 1 as a string). \cr
-      second_chance \tab character \tab Whether the shot was a second-chance attempt (0 / 1 as a string). \cr
-      points_off_turnover \tab character \tab Whether the shot came off a turnover (0 / 1 as a string). \cr
-      minute \tab integer \tab Game minute of the event (1-based; 41+ in overtime). \cr
-      console \tab character \tab Game clock at the event (mm:ss remaining in the period). \cr
-      points_a \tab integer \tab Running score of team A (= the home side, measured on one game) after the event. \cr
-      points_b \tab integer \tab Running score of team B (= the away side, measured on one game) after the event. \cr
-      utc \tab character \tab UTC timestamp of the event (yyyymmddHHMMSS). \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per shot.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "euroleague_game_points")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the shot chart of one game from the live API: one row per made / missed

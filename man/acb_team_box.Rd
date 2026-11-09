@@ -13,40 +13,10 @@ acb_team_box(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_team_box}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
-   edition_id \tab integer \tab Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, \code{season}. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   team_side \tab character \tab Side of the game the team played: home or away (the feed lists the home team first). \cr
-   team_id \tab integer \tab Season-team entry id: one club in one competition edition, NEW every season (Barca = 4467 in Liga 2026-27). Not the club: use club_id to follow a club across seasons. \cr
-   club_id \tab integer \tab Stable ACB club id (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the same across seasons and sponsor names, and the club_id request argument. \cr
-   team \tab character \tab Team name as registered for that season (sponsor names change; the club id does not). \cr
-   team_abbr \tab character \tab Three-letter team abbreviation (BAR, RMB, VBC). \cr
-   quarter \tab integer \tab Period: 0 = the whole game, 1-4 the quarters, 5+ overtimes (games before about 2010 carry only 0). \cr
-   scope \tab character \tab total = everything the team did (its players plus the team's own events); team = the part credited to the team itself rather than a player (team rebounds, team turnovers). \cr
-   points \tab integer \tab Points, team total (players + team) \cr
-   free_throws_made \tab integer \tab Free throws made, team total (players + team) \cr
-   free_throws_attempted \tab integer \tab Free throws attempted, team total (players + team) \cr
-   two_pointers_made \tab integer \tab Two-point field goals made, team total (players + team) \cr
-   two_pointers_attempted \tab integer \tab Two-point field goals attempted, team total (players + team) \cr
-   three_pointers_made \tab integer \tab Three-point field goals made, team total (players + team) \cr
-   three_pointers_attempted \tab integer \tab Three-point field goals attempted, team total (players + team) \cr
-   assists \tab integer \tab Assists, team total (players + team) \cr
-   off_rebounds \tab integer \tab Offensive rebounds, team total (players + team) \cr
-   def_rebounds \tab integer \tab Defensive rebounds, team total (players + team) \cr
-   total_rebounds \tab integer \tab Total rebounds, team total (players + team) \cr
-   steals \tab integer \tab Steals, team total (players + team) \cr
-   turnovers \tab integer \tab Turnovers, team total (players + team) \cr
-   blocks \tab integer \tab Shots blocked (by this player or team), team total (players + team) \cr
-   received_blocks \tab integer \tab Own shots blocked by an opponent, team total (players + team) \cr
-   dunks \tab integer \tab Dunks, team total (players + team) \cr
-   personal_fouls \tab integer \tab Fouls committed, team total (players + team) \cr
-   fouls_drawn \tab integer \tab Fouls received, team total (players + team) \cr
-   plus_minus \tab integer \tab Point differential while on court (+/-), team total (players + team) \cr
-   rating \tab integer \tab Valoracion: ACB's efficiency rating (PIR) = points + rebounds + assists + steals + blocks + fouls received - missed field goals - missed free throws - turnovers - shots blocked by an opponent - fouls committed, team total (players + team) \cr
-}
+A \code{hoopR_data} tibble with one row per team and period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_team_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team totals of a game per period: everything the team did, and the part credited to the team itself.

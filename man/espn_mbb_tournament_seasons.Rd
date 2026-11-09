@@ -16,26 +16,26 @@ espn_nba_tournament_seasons(tournament_id, ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per season.
+A \code{hoopR_data} tibble with one row per season.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League slug. \cr
-      tournament_id \tab character \tab ESPN tournament identifier. \cr
-      season \tab integer \tab Season year. \cr
-      ref \tab character \tab Full \verb{$ref} URL for that season. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  tournament_id \tab character \tab ESPN tournament identifier. \cr
+  season \tab integer \tab Season year. \cr
+  ref \tab character \tab Full \code{$ref} URL for that season. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per season.
+A \code{hoopR_data} tibble with one row per season.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League slug (\code{"nba"}). \cr
-      tournament_id \tab character \tab ESPN tournament identifier. \cr
-      season \tab integer \tab Season year. \cr
-      ref \tab character \tab Full \verb{$ref} URL for that season. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug (\code{"nba"}). \cr
+  tournament_id \tab character \tab ESPN tournament identifier. \cr
+  season \tab integer \tab Season year. \cr
+  ref \tab character \tab Full \code{$ref} URL for that season. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

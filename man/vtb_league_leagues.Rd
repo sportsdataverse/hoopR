@@ -7,17 +7,10 @@
 vtb_league_leagues()
 }
 \value{
-A \code{hoopR_data} tibble: The leagues served by the API: vtb, vtbyouth, wbc. The columns are always these, in this
-order (sportsdataverse-py \code{vtb_league_leagues}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for
-this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league_id \tab integer \tab v2 league id (1 vtb, 2 vtbyouth, 3 wbc). Not an Infobasket id. \cr
-   league \tab character \tab League slug used in the paths: 'vtb' (VTB United League), 'vtbyouth' (youth league), 'wbc' (WINLINE Basket Cup). \cr
-   league_name_en \tab character \tab The league name in English. \cr
-   league_name_ru \tab character \tab The league name in Russian. \cr
-   league_abbrev_en \tab character \tab The league abbreviation in English. \cr
-   league_abbrev_ru \tab character \tab The league abbreviation in Russian. \cr
-}
+A \code{hoopR_data} tibble with one row per competition.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_league_leagues")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The leagues served by the API: vtb, vtbyouth, wbc.

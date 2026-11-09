@@ -16,32 +16,10 @@ belong to; a context whose \code{Year} differs raises \code{hoopR_asset_fetch}. 
 (default) = no check (the key alone selects the game).}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   schedule_key \tab integer \tab B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The \{schedule_key\} every game wrapper takes and the schedule page's list-item id. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. \cr
-   feed \tab character \tab Source feed of the row: v2 (v2_genius_contexts, B1/B2 from 2020-21) or v1 (v1_contexts: B3, B1/B2 2018-2020, and the 2016-17 / 2017-18 game-page embed). The feeds differ in id types, dates and some codes. \cr
-   period \tab integer \tab Period number: 1-4 regulation; overtime numbering is unverified (no overtime sample). \cr
-   event_no \tab integer \tab Event sequence number, ascending in game order. v2 counts in steps of 1000 (inserted corrections may fall in between); v1 counts 1, 2, 3... \cr
-   team_side \tab character \tab Side of the acting team from HomeAway (1 home, 2 away); null on game-level rows and official timeouts. \cr
-   team_id \tab character \tab B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. \cr
-   player_id \tab character \tab Primary actor PlayerID as text (key space: B.LEAGUE persons). On a v1 substitution it is the player going out. Null on team rows and game-level rows. \cr
-   player_no \tab character \tab Shirt number as text, so '00' and '0' stay distinct; null on team and game-level rows. \cr
-   player_name_j \tab character \tab Player name in Japanese (katakana for foreign players); null on team and game-level rows. \cr
-   shot_type \tab character \tab 3pt or 2pt, from ActionCD1 (1-2 three-point, 3-6 two-point). \cr
-   in_paint \tab logical \tab True for a two-point shot inside the paint, false outside; null for threes and on the B3 feed, whose 2PT codes do not split by paint. \cr
-   made \tab logical \tab True when the shot was made (ActionCD1 odd for threes and 3 / 4), false when missed. \cr
-   qualifier2 \tab character \tab English slug for the shot's ActionCD2 (jump_shot, layup, dunk); null when unknown. \cr
-   qualifier3 \tab character \tab English slug for the shot's ActionCD3 (fast_break, points_off_turnover, second_chance, ...); null when none. \cr
-   x \tab double \tab Event x: percent (0-100) of the court LENGTH from the 'left' baseline (baskets near 5 and 95). Metres (x / 100 x 28) are an inference. 2022-23 onward on v2 only. \cr
-   y \tab double \tab Event y: percent (0-100) of the court WIDTH (baskets at 50). Which sideline is y = 0 is unverified; metres (y / 100 x 15) are an inference. 2022-23 onward on v2 only. \cr
-   area_code \tab integer \tab Shot-zone code 1-13 read from the site's shot-chart SVG: 1 restricted area, 2 rest of the paint, 3 / 7 baseline mid-range, 4 / 6 wing mid-range, 5 top-of-the-key mid-range, 8 / 12 corner 3, 9 / 11 wing 3, 10 top 3, 13 deep band. Of each pair the first is the side far along the baseline. Also set on turnover and foul rows; 2022-23 onward. \cr
-   area \tab character \tab English zone slug for area_code (restricted_area, paint, baseline_mid_range, wing_mid_range, top_of_key_mid_range, corner_3, wing_3, top_3, deep_3); mirrored codes share a slug. \cr
-   side \tab character \tab Basket the play is charted at: 'left' (x near 0) or 'right' (x near 100); flips at half-time. Present from 2025-26 only; earlier seasons leave it null and the end must be inferred from x. \cr
-   rest_time \tab character \tab Game clock REMAINING in the period as the feed's 'mm:ss' text (counts down from 10:00). \cr
-   clock_seconds \tab integer \tab Game clock remaining in the period in whole seconds (8:50 = 530), derived from rest_time. \cr
-   score \tab character \tab Running score 'home-away' after the event (e.g. '2-4'); null on player-in rows and v1 substitutions. \cr
-}
+A \code{hoopR_data} tibble with one row per field-goal attempt.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "bleague_shots")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Field-goal attempts of one B.LEAGUE game with their court position (play-by-play

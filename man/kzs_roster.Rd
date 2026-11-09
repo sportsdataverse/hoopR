@@ -14,28 +14,10 @@ match-team id nor the club id.}
 season, e.g. 579 (men's first league 2025/26).}
 }
 \value{
-A \code{hoopR_data} tibble: A team's roster in one competition (the rows carry no team or competition id). An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_roster}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Team id: one club team in one season (joins kzs_teams); not the match-team id and not the club id. \cr
-   competition_id \tab integer \tab Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). \cr
-   roster_entry_id \tab integer \tab Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. \cr
-   player_id \tab integer \tab Player id (KZS player registry). Joins to \verb{/players/\{playerId\}}, box-score and play-by-play \code{playerId}. \cr
-   identification_number \tab integer \tab Player's KZS registration (licence) number; a different key space from the player id, used by no captured route. \cr
-   person_id \tab integer \tab Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. \cr
-   first_name \tab character \tab The player's given name. \cr
-   last_name \tab character \tab The player's family name. \cr
-   year_of_birth \tab integer \tab Year of birth (players: public bio). \cr
-   nationality_id \tab integer \tab Country id (FMS internal; use the ISO codes). \cr
-   nationality_alpha2_code \tab character \tab ISO 3166-1 alpha-2 country code. \cr
-   nationality_alpha3_code \tab character \tab ISO 3166-1 alpha-3 country code. \cr
-   nationality_name \tab character \tab Country name in Slovenian (e.g. 'Zdruzene drzave' = United States); use \code{engName} or the ISO codes. \cr
-   nationality_eng_name \tab character \tab Country name in English. \cr
-   homegrown \tab logical \tab True when the player counts as homegrown (domaci igralec) for roster limits. \cr
-   photo_uuid \tab character \tab Player photo: image file id, served at \verb{https://api.kzs.si/public/images/\{uuid\}}. \cr
-   positions \tab character \tab Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. \cr
-   jersey_number \tab character \tab Shirt number worn, sent as a string ('1', '55'). \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_roster")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A team's roster in one competition (the rows carry no team or competition id).

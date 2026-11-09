@@ -38,49 +38,7 @@ NULL
 #'   never inferred from the payload** - callers pass the id from the file path,
 #'   so a payload missing its own `id` still produces a joinable row.
 #'
-#' @return A one-row tibble carrying the full 35-column set (absent fields are
-#'   `NA`), so callers see a stable schema regardless of payload completeness:
-#'
-#'   \if{html}{\tabular{ll}{
-#'      col_name \tab types \cr
-#'      athlete_id \tab integer \cr
-#'      guid \tab character \cr
-#'      uid \tab character \cr
-#'      slug \tab character \cr
-#'      type \tab character \cr
-#'      first_name \tab character \cr
-#'      last_name \tab character \cr
-#'      full_name \tab character \cr
-#'      display_name \tab character \cr
-#'      short_name \tab character \cr
-#'      height \tab numeric \cr
-#'      display_height \tab character \cr
-#'      weight \tab numeric \cr
-#'      display_weight \tab character \cr
-#'      age \tab integer \cr
-#'      date_of_birth \tab character \cr
-#'      birth_city \tab character \cr
-#'      birth_state \tab character \cr
-#'      birth_country \tab character \cr
-#'      jersey \tab character \cr
-#'      position_id \tab integer \cr
-#'      position_name \tab character \cr
-#'      position_abbreviation \tab character \cr
-#'      position_display_name \tab character \cr
-#'      college_id \tab integer \cr
-#'      current_team_id \tab integer \cr
-#'      headshot_href \tab character \cr
-#'      experience_years \tab integer \cr
-#'      status_id \tab integer \cr
-#'      status_name \tab character \cr
-#'      status_type \tab character \cr
-#'      draft_year \tab integer \cr
-#'      draft_round \tab integer \cr
-#'      draft_selection \tab integer \cr
-#'      active \tab logical \cr
-#'   }}
-#'   \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("espn_basketball_player_core", inline = FALSE, unit = "athlete")
 #' @examples
 #' \donttest{
 #'   # Split across lines to keep the Rd under the line-width limit; the

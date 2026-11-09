@@ -15,40 +15,40 @@ espn_nba_futures(season = most_recent_nba_season(), ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A long-format tibble.
+A \code{hoopR_data} tibble with one row per futures market entry.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab integer \tab Season year. \cr
-      league \tab character \tab League slug. \cr
-      market_id \tab character \tab ESPN futures-market identifier. \cr
-      market_name \tab character \tab Internal market name. \cr
-      market_type \tab character \tab Market type code. \cr
-      market_display \tab character \tab Human-readable market name. \cr
-      provider_id \tab character \tab Sportsbook provider identifier. \cr
-      provider_name \tab character \tab Sportsbook provider name. \cr
-      team_id \tab character \tab ESPN team id. \cr
-      odds_value \tab character \tab American odds for the team. \cr
-      team_ref \tab character \tab \verb{$ref} to the per-season team resource. \cr
-   }}
+  col_name \tab types \tab description \cr
+  season \tab integer \tab Season year. \cr
+  league \tab character \tab League slug. \cr
+  market_id \tab character \tab ESPN futures-market identifier. \cr
+  market_name \tab character \tab Internal market name. \cr
+  market_type \tab character \tab Market type code. \cr
+  market_display \tab character \tab Human-readable market name. \cr
+  provider_id \tab character \tab Sportsbook provider identifier. \cr
+  provider_name \tab character \tab Sportsbook provider name. \cr
+  team_id \tab character \tab ESPN team id. \cr
+  odds_value \tab character \tab American odds for the team. \cr
+  team_ref \tab character \tab \code{$ref} to the per-season team resource. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A long-format tibble.
+A \code{hoopR_data} tibble with one row per futures market entry.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab integer \tab Season year. \cr
-      league \tab character \tab League slug (\code{"nba"}). \cr
-      market_id \tab character \tab ESPN futures-market identifier. \cr
-      market_name \tab character \tab Internal market name (e.g. "NBA - Winner"). \cr
-      market_type \tab character \tab Market type code (\code{winLeague}, \code{winConference}, \code{winDivision}, ...). \cr
-      market_display \tab character \tab Human-readable name (e.g. "NBA Championship Winner"). \cr
-      provider_id \tab character \tab Sportsbook provider identifier. \cr
-      provider_name \tab character \tab Sportsbook provider name (e.g. "ESPN BET"). \cr
-      team_id \tab character \tab ESPN team id (parsed from \code{team_ref}). \cr
-      odds_value \tab character \tab American odds for the team (e.g. "-250", "+800"). \cr
-      team_ref \tab character \tab \verb{$ref} to the per-season team resource. \cr
-   }}
+  col_name \tab types \tab description \cr
+  season \tab integer \tab Season year. \cr
+  league \tab character \tab League slug (\code{"nba"}). \cr
+  market_id \tab character \tab ESPN futures-market identifier. \cr
+  market_name \tab character \tab Internal market name (e.g. "NBA - Winner"). \cr
+  market_type \tab character \tab Market type code (\code{winLeague}, \code{winConference}, \code{winDivision}, ...). \cr
+  market_display \tab character \tab Human-readable name (e.g. "NBA Championship Winner"). \cr
+  provider_id \tab character \tab Sportsbook provider identifier. \cr
+  provider_name \tab character \tab Sportsbook provider name (e.g. "ESPN BET"). \cr
+  team_id \tab character \tab ESPN team id (parsed from \code{team_ref}). \cr
+  odds_value \tab character \tab American odds for the team (e.g. "-250", "+800"). \cr
+  team_ref \tab character \tab \code{$ref} to the per-season team resource. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

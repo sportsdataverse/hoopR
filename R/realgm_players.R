@@ -12,24 +12,7 @@
 #' challenge, so the `realgm_*()` functions drive headless Chrome via the
 #' optional \pkg{chromote} package (install it and Google Chrome). A plain HTTP
 #' client receives an HTTP 403 challenge page.
-#' @return A `hoopR_data` tibble with one row per active player:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       number \tab integer \tab Row number. \cr
-#'       player \tab character \tab Player name. \cr
-#'       pos \tab character \tab Position. \cr
-#'       ht \tab character \tab Listed height. \cr
-#'       wt \tab integer \tab Listed weight (lbs). \cr
-#'       age \tab numeric \tab Age. \cr
-#'       current_team \tab character \tab Current NBA team. \cr
-#'       yos \tab integer \tab Years of service. \cr
-#'       pre_draft_team \tab character \tab Pre-draft team / school. \cr
-#'       draft_status \tab character \tab Draft pick / undrafted status. \cr
-#'       nationality \tab character \tab Player nationality. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("realgm_players", inline = FALSE, unit = "active player")
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names
@@ -74,24 +57,7 @@ realgm_players <- function() {
 #' international rosters -- a view no first-party NBA/ESPN endpoint provides.
 #'
 #' **Requires a headless browser** (see [realgm_players()]).
-#' @return A `hoopR_data` tibble with one row per player:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       player \tab character \tab Player name. \cr
-#'       pos \tab character \tab Position. \cr
-#'       ht \tab character \tab Listed height. \cr
-#'       wt \tab integer \tab Listed weight (lbs). \cr
-#'       nba_status \tab character \tab NBA contract / rights status. \cr
-#'       team_s \tab character \tab Current overseas team(s) and NBA affiliation. \cr
-#'       gp \tab integer \tab Games played. \cr
-#'       mpg \tab numeric \tab Minutes per game. \cr
-#'       ppg \tab numeric \tab Points per game. \cr
-#'       rpg \tab numeric \tab Rebounds per game. \cr
-#'       apg \tab numeric \tab Assists per game. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("realgm_players_abroad", inline = FALSE, unit = "player")
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names
@@ -138,26 +104,7 @@ realgm_players_abroad <- function() {
 #' -- the player's listed agent.
 #'
 #' **Requires a headless browser** (see [realgm_players()]).
-#' @return A `hoopR_data` tibble with one row per future free agent:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       player \tab character \tab Player name. \cr
-#'       pos \tab character \tab Position. \cr
-#'       team \tab character \tab Current team abbreviation. \cr
-#'       season \tab character \tab Free-agency season (e.g. \code{2026-2027}). \cr
-#'       age \tab integer \tab Age. \cr
-#'       yos \tab integer \tab Years of service. \cr
-#'       veteran_fa_status \tab character \tab Bird / Non-Bird / veteran FA status. \cr
-#'       gp \tab integer \tab Games played. \cr
-#'       pts \tab numeric \tab Points per game. \cr
-#'       reb \tab numeric \tab Rebounds per game. \cr
-#'       ast \tab numeric \tab Assists per game. \cr
-#'       per \tab numeric \tab Player Efficiency Rating. \cr
-#'       agent \tab character \tab Listed player agent. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("realgm_future_free_agents", inline = FALSE, unit = "future free agent")
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names

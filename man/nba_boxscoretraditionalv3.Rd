@@ -131,52 +131,49 @@ nba_boxscoresummaryv3(game_id = "0022200021", ...)
 \item{rotation_stat}{Rotation stat to provide details on: PLAYER_PTS, PT_DIFF, USG_PCT}
 }
 \value{
-Returns a named list of data frames:
-home_team_player_traditional, away_team_player_traditional, home_team_totals_traditional,
-away_team_totals_traditional, home_team_starters_totals, away_team_starters_totals,
-home_team_bench_totals, away_team_bench_totals
+A named list of \code{hoopR_data} tibbles: \code{home_team_player_traditional}, \code{away_team_player_traditional}, \code{home_team_totals_traditional}, \code{away_team_totals_traditional}, \code{home_team_starters_totals}, \code{away_team_starters_totals}, \code{home_team_bench_totals}, \code{away_team_bench_totals}.
 
 \strong{home_team_player_traditional}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-      first_name \tab character \tab Player's first name. \cr
-      family_name \tab character \tab Player's family / last name. \cr
-      name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
-      player_slug \tab character \tab URL-safe player identifier. \cr
-      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
-      comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
-      jersey_num \tab character \tab Jersey number worn by the player. \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      field_goals_made \tab integer \tab Field goals made (2-pt + 3-pt). \cr
-      field_goals_attempted \tab integer \tab Field goal attempts (2-pt + 3-pt). \cr
-      field_goals_percentage \tab numeric \tab Field goal percentage (0-1 decimal). \cr
-      three_pointers_made \tab integer \tab Three-point field goals made. \cr
-      three_pointers_attempted \tab integer \tab Three-point field goal attempts. \cr
-      three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1 decimal). \cr
-      free_throws_made \tab integer \tab Free throws made. \cr
-      free_throws_attempted \tab integer \tab Free throw attempts. \cr
-      free_throws_percentage \tab numeric \tab Free throw percentage (0-1 decimal). \cr
-      rebounds_offensive \tab integer \tab Offensive rebounds. \cr
-      rebounds_defensive \tab integer \tab Defensive rebounds. \cr
-      rebounds_total \tab integer \tab Total rebounds. \cr
-      assists \tab integer \tab Total assists. \cr
-      steals \tab integer \tab Total steals. \cr
-      blocks \tab integer \tab Total blocks. \cr
-      turnovers \tab integer \tab Total turnovers. \cr
-      fouls_personal \tab integer \tab Personal fouls. \cr
-      points \tab integer \tab Points scored. \cr
-      plus_minus_points \tab numeric \tab Plus/minus point differential while on court. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+  player_slug \tab character \tab URL-safe player identifier. \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  field_goals_made \tab integer \tab Field goals made (2-pt + 3-pt). \cr
+  field_goals_attempted \tab integer \tab Field goal attempts (2-pt + 3-pt). \cr
+  field_goals_percentage \tab numeric \tab Field goal percentage (0-1 decimal). \cr
+  three_pointers_made \tab integer \tab Three-point field goals made. \cr
+  three_pointers_attempted \tab integer \tab Three-point field goal attempts. \cr
+  three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1 decimal). \cr
+  free_throws_made \tab integer \tab Free throws made. \cr
+  free_throws_attempted \tab integer \tab Free throw attempts. \cr
+  free_throws_percentage \tab numeric \tab Free throw percentage (0-1 decimal). \cr
+  rebounds_offensive \tab integer \tab Offensive rebounds. \cr
+  rebounds_defensive \tab integer \tab Defensive rebounds. \cr
+  rebounds_total \tab integer \tab Total rebounds. \cr
+  assists \tab integer \tab Total assists. \cr
+  steals \tab integer \tab Total steals. \cr
+  blocks \tab integer \tab Total blocks. \cr
+  turnovers \tab integer \tab Total turnovers. \cr
+  fouls_personal \tab integer \tab Personal fouls. \cr
+  points \tab integer \tab Points scored. \cr
+  plus_minus_points \tab numeric \tab Plus/minus point differential while on court. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_player_traditional}
@@ -186,36 +183,36 @@ Same columns as the \strong{home_team_player_traditional} table above.
 \strong{home_team_totals_traditional}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      field_goals_made \tab integer \tab Field goals made (2-pt + 3-pt). \cr
-      field_goals_attempted \tab integer \tab Field goal attempts (2-pt + 3-pt). \cr
-      field_goals_percentage \tab numeric \tab Field goal percentage (0-1 decimal). \cr
-      three_pointers_made \tab integer \tab Three-point field goals made. \cr
-      three_pointers_attempted \tab integer \tab Three-point field goal attempts. \cr
-      three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1 decimal). \cr
-      free_throws_made \tab integer \tab Free throws made. \cr
-      free_throws_attempted \tab integer \tab Free throw attempts. \cr
-      free_throws_percentage \tab numeric \tab Free throw percentage (0-1 decimal). \cr
-      rebounds_offensive \tab integer \tab Offensive rebounds. \cr
-      rebounds_defensive \tab integer \tab Defensive rebounds. \cr
-      rebounds_total \tab integer \tab Total rebounds. \cr
-      assists \tab integer \tab Total assists. \cr
-      steals \tab integer \tab Total steals. \cr
-      blocks \tab integer \tab Total blocks. \cr
-      turnovers \tab integer \tab Total turnovers. \cr
-      fouls_personal \tab integer \tab Personal fouls. \cr
-      points \tab integer \tab Points scored. \cr
-      plus_minus_points \tab numeric \tab Plus/minus point differential while on court. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  field_goals_made \tab integer \tab Field goals made (2-pt + 3-pt). \cr
+  field_goals_attempted \tab integer \tab Field goal attempts (2-pt + 3-pt). \cr
+  field_goals_percentage \tab numeric \tab Field goal percentage (0-1 decimal). \cr
+  three_pointers_made \tab integer \tab Three-point field goals made. \cr
+  three_pointers_attempted \tab integer \tab Three-point field goal attempts. \cr
+  three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1 decimal). \cr
+  free_throws_made \tab integer \tab Free throws made. \cr
+  free_throws_attempted \tab integer \tab Free throw attempts. \cr
+  free_throws_percentage \tab numeric \tab Free throw percentage (0-1 decimal). \cr
+  rebounds_offensive \tab integer \tab Offensive rebounds. \cr
+  rebounds_defensive \tab integer \tab Defensive rebounds. \cr
+  rebounds_total \tab integer \tab Total rebounds. \cr
+  assists \tab integer \tab Total assists. \cr
+  steals \tab integer \tab Total steals. \cr
+  blocks \tab integer \tab Total blocks. \cr
+  turnovers \tab integer \tab Total turnovers. \cr
+  fouls_personal \tab integer \tab Personal fouls. \cr
+  points \tab integer \tab Points scored. \cr
+  plus_minus_points \tab numeric \tab Plus/minus point differential while on court. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_totals_traditional}
@@ -225,35 +222,35 @@ Same columns as the \strong{home_team_totals_traditional} table above.
 \strong{home_team_starters_totals}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      field_goals_made \tab integer \tab Field goals made (2-pt + 3-pt). \cr
-      field_goals_attempted \tab integer \tab Field goal attempts (2-pt + 3-pt). \cr
-      field_goals_percentage \tab numeric \tab Field goal percentage (0-1 decimal). \cr
-      three_pointers_made \tab integer \tab Three-point field goals made. \cr
-      three_pointers_attempted \tab integer \tab Three-point field goal attempts. \cr
-      three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1 decimal). \cr
-      free_throws_made \tab integer \tab Free throws made. \cr
-      free_throws_attempted \tab integer \tab Free throw attempts. \cr
-      free_throws_percentage \tab numeric \tab Free throw percentage (0-1 decimal). \cr
-      rebounds_offensive \tab integer \tab Offensive rebounds. \cr
-      rebounds_defensive \tab integer \tab Defensive rebounds. \cr
-      rebounds_total \tab integer \tab Total rebounds. \cr
-      assists \tab integer \tab Total assists. \cr
-      steals \tab integer \tab Total steals. \cr
-      blocks \tab integer \tab Total blocks. \cr
-      turnovers \tab integer \tab Total turnovers. \cr
-      fouls_personal \tab integer \tab Personal fouls. \cr
-      points \tab integer \tab Points scored. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  field_goals_made \tab integer \tab Field goals made (2-pt + 3-pt). \cr
+  field_goals_attempted \tab integer \tab Field goal attempts (2-pt + 3-pt). \cr
+  field_goals_percentage \tab numeric \tab Field goal percentage (0-1 decimal). \cr
+  three_pointers_made \tab integer \tab Three-point field goals made. \cr
+  three_pointers_attempted \tab integer \tab Three-point field goal attempts. \cr
+  three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1 decimal). \cr
+  free_throws_made \tab integer \tab Free throws made. \cr
+  free_throws_attempted \tab integer \tab Free throw attempts. \cr
+  free_throws_percentage \tab numeric \tab Free throw percentage (0-1 decimal). \cr
+  rebounds_offensive \tab integer \tab Offensive rebounds. \cr
+  rebounds_defensive \tab integer \tab Defensive rebounds. \cr
+  rebounds_total \tab integer \tab Total rebounds. \cr
+  assists \tab integer \tab Total assists. \cr
+  steals \tab integer \tab Total steals. \cr
+  blocks \tab integer \tab Total blocks. \cr
+  turnovers \tab integer \tab Total turnovers. \cr
+  fouls_personal \tab integer \tab Personal fouls. \cr
+  points \tab integer \tab Points scored. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_starters_totals}
@@ -268,53 +265,52 @@ Same columns as the \strong{home_team_starters_totals} table above.
 
 Same columns as the \strong{home_team_starters_totals} table above.
 
-Returns a named list of data frames: home_team_player_advanced, away_team_player_advanced,
-home_team_totals_advanced, away_team_totals_advanced
+A named list of \code{hoopR_data} tibbles: \code{home_team_player_advanced}, \code{away_team_player_advanced}, \code{home_team_totals_advanced}, \code{away_team_totals_advanced}.
 
 \strong{home_team_player_advanced}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-      first_name \tab character \tab Player's first name. \cr
-      family_name \tab character \tab Player's family / last name. \cr
-      name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
-      player_slug \tab character \tab URL-safe player identifier. \cr
-      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
-      comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
-      jersey_num \tab character \tab Jersey number worn by the player. \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      estimated_offensive_rating \tab numeric \tab Estimated offensive rating (points per 100 possessions estimate). \cr
-      offensive_rating \tab numeric \tab Offensive rating (points per 100 possessions). \cr
-      estimated_defensive_rating \tab numeric \tab Estimated defensive rating (points allowed per 100 possessions estimate). \cr
-      defensive_rating \tab numeric \tab Defensive rating (points allowed per 100 possessions). \cr
-      estimated_net_rating \tab numeric \tab Estimated net rating (off rating - def rating). \cr
-      net_rating \tab numeric \tab Net rating (off rating - def rating). \cr
-      assist_percentage \tab numeric \tab Assist percentage (0-1). \cr
-      assist_to_turnover \tab numeric \tab Assist-to-turnover ratio. \cr
-      assist_ratio \tab numeric \tab Assist ratio (assists per 100 possessions used). \cr
-      offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
-      defensive_rebound_percentage \tab numeric \tab Defensive rebound percentage (0-1). \cr
-      rebound_percentage \tab numeric \tab Total rebound percentage (0-1). \cr
-      turnover_ratio \tab numeric \tab Turnover ratio (turnovers per 100 possessions used). \cr
-      effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
-      true_shooting_percentage \tab numeric \tab True shooting percentage (0-1). \cr
-      usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
-      estimated_usage_percentage \tab numeric \tab Estimated usage percentage (0-1). \cr
-      estimated_pace \tab numeric \tab Estimated possessions per 48 minutes. \cr
-      pace \tab numeric \tab Possessions per 48 minutes. \cr
-      pace_per40 \tab numeric \tab Pace per40. \cr
-      possessions \tab numeric \tab Possessions used. \cr
-      pie \tab numeric \tab Player Impact Estimate (0-1). \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+  player_slug \tab character \tab URL-safe player identifier. \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  estimated_offensive_rating \tab numeric \tab Estimated offensive rating (points per 100 possessions estimate). \cr
+  offensive_rating \tab numeric \tab Offensive rating (points per 100 possessions). \cr
+  estimated_defensive_rating \tab numeric \tab Estimated defensive rating (points allowed per 100 possessions estimate). \cr
+  defensive_rating \tab numeric \tab Defensive rating (points allowed per 100 possessions). \cr
+  estimated_net_rating \tab numeric \tab Estimated net rating (off rating - def rating). \cr
+  net_rating \tab numeric \tab Net rating (off rating - def rating). \cr
+  assist_percentage \tab numeric \tab Assist percentage (0-1). \cr
+  assist_to_turnover \tab numeric \tab Assist-to-turnover ratio. \cr
+  assist_ratio \tab numeric \tab Assist ratio (assists per 100 possessions used). \cr
+  offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
+  defensive_rebound_percentage \tab numeric \tab Defensive rebound percentage (0-1). \cr
+  rebound_percentage \tab numeric \tab Total rebound percentage (0-1). \cr
+  turnover_ratio \tab numeric \tab Turnover ratio (turnovers per 100 possessions used). \cr
+  effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
+  true_shooting_percentage \tab numeric \tab True shooting percentage (0-1). \cr
+  usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
+  estimated_usage_percentage \tab numeric \tab Estimated usage percentage (0-1). \cr
+  estimated_pace \tab numeric \tab Estimated possessions per 48 minutes. \cr
+  pace \tab numeric \tab Possessions per 48 minutes. \cr
+  pace_per40 \tab numeric \tab Pace per40. \cr
+  possessions \tab numeric \tab Possessions used. \cr
+  pie \tab numeric \tab Player Impact Estimate (0-1). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_player_advanced}
@@ -324,83 +320,82 @@ Same columns as the \strong{home_team_player_advanced} table above.
 \strong{home_team_totals_advanced}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      estimated_offensive_rating \tab numeric \tab Estimated offensive rating (points per 100 possessions estimate). \cr
-      offensive_rating \tab numeric \tab Offensive rating (points per 100 possessions). \cr
-      estimated_defensive_rating \tab numeric \tab Estimated defensive rating (points allowed per 100 possessions estimate). \cr
-      defensive_rating \tab numeric \tab Defensive rating (points allowed per 100 possessions). \cr
-      estimated_net_rating \tab numeric \tab Estimated net rating (off rating - def rating). \cr
-      net_rating \tab numeric \tab Net rating (off rating - def rating). \cr
-      assist_percentage \tab numeric \tab Assist percentage (0-1). \cr
-      assist_to_turnover \tab numeric \tab Assist-to-turnover ratio. \cr
-      assist_ratio \tab numeric \tab Assist ratio (assists per 100 possessions used). \cr
-      offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
-      defensive_rebound_percentage \tab numeric \tab Defensive rebound percentage (0-1). \cr
-      rebound_percentage \tab numeric \tab Total rebound percentage (0-1). \cr
-      estimated_team_turnover_percentage \tab numeric \tab Estimated team turnover percentage (0-1). \cr
-      turnover_ratio \tab numeric \tab Turnover ratio (turnovers per 100 possessions used). \cr
-      effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
-      true_shooting_percentage \tab numeric \tab True shooting percentage (0-1). \cr
-      usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
-      estimated_usage_percentage \tab numeric \tab Estimated usage percentage (0-1). \cr
-      estimated_pace \tab numeric \tab Estimated possessions per 48 minutes. \cr
-      pace \tab numeric \tab Possessions per 48 minutes. \cr
-      pace_per40 \tab numeric \tab Pace per40. \cr
-      possessions \tab numeric \tab Possessions used. \cr
-      pie \tab numeric \tab Player Impact Estimate (0-1). \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  estimated_offensive_rating \tab numeric \tab Estimated offensive rating (points per 100 possessions estimate). \cr
+  offensive_rating \tab numeric \tab Offensive rating (points per 100 possessions). \cr
+  estimated_defensive_rating \tab numeric \tab Estimated defensive rating (points allowed per 100 possessions estimate). \cr
+  defensive_rating \tab numeric \tab Defensive rating (points allowed per 100 possessions). \cr
+  estimated_net_rating \tab numeric \tab Estimated net rating (off rating - def rating). \cr
+  net_rating \tab numeric \tab Net rating (off rating - def rating). \cr
+  assist_percentage \tab numeric \tab Assist percentage (0-1). \cr
+  assist_to_turnover \tab numeric \tab Assist-to-turnover ratio. \cr
+  assist_ratio \tab numeric \tab Assist ratio (assists per 100 possessions used). \cr
+  offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
+  defensive_rebound_percentage \tab numeric \tab Defensive rebound percentage (0-1). \cr
+  rebound_percentage \tab numeric \tab Total rebound percentage (0-1). \cr
+  estimated_team_turnover_percentage \tab numeric \tab Estimated team turnover percentage (0-1). \cr
+  turnover_ratio \tab numeric \tab Turnover ratio (turnovers per 100 possessions used). \cr
+  effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
+  true_shooting_percentage \tab numeric \tab True shooting percentage (0-1). \cr
+  usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
+  estimated_usage_percentage \tab numeric \tab Estimated usage percentage (0-1). \cr
+  estimated_pace \tab numeric \tab Estimated possessions per 48 minutes. \cr
+  pace \tab numeric \tab Possessions per 48 minutes. \cr
+  pace_per40 \tab numeric \tab Pace per40. \cr
+  possessions \tab numeric \tab Possessions used. \cr
+  pie \tab numeric \tab Player Impact Estimate (0-1). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_totals_advanced}
 
 Same columns as the \strong{home_team_totals_advanced} table above.
 
-Returns a named list of data frames:  home_team_player_misc, away_team_player_misc,
-home_team_totals_misc, away_team_totals_misc
+A named list of \code{hoopR_data} tibbles: \code{home_team_player_misc}, \code{away_team_player_misc}, \code{home_team_totals_misc}, \code{away_team_totals_misc}.
 
 \strong{home_team_player_misc}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-      first_name \tab character \tab Player's first name. \cr
-      family_name \tab character \tab Player's family / last name. \cr
-      name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
-      player_slug \tab character \tab URL-safe player identifier. \cr
-      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
-      comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
-      jersey_num \tab character \tab Jersey number worn by the player. \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      points_off_turnovers \tab integer \tab Points scored off opponent turnovers. \cr
-      points_second_chance \tab integer \tab Second-chance points scored. \cr
-      points_fast_break \tab integer \tab Fast-break points scored. \cr
-      points_paint \tab integer \tab Points scored in the paint. \cr
-      opp_points_off_turnovers \tab integer \tab Opponent points off turnovers. \cr
-      opp_points_second_chance \tab integer \tab Opponent points second chance. \cr
-      opp_points_fast_break \tab integer \tab Opponent points fast break. \cr
-      opp_points_paint \tab integer \tab Opponent points paint. \cr
-      blocks \tab integer \tab Total blocks. \cr
-      blocks_against \tab integer \tab Shots blocked by opponents while attempting. \cr
-      fouls_personal \tab integer \tab Personal fouls. \cr
-      fouls_drawn \tab integer \tab Personal fouls drawn (by opponent's actions). \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+  player_slug \tab character \tab URL-safe player identifier. \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  points_off_turnovers \tab integer \tab Points scored off opponent turnovers. \cr
+  points_second_chance \tab integer \tab Second-chance points scored. \cr
+  points_fast_break \tab integer \tab Fast-break points scored. \cr
+  points_paint \tab integer \tab Points scored in the paint. \cr
+  opp_points_off_turnovers \tab integer \tab Opponent points off turnovers. \cr
+  opp_points_second_chance \tab integer \tab Opponent points second chance. \cr
+  opp_points_fast_break \tab integer \tab Opponent points fast break. \cr
+  opp_points_paint \tab integer \tab Opponent points paint. \cr
+  blocks \tab integer \tab Total blocks. \cr
+  blocks_against \tab integer \tab Shots blocked by opponents while attempting. \cr
+  fouls_personal \tab integer \tab Personal fouls. \cr
+  fouls_drawn \tab integer \tab Personal fouls drawn (by opponent's actions). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_player_misc}
@@ -410,75 +405,74 @@ Same columns as the \strong{home_team_player_misc} table above.
 \strong{home_team_totals_misc}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      points_off_turnovers \tab integer \tab Points scored off opponent turnovers. \cr
-      points_second_chance \tab integer \tab Second-chance points scored. \cr
-      points_fast_break \tab integer \tab Fast-break points scored. \cr
-      points_paint \tab integer \tab Points scored in the paint. \cr
-      opp_points_off_turnovers \tab integer \tab Opponent points off turnovers. \cr
-      opp_points_second_chance \tab integer \tab Opponent points second chance. \cr
-      opp_points_fast_break \tab integer \tab Opponent points fast break. \cr
-      opp_points_paint \tab integer \tab Opponent points paint. \cr
-      blocks \tab integer \tab Total blocks. \cr
-      blocks_against \tab integer \tab Shots blocked by opponents while attempting. \cr
-      fouls_personal \tab integer \tab Personal fouls. \cr
-      fouls_drawn \tab integer \tab Personal fouls drawn (by opponent's actions). \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  points_off_turnovers \tab integer \tab Points scored off opponent turnovers. \cr
+  points_second_chance \tab integer \tab Second-chance points scored. \cr
+  points_fast_break \tab integer \tab Fast-break points scored. \cr
+  points_paint \tab integer \tab Points scored in the paint. \cr
+  opp_points_off_turnovers \tab integer \tab Opponent points off turnovers. \cr
+  opp_points_second_chance \tab integer \tab Opponent points second chance. \cr
+  opp_points_fast_break \tab integer \tab Opponent points fast break. \cr
+  opp_points_paint \tab integer \tab Opponent points paint. \cr
+  blocks \tab integer \tab Total blocks. \cr
+  blocks_against \tab integer \tab Shots blocked by opponents while attempting. \cr
+  fouls_personal \tab integer \tab Personal fouls. \cr
+  fouls_drawn \tab integer \tab Personal fouls drawn (by opponent's actions). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_totals_misc}
 
 Same columns as the \strong{home_team_totals_misc} table above.
 
-Returns a named list of data frames: home_team_player_scoring, away_team_player_scoring,
-home_team_totals_scoring, away_team_totals_scoring
+A named list of \code{hoopR_data} tibbles: \code{home_team_player_scoring}, \code{away_team_player_scoring}, \code{home_team_totals_scoring}, \code{away_team_totals_scoring}.
 
 \strong{home_team_player_scoring}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-      first_name \tab character \tab Player's first name. \cr
-      family_name \tab character \tab Player's family / last name. \cr
-      name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
-      player_slug \tab character \tab URL-safe player identifier. \cr
-      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
-      comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
-      jersey_num \tab character \tab Jersey number worn by the player. \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      percentage_field_goals_attempted2pt \tab numeric \tab Percentage field goals attempted2pt. \cr
-      percentage_field_goals_attempted3pt \tab numeric \tab Percentage field goals attempted3pt. \cr
-      percentage_points2pt \tab numeric \tab Percentage points2pt. \cr
-      percentage_points_midrange2pt \tab numeric \tab Percentage points midrange2pt. \cr
-      percentage_points3pt \tab numeric \tab Percentage points3pt. \cr
-      percentage_points_fast_break \tab numeric \tab Percentage points fast break. \cr
-      percentage_points_free_throw \tab numeric \tab Percentage points free throw. \cr
-      percentage_points_off_turnovers \tab numeric \tab Percentage points off turnovers. \cr
-      percentage_points_paint \tab numeric \tab Percentage points paint. \cr
-      percentage_assisted2pt \tab numeric \tab Percentage assisted2pt. \cr
-      percentage_unassisted2pt \tab numeric \tab Percentage unassisted2pt. \cr
-      percentage_assisted3pt \tab numeric \tab Percentage assisted3pt. \cr
-      percentage_unassisted3pt \tab numeric \tab Percentage unassisted3pt. \cr
-      percentage_assisted_fgm \tab numeric \tab Percentage assisted fgm. \cr
-      percentage_unassisted_fgm \tab numeric \tab Percentage unassisted fgm. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+  player_slug \tab character \tab URL-safe player identifier. \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  percentage_field_goals_attempted2pt \tab numeric \tab Percentage field goals attempted2pt. \cr
+  percentage_field_goals_attempted3pt \tab numeric \tab Percentage field goals attempted3pt. \cr
+  percentage_points2pt \tab numeric \tab Percentage points2pt. \cr
+  percentage_points_midrange2pt \tab numeric \tab Percentage points midrange2pt. \cr
+  percentage_points3pt \tab numeric \tab Percentage points3pt. \cr
+  percentage_points_fast_break \tab numeric \tab Percentage points fast break. \cr
+  percentage_points_free_throw \tab numeric \tab Percentage points free throw. \cr
+  percentage_points_off_turnovers \tab numeric \tab Percentage points off turnovers. \cr
+  percentage_points_paint \tab numeric \tab Percentage points paint. \cr
+  percentage_assisted2pt \tab numeric \tab Percentage assisted2pt. \cr
+  percentage_unassisted2pt \tab numeric \tab Percentage unassisted2pt. \cr
+  percentage_assisted3pt \tab numeric \tab Percentage assisted3pt. \cr
+  percentage_unassisted3pt \tab numeric \tab Percentage unassisted3pt. \cr
+  percentage_assisted_fgm \tab numeric \tab Percentage assisted fgm. \cr
+  percentage_unassisted_fgm \tab numeric \tab Percentage unassisted fgm. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_player_scoring}
@@ -488,81 +482,80 @@ Same columns as the \strong{home_team_player_scoring} table above.
 \strong{home_team_totals_scoring}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      percentage_field_goals_attempted2pt \tab numeric \tab Percentage field goals attempted2pt. \cr
-      percentage_field_goals_attempted3pt \tab numeric \tab Percentage field goals attempted3pt. \cr
-      percentage_points2pt \tab numeric \tab Percentage points2pt. \cr
-      percentage_points_midrange2pt \tab numeric \tab Percentage points midrange2pt. \cr
-      percentage_points3pt \tab numeric \tab Percentage points3pt. \cr
-      percentage_points_fast_break \tab numeric \tab Percentage points fast break. \cr
-      percentage_points_free_throw \tab numeric \tab Percentage points free throw. \cr
-      percentage_points_off_turnovers \tab numeric \tab Percentage points off turnovers. \cr
-      percentage_points_paint \tab numeric \tab Percentage points paint. \cr
-      percentage_assisted2pt \tab numeric \tab Percentage assisted2pt. \cr
-      percentage_unassisted2pt \tab numeric \tab Percentage unassisted2pt. \cr
-      percentage_assisted3pt \tab numeric \tab Percentage assisted3pt. \cr
-      percentage_unassisted3pt \tab numeric \tab Percentage unassisted3pt. \cr
-      percentage_assisted_fgm \tab numeric \tab Percentage assisted fgm. \cr
-      percentage_unassisted_fgm \tab numeric \tab Percentage unassisted fgm. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  percentage_field_goals_attempted2pt \tab numeric \tab Percentage field goals attempted2pt. \cr
+  percentage_field_goals_attempted3pt \tab numeric \tab Percentage field goals attempted3pt. \cr
+  percentage_points2pt \tab numeric \tab Percentage points2pt. \cr
+  percentage_points_midrange2pt \tab numeric \tab Percentage points midrange2pt. \cr
+  percentage_points3pt \tab numeric \tab Percentage points3pt. \cr
+  percentage_points_fast_break \tab numeric \tab Percentage points fast break. \cr
+  percentage_points_free_throw \tab numeric \tab Percentage points free throw. \cr
+  percentage_points_off_turnovers \tab numeric \tab Percentage points off turnovers. \cr
+  percentage_points_paint \tab numeric \tab Percentage points paint. \cr
+  percentage_assisted2pt \tab numeric \tab Percentage assisted2pt. \cr
+  percentage_unassisted2pt \tab numeric \tab Percentage unassisted2pt. \cr
+  percentage_assisted3pt \tab numeric \tab Percentage assisted3pt. \cr
+  percentage_unassisted3pt \tab numeric \tab Percentage unassisted3pt. \cr
+  percentage_assisted_fgm \tab numeric \tab Percentage assisted fgm. \cr
+  percentage_unassisted_fgm \tab numeric \tab Percentage unassisted fgm. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_totals_scoring}
 
 Same columns as the \strong{home_team_totals_scoring} table above.
 
-Returns a named list of data frames:  home_team_player_usage, away_team_player_usage,
-home_team_totals_usage, away_team_totals_usage
+A named list of \code{hoopR_data} tibbles: \code{home_team_player_usage}, \code{away_team_player_usage}, \code{home_team_totals_usage}, \code{away_team_totals_usage}.
 
 \strong{home_team_player_usage}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-      first_name \tab character \tab Player's first name. \cr
-      family_name \tab character \tab Player's family / last name. \cr
-      name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
-      player_slug \tab character \tab URL-safe player identifier. \cr
-      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
-      comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
-      jersey_num \tab character \tab Jersey number worn by the player. \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
-      percentage_field_goals_made \tab numeric \tab Number of percentage field goals made. \cr
-      percentage_field_goals_attempted \tab numeric \tab Number of percentage field goals attempted. \cr
-      percentage_three_pointers_made \tab numeric \tab Number of percentage three pointers made. \cr
-      percentage_three_pointers_attempted \tab numeric \tab Number of percentage three pointers attempted. \cr
-      percentage_free_throws_made \tab numeric \tab Number of percentage free throws made. \cr
-      percentage_free_throws_attempted \tab numeric \tab Number of percentage free throws attempted. \cr
-      percentage_rebounds_offensive \tab numeric \tab Percentage rebounds offensive. \cr
-      percentage_rebounds_defensive \tab numeric \tab Percentage rebounds defensive. \cr
-      percentage_rebounds_total \tab numeric \tab Percentage rebounds total. \cr
-      percentage_assists \tab numeric \tab Percentage assists. \cr
-      percentage_turnovers \tab numeric \tab Percentage turnovers. \cr
-      percentage_steals \tab numeric \tab Percentage steals. \cr
-      percentage_blocks \tab numeric \tab Percentage blocks. \cr
-      percentage_blocks_allowed \tab numeric \tab Percentage blocks allowed. \cr
-      percentage_personal_fouls \tab numeric \tab Percentage personal fouls. \cr
-      percentage_personal_fouls_drawn \tab numeric \tab Percentage personal fouls drawn. \cr
-      percentage_points \tab numeric \tab Percentage points. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+  player_slug \tab character \tab URL-safe player identifier. \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
+  percentage_field_goals_made \tab numeric \tab Number of percentage field goals made. \cr
+  percentage_field_goals_attempted \tab numeric \tab Number of percentage field goals attempted. \cr
+  percentage_three_pointers_made \tab numeric \tab Number of percentage three pointers made. \cr
+  percentage_three_pointers_attempted \tab numeric \tab Number of percentage three pointers attempted. \cr
+  percentage_free_throws_made \tab numeric \tab Number of percentage free throws made. \cr
+  percentage_free_throws_attempted \tab numeric \tab Number of percentage free throws attempted. \cr
+  percentage_rebounds_offensive \tab numeric \tab Percentage rebounds offensive. \cr
+  percentage_rebounds_defensive \tab numeric \tab Percentage rebounds defensive. \cr
+  percentage_rebounds_total \tab numeric \tab Percentage rebounds total. \cr
+  percentage_assists \tab numeric \tab Percentage assists. \cr
+  percentage_turnovers \tab numeric \tab Percentage turnovers. \cr
+  percentage_steals \tab numeric \tab Percentage steals. \cr
+  percentage_blocks \tab numeric \tab Percentage blocks. \cr
+  percentage_blocks_allowed \tab numeric \tab Percentage blocks allowed. \cr
+  percentage_personal_fouls \tab numeric \tab Percentage personal fouls. \cr
+  percentage_personal_fouls_drawn \tab numeric \tab Percentage personal fouls drawn. \cr
+  percentage_points \tab numeric \tab Percentage points. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_player_usage}
@@ -572,75 +565,73 @@ Same columns as the \strong{home_team_player_usage} table above.
 \strong{home_team_totals_usage}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
-      percentage_field_goals_made \tab numeric \tab Number of percentage field goals made. \cr
-      percentage_field_goals_attempted \tab numeric \tab Number of percentage field goals attempted. \cr
-      percentage_three_pointers_made \tab numeric \tab Number of percentage three pointers made. \cr
-      percentage_three_pointers_attempted \tab numeric \tab Number of percentage three pointers attempted. \cr
-      percentage_free_throws_made \tab numeric \tab Number of percentage free throws made. \cr
-      percentage_free_throws_attempted \tab numeric \tab Number of percentage free throws attempted. \cr
-      percentage_rebounds_offensive \tab numeric \tab Percentage rebounds offensive. \cr
-      percentage_rebounds_defensive \tab numeric \tab Percentage rebounds defensive. \cr
-      percentage_rebounds_total \tab numeric \tab Percentage rebounds total. \cr
-      percentage_assists \tab numeric \tab Percentage assists. \cr
-      percentage_turnovers \tab numeric \tab Percentage turnovers. \cr
-      percentage_steals \tab numeric \tab Percentage steals. \cr
-      percentage_blocks \tab numeric \tab Percentage blocks. \cr
-      percentage_blocks_allowed \tab numeric \tab Percentage blocks allowed. \cr
-      percentage_personal_fouls \tab numeric \tab Percentage personal fouls. \cr
-      percentage_personal_fouls_drawn \tab numeric \tab Percentage personal fouls drawn. \cr
-      percentage_points \tab numeric \tab Percentage points. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  usage_percentage \tab numeric \tab Usage percentage (0-1). \cr
+  percentage_field_goals_made \tab numeric \tab Number of percentage field goals made. \cr
+  percentage_field_goals_attempted \tab numeric \tab Number of percentage field goals attempted. \cr
+  percentage_three_pointers_made \tab numeric \tab Number of percentage three pointers made. \cr
+  percentage_three_pointers_attempted \tab numeric \tab Number of percentage three pointers attempted. \cr
+  percentage_free_throws_made \tab numeric \tab Number of percentage free throws made. \cr
+  percentage_free_throws_attempted \tab numeric \tab Number of percentage free throws attempted. \cr
+  percentage_rebounds_offensive \tab numeric \tab Percentage rebounds offensive. \cr
+  percentage_rebounds_defensive \tab numeric \tab Percentage rebounds defensive. \cr
+  percentage_rebounds_total \tab numeric \tab Percentage rebounds total. \cr
+  percentage_assists \tab numeric \tab Percentage assists. \cr
+  percentage_turnovers \tab numeric \tab Percentage turnovers. \cr
+  percentage_steals \tab numeric \tab Percentage steals. \cr
+  percentage_blocks \tab numeric \tab Percentage blocks. \cr
+  percentage_blocks_allowed \tab numeric \tab Percentage blocks allowed. \cr
+  percentage_personal_fouls \tab numeric \tab Percentage personal fouls. \cr
+  percentage_personal_fouls_drawn \tab numeric \tab Percentage personal fouls drawn. \cr
+  percentage_points \tab numeric \tab Percentage points. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_totals_usage}
 
 Same columns as the \strong{home_team_totals_usage} table above.
 
-Returns a named list of data frames:  home_team_player_four_factors,
-away_team_player_four_factors, home_team_totals_four_factors,
-away_team_totals_four_factors
+A named list of \code{hoopR_data} tibbles: \code{home_team_player_four_factors}, \code{away_team_player_four_factors}, \code{home_team_totals_four_factors}, \code{away_team_totals_four_factors}.
 
 \strong{home_team_player_four_factors}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-      first_name \tab character \tab Player's first name. \cr
-      family_name \tab character \tab Player's family / last name. \cr
-      name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
-      player_slug \tab character \tab URL-safe player identifier. \cr
-      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
-      comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
-      jersey_num \tab character \tab Jersey number worn by the player. \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
-      free_throw_attempt_rate \tab numeric \tab Free throw attempt rate (FTA / FGA). \cr
-      team_turnover_percentage \tab numeric \tab Team turnover percentage (0-1). \cr
-      offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
-      opp_effective_field_goal_percentage \tab numeric \tab Opponent effective field goal percentage (0-1 decimal). \cr
-      opp_free_throw_attempt_rate \tab numeric \tab Opponent free throw attempt rate. \cr
-      opp_team_turnover_percentage \tab numeric \tab Opponent team turnover percentage (0-1 decimal). \cr
-      opp_offensive_rebound_percentage \tab numeric \tab Opponent offensive rebound percentage (0-1 decimal). \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+  player_slug \tab character \tab URL-safe player identifier. \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
+  free_throw_attempt_rate \tab numeric \tab Free throw attempt rate (FTA / FGA). \cr
+  team_turnover_percentage \tab numeric \tab Team turnover percentage (0-1). \cr
+  offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
+  opp_effective_field_goal_percentage \tab numeric \tab Opponent effective field goal percentage (0-1 decimal). \cr
+  opp_free_throw_attempt_rate \tab numeric \tab Opponent free throw attempt rate. \cr
+  opp_team_turnover_percentage \tab numeric \tab Opponent team turnover percentage (0-1 decimal). \cr
+  opp_offensive_rebound_percentage \tab numeric \tab Opponent offensive rebound percentage (0-1 decimal). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_player_four_factors}
@@ -650,76 +641,75 @@ Same columns as the \strong{home_team_player_four_factors} table above.
 \strong{home_team_totals_four_factors}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
-      free_throw_attempt_rate \tab numeric \tab Free throw attempt rate (FTA / FGA). \cr
-      team_turnover_percentage \tab numeric \tab Team turnover percentage (0-1). \cr
-      offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
-      opp_effective_field_goal_percentage \tab numeric \tab Opponent effective field goal percentage (0-1 decimal). \cr
-      opp_free_throw_attempt_rate \tab numeric \tab Opponent free throw attempt rate. \cr
-      opp_team_turnover_percentage \tab numeric \tab Opponent team turnover percentage (0-1 decimal). \cr
-      opp_offensive_rebound_percentage \tab numeric \tab Opponent offensive rebound percentage (0-1 decimal). \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  effective_field_goal_percentage \tab numeric \tab Effective field goal percentage (0-1). \cr
+  free_throw_attempt_rate \tab numeric \tab Free throw attempt rate (FTA / FGA). \cr
+  team_turnover_percentage \tab numeric \tab Team turnover percentage (0-1). \cr
+  offensive_rebound_percentage \tab numeric \tab Offensive rebound percentage (0-1). \cr
+  opp_effective_field_goal_percentage \tab numeric \tab Opponent effective field goal percentage (0-1 decimal). \cr
+  opp_free_throw_attempt_rate \tab numeric \tab Opponent free throw attempt rate. \cr
+  opp_team_turnover_percentage \tab numeric \tab Opponent team turnover percentage (0-1 decimal). \cr
+  opp_offensive_rebound_percentage \tab numeric \tab Opponent offensive rebound percentage (0-1 decimal). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_totals_four_factors}
 
 Same columns as the \strong{home_team_totals_four_factors} table above.
 
-Returns a named list of data frames: home_team_player_player_track, away_team_player_player_track,
-home_team_totals_player_track, away_team_totals_player_track
+A named list of \code{hoopR_data} tibbles: \code{home_team_player_player_track}, \code{away_team_player_player_track}, \code{home_team_totals_player_track}, \code{away_team_totals_player_track}.
 
 \strong{home_team_player_player_track}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-      first_name \tab character \tab Player's first name. \cr
-      family_name \tab character \tab Player's family / last name. \cr
-      name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
-      player_slug \tab character \tab URL-safe player identifier. \cr
-      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
-      comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
-      jersey_num \tab character \tab Jersey number worn by the player. \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      speed \tab numeric \tab Speed. \cr
-      distance \tab numeric \tab Distance value (in feet for shot data; otherwise context-dependent). \cr
-      rebound_chances_offensive \tab integer \tab Rebound chances offensive. \cr
-      rebound_chances_defensive \tab integer \tab Rebound chances defensive. \cr
-      rebound_chances_total \tab integer \tab Rebound chances total. \cr
-      touches \tab integer \tab Touches. \cr
-      secondary_assists \tab integer \tab Secondary assists. \cr
-      free_throw_assists \tab integer \tab Free throw assists (passes that led to a fouled shot attempt). \cr
-      passes \tab integer \tab Passes. \cr
-      assists \tab integer \tab Total assists. \cr
-      contested_field_goals_made \tab integer \tab Contested field goals made. \cr
-      contested_field_goals_attempted \tab integer \tab Contested field goal attempts. \cr
-      contested_field_goal_percentage \tab numeric \tab Contested field goal percentage (0-1). \cr
-      uncontested_field_goals_made \tab integer \tab Number of uncontested field goals made. \cr
-      uncontested_field_goals_attempted \tab integer \tab Number of uncontested field goals attempted. \cr
-      uncontested_field_goals_percentage \tab numeric \tab Uncontested field goals percentage (0-1 decimal). \cr
-      field_goal_percentage \tab numeric \tab Field Goal Percentage. \cr
-      defended_at_rim_field_goals_made \tab integer \tab Field goals made allowed when defending at the rim. \cr
-      defended_at_rim_field_goals_attempted \tab integer \tab Field goal attempts allowed when defending at the rim. \cr
-      defended_at_rim_field_goal_percentage \tab numeric \tab Field goal percentage allowed at the rim (0-1). \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+  player_slug \tab character \tab URL-safe player identifier. \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  speed \tab numeric \tab Speed. \cr
+  distance \tab numeric \tab Distance value (in feet for shot data; otherwise context-dependent). \cr
+  rebound_chances_offensive \tab integer \tab Rebound chances offensive. \cr
+  rebound_chances_defensive \tab integer \tab Rebound chances defensive. \cr
+  rebound_chances_total \tab integer \tab Rebound chances total. \cr
+  touches \tab integer \tab Touches. \cr
+  secondary_assists \tab integer \tab Secondary assists. \cr
+  free_throw_assists \tab integer \tab Free throw assists (passes that led to a fouled shot attempt). \cr
+  passes \tab integer \tab Passes. \cr
+  assists \tab integer \tab Total assists. \cr
+  contested_field_goals_made \tab integer \tab Contested field goals made. \cr
+  contested_field_goals_attempted \tab integer \tab Contested field goal attempts. \cr
+  contested_field_goal_percentage \tab numeric \tab Contested field goal percentage (0-1). \cr
+  uncontested_field_goals_made \tab integer \tab Number of uncontested field goals made. \cr
+  uncontested_field_goals_attempted \tab integer \tab Number of uncontested field goals attempted. \cr
+  uncontested_field_goals_percentage \tab numeric \tab Uncontested field goals percentage (0-1 decimal). \cr
+  field_goal_percentage \tab numeric \tab Field Goal Percentage. \cr
+  defended_at_rim_field_goals_made \tab integer \tab Field goals made allowed when defending at the rim. \cr
+  defended_at_rim_field_goals_attempted \tab integer \tab Field goal attempts allowed when defending at the rim. \cr
+  defended_at_rim_field_goal_percentage \tab numeric \tab Field goal percentage allowed at the rim (0-1). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_player_player_track}
@@ -729,144 +719,143 @@ Same columns as the \strong{home_team_player_player_track} table above.
 \strong{home_team_totals_player_track}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      distance \tab numeric \tab Distance value (in feet for shot data; otherwise context-dependent). \cr
-      rebound_chances_offensive \tab integer \tab Rebound chances offensive. \cr
-      rebound_chances_defensive \tab integer \tab Rebound chances defensive. \cr
-      rebound_chances_total \tab integer \tab Rebound chances total. \cr
-      touches \tab integer \tab Touches. \cr
-      secondary_assists \tab integer \tab Secondary assists. \cr
-      free_throw_assists \tab integer \tab Free throw assists (passes that led to a fouled shot attempt). \cr
-      passes \tab integer \tab Passes. \cr
-      assists \tab integer \tab Total assists. \cr
-      contested_field_goals_made \tab integer \tab Contested field goals made. \cr
-      contested_field_goals_attempted \tab integer \tab Contested field goal attempts. \cr
-      contested_field_goal_percentage \tab numeric \tab Contested field goal percentage (0-1). \cr
-      uncontested_field_goals_made \tab integer \tab Number of uncontested field goals made. \cr
-      uncontested_field_goals_attempted \tab integer \tab Number of uncontested field goals attempted. \cr
-      uncontested_field_goals_percentage \tab numeric \tab Uncontested field goals percentage (0-1 decimal). \cr
-      field_goal_percentage \tab numeric \tab Field Goal Percentage. \cr
-      defended_at_rim_field_goals_made \tab integer \tab Field goals made allowed when defending at the rim. \cr
-      defended_at_rim_field_goals_attempted \tab integer \tab Field goal attempts allowed when defending at the rim. \cr
-      defended_at_rim_field_goal_percentage \tab numeric \tab Field goal percentage allowed at the rim (0-1). \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  distance \tab numeric \tab Distance value (in feet for shot data; otherwise context-dependent). \cr
+  rebound_chances_offensive \tab integer \tab Rebound chances offensive. \cr
+  rebound_chances_defensive \tab integer \tab Rebound chances defensive. \cr
+  rebound_chances_total \tab integer \tab Rebound chances total. \cr
+  touches \tab integer \tab Touches. \cr
+  secondary_assists \tab integer \tab Secondary assists. \cr
+  free_throw_assists \tab integer \tab Free throw assists (passes that led to a fouled shot attempt). \cr
+  passes \tab integer \tab Passes. \cr
+  assists \tab integer \tab Total assists. \cr
+  contested_field_goals_made \tab integer \tab Contested field goals made. \cr
+  contested_field_goals_attempted \tab integer \tab Contested field goal attempts. \cr
+  contested_field_goal_percentage \tab numeric \tab Contested field goal percentage (0-1). \cr
+  uncontested_field_goals_made \tab integer \tab Number of uncontested field goals made. \cr
+  uncontested_field_goals_attempted \tab integer \tab Number of uncontested field goals attempted. \cr
+  uncontested_field_goals_percentage \tab numeric \tab Uncontested field goals percentage (0-1 decimal). \cr
+  field_goal_percentage \tab numeric \tab Field Goal Percentage. \cr
+  defended_at_rim_field_goals_made \tab integer \tab Field goals made allowed when defending at the rim. \cr
+  defended_at_rim_field_goals_attempted \tab integer \tab Field goal attempts allowed when defending at the rim. \cr
+  defended_at_rim_field_goal_percentage \tab numeric \tab Field goal percentage allowed at the rim (0-1). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_totals_player_track}
 
 Same columns as the \strong{home_team_totals_player_track} table above.
 
-Returns a named list of data frames: home_team_player_matchups, away_team_player_matchups
+A named list of \code{hoopR_data} tibbles: \code{home_team_player_matchups}, \code{away_team_player_matchups}.
 
 \strong{home_team_player_matchups}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-      first_name \tab character \tab Player's first name. \cr
-      family_name \tab character \tab Player's family / last name. \cr
-      name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
-      player_slug \tab character \tab URL-safe player identifier. \cr
-      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
-      comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
-      jersey_num \tab character \tab Jersey number worn by the player. \cr
-      matchups_person_id \tab integer \tab Unique identifier for matchups person. \cr
-      matchups_first_name \tab character \tab Matchups first name. \cr
-      matchups_family_name \tab character \tab Matchups family name. \cr
-      matchups_name_i \tab character \tab Matchups name i. \cr
-      matchups_player_slug \tab character \tab Matchups player slug. \cr
-      matchups_jersey_num \tab character \tab Matchups jersey num. \cr
-      matchup_minutes \tab character \tab Matchup minutes. \cr
-      matchup_minutes_sort \tab numeric \tab Matchup minutes sort. \cr
-      partial_possessions \tab numeric \tab Partial possessions. \cr
-      percentage_defender_total_time \tab numeric \tab Time / clock value. \cr
-      percentage_offensive_total_time \tab numeric \tab Time / clock value. \cr
-      percentage_total_time_both_on \tab numeric \tab Percentage total time both on. \cr
-      switches_on \tab integer \tab Switches on. \cr
-      player_points \tab integer \tab Player points. \cr
-      team_points \tab integer \tab Team points. \cr
-      matchup_assists \tab integer \tab Matchup assists. \cr
-      matchup_potential_assists \tab integer \tab Matchup potential assists. \cr
-      matchup_turnovers \tab integer \tab Matchup turnovers. \cr
-      matchup_blocks \tab integer \tab Matchup blocks. \cr
-      matchup_field_goals_made \tab integer \tab Number of matchup field goals made. \cr
-      matchup_field_goals_attempted \tab integer \tab Number of matchup field goals attempted. \cr
-      matchup_field_goals_percentage \tab numeric \tab Matchup field goals percentage (0-1 decimal). \cr
-      matchup_three_pointers_made \tab integer \tab Number of matchup three pointers made. \cr
-      matchup_three_pointers_attempted \tab integer \tab Number of matchup three pointers attempted. \cr
-      matchup_three_pointers_percentage \tab numeric \tab Matchup three pointers percentage (0-1 decimal). \cr
-      help_blocks \tab integer \tab Help blocks. \cr
-      help_field_goals_made \tab integer \tab Number of help field goals made. \cr
-      help_field_goals_attempted \tab integer \tab Number of help field goals attempted. \cr
-      help_field_goals_percentage \tab numeric \tab Help field goals percentage (0-1 decimal). \cr
-      matchup_free_throws_made \tab integer \tab Number of matchup free throws made. \cr
-      matchup_free_throws_attempted \tab integer \tab Number of matchup free throws attempted. \cr
-      shooting_fouls \tab integer \tab Shooting fouls. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+  player_slug \tab character \tab URL-safe player identifier. \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+  matchups_person_id \tab integer \tab Unique identifier for matchups person. \cr
+  matchups_first_name \tab character \tab Matchups first name. \cr
+  matchups_family_name \tab character \tab Matchups family name. \cr
+  matchups_name_i \tab character \tab Matchups name i. \cr
+  matchups_player_slug \tab character \tab Matchups player slug. \cr
+  matchups_jersey_num \tab character \tab Matchups jersey num. \cr
+  matchup_minutes \tab character \tab Matchup minutes. \cr
+  matchup_minutes_sort \tab numeric \tab Matchup minutes sort. \cr
+  partial_possessions \tab numeric \tab Partial possessions. \cr
+  percentage_defender_total_time \tab numeric \tab Time / clock value. \cr
+  percentage_offensive_total_time \tab numeric \tab Time / clock value. \cr
+  percentage_total_time_both_on \tab numeric \tab Percentage total time both on. \cr
+  switches_on \tab integer \tab Switches on. \cr
+  player_points \tab integer \tab Player points. \cr
+  team_points \tab integer \tab Team points. \cr
+  matchup_assists \tab integer \tab Matchup assists. \cr
+  matchup_potential_assists \tab integer \tab Matchup potential assists. \cr
+  matchup_turnovers \tab integer \tab Matchup turnovers. \cr
+  matchup_blocks \tab integer \tab Matchup blocks. \cr
+  matchup_field_goals_made \tab integer \tab Number of matchup field goals made. \cr
+  matchup_field_goals_attempted \tab integer \tab Number of matchup field goals attempted. \cr
+  matchup_field_goals_percentage \tab numeric \tab Matchup field goals percentage (0-1 decimal). \cr
+  matchup_three_pointers_made \tab integer \tab Number of matchup three pointers made. \cr
+  matchup_three_pointers_attempted \tab integer \tab Number of matchup three pointers attempted. \cr
+  matchup_three_pointers_percentage \tab numeric \tab Matchup three pointers percentage (0-1 decimal). \cr
+  help_blocks \tab integer \tab Help blocks. \cr
+  help_field_goals_made \tab integer \tab Number of help field goals made. \cr
+  help_field_goals_attempted \tab integer \tab Number of help field goals attempted. \cr
+  help_field_goals_percentage \tab numeric \tab Help field goals percentage (0-1 decimal). \cr
+  matchup_free_throws_made \tab integer \tab Number of matchup free throws made. \cr
+  matchup_free_throws_attempted \tab integer \tab Number of matchup free throws attempted. \cr
+  shooting_fouls \tab integer \tab Shooting fouls. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_player_matchups}
 
 Same columns as the \strong{home_team_player_matchups} table above.
 
-Returns a named list of data frames: home_team_player_hustle, away_team_player_hustle,
-home_team_hustle_totals, away_team_hustle_totals
+A named list of \code{hoopR_data} tibbles: \code{home_team_player_hustle}, \code{away_team_player_hustle}, \code{home_team_totals_hustle}, \code{away_team_totals_hustle}.
 
 \strong{home_team_player_hustle}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-      first_name \tab character \tab Player's first name. \cr
-      family_name \tab character \tab Player's family / last name. \cr
-      name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
-      player_slug \tab character \tab URL-safe player identifier. \cr
-      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
-      comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
-      jersey_num \tab character \tab Jersey number worn by the player. \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      points \tab integer \tab Points scored. \cr
-      contested_shots \tab integer \tab Defensively contested shots. \cr
-      contested_shots2pt \tab integer \tab Contested shots2pt. \cr
-      contested_shots3pt \tab integer \tab Contested shots3pt. \cr
-      deflections \tab integer \tab Defensive deflections. \cr
-      charges_drawn \tab integer \tab Charges drawn. \cr
-      screen_assists \tab integer \tab Screen assists (resulting in a basket). \cr
-      screen_assist_points \tab integer \tab Points generated from screen assists. \cr
-      loose_balls_recovered_offensive \tab integer \tab Loose balls recovered on offense. \cr
-      loose_balls_recovered_defensive \tab integer \tab Loose balls recovered on defense. \cr
-      loose_balls_recovered_total \tab integer \tab Loose balls recovered total. \cr
-      offensive_box_outs \tab integer \tab Offensive box outs. \cr
-      defensive_box_outs \tab integer \tab Defensive box outs. \cr
-      box_out_player_team_rebounds \tab integer \tab Box-outs that led to either a player or team rebound. \cr
-      box_out_player_rebounds \tab integer \tab Box-outs that led to a player rebound. \cr
-      box_outs \tab integer \tab Box-outs executed. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+  player_slug \tab character \tab URL-safe player identifier. \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  points \tab integer \tab Points scored. \cr
+  contested_shots \tab integer \tab Defensively contested shots. \cr
+  contested_shots2pt \tab integer \tab Contested shots2pt. \cr
+  contested_shots3pt \tab integer \tab Contested shots3pt. \cr
+  deflections \tab integer \tab Defensive deflections. \cr
+  charges_drawn \tab integer \tab Charges drawn. \cr
+  screen_assists \tab integer \tab Screen assists (resulting in a basket). \cr
+  screen_assist_points \tab integer \tab Points generated from screen assists. \cr
+  loose_balls_recovered_offensive \tab integer \tab Loose balls recovered on offense. \cr
+  loose_balls_recovered_defensive \tab integer \tab Loose balls recovered on defense. \cr
+  loose_balls_recovered_total \tab integer \tab Loose balls recovered total. \cr
+  offensive_box_outs \tab integer \tab Offensive box outs. \cr
+  defensive_box_outs \tab integer \tab Defensive box outs. \cr
+  box_out_player_team_rebounds \tab integer \tab Box-outs that led to either a player or team rebound. \cr
+  box_out_player_rebounds \tab integer \tab Box-outs that led to a player rebound. \cr
+  box_outs \tab integer \tab Box-outs executed. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_player_hustle}
@@ -876,78 +865,77 @@ Same columns as the \strong{home_team_player_hustle} table above.
 \strong{home_team_totals_hustle}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
-      points \tab integer \tab Points scored. \cr
-      contested_shots \tab integer \tab Defensively contested shots. \cr
-      contested_shots2pt \tab integer \tab Contested shots2pt. \cr
-      contested_shots3pt \tab integer \tab Contested shots3pt. \cr
-      deflections \tab integer \tab Defensive deflections. \cr
-      charges_drawn \tab integer \tab Charges drawn. \cr
-      screen_assists \tab integer \tab Screen assists (resulting in a basket). \cr
-      screen_assist_points \tab integer \tab Points generated from screen assists. \cr
-      loose_balls_recovered_offensive \tab integer \tab Loose balls recovered on offense. \cr
-      loose_balls_recovered_defensive \tab integer \tab Loose balls recovered on defense. \cr
-      loose_balls_recovered_total \tab integer \tab Loose balls recovered total. \cr
-      offensive_box_outs \tab integer \tab Offensive box outs. \cr
-      defensive_box_outs \tab integer \tab Defensive box outs. \cr
-      box_out_player_team_rebounds \tab integer \tab Box-outs that led to either a player or team rebound. \cr
-      box_out_player_rebounds \tab integer \tab Box-outs that led to a player rebound. \cr
-      box_outs \tab integer \tab Box-outs executed. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  minutes \tab character \tab Minutes played, formatted MM:SS (V3 PT-duration parsed) or decimal minutes (V2). \cr
+  points \tab integer \tab Points scored. \cr
+  contested_shots \tab integer \tab Defensively contested shots. \cr
+  contested_shots2pt \tab integer \tab Contested shots2pt. \cr
+  contested_shots3pt \tab integer \tab Contested shots3pt. \cr
+  deflections \tab integer \tab Defensive deflections. \cr
+  charges_drawn \tab integer \tab Charges drawn. \cr
+  screen_assists \tab integer \tab Screen assists (resulting in a basket). \cr
+  screen_assist_points \tab integer \tab Points generated from screen assists. \cr
+  loose_balls_recovered_offensive \tab integer \tab Loose balls recovered on offense. \cr
+  loose_balls_recovered_defensive \tab integer \tab Loose balls recovered on defense. \cr
+  loose_balls_recovered_total \tab integer \tab Loose balls recovered total. \cr
+  offensive_box_outs \tab integer \tab Offensive box outs. \cr
+  defensive_box_outs \tab integer \tab Defensive box outs. \cr
+  box_out_player_team_rebounds \tab integer \tab Box-outs that led to either a player or team rebound. \cr
+  box_out_player_rebounds \tab integer \tab Box-outs that led to a player rebound. \cr
+  box_outs \tab integer \tab Box-outs executed. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_totals_hustle}
 
 Same columns as the \strong{home_team_totals_hustle} table above.
 
-Returns a named list of data frames: home_team_player_defensive, away_team_player_defensive,
-home_team_totals_defensive, away_team_totals_defensive
+A named list of \code{hoopR_data} tibbles: \code{home_team_player_defensive}, \code{away_team_player_defensive}, \code{home_team_totals_defensive}, \code{away_team_totals_defensive}.
 
 \strong{home_team_player_defensive}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-      first_name \tab character \tab Player's first name. \cr
-      family_name \tab character \tab Player's family / last name. \cr
-      name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
-      player_slug \tab character \tab URL-safe player identifier. \cr
-      position \tab character \tab Listed roster position (G, F, C, etc.). \cr
-      comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
-      jersey_num \tab character \tab Jersey number worn by the player. \cr
-      matchup_minutes \tab character \tab Matchup minutes. \cr
-      partial_possessions \tab numeric \tab Partial possessions. \cr
-      switches_on \tab integer \tab Switches on. \cr
-      player_points \tab integer \tab Player points. \cr
-      defensive_rebounds \tab integer \tab Defensive rebounds. \cr
-      matchup_assists \tab integer \tab Matchup assists. \cr
-      matchup_turnovers \tab integer \tab Matchup turnovers. \cr
-      steals \tab integer \tab Total steals. \cr
-      blocks \tab integer \tab Total blocks. \cr
-      matchup_field_goals_made \tab integer \tab Number of matchup field goals made. \cr
-      matchup_field_goals_attempted \tab integer \tab Number of matchup field goals attempted. \cr
-      matchup_field_goal_percentage \tab numeric \tab Matchup field goal percentage (0-1 decimal). \cr
-      matchup_three_pointers_made \tab integer \tab Number of matchup three pointers made. \cr
-      matchup_three_pointers_attempted \tab integer \tab Number of matchup three pointers attempted. \cr
-      matchup_three_pointer_percentage \tab numeric \tab Matchup three pointer percentage (0-1 decimal). \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+  player_slug \tab character \tab URL-safe player identifier. \cr
+  position \tab character \tab Listed roster position (G, F, C, etc.). \cr
+  comment \tab character \tab Player status / inactive reason (e.g. 'DNP - Coach's Decision', 'Inactive'). \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+  matchup_minutes \tab character \tab Matchup minutes. \cr
+  partial_possessions \tab numeric \tab Partial possessions. \cr
+  switches_on \tab integer \tab Switches on. \cr
+  player_points \tab integer \tab Player points. \cr
+  defensive_rebounds \tab integer \tab Defensive rebounds. \cr
+  matchup_assists \tab integer \tab Matchup assists. \cr
+  matchup_turnovers \tab integer \tab Matchup turnovers. \cr
+  steals \tab integer \tab Total steals. \cr
+  blocks \tab integer \tab Total blocks. \cr
+  matchup_field_goals_made \tab integer \tab Number of matchup field goals made. \cr
+  matchup_field_goals_attempted \tab integer \tab Number of matchup field goals attempted. \cr
+  matchup_field_goal_percentage \tab numeric \tab Matchup field goal percentage (0-1 decimal). \cr
+  matchup_three_pointers_made \tab integer \tab Number of matchup three pointers made. \cr
+  matchup_three_pointers_attempted \tab integer \tab Number of matchup three pointers attempted. \cr
+  matchup_three_pointer_percentage \tab numeric \tab Matchup three pointer percentage (0-1 decimal). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_player_defensive}
@@ -957,215 +945,213 @@ Same columns as the \strong{home_team_player_defensive} table above.
 \strong{home_team_totals_defensive}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{away_team_totals_defensive}
 
 Same columns as the \strong{home_team_totals_defensive} table above.
 
-Returns a named list of data frames: AwayTeam, HomeTeam
+A named list of tibbles: \code{AwayTeam}, \code{HomeTeam}.
 
 \strong{AwayTeam}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      GAME_ID \tab character \tab Unique game identifier. \cr
-      TEAM_ID \tab character \tab Unique team identifier. \cr
-      TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
-      PLAYER_FIRST \tab character \tab  \cr
-      PLAYER_LAST \tab character \tab  \cr
-      IN_TIME_REAL \tab character \tab  \cr
-      OUT_TIME_REAL \tab character \tab  \cr
-      PLAYER_PTS \tab character \tab  \cr
-      PT_DIFF \tab character \tab  \cr
-      USG_PCT \tab character \tab Usage percentage (0-1). \cr
-   }}
+  col_name \tab types \tab description \cr
+  GAME_ID \tab character \tab Unique game identifier. \cr
+  TEAM_ID \tab character \tab Unique team identifier. \cr
+  TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
+  PLAYER_FIRST \tab character \tab  \cr
+  PLAYER_LAST \tab character \tab  \cr
+  IN_TIME_REAL \tab character \tab  \cr
+  OUT_TIME_REAL \tab character \tab  \cr
+  PLAYER_PTS \tab character \tab  \cr
+  PT_DIFF \tab character \tab  \cr
+  USG_PCT \tab character \tab Usage percentage (0-1). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{HomeTeam}
 
 Same columns as the \strong{AwayTeam} table above.
 
-Returns a named list of data frames:
-GameSummary, GameInfo, ArenaInfo, Officials, LineScore,
-InactivePlayers, LastFiveMeetings, OtherStats, AvailableVideo
+A named list of \code{hoopR_data} tibbles: \code{GameSummary}, \code{GameInfo}, \code{ArenaInfo}, \code{Officials}, \code{LineScore}, \code{InactivePlayers}, \code{LastFiveMeetings}, \code{OtherStats}, \code{AvailableVideo}.
 
 \strong{GameSummary}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      game_code \tab character \tab ESPN game code (numeric identifier). \cr
-      game_status \tab integer \tab Game status label. \cr
-      game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
-      period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-      game_clock \tab character \tab Game clock. \cr
-      game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
-      game_et \tab character \tab Game et. \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      duration \tab integer \tab Duration. \cr
-      attendance \tab integer \tab Reported attendance. \cr
-      sellout \tab character \tab Sellout. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  game_code \tab character \tab ESPN game code (numeric identifier). \cr
+  game_status \tab integer \tab Game status label. \cr
+  game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+  period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+  game_clock \tab character \tab Game clock. \cr
+  game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
+  game_et \tab character \tab Game et. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  duration \tab integer \tab Duration. \cr
+  attendance \tab integer \tab Reported attendance. \cr
+  sellout \tab character \tab Sellout. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{GameInfo}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      game_date \tab character \tab Game date (YYYY-MM-DD). \cr
-      attendance \tab integer \tab Reported attendance. \cr
-      game_duration \tab integer \tab Game duration. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  game_date \tab character \tab Game date (YYYY-MM-DD). \cr
+  attendance \tab integer \tab Reported attendance. \cr
+  game_duration \tab integer \tab Game duration. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{ArenaInfo}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      arena_id \tab integer \tab Unique identifier for arena. \cr
-      arena_name \tab character \tab Arena name. \cr
-      arena_city \tab character \tab Arena city. \cr
-      arena_state \tab character \tab Arena state. \cr
-      arena_country \tab character \tab Arena country. \cr
-      arena_timezone \tab character \tab Arena timezone. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  arena_id \tab integer \tab Unique identifier for arena. \cr
+  arena_name \tab character \tab Arena name. \cr
+  arena_city \tab character \tab Arena city. \cr
+  arena_state \tab character \tab Arena state. \cr
+  arena_country \tab character \tab Arena country. \cr
+  arena_timezone \tab character \tab Arena timezone. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{Officials}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-      name \tab character \tab Display name. \cr
-      name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
-      first_name \tab character \tab Player's first name. \cr
-      family_name \tab character \tab Player's family / last name. \cr
-      jersey_num \tab character \tab Jersey number worn by the player. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  name \tab character \tab Display name. \cr
+  name_i \tab character \tab Initialed name (e.g. 'A. Wilson'). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{LineScore}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-      team_wins \tab integer \tab Team wins. \cr
-      team_losses \tab integer \tab Team losses. \cr
-      period1_score \tab integer \tab Period1 score. \cr
-      period2_score \tab integer \tab Period2 score. \cr
-      period3_score \tab integer \tab Period3 score. \cr
-      period4_score \tab integer \tab Period4 score. \cr
-      score \tab integer \tab Final score. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
+  team_wins \tab integer \tab Team wins. \cr
+  team_losses \tab integer \tab Team losses. \cr
+  period1_score \tab integer \tab Period1 score. \cr
+  period2_score \tab integer \tab Period2 score. \cr
+  period3_score \tab integer \tab Period3 score. \cr
+  period4_score \tab integer \tab Period4 score. \cr
+  score \tab integer \tab Final score. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{InactivePlayers}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-      first_name \tab character \tab Player's first name. \cr
-      family_name \tab character \tab Player's family / last name. \cr
-      jersey_num \tab character \tab Jersey number worn by the player. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
+  first_name \tab character \tab Player's first name. \cr
+  family_name \tab character \tab Player's family / last name. \cr
+  jersey_num \tab character \tab Jersey number worn by the player. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{LastFiveMeetings}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      recency_order \tab integer \tab Recency order. \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
-      game_et \tab character \tab Game et. \cr
-      game_status \tab integer \tab Game status label. \cr
-      game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
-      away_team_id \tab integer \tab Unique identifier for the away team. \cr
-      away_team_city \tab character \tab Away team city / location. \cr
-      away_team_name \tab character \tab Away team name. \cr
-      away_team_tricode \tab character \tab Away team three-letter code. \cr
-      away_team_score \tab integer \tab Away team's score. \cr
-      away_team_wins \tab integer \tab Away team's team wins. \cr
-      away_team_losses \tab integer \tab Away team's team losses. \cr
-      home_team_id \tab integer \tab Unique identifier for the home team. \cr
-      home_team_city \tab character \tab Home team city / location. \cr
-      home_team_name \tab character \tab Home team name. \cr
-      home_team_tricode \tab character \tab Home team three-letter code. \cr
-      home_team_score \tab integer \tab Home team's score. \cr
-      home_team_wins \tab integer \tab Home team's team wins. \cr
-      home_team_losses \tab integer \tab Home team's team losses. \cr
-   }}
+  col_name \tab types \tab description \cr
+  recency_order \tab integer \tab Recency order. \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  game_time_utc \tab character \tab Game start time in UTC (ISO 8601 timestamp). \cr
+  game_et \tab character \tab Game et. \cr
+  game_status \tab integer \tab Game status label. \cr
+  game_status_text \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  away_team_city \tab character \tab Away team city / location. \cr
+  away_team_name \tab character \tab Away team name. \cr
+  away_team_tricode \tab character \tab Away team three-letter code. \cr
+  away_team_score \tab integer \tab Away team's score. \cr
+  away_team_wins \tab integer \tab Away team's team wins. \cr
+  away_team_losses \tab integer \tab Away team's team losses. \cr
+  home_team_id \tab integer \tab Unique identifier for the home team. \cr
+  home_team_city \tab character \tab Home team city / location. \cr
+  home_team_name \tab character \tab Home team name. \cr
+  home_team_tricode \tab character \tab Home team three-letter code. \cr
+  home_team_score \tab integer \tab Home team's score. \cr
+  home_team_wins \tab integer \tab Home team's team wins. \cr
+  home_team_losses \tab integer \tab Home team's team losses. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{OtherStats}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      team_id \tab integer \tab Unique team identifier. \cr
-      team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-      team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-      team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
-      points \tab integer \tab Points scored. \cr
-      rebounds_total \tab integer \tab Total rebounds. \cr
-      assists \tab integer \tab Total assists. \cr
-      steals \tab integer \tab Total steals. \cr
-      blocks \tab integer \tab Total blocks. \cr
-      turnovers \tab integer \tab Total turnovers. \cr
-      field_goals_percentage \tab numeric \tab Field goal percentage (0-1 decimal). \cr
-      three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1 decimal). \cr
-      free_throws_percentage \tab numeric \tab Free throw percentage (0-1 decimal). \cr
-      points_in_the_paint \tab integer \tab Points in the paint. \cr
-      points_second_chance \tab integer \tab Second-chance points scored. \cr
-      points_fast_break \tab integer \tab Fast-break points scored. \cr
-      biggest_lead \tab integer \tab Biggest lead. \cr
-      lead_changes \tab integer \tab Lead changes. \cr
-      times_tied \tab integer \tab Times tied. \cr
-      biggest_scoring_run \tab integer \tab Biggest scoring run. \cr
-      turnovers_team \tab integer \tab Turnovers team. \cr
-      turnovers_total \tab integer \tab Turnovers total. \cr
-      rebounds_team \tab integer \tab Rebounds team. \cr
-      points_from_turnovers \tab integer \tab Points from turnovers. \cr
-      bench_points \tab integer \tab Points scored by the bench. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  team_id \tab integer \tab Unique team identifier. \cr
+  team_city \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
+  team_name \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
+  team_tricode \tab character \tab Three-letter team code (e.g. 'LAS' / 'NYL'). \cr
+  points \tab integer \tab Points scored. \cr
+  rebounds_total \tab integer \tab Total rebounds. \cr
+  assists \tab integer \tab Total assists. \cr
+  steals \tab integer \tab Total steals. \cr
+  blocks \tab integer \tab Total blocks. \cr
+  turnovers \tab integer \tab Total turnovers. \cr
+  field_goals_percentage \tab numeric \tab Field goal percentage (0-1 decimal). \cr
+  three_pointers_percentage \tab numeric \tab Three-point field goal percentage (0-1 decimal). \cr
+  free_throws_percentage \tab numeric \tab Free throw percentage (0-1 decimal). \cr
+  points_in_the_paint \tab integer \tab Points in the paint. \cr
+  points_second_chance \tab integer \tab Second-chance points scored. \cr
+  points_fast_break \tab integer \tab Fast-break points scored. \cr
+  biggest_lead \tab integer \tab Biggest lead. \cr
+  lead_changes \tab integer \tab Lead changes. \cr
+  times_tied \tab integer \tab Times tied. \cr
+  biggest_scoring_run \tab integer \tab Biggest scoring run. \cr
+  turnovers_team \tab integer \tab Turnovers team. \cr
+  turnovers_total \tab integer \tab Turnovers total. \cr
+  rebounds_team \tab integer \tab Rebounds team. \cr
+  points_from_turnovers \tab integer \tab Points from turnovers. \cr
+  bench_points \tab integer \tab Points scored by the bench. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 \strong{AvailableVideo}
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab character \tab Unique game identifier. \cr
-      video_available_flag \tab integer \tab Video available flag. \cr
-      pt_available \tab integer \tab Pt available. \cr
-      pt_xyz_available \tab integer \tab Pt xyz available. \cr
-      wh_status \tab integer \tab Wh status. \cr
-      hustle_status \tab integer \tab Hustle status. \cr
-      historical_status \tab integer \tab Historical status. \cr
-   }}
+  col_name \tab types \tab description \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  video_available_flag \tab integer \tab Video available flag. \cr
+  pt_available \tab integer \tab Pt available. \cr
+  pt_xyz_available \tab integer \tab Pt xyz available. \cr
+  wh_status \tab integer \tab Wh status. \cr
+  hustle_status \tab integer \tab Hustle status. \cr
+  historical_status \tab integer \tab Historical status. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

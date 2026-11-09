@@ -7,21 +7,10 @@
 realgm_salary_cap()
 }
 \value{
-A \code{hoopR_data} tibble with one row per season:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab character \tab Season (e.g. \code{2025-2026}). \cr
-      salary_cap \tab character \tab Salary cap. \cr
-      luxury_tax \tab character \tab Luxury-tax threshold. \cr
-      x1st_apron \tab character \tab First apron. \cr
-      x2nd_apron \tab character \tab Second apron. \cr
-      bae \tab character \tab Bi-annual exception. \cr
-      non_taxpayer_mle \tab character \tab Non-taxpayer mid-level exception. \cr
-      taxpayer_mle \tab character \tab Taxpayer mid-level exception. \cr
-      team_room_mle \tab character \tab Room mid-level exception. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "realgm_salary_cap")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get the NBA salary-cap history (and projections) from

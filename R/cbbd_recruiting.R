@@ -6,27 +6,7 @@
 #' @param team (*character* optional): Committed team filter.
 #' @param conference (*character* optional): Conference abbreviation filter.
 #' @param position (*character* optional): Position filter.
-#' @return A `hoopR_data` tibble with one row per recruit. The `hometown` and
-#'   `committed_to` objects are flattened into prefixed columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       id \tab integer \tab Recruit id. \cr
-#'       source_id \tab character \tab Source (ESPN) recruit id. \cr
-#'       position \tab character \tab Recruit position. \cr
-#'       school_id \tab integer \tab High school / club id. \cr
-#'       school \tab character \tab High school / club name. \cr
-#'       athlete_id \tab integer \tab Athlete id (once enrolled). \cr
-#'       year \tab integer \tab Recruiting class year. \cr
-#'       name \tab character \tab Recruit name. \cr
-#'       height_inches \tab numeric \tab Height in inches. \cr
-#'       weight_pounds \tab integer \tab Weight in pounds. \cr
-#'       stars \tab integer \tab Star rating. \cr
-#'       rating \tab numeric \tab Numeric recruit rating. \cr
-#'       ranking \tab integer \tab Overall ranking. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_recruiting_players", inline = FALSE, unit = "recruit")
 #' @keywords CBD Recruiting
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -67,19 +47,7 @@ cbbd_recruiting_players <- function(year = NULL, team = NULL, conference = NULL,
 #' @description
 #' **Get team recruiting rankings from the CollegeBasketballData API.**
 #' @param conference (*character* optional): Conference abbreviation filter.
-#' @return A `hoopR_data` tibble with one row per team:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       team_id \tab integer \tab CollegeBasketballData team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conference \tab character \tab Conference name. \cr
-#'       year \tab integer \tab Recruiting class year. \cr
-#'       ranking \tab integer \tab Team recruiting ranking. \cr
-#'       rating \tab numeric \tab Team recruiting rating. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_recruiting_teams", inline = FALSE, unit = "team")
 #' @keywords CBD Recruiting
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -123,24 +91,7 @@ cbbd_recruiting_teams <- function(year = NULL, team = NULL, conference = NULL) {
 #' @param source_conference (*character* optional): Origin conference filter.
 #' @param destination_conference (*character* optional): Destination conference filter.
 #' @param position (*character* optional): Position filter.
-#' @return A `hoopR_data` tibble with one row per transfer. The `origin` and
-#'   `destination` objects are flattened into prefixed columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       id \tab integer \tab Transfer id. \cr
-#'       source_id \tab character \tab Source (ESPN) athlete id. \cr
-#'       year \tab integer \tab Transfer class year. \cr
-#'       first_name \tab character \tab Player first name. \cr
-#'       last_name \tab character \tab Player last name. \cr
-#'       position \tab character \tab Player position. \cr
-#'       eligibility \tab character \tab Eligibility status. \cr
-#'       years_remaining \tab integer \tab Years of eligibility remaining. \cr
-#'       stars \tab integer \tab Star rating. \cr
-#'       rating \tab numeric \tab Numeric rating. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_recruiting_portal", inline = FALSE, unit = "transfer")
 #' @keywords CBD Recruiting
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names

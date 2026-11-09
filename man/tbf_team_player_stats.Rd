@@ -19,51 +19,10 @@ stable club_id.}
 The top flight was named TBL until 2007-08 and is listed under bsl.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per player.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). \cr
-   competition \tab character \tab TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). \cr
-   team_process_id \tab integer \tab Team-season id of the request (key space: TBF team registrations). \cr
-   person_id \tab integer \tab TBF person id (code; key space: TBF persons, stable across seasons and clubs). \cr
-   jersey_number \tab character \tab Shirt number (oyuncuNo) as a string. \cr
-   first_name \tab character \tab Player's first name. \cr
-   last_name \tab character \tab Player's last name. \cr
-   games \tab integer \tab Games played (macSayisi). \cr
-   seconds_played \tab integer \tab Season total time on court in seconds (sureToplam 'hh:mm:ss'). \cr
-   points \tab integer \tab Season total points (sayiToplam; the API sends it as a string). \cr
-   fg_made \tab integer \tab Season field goals made (agBasarili; sent as a string). \cr
-   fg_attempted \tab integer \tab Season field goals attempted (agDeneme). \cr
-   fg2_made \tab integer \tab Season two-point field goals made (puan20Toplam). \cr
-   fg2_attempted \tab integer \tab Season two-point field goals attempted (puan21Toplam). \cr
-   fg3_made \tab integer \tab Season three-point field goals made (puan30Toplam). \cr
-   fg3_attempted \tab integer \tab Season three-point field goals attempted (puan31Toplam). \cr
-   ft_made \tab integer \tab Season free throws made (sA0Toplam). \cr
-   ft_attempted \tab integer \tab Season free throws attempted (sA1Toplam). \cr
-   def_rebounds \tab integer \tab Season defensive rebounds (drToplam). \cr
-   off_rebounds \tab integer \tab Season offensive rebounds (hrToplam). \cr
-   rebounds \tab integer \tab Season total rebounds (trToplam). \cr
-   assists \tab integer \tab Season assists (asistToplam). \cr
-   blocks \tab integer \tab Season blocks (blokToplam). \cr
-   steals \tab integer \tab Season steals (topCalmaToplam). \cr
-   turnovers \tab integer \tab Season turnovers (topKaybiToplam). \cr
-   fouls \tab integer \tab Season personal fouls (faulToplam). \cr
-   plus_minus \tab double \tab Season plus/minus contribution (oyunaKatki = contribution to the game), a decimal string. \cr
-   efficiency \tab integer \tab Season efficiency rating total (vpToplam, verimlilik puani). \cr
-   fg_pct \tab double \tab Field-goal percentage 0-100 with two decimals (agYuzdesi). \cr
-   fg2_pct \tab double \tab Two-point percentage 0-100 with two decimals (ikilikYuzdesi). \cr
-   fg3_pct \tab double \tab Three-point percentage 0-100 with two decimals (uclukYuzdesi). \cr
-   ft_pct \tab double \tab Free-throw percentage 0-100 with two decimals (serbestAtisYuzdesi). \cr
-   seconds_per_game \tab integer \tab Average time on court per game in seconds (sureOrtalama 'hh:mm:ss'). \cr
-   points_per_game \tab double \tab Points per game (sayiOrtalama). \cr
-   rebounds_per_game \tab double \tab Rebounds per game (trOrtalama). \cr
-   assists_per_game \tab double \tab Assists per game (asistOrtalama). \cr
-   steals_per_game \tab double \tab Steals per game (topCalmaOrtalama). \cr
-   blocks_per_game \tab double \tab Blocks per game (blokOrtalama). \cr
-   turnovers_per_game \tab double \tab Turnovers per game (topKaybiOrtalama). \cr
-   efficiency_per_game \tab double \tab Efficiency rating per game (vpOrtalama). \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_team_player_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Season player statistics of one team-season: totals, percentages and per-game averages.

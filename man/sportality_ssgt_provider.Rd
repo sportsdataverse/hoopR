@@ -11,12 +11,10 @@ sportality_ssgt_provider(ssgt_uuid)
 Directory: \verb{/statistics-v2/layout-info} \verb{seasonSeriesGameTypeTeams[].ssgtUuid}.}
 }
 \value{
-A \code{hoopR_data} tibble: Stats provider of an ssgt, a bare word (genius-basketball). An empty valid answer
-raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
-\code{sportality_ssgt_provider}), then any column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   provider \tab character \tab Stats provider of the ssgt (genius-basketball, a Genius Sports LiveStats relay). \cr
-}
+A \code{hoopR_data} tibble with one row per stats provider.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_ssgt_provider")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Stats provider of an ssgt, a bare word (genius-basketball).

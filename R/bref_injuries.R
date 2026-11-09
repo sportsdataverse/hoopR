@@ -12,17 +12,7 @@
 #' tool is gone). This function uses Basketball-Reference's live injury report
 #' instead, which is maintained and carries the same player / team / status /
 #' note fields.
-#' @return A `hoopR_data` tibble with one row per injured player:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       player \tab character \tab Player name. \cr
-#'       team_name \tab character \tab Team name. \cr
-#'       date_update \tab character \tab Date the status was last updated. \cr
-#'       note \tab character \tab Injury status and description. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("bref_injuries", inline = FALSE, unit = "injured player")
 #' @keywords Basketball-Reference
 #' @importFrom janitor clean_names
 #' @importFrom dplyr as_tibble

@@ -36,20 +36,8 @@ NULL
 #'   (integer NBA Stats person IDs), and \code{points} (numeric, points scored
 #'   on that possession).
 #' @param ... Reserved for future keyword arguments (currently ignored).
-#' @return Returns a \code{data.frame} with one row per player:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       player_id \tab integer \tab NBA Stats person ID. Rows are sorted ascending by player_id. \cr
-#'       o_rapm \tab numeric \tab Offensive RAPM (per-100-possession points added on offense). Positive = better offensive player. \cr
-#'       d_rapm \tab numeric \tab Defensive RAPM (per-100-possession points saved on defense). Positive = better defensive player (sign is flipped so good defense is positive). \cr
-#'       rapm \tab numeric \tab Total RAPM = o_rapm + d_rapm. Positive = net positive impact. \cr
-#'       off_poss \tab integer \tab Number of possessions the player appeared on offense. \cr
-#'       def_poss \tab integer \tab Number of possessions the player appeared on defense. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'   Returns a 0-row frame with the same schema when input is empty or all
+#' @eval .returns_rd("nba_rapm", unit = "player")
+#' @return Returns a 0-row frame with the same schema when input is empty or all
 #'   possessions have NA lineup cells (never-raise).
 #'
 #'   **Note:** RAPM is expressed in per-100-possession units. A **full season**
@@ -63,8 +51,8 @@ NULL
 #'   sportsdataverse-py. glmnet and sklearn scale and choose the penalty
 #'   differently, so the two agree closely but not exactly. The data do not fix
 #'   the overall level of the offensive or defensive block (nor, therefore, of
-#'   \code{rapm}); the equal penalty sets it so that the plain average of
-#'   \code{o_rapm} over players, and of \code{d_rapm}, is 0. Possession-weighted
+#'   `rapm`); the equal penalty sets it so that the plain average of
+#'   `o_rapm` over players, and of `d_rapm`, is 0. Possession-weighted
 #'   means are not fixed by the model: if playing time is correlated with
 #'   player quality they can be well away from 0. On the 2025-26 NBA regular
 #'   season they were +0.30 (O-RAPM) and +0.07 (D-RAPM).

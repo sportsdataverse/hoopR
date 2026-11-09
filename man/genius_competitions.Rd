@@ -14,18 +14,10 @@ page record (a list): \code{data.json} as served plus \verb{_request} (the ids a
 record parsed from an HTML page.}
 }
 \value{
-A \code{hoopR_data} tibble (a zero-row tibble with these columns when Genius answers
-an empty valid page), or the raw list when \code{return_parsed = FALSE}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   org \tab character \tab ORG code the request used (the hosted ORG, or the LiveStats ORG for the /u/ shell). \cr
-   comp_id \tab integer \tab Genius competition id (compId): one per org competition-season; the \{compId\} of hosted and data/competition paths \cr
-   label \tab character \tab Competition label as the org typed it, free text in any language: may or may not carry a season ('BASKET LEAGUE 2019 - 20', '1st division', 'Kypello Elladas' (in Greek script) = Greek Cup, 'Mavroskoufeia' (in Greek script) = Mavroskoufeia youth tournament) \cr
-   league_id \tab integer \tab Genius league id of the org (ESAKE = 115; IBBA has two: 187 and 549) \cr
-   year \tab integer \tab Genius season year of the competition: the START year of a two-year season (BNXT '2023-2024' = 2023), the year itself for a calendar season. null when the page gives none \cr
-   season \tab integer \tab sdv END-year season of the competition (2026 = 2025-26) from the label span, else the Genius year; null when no rule applies. See season_rule. \cr
-   season_rule \tab character \tab Which rule produced season: 'label span', 'genius year + 1 (split)', 'genius year (calendar)', 'label year (calendar)' or 'unknown'. \cr
-   selected \tab logical \tab True for the competition the hosted chooser pre-selects (the org's default, not always the newest). \cr
-}
+A \code{hoopR_data} tibble with one row per competition-season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "genius_competitions")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every competition of an org from the hosted WebStats chooser, with its END-year season.

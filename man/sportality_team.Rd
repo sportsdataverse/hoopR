@@ -11,26 +11,10 @@ sportality_team(team_uuid)
 space: platform team uuids (not the numeric Genius team id).}
 }
 \value{
-A \code{hoopR_data} tibble: One team. An empty valid answer raises \code{hoopR_no_data}; the documented columns come
-first, in this order (sportsdataverse-py \code{sportality_team}), then any column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   names_code \tab character \tab Three-letter team code (HOL, RAN ...); codes changed between seasons for some clubs (BAK in 2026, BKA in 2025 for Bakken Bears). \cr
-   names_short \tab character \tab Short name of the team. \cr
-   names_long \tab character \tab Long name of the team. \cr
-   names_full \tab character \tab Full name of the team. \cr
-   names_code_site \tab character \tab Team code as the club's own site shows it. \cr
-   names_short_site \tab character \tab Short team name as the club's own site shows it. \cr
-   names_full_site \tab character \tab Full team name as the club's own site shows it. \cr
-   names_long_site \tab character \tab Long team name as the club's own site shows it. \cr
-   info \tab character \tab Detail record (shape depends on the route; see the child columns). \cr
-   uuid \tab character \tab Platform uuid of this record (10-character lowercase key space of its record type; joins the route that serves it). \cr
-   nationality \tab character \tab ISO 3166-1 alpha-2 country code. \cr
-   arena_name \tab character \tab Name of the arena. \cr
-   public_url \tab character \tab The club's own website. \cr
-   icon \tab character \tab Team logo URL (SVG on sportality.cdn.s8y.se). \cr
-   owner_instance_id \tab character \tab Site instance id of the club that owns the team (platform key space, e.g. hol2_hol). \cr
-   site_display_name \tab character \tab Team name as the league site displays it. \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_team")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One team.

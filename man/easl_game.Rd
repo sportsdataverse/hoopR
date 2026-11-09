@@ -12,55 +12,10 @@ easl_game(fixture_id)
 malformed id is \code{hoopR_bad_request}.}
 }
 \value{
-A \code{hoopR_data} tibble: Header of one finished fixture: teams, final score, status, stage, pool, venue and
-attendance. An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{easl_game}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Always null here: the game route carries no season; join season_id to easl_seasons. \cr
-   season_id \tab character \tab Always null here: the game route carries no season. \cr
-   fixture_id \tab character \tab fixtureId: DataCore fixture (game) UUID v1 (key space: EASL games; the \code{{fixtureId}} of every /matches route). \cr
-   fixture_number \tab integer \tab Fixture number YYSSNNN: two-digit start year, two-digit end year, three-digit sequence (2627001 = first game of 2026-27, 2526003 = third of 2025-26). Null on every 2023-24 fixture. \cr
-   fixture_type \tab character \tab REGULAR (group stage), PLAYOFF (quarter- and semifinals) or FINAL (championship and third-place games). Missing from the DRAFT placeholders. \cr
-   status \tab character \tab CONFIRMED = finished with a final box score; SCHEDULED = future; DRAFT = a placeholder with no teams or time. \cr
-   fixture_name \tab character \tab Fixture name for special games ('EASL Championship', 'Semifinals 2', 'EASL Tip-Off 2026 Cebu'); null for ordinary group games. \cr
-   start_time_utc \tab character \tab Scheduled tip-off in UTC, 'YYYY-MM-DDTHH:MM:SS' with no zone marker. The /matches list holds null here on DRAFT fixtures; the single-fixture sample is a finished game. \cr
-   start_time_local \tab character \tab Scheduled tip-off in the venue's local time, 'YYYY-MM-DDTHH:MM:SS' with no zone (19:10 local = 10:10 UTC in Tokyo). DRAFT fixtures carry a date at 00:00:00. \cr
-   attendance \tab integer \tab Announced attendance of the game; null when not recorded. \cr
-   live_data_available \tab logical \tab Whether live stats were collected for the game (present on a minority of fixtures; meaning unverified). Absent on some rows. \cr
-   live_video_available \tab logical \tab Whether live video was available (false on all 146 fixtures of the four seasons). \cr
-   pool_code \tab character \tab Pool (group) id: a 30-character hex string, equal to pool.id; null on playoff and DRAFT fixtures. \cr
-   pool_id \tab character \tab Pool id: a 30-character hex string; null for playoff games ('Unknown Pool'). \cr
-   pool_name \tab character \tab Pool name: 'Group A', 'Group B', 'Group C' or the placeholder 'Unknown Pool'. \cr
-   pool_abb \tab character \tab Pool abbreviation (A, B, C). Playoff and DRAFT fixtures of the /matches list carry the placeholder pool, whose abb is empty or 'N/A'. \cr
-   stage_id \tab character \tab Stage reference \verb{<season UUID>:<stage code>} on team-fixture rows only (its first half scopes the fixture to a season); null on the other fixture routes, which send the stage_code, stage_name and stage_order trio. \cr
-   stage_code \tab character \tab Stage id: a 30-character hex string. Absent on some rows. \cr
-   stage_name \tab character \tab Stage name: 'Group Stage', 'Final Four' or 'EASL Playoffs'. Absent on some rows. \cr
-   stage_order \tab integer \tab Ordinal of the stage within the season (1 = Group Stage, 2 = EASL Playoffs). Absent on some rows. \cr
-   venue_name \tab character \tab Arena name. Absent on some rows. \cr
-   venue_name_latin \tab character \tab Venue name in Latin script; null on most rows. \cr
-   venue_abbreviation_latin \tab character \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (String). \cr
-   venue_abbreviation_local \tab character \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (String). \cr
-   venue_alternate_name_latin \tab character \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (String). \cr
-   venue_country_code \tab character \tab ISO 3166-1 alpha-3 country code of the arena: JPN, TWN, PHL, KOR, MAC, HKG, MNG, CHN. The /matches list holds null here on DRAFT fixtures (empty venue). \cr
-   venue_city \tab character \tab City of the arena. \cr
-   venue_state \tab character \tab State or province of the arena (Philippine games, for example Cebu). \cr
-   home_team_id \tab character \tab Home team: teamId: DataCore team (entity) UUID v1 (key space: EASL teams, the same id as \code{entityId}; joins /teams, /standings team.id, fixture competitors, box and play-by-play teams). Not a player id. \cr
-   home_name \tab character \tab Home team: display name. Despite the field name this is the English / Latin-script name used on the league site. \cr
-   home_name_native \tab character \tab Home team: alternative name: the native-script name of some Japanese clubs (for example the Japanese-script name of Utsunomiya Brex), blank for most clubs; for players it usually equals nameFullLocal. Despite the field name it is not always Latin script. Null on some rows. \cr
-   home_code_latin \tab character \tab Home team: three-letter club code (for example BRE); null or empty for some clubs. \cr
-   home_code_local \tab character \tab Home team: alternative three-letter club code (for example TPP); null for most clubs. A club may have only one of codeLatin / codeLocal. \cr
-   home_score \tab integer \tab Home team final points (the wire sends a numeric string; cast to Int64); null before the game is played. \cr
-   home_result_place \tab integer \tab Home team: result place: 1 = winner, 2 = loser. The /matches list holds null here for fixtures not yet played; \verb{/matches/\{fixtureId\}} is sampled for finished games only. \cr
-   home_draw \tab logical \tab Home team: true when the game has no winner YET or ever: true on every unplayed competitor, false on every finished one (a tie has never happened). \cr
-   away_team_id \tab character \tab Away team: teamId: DataCore team (entity) UUID v1 (key space: EASL teams, the same id as \code{entityId}; joins /teams, /standings team.id, fixture competitors, box and play-by-play teams). Not a player id. \cr
-   away_name \tab character \tab Away team: display name. Despite the field name this is the English / Latin-script name used on the league site. \cr
-   away_name_native \tab character \tab Away team: alternative name: the native-script name of some Japanese clubs (for example the Japanese-script name of Utsunomiya Brex), blank for most clubs; for players it usually equals nameFullLocal. Despite the field name it is not always Latin script. Null on some rows. \cr
-   away_code_latin \tab character \tab Away team: three-letter club code (for example BRE); null or empty for some clubs. \cr
-   away_code_local \tab character \tab Away team: alternative three-letter club code (for example TPP); null for most clubs. A club may have only one of codeLatin / codeLocal. \cr
-   away_score \tab integer \tab Away team final points (the wire sends a numeric string; cast to Int64); null before the game is played. \cr
-   away_result_place \tab integer \tab Away team: result place: 1 = winner, 2 = loser. The /matches list holds null here for fixtures not yet played; \verb{/matches/\{fixtureId\}} is sampled for finished games only. \cr
-   away_draw \tab logical \tab Away team: true when the game has no winner YET or ever: true on every unplayed competitor, false on every finished one (a tie has never happened). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "easl_game")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Header of one finished fixture: teams, final score, status, stage, pool, venue and attendance.

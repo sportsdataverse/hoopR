@@ -17,21 +17,10 @@ druga.aba-liga.com, lea=2). Both sites serve one database; the runtime asks the 
 \code{"aba"}.}
 }
 \value{
-A \code{hoopR_data} tibble.
-One row per period played: \code{period} (\code{Q1}..\code{Q4}, then \code{OT1}, \code{OT2}...), its 1-based \code{period_no} and the points
-scored IN the period (not cumulative).
-Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_no \tab integer \tab Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The \{gameNo\} of the match route. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr
-   league_id \tab integer \tab League code, the site's lea: 1 = ABA League, 2 = ABA League 2. \cr
-   league \tab character \tab League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. \cr
-   period \tab character \tab 'Q1'..'Q4', then 'OT1', 'OT2' ... for overtimes. \cr
-   period_no \tab integer \tab 1-based position of the period: 1-4 for Q1-Q4, then 5 for OT1, 6 for OT2. \cr
-   home_points \tab integer \tab Home points scored IN the period (not cumulative). \cr
-   away_points \tab integer \tab Away points scored IN the period (not cumulative). \cr
-}
+A \code{hoopR_data} tibble with one row per period played.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "aba_periods")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Points each team scored in each quarter and overtime of one finished game.

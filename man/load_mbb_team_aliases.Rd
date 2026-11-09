@@ -18,25 +18,27 @@ the data into a database.}
 \item{tablename}{The name of the data table within the database}
 }
 \value{
-Returns a \code{hoopR_data} tibble with one row per team alias, or \code{NULL} after
-appending the rows to \code{tablename} when \code{dbConnection} and \code{tablename} are both given.
+A \code{hoopR_data} tibble with one row per team alias.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League key: \code{mbb} or \code{nba}. \cr
-      team_id \tab character \tab ESPN team id. \cr
-      team_id_source \tab character \tab Id system of \code{team_id}: \code{espn}. \cr
-      source \tab character \tab Source that uses the alias: \code{fox}, \code{yahoo}, \code{torvik}, \code{kenpom}, \code{ncaa}, \code{sports247} (247Sports) or \code{on3} (MBB); \code{fox}, \code{yahoo}, \code{cbs} or \code{nba_stats} (NBA). \cr
-      source_id \tab character \tab The source's own team id (e.g. \code{25}, \code{nba.t.1}); \code{NA} for a name-only source (KenPom, Torvik). \cr
-      id_kind \tab character \tab \code{team} (the source's id for this sport's team) or \code{school} (one id for every sport of a school: the stats.ncaa.org org id, 247Sports \code{institutionKey}, On3 \code{orgKey}). \cr
-      name_kind \tab character \tab \code{name} or \code{abbreviation} when the source gives its own spelling, else \code{NA}. An id with a name and an abbreviation is two rows. \cr
-      value \tab character \tab The source's own spelling of the name or abbreviation; \code{NA} when \code{name_kind} is \code{NA}. \cr
-      valid_from \tab integer \tab First season (ending year) the source shows this id or name on the team, inclusive. \cr
-      valid_to \tab integer \tab Last season (ending year) the source shows this id or name on the team, inclusive; a gap in the source splits the window into two rows. \cr
-      match_method \tab character \tab How the row was matched: \code{deterministic} (a formula or shared key), \code{crosswalk} (carried from a published crosswalk), \code{curated} (a cited hand-made map); for a captured team directory, \code{alias}, \code{exact_name} (normalized name) or \code{dict} (curated name dictionary). \cr
-      evidence \tab character \tab The asset or file the row came from. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League key: \code{mbb} or \code{nba}. \cr
+  team_id \tab character \tab ESPN team id. \cr
+  team_id_source \tab character \tab Id system of \code{team_id}: \code{espn}. \cr
+  source \tab character \tab Source that uses the alias: \code{fox}, \code{yahoo}, \code{torvik}, \code{kenpom}, \code{ncaa}, \code{sports247} (247Sports) or \code{on3} (MBB); \code{fox}, \code{yahoo}, \code{cbs} or \code{nba_stats} (NBA). \cr
+  source_id \tab character \tab The source's own team id (e.g. \code{25}, \code{nba.t.1}); \code{NA} for a name-only source (KenPom, Torvik). \cr
+  id_kind \tab character \tab \code{team} (the source's id for this sport's team) or \code{school} (one id for every sport of a school: the stats.ncaa.org org id, 247Sports \code{institutionKey}, On3 \code{orgKey}). \cr
+  name_kind \tab character \tab \code{name} or \code{abbreviation} when the source gives its own spelling, else \code{NA}. An id with a name and an abbreviation is two rows. \cr
+  value \tab character \tab The source's own spelling of the name or abbreviation; \code{NA} when \code{name_kind} is \code{NA}. \cr
+  valid_from \tab integer \tab First season (ending year) the source shows this id or name on the team, inclusive. \cr
+  valid_to \tab integer \tab Last season (ending year) the source shows this id or name on the team, inclusive; a gap in the source splits the window into two rows. \cr
+  match_method \tab character \tab How the row was matched: \code{deterministic} (a formula or shared key), \code{crosswalk} (carried from a published crosswalk), \code{curated} (a cited hand-made map); for a captured team directory, \code{alias}, \code{exact_name} (normalized name) or \code{dict} (curated name dictionary). \cr
+  evidence \tab character \tab The asset or file the row came from. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\code{NULL} instead, after appending the rows to \code{tablename}, when \code{dbConnection} and
+\code{tablename} are both given.
 }
 \description{
 Loads every team id and name another source uses for an

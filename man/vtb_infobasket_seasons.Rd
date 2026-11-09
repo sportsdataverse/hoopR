@@ -11,17 +11,10 @@ vtb_infobasket_seasons(tag = "vtb")
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: Season END year -> season-level CompID for a competition tag (the table every season-keyed
-wrapper maps with). The columns are always these, in this order (sportsdataverse-py \code{vtb_infobasket_seasons}); an empty valid
-answer raises \code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. \cr
-   comp_id \tab integer \tab Season-level CompID of that season (50714 = VTB 2025-26). Pass it as \code{comps} to /Comp/GetCalendar/. \cr
-   name_ru \tab character \tab Season name in Russian ('Sezon 2025/2026' = 'Season 2025/2026'). \cr
-   name_en \tab character \tab Season name in English. \cr
-   db \tab character \tab Infobasket database the competition lives in ('org'). \cr
-   tag \tab character \tab Competition tag of the request (vtb is the VTB United League; vtbyouth, wbc, wpremier and rfb also answer). \cr
-}
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Season END year -> season-level CompID for a competition tag (the table every season-keyed wrapper maps with).

@@ -12,37 +12,10 @@ pleague_pbp(gid)
 are served.}
 }
 \value{
-A \code{hoopR_data} tibble: Play-by-play of one finished game (2022-23 on) in game order, with shot x / y and the
-clip references. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
-\code{pleague_pbp}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   gid \tab integer \tab P. LEAGUE+ game id on the site: ONE global integer sequence over every stage and season (1-12 = 2020-21 pre-season, 13 = the 2020-21 opener, 197 = the 2022-23 opener, 662 = the 2025-26 opener), with gaps; a row id, not a count. The \{gid\} of /game/\{gid\}. \cr
-   seq \tab integer \tab Position of the play in game order, 1-based (the fragment lists plays oldest first within the fragment). \cr
-   period \tab character \tab Period label: Q1-Q4, then OT1, OT2 for overtime. \cr
-   period_no \tab integer \tab 1-based position of the period: 1-4 for Q1-Q4, then 5 for OT1, 6 for OT2. \cr
-   clock \tab character \tab Game clock REMAINING in the period 'mm:ss' (counts down; Q1 opens at 12:00, OT at 05:00). \cr
-   seconds_left \tab integer \tab The clock as whole seconds remaining in the period (08:34 = 514), derived by the parser. \cr
-   side \tab character \tab Side of the acting team: away or home (the fragment places the play in the away or home column). \cr
-   jersey \tab character \tab Shirt number of the acting player as printed; null on team rows and where the name is printed without a number. \cr
-   player_zh \tab character \tab Acting player's name as printed; null on team rows (a team rebound, timeout or shot-clock violation). The page prints no player ids: join to the box on side, jersey and name_zh. \cr
-   action \tab character \tab Action code (one of the codes listed under "Action codes" below; an unseen phrase is refused as layout drift). \cr
-   action_zh \tab character \tab The action phrase as printed, Traditional Chinese ((Chinese text) = dunk, made; '#35 (Chinese text)' = '#35 \{player\} dunk, made'); blank on an unlabelled row. Each of the 82 observed phrases maps to one action code (see \code{action}). \cr
-   action_en \tab character \tab English meaning of the play's phrase (see action), so a free throw reads its own trip, e.g. 'free throw 2, made'; null for a code outside the observed table. \cr
-   text_zh \tab character \tab The whole printed text of the play, e.g. '#35 (Chinese text)' = '#35 \{player\} dunk, made'. \cr
-   ft_number \tab integer \tab Which free throw of the trip this is (1, 2 or 3), from (Chinese text); null on every other play. \cr
-   ft_awarded \tab integer \tab Free throws awarded in the trip (1, 2 or 3) from (Chinese text); set only on the FIRST free throw's row, null otherwise. \cr
-   points \tab integer \tab Points scored by the play from the '+2' / '+3' / '+1' tag; null when the tag is a bare '+'. \cr
-   score_away \tab integer \tab Away score after the play, from the 'A - H' cell (AWAY first, unlike the box); null on plays that print no score (substitutions, rebounds, jump balls). \cr
-   score_home \tab integer \tab Home score after the play, from the 'A - H' cell; null when the play prints no score. \cr
-   x \tab double \tab Shot / play x: PERCENT (0-100) of the court LENGTH in the PHYSICAL court frame (not normalised per team): baskets near x = 5 and x = 95, teams swap ends at half-time. The Preciser shot list uses a home-attacks-95 frame: x_vendor = 100 - x in the halves where the home team attacks x < 50. Null on plays without a location. Court 28.75 m long. \cr
-   y \tab double \tab Shot / play y: PERCENT (0-100) of the court WIDTH in the physical frame (baskets at y = 50); y_vendor = 100 - y in the halves where the home team attacks x < 50. Which sideline is y = 0 is unverified. Court 15.25 m wide. \cr
-   nice_play \tab logical \tab True when the site stars the play (a nice_play row class and a starred clip). \cr
-   video_uuid \tab character \tab Clip uuid (key space: the clip vendor tryspot); null on plays without a clip (about 3 in 4). The clip urls are never kept: they carry a vendor access key. \cr
-   synergy_play_id \tab character \tab Synergy Sports play uuid of the clip (the site links Synergy); a string on every one of the 50,862 clips in the corpus. \cr
-   video_stat_category \tab character \tab The clip's own stat label (ast, blk, ft_made, ft_miss, pfoul, reb_d, reb_o, stl, three_made, three_miss, timeout, turnover, two_made, two_miss): it names the PLAY the clip shows, not always this row's action (a rebound row carries the missed shot's clip). \cr
-   tryspot_player_id \tab integer \tab Player id in the clip vendor's key space (an integer such as 59476); NOT the box player_id. \cr
-   video_created_at \tab character \tab When the clip was created, UTC ISO 8601 with milliseconds. \cr
-}
+A \code{hoopR_data} tibble with one row per play-by-play event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play of one finished game (2022-23 on) in game order, with shot x / y and the clip references.

@@ -15,22 +15,10 @@ and box (cached) and checks the vendor body against them (uuid, final score, mad
 the uuid must be the game page's. Without it only the checks the body allows by itself run.}
 }
 \value{
-A \code{hoopR_data} tibble: On-court stints of every player of one finished game (the rotation chart). An empty valid
-answer is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{pleague_preciser_rotation}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_uuid \tab character \tab Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; \code{uuid} of pleague_game. \cr
-   side \tab character \tab Which team the row belongs to: home or away. \cr
-   name_zh \tab character \tab Player name (Traditional Chinese); equals the site box name_zh, which is how the runtime checks the roster. \cr
-   jersey \tab integer \tab Shirt number (an integer here; the box prints it as a string). \cr
-   started \tab logical \tab True when the player started the game. \cr
-   stint_no \tab integer \tab 1-based position of the stint among the player's stints, in game order. \cr
-   start_period \tab character \tab Period in which the stint starts (Q1-Q4, OT1, ...). \cr
-   start_clock \tab character \tab Clock REMAINING in start_period when the stint starts, 'm:ss'. \cr
-   start_seconds \tab integer \tab Seconds elapsed on the game clock when the stint starts (cumulative across periods). \cr
-   end_period \tab character \tab Period in which the stint ends. \cr
-   end_clock \tab character \tab Clock REMAINING in end_period when the stint ends, 'm:ss'. \cr
-   end_seconds \tab integer \tab Seconds elapsed on the game clock when the stint ends (cumulative across periods). \cr
-}
+A \code{hoopR_data} tibble with one row per player stint.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_preciser_rotation")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 On-court stints of every player of one finished game (the rotation chart).

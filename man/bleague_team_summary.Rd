@@ -16,49 +16,10 @@ belong to; a context whose \code{Year} differs raises \code{hoopR_asset_fetch}. 
 (default) = no check (the key alone selects the game).}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   schedule_key \tab integer \tab B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The \{schedule_key\} every game wrapper takes and the schedule page's list-item id. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. \cr
-   feed \tab character \tab Source feed of the row: v2 (v2_genius_contexts, B1/B2 from 2020-21) or v1 (v1_contexts: B3, B1/B2 2018-2020, and the 2016-17 / 2017-18 game-page embed). The feeds differ in id types, dates and some codes. \cr
-   period_category \tab integer \tab Period category: 1-4 = quarters 1-4, 15 = first half, 16 = second half, 18 = whole game. Overtime codes are unverified. \cr
-   team_side \tab character \tab Side of the game the row belongs to: home or away. \cr
-   team_id \tab character \tab B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. \cr
-   team_name_j \tab character \tab Team name in Japanese. \cr
-   team_name_e \tab character \tab Team name in English, uppercase. \cr
-   fg_made \tab integer \tab Field goals made (PTM). \cr
-   fg_attempted \tab integer \tab Field goals attempted (PTA). \cr
-   fg_pct \tab double \tab Field-goal percentage 0-100, one decimal. \cr
-   fg2_made \tab integer \tab Two-point field goals made. \cr
-   fg2_attempted \tab integer \tab Two-point field goals attempted. \cr
-   fg2_pct \tab double \tab Two-point percentage 0-100. \cr
-   fg3_made \tab integer \tab Three-point field goals made. \cr
-   fg3_attempted \tab integer \tab Three-point field goals attempted. \cr
-   fg3_pct \tab double \tab Three-point percentage 0-100. \cr
-   ft_made \tab integer \tab Free throws made. \cr
-   ft_attempted \tab integer \tab Free throws attempted. \cr
-   ft_pct \tab double \tab Free-throw percentage 0-100. \cr
-   reb_off \tab integer \tab Offensive rebounds. \cr
-   reb_def \tab integer \tab Defensive rebounds. \cr
-   reb \tab integer \tab Total rebounds. \cr
-   assists \tab integer \tab Assists credited to the team in the period category. \cr
-   turnovers \tab integer \tab Turnovers committed by the team in the period category. \cr
-   steals \tab integer \tab Steals made by the team in the period category. \cr
-   blocks \tab integer \tab Blocks made by the team in the period category. \cr
-   blocks_received \tab integer \tab Shots blocked by the opponent. \cr
-   fouls \tab integer \tab Fouls committed. \cr
-   fouls_drawn \tab integer \tab Fouls drawn. \cr
-   paint_points \tab integer \tab Points in the paint (inside-the-paint 2PT points; 2x the players' PT2IN count on v2). \cr
-   points_off_turnover \tab integer \tab Points off turnovers. \cr
-   second_chance_points \tab integer \tab Second-chance points. \cr
-   fast_break_points \tab integer \tab Fast-break points. \cr
-   max_lead \tab integer \tab Largest lead of the team in the period category (0 if it never led). \cr
-   lead_last \tab integer \tab Lead statistic (LeadLast), integer; meaning unverified (7 for the home side on all checked games). \cr
-   lead_last_home \tab integer \tab Home score-like value tied to lead_last; meaning unverified. A string on v2 quarter / game rows. \cr
-   lead_last_away \tab integer \tab Away score-like value tied to lead_last; meaning unverified. \cr
-   lead_changes \tab integer \tab Lead changes in the period category (LeadCount); the same on both side rows. \cr
-   ties \tab integer \tab Times the score was tied in the period category (TieCount); the same on both side rows. \cr
-}
+A \code{hoopR_data} tibble with one row per team side.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "bleague_team_summary")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Team summary of one B.LEAGUE game per period category, in long form (one row per

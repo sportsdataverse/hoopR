@@ -13,48 +13,48 @@ espn_nba_wp(game_id)
 \item{game_id}{(\emph{Integer} required): Game ID filter for querying a single game}
 }
 \value{
-\code{\link[=espn_mbb_wp]{espn_mbb_wp()}} - A data frame with 9 variables:
+A \code{hoopR_data} tibble with one row per play.
 
 \if{html}{\tabular{lll}{
-   col_name \tab type \tab description \cr
-   \code{game_id} \tab character \tab Referencing game ID (should be same as \code{game_id} from other functions). \cr
-   \code{play_id} \tab character \tab Referencing play ID. \cr
-   \code{period} \tab integer \tab Clock (time) left in the game. \cr
-   \code{time_left} \tab character \tab Clock (time) left in the game. \cr
-   \code{period_seconds_left} \tab integer \tab Seconds left in the period. \cr
-   \code{game_seconds_left} \tab integer \tab Seconds left in the game. \cr
-   \code{home_win_percentage} \tab double \tab The probability of the home team winning the game. \cr
-   \code{away_win_percentage} \tab double \tab The probability of the away team winning the game (calculated as 1 - \code{home_win_percentage} - \code{tie_percentage}). \cr
-   \code{tie_percentage} \tab double \tab The probability of the game ending the final period in a tie. \cr
+  col_name \tab types \tab description \cr
+  \code{game_id} \tab character \tab Referencing game ID (should be same as \code{game_id} from other functions). \cr
+  \code{play_id} \tab character \tab Referencing play ID. \cr
+  \code{period} \tab integer \tab Clock (time) left in the game. \cr
+  \code{time_left} \tab character \tab Clock (time) left in the game. \cr
+  \code{period_seconds_left} \tab integer \tab Seconds left in the period. \cr
+  \code{game_seconds_left} \tab integer \tab Seconds left in the game. \cr
+  \code{home_win_percentage} \tab double \tab The probability of the home team winning the game. \cr
+  \code{away_win_percentage} \tab double \tab The probability of the away team winning the game (calculated as 1 - \code{home_win_percentage} - \code{tie_percentage}). \cr
+  \code{tie_percentage} \tab double \tab The probability of the game ending the final period in a tie. \cr
 }}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\code{\link[=espn_nba_wp]{espn_nba_wp()}} - A data frame with 21 variables:
+A \code{hoopR_data} tibble with one row per play.
 
 \if{html}{\tabular{lll}{
-     col_name \tab types \tab description \cr
-     game_id \tab numeric \tab Unique game identifier. \cr
-     play_id \tab character \tab Unique play identifier within a game. \cr
-     home_win_percentage \tab numeric \tab Home win percentage (0-1 decimal). \cr
-     away_win_percentage \tab numeric \tab Away win percentage (0-1 decimal). \cr
-     tie_percentage \tab numeric \tab Tie percentage (0-1 decimal). \cr
-     sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
-     text \tab character \tab Text description of the play / record. \cr
-     away_score \tab integer \tab Away team score at the time of the play. \cr
-     home_score \tab integer \tab Home team score at the time of the play. \cr
-     scoring_play \tab logical \tab TRUE if the play resulted in points scored. \cr
-     score_value \tab integer \tab Point value of the play (2 / 3 / 1). \cr
-     participants \tab list \tab Participants. \cr
-     shooting_play \tab logical \tab TRUE if the play was a shooting attempt. \cr
-     type_id \tab character \tab Type identifier (numeric). \cr
-     type_text \tab character \tab Display text for the type field. \cr
-     period_number \tab integer \tab Numeric period (1-4 for quarters; 5+ for OT). \cr
-     period_display_value \tab character \tab Period display label (e.g. '1st Quarter', 'OT'). \cr
-     clock_display_value \tab character \tab Game clock display string (e.g. '8:32'). \cr
-     team_id \tab character \tab Unique team identifier. \cr
-     coordinate_x \tab integer \tab X coordinate on the court (half-court layout). \cr
-     coordinate_y \tab integer \tab Y coordinate on the court (half-court layout). \cr
-  }}
+  col_name \tab types \tab description \cr
+  game_id \tab numeric \tab Unique game identifier. \cr
+  play_id \tab character \tab Unique play identifier within a game. \cr
+  home_win_percentage \tab numeric \tab Home win percentage (0-1 decimal). \cr
+  away_win_percentage \tab numeric \tab Away win percentage (0-1 decimal). \cr
+  tie_percentage \tab numeric \tab Tie percentage (0-1 decimal). \cr
+  sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
+  text \tab character \tab Text description of the play / record. \cr
+  away_score \tab integer \tab Away team score at the time of the play. \cr
+  home_score \tab integer \tab Home team score at the time of the play. \cr
+  scoring_play \tab logical \tab TRUE if the play resulted in points scored. \cr
+  score_value \tab integer \tab Point value of the play (2 / 3 / 1). \cr
+  participants \tab list \tab Participants. \cr
+  shooting_play \tab logical \tab TRUE if the play was a shooting attempt. \cr
+  type_id \tab character \tab Type identifier (numeric). \cr
+  type_text \tab character \tab Display text for the type field. \cr
+  period_number \tab integer \tab Numeric period (1-4 for quarters; 5+ for OT). \cr
+  period_display_value \tab character \tab Period display label (e.g. '1st Quarter', 'OT'). \cr
+  clock_display_value \tab character \tab Game clock display string (e.g. '8:32'). \cr
+  team_id \tab character \tab Unique team identifier. \cr
+  coordinate_x \tab integer \tab X coordinate on the court (half-court layout). \cr
+  coordinate_y \tab integer \tab Y coordinate on the court (half-court layout). \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

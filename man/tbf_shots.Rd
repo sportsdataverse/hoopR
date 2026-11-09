@@ -11,21 +11,10 @@ tbf_shots(match_id)
 sequence across leagues and seasons. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per attempt. \code{x} and \code{y} are percentages of a horizontal full court.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. \cr
-   period \tab integer \tab Period number of the attempt: 1-4; overtime numbering is unverified. \cr
-   period_type \tab integer \tab Period type code: 1 = regulation, 2 = overtime (from the app code; no overtime game in the samples). \cr
-   side \tab character \tab Side of the shooting team (isHome). \cr
-   shot_player_id \tab integer \tab Shooter id in the SHOT-CHART key space, which is NOT the TBF person id of the box score (Quentin Peterson = 2814324 here, 501076 as a TBF person): join shots to box rows on player_name + jersey_number + side. \cr
-   player_name \tab character \tab Player name as TBF prints it for that route (title case, Turkish letters kept). \cr
-   jersey_number \tab character \tab Shirt number as a string, so '0' and '00' stay distinct. \cr
-   x \tab integer \tab Court x position: integer percent (0-100) of the LENGTH of a horizontal full court from the LEFT baseline (baskets near 5 and 95); teams change ends at half-time. Metres (x / 100 x 28) are an inference. \cr
-   y \tab integer \tab Court y position: integer percent (0-100) of the court WIDTH from the BOTTOM sideline (baskets near 50), verified from the app's drawing code (top = 100 - y). Metres (y / 100 x 15) are an inference. \cr
-   made \tab logical \tab True when the attempt was made (isSucceed). \cr
-}
+A \code{hoopR_data} tibble with one row per attempt.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_shots")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every field-goal attempt of a finished game (2025-26 onward) with its court position.

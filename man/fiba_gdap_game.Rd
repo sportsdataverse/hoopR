@@ -13,59 +13,10 @@ the \verb{<gameId>} of a game page URL}
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab FIBA game id, global across competitions (GDAP key space): gdapGameId, the \verb{<gameId>} of a game-page URL. \cr
-   round_name \tab character \tab Round label (Group Phase, Quarter-Finals, Final...). \cr
-   technical_name \tab character \tab Technical game name '\verb{<roundId>}-\verb{<groupPairingCode>}-\verb{<gameNumber>}'. \cr
-   round_type \tab character \tab Round type label: Group Round, Non Group Round, Super Round (getgdapgamesbycompetitionid uses the code G/NG here). \cr
-   group_pairing_code \tab character \tab Group letter (group play) or pairing number (knockout bracket slot). \cr
-   game_number \tab character \tab Game number within the round or pairing (a string: '1', 'A'). \cr
-   status_code \tab character \tab Game status code: VALID (validated result), CLOS (closed, pre-2000 rows). \cr
-   game_day \tab integer \tab Game day number within the round. \cr
-   team_a_from \tab character \tab How team A qualified for this slot ('Winner of Game 87', '1st of group C'); null in group play. \cr
-   team_b_from \tab character \tab How team B qualified for this slot ('Winner of Game 88', '2nd of group A'); null in group play. \cr
-   team_a_team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
-   team_a_organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
-   team_a_code \tab character \tab Team code (national: FIBA country code; club: a club abbreviation such as OOST). \cr
-   team_a_official_name \tab character \tab Official name of team A: the country for a national team, the club for a club team. \cr
-   team_a_short_name \tab character \tab Short name of team A: the country code for a national team, the club's short name for a club. \cr
-   team_b_team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
-   team_b_organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
-   team_b_code \tab character \tab Team code (national: FIBA country code; club: a club abbreviation such as NANT). \cr
-   team_b_official_name \tab character \tab Official name of team B: the country for a national team, the club for a club team. \cr
-   team_b_short_name \tab character \tab Short name of team B: the country code for a national team, the club's short name for a club. \cr
-   team_a_score \tab integer \tab Final score of team A. \cr
-   team_b_score \tab integer \tab Final score of team B. \cr
-   team_a_aggregated_score \tab integer \tab Two-leg aggregate score of team A (0 when not a two-leg tie). \cr
-   team_b_aggregated_score \tab integer \tab Two-leg aggregate score of team B (0 when not a two-leg tie). \cr
-   host_city \tab character \tab City of the venue. \cr
-   host_country \tab character \tab Country of the venue (name; a FIBA code in getgdapgameswithleaderdetailsbyteamid). \cr
-   host_country_code \tab character \tab FIBA code of the venue's country. \cr
-   venue_id \tab integer \tab Venue id (GDAP key space; 0 = unknown). \cr
-   venue_name \tab character \tab Name of the arena the game is played in. \cr
-   game_date_time \tab character \tab Tip-off in venue-local wall-clock time, ISO 8601 without offset (T00:00:00 when hasTimeGameDateTime is false). \cr
-   game_date_time_utc \tab character \tab Tip-off in UTC, ISO 8601 without the Z. \cr
-   has_time_game_date_time \tab logical \tab False when only the date is known (the time part is then 00:00:00). \cr
-   iana_time_zone \tab character \tab IANA time zone of the venue. \cr
-   utc_offset \tab double \tab Venue UTC offset at tip-off, in hours (Float64: a half-hour zone such as India +5.5 or Adelaide +9.5 is a fraction; whole hours in every sample). \cr
-   is_postponed \tab logical \tab True when the game was postponed. \cr
-   is_played_behind_closed_doors \tab logical \tab True when played without spectators. \cr
-   venue_capacity \tab integer \tab Venue capacity (0 = unknown). \cr
-   spectators \tab integer \tab Attendance at the game, as recorded by FIBA. \cr
-   is_live \tab logical \tab True while the game is being played. \cr
-   current_period \tab character \tab Last period reached ('Q4', 'OT1'). \cr
-   chrono \tab character \tab Game clock of the current period, 'mm:ss' ('00:00' when finished). \cr
-   live_game_status \tab integer \tab Live state code: 999 on every finished game; 5 seen on a finished 2024 youth game; mapping unverified. \cr
-   current_period_status \tab character \tab State of the current period: E = ended (the only value sampled). \cr
-   game_statistic_status_code \tab character \tab Box-score validation status: VALID. \cr
-   game_play_by_play_status_code \tab character \tab Play-by-play availability flag: VALID or EMPTY. UNRELIABLE: World Cup 2014 and EuroBasket 2017 say EMPTY but their game pages carry full play-by-play; always check the page. \cr
-   game_result_status_code \tab character \tab Result validation status: VALID. \cr
-   game_result_additional_information \tab character \tab Free-text result note (forfeit, overtime remark); null when none. \cr
-   window_id \tab integer \tab Qualifier window id; null otherwise. \cr
-   window_code \tab character \tab Qualifier window code; null otherwise. \cr
-   window_name \tab character \tab Qualifier window name; null otherwise. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_game")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One game's header: teams, score, venue, attendance and status codes (no box score or play-by-play: see

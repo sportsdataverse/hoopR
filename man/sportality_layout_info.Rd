@@ -7,22 +7,10 @@
 sportality_layout_info()
 }
 \value{
-A \code{hoopR_data} tibble: Directory of every ssgt (season + series + game type) with its teams, and the stats
-modules. An empty valid answer raises \code{hoopR_no_data}; the documented columns come first, in this order
-(sportsdataverse-py \code{sportality_layout_info}), then any column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025/26). \cr
-   season_code \tab character \tab Provider season code: the START year (2025 = 2025/26). \cr
-   season_name \tab character \tab Season name as 'YYYY/YYYY' (start/end year). \cr
-   game_type \tab character \tab Game type of the game ('' on every line seen). \cr
-   game_type_name \tab character \tab Game type name in Danish (Grundspil = regular season, Slutspil = playoffs). \cr
-   series_code \tab character \tab Series code (DBL = Basketligaen). \cr
-   ssgt_uuid \tab character \tab ssgt uuid (platform key space: one season + series + game type); joins /statistics-v2/layout-info \verb{seasonSeriesGameTypeTeams[].ssgtUuid} and every route keyed by ssgt. \cr
-   state \tab character \tab Game state. Schedule and day views: pre-game or post-game (hyphen). sports-v2 game-info: post_game (underscore). Gameday overview: GameEnded. Values: \code{active} = current ssgt; \code{closed} = past ssgt. \cr
-   season_uuid \tab character \tab Season uuid (platform key space). \cr
-   series_uuid \tab character \tab Series uuid (platform key space). \cr
-   game_type_uuid \tab character \tab Game type uuid (platform key space). \cr
-}
+A \code{hoopR_data} tibble with one row per season-series-game type (ssgt).
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_layout_info")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Directory of every ssgt (season + series + game type) with its teams, and the stats modules.

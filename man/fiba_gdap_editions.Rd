@@ -27,38 +27,10 @@ the same season.}
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   hosts \tab character \tab Host countries with their cities. Stored as a JSON string. \cr
-   competition_id \tab integer \tab FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. \cr
-   competition_code \tab character \tab Competition code (WMM men's World Cup, WOLYM, BCL, ELW...). \cr
-   season \tab integer \tab Season key, three rules: the END year for club competitions (BCL 2024-25 = 2025) and the event year for national-team events (World Cup 2023 = 2023), both equal to the package season key; qualifiers carry the TARGET tournament year, not the year played (World Cup 2027 qualifiers played in 2025 = 2027, EuroBasket 2029 pre-qualifiers = 2029). \cr
-   official_name \tab character \tab Edition title (FIBA Basketball World Cup; Paris 2024 Men's Olympic Basketball Tournament). \cr
-   start \tab character \tab First day, YYYY-MM-DD. \cr
-   end \tab character \tab Last day, YYYY-MM-DD. \cr
-   status \tab character \tab Competition status: In Progress, Completed, Closed. \cr
-   age_category \tab character \tab Age category (Senior, Under 16...). \cr
-   gender \tab character \tab Men or Women: the gender of the competition. \cr
-   fiba_zone \tab character \tab FIBA zone the competition belongs to (World, Europe, Americas...). \cr
-   zone_information_zone_id \tab integer \tab FIBA zone id (1 = World, 23 = Europe; zone table key space). \cr
-   zone_information_zone_official_name \tab character \tab Official name of the competition's FIBA zone (FIBA Europe, FIBA Americas, World). \cr
-   zone_information_zone_code \tab character \tab Zone code (W, E, AF, AM, AS, OC). \cr
-   zone_information_top_zone_id \tab integer \tab Parent zone id; null for top zones. \cr
-   zone_information_top_zone_official_name \tab character \tab Parent zone name; always null in the samples, values unverified. \cr
-   zone_information_top_zone_code \tab character \tab Parent zone code; always null in the samples, values unverified. \cr
-   competition_type \tab character \tab National Teams or Clubs. \cr
-   competition_category_is_league \tab logical \tab True for league-format club competitions. \cr
-   competition_category_age_type \tab character \tab Age type code: S senior, U16. \cr
-   competition_category_code \tab character \tab Category code (WC World Cup, OLY Olympic Tournament, CCC-1 continental club tier 1). \cr
-   competition_category_name \tab character \tab Name of the competition's category (FIBA Basketball World Cup, Olympic Basketball Tournament...). \cr
-   official_flag_item_code \tab character \tab Official-status code: O = official. \cr
-   official_flag_item_name \tab character \tab Official-status label. \cr
-   official \tab character \tab Official-status label. \cr
-   discipline \tab character \tab Discipline (Basketball; 3x3 is a separate platform). \cr
-   competition_marketing_name_competition_marketing_name_id \tab integer \tab Competition family id (201 = World Cup, 112 = BCL tier 1, 211 = EuroLeague Women); the \verb{<histId>} of /en/history/ pages. \cr
-   competition_marketing_name_marketing_name \tab character \tab Competition family name; slugified it is the \verb{<histSlug>} of /en/history/ pages. \cr
-   competition_marketing_name_code \tab character \tab Family code; null in every sample. \cr
-}
+A \code{hoopR_data} tibble with one row per edition.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_editions")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every edition of a competition family between two seasons.

@@ -12,105 +12,10 @@ easl_player_box(fixture_id)
 malformed id is \code{hoopR_bad_request}.}
 }
 \value{
-A \code{hoopR_data} tibble: Player box score of a finished game, one row per rostered player (non-players have null
-counting stats). An empty answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{easl_player_box}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   fixture_id \tab character \tab DataCore fixture (game) UUID v1 of the box row. \cr
-   team_id \tab character \tab The player's team: DataCore team (entity) UUID v1 (the wire's entityId). \cr
-   team_name \tab character \tab The player's team display name, joined from the body's teams array. \cr
-   team_name_native \tab character \tab The player's team name in native script, joined from the body's teams array; blank for most clubs. \cr
-   player_id \tab character \tab playerId: DataCore person UUID v1 (key space: EASL persons, the same id as the box score's \code{personId}; joins /players, leaders and play-by-play players). Not a team id. \cr
-   player_name \tab character \tab Player display name in 'FAMILY Given' form with the family name upper-cased (OSAKABE Taiki), in Latin script. Absent on some rows. \cr
-   player_name_latin \tab character \tab Alternative name: equal to nameFullLocal for 257 of 552 players, otherwise null; never non-Latin in the observed data. Absent on some rows. \cr
-   bib \tab character \tab Jersey number as a string ('00' and '0' are distinct). \cr
-   position \tab character \tab Playing position: G, F, C, PG, SG, SF, PF or GF; null on some rows. \cr
-   starter \tab logical \tab True for a starter (five per team). \cr
-   is_player \tab logical \tab True on every row (team officials are never listed). \cr
-   is_team_official \tab logical \tab False on every row. \cr
-   played \tab logical \tab True when the player has playing time (minutes present); False for the rostered players who did not play (their counting stats are null). \cr
-   minutes_played \tab double \tab Playing time in minutes (decimal), parsed from the ISO 8601 minutes statistic (PT35M11S = 35.1833). \cr
-   assists \tab integer \tab Assists: passes that directly lead to a made field goal. Null on some rows. \cr
-   assists_defensive \tab integer \tab Defensive assists (DataCore column; meaning unverified). Null on some rows. \cr
-   assists_turnover_ratio \tab double \tab Assists divided by turnovers (a ratio, not a percentage). Null on some rows. \cr
-   blocks \tab integer \tab Shots blocked (made by this player or team). Null on some rows. \cr
-   blocks_received \tab integer \tab The team's or player's own shots that were blocked by an opponent. Null on some rows. \cr
-   double_double \tab integer \tab Double-double flag: 1 when exactly two of points, rebounds, assists, steals, blocks reached 10 in the game, else 0 (a triple-double is counted in tripleDouble instead). In a season line it is a count of such games. \cr
-   dunks \tab integer \tab Dunks made. Null on some rows. \cr
-   efficiency \tab integer \tab NBA-style efficiency: points + rebounds + assists + steals + blocks - missed field goals - missed free throws - turnovers (verified on all 2,143 played player-games). \cr
-   efficiency_custom \tab integer \tab Custom efficiency slot (DataCore column; meaning unverified). Null on some rows. \cr
-   field_goals_attempted \tab integer \tab Field goals attempted (2- and 3-point shots; free throws excluded). Null on some rows. \cr
-   field_goals_effective_percentage \tab double \tab Effective field-goal percentage on a 0-100 scale: (FGM + 0.5 x 3PM) / FGA x 100; can exceed 100 on small samples. Null on some rows. \cr
-   field_goals_made \tab integer \tab Field goals made (2- and 3-point shots). Null on some rows. \cr
-   field_goals_percentage \tab double \tab Field-goal percentage on a 0-100 scale (made / attempted x 100). Null on some rows. \cr
-   fouls_coach_disqualifying \tab integer \tab Disqualifying fouls on the coach. Null on some rows. \cr
-   fouls_coach_technical \tab integer \tab Technical fouls on the coach. Null on some rows. \cr
-   fouls_disqualifying \tab integer \tab Disqualifying fouls. Null on some rows. \cr
-   fouls_disruptive \tab integer \tab Disruptive fouls (DataCore column; filled from 2026-27). Null on some rows. \cr
-   fouls_drawn \tab integer \tab Fouls drawn (committed against this player or team by an opponent). Null on some rows. \cr
-   fouls_flagrant \tab integer \tab Flagrant fouls (DataCore column; filled from 2026-27). Null on some rows. \cr
-   fouls_offensive \tab integer \tab Offensive fouls committed. Counted separately from foulsPersonal. Null on some rows. \cr
-   fouls_personal \tab integer \tab Personal fouls committed (offensive, technical and unsportsmanlike fouls are separate columns). Null on some rows. \cr
-   fouls_technical \tab integer \tab Technical fouls committed by the player or team. Null on some rows. \cr
-   fouls_technical_cat1 \tab integer \tab Technical fouls of category 1 (DataCore column; filled from 2026-27). Null on some rows. \cr
-   fouls_technical_cat2 \tab integer \tab Technical fouls of category 2 (DataCore column; filled from 2026-27). Null on some rows. \cr
-   fouls_total \tab integer \tab Fouls charged in total: personal + technical + unsportsmanlike + offensive (matches 2,142 of 2,143 played player-games; the exception is unexplained). \cr
-   fouls_unsportsmanlike \tab integer \tab Unsportsmanlike fouls committed. Null on some rows. \cr
-   free_throws_attempted \tab integer \tab Free throws attempted. Null on some rows. \cr
-   free_throws_made \tab integer \tab Free throws made: a game count on the box-score and team-total routes, a season total on the season statistics routes. \cr
-   free_throws_percentage \tab double \tab Free-throw percentage on a 0-100 scale. Null on some rows. \cr
-   index_of_success \tab integer \tab Index of success: efficiency + fouls drawn - personal fouls - technical fouls - blocks received (verified on all 2,143 played player-games). It differs from pir only in which fouls it subtracts. \cr
-   max_assists \tab integer \tab Highest assists in a single game: in a game row it equals assists; in a season line it is the best game. Null on some rows. \cr
-   max_free_throws_made \tab integer \tab Highest free throws made in a single game (equals freeThrowsMade in a game row). \cr
-   max_points \tab integer \tab Highest points in a single game (equals points in a game row). \cr
-   max_points_four_made \tab integer \tab Highest 4-point shots made in a game (DataCore column; EASL has no 4-point line; filled from 2026-27). Null on some rows. \cr
-   max_points_three_made \tab integer \tab Highest 3-pointers made in a single game. Null on some rows. \cr
-   max_points_two_made \tab integer \tab Highest 2-pointers made in a single game. Null on some rows. \cr
-   max_rebounds \tab integer \tab Highest rebounds in a single game. Null on some rows. \cr
-   max_rebounds_defensive \tab integer \tab Highest defensive rebounds in a single game. Null on some rows. \cr
-   max_rebounds_offensive \tab integer \tab Highest offensive rebounds in a single game. Null on some rows. \cr
-   max_steals \tab integer \tab Highest steals in a single game. Null on some rows. \cr
-   minus \tab integer \tab Points the opponents scored while the player was on the court. Null on some rows. \cr
-   minutes \tab character \tab Playing time as an ISO 8601 duration \verb{PT\{m\}M\{s\}S} with the minutes NOT wrapped at 60 (PT27M53S; a team's is the sum of its players', PT200M for a 40-minute game, PT250M with one overtime). Null on some rows. \cr
-   pir \tab integer \tab Performance index rating: efficiency + fouls drawn - total fouls - blocks received (verified on all 2,143 played player-games). \cr
-   plus \tab integer \tab Points the player's team scored while he was on the court. Null on some rows. \cr
-   plus_minus \tab integer \tab plus - minus: the team's point margin while the player was on the court. Null on some rows. \cr
-   points \tab integer \tab Points scored: a game count on the box-score and team-total routes, a season total on the season statistics routes. \cr
-   points_fast_break \tab integer \tab Points scored on fast breaks. Null on some rows. \cr
-   points_fast_break_attempted \tab integer \tab Fast-break field goals attempted. Null on some rows. \cr
-   points_fast_break_made \tab integer \tab Fast-break field goals made. Null on some rows. \cr
-   points_four_attempted \tab integer \tab 4-point shots attempted (DataCore column; EASL has no 4-point line; filled from 2026-27). Null on some rows. \cr
-   points_four_made \tab integer \tab 4-point shots made (see pointsFourAttempted). Null on some rows. \cr
-   points_four_percentage \tab double \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (Float64). \cr
-   points_from_turnover \tab integer \tab Points scored off opponent turnovers. Null on some rows. \cr
-   points_in_the_paint \tab integer \tab Points scored in the paint. Null on some rows. \cr
-   points_in_the_paint_attempted \tab integer \tab Field goals attempted in the paint. Null on some rows. \cr
-   points_in_the_paint_made \tab integer \tab Field goals made in the paint. Null on some rows. \cr
-   points_second_chance \tab integer \tab Points scored on second-chance possessions (after an offensive rebound). Null on some rows. \cr
-   points_second_chance_attempted \tab integer \tab Second-chance field goals attempted. Null on some rows. \cr
-   points_second_chance_made \tab integer \tab Second-chance field goals made. Null on some rows. \cr
-   points_three_attempted \tab integer \tab 3-point field goals attempted. Null on some rows. \cr
-   points_three_made \tab integer \tab 3-point field goals made. Null on some rows. \cr
-   points_three_percentage \tab double \tab 3-point percentage on a 0-100 scale. Null on some rows. \cr
-   points_two_attempted \tab integer \tab 2-point field goals attempted. Null on some rows. \cr
-   points_two_made \tab integer \tab 2-point field goals made. Null on some rows. \cr
-   points_two_percentage \tab double \tab 2-point percentage on a 0-100 scale. Null on some rows. \cr
-   power_play_points \tab integer \tab Power-play points (an ice-hockey column; meaning in basketball unverified). Null on some rows. \cr
-   power_play_points_awarded \tab integer \tab Power-play points awarded (an ice-hockey column; meaning in basketball unverified). Null on some rows. \cr
-   rebounds \tab integer \tab Total rebounds: offensive + defensive. Team's totals include team rebounds. Null on some rows. \cr
-   rebounds_defensive \tab integer \tab Defensive rebounds. Null on some rows. \cr
-   rebounds_defensive_percentage \tab double \tab Share of available defensive rebounds taken while on the court, on a 0-100 scale; values above 100 (up to 108.9) occur, so the definition is unverified. Null on some rows. \cr
-   rebounds_offensive \tab integer \tab Offensive rebounds. Null on some rows. \cr
-   rebounds_offensive_percentage \tab double \tab Share of available offensive rebounds taken while on the court, 0-100 scale (up to 91.4 observed); definition unverified. Null on some rows. \cr
-   rebounds_percentage \tab double \tab Share of all available rebounds taken while on the court, 0-100 scale; definition unverified. Null on some rows. \cr
-   steals \tab integer \tab Steals. Null on some rows. \cr
-   triple_double \tab integer \tab Triple-double flag: 1 when three or more of points, rebounds, assists, steals, blocks reached 10, else 0. \cr
-   true_shooting_attempts \tab double \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (Float64). \cr
-   true_shooting_percentage \tab double \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (Float64). \cr
-   turnovers \tab integer \tab Turnovers committed by players. Null on some rows. \cr
-   turnovers_percentage \tab double \tab Not yet populated upstream: null in every full body observed (2026-10-12), so its meaning is unverified; the 2026-27 bodies start filling some of these columns, so it is typed from its family (Float64). \cr
-   usage_rate \tab double \tab Usage rate on a 0-100 scale: share of the team's possessions used while on the court (up to 136 observed); definition unverified. Null on some rows. \cr
-}
+A \code{hoopR_data} tibble with one row per rostered player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "easl_player_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player box score of a finished game, one row per rostered player (non-players have null counting stats).

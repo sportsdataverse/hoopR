@@ -29,13 +29,31 @@ espn_nba_week_rankings(
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per ranking source.
+A \code{hoopR_data} tibble with one row per ranking source.
 
-Columns as documented in the shared \link{espn_mbb_week_rankings_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  week \tab integer \tab Week number. \cr
+  ranking_id \tab character \tab ESPN ranking id. \cr
+  ref \tab character \tab \code{$ref} URL for the ranked-teams detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per ranking source.
+A \code{hoopR_data} tibble with one row per ranking source.
 
-Columns as documented in the shared \link{espn_mbb_week_rankings_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  week \tab integer \tab Week number. \cr
+  ranking_id \tab character \tab ESPN ranking id. \cr
+  ref \tab character \tab \code{$ref} URL for the ranked-teams detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Returns the index of ranking sources available for one (MBB season x

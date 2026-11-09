@@ -404,43 +404,7 @@ NULL
 #' @param fox An already-fetched frame with `fox_team_id`, `fox_team_name`
 #'   and `fox_section`, or `NULL` (default) to fetch `season`'s Fox
 #'   standings live. Pass an empty `data.frame()` to skip Fox.
-#' @return A `hoopR_data` tibble, one row per ESPN team:
-#'
-#'   \if{html}{\tabular{lll}{
-#'      col_name \tab types \tab description \cr
-#'      season \tab integer \tab Season year. \cr
-#'      espn_team_id \tab integer \tab ESPN team id (canonical key). \cr
-#'      espn_abbreviation \tab character \tab ESPN abbreviation. \cr
-#'      espn_display_name \tab character \tab ESPN display name (school + mascot). \cr
-#'      espn_short_name \tab character \tab ESPN short name. \cr
-#'      espn_location \tab character \tab ESPN school/location only. \cr
-#'      espn_mascot \tab character \tab ESPN mascot/nickname. \cr
-#'      espn_conference \tab character \tab Conference that season, under that season's name (NA if not in a Division I conference). \cr
-#'      fox_team_id \tab character \tab Fox Bifrost team id (NA if unmatched). \cr
-#'      fox_team_name \tab character \tab Fox team name (NA if unmatched). \cr
-#'      fox_section \tab character \tab Fox conference that season (NA if unmatched or unconfirmed). \cr
-#'      bart_team \tab character \tab Torvik team name (NA if unmatched). \cr
-#'      bart_conf \tab character \tab Torvik conference abbreviation (NA if unmatched). \cr
-#'      kp_team \tab character \tab KenPom team name (NA if unmatched). \cr
-#'      kp_conf \tab character \tab KenPom conference abbreviation (NA if unmatched). \cr
-#'      ncaa_team \tab character \tab NCAA (stats.ncaa.org) team name; same for every season (NA if unknown). \cr
-#'      espn_pbp_name \tab character \tab Team name as ESPN play-by-play prints it; same for every season (NA if unknown). \cr
-#'      warren_nolan_team \tab character \tab Warren Nolan team name; same for every season (NA if unknown). \cr
-#'      team_247 \tab character \tab 247Sports team name; same for every season (NA if unknown). \cr
-#'      sref_slug \tab character \tab Sports-Reference school URL slug (`/cbb/schools/<slug>/`); same for every season (NA if unknown). \cr
-#'      sref_team \tab character \tab Sports-Reference school name; same for every season (NA if unknown). \cr
-#'      yahoo_team_id \tab character \tab Yahoo team id (NA placeholder). \cr
-#'      yahoo_team_name \tab character \tab Yahoo team name (NA placeholder). \cr
-#'      fox_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
-#'      bart_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
-#'      kp_match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
-#'      match_method \tab character \tab Combination of matched sources, e.g. \cr
-#'       \tab  \tab "fox+bart+kp" / "fox+bart" / "bart+kp" / \cr
-#'       \tab  \tab "fox_only" / "bart_only" / "kp_only" / \cr
-#'       \tab  \tab "espn_only". \cr
-#'   }}
-#'   \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("mbb_team_crosswalk", unit = "ESPN team")
 #' @importFrom dplyr transmute left_join mutate select if_else case_when
 #' @export
 #' @family MBB Crosswalk Functions
@@ -587,27 +551,7 @@ NULL
 #' @param include_kenpom Logical. When `TRUE` AND `KP_USER` is set,
 #'   attempts to enrich `kp_game_id` via per-team `kp_team_schedule()` calls.
 #'   Default `FALSE`.
-#' @return A `hoopR_data` tibble, one row per game:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season year. \cr
-#'       game_date \tab Date \tab ET game date. \cr
-#'       home_espn_team_id \tab integer \tab ESPN home team id (NA for bart-only rows). \cr
-#'       away_espn_team_id \tab integer \tab ESPN away team id (NA for bart-only rows). \cr
-#'       espn_game_id \tab character \tab ESPN game id (NA for bart-only rows). \cr
-#'       bart_muid \tab character \tab Torvik muid (NA for espn-only rows). \cr
-#'       bart_team1 \tab character \tab Torvik team1 name (NA for espn-only rows). \cr
-#'       bart_team2 \tab character \tab Torvik team2 name (NA for espn-only rows). \cr
-#'       bart_winner \tab character \tab Torvik winner name (NA for espn-only rows). \cr
-#'       kp_game_id \tab character \tab KenPom game id (NA unless kenpom enabled). \cr
-#'       fox_game_id \tab character \tab Fox game id (NA placeholder). \cr
-#'       yahoo_game_id \tab character \tab Yahoo game id (NA placeholder). \cr
-#'       match_method \tab character \tab "both"/"espn_only"/"bart_only". \cr
-#'       match_confidence \tab numeric \tab 1 for matched, NA for unmatched. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("mbb_schedule_crosswalk", unit = "game")
 #' @importFrom dplyr transmute bind_rows left_join mutate
 #' @export
 #' @family MBB Crosswalk Functions
@@ -920,30 +864,7 @@ NULL
 #'   `most_recent_mbb_season()`.
 #' @param min_confidence Jaro-Winkler similarity floor for fuzzy matches
 #'   (default 0.92).
-#' @return A `hoopR_data` tibble, one row per player per team (ESPN-anchored):
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season year. \cr
-#'       espn_team_id \tab integer \tab ESPN team id (canonical key). \cr
-#'       team_abbreviation \tab character \tab ESPN team abbreviation. \cr
-#'       player_name \tab character \tab Normalized player name (matching key). \cr
-#'       espn_athlete_id \tab character \tab ESPN athlete id. \cr
-#'       espn_full_name \tab character \tab ESPN full name. \cr
-#'       espn_jersey \tab character \tab ESPN jersey number. \cr
-#'       espn_position \tab character \tab ESPN position abbreviation. \cr
-#'       fox_athlete_id \tab character \tab Fox athlete id (NA if unmatched). \cr
-#'       fox_player \tab character \tab Fox player name (NA if unmatched). \cr
-#'       fox_jersey \tab character \tab Fox jersey number (NA if unmatched). \cr
-#'       fox_position_group \tab character \tab Fox position group label (NA if unmatched). \cr
-#'       yahoo_player_id \tab character \tab Yahoo player id (NA placeholder). \cr
-#'       yahoo_player_name \tab character \tab Yahoo player name (NA placeholder). \cr
-#'       match_method \tab character \tab "exact_name"/"fuzzy_jw"/"unmatched". \cr
-#'       match_confidence \tab numeric \tab Jaro-Winkler score or 1 for exact (NA if none). \cr
-#'       match_keys \tab character \tab NA (reserved for future use). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("mbb_player_crosswalk", unit = "player per team")
 #' @importFrom dplyr transmute bind_rows
 #' @importFrom purrr map list_rbind
 #' @export

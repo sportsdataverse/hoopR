@@ -9,32 +9,7 @@ NULL
 #' @param league_id league_id
 #' @param season season
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: CommonAllPlayers
-#'
-#'    **CommonAllPlayers**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
-#'       DISPLAY_LAST_COMMA_FIRST \tab character \tab  \cr
-#'       DISPLAY_FIRST_LAST \tab character \tab  \cr
-#'       ROSTERSTATUS \tab character \tab  \cr
-#'       FROM_YEAR \tab character \tab  \cr
-#'       TO_YEAR \tab character \tab  \cr
-#'       PLAYERCODE \tab character \tab  \cr
-#'       PLAYER_SLUG \tab character \tab URL-safe player identifier. \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       TEAM_CODE \tab character \tab  \cr
-#'       TEAM_SLUG \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
-#'       GAMES_PLAYED_FLAG \tab character \tab  \cr
-#'       OTHERLEAGUE_EXPERIENCE_CH \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_commonallplayers", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -95,72 +70,7 @@ NULL
 #' @author Saiem Gilani
 #' @param player_id player_id
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: CommonPlayerInfo, PlayerHeadlineStats,
-#'  AvailableSeasons
-#'
-#'    **CommonPlayerInfo**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       PERSON_ID \tab character \tab Unique player identifier (V3 endpoints). \cr
-#'       FIRST_NAME \tab character \tab Player's first name. \cr
-#'       LAST_NAME \tab character \tab Player's last name. \cr
-#'       DISPLAY_FIRST_LAST \tab character \tab  \cr
-#'       DISPLAY_LAST_COMMA_FIRST \tab character \tab  \cr
-#'       DISPLAY_FI_LAST \tab character \tab  \cr
-#'       PLAYER_SLUG \tab character \tab URL-safe player identifier. \cr
-#'       BIRTHDATE \tab character \tab  \cr
-#'       SCHOOL \tab character \tab Player's school / college (when distinct from 'college'). \cr
-#'       COUNTRY \tab character \tab Country (full name or code). \cr
-#'       LAST_AFFILIATION \tab character \tab  \cr
-#'       HEIGHT \tab character \tab Player height (string e.g. '6-2' or inches). \cr
-#'       WEIGHT \tab character \tab Player weight in pounds. \cr
-#'       SEASON_EXP \tab character \tab  \cr
-#'       JERSEY \tab character \tab Jersey number worn by the player. \cr
-#'       POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
-#'       ROSTERSTATUS \tab character \tab  \cr
-#'       GAMES_PLAYED_CURRENT_SEASON_FLAG \tab character \tab  \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       TEAM_NAME \tab character \tab Full team display name (e.g. 'Las Vegas Aces'). \cr
-#'       TEAM_ABBREVIATION \tab character \tab Short team abbreviation (e.g. 'LAS'). \cr
-#'       TEAM_CODE \tab character \tab  \cr
-#'       TEAM_CITY \tab character \tab Team city or region (e.g. 'Las Vegas'). \cr
-#'       PLAYERCODE \tab character \tab  \cr
-#'       FROM_YEAR \tab character \tab  \cr
-#'       TO_YEAR \tab character \tab  \cr
-#'       DLEAGUE_FLAG \tab character \tab  \cr
-#'       NBA_FLAG \tab character \tab  \cr
-#'       GAMES_PLAYED_FLAG \tab character \tab  \cr
-#'       DRAFT_YEAR \tab character \tab Draft year (4-digit). \cr
-#'       DRAFT_ROUND \tab character \tab Round of the draft selection. \cr
-#'       DRAFT_NUMBER \tab character \tab  \cr
-#'       GREATEST_75_FLAG \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **PlayerHeadlineStats**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
-#'       PLAYER_NAME \tab character \tab Player name. \cr
-#'       TimeFrame \tab character \tab  \cr
-#'       PTS \tab character \tab Points scored. \cr
-#'       AST \tab character \tab Assists. \cr
-#'       REB \tab character \tab Total rebounds. \cr
-#'       PIE \tab character \tab Player Impact Estimate (0-1). \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **AvailableSeasons**
-#'
-#'
-#'    |col_name  |types     |description               |
-#'    |:---------|:---------|:-------------------------|
-#'    |SEASON_ID |character |Unique season identifier. |
-#'
+#' @eval .returns_rd("nba_commonplayerinfo", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -221,21 +131,7 @@ NULL
 #' @param season season
 #' @param series_id series_id
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: PlayoffSeries
-#'
-#'    **PlayoffSeries**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       GAME_ID \tab character \tab Unique game identifier. \cr
-#'       HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
-#'       VISITOR_TEAM_ID \tab character \tab  \cr
-#'       SERIES_ID \tab character \tab  \cr
-#'       GAME_NUM \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_commonplayoffseries", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -295,50 +191,7 @@ NULL
 #' @param season season
 #' @param team_id team_id
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a named list of data frames: Coaches, CommonTeamRoster
-#'
-#'    **CommonTeamRoster**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TeamID \tab character \tab Teamid. \cr
-#'       SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-#'       LeagueID \tab character \tab  \cr
-#'       PLAYER \tab character \tab Player. \cr
-#'       NICKNAME \tab character \tab Team or athlete nickname. \cr
-#'       PLAYER_SLUG \tab character \tab URL-safe player identifier. \cr
-#'       NUM \tab character \tab  \cr
-#'       POSITION \tab character \tab Listed roster position (G, F, C, etc.). \cr
-#'       HEIGHT \tab character \tab Player height (string e.g. '6-2' or inches). \cr
-#'       WEIGHT \tab character \tab Player weight in pounds. \cr
-#'       BIRTH_DATE \tab character \tab Date of birth (YYYY-MM-DD). \cr
-#'       AGE \tab character \tab Player age (in years). \cr
-#'       EXP \tab character \tab Exp. \cr
-#'       SCHOOL \tab character \tab Player's school / college (when distinct from 'college'). \cr
-#'       PLAYER_ID \tab character \tab Unique player identifier. \cr
-#'       HOW_ACQUIRED \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **Coaches**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       SEASON \tab character \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-#'       COACH_ID \tab character \tab  \cr
-#'       FIRST_NAME \tab character \tab Player's first name. \cr
-#'       LAST_NAME \tab character \tab Player's last name. \cr
-#'       COACH_NAME \tab character \tab  \cr
-#'       IS_ASSISTANT \tab character \tab  \cr
-#'       COACH_TYPE \tab character \tab  \cr
-#'       SORT_SEQUENCE \tab character \tab  \cr
-#'       SUB_SORT_SEQUENCE \tab character \tab  \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_commonteamroster", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -399,21 +252,7 @@ NULL
 #' @rdname nba_commonallplayers
 #' @author Saiem Gilani
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: TeamYears
-#'
-#'    **TeamYears**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       LEAGUE_ID \tab character \tab League identifier ('10' = WNBA). \cr
-#'       TEAM_ID \tab character \tab Unique team identifier. \cr
-#'       MIN_YEAR \tab character \tab  \cr
-#'       MAX_YEAR \tab character \tab  \cr
-#'       ABBREVIATION \tab character \tab Short abbreviation. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_commonteamyears", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest

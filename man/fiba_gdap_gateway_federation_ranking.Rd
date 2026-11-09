@@ -22,22 +22,10 @@ before it (2026-03-10 answers the 2026-03-03 ranking). Omitted = the latest rank
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   as_of_date \tab character \tab Date of the ranking returned: the latest ranking published on or before the requested date. \cr
-   zone_ranking_code \tab character \tab Ranking zone code (WORLD, AFRICA...). \cr
-   zone_ranking_official_name \tab character \tab Ranking zone official name. \cr
-   world_rank \tab integer \tab Position in the FIBA world ranking (1 = best). \cr
-   country_name \tab character \tab Country name in English. \cr
-   zone_rank \tab integer \tab Rank within the zone. \cr
-   ioc_code \tab character \tab IOC country code. \cr
-   fiba_code \tab character \tab FIBA three-letter country code (GER, USA; historic URS, YUG). \cr
-   current_points \tab double \tab Ranking points (one decimal). \cr
-   world_rank_variation \tab integer \tab Change in world rank since the previous release (positive = up). \cr
-   comments \tab character \tab Ranking note; null in every sample. \cr
-   organisation_id \tab integer \tab Organisation id, stable across competitions and seasons: the national federation for a national team (64 = Germany), the club for a club team (396 = Filou Oostende). Same key space as nationalFederationId, clubId, play-by-play oId and the game page's T_\verb{<id>}. \cr
-   organisation_status_code \tab character \tab Organisation status: ACT active. \cr
-}
+A \code{hoopR_data} tibble with one row per ranked federation.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_gateway_federation_ranking")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 FIBA world ranking from the server-side gateway (same items as fiba_gdap_federation_ranking).

@@ -10,16 +10,10 @@ sportpress_phases(season)
 \item{season}{(required) Season END year (2026 = 2025-26), the API's own key; no mapping is applied.}
 }
 \value{
-A \code{hoopR_data} tibble: The competition of a season with its phases (regular season, playoffs, supercup). An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_phases}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the sdv convention and the API's own season key. \cr
-   competition_id \tab integer \tab Competition id (key space: sportpress competitions): ONE season of the league (24 = 2025-26, 25 = 2026-27). Not the season number. The key of the standings, ranking, slider and box routes. \cr
-   competition_name \tab character \tab Competition name, 'BNXT League 2025-2026'. \cr
-   phase_id \tab integer \tab Phase id (key space: sportpress phases); the \code{{phaseId}} of the standings route. New every season. \cr
-   phase_name \tab character \tab Phase name as entered in the CMS; names differ every season. \cr
-   standings_visible \tab logical \tab Whether the phase shows standings; false for playoff phases, which answer the standings route empty. \cr
-}
+A \code{hoopR_data} tibble with one row per phase.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_phases")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The competition of a season with its phases (regular season, playoffs, supercup).

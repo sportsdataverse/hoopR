@@ -11,29 +11,7 @@
 #'   [cbbd_games()].
 #' @param shooting_plays_only (*logical* optional): If `TRUE`, return only
 #'   shooting plays. Defaults to `FALSE`.
-#' @return A `hoopR_data` tibble with one row per play (key columns; `shot_info`
-#'   is flattened to `shot_info_*`, `participants`/`on_floor` are list-columns):
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       id \tab integer \tab Play id. \cr
-#'       game_id \tab integer \tab Game id. \cr
-#'       season \tab numeric \tab Season (4-digit ending-year). \cr
-#'       play_type \tab character \tab Play type description. \cr
-#'       team_id \tab integer \tab Team id of the team on the play. \cr
-#'       team \tab character \tab Team on the play. \cr
-#'       period \tab integer \tab Period number. \cr
-#'       clock \tab character \tab Game clock. \cr
-#'       seconds_remaining \tab integer \tab Seconds remaining in the period. \cr
-#'       home_score \tab integer \tab Home score after the play. \cr
-#'       away_score \tab integer \tab Away score after the play. \cr
-#'       scoring_play \tab logical \tab Whether the play scored. \cr
-#'       shooting_play \tab logical \tab Whether the play was a shot. \cr
-#'       score_value \tab numeric \tab Point value of the play. \cr
-#'       play_text \tab character \tab Play description text. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_plays_game", inline = FALSE, unit = "play")
 #' @keywords CBD Plays
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names
@@ -256,15 +234,7 @@ cbbd_plays_tournament <- function(tournament, season = most_recent_mbb_season(),
 #' **CBD Play Types**
 #' @description
 #' **Get the list of play types from the CollegeBasketballData API.**
-#' @return A `hoopR_data` tibble with one row per play type:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       id \tab integer \tab Play type id. \cr
-#'       name \tab character \tab Play type name. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_play_types", inline = FALSE, unit = "play type")
 #' @keywords CBD Plays
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names

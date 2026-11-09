@@ -15,20 +15,10 @@ A year the list lacks raises \code{hoopR_no_data}.}
 The top flight was named TBL until 2007-08 and is listed under bsl.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per team registration.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). \cr
-   competition \tab character \tab TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). \cr
-   team_process_id \tab integer \tab Team-season id (teamProcessId = takimIslemId, a team REGISTRATION; key space: TBF team registrations, a NEW id per club per league-season: Tofas = 265995 in BSL 2026-27). The team_process_id argument of the team wrappers; not the stable club_id. \cr
-   club_id \tab integer \tab Stable club id (takimID / teamId of the team lists; key space: TBF clubs, the same across seasons and leagues: Tofas = 13). Not the team-season id (team_process_id). \cr
-   team_name \tab character \tab Team name as registered for that season, uppercase with Turkish letters. \cr
-   city \tab character \tab Home city (teamCityName), uppercase Turkish. \cr
-   code \tab character \tab Team short code (teamCode). \cr
-   season_id \tab integer \tab Internal TBF season id (key space: TBF seasons, global across leagues: 174 = 2026-2027, 172 = 2025-2026; the odd ids are international UA- seasons). Never an sdv key: use season (END year). \cr
-   season_label \tab character \tab Season label 'YYYY-YYYY' of the league-season. \cr
-}
+A \code{hoopR_data} tibble with one row per team registration.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every team registered in one league-season with its team-season id (team_process_id) and club id.

@@ -20,20 +20,10 @@ labels follow it.}
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: The competitions a club played in one season. The columns are always these, in this order
-(sportsdataverse-py \code{vtb_infobasket_team_comps}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows for
-this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. \cr
-   comp_id \tab integer \tab Competition id (the season or a stage of it). \cr
-   comp_type \tab integer \tab Stage type code: 0 season, regular season or group; 10 playoff container; 5 and 7 playoff series; -5 seen in season lists. Meanings inferred from the stage names, unverified. \cr
-   comp_sort \tab integer \tab Sort order among sibling stages. \cr
-   level \tab integer \tab Depth of the competition in the tree (1 = season level). \cr
-   comp_name_ru \tab character \tab Competition name, Russian ('Edinaya liga VTB' = 'VTB United League'). \cr
-   comp_name_en \tab character \tab Stage name (e.g. 'Regular Season'), English. \cr
-   parent_comp_id \tab integer \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-}
+A \code{hoopR_data} tibble with one row per competition.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_team_comps")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The competitions a club played in one season.

@@ -11,30 +11,10 @@ sportality_team_stats(game_uuid)
 platform game uuids; the Genius match id is \code{extId} / \code{gameSourceId} in the body.}
 }
 \value{
-A \code{hoopR_data} tibble: Team totals per period (2023/24 on). An empty valid answer raises \code{hoopR_no_data};
-the documented columns come first, in this order (sportsdataverse-py \code{sportality_team_stats}), then any column the API
-added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_side \tab character \tab home or away: the side the row belongs to. \cr
-   game_source_id \tab integer \tab Genius match id (Int64), the same number as game_id and sports-v2 game_info_ext_id. \cr
-   game_id \tab integer \tab Genius match id (Int64), the join to the genius family; on play-by-play lines, an integer elsewhere. \cr
-   team_id \tab integer \tab Genius team id (Int64): in gameday bodies, an integer in standings and stats tables. \cr
-   team_name \tab character \tab Name of the team. \cr
-   team_code \tab character \tab Platform team code (HOL, RAN). \cr
-   team_number \tab integer \tab Team number; home is 1. \cr
-   instance_id \tab character \tab Site instance that owns the feed (platform key space; dbl1_dbl). \cr
-   source \tab character \tab Feed that produced the row (genius-basketball-stream-reader). \cr
-   game_uuid \tab character \tab Platform game uuid (c4hh5nig6t); every gameday route takes it. \cr
-   period \tab integer \tab Period: 0 = the whole game, 1-4 the quarters, 5 and up overtime. \cr
-   period_type \tab character \tab REGULAR or OVERTIME; absent on the whole-game row of some eras. Values: \code{REGULAR} = regulation period. \cr
-   tp \tab integer \tab Points scored by the team in the period (period 0 = the whole game). \cr
-   fgm \tab integer \tab Field goals made (total). \cr
-   a \tab integer \tab Assists (total). \cr
-   reb \tab integer \tab Total rebounds. \cr
-   stl \tab integer \tab Number of steals. \cr
-   blk \tab integer \tab Number of blocked shots made. \cr
-   pf \tab integer \tab Personal fouls. \cr
-}
+A \code{hoopR_data} tibble with one row per team and period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_team_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team totals per period (2023/24 on).

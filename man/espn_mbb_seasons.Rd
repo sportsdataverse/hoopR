@@ -15,13 +15,29 @@ forward compatibility. Proxy configuration should use
 \code{options(hoopR.proxy = ...)} -- see \code{?hoopR} for details.}
 }
 \value{
-A single \code{hoopR_data} tibble with one row per season.
+A \code{hoopR_data} tibble with one row per season.
 
-Columns as documented in the shared \link{espn_mbb_seasons_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+  start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+  end_date \tab character \tab End date (YYYY-MM-DD). \cr
+  display_name \tab character \tab Display name. \cr
+  season_type_count \tab integer \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A single \code{hoopR_data} tibble with one row per season.
+A \code{hoopR_data} tibble with one row per season.
 
-Columns as documented in the shared \link{espn_mbb_seasons_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+  start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+  end_date \tab character \tab End date (YYYY-MM-DD). \cr
+  display_name \tab character \tab Display name. \cr
+  season_type_count \tab integer \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 \strong{Get ESPN Women's College Basketball Seasons}

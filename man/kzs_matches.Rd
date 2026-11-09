@@ -16,79 +16,10 @@ season, e.g. 579 (men's first league 2025/26).}
 \item{date_to}{Latest tip-off, an ISO instant such as 2025-10-31T23:59:59.000Z. Omitted = the whole competition.}
 }
 \value{
-A \code{hoopR_data} tibble: Matches of a competition (optionally inside a from/to window) with the Genius LiveStats id.
-An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_matches}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab KZS match id. Joins to \verb{/matches/\{matchId\}} (and its /playByPlay, /stats) and stats \code{matchId}. \cr
-   competition_id \tab integer \tab Competition id: one per competition per season (men's top league 2025-26 = 579, 2026-27 = 608). Joins to \verb{/competitions/\{competitionId\}} and the \code{competitionId} query params. \cr
-   competition_name \tab character \tab Competition name (Slovenian; the sponsor name changes: Liga Telemach 2007-15, NovaKBM 2015-24, OTP banka 2024-). \cr
-   competition_type \tab character \tab Competition type (code table). \cr
-   competition_phase_id \tab integer \tab Competition-phase id. Joins to \verb{competitions[].competitionPhaseId} on matches and \verb{/competitions/\{competitionId\}} \verb{phases[].id}. \cr
-   competition_phase_name \tab character \tab Phase name, Slovenian ('Redni del' = regular season, '1. del' = first stage). \cr
-   transferred \tab logical \tab True when the match was carried over from an earlier phase (results transferred). \cr
-   season_id \tab integer \tab Season id: OPAQUE, not a year (1 = 2000/2001 ... 27 = 2026/2027, 31 = 1991/1992). The season \code{name} is 'START/END'; the sdv season is the END year (the second half of \code{name}). \cr
-   season \tab integer \tab Season END year (2026/2027 = 2027), from the row's own season name or id, else from the request. \cr
-   genius_match_id \tab integer \tab Genius LiveStats match id parsed from fiba_live_stats_url (org KZS); null before 2015/16. \cr
-   organiser_team_id \tab integer \tab Team id of the organiser (home) side; null in older headers, which send an empty organiser. \cr
-   round \tab integer \tab Round (matchday) number within the phase. \cr
-   fiba_live_stats_url \tab character \tab Genius Sports LiveStats URL \code{'https://fibalivestats.dcd.shared.geniussports.com/u/KZS/{geniusMatchId}/'}; the number is the Genius match id that keys genius-livestats/ data.json. Absent before 2015-16 (no live stats). \cr
-   game_index \tab integer \tab Game number within the round (fixture order). \cr
-   date_time \tab character \tab Tip-off, UTC (ISO 8601 'Z'). \cr
-   attendance \tab integer \tab Spectators (0 when not recorded). \cr
-   sport_hall_name \tab character \tab Name of the venue (sports hall) where the game is played or the team is based. \cr
-   sport_hall_address \tab character \tab Venue address, one line. \cr
-   sport_hall_id \tab integer \tab Sport hall (venue) id. \verb{/sportHalls/\{id\}} is in the site bundle, not captured. \cr
-   first_team_id \tab integer \tab Match-team id: this team's entry in this one match (unique per match and side). Joins to play-by-play \code{matchTeamId}; NOT a team id. First (home) side. \cr
-   first_team_team_id \tab integer \tab Team id: one club team in one season (Ilirija 2025-26 = 17551). Joins to \verb{/teams/\{teamId\}}, standings \code{teamId}, box-score \code{teamId} and the \code{teamId} query params. First (home) team. \cr
-   is_first_team_placeholder \tab logical \tab True when the first (home) slot is a bracket placeholder, not yet a team. \cr
-   second_team_id \tab integer \tab Match-team id: this team's entry in this one match (unique per match and side). Joins to play-by-play \code{matchTeamId}; NOT a team id. Second (away) side. \cr
-   second_team_team_id \tab integer \tab Team id: one club team in one season (Ilirija 2025-26 = 17551). Joins to \verb{/teams/\{teamId\}}, standings \code{teamId}, box-score \code{teamId} and the \code{teamId} query params. Second (away) team. \cr
-   is_second_team_placeholder \tab logical \tab True when the second (away) slot is a placeholder. \cr
-   first_team_name \tab character \tab First (home) team name. \cr
-   first_team_short_name \tab character \tab First team short name ('' when none). \cr
-   second_team_name \tab character \tab Second (away) team name. \cr
-   second_team_short_name \tab character \tab Second team short name ('' when none). \cr
-   first_team_score \tab integer \tab First (home) team final score. \cr
-   second_team_score \tab integer \tab Second (away) team final score. \cr
-   score_inserted_manually \tab logical \tab True when the score was typed in by the federation rather than taken from the live-stats feed. \cr
-   first_team_logo_uuid \tab character \tab First (home) team logo: image file id, served at \verb{https://api.kzs.si/public/images/\{uuid\}} (PNG). \cr
-   second_team_logo_uuid \tab character \tab Second (away) team logo: image file id, served at \verb{https://api.kzs.si/public/images/\{uuid\}} (PNG). \cr
-   first_team_code \tab character \tab First team 3-letter code (club code). \cr
-   second_team_code \tab character \tab Second team 3-letter code. \cr
-   status \tab character \tab Match status: FINISHED in every sample (POSTPONED filtered by the site on other lists). \cr
-   delegated \tab logical \tab True once officials are assigned to the match. \cr
-   referee1_id \tab integer \tab Official id (referee/commissioner registry); a different key space from \code{person.id}. /referees/ and /commissioners/ are in the site bundle but not captured. \cr
-   referee1_person_id \tab integer \tab Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. \cr
-   referee1_person_first_name \tab character \tab The official's given name. \cr
-   referee1_person_last_name \tab character \tab The official's family name. \cr
-   referee1_person_gender \tab character \tab MALE or FEMALE. \cr
-   referee1_ranks \tab character \tab Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. \cr
-   referee2_id \tab integer \tab Official id (referee/commissioner registry); a different key space from \code{person.id}. /referees/ and /commissioners/ are in the site bundle but not captured. \cr
-   referee2_person_id \tab integer \tab Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. \cr
-   referee2_person_first_name \tab character \tab The official's given name. \cr
-   referee2_person_last_name \tab character \tab The official's family name. \cr
-   referee2_person_gender \tab character \tab MALE or FEMALE. \cr
-   referee2_ranks \tab character \tab Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. \cr
-   referee3_id \tab integer \tab Official id (referee/commissioner registry); a different key space from \code{person.id}. /referees/ and /commissioners/ are in the site bundle but not captured. \cr
-   referee3_person_id \tab integer \tab Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. \cr
-   referee3_person_first_name \tab character \tab The official's given name. \cr
-   referee3_person_last_name \tab character \tab The official's family name. \cr
-   referee3_person_gender \tab character \tab MALE or FEMALE. \cr
-   referee3_ranks \tab character \tab Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. \cr
-   commissioner_id \tab integer \tab Official id (referee/commissioner registry); a different key space from \code{person.id}. /referees/ and /commissioners/ are in the site bundle but not captured. \cr
-   commissioner_person_id \tab integer \tab Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. \cr
-   commissioner_person_first_name \tab character \tab The official's given name. \cr
-   commissioner_person_last_name \tab character \tab The official's family name. \cr
-   commissioner_person_gender \tab character \tab MALE or FEMALE. \cr
-   commissioner_ranks \tab character \tab Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. \cr
-   referee_controller_id \tab integer \tab Official id (referee/commissioner registry); a different key space from \code{person.id}. /referees/ and /commissioners/ are in the site bundle but not captured. \cr
-   referee_controller_person_id \tab integer \tab Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. \cr
-   referee_controller_person_first_name \tab character \tab The official's given name. \cr
-   referee_controller_person_last_name \tab character \tab The official's family name. \cr
-   referee_controller_person_gender \tab character \tab MALE or FEMALE. \cr
-   referee_controller_ranks \tab character \tab Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. \cr
-   match_evaluation_id \tab integer \tab Id of the officials' evaluation record (internal; no public route). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_matches")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Matches of a competition (optionally inside a from/to window) with the Genius LiveStats id.

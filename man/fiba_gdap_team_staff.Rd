@@ -14,26 +14,10 @@ competition.competitionId of any game row (208182 = World Cup 2023, 208722 = Par
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab FIBA team id (Int64), one per team per competition; the team the coach is registered with. \cr
-   team_name \tab character \tab Team name the coach is registered with. \cr
-   team_code \tab character \tab Team code (GER, USA...) the coach is registered with. \cr
-   person_id \tab integer \tab FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P_\verb{<id>} = gdapPlayerId. \cr
-   first_name \tab character \tab Given name(s) as registered with FIBA. \cr
-   last_name \tab character \tab Last name (officials: upper case). \cr
-   gender \tab character \tab Sex of the person: M or F (Male/Female on getgdapcompetitionnominationsbyid). \cr
-   function \tab character \tab Role: Head Coach, Coach, Assistant Coach. \cr
-   is_head_coach \tab integer \tab 1 for the head coach, 0 otherwise (an integer flag, not a boolean). \cr
-   is_assistant_coach \tab integer \tab 1 for an assistant coach, else null (integer flag). \cr
-   is_accompanying_coach \tab logical \tab Accompanying-coach flag; always null in the samples, values unverified. \cr
-   coach_display_order \tab integer \tab Display order; null when unset. \cr
-   is_on_final_roster \tab logical \tab True when on the final (12-player) roster. \cr
-   nationalities \tab character \tab Nationalities (FIBA codes on player info; country objects on rosters and officials). Stored as a JSON string. \cr
-   coach_license_organisation_name \tab character \tab Federation that issued the coaching licence. \cr
-   coach_license_country_code \tab character \tab FIBA code of the licensing federation's country. \cr
-   final_roster_member_status_code \tab character \tab Roster entry status; always null in the samples, values unverified. \cr
-}
+A \code{hoopR_data} tibble with one row per staff member.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_team_staff")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Coaches of every team of a competition.

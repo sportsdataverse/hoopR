@@ -11,24 +11,10 @@ kzs_player(player_id)
 id.}
 }
 \value{
-A \code{hoopR_data} tibble: Player profile: names, year of birth, nationality and positions. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_player}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. \cr
-   identification_number \tab integer \tab Player's KZS registration (licence) number; a different key space from the player id, used by no captured route. \cr
-   person_id \tab integer \tab Person id: the federation's person record behind a player, coach or official; a different key space from player, coach and official ids. \cr
-   first_name \tab character \tab The player's given name. \cr
-   last_name \tab character \tab The player's family name. \cr
-   year_of_birth \tab integer \tab Year of birth (players: public bio). \cr
-   nationality_id \tab integer \tab Country id (FMS internal; use the ISO codes). \cr
-   nationality_alpha2_code \tab character \tab ISO 3166-1 alpha-2 country code. \cr
-   nationality_alpha3_code \tab character \tab ISO 3166-1 alpha-3 country code. \cr
-   nationality_name \tab character \tab Country name in Slovenian (e.g. 'Zdruzene drzave' = United States); use \code{engName} or the ISO codes. \cr
-   nationality_eng_name \tab character \tab Country name in English. \cr
-   homegrown \tab logical \tab True when the player counts as homegrown (domaci igralec) for roster limits. \cr
-   photo_uuid \tab character \tab Player photo: image file id, served at \verb{https://api.kzs.si/public/images/\{uuid\}}. \cr
-   positions \tab character \tab Unobserved: null, or an empty array, in every sample, so its type and meaning are unconfirmed. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_player")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player profile: names, year of birth, nationality and positions.

@@ -13,36 +13,10 @@ acb_match_header(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_match_header}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab Match id. Legacy ids (seasons up to 2019-20) sit below about 20000 (12559 = 2005-06 final, 17718 = 2016-17 final); from 2020-21 they start at about 100000 (102920 in 2021-22, 105401 in 2026-27). One key space across competitions: the matchId param of every matchdata route. \cr
-   competition_id \tab integer \tab Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa (x-competitions) \cr
-   start \tab POSIXct \tab Tip-off, ISO 8601 UTC \cr
-   status \tab character \tab Game state: FINALIZED once over; the live and scheduled values are unverified. \cr
-   is_on_half_time \tab logical \tab At half time (live) \cr
-   time_left \tab character \tab Period clock remaining as 'mm:ss' ('00:00' once the game is over). \cr
-   current_quarter \tab integer \tab Current or last quarter (5+ = overtime; 0 for 2005-06 matches) \cr
-   home_score \tab integer \tab Home points: the final score once the game is over, else the live score. \cr
-   away_score \tab integer \tab Away points: the final score once the game is over, else the live score. \cr
-   home_bonus \tab integer \tab Home team-foul bonus counter of the current period (unverified meaning). \cr
-   away_bonus \tab integer \tab Away team-foul bonus counter of the current period (unverified meaning). \cr
-   home_team_id \tab integer \tab Home season-team entry id (new every season). \cr
-   home_club_id \tab integer \tab Home stable club id (2 = Barca, 9 = Real Madrid). \cr
-   home_team \tab character \tab Team name that season (sponsor names change) \cr
-   home_team_abbr \tab character \tab Three-letter abbreviation (BAR, RMB) \cr
-   away_team_id \tab integer \tab Away season-team entry id (new every season). \cr
-   away_club_id \tab integer \tab Away stable club id. \cr
-   away_team \tab character \tab Team name that season (sponsor names change) \cr
-   away_team_abbr \tab character \tab Three-letter abbreviation (BAR, RMB) \cr
-   edition_id \tab integer \tab Season id (START year - 1935) read from the home team entry. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   has_overview \tab logical \tab True when the site offers the overview panels (lead tracker, lineups, leaders) for the game. \cr
-   has_play_by_play \tab logical \tab True when the site offers play-by-play (2016-17 onward). \cr
-   has_boxscore \tab logical \tab True when the site offers a box score for the game. \cr
-   has_advanced \tab logical \tab True when the site offers advanced statistics for the game. \cr
-   highlights_url \tab character \tab Highlights video URL; null when none is published. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_match_header")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Match header: teams, status, score, bonus, current period and the content the site offers.

@@ -15,20 +15,10 @@ and box (cached) and checks the vendor body against them (uuid, final score, mad
 the uuid must be the game page's. Without it only the checks the body allows by itself run.}
 }
 \value{
-A \code{hoopR_data} tibble: Score at each minute mark of one finished game, with the score difference (the lead
-tracker). An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
-\code{pleague_preciser_lead_flow}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_uuid \tab character \tab Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; \code{uuid} of pleague_game. \cr
-   seq \tab integer \tab 1-based position of the minute mark in game order. \cr
-   period \tab character \tab Period label: Q1-Q4, then OT1, OT2 (the vendor sends it in lower case). \cr
-   period_no \tab integer \tab 1-based position of the period: 1-4 for Q1-Q4, 5 for OT1, 6 for OT2. \cr
-   clock \tab character \tab Game clock REMAINING in the period 'mm:ss' (counts down). \cr
-   seconds_left \tab integer \tab The clock as whole seconds remaining in the period (08:34 = 514), derived by the parser. \cr
-   home_score \tab integer \tab Home score after the event. \cr
-   away_score \tab integer \tab Away score after the event. \cr
-   score_difference \tab integer \tab home_score minus away_score (positive = home leads). \cr
-}
+A \code{hoopR_data} tibble with one row per minute mark.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_preciser_lead_flow")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Score at each minute mark of one finished game, with the score difference (the lead tracker).

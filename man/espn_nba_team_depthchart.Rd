@@ -14,21 +14,21 @@ espn_nba_team_depthchart(team_id, season = most_recent_nba_season(), ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A long tibble with one row per athlete depth entry.
+A \code{hoopR_data} tibble with one row per athlete depth entry.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League slug. \cr
-      team_id \tab character \tab ESPN team id. \cr
-      season \tab integer \tab Season year. \cr
-      depthchart_id \tab character \tab Depth chart id (typically "1"). \cr
-      depthchart_name \tab character \tab Depth chart name. \cr
-      position \tab character \tab Position code (\code{pg}/\code{sg}/\code{sf}/\code{pf}/\code{c}). \cr
-      rank \tab integer \tab Depth rank (1 = starter). \cr
-      athlete_id \tab character \tab ESPN athlete id. \cr
-      athlete_ref \tab character \tab \verb{$ref} URL to athlete-in-season. \cr
-      position_ref \tab character \tab \verb{$ref} URL to position resource. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  team_id \tab character \tab ESPN team id. \cr
+  season \tab integer \tab Season year. \cr
+  depthchart_id \tab character \tab Depth chart id (typically "1"). \cr
+  depthchart_name \tab character \tab Depth chart name. \cr
+  position \tab character \tab Position code (\code{pg}/\code{sg}/\code{sf}/\code{pf}/\code{c}). \cr
+  rank \tab integer \tab Depth rank (1 = starter). \cr
+  athlete_id \tab character \tab ESPN athlete id. \cr
+  athlete_ref \tab character \tab \code{$ref} URL to athlete-in-season. \cr
+  position_ref \tab character \tab \code{$ref} URL to position resource. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

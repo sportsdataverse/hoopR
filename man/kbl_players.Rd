@@ -7,21 +7,10 @@
 kbl_players()
 }
 \value{
-A \code{hoopR_data} tibble: The site's player directory (current and former players) with their current or last team.
-The columns are always these, in this order (sportsdataverse-py \code{kbl_players}); an empty valid answer raises \code{hoopR_no_data},
-a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   pcode \tab character \tab KBL player code (6-digit string). Joins to \code{pcode} on every route and to \code{playerNo} in /league/round-mvp. \cr
-   player_name \tab character \tab Player name in Korean (foreign players in Hangul transliteration). \cr
-   player_name_en \tab character \tab Player name in English / romanized (sometimes Hangul for former players). \cr
-   team_code \tab character \tab Team code of the player's current or last team. KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList \code{teamCode}, game \code{tcodeH}/\code{tcodeA}, \code{t} in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (\code{teamCodeD}). \cr
-   team_name \tab character \tab Short name (Korean) of the player's current or last team. \cr
-   team_name_en \tab character \tab Current team short name in English (e.g. 'JUNG KWAN JANG'). \cr
-   back_num \tab character \tab Jersey number (string). \cr
-   pos \tab character \tab Position code (string): C center, FD forward, GD guard, FC forward-center, GF guard-forward; table in the returns md. \cr
-   player_flag \tab character \tab Player type (string): '0' domestic, '1' foreign import, '2' Asian-quota player. \cr
-   last_career \tab character \tab Meaning unverified: a season-code-like number, 'A' or ''. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The site's player directory (current and former players) with their current or last team.

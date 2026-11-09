@@ -10,24 +10,7 @@
 #' @param poll_type (*character* optional): One of `ap`, `coaches`.
 #' @param team (*character* optional): Team name filter.
 #' @param conference (*character* optional): Conference abbreviation filter.
-#' @return A `hoopR_data` tibble with one row per ranked team per poll:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       season \tab integer \tab Season (4-digit ending-year). \cr
-#'       season_type \tab character \tab Season type. \cr
-#'       week \tab integer \tab Poll week. \cr
-#'       poll_date \tab character \tab Date the poll was released. \cr
-#'       poll_type \tab character \tab Poll type (\code{ap} or \code{coaches}). \cr
-#'       team_id \tab integer \tab CollegeBasketballData team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conference \tab character \tab Conference name. \cr
-#'       ranking \tab integer \tab Poll rank. \cr
-#'       points \tab numeric \tab Poll points received. \cr
-#'       first_place_votes \tab numeric \tab Number of first-place votes. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_rankings", inline = FALSE, unit = "ranked team per poll")
 #' @keywords CBD Rankings
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names

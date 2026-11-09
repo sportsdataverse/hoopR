@@ -10,16 +10,10 @@ sportpress_game_periods(game_id)
 \item{game_id}{(required) Game id (integer), unique across seasons; from \code{\link[=sportpress_schedule]{sportpress_schedule()}} (\code{game_id}).}
 }
 \value{
-A \code{hoopR_data} tibble: Points each side scored in each period of a game (periods 5 and up are overtimes). An empty
-valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{sportpress_game_periods}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Game id (key space: sportpress games), unique across seasons: the key of every game route. \cr
-   team_side \tab character \tab Side of the game the row belongs to: home or away (the provider's is_home, or side 1 / 2). \cr
-   competition_team_id \tab integer \tab Competition-team id of the side. \cr
-   period \tab integer \tab Period number: 1-4 are the quarters, 5 and up are overtimes (5 = first overtime). \cr
-   score \tab integer \tab Points the side scored IN that period (not cumulative). \cr
-}
+A \code{hoopR_data} tibble with one row per side and period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_game_periods")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Points each side scored in each period of a game (periods 5 and up are overtimes).

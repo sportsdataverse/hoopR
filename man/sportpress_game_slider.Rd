@@ -11,27 +11,10 @@ sportpress_game_slider(competition_id)
 (\code{\link[=sportpress_phases]{sportpress_phases()}} maps a season to it).}
 }
 \value{
-A \code{hoopR_data} tibble: The latest 14 finished games of a competition plus every upcoming game, with the Genius
-match id. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{sportpress_game_slider}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Game id (key space: sportpress games), unique across seasons: the key of every game route. \cr
-   genius_id \tab integer \tab Genius Sports LiveStats match id (organisation BNXT): the join to the genius family. Upcoming games already carry one; null for the 2020-21 competition. \cr
-   game_time \tab POSIXct \tab Tip-off as a naive datetime. The source carries no offset; the league's local time is assumed and unverified. POSIXct in Europe/Brussels (league local time). \cr
-   status \tab character \tab Game status: finished, or ready for an upcoming game. \cr
-   competition_id \tab integer \tab Competition id (key space: sportpress competitions): ONE season of the league (24 = 2025-26, 25 = 2026-27). Not the season number. The key of the standings, ranking, slider and box routes. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the sdv convention and the API's own season key. \cr
-   phase_id \tab integer \tab Phase id (key space: sportpress phases), a stage of one competition such as the regular season or the playoffs; new every season. \cr
-   phase_name \tab character \tab Phase name as entered in the CMS ('Regular season 2026-27'). \cr
-   home_competition_team_id \tab integer \tab Home side. Competition-team id (key space: sportpress competition teams): a team in ONE competition, so the same club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). Joins competitors, rosters, box scores, film and standings. The stable club key across seasons is \code{uu_team_id}. \cr
-   home_team \tab character \tab Home side. Display name incl. the sponsor. Teams of the playoff phases carry a ' playoff' suffix (2025-26), and standings names vary with X-Localization ('Partena Professional Okapi Aalst Playoff' (en) vs 'Okapi Aalst Playoff' (nl, fr)): never join on it. \cr
-   home_team_short_name \tab character \tab Home side. Three-letter club code (CHA, OOS, ANT, MON, LIM, ...), stable across seasons in the samples. \cr
-   home_score \tab integer \tab Home side. Final points of the side, including overtime. \cr
-   away_competition_team_id \tab integer \tab Away side. Competition-team id (key space: sportpress competition teams): a team in ONE competition, so the same club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). Joins competitors, rosters, box scores, film and standings. The stable club key across seasons is \code{uu_team_id}. \cr
-   away_team \tab character \tab Away side. Display name incl. the sponsor. Teams of the playoff phases carry a ' playoff' suffix (2025-26), and standings names vary with X-Localization ('Partena Professional Okapi Aalst Playoff' (en) vs 'Okapi Aalst Playoff' (nl, fr)): never join on it. \cr
-   away_team_short_name \tab character \tab Away side. Three-letter club code (CHA, OOS, ANT, MON, LIM, ...), stable across seasons in the samples. \cr
-   away_score \tab integer \tab Away side. Final points of the side, including overtime. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_game_slider")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The latest 14 finished games of a competition plus every upcoming game, with the Genius match id.

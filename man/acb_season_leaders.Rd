@@ -13,27 +13,10 @@ acb_season_leaders(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_season_leaders}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
-   edition_id \tab integer \tab Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, \code{season}. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   team_side \tab character \tab Side of the game the team played: home or away (the feed lists the home team first). \cr
-   team_id \tab integer \tab Season-team entry id: one club in one competition edition, NEW every season (Barca = 4467 in Liga 2026-27). Not the club: use club_id to follow a club across seasons. \cr
-   club_id \tab integer \tab Stable ACB club id (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the same across seasons and sponsor names, and the club_id request argument. \cr
-   team \tab character \tab Team name as registered for that season (sponsor names change; the club id does not). \cr
-   team_abbr \tab character \tab Three-letter team abbreviation (BAR, RMB, VBC). \cr
-   metric \tab character \tab Leader category in snake_case (the API's key, e.g. rating, points, rebounds, assists). \cr
-   rank \tab integer \tab Place in the category list, 1 = the leader, in the order the feed lists them. \cr
-   value \tab double \tab The player's season value in the category before this game (a total or an average depending on the category). \cr
-   player_id \tab integer \tab ACB licence number: the person id everywhere. A player's box-score \code{player.id}, his play-by-play and shot \code{playerLicenseId} and the \code{playerLicenceId} / \code{playerLicense} request params hold the same number (all 24 players of match 105401 match). 20209407 = Edy Tavares. Older licences start 2020..., recent ones 3000.... \cr
-   player_name \tab character \tab Display (sporting) name ('Edy Tavares') \cr
-   first_name \tab character \tab Legal first name(s) \cr
-   last_name \tab character \tab Legal last name(s) \cr
-   shirt_number \tab character \tab Shirt number, a string ('' or null when unknown) \cr
-   game_role \tab character \tab Position or staff role, in Spanish: Base (point guard), Escolta (shooting guard), Alero (small forward), Ala-pivot (power forward), Pivot (centre); Entrenador (head coach), Segundo Entrenador / Entrenador Ayudante (assistant coach). Null or '' in many rows \cr
-}
+A \code{hoopR_data} tibble with one row per team, statistic and rank.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_season_leaders")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Each team's season leaders before a game, by category.

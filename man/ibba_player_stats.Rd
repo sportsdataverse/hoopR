@@ -20,38 +20,10 @@ unchanged.}
 (default) the regular season.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab Player-season id (key space: IBBA player registrations; a NEW id every season, e.g. Jaylen Hoard = 21912 in 2025-26 and 25997 in 2026-27; the ASMX host has no cross-season person id). Joins ibba_players, ibba_player, ibba_box_score and ibba_leaders; null on the team-credited and TOTAL box rows. \cr
-   jersey \tab character \tab Jersey number as a zero-padded string ('02'); a box score also uses '_TEAM' and 'TOTAL' for its two non-player lines. \cr
-   season \tab integer \tab Season END year as an integer (2026 = 2025-26): the host's own cYear, no mapping. \cr
-   team_id \tab integer \tab Team-season id (key space: IBBA team registrations; a NEW id every season for the same club, e.g. Maccabi Tel Aviv = 1109 in 2025-26 and 2111 in 2026-27). Joins ibba_teams, ibba_players, ibba_coaches, ibba_box_score and the games' home / away ids. \cr
-   games \tab integer \tab Games played (in the standings or in the season stats). \cr
-   minutes \tab double \tab Minutes played, whole minutes; a TOTAL line holds the team's player-minutes (200 plus 25 per overtime). Season total, or the per-game average when is_averages is true. \cr
-   pts \tab double \tab Points scored by the player or team (free throws included). Season total, or the per-game average when is_averages is true. \cr
-   fg2m \tab double \tab Two-point field goals made. Season total, or the per-game average when is_averages is true. \cr
-   fg2a \tab double \tab Two-point field goals attempted (verified equal to Segev made + missed). Season total, or the per-game average when is_averages is true. \cr
-   fg2_pct \tab double \tab Two-point field-goal percentage, 0-100. Season total, or the per-game average when is_averages is true. \cr
-   fg3m \tab double \tab Three-point field goals made. Season total, or the per-game average when is_averages is true. \cr
-   fg3a \tab double \tab Three-point field goals attempted. Season total, or the per-game average when is_averages is true. \cr
-   fg3_pct \tab double \tab Three-point field-goal percentage, 0-100. Season total, or the per-game average when is_averages is true. \cr
-   ftm \tab double \tab Free throws made. Season total, or the per-game average when is_averages is true. \cr
-   fta \tab double \tab Free throws attempted. Season total, or the per-game average when is_averages is true. \cr
-   ft_pct \tab double \tab Free-throw percentage, 0-100. Season total, or the per-game average when is_averages is true. \cr
-   dreb \tab double \tab Defensive rebounds. Season total, or the per-game average when is_averages is true. \cr
-   oreb \tab double \tab Offensive rebounds. Season total, or the per-game average when is_averages is true. \cr
-   reb \tab double \tab Total rebounds. Season total, or the per-game average when is_averages is true. \cr
-   fouls_drawn \tab double \tab Fouls DRAWN: fouls opponents committed against the player or team (the wire's fouls_against; verified equal to Segev f_drawn). Season total, or the per-game average when is_averages is true. \cr
-   fouls \tab double \tab Fouls COMMITTED by the player or team (the wire's fouls_for; verified equal to Segev f). Season total, or the per-game average when is_averages is true. \cr
-   steals \tab double \tab Steals made by the player or team. Season total, or the per-game average when is_averages is true. \cr
-   turnovers \tab double \tab Turnovers (the wire's misspelt tournovers). Season total, or the per-game average when is_averages is true. \cr
-   assists \tab double \tab Assists credited to the player or team. Season total, or the per-game average when is_averages is true. \cr
-   blocks \tab double \tab Shots the player or team blocked. Season total, or the per-game average when is_averages is true. \cr
-   blocks_against \tab double \tab Own shots that were blocked. Season total, or the per-game average when is_averages is true. \cr
-   val \tab double \tab Efficiency rating (valuation; verified equal to Segev rate); -1 on 2004-05 team-credited lines. Season total, or the per-game average when is_averages is true. \cr
-   plus_minus \tab double \tab Plus-minus; 0 on every line of the 2004-05 sample (not recorded then, inferred). Season total, or the per-game average when is_averages is true. \cr
-   dunks \tab double \tab Dunks made by the player or team. Season total, or the per-game average when is_averages is true. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_player_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{A player-season's totals, or per-game averages with is_averages=True.}

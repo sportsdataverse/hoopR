@@ -11,26 +11,10 @@ kbl_playoff_games(season)
 maps it to the KBL seasonCode (47 = 2025-26).}
 }
 \value{
-A \code{hoopR_data} tibble: The games of the playoff bracket (2024-25 on; the older bracket format lists no games). The
-columns are always these, in this order (sportsdataverse-py \code{kbl_playoff_games}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr
-   season_code \tab integer \tab KBL season code of the game (from the bracket's gmkey object). \cr
-   gmkey \tab character \tab Game key \verb{S\{seasonCode\}G\{gameCode\}N\{gameNo\}} (e.g. S47G01N49): the id of every game route and game frame. \cr
-   game_code \tab character \tab Competition type of the game: 03 playoffs, 04 championship final. \cr
-   game_no \tab integer \tab Game number inside the competition, from the bracket's gmkey object. \cr
-   round \tab character \tab Playoff round: quarterfinal (the last six, seeds 3-6), semifinal (the last four) or final; on the round-MVP and rounds frames the round number of the season. \cr
-   series_no \tab integer \tab Series number inside the round (1 or 2 for the quarterfinals and semifinals, 1 for the final). \cr
-   game_date \tab Date \tab Game date, KST. \cr
-   home_team_code \tab character \tab Home team code. Team code: the KBL club in that season (two-digit string with a leading zero, e.g. '50' = Changwon LG). Joins kbl_teams team_code; not stable across ownership changes (the Anyang club is '40' in 1997-98, '70' today). \cr
-   away_team_code \tab character \tab Away team code. Team code: the KBL club in that season (two-digit string with a leading zero, e.g. '50' = Changwon LG). Joins kbl_teams team_code; not stable across ownership changes (the Anyang club is '40' in 1997-98, '70' today). \cr
-   home_team_name \tab character \tab Home team short name (Korean). \cr
-   away_team_name \tab character \tab Away team short name (Korean). \cr
-   home_score \tab integer \tab Home team points. \cr
-   away_score \tab integer \tab Away team points. \cr
-   home_win \tab logical \tab 1 when the home team won, else 0. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_playoff_games")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The games of the playoff bracket (2024-25 on; the older bracket format lists no games).

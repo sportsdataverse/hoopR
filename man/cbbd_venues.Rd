@@ -7,18 +7,10 @@
 cbbd_venues()
 }
 \value{
-A \code{hoopR_data} tibble with one row per venue:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab integer \tab CollegeBasketballData venue id. \cr
-      source_id \tab character \tab Source (ESPN) venue id. \cr
-      name \tab character \tab Venue name. \cr
-      city \tab character \tab Venue city. \cr
-      state \tab character \tab Venue state. \cr
-      country \tab character \tab Venue country. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per venue.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_venues")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get college basketball venues from the CollegeBasketballData API.}

@@ -30,53 +30,10 @@ games), MAY, JUNE, JULY or AUGUST. \code{NULL} = all games. Values from the CEBL
 \item{vs_conference}{(default \code{NULL}) EAST or WEST: only games against that conference's teams count.}
 }
 \value{
-A \code{hoopR_data} tibble: Team statistic table (totals or per game) with a league row; filter by season,
-competition, segment, opponent team or opponent conference. An empty valid answer raises \code{hoopR_no_data}; the
-columns are always these, in this order (sportsdataverse-py \code{cebl_team_stats}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season: the calendar year it is played in (May to August) = the sdv END year (2025). Taken from the request (the body does not echo it); null for the all-time table and for a bare body. \cr
-   mode \tab character \tab Table mode of the request: TOTALS (sums over the selected games) or PER_GAME (per-game averages); the body does not echo it. \cr
-   competition \tab character \tab Competition filter of the request: REGULAR or FINALS; null when both were asked. The body does not echo it. \cr
-   segment \tab character \tab Game-subset filter of the request (HOME, AWAY, L5G, MAY ...); null for all games. The body does not echo it. \cr
-   vs_conference \tab character \tab Opponent-conference filter of the request (EAST or WEST); null when not asked. The body does not echo it. \cr
-   vs_team_id \tab integer \tab Opponent team filter of the request (CEBL team id); null when not asked. The body does not echo it. \cr
-   team_id \tab integer \tab CEBL team id (its own key space; not a Genius id). Joins /teams/ \code{id}, the games' \code{home_team_id} / \code{away_team_id}, \code{team_id} in player rows and the \code{team_id} / \code{vs_team_id} params. A relocated or renamed franchise has a second id: the Stats Hub groups 15+56 (Saskatchewan Rattlers, Saskatoon Mamba), 17+53 (Calgary Surge, Guelph Nighthawks), 19+55 (Brampton, Hamilton Honey Badgers) and 16+54 (Vancouver, Fraser Valley Bandits). Null on the league row. \cr
-   is_league_row \tab logical \tab True on the one league row of a team table (null team_id and names): the league's own figures, where played counts team-games and, in TOTALS, points equals points_against. \cr
-   name_en \tab character \tab Team full name in English ('Niagara River Lions'). Null on the league row. \cr
-   short_name_en \tab character \tab Team short name in English, usually the city ('Niagara'). Null on the league row. \cr
-   name_fr \tab character \tab Team full name in French ('River Lions de Niagara'). Null on the league row. \cr
-   short_name_fr \tab character \tab Team short name in French, usually the city. Null on the league row. \cr
-   played \tab integer \tab Games played (a count in both modes). On the league row: team-games (twice the games). \cr
-   wins \tab integer \tab Wins (a count in both modes). \cr
-   win_percentage \tab double \tab Wins / games played, 0-1 with 3 decimals ('0.625'). A string. \cr
-   losses \tab integer \tab Losses (a count in both modes). \cr
-   points \tab double \tab Points scored. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   points_against \tab double \tab Points allowed. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   point_difference \tab double \tab Points scored minus points allowed. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   field_goals_made \tab double \tab Field goals made (2- and 3-pointers). TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   field_goals_attempted \tab double \tab Field goals attempted (2- and 3-pointers). TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   field_goal_percentage \tab double \tab Field-goal percentage, 0-100 with 1 decimal ('44.7'): made / attempted over the selected games (the same in both modes). A string. \cr
-   three_points_made \tab double \tab Three-pointers made. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   three_points_attempted \tab double \tab Three-pointers attempted. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   three_point_percentage \tab double \tab Three-point percentage, 0-100 with 1 decimal ('44.7'): made / attempted over the selected games (the same in both modes). A string. \cr
-   free_throws_made \tab double \tab Free throws made. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   free_throws_attempted \tab double \tab Free throws attempted. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   free_throw_percentage \tab double \tab Free-throw percentage, 0-100 with 1 decimal ('44.7'): made / attempted over the selected games (the same in both modes). A string. \cr
-   offensive_rebounds \tab double \tab Offensive rebounds. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   defensive_rebounds \tab double \tab Defensive rebounds. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   rebounds \tab double \tab Total rebounds (offensive + defensive). TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   assists \tab double \tab Assists. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   turn_overs \tab double \tab Turnovers. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   steals \tab double \tab Steals. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   blocks \tab double \tab Shots blocked. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   fouls \tab double \tab Personal fouls committed. TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   fouls_drawn \tab double \tab Fouls drawn (committed by opponents). TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   efficiency \tab double \tab Efficiency rating (EFF); CEBL does not publish its formula (unverified: the usual Genius / FIBA EFF is PTS + REB + AST + STL + BLK - missed FG - missed FT - TO). TOTALS: the sum over the selected games; PER_GAME: the per-game average, 1 decimal. A decimal sent as a string ('2256.0', '12.7'). \cr
-   logo_url \tab character \tab Team logo URL (icon with the team name) on Google Cloud Storage. Null on the league row. \cr
-   icon_url \tab character \tab Team icon URL (without the team name) on Google Cloud Storage. Null on the league row. \cr
-   stats_url_en \tab character \tab The team's stats page on cebl.ca (\verb{https://cebl.ca/stats/\{slug\}}). Null on the league row. \cr
-   stats_url_fr \tab character \tab The team's stats page on the French cebl.ca (\verb{https://cebl.ca/fr-ca/stats/\{slug\}}). Null on the league row. \cr
-}
+A \code{hoopR_data} tibble with one row per team, plus a league row.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cebl_team_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team statistic table (totals or per game) with a league row; filter by season, competition, segment, opponent

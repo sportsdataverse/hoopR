@@ -11,36 +11,10 @@ cba_player_box(schedule_id)
 2025-26 round 1). Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble: One row per player and a team rebounds/turnovers row per side (null player_id). An empty
-valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py \code{cba_player_box}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   schedule_id \tab integer \tab CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the \code{{scheduleId}} of every game route). Stamped by the runtime from the request; null on a body parsed without it. \cr
-   side \tab character \tab Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block). \cr
-   assists \tab integer \tab Assists in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   blocked \tab integer \tab Blocks in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   cn_alias \tab character \tab Player name (Chinese). The team row reads 'team rebounds / turnovers' (rebounds and turnovers not credited to a player; that row does not exist in the 2009-10 sample). \cr
-   field_goals \tab integer \tab Field goals made in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   field_goals_attempted \tab integer \tab Field goals attempted in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   field_goals_percentage \tab double \tab Field-goal percentage as a FRACTION 0-1 (0.308), null when no attempt (0/0) as well as on the team row. \cr
-   fouls \tab integer \tab Personal fouls in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   free_throws \tab integer \tab Free throws made in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   free_throws_attempted \tab integer \tab Free throws attempted in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   free_throws_percentage \tab double \tab Free-throw percentage as a FRACTION 0-1, null on the team row. \cr
-   game_start \tab integer \tab Starter flag: 1 = started the game. Null on the team row. \cr
-   number \tab character \tab Jersey number as a string. Null on the team row. \cr
-   player_id \tab integer \tab playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. Null on the team row. \cr
-   plus_minus \tab integer \tab Plus-minus while on court. Null on the team row and on every row of the 2009-10 sample (not tracked then). \cr
-   points \tab integer \tab Points in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   rebounds \tab integer \tab Total rebounds in this game (integer). The team row carries the team's own total here. \cr
-   rebounds_defensive \tab integer \tab Defensive rebounds in this game (integer). The team row carries the team's own total here. \cr
-   rebounds_offensive \tab integer \tab Offensive rebounds in this game (integer). The team row carries the team's own total here. \cr
-   steals \tab integer \tab Steals in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   three_point_attempted \tab integer \tab Three-pointers attempted in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   three_point_goals \tab integer \tab Three-pointers made in this game (integer). Null on the team row (the (Chinese text) rebounds/turnovers row). \cr
-   three_point_percentage \tab double \tab Three-point percentage as a FRACTION 0-1, null on the team row. \cr
-   turnovers \tab integer \tab Turnovers in this game (integer). The team row carries the team's own total here. \cr
-   up_time \tab integer \tab Time on court in SECONDS (1692 = 28:12). Null on the team row. \cr
-}
+A \code{hoopR_data} tibble with one row per player, plus a team row per side.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cba_player_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player box score of a finished game, both sides, plus a team rebounds/turnovers row per side (null player_id).

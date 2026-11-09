@@ -11,60 +11,10 @@ sportality_pbp(game_uuid)
 platform game uuids; the Genius match id is \code{extId} / \code{gameSourceId} in the body.}
 }
 \value{
-A \code{hoopR_data} tibble: Play-by-play events with shot coordinates and the Genius ids (2023/24 on). An empty
-valid answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
-\code{sportality_pbp}), then any column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_source_id \tab integer \tab Genius match id (Int64), the same number as game_id and sports-v2 game_info_ext_id. \cr
-   game_id \tab integer \tab Genius match id (Int64), the join to the genius family; on play-by-play lines, an integer elsewhere. \cr
-   event_id \tab integer \tab Genius event number within the game (Int64), increasing through the game. \cr
-   type \tab character \tab Event type: one line per action; shots are the shooter's line, assists, blocks, steals and fouls drawn are further lines. Values: \verb{2pt} = two-point attempt (made when isSuccessful = 1); \verb{3pt} = three-point attempt (made when isSuccessful = 1); \code{assist} = assist on the previous made shot; \code{block} = block; \code{clock} = clock start, stop or adjustment; \code{foul} = foul committed; \code{foulon} = foul drawn (fouled player); \code{freethrow} = free-throw attempt; \code{game} = game start / end line; \code{headcoachchallenge} = head coach challenge; \code{jumpball} = jump ball or held ball; \code{period} = period start / end line; \code{rebound} = rebound; \code{steal} = steal; \code{substitution} = substitution (in or out); \code{timeout} = timeout; \code{turnover} = turnover. \cr
-   event_uuid \tab character \tab Event uuid (UUID v5 derived from the event; unique per event). \cr
-   period \tab integer \tab Period: 0 = the whole game, 1-4 the quarters, 5 and up overtime. \cr
-   period_type \tab character \tab REGULAR or OVERTIME; absent on the period marker lines. Values: \code{OVERTIME} = overtime period; \code{REGULAR} = regulation period. \cr
-   time \tab character \tab Clock REMAINING in the period as mm:ss:cc (cc looks like hundredths of a second, only ever 00, 10, 30, 50 ... seen; unverified). Absent on the per-period marker lines. \cr
-   real_world_time \tab character \tab Wall-clock time of the event, ISO 8601 UTC. \cr
-   updated_time \tab character \tab When the feed last updated the event, ISO 8601 UTC. \cr
-   home_team_id \tab integer \tab Genius team id of the home team (Genius key space; Int64). \cr
-   home_team_code \tab character \tab Home team code as Genius spells it (mixed case, 'Hol'). \cr
-   home_team_name \tab character \tab Name of the home team. \cr
-   home_abbreviation \tab character \tab Home team abbreviation. \cr
-   home_team_number \tab integer \tab Team number in the game; home is 1. \cr
-   home_place \tab character \tab Side of the home block: always home. \cr
-   home_score \tab integer \tab Points scored by the home team. \cr
-   away_team_id \tab integer \tab Genius team id of the away team (Genius key space; Int64). \cr
-   away_team_code \tab character \tab Away team code as Genius spells it. \cr
-   away_team_name \tab character \tab Name of the away team. \cr
-   away_abbreviation \tab character \tab Away team abbreviation. \cr
-   away_team_number \tab integer \tab Team number in the game; away is 2. \cr
-   away_place \tab character \tab Side of the away block: always away. \cr
-   away_score \tab integer \tab Points scored by the away team. \cr
-   revision \tab integer \tab Revision counter of the event. \cr
-   game_state \tab character \tab Game state at the event: ongoing during play, GameEnded on the final line. Values: \code{GameEnded} = game over (the final line of a complete feed); \code{ongoing} = game in progress. \cr
-   game_type \tab character \tab Game type of the game ('' on every line seen). \cr
-   round \tab integer \tab Round number (0). \cr
-   start_date_and_time \tab character \tab Start of the game ('' on every line seen). \cr
-   sub_type \tab character \tab Refinement of \code{type} (the shot type, rebound kind, foul kind, ...); null on types that have none. Values are listed under "Sub-type codes" below. \cr
-   qualifiers \tab character \tab Event qualifiers joined by ';' (a list in recent games, a ';'-joined string or null in older ones). \cr
-   is_successful \tab integer \tab 1 when the action succeeded (a made shot or free throw, a recorded rebound ...). ABSENT, not 0, for a missed shot, so count misses as rows without it. \cr
-   instance_id \tab character \tab Site instance id of the club or league (platform key space, \verb{<code><n>_<code>} such as hol2_hol; the league itself is dbl1_dbl). \cr
-   source \tab character \tab Feed that produced the line (genius-basketball-stream-reader). \cr
-   game_uuid \tab character \tab Platform game uuid (c4hh5nig6t); every gameday route takes it. \cr
-   event_team_id \tab integer \tab Genius team id (Genius key space; Int64). \cr
-   event_team_code \tab character \tab Team code as Genius spells it. \cr
-   event_team_name \tab character \tab Name of the team. \cr
-   event_abbreviation \tab character \tab Team abbreviation. \cr
-   event_team_number \tab integer \tab Team number in the game (1 home, 2 away). \cr
-   event_place \tab character \tab Side of the team the event belongs to: home or away. \cr
-   player_id \tab integer \tab Genius person id (Int64). A string key in the players maps, an integer in play-by-play and box-score rows; cast here so the frames join, and join the genius family. \cr
-   player_pno \tab integer \tab Genius shirt-table number of the player. \cr
-   player_team_number \tab integer \tab Team number in the game (1 home, 2 away). \cr
-   player_first_name \tab character \tab Given (first) name(s) of the player. \cr
-   player_family_name \tab character \tab Family name (this route says familyName; the others lastName). \cr
-   coordinates_x \tab double \tab Shot or event x coordinate in Genius court units (Float64); origin and scale unverified. \cr
-   coordinates_y \tab double \tab Shot or event y coordinate in Genius court units (Float64); origin and orientation unverified. \cr
-   period_time \tab integer \tab Marker lines only: 0 (an integer), the start of the period. \cr
-}
+A \code{hoopR_data} tibble with one row per play-by-play event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play events with shot coordinates and the Genius ids (2023/24 on).

@@ -38,22 +38,10 @@ sent; with neither \code{season} nor \code{season_id} the API filters by it.}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row for the player:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   person_id \tab character \tab Player UUID (person), shared across seasons and sites. \cr
-   name \tab character \tab Player name as the site prints it. \cr
-   bib \tab character \tab Jersey number on the card; null when none. \cr
-   team_id \tab character \tab Team UUID of the player's current team on the card. \cr
-   team_name \tab character \tab Name of the player's current team on the card. \cr
-   image_url \tab character \tab URL of the Sportradar-hosted image (400 px). \cr
-   date_of_birth \tab Date \tab Player's date of birth, from the card's info items. \cr
-   age \tab integer \tab Player's age in years, from the card's info items. \cr
-   nationality \tab character \tab Player's nationality in the site's language, from the card's info items. \cr
-   points_per_game \tab double \tab Points per game over the season shown on the card. \cr
-   rebounds_offensive_per_game \tab double \tab Offensive rebounds per game over the season shown on the card. \cr
-   rebounds_defensive_per_game \tab double \tab Defensive rebounds per game over the season shown on the card. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_player")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{A player page: bio and the season averages the card shows.}

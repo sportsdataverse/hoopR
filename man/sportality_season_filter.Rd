@@ -7,16 +7,10 @@
 sportality_season_filter()
 }
 \value{
-A \code{hoopR_data} tibble: Series, the 25 seasons (2002/03 on), game types and the default ssgt. An empty valid
-answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
-\code{sportality_season_filter}), then any column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   kind \tab character \tab Directory entry kind: series, season or game_type. \cr
-   code \tab character \tab Series code (DBL = Basketligaen). \cr
-   name \tab character \tab Game type name in Danish (Grundspil = regular season, Slutspil = playoffs). \cr
-   uuid \tab character \tab Series uuid (platform key space); the seriesUuid of /sports-v2/game-schedule. \cr
-   deleted \tab logical \tab Soft-delete flag; false on every record seen. \cr
-}
+A \code{hoopR_data} tibble with one row per filter option.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_season_filter")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Series, the 25 seasons (2002/03 on), game types and the default ssgt.

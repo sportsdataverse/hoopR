@@ -27,51 +27,20 @@ cbbd_draft_picks(
 \item{position}{(\emph{character} optional): Position filter.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per NBA team:
+A \code{hoopR_data} tibble with one row per NBA team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_draft_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab integer \tab NBA team id. \cr
-      source_id \tab character \tab Source (ESPN) team id. \cr
-      location \tab character \tab Team location (city). \cr
-      name \tab character \tab Team name. \cr
-      display_name \tab character \tab Full team display name. \cr
-      abbreviation \tab character \tab Team abbreviation. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per draft position.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_draft_positions")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-A \code{hoopR_data} tibble with one row per draft position:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      name \tab character \tab Position name. \cr
-      abbreviation \tab character \tab Position abbreviation. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-A \code{hoopR_data} tibble with one row per draft pick:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      athlete_id \tab integer \tab Athlete id. \cr
-      source_team_id \tab integer \tab College team id. \cr
-      source_team_location \tab character \tab College team location. \cr
-      source_team_name \tab character \tab College team name. \cr
-      source_team_league_affiliation \tab character \tab College team league affiliation. \cr
-      source_team_college_id \tab numeric \tab College id. \cr
-      draft_team_id \tab numeric \tab NBA team id. \cr
-      draft_team \tab character \tab NBA team name. \cr
-      year \tab integer \tab Draft year. \cr
-      overall \tab integer \tab Overall pick number. \cr
-      round \tab integer \tab Draft round. \cr
-      pick \tab integer \tab Pick number within the round. \cr
-      name \tab character \tab Player name. \cr
-      overall_rank \tab integer \tab Pre-draft overall rank. \cr
-      position_rank \tab integer \tab Pre-draft position rank. \cr
-      height \tab numeric \tab Player height. \cr
-      weight \tab integer \tab Player weight (lbs). \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per draft pick.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_draft_picks")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get NBA draft teams from the CollegeBasketballData API.}

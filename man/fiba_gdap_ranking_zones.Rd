@@ -10,12 +10,10 @@ fiba_gdap_ranking_zones(return_parsed = TRUE)
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   zone_ranking_id \tab integer \tab Ranking zone id (getgdaprankingzones key space: 1 = World ... 5 = Europe). \cr
-   code \tab character \tab Ranking zone code (W, AF, AM, AS, EU). \cr
-   official_name \tab character \tab Official name of the ranking zone (World, FIBA Europe, FIBA Americas...). \cr
-}
+A \code{hoopR_data} tibble with one row per ranking zone.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_ranking_zones")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 FIBA world-ranking zones.

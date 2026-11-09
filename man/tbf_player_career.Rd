@@ -10,41 +10,10 @@ tbf_player_career(player_id)
 \item{player_id}{Required. TBF person id, e.g. 196413; person_id in \code{\link[=tbf_players]{tbf_players()}} and the box score.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per career season and competition. Totals and averages rows are not included.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   person_id \tab integer \tab TBF person id of the player asked for (the player_id argument). \cr
-   player_name \tab character \tab Player's full name from the profile (the same on every row). \cr
-   nationality \tab character \tab Nationality as a TURKISH country name from the profile (country). \cr
-   height_cm \tab integer \tab Height in centimetres from the profile; null when TBF has none. \cr
-   season_label \tab character \tab Career season as TBF writes it (seasonCode), e.g. 2025-2026. \cr
-   season \tab integer \tab Career season END year, read from the season label. \cr
-   team_name \tab character \tab Team the player represented that season, uppercase with Turkish letters (teamName). \cr
-   activity_name \tab character \tab League-season name (activityName), e.g. 'BSL 2025-2026'. \cr
-   activity_type_id \tab integer \tab Competition type id (faaliyetTuruId): 1 = BSL, 4 = TBL, 79 = BGL. \cr
-   activity_id \tab integer \tab Activity id of the league-season (faaliyetAltAlaniId; key space: TBF league-seasons). \cr
-   games \tab integer \tab Games played (macSayisi = game count). \cr
-   seconds_played \tab integer \tab Total time on court that season in seconds (formattedTotalSeconds 'hh:mm:ss'). \cr
-   points \tab integer \tab Points scored in the game (or season) the row covers. \cr
-   assists \tab integer \tab Assists in that season and competition. \cr
-   fg_made \tab integer \tab Field goals made (fieldGoalsMade), 2PT + 3PT. \cr
-   fg_attempted \tab integer \tab Field goals attempted (fieldGoalsAttempted), 2PT + 3PT. \cr
-   fg3_made \tab integer \tab Three-point field goals made (threePointsMade). \cr
-   fg3_attempted \tab integer \tab Three-point field goals attempted (threePointsAttempted). \cr
-   ft_made \tab integer \tab Free throws made (the API spells the field freeThows). \cr
-   ft_attempted \tab integer \tab Free throws attempted (freeThowsAttempted). \cr
-   off_rebounds \tab integer \tab Offensive rebounds in that season and competition. \cr
-   def_rebounds \tab integer \tab Defensive rebounds in that season and competition. \cr
-   rebounds \tab integer \tab Total rebounds in that season and competition. \cr
-   steals \tab integer \tab Steals in that season and competition. \cr
-   turnovers \tab integer \tab Turnovers (the API spells the field tournovers). \cr
-   blocks \tab integer \tab Blocks in that season and competition. \cr
-   fouls \tab integer \tab Personal fouls (the API spells the field fauls). \cr
-   efficiency \tab integer \tab Efficiency rating total (playerEfficiency, PIR) for that season and competition. \cr
-   fouls_drawn \tab integer \tab Fouls drawn (yapilanFaul). \cr
-   blocks_received \tab integer \tab Own shots blocked by an opponent (yenilenBlok). \cr
-}
+A \code{hoopR_data} tibble with one row per career season and competition.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_player_career")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One player's career: a row per season and competition with totals (birth date is not returned).

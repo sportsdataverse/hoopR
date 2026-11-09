@@ -11,44 +11,10 @@ tbf_player_box(match_id)
 sequence across leagues and seasons. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per player who is on the sheet; \code{is_starter} marks the starting five (none flagged in 2006-07).
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. \cr
-   side \tab character \tab Side of the game the row belongs to: home or away (from the route's isHome flag or home / away block). \cr
-   team_process_id \tab integer \tab Team-season id of the player's side (from the game header; key space: TBF team registrations). \cr
-   player_id \tab integer \tab TBF person id (key space: TBF persons, stable across seasons and clubs: 196413). The same value as person_id in the player and team tables and the player_id argument of tbf_player_career. \cr
-   player_name \tab character \tab Player name as TBF prints it for that route (title case, Turkish letters kept). \cr
-   jersey_number \tab character \tab Shirt number as a string, so '0' and '00' stay distinct. \cr
-   is_starter \tab logical \tab True for the starting five (homeTopFive / awayTopFive block); none are flagged in 2006-07. \cr
-   seconds_played \tab integer \tab Time on court in seconds, parsed from the 'mm:ss' or 'hh:mm:ss' text the API sends (team totals sum their players, so 200:00 = 12000). \cr
-   points \tab integer \tab Points scored in the game (or season) the row covers. \cr
-   fg_made \tab integer \tab Field goals made, 2PT + 3PT (successfulShots). \cr
-   fg_attempted \tab integer \tab Field goals attempted, 2PT + 3PT (shotAttempts). \cr
-   fg_pct \tab integer \tab Field-goal percentage 0-100, rounded to an integer by the API. \cr
-   fg2_made \tab integer \tab Two-point field goals MADE (the API calls it twoPointShots; attempts are fg2_attempted). \cr
-   fg2_attempted \tab integer \tab Two-point field goals attempted (twoPointShotAttempts). \cr
-   fg2_pct \tab integer \tab Two-point percentage 0-100, an integer. \cr
-   fg3_made \tab integer \tab Three-point field goals MADE (the API calls it threePointShots). \cr
-   fg3_attempted \tab integer \tab Three-point field goals attempted (threePointShotAttempts). \cr
-   fg3_pct \tab integer \tab Three-point percentage 0-100, an integer. \cr
-   ft_made \tab integer \tab Free throws MADE (serbest atis; the API calls it freeThrows). \cr
-   ft_attempted \tab integer \tab Free throws attempted (freeThrowAttempts). \cr
-   ft_pct \tab integer \tab Free-throw percentage 0-100, an integer. \cr
-   off_rebounds \tab integer \tab Offensive rebounds (hucum ribaundu). \cr
-   def_rebounds \tab integer \tab Defensive rebounds (savunma ribaundu). \cr
-   rebounds \tab integer \tab Total rebounds (toplam ribaund). \cr
-   assists \tab integer \tab Assists in this game (asist). \cr
-   steals \tab integer \tab Steals in this game (top calma). \cr
-   blocks \tab integer \tab Shots this player blocked in this game (blok). \cr
-   turnovers \tab integer \tab Turnovers committed in this game (top kaybi). \cr
-   fouls \tab integer \tab Personal fouls committed (faul). \cr
-   fouls_drawn \tab integer \tab Fouls drawn (rivalFoul = foul committed by the opponent). \cr
-   blocks_received \tab integer \tab Own shots blocked by an opponent (blocksReceived). \cr
-   plus_minus \tab integer \tab Plus/minus while on court (plusMinus); null when the API sends ''. \cr
-   efficiency \tab integer \tab Efficiency rating (verimlilik puani, PIR): points + rebounds + assists + steals + blocks + fouls drawn - missed shots - turnovers - fouls. An integer on player rows. \cr
-}
+A \code{hoopR_data} tibble with one row per player who is on the sheet.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_player_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player box score of a finished game: minutes, shooting splits, rebounds, assists, +/- and efficiency.

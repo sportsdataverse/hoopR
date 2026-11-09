@@ -30,13 +30,45 @@ under \code{season_type = 0} (all-types aggregate), so that is the default.}
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A long tibble with one row per (category x stat).
+A \code{hoopR_data} tibble with one row per category and statistic.
 
-Columns as documented in the shared \link{espn_mbb_team_odds_records_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  team_id \tab character \tab ESPN team identifier. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  category_type \tab character \tab Category type code (e.g. "moneyLineOverall"). \cr
+  category_abbrev \tab character \tab Category abbreviation (e.g. "ML"). \cr
+  category_short \tab character \tab Short display. \cr
+  category_display \tab character \tab Full category name. \cr
+  stat_type \tab character \tab Stat type code (e.g. "win", "loss"). \cr
+  stat_abbrev \tab character \tab Stat abbreviation (e.g. "W", "L"). \cr
+  stat_display \tab character \tab Stat display name. \cr
+  value \tab numeric \tab Numeric stat value. \cr
+  display_value \tab character \tab Display-formatted value. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A long tibble with one row per (category x stat).
+A \code{hoopR_data} tibble with one row per category and statistic.
 
-Columns as documented in the shared \link{espn_mbb_team_odds_records_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  team_id \tab character \tab ESPN team identifier. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  category_type \tab character \tab Category type code (e.g. "moneyLineOverall"). \cr
+  category_abbrev \tab character \tab Category abbreviation (e.g. "ML"). \cr
+  category_short \tab character \tab Short display. \cr
+  category_display \tab character \tab Full category name. \cr
+  stat_type \tab character \tab Stat type code (e.g. "win", "loss"). \cr
+  stat_abbrev \tab character \tab Stat abbreviation (e.g. "W", "L"). \cr
+  stat_display \tab character \tab Stat display name. \cr
+  value \tab numeric \tab Numeric stat value. \cr
+  display_value \tab character \tab Display-formatted value. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Returns the long-format odds-records breakdown for a team in one

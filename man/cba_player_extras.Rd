@@ -11,20 +11,10 @@ cba_player_extras(schedule_id)
 2025-26 round 1). Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble: One row per player (deduplicated on player_id, first row kept). An empty valid answer is a
-zero-row tibble with these columns, in this order (sportsdataverse-py \code{cba_player_extras}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   schedule_id \tab integer \tab CBA game id (key space: CBA games, ONE global 9-digit sequence 100xxxxxx across seasons and match types; the \code{{scheduleId}} of every game route). Stamped by the runtime from the request; null on a body parsed without it. \cr
-   side \tab character \tab Side of the game the row belongs to: home (the API's host / home block) or away (guest / visiting block). \cr
-   cn_alias \tab character \tab Player name (Chinese). \cr
-   dunks_points \tab integer \tab points scored on dunks. \cr
-   fast_break_points \tab integer \tab fast-break points scored by the player. \cr
-   field_goals_at_rim_made \tab integer \tab points scored in the paint (the site's own column title). The field name says 'made' but the value is a POINTS count: it exceeds field goals made for 15 of 65 sampled players (e.g. 10 against 9 field goals made, 28 points). \cr
-   game_start \tab integer \tab Starter flag: 1 = started the game. \cr
-   number \tab character \tab Jersey number as a string. \cr
-   player_id \tab integer \tab playerId (key space: CBA persons, stable across seasons and clubs; 3-9 digits, older players have short ids (393433) and newer ones 100xxxxxx). Joins the player box routes, the season player lists and getPlayersByScheduleId. Not a team id. \cr
-   up_time \tab integer \tab Time on court in SECONDS. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cba_player_extras")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Fast-break points, dunk points and paint points per player of a finished game, one row per player.

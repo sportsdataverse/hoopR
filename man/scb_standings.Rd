@@ -19,66 +19,10 @@ empty table.}
 DBBL_CUP (DBBL host). BBL_CUP answers an empty table.}
 }
 \value{
-A \code{hoopR_data} tibble: League table of a season: record, home / away split, streaks and tie-break detail
-(2005-06 on). An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order
-(sportsdataverse-py \code{scb_standings}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the sdv key; the API's \code{season_id} plus one. \cr
-   standing_id \tab character \tab Opaque id of the standings row, a string. \cr
-   season_team_id \tab character \tab Season-team id; equal to the club \code{teamId} in every sample (BBL 2005-2026, DBBL 2024-2026). An integer here. \cr
-   team_id \tab character \tab Club id; equal to \code{seasonTeamId} in every sample. Joins to \verb{/teams/\{teamId\}}. \cr
-   team_name \tab character \tab Team name; null on some rows. \cr
-   team_tlc \tab character \tab Three-letter club code. \cr
-   team_name_short \tab character \tab Short team name (null on DBBL). \cr
-   has_reached_playoffs \tab logical \tab Clinched a playoff place. \cr
-   has_reached_playins \tab logical \tab Clinched at least the play-ins. \cr
-   is_relegation_certain \tab logical \tab Relegated for certain. \cr
-   season_id \tab integer \tab Season, START year (2026 = 2026-27). \cr
-   competition \tab character \tab Competition: BBL, BBL_CUP (Pokal), ALLSTAR, CHAMPIONS_CUP on the BBL host; DBBL, DBBL_CUP on the DBBL host. \cr
-   stage \tab character \tab Stage: MAIN_ROUND (Hauptrunde, regular season), PLAYINS, FIRST_ROUND, SECOND_ROUND, ROUND_OF_16 (Achtelfinale), ROUND_OF_8 (Viertelfinale), SEMI_FINALS, FINALS, THIRD_PLACE_GAME, QUALIFICATION, GROUP_STAGE. \cr
-   rank \tab integer \tab Table position. \cr
-   streak \tab character \tab Current streak: W or L; empty when none. \cr
-   streak_count \tab integer \tab Length of the current streak. \cr
-   point_corrections \tab character \tab Table-point deductions; [] in every sample. \cr
-   home_victories \tab integer \tab Home games: wins. \cr
-   home_losses \tab integer \tab Home games: number of losses in the table. \cr
-   home_victory_percentage \tab double \tab Home games: win percentage, 0-100. \cr
-   away_victories \tab integer \tab Away games: wins. \cr
-   away_losses \tab integer \tab Away games: number of losses in the table. \cr
-   away_victory_percentage \tab double \tab Away games: win percentage, 0-100. \cr
-   table_points \tab integer \tab Table points scored (2 per win), from the API's \code{totalPointsMade}; the provider's notes call its 'Points' fields table points. \cr
-   table_points_against \tab integer \tab Table points conceded (2 per loss), from the API's \code{totalPointsAgainst}; per the provider's notes, table points. \cr
-   total_victory_percentage \tab double \tab All games: win percentage, 0-100. \cr
-   total_games \tab integer \tab Games played in the table (home and away together). \cr
-   total_victories \tab integer \tab All games: wins. \cr
-   total_losses \tab integer \tab Losses in the table over all games. \cr
-   last10_victories \tab integer \tab Wins in the last 10 games. \cr
-   last10_losses \tab integer \tab Losses in the last 10 games. \cr
-   last10_percentage \tab double \tab Win percentage over the last 10 games, 0-100. \cr
-   last10_outcomes \tab character \tab Results of the last games, newest first: W or L. \cr
-   home_last10_victories \tab integer \tab Home games: last 10 games, wins. \cr
-   home_last10_losses \tab integer \tab Home games: last 10 games, losses. \cr
-   home_last10_victory_percentage \tab double \tab Home games: last 10 games, win percentage, 0-100. \cr
-   home_streak \tab character \tab Home games: current streak, W or L. \cr
-   home_streak_count \tab integer \tab Home games: length of the current streak. \cr
-   away_last10_victories \tab integer \tab Away games: last 10 games, wins. \cr
-   away_last10_losses \tab integer \tab Away games: last 10 games, losses. \cr
-   away_last10_victory_percentage \tab double \tab Away games: last 10 games, win percentage, 0-100. \cr
-   away_streak \tab character \tab Away games: current streak, W or L. \cr
-   away_streak_count \tab integer \tab Away games: length of the current streak. \cr
-   updated_date \tab character \tab Last update of the row, ISO 8601 UTC. \cr
-   ranking_comparison_info \tab character \tab Tie-break detail among teams level on record. \cr
-   home_points_for \tab integer \tab Home games: basketball points scored (the API's football-style \code{GoalsMade}). \cr
-   away_points_for \tab integer \tab Away games: basketball points scored (the API's football-style \code{GoalsMade}). \cr
-   total_points_for \tab integer \tab All games: basketball points scored (the API's football-style \code{GoalsMade}). \cr
-   home_points_against \tab integer \tab Home games: basketball points allowed (the API's football-style \code{GoalsAgainst}). \cr
-   away_points_against \tab integer \tab Away games: basketball points allowed (the API's football-style \code{GoalsAgainst}). \cr
-   total_points_against \tab integer \tab All games: basketball points allowed (the API's football-style \code{GoalsAgainst}). \cr
-   home_point_difference \tab integer \tab Home games: point differential, scored minus allowed (the API's \code{GoalDifference}). \cr
-   away_point_difference \tab integer \tab Away games: point differential, scored minus allowed (the API's \code{GoalDifference}). \cr
-   total_point_difference \tab integer \tab All games: point differential, scored minus allowed (the API's \code{GoalDifference}). \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 League table of a season: record, home / away split, streaks and tie-break detail (2005-06 on).

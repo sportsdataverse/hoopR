@@ -11,56 +11,10 @@ vtb_infobasket_team_box_score(game_id)
 across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Team box score of a finished game, with the head coach's technical fouls. The columns are
-always these, in this order (sportsdataverse-py \code{vtb_infobasket_team_box_score}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Infobasket GameID of the game (the v2 matches' match_id); global across seasons. \cr
-   is_home \tab logical \tab True for team 1, the team listed first (team A, the home side in the calendar); the body has no explicit home flag (unverified). \cr
-   team_number \tab integer \tab Side: 1 team A (home), 2 team B (away). \cr
-   team_id \tab integer \tab Infobasket team id (TeamID): one club's entry in a competition family (Lokomotiv Kuban = 2650). Joins to /Widget/Team*/\{teamId\} and equals the v2 API \code{teamId}. The scope check compares both sides with the request. \cr
-   score \tab integer \tab Final points of the team. \cr
-   points \tab integer \tab Points. The wire's null is 0 here (null counts are filled). \cr
-   shot1 \tab integer \tab Free throws attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal1 \tab integer \tab Free throws made. The wire's null is 0 here (null counts are filled). \cr
-   shot2 \tab integer \tab 2-point field goals attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal2 \tab integer \tab 2-point field goals made. The wire's null is 0 here (null counts are filled). \cr
-   shot3 \tab integer \tab 3-point field goals attempted. The wire's null is 0 here (null counts are filled). \cr
-   goal3 \tab integer \tab 3-point field goals made. The wire's null is 0 here (null counts are filled). \cr
-   shot1_percent \tab double \tab Free-throw percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   shot2_percent \tab double \tab 2-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   shot3_percent \tab double \tab 3-point percentage (0-100); parsed to a number (the wire sends a comma-decimal string, null when there were no attempts). \cr
-   assist \tab integer \tab Assists. The wire's null is 0 here (null counts are filled). \cr
-   blocks \tab integer \tab Blocked shots. The wire's null is 0 here (null counts are filled). \cr
-   def_rebound \tab integer \tab Defensive rebounds. The wire's null is 0 here (null counts are filled). \cr
-   off_rebound \tab integer \tab Offensive rebounds. The wire's null is 0 here (null counts are filled). \cr
-   rebound \tab integer \tab Total rebounds. The wire's null is 0 here (null counts are filled). \cr
-   steal \tab integer \tab Steals. The wire's null is 0 here (null counts are filled). \cr
-   turnover \tab integer \tab Turnovers. The wire's null is 0 here (null counts are filled). \cr
-   team_def_rebound \tab integer \tab Team defensive rebounds (not credited to a player). The wire's null is 0 here (null counts are filled). \cr
-   team_off_rebound \tab integer \tab Team offensive rebounds (not credited to a player). The wire's null is 0 here (null counts are filled). \cr
-   team_rebound \tab integer \tab Team rebounds (not credited to a player). The wire's null is 0 here (null counts are filled). \cr
-   team_steal \tab integer \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   team_turnover \tab integer \tab Team turnovers (not credited to a player, e.g. shot-clock violations). The wire's null is 0 here (null counts are filled). \cr
-   foul \tab integer \tab Personal fouls committed by the team. \cr
-   opponent_foul \tab integer \tab Fouls drawn. The wire's null is 0 here (null counts are filled). \cr
-   seconds \tab integer \tab Playing time in seconds. \cr
-   played_time \tab character \tab Playing time as 'minutes:seconds' (team rows sum the five players: '200:00' = 40 minutes x 5). \cr
-   plus_minus \tab integer \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   team_short_name_ru \tab character \tab The the team's short name in Russian (as the competition names it). \cr
-   team_short_name_en \tab character \tab The the team's short name in English (as the competition names it). \cr
-   team_name_ru \tab character \tab The the team's name in Russian (as the competition names it). \cr
-   team_name_en \tab character \tab The the team's name in English (as the competition names it). \cr
-   team_region_name_ru \tab character \tab The the team's region or city in Russian (as the competition names it). \cr
-   team_region_name_en \tab character \tab The the team's region or city in English (as the competition names it). \cr
-   coach_person_id \tab integer \tab Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/\{personId\} (players) and /Widget/CoachPage/\{personId\} (coaches). \cr
-   coach_name_en \tab character \tab Head coach's name in English, as 'Last First'. \cr
-   coach_name_ru \tab character \tab Head coach's name in Russian, as 'Last First'. \cr
-   coach_foul_c \tab integer \tab Technical fouls on the head coach for his own conduct (scoresheet 'C'). \cr
-   coach_foul_b \tab integer \tab Technical fouls on the head coach for bench conduct (scoresheet 'B'). \cr
-   coach_foul_d \tab integer \tab Disqualifying fouls on the coach (scoresheet 'D'). \cr
-   coach_foul \tab integer \tab Fouls charged to the coach (C + B + D). \cr
-}
+A \code{hoopR_data} tibble with one row per team in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_team_box_score")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team box score of a finished game, with the head coach's technical fouls.

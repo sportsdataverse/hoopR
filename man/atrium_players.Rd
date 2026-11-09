@@ -38,24 +38,10 @@ or any fixture row).}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per \verb{(season_id, person_id)}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   season_id \tab character \tab Season UUID of the roster list. \cr
-   person_id \tab character \tab Player UUID (person), shared across seasons and sites. \cr
-   name \tab character \tab Player name as the site prints it. \cr
-   bib \tab character \tab Jersey number, as text. \cr
-   entity_id \tab character \tab Team UUID the player is rostered with that season. \cr
-   team_name \tab character \tab Team name in the site's language. \cr
-   position_code \tab character \tab Position code (C, PG, SF, ...), language-independent. \cr
-   position_name \tab character \tab Position name in the site's language. \cr
-   nationality \tab character \tab Player's nationality in the site's language (e.g. Belgique). \cr
-   date_of_birth \tab Date \tab Player's date of birth. \cr
-   age \tab integer \tab Player's age in years when the body was generated. \cr
-   height \tab integer \tab Height as an integer, centimetres presumed (unit unverified); null when the site gives none. \cr
-   status \tab character \tab Player status in the site's language (Actif, Blesse). \cr
-   image_url \tab character \tab URL of the Sportradar-hosted image (400 px). \cr
-}
+A \code{hoopR_data} tibble with one row per (\code{season_id}, \code{person_id}).
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{The players of a season, with position, nationality, birth date, age and height.}

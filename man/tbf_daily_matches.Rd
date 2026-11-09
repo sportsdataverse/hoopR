@@ -19,38 +19,10 @@ The top flight was named TBL until 2007-08 and is listed under bsl. Optional, wi
 competition.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per game with its \code{group_name} (the competition group the app shows).
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   group_name \tab character \tab Competition group the app shows the game under (grup adi). \cr
-   match_id \tab integer \tab TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. \cr
-   match_code \tab character \tab TBF short game code ('1EA4917'); unique per game, meaning of the letters unverified. \cr
-   genius_id \tab integer \tab Genius Sports LiveStats match id (TBF spells it genuisId); joins the genius family. Null when TBF stored none: every game before 2018-19, many 2021-25 games and games not yet assigned one. \cr
-   activity_id \tab integer \tab Activity id (faaliyet = activity; key space: TBF league-SEASONS, new every season: BSL 2026-27 = 22214, BSL 2025-26 = 20728, TBL 2026-27 = 22215, KBSL 2026-27 = 22209). Cast to an integer from the 22214 / 22214.0 the API sends. \cr
-   activity_name \tab character \tab Activity name ('BSL 2026-2027'). \cr
-   competition \tab character \tab TBF league the row belongs to: bsl, tbl or kbsl (the request's competition, or the league prefix the API reports). \cr
-   season_id \tab integer \tab Internal TBF season id (key space: TBF seasons, global across leagues: 174 = 2026-2027, 172 = 2025-2026; the odd ids are international UA- seasons). Never an sdv key: use season (END year). \cr
-   season_label \tab character \tab Season label as TBF writes it, 'YYYY-YYYY' (start and end year). \cr
-   season \tab integer \tab Season END year (2027 = the 2026-2027 season), read from the 'YYYY-YYYY' label or the request; the sdv season key. Not the internal TBF season id (season_id). \cr
-   tipoff \tab POSIXct \tab Tip-off as a naive timestamp in Turkey local time (Europe/Istanbul, UTC+3); the API sends no offset. \cr
-   match_date \tab Date \tab Tip-off date 'YYYY-MM-DD'; equals the MatchDate parameter (checked). \cr
-   week \tab character \tab Week (hafta) label or number: 'N. Hafta' on schedule rows, the number on standings rows, a playoff round name later in the season. \cr
-   phase \tab integer \tab Phase code as a string ('1' = first half of the regular season); see get-league-weeks devre_ID. \cr
-   status_id \tab integer \tab Game status code: 1 = played (Oynandi), 4 = not played (Oynanmadi), 19 = fixture without a date and time. Cast to an integer from the 1 / 1.0 the API sends. \cr
-   home_team_process_id \tab integer \tab Team-season id (teamProcessId = takimIslemId, 'team registration'; key space: TBF team registrations, a NEW id per club per league-season: Tofas = 265995 in BSL 2026-27). The TeamProcessId parameter of the /Team/ routes. Not the club id (takimID / teamId of the team lists). \cr
-   home_team \tab character \tab Team name as registered for that season, uppercase with Turkish letters (sponsor name: 'PIZZABULLS BORDO BANDIRMA'). \cr
-   home_score \tab integer \tab Home points (null before the game). \cr
-   away_team_process_id \tab integer \tab Team-season id (teamProcessId = takimIslemId, 'team registration'; key space: TBF team registrations, a NEW id per club per league-season: Tofas = 265995 in BSL 2026-27). The TeamProcessId parameter of the /Team/ routes. Not the club id (takimID / teamId of the team lists). \cr
-   away_team \tab character \tab Team name as registered for that season, uppercase with Turkish letters (sponsor name: 'PIZZABULLS BORDO BANDIRMA'). \cr
-   away_score \tab integer \tab Away points (null before the game). \cr
-   venue \tab character \tab Venue (salon) name. \cr
-   province \tab character \tab Province (il) of the venue when sent, uppercase Turkish; null otherwise. \cr
-   gender \tab character \tab Gender in Turkish when sent; empty on get-daily-matches, so null. \cr
-   broadcast_channel \tab character \tab Broadcaster ('beINSports', 'HT SPOR', 'Youtube / TBF TV'), or ''. \cr
-   has_overtime \tab logical \tab Overtime flag (uzatma = overtime). Reliability unverified: false on every one of 64 BSL 2025-26 games checked. \cr
-   status \tab character \tab Game status text in Turkish: Oynandi = played, Oynanmadi = not played. \cr
-}
+A \code{hoopR_data} tibble with one row per game with its group_name.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_daily_matches")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every TBF game played on one date, grouped by competition, optionally for one league-season.

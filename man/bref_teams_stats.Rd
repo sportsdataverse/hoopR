@@ -15,20 +15,10 @@ bref_teams_stats(season = most_recent_nba_season(), table = "per_game")
 \code{advanced}, or \code{opponent} (opponent per-game).}
 }
 \value{
-A \code{hoopR_data} tibble with one row per team (columns vary by \code{table};
-common identifying columns shown -- names are Basketball-Reference
-\code{data-stat} keys):
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      ranker \tab integer \tab Row rank. \cr
-      team \tab character \tab Team name. \cr
-      g \tab integer \tab Games played. \cr
-      mp \tab numeric \tab Minutes played. \cr
-      pts \tab numeric \tab Points (scaled to the chosen \code{table}). \cr
-      season \tab integer \tab Season (echoes the \code{season} argument). \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "bref_teams_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get team season statistics from

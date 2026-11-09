@@ -10,15 +10,10 @@ kzs_period_scores(match_id)
 \item{match_id}{(required) Match id (match_id in kzs_matches), e.g. 101839. Global across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Points by match part (quarters and overtimes) from the match header. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{kzs_period_scores}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab Match id: the federation key of a game, global across seasons (joins kzs_matches and kzs_match). \cr
-   score_id \tab integer \tab Period-score row id. \cr
-   match_part \tab character \tab Period: QUARTER1-QUARTER4, then OT1 for the first overtime (OT2 and on by the same pattern, unobserved). \cr
-   first_team_score \tab integer \tab First (home) team points in the period. \cr
-   second_team_score \tab integer \tab Second (away) team points in the period. \cr
-}
+A \code{hoopR_data} tibble with one row per team and period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_period_scores")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Points by match part (quarters and overtimes) from the match header.

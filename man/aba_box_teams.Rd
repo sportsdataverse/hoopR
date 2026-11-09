@@ -17,47 +17,10 @@ druga.aba-liga.com, lea=2). Both sites serve one database; the runtime asks the 
 \code{"aba"}.}
 }
 \value{
-A \code{hoopR_data} tibble.
-Two rows, home then away. \code{minutes} is the five on court summed (\code{200:00}, \code{225:00} with one overtime);
-\code{points} equals the final score; \code{reb_tot} equals the players' sum (team rebounds are not added).
-Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_no \tab integer \tab Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The \{gameNo\} of the match route. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr
-   league_id \tab integer \tab League code, the site's lea: 1 = ABA League, 2 = ABA League 2. \cr
-   league \tab character \tab League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. \cr
-   side \tab character \tab 'home' or 'away' (the home team is listed first everywhere on the site). \cr
-   team_id \tab integer \tab ABA club id (global: the same id in every season and in both leagues, e.g. Partizan = 22 in 2008-09 and 2025-26). Joins every frame that carries it; the calendar has club names only. \cr
-   team_name \tab character \tab Club name as the site prints it now (see game.home_team). \cr
-   minutes \tab character \tab Minutes played, 'mm:ss' text. Team rows sum the five on court: '200:00', '225:00' with one overtime. \cr
-   points \tab integer \tab Points scored (overall Pts). \cr
-   fg_pct \tab double \tab Field-goal percentage over 2- and 3-point attempts, 0-100 with one decimal (FG2 + FG3 made / attempted); 0 when no attempt. Header 'overall \%'. \cr
-   fg2_made \tab integer \tab 2-point field goals made (FG2 M). \cr
-   fg2_att \tab integer \tab 2-point field goals attempted (FG2 A). \cr
-   fg2_pct \tab double \tab 2-point percentage, 0-100 with one decimal; 0 when no attempt. \cr
-   fg3_made \tab integer \tab 3-point field goals made (FG3 M). \cr
-   fg3_att \tab integer \tab 3-point field goals attempted (FG3 A). \cr
-   fg3_pct \tab double \tab 3-point percentage, 0-100 with one decimal; 0 when no attempt. \cr
-   ft_made \tab integer \tab Free throws made (FT M). \cr
-   ft_att \tab integer \tab Free throws attempted (FT A). \cr
-   ft_pct \tab double \tab Free-throw percentage, 0-100 with one decimal; 0 when no attempt. \cr
-   reb_def \tab integer \tab Defensive rebounds (Rebs D). \cr
-   reb_off \tab integer \tab Offensive rebounds (Rebs O). \cr
-   reb_tot \tab integer \tab Total rebounds (Rebs T). Team rows equal the players' sum on every sample (team rebounds are not added). \cr
-   assists \tab integer \tab Assists made (the Ass column). \cr
-   steals \tab integer \tab Steals made (the St column). \cr
-   turnovers \tab integer \tab Turnovers (To). \cr
-   blocks \tab integer \tab Shots blocked by this player or team (Blck Fv, 'in favour'). \cr
-   blocks_against \tab integer \tab Own shots blocked by an opponent (Blck Ag, 'against'). \cr
-   fouls \tab integer \tab Fouls committed (Foul Cm). \cr
-   fouls_drawn \tab integer \tab Fouls drawn / received (Foul Rv). \cr
-   pts_paint \tab integer \tab Points in the paint (Points from Paint). Null where the season has no such column (2008-09) and on did-not-play rows. \cr
-   pts_second_chance \tab integer \tab Second-chance points (Points from 2ndCh). Null where the season has no such column (2008-09) and on did-not-play rows. \cr
-   pts_fast_break \tab integer \tab Fast-break points (Points from FstBr). Null where the season has no such column (2008-09) and on did-not-play rows. \cr
-   plus_minus \tab integer \tab Plus/minus while on court (+/-). 0 on every row of the 2008-09 sample (not tracked then). Team rows: the final margin (0 on the 2008-09 sample). \cr
-   valuation \tab integer \tab Valuation (Val, 'rank Value'): the efficiency rating (PIR-style index) the site ranks players by. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "aba_box_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team totals of one finished game: the Team Compare table, home then away.

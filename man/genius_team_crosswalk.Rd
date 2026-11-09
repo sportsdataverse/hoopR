@@ -12,11 +12,10 @@ genius_team_crosswalk(df, source)
 \item{source}{One of \code{"sportality_standings"}, \code{"sportality_teams"}, \code{"sportality_players"}.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per team:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_uuid \tab character \tab Sportality platform team uuid. \cr
-   genius_team_id \tab integer \tab Genius team id of the same team (home_team_id / away_team_id of the genius schedule frames). \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "genius_team_crosswalk")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Sportality platform team uuid <-> Genius team id, from a Sportality frame that carries both.

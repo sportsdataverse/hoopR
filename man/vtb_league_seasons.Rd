@@ -11,16 +11,10 @@ vtb_league_seasons(league_slug)
 wbc (WINLINE Basket Cup).}
 }
 \value{
-A \code{hoopR_data} tibble: The seasons the API serves for one league (new seasons only, from 2024-25). The columns are
-always these, in this order (sportsdataverse-py \code{vtb_league_seasons}); an empty valid answer raises \code{hoopR_no_data}, a valid
-body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26); the sdv season key and the \code{{season}} path param. \cr
-   league \tab character \tab League slug, echoed. \cr
-   is_current \tab logical \tab True for the current season. \cr
-   season_name \tab character \tab Season name ('Season 2025/2026'). \cr
-   season_abbrev \tab character \tab Season abbreviation ('25/26'). \cr
-}
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_league_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The seasons the API serves for one league (new seasons only, from 2024-25).

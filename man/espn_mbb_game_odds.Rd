@@ -48,18 +48,56 @@ forward compatibility. Proxy configuration should use
 \code{options(hoopR.proxy = ...)} -- see \code{?hoopR} for details.}
 }
 \value{
-A tibble with one row per odds provider (typically empty for MBB
-because ESPN does not carry NCAA basketball betting lines).
+A \code{hoopR_data} tibble with one row per odds provider.
 
-Columns as documented in the shared \link{espn_mbb_game_odds_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  event_id \tab character \tab Unique event / game identifier (ESPN). \cr
+  provider_id \tab character \tab Unique identifier for provider. \cr
+  provider_name \tab character \tab Provider name. \cr
+  details \tab character \tab Details. \cr
+  over_under \tab numeric \tab Over under. \cr
+  spread \tab numeric \tab Spread. \cr
+  home_money_line \tab integer \tab  \cr
+  away_money_line \tab integer \tab  \cr
+  home_team_odds_open \tab numeric \tab  \cr
+  home_team_odds_close \tab numeric \tab  \cr
+  away_team_odds_open \tab numeric \tab  \cr
+  away_team_odds_close \tab numeric \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per official assigned to the game.
+A \code{hoopR_data} tibble with one row per official assigned to the game.
 
-Columns as documented in the shared \link{espn_mbb_game_officials_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  event_id \tab character \tab Unique event / game identifier (ESPN). \cr
+  official_id \tab character \tab Unique official / referee identifier. \cr
+  full_name \tab character \tab Player's full name. \cr
+  display_name \tab character \tab Display name. \cr
+  position_id \tab character \tab Unique position identifier. \cr
+  position_name \tab character \tab Listed roster position ('Guard', 'Forward', 'Center'). \cr
+  position_type \tab character \tab  \cr
+  order \tab integer \tab Display order within the result set. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per broadcast outlet for the game.
+A \code{hoopR_data} tibble with one row per broadcast outlet for the game.
 
-Columns as documented in the shared \link{espn_mbb_game_broadcasts_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  event_id \tab character \tab Unique event / game identifier (ESPN). \cr
+  broadcast_id \tab character \tab  \cr
+  type_id \tab character \tab Type identifier (numeric). \cr
+  type_short_name \tab character \tab  \cr
+  type_long_name \tab character \tab  \cr
+  market_id \tab character \tab  \cr
+  market_type \tab character \tab  \cr
+  names \tab character \tab  \cr
+  lang \tab character \tab  \cr
+  region \tab character \tab Region label. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 A single-row tibble with timeouts + fouls for both teams.
 
@@ -67,17 +105,56 @@ A long tibble with rows for both home and away teams.
 
 A tibble with one row per team-game power-index entry.
 
-A tibble with one row per odds provider.
+A \code{hoopR_data} tibble with one row per odds provider.
 
-Columns as documented in the shared \link{espn_mbb_game_odds_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  event_id \tab character \tab Unique event / game identifier (ESPN). \cr
+  provider_id \tab character \tab Unique identifier for provider. \cr
+  provider_name \tab character \tab Provider name. \cr
+  details \tab character \tab Details. \cr
+  over_under \tab numeric \tab Over under. \cr
+  spread \tab numeric \tab Spread. \cr
+  home_money_line \tab integer \tab  \cr
+  away_money_line \tab integer \tab  \cr
+  home_team_odds_open \tab numeric \tab  \cr
+  home_team_odds_close \tab numeric \tab  \cr
+  away_team_odds_open \tab numeric \tab  \cr
+  away_team_odds_close \tab numeric \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per official assigned to the game.
+A \code{hoopR_data} tibble with one row per official assigned to the game.
 
-Columns as documented in the shared \link{espn_mbb_game_officials_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  event_id \tab character \tab Unique event / game identifier (ESPN). \cr
+  official_id \tab character \tab Unique official / referee identifier. \cr
+  full_name \tab character \tab Player's full name. \cr
+  display_name \tab character \tab Display name. \cr
+  position_id \tab character \tab Unique position identifier. \cr
+  position_name \tab character \tab Listed roster position ('Guard', 'Forward', 'Center'). \cr
+  position_type \tab character \tab  \cr
+  order \tab integer \tab Display order within the result set. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per broadcast outlet for the game.
+A \code{hoopR_data} tibble with one row per broadcast outlet for the game.
 
-Columns as documented in the shared \link{espn_mbb_game_broadcasts_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  event_id \tab character \tab Unique event / game identifier (ESPN). \cr
+  broadcast_id \tab character \tab  \cr
+  type_id \tab character \tab Type identifier (numeric). \cr
+  type_short_name \tab character \tab  \cr
+  type_long_name \tab character \tab  \cr
+  market_id \tab character \tab  \cr
+  market_type \tab character \tab  \cr
+  names \tab character \tab  \cr
+  lang \tab character \tab  \cr
+  region \tab character \tab Region label. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 A single-row tibble with timeouts + fouls for both teams.
 

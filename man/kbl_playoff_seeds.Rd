@@ -11,18 +11,10 @@ kbl_playoff_seeds(season)
 maps it to the KBL seasonCode (47 = 2025-26).}
 }
 \value{
-A \code{hoopR_data} tibble: The regular-season finish that seeds the playoffs (the top six). The columns are always
-these, in this order (sportsdataverse-py \code{kbl_playoff_seeds}); an empty valid answer raises \code{hoopR_no_data}, a valid body
-with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr
-   season_code \tab integer \tab KBL season code: sequential over every season and D-League edition (2 = 1997-98, 47 = 2025-26); the crosswalk to the sdv END year is in the README. \cr
-   game_code \tab character \tab Competition type of the standings: '01' regular season. \cr
-   seed \tab integer \tab Final regular-season standing, i.e. the playoff seed (1-6). \cr
-   team_code \tab character \tab KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList \code{teamCode}, game \code{tcodeH}/\code{tcodeA}, \code{t} in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (\code{teamCodeD}). \cr
-   team_name \tab character \tab Team short name (Korean, e.g. Wonju DB). English names: /common/teamList \code{teamNameEn} / \code{teamNameFullEn}, joined on the team code. \cr
-   team_name_full \tab character \tab Team full name (Korean). \cr
-}
+A \code{hoopR_data} tibble with one row per seeded team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_playoff_seeds")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The regular-season finish that seeds the playoffs (the top six).

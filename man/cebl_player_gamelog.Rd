@@ -16,41 +16,10 @@ season combined (the Stats Hub's All-Time). An unknown year answers \code{hoopR_
 \item{competition}{(default \code{NULL}) REGULAR (regular season) or FINALS (the playoffs). \code{NULL} = both.}
 }
 \value{
-A \code{hoopR_data} tibble: One player's game log: one row per game played, with the Genius match id of the game. An
-empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{cebl_player_gamelog}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab CEBL player id of the log asked for (from the request; the body does not echo it). \cr
-   season \tab integer \tab Season of the game: the year of game_date (the calendar year = the sdv END year). \cr
-   game_date \tab POSIXct \tab Tip-off of the game, ISO 8601 in UTC (same as the game's \code{start_time_utc}). \cr
-   genius_match_id \tab integer \tab Genius LiveStats match id parsed from the stats URL (the join to the genius family, organisation CEBL, where play-by-play and shots live). Derived from the URL, not fetched; null when the URL is absent. \cr
-   team_abbreviated_name \tab character \tab Three-letter code of the player's team in that game ('OTT'). \cr
-   matchup \tab character \tab '\{TEAM\} \{team score\} \{vs or @\} \{opponent score\} \{OPP\}': the player's team code and score first; \code{vs} = a home game, \code{@} = an away game ('OTT 91 @ 95 BHB'). \cr
-   minutes \tab double \tab Minutes played as decimal minutes (26.4), not mm:ss; the API sends a string. \cr
-   points \tab integer \tab Points scored in the game. An integer. \cr
-   field_goals_made \tab integer \tab Field goals made (2- and 3-pointers) in the game. An integer. \cr
-   field_goals_attempted \tab integer \tab Field goals attempted (2- and 3-pointers) in the game. An integer. \cr
-   field_goal_percentage \tab double \tab Field-goal percentage, 0-100 with 1 decimal ('44.7'): made / attempted over the game. A string. \cr
-   three_points_made \tab integer \tab Three-pointers made in the game. An integer. \cr
-   three_points_attempted \tab integer \tab Three-pointers attempted in the game. An integer. \cr
-   three_point_percentage \tab double \tab Three-point percentage, 0-100 with 1 decimal ('44.7'): made / attempted over the game. A string. \cr
-   free_throws_made \tab integer \tab Free throws made in the game. An integer. \cr
-   free_throws_attempted \tab integer \tab Free throws attempted in the game. An integer. \cr
-   free_throw_percentage \tab double \tab Free-throw percentage, 0-100 with 1 decimal ('44.7'): made / attempted over the game. A string. \cr
-   offensive_rebounds \tab integer \tab Offensive rebounds in the game. An integer. \cr
-   defensive_rebounds \tab integer \tab Defensive rebounds in the game. An integer. \cr
-   rebounds \tab integer \tab Total rebounds in the game; the API sends it as a string ('5'), cast to Int64. \cr
-   assists \tab integer \tab Assists in the game. An integer. \cr
-   turn_overs \tab integer \tab Turnovers in the game. An integer. \cr
-   steals \tab integer \tab Steals in the game. An integer. \cr
-   blocks \tab integer \tab Shots blocked in the game. An integer. \cr
-   fouls \tab integer \tab Personal fouls committed in the game. An integer. \cr
-   is_target_scorer \tab logical \tab True when the player made the basket that reached the Elam Ending target score and ended the game. \cr
-   game_stats_url_en \tab character \tab cebl.ca game page, \verb{https://www.cebl.ca/game?id=\{matchId\}}: \code{id} is the Genius match id (the join to genius-livestats/). \cr
-   game_stats_url_fr \tab character \tab French cebl.ca game page (\verb{https://www.cebl.ca/fr-ca/game?id=\{matchId\}}). \cr
-   team_stats_url_en \tab character \tab cebl.ca stats page of the player's team in that game (English). \cr
-   team_stats_url_fr \tab character \tab cebl.ca stats page of the player's team in that game (French). \cr
-}
+A \code{hoopR_data} tibble with one row per game played.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cebl_player_gamelog")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One player's game log: one row per game played, with the Genius match id of the game.

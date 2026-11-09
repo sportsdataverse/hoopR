@@ -33,13 +33,57 @@ espn_nba_week_ranking(
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per ranked team (typically 25).
+A \code{hoopR_data} tibble with one row per ranked team.
 
-Columns as documented in the shared \link{espn_mbb_week_ranking_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  week \tab integer \tab Week number. \cr
+  ranking_id \tab character \tab ESPN ranking id. \cr
+  name \tab character \tab Ranking name (e.g. "AP Top 25"). \cr
+  short_name \tab character \tab Short name. \cr
+  type \tab character \tab Ranking type code. \cr
+  headline \tab character \tab Full headline. \cr
+  date \tab character \tab Date of the ranking. \cr
+  current \tab integer \tab Current rank. \cr
+  previous \tab integer \tab Previous-week rank. \cr
+  points \tab numeric \tab Voting points. \cr
+  first_place_votes \tab integer \tab First-place vote count. \cr
+  trend \tab character \tab Trend indicator (e.g. "+3", "-2", "-"). \cr
+  record_summary \tab character \tab Team's record at time of poll (e.g. "20-2"). \cr
+  team_id \tab character \tab ESPN team id. \cr
+  team_ref \tab character \tab \code{$ref} to the team-in-season resource. \cr
+  last_updated \tab character \tab Last-updated timestamp. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per ranked team (typically 25).
+A \code{hoopR_data} tibble with one row per ranked team.
 
-Columns as documented in the shared \link{espn_mbb_week_ranking_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year. \cr
+  season_type \tab integer \tab Season-type id. \cr
+  week \tab integer \tab Week number. \cr
+  ranking_id \tab character \tab ESPN ranking id. \cr
+  name \tab character \tab Ranking name (e.g. "AP Top 25"). \cr
+  short_name \tab character \tab Short name. \cr
+  type \tab character \tab Ranking type code. \cr
+  headline \tab character \tab Full headline. \cr
+  date \tab character \tab Date of the ranking. \cr
+  current \tab integer \tab Current rank. \cr
+  previous \tab integer \tab Previous-week rank. \cr
+  points \tab numeric \tab Voting points. \cr
+  first_place_votes \tab integer \tab First-place vote count. \cr
+  trend \tab character \tab Trend indicator (e.g. "+3", "-2", "-"). \cr
+  record_summary \tab character \tab Team's record at time of poll (e.g. "20-2"). \cr
+  team_id \tab character \tab ESPN team id. \cr
+  team_ref \tab character \tab \code{$ref} to the team-in-season resource. \cr
+  last_updated \tab character \tab Last-updated timestamp. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Returns the long-format ranked teams for one (season x season-type x

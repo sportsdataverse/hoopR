@@ -13,26 +13,10 @@ lba_teams_leaderboard(board, season = NULL)
 \item{season}{Season END year (2027 = 2026-27). Omitted = the site's default season (unverified).}
 }
 \value{
-A \code{hoopR_data} tibble: Season team leaderboards, offensive or defensive, one row per team and category. The
-columns are always these, in this order (sportsdataverse-py \code{lba_teams_leaderboard}); a column the site adds later is
-appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   category \tab character \tab Category of this row (the \code{cat} param, e.g. \code{points}). \cr
-   name \tab character \tab Given name (players) / team name (teams). \cr
-   sponsor_name \tab character \tab Sponsor name (empty or null in the samples). \cr
-   short_name \tab character \tab Short name of the team, e.g. BC Roma. \cr
-   tv_name \tab character \tab Short team name for TV graphics. \cr
-   year \tab integer \tab Season START year (2026 = 2026-27); sdv END year = year + 1. \cr
-   logo_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-   attempts \tab integer \tab Shots attempted in the zone, parsed from num. \cr
-   total_played_matches \tab integer \tab Games the team has played, counted for the leaderboard. \cr
-   total_points \tab integer \tab Points scored (offensive) or allowed (defensive) in the season. \cr
-   minutes \tab integer \tab Minutes per game (players: decimal string \code{28.67}) / total minutes (teams: integer). \cr
-   score_40_min \tab double \tab Value per 40 minutes. \cr
-   score \tab double \tab Value in the category under the \code{ob} order (default \code{avg} = per game); players send a decimal string, teams a number. \cr
-   team_id \tab integer \tab Team id (team-season). \cr
-}
+A \code{hoopR_data} tibble with one row per team and category.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_teams_leaderboard")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Season team leaderboards, offensive or defensive, one row per team and category.

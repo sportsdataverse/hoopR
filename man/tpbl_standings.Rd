@@ -12,22 +12,10 @@ preseason, regular season, playoffs, postseason challenge, finals; 8, 9, 11, 12,
 2026-27); \code{division_id} in tpbl_divisions. Not the GoHoops division id.}
 }
 \value{
-A \code{hoopR_data} tibble: League table of one division: rank, record, games behind and streak. An empty answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{tpbl_standings}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   division_id \tab integer \tab TPBL division id (key space: TPBL divisions, one competition phase of one season; 1, 2, 5, 6, 7 = 2024-25, 8, 9, 11, 12, 35 = 2025-26, 655, 656 = 2026-27): the \code{{division_id}} of every division route. Not the GoHoops division id. \cr
-   rank \tab integer \tab Rank in the division, 1-based. \cr
-   team_id \tab integer \tab TPBL team id (key space: TPBL teams = franchises, 2-8 so far; stable across seasons): the \code{{team_id}} of the division team routes. Not the GoHoops franchise id and not the squad id. \cr
-   gohoops_team_id \tab integer \tab GoHoops franchise id (key space: GoHoops franchises, 940-946; stable across seasons; = the TPBL team id + 938). \cr
-   gohoops_squad_id \tab integer \tab GoHoops squad id (key space: GoHoops squads = one team in one season: 8209-8215 in 2024-25, 11931-11937 in 2025-26, 15536-15542 in 2026-27; it changes every season). \cr
-   team \tab character \tab Team name in Traditional Chinese with the sponsor (Kaohsiung Aquas, Formosa Dreamers, Hsinchu Lioneers, Taoyuan Leopards, New Taipei CTBC DEA, New Taipei Kings, Taipei Mars). \cr
-   alt_name \tab character \tab Lowercase English slug of the team: aquas, dreamers, lioneers, leopards, dea, kings, mars. \cr
-   won \tab integer \tab Games won in the division so far. \cr
-   lost \tab integer \tab Games lost in the division so far. \cr
-   drawn \tab integer \tab Games drawn (always 0 in basketball). \cr
-   games_behind \tab double \tab Games behind the leader (0 for the leader); a whole number in every captured division, read as a float so half games cannot break the dtype. \cr
-   streak \tab character \tab Current streak: 'W' + count for wins, 'L' + count for losses (W2 = two straight wins). \cr
-}
+A \code{hoopR_data} tibble with one row per team in the standings.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tpbl_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 League table of one division: rank, record, games behind and streak.

@@ -32,23 +32,10 @@ One of "AVERAGE", "SUM", "BEST_PERFORMANCE".}
 \item{sort}{Sort direction. One of "ASC", "DESC".}
 }
 \value{
-A \code{hoopR_data} tibble: Team leaderboard of a competition for one stat category (total, per-game average and
-single-game best). An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order
-(sportsdataverse-py \code{kzs_team_leaderboard}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id: one per competition per season (men's first league 2025/26 = 579, 2026/27 = 608). \cr
-   stats_category \tab character \tab Stat category of the board (PTS points, R rebounds, ASS assists ...): the request's, the rows do not echo it. \cr
-   club_id \tab integer \tab Club id: the club across seasons and categories (Ilirija = 16). No captured route is keyed by it. \cr
-   club_fullname \tab character \tab Club's full legal name. \cr
-   club_logo_uuid \tab character \tab Club logo: image file id, served at \verb{https://api.kzs.si/public/images/\{uuid\}}. \cr
-   club_code \tab character \tab Club 3-letter code. \cr
-   team_id \tab integer \tab Team id: one club team in one season (Ilirija 2025-26 = 17551). Joins to \verb{/teams/\{teamId\}}, standings \code{teamId}, box-score \code{teamId} and the \code{teamId} query params. \cr
-   team_name \tab character \tab Team name for the season, sponsor included. \cr
-   games_played \tab integer \tab Games the team played in the competition. \cr
-   sum \tab double \tab Season total of the requested statsCategory. \cr
-   average \tab double \tab Per-game average of the statsCategory. \cr
-   max \tab double \tab Single-game best of the statsCategory. \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kzs_team_leaderboard")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team leaderboard of a competition for one stat category (total, per-game average and single-game best).

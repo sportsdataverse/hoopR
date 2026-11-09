@@ -20,23 +20,10 @@ the round number (6017 = Liga 2026-27 round 3). List them with \code{acb_competi
 Omitted = the current (or last) round. A whole number; a whole double is accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_standings_rounds}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   competition_id \tab integer \tab Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa. \cr
-   edition_id \tab integer \tab Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, \code{season}. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   team_id \tab integer \tab Season-team entry id: one club in one competition edition, NEW every season (Barca = 4467 in Liga 2026-27). Not the club: use club_id to follow a club across seasons. \cr
-   club_id \tab integer \tab Stable ACB club id (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the same across seasons and sponsor names, and the club_id request argument. \cr
-   team \tab character \tab Team name as registered for that season (sponsor names change; the club id does not). \cr
-   team_abbr \tab character \tab Three-letter team abbreviation (BAR, RMB, VBC). \cr
-   round_id \tab integer \tab Global round id of the standing. \cr
-   round_number \tab integer \tab Round number within the phase \cr
-   subphase_id \tab integer \tab Sub-phase id inside a phase (a playoff round or a cup round, e.g. 291, 292, 293); null in the regular season \cr
-   subphase_number \tab integer \tab Sub-phase number; null in the regular season \cr
-   position \tab integer \tab The team's league position after this round. \cr
-   match_id \tab integer \tab The team's game in this round. \cr
-}
+A \code{hoopR_data} tibble with one row per team and round.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_standings_rounds")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Standings history: each team's position after each round, with the round's game.

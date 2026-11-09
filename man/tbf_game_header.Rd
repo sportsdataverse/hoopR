@@ -11,38 +11,10 @@ tbf_game_header(match_id)
 sequence across leagues and seasons. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. One row.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. \cr
-   match_code \tab character \tab TBF short game code ('1EA4917'). \cr
-   genius_id \tab integer \tab Genius Sports LiveStats match id (TBF spells it genuisId); joins the genius family. Null when TBF stored none: every game before 2018-19, many 2021-25 games and games not yet assigned one. \cr
-   activity_id \tab integer \tab Activity id (faaliyet = activity; key space: TBF league-SEASONS, new every season: BSL 2026-27 = 22214, BSL 2025-26 = 20728, TBL 2026-27 = 22215, KBSL 2026-27 = 22209). Cast to an integer from the 22214 / 22214.0 the API sends. \cr
-   activity_name \tab character \tab Activity name ('BSL 2026-2027'). \cr
-   season_id \tab integer \tab Internal TBF season id (key space: TBF seasons, global across leagues: 174 = 2026-2027, 172 = 2025-2026; the odd ids are international UA- seasons). Never an sdv key: use season (END year). \cr
-   season_label \tab character \tab Season label 'YYYY-YYYY' (seasonName). \cr
-   season \tab integer \tab Season END year, read from the season label (seasonName). \cr
-   tipoff \tab POSIXct \tab Tip-off as a naive timestamp in Turkey local time (Europe/Istanbul, UTC+3). \cr
-   status_id \tab integer \tab Game status code: 1 = played (Oynandi), 4 = not played (Oynanmadi), 19 = fixture without a date and time. Cast to an integer from the 1 / 1.0 the API sends. \cr
-   status \tab character \tab Game status text in Turkish: Oynandi = played. Only finished games are served. \cr
-   venue \tab character \tab Venue name (location) as TBF prints it. \cr
-   attendance \tab integer \tab Spectator count (matchSpectatorCount); 0 when not recorded. \cr
-   has_overtime \tab logical \tab Overtime flag (uzatma = overtime). Reliability unverified: false on every one of 64 BSL 2025-26 games checked. \cr
-   broadcast_channel \tab character \tab Broadcaster (matchBroadcastChannel), e.g. beINSports, or null. \cr
-   home_team_process_id \tab integer \tab Home team-season id (key space: TBF team registrations; the header calls it homeTeamProcessId). \cr
-   home_team \tab character \tab Home team name as registered for that season, uppercase with Turkish letters. \cr
-   home_coach \tab character \tab Home head coach name, uppercase. \cr
-   home_score \tab integer \tab Home final score. \cr
-   away_team_process_id \tab integer \tab Away team-season id (key space: TBF team registrations). \cr
-   away_team \tab character \tab Away team name as registered for that season, uppercase with Turkish letters. \cr
-   away_coach \tab character \tab Away head coach name, uppercase. \cr
-   away_score \tab integer \tab Away final score. \cr
-   referee \tab character \tab Main referee's name (names only: no contact or birth data is returned). \cr
-   first_assistant_referee \tab character \tab First assistant referee's name. \cr
-   second_assistant_referee \tab character \tab Second assistant referee's name. \cr
-   commissioner \tab character \tab Commissioner's (temsilci = representative) name. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_game_header")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Game header of a finished game: teams, coaches, final score, officials, venue and the Genius LiveStats id.

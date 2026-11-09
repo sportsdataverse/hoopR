@@ -7,14 +7,10 @@
 sportpress_referees()
 }
 \value{
-A \code{hoopR_data} tibble: Referees of the league (staff title 2). An empty valid answer raises \code{hoopR_no_data}; the
-columns are always these, in this order (sportsdataverse-py \code{sportpress_referees}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   staff_id \tab integer \tab Staff member id (key space: sportpress staff); the referees are title 2. \cr
-   name \tab character \tab Referee name 'First Last' (free text). \cr
-   title_id \tab integer \tab Staff title id: 1 = Head coach, 2 = Referee; Assistant coach has its own id. \cr
-   title_name \tab character \tab Staff title in English: Head coach, Assistant coach or Referee. \cr
-}
+A \code{hoopR_data} tibble with one row per official.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_referees")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Referees of the league (staff title 2).

@@ -72,109 +72,30 @@ Defaults to \code{most_recent_mbb_season()}.}
 \item{tournament}{(\emph{character} optional): Tournament filter.}
 }
 \value{
-A \code{hoopR_data} tibble with one row per game (key columns; period-point
-arrays are returned as list-columns):
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_games")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab integer \tab CollegeBasketballData game id. \cr
-      source_id \tab character \tab Source (ESPN) game id. \cr
-      season \tab integer \tab Season (4-digit ending-year). \cr
-      season_type \tab character \tab Season type. \cr
-      start_date \tab character \tab Game start date (ISO 8601). \cr
-      neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
-      conference_game \tab logical \tab Whether the game was a conference game. \cr
-      status \tab character \tab Game status. \cr
-      home_team_id \tab integer \tab Home team id. \cr
-      home_team \tab character \tab Home team name. \cr
-      home_points \tab integer \tab Home team points. \cr
-      home_winner \tab logical \tab Whether the home team won. \cr
-      away_team_id \tab integer \tab Away team id. \cr
-      away_team \tab character \tab Away team name. \cr
-      away_points \tab integer \tab Away team points. \cr
-      away_winner \tab logical \tab Whether the away team won. \cr
-      venue_id \tab integer \tab Venue id. \cr
-      venue \tab character \tab Venue name. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_games_media")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-A \code{hoopR_data} tibble with one row per game. The \code{broadcasts} column is
-a nested list of broadcast outlets:
+A \code{hoopR_data} tibble with one row per team-game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_games_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab integer \tab CollegeBasketballData game id. \cr
-      season \tab integer \tab Season (4-digit ending-year). \cr
-      season_type \tab character \tab Season type. \cr
-      start_date \tab character \tab Game start date (ISO 8601). \cr
-      home_team_id \tab integer \tab Home team id. \cr
-      home_team \tab character \tab Home team name. \cr
-      away_team_id \tab integer \tab Away team id. \cr
-      away_team \tab character \tab Away team name. \cr
-      neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
-      conference_game \tab logical \tab Whether the game was a conference game. \cr
-      broadcasts \tab list \tab Nested list of broadcast outlets. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per team-game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_games_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-A \code{hoopR_data} tibble with one row per team-game. Per-team statistic
-objects (\code{team_stats}, \code{opponent_stats}) are flattened into \verb{team_stats_*} /
-\verb{opponent_stats_*} columns. Key identifying columns:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab integer \tab CollegeBasketballData game id. \cr
-      season \tab integer \tab Season (4-digit ending-year). \cr
-      start_date \tab character \tab Game start date (ISO 8601). \cr
-      team_id \tab integer \tab Team id. \cr
-      team \tab character \tab Team name. \cr
-      conference \tab character \tab Team conference. \cr
-      opponent_id \tab integer \tab Opponent team id. \cr
-      opponent \tab character \tab Opponent team name. \cr
-      is_home \tab logical \tab Whether the team was home. \cr
-      neutral_site \tab logical \tab Whether the game was at a neutral site. \cr
-      game_minutes \tab numeric \tab Total team minutes. \cr
-      pace \tab numeric \tab Game pace (possessions). \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-A \code{hoopR_data} tibble with one row per team-game. The \code{players} column
-is a nested list of per-player box scores. Key identifying columns:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      game_id \tab integer \tab CollegeBasketballData game id. \cr
-      season \tab integer \tab Season (4-digit ending-year). \cr
-      start_date \tab character \tab Game start date (ISO 8601). \cr
-      team_id \tab integer \tab Team id. \cr
-      team \tab character \tab Team name. \cr
-      conference \tab character \tab Team conference. \cr
-      opponent_id \tab integer \tab Opponent team id. \cr
-      opponent \tab character \tab Opponent team name. \cr
-      is_home \tab logical \tab Whether the team was home. \cr
-      game_minutes \tab numeric \tab Total team minutes. \cr
-      game_pace \tab numeric \tab Game pace (possessions). \cr
-      players \tab list \tab Nested list of per-player box scores. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-A \code{hoopR_data} tibble with one row per game. The \code{home_team},
-\code{away_team} and \code{betting} objects are flattened into \verb{home_team_*},
-\verb{away_team_*} and \verb{betting_*} columns. Key identifying columns:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab integer \tab CollegeBasketballData game id. \cr
-      start_date \tab character \tab Game start date (ISO 8601). \cr
-      tv \tab character \tab Broadcast TV network. \cr
-      neutral_site \tab logical \tab Whether the game is at a neutral site. \cr
-      conference_game \tab logical \tab Whether the game is a conference game. \cr
-      status \tab character \tab Game status. \cr
-      period \tab integer \tab Current period. \cr
-      clock \tab character \tab Game clock. \cr
-      venue \tab character \tab Venue name. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_scoreboard")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get college basketball games from the CollegeBasketballData API.}

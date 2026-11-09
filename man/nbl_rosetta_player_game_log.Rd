@@ -21,78 +21,10 @@ nbl_rosetta_player_game_log(
 \item{participated}{(\emph{integer} default \code{NULL}): 1 = only games the player played in (without it, games on the roster that he sat out too). Sent as \code{filter[participated]}.}
 }
 \value{
-A \code{hoopR_data} tibble (one row per game):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   org \tab character \tab Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. \cr
-   period \tab integer \tab Period as a STRING: 0 = game or season total, 1-4 = quarters, 11/12/13 = first/second/third overtime (inferred: fewer teams have each) \cr
-   playing_position \tab character \tab Playing position code (G, F, C, PG, SF, FC, ...); null when not recorded. \cr
-   points \tab integer \tab Points in the game. \cr
-   rebounds \tab integer \tab Total rebounds in the game. \cr
-   assists \tab integer \tab Assists in the game. \cr
-   blocks \tab integer \tab Blocks in the game. \cr
-   steals \tab integer \tab Steals in the game. \cr
-   turnovers \tab integer \tab Turnovers in the game. \cr
-   offensive_rebounds \tab integer \tab Offensive rebounds in the game. \cr
-   defensive_rebounds \tab integer \tab Defensive rebounds in the game. \cr
-   personal_fouls \tab integer \tab Personal fouls in the game. \cr
-   three_points_attempted \tab integer \tab Three-point field goals attempted in the game. \cr
-   three_points_made \tab integer \tab Three-point field goals made in the game. \cr
-   three_points_percentage \tab double \tab Three-point field goals made / attempted, a 0-1 FRACTION. \cr
-   two_points_attempted \tab integer \tab Two-point field goals attempted in the game. \cr
-   two_points_made \tab integer \tab Two-point field goals made in the game. \cr
-   two_points_percentage \tab double \tab Two-point field goals made / attempted, a 0-1 FRACTION. \cr
-   field_goals_attempted \tab integer \tab Field goals attempted in the game. \cr
-   field_goals_made \tab integer \tab Field goals made in the game. \cr
-   field_goals_percentage \tab double \tab Field goals made / attempted, a 0-1 FRACTION. \cr
-   free_throws_attempted \tab integer \tab Free throws attempted in the game. \cr
-   free_throws_made \tab integer \tab Free throws made in the game. \cr
-   free_throws_percentage \tab double \tab Free throws made / attempted, a 0-1 FRACTION. \cr
-   minutes \tab double \tab Minutes played, decimal minutes. \cr
-   participated \tab logical \tab Player took part in the game. \cr
-   match_id \tab character \tab DataCore fixture id of the match (UUID v1): the \code{{match_id}} route key and fixtureId in play-by-play. Join on it. \cr
-   rosetta_match_id \tab character \tab Rosetta's match RECORD id (UUID v4) as carried by box-score and play-by-play rows; no route accepts it. Join on match_id. \cr
-   match_start_time_datetime \tab character \tab Tip-off, UTC; same value as start_time. \cr
-   match_status \tab character \tab Status of the match in Rosetta's words (complete for a finished game): box score and play-by-play of any other status are partial. \cr
-   match_season_id \tab character \tab DataCore id (UUID v1, Sportradar) of the match's season; stable across seasons and the id to join on across routes. \cr
-   rosetta_match_season_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the match's season; routes that take this entity accept it as well as the DataCore id. \cr
-   match_season_year \tab integer \tab Season year as a STRING. NBL and WNBL from 1998-99: the START year ("2025" = 2025-26, sdv END = year + 1). NBL and WNBL 1979-1997 and every NBL1 season: the calendar year the season was played (END = year). Year 1998 holds two NBL and two WNBL seasons (calendar 1998 and 1998-99): tell them apart by start_date. \cr
-   match_season_type \tab character \tab Season type: regular (includes finals), preseason, in_season (cups, blitz, exhibition), test. \cr
-   rosetta_match_home_team_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the match's home team; routes that take this entity accept it as well as the DataCore id. \cr
-   match_home_team_name \tab character \tab Display name of the team. \cr
-   match_home_team_code \tab character \tab Team code of the match's home team, e.g. PER or SYD. \cr
-   rosetta_match_away_team_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the match's away team; routes that take this entity accept it as well as the DataCore id. \cr
-   match_away_team_name \tab character \tab Display name of the team. \cr
-   match_away_team_code \tab character \tab Team code of the match's away team, e.g. PER or SYD. \cr
-   player_id \tab character \tab DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. \cr
-   rosetta_player_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the player; routes that take this entity accept it as well as the DataCore id. \cr
-   player_jersey_number \tab character \tab Jersey number, a STRING. \cr
-   player_first_name \tab character \tab The player's given name, e.g. Elijah. \cr
-   player_last_name \tab character \tab The player's family name, e.g. Pepper. \cr
-   team_id \tab character \tab DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. \cr
-   rosetta_team_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the team; routes that take this entity accept it as well as the DataCore id. \cr
-   team_name \tab character \tab Name of the team as Rosetta spells it, e.g. Perth Wildcats. \cr
-   team_code \tab character \tab Team code, e.g. PER (the \code{{team_code}} path value) \cr
-   sc_total_score \tab integer \tab SuperCoach score including double-double / triple-double bonuses. \cr
-   sc_total_score_without_dd_and_td \tab integer \tab SuperCoach score without those bonuses. \cr
-   sc_breakdown_points_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_points_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   sc_breakdown_rebounds_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_rebounds_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   sc_breakdown_assists_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_assists_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   sc_breakdown_blocks_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_blocks_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   sc_breakdown_steals_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_steals_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   sc_breakdown_turnovers_value \tab integer \tab The stat's value for the game or season. \cr
-   sc_breakdown_turnovers_points \tab integer \tab SuperCoach points this stat earns (e.g. 3 per steal or block, -2 per turnover) \cr
-   sc_double_figure_count \tab integer \tab Stats in double figures (for the double-double / triple-double bonus) \cr
-   sc_season_total \tab integer \tab Player's SuperCoach total for the season so far. \cr
-   season_end_year \tab integer \tab sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_player_game_log")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A player's game log for a season: the box-score line of each game (period 0 = whole game) and the game.

@@ -13,19 +13,10 @@ the \verb{<gameId>} of a game page URL}
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab FIBA game id (Int64) of the game the official was nominated to. \cr
-   person_id \tab integer \tab FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P_\verb{<id>} = gdapPlayerId. \cr
-   first_name \tab character \tab Given name(s) as registered with FIBA. \cr
-   last_name \tab character \tab Last name (officials: upper case). \cr
-   gender \tab character \tab Sex of the person: M or F (Male/Female on getgdapcompetitionnominationsbyid). \cr
-   role_code \tab character \tab Role code (REF, FIBATDEL...). \cr
-   role_name \tab character \tab Role name on the game (Crew chief, Umpire, Commissioner, Assistant scorer...). \cr
-   role_order \tab character \tab Order within the role; a numeric string or null. \cr
-   default_nationality \tab character \tab FIBA code of the official's main nationality. \cr
-   license_nationality \tab character \tab FIBA code of the federation that licenses the official. \cr
-}
+A \code{hoopR_data} tibble with one row per official.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_game_officials")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Officials nominated to one game (referees, table officials, commissioner).

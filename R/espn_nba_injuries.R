@@ -7,13 +7,8 @@ NULL
 #' @rdname espn_mbb_injuries
 #' @author Saiem Gilani
 #' @param ... Currently unused; reserved for future argument threading.
-#' @return Returns a tibble of league-wide NBA injury records.
-#'   Returns an empty tibble (zero rows) when no injuries are reported.
-#'
-#'    **Injuries**
-#'
-#'    Columns as documented in the shared [espn_mbb_injuries_injuries_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_injuries")
+#' @return An empty tibble (zero rows) when no injuries are reported.
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows mutate
 #' @importFrom janitor clean_names
@@ -42,14 +37,8 @@ NULL
 #' @rdname espn_mbb_team_injuries
 #' @author Saiem Gilani
 #' @param ... Currently unused; reserved for future argument threading.
-#' @return Returns a tibble of injury records for the specified NBA team.
-#'   Returns an empty tibble (zero rows) when the team has no reported
-#'   injuries.
-#'
-#'    **Injuries**
-#'
-#'    Columns as documented in the shared [espn_mbb_team_injuries_injuries_schema] table.
-#'
+#' @eval .returns_rd("espn_nba_team_injuries")
+#' @return An empty tibble (zero rows) when no injuries are reported.
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows
 #' @importFrom janitor clean_names

@@ -11,29 +11,10 @@ vtb_infobasket_pbp(game_id)
 across seasons.}
 }
 \value{
-A \code{hoopR_data} tibble: Play-by-play of a finished game with shot x/y (2022-23 onwards; earlier games have no plays).
-The columns are always these, in this order (sportsdataverse-py \code{vtb_infobasket_pbp}); an empty valid answer raises
-\code{hoopR_no_data}, a valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Infobasket GameID of the game (the v2 matches' match_id); global across seasons. \cr
-   play_id \tab integer \tab Play id within the game (the row-0 header play included); parent_play_id points at another play_id. \cr
-   parent_play_id \tab integer \tab play_id of the parent play (a made shot's children: shot type, assist, possession change). \cr
-   play_type_id \tab integer \tab Play type code (see play_type; the full table is in vtb-returns.md). \cr
-   play_type \tab character \tab English label of play_type_id from the site widget's table (null for a code the table lacks). \cr
-   play_period \tab integer \tab Period: 1-4 quarters, 5+ overtimes. \cr
-   play_second \tab integer \tab Time ELAPSED in the period, in tenths of a second (6000 = 600 s = end of a 10-minute quarter). Game clock = period length - PlaySecond/10. \cr
-   play_sort_order \tab integer \tab Order among plays sharing the same play_second. \cr
-   play_flag \tab integer \tab Play flag; 0 in every sample (meaning unverified). \cr
-   start_id \tab integer \tab Line-up slot id within this game's line-up (0 = the placeholder row); not a person id. \cr
-   team_number \tab integer \tab Side (1 or 2) of the line-up slot the play belongs to; null for a play with no player. \cr
-   team_id \tab integer \tab Infobasket TeamID of the team the play belongs to; null for a play with no player. \cr
-   person_id \tab integer \tab Infobasket PersonID of the player of the line-up slot; null for a play with no player. \cr
-   play_zone \tab integer \tab Court zone code of a shot: 1-3 count as paint in the site's widget, 3-pointers sit in zones 7-12; the full map is unverified. \cr
-   play_x \tab integer \tab Shot x in decimetres across the court, -75..75, origin at the basket centre (orientation from the renderer, unverified). \cr
-   play_y \tab integer \tab Shot y in decimetres from the basket toward midcourt (about -16 baseline, 124 midcourt). \cr
-   video_from \tab integer \tab Video clip start, Unix epoch seconds; 0 when none. \cr
-   video_to \tab integer \tab Video clip end, Unix epoch seconds; 0 when none. \cr
-}
+A \code{hoopR_data} tibble with one row per play-by-play event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_pbp")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Play-by-play of a finished game with shot x/y (2022-23 onwards; earlier games have no plays).

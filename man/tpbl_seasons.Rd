@@ -7,17 +7,10 @@
 tpbl_seasons()
 }
 \value{
-A \code{hoopR_data} tibble: Every TPBL season with its TPBL and GoHoops ids, label, status and date window. An empty
-answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{tpbl_seasons}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year, read from the label '2024-2025' plus the Chinese word for season: 2025 for 2024-25. \cr
-   season_id \tab integer \tab TPBL season id (key space: TPBL seasons on api.tpbl.basketball; 1 = 2024-25, 2 = 2025-26, 3 = 2026-27): the \code{{season_id}} of the season game list and, equal to it, the \code{{event_id}} of \verb{/events/\{event_id\}/*}. Not the GoHoops season id. \cr
-   gohoops_season_id \tab integer \tab GoHoops season id (key space: GoHoops seasons, the id system the API echoes beside its own; 101 = 2024-25, 213 = 2025-26, 275 = 2026-27). Not the TPBL season id. \cr
-   name \tab character \tab Season label in Traditional Chinese: '2024-2025' plus the Chinese word for season. \cr
-   status \tab character \tab Season status: COMPLETED or IN_PROGRESS. \cr
-   started_at \tab character \tab Season start, 'YYYY-MM-DD 00:00:00' text. Preseason games can be played before it (the 2026-27 start is 2026-10-17, its first games were played 2026-10-09). \cr
-   ended_at \tab character \tab Season end, 'YYYY-MM-DD 00:00:00' text (the planned end for a season in progress). \cr
-}
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tpbl_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every TPBL season with its TPBL and GoHoops ids, label, status and date window.

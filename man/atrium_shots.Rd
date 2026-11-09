@@ -19,31 +19,10 @@ competitions.}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per shot (\code{event_id}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   fixture_id \tab character \tab Game UUID (fixture); the key of every game frame and of the fixture_detail routes. \cr
-   season_id \tab character \tab Season UUID of the game. \cr
-   sequence \tab integer \tab 1-based position of the shot among the shots of the game (not the pbp sequence). \cr
-   event_id \tab character \tab Event UUID of the shot; the same event in atrium_pbp. \cr
-   period_id \tab integer \tab Period number: 1-4 regulation, 11, 12, ... overtimes (not 5). \cr
-   clock \tab character \tab Time REMAINING in the period as an ISO 8601 duration (PT10M0S at the start). \cr
-   clock_seconds \tab integer \tab Seconds remaining in the period, parsed from clock. \cr
-   entity_id \tab character \tab Team UUID the event is credited to. \cr
-   side \tab character \tab Side of the game the row belongs to: home or away (from the fixture's isHome flag). \cr
-   person_id \tab character \tab Player UUID of the shooter. \cr
-   person_name \tab character \tab Name of the shooter. \cr
-   bib \tab character \tab Jersey number of the player, as text; null for team events. \cr
-   event_type \tab character \tab Event type: 2pt, 3pt, freeThrow, rebound, assist, steal, block, turnover, foul, substitution, timeOut, jumpBall, ... (language-independent). \cr
-   event_sub_type \tab character \tab Event detail: jumpShot, layup, offensive, defensive, in, out, 1Of2, personal, ...; null when none. \cr
-   description \tab character \tab The event's text in the site's language (e.g. Entre-deux remporte). \cr
-   success \tab logical \tab True when the shot was made, false when missed. \cr
-   success_label \tab character \tab The made / missed label in the site's language; sent on shot events only. \cr
-   x \tab double \tab Shot location along the 28 m court length as percent of the court (0-100, origin at a corner); the home team attacks the low-x basket all game; LNBP and NBL1 clamp rim attempts to 5 / 95. \cr
-   y \tab double \tab Shot location across the 15 m width as percent of the court (0-100); which sideline is 0 is unverified. \cr
-   home_score \tab integer \tab Home team's running score after the event. \cr
-   away_score \tab integer \tab Away team's running score after the event. \cr
-}
+A \code{hoopR_data} tibble with one row per shot.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_shots")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{One game's 2pt / 3pt attempts with their court location (percent of the court)

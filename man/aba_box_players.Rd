@@ -17,55 +17,10 @@ druga.aba-liga.com, lea=2). Both sites serve one database; the runtime asks the 
 \code{"aba"}.}
 }
 \value{
-A \code{hoopR_data} tibble.
-One row per player listed, in page order. \code{played} is false on a did-not-play row (minutes \code{00:00}, every stat
-null). \code{starter} and \code{on_court_at_end} exist from 2017-18 and are null for the whole game before. The advanced
-\code{pts_paint} / \code{pts_second_chance} / \code{pts_fast_break} trio is null where the season has none (2008-09).
-\code{plus_minus} is 0 on every row of the 2008-09 sample (not tracked then). Percentages are 0-100. Join on
-\code{player_id} (global), not on the printed name.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_no \tab integer \tab Game number, per season AND league: it restarts at 1 for every season and league, so a game's key is (game_no, season, league_id). Unplayed playoff games leave gaps. The \{gameNo\} of the match route. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr
-   league_id \tab integer \tab League code, the site's lea: 1 = ABA League, 2 = ABA League 2. \cr
-   league \tab character \tab League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. \cr
-   side \tab character \tab 'home' or 'away' (the home team is listed first everywhere on the site). \cr
-   team_id \tab integer \tab ABA club id (global: the same id in every season and in both leagues, e.g. Partizan = 22 in 2008-09 and 2025-26). Joins every frame that carries it; the calendar has club names only. \cr
-   jersey \tab integer \tab Jersey number worn in the game (the box lists players by jersey number). \cr
-   player_id \tab integer \tab ABA player id (global: one person keeps one id across seasons and both leagues, e.g. Carlik Jones = 4807), cast to an integer. Join on it, never on the printed name. \cr
-   player_name \tab character \tab Name as the box prints it: 'Surname I.' (diacritics kept). \cr
-   starter \tab logical \tab In the starting five: the box marks it with '\emph{' (matches the play-by-play 'in starting lineup' rows on every sample). Null for the whole game when no row carries a '}' (box-only seasons, 2008-09 sample). \cr
-   on_court_at_end \tab logical \tab On court at the final buzzer: the box prints the name in bold (matches the substitutions in the play-by-play on every sample). Null for the whole game when no name is bold (box-only seasons). \cr
-   played \tab logical \tab False on a did-not-play row (minutes '00:00' and one empty cell across the stat columns); its stat columns are null. \cr
-   minutes \tab character \tab Minutes played, 'mm:ss' text. '00:00' on did-not-play rows. \cr
-   points \tab integer \tab Points scored (overall Pts). Null on did-not-play rows (played = false). \cr
-   fg_pct \tab double \tab Field-goal percentage over 2- and 3-point attempts, 0-100 with one decimal (FG2 + FG3 made / attempted); 0 when no attempt. Header 'overall \%'. Null on did-not-play rows (played = false). \cr
-   fg2_made \tab integer \tab 2-point field goals made (FG2 M). Null on did-not-play rows (played = false). \cr
-   fg2_att \tab integer \tab 2-point field goals attempted (FG2 A). Null on did-not-play rows (played = false). \cr
-   fg2_pct \tab double \tab 2-point percentage, 0-100 with one decimal; 0 when no attempt. Null on did-not-play rows (played = false). \cr
-   fg3_made \tab integer \tab 3-point field goals made (FG3 M). Null on did-not-play rows (played = false). \cr
-   fg3_att \tab integer \tab 3-point field goals attempted (FG3 A). Null on did-not-play rows (played = false). \cr
-   fg3_pct \tab double \tab 3-point percentage, 0-100 with one decimal; 0 when no attempt. Null on did-not-play rows (played = false). \cr
-   ft_made \tab integer \tab Free throws made (FT M). Null on did-not-play rows (played = false). \cr
-   ft_att \tab integer \tab Free throws attempted (FT A). Null on did-not-play rows (played = false). \cr
-   ft_pct \tab double \tab Free-throw percentage, 0-100 with one decimal; 0 when no attempt. Null on did-not-play rows (played = false). \cr
-   reb_def \tab integer \tab Defensive rebounds (Rebs D). Null on did-not-play rows (played = false). \cr
-   reb_off \tab integer \tab Offensive rebounds (Rebs O). Null on did-not-play rows (played = false). \cr
-   reb_tot \tab integer \tab Total rebounds (Rebs T). Null on did-not-play rows (played = false). \cr
-   assists \tab integer \tab Assists made (the Ass column). \cr
-   steals \tab integer \tab Steals made (the St column). \cr
-   turnovers \tab integer \tab Turnovers (To). Null on did-not-play rows (played = false). \cr
-   blocks \tab integer \tab Shots blocked by this player or team (Blck Fv, 'in favour'). Null on did-not-play rows (played = false). \cr
-   blocks_against \tab integer \tab Own shots blocked by an opponent (Blck Ag, 'against'). Null on did-not-play rows (played = false). \cr
-   fouls \tab integer \tab Fouls committed (Foul Cm). Null on did-not-play rows (played = false). \cr
-   fouls_drawn \tab integer \tab Fouls drawn / received (Foul Rv). Null on did-not-play rows (played = false). \cr
-   pts_paint \tab integer \tab Points in the paint (Points from Paint). Null where the season has no such column (2008-09) and on did-not-play rows. \cr
-   pts_second_chance \tab integer \tab Second-chance points (Points from 2ndCh). Null where the season has no such column (2008-09) and on did-not-play rows. \cr
-   pts_fast_break \tab integer \tab Fast-break points (Points from FstBr). Null where the season has no such column (2008-09) and on did-not-play rows. \cr
-   plus_minus \tab integer \tab Plus/minus while on court (+/-). 0 on every row of the 2008-09 sample (not tracked then). Null on did-not-play rows (played = false). \cr
-   valuation \tab integer \tab Valuation (Val, 'rank Value'): the efficiency rating (PIR-style index) the site ranks players by. Null on did-not-play rows (played = false). \cr
-}
+A \code{hoopR_data} tibble with one row per player listed.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "aba_box_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player box score of one finished game (2001-02 on): minutes, points, shooting splits, rebounds, assists, fouls,

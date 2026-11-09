@@ -15,50 +15,50 @@ espn_nba_franchise(franchise_id, ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A single-row tibble.
+A \code{hoopR_data} tibble with one row per franchise.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab character \tab ESPN franchise identifier. \cr
-      uid \tab character \tab ESPN UID string. \cr
-      slug \tab character \tab URL-safe identifier. \cr
-      location \tab character \tab Franchise location. \cr
-      name \tab character \tab Franchise name. \cr
-      nickname \tab character \tab Common nickname. \cr
-      abbreviation \tab character \tab Short abbreviation. \cr
-      display_name \tab character \tab Full display name. \cr
-      short_display_name \tab character \tab Short display name. \cr
-      color \tab character \tab Primary color (hex, no leading '#'). \cr
-      is_active \tab logical \tab Whether franchise is currently active. \cr
-      league \tab character \tab League slug. \cr
-      logo \tab character \tab Primary logo URL. \cr
-      logo_dark \tab character \tab Dark-mode logo URL. \cr
-      venue_ref \tab character \tab \verb{$ref} to franchise's primary venue. \cr
-      team_ref \tab character \tab \verb{$ref} to the current team for franchise. \cr
-   }}
+  col_name \tab types \tab description \cr
+  id \tab character \tab ESPN franchise identifier. \cr
+  uid \tab character \tab ESPN UID string. \cr
+  slug \tab character \tab URL-safe identifier. \cr
+  location \tab character \tab Franchise location. \cr
+  name \tab character \tab Franchise name. \cr
+  nickname \tab character \tab Common nickname. \cr
+  abbreviation \tab character \tab Short abbreviation. \cr
+  display_name \tab character \tab Full display name. \cr
+  short_display_name \tab character \tab Short display name. \cr
+  color \tab character \tab Primary color (hex, no leading '#'). \cr
+  is_active \tab logical \tab Whether franchise is currently active. \cr
+  league \tab character \tab League slug. \cr
+  logo \tab character \tab Primary logo URL. \cr
+  logo_dark \tab character \tab Dark-mode logo URL. \cr
+  venue_ref \tab character \tab \code{$ref} to franchise's primary venue. \cr
+  team_ref \tab character \tab \code{$ref} to the current team for franchise. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A single-row tibble.
+A \code{hoopR_data} tibble with one row per franchise.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab character \tab ESPN franchise identifier. \cr
-      uid \tab character \tab ESPN UID string. \cr
-      slug \tab character \tab URL-safe identifier. \cr
-      location \tab character \tab Franchise location. \cr
-      name \tab character \tab Franchise name. \cr
-      nickname \tab character \tab Common nickname (often same as name). \cr
-      abbreviation \tab character \tab Short abbreviation. \cr
-      display_name \tab character \tab Full display name. \cr
-      short_display_name \tab character \tab Short display name. \cr
-      color \tab character \tab Primary color (hex, no leading '#'). \cr
-      is_active \tab logical \tab Whether franchise is currently active. \cr
-      league \tab character \tab League slug (\code{"nba"}). \cr
-      logo \tab character \tab Primary logo URL. \cr
-      logo_dark \tab character \tab Dark-mode logo URL. \cr
-      venue_ref \tab character \tab \verb{$ref} to franchise's primary venue. \cr
-      team_ref \tab character \tab \verb{$ref} to the current team for franchise. \cr
-   }}
+  col_name \tab types \tab description \cr
+  id \tab character \tab ESPN franchise identifier. \cr
+  uid \tab character \tab ESPN UID string. \cr
+  slug \tab character \tab URL-safe identifier. \cr
+  location \tab character \tab Franchise location. \cr
+  name \tab character \tab Franchise name. \cr
+  nickname \tab character \tab Common nickname (often same as name). \cr
+  abbreviation \tab character \tab Short abbreviation. \cr
+  display_name \tab character \tab Full display name. \cr
+  short_display_name \tab character \tab Short display name. \cr
+  color \tab character \tab Primary color (hex, no leading '#'). \cr
+  is_active \tab logical \tab Whether franchise is currently active. \cr
+  league \tab character \tab League slug (\code{"nba"}). \cr
+  logo \tab character \tab Primary logo URL. \cr
+  logo_dark \tab character \tab Dark-mode logo URL. \cr
+  venue_ref \tab character \tab \code{$ref} to franchise's primary venue. \cr
+  team_ref \tab character \tab \code{$ref} to the current team for franchise. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{

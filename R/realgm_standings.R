@@ -9,27 +9,7 @@
 #' conference tables are stacked and labelled by a `conference` column.
 #'
 #' **Requires a headless browser** (see [realgm_players()]).
-#' @return A `hoopR_data` tibble with one row per team:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       number \tab integer \tab Conference rank. \cr
-#'       team \tab character \tab Team name. \cr
-#'       w \tab integer \tab Wins. \cr
-#'       l \tab integer \tab Losses. \cr
-#'       pct \tab numeric \tab Win percentage. \cr
-#'       gb \tab numeric \tab Games back. \cr
-#'       l10 \tab character \tab Last-ten record. \cr
-#'       strk \tab character \tab Current streak. \cr
-#'       ppg \tab numeric \tab Points per game. \cr
-#'       oppg \tab numeric \tab Opponent points per game. \cr
-#'       diff \tab numeric \tab Scoring margin. \cr
-#'       home \tab character \tab Home record. \cr
-#'       away \tab character \tab Away record. \cr
-#'       conference \tab character \tab \code{Eastern} or \code{Western}. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("realgm_standings", inline = FALSE, unit = "team")
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names
@@ -82,16 +62,7 @@ realgm_standings <- function() {
 #' RealGM (basketball.realgm.com).**
 #'
 #' **Requires a headless browser** (see [realgm_players()]).
-#' @return A `hoopR_data` tibble with one row per team:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       team \tab character \tab Team name. \cr
-#'       division \tab character \tab Division (e.g. \code{Atlantic}). \cr
-#'       conference \tab character \tab \code{Eastern} or \code{Western}. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("realgm_teams", inline = FALSE, unit = "team")
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names

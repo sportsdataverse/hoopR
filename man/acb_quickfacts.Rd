@@ -13,22 +13,10 @@ acb_quickfacts(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_quickfacts}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
-   team_side \tab character \tab Side of the game the team played: home or away (the feed lists the home team first). \cr
-   team_id \tab integer \tab Season-team entry id (new every season). \cr
-   club_id \tab integer \tab Stable club id (2 = Barca, 9 = Real Madrid). \cr
-   team \tab character \tab Team name for the season. \cr
-   team_abbr \tab character \tab Three-letter team abbreviation. \cr
-   edition_id \tab integer \tab Season id (START year - 1935). \cr
-   season \tab integer \tab Season END year (edition_id + 1936). \cr
-   standing \tab integer \tab League position before the game. \cr
-   wins \tab integer \tab Wins before the game. \cr
-   losses \tab integer \tab Losses before the game (the API's currentLoses). \cr
-   last_results \tab character \tab Recent results joined with '; ' (WIN / LOSS), in the order the API sends them. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_quickfacts")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Pre-match facts per team: standing, record, recent results.

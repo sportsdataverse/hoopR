@@ -16,13 +16,27 @@ espn_nba_player_seasons(athlete_id, ...)
 \item{...}{Additional arguments; currently unused.}
 }
 \value{
-A tibble with one row per career season.
+A \code{hoopR_data} tibble with one row per career season.
 
-Columns as documented in the shared \link{espn_mbb_player_seasons_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  athlete_id \tab character \tab ESPN athlete id. \cr
+  season \tab integer \tab Season year. \cr
+  ref \tab character \tab \code{$ref} URL to the season detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A tibble with one row per career season.
+A \code{hoopR_data} tibble with one row per career season.
 
-Columns as documented in the shared \link{espn_mbb_player_seasons_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  athlete_id \tab character \tab ESPN athlete id. \cr
+  season \tab integer \tab Season year. \cr
+  ref \tab character \tab \code{$ref} URL to the season detail. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 }
 \description{
 Returns the list of seasons an MBB athlete appeared in. Useful for

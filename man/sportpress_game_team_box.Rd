@@ -13,45 +13,10 @@ sportpress_game_team_box(competition_id, game_id)
 \item{game_id}{(required) Game id (integer), unique across seasons; from \code{\link[=sportpress_schedule]{sportpress_schedule()}} (\code{game_id}).}
 }
 \value{
-A \code{hoopR_data} tibble: Team totals of both sides from the box score of a finished game. An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_game_team_box}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Game id the box score was asked for (the body does not echo it). \cr
-   competition_id \tab integer \tab Competition id the box score was asked for; checked against the game. \cr
-   team_side \tab character \tab Side of the game the row belongs to: home or away (the provider's is_home, or side 1 / 2). \cr
-   competition_team_id \tab integer \tab Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. \cr
-   team \tab character \tab Team display name including the sponsor; varies with language and playoff suffixes: never join on it. \cr
-   team_short_name \tab character \tab Three-letter club code (ANT, MON, ...), stable across seasons in the samples. \cr
-   minute \tab integer \tab The team's total: minutes played; for a team total, the sum over its players (200 + 25 per overtime). \cr
-   foul \tab integer \tab The team's total: personal fouls committed. \cr
-   defensive_foul \tab integer \tab The team's total: fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. \cr
-   dunk_made \tab integer \tab The team's total: dunks made (a subset of the two-point field goals). \cr
-   dunk_all \tab integer \tab The team's total: dunks attempted. \cr
-   dunk_percent \tab double \tab The team's total: dunk percentage 0-100; 0 when none were attempted. \cr
-   two_point_made \tab integer \tab The team's total: two-point field goals made. \cr
-   two_point_all \tab integer \tab The team's total: two-point field goals attempted. \cr
-   two_point_percent \tab double \tab The team's total: two-point percentage 0-100. \cr
-   three_point_made \tab integer \tab The team's total: three-point field goals made. \cr
-   three_point_all \tab integer \tab The team's total: three-point field goals attempted. \cr
-   three_point_percent \tab double \tab The team's total: three-point percentage 0-100. \cr
-   throw_made \tab integer \tab The team's total: all field goals made, two- plus three-pointers (the provider calls them 'throw'). \cr
-   throw_all \tab integer \tab The team's total: all field goals attempted, two- plus three-pointers (the provider calls them 'throw'). \cr
-   throw_percent \tab double \tab The team's total: field-goal percentage 0-100. \cr
-   free_throw_made \tab integer \tab The team's total: free throws made. \cr
-   free_throw_all \tab integer \tab The team's total: free throws attempted. \cr
-   free_throw_percent \tab double \tab The team's total: free-throw percentage 0-100. \cr
-   offensive_rebound \tab integer \tab The team's total: offensive rebounds. \cr
-   defensive_rebound \tab integer \tab The team's total: defensive rebounds. \cr
-   total_rebound \tab integer \tab The team's total: total rebounds (offensive plus defensive). \cr
-   block \tab integer \tab The team's total: shots blocked by the player. \cr
-   block_against \tab integer \tab The team's total: own shots blocked by an opponent. \cr
-   turnover \tab integer \tab The team's total: turnovers committed. \cr
-   steal \tab integer \tab The team's total: steals (balls taken from an opponent). \cr
-   assist \tab integer \tab The team's total: assists (passes leading directly to a made basket). \cr
-   points \tab integer \tab Team points in the box score; can differ from the schedule final score (about 18 of 1,246 sampled team boxes, by 2-21 points). \cr
-   value \tab integer \tab The team's total: efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. \cr
-   plusminus \tab integer \tab The team's total: plus/minus: the score margin while the player (or team) was on court; for a team total it is the game margin. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_game_team_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team totals of both sides from the box score of a finished game.

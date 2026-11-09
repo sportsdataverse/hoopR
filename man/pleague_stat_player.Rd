@@ -13,55 +13,10 @@ two digits of season). The first season is 2020-21 (\code{season=2021}); earlier
 \item{stage_sn}{Required. Stage select value of the player table: 2 = regular season, 3 = playoffs, 4 = finals.}
 }
 \value{
-A \code{hoopR_data} tibble: Player season averages and totals of one season and stage: shooting, rebounds, assists
-and fouls. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
-\code{pleague_stat_player}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2025 = the site's slug '2024-25'): the first year of the slug plus one. \cr
-   season_slug \tab character \tab The site's season slug as printed: the START year, then the END year's last two digits ('2024-25'). \cr
-   stage_sn \tab integer \tab Stage select value: 2 = regular season, 3 = playoffs, 4 = finals (echo of the request, checked against the page's selected option). \cr
-   stage \tab character \tab Stage slug: pre-season ((Chinese text), exhibition games before the season), regular-season ((Chinese text)), playoffs ((Chinese text)) or finals ((Chinese text), the championship series). \cr
-   player_page_id \tab character \tab The 8-character page id of /player/\{id\} (e.g. '1JbPozLB'). The box random_id on 2022-23+ rows; NOT the box player_id. \cr
-   name_zh \tab character \tab Player name as printed (Traditional Chinese, or a transliteration for foreign players). \cr
-   jersey \tab character \tab Shirt number as a string (the player's number in the latest game). \cr
-   team_zh \tab character \tab Team name in Traditional Chinese as the page prints it (a traded player shows the current team). \cr
-   games \tab integer \tab Games played ((Chinese text)). \cr
-   minutes_avg \tab character \tab Minutes per game 'mm:ss' ((Chinese text)). \cr
-   minutes_total \tab character \tab Total minutes 'mmm:ss' ((Chinese text)). \cr
-   fg2_made_avg \tab double \tab Per-game average of 2-point makes ((Chinese text)). \cr
-   fg2_made_total \tab integer \tab Season total of 2-point makes ((Chinese text)). \cr
-   fg2_att_avg \tab double \tab Per-game average of 2-point attempts ((Chinese text)). \cr
-   fg2_att_total \tab integer \tab Season total of 2-point attempts ((Chinese text)). \cr
-   fg3_made_avg \tab double \tab Per-game average of 3-point makes ((Chinese text)). \cr
-   fg3_made_total \tab integer \tab Season total of 3-point makes ((Chinese text)). \cr
-   fg3_att_avg \tab double \tab Per-game average of 3-point attempts ((Chinese text)). \cr
-   fg3_att_total \tab integer \tab Season total of 3-point attempts ((Chinese text)). \cr
-   ft_made_avg \tab double \tab Per-game average of free-throw makes ((Chinese text)). \cr
-   ft_made_total \tab integer \tab Season total of free-throw makes ((Chinese text)). \cr
-   ft_att_avg \tab double \tab Per-game average of free-throw attempts ((Chinese text)). \cr
-   ft_att_total \tab integer \tab Season total of free-throw attempts ((Chinese text)). \cr
-   points_avg \tab double \tab Per-game average of points ((Chinese text)). \cr
-   points_total \tab integer \tab Season total of points ((Chinese text)). \cr
-   reb_off_avg \tab double \tab Per-game average of offensive rebounds ((Chinese text)). \cr
-   reb_off_total \tab integer \tab Season total of offensive rebounds ((Chinese text)). \cr
-   reb_def_avg \tab double \tab Per-game average of defensive rebounds ((Chinese text)). \cr
-   reb_def_total \tab integer \tab Season total of defensive rebounds ((Chinese text)). \cr
-   reb_avg \tab double \tab Per-game average of total rebounds ((Chinese text)). \cr
-   reb_total \tab integer \tab Season total of total rebounds ((Chinese text)). \cr
-   ast_avg \tab double \tab Per-game average of assists ((Chinese text)). \cr
-   ast_total \tab integer \tab Season total of assists ((Chinese text)). \cr
-   stl_avg \tab double \tab Per-game average of steals ((Chinese text)). \cr
-   stl_total \tab integer \tab Season total of steals ((Chinese text)). \cr
-   blk_avg \tab double \tab Per-game average of blocks ((Chinese text)). \cr
-   blk_total \tab integer \tab Season total of blocks ((Chinese text)). \cr
-   tov_avg \tab double \tab Per-game average of turnovers ((Chinese text)). \cr
-   tov_total \tab integer \tab Season total of turnovers ((Chinese text)). \cr
-   pf_avg \tab double \tab Per-game average of personal fouls ((Chinese text)). \cr
-   pf_total \tab integer \tab Season total of personal fouls ((Chinese text)). \cr
-   fg2_pct \tab double \tab 2-point percentage 0-100 ((Chinese text); the cell holds the same value as average and total). \cr
-   fg3_pct \tab double \tab 3-point percentage 0-100 ((Chinese text); same value as average and total). \cr
-   ft_pct \tab double \tab Free-throw percentage 0-100 ((Chinese text); same value as average and total). \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_stat_player")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player season averages and totals of one season and stage: shooting, rebounds, assists and fouls.

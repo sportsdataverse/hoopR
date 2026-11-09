@@ -11,33 +11,10 @@ lba_roster(team_id)
 season.}
 }
 \value{
-A \code{hoopR_data} tibble: Players of one team-season with bio, number and role. The columns are always these, in
-this order (sportsdataverse-py \code{lba_roster}); a column the site adds later is appended after them:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Team-season id (re-issued every season); join lba_teams for the stable club_id. \cr
-   club_id \tab integer \tab Club id: the cross-season join key for team ids (only here and in the \code{team} headers); stability across seasons is unverified. \cr
-   club_code \tab character \tab Club code (\code{TVB}, \code{TS}); whether it is stable across seasons is unverified. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27): the row's START year + 1. \cr
-   player_id \tab integer \tab Player id (global). \cr
-   name \tab character \tab Player's given name. \cr
-   surname \tab character \tab Player's family name. \cr
-   code \tab character \tab Player code \code{SURNAME3-NAME3-YY}. \cr
-   place_of_birth \tab character \tab Birthplace (Italian spelling). \cr
-   birth_date \tab character \tab Birth date, Date \code{YYYY-MM-DD}. \cr
-   player_number \tab character \tab Jersey number, number sent as a string. \cr
-   country \tab character \tab Nationality, ISO alpha-3. \cr
-   uefa_ratio \tab character \tab Eligibility class for the foreign-player quota: \code{I}, \code{E} or \code{C} (7 / 6 / 1 on the Treviso roster; reading as Italian / EU / non-EU is inferred). \cr
-   height \tab integer \tab Player's height in centimetres. \cr
-   weight \tab integer \tab Player's weight in kilograms. \cr
-   year \tab integer \tab Season START year of the player entry (2026 = 2026-27). \cr
-   start_date \tab character \tab Contract start with the team, Date \code{YYYY-MM-DD}. \cr
-   end_date \tab character \tab Contract end with the team, Date \code{YYYY-MM-DD}. \cr
-   player_role_id \tab integer \tab Position id (position key space: the id behind \code{player_role}; joins the \code{r_id} filter). \cr
-   player_role \tab character \tab Position, Italian: \code{Playmaker} (point guard), \code{Guardia} (guard), \code{Ala} (forward), \code{Centro} (center), \code{-} unknown. \cr
-   team_name \tab character \tab Team name in that season, with its sponsor (\verb{Nutribullet Treviso Basket}); changes with the sponsor. \cr
-   player_picture_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-   team_logo_key \tab character \tab Image key: the image is \code{{cdn_url}/{key}}, resized copies \code{{cdn_url}/variants/{key}/thumb} or \verb{/large} (the site's getApiImageUrl). \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lba_roster")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Players of one team-season with bio, number and role.

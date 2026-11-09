@@ -36,54 +36,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a list of tibbles: videoUrls, playlist
-#'
-#'    **videoUrls**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       uuid \tab character \tab Uuid. \cr
-#'       sdur \tab integer \tab Sdur. \cr
-#'       surl \tab character \tab Surl. \cr
-#'       sth \tab character \tab Sth. \cr
-#'       mdur \tab integer \tab Mdur. \cr
-#'       murl \tab character \tab Murl. \cr
-#'       mth \tab character \tab Mth. \cr
-#'       ldur \tab integer \tab Ldur. \cr
-#'       lurl \tab character \tab Lurl. \cr
-#'       lth \tab character \tab Lth. \cr
-#'       vtt \tab character \tab Vtt. \cr
-#'       scc \tab character \tab Scc. \cr
-#'       srt \tab character \tab Srt. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **playlist**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       gi \tab character \tab Gi. \cr
-#'       ei \tab integer \tab Ei. \cr
-#'       y \tab integer \tab Y. \cr
-#'       m \tab character \tab M. \cr
-#'       d \tab character \tab D. \cr
-#'       gc \tab character \tab Gc. \cr
-#'       p \tab integer \tab P. \cr
-#'       dsc \tab character \tab Dsc. \cr
-#'       ha \tab character \tab Ha. \cr
-#'       hid \tab integer \tab Hid. \cr
-#'       va \tab character \tab Va. \cr
-#'       vid \tab integer \tab Vid. \cr
-#'       hpb \tab integer \tab Hpb. \cr
-#'       hpa \tab integer \tab Hpa. \cr
-#'       vpb \tab integer \tab Vpb. \cr
-#'       vpa \tab integer \tab Vpa. \cr
-#'       pta \tab integer \tab Pta. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_videodetailsasset", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -239,53 +192,7 @@ NULL
 #' @param vs_conference vs_conference
 #' @param vs_division vs_division
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a list of tibbles: videoUrls, playlist
-#'
-#'    **videoUrls**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       uuid \tab character \tab Uuid. \cr
-#'       dur \tab logical \tab Dur. \cr
-#'       stt \tab logical \tab Stt. \cr
-#'       stp \tab logical \tab Stp. \cr
-#'       sth \tab logical \tab Sth. \cr
-#'       stw \tab logical \tab Stw. \cr
-#'       mtt \tab logical \tab Mtt. \cr
-#'       mtp \tab logical \tab Mtp. \cr
-#'       mth \tab logical \tab Mth. \cr
-#'       mtw \tab logical \tab Mtw. \cr
-#'       ltt \tab logical \tab Ltt. \cr
-#'       ltp \tab logical \tab Ltp. \cr
-#'       lth \tab logical \tab Lth. \cr
-#'       ltw \tab logical \tab Ltw. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
-#'    **playlist**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       gi \tab character \tab Gi. \cr
-#'       ei \tab integer \tab Ei. \cr
-#'       y \tab integer \tab Y. \cr
-#'       m \tab character \tab M. \cr
-#'       d \tab character \tab D. \cr
-#'       gc \tab character \tab Gc. \cr
-#'       p \tab integer \tab P. \cr
-#'       dsc \tab character \tab Dsc. \cr
-#'       ha \tab character \tab Ha. \cr
-#'       va \tab character \tab Va. \cr
-#'       hpb \tab integer \tab Hpb. \cr
-#'       hpa \tab integer \tab Hpa. \cr
-#'       vpb \tab integer \tab Vpb. \cr
-#'       vpa \tab integer \tab Vpa. \cr
-#'       pta \tab integer \tab Pta. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_videodetails", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -481,30 +388,7 @@ NULL
 #' @param game_date game_date
 #' @param league_id league_id
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Return a list of tibbles: VideoStatus
-#'
-#'    **VideoStatus**
-#'
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       GAME_ID \tab character \tab Unique game identifier. \cr
-#'       GAME_DATE \tab character \tab Game date (YYYY-MM-DD). \cr
-#'       VISITOR_TEAM_ID \tab character \tab  \cr
-#'       VISITOR_TEAM_CITY \tab character \tab  \cr
-#'       VISITOR_TEAM_NAME \tab character \tab  \cr
-#'       VISITOR_TEAM_ABBREVIATION \tab character \tab  \cr
-#'       HOME_TEAM_ID \tab character \tab Unique identifier for the home team. \cr
-#'       HOME_TEAM_CITY \tab character \tab Home team city / location. \cr
-#'       HOME_TEAM_NAME \tab character \tab Home team name. \cr
-#'       HOME_TEAM_ABBREVIATION \tab character \tab  \cr
-#'       GAME_STATUS \tab character \tab Game status label. \cr
-#'       GAME_STATUS_TEXT \tab character \tab Game status display text (e.g. 'Final', '4:32 - 4th'). \cr
-#'       IS_AVAILABLE \tab character \tab  \cr
-#'       PT_XYZ_AVAILABLE \tab character \tab Pt xyz available. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nba_videostatus", class = "tibble")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest

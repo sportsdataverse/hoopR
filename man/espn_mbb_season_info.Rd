@@ -18,35 +18,61 @@ forward compatibility. Proxy configuration should use
 \code{options(hoopR.proxy = ...)} -- see \code{?hoopR} for details.}
 }
 \value{
-A named list of \code{hoopR_data} tibbles:
-\code{Info}, \code{Types}, \code{Athletes}, \code{Coaches}, \code{Teams}, \code{Awards}.
-\verb{$ref} URL components are returned as character columns and are NOT
-auto-resolved -- use targeted endpoint functions for details.
+A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Types}, \code{Athletes}, \code{Coaches}, \code{Teams}, \code{Awards}.
 
 \strong{Info}
 
-Columns as documented in the shared \link{espn_mbb_season_info_info_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  year \tab integer \tab 4-digit year. \cr
+  start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+  end_date \tab character \tab End date (YYYY-MM-DD). \cr
+  display_name \tab character \tab Display name. \cr
+  type_id \tab character \tab Type identifier (numeric). \cr
+  type_name \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Types / Athletes / Coaches / Teams / Awards}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   count \tab integer \tab Count of count. \cr
-   ref \tab character \tab  \cr
-}
+\strong{Types / Athletes / Coaches / Teams / Awards}
 
-A named list of \code{hoopR_data} tibbles:
-\code{Info}, \code{Types}, \code{Athletes}, \code{Coaches}, \code{Teams}, \code{Awards}.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  count \tab integer \tab Count of count. \cr
+  ref \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\code{Types}, \code{Athletes}, \code{Coaches}, \code{Teams} and \code{Awards} share the second table.
 \verb{$ref} URL components are returned as character columns and are NOT
 auto-resolved -- use targeted endpoint functions for details.
 
+A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Types}, \code{Athletes}, \code{Coaches}, \code{Teams}, \code{Awards}.
+
 \strong{Info}
 
-Columns as documented in the shared \link{espn_mbb_season_info_info_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  year \tab integer \tab 4-digit year. \cr
+  start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+  end_date \tab character \tab End date (YYYY-MM-DD). \cr
+  display_name \tab character \tab Display name. \cr
+  type_id \tab character \tab Type identifier (numeric). \cr
+  type_name \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Types / Athletes / Coaches / Teams / Awards}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   count \tab integer \tab Count of count. \cr
-   ref \tab character \tab  \cr
-}
+\strong{Types / Athletes / Coaches / Teams / Awards}
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  count \tab integer \tab Count of count. \cr
+  ref \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+\code{Types}, \code{Athletes}, \code{Coaches}, \code{Teams} and \code{Awards} share the second table.
+\verb{$ref} URL components are returned as character columns and are NOT
+auto-resolved -- use targeted endpoint functions for details.
 }
 \description{
 \strong{Get ESPN Women's College Basketball Season Info}

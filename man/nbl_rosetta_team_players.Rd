@@ -14,38 +14,10 @@ nbl_rosetta_team_players(team_id, season, org = "nbl")
 \item{org}{(\emph{character} default \code{"nbl"}): Organisation: nbl (men's NBL), wnbl (women's) or nbl1 (the second tier, men's and women's conferences). One of \code{"nbl"}, \code{"wnbl"}, \code{"nbl1"}.}
 }
 \value{
-A \code{hoopR_data} tibble (one row per roster entry):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   org \tab character \tab Organisation the row belongs to: nbl, wnbl or nbl1. From the row's competition, else from the request. \cr
-   jersey_number \tab character \tab Jersey number, a STRING. \cr
-   playing_position \tab character \tab Playing position code (G, F, C, PG, SF, FC, ...); null when not recorded. \cr
-   team_id \tab character \tab DataCore id (UUID v1, Sportradar) of the team; stable across seasons and the id to join on across routes. \cr
-   rosetta_team_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the team; routes that take this entity accept it as well as the DataCore id. \cr
-   team_name \tab character \tab Name of the team as Rosetta spells it, e.g. Perth Wildcats. \cr
-   team_code \tab character \tab Team code, e.g. PER (the \code{{team_code}} path value) \cr
-   team_gender \tab character \tab Gender (MALE/FEMALE upper case on seasons and players, male/female lower case on competitions and divisions; UNKNOWN seen) \cr
-   player_id \tab character \tab DataCore id (UUID v1, Sportradar) of the player; stable across seasons and the id to join on across routes. \cr
-   rosetta_player_id \tab character \tab Rosetta's own id (UUID v4; v5 on NBL1) of the player; routes that take this entity accept it as well as the DataCore id. \cr
-   player_first_name \tab character \tab The player's given name, e.g. Elijah. \cr
-   player_last_name \tab character \tab The player's family name, e.g. Pepper. \cr
-   player_full_name \tab character \tab Given and family name. \cr
-   player_jersey_number \tab character \tab Jersey number, a STRING. \cr
-   player_playing_position \tab character \tab Playing position code (G, F, C, PG, SF, FC, ...); null when not recorded. \cr
-   player_active \tab logical \tab Player record is active. \cr
-   player_date_of_birth \tab character \tab Date of birth, ISO date. \cr
-   player_nationality \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   player_height \tab double \tab Height in centimetres. \cr
-   player_weight \tab double \tab Weight in kilograms. \cr
-   player_dominant_hand \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   player_gender \tab character \tab Gender (MALE/FEMALE upper case on seasons and players, male/female lower case on competitions and divisions; UNKNOWN seen) \cr
-   player_nationality_code \tab character \tab Nationality, ISO 3166-1 alpha-3 code. \cr
-   player_birthplace \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   player_rookie_year \tab character \tab Unobserved in samples (null in every capture); type and meaning unverified. \cr
-   season_end_year \tab integer \tab sdv season key: the END year of the season (2026 = 2025-26), derived from season_year (a START year for the NBL and WNBL from 1998-99, a calendar year for NBL1 and the 1979-1997 winter seasons; year 1998 is split on the start date). Where the body carries no year it is the season asked for. \cr
-}
-
-
-Columns the body adds beyond these follow, in body order (sportsdataverse-py keeps them too).
+A \code{hoopR_data} tibble with one row per roster entry.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "nbl_rosetta_team_players")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Roster of one team in a season: player bio, jersey and position.

@@ -11,31 +11,10 @@ lkl_shots(game_id)
 before 2018-19. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per attempt (free throws are not charted), periods ascending. The data is
-Genius LiveStats'. \code{x} is the percent (0-100) of the court LENGTH from the left baseline of a horizontal full court
-(baskets near 5 and 95) and \code{y} the percent of the WIDTH (baskets at 50); metres are \verb{x / 100 x 28} and \verb{y / 100 x 15}, an inference. Which sideline is \code{y} 0 is unverified. \code{side} is the basket half (\code{LEFT} = x < 50) except
-backcourt heaves, and teams switch baskets at half-time, so normalise to one basket before plotting. \code{area} is a
-zone code, \code{left} / \code{right} from the shooter's view. The shooter is named by \code{player_id} (lkl.lt persons);
-\code{player_slug} is the reverse lookup through the runtime's roster (null on a body without the stamp). The site charts
-shots from 2024-25 on. A body without shots gives a zero-row tibble.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab lkl.lt game id (key space: LKL games; the \code{{gameId}} of every route). Not sequential by season before 2018-19; not the Genius matchId. A frame parsed from a bare body has a null game_id when the body does not echo it (the runtime stamps it under \verb{_request}). \cr
-   shot_id \tab integer \tab Shot event id (key space: lkl.lt shot events, increasing over time); joins nothing else and is not the Genius action number. \cr
-   period \tab integer \tab Period number: 1-4 regulation, 5 the first overtime, 6 the second. \cr
-   period_type \tab character \tab regular for periods 1-4, overtime from period 5. \cr
-   team_side \tab character \tab Side of the shooter's team (the line's is_home flag): home or away. \cr
-   team_id \tab integer \tab lkl.lt team id (key space: lkl.lt clubs, STABLE across seasons and renamings: 6 = Rytas). Joins lkl_game_info home_team_id / away_team_id; not the Genius team id. Null on a frame parsed from a bare body. \cr
-   player_id \tab integer \tab lkl.lt player id (key space: lkl.lt persons, stable across seasons). Resolved from the player slug through the game roster the runtime stamps from the game page; null on a bare body or a slug the roster lacks. \cr
-   player_slug \tab character \tab lkl.lt player slug (key space: lkl.lt persons; the \code{{slug}} of lkl.lt/zaidejai/\code{{slug}}, stable across seasons). Join key to lkl_game_players.slug. \cr
-   type \tab character \tab 2pt or 3pt (free throws are not in the chart). \cr
-   made \tab logical \tab True when the shot was made, false when missed. \cr
-   x \tab double \tab Court x position: percent (0-100) of the LENGTH of a horizontal full court from the left baseline (baskets near 5 and 95). Teams switch baskets at half-time; metres (x / 100 x 28) are an inference. \cr
-   y \tab double \tab Court y position: percent (0-100) of the court WIDTH (baskets at 50). Metres (y / 100 x 15) are an inference; which sideline is y = 0 is unverified. \cr
-   side \tab character \tab Basket half the shot is at: LEFT (x < 50) or RIGHT, except backcourt heaves (area backcourt). \cr
-   area \tab character \tab Court zone code (e.g. inthepaint, underbasket, outsideleft); left and right are from the shooter's view, so zones are point-symmetric between the two baskets. \cr
-}
+A \code{hoopR_data} tibble with one row per attempt.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "lkl_shots")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every field-goal attempt of a finished game (2024-25 onward) with its court position (Genius LiveStats data).

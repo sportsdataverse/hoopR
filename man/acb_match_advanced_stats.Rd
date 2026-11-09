@@ -13,27 +13,10 @@ acb_match_advanced_stats(match_id)
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_match_advanced_stats}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab ACB match id (one global sequence for every competition; legacy ids are below about 20000 up to 2019-20, ids from 2020-21 start around 100000). Taken from the request when the body does not name the game. \cr
-   edition_id \tab integer \tab Season id (editionId) = season START year - 1935 (91 = 2026-27). The wrappers take the END year, \code{season}. \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   team_side \tab character \tab Side of the game the team played: home or away (the feed lists the home team first). \cr
-   team_id \tab integer \tab Season-team entry id: one club in one competition edition, NEW every season (Barca = 4467 in Liga 2026-27). Not the club: use club_id to follow a club across seasons. \cr
-   club_id \tab integer \tab Stable ACB club id (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the same across seasons and sponsor names, and the club_id request argument. \cr
-   team \tab character \tab Team name as registered for that season (sponsor names change; the club id does not). \cr
-   team_abbr \tab character \tab Three-letter team abbreviation (BAR, RMB, VBC). \cr
-   group \tab character \tab Statistic group in snake_case (four_factors, game_rhythm, ball_handling, shooting, points, ratings, rebounds). \cr
-   stat \tab character \tab Statistic in snake_case (efg_pct, orb_pct, tov_pct, f_tr = free-throw rate, possessions, pace, points_per_possession, ast_ratio, ..., net_rating, oer, der, trb_pct). \cr
-   match_value \tab double \tab The statistic in this game (the API's partido). \cr
-   season_value \tab double \tab The team's value over the season (the API's temporada). \cr
-   win_value \tab double \tab The team's value in its wins (the API's win). \cr
-   loss_value \tab double \tab The team's value in its losses (the API's loss). \cr
-   season_diff \tab double \tab Game value minus season value (temporadaDiff). \cr
-   win_diff \tab double \tab Game value minus the wins value (winDiff). \cr
-   loss_diff \tab double \tab Game value minus the losses value (lossDiff). \cr
-}
+A \code{hoopR_data} tibble with one row per team, statistic group and statistic.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_match_advanced_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Team advanced statistics of a game against the team's season and win/loss splits.

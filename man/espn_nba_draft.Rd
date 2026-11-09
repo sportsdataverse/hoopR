@@ -49,23 +49,23 @@ forward compatibility. Proxy configuration should use
 \item{athlete_id}{ESPN draftee identifier.}
 }
 \value{
-A single-row tibble.
+A \code{hoopR_data} tibble with one row per draft pick.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      league \tab character \tab League slug. \cr
-      season \tab integer \tab Season year of the draft. \cr
-      round \tab integer \tab Round number. \cr
-      pick \tab integer \tab Pick within the round. \cr
-      overall \tab integer \tab Overall pick number. \cr
-      traded \tab logical \tab Whether the pick was traded. \cr
-      trade_note \tab character \tab Trade note (if any). \cr
-      status \tab character \tab Pick status name. \cr
-      athlete_id \tab character \tab Drafted athlete's ESPN id. \cr
-      team_id \tab character \tab Drafting team's ESPN id. \cr
-      athlete_ref \tab character \tab \verb{$ref} to athlete. \cr
-      team_ref \tab character \tab \verb{$ref} to team. \cr
-   }}
+  col_name \tab types \tab description \cr
+  league \tab character \tab League slug. \cr
+  season \tab integer \tab Season year of the draft. \cr
+  round \tab integer \tab Round number. \cr
+  pick \tab integer \tab Pick within the round. \cr
+  overall \tab integer \tab Overall pick number. \cr
+  traded \tab logical \tab Whether the pick was traded. \cr
+  trade_note \tab character \tab Trade note (if any). \cr
+  status \tab character \tab Pick status name. \cr
+  athlete_id \tab character \tab Drafted athlete's ESPN id. \cr
+  team_id \tab character \tab Drafting team's ESPN id. \cr
+  athlete_ref \tab character \tab \code{$ref} to athlete. \cr
+  team_ref \tab character \tab \code{$ref} to team. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
 A tibble with one row per round.
@@ -78,27 +78,23 @@ A single-row tibble.
 
 A single-row tibble.
 
-A \code{hoopR_data} tibble with one row per draft pick:
+A \code{hoopR_data} tibble with one row per draft pick.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
-      round \tab integer \tab Tournament / playoff round. \cr
-      pick \tab integer \tab  \cr
-      overall \tab integer \tab Overall. \cr
-      traded \tab logical \tab  \cr
-      trade_note \tab character \tab  \cr
-      status \tab character \tab Status label. \cr
-      athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
-      athlete_ref \tab character \tab  \cr
-      team_id \tab character \tab Unique team identifier. \cr
-      team_ref \tab character \tab  \cr
-   }}
+  col_name \tab types \tab description \cr
+  season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+  round \tab integer \tab Tournament / playoff round. \cr
+  pick \tab integer \tab  \cr
+  overall \tab integer \tab Overall. \cr
+  traded \tab logical \tab  \cr
+  trade_note \tab character \tab  \cr
+  status \tab character \tab Status label. \cr
+  athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
+  athlete_ref \tab character \tab  \cr
+  team_id \tab character \tab Unique team identifier. \cr
+  team_ref \tab character \tab  \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-Athlete and team details (name, position, college, abbreviation) are not
-inlined in the draft response; resolve them via \code{espn_nba_player_info()}
-or \code{espn_nba_team()} using the returned IDs.
 }
 \description{
 Returns a single NBA draft pick. Defaults to the most recent NBA

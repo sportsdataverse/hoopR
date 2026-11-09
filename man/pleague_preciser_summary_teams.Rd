@@ -15,39 +15,10 @@ and box (cached) and checks the vendor body against them (uuid, final score, mad
 the uuid must be the game page's. Without it only the checks the body allows by itself run.}
 }
 \value{
-A \code{hoopR_data} tibble: Post-game team comparison of one finished game: totals, situational points, lead tracker
-and top performer. An empty valid answer is a zero-row tibble with these columns, in this order (sportsdataverse-py
-\code{pleague_preciser_summary_teams}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_uuid \tab character \tab Preciser game uuid (key space: the vendor's games, a version-1 uuid), the uuid asked for; \code{uuid} of pleague_game. \cr
-   side \tab character \tab Which team the row belongs to: home or away. \cr
-   team_uuid \tab character \tab Preciser team uuid (key space: the vendor's teams; the file name of the club logo). Joins the site team_id through pleague_standings.team_uuid: 1 = e86394aa-3d88-11ed-8ba8-7f44ba46b0b1 ((Chinese text), Taipei Fubon Braves); 2 = e865bb20-3d88-11ed-a956-7f44ba46b0b1 ((Chinese text), Taoyuan Pauian Pilots (Taoyuan Pilots from 2024-25)); 3 = e8674343-3d88-11ed-98b4-7f44ba46b0b1 ((Chinese text), Hsinchu Jko Lioneers (Toplus Lioneers from 2023-24)); 4 = e869743f-3d88-11ed-925e-7f44ba46b0b1 ((Chinese text), Formosa Taishin Dreamers (Formosa Dreamers from 2022-23)); 5 = e86cac11-3d88-11ed-8637-7f44ba46b0b1 ((Chinese text), Kaohsiung 17LIVE Steelers); 6 = e86b0ecc-3d88-11ed-bed5-7f44ba46b0b1 ((Chinese text), New Taipei Kings); 7 = 3c3a601a-358a-11ed-ab92-711c34ed1298 ((Chinese text), TSG Ghosthawks); 8 = bf957f5a-9389-11f0-812c-a38482ec4d30 ((Chinese text), Yankey Ark). \cr
-   team_name_zh \tab character \tab Team full name in Traditional Chinese ((Chinese text) = Taipei Fubon Braves, (Chinese text) = Taoyuan Pauian Pilots, (Chinese text) = Hsinchu Toplus Lioneers, (Chinese text) = Formosa Dreamers, (Chinese text) = Kaohsiung 17LIVE Steelers, (Chinese text) = New Taipei Kings, (Chinese text) = TSG Ghosthawks). \cr
-   color \tab character \tab Team colour as a CSS hex string. \cr
-   logo_url \tab character \tab Team logo url (photonew.preciser.io/plg/teams/\{team uuid\}.png). \cr
-   points \tab integer \tab Team points (the comparison block). \cr
-   rebounds \tab integer \tab Team total rebounds (the comparison block). \cr
-   assists \tab integer \tab Team assists (the comparison block). \cr
-   steals \tab integer \tab Team steals (the comparison block). \cr
-   blocks \tab integer \tab Team blocks made (the comparison block). \cr
-   turnovers \tab integer \tab Team turnovers. \cr
-   fg_made \tab integer \tab Team field goals MADE: the vendor's key is field_goal_percentage but the value is a count of makes. \cr
-   fg2_pct \tab double \tab Team 2-point percentage 0-100. \cr
-   fg3_pct \tab double \tab Team 3-point percentage 0-100. \cr
-   ft_pct \tab double \tab Team free-throw percentage 0-100. \cr
-   fast_break_points \tab double \tab Team fast-break points. \cr
-   paint_points \tab double \tab Team points in the paint. \cr
-   second_chance_points \tab double \tab Team second-chance points. \cr
-   biggest_lead \tab integer \tab The team's largest lead in points. \cr
-   biggest_scoring_run \tab integer \tab The team's longest unanswered scoring run, in points. \cr
-   time_leading_seconds \tab integer \tab Seconds the team led. \cr
-   lead_changes \tab integer \tab Number of lead changes in the game (the same for both rows). \cr
-   top_player_name \tab character \tab Name of the team's top performer (Traditional Chinese or a transliteration). \cr
-   top_player_jersey \tab character \tab Shirt number of the top performer as a string. \cr
-   top_player_points \tab integer \tab Points of the top performer in the game. \cr
-   top_player_rebounds \tab integer \tab Total rebounds of the top performer in the game. \cr
-   top_player_assists \tab integer \tab Assists of the top performer in the game. \cr
-}
+A \code{hoopR_data} tibble with one row per team in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "pleague_preciser_summary_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Post-game team comparison of one finished game: totals, situational points, lead tracker and top performer.

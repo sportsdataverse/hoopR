@@ -17,34 +17,10 @@ the same as omitting it (verified on awards and rosters)}
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
-   team_code \tab character \tab Team code (FIBA country code or club abbreviation). \cr
-   team_name \tab character \tab Team name (the country for a national team, the club for a club team). \cr
-   organisation_id \tab integer \tab Stable federation or club id (Int64), the same in every competition and season (64 = Germany). \cr
-   competition_id \tab integer \tab FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. \cr
-   person_id \tab integer \tab FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P_\verb{<id>} = gdapPlayerId. \cr
-   first_name \tab character \tab Given name(s) as registered with FIBA. \cr
-   last_name \tab character \tab Last name (officials: upper case). \cr
-   gender \tab character \tab Sex of the person: M or F (Male/Female on getgdapcompetitionnominationsbyid). \cr
-   date_of_birth \tab character \tab Date of birth, YYYY-MM-DD. \cr
-   uniform_number \tab character \tab Jersey number (a string). \cr
-   uniform_name \tab character \tab Name printed on the jersey. \cr
-   position \tab character \tab Playing position (roster: Point Guard...; game page: PG, SG, SF, PF, C). \cr
-   height_in_cm \tab integer \tab Player height in centimetres. \cr
-   height_in_feet_inches \tab character \tab Height, feet and inches string (6'7"). \cr
-   nationality \tab character \tab FIBA code of the main nationality. \cr
-   is_on_final_roster \tab logical \tab True when on the final (12-player) roster. \cr
-   games_played \tab integer \tab Games played in the competition. \cr
-   club_id \tab integer \tab Organisation id of the player's club (organisationId key space). \cr
-   club_name \tab character \tab Club at the time of the competition. \cr
-   country_fiba_code \tab character \tab FIBA code of the country the person represents. \cr
-   club_country_fiba_code \tab character \tab FIBA code of the club's country. \cr
-   is_captain \tab logical \tab True for the team captain. \cr
-   is_player_free_agent \tab logical \tab True when the player had no club. \cr
-   final_roster_member_status_code \tab character \tab Roster entry status: VALID, PARTIAL (incomplete registration). \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_roster")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A team's roster at a competition.

@@ -15,21 +15,10 @@ page record (a list): \code{data.json} as served plus \verb{_request} (the ids a
 record parsed from an HTML page.}
 }
 \value{
-A \code{hoopR_data} tibble (a zero-row tibble with these columns when Genius answers
-an empty valid page), or the raw list when \code{return_parsed = FALSE}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab From the webcast link. Genius match id: the \{matchId\} of data.json and /u/; one global sequence across every Genius customer (~0.3 M in 2016, ~2.9 M in Oct 2026) \cr
-   webcast_org \tab character \tab ORG code of the webcast link; can differ from the hosted ORG (NZNBL games link /webcast/NZN/) \cr
-   competition_name \tab character \tab Competition label, free text \cr
-   status \tab character \tab Status text as shown ('Final', 'Live', a tip-off time) \cr
-   date \tab character \tab Date as shown, 'DD/MM/YYYY' in samples (format follows the widget locale; unverified for others) \cr
-   home_team_id \tab integer \tab Home team from the \verb{tid<N>} class. Genius team id (warehouse key space, global across orgs and seasons; the /team/\{id\} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code \cr
-   home_team_code \tab character \tab Home team short code from the widget, in the local script when the org enters one. \cr
-   home_score \tab integer \tab Home points; null before tip-off (typed integer only on a route whose 3 sampled rows were all played) \cr
-   away_team_id \tab integer \tab Away team from the \verb{tid<N>} class. Genius team id (warehouse key space, global across orgs and seasons; the /team/\{id\} of hosted pages, the tid of the widget, the teamId of data/competition). data.json carries no team id: join on name/code \cr
-   away_team_code \tab character \tab Away team short code from the widget, in the local script when the org enters one. \cr
-   away_score \tab integer \tab Away points; null before tip-off (typed integer only on a route whose 3 sampled rows were all played) \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "genius_widget_games")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The latest games a league site's results widget shows (needs no proxy).

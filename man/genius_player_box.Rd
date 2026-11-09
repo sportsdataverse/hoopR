@@ -15,61 +15,10 @@ page record (a list): \code{data.json} as served plus \verb{_request} (the ids a
 record parsed from an HTML page.}
 }
 \value{
-A \code{hoopR_data} tibble (a zero-row tibble with these columns when Genius answers
-an empty valid page), or the raw list when \code{return_parsed = FALSE}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab Genius match id of the game. data.json does not carry it: it is the match_id asked for, stamped by the runtime (the global match sequence shared by every Genius customer). \cr
-   tno \tab integer \tab Team number within this game: 1 = the team listed first (home on the hosted schedule and widget), 2 = the other, 0 = no team. In-game only: not a team id. \cr
-   pno \tab integer \tab Player number within this game, the key of the team's player map; 0 = no player. In-game only: not a person id and not the shirt number. \cr
-   name \tab character \tab Display name ('T. Nichols') \cr
-   first_name \tab character \tab Given name in the competition's own script and spelling (Greek, Hebrew, Czech, ... as entered) \cr
-   family_name \tab character \tab Family name in the competition's own script \cr
-   international_first_name \tab character \tab Given name in Latin script \cr
-   international_family_name \tab character \tab Family name in Latin script (often upper case) \cr
-   scoreboard_name \tab character \tab Short display name ('T. Nichols'), in the local script when the org enters one \cr
-   shirt_number \tab character \tab Shirt number as a string ('0' and '00' differ) \cr
-   playing_position \tab character \tab Playing position code (PG, SG, SF, PF, C, G, F, ...); empty string when not entered \cr
-   starter \tab integer \tab 1 when the player started the game, else 0 \cr
-   captain \tab integer \tab 1 for the team captain, else 0; absent in some orgs \cr
-   active \tab integer \tab 1 when the player is on court now (at game end: on court at the final whistle), else 0 \cr
-   minutes \tab character \tab Minutes as the feed prints them, an 'mm:ss' text (can exceed 59 for a team; '199:60' happens); the text of an integer when the feed sends one. \cr
-   seconds_played \tab integer \tab Seconds played parsed from the printed mm:ss text as minutes * 60 + seconds (so '224:60' gives 13500); null when the feed sent an integer, whose unit is unknown. \cr
-   field_goals_made \tab integer \tab Field goals the player made in the game (two- and three-pointers together; a count). \cr
-   field_goals_attempted \tab integer \tab Field goals the player attempted in the game (two- and three-pointers together; a count). \cr
-   field_goals_percentage \tab double \tab Field-goal percentage, 0-100, rounded to an integer by the feed \cr
-   three_pointers_made \tab integer \tab Three-pointers made \cr
-   three_pointers_attempted \tab integer \tab Three-pointers attempted \cr
-   three_pointers_percentage \tab double \tab Three-point percentage, 0-100, rounded to an integer \cr
-   two_pointers_made \tab integer \tab Two-pointers made \cr
-   two_pointers_attempted \tab integer \tab Two-pointers attempted \cr
-   two_pointers_percentage \tab double \tab Two-point percentage, 0-100, rounded to an integer \cr
-   free_throws_made \tab integer \tab Free throws the player made in the game (a count). \cr
-   free_throws_attempted \tab integer \tab Free throws the player attempted in the game (a count). \cr
-   free_throws_percentage \tab double \tab Free-throw percentage, 0-100, rounded to an integer \cr
-   rebounds_defensive \tab integer \tab Defensive rebounds \cr
-   rebounds_offensive \tab integer \tab Offensive rebounds \cr
-   rebounds_total \tab integer \tab Total rebounds (offensive plus defensive) the player collected in the game. \cr
-   assists \tab integer \tab Assists credited to the player in the game. \cr
-   turnovers \tab integer \tab Turnovers committed by the player in the game. \cr
-   steals \tab integer \tab Steals credited to the player in the game. \cr
-   blocks \tab integer \tab Shots the player blocked in the game (blocks made, not received). \cr
-   blocks_received \tab integer \tab Own shots blocked by an opponent \cr
-   fouls_personal \tab integer \tab Personal fouls committed \cr
-   fouls_on \tab integer \tab Fouls drawn: personal fouls committed against the player in the game. \cr
-   points \tab integer \tab Points the player scored in the game, free throws included. \cr
-   points_from_turnovers \tab integer \tab Points off turnovers \cr
-   points_second_chance \tab integer \tab Second-chance points \cr
-   points_fast_break \tab integer \tab Fast-break points \cr
-   points_in_the_paint \tab integer \tab Points the player scored in the paint in the game (the feed's sPointsInThePaint). \cr
-   plus_minus_points \tab integer \tab Plus/minus: team point margin while the player was on court \cr
-   eff_1 \tab integer \tab Genius efficiency formula 1. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
-   eff_2 \tab integer \tab Genius efficiency formula 2. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
-   eff_3 \tab double \tab Genius efficiency formula 3. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
-   eff_4 \tab double \tab Genius efficiency formula 4. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
-   eff_5 \tab integer \tab Genius efficiency formula 5. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
-   eff_6 \tab integer \tab Genius efficiency formula 6. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site \cr
-   eff_7 \tab integer \tab Genius efficiency formula 7. The feed carries seven formulas (eff_1..eff_7) with no labels; the definitions are not published. In samples eff_1/eff_6/eff_7 often agree (an index-rating style total), eff_3/eff_4 are decimals. Unverified: do not treat any as PIR/EFF without checking against a league site. Absent in the 2014-15 era sample (WBBL 12248), which carries eff_1..eff_6 on players and no team tot_eff_* \cr
-}
+A \code{hoopR_data} tibble with one row per player in the game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "genius_player_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Player box score of a finished game: minutes, shooting, rebounds, assists and the efficiency formulas.

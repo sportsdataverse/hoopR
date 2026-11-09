@@ -10,11 +10,10 @@ ibba_segev_game_crosswalk(df)
 \item{df}{A data frame from \code{\link[=ibba_games]{ibba_games()}} or \code{\link[=ibba_games_by_team]{ibba_games_by_team()}}.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per game:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab IBBA game id (key space: basket.co.il games): the \code{game_id} of \code{\link[=ibba_games]{ibba_games()}} and \code{\link[=ibba_box_score]{ibba_box_score()}}. \cr
-   segev_game_id \tab integer \tab The Segev game id of the same game: the \code{game_id} every \verb{ibba_segev_*()} wrapper takes. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "ibba_segev_game_crosswalk")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{IBBA \code{game_id} <-> Segev \code{game_id}, from an \code{\link[=ibba_games]{ibba_games()}} (or \code{\link[=ibba_games_by_team]{ibba_games_by_team()}})

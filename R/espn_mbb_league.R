@@ -21,11 +21,7 @@ NULL
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
-#' @return A single `hoopR_data` tibble with one row per category-athlete
-#'   pair.
-#'
-#'    Columns as documented in the shared [espn_mbb_leaders_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_leaders", unit = "category-athlete pair")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
@@ -61,10 +57,7 @@ NULL
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
-#' @return A single `hoopR_data` tibble with one row per venue.
-#'
-#'    Columns as documented in the shared [espn_mbb_venues_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_venues", unit = "venue")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
@@ -98,10 +91,7 @@ NULL
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
-#' @return A single `hoopR_data` tibble with one row per coach.
-#'
-#'    Columns as documented in the shared [espn_mbb_coaches_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_coaches", unit = "coach")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
@@ -142,10 +132,7 @@ NULL
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
-#' @return A single `hoopR_data` tibble with one row per athlete.
-#'
-#'    Columns as documented in the shared [espn_mbb_athletes_index_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_athletes_index", unit = "athlete")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble bind_rows any_of
 #' @importFrom janitor clean_names
@@ -183,10 +170,7 @@ NULL
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
-#' @return A single `hoopR_data` tibble with one row per season.
-#'
-#'    Columns as documented in the shared [espn_mbb_seasons_schema] table.
-#'
+#' @eval .returns_rd("espn_mbb_seasons", unit = "season")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble any_of
 #' @importFrom janitor clean_names
@@ -220,22 +204,10 @@ NULL
 #' @param ... Additional arguments; currently unused but retained for
 #'   forward compatibility. Proxy configuration should use
 #'   `options(hoopR.proxy = ...)` -- see `?hoopR` for details.
-#' @return A named list of `hoopR_data` tibbles:
-#'   `Info`, `Types`, `Athletes`, `Coaches`, `Teams`, `Awards`.
+#' @eval .returns_rd("espn_mbb_season_info")
+#' @return `Types`, `Athletes`, `Coaches`, `Teams` and `Awards` share the second table.
 #'   `$ref` URL components are returned as character columns and are NOT
 #'   auto-resolved -- use targeted endpoint functions for details.
-#'
-#'    **Info**
-#'
-#'    Columns as documented in the shared [espn_mbb_season_info_info_schema] table.
-#'
-#'    **Types / Athletes / Coaches / Teams / Awards**
-#'
-#'    |col_name |types     |description     |
-#'    |:--------|:---------|:---------------|
-#'    |count    |integer   |Count of count. |
-#'    |ref      |character |                |
-#'
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr as_tibble any_of
 #' @importFrom janitor clean_names

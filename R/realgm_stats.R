@@ -26,22 +26,7 @@
 #'   `"Misc_Stats"`.
 #' @param season_type Season segment. One of `"Regular_Season"` (default),
 #'   `"Playoffs"`, `"Preseason"` or `"Summer_League"`.
-#' @return A `hoopR_data` tibble (one row per qualified player) carrying the
-#'   requested `season`, `stat_type` and `season_type` as columns. Columns vary
-#'   by `stat_type`; for `"Averages"`:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       player \tab character \tab Player name. \cr
-#'       team \tab character \tab Team abbreviation. \cr
-#'       gp \tab integer \tab Games played. \cr
-#'       mpg \tab numeric \tab Minutes per game. \cr
-#'       ppg \tab numeric \tab Points per game. \cr
-#'       rpg \tab numeric \tab Rebounds per game. \cr
-#'       apg \tab numeric \tab Assists per game. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("realgm_player_stats", inline = FALSE, unit = "qualified player")
 #' @keywords RealGM
 #' @importFrom rvest read_html html_elements html_table
 #' @importFrom janitor clean_names

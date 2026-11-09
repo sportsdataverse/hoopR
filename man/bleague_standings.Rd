@@ -13,31 +13,10 @@ own year is the START year, so the request sends \code{season - 1}.}
 \item{tab}{(\emph{integer} required): division tab: 1 = B1, 2 = B2, 3 = B3.}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. \cr
-   tab \tab integer \tab Division tab: 1 = B1, 2 = B2, 3 = B3. \cr
-   season_label \tab character \tab Season label of the selected option (2025-26). \cr
-   section \tab character \tab Table heading in Japanese (East, Central and West divisions, wild card); section_en is its English name. \cr
-   section_en \tab character \tab English name of section for the four known headings; null for any other heading. \cr
-   rank \tab integer \tab Rank in that table; a club in a division table also appears in the wild-card table. \cr
-   team_id \tab character \tab B.LEAGUE TeamID as text (key space: B.LEAGUE clubs, stable across seasons AND club renames: 703 = Tochigi Brex in 2016-17 = Utsunomiya Brex in 2025-26). The feed sends a string on v2 and an integer on v1; both are text here. Not a player id. \cr
-   team \tab character \tab Club name in Japanese as the standings page prints it (e.g. Chiba Jets). \cr
-   team_short \tab character \tab Club short name in Japanese (e.g. Chiba J). \cr
-   wins \tab integer \tab Games won so far this season in the table. \cr
-   losses \tab integer \tab Games lost so far this season in the table. \cr
-   win_pct \tab double \tab Win percentage as a 0-1 fraction. \cr
-   games_behind \tab double \tab Games behind the table leader. \cr
-   points_for \tab integer \tab Points scored over the season to date. \cr
-   points_against \tab integer \tab Points allowed over the season to date. \cr
-   point_diff \tab integer \tab Point differential. \cr
-   home_record \tab character \tab Home record W-L. \cr
-   away_record \tab character \tab Away record W-L. \cr
-   last_n \tab integer \tab Length of the recent-form window the page shows: 5 or 10 games. \cr
-   last_n_record \tab character \tab Record W-L over the last_n games. \cr
-   streak \tab character \tab Current streak as printed: W5 = five straight wins, L1 = one loss. \cr
-   division_title \tab character \tab Division-title mark as printed; null when none ('--'). \cr
-}
+A \code{hoopR_data} tibble with one row per club per table.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "bleague_standings")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Standings of one B.LEAGUE season and division, one row per club per table

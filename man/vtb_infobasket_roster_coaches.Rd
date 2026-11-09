@@ -20,30 +20,10 @@ labels follow it.}
 The season table is read for this tag.}
 }
 \value{
-A \code{hoopR_data} tibble: A club's coaches in one season (no birth data). The columns are always these, in this order
-(sportsdataverse-py \code{vtb_infobasket_roster_coaches}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows
-for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Infobasket TeamID (2650 = Lokomotiv Kuban); the v2 teamId. Not a club-record id and not a registration id. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the season the request asked for, stamped by the runtime. \cr
-   person_id \tab integer \tab Infobasket person id (PersonID): one person (player, coach or official) across clubs and seasons. Joins to /Widget/PlayerPage/\{personId\} (players) and /Widget/CoachPage/\{personId\} (coaches). \cr
-   coach_number \tab integer \tab Coach order on the team sheet (1 = head coach). \cr
-   display_number \tab character \tab Shirt number as displayed ('0' and '00' differ). \cr
-   post_id \tab integer \tab Unobserved: null in every sample, so its type and meaning are unconfirmed. \cr
-   post \tab character \tab Coaching post ('Head Coach', 'Assistant Coach'). \cr
-   country_code_ioc \tab character \tab Nationality code: ISO 3166 alpha-2 in most rows ('RU', 'US'), IOC alpha-3 in some ('BLR'). \cr
-   country_name \tab character \tab Nationality, English country name. \cr
-   rank \tab integer \tab Unobserved: the roster sends an empty string for every player and coach (null here); the field belongs to the leader lists (best_players), so its meaning on the roster is unconfirmed. \cr
-   is_active \tab logical \tab True while the person is on the current roster. \cr
-   active_status \tab character \tab Roster status text ('Accepted'), empty otherwise. \cr
-   person_last_name_ru \tab character \tab Last name, Russian. \cr
-   person_last_name_en \tab character \tab Last name, English. \cr
-   person_first_name_ru \tab character \tab First name, Russian. \cr
-   person_first_name_en \tab character \tab First name, English. \cr
-   person_full_name_ru \tab character \tab Full name, 'Last First', Russian. \cr
-   person_full_name_en \tab character \tab Full name, 'Last First', English. \cr
-   person_gender \tab integer \tab Person gender: 1 on every sampled (male) person. \cr
-}
+A \code{hoopR_data} tibble with one row per staff member.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_roster_coaches")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A club's coaches in one season (no birth data).

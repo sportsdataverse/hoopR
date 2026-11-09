@@ -20,41 +20,15 @@ cbbd_teams_roster(season = most_recent_mbb_season(), team = NULL)
 \item{team}{(\emph{character} optional): Team name filter (e.g. \code{Duke}).}
 }
 \value{
-A \code{hoopR_data} tibble with one row per team:
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_teams")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab integer \tab CollegeBasketballData team id. \cr
-      source_id \tab character \tab Source (ESPN) team id. \cr
-      school \tab character \tab School name. \cr
-      mascot \tab character \tab Team mascot. \cr
-      abbreviation \tab character \tab Team abbreviation. \cr
-      display_name \tab character \tab Full team display name. \cr
-      short_display_name \tab character \tab Short team display name. \cr
-      primary_color \tab character \tab Primary team color (hex). \cr
-      secondary_color \tab character \tab Secondary team color (hex). \cr
-      current_venue_id \tab integer \tab Current home venue id. \cr
-      current_venue \tab character \tab Current home venue name. \cr
-      current_city \tab character \tab Current home venue city. \cr
-      current_state \tab character \tab Current home venue state. \cr
-      conference_id \tab integer \tab Conference id. \cr
-      conference \tab character \tab Conference name. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
-
-A \code{hoopR_data} tibble with one row per team. The \code{players} column is a
-nested list of roster players:
-
-\if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      team_id \tab integer \tab CollegeBasketballData team id. \cr
-      team_source_id \tab character \tab Source (ESPN) team id. \cr
-      team \tab character \tab Team name. \cr
-      conference \tab character \tab Conference name. \cr
-      season \tab integer \tab Season (4-digit ending-year). \cr
-      players \tab list \tab Nested list of roster players. \cr
-   }}
-\if{latex}{See the HTML help or pkgdown reference for the column table.}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cbbd_teams_roster")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Get college basketball teams from the CollegeBasketballData API.}

@@ -22,25 +22,10 @@ platform game uuids; the Genius match id is \code{extId} / \code{gameSourceId} i
 \item{away_team_uuid}{(required) Away team uuid; without it the away side comes back blank.}
 }
 \value{
-A \code{hoopR_data} tibble: Post-game team comparison (2023/24 on). An empty valid answer raises \code{hoopR_no_data};
-the documented columns come first, in this order (sportsdataverse-py \code{sportality_post_game_team_stats}), then any column
-the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   home_team_side_translate_key \tab character \tab Translation key of the comparison row's label (s_2P, s_3P, s_FT, ...); the site translates it. \cr
-   home_team_left_type \tab character \tab Stat code of the left value (2PM = two-pointers made). \cr
-   home_team_left_value \tab integer \tab Value of the left-hand statistic of the comparison row. \cr
-   home_team_right_type \tab character \tab Stat code of the right value (2PA = two-pointers attempted). \cr
-   home_team_right_value \tab integer \tab Value of the right-hand statistic of the comparison row. \cr
-   home_team_center_type \tab character \tab Stat code of the centre value (2PPerc = two-point percentage). \cr
-   home_team_center_value \tab integer \tab Centre value (percentage as an integer 0-100). \cr
-   away_team_side_translate_key \tab character \tab Translation key of the comparison row's label (s_2P, s_3P, s_FT, ...); the site translates it. \cr
-   away_team_left_type \tab character \tab Stat code of the left value (2PM = two-pointers made). \cr
-   away_team_left_value \tab integer \tab Value of the left-hand statistic of the comparison row. \cr
-   away_team_right_type \tab character \tab Stat code of the right value (2PA = two-pointers attempted). \cr
-   away_team_right_value \tab integer \tab Value of the right-hand statistic of the comparison row. \cr
-   away_team_center_type \tab character \tab Stat code of the centre value (2PPerc = two-point percentage). \cr
-   away_team_center_value \tab integer \tab Centre value (percentage as an integer 0-100). \cr
-}
+A \code{hoopR_data} tibble with one row per statistic.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_post_game_team_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Post-game team comparison (2023/24 on).

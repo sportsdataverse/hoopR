@@ -19,24 +19,10 @@ competitions.}
 \code{"fr-FR"}. Omitted = the site's own language. Ids and codes never change.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per \verb{(fixture_id, period_id)}:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   website_id \tab integer \tab Site config id the body came from (12 LNB, 14 LNBP, 3 NBL1, 13 El Salvador, 22 Panama, 236 Austria, 326 Montenegro), read from the body's links.self. \cr
-   fixture_id \tab character \tab Game UUID (fixture); the key of every game frame and of the fixture_detail routes. \cr
-   season_id \tab character \tab Season UUID of the game. \cr
-   period_id \tab integer \tab Period number: 1-4 regulation, 11, 12, ... overtimes (not 5). \cr
-   label \tab character \tab Short period label in the site's language (Q1, P1), as sent. \cr
-   is_overtime \tab logical \tab True for an overtime period. \cr
-   is_shootout \tab logical \tab True for a shootout period. \cr
-   started \tab logical \tab True once the period has started. \cr
-   ended \tab logical \tab True once the period has ended. \cr
-   duration_minutes \tab integer \tab Length of the period in minutes. \cr
-   elapsed_minutes_before_period \tab integer \tab Minutes of game time played before the period starts (40 for the first overtime). \cr
-   home_entity_id \tab character \tab Team UUID of the home team, from the fixture's isHome flag. \cr
-   away_entity_id \tab character \tab Team UUID of the away team, from the fixture's isHome flag. \cr
-   home_points \tab integer \tab Points the home team scored in this period (not the running score). \cr
-   away_points \tab integer \tab Points the away team scored in this period (not the running score). \cr
-}
+A \code{hoopR_data} tibble with one row per (\code{fixture_id}, \code{period_id}).
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "atrium_fixture_periods")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{One game's periods with the points each team scored in each, overtime periods

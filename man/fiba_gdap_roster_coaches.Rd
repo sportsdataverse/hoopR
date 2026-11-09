@@ -21,28 +21,10 @@ the same as omitting it (verified on awards and rosters)}
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
-   team_code \tab character \tab Team code (FIBA country code or club abbreviation). \cr
-   team_name \tab character \tab Team name (the country for a national team, the club for a club team). \cr
-   organisation_id \tab integer \tab Stable federation or club id (Int64), the same in every competition and season (64 = Germany). \cr
-   competition_id \tab integer \tab FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. \cr
-   person_id \tab integer \tab FIBA person id, global across competitions and roles (player, coach, official): roster personId = play-by-play pId = game-page P_\verb{<id>} = gdapPlayerId. \cr
-   first_name \tab character \tab Given name(s) as registered with FIBA. \cr
-   last_name \tab character \tab Last name (officials: upper case). \cr
-   gender \tab character \tab Sex of the person: M or F (Male/Female on getgdapcompetitionnominationsbyid). \cr
-   function \tab character \tab Role: Head Coach, Coach, Assistant Coach. \cr
-   is_head_coach \tab integer \tab 1 for the head coach, 0 otherwise (an integer flag, not a boolean). \cr
-   is_assistant_coach \tab integer \tab 1 for an assistant coach, else null (integer flag). \cr
-   is_accompanying_coach \tab logical \tab Accompanying-coach flag; always null in the samples, values unverified. \cr
-   coach_display_order \tab integer \tab Display order; null when unset. \cr
-   is_on_final_roster \tab logical \tab True when on the final (12-player) roster. \cr
-   nationalities \tab character \tab Nationalities (FIBA codes on player info; country objects on rosters and officials). Stored as a JSON string. \cr
-   coach_license_organisation_name \tab character \tab Federation that issued the coaching licence. \cr
-   coach_license_country_code \tab character \tab FIBA code of the licensing federation's country. \cr
-   final_roster_member_status_code \tab character \tab Roster entry status: VALID, PARTIAL (incomplete registration). \cr
-}
+A \code{hoopR_data} tibble with one row per staff member.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_roster_coaches")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A team's coaches on its roster at a competition.

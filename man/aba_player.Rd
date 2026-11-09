@@ -17,27 +17,10 @@ druga.aba-liga.com, lea=2). Both sites serve one database; the runtime asks the 
 \code{"aba"}.}
 }
 \value{
-A \code{hoopR_data} tibble.
-One row keyed by (\code{player_id}, \code{season}, \code{league_id}) with the club (\code{team_id} is the global club id),
-position, height in cm, birth date and place, nationality (a three-letter code) and \code{career}, the free-text
-Clubs box joined with \code{"; "} (oldest first). These bio fields are the public player profile.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer with nothing in
-it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   player_id \tab integer \tab ABA player id (global: one person keeps one id across seasons and both leagues, e.g. Carlik Jones = 4807), cast to an integer. Join on it, never on the printed name. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26): the site's START-year key sez (25) plus 2001. \cr
-   league_id \tab integer \tab League code, the site's lea: 1 = ABA League, 2 = ABA League 2. \cr
-   league \tab character \tab League label: aba (ABA League, lea 1) or aba2 (ABA League 2, lea 2), the wrapper's league argument. \cr
-   name \tab character \tab Full name from the h1, 'First Last' (checked against the expected name). \cr
-   team_id \tab integer \tab ABA club id (global: the same id in every season and in both leagues, e.g. Partizan = 22 in 2008-09 and 2025-26). Joins every frame that carries it; the calendar has club names only. \cr
-   club \tab character \tab Club name of the 'Club:' row. \cr
-   position \tab character \tab Position in English as printed ('Guard' on the sample). \cr
-   height_cm \tab integer \tab Height in centimetres ('185 cm'). \cr
-   birth_date \tab Date \tab Date of birth, ISO 'YYYY-MM-DD' (public player bio). \cr
-   birth_place \tab character \tab Place of birth as printed, 'City, COUNTRY' ('Cincinnati, USA'). \cr
-   nationality \tab character \tab Sporting nationality, a three-letter code as printed ('SSD' = South Sudan; IOC/FIBA-style codes). \cr
-   career \tab character \tab The Clubs box, one free-text line per stint, oldest first, joined with '; ' ('2021/22 - Texas Legends; 2024-27 - Partizan Mozzart Bet'). \cr
-}
+A \code{hoopR_data} tibble with one row per (\code{player_id}, \code{season}, \code{league_id}).
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "aba_player")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 One player's bio for one season and league: club, position, height, birth date and place, nationality and the

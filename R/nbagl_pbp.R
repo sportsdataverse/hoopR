@@ -9,47 +9,7 @@ NULL
 #' @param game_id Game ID - 10 digits, i.e. 0021900001
 #' @param on_court If TRUE (default), on-court player IDs are added for each play event.
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a data frame of play-by-play with core columns:
-#' When `on_court = TRUE`, lineup columns are included and may be `NA` when lineup
-#' inference data is unavailable for a given game.
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       game_id \tab character \tab Unique game identifier. \cr
-#'       action_number \tab integer \tab Sequential action number within a game (V3 PBP). \cr
-#'       clock \tab character \tab Game clock value. \cr
-#'       period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
-#'       team_id \tab integer \tab Unique team identifier. \cr
-#'       person_id \tab integer \tab Unique player identifier (V3 endpoints). \cr
-#'       player_name \tab character \tab Player name. \cr
-#'       x_legacy \tab integer \tab V2-format X coordinate (preserved for V3-to-V2 compatibility). \cr
-#'       y_legacy \tab integer \tab V2-format Y coordinate (preserved for V3-to-V2 compatibility). \cr
-#'       shot_distance \tab numeric \tab Shot distance from the basket, in feet. \cr
-#'       shot_result \tab character \tab Shot result ('Made' / 'Missed'). \cr
-#'       is_field_goal \tab integer \tab 1 if the action was a field goal; 0 otherwise. \cr
-#'       score_home \tab character \tab Score home. \cr
-#'       score_away \tab character \tab Score away. \cr
-#'       points_total \tab integer \tab Running total of points scored. \cr
-#'       location \tab character \tab Location. \cr
-#'       description \tab character \tab Long-form description text. \cr
-#'       action_type \tab character \tab Action type label (e.g. 'Made Shot', 'Substitution'). \cr
-#'       sub_type \tab character \tab Action sub-type label. \cr
-#'       video_available \tab logical \tab Video available. \cr
-#'       shot_value \tab integer \tab Point value of the shot (2 or 3). \cr
-#'       action_id \tab integer \tab Unique action identifier within a game (V3 PBP). \cr
-#'       away_player1 \tab numeric \tab Away team's player1. \cr
-#'       away_player2 \tab numeric \tab Away team's player2. \cr
-#'       away_player3 \tab numeric \tab Away team's player3. \cr
-#'       away_player4 \tab numeric \tab Away team's player4. \cr
-#'       away_player5 \tab numeric \tab Away team's player5. \cr
-#'       home_player1 \tab numeric \tab Home team's player1. \cr
-#'       home_player2 \tab numeric \tab Home team's player2. \cr
-#'       home_player3 \tab numeric \tab Home team's player3. \cr
-#'       home_player4 \tab numeric \tab Home team's player4. \cr
-#'       home_player5 \tab numeric \tab Home team's player5. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("nbagl_pbp", inline = FALSE, unit = "play-by-play event")
 #' @importFrom jsonlite fromJSON
 #' @importFrom dplyr pull bind_rows
 #' @import rvest
@@ -109,10 +69,7 @@ NULL
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a data frame: PlayByPlay
-#'
-#'    Columns as documented in the shared [nba_live_pbp_schema] table.
-#'
+#' @eval .returns_rd("nbagl_live_pbp", inline = FALSE, unit = "play-by-play event")
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest
@@ -210,63 +167,7 @@ NULL
 #' @author Saiem Gilani
 #' @param game_id Game ID
 #' @param ... Additional arguments passed to an underlying function like httr.
-#' @return Returns a named list of data frames: game_details, arena, officials, home_team_boxscore,
-#' away_team_boxscore, home_team_player_boxscore, away_team_player_boxscore, home_team_linescores,
-#' away_team_linescores
-#'
-#'    **game_details**
-#'
-#'
-#'    Columns as documented in the shared [nba_live_boxscore_game_details_schema] table.
-#'
-#'    **arena**
-#'
-#'
-#'    Columns as documented in the shared [nba_live_boxscore_arena_schema] table.
-#'
-#'    **officials**
-#'
-#'
-#'    Columns as documented in the shared [nba_live_boxscore_officials_schema] table.
-#'
-#'    **home_team_boxscore**
-#'
-#'
-#'    Columns as documented in the shared [nba_live_boxscore_home_team_boxscore_schema] table.
-#'
-#'    **away_team_boxscore**
-#'
-#'
-#'    Columns as documented in the shared [nba_live_boxscore_home_team_boxscore_schema] table.
-#'
-#'    **home_team_player_boxscore**
-#'
-#'
-#'    Columns as documented in the shared [nba_live_boxscore_home_team_player_boxscore_schema] table.
-#'
-#'    **away_team_player_boxscore**
-#'
-#'
-#'    Columns as documented in the shared [nba_live_boxscore_home_team_player_boxscore_schema] table.
-#'
-#'    **home_team_linescores**
-#'
-#'
-#'    |col_name    |types     |description                                   |
-#'    |:-----------|:---------|:---------------------------------------------|
-#'    |period      |integer   |Period of the game (1-4 quarters; 5+ for OT). |
-#'    |period_type |character |Period type.                                  |
-#'    |score       |integer   |Final score.                                  |
-#'
-#'    **away_team_linescores**
-#'
-#'
-#'    |col_name    |types     |description                                   |
-#'    |:-----------|:---------|:---------------------------------------------|
-#'    |period      |integer   |Period of the game (1-4 quarters; 5+ for OT). |
-#'    |period_type |character |Period type.                                  |
-#'    |score       |integer   |Final score.                                  |
-#'
+#' @eval .returns_rd("nbagl_live_boxscore", inline = FALSE)
 #' @importFrom jsonlite fromJSON toJSON
 #' @importFrom dplyr filter select rename bind_cols bind_rows as_tibble
 #' @import rvest

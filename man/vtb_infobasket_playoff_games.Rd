@@ -11,28 +11,10 @@ vtb_infobasket_playoff_games(comp_id)
 (Regular Season 2025-26) or 54281 (Playoff 2025-26).}
 }
 \value{
-A \code{hoopR_data} tibble: The games of every series of a playoff stage. The columns are always these, in this order
-(sportsdataverse-py \code{vtb_infobasket_playoff_games}); an empty valid answer raises \code{hoopR_no_data}, a valid body with no rows
-for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   comp_id \tab integer \tab Stage CompID the request asked for (50720 = the 2025-26 regular season): a stage below the season, not an END year. \cr
-   tree \tab integer \tab Bracket tree number (1 = the main bracket). \cr
-   round \tab integer \tab Round as the number of series in it (4 = quarter-finals, 2 = semi-finals, 1 = final). \cr
-   sort \tab integer \tab Series order within the round. \cr
-   game_id \tab integer \tab Infobasket game id (GameID); equals the v2 API \code{matchId}. Joins to /Widget/GetOnline/\{gameId\} and /Widget/GamePage/\{gameId\}. \cr
-   game_status \tab integer \tab Game status in the game-record code set: 21 on every completed game sampled (not the calendar's 0/1/2). \cr
-   score \tab character \tab Final score 'side1:side2'. \cr
-   plus_minus \tab integer \tab Point difference from side 1's view. \cr
-   game_date \tab character \tab Game date as an ISO 8601 date (YYYY-MM-DD); the wire sends DD.MM.YYYY. \cr
-   team1_id \tab integer \tab TeamID of side 1. \cr
-   team2_id \tab integer \tab TeamID of side 2. \cr
-   team1_place \tab integer \tab Seed of side 1. \cr
-   team2_place \tab integer \tab Seed of side 2. \cr
-   home_team \tab integer \tab Home side of that game (1 or 2). \cr
-   win_team \tab integer \tab Winning side of that game (1 or 2). \cr
-   score1 \tab integer \tab Series wins of side 1. \cr
-   score2 \tab integer \tab Series wins of side 2. \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "vtb_infobasket_playoff_games")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The games of every series of a playoff stage.

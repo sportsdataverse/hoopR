@@ -11,16 +11,10 @@ tbf_period_scores(match_id)
 sequence across leagues and seasons. Only a finished game is served.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per side and period (home first).
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   match_id \tab integer \tab TBF game id (key space: TBF games, ONE global sequence across leagues and seasons: 62552 in 2006-07, 346279 in 2026-27). The match_id argument of every game wrapper; the routes echo it as a string or null, the runtime stamps the integer asked for. \cr
-   side \tab character \tab Side of the score: home (homeTeamScore) or away (awayTeamScore). \cr
-   period \tab integer \tab Period number (quarter): 1-4 regulation; overtime numbering is unverified. \cr
-   period_type \tab integer \tab Period type code: 1 = regulation, 2 = overtime (from the app code; no overtime game in the samples). \cr
-   points \tab integer \tab Points the side scored IN the period (not cumulative). \cr
-}
+A \code{hoopR_data} tibble with one row per side and period.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_period_scores")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Points each side scored in each period of a finished game, overtime included.

@@ -11,40 +11,10 @@ sportality_game_overview(game_uuid)
 platform game uuids; the Genius match id is \code{extId} / \code{gameSourceId} in the body.}
 }
 \value{
-A \code{hoopR_data} tibble: Score, state, clock and the Genius ids of one game (2023/24 on). An empty valid
-answer raises \code{hoopR_no_data}; the documented columns come first, in this order (sportsdataverse-py
-\code{sportality_game_overview}), then any column the API added later:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_uuid \tab character \tab Platform game uuid (c4hh5nig6t); every gameday route takes it. \cr
-   home_team_game_source_id \tab integer \tab Genius match id (Genius key space; integer here). \cr
-   home_team_game_id \tab integer \tab Genius match id (Genius key space; the same number as gameSourceId). \cr
-   home_team_team_id \tab integer \tab Genius team id of the home team (Genius key space; Int64). \cr
-   home_team_team_name \tab character \tab Name of the home team. \cr
-   home_team_team_code \tab character \tab Home team code as Genius spells it (mixed case, 'Hol'). \cr
-   home_team_team_number \tab integer \tab Team number in the game; home is 1. \cr
-   home_team_place \tab character \tab home. Values: \code{home} = home team. \cr
-   home_team_instance_id \tab character \tab Site instance id of the home club (platform key space). \cr
-   home_team_source \tab character \tab Feed that produced the row (genius-basketball-stream-reader). \cr
-   home_team_game_uuid \tab character \tab Game uuid (platform key space). \cr
-   away_team_game_source_id \tab integer \tab Genius match id (Genius key space; integer here). \cr
-   away_team_game_id \tab integer \tab Genius match id (Genius key space; the same number as gameSourceId). \cr
-   away_team_team_id \tab integer \tab Genius team id of the away team (Genius key space; Int64). \cr
-   away_team_team_name \tab character \tab Name of the away team. \cr
-   away_team_team_code \tab character \tab Away team code as Genius spells it. \cr
-   away_team_team_number \tab integer \tab Team number in the game; away is 2. \cr
-   away_team_place \tab character \tab away. Values: \code{away} = away team. \cr
-   away_team_instance_id \tab character \tab Site instance id of the away club (platform key space). \cr
-   away_team_source \tab character \tab Feed that produced the row (genius-basketball-stream-reader). \cr
-   away_team_game_uuid \tab character \tab Game uuid (platform key space). \cr
-   home_goals \tab integer \tab Points scored by the home team. \cr
-   away_goals \tab integer \tab Points scored by the away team. \cr
-   state \tab character \tab Game state. Schedule and day views: pre-game or post-game (hyphen). sports-v2 game-info: post_game (underscore). Gameday overview: GameEnded. Values: \code{GameEnded} = played (gameday overview). \cr
-   time_game_id \tab integer \tab Genius match id (Genius key space). \cr
-   time_period \tab integer \tab Period number the clock stands in (1-4 regulation, 5+ overtime). \cr
-   time_period_time \tab character \tab Clock remaining in the period, 'hh:mm:ss' ('00:00:00' once the period or game is over). \cr
-   time_instance_id \tab character \tab Site instance that owns the feed (platform key space; dbl1_dbl). \cr
-   time_source \tab character \tab Feed that produced the row (genius-basketball-stream-reader). \cr
-}
+A \code{hoopR_data} tibble with one row per game.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportality_game_overview")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Score, state, clock and the Genius ids of one game (2023/24 on).

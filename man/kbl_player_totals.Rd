@@ -18,62 +18,10 @@ D-League edition), '03' playoffs, '04' championship final, '07' EASL, '08' D-Lea
 '11'/'13' cups, '14' Open Match Day. Only '01' was probed live.}
 }
 \value{
-A \code{hoopR_data} tibble: Season player totals of one competition (every player with at least one game). The columns
-are always these, in this order (sportsdataverse-py \code{kbl_player_totals}); an empty valid answer raises \code{hoopR_no_data}, a
-valid body with no rows for this frame is a zero-row tibble:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), derived from season_code through the crosswalk (kbl_codes.SEASONS). \cr
-   season_code \tab integer \tab KBL season code: one sequential number over every season and D-League edition (47 = 2025-26, 48 = the 2025 D-League). \cr
-   game_code \tab character \tab Competition inside the season, two digits: 01 regular season, 03 playoffs, 04 final, 07 EASL, 08 D-League stage 2, 10 All-Star, 11/13 cups, 14 Open Match Day. \cr
-   glkey \tab character \tab Competition key \verb{S\{seasonCode\}G\{gameCode\}} (e.g. S47G01 = 2025-26 regular season): the id of the season routes. \cr
-   pcode \tab character \tab KBL player code (six-digit string). \cr
-   player_name \tab character \tab Player name in Korean (foreign players in Hangul transliteration). \cr
-   player_name_en \tab character \tab Player name in English / romanized (sometimes Hangul for former players). \cr
-   team_code \tab character \tab KBL team code (2-digit string, e.g. '50' = Changwon LG). Joins to /common/teamList \code{teamCode}, game \code{tcodeH}/\code{tcodeA}, \code{t} in text-cast. Not stable across ownership changes: the Anyang club is '40' (SBS) in 1997-98 and '70' today. D-League sides have their own codes (\code{teamCodeD}). \cr
-   team_name \tab character \tab Team short name (Korean, e.g. Changwon LG), as it was at the time. English names: /common/teamList \code{teamNameEn} / \code{teamNameFullEn}, joined on the team code. \cr
-   back_num \tab character \tab Jersey number (string). \cr
-   pos \tab character \tab Position code (string): C center, FD forward, GD guard, FC forward-center, GF guard-forward; table in the returns md. \cr
-   player_flag \tab character \tab Player type (string): '0' domestic, '1' foreign import, '2' Asian-quota player. \cr
-   game_count \tab integer \tab Games played (this season or competition). \cr
-   start_count \tab integer \tab Meaning unverified: up to 4 x gameCount in every sampled row, so probably quarters started. \cr
-   score \tab integer \tab Points. Season total for the competition (glkey). \cr
-   fg \tab integer \tab Two-point field goals made, dunks included: 201 + 207 rows (score = 2\emph{fg + 3}threep + ft holds on every sampled box). Season total for the competition (glkey). \cr
-   fg_a \tab integer \tab Two-point field-goal attempts, made + missed, dunks included: 201 + 202 + 207 + 208 rows (checked per team on S47G01N49). Season total for the competition (glkey). \cr
-   fgt \tab integer \tab Field goals made, two- and three-point (fg + threep). Season total for the competition (glkey). \cr
-   fgt_a \tab integer \tab Field-goal attempts, two- and three-point (fgA + threepA). Season total for the competition (glkey). \cr
-   threep \tab integer \tab Three-point field goals made (action 205). Season total for the competition (glkey). \cr
-   threep_a \tab integer \tab Three-point attempts, made + missed (205 + 206). Season total for the competition (glkey). \cr
-   ft \tab integer \tab Free throws made (action 203). Season total for the competition (glkey). \cr
-   ft_a \tab integer \tab Free-throw attempts, made + missed (203 + 204). Season total for the competition (glkey). \cr
-   dk \tab integer \tab Dunks made (action 207); included in \code{fg}. Season total for the competition (glkey). \cr
-   dk_a \tab integer \tab Dunk attempts (made + missed, actions 207 + 208). Season total for the competition (glkey). \cr
-   rb \tab integer \tab Total rebounds (offr + defr; team rebounds are \code{teamR}). Season total for the competition (glkey). \cr
-   offr \tab integer \tab Offensive rebounds (action 209). Season total for the competition (glkey). \cr
-   defr \tab integer \tab Defensive rebounds (action 210). Season total for the competition (glkey). \cr
-   ast \tab integer \tab Assists (action 211). Season total for the competition (glkey). \cr
-   stl \tab integer \tab Steals (action 212). Season total for the competition (glkey). \cr
-   bs \tab integer \tab Blocked shots (action 213). Season total for the competition (glkey). \cr
-   to \tab integer \tab Turnovers (action 214). Season total for the competition (glkey). \cr
-   foul \tab integer \tab Personal fouls (wft + woft). Season total for the competition (glkey). \cr
-   wft \tab integer \tab Fouls that awarded free throws (action 215). Season total for the competition (glkey). \cr
-   woft \tab integer \tab Fouls that awarded no free throws (action 216). Season total for the competition (glkey). \cr
-   pp \tab integer \tab Field goals made in the paint. Season total for the competition (glkey). \cr
-   pp_a \tab integer \tab Field-goal attempts in the paint. Season total for the competition (glkey). \cr
-   pscore \tab integer \tab Points in the paint (2 * pp). Season total for the competition (glkey). \cr
-   sast \tab integer \tab Screen assists (action 226; tracked in recent seasons only, 0 before). Season total for the competition (glkey). \cr
-   dfl \tab integer \tab Deflections (action 227; tracked in recent seasons only, 0 before). Season total for the competition (glkey). \cr
-   gd \tab integer \tab Good-defense plays (action 221). Season total for the competition (glkey). \cr
-   idf \tab integer \tab Illegal-defense violations (action 219; an early-KBL rule, so non-zero only in old seasons). Season total for the competition (glkey). \cr
-   fb \tab integer \tab Fast breaks credited to the player (action 217 rows that name a player, as in 1997-98); 0 in recent seasons, where fast breaks are team rows (\code{tfb}). Season total for the competition (glkey). \cr
-   ef \tab integer \tab Meaning unverified (0 in every game sample; non-zero in some season totals). Season total for the competition (glkey). \cr
-   tf \tab integer \tab Probably technical fouls (unverified; 0 in most rows). Season total for the competition (glkey). \cr
-   inout \tab integer \tab Times the player entered the game, the start included (checked on the 2025-26 sample game); a team row sums its players. Season total for the competition (glkey). \cr
-   inout1 \tab integer \tab Times the player was substituted out before the end (checked on the 2025-26 sample game); a team row sums its players. Season total for the competition (glkey). \cr
-   play_min \tab integer \tab Minutes of playing time; add \code{playSec} seconds. Season total for the competition (glkey). \cr
-   play_sec \tab integer \tab Seconds part of the playing time (0-59), added to \code{playMin}. Season total for the competition (glkey). \cr
-   foulout \tab integer \tab Meaning unverified: values exceed games played (70 for a 40-game player with 74 fouls); possibly fouls drawn, as this route has no \code{fo}. \cr
-   minutes_played \tab double \tab Playing time in minutes (play_min + play_sec / 60), derived. \cr
-}
+A \code{hoopR_data} tibble with one row per player.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "kbl_player_totals")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Season player totals of one competition (every player with at least one game).

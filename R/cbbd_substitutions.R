@@ -4,25 +4,7 @@
 #' **Get substitution data for a single game from the CollegeBasketballData API.**
 #' @param game_id (*integer* required): CollegeBasketballData game id. See
 #'   [cbbd_games()].
-#' @return A `hoopR_data` tibble with one row per substitution. `sub_in` and
-#'   `sub_out` objects are flattened to `sub_in_*` / `sub_out_*` columns:
-#'
-#'    \if{html}{\tabular{lll}{
-#'       col_name \tab types \tab description \cr
-#'       game_id \tab integer \tab Game id. \cr
-#'       start_date \tab character \tab Game start date (ISO 8601). \cr
-#'       team_id \tab integer \tab Team id. \cr
-#'       team \tab character \tab Team name. \cr
-#'       conference \tab character \tab Team conference. \cr
-#'       athlete_id \tab integer \tab Athlete id. \cr
-#'       athlete \tab character \tab Athlete name. \cr
-#'       position \tab character \tab Athlete position. \cr
-#'       opponent_id \tab integer \tab Opponent team id. \cr
-#'       opponent \tab character \tab Opponent team name. \cr
-#'       opponent_conference \tab character \tab Opponent conference. \cr
-#'    }}
-#'    \if{latex}{See the HTML help or pkgdown reference for the column table.}
-#'
+#' @eval .returns_rd("cbbd_substitutions_game", inline = FALSE, unit = "substitution")
 #' @keywords CBD Substitutions
 #' @importFrom jsonlite fromJSON
 #' @importFrom janitor clean_names

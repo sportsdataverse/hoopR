@@ -14,84 +14,10 @@ organisationId}
 \item{return_parsed}{Parse the payload into a tibble (default \code{TRUE}); \code{FALSE} returns the raw JSON list.}
 }
 \value{
-A \code{hoopR_data} tibble (the raw JSON list when \code{return_parsed = FALSE}) with the following columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Competition team id: one per team per competition (Germany = 279569 at the 2023 World Cup, 281545 at Paris 2024). Joins getgdapcompetitionteamrosterbyteamid / getgdapcompetitionteamstatisticsbyteamid gdapTeamId; not an organisationId. \cr
-   competition_id \tab integer \tab FIBA competition id (GDAP key space): one per edition (2023 World Cup = 208182, BCL 2024-25 = 208850); gdapCompetitionId. \cr
-   points_per_game \tab double \tab The team's average points per game played. \cr
-   rebounds_per_game \tab double \tab The bench players' average rebounds per game played. \cr
-   rebounds_offensive_per_game \tab double \tab The bench players' average offensive rebounds per game played. \cr
-   rebounds_defensive_per_game \tab double \tab The bench players' average defensive rebounds per game played. \cr
-   assists_per_game \tab double \tab The team's average assists per game played. \cr
-   blocks_per_game \tab double \tab The team's average blocked shots per game played. \cr
-   turnovers_per_game \tab double \tab The bench players' average turnovers per game played. \cr
-   fouls_per_game \tab double \tab The bench players' average personal fouls per game played. \cr
-   plus_minus_per_game \tab double \tab The team's average plus/minus (point differential while on court) per game played. \cr
-   efficiency_per_game \tab double \tab The team's average efficiency (FIBA EFF) per game played. \cr
-   play_time_in_seconds_per_game \tab double \tab The team's average playing time in seconds per game played. \cr
-   field_goals_made_per_game \tab double \tab The team's average field goals made per game played. \cr
-   field_goals_attempted_per_game \tab double \tab The team's average field goals attempted per game played. \cr
-   two_points_made_per_game \tab double \tab The team's average two-point field goals made per game played. \cr
-   two_points_attempted_per_game \tab double \tab The team's average two-point field goals attempted per game played. \cr
-   three_points_made_per_game \tab double \tab The team's average three-point field goals made per game played. \cr
-   three_points_attempted_per_game \tab double \tab The team's average three-point field goals attempted per game played. \cr
-   free_throws_made_per_game \tab double \tab The team's average free throws made per game played. \cr
-   free_throws_attempted_per_game \tab double \tab The team's average free throws attempted per game played. \cr
-   points_from_turnovers_per_game \tab double \tab The team's average points from turnovers per game played. \cr
-   fast_break_points_per_game \tab double \tab The team's average fast-break points per game played. \cr
-   second_chance_points_per_game \tab double \tab The team's average second-chance points per game played. \cr
-   points_in_the_paint_per_game \tab double \tab The team's average points in the paint per game played. \cr
-   from_bench_points_per_game \tab double \tab The team's average points by bench players per game played. \cr
-   steals_per_game \tab double \tab The team's average steals per game played. \cr
-   total_games_played \tab integer \tab The bench players' total games played over the games played. \cr
-   total_games_won \tab integer \tab The team's total games won over the games played. \cr
-   total_games_lost \tab integer \tab The team's total games lost over the games played. \cr
-   total_rebounds \tab integer \tab The bench players' total rebounds over the games played. \cr
-   total_rebounds_offensive \tab integer \tab The bench players' total offensive rebounds over the games played. \cr
-   total_rebounds_defensive \tab integer \tab The bench players' total defensive rebounds over the games played. \cr
-   total_blocks \tab integer \tab The team's total blocked shots over the games played. \cr
-   total_turnovers \tab integer \tab The bench players' total turnovers over the games played. \cr
-   total_fouls \tab integer \tab The bench players' total personal fouls over the games played. \cr
-   total_assists \tab integer \tab The team's total assists over the games played. \cr
-   total_plus_minus \tab integer \tab The team's total plus/minus (point differential while on court) over the games played. \cr
-   total_efficiency \tab integer \tab The team's total efficiency (FIBA EFF) over the games played. \cr
-   total_play_time_in_seconds \tab integer \tab The team's total playing time in seconds over the games played. \cr
-   total_points \tab integer \tab The team's total points over the games played. \cr
-   total_field_goals_made \tab integer \tab The team's total field goals made over the games played. \cr
-   total_field_goals_attempted \tab integer \tab The team's total field goals attempted over the games played. \cr
-   field_goals_percentage \tab double \tab Field-goal percentage, 0-100 (over the competition; full float precision in averages). \cr
-   total_two_points_made \tab integer \tab The team's total two-point field goals made over the games played. \cr
-   total_two_points_attempted \tab integer \tab The team's total two-point field goals attempted over the games played. \cr
-   two_points_percentage \tab double \tab Two-point field-goal percentage, 0-100 (over the competition; full float precision in averages). \cr
-   total_three_points_made \tab integer \tab The team's total three-point field goals made over the games played. \cr
-   total_three_points_attempted \tab integer \tab The team's total three-point field goals attempted over the games played. \cr
-   three_points_percentage \tab double \tab Three-point field-goal percentage, 0-100 (over the competition; full float precision in averages). \cr
-   total_free_throws_made \tab integer \tab The team's total free throws made over the games played. \cr
-   total_free_throws_attempted \tab integer \tab The team's total free throws attempted over the games played. \cr
-   free_throws_percentage \tab double \tab Free-throw percentage, 0-100 (over the competition; full float precision in averages). \cr
-   total_double_doubles \tab integer \tab The team's total double-doubles over the games played. \cr
-   total_triple_doubles \tab integer \tab The team's total triple-doubles over the games played. \cr
-   total_quadruple_doubles \tab integer \tab The team's total quadruple-doubles over the games played. \cr
-   total_quintuple_doubles \tab integer \tab The team's total quintuple-doubles over the games played. \cr
-   total_points_from_turnovers \tab integer \tab The team's total points from turnovers over the games played. \cr
-   total_fast_break_points \tab integer \tab The team's total fast-break points over the games played. \cr
-   total_second_chance_points \tab integer \tab The team's total second-chance points over the games played. \cr
-   total_points_in_the_paint \tab integer \tab The team's total points in the paint over the games played. \cr
-   total_from_bench_points \tab integer \tab The team's total points by bench players over the games played. \cr
-   total_steals \tab integer \tab The team's total steals over the games played. \cr
-   biggest_lead \tab integer \tab Team's biggest lead in any game of the competition, points. \cr
-   bench_total_games_played \tab integer \tab The bench players' total games played over the games played. \cr
-   bench_rebounds_per_game \tab double \tab The bench players' average rebounds per game played. \cr
-   bench_rebounds_offensive_per_game \tab double \tab The bench players' average offensive rebounds per game played. \cr
-   bench_rebounds_defensive_per_game \tab double \tab The bench players' average defensive rebounds per game played. \cr
-   bench_turnovers_per_game \tab double \tab The bench players' average turnovers per game played. \cr
-   bench_fouls_per_game \tab double \tab The bench players' average personal fouls per game played. \cr
-   bench_total_rebounds \tab integer \tab The bench players' total rebounds over the games played. \cr
-   bench_total_rebounds_offensive \tab integer \tab The bench players' total offensive rebounds over the games played. \cr
-   bench_total_rebounds_defensive \tab integer \tab The bench players' total defensive rebounds over the games played. \cr
-   bench_total_turnovers \tab integer \tab The bench players' total turnovers over the games played. \cr
-   bench_total_fouls \tab integer \tab The bench players' total personal fouls over the games played. \cr
-}
+A \code{hoopR_data} tibble with one row per team.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "fiba_gdap_team_stats")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 A team's per-game averages and totals at a competition, with the bench totals.

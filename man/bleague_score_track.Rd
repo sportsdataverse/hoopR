@@ -16,16 +16,10 @@ belong to; a context whose \code{Year} differs raises \code{hoopR_asset_fetch}. 
 (default) = no check (the key alone selects the game).}
 }
 \value{
-A \code{hoopR_data} tibble with these columns:\tabular{lll}{
-   col_name \tab type \tab description \cr
-   schedule_key \tab integer \tab B.LEAGUE ScheduleKey (key space: B.LEAGUE games, ONE global integer sequence across B1, B2, B3 and every season). The \{schedule_key\} every game wrapper takes and the schedule page's list-item id. \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the feed's Year (the START year) plus one. \cr
-   feed \tab character \tab Source feed of the row: v2 (v2_genius_contexts, B1/B2 from 2020-21) or v1 (v1_contexts: B3, B1/B2 2018-2020, and the 2016-17 / 2017-18 game-page embed). The feeds differ in id types, dates and some codes. \cr
-   period \tab integer \tab Period number: 1-4 regulation; overtime numbering is unverified (no overtime sample). \cr
-   event_index \tab integer \tab Index of the scoring event, 0 = the 0-0 start row, then 1, 2... (the score track's x axis; NOT a clock). \cr
-   home_points \tab integer \tab Home running total after the event. \cr
-   away_points \tab integer \tab Away running total after the event. \cr
-}
+A \code{hoopR_data} tibble with one row per scoring event.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "bleague_score_track")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 \strong{Running score after each scoring event of one B.LEAGUE game (v1 feed only; the

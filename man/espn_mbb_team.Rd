@@ -39,166 +39,274 @@ forward compatibility. Proxy configuration should use
 \code{options(hoopR.proxy = ...)} -- see \code{?hoopR} for details.}
 }
 \value{
-A named list of data frames: \code{Info}, \code{Record}, \code{NextEvent},
-\code{StandingSummary}, \code{Coaches}.
+A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Record}, \code{NextEvent}, \code{StandingSummary}, \code{Coaches}.
 
 \strong{Info}
 
-Columns as documented in the shared \link{espn_mbb_team_info_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  uid \tab character \tab ESPN UID string (universal identifier). \cr
+  slug \tab character \tab URL-safe identifier. \cr
+  abbreviation \tab character \tab Short abbreviation. \cr
+  display_name \tab character \tab Display name. \cr
+  short_display_name \tab character \tab Short display name. \cr
+  name \tab character \tab Display name. \cr
+  nickname \tab character \tab Team or athlete nickname. \cr
+  location \tab character \tab Location. \cr
+  color \tab character \tab Primary color (hex without leading '#'). \cr
+  alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
+  logo \tab character \tab Team or league logo URL. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Record}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   type \tab character \tab Record type / category. \cr
-   summary \tab character \tab  \cr
-   stats \tab list \tab  \cr
-}
+\strong{Record}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  type \tab character \tab Record type / category. \cr
+  summary \tab character \tab  \cr
+  stats \tab list \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{NextEvent}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab character \tab Id. \cr
-   date \tab character \tab Date in YYYY-MM-DD format. \cr
-   name \tab character \tab Display name. \cr
-   short_name \tab character \tab Short display name. \cr
-}
+\strong{NextEvent}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  date \tab character \tab Date in YYYY-MM-DD format. \cr
+  name \tab character \tab Display name. \cr
+  short_name \tab character \tab Short display name. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{StandingSummary}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   standing_summary \tab character \tab  \cr
-}
+\strong{StandingSummary}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  standing_summary \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Coaches}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab character \tab Id. \cr
-   first_name \tab character \tab Player's first name. \cr
-   last_name \tab character \tab Player's last name. \cr
-   experience \tab integer \tab Years of professional experience. \cr
-}
+\strong{Coaches}
 
-A single tibble with one row per athlete.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  first_name \tab character \tab Player's first name. \cr
+  last_name \tab character \tab Player's last name. \cr
+  experience \tab integer \tab Years of professional experience. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Columns as documented in the shared \link{espn_mbb_team_roster_schema} table.
+A \code{hoopR_data} tibble with one row per athlete.
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
+  full_name \tab character \tab Player's full name. \cr
+  jersey \tab character \tab Jersey number worn by the player. \cr
+  position_abbrev \tab character \tab  \cr
+  position_name \tab character \tab Listed roster position ('Guard', 'Forward', 'Center'). \cr
+  height \tab character \tab Player height (string e.g. '6-2' or inches). \cr
+  weight \tab character \tab Player weight in pounds. \cr
+  age \tab character \tab Player age (in years). \cr
+  birth_date \tab character \tab Date of birth (YYYY-MM-DD). \cr
+  birth_place \tab character \tab Place of birth. \cr
+  headshot \tab character \tab Headshot image URL. \cr
+  link_web \tab character \tab Web link / URL. \cr
+  status \tab character \tab Status label. \cr
+  team_id \tab character \tab Unique team identifier. \cr
+  season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
 ESPN's roster endpoint ignores the season, so a season before the current
 one is built from that season's published player box scores (name, jersey,
 position and headshot from the athlete's last game; bio columns \code{NA}), and
 errors when none are published.
 
-A single long-format tibble (one row per category-rank-athlete).
-
-Columns as documented in the shared \link{espn_mbb_team_leaders_schema} table.
-
-A single-row tibble with team identity scalars and \verb{_ref} URL
-columns. Selected columns:
+A \code{hoopR_data} tibble with one row per category-rank-athlete.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab character \tab ESPN team identifier. \cr
-      guid \tab character \tab Stable cross-league team GUID. \cr
-      uid \tab character \tab ESPN UID string. \cr
-      slug \tab character \tab URL-safe identifier. \cr
-      location \tab character \tab School/program location (e.g. "Duke"). \cr
-      name \tab character \tab Team name (e.g. "Blue Devils"). \cr
-      nickname \tab character \tab Common nickname (often same as location). \cr
-      abbreviation \tab character \tab Short abbreviation (e.g. "DUKE"). \cr
-      display_name \tab character \tab Full display name. \cr
-      short_display_name \tab character \tab Short display name. \cr
-      color \tab character \tab Primary color (hex, no leading '#'). \cr
-      alternate_color \tab character \tab Alternate color (hex, no leading '#'). \cr
-      is_active \tab logical \tab Whether the team was active in this season. \cr
-      season \tab integer \tab Season year. \cr
-      logo \tab character \tab Primary logo URL. \cr
-      logo_dark \tab character \tab Dark-mode logo URL. \cr
-      record_ref \tab character \tab \verb{$ref} to team record resource. \cr
-      statistics_ref \tab character \tab \verb{$ref} to team statistics resource. \cr
-      athletes_ref \tab character \tab \verb{$ref} to team roster resource (college-only). \cr
-      college_ref \tab character \tab \verb{$ref} to college (institution) resource. \cr
-      coaches_ref \tab character \tab \verb{$ref} to team coaches resource. \cr
-      franchise_ref \tab character \tab \verb{$ref} to franchise resource. \cr
-   }}
+  col_name \tab types \tab description \cr
+  team_id \tab character \tab Unique team identifier. \cr
+  season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+  category \tab character \tab Category label. \cr
+  display_name \tab character \tab Display name. \cr
+  athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
+  athlete_name \tab character \tab Athlete display name (ESPN). \cr
+  value \tab numeric \tab Numeric or string value field. \cr
+  rank \tab integer \tab Rank. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-A named list of data frames: \code{Info}, \code{Record}, \code{NextEvent},
-\code{StandingSummary}, \code{Coaches}.
+A \code{hoopR_data} tibble with one row per team-season.
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab ESPN team identifier. \cr
+  guid \tab character \tab Stable cross-league team GUID. \cr
+  uid \tab character \tab ESPN UID string. \cr
+  slug \tab character \tab URL-safe identifier. \cr
+  location \tab character \tab School/program location (e.g. "Duke"). \cr
+  name \tab character \tab Team name (e.g. "Blue Devils"). \cr
+  nickname \tab character \tab Common nickname (often same as location). \cr
+  abbreviation \tab character \tab Short abbreviation (e.g. "DUKE"). \cr
+  display_name \tab character \tab Full display name. \cr
+  short_display_name \tab character \tab Short display name. \cr
+  color \tab character \tab Primary color (hex, no leading '#'). \cr
+  alternate_color \tab character \tab Alternate color (hex, no leading '#'). \cr
+  is_active \tab logical \tab Whether the team was active in this season. \cr
+  season \tab integer \tab Season year. \cr
+  logo \tab character \tab Primary logo URL. \cr
+  logo_dark \tab character \tab Dark-mode logo URL. \cr
+  record_ref \tab character \tab \code{$ref} to team record resource. \cr
+  statistics_ref \tab character \tab \code{$ref} to team statistics resource. \cr
+  athletes_ref \tab character \tab \code{$ref} to team roster resource (college-only). \cr
+  college_ref \tab character \tab \code{$ref} to college (institution) resource. \cr
+  coaches_ref \tab character \tab \code{$ref} to team coaches resource. \cr
+  franchise_ref \tab character \tab \code{$ref} to franchise resource. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+The table lists selected columns: team identity scalars and \verb{_ref} URL columns.
+
+A named list of \code{hoopR_data} tibbles: \code{Info}, \code{Record}, \code{NextEvent}, \code{StandingSummary}, \code{Coaches}.
 
 \strong{Info}
 
-Columns as documented in the shared \link{espn_mbb_team_info_schema} table.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  uid \tab character \tab ESPN UID string (universal identifier). \cr
+  slug \tab character \tab URL-safe identifier. \cr
+  abbreviation \tab character \tab Short abbreviation. \cr
+  display_name \tab character \tab Display name. \cr
+  short_display_name \tab character \tab Short display name. \cr
+  name \tab character \tab Display name. \cr
+  nickname \tab character \tab Team or athlete nickname. \cr
+  location \tab character \tab Location. \cr
+  color \tab character \tab Primary color (hex without leading '#'). \cr
+  alternate_color \tab character \tab Alternate color (hex without leading '#'). \cr
+  logo \tab character \tab Team or league logo URL. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Record}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   type \tab character \tab Record type / category. \cr
-   summary \tab character \tab  \cr
-   stats \tab list \tab  \cr
-}
+\strong{Record}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  type \tab character \tab Record type / category. \cr
+  summary \tab character \tab  \cr
+  stats \tab list \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{NextEvent}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab character \tab Id. \cr
-   date \tab character \tab Date in YYYY-MM-DD format. \cr
-   name \tab character \tab Display name. \cr
-   short_name \tab character \tab Short display name. \cr
-}
+\strong{NextEvent}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  date \tab character \tab Date in YYYY-MM-DD format. \cr
+  name \tab character \tab Display name. \cr
+  short_name \tab character \tab Short display name. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{StandingSummary}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   standing_summary \tab character \tab  \cr
-}
+\strong{StandingSummary}
 
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  standing_summary \tab character \tab  \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-\strong{Coaches}\tabular{lll}{
-   col_name \tab types \tab description \cr
-   id \tab character \tab Id. \cr
-   first_name \tab character \tab Player's first name. \cr
-   last_name \tab character \tab Player's last name. \cr
-   experience \tab integer \tab Years of professional experience. \cr
-}
+\strong{Coaches}
 
-A single tibble with one row per athlete.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab Id. \cr
+  first_name \tab character \tab Player's first name. \cr
+  last_name \tab character \tab Player's last name. \cr
+  experience \tab integer \tab Years of professional experience. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
 
-Columns as documented in the shared \link{espn_mbb_team_roster_schema} table.
+A \code{hoopR_data} tibble with one row per athlete.
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
+  full_name \tab character \tab Player's full name. \cr
+  jersey \tab character \tab Jersey number worn by the player. \cr
+  position_abbrev \tab character \tab  \cr
+  position_name \tab character \tab Listed roster position ('Guard', 'Forward', 'Center'). \cr
+  height \tab character \tab Player height (string e.g. '6-2' or inches). \cr
+  weight \tab character \tab Player weight in pounds. \cr
+  age \tab character \tab Player age (in years). \cr
+  birth_date \tab character \tab Date of birth (YYYY-MM-DD). \cr
+  birth_place \tab character \tab Place of birth. \cr
+  headshot \tab character \tab Headshot image URL. \cr
+  link_web \tab character \tab Web link / URL. \cr
+  status \tab character \tab Status label. \cr
+  team_id \tab character \tab Unique team identifier. \cr
+  season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
 ESPN's roster endpoint ignores the season, so a season before the current
 one is built from that season's published player box scores (name, jersey,
 position and headshot from the athlete's last game; bio columns \code{NA}), and
 errors when none are published.
 
-A single long-format tibble (one row per category-rank-athlete).
-
-Columns as documented in the shared \link{espn_mbb_team_leaders_schema} table.
-
-A single-row tibble with team identity scalars and \verb{_ref} URL
-columns. Selected columns:
+A \code{hoopR_data} tibble with one row per category-rank-athlete.
 
 \if{html}{\tabular{lll}{
-      col_name \tab types \tab description \cr
-      id \tab character \tab ESPN team identifier. \cr
-      guid \tab character \tab Stable cross-league team GUID. \cr
-      uid \tab character \tab ESPN UID string. \cr
-      slug \tab character \tab URL-safe identifier. \cr
-      location \tab character \tab Team city/region (e.g. "Los Angeles"). \cr
-      name \tab character \tab Team name (e.g. "Lakers"). \cr
-      abbreviation \tab character \tab Short abbreviation (e.g. "LAL"). \cr
-      display_name \tab character \tab Full display name. \cr
-      short_display_name \tab character \tab Short display name. \cr
-      color \tab character \tab Primary color (hex, no leading '#'). \cr
-      alternate_color \tab character \tab Alternate color (hex, no leading '#'). \cr
-      is_active \tab logical \tab Whether the team was active in this season. \cr
-      season \tab integer \tab Season year. \cr
-      logo \tab character \tab Primary logo URL. \cr
-      logo_dark \tab character \tab Dark-mode logo URL. \cr
-      record_ref \tab character \tab \verb{$ref} to team record resource (if present). \cr
-      statistics_ref \tab character \tab \verb{$ref} to team statistics resource (if present). \cr
-      leaders_ref \tab character \tab \verb{$ref} to team leaders resource (if present). \cr
-      coaches_ref \tab character \tab \verb{$ref} to team coaches resource (if present). \cr
-      depth_charts_ref \tab character \tab \verb{$ref} to depth chart resource (NBA-only). \cr
-      events_ref \tab character \tab \verb{$ref} to team events resource (if present). \cr
-      transactions_ref \tab character \tab \verb{$ref} to team transactions resource (if present). \cr
-      franchise_ref \tab character \tab \verb{$ref} to franchise resource. \cr
-   }}
+  col_name \tab types \tab description \cr
+  team_id \tab character \tab Unique team identifier. \cr
+  season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
+  category \tab character \tab Category label. \cr
+  display_name \tab character \tab Display name. \cr
+  athlete_id \tab character \tab Unique athlete identifier (ESPN). \cr
+  athlete_name \tab character \tab Athlete display name (ESPN). \cr
+  value \tab numeric \tab Numeric or string value field. \cr
+  rank \tab integer \tab Rank. \cr
+}}
 \if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+A \code{hoopR_data} tibble with one row per team-season.
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  id \tab character \tab ESPN team identifier. \cr
+  guid \tab character \tab Stable cross-league team GUID. \cr
+  uid \tab character \tab ESPN UID string. \cr
+  slug \tab character \tab URL-safe identifier. \cr
+  location \tab character \tab Team city/region (e.g. "Los Angeles"). \cr
+  name \tab character \tab Team name (e.g. "Lakers"). \cr
+  abbreviation \tab character \tab Short abbreviation (e.g. "LAL"). \cr
+  display_name \tab character \tab Full display name. \cr
+  short_display_name \tab character \tab Short display name. \cr
+  color \tab character \tab Primary color (hex, no leading '#'). \cr
+  alternate_color \tab character \tab Alternate color (hex, no leading '#'). \cr
+  is_active \tab logical \tab Whether the team was active in this season. \cr
+  season \tab integer \tab Season year. \cr
+  logo \tab character \tab Primary logo URL. \cr
+  logo_dark \tab character \tab Dark-mode logo URL. \cr
+  record_ref \tab character \tab \code{$ref} to team record resource (if present). \cr
+  statistics_ref \tab character \tab \code{$ref} to team statistics resource (if present). \cr
+  leaders_ref \tab character \tab \code{$ref} to team leaders resource (if present). \cr
+  coaches_ref \tab character \tab \code{$ref} to team coaches resource (if present). \cr
+  depth_charts_ref \tab character \tab \code{$ref} to depth chart resource (NBA-only). \cr
+  events_ref \tab character \tab \code{$ref} to team events resource (if present). \cr
+  transactions_ref \tab character \tab \code{$ref} to team transactions resource (if present). \cr
+  franchise_ref \tab character \tab \code{$ref} to franchise resource. \cr
+}}
+\if{latex}{See the HTML help or pkgdown reference for the column table.}
+
+The table lists selected columns: team identity scalars and \verb{_ref} URL columns.
 }
 \description{
 Era-correct team identity for a men's college basketball program in a

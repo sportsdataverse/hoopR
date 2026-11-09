@@ -15,19 +15,10 @@ A year the list lacks raises \code{hoopR_no_data}.}
 The top flight was named TBL until 2007-08 and is listed under bsl.}
 }
 \value{
-A \code{hoopR_data} tibble. One row per week in play order; \code{week} is the value the schedule and standings take.
-Every column below is always present (a zero-row tibble keeps them and their types); an answer
-with nothing in it raises \code{hoopR_no_data}, as in sportsdataverse-py.\tabular{lll}{
-   col_name \tab type \tab description \cr
-   activity_id \tab integer \tab Activity id of the request's league-season (key space: TBF league-seasons). \cr
-   season \tab integer \tab Season END year of the request (2027 = 2026-2027). \cr
-   competition \tab character \tab TBF league of the request: bsl, tbl or kbsl. \cr
-   week \tab character \tab Week number as a string; the value the week argument of tbf_standings and tbf_schedule takes. \cr
-   phase \tab integer \tab Phase code (devre = half / phase): 1 = first half of the regular season, 2 = second half, 3 = playoff quarter-final, 4 = semi-final, 5 = final. \cr
-   phase_name \tab character \tab Phase name in Turkish on playoff weeks (Playoff Final = final); null on regular-season weeks. \cr
-   label \tab character \tab Week label: 'Hafta N' (week N) or the playoff round name. \cr
-   is_current \tab logical \tab True on the current (or last played) week; exactly one row. \cr
-}
+A \code{hoopR_data} tibble with one row per week in play order.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "tbf_weeks")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 The weeks (rounds) of one league-season, playoff rounds included.

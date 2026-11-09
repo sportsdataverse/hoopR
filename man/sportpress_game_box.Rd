@@ -13,55 +13,10 @@ sportpress_game_box(competition_id, game_id)
 \item{game_id}{(required) Game id (integer), unique across seasons; from \code{\link[=sportpress_schedule]{sportpress_schedule()}} (\code{game_id}).}
 }
 \value{
-A \code{hoopR_data} tibble: Per-player box score of a finished game (one row per player line). An empty valid answer
-raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py \code{sportpress_game_box}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   game_id \tab integer \tab Game id the box score was asked for (the body does not echo it). \cr
-   competition_id \tab integer \tab Competition id the box score was asked for; checked against the game. \cr
-   team_side \tab character \tab Side of the game the row belongs to: home or away (the provider's is_home, or side 1 / 2). \cr
-   competition_team_id \tab integer \tab Competition-team id (key space: sportpress competition teams): a team in ONE competition, so a club has a new id every season (Antwerp = 3 in 2021-22, 506 in 2025-26, 541 in 2026-27). uu_team_id is the stable club key. \cr
-   team \tab character \tab Team display name including the sponsor; varies with language and playoff suffixes: never join on it. \cr
-   team_short_name \tab character \tab Three-letter club code (ANT, MON, ...), stable across seasons in the samples. \cr
-   roster_id \tab integer \tab Roster id of the line; null when the line has no player (15 of 14,142 sampled lines). \cr
-   player_id \tab integer \tab Player id (key space: sportpress persons): stable across seasons and teams, distinct from roster_id. Not a Genius or FIBA person id. \cr
-   first_name \tab character \tab Given name of the player as entered in the CMS. \cr
-   last_name \tab character \tab Family name of the player as entered in the CMS. \cr
-   nationality_code \tab character \tab Nationality code in FIBA style (USA, BEL, NED): DIRTY, with lower-case variants, '/'-joined pairs (USA/BEL), the empty string and 'HOL'; normalise before joining. \cr
-   birth_date \tab Date \tab Date of birth as shown on the public player page; null when unknown. \cr
-   position_id \tab integer \tab Playing position id (key space: sportpress positions); null on 21 of 14,142 sampled lines. \cr
-   position \tab character \tab Playing position: point_guard, shooting_guard, small_forward, power_forward or center. \cr
-   starter \tab logical \tab True when the player was in the starting five. \cr
-   jersey \tab character \tab Shirt number as text; the box score sends it as an integer, so a zero-padded '00' is already lost there. \cr
-   minute \tab integer \tab Minutes played; for a team total, the sum over its players (200 + 25 per overtime). \cr
-   foul \tab integer \tab Personal fouls committed. \cr
-   defensive_foul \tab integer \tab Fouls DRAWN (suffered), despite the name: equals the opponent's foul count up to scorer corrections. \cr
-   dunk_made \tab integer \tab Dunks made (a subset of the two-point field goals). \cr
-   dunk_all \tab integer \tab Dunks attempted. \cr
-   dunk_percent \tab double \tab Dunk percentage 0-100; 0 when none were attempted. \cr
-   two_point_made \tab integer \tab Two-point field goals made. \cr
-   two_point_all \tab integer \tab Two-point field goals attempted. \cr
-   two_point_percent \tab double \tab Two-point percentage 0-100. \cr
-   three_point_made \tab integer \tab Three-point field goals made. \cr
-   three_point_all \tab integer \tab Three-point field goals attempted. \cr
-   three_point_percent \tab double \tab Three-point percentage 0-100. \cr
-   throw_made \tab integer \tab All field goals made, two- plus three-pointers (the provider calls them 'throw'). \cr
-   throw_all \tab integer \tab All field goals attempted, two- plus three-pointers (the provider calls them 'throw'). \cr
-   throw_percent \tab double \tab Field-goal percentage 0-100. \cr
-   free_throw_made \tab integer \tab Free throws made. \cr
-   free_throw_all \tab integer \tab Free throws attempted. \cr
-   free_throw_percent \tab double \tab Free-throw percentage 0-100. \cr
-   offensive_rebound \tab integer \tab Offensive rebounds. \cr
-   defensive_rebound \tab integer \tab Defensive rebounds. \cr
-   total_rebound \tab integer \tab Total rebounds (offensive plus defensive). \cr
-   block \tab integer \tab Shots blocked by the player. \cr
-   block_against \tab integer \tab Own shots blocked by an opponent. \cr
-   turnover \tab integer \tab Turnovers committed. \cr
-   steal \tab integer \tab Steals (balls taken from an opponent). \cr
-   assist \tab integer \tab Assists (passes leading directly to a made basket). \cr
-   points \tab integer \tab Points scored (2 x two-pointers + 3 x three-pointers + free throws). \cr
-   value \tab integer \tab Efficiency rating (PIR with fouls drawn): points + rebounds + assists + steals + blocks + fouls drawn - missed field goals - missed free throws - turnovers. \cr
-   plusminus \tab integer \tab Plus/minus: the score margin while the player (or team) was on court; for a team total it is the game margin. \cr
-}
+A \code{hoopR_data} tibble with one row per player line.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "sportpress_game_box")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Per-player box score of a finished game (one row per player line).

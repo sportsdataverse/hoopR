@@ -7,13 +7,10 @@
 cba_seasons()
 }
 \value{
-A \code{hoopR_data} tibble: One row per season: label, START year, default flag. An empty valid answer is a zero-row
-tibble with these columns, in this order (sportsdataverse-py \code{cba_seasons}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   is_default \tab integer \tab Default-selection flag: 1 = the site's default season (exactly one row: the season in progress or next), 2 = not the default. \cr
-   key \tab character \tab Season label 'YYYY-YYYY' (START year - END year), e.g. '2025-2026'; the sdv season key is the second year. The list runs from the upcoming season (2026-2027, 32 rows) down to 1995-1996 with no gap. \cr
-   value \tab character \tab Season START year (2025 = the 2025-26 season). The sdv season key is the END year = season + 1; map at the boundary. String of digits ('2025'); the value every season parameter takes. \cr
-}
+A \code{hoopR_data} tibble with one row per season.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "cba_seasons")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Every season of the CBA data site, newest first (the upcoming season is the default), 1995-96 on.

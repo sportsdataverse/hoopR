@@ -18,83 +18,10 @@ api-1.dbbl.scb.world). The two share one API; game ids overlap, so a game is (le
 PLAYOFFS, PLAYOFFS_TOTAL, MAIN_ROUND_AND_PLAY_OFFS or CUP.}
 }
 \value{
-A \code{hoopR_data} tibble: Season player stat table: totals and per-game values, one row per player and stat
-block. An empty valid answer raises \code{hoopR_no_data}; the columns are always these, in this order (sportsdataverse-py
-\code{scb_player_statistics}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   league \tab character \tab League the row belongs to: \code{bbl} (men) or \code{dbbl} (women); BBL and DBBL game ids overlap, so a game is (league, game_id). \cr
-   season \tab integer \tab Season END year (2026 = 2025-26), the sdv key; the API's \code{season_id} plus one. \cr
-   display_type \tab character \tab Which games the table covers, echoed from the request (MAIN_ROUND, PLAYOFFS, PLAYOFFS_TOTAL, MAIN_ROUND_AND_PLAY_OFFS or CUP). \cr
-   season_player_id \tab character \tab Season-player id: one player's engagement with one club (kept across seasons while he stays, new after a move; see README). Joins to box-score \code{seasonPlayer.id}, action \code{seasonPlayerId} and \verb{/season-players/\{seasonPlayerId\}}. \cr
-   real_player_id \tab integer \tab Global person id: the same across clubs and seasons. Joins to \code{realPlayerId} everywhere. \cr
-   first_name \tab character \tab Player's given name. \cr
-   last_name \tab character \tab Player's family name. \cr
-   shirt_number \tab character \tab Jersey number of the player, kept as text so a \code{00} jersey survives. \cr
-   position \tab character \tab Position: POINT_GUARD, SHOOTING_GUARD, SMALL_FORWARD, POWER_FORWARD, CENTER. \cr
-   team_id \tab character \tab Club id; equal to \code{seasonTeamId} in every sample. Joins to \verb{/teams/\{teamId\}}. \cr
-   season_team_id \tab character \tab Season-team id; equal to the club \code{teamId} in every sample (BBL 2005-2026, DBBL 2024-2026). \cr
-   team_name \tab character \tab Team name as listed that season (sponsor names included, e.g. 'EWE Baskets Oldenburg'). \cr
-   team_tlc \tab character \tab Three-letter club code. \cr
-   season_id \tab integer \tab The API's own season key, the START year (2025 = 2025-26); \code{season} minus one. \cr
-   round_code \tab integer \tab Provider round code; 1 for MAIN_ROUND in every sample (mapping unverified). \cr
-   competition \tab character \tab Competition: BBL, BBL_CUP (Pokal), ALLSTAR, CHAMPIONS_CUP on the BBL host; DBBL, DBBL_CUP on the DBBL host. \cr
-   seconds_played \tab integer \tab The player's season total playing time in SECONDS over displayType. \cr
-   points \tab integer \tab The player's season total points over displayType. \cr
-   two_point_shots_made \tab integer \tab The player's season total 2-point field goals made over displayType. \cr
-   two_point_shots_attempted \tab integer \tab The player's season total 2-point field goals attempted over displayType. \cr
-   two_point_shot_success_percent \tab double \tab The player's season total 2-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. \cr
-   three_point_shots_made \tab integer \tab The player's season total 3-point field goals made over displayType. \cr
-   three_point_shots_attempted \tab integer \tab The player's season total 3-point field goals attempted over displayType. \cr
-   three_point_shot_success_percent \tab double \tab The player's season total 3-point field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. \cr
-   field_goals_made \tab integer \tab The player's season total field goals made over displayType. \cr
-   field_goals_attempted \tab integer \tab The player's season total field goals attempted over displayType. \cr
-   field_goals_success_percent \tab double \tab The player's season total field-goal percentage over displaytype, 0-100 (one decimal); 0 when no attempts. \cr
-   free_throws_made \tab integer \tab The player's season total free throws made over displayType. \cr
-   free_throws_attempted \tab integer \tab The player's season total free throws attempted over displayType. \cr
-   free_throws_success_percent \tab double \tab The player's season total free-throw percentage over displaytype, 0-100 (one decimal); 0 when no attempts. \cr
-   offensive_rebounds \tab integer \tab The player's season total offensive rebounds over displayType. \cr
-   defensive_rebounds \tab integer \tab The player's season total defensive rebounds over displayType. \cr
-   total_rebounds \tab integer \tab The player's season total rebounds (offensive + defensive) over displayType. \cr
-   assists \tab integer \tab The player's season total assists over displayType. \cr
-   steals \tab integer \tab The player's season total steals over displayType. \cr
-   turnovers \tab integer \tab The player's season total turnovers over displayType. \cr
-   blocks \tab integer \tab The player's season total blocked shots over displayType. \cr
-   fouls_committed \tab integer \tab The player's season total fouls committed over displayType. \cr
-   efficiency \tab integer \tab The player's season total efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score) over displayType. \cr
-   plus_minus \tab integer \tab The player's season total plus-minus over displaytype. \cr
-   games_played \tab integer \tab The player's season total games played over displayType. \cr
-   seconds_per_game \tab double \tab Per-game average of seconds, seconds. \cr
-   points_per_game \tab double \tab Per-game average of points. \cr
-   two_point_shots_made_per_game \tab double \tab Per-game average of 2-point field goals made. \cr
-   two_point_shots_attempted_per_game \tab double \tab Per-game average of 2-point field goals attempted. \cr
-   three_point_shots_made_per_game \tab double \tab Per-game average of 3-point field goals made. \cr
-   three_point_shots_attempted_per_game \tab double \tab Per-game average of 3-point field goals attempted. \cr
-   field_goals_made_per_game \tab double \tab Per-game average of field goals made. \cr
-   field_goals_attempted_per_game \tab double \tab Per-game average of field goals attempted. \cr
-   field_goals_success_percent_per_game \tab double \tab Per-game average of field-goal percentage (0 in every sample: unusable). \cr
-   free_throws_made_per_game \tab double \tab Per-game average of free throws made. \cr
-   free_throws_attempted_per_game \tab double \tab Per-game average of free throws attempted. \cr
-   defensive_rebounds_per_game \tab double \tab Per-game average of defensive rebounds. \cr
-   offensive_rebounds_per_game \tab double \tab Per-game average of offensive rebounds. \cr
-   total_rebounds_per_game \tab double \tab Per-game average of rebounds (offensive + defensive). \cr
-   assists_per_game \tab double \tab Per-game average of assists. \cr
-   steals_per_game \tab double \tab Per-game average of steals. \cr
-   turnovers_per_game \tab double \tab Per-game average of turnovers. \cr
-   blocks_per_game \tab double \tab Per-game average of blocked shots. \cr
-   fouls_committed_per_game \tab double \tab Per-game average of fouls committed. \cr
-   efficiency_per_game \tab double \tab Per-game average of efficiency (EFF = PTS + REB + AST + STL + BLK - missed FG - missed FT - TO; checked on a 2026 box score). \cr
-   plus_minus_per_game \tab double \tab Per-game average of plus-minus (point margin while on court). \cr
-   double_double \tab integer \tab The player's season total double-doubles over displayType. \cr
-   double_double_per_game \tab double \tab Per-game average of double-doubles. \cr
-   games_started \tab integer \tab The player's season total games started over displayType. \cr
-   triple_double \tab integer \tab The player's season total triple-doubles over displayType. \cr
-   triple_double_per_game \tab double \tab Per-game average of triple-doubles. \cr
-   fouls_received \tab integer \tab The player's season total fouls drawn over displayType. \cr
-   fouls_received_per_game \tab double \tab Per-game average of fouls drawn. \cr
-   overall \tab logical \tab False in every sample (meaning unverified). \cr
-   stage \tab character \tab Stage: MAIN_ROUND (Hauptrunde, regular season), PLAYINS, FIRST_ROUND, SECOND_ROUND, ROUND_OF_16 (Achtelfinale), ROUND_OF_8 (Viertelfinale), SEMI_FINALS, FINALS, THIRD_PLACE_GAME, QUALIFICATION, GROUP_STAGE. \cr
-   aggregation \tab character \tab Aggregation label as sent: STAGE in player tables, MAIN_ROUND in team tables. \cr
-}
+A \code{hoopR_data} tibble with one row per player and stat block.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "scb_player_statistics")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Season player stat table: totals and per-game values, one row per player and stat block.

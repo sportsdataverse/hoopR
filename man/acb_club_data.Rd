@@ -12,32 +12,10 @@ Real Madrid, 13 = Valencia Basket). Not the season-team \code{team_id}. A whole 
 accepted.}
 }
 \value{
-A \code{hoopR_data} tibble, one row per record described above; the columns are always these, in this order
-(sportsdataverse-py \code{acb_club_data}):\tabular{lll}{
-   col_name \tab type \tab description \cr
-   team_id \tab integer \tab Season-team id: one team's entry in one competition edition (4467 = Barca in Liga 2026-27, 4388 = Real Madrid in Liga 2025-26). Changes every season and competition. Joins every \code{homeTeamId} / \code{awayTeamId} / \code{teamId} / \code{teamEditionId}. Not the club id. \cr
-   club_id \tab integer \tab Club id, stable across seasons and sponsor names (2 = Barca, 9 = Real Madrid, 13 = Valencia Basket): the \code{clubId} request param and every \code{homeClubId} / \code{awayClubId}. \cr
-   team \tab character \tab Team name that season (sponsor names change) \cr
-   team_abbr \tab character \tab Three-letter abbreviation (BAR, RMB) \cr
-   competition_id \tab integer \tab Competition id: 1 Liga Endesa, 2 Copa del Rey, 3 Supercopa Endesa, 10 Minicopa Endesa (x-competitions) \cr
-   edition_id \tab integer \tab Season id (\code{editionId}) = season START year - 1935 (91 = 2026-27, 81 = 2016-17, 70 = 2005-06, 48 = 1983-84, the first). The sdv season (END year) is editionId + 1936. Season lists also carry \code{seasonStartYear} / \code{seasonEndYear} \cr
-   season \tab integer \tab Season END year (2027 = 2026-27) = edition_id + 1936: the key the wrappers take. \cr
-   stadium_name \tab character \tab Arena name (the club's home venue). \cr
-   stadium_address \tab character \tab Arena street address. \cr
-   stadium_capacity \tab integer \tab Arena capacity. \cr
-   president \tab character \tab Club president's name; null for most clubs. \cr
-   foundation_year \tab integer \tab Year the club was founded. \cr
-   web_url \tab character \tab Club website URL. \cr
-   ticketing_url \tab character \tab Club ticket shop URL. \cr
-   merchandising_url \tab character \tab Club merchandise shop URL (the API's merchanUrl). \cr
-   instagram_url \tab character \tab Club Instagram URL. \cr
-   twitter_url \tab character \tab Club X / Twitter URL. \cr
-   facebook_url \tab character \tab Club Facebook URL. \cr
-   youtube_url \tab character \tab Club YouTube URL. \cr
-   tiktok_url \tab character \tab Club TikTok URL. \cr
-   validated \tab logical \tab True when the club profile is validated by the league. \cr
-   temporary_roster \tab logical \tab True while the club's roster is provisional. \cr
-}
+A \code{hoopR_data} tibble with one row per club.
+Its columns are listed in \link{return_columns}
+(\code{subset(return_columns, fn == "acb_club_data")}) and in the searchable
+\href{https://hoopR.sportsdataverse.org/articles/return-columns.html}{return columns} article.
 }
 \description{
 Club profile: arena, contacts and links.
