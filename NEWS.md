@@ -476,6 +476,10 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   is 7-80 MB (`load_mbb_pbp()`, `load_mbb_player_box()`, `load_mbb_shots()`,
   `load_nba_stats_pbp()`, and the NCAA MBB pbp, shots, lineups, matchup-stints,
   possessions and player-box loaders).
+* The help pages of the 22 largest function families (ESPN MBB and NBA, and most international
+  families) link to one family index page (`?family_espn_mbb`, `?family_acb`, ...) in
+  "See also" instead of listing every other member. The lists repeated each family on every
+  page and were 1.2 MB of the installed help.
 * The DESCRIPTION explains NBA, ESPN, NCAA, FIBA, ACB, VTB, NBL, KBL and CBA on first use,
   and the help pages use ASCII punctuation (`-`, `x`) in place of em dashes, en dashes and
   multiplication signs.

@@ -543,7 +543,7 @@ shared internal engine in `R/crosswalk_basketball.R`.
 - `pad_id()` must be called on game IDs before passing to the API (zero-pads to 10 digits).
 - V3 endpoints return different structures per endpoint -- always verify with the nba_api Python parsers in the companion repo.
 - `data.frame(list_of_items)` can produce unexpected column types when the API returns mixed `NULL`/value fields -- use `%||%` defaults.
-- The `@family` tag groups functions in pkgdown reference pages -- keep consistent with existing families.
+- The `@family` tag adds a "See also" list of every family member to every member, so it grows as n^2. The 22 large families in `R/families.R` (ESPN MBB/NBA and most international families) use `#' @concept <Family>` plus `#' @seealso [family_<slug>] lists every function in this family.` instead; their index page is built from the `@concept` tags by `.family_index()` at `devtools::document()` time. A new function in one of those families takes those two lines, not `@family`. Small families keep `@family`.
 - V3-style leader endpoints (dunkscoreleaders, gravityleaders) return all values as mixed types -- coerce everything to `as.character()` with `%||% NA_character_` before building data frames.
 - IST Standings has dynamic game columns (gameId1, gameId2, etc.) -- tests should use `expect_true(all(core_cols %in% colnames()))` instead of exact match.
 - ESPN API columns change over time -- use `expect_in()` for subset validation in tests.
