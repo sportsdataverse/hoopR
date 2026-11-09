@@ -1,0 +1,4274 @@
+{
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/rankings?groups=50": {
+    "file": "be4e21e9cd196d74.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard/conferences?seasontype=2": {
+    "file": "9a226bad7f31df9a.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups=100&limit=1000&dates=20221117": {
+    "file": "3e03d7987e563724.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups=100&limit=1000&dates=20261107": {
+    "file": "74c1a76f7c794a82.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups=50&limit=1000&dates=20221117": {
+    "file": "2af5756cc725ccc8.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups=50&limit=1000&dates=20261107": {
+    "file": "76e74fbb8b3b9b71.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups=55&limit=1000&dates=20221117": {
+    "file": "63e2ce0a329c05f8.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups=55&limit=1000&dates=20261107": {
+    "file": "e502d93563cf47e6.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups=56&limit=1000&dates=20221117": {
+    "file": "2225e79655c427ce.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?groups=56&limit=1000&dates=20261107": {
+    "file": "817a535c3eb9edf7.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?event=401256760": {
+    "file": "e9944fcc268d525c.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?event=401479672": {
+    "file": "5a54eb03fc6657a9.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": false
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/139": {
+    "file": "42091e46372ee90f.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/150?enable=roster": {
+    "file": "ab216c444fef7f4d.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/151": {
+    "file": "3ed1b722f2bdd9f0.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/160": {
+    "file": "72018ce5a96a8533.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/179": {
+    "file": "712e9f35afbbd39e.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/202": {
+    "file": "475ab334097b92da.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/2066": {
+    "file": "f292bd0b9422b21c.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/218": {
+    "file": "40b4928d99ed2b70.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/227": {
+    "file": "82f2352abb882ccd.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/24": {
+    "file": "19b8086892689bdc.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/25": {
+    "file": "bb6a6b710ec997b8.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/257": {
+    "file": "6fcba4980294f5ce.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/261": {
+    "file": "0e1a09433028a73b.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/288": {
+    "file": "571cd3f0b3e00723.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/294": {
+    "file": "71672323b0c9209e.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/311": {
+    "file": "9b7425e666894657.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/399": {
+    "file": "dd4e2a66c83abf56.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/45": {
+    "file": "7d099773128f2cbc.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/5": {
+    "file": "7fe2da0b298d7b48.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/52": {
+    "file": "489dc8f81e0f479c.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/526": {
+    "file": "8ef2066595cf0244.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/56": {
+    "file": "373565064db5a7f2.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/58": {
+    "file": "7014f51dd4b7bf48.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/59": {
+    "file": "311766dbd9248059.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/87": {
+    "file": "00808a120a4d94f2.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/91": {
+    "file": "f9cea333cc502bfe.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?groups=50&limit=1000": {
+    "file": "369a64058454e6ea.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": false
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?limit=1000": {
+    "file": "93472bb5da9fcc8e.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?limit=1000&dates=20230423": {
+    "file": "657d15ea56bba81d.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?limit=1000&dates=20261107": {
+    "file": "db5cdd215b56e47f.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401071880": {
+    "file": "22b8bd1b6c7a4218.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": false
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401283399": {
+    "file": "ec91786e9fc1e434.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909938": {
+    "file": "32881be45b99b6f7.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/13?enable=roster": {
+    "file": "8a3dd7747f4cbedd.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "http://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams?limit=1000": {
+    "file": "f620f5ac54656f7a.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2020/teams/150?lang=en&region=us": {
+    "file": "211da6c4dae6709c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4277850?lang=en&region=us": {
+    "file": "c9a5b3064a172d06.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4277852?lang=en&region=us": {
+    "file": "3c5e36f084f1cabc.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4277854?lang=en&region=us": {
+    "file": "59f67a1c81496b0b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4395713?lang=en&region=us": {
+    "file": "408f9ebb3b39bb22.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4395714?lang=en&region=us": {
+    "file": "c1767c56c4a6d493.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4397204?lang=en&region=us": {
+    "file": "af9104db494a960b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4432812?lang=en&region=us": {
+    "file": "8aa65e56818cf7dd.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4432819?lang=en&region=us": {
+    "file": "a8b9fc732603c227.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4432829?lang=en&region=us": {
+    "file": "e0d2792cfbf07ac2.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4433134?lang=en&region=us": {
+    "file": "bc1c32c57adabca9.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/250?lang=en&region=us": {
+    "file": "be27517e7514bb8f.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/52?lang=en&region=us": {
+    "file": "fd2feb1483af88ea.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/teams/57?lang=en&region=us": {
+    "file": "48a29bb3e5a3ba5b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2027/types/2/groups/1/teams?lang=en&region=us": {
+    "file": "ed9c82ac8065e9d0.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2027/types/2/groups/2/teams?lang=en&region=us": {
+    "file": "4b69325f40046644.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2027/types/2/groups/3/teams?lang=en&region=us": {
+    "file": "85c24d3dba4c133e.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2027/types/2/groups/46/teams?lang=en&region=us": {
+    "file": "6aa4bb143fe25840.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2027/types/2/groups/50/children?limit=1000&lang=en&region=us": {
+    "file": "1103c1f93acdc928.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2027/types/2/groups/62/teams?lang=en&region=us": {
+    "file": "513b24f5681511df.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2020/teams/13?lang=en&region=us": {
+    "file": "87814f22f6e87f86.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/2490089?lang=en&region=us": {
+    "file": "898b19bccf8d948f.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/2534781?lang=en&region=us": {
+    "file": "d198defe47d222f8.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/2993874?lang=en&region=us": {
+    "file": "3f97287c194dee09.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/3133626?lang=en&region=us": {
+    "file": "f37c4e4a61ebfb4b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/3134932?lang=en&region=us": {
+    "file": "7e74b2a798929c7b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/3135045?lang=en&region=us": {
+    "file": "df6bc2f1955c6c5c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/3135046?lang=en&region=us": {
+    "file": "eba94c4ed6b672a9.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/3138156?lang=en&region=us": {
+    "file": "c2d49dfaf461a465.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/3155526?lang=en&region=us": {
+    "file": "c04498f36bc7cbc3.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/3213?lang=en&region=us": {
+    "file": "d2c1cb716ab93b1a.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/3438?lang=en&region=us": {
+    "file": "c02d19b5e70c58f3.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/3906665?lang=en&region=us": {
+    "file": "09c99515e2df55ec.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/3908903?lang=en&region=us": {
+    "file": "9a28d7d4c94da932.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/4066392?lang=en&region=us": {
+    "file": "840394e9b2dac122.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/4066436?lang=en&region=us": {
+    "file": "b5d6e36e31699c39.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/4080610?lang=en&region=us": {
+    "file": "2d095ac0c3b23c22.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/4277964?lang=en&region=us": {
+    "file": "1b2b5a1c80b65851.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/4278073?lang=en&region=us": {
+    "file": "487a5f1a818d7dd5.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/4279888?lang=en&region=us": {
+    "file": "8053d6538258605b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/4397020?lang=en&region=us": {
+    "file": "47c2c3e5002c05ae.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/4423545?lang=en&region=us": {
+    "file": "cd0e1e5b6fbd837b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/4683027?lang=en&region=us": {
+    "file": "6382c42c90bd4c0a.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/6477?lang=en&region=us": {
+    "file": "9dc73e2958e2d0a5.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/athletes/6610?lang=en&region=us": {
+    "file": "5867d5b034b258a3.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/teams/25?lang=en&region=us": {
+    "file": "e8605ad1a43441f5.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2021/teams/29?lang=en&region=us": {
+    "file": "8cacd5de3fd4be19.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "http://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2022/teams/13?lang=en&region=us": {
+    "file": "c949efd63d6cb638.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://api-live.euroleague.net/v2/competitions": {
+    "file": "ecc1fc779e009f5c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api-live.euroleague.net/v2/competitions/E/seasons": {
+    "file": "b031de7f7fe4ba0c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api-live.euroleague.net/v2/competitions/E/seasons/E2025/clubs": {
+    "file": "9927b400d99b3aa7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api-live.euroleague.net/v2/competitions/E/seasons/E2025/games": {
+    "file": "f18d9f9f9f1a079b.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api-live.euroleague.net/v2/competitions/E/seasons/E2025/games/1/stats": {
+    "file": "34b958e326e9b348.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api-live.euroleague.net/v2/competitions/E/seasons/E2025/people?limit=50": {
+    "file": "3038ba4fbf8aca76.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api-live.euroleague.net/v2/competitions/E/seasons/E2025/rounds": {
+    "file": "61a0c08dcbdd74eb.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api-live.euroleague.net/v3/competitions/E/seasons/E2025/games/1/report": {
+    "file": "1d4d65571e09c784.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api-live.euroleague.net/v3/competitions/E/seasons/E2025/rounds/1/basicstandings": {
+    "file": "682d61bca2d53276.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api-live.euroleague.net/v3/competitions/E/seasons/E2025/rounds/1/streaks": {
+    "file": "45df16bdae036659.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api-live.euroleague.net/v3/competitions/E/statistics/players/advanced?SeasonMode=Single&SeasonCode=E2025&statisticMode=PerGame": {
+    "file": "f543f702b0cdeb96.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api-live.euroleague.net/v3/competitions/E/statistics/players/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=PerGame&limit=25": {
+    "file": "abf5aa8d7e7c833c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api-live.euroleague.net/v3/competitions/E/statistics/teams/advanced?SeasonMode=Single&SeasonCode=E2025&statisticMode=PerGame": {
+    "file": "b96773d0a0d131cc.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api-live.euroleague.net/v3/competitions/E/statistics/teams/traditional?SeasonMode=Single&SeasonCode=E2025&statisticMode=PerGame": {
+    "file": "bfdf390da54e03f8.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.basketball-bundesliga.de/games/2006920": {
+    "file": "89c1319e5ac7d3bb.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.basketball-bundesliga.de/games/2006920/stats": {
+    "file": "50c912ab396d9304.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.basketball-bundesliga.de/games/recent": {
+    "file": "34c1a5f0de203a1f.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.basketball-bundesliga.de/games?currentPage=1&pageSize=500": {
+    "file": "72a27635ad063f6b.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.basketball-bundesliga.de/seasons": {
+    "file": "28b0453a3261f246.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.basketball-bundesliga.de/seasons/2025": {
+    "file": "7aba2fef5efaa5e7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.basketball-bundesliga.de/seasons/2025/player-statistics?displayType=MAIN_ROUND": {
+    "file": "d302025ffdd61b56.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.basketball-bundesliga.de/seasons/2025/team-statistics?displayType=MAIN_ROUND": {
+    "file": "1339fecd4803024d.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.basketball-bundesliga.de/standings": {
+    "file": "2cae63c03dc20c94.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/conferences": {
+    "file": "7f83e0ec94a07623.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/draft/picks?year=2024": {
+    "file": "af020d29d79f5072.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/draft/positions": {
+    "file": "0c7d94e51c0b1069.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/draft/teams": {
+    "file": "eb2930c2aa30ed13.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/games/media?season=2024&team=Duke": {
+    "file": "010ba91d9ee81f60.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/games/players?season=2024&team=Duke": {
+    "file": "f0a0044dc5e3f51f.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/games/teams?season=2024&team=Duke": {
+    "file": "a91e287fdb4387df.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/games?season=2024&team=Duke": {
+    "file": "4db99951ad7a5dae.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/lines/providers": {
+    "file": "c91e4677389462e7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/lines?season=2024&team=Duke": {
+    "file": "919370e2b43c7690.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/lineups/game/5881": {
+    "file": "78c94ae4c0af7263.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/lineups/team?season=2024&team=Duke": {
+    "file": "177d8cb8edd43e83.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/plays/date?date=2024-04-09T00%3A00%3A00.000Z&shootingPlaysOnly=false": {
+    "file": "22ca9958fc263a1b.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/plays/game/5881?shootingPlaysOnly=false": {
+    "file": "b9af36b50983025b.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/plays/player/160?season=2024&shootingPlaysOnly=false": {
+    "file": "3f95c6b8947c5cb7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/plays/team?season=2024&team=Duke&shootingPlaysOnly=false": {
+    "file": "5bdb3011907419b8.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/plays/tournament?tournament=CIT&season=2024&shootingPlaysOnly=false": {
+    "file": "1c72ecc438144926.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/plays/types": {
+    "file": "82ee57f66ccc39dc.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/rankings?season=2024&pollType=ap": {
+    "file": "793839fedad61c1f.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/ratings/adjusted?season=2024": {
+    "file": "dcd817c71396c8c5.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/ratings/elo?season=2024": {
+    "file": "e8918daae414c1a4.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/ratings/srs?season=2024": {
+    "file": "4eeb8649e5f79102.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/recruiting/players?year=2024": {
+    "file": "6b387cad492a9891.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/recruiting/portal?year=2024": {
+    "file": "03716ea0da6dda21.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/recruiting/teams?year=2024": {
+    "file": "d4b7e4564f2ed0b0.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/scoreboard?conference=ACC": {
+    "file": "e122ca7e6130610c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/stats/player/season?season=2024&team=Duke": {
+    "file": "f4fa0e2ab1d6f887.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/stats/player/shooting/season?season=2024&team=Duke": {
+    "file": "73a349d95a6478f7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/stats/team/leaderboard?season=2024": {
+    "file": "f833e9aebcb89543.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/stats/team/season?season=2024&team=Duke": {
+    "file": "48ddde2967214cf4.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/stats/team/shooting/season?season=2024&team=Duke": {
+    "file": "71ec2dcc7af34534.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/substitutions/game/5881": {
+    "file": "cc445f9b387cdb51.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/substitutions/player/160?season=2024": {
+    "file": "7d21241ea60ea31d.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/substitutions/team?season=2024&team=Duke": {
+    "file": "d36d300cb202221c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/teams/72/season/2025/overview": {
+    "file": "cf82e03da4f39844.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/teams/directory?season=2025": {
+    "file": "d0fe637e0b2db1b9.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/teams/roster?season=2024&team=Duke": {
+    "file": "a0c3ff840253b02f.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/teams?conference=ACC&season=2027": {
+    "file": "32532344fcbb6cff.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/venues": {
+    "file": "addb5908cd8b70b0.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.data.cebl.ca/games/2025/": {
+    "file": "3b91502e3d937d11.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.data.cebl.ca/players/statistics/aggregated/?season=2025&mode=PER_GAME": {
+    "file": "cdb6c76336bee55c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.data.cebl.ca/seasons/": {
+    "file": "e50dd60b70c334be.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.data.cebl.ca/teams/": {
+    "file": "1a5ccf55e26c85e5.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.data.cebl.ca/teams/14/roster/2025/": {
+    "file": "838e4035f532e1de.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.data.cebl.ca/teams/2025/": {
+    "file": "29c133a392ec875c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/event/262052/data?apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "019dccdbe53b914b.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "4": {}
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/conferences?apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "87720fb4518ed59e.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=10&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "8e1c94028006a891.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=11&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "33e4fd29494e1fea.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=12&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "e8c11c85594b0b3a.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=13&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "d3de196acaa23d77.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=14&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "cac434b606eba2c8.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=15&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "d03fc88aa2f5529d.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=16&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "ae3ec91f27e30695.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=17&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "9f2299977a1f7535.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=18&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "78fbcf0147c161e5.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=19&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "d428cbf5bdfe88ff.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=195&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "5b7e6ba427961d3a.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=20&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "20b19ef530b47513.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=21&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "e864499c00c68c8c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=23&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "8320654a13281a91.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=24&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "cac75f13eced9f94.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=25&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "a3b8b6752010fa49.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=251&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "bd5e29e19e7f91fa.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=26&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "cbbb658216605781.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=27&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "169f731e1132bbc8.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=28&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "ed4dae0bab373c3a.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=29&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "fdbd44e55cbfa7c4.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=30&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "45a666f7e9c19250.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=31&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "0f8cfaf3c3ab0597.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=32&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "bd26185cf44b632a.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=33&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "aa99e662ce7a616c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=34&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "6d9a0024456e69b7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=35&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "2cb46415b5b57864.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=36&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "ffee8eb4b0454279.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=37&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "23309e3a023762f5.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=38&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "8cdf9f2e75bf80d2.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=39&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "6801ad9ef16e5223.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=40&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "58d7cde5e9d42054.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/league/standings?groupId=9&season=2024&apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "8158942bd086018d.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/team/1/standings?apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "20a8321a6a32ac48.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "4": {}
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/team/2/standings?apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "3cf900dd9b525e88.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "4": {}
+  },
+  "https://api.foxsports.com/bifrost/v1/cbk/team/3/standings?apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "0c3b7ddce960db6a.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "4": {}
+  },
+  "https://api.foxsports.com/bifrost/v1/nba/event/106422/data?apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "65531d4720539242.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "4": {}
+  },
+  "https://api.foxsports.com/bifrost/v1/nba/event/106422/odds?apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "fccc3508958c8fd1.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.foxsports.com/bifrost/v1/nba/league/stats-con/player/scoring/0?apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "a54b634e70216fc7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "4": {}
+  },
+  "https://api.foxsports.com/bifrost/v1/nba/team/1/gamelog?apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "2ee9591d15fc780f.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "4": {}
+  },
+  "https://api.foxsports.com/bifrost/v1/nba/team/1/roster?apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "2eef7647c717a29e.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "4": {}
+  },
+  "https://api.foxsports.com/bifrost/v1/nba/team/1/standings?apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "b8fc99d3c389ddda.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "4": {}
+  },
+  "https://api.foxsports.com/bifrost/v1/nba/team/1/stats?apikey=jE7yBJVRNAwdDesMgTzTXUUSx1It41Fq&api-version=1.1": {
+    "file": "c1bfebdb91a728f1.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "4": {}
+  },
+  "https://api.kbl.or.kr/common/teamList": {
+    "file": "52355fb26b72ab82.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/league/rank/S45G01": {
+    "file": "b6d29db90f4524b1.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/match/list?fromDate=20251101&toDate=20251102": {
+    "file": "dfa8e86e52afc488.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/match/S47G01N49": {
+    "file": "0fecaa3f07292bc1.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/match/S47G01N49/match-chart": {
+    "file": "a5f359dd333f8808.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/match/S47G01N49/player-stat": {
+    "file": "14434ab1100c8411.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/match/S47G01N49/team-record": {
+    "file": "991f81626fc43ea7.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/match/S47G01N49/text-cast?quarterList=Q1%2CQ2%2CQ3%2CQ4%2CEQ1%2CEQ2%2CEQ3%2CEQ4": {
+    "file": "156817264f1580cf.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/players": {
+    "file": "82132b50bb7211fd.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/season/list": {
+    "file": "eb5f6756a48f1226.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/competitions/?limit=10000&seasonId=26": {
+    "file": "8b8d0c602433f58a.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/competitions/?seasonId=26&limit=10000": {
+    "file": "9b20c7b4ba6abaab.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/competitions/579": {
+    "file": "56adda4d1386b3ae.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/matches/?limit=1000&competitionId=579&from=2025-10-01T00%3A00%3A00.000Z&to=2025-10-31T23%3A59%3A59.000Z": {
+    "file": "f66b36b69f03b031.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/matches/101839": {
+    "file": "eaa84c4fd67618d3.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/matches/101839/playByPlay": {
+    "file": "d99ea04b1fda8d52.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/matches/101839/stats": {
+    "file": "9c78e13510b321b6.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/matches/standings?competitionId=579": {
+    "file": "4be3c629c2b73351.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/players/106285/stats?seasonId=26": {
+    "file": "6dc28b0660b8d4c3.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/seasons/?limit=1000": {
+    "file": "fd489fb3c0750675.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/teams/?limit=1000&competitionId=579": {
+    "file": "97d99a8f46543172.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.preciser.io/v1/chart-data/id/e6f98675-3e5b-11ed-949e-5d17350689cf": {
+    "file": "d4b21f9a38138554.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": false
+  },
+  "https://api.tpbl.basketball/api/divisions/2/games/standings": {
+    "file": "91763ed6536d8b04.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.tpbl.basketball/api/divisions/2/teams/4/players": {
+    "file": "7c46ee01138173a0.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.tpbl.basketball/api/events/2/teams": {
+    "file": "46ff6ecff0384297.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.tpbl.basketball/api/games/6": {
+    "file": "fc68993d5499740d.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.tpbl.basketball/api/games/6/stats": {
+    "file": "f4e6343c2d69e9cd.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.tpbl.basketball/api/seasons": {
+    "file": "c65d38af405c0a53.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.tpbl.basketball/api/seasons/2/games": {
+    "file": "2971f4936096b14b.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.vtb-league.com/v2/leagues": {
+    "file": "3531133f12d9b353.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.vtb-league.com/v2/leagues/vtb/seasons": {
+    "file": "f39e8a6e457141a8.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.vtb-league.com/v2/leagues/vtb/seasons/2026/matches?limit=1000": {
+    "file": "9bd6cc950ff770ac.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": false
+  },
+  "https://api2.acb.com/api/matchdata/MatchHeader/match-header?matchId=105401": {
+    "file": "bb13c24c42a6f018.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/matchdata/MatchShots/match-shots?matchId=105401": {
+    "file": "6a646419c0ba6dc3.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/matchdata/Menu/matchlist?matchId=105401": {
+    "file": "4bf53f934db40c42.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/matchdata/PlayByPlay/play-by-play?matchId=105401": {
+    "file": "e0943bcafce76060.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/matchdata/Preview/season-leaders?matchId=105401": {
+    "file": "02757b71f01e1503.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/matchdata/Result/boxscores?matchId=105401": {
+    "file": "5d711048482bfabc.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/Calendar/season-calendar?editionId=91": {
+    "file": "212f4b6db4286932.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/Competition/bracket?editionId=90": {
+    "file": "4eb4f18f23c95203.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/Competition/matches?editionId=91&roundId=6017": {
+    "file": "927d5c078b046709.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/Competition/standings?editionId=91": {
+    "file": "e1d76e1500ec0aef.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/PlayerProfile/matches?playerLicenceId=20209407&editionId=91": {
+    "file": "0ae1ecf5f6cd0e3a.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/PlayerProfile/player-data?playerLicenceId=20209407": {
+    "file": "7e9299305a7980c8.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/PlayerProfile/player-stats?playerLicenceId=20209407": {
+    "file": "e905f03763ac1e15.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/TeamProfile/current-roster?clubId=2&editionId=91": {
+    "file": "63741df49d38ac73.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/TeamProfile/team-matches?clubId=2&editionId=91": {
+    "file": "d2721c52823e6464.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/TeamProfile/team-stats?clubId=2&editionId=91": {
+    "file": "395d9a07da5a1651.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/TeamProfile/teams?editionId=91": {
+    "file": "ceb943c032610a05.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://b-league.s3.amazonaws.com/web_json/v2_genius_contexts/504734/110.json": {
+    "file": "2209a474ebac17c7.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": false
+  },
+  "https://b-league.s3.amazonaws.com/web_json/v2_genius_contexts/504734/latestid": {
+    "file": "fe357c7f87103624.gz",
+    "status": 200,
+    "type": "application/octet-stream",
+    "trimmed": false
+  },
+  "https://baloncestoenvivo.feb.es/": {
+    "file": "2bb5202ed37e6c38.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://barttorvik.com/2024_fffinal.csv": {
+    "file": "da8607dd33ab06c8.gz",
+    "status": 200,
+    "type": "text/csv",
+    "trimmed": true
+  },
+  "https://barttorvik.com/2024_super_sked.json": {
+    "file": "40d1df727f3d06fd.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://barttorvik.com/2024_team_results.csv": {
+    "file": "24d5bd79e45aee4c.gz",
+    "status": 200,
+    "type": "text/csv",
+    "trimmed": true
+  },
+  "https://barttorvik.com/2025_team_results.csv": {
+    "file": "d2e37cd82779db1f.gz",
+    "status": 200,
+    "type": "text/csv",
+    "trimmed": false
+  },
+  "https://barttorvik.com/cgi-bin/ncaat.cgi?yrlow=2010&yrhigh=2024&type=conf": {
+    "file": "29fce29331011ede.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://barttorvik.com/getadvstats.php?year=2024&csv=1": {
+    "file": "67ba27a5fb1b8a41.gz",
+    "status": 200,
+    "type": "text/csv; charset=utf-8",
+    "trimmed": true
+  },
+  "https://barttorvik.com/getgamestats.php?year=2024&json=1": {
+    "file": "585e26acae38a23c.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://basket.co.il/ws/ws.asmx/Boards?cYear=2026": {
+    "file": "60550cf01ffe0eb2.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://basket.co.il/ws/ws.asmx/Boxscore?game_id=26392&cYear=2026": {
+    "file": "43fc352c6fe8cbfc.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://basket.co.il/ws/ws.asmx/Games?board_id=5&board_round=1&team_id=0&team_uid=0&game_id=0&cYear=2026": {
+    "file": "b519bf1f305b5eca.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://basket.co.il/ws/ws.asmx/LeaderByType?stat_type=pts&cYear=2026&team_id=0": {
+    "file": "9f45fd68800f863e.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://basket.co.il/ws/ws.asmx/Players?team_id=1109&team_uid=10&cYear=2026": {
+    "file": "6308ac0f00b62c06.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://basket.co.il/ws/ws.asmx/PlayerStatsById?player_id=21912&cYear=2026&isAverages=false&isPlayOff=false": {
+    "file": "d2220f2fc7efc3e7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://basket.co.il/ws/ws.asmx/Teams?board_id=5&cYear=2026": {
+    "file": "872cad82ebfb019d.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://basket.co.il/ws/ws.asmx/TeamStatsById?team_id=1109&cYear=2026&isAverages=false&isPlayOff=false": {
+    "file": "5200454ec89d9813.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://bnxt.sportpress.info/api/v1/boxscore/game/25/11295": {
+    "file": "30f7588caac77f4e.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://bnxt.sportpress.info/api/v1/competition-team/all?competition_id=24": {
+    "file": "f0f80bc6814e66c0.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://bnxt.sportpress.info/api/v1/competition-team/average-rankings/24": {
+    "file": "19a5912815446528.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://bnxt.sportpress.info/api/v1/competition-team/club/seasons?clubs%5B0%5D=1&clubs%5B1%5D=2": {
+    "file": "61f444effd900d3d.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://bnxt.sportpress.info/api/v1/phase/season/2026": {
+    "file": "6c3113caf680d15b.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://bnxt.sportpress.info/api/v1/player/average-rankings/24?limit=5": {
+    "file": "0e0b0c10e555c730.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://bnxt.sportpress.info/api/v1/roster/season-players/2026": {
+    "file": "70abe584c8fdb6cd.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://bnxt.sportpress.info/api/v1/schedule/club/2026?clubs%5B0%5D=1&clubs%5B1%5D=2&month=-1": {
+    "file": "9baa9516557c3ee0.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://bnxt.sportpress.info/api/v1/schedule/find/11295": {
+    "file": "d21d56b323c3cb51.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://bnxt.sportpress.info/api/v1/schedule/overview/11295": {
+    "file": "332fff963459fa48.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://bnxt.sportpress.info/api/v1/standings/competition/24/phase/169": {
+    "file": "5d598475ce866239.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://bnxtleague.com/": {
+    "file": "e7540a80f0e392a1.gz",
+    "status": 200,
+    "type": "text/html",
+    "trimmed": true
+  },
+  "https://bnxtleague.com/js/app.c24ea02e.js": {
+    "file": "cf5e0d8ec7b15736.gz",
+    "status": 200,
+    "type": "text/javascript",
+    "trimmed": true
+  },
+  "https://cebl-stats-hub.web.app/_next/static/chunks/app/league-leaders/page-94810263421d98a3.js": {
+    "file": "d19bcfb71fcf1e81.gz",
+    "status": 200,
+    "type": "text/javascript; charset=utf-8",
+    "trimmed": true
+  },
+  "https://cebl-stats-hub.web.app/league-leaders": {
+    "file": "421cf7531311cc21.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/com-code-tables/getMatchType": {
+    "file": "56e27dea4bb4b359.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/com-code-tables/getSeason": {
+    "file": "a873e5ea8c2e52e9.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/com-code-tables/getTeam?type=2&season=2025": {
+    "file": "2f91cad521a802af.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/player-base-list?pageNumber=1&pageSize=100": {
+    "file": "6321e9777ca68bd8.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/player-match-datas/data-count": {
+    "file": "07a283a4eba67ff4.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/schedule-eventses/filterPage?startNum=0": {
+    "file": "23ab12d6c254be62.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/schedule-quarters/getQuarterInfo": {
+    "file": "1f2f3f21ec752528.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/schedules/day?auto=0&day=2025-12-12": {
+    "file": "23869476e1924390.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/schedules/getPlayersByScheduleId/100105799": {
+    "file": "32f16b16eacec0d6.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/schedules/month?year=2025&month=12": {
+    "file": "b2c23e5881ca9286.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/team-match-datas/getMatchDataReport/baseInfo/100105799": {
+    "file": "13f260944094ea98.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/team-match-datas/schedule-shoot-list": {
+    "file": "d224bf12d181cd80.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/teams/basic-data": {
+    "file": "3f7cb6ddfe6805c2.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/teams/teamList": {
+    "file": "7d2fb4d4dad669b3.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getGdapCompetitionById?gdapCompetitionId=208182": {
+    "file": "5474b9413ac95f77.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": false
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapcompetitionfinalstandingbycompetitionid?profile=true&gdapCompetitionId=208182": {
+    "file": "34911cf924daf644.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapcompetitionsbyseasonsandcompetitionmarketingname?competitionMarketingNameId=201&fromSeason=2023&toSeason=2023": {
+    "file": "464d7a2d68c58d53.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapcompetitionteamrosterbyteamid?gdapTeamId=279569": {
+    "file": "c4f507dd9a3aa12d.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapcompetitionteamsbycompetitionid?profile=true&gdapCompetitionId=208182": {
+    "file": "6c285d4c98942512.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapcompetitionteamstatisticsbyteamid?gdapTeamId=279569": {
+    "file": "f08f3d751dde60d4.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapgamebyid?gdapGameId=100720": {
+    "file": "8e6add8337608d59.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapgamesbycompetitionid?gdapCompetitionId=208182": {
+    "file": "e23a1c2b56913526.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": false
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapgameswithleaderdetailsbyteamid?gdapTeamId=279569": {
+    "file": "3a2129de58d2f1b9.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapplayercompetitionstatisticsbyplayerid?gdapPlayerId=211501&gdapCompetitionId=208182": {
+    "file": "5b4542d6d31cf20a.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapplayergamestatisticsbyplayerid?gdapPlayerId=211501&gdapCompetitionId=208182": {
+    "file": "247aa5a3b4f0c258.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdaproundsbycompetitionid?gdapCompetitionId=208182": {
+    "file": "0eca8a231bab8bcb.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/matches/10af8fd4-106e-11f1-960b-5798087c7aa3": {
+    "file": "df143adeb5115766.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/matches/10af8fd4-106e-11f1-960b-5798087c7aa3/boxscore": {
+    "file": "9f18ed825be127f0.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/matches/10af8fd4-106e-11f1-960b-5798087c7aa3/playbyplay": {
+    "file": "367dec3cd377663e.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/matches/10af8fd4-106e-11f1-960b-5798087c7aa3/teamstats": {
+    "file": "ffa861f848c42686.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/matches/10af8fd4-106e-11f1-960b-5798087c7aa3/teamstats/by/period": {
+    "file": "2eea3757f35129d1.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/matches?seasonId=77441bb3-9759-11f0-b659-0561c09a0222": {
+    "file": "a9a2dff6e2364b6b.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/metadata/seasons": {
+    "file": "a28a54f95150039c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/players?seasonId=77441bb3-9759-11f0-b659-0561c09a0222&teamId=865489e8-b0f5-11ed-8b3f-c199a9dea184": {
+    "file": "5307e3f60b4ce246.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/standings?seasonId=77441bb3-9759-11f0-b659-0561c09a0222": {
+    "file": "fbd586d696c3001b.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/teams": {
+    "file": "61ce68f2f7d7fd06.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://embed-api.eui.connect.sportradar.com/v1/embed/12/entities?seasonId=df310a05-51ad-11f0-bd89-c735508e1e09": {
+    "file": "cef41b028b49cdb8.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://embed-api.eui.connect.sportradar.com/v1/embed/12/fixture_detail?sub=statistics&fixtureId=5423072b-6715-11f0-bd8b-9ffadebc148f": {
+    "file": "f169cf2b343f21dd.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://embed-api.eui.connect.sportradar.com/v1/embed/12/fixtures": {
+    "file": "4c78b4cb3b2ca0bc.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://embed-api.eui.connect.sportradar.com/v1/embed/12/persons?seasonId=df310a05-51ad-11f0-bd89-c735508e1e09": {
+    "file": "b71a0b71a70c05a2.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://embed-api.eui.connect.sportradar.com/v1/embed/12/standings?seasonId=df310a05-51ad-11f0-bd89-c735508e1e09": {
+    "file": "7a6cd8fdccf01cf1.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://embed-api.eui.connect.sportradar.com/v1/embed/12/statistics_entities?seasonId=df310a05-51ad-11f0-bd89-c735508e1e09": {
+    "file": "fd36975ac509e994.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://embed-api.eui.connect.sportradar.com/v1/embed/14/fixture_detail?sub=pbp&fixtureId=0dc631bd-c34c-11f1-8d16-4d5a21afb79d": {
+    "file": "595dd7c6dccb9a38.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://embed-api.eui.connect.sportradar.com/v1/embed/14/fixture_detail?sub=shot_chart&fixtureId=0dc631bd-c34c-11f1-8d16-4d5a21afb79d": {
+    "file": "03a9da711933f209.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://embed-api.eui.connect.sportradar.com/v1/embed/14/fixture_detail?sub=statistics&fixtureId=0dc631bd-c34c-11f1-8d16-4d5a21afb79d": {
+    "file": "3442bf52b9ca1609.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://embed-api.eui.connect.sportradar.com/v1/embed/14/fixtures": {
+    "file": "b5f6228b5ed60ab6.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://fibalivestats.dcd.shared.geniussports.com/data/2902690/data.json": {
+    "file": "d5878690f5344b78.gz",
+    "status": 200,
+    "type": "application/javascript",
+    "trimmed": true
+  },
+  "https://fibalivestats.dcd.shared.geniussports.com/data/competition/49915.json": {
+    "file": "62bec9db2b060629.gz",
+    "status": 200,
+    "type": "application/javascript",
+    "trimmed": true
+  },
+  "https://fibalivestats.dcd.shared.geniussports.com/u/ESAKE/2902690/": {
+    "file": "0fce86084d7fd00b.gz",
+    "status": 200,
+    "type": "text/html",
+    "trimmed": true
+  },
+  "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_groups/mbb_group_seasons.parquet": {
+    "file": "b2591bcced6ab9bf.gz",
+    "status": 200,
+    "type": "application/octet-stream",
+    "trimmed": false
+  },
+  "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_groups/mbb_team_group_seasons_2025.parquet": {
+    "file": "757f13593f405598.gz",
+    "status": 200,
+    "type": "application/octet-stream",
+    "trimmed": false
+  },
+  "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_groups/mbb_team_group_seasons_2026.parquet": {
+    "file": "23840c9fcc5337b5.gz",
+    "status": 200,
+    "type": "application/octet-stream",
+    "trimmed": false
+  },
+  "https://hosted.dcd.shared.geniussports.com/CEBL/en/competition/47852/schedule?roundNumber=-1": {
+    "file": "215408287c45ed0f.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://hosted.dcd.shared.geniussports.com/embednf/HKS/en/competition/49946/schedule?roundNumber=-1": {
+    "file": "ed11479156505400.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://hosted.dcd.shared.geniussports.com/ESAKE/en/schedule": {
+    "file": "c9aab5c206628e15.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://intrafeb.feb.es/LiveStats.API/api/v1/BoxScore/2535725": {
+    "file": "da68bc6510d54def.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://intrafeb.feb.es/LiveStats.API/api/v1/KeyFacts/2535725": {
+    "file": "7809008649abf3f2.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://intrafeb.feb.es/LiveStats.API/api/v1/TeamStats/2535725": {
+    "file": "f4e2bd7cad485f77.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://live.euroleague.net/api/Boxscore?gamecode=1&seasoncode=E2025": {
+    "file": "083df9bf5e1e500b.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://live.euroleague.net/api/Header?gamecode=1&seasoncode=E2025": {
+    "file": "ab3a2e5de52ea869.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://live.euroleague.net/api/PlayByPlay?gamecode=1&seasoncode=E2025": {
+    "file": "0c6c10a701eb53bf.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://live.euroleague.net/api/Points?gamecode=1&seasoncode=E2025": {
+    "file": "017fa6a1b9434afb.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/api/livestream/boxscore/11446": {
+    "file": "8a690f680b97d2bc.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://lkl.lt/api/livestream/game-score/11446": {
+    "file": "19e4a5f21a35ec05.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://lkl.lt/api/livestream/game-stats/11446": {
+    "file": "5276f42c9fa41a38.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://lkl.lt/api/livestream/leaders/11446": {
+    "file": "60b3b88599ad8de7.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://lkl.lt/api/livestream/play-by-play/11446": {
+    "file": "5804df59df2f4b1b.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://lkl.lt/api/livestream/shot-chart/11446": {
+    "file": "9314dd2fb76b8c15.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://lkl.lt/api/livestream/summary/11446": {
+    "file": "2447ee859fb73795.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=1": {
+    "file": "db953a6bfd27d549.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=10": {
+    "file": "fb4a7da49e11ac2e.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=11": {
+    "file": "b20b229ec41a8634.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=12": {
+    "file": "dc044f7a1a4021ba.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=13": {
+    "file": "2b16fdcbcb5b71f4.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=14": {
+    "file": "a6548521f1a5f1b2.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=15": {
+    "file": "3267e498764a2ede.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=16": {
+    "file": "89b06e0181469273.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=17": {
+    "file": "ff82c33ebbc8a5b3.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=2": {
+    "file": "a074426c1cb8468a.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=3": {
+    "file": "3f4b8c505ceda68a.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=4": {
+    "file": "47a8918519b0a637.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=5": {
+    "file": "8275d996718a7ce5.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=6": {
+    "file": "dc42d973214f0369.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=7": {
+    "file": "be697fb7297107a7.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=8": {
+    "file": "b6067af52a27da57.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadResults?team=-&opponent=-&month=-&season=41936&page=9": {
+    "file": "090b595371f81931.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/loadStandings/34": {
+    "file": "275eda55e9ecd4f0.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/rezultatai": {
+    "file": "2e75c494d50770ed.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/rungtynes/11446": {
+    "file": "915707abd4874152.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://lkl.lt/turnyrine-lentele": {
+    "file": "3adbaa24be21cbb9.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/League/get-league-weeks?seasonId=174&leagueId=22214": {
+    "file": "8b5b6b1e327c446b.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/League/get-leagues-and-seasons-by-prefix?prefix=bsl": {
+    "file": "58e989b2679ae661.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/League/get-leagues-for-filter?seasonId=174": {
+    "file": "0321eb4f3fc840a7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/League/get-standings-table?seasonId=174&leagueId=22214": {
+    "file": "2f7e252543195481.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Match/game-flow?matchId=346279": {
+    "file": "8b34309171966a57.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Match/get-all-matches-for-filter?ActivityId=22214&WeekFilter=1&Page=1&PageSize=-1": {
+    "file": "848599a5d3a1fd86.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Match/get-daily-matches?MatchDate=2026-10-11&GroupByActivity=true": {
+    "file": "4fecafa19a6eeab2.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Match/mac-header?matchId=346279": {
+    "file": "e521234bca1d07b6.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Match/mac-istatistik?matchId=346279": {
+    "file": "43b5a78d0418482a.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Match/mac-leader?matchId=346279": {
+    "file": "8cf31f6052ad9156.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Match/mac-ozet?matchId=346279": {
+    "file": "f11fee77eabcc3a3.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Match/shot-chart?matchId=346279": {
+    "file": "00f7330d8ce45cbf.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Player/get-3Point-leaders?seasonId=174&leagueId=22214": {
+    "file": "d5364cda7e423515.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Player/get-asist-leaders?seasonId=174&leagueId=22214": {
+    "file": "96aa8066c909db29.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Player/get-blok-leaders?seasonId=174&leagueId=22214": {
+    "file": "2307acf88b04cab6.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Player/get-duration-leaders?seasonId=174&leagueId=22214": {
+    "file": "9c2ae4553295721d.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Player/get-mvp-leaders?seasonId=174&leagueId=22214": {
+    "file": "1408373409842c1e.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Player/get-player-detail-profile-and-career-info/196413": {
+    "file": "33f0eb2565e1cabf.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Player/get-player-list?seasonId=174&leagueId=22214&page=1&pageSize=-1&sortPlayersEnum=AZ": {
+    "file": "9b1cc62679509022.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Player/get-point-leaders?seasonId=174&leagueId=22214": {
+    "file": "b4e26a8aa7ecc6bd.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Player/get-ribound-leaders?seasonId=174&leagueId=22214": {
+    "file": "3088a8baf06db111.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Player/get-top-calma-leaders?seasonId=174&leagueId=22214": {
+    "file": "ce97e059940ed709.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Player/get-top-kaybi-leaders?seasonId=174&leagueId=22214": {
+    "file": "40f2f78971ae38b3.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Season/get-seasons": {
+    "file": "d89d1f5e7c61e952.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Team/get-team-active-player-list-by-season-and-league?LeagueId=22214&SeasonId=174&TeamProcessId=265995": {
+    "file": "dd3d07b190d0dceb.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Team/get-team-detail-matches-by-season-and-league?LeagueId=22214&SeasonId=174&TeamProcessId=265995": {
+    "file": "e68812f57b873681.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Team/get-team-detail-statistic?LeagueId=22214&SeasonId=174&TeamProcessId=265995": {
+    "file": "df5d070eefc5a4c7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Team/get-team-detail-team-staff-by-season-and-league?LeagueId=22214&SeasonId=174&TeamProcessId=265995": {
+    "file": "bb1ee99b261490a6.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://miniappapi.tbf.org.tr/webapi-service/api/Team/get-teams-by-leauge?leaugeId=22214": {
+    "file": "d7d4978529996d1c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Comp/GetCalendar/?format=json&comps=50714": {
+    "file": "d8e37ee2f9c7b607.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://org.infobasket.su/Comp/GetSeasonsForTag?format=json&tag=vtb": {
+    "file": "6e936440726d8ef4.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Comp/GetSeasonsForTag?tag=vtb&format=json": {
+    "file": "9bca00da9ded71e7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://org.infobasket.su/Comp/GetTeamStats/50714?page=0": {
+    "file": "4dcdcb24f0b2fced.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://org.infobasket.su/Widget/CompTeamResults/50720?format=json": {
+    "file": "25f54579c8363d88.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Widget/GetOnline/921391?format=json": {
+    "file": "54ea4bec479f3814.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Widget/PlayerPage/423011?format=json&tag=vtb": {
+    "file": "d7983c149dd96828.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Widget/PlayerSeasonStats/423011?format=json&tag=vtb": {
+    "file": "dd58750550edbf9e.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Widget/PlayOff/54281?format=json": {
+    "file": "0155ff868ab9a350.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Widget/TeamGames/2650?format=json&tag=vtb&compId=50714": {
+    "file": "96c988d686c3421c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://org.infobasket.su/Widget/TeamPage/2650?format=json&lang=en&tag=vtb": {
+    "file": "26af4300ae958a43.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Widget/TeamRoster/2650?format=json&lang=en&tag=vtb&compId=50714": {
+    "file": "474cc1b00d5e4ac5.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://pleagueofficial.com/api/boxscore.preciser.php?id=197&away_tab=total&home_tab=total": {
+    "file": "d674e253222a4542.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://pleagueofficial.com/api/playbyplay.php?uuid=e6f98675-3e5b-11ed-949e-5d17350689cf": {
+    "file": "0d1ec3b010a5d4f9.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://pleagueofficial.com/game/197": {
+    "file": "b8a9a0b7bc7fe5ae.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://pleagueofficial.com/schedule-regular-season/2024-25": {
+    "file": "e887ed21866de2ab.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://prod.rosetta.nbl.com.au/get/match/b217a699-4bef-11f0-bc08-933162362355/live/all": {
+    "file": "1439674c5fba4066.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://prod.rosetta.nbl.com.au/get/nbl/matches/in/season/2025/regular?limit=2000": {
+    "file": "eca3555f4c026e97.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://prod.rosetta.nbl.com.au/get/nbl/players/in/season/2025?limit=5000": {
+    "file": "40f32415a13159ea.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://prod.rosetta.nbl.com.au/get/nbl/seasons/current": {
+    "file": "6faeddfd8334f98d.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://prod.rosetta.nbl.com.au/get/nbl/seasons?limit=1000": {
+    "file": "92586c6f44f2ffbe.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://prod.rosetta.nbl.com.au/get/nbl/standings/2025/regular?limit=1000": {
+    "file": "18c840b34375c70d.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://prod.rosetta.nbl.com.au/get/nbl/statistics/for/player/7619d3ea-410d-11f0-9235-2902fc2f936f": {
+    "file": "da0bd4bc76a525a7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://prod.rosetta.nbl.com.au/get/nbl/teams?limit=5000": {
+    "file": "44f3bbaab60c63af.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/news?limit=5": {
+    "file": "43100078535c3469.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/news?team=150&limit=5": {
+    "file": "a87d8aa4f20c704d.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard?dates=2025": {
+    "file": "c75685f49a27e5b0.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/150/roster": {
+    "file": "fecf2bfe65b2bc64.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/150/schedule?season=2025&seasontype=2": {
+    "file": "6db65fc3e265735f.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/150?enable=roster,projection,stats&season=2025": {
+    "file": "84993f9defa6fcee.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries": {
+    "file": "4d915fc38323245b.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/news?limit=5": {
+    "file": "0f9ec57c229b31f8.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/news?team=13&limit=5": {
+    "file": "f8c75c61dd75aa87.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=2025": {
+    "file": "4e86abadf167e449.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/13/roster": {
+    "file": "b3091fface2b8b1c.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/13/schedule?season=2025&seasontype=2": {
+    "file": "26bed60c259ab459.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/13?enable=roster,projection,stats&season=2025": {
+    "file": "e53ff2851c043fa4.gz",
+    "status": 200,
+    "type": "application/json",
+    "4": {}
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/transactions?season=2025&limit=10": {
+    "file": "3f67582cbc41c24e.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/transactions?season=2026&limit=10": {
+    "file": "a1ddcb63621a80eb.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/athletes/4593919/overview?season=2025": {
+    "file": "a37c8299339dfd77.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/athletes/4593919/splits?season=2025": {
+    "file": "039ef0b2a9e73dcf.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/athletes/4593919/stats?season=2025": {
+    "file": "dfcb1a01a6c8a17d.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.web.api.espn.com/apis/common/v3/sports/basketball/mens-college-basketball/athletes/4711256/gamelog?season=2025": {
+    "file": "f74594d4d5d54273.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/1966/gamelog?season=2024": {
+    "file": "dd1ed78ba414fac1.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/1966/overview?season=2024": {
+    "file": "087a82a341114b59.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/1966/splits?season=2024": {
+    "file": "c79112cedf6efa3a.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/1966/stats?season=2024": {
+    "file": "1096dccd361c270a.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "4": {}
+  },
+  "https://site.web.api.espn.com/apis/v2/sports/basketball/mens-college-basketball/standings?region=us&lang=en&contentorigin=espn&type=0&level=3&sort=winpercent%3Adesc%2Cwins%3Adesc%2Cgamesbehind%3Aasc&season=2021": {
+    "file": "8ac0ae362f686669.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": false
+  },
+  "https://site.web.api.espn.com/apis/v2/sports/basketball/nba/standings?region=us&lang=en&contentorigin=espn&type=0&level=1&sort=winpercent%3Adesc%2Cwins%3Adesc%2Cgamesbehind%3Aasc&season=2021": {
+    "file": "0126fa05d1340e0a.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": false
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/athletes/4593919": {
+    "file": "5a51dde392925882.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/athletes/4593919/statistics/0?lang=en&region=us": {
+    "file": "20376158271af9c8.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/athletes/4593919/statisticslog": {
+    "file": "98874bc53ebef044.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/coaches/32116/record/2?lang=en&region=us": {
+    "file": "89a187e8ce3ca5dd.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/coaches/32116?lang=en&region=us": {
+    "file": "0d42d5ba0ceed8b8.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/broadcasts": {
+    "file": "875eaa5380691c7b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/competitors/": {
+    "file": "efdefda499b0f20d.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/competitors/52/leaders?lang=en&region=us": {
+    "file": "e938117336822482.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/competitors/52/linescores?lang=en&region=us": {
+    "file": "034d5a760b84f063.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/competitors/52/records?lang=en&region=us": {
+    "file": "b3e5a659c9b91d32.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/competitors/52/roster": {
+    "file": "f5fd833c95256d64.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/competitors/52/roster/4277850/statistics/0?lang=en&region=us": {
+    "file": "f5d8923bfa9f220f.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/competitors/52/roster/4277850?lang=en&region=us": {
+    "file": "7f3ca5715ba63170.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/competitors/52/roster?limit=100&lang=en&region=us": {
+    "file": "d00e1924038923a2.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/competitors/52/score?lang=en&region=us": {
+    "file": "1ccb8d9fe500b725.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/competitors/52/statistics?lang=en&region=us": {
+    "file": "69101f21c020ba7f.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/competitors/57/roster": {
+    "file": "f66146530d5b4da6.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/odds": {
+    "file": "b5dc1ca4574f1f5e.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/officials": {
+    "file": "2fa46364f6a482b1.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/officials/1?lang=en&region=us": {
+    "file": "da7971ab1f6ad996.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/plays/401256760101805901?lang=en&region=us": {
+    "file": "a0cd85e904ad66ae.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/powerindex?limit=200&lang=en&region=us": {
+    "file": "2fab10b3b876567d.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/predictor?lang=en&region=us": {
+    "file": "06fdb8fb06cd8a2a.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/probabilities?limit=50&page=1": {
+    "file": "634dd27d6d332f22.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/probabilities?limit=50&page=2": {
+    "file": "6223eabdf3f39c01.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/probabilities?limit=50&page=3": {
+    "file": "f20a9c6e886b2f45.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/probabilities?limit=50&page=4": {
+    "file": "0fa579e77cc71359.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/probabilities?limit=50&page=5": {
+    "file": "a6dd2fcb5791be41.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/probabilities?limit=50&page=6": {
+    "file": "5695131b161057a4.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/probabilities?limit=50&page=7": {
+    "file": "d96c36a240bc9b51.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/probabilities?limit=50&page=8": {
+    "file": "cb3e495919977610.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/situation?lang=en&region=us": {
+    "file": "58ec938534efe772.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises/150?lang=en&region=us": {
+    "file": "31407f6c9b419eba.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/franchises?limit=200&lang=en&region=us": {
+    "file": "99ebc3a1d7434997.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions/1?lang=en&region=us": {
+    "file": "03a005d348d39ba3.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/positions?limit=200&lang=en&region=us": {
+    "file": "15c4f6b17c171cbe.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2020/types/2/teams/150/statistics/": {
+    "file": "e4b1d9895e454b7a.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/athletes/4593919": {
+    "file": "02820b9b7bc28478.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2021/types/2/athletes/4593919/statistics/": {
+    "file": "aeeba580e5cd48e1.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/awards/344?lang=en&region=us": {
+    "file": "37d687b309f1af45.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/awards?lang=en&region=us": {
+    "file": "9aafdde538768279.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/types/2/teams/150/records/0?lang=en&region=us": {
+    "file": "cd0ea768a6463a08.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2024/types/2/teams/150/statistics?lang=en&region=us": {
+    "file": "9cba2826fda4f2cb.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025": {
+    "file": "0ce230920a04fcf9.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4683735/eventlog?lang=en&region=us": {
+    "file": "299f346120284a74.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes/4711256/eventlog": {
+    "file": "8b6676def0ee3742.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes?limit=100&page=1": {
+    "file": "c7d0dbb5da32cea1.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes?limit=100&page=10": {
+    "file": "44ae6b19c1e4d7df.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes?limit=100&page=2": {
+    "file": "b55a4d085afce9c6.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes?limit=100&page=3": {
+    "file": "875ea7acb76fb992.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes?limit=100&page=4": {
+    "file": "b1cff7d8629c0451.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes?limit=100&page=5": {
+    "file": "4938f6e2eb597b3b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes?limit=100&page=6": {
+    "file": "e9b8d3162f8beee2.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes?limit=100&page=7": {
+    "file": "8936a3c71792772b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes?limit=100&page=8": {
+    "file": "0f4a203c67beea1d.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/athletes?limit=100&page=9": {
+    "file": "3b488edda6dd5e85.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/coaches/32116?lang=en&region=us": {
+    "file": "b8a6a5042cc8e98f.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/coaches?limit=100&page=1": {
+    "file": "5ebe8ed42ee196f7.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/coaches?limit=100&page=2": {
+    "file": "8e690ffd91c71a3c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/coaches?limit=100&page=3": {
+    "file": "0a5f5d5f406d5084.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/coaches?limit=100&page=4": {
+    "file": "9f50e572af7ea279.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/futures?limit=200&lang=en&region=us": {
+    "file": "9d57d270563a4445.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/powerindex?limit=100&page=1&lang=en&region=us": {
+    "file": "39bf264db08fd9ff.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/rankings/1?lang=en&region=us": {
+    "file": "e0612415085dfeaf.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/rankings?lang=en&region=us": {
+    "file": "73b73484ee9f2806.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150/athletes?limit=200&lang=en&region=us": {
+    "file": "fe99ddb8a2c8d4d8.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/teams/150?lang=en&region=us": {
+    "file": "2355756c744f94d4.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/groups/5/teams?limit=200&lang=en&region=us": {
+    "file": "52ca595ea1996daa.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/groups/5?lang=en&region=us": {
+    "file": "aa2af69d0ad6862a.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/groups?limit=200&lang=en&region=us": {
+    "file": "4afe33d1dd7c84b5.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/leaders": {
+    "file": "f07c017a9e7d7157.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/leaders?lang=en&region=us": {
+    "file": "0f0ef9ee3c770403.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/teams/150/record?lang=en&region=us": {
+    "file": "ee081a262548455c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/5/rankings/1?lang=en&region=us": {
+    "file": "e6799b8c3810c463.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/5/rankings?lang=en&region=us": {
+    "file": "ef1864274028122d.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks/5?lang=en&region=us": {
+    "file": "e3b5ada8544d73c6.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2/weeks?limit=200&lang=en&region=us": {
+    "file": "299ba37e48641ccb.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/2?lang=en&region=us": {
+    "file": "58eed00a04634565.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/groups?limit=200&lang=en&region=us": {
+    "file": "fa875a9f070bd906.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/leaders?lang=en&region=us": {
+    "file": "c65ffe204539aa8d.gz",
+    "status": 404,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/teams/150/record?lang=en&region=us": {
+    "file": "2185162e2684f9ec.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types/3/weeks?limit=200&lang=en&region=us": {
+    "file": "a23bbe8d9b8f1bdf.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2025/types?lang=en&region=us": {
+    "file": "53d5d5b5e9028314.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons?limit=200": {
+    "file": "e3bf4f7c7642a79c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/3/seasons/2024?lang=en&region=us": {
+    "file": "9b054d4706659c1b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/3/seasons?limit=200&lang=en&region=us": {
+    "file": "9eb52a580a712452.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments/3?lang=en&region=us": {
+    "file": "d95ba8ceea7ad9ad.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/tournaments?limit=200&lang=en&region=us": {
+    "file": "210e25110812954c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues?limit=100&page=1": {
+    "file": "3f016b7fecda2755.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues?limit=100&page=10": {
+    "file": "ff27f4bedc74d321.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues?limit=100&page=11": {
+    "file": "20a42d42c5a29f4b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues?limit=100&page=2": {
+    "file": "34603363795905d8.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues?limit=100&page=3": {
+    "file": "7be05c62435e0982.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues?limit=100&page=4": {
+    "file": "408e6b473a18a4ff.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues?limit=100&page=5": {
+    "file": "13712186eeabaaa6.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues?limit=100&page=6": {
+    "file": "1e99a98b20c15c24.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues?limit=100&page=7": {
+    "file": "966bc1d0d7ac0993.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues?limit=100&page=8": {
+    "file": "293f45970e61cc27.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/venues?limit=100&page=9": {
+    "file": "21d26d7a289b638b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966": {
+    "file": "ee6663e6e6add9df.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966/awards": {
+    "file": "3b724b6b6c7b49d0.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966/contracts/2025?lang=en&region=us": {
+    "file": "c2f7c5e5c9ccbdde.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966/contracts?lang=en&region=us": {
+    "file": "429803b3d8af3236.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966/seasons?limit=200&lang=en&region=us": {
+    "file": "797f6a800e72e497.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966/statistics/0?lang=en&region=us": {
+    "file": "eb5a89fbe3bcbd36.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/athletes/1966/statisticslog": {
+    "file": "262788b7d5f4c670.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/coaches/52120/record/2?lang=en&region=us": {
+    "file": "2f82b3796cf95bca.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/coaches/52120?lang=en&region=us": {
+    "file": "0c090913fde7857a.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/competitors/": {
+    "file": "8ce17d9f781286a4.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/competitors/25/roster": {
+    "file": "5baafdc70a96b2c0.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/competitors/29/leaders?lang=en&region=us": {
+    "file": "8b20e435ea3ecdca.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/competitors/29/linescores?lang=en&region=us": {
+    "file": "482b52d1e4dab36b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/competitors/29/records?lang=en&region=us": {
+    "file": "fbc009f60b5e6754.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/competitors/29/roster": {
+    "file": "2acb4c702412230c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": false
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/competitors/29/roster/2993874/statistics/0?lang=en&region=us": {
+    "file": "5e9b8d595f0dac1d.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/competitors/29/roster/2993874?lang=en&region=us": {
+    "file": "72cede9af6737b12.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/competitors/29/roster?limit=100&lang=en&region=us": {
+    "file": "2cdabf2e18298f56.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/competitors/29/score?lang=en&region=us": {
+    "file": "5e2bc0649c919e6c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/competitors/29/statistics?lang=en&region=us": {
+    "file": "ebc5453b59a6af65.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/odds": {
+    "file": "8842ba196e588950.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/officials": {
+    "file": "564e617d8af3d95e.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/officials/1?lang=en&region=us": {
+    "file": "d31340b628d59d8c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/plays/4012833994?lang=en&region=us": {
+    "file": "1a6912065d4401a7.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/powerindex?limit=200&lang=en&region=us": {
+    "file": "8a4341041946b0c3.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/predictor?lang=en&region=us": {
+    "file": "d5a72e61638d3645.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/probabilities?limit=50&page=1": {
+    "file": "f3fb8bfe079b005f.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/probabilities?limit=50&page=10": {
+    "file": "4a58cbb5c2f343c3.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/probabilities?limit=50&page=2": {
+    "file": "3012aeaeb766d4a5.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/probabilities?limit=50&page=3": {
+    "file": "9d2f90986c3fba67.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/probabilities?limit=50&page=4": {
+    "file": "a25ff91aa2efb542.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/probabilities?limit=50&page=5": {
+    "file": "d1ee1cf4dfe8d862.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/probabilities?limit=50&page=6": {
+    "file": "c7a990d0040a960c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/probabilities?limit=50&page=7": {
+    "file": "9deb99cf54441648.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/probabilities?limit=50&page=8": {
+    "file": "8b5896e4be165588.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/probabilities?limit=50&page=9": {
+    "file": "cee7d5539d165737.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/situation?lang=en&region=us": {
+    "file": "2eb805eb41a324ad.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/broadcasts": {
+    "file": "59bfe349841fd717.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/odds": {
+    "file": "798506a580831f7e.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/odds/100/propBets?limit=100&page=1&lang=en&region=us": {
+    "file": "8d27ab04d6aab82c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/odds/100/propBets?limit=100&page=2&lang=en&region=us": {
+    "file": "f1a7d71b9103e2d0.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/odds/100/propBets?limit=100&page=3&lang=en&region=us": {
+    "file": "995919a6beff20d0.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/odds/100/propBets?limit=100&page=4&lang=en&region=us": {
+    "file": "d7bcd9c962ed81d1.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/probabilities?limit=50&page=1": {
+    "file": "1fd5e1543aef0eca.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/probabilities?limit=50&page=10": {
+    "file": "53011e1a2b376141.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/probabilities?limit=50&page=2": {
+    "file": "1b32ab1f8328a84e.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/probabilities?limit=50&page=3": {
+    "file": "f2f001f37a4a2eac.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/probabilities?limit=50&page=4": {
+    "file": "390af2ae48dafa8f.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/probabilities?limit=50&page=5": {
+    "file": "a43e81d2135a3019.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/probabilities?limit=50&page=6": {
+    "file": "07cc00b66c7b0944.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/probabilities?limit=50&page=7": {
+    "file": "a95314cf32cbd574.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/probabilities?limit=50&page=8": {
+    "file": "35f309bc29b62c0d.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401909938/competitions/401909938/probabilities?limit=50&page=9": {
+    "file": "3fbda7d7f2be2c17.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/franchises/13?lang=en&region=us": {
+    "file": "6ff993488dc3a43f.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/franchises?limit=200&lang=en&region=us": {
+    "file": "ccb60974cd23c27c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/positions/1?lang=en&region=us": {
+    "file": "d6fdd11bb0e7a701.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/positions?limit=200&lang=en&region=us": {
+    "file": "445dd52a67550325.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2020/types/2/teams/13/statistics/": {
+    "file": "6f195a0d5d6f2eb2.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2022/athletes/1966": {
+    "file": "1456b7d730fd37bf.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2022/types/2/athletes/1966/statistics/": {
+    "file": "43988b87a7323baa.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/athletes/1966/eventlog": {
+    "file": "a97004e664f6a830.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/awards/33?lang=en&region=us": {
+    "file": "37f0809256ca6967.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/awards?lang=en&region=us": {
+    "file": "54079843b5da195d.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/draft/athletes/108206?lang=en&region=us": {
+    "file": "fe6f139591e5d7bf.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "trimmed": true
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/draft/athletes?limit=200&lang=en&region=us": {
+    "file": "5dac77ee609f8f33.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/draft/rounds": {
+    "file": "069358cf87f46c1e.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/draft/rounds/1/picks/1?lang=en&region=us": {
+    "file": "23f0bb39fca8cc3e.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/draft/rounds?lang=en&region=us": {
+    "file": "793e6dde8f57d324.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/draft/status?lang=en&region=us": {
+    "file": "081a05fcb6693fa6.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/draft?lang=en&region=us": {
+    "file": "81f5b5388c74201b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/types/2/leaders": {
+    "file": "03fc4a5bcfbd7820.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/types/2/teams/13/records/0?lang=en&region=us": {
+    "file": "e05abed5fce13dbf.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2024/types/2/teams/13/statistics?lang=en&region=us": {
+    "file": "27f34ba248552b83.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025": {
+    "file": "8662b78debc02887.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/athletes/1966/eventlog?lang=en&region=us": {
+    "file": "c87a7dcf9b8d2936.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/athletes?limit=100&page=1": {
+    "file": "b1b8c395c98ca6cd.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/athletes?limit=100&page=2": {
+    "file": "3e7ea89145eb2a9c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/athletes?limit=100&page=3": {
+    "file": "c2ce7aaf7b29acd1.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/athletes?limit=100&page=4": {
+    "file": "b88d4c99a79ff545.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/athletes?limit=100&page=5": {
+    "file": "e3c3d27f0034f21f.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/athletes?limit=100&page=6": {
+    "file": "21b49c8d9db2e74d.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/athletes?limit=100&page=7": {
+    "file": "cb14442015739352.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/athletes?limit=100&page=8": {
+    "file": "6bf5c296186f7780.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/coaches/52120?lang=en&region=us": {
+    "file": "a0f935b28ba1bd6e.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/coaches?limit=100&page=1": {
+    "file": "7811827d9ebed761.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/futures?limit=200&lang=en&region=us": {
+    "file": "1f548cd1906fef98.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/powerindex?limit=100&page=1&lang=en&region=us": {
+    "file": "958d4338c1a6a62b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/teams/13/athletes?limit=200&lang=en&region=us": {
+    "file": "e99893b3c4f3f00a.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/teams/13/depthcharts?lang=en&region=us": {
+    "file": "fbbe6cf62523606e.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/teams/13?lang=en&region=us": {
+    "file": "fcead946005ca382.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/2/groups/5/children?limit=200&lang=en&region=us": {
+    "file": "d2594625f1b006bf.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/2/groups/5/teams?limit=200&lang=en&region=us": {
+    "file": "dbb7993831141fe2.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/2/groups/5?lang=en&region=us": {
+    "file": "ac929775a444724c.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/2/groups?limit=200&lang=en&region=us": {
+    "file": "717bebd98910ab1f.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/2/leaders?lang=en&region=us": {
+    "file": "bb4339c6f1ec2e8d.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/2/teams/13/record?lang=en&region=us": {
+    "file": "c7bcf8bc61ff1fa3.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/2/weeks/5?lang=en&region=us": {
+    "file": "e8996ef013a050b2.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/2/weeks?limit=200&lang=en&region=us": {
+    "file": "f08e5d6c53452b7a.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/2?lang=en&region=us": {
+    "file": "16592a76a2682406.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/3/groups?limit=200&lang=en&region=us": {
+    "file": "527ca72dd0ee22c0.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/3/leaders?lang=en&region=us": {
+    "file": "1af5eeb2fc08bb44.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/3/teams/13/record?lang=en&region=us": {
+    "file": "de2d16da39c2365b.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types/3/weeks?limit=200&lang=en&region=us": {
+    "file": "b34e24b21663ad01.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/types?lang=en&region=us": {
+    "file": "5bca70de32d82144.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons?limit=200": {
+    "file": "b0479bcee916aa58.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/tournaments/1/seasons/2024?lang=en&region=us": {
+    "file": "a82aceb8658a4bf5.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/tournaments/1/seasons?limit=200&lang=en&region=us": {
+    "file": "a5d628c36405eed0.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/tournaments/1?lang=en&region=us": {
+    "file": "0941ed7b96eaf309.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/tournaments?limit=200&lang=en&region=us": {
+    "file": "f4a3be4a4fbe0b17.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/venues?limit=100&page=1": {
+    "file": "d4e9462bbfbe75bb.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/venues?limit=100&page=2": {
+    "file": "77630ef84e098907.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/venues?limit=100&page=3": {
+    "file": "0d8f52914cca85c5.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/venues?limit=100&page=4": {
+    "file": "e589fedcafdf1dd1.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/venues?limit=100&page=5": {
+    "file": "a5652d63d046f5cb.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/venues?limit=100&page=6": {
+    "file": "3bc1d409d6d64bb2.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/venues?limit=100&page=7": {
+    "file": "70ffa79e00c15078.gz",
+    "status": 200,
+    "type": "application/json;charset=utf-8",
+    "4": {}
+  },
+  "https://stats.segevstats.com/realtimestat_heb/api/?method=getActions&game_id=50": {
+    "file": "e0efc1540e52a761.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://stats.segevstats.com/realtimestat_heb/api/?method=getBoxScore&game_id=50": {
+    "file": "29baba2e3a478f32.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://stats.segevstats.com/realtimestat_heb/api/?method=getGameInfo&game_id=50": {
+    "file": "cbad3d7a04f13d97.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://widget.wh.geniussports.com/widget/?RFJIN037I07QV520B7WEXKV1GYNA31": {
+    "file": "5cba5e9fdd0eeba5.gz",
+    "status": 200,
+    "type": "application/javascript",
+    "trimmed": true
+  },
+  "https://www.aba-liga.com/calendar/25/1/": {
+    "file": "69b7dd548d035afd.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://www.aba-liga.com/live-match/rezultati-1718/create_json.php?id=6&sez=25&lea=1": {
+    "file": "79b1fe618d93c598.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://www.aba-liga.com/live-match/rezultati-1718/create_scoredifference.php?id=6&sez=25&lea=1": {
+    "file": "5f7442472fb1b593.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://www.aba-liga.com/live-match/rezultati-1718/create_shooting_chart.php?id=6&sez=25&lea=1": {
+    "file": "df3f1dc5094e36c3.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://www.aba-liga.com/match/6/25/1/Overview": {
+    "file": "47438ba4c985e7ba.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://www.aba-liga.com/player/4807/25/1/": {
+    "file": "3967c06df40c65b1.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://www.aba-liga.com/standings/25/1/": {
+    "file": "db0a70ac01f473f1.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://www.basketligaen.dk/api/gameday/boxscore/c4hh5nig6t": {
+    "file": "97b0c2b2c2e81cbd.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.basketligaen.dk/api/gameday/game-info/c4hh5nig6t": {
+    "file": "e851a57592bbc5d6.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.basketligaen.dk/api/gameday/game-overview/c4hh5nig6t": {
+    "file": "24cdd3f7b110ee3f.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.basketligaen.dk/api/gameday/play-by-play/c4hh5nig6t": {
+    "file": "5ac59ac79d4db7ad.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.basketligaen.dk/api/gameday/player-stats/c4hh5nig6t": {
+    "file": "4b415c4614afe096.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.basketligaen.dk/api/gameday/team-standings/xs07bd3fmp": {
+    "file": "7d08c360ba989ede.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.basketligaen.dk/api/gameday/team-stats/c4hh5nig6t": {
+    "file": "c39291c6df0befd0.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.basketligaen.dk/api/sports-v2/athletes/by-team-uuid/rfo82vr830": {
+    "file": "b86e3af9dfd398a3.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.basketligaen.dk/api/sports-v2/game-info/c4hh5nig6t": {
+    "file": "5dd62b9bba8d4239.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.basketligaen.dk/api/sports-v2/season-series-game-types-filter": {
+    "file": "92b491ca33beded7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://www.basketligaen.dk/api/sports-v2/teams/rfo82vr830": {
+    "file": "5e4ea874dc46d0cf.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.bleague.jp/schedule/?tab=1&year=2025&event=2&mon=10&day=04": {
+    "file": "eac1ad3b40fa352f.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.bleague.jp/standings/?year=2025&tab=1": {
+    "file": "a5b2569c05c39ec2.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.easycredit-bbl.de/": {
+    "file": "f602e59d486ab8a5.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.fiba.basketball/en": {
+    "file": "9da6ec0e8d9bad85.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.fiba.basketball/en/history/201-fiba-basketball-world-cup/208182/games/100720-GER-SRB": {
+    "file": "f5b24edff190d5e6.gz",
+    "status": 200,
+    "type": "text/x-component",
+    "trimmed": false
+  },
+  "https://www.legabasket.it/api/championships/get-championship-ranking?id=602&d=3": {
+    "file": "6ec95dbe30e19c43.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.legabasket.it/api/championships/get-championships-calendar-by-id?id=602&d=1": {
+    "file": "5f3f30ab4d2aa2ca.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.legabasket.it/api/championships/get-championships-matches-by-id?sc=1&id=25602": {
+    "file": "34935c72c0a7d85f.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.legabasket.it/api/championships/get-championships-matches-play-by-play?info=true&sort=asc&id=25602": {
+    "file": "99b1660e2deff2db.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.legabasket.it/api/championships/get-championships-matches-scores-by-id?info=true&id=25602": {
+    "file": "458cd82212ebc056.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.legabasket.it/api/championships/get-championships?cs_id=1&items=1000&s=2026": {
+    "file": "995cb34d76aebbf4.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.legabasket.it/api/matches/get-championship-matches-shots-by-id?info=1&id=25602": {
+    "file": "18f09c9b9bb41a27.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.legabasket.it/api/players/get-players?items=50&year=2026": {
+    "file": "d901f95318eca281.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.legabasket.it/api/teams/get-teams?items=50&year=2026": {
+    "file": "83672bb02eea277b.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": false
+  },
+  "https://www.nbadraft.net/nba-mock-drafts/": {
+    "file": "d78b8f63b6ab5de9.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  },
+  "https://www.rotowire.com/basketball/tables/injury-report.php?team=ALL&pos=ALL": {
+    "file": "a9521ba3f90e96fb.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://www.spotrac.com/nba/cap/_/year/2024/": {
+    "file": "2100696c54079b9a.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
+  }
+}
