@@ -52,7 +52,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gdap_round_standings(comp = 208182))
 #> ── FIBA gdap_round_standings from fiba.basketball ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:54:07 UTC
+#> ℹ Data updated: 2026-11-09 21:13:31 UTC
 #> # A tibble: 88 × 23
 #>    round_id round_name  round_code group_name group_status_code  rank
 #>       <int> <chr>       <chr>      <chr>      <chr>             <int>

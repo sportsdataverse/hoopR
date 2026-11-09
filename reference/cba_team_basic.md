@@ -65,7 +65,7 @@ lists every function in this family.
 # \donttest{
   try(cba_team_basic(team_id = 29128))
 #> ── CBA Team Basic from data-server.cbaleague.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:51:54 UTC
+#> ℹ Data updated: 2026-11-09 21:11:19 UTC
 #> # A tibble: 21 × 30
 #>    assists blocked cba_rank field_goals field_goals_attempted
 #>      <dbl>   <dbl> <chr>          <dbl>                 <dbl>

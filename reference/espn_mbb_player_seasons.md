@@ -64,18 +64,18 @@ Saiem Gilani
 # \donttest{
   # LeBron James (1966): 23 career seasons
   espn_mbb_player_seasons(athlete_id = 4593919)
-#> ✖ 2026-11-09 19:52:57.635561: Failed to retrieve ESPN mens-college-basketball athlete seasons for athlete_id=4593919
+#> ✖ 2026-11-09 21:12:26.179169: Failed to retrieve ESPN mens-college-basketball athlete seasons for athlete_id=4593919
 #> ✖ Args: league = "mens-college-basketball", athlete_id = 4593919
 #> ✖ Error: The API returned an error
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Seasons ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:52:57 UTC
+#> ℹ Data updated: 2026-11-09 21:12:26 UTC
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   # LeBron James (1966): 23 career seasons
   espn_nba_player_seasons(athlete_id = 1966)
 #> ── ESPN NBA Athlete Seasons ───────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:52:57 UTC
+#> ℹ Data updated: 2026-11-09 21:12:26 UTC
 #> # A tibble: 24 × 4
 #>    league athlete_id season ref                                                 
 #>    <chr>  <chr>       <int> <chr>                                               

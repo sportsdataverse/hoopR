@@ -94,7 +94,7 @@ lists every function in this family.
 # \donttest{
   try(acb_match_header(match_id = 105401))
 #> ── ACB Match Header from api2.acb.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:50:55 UTC
+#> ℹ Data updated: 2026-11-09 21:10:25 UTC
 #> # A tibble: 1 × 26
 #>   match_id competition_id start               status   is_on_half_time time_left
 #>      <int>          <int> <dttm>              <chr>    <lgl>           <chr>    

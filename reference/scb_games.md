@@ -81,7 +81,7 @@ lists every function in this family.
 # \donttest{
   try(scb_games())
 #> ── BBL/DBBL Games from the SCB API ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:57:10 UTC
+#> ℹ Data updated: 2026-11-09 21:16:22 UTC
 #> # A tibble: 325 × 89
 #>    league season season_id game_id competition stage       status scheduled_time
 #>    <chr>   <int>     <int> <chr>   <chr>       <chr>       <chr>  <chr>         

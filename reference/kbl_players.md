@@ -37,7 +37,7 @@ lists every function in this family.
 # \donttest{
   try(kbl_players())
 #> ── KBL Players from api.kbl.or.kr ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:54:42 UTC
+#> ℹ Data updated: 2026-11-09 21:14:04 UTC
 #> # A tibble: 1,498 × 10
 #>    pcode  player_name player_name_en   team_code team_name team_name_en back_num
 #>    <chr>  <chr>       <chr>            <chr>     <chr>     <chr>        <chr>   

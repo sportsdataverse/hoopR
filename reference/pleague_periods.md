@@ -46,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(pleague_periods(gid = 197))
 #> ── P. LEAGUE+ Periods from pleagueofficial.com ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:56:52 UTC
+#> ℹ Data updated: 2026-11-09 21:16:05 UTC
 #> # A tibble: 4 × 5
 #>     gid period period_no home_points away_points
 #>   <int> <chr>      <int>       <int>       <int>

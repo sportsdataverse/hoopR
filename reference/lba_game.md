@@ -46,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(lba_game(game_id = 25602))
 #> ── LBA Game from legabasket.it ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:55:12 UTC
+#> ℹ Data updated: 2026-11-09 21:14:34 UTC
 #> # A tibble: 1 × 62
 #>   season game_id game_status championship_id competition_name      
 #>    <int>   <int> <chr>                 <int> <chr>                 

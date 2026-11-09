@@ -60,7 +60,7 @@ lists every function in this family.
 # \donttest{
   try(scb_standings())
 #> ── BBL/DBBL Standings from the SCB API ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:57:16 UTC
+#> ℹ Data updated: 2026-11-09 21:16:28 UTC
 #> # A tibble: 18 × 55
 #>    league season standing_id season_team_id team_id team_name           team_tlc
 #>    <chr>   <int> <chr>       <chr>          <chr>   <chr>               <chr>   
@@ -78,10 +78,10 @@ lists every function in this family.
 #> 12 bbl      2027 74712       422            422     Basketball Löwen B… BRA     
 #> 13 bbl      2027 74721       541            541     RASTA Vechta        VEC     
 #> 14 bbl      2027 74710       418            418     ratiopharm ulm      ULM     
-#> 15 bbl      2027 74717       483            483     Science City Jena   JEN     
-#> 16 bbl      2027 74718       485            485     NINERS Chemnitz     CHE     
-#> 17 bbl      2027 74785       473            473     Phoenix Hagen       HAG     
-#> 18 bbl      2027 74723       554            554     Veolia Towers Hamb… HAM     
+#> 15 bbl      2027 74723       554            554     Veolia Towers Hamb… HAM     
+#> 16 bbl      2027 74717       483            483     Science City Jena   JEN     
+#> 17 bbl      2027 74718       485            485     NINERS Chemnitz     CHE     
+#> 18 bbl      2027 74785       473            473     Phoenix Hagen       HAG     
 #> # ℹ 48 more variables: team_name_short <chr>, has_reached_playoffs <lgl>,
 #> #   has_reached_playins <lgl>, is_relegation_certain <lgl>, season_id <int>,
 #> #   competition <chr>, stage <chr>, rank <int>, streak <chr>,

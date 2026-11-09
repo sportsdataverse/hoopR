@@ -83,20 +83,20 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:52:52 UTC
+#> ℹ Data updated: 2026-11-09 21:12:21 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Story Breakin… Stats, rec… 2026-11-… FALSE   ESPN   https:/… 41       
-#> 2  5.04e7 Head… UCLA ho… UCLA jumpe… 2026-11-… FALSE   NA     https:/… 41       
-#> 3  5.04e7 Head… FSU hir… Florida St… 2026-11-… FALSE   Andre… https:/… 23       
-#> 4  5.04e7 Prev… Iona vi… Iona Gaels… 2026-11-… FALSE   NA     http://… 41       
-#> 5  5.04e7 Prev… Fairfie… Fairfield … 2026-11-… FALSE   NA     http://… 41       
+#> 1  5.04e7 Story 2026 Ch… The Champi… 2026-11-… FALSE   ESPN   https:/… 41       
+#> 2  5.04e7 Head… Kansas'… Kansas gua… 2026-11-… FALSE   Jeff … https:/… 41       
+#> 3  5.04e7 Story Breakin… Stats, rec… 2026-11-… FALSE   ESPN   https:/… 41       
+#> 4  5.04e7 Head… UCLA ho… UCLA jumpe… 2026-11-… FALSE   NA     https:/… 41       
+#> 5  5.04e7 Head… FSU hir… Florida St… 2026-11-… FALSE   Andre… https:/… 23       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:52:52 UTC
+#> ℹ Data updated: 2026-11-09 21:12:21 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    

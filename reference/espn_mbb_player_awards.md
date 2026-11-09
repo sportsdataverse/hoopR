@@ -76,7 +76,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_player_awards(athlete_id = "4593919")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Awards from ESPN.com ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:52:53 UTC
+#> ℹ Data updated: 2026-11-09 21:12:21 UTC
 #> # A tibble: 0 × 6
 #> # ℹ 6 variables: season <chr>, award_id <chr>, name <chr>, description <chr>,
 #> #   date <chr>, type <chr>
@@ -84,7 +84,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_player_awards(athlete_id = "1966")
 #> ── ESPN NBA Athlete Awards from ESPN.com ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:52:53 UTC
+#> ℹ Data updated: 2026-11-09 21:12:21 UTC
 #> # A tibble: 25 × 7
 #>    season award_id name  description date  type  ref_url                        
 #>    <chr>  <chr>    <chr> <chr>       <chr> <chr> <chr>                          

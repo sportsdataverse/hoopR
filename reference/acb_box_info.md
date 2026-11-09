@@ -52,7 +52,7 @@ lists every function in this family.
 # \donttest{
   try(acb_box_info(match_id = 105401))
 #> ── ACB Box Info from api2.acb.com ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:50:49 UTC
+#> ℹ Data updated: 2026-11-09 21:10:18 UTC
 #> # A tibble: 2 × 13
 #>   match_id edition_id season team_side team_id club_id team            team_abbr
 #>      <int>      <int>  <int> <chr>       <int>   <int> <chr>           <chr>    

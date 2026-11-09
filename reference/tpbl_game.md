@@ -45,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(tpbl_game(game_id = 6))
 #> ── TPBL Game from api.tpbl.basketball ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 19:58:15 UTC
+#> ℹ Data updated: 2026-11-09 21:17:25 UTC
 #> # A tibble: 1 × 34
 #>   season season_id game_id gohoops_game_id division_id gohoops_division_id
 #>    <int>     <int>   <int>           <int>       <int>               <int>

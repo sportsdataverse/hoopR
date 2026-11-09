@@ -70,19 +70,19 @@ article.
 ``` r
 # \donttest{
   try(cbbd_draft_teams())
-#> ✖ 2026-11-09 19:51:56.552406: Invalid arguments or no draft teams available!
+#> ✖ 2026-11-09 21:11:21.335811: Invalid arguments or no draft teams available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_draft_positions())
-#> ✖ 2026-11-09 19:51:56.559313: Invalid arguments or no draft positions available!
+#> ✖ 2026-11-09 21:11:21.342342: Invalid arguments or no draft positions available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_draft_picks(year = 2024))
-#> ✖ 2026-11-09 19:51:56.566402: Invalid arguments or no draft picks available!
+#> ✖ 2026-11-09 21:11:21.348898: Invalid arguments or no draft picks available!
 #> ✖ Args: year = 2024, draft_team = NULL, source_team = NULL, position = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
