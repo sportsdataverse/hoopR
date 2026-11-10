@@ -356,7 +356,7 @@ test_that("a connection failure is a transient failed fetch, never empty", {
 })
 
 test_that("an empty or malformed payload parses to a zero-row frame with the documented columns and types", {
-  expect_setequal(names(.ACB_EXTRACT), names(.acb_fields))
+  expect_setequal(names(.ACB_EXTRACT()), names(.acb_fields))
   for (short in names(.acb_fields)) {
     for (payload in list(list(), stats::setNames(list(), character()), NULL, "x", list(1L, "a"))) {
       out <- .acb_parse(short, payload)

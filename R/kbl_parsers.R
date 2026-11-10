@@ -477,7 +477,8 @@
 }
 
 #' @noRd
-.kbl_shapers <- list(
+# Built at call time, so a traced function (covr, trace()) is the one called, not a copy taken at load.
+.kbl_shapers <- function() list(
   seasons = .kbl_shape_seasoned, teams = .kbl_shape_plain, schedule = .kbl_shape_seasoned,
   game = .kbl_shape_game, period_scores = .kbl_shape_period_scores, pbp = .kbl_shape_pbp,
   player_box = .kbl_shape_box, team_box = .kbl_shape_box, shots = .kbl_shape_shots,
@@ -491,7 +492,7 @@
 
 #' The `kind` frame of a runtime answer (`list(body =, req =)`).
 #' @noRd
-.kbl_parse <- function(kind, raw) .kbl_frame(kind, .kbl_shapers[[kind]](raw$body, raw$req))
+.kbl_parse <- function(kind, raw) .kbl_frame(kind, .kbl_shapers()[[kind]](raw$body, raw$req))
 
 #' @noRd
 .kbl_out <- function(kind, raw, type) make_hoopR_data(.kbl_parse(kind, raw), type, Sys.time())

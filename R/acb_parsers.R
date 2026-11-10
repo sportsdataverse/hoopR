@@ -251,7 +251,7 @@
 #' Parse a stamped body into the `short` frame; an odd body is a zero-row frame, never an error.
 #' @noRd
 .acb_parse <- function(short, raw) {
-  pairs <- tryCatch(.ACB_EXTRACT[[short]](raw), error = function(e) list())
+  pairs <- tryCatch(.ACB_EXTRACT()[[short]](raw), error = function(e) list())
   .acb_emit(short, pairs)
 }
 
@@ -919,7 +919,8 @@
 
 #' Frame name -> extractor (sportsdataverse-py `_EXTRACT`).
 #' @noRd
-.ACB_EXTRACT <- list(
+# Built at call time, so a traced function (covr, trace()) is the one called, not a copy taken at load.
+.ACB_EXTRACT <- function() list(
   match_header = .acb_x_match_header, period_scores = .acb_x_period_scores, player_box = .acb_x_player_box,
   team_box = .acb_x_team_box, box_info = .acb_x_box_info, pbp = .acb_x_pbp, shots = .acb_x_shots,
   lead_tracker = .acb_x_lead_tracker, lead_stats = .acb_x_lead_stats, lineup = .acb_x_lineup,

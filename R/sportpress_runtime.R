@@ -614,7 +614,8 @@
 #' Route -> path template (`{id}` placeholders, the R argument names), the check, and whether the route
 #' is gated on a finished game (the box score, film and overview).
 #' @noRd
-.SPORTPRESS_ROUTES <- list(
+# Built at call time, so a traced function (covr, trace()) is the one called, not a copy taken at load.
+.SPORTPRESS_ROUTES <- function() list(
   server_config = list("/server-config", .sportpress_c_server_config),
   club_seasons = list("/competition-team/club/seasons", .sportpress_c_club_seasons),
   staff_list = list("/staff/list", .sportpress_c_referees),
@@ -666,7 +667,7 @@
 #'   nine-category ranking object), plus `_request`.
 #' @noRd
 .sportpress_get <- function(route, ids = list(), query = list(), call = rlang::caller_env()) {
-  rt <- .SPORTPRESS_ROUTES[[route]]
+  rt <- .SPORTPRESS_ROUTES()[[route]]
   ids <- lapply(stats::setNames(nm = names(ids)), function(n) .sportpress_int_arg(ids[[n]], n, call))
   query <- Filter(Negate(is.null), query)
   for (n in intersect(names(query), c("competition_id", "phase_id", "title_id", "month"))) {
