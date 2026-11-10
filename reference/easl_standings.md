@@ -46,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(easl_standings(season = 2026))
 #> ── EASL Standings from easl.joshricha.com ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:11:51 UTC
+#> ℹ Data updated: 2026-11-10 01:59:40 UTC
 #> # A tibble: 12 × 36
 #>    season season_id     standing_id position team_id team_name team_code pool_id
 #>     <int> <chr>         <chr>          <int> <chr>   <chr>     <chr>     <chr>  

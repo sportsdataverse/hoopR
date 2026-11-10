@@ -57,18 +57,21 @@ Saiem Gilani
 
 ``` r
 # \donttest{
-  espn_mbb_game_play(event_id = 401256760, play_id = 401256760101805901)
-#> ✖ 2026-11-09 21:12:17.08845: Failed to retrieve ESPN mens-college-basketball event play detail for event_id=401256760, play_id=401256760101805888
-#> ✖ Args: league = "mens-college-basketball", event_id = 401256760, play_id = 401256760101805888
-#> ✖ Error: The API returned an error
+  espn_mbb_game_play(event_id = 401256760, play_id = "401256760101805901")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Play Detail ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:12:17 UTC
-#> # A tibble: 0 × 0
+#> ℹ Data updated: 2026-11-10 02:00:13 UTC
+#> # A tibble: 1 × 19
+#>   league     event_id play_id sequence_number type_id type_text text  short_text
+#>   <chr>      <chr>    <chr>   <chr>           <chr>   <chr>     <chr> <chr>     
+#> 1 mens-coll… 4012567… 401256… 101805901       558     JumpShot  M.J.… M. Walker…
+#> # ℹ 11 more variables: period <int>, clock <chr>, scoring_play <lgl>,
+#> #   score_value <dbl>, away_score <int>, home_score <int>, shooting_play <lgl>,
+#> #   coordinate_x <dbl>, coordinate_y <dbl>, team_ref <chr>, wallclock <chr>
 # }
 # \donttest{
   espn_nba_game_play(event_id = 401283399, play_id = 4012833994)
 #> ── ESPN NBA Event Play Detail ─────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:12:17 UTC
+#> ℹ Data updated: 2026-11-10 02:00:13 UTC
 #> # A tibble: 1 × 19
 #>   league event_id  play_id    sequence_number type_id type_text text  short_text
 #>   <chr>  <chr>     <chr>      <chr>           <chr>   <chr>     <chr> <chr>     

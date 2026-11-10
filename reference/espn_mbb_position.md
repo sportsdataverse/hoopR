@@ -50,7 +50,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_position(position_id = 1)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Position from ESPN.com ────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:12:27 UTC
+#> ℹ Data updated: 2026-11-10 02:00:25 UTC
 #> # A tibble: 1 × 7
 #>   position_id name   display_name abbreviation leaf  parent_ref league          
 #>   <chr>       <chr>  <chr>        <chr>        <lgl> <chr>      <chr>           
@@ -59,7 +59,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_position(position_id = 1)
 #> ── ESPN NBA Position from ESPN.com ────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:12:27 UTC
+#> ℹ Data updated: 2026-11-10 02:00:25 UTC
 #> # A tibble: 1 × 7
 #>   position_id name        display_name abbreviation leaf  parent_ref      league
 #>   <chr>       <chr>       <chr>        <chr>        <lgl> <chr>           <chr> 

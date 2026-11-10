@@ -61,7 +61,7 @@ lists every function in this family.
 # \donttest{
   try(acb_shots(match_id = 105401))
 #> ── ACB Shots from api2.acb.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:10:35 UTC
+#> ℹ Data updated: 2026-11-10 01:58:06 UTC
 #> # A tibble: 188 × 24
 #>    match_id edition_id season shot_id pos_x pos_y coord_system x_basket_m
 #>       <int>      <int>  <int>   <int> <int> <int> <chr>             <dbl>

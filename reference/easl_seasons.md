@@ -37,7 +37,7 @@ lists every function in this family.
 # \donttest{
   try(easl_seasons())
 #> ── EASL Seasons from easl.joshricha.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:11:48 UTC
+#> ℹ Data updated: 2026-11-10 01:59:38 UTC
 #> # A tibble: 4 × 20
 #>   season season_id        season_row_id  year name  name_latin status start_date
 #>    <int> <chr>                    <int> <int> <chr> <chr>      <chr>  <date>    

@@ -66,7 +66,7 @@ lists every function in this family.
 # \donttest{
   try(nbl_rosetta_players(org = "nbl", season = 2026))
 #> ── NBL Rosetta players from prod.rosetta.nbl.com.au ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:15:56 UTC
+#> ℹ Data updated: 2026-11-10 02:04:27 UTC
 #> # A tibble: 195 × 33
 #>    org   jersey_number playing_position player_id              rosetta_player_id
 #>    <chr> <chr>         <chr>            <chr>                  <chr>            

@@ -55,7 +55,16 @@ lists every function in this family.
 
 ``` r
 # \donttest{
-  try(ibba_leaders(season = 2026, stat_type = pts))
-#> Error in eval(expr, envir) : object 'pts' not found
+  try(ibba_leaders(season = 2026, stat_type = "pts"))
+#> ── IBBA leaders ───────────────────────────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-10 02:02:11 UTC
+#> # A tibble: 5 × 8
+#>   value games season team_id jersey player_id player_name_he     photo_path     
+#>   <dbl> <int>  <int>   <int> <chr>      <int> <chr>              <chr>          
+#> 1  22.3     6   2026    1118 03         25928 זאק בראיינט        /pics/2025-202…
+#> 2  21.8     6   2026    1114 03         25946 רוב אדוארדס        NA             
+#> 3  20.7     3   2026    1118 12         25949 ג'סטין אדלר-דייויס /pics/2025-202…
+#> 4  20.2    17   2026    1118 44         21837 אלייז'ה סטיוארט    /pics/2025-202…
+#> 5  19       2   2026    1119 00         24891 זאהיר פורטר        /pics/2025-202…
 # }
 ```

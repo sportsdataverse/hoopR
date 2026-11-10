@@ -50,7 +50,7 @@ lists every function in this family.
 # \donttest{
   try(ibba_teams(season = 2026))
 #> ── IBBA teams ─────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:13:57 UTC
+#> ℹ Data updated: 2026-11-10 02:02:18 UTC
 #> # A tibble: 14 × 26
 #>    team_uid team_id season team_name_he             team_short_name_he team_name
 #>       <int>   <int>  <int> <chr>                    <chr>              <chr>    

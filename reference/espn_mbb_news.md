@@ -83,27 +83,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:12:21 UTC
-#> # A tibble: 5 × 9
-#>        id type  headline description published premium byline link_web league_id
-#>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Story 2026 Ch… The Champi… 2026-11-… FALSE   ESPN   https:/… 41       
-#> 2  5.04e7 Head… Kansas'… Kansas gua… 2026-11-… FALSE   Jeff … https:/… 41       
-#> 3  5.04e7 Story Breakin… Stats, rec… 2026-11-… FALSE   ESPN   https:/… 41       
-#> 4  5.04e7 Head… UCLA ho… UCLA jumpe… 2026-11-… FALSE   NA     https:/… 41       
-#> 5  5.04e7 Head… FSU hir… Florida St… 2026-11-… FALSE   Andre… https:/… 23       
+#> ℹ Data updated: 2026-11-10 02:00:18 UTC
+#> # A tibble: 5 × 8
+#>         id type  headline       description published premium link_web league_id
+#>      <int> <chr> <chr>          <chr>       <chr>     <lgl>   <chr>    <chr>    
+#> 1 50437882 Recap Burton and Ha… — Markus B… 2026-11-… FALSE   http://… 41       
+#> 2 50437863 Media Howard Bison … Howard Bis… 2026-11-… FALSE   https:/… 41       
+#> 3 50437764 Media Nittany Lions… Nittany Li… 2026-11-… FALSE   https:/… 41       
+#> 4 50437564 Recap John Mobley J… — John Mob… 2026-11-… FALSE   http://… 41       
+#> 5 50437533 Media Marshall Thun… Marshall T… 2026-11-… FALSE   https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:12:21 UTC
+#> ℹ Data updated: 2026-11-10 02:00:18 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.00e7 Story NBA buz… "The NBA i… 2026-11-… FALSE   ESPN … https:/… 46       
-#> 2  5.04e7 Story Monday'… "Andre Sne… 2026-11-… FALSE   Andre… https:/… 22000    
-#> 3  5.04e7 Head… Sources… "The NBA i… 2026-11-… FALSE   NA     https:/… 46       
-#> 4  5.04e7 Story Fantasy… "Steve Ale… 2026-11-… FALSE   Steve… https:/… 3090     
-#> 5  5.04e7 Head… Giannis… "Giannis A… 2026-11-… FALSE   NA     https:/… 46       
+#> 1  5.04e7 Head… Doc Riv… "Doc River… 2026-11-… FALSE   Marc … https:/… 46       
+#> 2  5.04e7 Head… Luka Do… "Luka Donc… 2026-11-… FALSE   Dave … https:/… 46       
+#> 3  5.04e7 Head… Bronny … "Lakers gu… 2026-11-… FALSE   NA     https:/… 46       
+#> 4  5.00e7 Story NBA buz… "The NBA i… 2026-11-… FALSE   ESPN … https:/… 46       
+#> 5  5.04e7 Story Monday'… "Andre Sne… 2026-11-… FALSE   Andre… https:/… 22000    
 # }
 ```

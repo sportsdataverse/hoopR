@@ -29,7 +29,7 @@ playoffs), on a per-100-possession scale where noted.
 | adj-RAPM | `o_adj_rapm`, `d_adj_rapm`, `adj_rapm` | RAPM shrunk toward a box-score prior (the previous season’s SPM) instead of toward zero. |
 | SPM | `ospm`, `dspm`, `spm` | Statistical plus-minus: a ridge regression that predicts RAPM from per-100 box-score stats. |
 | BPM 2.0 | `obpm`, `dbpm`, `bpm` | Box plus-minus from box-score logs and listed positions. |
-| DARKO-style | `darko_filtered_skill`, `darko_projected_rating`, `darko_projected_sd` | A Kalman filter over each player’s RAPM history with an aging curve: a current skill estimate and a projection for next season. |
+| DARKO-style | `boban_filtered_skill`, `boban_projected_rating`, `boban_projected_sd` | A Kalman filter over each player’s RAPM history with an aging curve: a current skill estimate and a projection for next season. |
 | WAR | `war` | Wins above replacement: RAPM times a calibrated points-per-win factor, relative to a replacement level of -2.0. |
 
 Plus identifiers and playing time: `player_id` (NBA Stats person id),
@@ -102,19 +102,19 @@ rs_2026 <- impact |>
   filter(season == 2026, season_type == "Regular Season")
 
 rs_2026 |>
-  select(rapm, adj_rapm, spm, bpm, darko_filtered_skill, war) |>
+  select(rapm, adj_rapm, spm, bpm, boban_filtered_skill, war) |>
   cor(use = "pairwise.complete.obs") |>
   round(2)
-#>                      rapm adj_rapm  spm  bpm darko_filtered_skill  war
-#> rapm                 1.00     0.91 0.44 0.44                 1.00 0.85
-#> adj_rapm             0.91     1.00 0.46 0.33                 0.92 0.71
-#> spm                  0.44     0.46 1.00 0.53                 0.43 0.45
-#> bpm                  0.44     0.33 0.53 1.00                 0.43 0.45
-#> darko_filtered_skill 1.00     0.92 0.43 0.43                 1.00 0.83
-#> war                  0.85     0.71 0.45 0.45                 0.83 1.00
+#>                      rapm adj_rapm  spm  bpm boban_filtered_skill  war
+#> rapm                 1.00     0.91 0.43 0.42                 1.00 0.84
+#> adj_rapm             0.91     1.00 0.52 0.46                 0.90 0.80
+#> spm                  0.43     0.52 1.00 0.85                 0.42 0.45
+#> bpm                  0.42     0.46 0.85 1.00                 0.41 0.45
+#> boban_filtered_skill 1.00     0.90 0.42 0.41                 1.00 0.83
+#> war                  0.84     0.80 0.45 0.45                 0.83 1.00
 ```
 
-In the 2025-26 regular season, RAPM and adj-RAPM correlate at r = 0.913
+In the 2025-26 regular season, RAPM and adj-RAPM correlate at r = 0.908
 across 582 players (the model card reports 0.913 for the same
 comparison).
 
@@ -174,21 +174,21 @@ if (!is.null(spm)) {
       rec$ridge_alpha[i], ", train r(SPM, RAPM) =", round(rec$train_r_spm_vs_rapm[i], 3), "\n")
   coefs |> mutate(across(where(is.numeric), \(x) round(x, 3)))
 }
-#> 2026 fit: 582 regular-season players, ridge alpha = 100 , train r(SPM, RAPM) = 0.437
+#> 2026 fit: 582 regular-season players, ridge alpha = 100 , train r(SPM, RAPM) = 0.431
 #> # A tibble: 11 × 6
 #>    feature o_coef d_coef feature_sd o_importance d_importance
 #>    <chr>    <dbl>  <dbl>      <dbl>        <dbl>        <dbl>
-#>  1 pts      0.136  0.008      7.30         0.992        0.057
-#>  2 fga     -0.059 -0.024      4.97         0.294        0.12 
-#>  3 dreb     0.036  0.082      2.75         0.098        0.225
-#>  4 ast      0.092  0.025      2.71         0.25         0.068
-#>  5 tov     -0.176 -0.062      1.29         0.227        0.08 
-#>  6 blk     -0.084  0.228      0.951        0.08         0.217
-#>  7 stl      0.021  0.244      0.878        0.018        0.215
-#>  8 oreb     0.054  0.052      1.90         0.103        0.098
-#>  9 fg3m     0.008  0.083      1.57         0.012        0.131
-#> 10 pf      -0.018 -0.055      1.64         0.029        0.091
-#> 11 fta     -0.003 -0.017      2.89         0.01         0.048
+#>  1 pts      0.112  0.007      7.30         0.815        0.048
+#>  2 fga     -0.047 -0.02       4.97         0.236        0.1  
+#>  3 ast      0.079  0.023      2.71         0.214        0.062
+#>  4 dreb     0.032  0.064      2.75         0.089        0.176
+#>  5 tov     -0.148 -0.056      1.29         0.19         0.073
+#>  6 blk     -0.067  0.194      0.951        0.064        0.184
+#>  7 stl      0.022  0.208      0.878        0.02         0.183
+#>  8 oreb     0.046  0.045      1.90         0.088        0.085
+#>  9 fg3m     0.008  0.072      1.57         0.013        0.112
+#> 10 pf      -0.016 -0.045      1.64         0.026        0.074
+#> 11 fta     -0.002 -0.015      2.89         0.007        0.044
 ```
 
 Scoring volume drives the offensive side and steals, blocks and
@@ -212,7 +212,7 @@ rs <- impact |>
   distinct(player_id, season, .keep_all = TRUE)
 
 pairs <- rs |>
-  select(player_id, season, rapm, bpm, darko_projected_rating) |>
+  select(player_id, season, rapm, bpm, boban_projected_rating) |>
   inner_join(rs |> transmute(player_id, season = season - 1, rapm_next = rapm, bpm_next = bpm),
              by = c("player_id", "season"))
 
@@ -222,16 +222,16 @@ pairs |>
     n = n(),
     rapm_yoy = cor(rapm, rapm_next),
     bpm_yoy = cor(bpm, bpm_next),
-    darko_forward_r = cor(darko_projected_rating, rapm_next),
-    darko_forward_mae = mean(abs(darko_projected_rating - rapm_next)),
+    boban_forward_r = cor(boban_projected_rating, rapm_next),
+    boban_forward_mae = mean(abs(boban_projected_rating - rapm_next)),
     carry_forward_mae = mean(abs(rapm - rapm_next))
   ) |>
   mutate(across(-c(season, n), \(x) round(x, 3)))
 #> # A tibble: 2 × 7
-#>   season     n rapm_yoy bpm_yoy darko_forward_r darko_forward_mae
+#>   season     n rapm_yoy bpm_yoy boban_forward_r boban_forward_mae
 #>    <dbl> <int>    <dbl>   <dbl>           <dbl>             <dbl>
-#> 1   2024   447    0.407   0.455           0.398              1.04
-#> 2   2025   464    0.345   0.387           0.332              1.70
+#> 1   2024   447    0.361   0.346           0.356              1.55
+#> 2   2025   464    0.347   0.37            0.334              1.68
 #> # ℹ 1 more variable: carry_forward_mae <dbl>
 ```
 
@@ -244,7 +244,7 @@ reliability is 0.357 across 11,272 player pairs.
 
 ### DARKO-style forward validation
 
-`darko_projected_rating` is made with information through season *t*
+`boban_projected_rating` is made with information through season *t*
 only, so comparing it with realized RAPM in season *t + 1* is an honest
 out-of-sample test. The table above includes that test for the seasons
 loaded here, plus a “carry-forward” baseline that simply assumes next
@@ -257,7 +257,7 @@ season’s RAPM equals this season’s. As reported in the model card:
   seasons lifts the correlation from about 0.37 to about 0.44.
 - The projection does not beat carry-forward RAPM on *ranking* (their
   correlations are within about 0.01), but it has lower mean absolute
-  error against every target. Read `darko_projected_rating` as a
+  error against every target. Read `boban_projected_rating` as a
   better-calibrated magnitude, not a better ordering.
 
 ### Agreement with an external RAPM
@@ -281,21 +281,21 @@ rs_2026 |>
 #> # A tibble: 15 × 8
 #>    player_name          team_abbreviation    gp   min  rapm adj_rapm   bpm   war
 #>    <chr>                <chr>             <int> <dbl> <dbl>    <dbl> <dbl> <dbl>
-#>  1 Dyson Daniels        ATL                  76  2523  6.78    13.7   3.34  25.0
-#>  2 Shai Gilgeous-Alexa… OKC                  68  2261  8       13.6  19.8   24.9
-#>  3 Derrick White        BOS                  77  2623  5.63     8.5   9.65  21.2
-#>  4 Chet Holmgren        OKC                  69  1997  7.41    12.3  12.4   21.0
-#>  5 Kawhi Leonard        LAC                  65  2087  7.37    13.1   6.75  20.9
-#>  6 Victor Wembanyama    SAS                  64  1867  7.88    12.2  14.3   20.4
-#>  7 Bam Adebayo          MIA                  73  2363  5.49    10.5   2.55  20.1
-#>  8 Amen Thompson        HOU                  79  2954  4.31     7.98  7.21  19.8
-#>  9 Nikola Jokić         DEN                  65  2265  5.9     10.5  18.0   19.3
-#> 10 Donovan Mitchell     CLE                  70  2341  4.64     7.05  7.75  17.5
-#> 11 Nickeil Alexander-W… ATL                  78  2603  3.85     8.15  2.51  17.3
-#> 12 Julian Champagnie    SAS                  82  2267  4.87     7.5   7.19  17.3
-#> 13 Donte DiVincenzo     MIN                  82  2497  4.07     6.4   3.9   16.9
-#> 14 Cade Cunningham      DET                  64  2172  5.03     8.59 12.9   16.7
-#> 15 Devin Booker         PHX                  64  2148  4.97    10.4   3.38  16.3
+#>  1 Shai Gilgeous-Alexa… OKC                  68  2261  7.06     8.11 11.1   22.6
+#>  2 Dyson Daniels        ATL                  76  2523  5.58     5.01  1.5   21.5
+#>  3 Derrick White        BOS                  77  2623  4.99     4.99  3.39  19.4
+#>  4 Chet Holmgren        OKC                  69  1997  6.56     6.31  3.7   19.1
+#>  5 Victor Wembanyama    SAS                  64  1867  6.96     7.62  7.88  18.5
+#>  6 Kawhi Leonard        LAC                  65  2087  6.27     6.08  5.84  18.4
+#>  7 Amen Thompson        HOU                  79  2954  3.71     3.68  3.05  18.0
+#>  8 Bam Adebayo          MIA                  73  2363  4.61     4.88  0.8   17.7
+#>  9 Nikola Jokić         DEN                  65  2265  5.12     7.35 14.0   17.4
+#> 10 Donovan Mitchell     CLE                  70  2341  4.08     4.44  4.55  16.0
+#> 11 Julian Champagnie    SAS                  82  2267  4.28     3.54  0.73  15.8
+#> 12 Nickeil Alexander-W… ATL                  78  2603  3.23     2.26  0.67  15.5
+#> 13 Donte DiVincenzo     MIN                  82  2497  3.55     3.14  1.31  15.4
+#> 14 Cade Cunningham      DET                  64  2172  4.47     4.54  6.61  15.4
+#> 15 OG Anunoby           NYK                  67  2226  3.86     3.36  1.34  14.1
 ```
 
 Read the leaderboard as tiers, not a strict ranking (see the uncertainty

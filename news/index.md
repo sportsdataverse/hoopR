@@ -201,6 +201,43 @@
 
 #### **ESPN**
 
+- ESPN wrappers no longer return an empty frame when parsing raises a
+  harmless warning. Their `tryCatch(warning =)` handlers unwound the
+  whole parse, so a
+  [`data.frame()`](https://rdrr.io/r/base/data.frame.html) “row names
+  were found from a short variable” warning made
+  [`espn_nba_team_current_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_team_current_roster.md)
+  return a 0 x 0 tibble; the warning is now reported (or dropped) and
+  parsing carries on, across all 126 ESPN call sites.
+
+- [`espn_nba_game_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_team_linescores.md)
+  /
+  [`espn_mbb_game_team_roster()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_team_linescores.md)
+  (and the `athlete_id`s they feed) read the roster ESPN now serves
+  inline as `entries`; they read only the old paginated `items` and
+  always returned 0 rows.
+
+- [`espn_nba_game_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_propbets.md)
+  /
+  [`espn_mbb_game_propbets()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_propbets.md)
+  read ESPN’s prices, now nested as `{value, open}`; coercing that list
+  errored and every call returned 0 rows.
+
+- [`fox_nba_odds()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_odds.md)
+  /
+  [`fox_mbb_odds()`](https://hoopR.sportsdataverse.org/reference/fox_basketball_odds.md)
+  find the odds six-pack, which Fox now nests as a module under
+  `sectionList`; they always returned 0 rows.
+
+- The
+  [`espn_mbb_game_play()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_play.md)
+  /
+  [`espn_mbb_game_play_personnel()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_play_personnel.md)
+  examples pass the 18-digit play id as a string: as a number it was
+  rounded and 404ed. The
+  [`ibba_leaders()`](https://hoopR.sportsdataverse.org/reference/ibba_leaders.md)
+  example quotes `stat_type = "pts"`.
+
 - [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
   [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md),
   the `Plays` frame of
@@ -606,6 +643,13 @@ vocabulary.
 
 #### **Dependencies**
 
+- [`update_mbb_db()`](https://hoopR.sportsdataverse.org/reference/update_mbb_db.md)
+  /
+  [`update_nba_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_db.md)
+  read the stored game ids with a plain DBI query: on an existing table
+  they called
+  [`dplyr::tbl()`](https://dplyr.tidyverse.org/reference/tbl.html),
+  which needs dbplyr, a package hoopR does not declare.
 - data.table must now be 1.15.0 or later (was 1.14.0): the release csv
   reads pass the url as `fread(file =)`, which downloads urls only from
   1.15.0 on.
@@ -727,6 +771,22 @@ vocabulary.
 - The DESCRIPTION explains NBA, ESPN, NCAA, FIBA, ACB, VTB, NBL, KBL and
   CBA on first use, and the help pages use ASCII punctuation (`-`, `x`)
   in place of em dashes, en dashes and multiplication signs.
+
+#### **Tests**
+
+- Offline replay tests for the ESPN, Fox, international,
+  CollegeBasketballData, Torvik and salary / mock-draft wrappers: each
+  call’s HTTP responses are recorded once
+  (`data-raw/http_fixtures/record_fixtures.R`, arrays trimmed to five
+  items) and replayed through httr2 mocks, so the wrappers run on CI
+  with no network. The fixtures are `.Rbuildignore`d; the tests skip
+  without them. The recorder never requests stats.nba.com,
+  stats.ncaa.org, Sports Reference or KenPom. Also new: mocked tests of
+  the play-by-play database builders.
+- The internal
+  [`clean_team_names_NCAA_merge()`](https://hoopR.sportsdataverse.org/reference/clean_team_names_NCAA_merge.md)
+  errored on every call (it used `.data$` inside a data.table `[`); it
+  now maps the names.
 
 ## **hoopR 3.1.0**
 

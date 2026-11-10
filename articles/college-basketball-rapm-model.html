@@ -497,7 +497,7 @@ starting with <code>002</code> are regular-season games.)
 <span></span>
 <span><span class="va">fit_time</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.time.html" class="external-link">system.time</a></span><span class="op">(</span><span class="va">my_rapm</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/nba_rapm.html">nba_rapm</a></span><span class="op">(</span><span class="va">nba_poss</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">fit_time</span><span class="op">[[</span><span class="st">"elapsed"</span><span class="op">]</span><span class="op">]</span>, <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 7.2</span></span>
+<span><span class="co">#&gt; [1] 11.7</span></span>
 <span></span>
 <span><span class="va">my_rapm</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span>players <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span>,</span>
@@ -545,8 +545,8 @@ says little either way. Use a possession floor when ranking.</li>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 3</span></span></span>
 <span><span class="co">#&gt;   floor              players r_with_published</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 1,000+ possessions     383            0.986</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> under 1,000            199            0.983</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 1,000+ possessions     383            0.995</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> under 1,000            199            0.991</span></span></code></pre></div>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">compare</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">off_poss</span> <span class="op">&gt;=</span> <span class="fl">1000</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -562,7 +562,7 @@ says little either way. Use a possession floor when ranking.</li>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="college-basketball-rapm-model_files/figure-html/compare_plot-1.png" class="r-plt" alt="Scatter plot comparing RAPM fitted with nba_rapm() against the published NBA player impact RAPM for players with at least 1,000 offensive possessions in 2025-26." width="768"></p>
 <p>The two agree closely for regulars. To control the penalty yourself,
-build the design and call <code><a href="https://rdrr.io/pkg/glmnet/man/glmnet.html" class="external-link">glmnet::glmnet()</a></code> with your own
+build the design and call <code><a href="https://glmnet.stanford.edu/reference/glmnet.html" class="external-link">glmnet::glmnet()</a></code> with your own
 <code>lambda</code>.</p>
 <p>For a single game you can build the possession frame from live NBA
 Stats play-by-play with <code><a href="../reference/nba_possession_lineups.html">nba_possession_lineups()</a></code>. It calls

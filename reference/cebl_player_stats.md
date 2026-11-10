@@ -82,7 +82,7 @@ Other CEBL Functions:
 # \donttest{
   try(cebl_player_stats(mode = "PER_GAME", season = 2025))
 #> ── CEBL Player Statistics from the CEBL Stats API ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:11:27 UTC
+#> ℹ Data updated: 2026-11-10 01:59:15 UTC
 #> # A tibble: 175 × 37
 #>    season mode     competition segment player_id full_name   nationality team_id
 #>     <int> <chr>    <chr>       <chr>       <int> <chr>       <chr>         <int>

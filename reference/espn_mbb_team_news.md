@@ -88,7 +88,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-11-09 21:12:47 UTC
+#> ℹ Data updated: 2026-11-10 02:00:50 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -101,14 +101,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:12:47 UTC
+#> ℹ Data updated: 2026-11-10 02:00:50 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Story Bobby M… With tax a… 2026-11-… FALSE   Bobby… https:/… 46       
-#> 2  5.04e7 Prev… Los Ang… Los Angele… 2026-11-… FALSE   NA     http://… 46       
-#> 3  4.16e7 Story Which N… In 2024, B… 2026-11-… FALSE   Keith… https:/… NA       
-#> 4  5.04e7 Head… Reaves … Austin Rea… 2026-11-… FALSE   Dave … https:/… 46       
-#> 5  5.04e7 Recap Austin … — Austin R… 2026-11-… FALSE   NA     http://… 46       
+#> 1  5.04e7 Head… Luka Do… Luka Donci… 2026-11-… FALSE   Dave … https:/… 46       
+#> 2  5.04e7 Head… Bronny … Lakers gua… 2026-11-… FALSE   NA     https:/… 46       
+#> 3  5.04e7 Story Bobby M… With tax a… 2026-11-… FALSE   Bobby… https:/… 46       
+#> 4  5.04e7 Prev… Los Ang… Los Angele… 2026-11-… FALSE   NA     http://… 46       
+#> 5  4.16e7 Story Which N… In 2024, B… 2026-11-… FALSE   Keith… https:/… NA       
 # }
 ```

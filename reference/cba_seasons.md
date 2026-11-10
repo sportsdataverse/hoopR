@@ -121,7 +121,7 @@ lists every function in this family.
 # \donttest{
   try(cba_seasons())
 #> ── CBA Seasons from data-server.cbaleague.com ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:11:17 UTC
+#> ℹ Data updated: 2026-11-10 01:59:05 UTC
 #> # A tibble: 32 × 3
 #>    is_default key       value
 #>         <int> <chr>     <chr>

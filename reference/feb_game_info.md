@@ -94,16 +94,8 @@ Other FEB Functions:
 ``` r
 # \donttest{
   try(feb_game_info(game_id = 2535725))
-#> ── FEB game info from intrafeb.feb.es ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:13:09 UTC
-#> # A tibble: 1 × 24
-#>   game_id comp_id competition group_label period clock start_time          venue
-#>     <int>   <int> <chr>       <chr>        <int> <chr> <dttm>              <chr>
-#> 1 2535725     115 PRIMERA FEB Único            4 FINAL 2026-09-26 19:00:00 PABE…
-#> # ℹ 16 more variables: address <chr>, referee1 <chr>, referee2 <chr>,
-#> #   referee3 <chr>, status <int>, status_text <chr>, home_team_id <int>,
-#> #   home_team <chr>, home_team_code <chr>, home_club_code <chr>,
-#> #   home_score <int>, away_team_id <int>, away_team <chr>,
-#> #   away_team_code <chr>, away_club_code <chr>, away_score <int>
+#> Error in feb_game_info(game_id = 2535725) : 
+#>   intrafeb.feb.es/LiveStats.API/api/v1/TeamStats/2535725 answered HTTP
+#> 500, not 200.
 # }
 ```

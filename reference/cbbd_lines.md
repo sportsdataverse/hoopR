@@ -64,14 +64,14 @@ article.
 ``` r
 # \donttest{
   try(cbbd_lines(season = 2024, team = "Duke"))
-#> ✖ 2026-11-09 21:11:21.764263: Invalid arguments or no betting lines available!
+#> ✖ 2026-11-10 01:59:09.121427: Invalid arguments or no betting lines available!
 #> ✖ Args: season = 2024, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_lines_providers())
-#> ✖ 2026-11-09 21:11:21.77326: Invalid arguments or no line providers available!
+#> ✖ 2026-11-10 01:59:09.132326: Invalid arguments or no line providers available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

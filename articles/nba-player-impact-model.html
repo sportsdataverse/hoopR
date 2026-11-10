@@ -235,9 +235,9 @@ per-100 box-score stats.</td>
 <tr class="odd">
 <td>DARKO-style</td>
 <td>
-<code>darko_filtered_skill</code>,
-<code>darko_projected_rating</code>,
-<code>darko_projected_sd</code>
+<code>boban_filtered_skill</code>,
+<code>boban_projected_rating</code>,
+<code>boban_projected_sd</code>
 </td>
 <td>A Kalman filter over each player’s RAPM history with an aging curve:
 a current skill estimate and a projection for next season.</td>
@@ -324,18 +324,18 @@ each family should agree only partly with the other.</p>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">season</span> <span class="op">==</span> <span class="fl">2026</span>, <span class="va">season_type</span> <span class="op">==</span> <span class="st">"Regular Season"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">rs_2026</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">rapm</span>, <span class="va">adj_rapm</span>, <span class="va">spm</span>, <span class="va">bpm</span>, <span class="va">darko_filtered_skill</span>, <span class="va">war</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">rapm</span>, <span class="va">adj_rapm</span>, <span class="va">spm</span>, <span class="va">bpm</span>, <span class="va">boban_filtered_skill</span>, <span class="va">war</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">cor</a></span><span class="op">(</span>use <span class="op">=</span> <span class="st">"pairwise.complete.obs"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span>
-<span><span class="co">#&gt;                      rapm adj_rapm  spm  bpm darko_filtered_skill  war</span></span>
-<span><span class="co">#&gt; rapm                 1.00     0.91 0.44 0.44                 1.00 0.85</span></span>
-<span><span class="co">#&gt; adj_rapm             0.91     1.00 0.46 0.33                 0.92 0.71</span></span>
-<span><span class="co">#&gt; spm                  0.44     0.46 1.00 0.53                 0.43 0.45</span></span>
-<span><span class="co">#&gt; bpm                  0.44     0.33 0.53 1.00                 0.43 0.45</span></span>
-<span><span class="co">#&gt; darko_filtered_skill 1.00     0.92 0.43 0.43                 1.00 0.83</span></span>
-<span><span class="co">#&gt; war                  0.85     0.71 0.45 0.45                 0.83 1.00</span></span></code></pre></div>
+<span><span class="co">#&gt;                      rapm adj_rapm  spm  bpm boban_filtered_skill  war</span></span>
+<span><span class="co">#&gt; rapm                 1.00     0.91 0.43 0.42                 1.00 0.84</span></span>
+<span><span class="co">#&gt; adj_rapm             0.91     1.00 0.52 0.46                 0.90 0.80</span></span>
+<span><span class="co">#&gt; spm                  0.43     0.52 1.00 0.85                 0.42 0.45</span></span>
+<span><span class="co">#&gt; bpm                  0.42     0.46 0.85 1.00                 0.41 0.45</span></span>
+<span><span class="co">#&gt; boban_filtered_skill 1.00     0.90 0.42 0.41                 1.00 0.83</span></span>
+<span><span class="co">#&gt; war                  0.84     0.80 0.45 0.45                 0.83 1.00</span></span></code></pre></div>
 <p>In the 2025-26 regular season, RAPM and adj-RAPM correlate at r =
-0.913 across 582 players (the model card reports 0.913 for the same
+0.908 across 582 players (the model card reports 0.913 for the same
 comparison).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">rs_2026</span> <span class="op">|&gt;</span></span>
@@ -387,21 +387,21 @@ standard deviation gives a comparable measure of importance:</p>
 <span>      <span class="va">rec</span><span class="op">$</span><span class="va">ridge_alpha</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>, <span class="st">", train r(SPM, RAPM) ="</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">rec</span><span class="op">$</span><span class="va">train_r_spm_vs_rapm</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>, <span class="fl">3</span><span class="op">)</span>, <span class="st">"\n"</span><span class="op">)</span></span>
 <span>  <span class="va">coefs</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html" class="external-link">across</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html" class="external-link">where</a></span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span>, \<span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">x</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
-<span><span class="co">#&gt; 2026 fit: 582 regular-season players, ridge alpha = 100 , train r(SPM, RAPM) = 0.437</span></span>
+<span><span class="co">#&gt; 2026 fit: 582 regular-season players, ridge alpha = 100 , train r(SPM, RAPM) = 0.431</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 11 × 6</span></span></span>
 <span><span class="co">#&gt;    feature o_coef d_coef feature_sd o_importance d_importance</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> pts      0.136  0.008      7.30         0.992        0.057</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> fga     -<span style="color: #BB0000;">0.059</span> -<span style="color: #BB0000;">0.024</span>      4.97         0.294        0.12 </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> dreb     0.036  0.082      2.75         0.098        0.225</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> ast      0.092  0.025      2.71         0.25         0.068</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> tov     -<span style="color: #BB0000;">0.176</span> -<span style="color: #BB0000;">0.062</span>      1.29         0.227        0.08 </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> blk     -<span style="color: #BB0000;">0.084</span>  0.228      0.951        0.08         0.217</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> stl      0.021  0.244      0.878        0.018        0.215</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> oreb     0.054  0.052      1.90         0.103        0.098</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> fg3m     0.008  0.083      1.57         0.012        0.131</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> pf      -<span style="color: #BB0000;">0.018</span> -<span style="color: #BB0000;">0.055</span>      1.64         0.029        0.091</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> fta     -<span style="color: #BB0000;">0.003</span> -<span style="color: #BB0000;">0.017</span>      2.89         0.01         0.048</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> pts      0.112  0.007      7.30         0.815        0.048</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> fga     -<span style="color: #BB0000;">0.047</span> -<span style="color: #BB0000;">0.02</span>       4.97         0.236        0.1  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> ast      0.079  0.023      2.71         0.214        0.062</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> dreb     0.032  0.064      2.75         0.089        0.176</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> tov     -<span style="color: #BB0000;">0.148</span> -<span style="color: #BB0000;">0.056</span>      1.29         0.19         0.073</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> blk     -<span style="color: #BB0000;">0.067</span>  0.194      0.951        0.064        0.184</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> stl      0.022  0.208      0.878        0.02         0.183</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> oreb     0.046  0.045      1.90         0.088        0.085</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> fg3m     0.008  0.072      1.57         0.013        0.112</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> pf      -<span style="color: #BB0000;">0.016</span> -<span style="color: #BB0000;">0.045</span>      1.64         0.026        0.074</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> fta     -<span style="color: #BB0000;">0.002</span> -<span style="color: #BB0000;">0.015</span>      2.89         0.007        0.044</span></span></code></pre></div>
 <p>Scoring volume drives the offensive side and steals, blocks and
 defensive rebounds the defensive side, which is the usual shape of a
 box-score plus-minus. The training correlation between SPM and its RAPM
@@ -423,7 +423,7 @@ RAPM with his RAPM the following season:</p>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="va">player_id</span>, <span class="va">season</span>, .keep_all <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">pairs</span> <span class="op">&lt;-</span> <span class="va">rs</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">player_id</span>, <span class="va">season</span>, <span class="va">rapm</span>, <span class="va">bpm</span>, <span class="va">darko_projected_rating</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">player_id</span>, <span class="va">season</span>, <span class="va">rapm</span>, <span class="va">bpm</span>, <span class="va">boban_projected_rating</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">inner_join</a></span><span class="op">(</span><span class="va">rs</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/transmute.html" class="external-link">transmute</a></span><span class="op">(</span><span class="va">player_id</span>, season <span class="op">=</span> <span class="va">season</span> <span class="op">-</span> <span class="fl">1</span>, rapm_next <span class="op">=</span> <span class="va">rapm</span>, bpm_next <span class="op">=</span> <span class="va">bpm</span><span class="op">)</span>,</span>
 <span>             by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"player_id"</span>, <span class="st">"season"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
@@ -433,16 +433,16 @@ RAPM with his RAPM the following season:</p>
 <span>    n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>    rapm_yoy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">cor</a></span><span class="op">(</span><span class="va">rapm</span>, <span class="va">rapm_next</span><span class="op">)</span>,</span>
 <span>    bpm_yoy <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">cor</a></span><span class="op">(</span><span class="va">bpm</span>, <span class="va">bpm_next</span><span class="op">)</span>,</span>
-<span>    darko_forward_r <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">cor</a></span><span class="op">(</span><span class="va">darko_projected_rating</span>, <span class="va">rapm_next</span><span class="op">)</span>,</span>
-<span>    darko_forward_mae <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">darko_projected_rating</span> <span class="op">-</span> <span class="va">rapm_next</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>    boban_forward_r <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">cor</a></span><span class="op">(</span><span class="va">boban_projected_rating</span>, <span class="va">rapm_next</span><span class="op">)</span>,</span>
+<span>    boban_forward_mae <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">boban_projected_rating</span> <span class="op">-</span> <span class="va">rapm_next</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>    carry_forward_mae <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">rapm</span> <span class="op">-</span> <span class="va">rapm_next</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html" class="external-link">across</a></span><span class="op">(</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">season</span>, <span class="va">n</span><span class="op">)</span>, \<span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">x</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 7</span></span></span>
-<span><span class="co">#&gt;   season     n rapm_yoy bpm_yoy darko_forward_r darko_forward_mae</span></span>
+<span><span class="co">#&gt;   season     n rapm_yoy bpm_yoy boban_forward_r boban_forward_mae</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   <span style="text-decoration: underline;">2</span>024   447    0.407   0.455           0.398              1.04</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>   <span style="text-decoration: underline;">2</span>025   464    0.345   0.387           0.332              1.70</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>   <span style="text-decoration: underline;">2</span>024   447    0.361   0.346           0.356              1.55</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>   <span style="text-decoration: underline;">2</span>025   464    0.347   0.37            0.334              1.68</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 1 more variable: carry_forward_mae &lt;dbl&gt;</span></span></span></code></pre></div>
 <p>Here <code>season</code> is the season the projection was made in.
 Single-season RAPM is noisy: its year-over-year correlation is modest.
@@ -454,7 +454,7 @@ year-over-year reliability is 0.357 across 11,272 player pairs.</p>
 <div class="section level3">
 <h3 id="darko-style-forward-validation">DARKO-style forward validation<a class="anchor" aria-label="anchor" href="#darko-style-forward-validation"></a>
 </h3>
-<p><code>darko_projected_rating</code> is made with information through
+<p><code>boban_projected_rating</code> is made with information through
 season <em>t</em> only, so comparing it with realized RAPM in season
 <em>t + 1</em> is an honest out-of-sample test. The table above includes
 that test for the seasons loaded here, plus a “carry-forward” baseline
@@ -469,7 +469,7 @@ lifts the correlation from about 0.37 to about 0.44.</li>
 <li>The projection does not beat carry-forward RAPM on <em>ranking</em>
 (their correlations are within about 0.01), but it has lower mean
 absolute error against every target. Read
-<code>darko_projected_rating</code> as a better-calibrated magnitude,
+<code>boban_projected_rating</code> as a better-calibrated magnitude,
 not a better ordering.</li>
 </ul>
 </div>
@@ -496,21 +496,21 @@ floors, so a release whose RAPM drifted from them would be blocked.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 15 × 8</span></span></span>
 <span><span class="co">#&gt;    player_name          team_abbreviation    gp   min  rapm adj_rapm   bpm   war</span></span>
 <span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Dyson Daniels        ATL                  76  <span style="text-decoration: underline;">2</span>523  6.78    13.7   3.34  25.0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Shai Gilgeous-Alexa… OKC                  68  <span style="text-decoration: underline;">2</span>261  8       13.6  19.8   24.9</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Derrick White        BOS                  77  <span style="text-decoration: underline;">2</span>623  5.63     8.5   9.65  21.2</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Chet Holmgren        OKC                  69  <span style="text-decoration: underline;">1</span>997  7.41    12.3  12.4   21.0</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Kawhi Leonard        LAC                  65  <span style="text-decoration: underline;">2</span>087  7.37    13.1   6.75  20.9</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Victor Wembanyama    SAS                  64  <span style="text-decoration: underline;">1</span>867  7.88    12.2  14.3   20.4</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Bam Adebayo          MIA                  73  <span style="text-decoration: underline;">2</span>363  5.49    10.5   2.55  20.1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Amen Thompson        HOU                  79  <span style="text-decoration: underline;">2</span>954  4.31     7.98  7.21  19.8</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Nikola Jokić         DEN                  65  <span style="text-decoration: underline;">2</span>265  5.9     10.5  18.0   19.3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Donovan Mitchell     CLE                  70  <span style="text-decoration: underline;">2</span>341  4.64     7.05  7.75  17.5</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> Nickeil Alexander-W… ATL                  78  <span style="text-decoration: underline;">2</span>603  3.85     8.15  2.51  17.3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> Julian Champagnie    SAS                  82  <span style="text-decoration: underline;">2</span>267  4.87     7.5   7.19  17.3</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> Donte DiVincenzo     MIN                  82  <span style="text-decoration: underline;">2</span>497  4.07     6.4   3.9   16.9</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> Cade Cunningham      DET                  64  <span style="text-decoration: underline;">2</span>172  5.03     8.59 12.9   16.7</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> Devin Booker         PHX                  64  <span style="text-decoration: underline;">2</span>148  4.97    10.4   3.38  16.3</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> Shai Gilgeous-Alexa… OKC                  68  <span style="text-decoration: underline;">2</span>261  7.06     8.11 11.1   22.6</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> Dyson Daniels        ATL                  76  <span style="text-decoration: underline;">2</span>523  5.58     5.01  1.5   21.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> Derrick White        BOS                  77  <span style="text-decoration: underline;">2</span>623  4.99     4.99  3.39  19.4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> Chet Holmgren        OKC                  69  <span style="text-decoration: underline;">1</span>997  6.56     6.31  3.7   19.1</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> Victor Wembanyama    SAS                  64  <span style="text-decoration: underline;">1</span>867  6.96     7.62  7.88  18.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> Kawhi Leonard        LAC                  65  <span style="text-decoration: underline;">2</span>087  6.27     6.08  5.84  18.4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> Amen Thompson        HOU                  79  <span style="text-decoration: underline;">2</span>954  3.71     3.68  3.05  18.0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> Bam Adebayo          MIA                  73  <span style="text-decoration: underline;">2</span>363  4.61     4.88  0.8   17.7</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> Nikola Jokić         DEN                  65  <span style="text-decoration: underline;">2</span>265  5.12     7.35 14.0   17.4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> Donovan Mitchell     CLE                  70  <span style="text-decoration: underline;">2</span>341  4.08     4.44  4.55  16.0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">11</span> Julian Champagnie    SAS                  82  <span style="text-decoration: underline;">2</span>267  4.28     3.54  0.73  15.8</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">12</span> Nickeil Alexander-W… ATL                  78  <span style="text-decoration: underline;">2</span>603  3.23     2.26  0.67  15.5</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">13</span> Donte DiVincenzo     MIN                  82  <span style="text-decoration: underline;">2</span>497  3.55     3.14  1.31  15.4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">14</span> Cade Cunningham      DET                  64  <span style="text-decoration: underline;">2</span>172  4.47     4.54  6.61  15.4</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">15</span> OG Anunoby           NYK                  67  <span style="text-decoration: underline;">2</span>226  3.86     3.36  1.34  14.1</span></span></code></pre></div>
 <p>Read the leaderboard as tiers, not a strict ranking (see the
 uncertainty note below).</p>
 </div>

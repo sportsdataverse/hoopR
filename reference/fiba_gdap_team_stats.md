@@ -51,7 +51,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gdap_team_stats(team_id = 279569))
 #> ── FIBA gdap_team_stats from fiba.basketball ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:13:35 UTC
+#> ℹ Data updated: 2026-11-10 02:01:54 UTC
 #> # A tibble: 1 × 75
 #>   team_id competition_id points_per_game rebounds_per_game
 #>     <int>          <int>           <dbl>             <dbl>

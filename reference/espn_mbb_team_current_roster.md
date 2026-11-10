@@ -42,7 +42,7 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_team_current_roster(team_id = 150))
 #> ── ESPN MBB Team Current Roster Information from ESPN.com ─────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:12:46 UTC
+#> ℹ Data updated: 2026-11-10 02:00:49 UTC
 #> # A tibble: 15 × 47
 #>    team_abbreviation team_alternate_color team_color team_display_name team_id
 #>    <chr>             <chr>                <chr>      <chr>               <int>
@@ -72,7 +72,35 @@ try(espn_mbb_team_current_roster(team_id = 150))
 # \donttest{
 try(espn_nba_team_current_roster(team_id = 13))
 #> ── ESPN NBA Team Current Roster Information from ESPN.com ─────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:12:46 UTC
-#> # A tibble: 0 × 0
+#> ℹ Data updated: 2026-11-10 02:00:49 UTC
+#> # A tibble: 19 × 72
+#>    team_abbreviation team_alternate_color team_color team_display_name 
+#>    <chr>             <chr>                <chr>      <chr>             
+#>  1 LAL               fdb927               552583     Los Angeles Lakers
+#>  2 LAL               fdb927               552583     Los Angeles Lakers
+#>  3 LAL               fdb927               552583     Los Angeles Lakers
+#>  4 LAL               fdb927               552583     Los Angeles Lakers
+#>  5 LAL               fdb927               552583     Los Angeles Lakers
+#>  6 LAL               fdb927               552583     Los Angeles Lakers
+#>  7 LAL               fdb927               552583     Los Angeles Lakers
+#>  8 LAL               fdb927               552583     Los Angeles Lakers
+#>  9 LAL               fdb927               552583     Los Angeles Lakers
+#> 10 LAL               fdb927               552583     Los Angeles Lakers
+#> 11 LAL               fdb927               552583     Los Angeles Lakers
+#> 12 LAL               fdb927               552583     Los Angeles Lakers
+#> 13 LAL               fdb927               552583     Los Angeles Lakers
+#> 14 LAL               fdb927               552583     Los Angeles Lakers
+#> 15 LAL               fdb927               552583     Los Angeles Lakers
+#> 16 LAL               fdb927               552583     Los Angeles Lakers
+#> 17 LAL               fdb927               552583     Los Angeles Lakers
+#> 18 LAL               fdb927               552583     Los Angeles Lakers
+#> 19 LAL               fdb927               552583     Los Angeles Lakers
+#> # ℹ 68 more variables: franchise.abbreviation <chr>, franchise.color <chr>,
+#> #   franchise.displayName <chr>, franchise.id <chr>, franchise.isActive <lgl>,
+#> #   franchise.location <chr>, franchise.name <chr>,
+#> #   franchise.shortDisplayName <chr>, franchise.slug <chr>,
+#> #   franchise.uid <chr>, franchise.venue.address.city <chr>,
+#> #   franchise.venue.address.state <chr>, franchise.venue.fullName <chr>,
+#> #   franchise.venue.grass <lgl>, franchise.venue.guid <chr>, …
 # }
 ```

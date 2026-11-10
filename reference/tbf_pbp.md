@@ -75,7 +75,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_pbp(match_id = 346279))
 #> ── TBF Play-by-Play ───────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:17:10 UTC
+#> ℹ Data updated: 2026-11-10 02:05:47 UTC
 #> # A tibble: 639 × 13
 #>    match_id action_number period period_type clock seconds_remaining home_score
 #>       <int>         <int>  <int>       <int> <chr>             <int>      <int>

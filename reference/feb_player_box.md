@@ -64,26 +64,8 @@ Other FEB Functions:
 ``` r
 # \donttest{
   try(feb_player_box(game_id = 2535725))
-#> ── FEB player box from intrafeb.feb.es ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 21:13:10 UTC
-#> # A tibble: 24 × 38
-#>    game_id team_side team_id team  player_id shirt_number player starter captain
-#>      <int> <chr>       <int> <chr>     <int> <chr>        <chr>  <lgl>   <lgl>  
-#>  1 2535725 home      1009716 BUEN…   1371559 3            V. AG… TRUE    FALSE  
-#>  2 2535725 home      1009716 BUEN…   2813013 5            N. RE… TRUE    FALSE  
-#>  3 2535725 home      1009716 BUEN…   2880241 6            J. ZE… TRUE    FALSE  
-#>  4 2535725 home      1009716 BUEN…   2432962 10           S. ME… FALSE   TRUE   
-#>  5 2535725 home      1009716 BUEN…   1603635 11           J. GO… FALSE   FALSE  
-#>  6 2535725 home      1009716 BUEN…   2880232 16           A. MA… FALSE   FALSE  
-#>  7 2535725 home      1009716 BUEN…   2500822 22           M. VO… TRUE    FALSE  
-#>  8 2535725 home      1009716 BUEN…   2162563 25           A. LA… FALSE   FALSE  
-#>  9 2535725 home      1009716 BUEN…   2117867 42           S. SA… FALSE   FALSE  
-#> 10 2535725 home      1009716 BUEN…   1981843 44           B. VA… TRUE    FALSE  
-#> # ℹ 14 more rows
-#> # ℹ 29 more variables: seconds_played <int>, min_formatted <chr>, pts <int>,
-#> #   p1m <int>, p1a <int>, p1p <dbl>, p2m <int>, p2a <int>, p2p <dbl>,
-#> #   p3m <int>, p3a <int>, p3p <dbl>, fgm <int>, fga <int>, fgp <dbl>, ro <int>,
-#> #   rd <int>, rt <int>, reb <int>, assist <int>, st <int>, to <int>, bs <int>,
-#> #   tc <int>, mt <int>, pf <int>, rf <int>, pllss <int>, val <int>
+#> Error in feb_player_box(game_id = 2535725) : 
+#>   intrafeb.feb.es/LiveStats.API/api/v1/BoxScore/2535725 answered HTTP 500,
+#> not 200.
 # }
 ```
