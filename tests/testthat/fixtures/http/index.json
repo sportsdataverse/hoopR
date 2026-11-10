@@ -677,6 +677,24 @@
     "type": "application/json; charset=utf-8",
     "trimmed": false
   },
+  "https://api.basketball-bundesliga.de/records/per-game/2025": {
+    "file": "27f3dacaf1024231.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.basketball-bundesliga.de/records/season-averages": {
+    "file": "4c725ba6ca075dc5.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.basketball-bundesliga.de/referees?currentPage=1&pageSize=100": {
+    "file": "2da85ab1e4d23e95.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://api.basketball-bundesliga.de/seasons": {
     "file": "28b0453a3261f246.gz",
     "status": 200,
@@ -695,6 +713,12 @@
     "type": "application/json; charset=utf-8",
     "trimmed": true
   },
+  "https://api.basketball-bundesliga.de/seasons/2025/playoff-tree": {
+    "file": "6822ed865da63bf9.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://api.basketball-bundesliga.de/seasons/2025/team-statistics?displayType=MAIN_ROUND": {
     "file": "1339fecd4803024d.gz",
     "status": 200,
@@ -703,6 +727,18 @@
   },
   "https://api.basketball-bundesliga.de/standings": {
     "file": "2cae63c03dc20c94.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.basketball-bundesliga.de/transfers": {
+    "file": "cc902c80c99ad04e.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.basketball-bundesliga.de/transfers/teams": {
+    "file": "d1e22054bc55f238.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
@@ -949,6 +985,12 @@
   },
   "https://api.data.cebl.ca/players/statistics/aggregated/?season=2025&mode=PER_GAME": {
     "file": "cdb6c76336bee55c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.data.cebl.ca/players/statistics/leaders/?season=2025&team_id=14&mode=PER_GAME&statistics=POINTS%2CREBOUNDS%2CASSISTS%2CTARGET_SCORES": {
+    "file": "a82954e4610d8014.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
@@ -1253,8 +1295,44 @@
     "type": "application/json;charset=UTF-8",
     "trimmed": true
   },
+  "https://api.kbl.or.kr/league/playoff/new/S45G01": {
+    "file": "16e17c4ccc835e9c.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
   "https://api.kbl.or.kr/league/rank/S45G01": {
     "file": "b6d29db90f4524b1.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/league/rank/S45G01/team-tracks": {
+    "file": "b702546092e83fbb.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/league/rank/team": {
+    "file": "9fa4e6472a476273.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/league/round-mvp/45": {
+    "file": "9a781f9ce24b3688.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/league/season-leader": {
+    "file": "1f37ce6aaec0fdd3.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://api.kbl.or.kr/leagues/S45G01/stats/players": {
+    "file": "501b27d3a8c7ec46.gz",
     "status": 200,
     "type": "application/json;charset=UTF-8",
     "trimmed": true
@@ -1325,6 +1403,24 @@
     "type": "application/json",
     "trimmed": true
   },
+  "https://api.kzs.si/api/v1/public/competitions/579/playerStats?limit=1000&statsCategory=PTS&orderType=AVERAGE&sortBy=avg&sort=DESC&competitionId=579": {
+    "file": "508a5daaaed2fddc.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/competitions/579/rounds": {
+    "file": "eaf36e50cf36d5a2.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/competitions/579/teamStats?limit=1000&statsCategory=PTS&orderType=AVERAGE&sortBy=avg&sort=DESC&competitionId=579": {
+    "file": "cdeee0134719e4b8.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
   "https://api.kzs.si/api/v1/public/matches/?limit=1000&competitionId=579&from=2025-10-01T00%3A00%3A00.000Z&to=2025-10-31T23%3A59%3A59.000Z": {
     "file": "f66b36b69f03b031.gz",
     "status": 200,
@@ -1349,8 +1445,20 @@
     "type": "application/json",
     "trimmed": true
   },
+  "https://api.kzs.si/api/v1/public/matches/579/playingDays": {
+    "file": "5b638b04ade7436d.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
   "https://api.kzs.si/api/v1/public/matches/standings?competitionId=579": {
     "file": "4be3c629c2b73351.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.kzs.si/api/v1/public/players/106285": {
+    "file": "8a3ef201441e8f66.gz",
     "status": 200,
     "type": "application/json",
     "trimmed": true
@@ -1373,6 +1481,24 @@
     "type": "application/json",
     "trimmed": true
   },
+  "https://api.preciser.io/game/injury/list/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf": {
+    "file": "919995dfc66f78d1.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.preciser.io/game/rotation/chart/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf": {
+    "file": "3f7e891f0f892d99.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.preciser.io/post/game/summary/o/plg/gameId/e6f98675-3e5b-11ed-949e-5d17350689cf": {
+    "file": "4710de0391f4eaca.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
   "https://api.preciser.io/v1/chart-data/id/e6f98675-3e5b-11ed-949e-5d17350689cf": {
     "file": "d4b21f9a38138554.gz",
     "status": 200,
@@ -1387,6 +1513,18 @@
   },
   "https://api.tpbl.basketball/api/divisions/2/teams/4/players": {
     "file": "7c46ee01138173a0.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.tpbl.basketball/api/divisions/2/teams/4/shooting-spots": {
+    "file": "ba82e9af5232cf1a.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://api.tpbl.basketball/api/events/2/divisions": {
+    "file": "bd74b5305ed65dad.gz",
     "status": 200,
     "type": "application/json",
     "trimmed": true
@@ -1439,6 +1577,12 @@
     "type": "application/json",
     "trimmed": false
   },
+  "https://api2.acb.com/api/matchdata/AdvancedStats/match-advanced-stats?matchId=105401": {
+    "file": "e9ded4425a2e9443.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://api2.acb.com/api/matchdata/MatchHeader/match-header?matchId=105401": {
     "file": "bb13c24c42a6f018.gz",
     "status": 200,
@@ -1457,8 +1601,38 @@
     "type": "application/json; charset=utf-8",
     "trimmed": true
   },
+  "https://api2.acb.com/api/matchdata/Overview/lead-tracker?matchId=105401": {
+    "file": "b15c7ecea0f63def.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/matchdata/Overview/lineup?matchId=105401": {
+    "file": "0a327aa0b89e43b5.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/matchdata/Overview/match-leaders?matchId=105401": {
+    "file": "85c184b611998d07.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/matchdata/Overview/match-team-comparison?matchId=105401": {
+    "file": "c1ead072d9a0c8e1.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://api2.acb.com/api/matchdata/PlayByPlay/play-by-play?matchId=105401": {
     "file": "e0943bcafce76060.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/matchdata/Preview/quickfacts?matchId=105401": {
+    "file": "64c0787c61645949.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
@@ -1493,8 +1667,20 @@
     "type": "application/json; charset=utf-8",
     "trimmed": true
   },
+  "https://api2.acb.com/api/seasondata/Competition/standings?editionId=90": {
+    "file": "e1ef330f1260e390.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://api2.acb.com/api/seasondata/Competition/standings?editionId=91": {
     "file": "e1d76e1500ec0aef.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/PlayerProfile/career?playerLicenceId=20209407": {
+    "file": "7e7eb23496f32f40.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
@@ -1517,14 +1703,50 @@
     "type": "application/json; charset=utf-8",
     "trimmed": true
   },
+  "https://api2.acb.com/api/seasondata/PlayerProfile/player-stats?playerLicenceId=20209407&editionId=90": {
+    "file": "277cd3a6d900d5c8.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/ShotChart/league-zones?editionId=90": {
+    "file": "6137242dd0458e64.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/TeamProfile/club-data?clubId=2": {
+    "file": "850631346fda5ccd.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://api2.acb.com/api/seasondata/TeamProfile/current-roster?clubId=2&editionId=91": {
     "file": "63741df49d38ac73.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
   },
+  "https://api2.acb.com/api/seasondata/TeamProfile/next-matches?clubId=2&editionId=90": {
+    "file": "967b4ebe0977afc0.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://api2.acb.com/api/seasondata/TeamProfile/team-matches?clubId=2&editionId=91": {
     "file": "d2721c52823e6464.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/TeamProfile/team-records?clubId=2": {
+    "file": "bd30e9d35c540819.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api2.acb.com/api/seasondata/TeamProfile/team-stats?clubId=2&editionId=90": {
+    "file": "77dbf4e8ea0445e4.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
@@ -1607,11 +1829,29 @@
     "type": "application/json; charset=utf-8",
     "trimmed": true
   },
+  "https://basket.co.il/ws/ws.asmx/BoardsEx?team_uid=10&cYear=2026": {
+    "file": "5186eace91ba3d1e.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://basket.co.il/ws/ws.asmx/Boxscore?game_id=26392&cYear=2026": {
     "file": "43fc352c6fe8cbfc.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": false
+  },
+  "https://basket.co.il/ws/ws.asmx/Coaches?team_id=1109&team_uid=10&cYear=2026": {
+    "file": "3a5757cfbaf4e8f8.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://basket.co.il/ws/ws.asmx/Configuration?cYear=2026": {
+    "file": "7583d970b82a1305.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
   },
   "https://basket.co.il/ws/ws.asmx/Games?board_id=5&board_round=1&team_id=0&team_uid=0&game_id=0&cYear=2026": {
     "file": "b519bf1f305b5eca.gz",
@@ -1619,8 +1859,26 @@
     "type": "application/json; charset=utf-8",
     "trimmed": true
   },
+  "https://basket.co.il/ws/ws.asmx/GamesByTeam?team_uid=10&cYear=2026": {
+    "file": "f0d899ffbac7bea3.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://basket.co.il/ws/ws.asmx/GamesEx?board_id=0&team_uid=10&cYear=2026": {
+    "file": "7f6b8fcd7221b8ec.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://basket.co.il/ws/ws.asmx/LeaderByType?stat_type=pts&cYear=2026&team_id=0": {
     "file": "9f45fd68800f863e.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://basket.co.il/ws/ws.asmx/PlayerById?player_id=21912&cYear=2026": {
+    "file": "b60ca1d91da9e3e7.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
@@ -1633,6 +1891,18 @@
   },
   "https://basket.co.il/ws/ws.asmx/PlayerStatsById?player_id=21912&cYear=2026&isAverages=false&isPlayOff=false": {
     "file": "d2220f2fc7efc3e7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://basket.co.il/ws/ws.asmx/StatsTypes": {
+    "file": "8d354b591ad55d73.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://basket.co.il/ws/ws.asmx/TeamById?team_id=1109&team_uid=10&cYear=2026": {
+    "file": "0963aa59239de20f.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
@@ -1685,6 +1955,12 @@
     "type": "application/json",
     "trimmed": true
   },
+  "https://bnxt.sportpress.info/api/v1/roster/season-nationality-codes/2026": {
+    "file": "2184cd658dd0e6ec.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
   "https://bnxt.sportpress.info/api/v1/roster/season-players/2026": {
     "file": "70abe584c8fdb6cd.gz",
     "status": 200,
@@ -1703,8 +1979,26 @@
     "type": "application/json",
     "trimmed": true
   },
+  "https://bnxt.sportpress.info/api/v1/schedule/game-slider/24": {
+    "file": "111f39c6d2d52755.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
   "https://bnxt.sportpress.info/api/v1/schedule/overview/11295": {
     "file": "332fff963459fa48.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://bnxt.sportpress.info/api/v1/server-config": {
+    "file": "404220f0d587033d.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://bnxt.sportpress.info/api/v1/staff/list?title_id=2": {
+    "file": "30e7dcc592feb1d0.gz",
     "status": 200,
     "type": "application/json",
     "trimmed": true
@@ -1763,8 +2057,38 @@
     "type": "application/json;charset=UTF-8",
     "trimmed": true
   },
+  "https://data-server.cbaleague.com/api/player-defensive-list?pageNumber=1&pageSize=100": {
+    "file": "c47146dbedbccbdc.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/player-match-datas/advance-count": {
+    "file": "fa1d431d4a2005b0.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
   "https://data-server.cbaleague.com/api/player-match-datas/data-count": {
     "file": "07a283a4eba67ff4.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/player-match-datas/schedule-other-data": {
+    "file": "b20ec504779c5141.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/player-offensive-list?pageNumber=1&pageSize=100": {
+    "file": "03ea85211066be17.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/player-shoot-list?pageNumber=1&pageSize=100": {
+    "file": "1a54ef85050d87cf.gz",
     "status": 200,
     "type": "application/json;charset=UTF-8",
     "trimmed": true
@@ -1799,8 +2123,32 @@
     "type": "application/json;charset=UTF-8",
     "trimmed": true
   },
+  "https://data-server.cbaleague.com/api/team-count/season?season=2025": {
+    "file": "06b609add7d189f8.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
   "https://data-server.cbaleague.com/api/team-match-datas/getMatchDataReport/baseInfo/100105799": {
     "file": "13f260944094ea98.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/team-match-datas/getMatchDataReport/bestDataQuota/100105799": {
+    "file": "b1090ae1e17a7771.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/team-match-datas/getMatchDataReport/bestPlayer/100105799": {
+    "file": "ab05642067fc2452.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/team-match-datas/getMatchDataReportStatues/100105799": {
+    "file": "c1b08227467bb4ff.gz",
     "status": 200,
     "type": "application/json;charset=UTF-8",
     "trimmed": true
@@ -1811,8 +2159,32 @@
     "type": "application/json;charset=UTF-8",
     "trimmed": true
   },
+  "https://data-server.cbaleague.com/api/team-match-datas/team-entirety-list?pageNumber=1&pageSize=100": {
+    "file": "2a6c820acca9d361.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/team-match-datas/team-shoot-list?pageNumber=1&pageSize=100": {
+    "file": "84d9e46472094e1c.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
   "https://data-server.cbaleague.com/api/teams/basic-data": {
     "file": "3f7cb6ddfe6805c2.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/teams/four-elements": {
+    "file": "a9786d683aeaf0d5.gz",
+    "status": 200,
+    "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://data-server.cbaleague.com/api/teams/schedule-four-elements": {
+    "file": "fb7fbcaaa6c02d03.gz",
     "status": 200,
     "type": "application/json;charset=UTF-8",
     "trimmed": true
@@ -1821,6 +2193,18 @@
     "file": "7d2fb4d4dad669b3.gz",
     "status": 200,
     "type": "application/json;charset=UTF-8",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getcustomgateway?fibaFunction=federationRanking&gender=men&zoneId=1": {
+    "file": "b23ecc980432b1e1.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapcompetitionawardsbyid?gdapCompetitionId=208182": {
+    "file": "d9a49278972f8448.gz",
+    "status": 200,
+    "type": "application/json",
     "trimmed": true
   },
   "https://digital-api.fiba.basketball/hapi/getGdapCompetitionById?gdapCompetitionId=208182": {
@@ -1835,8 +2219,26 @@
     "type": "application/json",
     "trimmed": true
   },
+  "https://digital-api.fiba.basketball/hapi/getgdapcompetitionnominationsbyid?gdapCompetitionId=208182&level=competition": {
+    "file": "fa2ac27bfa570fcd.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapcompetitionroundgamedaysbyid?gdapCompetitionId=208182": {
+    "file": "71d06abcd39a529e.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
   "https://digital-api.fiba.basketball/hapi/getgdapcompetitionsbyseasonsandcompetitionmarketingname?competitionMarketingNameId=201&fromSeason=2023&toSeason=2023": {
     "file": "464d7a2d68c58d53.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapcompetitionteamlatestrosterbyteamid?gdapTeamId=279569": {
+    "file": "9b6f043b9e94b450.gz",
     "status": 200,
     "type": "application/json",
     "trimmed": true
@@ -1859,6 +2261,12 @@
     "type": "application/json",
     "trimmed": true
   },
+  "https://digital-api.fiba.basketball/hapi/getgdapfederationsranking?gdapCategory=men&zoneRankingId=1": {
+    "file": "3f26cbcdb4c8cd9a.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
   "https://digital-api.fiba.basketball/hapi/getgdapgamebyid?gdapGameId=100720": {
     "file": "8e6add8337608d59.gz",
     "status": 200,
@@ -1877,6 +2285,18 @@
     "type": "application/json",
     "trimmed": true
   },
+  "https://digital-api.fiba.basketball/hapi/getgdapmedalcount?competitionMarketingNameId=201": {
+    "file": "cf7f10befdd57b43.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapnationalteams": {
+    "file": "4501c75c1dc0d592.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
   "https://digital-api.fiba.basketball/hapi/getgdapplayercompetitionstatisticsbyplayerid?gdapPlayerId=211501&gdapCompetitionId=208182": {
     "file": "5b4542d6d31cf20a.gz",
     "status": 200,
@@ -1889,10 +2309,40 @@
     "type": "application/json",
     "trimmed": true
   },
+  "https://digital-api.fiba.basketball/hapi/getgdapplayerinfobycompetitionid?gdapPlayerId=211501&gdapCompetitionId=208182": {
+    "file": "d4a972f3814a5f6c.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdaprankingzones": {
+    "file": "130ff6730bea9f22.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
   "https://digital-api.fiba.basketball/hapi/getgdaproundsbycompetitionid?gdapCompetitionId=208182": {
     "file": "0eca8a231bab8bcb.gz",
     "status": 200,
     "type": "application/json",
+    "trimmed": true
+  },
+  "https://digital-api.fiba.basketball/hapi/getgdapteamstaffbycompetitionid?gdapCompetitionId=208182": {
+    "file": "429bcb2bc59a37b7.gz",
+    "status": 200,
+    "type": "application/json",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/health": {
+    "file": "6a811532257da3cc.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/leaders?seasonId=77441bb3-9759-11f0-b659-0561c09a0222": {
+    "file": "3ba42aa0810bde07.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
     "trimmed": true
   },
   "https://easl.joshricha.com/api/v1/matches/10af8fd4-106e-11f1-960b-5798087c7aa3": {
@@ -1951,6 +2401,30 @@
   },
   "https://easl.joshricha.com/api/v1/teams": {
     "file": "61ce68f2f7d7fd06.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/teams/865489e8-b0f5-11ed-8b3f-c199a9dea184": {
+    "file": "0668d0dc1d199ce2.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/teams/865489e8-b0f5-11ed-8b3f-c199a9dea184/leaders?seasonId=77441bb3-9759-11f0-b659-0561c09a0222": {
+    "file": "d7d6452cf8ab47f2.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/teams/865489e8-b0f5-11ed-8b3f-c199a9dea184/matches?seasonId=77441bb3-9759-11f0-b659-0561c09a0222": {
+    "file": "73bd21f9e3822c53.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://easl.joshricha.com/api/v1/teams/865489e8-b0f5-11ed-8b3f-c199a9dea184/stats?seasonId=77441bb3-9759-11f0-b659-0561c09a0222": {
+    "file": "7ca43de67bec84ba.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
@@ -2453,6 +2927,18 @@
     "type": "application/json; charset=utf-8",
     "trimmed": true
   },
+  "https://org.infobasket.su/Comp/GetBestPlayers/50714?count=5&lang=en": {
+    "file": "83c079b0e9229226.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Comp/GetBestTeams/50714?count=5&lang=en": {
+    "file": "7358bdd0036a6478.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://org.infobasket.su/Comp/GetCalendar/?format=json&comps=50714": {
     "file": "d8e37ee2f9c7b607.gz",
     "status": 200,
@@ -2477,14 +2963,56 @@
     "type": "application/json; charset=utf-8",
     "trimmed": false
   },
+  "https://org.infobasket.su/Comp/GetTeamStatsForPreview/921391?compId=50714": {
+    "file": "83cf8e157cb4ddf3.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Widget/CompIssue/50714?format=json": {
+    "file": "4d8d21e57c84907b.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://org.infobasket.su/Widget/CompTeamResults/50720?format=json": {
     "file": "25f54579c8363d88.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
   },
+  "https://org.infobasket.su/Widget/GamePage/921391?format=json": {
+    "file": "d87659df379cff0c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Widget/GetBestPlayerParameters/?format=json&lang=en": {
+    "file": "5aad46172754b77f.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Widget/GetBestTeamParameters/?format=json&lang=en": {
+    "file": "fa8b916f53a524cb.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://org.infobasket.su/Widget/GetOnline/921391?format=json": {
     "file": "54ea4bec479f3814.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Widget/GetTeamComps/2650?format=json&lang=en&tag=vtb&season=50714": {
+    "file": "e88d714c0595e926.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://org.infobasket.su/Widget/GetTeamSeasons/2650?format=json&lang=en&tag=vtb": {
+    "file": "04e160e2e241d083.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
@@ -2525,6 +3053,12 @@
     "type": "application/json; charset=utf-8",
     "trimmed": false
   },
+  "https://org.infobasket.su/Widget/TeamStats/2650?format=json&lang=en&tag=vtb&compId=50714": {
+    "file": "e925768f677754af.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://pleagueofficial.com/api/boxscore.preciser.php?id=197&away_tab=total&home_tab=total": {
     "file": "d674e253222a4542.gz",
     "status": 200,
@@ -2549,14 +3083,32 @@
     "type": "text/html; charset=utf-8",
     "trimmed": true
   },
+  "https://prod.rosetta.nbl.com.au/get/match/b217a699-4bef-11f0-bc08-933162362355": {
+    "file": "39d76991ffd0442b.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://prod.rosetta.nbl.com.au/get/match/b217a699-4bef-11f0-bc08-933162362355/live/all": {
     "file": "1439674c5fba4066.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
   },
+  "https://prod.rosetta.nbl.com.au/get/match/outcomes/for/nbl/teams/in/season/2025/regular": {
+    "file": "71d61b5d30a6cd9a.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://prod.rosetta.nbl.com.au/get/nbl/matches/in/season/2025/regular?limit=2000": {
     "file": "eca3555f4c026e97.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://prod.rosetta.nbl.com.au/get/nbl/player_boxscores/for/7619d3ea-410d-11f0-9235-2902fc2f936f/in/season/2025/regular": {
+    "file": "5ab2f940cb8233e7.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
@@ -2587,6 +3139,12 @@
   },
   "https://prod.rosetta.nbl.com.au/get/nbl/statistics/for/player/7619d3ea-410d-11f0-9235-2902fc2f936f": {
     "file": "da0bd4bc76a525a7.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://prod.rosetta.nbl.com.au/get/nbl/team/stats/for/season/2025/regular?limit=5000": {
+    "file": "87c62f8d1f27ffd6.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
@@ -4157,14 +4715,32 @@
     "type": "application/json; charset=utf-8",
     "trimmed": true
   },
+  "https://www.basketligaen.dk/api/sports-v2/played-games/rfo82vr830": {
+    "file": "18cf6c5704e8c232.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://www.basketligaen.dk/api/sports-v2/season-series-game-types-filter": {
     "file": "92b491ca33beded7.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": false
   },
+  "https://www.basketligaen.dk/api/sports-v2/ssgt/xs07bd3fmp/provider": {
+    "file": "f80d6cc401680014.gz",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "trimmed": true
+  },
   "https://www.basketligaen.dk/api/sports-v2/teams/rfo82vr830": {
     "file": "5e4ea874dc46d0cf.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.basketligaen.dk/api/sports-v2/upcoming-games/rfo82vr830": {
+    "file": "2008c790712cbb8d.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
@@ -4243,6 +4819,12 @@
   },
   "https://www.legabasket.it/api/players/get-players?items=50&year=2026": {
     "file": "d901f95318eca281.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://www.legabasket.it/api/statistics/get-players-statistics?cs_id=1&s=2026&cat=points": {
+    "file": "c838de67e8057734.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true

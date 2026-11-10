@@ -65,3 +65,52 @@ test_that("easl_teams() parses a recorded response", {
   expect_recorded_data(x)
 })
 
+test_that("easl_health() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(easl_health())
+  expect_recorded_data(x)
+})
+
+test_that("easl_leaders(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(easl_leaders(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("easl_team(team_id = '865489e8-b0f5-11ed-8b3f-c199a9dea184') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(easl_team(team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
+  expect_recorded_data(x)
+})
+
+test_that("easl_team_box_by_period(fixture_id = '10af8fd4-106e-11f1-960b-5798087c7aa3') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(easl_team_box_by_period(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
+  expect_recorded_data(x)
+})
+
+test_that("easl_team_leaders(team_id = '865489e8-b0f5-11ed-8b3f-c199a9dea184', season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(easl_team_leaders(team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184", season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("easl_team_schedule(team_id = '865489e8-b0f5-11ed-8b3f-c199a9dea184', season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(easl_team_schedule(team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184", season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("easl_team_stats(team_id = '865489e8-b0f5-11ed-8b3f-c199a9dea184', season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(easl_team_stats(team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184", season = 2026))
+  expect_recorded_data(x)
+})
+

@@ -51,3 +51,38 @@ test_that("bleague_team_box(schedule_key = 504734) parses a recorded response", 
   expect_recorded_data(x)
 })
 
+test_that("bleague_period_scores(schedule_key = 504734, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(bleague_period_scores(schedule_key = 504734, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("bleague_schedule_clubs(season = 2026, tab = 1, month = 10, day = 4) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(bleague_schedule_clubs(season = 2026, tab = 1, month = 10, day = 4))
+  expect_recorded_data(x)
+})
+
+test_that("bleague_schedule_days(season = 2026, tab = 1, month = 10, day = 4) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(bleague_schedule_days(season = 2026, tab = 1, month = 10, day = 4))
+  expect_recorded_data(x)
+})
+
+test_that("bleague_schedule_events(season = 2026, tab = 1, month = 10, day = 4) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(bleague_schedule_events(season = 2026, tab = 1, month = 10, day = 4))
+  expect_recorded_data(x)
+})
+
+test_that("bleague_team_summary(schedule_key = 504734, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(bleague_team_summary(schedule_key = 504734, season = 2026))
+  expect_recorded_data(x)
+})
+

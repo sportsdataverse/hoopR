@@ -44,3 +44,10 @@ test_that("cebl_teams() parses a recorded response", {
   expect_recorded_data(x)
 })
 
+test_that("cebl_player_leaders(season = 2025, team_id = 14) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cebl_player_leaders(season = 2025, team_id = 14))
+  expect_recorded_data(x)
+})
+

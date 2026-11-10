@@ -135,3 +135,115 @@ test_that("vtb_league_matches(league_slug = 'vtb', season = 2026) parses a recor
   expect_recorded_data(x)
 })
 
+test_that("vtb_infobasket_best_player_parameters() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_best_player_parameters())
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_best_players(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_best_players(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_best_team_parameters() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_best_team_parameters())
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_best_teams(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_best_teams(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_comp_issue(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_comp_issue(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_game_page(game_id = 921391) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_game_page(game_id = 921391))
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_game_staff(game_id = 921391) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_game_staff(game_id = 921391))
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_player_career_stats(person_id = 423011) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_player_career_stats(person_id = 423011))
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_roster_coaches(team_id = 2650, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_roster_coaches(team_id = 2650, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_team_coach_stats(team_id = 2650, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_team_coach_stats(team_id = 2650, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_team_comps(team_id = 2650, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_team_comps(team_id = 2650, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_team_player_stats(team_id = 2650, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_team_player_stats(team_id = 2650, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_team_preview(game_id = 921391, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_team_preview(game_id = 921391, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_team_season_stats(team_id = 2650, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_team_season_stats(team_id = 2650, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_team_seasons(team_id = 2650) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_team_seasons(team_id = 2650))
+  expect_recorded_data(x)
+})
+
+test_that("vtb_infobasket_team_stats_coaches(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(vtb_infobasket_team_stats_coaches(season = 2026))
+  expect_recorded_data(x)
+})
+

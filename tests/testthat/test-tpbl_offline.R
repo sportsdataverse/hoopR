@@ -58,3 +58,45 @@ test_that("tpbl_teams(season = 2026) parses a recorded response", {
   expect_recorded_data(x)
 })
 
+test_that("tpbl_box_player_periods(game_id = 6) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(tpbl_box_player_periods(game_id = 6))
+  expect_recorded_data(x)
+})
+
+test_that("tpbl_box_team_periods(game_id = 6) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(tpbl_box_team_periods(game_id = 6))
+  expect_recorded_data(x)
+})
+
+test_that("tpbl_divisions(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(tpbl_divisions(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("tpbl_referees(game_id = 6) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(tpbl_referees(game_id = 6))
+  expect_recorded_data(x)
+})
+
+test_that("tpbl_standings_against(division_id = 2) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(tpbl_standings_against(division_id = 2))
+  expect_recorded_data(x)
+})
+
+test_that("tpbl_team_shots(division_id = 2, team_id = 4) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(tpbl_team_shots(division_id = 2, team_id = 4))
+  expect_recorded_data(x)
+})
+

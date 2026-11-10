@@ -100,3 +100,45 @@ test_that("sportpress_team_rankings(competition_id = 24) parses a recorded respo
   expect_recorded_data(x)
 })
 
+test_that("sportpress_competition_staff(competition_id = 24) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(sportpress_competition_staff(competition_id = 24))
+  expect_recorded_data(x)
+})
+
+test_that("sportpress_game_slider(competition_id = 24) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(sportpress_game_slider(competition_id = 24))
+  expect_recorded_data(x)
+})
+
+test_that("sportpress_game_top_performers(game_id = 11295) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(sportpress_game_top_performers(game_id = 11295))
+  expect_recorded_data(x)
+})
+
+test_that("sportpress_nationality_codes(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(sportpress_nationality_codes(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("sportpress_referees() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(sportpress_referees())
+  expect_recorded_data(x)
+})
+
+test_that("sportpress_ui_strings() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(sportpress_ui_strings())
+  expect_recorded_data(x)
+})
+

@@ -86,3 +86,59 @@ test_that("scb_games() parses a recorded response", {
   expect_recorded_data(x)
 })
 
+test_that("scb_playoff_games(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(scb_playoff_games(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("scb_playoff_series(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(scb_playoff_series(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("scb_records_per_game(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(scb_records_per_game(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("scb_records_season_averages() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(scb_records_season_averages())
+  expect_recorded_data(x)
+})
+
+test_that("scb_referees() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(scb_referees())
+  expect_recorded_data(x)
+})
+
+test_that("scb_team_rosters() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(scb_team_rosters())
+  expect_recorded_data(x)
+})
+
+test_that("scb_transfers() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(scb_transfers())
+  expect_recorded_data(x)
+})
+
+test_that("scb_transfers_teams() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(scb_transfers_teams())
+  expect_recorded_data(x)
+})
+

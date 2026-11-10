@@ -72,3 +72,17 @@ test_that("lba_teams(season = 2027) parses a recorded response", {
   expect_recorded_data(x)
 })
 
+test_that("lba_pbp_legend(game_id = 25602) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(lba_pbp_legend(game_id = 25602))
+  expect_recorded_data(x)
+})
+
+test_that("lba_players_leaderboard(season = 2027) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(lba_players_leaderboard(season = 2027))
+  expect_recorded_data(x)
+})
+

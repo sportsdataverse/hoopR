@@ -100,3 +100,10 @@ test_that("atrium_teams(website_id = 12, season = 2026, competition_id = '3f4064
   expect_recorded_data(x)
 })
 
+test_that("atrium_fixture_periods(website_id = 14, fixture_id = '0dc631bd-c34c-11f1-8d16-4d5a21afb79d') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(atrium_fixture_periods(website_id = 14, fixture_id = "0dc631bd-c34c-11f1-8d16-4d5a21afb79d"))
+  expect_recorded_data(x)
+})
+

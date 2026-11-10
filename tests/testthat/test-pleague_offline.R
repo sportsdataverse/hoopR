@@ -58,3 +58,52 @@ test_that("pleague_preciser_shots(uuid = 'e6f98675-3e5b-11ed-949e-5d17350689cf')
   expect_recorded_data(x)
 })
 
+test_that("pleague_officials(gid = 197) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(pleague_officials(gid = 197))
+  expect_recorded_data(x)
+})
+
+test_that("pleague_preciser_injury(uuid = 'e6f98675-3e5b-11ed-949e-5d17350689cf') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(pleague_preciser_injury(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
+  expect_recorded_data(x)
+})
+
+test_that("pleague_preciser_lead_flow(uuid = 'e6f98675-3e5b-11ed-949e-5d17350689cf') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(pleague_preciser_lead_flow(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
+  expect_recorded_data(x)
+})
+
+test_that("pleague_preciser_rotation(uuid = 'e6f98675-3e5b-11ed-949e-5d17350689cf') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(pleague_preciser_rotation(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
+  expect_recorded_data(x)
+})
+
+test_that("pleague_preciser_score_log(uuid = 'e6f98675-3e5b-11ed-949e-5d17350689cf') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(pleague_preciser_score_log(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
+  expect_recorded_data(x)
+})
+
+test_that("pleague_preciser_summary_teams(uuid = 'e6f98675-3e5b-11ed-949e-5d17350689cf') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(pleague_preciser_summary_teams(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
+  expect_recorded_data(x)
+})
+
+test_that("pleague_preciser_win_probability(uuid = 'e6f98675-3e5b-11ed-949e-5d17350689cf') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(pleague_preciser_win_probability(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
+  expect_recorded_data(x)
+})
+

@@ -93,3 +93,73 @@ test_that("ibba_leaders(season = 2026, stat_type = 'pts') parses a recorded resp
   expect_recorded_data(x)
 })
 
+test_that("ibba_boards_ex(team_uid = 10, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(ibba_boards_ex(team_uid = 10, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("ibba_coaches(team_id = 1109, team_uid = 10, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(ibba_coaches(team_id = 1109, team_uid = 10, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("ibba_configuration(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(ibba_configuration(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("ibba_games_by_team(team_uid = 10, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(ibba_games_by_team(team_uid = 10, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("ibba_games_ex(team_uid = 10, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(ibba_games_ex(team_uid = 10, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("ibba_player(player_id = 21912, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(ibba_player(player_id = 21912, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("ibba_segev_period_scores(game_id = 50) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(ibba_segev_period_scores(game_id = 50))
+  expect_recorded_data(x)
+})
+
+test_that("ibba_segev_rosters(game_id = 50) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(ibba_segev_rosters(game_id = 50))
+  expect_recorded_data(x)
+})
+
+test_that("ibba_stats_types() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(ibba_stats_types())
+  expect_recorded_data(x)
+})
+
+test_that("ibba_team(team_id = 1109, team_uid = 10, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(ibba_team(team_id = 1109, team_uid = 10, season = 2026))
+  expect_recorded_data(x)
+})
+

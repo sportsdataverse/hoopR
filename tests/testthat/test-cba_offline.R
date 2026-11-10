@@ -100,3 +100,94 @@ test_that("cba_teams() parses a recorded response", {
   expect_recorded_data(x)
 })
 
+test_that("cba_best_player(schedule_id = 100105799) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cba_best_player(schedule_id = 100105799))
+  expect_recorded_data(x)
+})
+
+test_that("cba_best_stats(schedule_id = 100105799) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cba_best_stats(schedule_id = 100105799))
+  expect_recorded_data(x)
+})
+
+test_that("cba_game_team_four(schedule_id = 100105799) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cba_game_team_four(schedule_id = 100105799))
+  expect_recorded_data(x)
+})
+
+test_that("cba_player_advanced(schedule_id = 100105799) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cba_player_advanced(schedule_id = 100105799))
+  expect_recorded_data(x)
+})
+
+test_that("cba_player_defensive(season = 2026, team_id = 29128) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cba_player_defensive(season = 2026, team_id = 29128))
+  expect_recorded_data(x)
+})
+
+test_that("cba_player_extras(schedule_id = 100105799) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cba_player_extras(schedule_id = 100105799))
+  expect_recorded_data(x)
+})
+
+test_that("cba_player_offensive(season = 2026, team_id = 29128) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cba_player_offensive(season = 2026, team_id = 29128))
+  expect_recorded_data(x)
+})
+
+test_that("cba_player_shots(season = 2026, team_id = 29128) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cba_player_shots(season = 2026, team_id = 29128))
+  expect_recorded_data(x)
+})
+
+test_that("cba_report_status(schedule_id = 100105799) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cba_report_status(schedule_id = 100105799))
+  expect_recorded_data(x)
+})
+
+test_that("cba_team_counts(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cba_team_counts(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("cba_team_four(team_id = 29128) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cba_team_four(team_id = 29128))
+  expect_recorded_data(x)
+})
+
+test_that("cba_team_overview(team_id = 29128) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cba_team_overview(team_id = 29128))
+  expect_recorded_data(x)
+})
+
+test_that("cba_team_shots(team_id = 29128) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cba_team_shots(team_id = 29128))
+  expect_recorded_data(x)
+})
+

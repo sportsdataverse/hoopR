@@ -135,3 +135,164 @@ test_that("fiba_gamepage_shots(game_id = 100720, comp = 208182) parses a recorde
   expect_recorded_data(x)
 })
 
+test_that("fiba_gamepage_lineup(game_id = 100720, comp = 208182) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gamepage_lineup(game_id = 100720, comp = 208182))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_awards(comp = 208182) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_awards(comp = 208182))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_federation_ranking() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_federation_ranking())
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_game_officials(game_id = 100720) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_game_officials(game_id = 100720))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_gateway_federation_ranking() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_gateway_federation_ranking())
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_medal_count(family_id = 201) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_medal_count(family_id = 201))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_national_teams() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_national_teams())
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_nominations(comp = 208182) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_nominations(comp = 208182))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_player_info(player_id = 211501, comp = 208182) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_player_info(player_id = 211501, comp = 208182))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_ranking_zones() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_ranking_zones())
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_roster_coaches(team_id = 279569) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_roster_coaches(team_id = 279569))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_roster_latest(team_id = 279569) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_roster_latest(team_id = 279569))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_round_gamedays(comp = 208182) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_round_gamedays(comp = 208182))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_team_player_stats(team_id = 279569) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_team_player_stats(team_id = 279569))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_gdap_team_staff(comp = 208182) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_gdap_team_staff(comp = 208182))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_wc_editions(season = 2023) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_wc_editions(season = 2023))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_wc_pbp(game_id = 100720, season = 2023) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_wc_pbp(game_id = 100720, season = 2023))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_wc_player_box(game_id = 100720, season = 2023) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_wc_player_box(game_id = 100720, season = 2023))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_wc_schedule(season = 2023) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_wc_schedule(season = 2023))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_wc_shots(game_id = 100720, season = 2023) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_wc_shots(game_id = 100720, season = 2023))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_wc_standings(season = 2023) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_wc_standings(season = 2023))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_wc_team_box(game_id = 100720, season = 2023) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_wc_team_box(game_id = 100720, season = 2023))
+  expect_recorded_data(x)
+})
+
+test_that("fiba_wc_teams(season = 2023) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(fiba_wc_teams(season = 2023))
+  expect_recorded_data(x)
+})
+

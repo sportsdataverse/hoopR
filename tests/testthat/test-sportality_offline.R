@@ -79,3 +79,24 @@ test_that("sportality_season_filter() parses a recorded response", {
   expect_recorded_data(x)
 })
 
+test_that("sportality_ssgt_provider(ssgt_uuid = 'xs07bd3fmp') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(sportality_ssgt_provider(ssgt_uuid = "xs07bd3fmp"))
+  expect_recorded_data(x)
+})
+
+test_that("sportality_team_played_games(team_uuid = 'rfo82vr830') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(sportality_team_played_games(team_uuid = "rfo82vr830"))
+  expect_recorded_data(x)
+})
+
+test_that("sportality_team_upcoming_games(team_uuid = 'rfo82vr830') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(sportality_team_upcoming_games(team_uuid = "rfo82vr830"))
+  expect_recorded_data(x)
+})
+

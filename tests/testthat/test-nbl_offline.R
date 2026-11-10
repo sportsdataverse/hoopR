@@ -79,3 +79,38 @@ test_that("nbl_rosetta_teams(org = 'nbl') parses a recorded response", {
   expect_recorded_data(x)
 })
 
+test_that("nbl_rosetta_match_by_id(match_id = 'b217a699-4bef-11f0-bc08-933162362355') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(nbl_rosetta_match_by_id(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
+  expect_recorded_data(x)
+})
+
+test_that("nbl_rosetta_match_player_period_box(match_id = 'b217a699-4bef-11f0-bc08-933162362355') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(nbl_rosetta_match_player_period_box(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
+  expect_recorded_data(x)
+})
+
+test_that("nbl_rosetta_outcomes(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(nbl_rosetta_outcomes(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("nbl_rosetta_player_game_log(player_id = '7619d3ea-410d-11f0-9235-2902fc2f936f', season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(nbl_rosetta_player_game_log(player_id = "7619d3ea-410d-11f0-9235-2902fc2f936f", season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("nbl_rosetta_team_stats(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(nbl_rosetta_team_stats(season = 2026))
+  expect_recorded_data(x)
+})
+

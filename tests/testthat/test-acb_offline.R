@@ -142,3 +142,122 @@ test_that("acb_teams(season = 2027) parses a recorded response", {
   expect_recorded_data(x)
 })
 
+test_that("acb_bracket_games(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_bracket_games(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("acb_career_stints(player_id = 20209407) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_career_stints(player_id = 20209407))
+  expect_recorded_data(x)
+})
+
+test_that("acb_career_trophies(player_id = 20209407) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_career_trophies(player_id = 20209407))
+  expect_recorded_data(x)
+})
+
+test_that("acb_club_data(club_id = 2) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_club_data(club_id = 2))
+  expect_recorded_data(x)
+})
+
+test_that("acb_lead_stats(match_id = 105401) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_lead_stats(match_id = 105401))
+  expect_recorded_data(x)
+})
+
+test_that("acb_lead_tracker(match_id = 105401) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_lead_tracker(match_id = 105401))
+  expect_recorded_data(x)
+})
+
+test_that("acb_league_zones(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_league_zones(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("acb_lineup(match_id = 105401) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_lineup(match_id = 105401))
+  expect_recorded_data(x)
+})
+
+test_that("acb_match_advanced_stats(match_id = 105401) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_match_advanced_stats(match_id = 105401))
+  expect_recorded_data(x)
+})
+
+test_that("acb_match_leaders(match_id = 105401) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_match_leaders(match_id = 105401))
+  expect_recorded_data(x)
+})
+
+test_that("acb_next_matches(club_id = 2, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_next_matches(club_id = 2, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("acb_player_totals(player_id = 20209407, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_player_totals(player_id = 20209407, season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("acb_quickfacts(match_id = 105401) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_quickfacts(match_id = 105401))
+  expect_recorded_data(x)
+})
+
+test_that("acb_standings_rounds(season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_standings_rounds(season = 2026))
+  expect_recorded_data(x)
+})
+
+test_that("acb_team_comparison(match_id = 105401) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_team_comparison(match_id = 105401))
+  expect_recorded_data(x)
+})
+
+test_that("acb_team_records(club_id = 2) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_team_records(club_id = 2))
+  expect_recorded_data(x)
+})
+
+test_that("acb_team_totals(club_id = 2, season = 2026) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(acb_team_totals(club_id = 2, season = 2026))
+  expect_recorded_data(x)
+})
+

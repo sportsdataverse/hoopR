@@ -79,3 +79,80 @@ test_that("kbl_teams() parses a recorded response", {
   expect_recorded_data(x)
 })
 
+test_that("kbl_current_standings() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kbl_current_standings())
+  expect_recorded_data(x)
+})
+
+test_that("kbl_game_leaders(gmkey = 'S47G01N49') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kbl_game_leaders(gmkey = "S47G01N49"))
+  expect_recorded_data(x)
+})
+
+test_that("kbl_player_totals(season = 2025) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kbl_player_totals(season = 2025))
+  expect_recorded_data(x)
+})
+
+test_that("kbl_playoff_games(season = 2025) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kbl_playoff_games(season = 2025))
+  expect_recorded_data(x)
+})
+
+test_that("kbl_playoff_seeds(season = 2025) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kbl_playoff_seeds(season = 2025))
+  expect_recorded_data(x)
+})
+
+test_that("kbl_playoff_series(season = 2025) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kbl_playoff_series(season = 2025))
+  expect_recorded_data(x)
+})
+
+test_that("kbl_round_mvps(season = 2025) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kbl_round_mvps(season = 2025))
+  expect_recorded_data(x)
+})
+
+test_that("kbl_rounds(season = 2025) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kbl_rounds(season = 2025))
+  expect_recorded_data(x)
+})
+
+test_that("kbl_score_track(gmkey = 'S47G01N49') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kbl_score_track(gmkey = "S47G01N49"))
+  expect_recorded_data(x)
+})
+
+test_that("kbl_season_leaders() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kbl_season_leaders())
+  expect_recorded_data(x)
+})
+
+test_that("kbl_team_tracks(season = 2025) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kbl_team_tracks(season = 2025))
+  expect_recorded_data(x)
+})
+

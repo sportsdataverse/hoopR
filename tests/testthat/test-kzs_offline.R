@@ -86,3 +86,59 @@ test_that("kzs_teams(competition_id = 579) parses a recorded response", {
   expect_recorded_data(x)
 })
 
+test_that("kzs_pbp_players(match_id = 101839) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kzs_pbp_players(match_id = 101839))
+  expect_recorded_data(x)
+})
+
+test_that("kzs_phases(competition_id = 579) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kzs_phases(competition_id = 579))
+  expect_recorded_data(x)
+})
+
+test_that("kzs_player(player_id = 106285) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kzs_player(player_id = 106285))
+  expect_recorded_data(x)
+})
+
+test_that("kzs_player_leaderboard(competition_id = 579) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kzs_player_leaderboard(competition_id = 579))
+  expect_recorded_data(x)
+})
+
+test_that("kzs_playing_days(competition_id = 579) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kzs_playing_days(competition_id = 579))
+  expect_recorded_data(x)
+})
+
+test_that("kzs_rounds(competition_id = 579) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kzs_rounds(competition_id = 579))
+  expect_recorded_data(x)
+})
+
+test_that("kzs_score_changes(match_id = 101839) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kzs_score_changes(match_id = 101839))
+  expect_recorded_data(x)
+})
+
+test_that("kzs_team_leaderboard(competition_id = 579) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(kzs_team_leaderboard(competition_id = 579))
+  expect_recorded_data(x)
+})
+
