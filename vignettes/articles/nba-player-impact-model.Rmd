@@ -33,7 +33,7 @@ One row per player, season and season type (regular season and playoffs), on a p
 | adj-RAPM | `o_adj_rapm`, `d_adj_rapm`, `adj_rapm` | RAPM shrunk toward a box-score prior (the previous season's SPM) instead of toward zero. |
 | SPM | `ospm`, `dspm`, `spm` | Statistical plus-minus: a ridge regression that predicts RAPM from per-100 box-score stats. |
 | BPM 2.0 | `obpm`, `dbpm`, `bpm` | Box plus-minus from box-score logs and listed positions. |
-| DARKO-style | `darko_filtered_skill`, `darko_projected_rating`, `darko_projected_sd` | A Kalman filter over each player's RAPM history with an aging curve: a current skill estimate and a projection for next season. |
+| DARKO-style | `boban_filtered_skill`, `boban_projected_rating`, `boban_projected_sd` | A Kalman filter over each player's RAPM history with an aging curve: a current skill estimate and a projection for next season. |
 | WAR | `war` | Wins above replacement: RAPM times a calibrated points-per-win factor, relative to a replacement level of -2.0. |
 
 Plus identifiers and playing time: `player_id` (NBA Stats person id), `player_name`, `team_id`, `team_abbreviation`, `teams`, `season`, `season_type`, `min` and `gp`.
@@ -73,7 +73,7 @@ rs_2026 <- impact |>
   filter(season == 2026, season_type == "Regular Season")
 
 rs_2026 |>
-  select(rapm, adj_rapm, spm, bpm, darko_filtered_skill, war) |>
+  select(rapm, adj_rapm, spm, bpm, boban_filtered_skill, war) |>
   cor(use = "pairwise.complete.obs") |>
   round(2)
 ```
@@ -146,7 +146,7 @@ rs <- impact |>
   distinct(player_id, season, .keep_all = TRUE)
 
 pairs <- rs |>
-  select(player_id, season, rapm, bpm, darko_projected_rating) |>
+  select(player_id, season, rapm, bpm, boban_projected_rating) |>
   inner_join(rs |> transmute(player_id, season = season - 1, rapm_next = rapm, bpm_next = bpm),
              by = c("player_id", "season"))
 
@@ -156,8 +156,8 @@ pairs |>
     n = n(),
     rapm_yoy = cor(rapm, rapm_next),
     bpm_yoy = cor(bpm, bpm_next),
-    darko_forward_r = cor(darko_projected_rating, rapm_next),
-    darko_forward_mae = mean(abs(darko_projected_rating - rapm_next)),
+    boban_forward_r = cor(boban_projected_rating, rapm_next),
+    boban_forward_mae = mean(abs(boban_projected_rating - rapm_next)),
     carry_forward_mae = mean(abs(rapm - rapm_next))
   ) |>
   mutate(across(-c(season, n), \(x) round(x, 3)))
@@ -167,11 +167,11 @@ Here `season` is the season the projection was made in. Single-season RAPM is no
 
 ### DARKO-style forward validation
 
-`darko_projected_rating` is made with information through season *t* only, so comparing it with realized RAPM in season *t + 1* is an honest out-of-sample test. The table above includes that test for the seasons loaded here, plus a "carry-forward" baseline that simply assumes next season's RAPM equals this season's. As reported in the model card:
+`boban_projected_rating` is made with information through season *t* only, so comparing it with realized RAPM in season *t + 1* is an honest out-of-sample test. The table above includes that test for the seasons loaded here, plus a "carry-forward" baseline that simply assumes next season's RAPM equals this season's. As reported in the model card:
 
 - The possession-weighted mean forward correlation is 0.362 over 28 season pairs.
 - Much of the shortfall is target noise: holding the projection and players fixed and averaging the target over two or three future seasons lifts the correlation from about 0.37 to about 0.44.
-- The projection does not beat carry-forward RAPM on *ranking* (their correlations are within about 0.01), but it has lower mean absolute error against every target. Read `darko_projected_rating` as a better-calibrated magnitude, not a better ordering.
+- The projection does not beat carry-forward RAPM on *ranking* (their correlations are within about 0.01), but it has lower mean absolute error against every target. Read `boban_projected_rating` as a better-calibrated magnitude, not a better ordering.
 
 ### Agreement with an external RAPM
 
