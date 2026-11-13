@@ -62,7 +62,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_tournaments()
 #> ── ESPN MENS-COLLEGE-BASKETBALL Tournaments Index ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:15:13 UTC
+#> ℹ Data updated: 2026-11-13 18:54:24 UTC
 #> # A tibble: 38 × 3
 #>    tournament_id ref                                                      league
 #>    <chr>         <chr>                                                    <chr> 
@@ -81,7 +81,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_tournaments()
 #> ── ESPN NBA Tournaments Index ─────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:15:13 UTC
+#> ℹ Data updated: 2026-11-13 18:54:25 UTC
 #> # A tibble: 2 × 3
 #>   tournament_id ref                                                       league
 #>   <chr>         <chr>                                                     <chr> 

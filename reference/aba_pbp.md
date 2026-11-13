@@ -105,7 +105,7 @@ Other ABA Functions:
   # Interactive only: parsing the play-by-play page takes 2-4 s.
   try(aba_pbp(game_no = 6, season = 2026))
 #> ── ABA League Play-by-Play ────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:12:13 UTC
+#> ℹ Data updated: 2026-11-13 18:51:25 UTC
 #> # A tibble: 659 × 18
 #>    game_no season league_id league   seq period clock seconds_left home_score
 #>      <int>  <int>     <int> <chr>  <int>  <int> <chr>        <int>      <int>

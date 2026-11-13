@@ -149,6 +149,11 @@ A `hoopR_data` tibble with one row per team-season.
 | rank | integer | National rank by adj_em. |
 | adj_em_z | numeric | Z-score of adj_em relative to the season's team distribution. |
 
+## See also
+
+Other Model Dataset loader functions:
+[`load_nba_current_impact()`](https://hoopR.sportsdataverse.org/reference/load_nba_current_impact.md)
+
 ## Author
 
 Saiem Gilani

@@ -235,7 +235,7 @@ lists every function in this family.
 # \donttest{
   try(pleague_pbp(gid = 197))
 #> ── P. LEAGUE+ Play-by-Play from pleagueofficial.com ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:18:53 UTC
+#> ℹ Data updated: 2026-11-13 18:58:23 UTC
 #> # A tibble: 630 × 26
 #>      gid   seq period period_no clock seconds_left side  jersey player_zh action
 #>    <int> <int> <chr>      <int> <chr>        <int> <chr> <chr>  <chr>     <chr> 

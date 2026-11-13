@@ -46,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(kbl_shots(gmkey = "S47G01N49"))
 #> ── KBL Shots from api.kbl.or.kr ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:16:34 UTC
+#> ℹ Data updated: 2026-11-13 18:55:47 UTC
 #> # A tibble: 127 × 15
 #>    gmkey   season_code season game_code game_no pcode player_name player_name_en
 #>    <chr>         <int>  <int> <chr>       <int> <chr> <chr>       <chr>         

@@ -344,6 +344,11 @@ Data
 
   **Load hoopR NBA play-by-play**
 
+- [`load_nba_depthcharts()`](https://hoopR.sportsdataverse.org/reference/load_nba_depthcharts.md)
+  :
+
+  **Load hoopR NBA depth charts**
+
 - [`update_nba_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_db.md)
   :
 
@@ -380,6 +385,52 @@ artifacts
   :
 
   **Load hoopR NBA Stats League Dashboard cube**
+
+- [`load_nba_stats_draft_combine_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_draft_combine.md)
+  [`load_nba_stats_draft_combine_anthro()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_draft_combine.md)
+  [`load_nba_stats_draft_combine_drills()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_draft_combine.md)
+  [`load_nba_stats_draft_combine_spot_shooting()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_draft_combine.md)
+  [`load_nba_stats_draft_combine_nonstationary_shooting()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_draft_combine.md)
+  :
+
+  **Load hoopR NBA Stats draft combine tables**
+
+- [`load_nba_stats_game_matchups()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_game_matchups.md)
+  :
+
+  **Load hoopR NBA Stats game matchups**
+
+- [`load_nba_stats_hustle_player()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_hustle.md)
+  [`load_nba_stats_hustle_team()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_hustle.md)
+  :
+
+  **Load hoopR NBA Stats hustle stats**
+
+- [`load_nba_stats_injury_report()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_injury_report.md)
+  :
+
+  **Load hoopR NBA official injury reports**
+
+- [`load_nba_stats_matchups()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_matchups.md)
+  [`load_nba_stats_matchups_rollup()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_matchups.md)
+  :
+
+  **Load hoopR NBA Stats player matchups**
+
+- [`load_nba_stats_metric_curves()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_metric_curves.md)
+  :
+
+  **Load hoopR NBA Stats metric curves**
+
+- [`load_nba_stats_rolling_windows()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_rolling_windows.md)
+  :
+
+  **Load hoopR NBA Stats rolling windows**
+
+- [`load_nba_stats_synergy()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_synergy.md)
+  :
+
+  **Load hoopR NBA Stats Synergy play-type stats**
 
 - [`update_nba_stats_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_stats_db.md)
   :
@@ -447,6 +498,11 @@ Functions exported by hoopR to access model-derived datasets
 
   **Load NBA player-impact ratings (RAPM / SPM / BPM / DARKO) from the
   data repo**
+
+- [`load_nba_current_impact()`](https://hoopR.sportsdataverse.org/reference/load_nba_current_impact.md)
+  :
+
+  **Load NBA current-impact ratings**
 
 ### Conference and Division Group Loaders
 

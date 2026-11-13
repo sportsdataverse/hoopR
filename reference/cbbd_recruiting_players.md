@@ -92,21 +92,21 @@ article.
 ``` r
 # \donttest{
   try(cbbd_recruiting_players(year = 2024))
-#> ✖ 2026-11-13 18:13:27.627476: Invalid arguments or no recruiting players available!
+#> ✖ 2026-11-13 18:52:39.521608: Invalid arguments or no recruiting players available!
 #> ✖ Args: year = 2024, team = NULL, conference = NULL, position = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_recruiting_teams(year = 2024))
-#> ✖ 2026-11-13 18:13:27.638141: Invalid arguments or no team recruiting rankings available!
+#> ✖ 2026-11-13 18:52:39.531797: Invalid arguments or no team recruiting rankings available!
 #> ✖ Args: year = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_recruiting_portal(year = 2024))
-#> ✖ 2026-11-13 18:13:27.653278: Invalid arguments or no transfer portal data available!
+#> ✖ 2026-11-13 18:52:39.541431: Invalid arguments or no transfer portal data available!
 #> ✖ Args: year = 2024, source_team = NULL, destination_team = NULL, source_conference = NULL, destination_conference = NULL, position = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

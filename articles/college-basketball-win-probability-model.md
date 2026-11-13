@@ -199,10 +199,10 @@ if (nrow(old_wp) > 0) {
 }
 #>                           era   plays  brier skill_vs_baseline
 #> 1               2026 (in era) 2915210 0.1212            0.4517
-#> 2 2012 (35-second shot clock) 1118161 0.1259            0.4151
+#> 2 2012 (35-second shot clock) 1118161 0.1186            0.4491
 #>   calibration_mae_20bin
 #> 1                0.0089
-#> 2                0.0237
+#> 2                0.0310
 ```
 
 As reported in the model card (computed on its own render), 2012 scored

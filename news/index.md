@@ -224,6 +224,39 @@
   map an NCAA, Fox, Yahoo, KenPom or NBA Stats player id to the ESPN
   `athlete_id`. Each row carries the seasons it holds (`valid_from` /
   `valid_to`), how it was matched and where it came from.
+- Sixteen loaders for the NBA release tags that had none, with the
+  names, arguments and season floors of their sportsdataverse-py twins:
+  [`load_nba_stats_synergy()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_synergy.md)
+  (`nba_stats_synergy`, 2015 on; `season_type`, `per_mode`,
+  `type_grouping` and `play_type` pick among the 72 files of a season),
+  [`load_nba_stats_hustle_player()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_hustle.md)
+  /
+  [`load_nba_stats_hustle_team()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_hustle.md)
+  (`nba_stats_hustle`, 2015 on),
+  [`load_nba_stats_matchups()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_matchups.md)
+  /
+  [`load_nba_stats_matchups_rollup()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_matchups.md)
+  (`nba_stats_matchups`, 2017 on),
+  [`load_nba_stats_game_matchups()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_game_matchups.md)
+  (`nba_stats_game_matchups`, 2017 on),
+  [`load_nba_stats_injury_report()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_injury_report.md)
+  (`nba_stats_injury_report`, the league’s official injury reports, 2018
+  on), the five draft-combine tables
+  [`load_nba_stats_draft_combine_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_draft_combine.md)
+  / `_anthro()` / `_drills()` / `_spot_shooting()` /
+  `_nonstationary_shooting()` (`nba_stats_draft_combine`, 2000 on),
+  [`load_nba_stats_metric_curves()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_metric_curves.md)
+  (FG% by shot distance) and
+  [`load_nba_stats_rolling_windows()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_rolling_windows.md)
+  (rolling shooting form), both 1996 on. Like every `load_nba_stats_*()`
+  loader they take the season’s START year. Two more take END years:
+  [`load_nba_depthcharts()`](https://hoopR.sportsdataverse.org/reference/load_nba_depthcharts.md)
+  (`espn_nba_depthcharts`, daily ESPN depth-chart snapshots, 2027 on)
+  and
+  [`load_nba_current_impact()`](https://hoopR.sportsdataverse.org/reference/load_nba_current_impact.md)
+  (`nba_current_impact`, weekly as-of player impact ratings, 2007 on). A
+  file missing inside a published season (no playoffs file yet) is
+  skipped quietly; a season with no file at all warns.
 
 #### **ESPN**
 
@@ -756,7 +789,7 @@ vocabulary.
   values, default and the functions that take it
   ([\#248](https://github.com/sportsdataverse/hoopR/issues/248)).
 - New dataset `return_columns` and article “Return Columns”: one row per
-  column of every data frame 963 hoopR functions return (function, list
+  column of every data frame 979 hoopR functions return (function, list
   element, column name, type and description), searchable on the site;
   `subset(return_columns, fn == "nba_pbp")` gives one function’s columns
   in R. The NBA and men’s college basketball functions (`load_nba_*`,

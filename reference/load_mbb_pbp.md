@@ -565,6 +565,7 @@ publishes as character.
 ## See also
 
 Other hoopR Loader Functions:
+[`load_nba_depthcharts()`](https://hoopR.sportsdataverse.org/reference/load_nba_depthcharts.md),
 [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
 
 ## Examples

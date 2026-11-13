@@ -590,7 +590,8 @@ publishes as character.
 ## See also
 
 Other hoopR Loader Functions:
-[`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+[`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+[`load_nba_depthcharts()`](https://hoopR.sportsdataverse.org/reference/load_nba_depthcharts.md)
 
 ## Examples
 
