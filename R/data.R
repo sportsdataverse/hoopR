@@ -45,7 +45,7 @@
 #' **Return Columns of hoopR Functions**
 #'
 #' The columns of every data frame a hoopR function returns: one row per
-#' column, with its type and description, for 959 functions. Most functions
+#' column, with its type and description, for 963 functions. Most functions
 #' outside the NBA and men's college basketball families list their columns
 #' here rather than in their help page; the NBA and MBB functions show the
 #' same table in their help page too. Built by `data-raw/return_columns.R`

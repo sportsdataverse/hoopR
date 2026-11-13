@@ -136,6 +136,7 @@ Other NBA Crosswalk Functions:
 \code{\link[=nba_team_crosswalk]{nba_team_crosswalk()}}
 
 Other MBB Crosswalk Functions:
+\code{\link[=load_mbb_ncaa_espn_team_crosswalk]{load_mbb_ncaa_espn_team_crosswalk()}},
 \code{\link[=mbb_player_crosswalk]{mbb_player_crosswalk()}},
 \code{\link[=mbb_schedule_crosswalk]{mbb_schedule_crosswalk()}},
 \code{\link[=mbb_team_crosswalk]{mbb_team_crosswalk()}}
