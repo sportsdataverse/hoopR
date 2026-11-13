@@ -1212,7 +1212,14 @@ NULL
 #' `"coaches"`, `"draft"`, `"game_lineups"`, `"game_rosters"`, `"lineups"`,
 #' `"officials"`, `"pbp"`, `"player_boxscores"`, `"player_game_logs"`,
 #' `"player_season_stats"`, `"possessions"`, `"rosters"`, `"schedule"`,
-#' `"shots"`, `"standings"`, `"team_boxscores"`, `"team_season_stats"`.
+#' `"shots"`, `"standings"`, `"team_boxscores"`, `"team_game_logs"`,
+#' `"team_season_stats"`.
+#'
+#' A `nba_stats_player_game_logs` table written before hoopR 3.2.0 holds team
+#' rows (the release held team rows until 2026-11-13). Drop it and rebuild it,
+#' and add `"team_game_logs"` for those rows:
+#' `DBI::dbRemoveTable(con, "nba_stats_player_game_logs")`, then
+#' `update_nba_stats_db(datasets = c("player_game_logs", "team_game_logs"))`.
 #'
 #' @param dbdir Directory in which the database is or shall be located. Defaults to
 #'   the per-user data directory `tools::R_user_dir("hoopR", "data")`, so nothing is
@@ -1245,7 +1252,8 @@ update_nba_stats_db <- function(dbdir = tools::R_user_dir("hoopR", "data"),
   valid <- c("coaches", "draft", "game_lineups", "game_rosters", "lineups",
              "officials", "pbp", "player_boxscores", "player_game_logs",
              "player_season_stats", "possessions", "rosters", "schedule",
-             "shots", "standings", "team_boxscores", "team_season_stats")
+             "shots", "standings", "team_boxscores", "team_game_logs",
+             "team_season_stats")
   if (is.null(datasets) || length(datasets) == 0) {
     cli::cli_abort(c(
       "x" = "{.arg datasets} is required for {.fn update_nba_stats_db}.",
@@ -1288,6 +1296,7 @@ update_nba_stats_db <- function(dbdir = tools::R_user_dir("hoopR", "data"),
     shots                = load_nba_stats_shots,
     standings            = load_nba_stats_standings,
     team_boxscores       = load_nba_stats_team_boxscores,
+    team_game_logs       = load_nba_stats_team_game_logs,
     team_season_stats    = load_nba_stats_team_season_stats
   )
 

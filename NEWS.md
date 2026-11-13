@@ -84,7 +84,10 @@
 * `load_nba_stats_player_game_logs()` now returns one row per player-game, with
   `player_id`, `player_name` and `fantasy_pts`. Until 2026-11-13 the
   `nba_stats_player_game_logs` release held team rows; those moved to
-  `load_nba_stats_team_game_logs()`.
+  `load_nba_stats_team_game_logs()`. A database table written by
+  `update_nba_stats_db(datasets = "player_game_logs")` before this release
+  holds team rows: drop `nba_stats_player_game_logs` and rebuild it, adding
+  `"team_game_logs"` (now a valid `update_nba_stats_db()` dataset).
 * The ESPN release loaders, the NBA and MBB crosswalk loaders and
   `load_ncaa_mbb_rapm()` / `load_ncaa_mbb_rapm_within_team()` no longer return an
   empty table when called with their default season before that season is
