@@ -15,6 +15,33 @@
 \alias{load_ncaa_mbb_schedule}
 \alias{load_ncaa_mbb_team_ids}
 \title{\strong{Load cleaned NCAA men's college basketball play-by-play from the data repo}}
+\source{
+The \code{ncaa_mbb_pbp} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_pbp}, published by \url{https://github.com/sportsdataverse/ncaa-mbb-hoops-data}.
+
+The \code{ncaa_mbb_shots} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_shots}, published by \url{https://github.com/sportsdataverse/ncaa-mbb-hoops-data}.
+
+The \code{ncaa_mbb_lineups} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_lineups}, published by \url{https://github.com/sportsdataverse/ncaa-mbb-hoops-data}.
+
+The \code{ncaa_mbb_matchup_stints} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_matchup_stints}, published by \url{https://github.com/sportsdataverse/ncaa-mbb-hoops-data}.
+
+The \code{ncaa_mbb_possessions} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_possessions}, published by \url{https://github.com/sportsdataverse/ncaa-mbb-hoops-data}.
+
+The \code{ncaa_mbb_rapm_within_team} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_rapm_within_team}, published by \url{https://github.com/sportsdataverse/ncaa-mbb-hoops-data}.
+
+The \code{ncaa_mbb_rapm} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_rapm}, published by \url{https://github.com/sportsdataverse/ncaa-mbb-hoops-data}.
+
+The \code{ncaa_mbb_player_box} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_player_box}, published by \url{https://github.com/sportsdataverse/ncaa-mbb-hoops-data}.
+
+The \code{ncaa_mbb_team_box} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_team_box}, published by \url{https://github.com/sportsdataverse/ncaa-mbb-hoops-data}.
+
+The \code{ncaa_mbb_rosters} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_rosters}, published by \url{https://github.com/sportsdataverse/ncaa-mbb-hoops-data}.
+
+The \code{ncaa_mbb_team_rosters} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_team_rosters}, published by \url{https://github.com/sportsdataverse/ncaa-mbb-hoops-data}.
+
+The \code{ncaa_mbb_schedule} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_schedule}, published by \url{https://github.com/sportsdataverse/ncaa-mbb-hoops-data}.
+
+The \code{ncaa_mbb_team_ids} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_team_ids}, published by \url{https://github.com/sportsdataverse/ncaa-mbb-hoops-data}.
+}
 \usage{
 load_ncaa_mbb_pbp(
   seasons = most_recent_mbb_season(),

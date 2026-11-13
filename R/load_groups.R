@@ -26,6 +26,7 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_mbb_groups", unit = "group lineage")
+#' @source The `mbb_groups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_groups>.
 #' @export
 #' @family Conference and Division Group loader functions
 #' @examples
@@ -51,6 +52,7 @@ load_mbb_groups <- function(..., dbConnection = NULL, tablename = NULL) {
 }
 
 #' @rdname load_mbb_groups
+#' @source The `nba_groups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_groups>.
 #' @export
 #' @examples
 #' \donttest{
@@ -89,6 +91,7 @@ NULL
 #'   `load_nba_group_seasons()` the `nba_groups` tag.
 #' @inheritParams load_mbb_groups
 #' @eval .returns_rd("load_mbb_group_seasons", unit = "group-season")
+#' @source The `mbb_groups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_groups>.
 #' @export
 #' @family Conference and Division Group loader functions
 #' @examples
@@ -114,6 +117,7 @@ load_mbb_group_seasons <- function(..., dbConnection = NULL, tablename = NULL) {
 }
 
 #' @rdname load_mbb_group_seasons
+#' @source The `nba_groups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_groups>.
 #' @export
 #' @examples
 #' \donttest{
@@ -152,6 +156,7 @@ NULL
 #'   and `load_nba_group_aliases()` the `nba_groups` tag.
 #' @inheritParams load_mbb_groups
 #' @eval .returns_rd("load_mbb_group_aliases", unit = "alias")
+#' @source The `mbb_groups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_groups>.
 #' @export
 #' @family Conference and Division Group loader functions
 #' @examples
@@ -177,6 +182,7 @@ load_mbb_group_aliases <- function(..., dbConnection = NULL, tablename = NULL) {
 }
 
 #' @rdname load_mbb_group_aliases
+#' @source The `nba_groups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_groups>.
 #' @export
 #' @examples
 #' \donttest{
@@ -220,6 +226,7 @@ NULL
 #'   (Min: 2002 for MBB, 1971 for NBA)
 #' @inheritParams load_mbb_groups
 #' @eval .returns_rd("load_mbb_team_group_seasons", unit = "team-season")
+#' @source The `mbb_groups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_groups>.
 #' @export
 #' @family Conference and Division Group loader functions
 #' @examples
@@ -265,6 +272,7 @@ load_mbb_team_group_seasons <- function(seasons = most_recent_mbb_season(),
 }
 
 #' @rdname load_mbb_team_group_seasons
+#' @source The `nba_groups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_groups>.
 #' @export
 #' @examples
 #' \donttest{
@@ -330,6 +338,7 @@ NULL
 #' @eval .returns_rd("load_mbb_team_aliases", unit = "team alias")
 #' @return `NULL` instead, after appending the rows to `tablename`, when `dbConnection` and
 #'   `tablename` are both given.
+#' @source The `mbb_groups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_groups>.
 #' @export
 #' @family Conference and Division Group loader functions
 #' @examples
@@ -355,6 +364,7 @@ load_mbb_team_aliases <- function(..., dbConnection = NULL, tablename = NULL) {
 }
 
 #' @rdname load_mbb_team_aliases
+#' @source The `nba_groups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_groups>.
 #' @export
 #' @examples
 #' \donttest{
@@ -400,6 +410,7 @@ NULL
 #' @eval .returns_rd("load_mbb_player_aliases", unit = "player alias")
 #' @return `NULL` instead, after appending the rows to `tablename`, when `dbConnection` and
 #'   `tablename` are both given.
+#' @source The `mbb_groups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_groups>.
 #' @export
 #' @family Conference and Division Group loader functions
 #' @examples
@@ -425,6 +436,7 @@ load_mbb_player_aliases <- function(..., dbConnection = NULL, tablename = NULL) 
 }
 
 #' @rdname load_mbb_player_aliases
+#' @source The `nba_groups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_groups>.
 #' @export
 #' @examples
 #' \donttest{

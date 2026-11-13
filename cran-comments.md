@@ -21,6 +21,9 @@ full list of changes is in NEWS.md. The main additions:
   feeds, Torvik, KenPom, `nba_gamerotation()` and `nba_pbp()` on-court players.
   `build_mbb_db()` and `build_nba_db()` now stop, leaving the existing table
   as it was, when the games index cannot be read.
+* The NBA crosswalk loaders return the NBA Stats team and player ids as
+  integer, like the `load_nba_stats_*()` loaders, and every release
+  loader's help page links the release tag it reads.
 * Dependencies: Rcpp and RcppParallel (unused; the package has no compiled
   code), magrittr and lubridate are no longer imported; glmnet, Matrix and
   stringdist moved to Suggests; withr and xml2 are now imported.

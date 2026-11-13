@@ -11,6 +11,9 @@ which mocks the release readers onto these files so the tests stay offline.
 | `rosters_2026.rds` | `espn_mens_college_basketball_rosters/rosters_2026.rds` | first 3; `athlete_id` is character in the asset |
 | `mbb_schedule_crosswalk_2026.rds` | `mbb_crosswalk/mbb_schedule_crosswalk_2026.rds` | first 3; `espn_game_id` is character |
 | `mbb_player_crosswalk_2026.rds` | `mbb_crosswalk/mbb_player_crosswalk_2026.rds` | first 3; `espn_athlete_id` is character |
+| `nba_team_crosswalk_2026.rds` | `nba_crosswalk/nba_team_crosswalk_2026.rds` (downloaded 2026-11-13) | first 3, 4 columns; `nba_team_id` is character |
+| `nba_schedule_crosswalk_2026.rds` | `nba_crosswalk/nba_schedule_crosswalk_2026.rds` (downloaded 2026-11-13) | first 3, 5 columns; `espn_game_id` and the `nba_*` ids are character |
+| `nba_player_crosswalk_2026.rds` | `nba_crosswalk/nba_player_crosswalk_2026.rds` (downloaded 2026-11-13) | first 3, 4 columns; `espn_athlete_id` / `nba_player_id` are character |
 | `ncaa_mbb_team_box_2026.rds` | `ncaa_mbb_team_box/ncaa_mbb_team_box_2026.rds` | first 3; `espn_*` ids are character |
 | `play_by_play_2025.rds` / `.parquet` | `espn_mens_college_basketball_pbp/play_by_play_2025.{rds,parquet}` | 4 plays of game 401700174 whose 18-digit ids (…828001-…828004, exact in the parquet's int64) all round to 401700174101828032 in the rds double |
 

@@ -5,6 +5,13 @@
 \alias{load_mbb_player_value}
 \alias{load_mbb_ratings}
 \title{\strong{Load NBA player-impact ratings (RAPM / SPM / BPM / DARKO) from the data repo}}
+\source{
+The \code{nba_player_impact} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_player_impact}.
+
+The \code{mbb_player_value} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_player_value}.
+
+The \code{mbb_ratings} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_ratings}.
+}
 \usage{
 load_nba_player_impact(
   seasons = most_recent_nba_season(),

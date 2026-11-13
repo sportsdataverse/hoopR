@@ -4,6 +4,11 @@
 \alias{load_mbb_groups}
 \alias{load_nba_groups}
 \title{\strong{Load conference and division lineages (MBB / NBA) from the data repo}}
+\source{
+The \code{mbb_groups} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_groups}.
+
+The \code{nba_groups} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_groups}.
+}
 \usage{
 load_mbb_groups(..., dbConnection = NULL, tablename = NULL)
 
