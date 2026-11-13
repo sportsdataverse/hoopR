@@ -27,7 +27,7 @@ full list of changes is in NEWS.md. The main additions:
   stringdist moved to Suggests; withr and xml2 are now imported.
 * The package now ships its `inst/CITATION` file, and three datasets:
   `parameter_descriptions` (10 KB), `mbb_team_names` (6 KB) and
-  `return_columns` (238 KB, xz): the returned columns of 962 functions.
+  `return_columns` (238 KB, xz): the returned columns of 963 functions.
   The NBA and men's college basketball help pages keep their column
   tables; the other 647 pages point to `return_columns` instead.
 * `ByteCompile: false`: the package is no longer byte-compiled at install

@@ -45,5 +45,12 @@ Valid \code{datasets} values:
 \code{"coaches"}, \code{"draft"}, \code{"game_lineups"}, \code{"game_rosters"}, \code{"lineups"},
 \code{"officials"}, \code{"pbp"}, \code{"player_boxscores"}, \code{"player_game_logs"},
 \code{"player_season_stats"}, \code{"possessions"}, \code{"rosters"}, \code{"schedule"},
-\code{"shots"}, \code{"standings"}, \code{"team_boxscores"}, \code{"team_season_stats"}.
+\code{"shots"}, \code{"standings"}, \code{"team_boxscores"}, \code{"team_game_logs"},
+\code{"team_season_stats"}.
+
+A \code{nba_stats_player_game_logs} table written before hoopR 3.2.0 holds team
+rows (the release held team rows until 2026-11-13). Drop it and rebuild it,
+and add \code{"team_game_logs"} for those rows:
+\code{DBI::dbRemoveTable(con, "nba_stats_player_game_logs")}, then
+\code{update_nba_stats_db(datasets = c("player_game_logs", "team_game_logs"))}.
 }

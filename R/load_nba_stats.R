@@ -159,7 +159,7 @@ load_nba_stats_draft <- function(seasons = most_recent_nba_stats_season(),
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_game_lineups(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_game_lineups <- function(seasons = most_recent_nba_stats_season(),
@@ -217,7 +217,7 @@ load_nba_stats_game_lineups <- function(seasons = most_recent_nba_stats_season()
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_game_rosters(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_game_rosters <- function(seasons = most_recent_nba_stats_season(),
@@ -278,7 +278,7 @@ load_nba_stats_game_rosters <- function(seasons = most_recent_nba_stats_season()
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_lineups(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_lineups <- function(seasons = most_recent_nba_stats_season(),
@@ -336,7 +336,7 @@ load_nba_stats_lineups <- function(seasons = most_recent_nba_stats_season(),
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_officials(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_officials <- function(seasons = most_recent_nba_stats_season(),
@@ -449,7 +449,7 @@ load_nba_stats_pbp <- function(seasons = most_recent_nba_stats_season(),
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_player_boxscores(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_player_boxscores <- function(seasons = most_recent_nba_stats_season(),
@@ -506,7 +506,7 @@ load_nba_stats_player_boxscores <- function(seasons = most_recent_nba_stats_seas
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_player_game_logs(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_player_game_logs <- function(seasons = most_recent_nba_stats_season(),
@@ -528,6 +528,63 @@ load_nba_stats_player_game_logs <- function(seasons = most_recent_nba_stats_seas
   urls <- paste0(
     "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/",
     "nba_stats_player_game_logs/player_game_logs_", seasons + 1, ".rds"
+  )
+
+  p <- NULL
+  if (is_installed("progressr")) p <- progressr::progressor(along = seasons)
+
+  out <- lapply(urls, progressively(loader, p))
+  out <- data.table::rbindlist(out, use.names = TRUE, fill = TRUE)
+  if (in_db) {
+    DBI::dbWriteTable(dbConnection, tablename, out, append = TRUE, ...)
+    out <- NULL
+  } else {
+    class(out) <- c("hoopR_data","tbl_df","tbl","data.frame")
+  }
+  out
+}
+
+
+#' @title
+#' **Load cleaned NBA Stats API per-team per-game logs from the data repo**
+#' @rdname load_nba_stats_coaches
+#' @description Loads per-team per-game logs scraped from
+#'   `stats.nba.com/leaguegamelog?PlayerOrTeam=T` (one row per team-game:
+#'   the team's box line, matchup and result). Backed by the
+#'   `hoopR-nba-stats-data` pipeline that publishes csv/parquet/rds
+#'   artifacts to the `nba_stats_team_game_logs` release tag. These rows were
+#'   published as `nba_stats_player_game_logs` until 2026-11-13.
+#' @param ... Additional arguments passed to an underlying function that writes
+#'   the season data into a database.
+#' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
+#' @param tablename The name of the data table within the database
+#' @eval .returns_rd("load_nba_stats_team_game_logs", unit = "team-game pair")
+#' @export
+#' @family NBA Stats loader functions
+#' @examplesIf interactive()
+#' \donttest{
+#'   # Interactive only: this help page holds 18 loaders, each a download.
+#'   try(load_nba_stats_team_game_logs(seasons = most_recent_nba_stats_season()))
+#' }
+load_nba_stats_team_game_logs <- function(seasons = most_recent_nba_stats_season(),
+                                            ...,
+                                            dbConnection = NULL, tablename = NULL) {
+  old <- options(list(stringsAsFactors = FALSE, scipen = 999))
+  on.exit(options(old))
+  dots <- rlang::dots_list(...)
+
+  loader <- rds_from_url
+  if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
+
+  if (isTRUE(seasons)) seasons <- 1996:most_recent_nba_stats_season()
+
+  stopifnot(is.numeric(seasons),
+            all(seasons >= 1996),
+            all(seasons <= most_recent_nba_stats_season()))
+
+  urls <- paste0(
+    "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/",
+    "nba_stats_team_game_logs/team_game_logs_", seasons + 1, ".rds"
   )
 
   p <- NULL
@@ -570,7 +627,7 @@ load_nba_stats_player_game_logs <- function(seasons = most_recent_nba_stats_seas
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_player_season_stats(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_player_season_stats <- function(seasons = most_recent_nba_stats_season(),
@@ -627,7 +684,7 @@ load_nba_stats_player_season_stats <- function(seasons = most_recent_nba_stats_s
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_possessions(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_possessions <- function(seasons = most_recent_nba_stats_season(),
@@ -682,7 +739,7 @@ load_nba_stats_possessions <- function(seasons = most_recent_nba_stats_season(),
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_rosters(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_rosters <- function(seasons = most_recent_nba_stats_season(),
@@ -738,7 +795,7 @@ load_nba_stats_rosters <- function(seasons = most_recent_nba_stats_season(),
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_schedule(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_schedule <- function(seasons = most_recent_nba_stats_season(),
@@ -795,7 +852,7 @@ load_nba_stats_schedule <- function(seasons = most_recent_nba_stats_season(),
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_shots(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_shots <- function(seasons = most_recent_nba_stats_season(),
@@ -855,7 +912,7 @@ load_nba_stats_shots <- function(seasons = most_recent_nba_stats_season(),
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_standings(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_standings <- function(seasons = most_recent_nba_stats_season(),
@@ -910,7 +967,7 @@ load_nba_stats_standings <- function(seasons = most_recent_nba_stats_season(),
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_team_boxscores(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_team_boxscores <- function(seasons = most_recent_nba_stats_season(),
@@ -971,7 +1028,7 @@ load_nba_stats_team_boxscores <- function(seasons = most_recent_nba_stats_season
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
 #' \donttest{
-#'   # Interactive only: this help page holds 17 loaders, each a download.
+#'   # Interactive only: this help page holds 18 loaders, each a download.
 #'   try(load_nba_stats_team_season_stats(seasons = most_recent_nba_stats_season()))
 #' }
 load_nba_stats_team_season_stats <- function(seasons = most_recent_nba_stats_season(),
@@ -1155,7 +1212,14 @@ NULL
 #' `"coaches"`, `"draft"`, `"game_lineups"`, `"game_rosters"`, `"lineups"`,
 #' `"officials"`, `"pbp"`, `"player_boxscores"`, `"player_game_logs"`,
 #' `"player_season_stats"`, `"possessions"`, `"rosters"`, `"schedule"`,
-#' `"shots"`, `"standings"`, `"team_boxscores"`, `"team_season_stats"`.
+#' `"shots"`, `"standings"`, `"team_boxscores"`, `"team_game_logs"`,
+#' `"team_season_stats"`.
+#'
+#' A `nba_stats_player_game_logs` table written before hoopR 3.2.0 holds team
+#' rows (the release held team rows until 2026-11-13). Drop it and rebuild it,
+#' and add `"team_game_logs"` for those rows:
+#' `DBI::dbRemoveTable(con, "nba_stats_player_game_logs")`, then
+#' `update_nba_stats_db(datasets = c("player_game_logs", "team_game_logs"))`.
 #'
 #' @param dbdir Directory in which the database is or shall be located. Defaults to
 #'   the per-user data directory `tools::R_user_dir("hoopR", "data")`, so nothing is
@@ -1188,7 +1252,8 @@ update_nba_stats_db <- function(dbdir = tools::R_user_dir("hoopR", "data"),
   valid <- c("coaches", "draft", "game_lineups", "game_rosters", "lineups",
              "officials", "pbp", "player_boxscores", "player_game_logs",
              "player_season_stats", "possessions", "rosters", "schedule",
-             "shots", "standings", "team_boxscores", "team_season_stats")
+             "shots", "standings", "team_boxscores", "team_game_logs",
+             "team_season_stats")
   if (is.null(datasets) || length(datasets) == 0) {
     cli::cli_abort(c(
       "x" = "{.arg datasets} is required for {.fn update_nba_stats_db}.",
@@ -1231,6 +1296,7 @@ update_nba_stats_db <- function(dbdir = tools::R_user_dir("hoopR", "data"),
     shots                = load_nba_stats_shots,
     standings            = load_nba_stats_standings,
     team_boxscores       = load_nba_stats_team_boxscores,
+    team_game_logs       = load_nba_stats_team_game_logs,
     team_season_stats    = load_nba_stats_team_season_stats
   )
 
