@@ -14,7 +14,7 @@ full list of changes is in NEWS.md. The main additions:
   and new CollegeBasketballData endpoints. After the data releases'
   2026-11 backfill the MBB and NBA loaders accept the newly published
   seasons (MBB player season stats from 2003, NBA game rosters and
-  officials from 1994), each published as `.rds`, so no loader needs arrow
+  officials and team season stats from 1994), each published as `.rds`, so no loader needs arrow
   for an older season.
 * Fixes for ESPN play-by-play, game rosters and prop bets, ESPN wrappers
   that a harmless parse warning emptied, Fox odds, the NBA CDN and G League

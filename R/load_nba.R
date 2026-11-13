@@ -11,9 +11,8 @@ NULL
 #'   release tag publishes (any other season is an error):
 #'   * `load_nba_team_box()`, `load_nba_player_box()`, `load_nba_schedule()`,
 #'     `load_nba_player_stats()`, `load_nba_player_core()`, `load_nba_game_rosters()`,
-#'     `load_nba_officials()`: 1994 onward.
-#'   * `load_nba_pbp()`, `load_nba_shots()`, `load_nba_team_stats()`,
-#'     `load_nba_standings()`: 2002 onward.
+#'     `load_nba_officials()`, `load_nba_team_stats()`: 1994 onward.
+#'   * `load_nba_pbp()`, `load_nba_shots()`, `load_nba_standings()`: 2002 onward.
 #'   * `load_nba_draft()`: 2003 onward.
 #'   * `load_nba_rosters()`: 2025 onward.
 #'
@@ -599,7 +598,7 @@ load_nba_team_stats <- function(seasons = most_recent_nba_season(), ...,
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_team_season_stats/team_season_stats_", seasons, ".rds")
-  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_team_stats", url_for = url_for, default = missing(seasons))
+  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_team_stats", url_for = url_for, default = missing(seasons))
 
   urls <- url_for(seasons)
 
