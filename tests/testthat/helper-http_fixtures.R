@@ -37,6 +37,13 @@ local_http_fixtures <- function(env = parent.frame()) {
   # any non-empty value passes the wrappers' key check.
   if (!nzchar(Sys.getenv("CBBD_API_KEY"))) withr::local_envvar(CBBD_API_KEY = "offline-replay", .local_envir = env)
   testthat::local_mocked_bindings(.intl_sleep = function(seconds) invisible(), .package = "hoopR", .env = env)
+  # The recorded FEB site page carries a JWT that expired after recording; a
+  # replay checks its exp against time 0 instead of now.
+  feb_token <- get(".feb_token_from_page", envir = asNamespace("hoopR"))
+  testthat::local_mocked_bindings(
+    .feb_token_from_page = function(html, now, call = rlang::caller_env()) feb_token(html, now = 0, call = call),
+    .package = "hoopR", .env = env
+  )
   httr2::local_mocked_responses(function(req) {
     hit <- index[[req$url]]
     if (is.null(hit)) {
