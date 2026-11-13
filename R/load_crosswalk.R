@@ -5,11 +5,14 @@
   on.exit(options(old))
 
   # ESPN ids match every other hoopR dataset (integer); the assets publish
-  # espn_game_id / espn_athlete_id as character.
+  # espn_game_id / espn_athlete_id as character. The NBA Stats team and
+  # player ids are integer in the load_nba_stats_*() loaders, so they are cast
+  # too; the zero-padded nba_game_id ("0022300001") stays character.
   loader <- function(url) {
     .ids_as_integer(rds_from_url(url), c(
       "espn_game_id", "espn_athlete_id", "espn_team_id",
-      "home_espn_team_id", "away_espn_team_id"
+      "home_espn_team_id", "away_espn_team_id",
+      "nba_team_id", "nba_home_team_id", "nba_away_team_id", "nba_player_id"
     ))
   }
 
@@ -75,10 +78,16 @@ NULL
 #'   returns an empty frame. A season outside the published range, or in a
 #'   known gap, is an error.
 #'   ESPN ids (`espn_game_id`, `espn_athlete_id`, `espn_team_id`) are returned as
-#'   integer, matching the ESPN box score, schedule and roster loaders.
+#'   integer, matching the ESPN box score, schedule and roster loaders. So
+#'   are the NBA Stats ids of the NBA crosswalks (`nba_team_id`,
+#'   `nba_home_team_id`, `nba_away_team_id`, `nba_player_id`), matching the
+#'   `load_nba_stats_*()` loaders; `nba_game_id` keeps its leading zeros as
+#'   character (`"0022300001"`). The live builders ([nba_team_crosswalk()]
+#'   and friends) still return the NBA Stats ids as character.
 #' @return Returns a tibble of class \code{hoopR_data} with one row per
 #'   NBA team per season. Columns include at minimum \code{season},
 #'   \code{espn_team_id}, and \code{nba_team_id}.
+#' @source The `nba_crosswalk` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk>.
 #' @export
 #' @family NBA Crosswalk Functions
 #' @examples
@@ -100,6 +109,7 @@ load_nba_team_crosswalk <- function(seasons = most_recent_nba_season()) {
 #' @return Returns a tibble of class \code{hoopR_data} with one row per
 #'   NBA game per season. Columns include at minimum \code{season},
 #'   \code{espn_game_id}, and \code{nba_game_id}.
+#' @source The `nba_crosswalk` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk>.
 #' @export
 #' @family NBA Crosswalk Functions
 #' @examples
@@ -121,6 +131,7 @@ load_nba_schedule_crosswalk <- function(seasons = most_recent_nba_season()) {
 #' @return Returns a tibble of class \code{hoopR_data} with one row per
 #'   NBA player per season. Columns include at minimum \code{season},
 #'   \code{espn_athlete_id}, and \code{nba_player_id}.
+#' @source The `nba_crosswalk` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk>.
 #' @export
 #' @family NBA Crosswalk Functions
 #' @examples
@@ -142,6 +153,7 @@ load_nba_player_crosswalk <- function(seasons = most_recent_nba_season()) {
 #' @return Returns a tibble of class \code{hoopR_data} with one row per
 #'   MBB team per season. Columns include at minimum \code{season} and
 #'   \code{espn_team_id}.
+#' @source The `mbb_crosswalk` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk>.
 #' @export
 #' @family MBB Crosswalk Functions
 #' @examples
@@ -163,6 +175,7 @@ load_mbb_team_crosswalk <- function(seasons = most_recent_mbb_season()) {
 #' @return Returns a tibble of class \code{hoopR_data} with one row per
 #'   MBB game per season. Columns include at minimum \code{season} and
 #'   \code{espn_game_id}.
+#' @source The `mbb_crosswalk` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk>.
 #' @export
 #' @family MBB Crosswalk Functions
 #' @examples
@@ -184,6 +197,7 @@ load_mbb_schedule_crosswalk <- function(seasons = most_recent_mbb_season()) {
 #' @return Returns a tibble of class \code{hoopR_data} with one row per
 #'   MBB player per season. Columns include at minimum \code{season} and
 #'   \code{espn_athlete_id}.
+#' @source The `mbb_crosswalk` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk>.
 #' @export
 #' @family MBB Crosswalk Functions
 #' @examples

@@ -45,6 +45,7 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_coaches", unit = "coach-team-season")
+#' @source The `nba_stats_coaches` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_coaches>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examples
@@ -100,6 +101,7 @@ load_nba_stats_coaches <- function(seasons = most_recent_nba_stats_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_draft", unit = "pick")
+#' @source The `nba_stats_draft` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_draft>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examples
@@ -155,6 +157,7 @@ load_nba_stats_draft <- function(seasons = most_recent_nba_stats_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_game_lineups", unit = "play-by-play action")
+#' @source The `nba_stats_game_lineups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_game_lineups>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -213,6 +216,7 @@ load_nba_stats_game_lineups <- function(seasons = most_recent_nba_stats_season()
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_game_rosters", unit = "inactive athlete-game pair")
+#' @source The `nba_stats_game_rosters` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_game_rosters>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -274,6 +278,7 @@ load_nba_stats_game_rosters <- function(seasons = most_recent_nba_stats_season()
 #'   slots and `group_id`/`group_name`). See `names(load_nba_stats_lineups())`
 #'   for the full column set, or the `lineups_base` table of
 #'   [load_nba_stats_leaguedash()] for the equivalent parameter-cube asset.
+#' @source The `nba_stats_lineups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_lineups>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -332,6 +337,7 @@ load_nba_stats_lineups <- function(seasons = most_recent_nba_stats_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_officials", unit = "official-game pair")
+#' @source The `nba_stats_officials` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_officials>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -389,6 +395,7 @@ load_nba_stats_officials <- function(seasons = most_recent_nba_stats_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_pbp", unit = "play-by-play action")
+#' @source The `nba_stats_pbp` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_pbp>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -445,6 +452,7 @@ load_nba_stats_pbp <- function(seasons = most_recent_nba_stats_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_player_boxscores", unit = "athlete-game pair")
+#' @source The `nba_stats_player_boxscores` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_player_boxscores>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -502,6 +510,7 @@ load_nba_stats_player_boxscores <- function(seasons = most_recent_nba_stats_seas
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_player_game_logs", unit = "athlete-game pair")
+#' @source The `nba_stats_player_game_logs` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_player_game_logs>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -623,6 +632,7 @@ load_nba_stats_team_game_logs <- function(seasons = most_recent_nba_stats_season
 #'   `names(load_nba_stats_player_season_stats())` for the full column set,
 #'   or the `player_stats_base` table of [load_nba_stats_leaguedash()] for
 #'   the equivalent parameter-cube asset.
+#' @source The `nba_stats_player_season_stats` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_player_season_stats>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -680,6 +690,7 @@ load_nba_stats_player_season_stats <- function(seasons = most_recent_nba_stats_s
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_possessions", unit = "possession")
+#' @source The `nba_stats_possessions` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_possessions>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -735,6 +746,7 @@ load_nba_stats_possessions <- function(seasons = most_recent_nba_stats_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_rosters", unit = "athlete-team-season")
+#' @source The `nba_stats_rosters` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_rosters>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -791,6 +803,7 @@ load_nba_stats_rosters <- function(seasons = most_recent_nba_stats_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_schedule", unit = "game")
+#' @source The `nba_stats_schedules` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_schedules>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -848,6 +861,7 @@ load_nba_stats_schedule <- function(seasons = most_recent_nba_stats_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_shots", unit = "shot attempt")
+#' @source The `nba_stats_shots` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_shots>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -908,6 +922,7 @@ load_nba_stats_shots <- function(seasons = most_recent_nba_stats_season(),
 #'   `names(load_nba_stats_standings())` for the full column set. The
 #'   `standings` table of [load_nba_stats_leaguedash()] is the equivalent
 #'   parameter-cube asset (same underlying `leaguestandingsv3` endpoint).
+#' @source The `nba_stats_standings` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_standings>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -963,6 +978,7 @@ load_nba_stats_standings <- function(seasons = most_recent_nba_stats_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_team_boxscores", unit = "team-game pair")
+#' @source The `nba_stats_team_boxscores` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_team_boxscores>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -1024,6 +1040,7 @@ load_nba_stats_team_boxscores <- function(seasons = most_recent_nba_stats_season
 #'   season). See `names(load_nba_stats_team_season_stats())` for the full
 #'   column set, or the `team_stats_base` table of
 #'   [load_nba_stats_leaguedash()] for the equivalent parameter-cube asset.
+#' @source The `nba_stats_team_season_stats` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_team_season_stats>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examplesIf interactive()
@@ -1142,6 +1159,7 @@ nba_stats_leaguedash_tables <- c(
 #'   row per player-season, team-season or lineup-season depending on
 #'   `table`. Column sets differ per table (11 to 625 columns); the
 #'   `*_master` tables are wide joins of every measure type for that entity.
+#' @source The `nba_stats_leaguedash` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_leaguedash>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @family NBA Stats loader functions
 #' @examples

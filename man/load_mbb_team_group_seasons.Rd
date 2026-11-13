@@ -4,6 +4,11 @@
 \alias{load_mbb_team_group_seasons}
 \alias{load_nba_team_group_seasons}
 \title{\strong{Load team conference membership by season (MBB / NBA) from the data repo}}
+\source{
+The \code{mbb_groups} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_groups}.
+
+The \code{nba_groups} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_groups}.
+}
 \usage{
 load_mbb_team_group_seasons(
   seasons = most_recent_mbb_season(),

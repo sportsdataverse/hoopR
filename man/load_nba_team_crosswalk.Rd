@@ -8,6 +8,19 @@
 \alias{load_mbb_schedule_crosswalk}
 \alias{load_mbb_player_crosswalk}
 \title{\strong{Load hoopR NBA team crosswalk}}
+\source{
+The \code{nba_crosswalk} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk}.
+
+The \code{nba_crosswalk} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk}.
+
+The \code{nba_crosswalk} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk}.
+
+The \code{mbb_crosswalk} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk}.
+
+The \code{mbb_crosswalk} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk}.
+
+The \code{mbb_crosswalk} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk}.
+}
 \usage{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
 
@@ -33,7 +46,12 @@ for that not-yet-published season is kept as asked: the read warns and
 returns an empty frame. A season outside the published range, or in a
 known gap, is an error.
 ESPN ids (\code{espn_game_id}, \code{espn_athlete_id}, \code{espn_team_id}) are returned as
-integer, matching the ESPN box score, schedule and roster loaders.}
+integer, matching the ESPN box score, schedule and roster loaders. So
+are the NBA Stats ids of the NBA crosswalks (\code{nba_team_id},
+\code{nba_home_team_id}, \code{nba_away_team_id}, \code{nba_player_id}), matching the
+\verb{load_nba_stats_*()} loaders; \code{nba_game_id} keeps its leading zeros as
+character (\code{"0022300001"}). The live builders (\code{\link[=nba_team_crosswalk]{nba_team_crosswalk()}}
+and friends) still return the NBA Stats ids as character.}
 }
 \value{
 Returns a tibble of class \code{hoopR_data} with one row per

@@ -448,6 +448,16 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   `athlete_id` from `load_{mbb,nba}_rosters()`, `espn_game_id` / `espn_athlete_id` from the
   crosswalk loaders and the `*espn_game_id` / `*espn_team_id` columns of `load_ncaa_mbb_*()`
   were character, so joins to the box scores and schedules failed.
+* The NBA Stats ids of `load_nba_team_crosswalk()` (`nba_team_id`),
+  `load_nba_schedule_crosswalk()` (`nba_home_team_id` / `nba_away_team_id`) and
+  `load_nba_player_crosswalk()` (`nba_player_id`) are integer, as in the
+  `load_nba_stats_*()` loaders; they were character, so a join to those loaders
+  needed a cast. `nba_game_id` keeps its leading zeros (`"0022300001"`) as
+  character. The live builders (`nba_team_crosswalk()` and friends) still
+  return character NBA Stats ids.
+* Every `load_*()` release loader's help page names its release tag on
+  sportsdataverse-data in a Source section, with the repository that publishes
+  it.
 * `espn_mbb_pbp()` / `espn_nba_pbp()` put the light logo in `home_team_logo` when ESPN
   lists the away team first; they used to put the dark one there.
 * `tail()` works on the result of every loader. The group, model, NBA Stats and

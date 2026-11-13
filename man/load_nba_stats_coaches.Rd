@@ -20,6 +20,41 @@
 \alias{load_nba_stats_team_boxscores}
 \alias{load_nba_stats_team_season_stats}
 \title{\strong{Load hoopR NBA Stats Coaches}}
+\source{
+The \code{nba_stats_coaches} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_coaches}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_draft} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_draft}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_game_lineups} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_game_lineups}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_game_rosters} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_game_rosters}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_lineups} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_lineups}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_officials} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_officials}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_pbp} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_pbp}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_player_boxscores} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_player_boxscores}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_player_game_logs} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_player_game_logs}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_player_season_stats} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_player_season_stats}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_possessions} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_possessions}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_rosters} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_rosters}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_schedules} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_schedules}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_shots} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_shots}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_standings} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_standings}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_team_boxscores} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_team_boxscores}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+
+The \code{nba_stats_team_season_stats} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_team_season_stats}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+}
 \usage{
 load_nba_stats_coaches(
   seasons = most_recent_nba_stats_season(),

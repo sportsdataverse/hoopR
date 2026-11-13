@@ -138,3 +138,22 @@ test_that("ESPN join ids come back integer from every loader", {
   expect_type(tb$contest_id, "character")
   expect_type(tb$team_ncaa_team_id, "character")
 })
+
+test_that("NBA crosswalks return NBA Stats team/player ids as integer, game ids padded", {
+  env <- new.env()
+  local_mocked_bindings(rds_from_url = .mock_rds(env))
+  local_mocked_bindings(.release_asset_exists = function(url) TRUE)
+
+  tc <- load_nba_team_crosswalk(seasons = 2026)
+  expect_identical(tc$nba_team_id, c(1610612737L, 1610612738L, 1610612740L))
+  expect_type(tc$espn_team_id, "integer")
+  sc <- load_nba_schedule_crosswalk(seasons = 2026)
+  expect_type(sc$nba_home_team_id, "integer")
+  expect_type(sc$nba_away_team_id, "integer")
+  expect_type(sc$espn_game_id, "integer")
+  # zero-padded NBA Stats game ids keep their leading zeros
+  expect_identical(sc$nba_game_id[1], "0042500405")
+  pc <- load_nba_player_crosswalk(seasons = 2026)
+  expect_identical(pc$nba_player_id, c(1642854L, 1627741L, 203468L))
+  expect_type(pc$espn_athlete_id, "integer")
+})

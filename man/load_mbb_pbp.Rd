@@ -14,6 +14,31 @@
 \alias{load_mbb_player_core}
 \alias{load_mbb_shots}
 \title{\strong{Load hoopR men's college basketball play-by-play}}
+\source{
+The \code{espn_mens_college_basketball_pbp} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_pbp}, published by \url{https://github.com/sportsdataverse/hoopR-mbb-data}.
+
+The \code{espn_mens_college_basketball_team_boxscores} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_team_boxscores}, published by \url{https://github.com/sportsdataverse/hoopR-mbb-data}.
+
+The \code{espn_mens_college_basketball_player_boxscores} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_player_boxscores}, published by \url{https://github.com/sportsdataverse/hoopR-mbb-data}.
+
+The \code{espn_mens_college_basketball_schedules} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_schedules}, published by \url{https://github.com/sportsdataverse/hoopR-mbb-data}.
+
+The \code{espn_mens_college_basketball_rosters} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_rosters}, published by \url{https://github.com/sportsdataverse/hoopR-mbb-data}.
+
+The \code{espn_mens_college_basketball_player_season_stats} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_player_season_stats}, published by \url{https://github.com/sportsdataverse/hoopR-mbb-data}.
+
+The \code{espn_mens_college_basketball_team_season_stats} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_team_season_stats}, published by \url{https://github.com/sportsdataverse/hoopR-mbb-data}.
+
+The \code{espn_mens_college_basketball_standings} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_standings}, published by \url{https://github.com/sportsdataverse/hoopR-mbb-data}.
+
+The \code{espn_mens_college_basketball_game_rosters} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_game_rosters}, published by \url{https://github.com/sportsdataverse/hoopR-mbb-data}.
+
+The \code{espn_mens_college_basketball_officials} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_officials}, published by \url{https://github.com/sportsdataverse/hoopR-mbb-data}.
+
+The \code{espn_mens_college_basketball_player_core} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_player_core}, published by \url{https://github.com/sportsdataverse/hoopR-mbb-data}.
+
+The \code{espn_mens_college_basketball_shots} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_shots}, published by \url{https://github.com/sportsdataverse/hoopR-mbb-data}.
+}
 \usage{
 load_mbb_pbp(
   seasons = most_recent_mbb_season(),

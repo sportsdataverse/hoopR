@@ -20,6 +20,7 @@
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_player_impact", unit = "player-team-season")
+#' @source The `nba_player_impact` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_player_impact>.
 #' @export
 #' @family Model Dataset loader functions
 #' @examples
@@ -85,6 +86,7 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_mbb_player_value", unit = "player-team-season")
+#' @source The `mbb_player_value` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_player_value>.
 #' @export
 #' @family Model Dataset loader functions
 #' @examples
@@ -143,6 +145,7 @@ load_mbb_player_value <- function(seasons = most_recent_mbb_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_mbb_ratings", unit = "team-season")
+#' @source The `mbb_ratings` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_ratings>.
 #' @export
 #' @family Model Dataset loader functions
 #' @examples
