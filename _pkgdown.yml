@@ -251,6 +251,7 @@ reference:
       - '`load_nba_officials`'
       - '`load_nba_player_core`'
       - '`load_nba_shots`'
+      - '`load_nba_depthcharts`'
       - '`update_nba_db`'
   - subtitle: NBA Stats API Data Loaders
     desc: Functions exported by hoopR to access hoopR-nba-stats-data NBA Stats API artifacts
@@ -274,6 +275,20 @@ reference:
       - '`load_nba_stats_team_boxscores`'
       - '`load_nba_stats_team_game_logs`'
       - '`load_nba_stats_team_season_stats`'
+      - '`load_nba_stats_draft_combine_anthro`'
+      - '`load_nba_stats_draft_combine_drills`'
+      - '`load_nba_stats_draft_combine_nonstationary_shooting`'
+      - '`load_nba_stats_draft_combine_spot_shooting`'
+      - '`load_nba_stats_draft_combine_stats`'
+      - '`load_nba_stats_game_matchups`'
+      - '`load_nba_stats_hustle_player`'
+      - '`load_nba_stats_hustle_team`'
+      - '`load_nba_stats_injury_report`'
+      - '`load_nba_stats_matchups`'
+      - '`load_nba_stats_matchups_rollup`'
+      - '`load_nba_stats_metric_curves`'
+      - '`load_nba_stats_rolling_windows`'
+      - '`load_nba_stats_synergy`'
       - '`update_nba_stats_db`'
   - subtitle: Men's College Basketball Data Functions
     desc: Functions exported by hoopR to access the hoopR-data repository's Men's College Basketball Data
@@ -311,6 +326,7 @@ reference:
     desc: Functions exported by hoopR to access model-derived datasets (player-impact, ratings, player-value) published to sportsdataverse-data
     contents:
       - '`load_nba_player_impact`'
+      - '`load_nba_current_impact`'
       - '`load_mbb_player_value`'
       - '`load_mbb_ratings`'
   - subtitle: Conference and Division Group Loaders

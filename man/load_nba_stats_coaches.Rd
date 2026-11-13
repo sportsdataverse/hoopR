@@ -861,6 +861,14 @@ measures, use \code{\link[=load_nba_stats_leaguedash]{load_nba_stats_leaguedash(
 }
 \seealso{
 Other NBA Stats loader functions:
-\code{\link[=load_nba_stats_leaguedash]{load_nba_stats_leaguedash()}}
+\code{\link{load_nba_stats_draft_combine}},
+\code{\link[=load_nba_stats_game_matchups]{load_nba_stats_game_matchups()}},
+\code{\link{load_nba_stats_hustle}},
+\code{\link[=load_nba_stats_injury_report]{load_nba_stats_injury_report()}},
+\code{\link[=load_nba_stats_leaguedash]{load_nba_stats_leaguedash()}},
+\code{\link[=load_nba_stats_matchups]{load_nba_stats_matchups()}},
+\code{\link[=load_nba_stats_metric_curves]{load_nba_stats_metric_curves()}},
+\code{\link[=load_nba_stats_rolling_windows]{load_nba_stats_rolling_windows()}},
+\code{\link[=load_nba_stats_synergy]{load_nba_stats_synergy()}}
 }
 \concept{NBA Stats loader functions}

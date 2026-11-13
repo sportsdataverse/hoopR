@@ -2,11 +2,14 @@
 % Please edit documentation in R/load_models.R
 \name{load_nba_player_impact}
 \alias{load_nba_player_impact}
+\alias{load_nba_current_impact}
 \alias{load_mbb_player_value}
 \alias{load_mbb_ratings}
 \title{\strong{Load NBA player-impact ratings (RAPM / SPM / BPM / DARKO) from the data repo}}
 \source{
 The \code{nba_player_impact} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_player_impact}.
+
+\url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_current_impact}
 
 The \code{mbb_player_value} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_player_value}.
 
@@ -14,6 +17,13 @@ The \code{mbb_ratings} release: \url{https://github.com/sportsdataverse/sportsda
 }
 \usage{
 load_nba_player_impact(
+  seasons = most_recent_nba_season(),
+  ...,
+  dbConnection = NULL,
+  tablename = NULL
+)
+
+load_nba_current_impact(
   seasons = most_recent_nba_season(),
   ...,
   dbConnection = NULL,
@@ -83,6 +93,24 @@ A \code{hoopR_data} tibble with one row per player-team-season.
 }}
 \if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_player_impact")} for the column table.}
 
+A \code{hoopR_data} tibble with one row per player per as-of date.
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  player_id \tab integer \tab NBA Stats player identifier (\code{person_id}). \cr
+  as_of \tab Date \tab Date the rating is for: opening night, then every 7 days. Only games dated before it are used. \cr
+  season \tab integer \tab Season END year (2026 = 2025-26) of the player's last game before \code{as_of}. \cr
+  o_current_impact \tab numeric \tab Expected offensive impact per 100 possessions as of \code{as_of}: the box prior in force plus the filtered deviation from it. \cr
+  d_current_impact \tab numeric \tab Expected defensive impact per 100 possessions as of \code{as_of} (positive = good defense). \cr
+  current_impact \tab numeric \tab Total expected impact per 100 possessions: \code{o_current_impact + d_current_impact}. \cr
+  o_prior \tab numeric \tab Offensive box-score prior per 100 possessions in force on \code{as_of}. \cr
+  d_prior \tab numeric \tab Defensive box-score prior per 100 possessions in force on \code{as_of} (positive = good defense). \cr
+  off_poss \tab integer \tab Offensive possessions the player played this season before \code{as_of} (0 when he has not played this season). \cr
+  def_poss \tab integer \tab Defensive possessions the player played this season before \code{as_of} (0 when he has not played this season). \cr
+  last_game_date \tab Date \tab Date of the player's last game before \code{as_of}. \cr
+}}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_current_impact")} for the column table.}
+
 A \code{hoopR_data} tibble with one row per player-team-season.
 
 \if{html}{\tabular{lll}{
@@ -124,6 +152,16 @@ replacement (WAR), and a DARKO-style skill/projection pair. Produced by
 the sportsdataverse-py NBA/WNBA possession-engine model program; published to the
 \code{nba_player_impact} release tag as csv/parquet/rds.
 
+Loads the \code{nba_current_impact} release: each NBA player's
+current offensive/defensive impact (points per 100 possessions) as of
+opening night and every 7 days after, from every game before that date
+-- a box-score prior plus a Kalman-filtered deviation carried across
+seasons. Where \code{\link[=load_nba_player_impact]{load_nba_player_impact()}} says what a player did in a
+season, this says what to expect from him on a date. Produced by the
+sportsdataverse-py \code{nba_current_impact()} model (published by
+\code{hoopR-nba-stats-data}'s \verb{nba_model_publish current-impact}); \code{player_id}
+is the NBA Stats \code{person_id}. Coverage is 2007 (2006-07) to 2026.
+
 Loads season-level NCAA men's college basketball
 player-value ratings -- one row per player-team-season, with a
 box-score-derived offensive/defensive/net box plus-minus (BPM). Coverage
@@ -143,6 +181,9 @@ published to the \code{mbb_ratings} release tag.
 \examples{
 \donttest{
   try(load_nba_player_impact(seasons = most_recent_nba_season()))
+}
+\donttest{
+  try(load_nba_current_impact(seasons = 2026))
 }
 \donttest{
   try(load_mbb_player_value(seasons = most_recent_mbb_season()))
