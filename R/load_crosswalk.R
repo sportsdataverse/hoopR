@@ -193,3 +193,73 @@ load_mbb_schedule_crosswalk <- function(seasons = most_recent_mbb_season()) {
 load_mbb_player_crosswalk <- function(seasons = most_recent_mbb_season()) {
   .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_player_crosswalk", first = 2025, last = most_recent_mbb_season(), default = missing(seasons))
 }
+
+
+# ---------------------------------------------------------------------------
+# stats.ncaa.org <-> ESPN (static, all-seasons files on the mbb_crosswalk tag)
+# ---------------------------------------------------------------------------
+
+# The release publishes the ESPN ids as character; cast them like every
+# other hoopR ESPN id. The NCAA ids are already integer.
+.load_mbb_ncaa_espn <- function(file) {
+  out <- .ids_as_integer(parquet_from_url(paste0(
+    "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/",
+    "mbb_crosswalk/", file, ".parquet"
+  )), c("espn_team_id", "espn_conference_id"))
+  class(out) <- c("hoopR_data", "tbl_df", "tbl", "data.frame")
+  out
+}
+
+#' **Load the stats.ncaa.org to ESPN MBB crosswalks**
+#' @name load_mbb_ncaa_espn_team_crosswalk
+NULL
+#' @title
+#' **Load the stats.ncaa.org to ESPN MBB team crosswalk from the data repo**
+#' @rdname load_mbb_ncaa_espn_team_crosswalk
+#' @description stats.ncaa.org gives a team a new numeric id every season
+#'   and spells school names in AP style; ESPN keeps one id per school. These
+#'   loaders read the all-seasons crosswalk tables on the `mbb_crosswalk`
+#'   release tag that join the two, so the `load_ncaa_mbb_*()` tables can be
+#'   matched to the ESPN-based `load_mbb_*()` tables.
+#'
+#'   * `load_mbb_ncaa_espn_team_crosswalk()`: one row per season and
+#'     stats.ncaa.org team id (2009-10 onward), with the ESPN team and both
+#'     sources' conference for that season. The same table as
+#'     sportsdataverse-py's `ncaa_espn_team_crosswalk(league = "mbb")`.
+#'   * `load_mbb_ncaa_espn_schools()`: one row per NCAA school (org id)
+#'     with its ESPN team.
+#'   * `load_mbb_ncaa_espn_school_seasons()`: one row per school, sport and
+#'     season with that season's stats.ncaa.org team id. It covers both
+#'     sports (`sport` is `mbb` or `wbb`), since an org id is shared by every
+#'     team of a school.
+#'
+#'   The ESPN ids (`espn_team_id`, `espn_conference_id`) are returned as
+#'   integer, matching the ESPN loaders. `ncaa_team_id` and `ncaa_org_id`
+#'   are integer, as published and as in sportsdataverse-py and wehoop; the
+#'   `load_ncaa_mbb_*()` loaders keep the NCAA ids as character (e.g. the
+#'   `id` of [load_ncaa_mbb_team_ids()]), so cast one side before joining
+#'   them. `season` is the
+#'   `"YYYY-YY"` string the release uses. The files are parquet, so these
+#'   loaders need the arrow package.
+#' @eval .returns_rd("load_mbb_ncaa_espn_team_crosswalk", unit = "season and stats.ncaa.org team (`load_mbb_ncaa_espn_team_crosswalk()`)")
+#' @source <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk>
+#' @seealso The WBB twins in wehoop, `load_wbb_ncaa_espn_team_crosswalk()` and friends.
+#' @export
+#' @family MBB Crosswalk Functions
+#' @examples
+#' \donttest{
+#'   try(load_mbb_ncaa_espn_team_crosswalk())
+#'   try(load_mbb_ncaa_espn_schools())
+#'   try(load_mbb_ncaa_espn_school_seasons())
+#' }
+load_mbb_ncaa_espn_team_crosswalk <- function() .load_mbb_ncaa_espn("ncaa_espn_team_crosswalk")
+
+#' @rdname load_mbb_ncaa_espn_team_crosswalk
+#' @eval .returns_rd("load_mbb_ncaa_espn_schools", unit = "NCAA school (`load_mbb_ncaa_espn_schools()`)")
+#' @export
+load_mbb_ncaa_espn_schools <- function() .load_mbb_ncaa_espn("ncaa_espn_schools")
+
+#' @rdname load_mbb_ncaa_espn_team_crosswalk
+#' @eval .returns_rd("load_mbb_ncaa_espn_school_seasons", unit = "school, sport and season (`load_mbb_ncaa_espn_school_seasons()`)")
+#' @export
+load_mbb_ncaa_espn_school_seasons <- function() .load_mbb_ncaa_espn("ncaa_espn_school_seasons")

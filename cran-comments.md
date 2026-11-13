@@ -15,7 +15,8 @@ full list of changes is in NEWS.md. The main additions:
   2026-11 backfill the MBB and NBA loaders accept the newly published
   seasons (MBB player season stats from 2003, NBA game rosters and
   officials and team season stats from 1994), each published as `.rds`, so no loader needs arrow
-  for an older season.
+  for an older season. New loaders read the static stats.ncaa.org to ESPN
+  team crosswalk tables (`load_mbb_ncaa_espn_*()`).
 * Fixes for ESPN play-by-play, game rosters and prop bets, ESPN wrappers
   that a harmless parse warning emptied, Fox odds, the NBA CDN and G League
   feeds, Torvik, KenPom, `nba_gamerotation()` and `nba_pbp()` on-court players.
@@ -26,7 +27,7 @@ full list of changes is in NEWS.md. The main additions:
   stringdist moved to Suggests; withr and xml2 are now imported.
 * The package now ships its `inst/CITATION` file, and three datasets:
   `parameter_descriptions` (10 KB), `mbb_team_names` (6 KB) and
-  `return_columns` (238 KB, xz): the returned columns of 959 functions.
+  `return_columns` (238 KB, xz): the returned columns of 962 functions.
   The NBA and men's college basketball help pages keep their column
   tables; the other 647 pages point to `return_columns` instead.
 * `ByteCompile: false`: the package is no longer byte-compiled at install
