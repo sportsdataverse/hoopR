@@ -10,6 +10,7 @@
 \alias{load_nba_stats_pbp}
 \alias{load_nba_stats_player_boxscores}
 \alias{load_nba_stats_player_game_logs}
+\alias{load_nba_stats_team_game_logs}
 \alias{load_nba_stats_player_season_stats}
 \alias{load_nba_stats_possessions}
 \alias{load_nba_stats_rosters}
@@ -77,6 +78,13 @@ load_nba_stats_player_boxscores(
 )
 
 load_nba_stats_player_game_logs(
+  seasons = most_recent_nba_stats_season(),
+  ...,
+  dbConnection = NULL,
+  tablename = NULL
+)
+
+load_nba_stats_team_game_logs(
   seasons = most_recent_nba_stats_season(),
   ...,
   dbConnection = NULL,
@@ -354,6 +362,8 @@ A \code{hoopR_data} tibble with one row per athlete-game pair.
 \if{html}{\tabular{lll}{
   col_name \tab types \tab description \cr
   season_id \tab character \tab Unique season identifier string. \cr
+  player_id \tab integer \tab Unique NBA Stats player identifier. \cr
+  player_name \tab character \tab Player display name, e.g. 'LeBron James'. \cr
   team_id \tab integer \tab Unique NBA Stats team identifier. \cr
   team_abbreviation \tab character \tab Three-letter team abbreviation. \cr
   team_name \tab character \tab Full team display name. \cr
@@ -381,11 +391,50 @@ A \code{hoopR_data} tibble with one row per athlete-game pair.
   pf \tab integer \tab Personal fouls. \cr
   pts \tab integer \tab Points scored. \cr
   plus_minus \tab integer \tab Plus/minus point differential while on court. \cr
+  fantasy_pts \tab numeric \tab NBA Stats fantasy points for the game. \cr
   video_available \tab integer \tab Whether NBA Stats video is available for the game. \cr
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
   season_type \tab character \tab Portion of the season (e.g. 'Regular Season', 'Playoffs'). \cr
 }}
 \if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_player_game_logs")} for the column table.}
+
+A \code{hoopR_data} tibble with one row per team-game pair.
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  season_id \tab character \tab Unique season identifier string. \cr
+  team_id \tab integer \tab Unique NBA Stats team identifier. \cr
+  team_abbreviation \tab character \tab Three-letter team abbreviation. \cr
+  team_name \tab character \tab Full team display name. \cr
+  game_id \tab character \tab Unique game identifier. \cr
+  game_date \tab character \tab Date the game was played, as an ISO 'YYYY-MM-DD' string. \cr
+  matchup \tab character \tab Matchup string, e.g. 'BOS vs. NYK' or 'BOS @ NYK'. \cr
+  wl \tab character \tab Game result, 'W' or 'L'. \cr
+  min \tab integer \tab Minutes played. \cr
+  fgm \tab integer \tab Field goals made. \cr
+  fga \tab integer \tab Field goal attempts. \cr
+  fg_pct \tab numeric \tab Field goal percentage (0-1). \cr
+  fg3m \tab integer \tab Three-point field goals made. \cr
+  fg3a \tab integer \tab Three-point field goal attempts. \cr
+  fg3_pct \tab numeric \tab Three-point field goal percentage (0-1). \cr
+  ftm \tab integer \tab Free throws made. \cr
+  fta \tab integer \tab Free throw attempts. \cr
+  ft_pct \tab numeric \tab Free throw percentage (0-1). \cr
+  oreb \tab integer \tab Offensive rebounds. \cr
+  dreb \tab integer \tab Defensive rebounds. \cr
+  reb \tab integer \tab Total rebounds. \cr
+  ast \tab integer \tab Assists. \cr
+  stl \tab integer \tab Steals. \cr
+  blk \tab integer \tab Blocks. \cr
+  tov \tab integer \tab Turnovers. \cr
+  pf \tab integer \tab Personal fouls. \cr
+  pts \tab integer \tab Points scored. \cr
+  plus_minus \tab integer \tab Team point differential for the game. \cr
+  video_available \tab integer \tab Whether NBA Stats video is available for the game. \cr
+  season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+  season_type \tab character \tab Portion of the season (e.g. 'Regular Season', 'Playoffs'). \cr
+}}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_team_game_logs")} for the column table.}
 
 Returns a \code{hoopR_data} tibble of player season stats (210
 columns: rank fields, bio fields, and standard/rank box-score
@@ -613,6 +662,13 @@ turnovers, personal fouls, plus/minus). Backed by the
 \code{hoopR-nba-stats-data} pipeline that publishes csv/parquet/rds
 artifacts to the \code{nba_stats_player_game_logs} release tag.
 
+Loads per-team per-game logs scraped from
+\code{stats.nba.com/leaguegamelog?PlayerOrTeam=T} (one row per team-game:
+the team's box line, matchup and result). Backed by the
+\code{hoopR-nba-stats-data} pipeline that publishes csv/parquet/rds
+artifacts to the \code{nba_stats_team_game_logs} release tag. These rows were
+published as \code{nba_stats_player_game_logs} until 2026-11-13.
+
 Loads season-level NBA player statistics
 (\code{leaguedashplayerstats}-style outputs, \code{Base} measure). Backed by the
 \code{hoopR-nba-stats-data} pipeline that publishes csv/parquet/rds
@@ -673,25 +729,25 @@ measures, use \code{\link[=load_nba_stats_leaguedash]{load_nba_stats_leaguedash(
 }
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_game_lineups(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_game_rosters(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_lineups(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_officials(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
@@ -703,61 +759,67 @@ measures, use \code{\link[=load_nba_stats_leaguedash]{load_nba_stats_leaguedash(
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_player_boxscores(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_player_game_logs(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
+  try(load_nba_stats_team_game_logs(seasons = most_recent_nba_stats_season()))
+}
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
+\donttest{
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_player_season_stats(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_possessions(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_rosters(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_schedule(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_shots(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_standings(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_team_boxscores(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
 \dontshow{if (interactive()) withAutoprint(\{ # examplesIf}
 \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_team_season_stats(seasons = most_recent_nba_stats_season()))
 }
 \dontshow{\}) # examplesIf}
