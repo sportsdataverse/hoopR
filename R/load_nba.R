@@ -35,6 +35,7 @@ NULL
 #' schedules: `load_nba_game_rosters()` casts `game_id`, and `load_nba_rosters()`
 #' casts `athlete_id`, both of which the release publishes as character.
 #' @eval .returns_rd("load_nba_pbp", unit = "play-by-play event")
+#' @source The `espn_nba_pbp` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_pbp>, published by <https://github.com/sportsdataverse/hoopR-nba-data>.
 #' @export
 #' @family hoopR Loader Functions
 #' @examples
@@ -77,6 +78,7 @@ load_nba_pbp <- function(seasons = most_recent_nba_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @eval .returns_rd("load_nba_team_box", unit = "team-game")
+#' @source The `espn_nba_team_boxscores` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_team_boxscores>, published by <https://github.com/sportsdataverse/hoopR-nba-data>.
 #' @export
 #' @family hoopR Loader Functions
 #' @examples
@@ -119,6 +121,7 @@ load_nba_team_box <- function(seasons = most_recent_nba_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @eval .returns_rd("load_nba_player_box", unit = "player-game")
+#' @source The `espn_nba_player_boxscores` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_player_boxscores>, published by <https://github.com/sportsdataverse/hoopR-nba-data>.
 #' @export
 #' @family hoopR Loader Functions
 #' @examples
@@ -159,6 +162,7 @@ load_nba_player_box <- function(seasons = most_recent_nba_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @eval .returns_rd("load_nba_schedule", unit = "game")
+#' @source The `espn_nba_schedules` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_schedules>, published by <https://github.com/sportsdataverse/hoopR-nba-data>.
 #' @export
 #' @family hoopR Loader Functions
 #' @examples
@@ -398,6 +402,7 @@ get_missing_nba_games <- function(completed_games, dbConnection, tablename) {
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @return Returns a tibble of per-season NBA standings.
+#' @source The `espn_nba_standings` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_standings>, published by <https://github.com/sportsdataverse/hoopR-nba-data>.
 #' @export
 load_nba_standings <- function(seasons = most_recent_nba_season(), ...,
                                dbConnection = NULL, tablename = NULL) {
@@ -436,6 +441,7 @@ load_nba_standings <- function(seasons = most_recent_nba_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @return Returns a tibble of per-game NBA rosters.
+#' @source The `espn_nba_game_rosters` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_game_rosters>, published by <https://github.com/sportsdataverse/hoopR-nba-data>.
 #' @export
 load_nba_game_rosters <- function(seasons = most_recent_nba_season(), ...,
                                   dbConnection = NULL, tablename = NULL) {
@@ -474,6 +480,7 @@ load_nba_game_rosters <- function(seasons = most_recent_nba_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @return Returns a tibble of per-game NBA officials.
+#' @source The `espn_nba_officials` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_officials>, published by <https://github.com/sportsdataverse/hoopR-nba-data>.
 #' @export
 load_nba_officials <- function(seasons = most_recent_nba_season(), ...,
                                dbConnection = NULL, tablename = NULL) {
@@ -512,6 +519,7 @@ load_nba_officials <- function(seasons = most_recent_nba_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @return Returns a tibble of NBA draft picks.
+#' @source The `espn_nba_draft` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_draft>, published by <https://github.com/sportsdataverse/hoopR-nba-data>.
 #' @export
 load_nba_draft <- function(seasons = most_recent_nba_season(), ...,
                            dbConnection = NULL, tablename = NULL) {
@@ -550,6 +558,7 @@ load_nba_draft <- function(seasons = most_recent_nba_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @return Returns a tibble of NBA player season stats (long format).
+#' @source The `espn_nba_player_season_stats` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_player_season_stats>, published by <https://github.com/sportsdataverse/hoopR-nba-data>.
 #' @export
 load_nba_player_stats <- function(seasons = most_recent_nba_season(), ...,
                                   dbConnection = NULL, tablename = NULL) {
@@ -588,6 +597,7 @@ load_nba_player_stats <- function(seasons = most_recent_nba_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @return Returns a tibble of NBA team season stats (long format).
+#' @source The `espn_nba_team_season_stats` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_team_season_stats>, published by <https://github.com/sportsdataverse/hoopR-nba-data>.
 #' @export
 load_nba_team_stats <- function(seasons = most_recent_nba_season(), ...,
                                 dbConnection = NULL, tablename = NULL) {
@@ -627,6 +637,7 @@ load_nba_team_stats <- function(seasons = most_recent_nba_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @return Returns a tibble of NBA team rosters.
+#' @source The `espn_nba_rosters` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_rosters>, published by <https://github.com/sportsdataverse/hoopR-nba-data>.
 #' @export
 load_nba_rosters <- function(seasons = most_recent_nba_season(), ...,
                              dbConnection = NULL, tablename = NULL) {
@@ -680,6 +691,7 @@ load_nba_rosters <- function(seasons = most_recent_nba_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @return Returns a tibble of NBA athlete core records (one row per athlete-season).
+#' @source The `espn_nba_player_core` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_player_core>, published by <https://github.com/sportsdataverse/hoopR-nba-data>.
 #' @export
 load_nba_player_core <- function(seasons = most_recent_nba_season(), ...,
                                  dbConnection = NULL, tablename = NULL) {
@@ -718,6 +730,7 @@ load_nba_player_core <- function(seasons = most_recent_nba_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_nba_db()`).
 #' @eval .returns_rd("load_nba_shots", unit = "shot attempt")
+#' @source The `espn_nba_shots` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_shots>, published by <https://github.com/sportsdataverse/hoopR-nba-data>.
 #' @export
 #' @family hoopR Loader Functions
 #' @examples

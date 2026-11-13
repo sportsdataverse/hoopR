@@ -27,6 +27,7 @@
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_ncaa_mbb_pbp", inline = FALSE, unit = "play-by-play event")
+#' @source The `ncaa_mbb_pbp` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_pbp>, published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
 #' @export
 #' @family NCAA MBB loader functions
 #' @examplesIf interactive()
@@ -87,6 +88,7 @@ load_ncaa_mbb_pbp <- function(seasons = most_recent_mbb_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_ncaa_mbb_shots", inline = FALSE, unit = "shot attempt")
+#' @source The `ncaa_mbb_shots` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_shots>, published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
 #' @export
 #' @family NCAA MBB loader functions
 #' @examplesIf interactive()
@@ -153,6 +155,7 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_ncaa_mbb_lineups", inline = FALSE, unit = "lineup stint")
+#' @source The `ncaa_mbb_lineups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_lineups>, published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
 #' @export
 #' @family NCAA MBB loader functions
 #' @examplesIf interactive()
@@ -212,6 +215,7 @@ load_ncaa_mbb_lineups <- function(seasons = most_recent_mbb_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_ncaa_mbb_matchup_stints", inline = FALSE, unit = "matchup stint")
+#' @source The `ncaa_mbb_matchup_stints` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_matchup_stints>, published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
 #' @export
 #' @family NCAA MBB loader functions
 #' @examplesIf interactive()
@@ -271,6 +275,7 @@ load_ncaa_mbb_matchup_stints <- function(seasons = most_recent_mbb_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_ncaa_mbb_possessions", inline = FALSE, unit = "possession")
+#' @source The `ncaa_mbb_possessions` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_possessions>, published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
 #' @export
 #' @family NCAA MBB loader functions
 #' @examplesIf interactive()
@@ -332,6 +337,7 @@ load_ncaa_mbb_possessions <- function(seasons = most_recent_mbb_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_ncaa_mbb_rapm_within_team", inline = FALSE, unit = "player-team-season")
+#' @source The `ncaa_mbb_rapm_within_team` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_rapm_within_team>, published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
 #' @export
 #' @family NCAA MBB loader functions
 #' @examples
@@ -394,6 +400,7 @@ load_ncaa_mbb_rapm_within_team <- function(seasons = most_recent_mbb_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_ncaa_mbb_rapm", inline = FALSE, unit = "player-season")
+#' @source The `ncaa_mbb_rapm` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_rapm>, published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
 #' @export
 #' @family NCAA MBB loader functions
 #' @examples
@@ -452,6 +459,7 @@ load_ncaa_mbb_rapm <- function(seasons = most_recent_mbb_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_ncaa_mbb_player_box", inline = FALSE, unit = "player-game")
+#' @source The `ncaa_mbb_player_box` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_player_box>, published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
 #' @export
 #' @family NCAA MBB loader functions
 #' @examplesIf interactive()
@@ -511,6 +519,7 @@ load_ncaa_mbb_player_box <- function(seasons = most_recent_mbb_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_ncaa_mbb_team_box", inline = FALSE, unit = "team-game")
+#' @source The `ncaa_mbb_team_box` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_team_box>, published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
 #' @export
 #' @family NCAA MBB loader functions
 #' @examples
@@ -568,6 +577,7 @@ load_ncaa_mbb_team_box <- function(seasons = most_recent_mbb_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_ncaa_mbb_rosters", inline = FALSE, unit = "player-team-season")
+#' @source The `ncaa_mbb_rosters` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_rosters>, published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
 #' @export
 #' @family NCAA MBB loader functions
 #' @examples
@@ -625,6 +635,7 @@ load_ncaa_mbb_rosters <- function(seasons = most_recent_mbb_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_ncaa_mbb_team_rosters", inline = FALSE, unit = "player-team-season")
+#' @source The `ncaa_mbb_team_rosters` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_team_rosters>, published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
 #' @export
 #' @family NCAA MBB loader functions
 #' @examples
@@ -681,6 +692,7 @@ load_ncaa_mbb_team_rosters <- function(seasons = most_recent_mbb_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_ncaa_mbb_schedule", inline = FALSE, unit = "game")
+#' @source The `ncaa_mbb_schedule` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_schedule>, published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
 #' @export
 #' @family NCAA MBB loader functions
 #' @examples
@@ -738,6 +750,7 @@ load_ncaa_mbb_schedule <- function(seasons = most_recent_mbb_season(),
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_ncaa_mbb_team_ids", inline = FALSE, unit = "team-season")
+#' @source The `ncaa_mbb_team_ids` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_team_ids>, published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
 #' @export
 #' @family NCAA MBB loader functions
 #' @examples

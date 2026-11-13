@@ -41,6 +41,7 @@ NULL
 #' schedules: `load_mbb_game_rosters()` casts `game_id`, and `load_mbb_rosters()`
 #' casts `athlete_id`, both of which the release publishes as character.
 #' @eval .returns_rd("load_mbb_pbp", unit = "play-by-play event")
+#' @source The `espn_mens_college_basketball_pbp` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_pbp>, published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
 #' @export
 #' @family hoopR Loader Functions
 #' @examplesIf interactive()
@@ -95,6 +96,7 @@ load_mbb_pbp <- function(
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @eval .returns_rd("load_mbb_team_box", unit = "team-game")
+#' @source The `espn_mens_college_basketball_team_boxscores` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_team_boxscores>, published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
 #' @export
 #' @family hoopR Loader Functions
 #' @examples \donttest{
@@ -148,6 +150,7 @@ load_mbb_team_box <- function(
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @eval .returns_rd("load_mbb_player_box", unit = "player-game")
+#' @source The `espn_mens_college_basketball_player_boxscores` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_player_boxscores>, published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
 #' @export
 #' @family hoopR Loader Functions
 #' @examplesIf interactive()
@@ -202,6 +205,7 @@ load_mbb_player_box <- function(
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @eval .returns_rd("load_mbb_schedule", unit = "game")
+#' @source The `espn_mens_college_basketball_schedules` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_schedules>, published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
 #' @export
 #' @family hoopR Loader Functions
 #' @examples \donttest{
@@ -507,6 +511,7 @@ get_missing_mbb_games <- function(completed_games, dbConnection, tablename) {
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @return Returns a tibble of MBB team rosters.
+#' @source The `espn_mens_college_basketball_rosters` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_rosters>, published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
 #' @export
 load_mbb_rosters <- function(seasons = most_recent_mbb_season(), ...,
                                  dbConnection = NULL, tablename = NULL) {
@@ -544,6 +549,7 @@ load_mbb_rosters <- function(seasons = most_recent_mbb_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @return Returns a tibble of MBB player season stats (long format).
+#' @source The `espn_mens_college_basketball_player_season_stats` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_player_season_stats>, published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
 #' @export
 load_mbb_player_stats <- function(seasons = most_recent_mbb_season(), ...,
                                  dbConnection = NULL, tablename = NULL) {
@@ -581,6 +587,7 @@ load_mbb_player_stats <- function(seasons = most_recent_mbb_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @return Returns a tibble of MBB team season stats (long format).
+#' @source The `espn_mens_college_basketball_team_season_stats` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_team_season_stats>, published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
 #' @export
 load_mbb_team_stats <- function(seasons = most_recent_mbb_season(), ...,
                                  dbConnection = NULL, tablename = NULL) {
@@ -618,6 +625,7 @@ load_mbb_team_stats <- function(seasons = most_recent_mbb_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @return Returns a tibble of MBB standings.
+#' @source The `espn_mens_college_basketball_standings` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_standings>, published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
 #' @export
 load_mbb_standings <- function(seasons = most_recent_mbb_season(), ...,
                                  dbConnection = NULL, tablename = NULL) {
@@ -655,6 +663,7 @@ load_mbb_standings <- function(seasons = most_recent_mbb_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @return Returns a tibble of MBB per-game rosters.
+#' @source The `espn_mens_college_basketball_game_rosters` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_game_rosters>, published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
 #' @export
 load_mbb_game_rosters <- function(seasons = most_recent_mbb_season(), ...,
                                  dbConnection = NULL, tablename = NULL) {
@@ -692,6 +701,7 @@ load_mbb_game_rosters <- function(seasons = most_recent_mbb_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @return Returns a tibble of MBB per-game officials.
+#' @source The `espn_mens_college_basketball_officials` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_officials>, published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
 #' @export
 load_mbb_officials <- function(seasons = most_recent_mbb_season(), ...,
                                  dbConnection = NULL, tablename = NULL) {
@@ -745,6 +755,7 @@ load_mbb_officials <- function(seasons = most_recent_mbb_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @return Returns a tibble of MBB athlete core records (one row per athlete-season).
+#' @source The `espn_mens_college_basketball_player_core` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_player_core>, published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
 #' @export
 load_mbb_player_core <- function(seasons = most_recent_mbb_season(), ...,
                                  dbConnection = NULL, tablename = NULL) {
@@ -786,6 +797,7 @@ load_mbb_player_core <- function(seasons = most_recent_mbb_season(), ...,
 #' @param ... Additional arguments passed to an underlying function that writes
 #' the season data into a database (used by `update_mbb_db()`).
 #' @eval .returns_rd("load_mbb_shots", unit = "shot attempt")
+#' @source The `espn_mens_college_basketball_shots` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_shots>, published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
 #' @export
 #' @family hoopR Loader Functions
 #' @examplesIf interactive()

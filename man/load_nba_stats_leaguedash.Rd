@@ -3,6 +3,9 @@
 \name{load_nba_stats_leaguedash}
 \alias{load_nba_stats_leaguedash}
 \title{\strong{Load hoopR NBA Stats League Dashboard cube}}
+\source{
+The \code{nba_stats_leaguedash} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_leaguedash}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
+}
 \usage{
 load_nba_stats_leaguedash(
   seasons = most_recent_nba_stats_season(),

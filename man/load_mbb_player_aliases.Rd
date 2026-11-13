@@ -4,6 +4,11 @@
 \alias{load_mbb_player_aliases}
 \alias{load_nba_player_aliases}
 \title{\strong{Load provider player id aliases (MBB / NBA) from the data repo}}
+\source{
+The \code{mbb_groups} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_groups}.
+
+The \code{nba_groups} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_groups}.
+}
 \usage{
 load_mbb_player_aliases(..., dbConnection = NULL, tablename = NULL)
 

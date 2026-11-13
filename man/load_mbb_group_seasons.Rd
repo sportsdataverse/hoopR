@@ -4,6 +4,11 @@
 \alias{load_mbb_group_seasons}
 \alias{load_nba_group_seasons}
 \title{\strong{Load conference and division names by season (MBB / NBA) from the data repo}}
+\source{
+The \code{mbb_groups} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_groups}.
+
+The \code{nba_groups} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_groups}.
+}
 \usage{
 load_mbb_group_seasons(..., dbConnection = NULL, tablename = NULL)
 
