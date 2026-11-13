@@ -36,12 +36,12 @@ test_that("loader floors match the first season each release publishes", {
   # 2004-2005 MBB pbp/shots were never published
   expect_error(load_mbb_pbp(seasons = 2004), "Published seasons: 2003, 2006-")
   expect_error(load_mbb_shots(seasons = 2005), "Published seasons: 2003, 2006-")
-  # rosters / player season stats only exist from 2025; officials from 2003 (no
-  # 2010) and game rosters from 2002, as .parquet before 2025
+  # rosters only exist from 2025; player season stats and officials from 2003
+  # (officials skip 2010) and game rosters from 2002
   expect_error(load_mbb_rosters(seasons = 2024), "Published seasons: 2025-")
   expect_error(load_mbb_officials(seasons = 2002), "Published seasons: 2003-2009, 2011-")
   expect_error(load_mbb_officials(seasons = 2010), "Published seasons: 2003-2009, 2011-")
-  expect_error(load_mbb_player_stats(seasons = 2010), "Published seasons: 2025-")
+  expect_error(load_mbb_player_stats(seasons = 2002), "Published seasons: 2003-")
   expect_error(load_nba_rosters(seasons = 2024), "Published seasons: 2025-")
   expect_error(load_mbb_team_stats(seasons = 2002), "Published seasons: 2003-")
   expect_error(load_mbb_standings(seasons = 2002), "Published seasons: 2003-")
@@ -50,7 +50,7 @@ test_that("loader floors match the first season each release publishes", {
   expect_no_error(load_mbb_game_rosters(seasons = 2010))
   expect_no_error(load_mbb_officials(seasons = 2003))
   expect_match(env$urls, "(game_rosters_2010|officials_2003)[.]rds$")
-  # the 2003-2024 seasons are parquet-only: the .rds miss reads the sibling
+  # an .rds miss reads the sibling .parquet
   expect_match(env$parquet, "game_rosters_2010[.]parquet$", all = FALSE)
   expect_match(env$parquet, "officials_2003[.]parquet$", all = FALSE)
   expect_error(load_mbb_game_rosters(seasons = 2001), "Published seasons: 2002-")
@@ -59,10 +59,14 @@ test_that("loader floors match the first season each release publishes", {
   expect_error(load_mbb_pbp(seasons = "2025"))
   expect_error(load_mbb_pbp(seasons = most_recent_mbb_season() + 1))
 
-  # NBA box / schedule / player stats / player core publish back to 1994
+  # NBA box / schedule / player stats / player core / game rosters / officials
+  # publish back to 1994
   env$urls <- NULL
   expect_no_error(load_nba_team_box(seasons = 1994))
   expect_no_error(load_nba_schedule(seasons = 1994))
+  expect_no_error(load_nba_game_rosters(seasons = 1994))
+  expect_no_error(load_nba_officials(seasons = 1994))
+  expect_error(load_nba_officials(seasons = 1993), "Published seasons: 1994-")
   expect_match(env$urls, "_1994[.]rds$")
   expect_error(load_nba_team_box(seasons = 1993), "Published seasons: 1994-")
 
