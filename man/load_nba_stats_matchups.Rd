@@ -5,7 +5,7 @@
 \alias{load_nba_stats_matchups_rollup}
 \title{\strong{Load hoopR NBA Stats player matchups}}
 \source{
-\url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_matchups}
+The \code{nba_stats_matchups} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_matchups}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
 }
 \usage{
 load_nba_stats_matchups(

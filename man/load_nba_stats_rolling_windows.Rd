@@ -4,7 +4,7 @@
 \alias{load_nba_stats_rolling_windows}
 \title{\strong{Load hoopR NBA Stats rolling windows}}
 \source{
-\url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_rolling_windows}
+The \code{nba_stats_rolling_windows} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_rolling_windows}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
 }
 \usage{
 load_nba_stats_rolling_windows(

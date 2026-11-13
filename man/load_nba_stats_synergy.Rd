@@ -4,7 +4,7 @@
 \alias{load_nba_stats_synergy}
 \title{\strong{Load hoopR NBA Stats Synergy play-type stats}}
 \source{
-\url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_synergy}
+The \code{nba_stats_synergy} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_synergy}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
 }
 \usage{
 load_nba_stats_synergy(

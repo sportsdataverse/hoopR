@@ -9,7 +9,7 @@
 \alias{load_nba_stats_draft_combine_nonstationary_shooting}
 \title{\strong{Load hoopR NBA Stats draft combine tables}}
 \source{
-\url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_draft_combine}
+The \code{nba_stats_draft_combine} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_draft_combine}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
 }
 \usage{
 load_nba_stats_draft_combine_stats(

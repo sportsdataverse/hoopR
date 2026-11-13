@@ -784,7 +784,7 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_depthcharts", unit = "athlete per depth-chart slot per snapshot date")
-#' @source <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_depthcharts>
+#' @source The `espn_nba_depthcharts` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_depthcharts>.
 #' @export
 #' @family hoopR Loader Functions
 #' @examples

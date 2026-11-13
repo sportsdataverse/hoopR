@@ -4,7 +4,7 @@
 \alias{load_nba_current_impact}
 \title{\strong{Load NBA current-impact ratings}}
 \source{
-\url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_current_impact}
+The \code{nba_current_impact} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_current_impact}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
 }
 \usage{
 load_nba_current_impact(

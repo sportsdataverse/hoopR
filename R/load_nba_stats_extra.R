@@ -143,7 +143,7 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_synergy", unit = "player per play type per split")
-#' @source <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_synergy>
+#' @source The `nba_stats_synergy` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_synergy>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @seealso The publishing pipeline,
 #'   <https://github.com/sportsdataverse/hoopR-nba-stats-data>, and the Python
 #'   twin `sportsdataverse.nba.load_nba_stats_synergy()`.
@@ -231,7 +231,7 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_hustle_player", unit = "player per season type per per mode (`load_nba_stats_hustle_player()`)")
-#' @source <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_hustle>
+#' @source The `nba_stats_hustle` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_hustle>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @seealso The publishing pipeline,
 #'   <https://github.com/sportsdataverse/hoopR-nba-stats-data>, and the Python
 #'   twins `sportsdataverse.nba.load_nba_stats_hustle_player()` /
@@ -298,7 +298,7 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_matchups", unit = "matchup pair per per mode (`load_nba_stats_matchups()`)")
-#' @source <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_matchups>
+#' @source The `nba_stats_matchups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_matchups>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @seealso The publishing pipeline,
 #'   <https://github.com/sportsdataverse/hoopR-nba-stats-data>, and the Python
 #'   twins `sportsdataverse.nba.load_nba_stats_matchups()` /
@@ -392,7 +392,7 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_draft_combine_stats", unit = "prospect (`load_nba_stats_draft_combine_stats()`)")
-#' @source <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_draft_combine>
+#' @source The `nba_stats_draft_combine` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_draft_combine>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @seealso The publishing pipeline,
 #'   <https://github.com/sportsdataverse/hoopR-nba-stats-data>, the draft
 #'   results in [load_nba_stats_draft()], and the Python twins
@@ -480,7 +480,7 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_game_matchups", unit = "matchup pair per game")
-#' @source <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_game_matchups>
+#' @source The `nba_stats_game_matchups` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_game_matchups>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @seealso The publishing pipeline,
 #'   <https://github.com/sportsdataverse/hoopR-nba-stats-data>, and the Python
 #'   twin `sportsdataverse.nba.load_nba_stats_game_matchups()`.
@@ -522,7 +522,7 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_injury_report", unit = "player per game per report")
-#' @source <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_injury_report>
+#' @source The `nba_stats_injury_report` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_injury_report>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @seealso The publishing pipeline,
 #'   <https://github.com/sportsdataverse/hoopR-nba-stats-data>, and the Python
 #'   twin `sportsdataverse.nba.load_nba_stats_injury_report()`.
@@ -566,7 +566,7 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_metric_curves", unit = "entity per metric per bin")
-#' @source <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_metric_curves>
+#' @source The `nba_stats_metric_curves` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_metric_curves>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @seealso The publishing pipeline,
 #'   <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
@@ -611,7 +611,7 @@ NULL
 #' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
 #' @param tablename The name of the data table within the database
 #' @eval .returns_rd("load_nba_stats_rolling_windows", unit = "entity per metric per window")
-#' @source <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_rolling_windows>
+#' @source The `nba_stats_rolling_windows` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_rolling_windows>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @seealso The publishing pipeline,
 #'   <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export

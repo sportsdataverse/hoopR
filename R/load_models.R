@@ -90,7 +90,7 @@ NULL
 #'   `hoopR-nba-stats-data`'s `nba_model_publish current-impact`); `player_id`
 #'   is the NBA Stats `person_id`. Coverage is 2007 (2006-07) to 2026.
 #' @eval .returns_rd("load_nba_current_impact", unit = "player per as-of date")
-#' @source <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_current_impact>
+#' @source The `nba_current_impact` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_current_impact>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 #' @export
 #' @examples
 #' \donttest{

@@ -4,7 +4,7 @@
 \alias{load_nba_depthcharts}
 \title{\strong{Load hoopR NBA depth charts}}
 \source{
-\url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_depthcharts}
+The \code{espn_nba_depthcharts} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_depthcharts}.
 }
 \usage{
 load_nba_depthcharts(

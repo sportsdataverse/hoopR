@@ -4,7 +4,7 @@
 \alias{load_nba_stats_injury_report}
 \title{\strong{Load hoopR NBA official injury reports}}
 \source{
-\url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_injury_report}
+The \code{nba_stats_injury_report} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_injury_report}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
 }
 \usage{
 load_nba_stats_injury_report(

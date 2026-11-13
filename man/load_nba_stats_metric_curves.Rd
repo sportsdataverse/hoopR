@@ -4,7 +4,7 @@
 \alias{load_nba_stats_metric_curves}
 \title{\strong{Load hoopR NBA Stats metric curves}}
 \source{
-\url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_metric_curves}
+The \code{nba_stats_metric_curves} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_metric_curves}, published by \url{https://github.com/sportsdataverse/hoopR-nba-stats-data}.
 }
 \usage{
 load_nba_stats_metric_curves(
