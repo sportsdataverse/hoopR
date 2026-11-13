@@ -38,7 +38,7 @@ load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 \item{seasons}{A vector of 4-digit seasons, or \code{TRUE} for every published
 season. Accepted seasons are the ones the release publishes: 2002 onward for
 the NBA crosswalks and \code{load_mbb_team_crosswalk()}, 2008 onward for
-\code{load_mbb_schedule_crosswalk()}, 2025 onward for \code{load_mbb_player_crosswalk()};
+\code{load_mbb_schedule_crosswalk()}, 2004 onward for \code{load_mbb_player_crosswalk()};
 the upper bound is \code{\link[=most_recent_nba_season]{most_recent_nba_season()}} / \code{\link[=most_recent_mbb_season]{most_recent_mbb_season()}}. When \code{seasons} is left at
 its default and that season's file is not published yet, the loader reads
 the newest published season instead, with a message. An explicit request
@@ -70,13 +70,53 @@ Returns a tibble of class \code{hoopR_data} with one row per
 MBB team per season. Columns include at minimum \code{season} and
 \code{espn_team_id}.
 
-Returns a tibble of class \code{hoopR_data} with one row per
-MBB game per season. Columns include at minimum \code{season} and
-\code{espn_game_id}.
+A \code{hoopR_data} tibble with one row per MBB game per season (\code{load_mbb_schedule_crosswalk()}).
 
-Returns a tibble of class \code{hoopR_data} with one row per
-MBB player per season. Columns include at minimum \code{season} and
-\code{espn_athlete_id}.
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  season \tab integer \tab Season END year (2026 = 2025-26). \cr
+  game_date \tab Date \tab Game date (US Eastern). \cr
+  home_espn_team_id \tab integer \tab ESPN home team id (\code{NA} on a Torvik-only row). \cr
+  away_espn_team_id \tab integer \tab ESPN away team id (\code{NA} on a Torvik-only row). \cr
+  espn_game_id \tab integer \tab ESPN game id (\code{NA} on a Torvik-only row); integer, like every hoopR ESPN id. \cr
+  bart_muid \tab character \tab Bart Torvik game id (\code{muid}; \code{NA} on an ESPN-only row). \cr
+  bart_team1 \tab character \tab Bart Torvik team1 name (\code{NA} on an ESPN-only row). \cr
+  bart_team2 \tab character \tab Bart Torvik team2 name (\code{NA} on an ESPN-only row). \cr
+  bart_winner \tab character \tab Bart Torvik winner name (\code{NA} on an ESPN-only row). \cr
+  kp_game_id \tab character \tab KenPom game id (\code{NA} when unmatched). \cr
+  fox_game_id \tab character \tab Fox Sports game id (\code{NA} when unmatched). \cr
+  yahoo_game_id \tab character \tab Yahoo game id (\code{NA} when unmatched). \cr
+  ncaa_contest_id \tab character \tab stats.ncaa.org contest id, the \code{contest_id} of the \code{load_ncaa_mbb_*()} loaders (character there and here; \code{NA} when unmatched, and on every row before the 2010 season, where the release has no stats.ncaa.org ids). \cr
+  match_method \tab character \tab Which sides the row joins: \code{both} (ESPN and Torvik), \code{espn_only} or \code{bart_only}. \cr
+  match_confidence \tab numeric \tab 1 for an ESPN-Torvik match, \code{NA} otherwise. \cr
+}}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_mbb_schedule_crosswalk")} for the column table.}
+
+A \code{hoopR_data} tibble with one row per MBB player per season (\code{load_mbb_player_crosswalk()}).
+
+\if{html}{\tabular{lll}{
+  col_name \tab types \tab description \cr
+  season \tab integer \tab Season END year (2026 = 2025-26). \cr
+  espn_team_id \tab integer \tab ESPN team id (the key). \cr
+  team_abbreviation \tab character \tab ESPN team abbreviation. \cr
+  player_name \tab character \tab Normalized player name (the matching key). \cr
+  espn_athlete_id \tab integer \tab ESPN athlete id; integer, like every hoopR ESPN id. \cr
+  espn_full_name \tab character \tab ESPN full name. \cr
+  espn_jersey \tab character \tab ESPN jersey number. \cr
+  espn_position \tab character \tab ESPN position abbreviation. \cr
+  fox_athlete_id \tab character \tab Fox Sports athlete id (\code{NA} when unmatched; Fox has no rosters for the oldest seasons). \cr
+  fox_player \tab character \tab Fox Sports player name (\code{NA} when unmatched). \cr
+  fox_jersey \tab character \tab Fox Sports jersey number (\code{NA} when unmatched). \cr
+  fox_position_group \tab character \tab Fox Sports position group label (\code{NA} when unmatched). \cr
+  yahoo_player_id \tab character \tab Yahoo player id (\code{NA} when unmatched). \cr
+  yahoo_player_name \tab character \tab Yahoo player name (\code{NA} when unmatched). \cr
+  kp_player_id \tab character \tab KenPom player id (\code{NA} when unmatched). \cr
+  ncaa_player_id \tab character \tab stats.ncaa.org player id, the \code{player_id} of the \code{load_ncaa_mbb_*()} loaders (character there and here; \code{NA} when unmatched, and on every row before the 2010 season, where the release has no stats.ncaa.org ids). \cr
+  match_method \tab character \tab How the Fox player was matched: \code{exact_name}, \code{fuzzy_jw} (Jaro-Winkler) or \code{unmatched}. \cr
+  match_confidence \tab numeric \tab Jaro-Winkler score, or 1 for an exact match (\code{NA} when unmatched). \cr
+  match_keys \tab character \tab Reserved; \code{NA}. \cr
+}}
+\if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_mbb_player_crosswalk")} for the column table.}
 }
 \description{
 Loads a pre-built per-season NBA team crosswalk that maps ESPN
@@ -100,14 +140,17 @@ and canonical abbreviations. The files are versioned \code{.rds} snapshots store
 in the \code{mbb_crosswalk} release of the sportsdataverse-data repository.
 
 Loads a pre-built per-season MBB schedule crosswalk that links
-ESPN game identifiers to Bart Torvik game identifiers. The files are versioned
+ESPN game identifiers to Bart Torvik, KenPom, Fox Sports, Yahoo and
+stats.ncaa.org (\code{ncaa_contest_id}) game identifiers. The files are versioned
 \code{.rds} snapshots stored in the \code{mbb_crosswalk} release of the
 sportsdataverse-data repository.
 
 Loads a pre-built per-season MBB player crosswalk that maps ESPN
-athlete identifiers to Fox Sports (Bifrost) player identifiers. The files are
+athlete identifiers to Fox Sports (Bifrost), Yahoo, KenPom and
+stats.ncaa.org (\code{ncaa_player_id}) player identifiers. The files are
 versioned \code{.rds} snapshots stored in the \code{mbb_crosswalk} release of the
-sportsdataverse-data repository.
+sportsdataverse-data repository. Seasons before Fox's rosters (the 2000s)
+carry the ESPN players with the provider columns \code{NA}.
 }
 \examples{
 \donttest{

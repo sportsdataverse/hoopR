@@ -345,6 +345,15 @@
   stay integer as published. wehoop ships the WBB twins
   (`load_wbb_ncaa_espn_*()`).
 
+* `load_mbb_player_crosswalk()` accepts seasons from 2004 (it started at
+  2025), now that the `mbb_crosswalk` release carries the 2004-2024 player
+  crosswalks. The MBB schedule and player crosswalks gain stats.ncaa.org ids,
+  `ncaa_contest_id` (after the other providers' game ids) and `ncaa_player_id`
+  (after `kp_player_id`), so `load_ncaa_mbb_*()` rows join to the ESPN ids
+  through them. Both stay character, like the `contest_id` / `player_id` of
+  the `load_ncaa_mbb_*()` loaders. The two loaders' help pages now list
+  their columns.
+
 * `mbb_schedule_crosswalk(include_kenpom = TRUE)` no longer aborts on KenPom's
   numeric `game_date` (`20201128`): the date now parses as `YYYYMMDD`, and each
   team's KenPom schedule is fetched inside its own error handler.
@@ -448,7 +457,7 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   the seasons its sportsdataverse-data release tag publishes, and its error lists them.
   `load_mbb_pbp()` accepts the published 2003 season (it stopped at 2006) and, like
   `load_mbb_shots()`, rejects the unpublished 2004-2005. `load_mbb_rosters()`,
-  `load_nba_rosters()` and `load_mbb_player_crosswalk()` start at 2025,
+  `load_nba_rosters()` start at 2025, `load_mbb_player_crosswalk()` at 2004,
   `load_mbb_player_stats()` and `load_mbb_officials()` at 2003, `load_mbb_team_stats()` and
   `load_mbb_standings()` at 2003, `load_mbb_schedule_crosswalk()` at 2008, and
   `load_mbb_game_rosters()` takes 2002 onward; before, `seasons = TRUE` asked
@@ -544,7 +553,7 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   each query parameter the `nba_*()` stats.nba.com wrappers send, with its API name,
   description, accepted values, default and the functions that take it (#248).
 * New dataset `return_columns` and article "Return Columns": one row per column of every
-  data frame 979 hoopR functions return (function, list element, column name, type and
+  data frame 981 hoopR functions return (function, list element, column name, type and
   description), searchable on the site; `subset(return_columns, fn == "nba_pbp")` gives
   one function's columns in R. The NBA and men's college basketball functions (`load_nba_*`,
   `load_mbb_*`, `espn_nba_*`, `espn_mbb_*`, `nba_*`) keep their column tables in the help

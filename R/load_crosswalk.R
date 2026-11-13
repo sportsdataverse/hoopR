@@ -70,7 +70,7 @@ NULL
 #' @param seasons A vector of 4-digit seasons, or `TRUE` for every published
 #'   season. Accepted seasons are the ones the release publishes: 2002 onward for
 #'   the NBA crosswalks and `load_mbb_team_crosswalk()`, 2008 onward for
-#'   `load_mbb_schedule_crosswalk()`, 2025 onward for `load_mbb_player_crosswalk()`;
+#'   `load_mbb_schedule_crosswalk()`, 2004 onward for `load_mbb_player_crosswalk()`;
 #'   the upper bound is [most_recent_nba_season()] / [most_recent_mbb_season()]. When `seasons` is left at
 #'   its default and that season's file is not published yet, the loader reads
 #'   the newest published season instead, with a message. An explicit request
@@ -169,12 +169,11 @@ load_mbb_team_crosswalk <- function(seasons = most_recent_mbb_season()) {
 #' **Load cached MBB schedule crosswalk from the data repo**
 #' @rdname load_nba_team_crosswalk
 #' @description Loads a pre-built per-season MBB schedule crosswalk that links
-#' ESPN game identifiers to Bart Torvik game identifiers. The files are versioned
+#' ESPN game identifiers to Bart Torvik, KenPom, Fox Sports, Yahoo and
+#' stats.ncaa.org (`ncaa_contest_id`) game identifiers. The files are versioned
 #' `.rds` snapshots stored in the `mbb_crosswalk` release of the
 #' sportsdataverse-data repository.
-#' @return Returns a tibble of class \code{hoopR_data} with one row per
-#'   MBB game per season. Columns include at minimum \code{season} and
-#'   \code{espn_game_id}.
+#' @eval .returns_rd("load_mbb_schedule_crosswalk", unit = "MBB game per season (`load_mbb_schedule_crosswalk()`)")
 #' @source The `mbb_crosswalk` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk>.
 #' @export
 #' @family MBB Crosswalk Functions
@@ -191,12 +190,12 @@ load_mbb_schedule_crosswalk <- function(seasons = most_recent_mbb_season()) {
 #' **Load cached MBB player crosswalk from the data repo**
 #' @rdname load_nba_team_crosswalk
 #' @description Loads a pre-built per-season MBB player crosswalk that maps ESPN
-#' athlete identifiers to Fox Sports (Bifrost) player identifiers. The files are
+#' athlete identifiers to Fox Sports (Bifrost), Yahoo, KenPom and
+#' stats.ncaa.org (`ncaa_player_id`) player identifiers. The files are
 #' versioned `.rds` snapshots stored in the `mbb_crosswalk` release of the
-#' sportsdataverse-data repository.
-#' @return Returns a tibble of class \code{hoopR_data} with one row per
-#'   MBB player per season. Columns include at minimum \code{season} and
-#'   \code{espn_athlete_id}.
+#' sportsdataverse-data repository. Seasons before Fox's rosters (the 2000s)
+#' carry the ESPN players with the provider columns `NA`.
+#' @eval .returns_rd("load_mbb_player_crosswalk", unit = "MBB player per season (`load_mbb_player_crosswalk()`)")
 #' @source The `mbb_crosswalk` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk>.
 #' @export
 #' @family MBB Crosswalk Functions
@@ -205,7 +204,7 @@ load_mbb_schedule_crosswalk <- function(seasons = most_recent_mbb_season()) {
 #' load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #' }
 load_mbb_player_crosswalk <- function(seasons = most_recent_mbb_season()) {
-  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_player_crosswalk", first = 2025, last = most_recent_mbb_season(), default = missing(seasons))
+  .load_nba_crosswalk(seasons, tag = "mbb_crosswalk", prefix = "mbb_player_crosswalk", first = 2004, last = most_recent_mbb_season(), default = missing(seasons))
 }
 
 
