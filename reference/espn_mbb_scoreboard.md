@@ -116,17 +116,17 @@ lists every function in this family.
 # Get schedule from date 2022-11-17
 # \donttest{
 try(espn_mbb_scoreboard(season = "20221117"))
-#> ✖ 2026-11-13 18:53:55.501671: Invalid arguments or no scoreboard data for 20221117 available!
+#> ✖ 2026-11-13 21:12:25.998076: Invalid arguments or no scoreboard data for 20221117 available!
 #> ✖ Args: group = "56", season_dates = "20221117"
 #> ✖ Error: Can't select columns that don't exist. ✖ Column `competitions` doesn't exist.
-#> ✖ 2026-11-13 18:53:55.741591: Invalid arguments or no scoreboard data for 20221117 available!
+#> ✖ 2026-11-13 21:12:26.228707: Invalid arguments or no scoreboard data for 20221117 available!
 #> ✖ Args: group = "55", season_dates = "20221117"
 #> ✖ Error: Can't select columns that don't exist. ✖ Column `competitions` doesn't exist.
-#> ✖ 2026-11-13 18:53:56.293979: Invalid arguments or no scoreboard data for 20221117 available!
+#> ✖ 2026-11-13 21:12:26.596559: Invalid arguments or no scoreboard data for 20221117 available!
 #> ✖ Args: group = "100", season_dates = "20221117"
 #> ✖ Error: Can't select columns that don't exist. ✖ Column `competitions` doesn't exist.
 #> ── ESPN MBB Scoreboard Information from ESPN.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:53:56 UTC
+#> ℹ Data updated: 2026-11-13 21:12:26 UTC
 #> # A tibble: 50 × 36
 #>    matchup         matchup_short season season_type season_slug game_id game_uid
 #>    <chr>           <chr>          <int>       <int> <chr>         <int> <chr>   
@@ -153,7 +153,7 @@ try(espn_mbb_scoreboard(season = "20221117"))
 # \donttest{
 try(espn_nba_scoreboard(season = 20230423))
 #> ── ESPN NBA Scoreboard Information from ESPN.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:53:56 UTC
+#> ℹ Data updated: 2026-11-13 21:12:26 UTC
 #> # A tibble: 4 × 37
 #>   matchup          matchup_short season season_type season_slug game_id game_uid
 #>   <chr>            <chr>          <int>       <int> <chr>         <int> <chr>   

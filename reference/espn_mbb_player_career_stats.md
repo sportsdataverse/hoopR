@@ -116,7 +116,7 @@ Saiem Gilani
   # LeBron James - regular + postseason combined
   espn_mbb_player_career_stats(athlete_id = 4593919)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Career Stats ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:53:43 UTC
+#> ℹ Data updated: 2026-11-13 21:12:15 UTC
 #> # A tibble: 87 × 17
 #>    league   athlete_id stat_type_id split_id split_name split_type category_name
 #>    <chr>    <chr>      <chr>        <chr>    <chr>      <chr>      <chr>        
@@ -138,7 +138,7 @@ Saiem Gilani
   # Just career aggregate
   espn_mbb_player_career_stats(athlete_id = 4593919, stat_type = 2L)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Athlete Career Stats ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:53:43 UTC
+#> ℹ Data updated: 2026-11-13 21:12:15 UTC
 #> # A tibble: 0 × 17
 #> # ℹ 17 variables: league <chr>, athlete_id <chr>, stat_type_id <chr>,
 #> #   split_id <chr>, split_name <chr>, split_type <chr>, category_name <chr>,
@@ -150,7 +150,7 @@ Saiem Gilani
   # LeBron James - regular + postseason combined
   espn_nba_player_career_stats(athlete_id = 1966)
 #> ── ESPN NBA Athlete Career Stats ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:53:43 UTC
+#> ℹ Data updated: 2026-11-13 21:12:16 UTC
 #> # A tibble: 114 × 17
 #>    league athlete_id stat_type_id split_id split_name split_type category_name
 #>    <chr>  <chr>      <chr>        <chr>    <chr>      <chr>      <chr>        
@@ -172,7 +172,7 @@ Saiem Gilani
   # Just career aggregate
   espn_nba_player_career_stats(athlete_id = 1966, stat_type = 2L)
 #> ── ESPN NBA Athlete Career Stats ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:53:44 UTC
+#> ℹ Data updated: 2026-11-13 21:12:16 UTC
 #> # A tibble: 0 × 17
 #> # ℹ 17 variables: league <chr>, athlete_id <chr>, stat_type_id <chr>,
 #> #   split_id <chr>, split_name <chr>, split_type <chr>, category_name <chr>,

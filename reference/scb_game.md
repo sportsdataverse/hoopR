@@ -52,7 +52,7 @@ lists every function in this family.
 # \donttest{
   try(scb_game(game_id = "2006920"))
 #> ── BBL/DBBL Game from the SCB API ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:58:37 UTC
+#> ℹ Data updated: 2026-11-13 21:16:57 UTC
 #> # A tibble: 1 × 91
 #>   league season season_id game_id competition stage      status   stat_status
 #>   <chr>   <int>     <int> <chr>   <chr>       <chr>      <chr>    <chr>      

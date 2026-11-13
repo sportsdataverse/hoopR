@@ -36,7 +36,7 @@ article.
 # \donttest{
   try(rotowire_injuries())
 #> ── NBA injury report from rotowire.com ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:58:34 UTC
+#> ℹ Data updated: 2026-11-13 21:16:53 UTC
 #> # A tibble: 5 × 10
 #>   player_id player first_name last_name team  position injury status return_date
 #>   <chr>     <chr>  <chr>      <chr>     <chr> <chr>    <chr>  <chr>  <chr>      

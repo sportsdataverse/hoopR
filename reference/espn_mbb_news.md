@@ -83,7 +83,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:53:42 UTC
+#> ℹ Data updated: 2026-11-13 21:12:14 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -96,14 +96,14 @@ Saiem Gilani
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:53:42 UTC
+#> ℹ Data updated: 2026-11-13 21:12:15 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.05e7 Head… Ex-lott… Three-poin… 2026-11-… FALSE   Jamal… https:/… 46       
-#> 2  5.05e7 Head… Prosecu… A co-defen… 2026-11-… FALSE   David… https:/… 46       
-#> 3  5.05e7 Story Fantasy… Andre Snel… 2026-11-… FALSE   Andre… https:/… 3090     
-#> 4  5.05e7 Media Stephen… Stephen A.… 2026-11-… FALSE   NA     https:/… 46       
-#> 5  5.00e7 Story NBA buz… The NBA is… 2026-11-… FALSE   ESPN … https:/… 46       
+#> 1  5.05e7 Media Shams: … Shams: Dej… 2026-11-… FALSE   NA     https:/… 46       
+#> 2  5.05e7 Story Fantasy… Andre expl… 2026-11-… FALSE   Andre… https:/… 3090     
+#> 3  5.00e7 Story NBA buz… The NBA is… 2026-11-… FALSE   ESPN … https:/… 46       
+#> 4  5.05e7 Head… Sources… Pelicans g… 2026-11-… FALSE   NA     https:/… 46       
+#> 5  5.05e7 Head… Ex-lott… Three-poin… 2026-11-… FALSE   Jamal… https:/… 46       
 # }
 ```

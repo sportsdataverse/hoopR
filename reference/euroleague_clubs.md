@@ -58,7 +58,7 @@ lists every function in this family.
     euroleague_clubs(competition_code = "E", season_code = "E2025")
   })
 #> ── EuroLeague clubs from api-live.euroleague.net ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:54:30 UTC
+#> ℹ Data updated: 2026-11-13 21:12:55 UTC
 #> # A tibble: 20 × 20
 #>    code  name         abbreviated_name editorial_name tv_code is_virtual sponsor
 #>    <chr> <chr>        <chr>            <chr>          <chr>   <lgl>      <chr>  

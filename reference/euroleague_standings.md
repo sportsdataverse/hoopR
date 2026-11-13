@@ -87,7 +87,7 @@ lists every function in this family.
     euroleague_standings(competition_code = "E", season_code = "E2025", round = 1, kind = "streaks")
   })
 #> ── EuroLeague standings streaks from api-live.euroleague.net ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:54:37 UTC
+#> ℹ Data updated: 2026-11-13 21:13:02 UTC
 #> # A tibble: 20 × 23
 #>    position position_change games_played games_won games_lost qualified
 #>       <int> <chr>                  <int>     <int>      <int> <lgl>    

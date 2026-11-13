@@ -95,7 +95,7 @@ lists every function in this family.
     shots[shots$id_action != "FTM", c("team", "id_action", "coord_x", "coord_y", "zone")]
   })
 #> ── EuroLeague game points (shot chart) from live.euroleague.net ────────────────
-#> ℹ Data updated: 2026-11-13 18:54:33 UTC
+#> ℹ Data updated: 2026-11-13 21:12:58 UTC
 #> # A tibble: 131 × 5
 #>    team  id_action coord_x coord_y zone 
 #>    <chr> <chr>       <int>   <int> <chr>

@@ -51,7 +51,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gdap_rounds(comp = 208182))
 #> ── FIBA gdap_rounds from fiba.basketball ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:55:08 UTC
+#> ℹ Data updated: 2026-11-13 21:13:35 UTC
 #> # A tibble: 10 × 18
 #>    game_system game_system_code parent_round_id round_code round_id round_name  
 #>    <chr>       <chr>                      <int> <chr>         <int> <chr>       

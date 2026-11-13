@@ -81,7 +81,7 @@ lists every function in this family.
 # \donttest{
   try(acb_round_matches(round_id = 6017, season = 2027))
 #> ── ACB Round Matches from api2.acb.com ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:51:43 UTC
+#> ℹ Data updated: 2026-11-13 21:10:19 UTC
 #> # A tibble: 9 × 25
 #>   competition_id edition_id season round_id round_number subphase_id
 #>            <int>      <int>  <int>    <int>        <int>       <int>

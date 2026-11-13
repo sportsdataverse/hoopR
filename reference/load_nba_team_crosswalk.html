@@ -16,13 +16,16 @@ team identifiers to Fox Sports (Bifrost), Bart Torvik, and KenPom identifiers
 and canonical abbreviations. The files are versioned .rds snapshots stored
 in the mbb_crosswalk release of the sportsdataverse-data repository.
 Loads a pre-built per-season MBB schedule crosswalk that links
-ESPN game identifiers to Bart Torvik game identifiers. The files are versioned
+ESPN game identifiers to Bart Torvik, KenPom, Fox Sports, Yahoo and
+stats.ncaa.org (ncaa_contest_id) game identifiers. The files are versioned
 .rds snapshots stored in the mbb_crosswalk release of the
 sportsdataverse-data repository.
 Loads a pre-built per-season MBB player crosswalk that maps ESPN
-athlete identifiers to Fox Sports (Bifrost) player identifiers. The files are
+athlete identifiers to Fox Sports (Bifrost), Yahoo, KenPom and
+stats.ncaa.org (ncaa_player_id) player identifiers. The files are
 versioned .rds snapshots stored in the mbb_crosswalk release of the
-sportsdataverse-data repository."><meta property="og:description" content="Loads a pre-built per-season NBA team crosswalk that maps ESPN
+sportsdataverse-data repository. Seasons before Fox's rosters (the 2000s)
+carry the ESPN players with the provider columns NA."><meta property="og:description" content="Loads a pre-built per-season NBA team crosswalk that maps ESPN
 team identifiers to NBA.com identifiers and canonical abbreviations. The
 files are versioned .rds snapshots stored in the nba_crosswalk release
 of the sportsdataverse-data repository.
@@ -39,13 +42,16 @@ team identifiers to Fox Sports (Bifrost), Bart Torvik, and KenPom identifiers
 and canonical abbreviations. The files are versioned .rds snapshots stored
 in the mbb_crosswalk release of the sportsdataverse-data repository.
 Loads a pre-built per-season MBB schedule crosswalk that links
-ESPN game identifiers to Bart Torvik game identifiers. The files are versioned
+ESPN game identifiers to Bart Torvik, KenPom, Fox Sports, Yahoo and
+stats.ncaa.org (ncaa_contest_id) game identifiers. The files are versioned
 .rds snapshots stored in the mbb_crosswalk release of the
 sportsdataverse-data repository.
 Loads a pre-built per-season MBB player crosswalk that maps ESPN
-athlete identifiers to Fox Sports (Bifrost) player identifiers. The files are
+athlete identifiers to Fox Sports (Bifrost), Yahoo, KenPom and
+stats.ncaa.org (ncaa_player_id) player identifiers. The files are
 versioned .rds snapshots stored in the mbb_crosswalk release of the
-sportsdataverse-data repository."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
+sportsdataverse-data repository. Seasons before Fox's rosters (the 2000s)
+carry the ESPN players with the provider columns NA."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
   window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
   plausible.init()
 </script></head><body>
@@ -181,13 +187,16 @@ team identifiers to Fox Sports (Bifrost), Bart Torvik, and KenPom identifiers
 and canonical abbreviations. The files are versioned <code>.rds</code> snapshots stored
 in the <code>mbb_crosswalk</code> release of the sportsdataverse-data repository.</p>
 <p>Loads a pre-built per-season MBB schedule crosswalk that links
-ESPN game identifiers to Bart Torvik game identifiers. The files are versioned
+ESPN game identifiers to Bart Torvik, KenPom, Fox Sports, Yahoo and
+stats.ncaa.org (<code>ncaa_contest_id</code>) game identifiers. The files are versioned
 <code>.rds</code> snapshots stored in the <code>mbb_crosswalk</code> release of the
 sportsdataverse-data repository.</p>
 <p>Loads a pre-built per-season MBB player crosswalk that maps ESPN
-athlete identifiers to Fox Sports (Bifrost) player identifiers. The files are
+athlete identifiers to Fox Sports (Bifrost), Yahoo, KenPom and
+stats.ncaa.org (<code>ncaa_player_id</code>) player identifiers. The files are
 versioned <code>.rds</code> snapshots stored in the <code>mbb_crosswalk</code> release of the
-sportsdataverse-data repository.</p>
+sportsdataverse-data repository. Seasons before Fox's rosters (the 2000s)
+carry the ESPN players with the provider columns <code>NA</code>.</p>
     </div>
 
     <div class="section level2">
@@ -222,7 +231,7 @@ sportsdataverse-data repository.</p>
 <dd><p>A vector of 4-digit seasons, or <code>TRUE</code> for every published
 season. Accepted seasons are the ones the release publishes: 2002 onward for
 the NBA crosswalks and <code>load_mbb_team_crosswalk()</code>, 2008 onward for
-<code>load_mbb_schedule_crosswalk()</code>, 2025 onward for <code>load_mbb_player_crosswalk()</code>;
+<code>load_mbb_schedule_crosswalk()</code>, 2004 onward for <code>load_mbb_player_crosswalk()</code>;
 the upper bound is <code><a href="most_recent_nba_season.html">most_recent_nba_season()</a></code> / <code><a href="most_recent_mbb_season.html">most_recent_mbb_season()</a></code>. When <code>seasons</code> is left at
 its default and that season's file is not published yet, the loader reads
 the newest published season instead, with a message. An explicit request
@@ -252,13 +261,9 @@ NBA player per season. Columns include at minimum <code>season</code>,
 <p>Returns a tibble of class <code>hoopR_data</code> with one row per
 MBB team per season. Columns include at minimum <code>season</code> and
 <code>espn_team_id</code>.</p>
-<p>Returns a tibble of class <code>hoopR_data</code> with one row per
-MBB game per season. Columns include at minimum <code>season</code> and
-<code>espn_game_id</code>.</p>
-<p>Returns a tibble of class <code>hoopR_data</code> with one row per
-MBB player per season. Columns include at minimum <code>season</code> and
-<code>espn_athlete_id</code>.</p>
-    </div>
+<p>A <code>hoopR_data</code> tibble with one row per MBB game per season (<code>load_mbb_schedule_crosswalk()</code>).</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26).</td></tr><tr><td>game_date</td><td>Date</td><td>Game date (US Eastern).</td></tr><tr><td>home_espn_team_id</td><td>integer</td><td>ESPN home team id (<code>NA</code> on a Torvik-only row).</td></tr><tr><td>away_espn_team_id</td><td>integer</td><td>ESPN away team id (<code>NA</code> on a Torvik-only row).</td></tr><tr><td>espn_game_id</td><td>integer</td><td>ESPN game id (<code>NA</code> on a Torvik-only row); integer, like every hoopR ESPN id.</td></tr><tr><td>bart_muid</td><td>character</td><td>Bart Torvik game id (<code>muid</code>; <code>NA</code> on an ESPN-only row).</td></tr><tr><td>bart_team1</td><td>character</td><td>Bart Torvik team1 name (<code>NA</code> on an ESPN-only row).</td></tr><tr><td>bart_team2</td><td>character</td><td>Bart Torvik team2 name (<code>NA</code> on an ESPN-only row).</td></tr><tr><td>bart_winner</td><td>character</td><td>Bart Torvik winner name (<code>NA</code> on an ESPN-only row).</td></tr><tr><td>kp_game_id</td><td>character</td><td>KenPom game id (<code>NA</code> when unmatched).</td></tr><tr><td>fox_game_id</td><td>character</td><td>Fox Sports game id (<code>NA</code> when unmatched).</td></tr><tr><td>yahoo_game_id</td><td>character</td><td>Yahoo game id (<code>NA</code> when unmatched).</td></tr><tr><td>ncaa_contest_id</td><td>character</td><td>stats.ncaa.org contest id, the <code>contest_id</code> of the <code>load_ncaa_mbb_*()</code> loaders (character there and here; <code>NA</code> when unmatched, and on every row before the 2010 season, where the release has no stats.ncaa.org ids).</td></tr><tr><td>match_method</td><td>character</td><td>Which sides the row joins: <code>both</code> (ESPN and Torvik), <code>espn_only</code> or <code>bart_only</code>.</td></tr><tr><td>match_confidence</td><td>numeric</td><td>1 for an ESPN-Torvik match, <code>NA</code> otherwise.</td></tr></table><p>A <code>hoopR_data</code> tibble with one row per MBB player per season (<code>load_mbb_player_crosswalk()</code>).</p>
+<p></p><table class="table table"><tr><td>col_name</td><td>types</td><td>description</td></tr><tr><td>season</td><td>integer</td><td>Season END year (2026 = 2025-26).</td></tr><tr><td>espn_team_id</td><td>integer</td><td>ESPN team id (the key).</td></tr><tr><td>team_abbreviation</td><td>character</td><td>ESPN team abbreviation.</td></tr><tr><td>player_name</td><td>character</td><td>Normalized player name (the matching key).</td></tr><tr><td>espn_athlete_id</td><td>integer</td><td>ESPN athlete id; integer, like every hoopR ESPN id.</td></tr><tr><td>espn_full_name</td><td>character</td><td>ESPN full name.</td></tr><tr><td>espn_jersey</td><td>character</td><td>ESPN jersey number.</td></tr><tr><td>espn_position</td><td>character</td><td>ESPN position abbreviation.</td></tr><tr><td>fox_athlete_id</td><td>character</td><td>Fox Sports athlete id (<code>NA</code> when unmatched; Fox has no rosters for the oldest seasons).</td></tr><tr><td>fox_player</td><td>character</td><td>Fox Sports player name (<code>NA</code> when unmatched).</td></tr><tr><td>fox_jersey</td><td>character</td><td>Fox Sports jersey number (<code>NA</code> when unmatched).</td></tr><tr><td>fox_position_group</td><td>character</td><td>Fox Sports position group label (<code>NA</code> when unmatched).</td></tr><tr><td>yahoo_player_id</td><td>character</td><td>Yahoo player id (<code>NA</code> when unmatched).</td></tr><tr><td>yahoo_player_name</td><td>character</td><td>Yahoo player name (<code>NA</code> when unmatched).</td></tr><tr><td>kp_player_id</td><td>character</td><td>KenPom player id (<code>NA</code> when unmatched).</td></tr><tr><td>ncaa_player_id</td><td>character</td><td>stats.ncaa.org player id, the <code>player_id</code> of the <code>load_ncaa_mbb_*()</code> loaders (character there and here; <code>NA</code> when unmatched, and on every row before the 2010 season, where the release has no stats.ncaa.org ids).</td></tr><tr><td>match_method</td><td>character</td><td>How the Fox player was matched: <code>exact_name</code>, <code>fuzzy_jw</code> (Jaro-Winkler) or <code>unmatched</code>.</td></tr><tr><td>match_confidence</td><td>numeric</td><td>Jaro-Winkler score, or 1 for an exact match (<code>NA</code> when unmatched).</td></tr><tr><td>match_keys</td><td>character</td><td>Reserved; <code>NA</code>.</td></tr></table></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other NBA Crosswalk Functions:
@@ -375,8 +380,8 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_mbb_schedule_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB schedule crosswalk (ESPN / Torvik) ─────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-13 13:04:19 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6,121 × 14</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-13 20:13:05 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6,121 × 15</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season game_date  home_espn_team_id away_espn_team_id espn_game_id bart_muid </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">2</span>027 2026-11-01               222                87    401<span style="text-decoration: underline;">920</span>982 Notre Dam…</span>
@@ -390,15 +395,15 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">2</span>027 2026-11-02               251              <span style="text-decoration: underline;">2</span>130    401<span style="text-decoration: underline;">906</span>863 Chicago S…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>027 2026-11-02               248              <span style="text-decoration: underline;">2</span>325    401<span style="text-decoration: underline;">925</span>811 La SalleH…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 6,111 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 8 more variables: bart_team1 &lt;chr&gt;, bart_team2 &lt;chr&gt;, bart_winner &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 9 more variables: bart_team1 &lt;chr&gt;, bart_team2 &lt;chr&gt;, bart_winner &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   kp_game_id &lt;chr&gt;, fox_game_id &lt;chr&gt;, yahoo_game_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   match_method &lt;chr&gt;, match_confidence &lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ncaa_contest_id &lt;chr&gt;, match_method &lt;chr&gt;, match_confidence &lt;dbl&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_mbb_player_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_mbb_season.html">most_recent_mbb_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── MBB player crosswalk (ESPN / Fox) ──────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-13 17:59:15 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5,568 × 18</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-13 20:46:14 UTC</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5,569 × 19</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season espn_team_id team_abbreviation player_name        espn_athlete_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">2</span>027         <span style="text-decoration: underline;">2</span>000 ACU               evan boisdur               5<span style="text-decoration: underline;">313</span>910</span>
@@ -411,12 +416,12 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">2</span>027         <span style="text-decoration: underline;">2</span>000 ACU               isaiah neyhart             5<span style="text-decoration: underline;">314</span>819</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">2</span>027         <span style="text-decoration: underline;">2</span>000 ACU               timeo pons                 5<span style="text-decoration: underline;">315</span>586</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>027         <span style="text-decoration: underline;">2</span>000 ACU               yaniel rivera              5<span style="text-decoration: underline;">177</span>702</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5,558 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 13 more variables: espn_full_name &lt;chr&gt;, espn_jersey &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 5,559 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 14 more variables: espn_full_name &lt;chr&gt;, espn_jersey &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   espn_position &lt;chr&gt;, fox_athlete_id &lt;chr&gt;, fox_player &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fox_jersey &lt;chr&gt;, fox_position_group &lt;chr&gt;, yahoo_player_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   yahoo_player_name &lt;chr&gt;, kp_player_id &lt;chr&gt;, match_method &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   match_confidence &lt;dbl&gt;, match_keys &lt;chr&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   yahoo_player_name &lt;chr&gt;, kp_player_id &lt;chr&gt;, ncaa_player_id &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   match_method &lt;chr&gt;, match_confidence &lt;dbl&gt;, match_keys &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

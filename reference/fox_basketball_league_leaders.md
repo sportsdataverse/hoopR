@@ -53,7 +53,7 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_league_leaders("scoring"))
 #> ── Fox Sports NBA league_leaders ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:55:14 UTC
+#> ℹ Data updated: 2026-11-13 21:13:40 UTC
 #> # A tibble: 75 × 6
 #>    players v2                gp    entity_id min   mpg  
 #>    <chr>   <chr>             <chr> <chr>     <chr> <chr>

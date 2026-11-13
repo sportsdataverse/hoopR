@@ -39,7 +39,7 @@ lists every function in this family.
 # \donttest{
   try(cba_match_types())
 #> ── CBA Match Types from data-server.cbaleague.com ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:52:25 UTC
+#> ℹ Data updated: 2026-11-13 21:11:03 UTC
 #> # A tibble: 5 × 3
 #>   is_default key    value
 #>        <int> <chr>  <chr>

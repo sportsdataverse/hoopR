@@ -53,7 +53,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_team(team_id = 2650))
 #> ── VTB Infobasket Team from org.infobasket.su ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 19:00:11 UTC
+#> ℹ Data updated: 2026-11-13 21:19:01 UTC
 #> # A tibble: 1 × 16
 #>   team_id team_type team_name_ru     team_name_en    team_short_name_ru
 #>     <int>     <int> <chr>            <chr>           <chr>             

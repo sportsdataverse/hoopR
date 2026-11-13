@@ -52,7 +52,7 @@ lists every function in this family.
 # \donttest{
   try(scb_games_recent())
 #> ── BBL/DBBL Recent Games from the SCB API ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:58:42 UTC
+#> ℹ Data updated: 2026-11-13 21:17:02 UTC
 #> # A tibble: 27 × 91
 #>    league season season_id game_id competition stage status bucket game_progress
 #>    <chr>   <int>     <int> <chr>   <chr>       <chr> <chr>  <chr>  <chr>        
@@ -65,7 +65,7 @@ lists every function in this family.
 #>  7 bbl      2027      2026 2006863 BBL         MAIN… OFFIC… past   E            
 #>  8 bbl      2027      2026 2006862 BBL         MAIN… OFFIC… past   E            
 #>  9 bbl      2027      2026 2006864 BBL         MAIN… OFFIC… past   E            
-#> 10 bbl      2027      2026 2006847 BBL         MAIN… PRE    prese… NA           
+#> 10 bbl      2027      2026 2006847 BBL         MAIN… OFFIC… prese… E            
 #> # ℹ 17 more rows
 #> # ℹ 82 more variables: scheduled_time <chr>, match_day <int>, is_tbd <lgl>,
 #> #   is_hidden <lgl>, home_team_id <chr>, home_season_team_id <chr>,

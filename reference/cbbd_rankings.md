@@ -58,7 +58,7 @@ article.
 ``` r
 # \donttest{
   try(cbbd_rankings(season = 2024, poll_type = "ap"))
-#> ✖ 2026-11-13 18:52:38.797444: Invalid arguments or no rankings data available!
+#> ✖ 2026-11-13 21:11:17.708887: Invalid arguments or no rankings data available!
 #> ✖ Args: season = 2024, season_type = NULL, week = NULL, poll_type = "ap", team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

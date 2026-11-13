@@ -83,7 +83,7 @@ Other hoopR Loader Functions:
 # \donttest{
   try(load_nba_depthcharts(seasons = most_recent_nba_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 64,878 × 18
+#> # A tibble: 65,887 × 18
 #>    as_of_date league season season_type team_id team_display_name
 #>    <date>     <chr>   <int>       <int>   <int> <chr>            
 #>  1 2026-09-08 nba      2027           1       1 Atlanta Hawks    
@@ -96,7 +96,7 @@ Other hoopR Loader Functions:
 #>  8 2026-09-08 nba      2027           1       1 Atlanta Hawks    
 #>  9 2026-09-08 nba      2027           1       1 Atlanta Hawks    
 #> 10 2026-09-08 nba      2027           1       1 Atlanta Hawks    
-#> # ℹ 64,868 more rows
+#> # ℹ 65,877 more rows
 #> # ℹ 12 more variables: team_abbreviation <chr>, group_id <int>,
 #> #   group_name <chr>, position_slot <chr>, position_id <int>,
 #> #   position_abbreviation <chr>, position_name <chr>, depth_rank <int>,

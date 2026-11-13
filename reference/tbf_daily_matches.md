@@ -89,7 +89,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_daily_matches(match_date = "2026-10-11"))
 #> ── TBF Daily Matches ──────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:59:27 UTC
+#> ℹ Data updated: 2026-11-13 21:17:47 UTC
 #> # A tibble: 11 × 27
 #>    group_name  match_id match_code genius_id activity_id activity_name 
 #>    <chr>          <int> <chr>          <int>       <int> <chr>         

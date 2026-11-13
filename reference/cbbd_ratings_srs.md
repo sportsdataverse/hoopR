@@ -76,21 +76,21 @@ article.
 ``` r
 # \donttest{
   try(cbbd_ratings_srs(season = 2024))
-#> ✖ 2026-11-13 18:52:38.998872: Invalid arguments or no SRS ratings available!
+#> ✖ 2026-11-13 21:11:17.892234: Invalid arguments or no SRS ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_ratings_adjusted(season = 2024))
-#> ✖ 2026-11-13 18:52:39.009979: Invalid arguments or no adjusted ratings available!
+#> ✖ 2026-11-13 21:11:17.902752: Invalid arguments or no adjusted ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_ratings_elo(season = 2024))
-#> ✖ 2026-11-13 18:52:39.021295: Invalid arguments or no Elo ratings available!
+#> ✖ 2026-11-13 21:11:17.912405: Invalid arguments or no Elo ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

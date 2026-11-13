@@ -47,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(kbl_player_box(gmkey = "S47G01N49"))
 #> ── KBL Player Box Score from api.kbl.or.kr ────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:55:40 UTC
+#> ℹ Data updated: 2026-11-13 21:14:06 UTC
 #> # A tibble: 24 × 71
 #>    gmkey  season_code season game_code game_no team_code home_away started pcode
 #>    <chr>        <int>  <int> <chr>       <int> <chr>     <chr>       <int> <chr>

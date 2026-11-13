@@ -22,7 +22,7 @@ article.
 ``` r
 # \donttest{
   try(cbbd_venues())
-#> ✖ 2026-11-13 18:52:40.81775: Invalid arguments or no venues data available!
+#> ✖ 2026-11-13 21:11:19.607769: Invalid arguments or no venues data available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }

@@ -94,7 +94,7 @@ lists every function in this family.
     euroleague_player_stats(competition_code = "E", season_code = "E2025", mode = "advanced")
   })
 #> ── EuroLeague advanced player stats from api-live.euroleague.net ───────────────
-#> ℹ Data updated: 2026-11-13 18:54:36 UTC
+#> ℹ Data updated: 2026-11-13 21:13:00 UTC
 #> # A tibble: 100 × 23
 #>    player_ranking games_played minutes_played effective_field_goal_percentage
 #>             <int>        <dbl>          <dbl> <chr>                          

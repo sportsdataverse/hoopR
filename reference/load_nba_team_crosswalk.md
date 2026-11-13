@@ -22,14 +22,17 @@ stored in the `mbb_crosswalk` release of the sportsdataverse-data
 repository.
 
 Loads a pre-built per-season MBB schedule crosswalk that links ESPN game
-identifiers to Bart Torvik game identifiers. The files are versioned
-`.rds` snapshots stored in the `mbb_crosswalk` release of the
+identifiers to Bart Torvik, KenPom, Fox Sports, Yahoo and stats.ncaa.org
+(`ncaa_contest_id`) game identifiers. The files are versioned `.rds`
+snapshots stored in the `mbb_crosswalk` release of the
 sportsdataverse-data repository.
 
 Loads a pre-built per-season MBB player crosswalk that maps ESPN athlete
-identifiers to Fox Sports (Bifrost) player identifiers. The files are
-versioned `.rds` snapshots stored in the `mbb_crosswalk` release of the
-sportsdataverse-data repository.
+identifiers to Fox Sports (Bifrost), Yahoo, KenPom and stats.ncaa.org
+(`ncaa_player_id`) player identifiers. The files are versioned `.rds`
+snapshots stored in the `mbb_crosswalk` release of the
+sportsdataverse-data repository. Seasons before Fox's rosters (the
+2000s) carry the ESPN players with the provider columns `NA`.
 
 ## Usage
 
@@ -74,7 +77,7 @@ The `mbb_crosswalk` release:
   A vector of 4-digit seasons, or `TRUE` for every published season.
   Accepted seasons are the ones the release publishes: 2002 onward for
   the NBA crosswalks and `load_mbb_team_crosswalk()`, 2008 onward for
-  `load_mbb_schedule_crosswalk()`, 2025 onward for
+  `load_mbb_schedule_crosswalk()`, 2004 onward for
   `load_mbb_player_crosswalk()`; the upper bound is
   [`most_recent_nba_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_nba_season.md)
   /
@@ -110,11 +113,53 @@ season. Columns include at minimum `season`, `espn_athlete_id`, and
 Returns a tibble of class `hoopR_data` with one row per MBB team per
 season. Columns include at minimum `season` and `espn_team_id`.
 
-Returns a tibble of class `hoopR_data` with one row per MBB game per
-season. Columns include at minimum `season` and `espn_game_id`.
+A `hoopR_data` tibble with one row per MBB game per season
+(`load_mbb_schedule_crosswalk()`).
 
-Returns a tibble of class `hoopR_data` with one row per MBB player per
-season. Columns include at minimum `season` and `espn_athlete_id`.
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| season | integer | Season END year (2026 = 2025-26). |
+| game_date | Date | Game date (US Eastern). |
+| home_espn_team_id | integer | ESPN home team id (`NA` on a Torvik-only row). |
+| away_espn_team_id | integer | ESPN away team id (`NA` on a Torvik-only row). |
+| espn_game_id | integer | ESPN game id (`NA` on a Torvik-only row); integer, like every hoopR ESPN id. |
+| bart_muid | character | Bart Torvik game id (`muid`; `NA` on an ESPN-only row). |
+| bart_team1 | character | Bart Torvik team1 name (`NA` on an ESPN-only row). |
+| bart_team2 | character | Bart Torvik team2 name (`NA` on an ESPN-only row). |
+| bart_winner | character | Bart Torvik winner name (`NA` on an ESPN-only row). |
+| kp_game_id | character | KenPom game id (`NA` when unmatched). |
+| fox_game_id | character | Fox Sports game id (`NA` when unmatched). |
+| yahoo_game_id | character | Yahoo game id (`NA` when unmatched). |
+| ncaa_contest_id | character | stats.ncaa.org contest id, the `contest_id` of the `load_ncaa_mbb_*()` loaders (character there and here; `NA` when unmatched, and on every row before the 2010 season, where the release has no stats.ncaa.org ids). |
+| match_method | character | Which sides the row joins: `both` (ESPN and Torvik), `espn_only` or `bart_only`. |
+| match_confidence | numeric | 1 for an ESPN-Torvik match, `NA` otherwise. |
+
+A `hoopR_data` tibble with one row per MBB player per season
+(`load_mbb_player_crosswalk()`).
+
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| season | integer | Season END year (2026 = 2025-26). |
+| espn_team_id | integer | ESPN team id (the key). |
+| team_abbreviation | character | ESPN team abbreviation. |
+| player_name | character | Normalized player name (the matching key). |
+| espn_athlete_id | integer | ESPN athlete id; integer, like every hoopR ESPN id. |
+| espn_full_name | character | ESPN full name. |
+| espn_jersey | character | ESPN jersey number. |
+| espn_position | character | ESPN position abbreviation. |
+| fox_athlete_id | character | Fox Sports athlete id (`NA` when unmatched; Fox has no rosters for the oldest seasons). |
+| fox_player | character | Fox Sports player name (`NA` when unmatched). |
+| fox_jersey | character | Fox Sports jersey number (`NA` when unmatched). |
+| fox_position_group | character | Fox Sports position group label (`NA` when unmatched). |
+| yahoo_player_id | character | Yahoo player id (`NA` when unmatched). |
+| yahoo_player_name | character | Yahoo player name (`NA` when unmatched). |
+| kp_player_id | character | KenPom player id (`NA` when unmatched). |
+| ncaa_player_id | character | stats.ncaa.org player id, the `player_id` of the `load_ncaa_mbb_*()` loaders (character there and here; `NA` when unmatched, and on every row before the 2010 season, where the release has no stats.ncaa.org ids). |
+| match_method | character | How the Fox player was matched: `exact_name`, `fuzzy_jw` (Jaro-Winkler) or `unmatched`. |
+| match_confidence | numeric | Jaro-Winkler score, or 1 for an exact match (`NA` when unmatched). |
+| match_keys | character | Reserved; `NA`. |
 
 ## See also
 
@@ -233,8 +278,8 @@ load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 # \donttest{
 load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 #> ── MBB schedule crosswalk (ESPN / Torvik) ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 13:04:19 UTC
-#> # A tibble: 6,121 × 14
+#> ℹ Data updated: 2026-11-13 20:13:05 UTC
+#> # A tibble: 6,121 × 15
 #>    season game_date  home_espn_team_id away_espn_team_id espn_game_id bart_muid 
 #>     <int> <date>                 <int>             <int>        <int> <chr>     
 #>  1   2027 2026-11-01               222                87    401920982 Notre Dam…
@@ -248,15 +293,15 @@ load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 #>  9   2027 2026-11-02               251              2130    401906863 Chicago S…
 #> 10   2027 2026-11-02               248              2325    401925811 La SalleH…
 #> # ℹ 6,111 more rows
-#> # ℹ 8 more variables: bart_team1 <chr>, bart_team2 <chr>, bart_winner <chr>,
+#> # ℹ 9 more variables: bart_team1 <chr>, bart_team2 <chr>, bart_winner <chr>,
 #> #   kp_game_id <chr>, fox_game_id <chr>, yahoo_game_id <chr>,
-#> #   match_method <chr>, match_confidence <dbl>
+#> #   ncaa_contest_id <chr>, match_method <chr>, match_confidence <dbl>
 # }
 # \donttest{
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #> ── MBB player crosswalk (ESPN / Fox) ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 17:59:15 UTC
-#> # A tibble: 5,568 × 18
+#> ℹ Data updated: 2026-11-13 20:46:14 UTC
+#> # A tibble: 5,569 × 19
 #>    season espn_team_id team_abbreviation player_name        espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                        <int>
 #>  1   2027         2000 ACU               evan boisdur               5313910
@@ -269,11 +314,11 @@ load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #>  8   2027         2000 ACU               isaiah neyhart             5314819
 #>  9   2027         2000 ACU               timeo pons                 5315586
 #> 10   2027         2000 ACU               yaniel rivera              5177702
-#> # ℹ 5,558 more rows
-#> # ℹ 13 more variables: espn_full_name <chr>, espn_jersey <chr>,
+#> # ℹ 5,559 more rows
+#> # ℹ 14 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, fox_athlete_id <chr>, fox_player <chr>,
 #> #   fox_jersey <chr>, fox_position_group <chr>, yahoo_player_id <chr>,
-#> #   yahoo_player_name <chr>, kp_player_id <chr>, match_method <chr>,
-#> #   match_confidence <dbl>, match_keys <chr>
+#> #   yahoo_player_name <chr>, kp_player_id <chr>, ncaa_player_id <chr>,
+#> #   match_method <chr>, match_confidence <dbl>, match_keys <chr>
 # }
 ```
