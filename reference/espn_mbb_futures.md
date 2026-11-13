@@ -82,7 +82,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_futures(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Futures ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 01:59:56 UTC
+#> ℹ Data updated: 2026-11-13 12:49:48 UTC
 #> # A tibble: 1,793 × 11
 #>    season league    market_id market_name market_type market_display provider_id
 #>     <int> <chr>         <int> <chr>       <chr>       <chr>          <chr>      
@@ -103,8 +103,8 @@ Saiem Gilani
 # \donttest{
   espn_nba_futures(season = 2025)
 #> ── ESPN NBA Season Futures ────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 01:59:56 UTC
-#> # A tibble: 574 × 11
+#> ℹ Data updated: 2026-11-13 12:49:49 UTC
+#> # A tibble: 575 × 11
 #>    season league market_id market_name  market_type market_display   provider_id
 #>     <int> <chr>      <int> <chr>        <chr>       <chr>            <chr>      
 #>  1   2025 nba         2564 NBA - Winner winLeague   NBA Championshi… 58         
@@ -117,7 +117,7 @@ Saiem Gilani
 #>  8   2025 nba         2564 NBA - Winner winLeague   NBA Championshi… 58         
 #>  9   2025 nba         2564 NBA - Winner winLeague   NBA Championshi… 58         
 #> 10   2025 nba         2564 NBA - Winner winLeague   NBA Championshi… 58         
-#> # ℹ 564 more rows
+#> # ℹ 565 more rows
 #> # ℹ 4 more variables: provider_name <chr>, team_id <chr>, odds_value <chr>,
 #> #   team_ref <chr>
 # }

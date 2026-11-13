@@ -54,7 +54,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_team_games(season = 2026, team_id = 2650))
 #> ── VTB Infobasket Team Games from org.infobasket.su ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 02:06:26 UTC
+#> ℹ Data updated: 2026-11-13 12:56:05 UTC
 #> # A tibble: 53 × 47
 #>    team_id season comp_id game_id game_number game_date  has_time game_time
 #>      <int>  <int>   <int>   <int> <chr>       <chr>      <lgl>    <chr>    

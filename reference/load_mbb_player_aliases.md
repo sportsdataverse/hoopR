@@ -78,7 +78,7 @@ Saiem Gilani
 # \donttest{
   try(load_mbb_player_aliases())
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 101,243 × 12
+#> # A tibble: 110,539 × 12
 #>    league athlete_id athlete_id_source source source_player_id team_id
 #>    <chr>  <chr>      <chr>             <chr>  <chr>            <chr>  
 #>  1 mbb    11145      espn              ncaa   3356339          77     
@@ -91,14 +91,14 @@ Saiem Gilani
 #>  8 mbb    2229314    espn              ncaa   4688539          16     
 #>  9 mbb    2229314    espn              ncaa   4885139          16     
 #> 10 mbb    22308      espn              ncaa   3353864          328    
-#> # ℹ 101,233 more rows
+#> # ℹ 110,529 more rows
 #> # ℹ 6 more variables: source_team_id <chr>, valid_from <int>, valid_to <int>,
 #> #   match_method <chr>, match_confidence <dbl>, evidence <chr>
 # }
 # \donttest{
   try(load_nba_player_aliases())
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 19,848 × 12
+#> # A tibble: 19,875 × 12
 #>    league athlete_id athlete_id_source source    source_player_id team_id
 #>    <chr>  <chr>      <chr>             <chr>     <chr>            <chr>  
 #>  1 nba    10         espn              fox       1010             14     
@@ -111,7 +111,7 @@ Saiem Gilani
 #>  8 nba    10         espn              fox       1010             19     
 #>  9 nba    10         espn              nba_stats 2124             14     
 #> 10 nba    10         espn              nba_stats 2124             30     
-#> # ℹ 19,838 more rows
+#> # ℹ 19,865 more rows
 #> # ℹ 6 more variables: source_team_id <chr>, valid_from <int>, valid_to <int>,
 #> #   match_method <chr>, match_confidence <dbl>, evidence <chr>
 # }

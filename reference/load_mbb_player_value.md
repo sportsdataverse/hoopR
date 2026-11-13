@@ -148,7 +148,7 @@ Saiem Gilani
 # \donttest{
   try(load_nba_player_impact(seasons = most_recent_nba_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 458 × 28
+#> # A tibble: 463 × 82
 #>    player_id player_name       team_id team_abbreviation team_name  teams season
 #>        <int> <chr>               <int> <chr>             <chr>      <chr>  <int>
 #>  1      2544 LeBron James   1610612755 PHI               Philadelp… PHI     2027
@@ -161,48 +161,48 @@ Saiem Gilani
 #>  8    201939 Stephen Curry  1610612744 GSW               Golden St… GSW     2027
 #>  9    201942 DeMar DeRozan  1610612743 DEN               Denver Nu… DEN     2027
 #> 10    201950 Jrue Holiday   1610612757 POR               Portland … POR     2027
-#> # ℹ 448 more rows
-#> # ℹ 21 more variables: season_type <chr>, o_rapm <dbl>, d_rapm <dbl>,
+#> # ℹ 453 more rows
+#> # ℹ 75 more variables: season_type <chr>, o_rapm <dbl>, d_rapm <dbl>,
 #> #   rapm <dbl>, off_poss <int>, def_poss <int>, o_adj_rapm <dbl>,
 #> #   d_adj_rapm <dbl>, adj_rapm <dbl>, ospm <dbl>, dspm <dbl>, spm <dbl>,
 #> #   min <dbl>, gp <int>, obpm <dbl>, dbpm <dbl>, bpm <dbl>, war <dbl>,
 #> #   boban_filtered_skill <dbl>, boban_projected_rating <dbl>,
-#> #   boban_projected_sd <dbl>
+#> #   boban_projected_sd <dbl>, o_rapm_n <int>, d_rapm_n <int>, rapm_n <int>, …
 # }
 # \donttest{
   try(load_mbb_player_value(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 6,369 × 9
+#> # A tibble: 7,063 × 9
 #>    player_id player     season team_id   min box_obpm box_dbpm box_bpm qualified
 #>    <chr>     <chr>       <int> <chr>   <dbl>    <dbl>    <dbl>   <dbl> <lgl>    
-#>  1 5176150   Jake Davis   2027 356         6     28.0    -5.40    22.6 FALSE    
-#>  2 5176222   Domas Kau…   2027 2344       15     19.0     3.07    22.0 FALSE    
-#>  3 5460041   Trey Will…   2027 172         8     18.2     2.51    20.7 FALSE    
-#>  4 5247524   Mous Diop    2027 2079       11     22.1    -1.91    20.2 FALSE    
-#>  5 5459995   Kellum Br…   2027 350         4     21.8    -2.04    19.8 FALSE    
-#>  6 5465507   Maddox Pa…   2027 294        13     13.6     5.36    18.9 FALSE    
-#>  7 5196935   Amari Reed   2027 2617       22     22.5    -4.14    18.4 FALSE    
-#>  8 5459646   Diggy Col…   2027 2032        4     20.0    -1.77    18.2 FALSE    
-#>  9 5314853   Cale Barc…   2027 253        36     23.0    -5.32    17.7 FALSE    
-#> 10 5466178   Nez Perki…   2027 126956      2     20.0    -2.36    17.6 FALSE    
-#> # ℹ 6,359 more rows
+#>  1 5176150   Jake Davis   2027 356         6     28.0   -5.40     22.6 FALSE    
+#>  2 5459892   Joe Baldw…   2027 2908        9     26.1   -4.97     21.1 FALSE    
+#>  3 5460041   Trey Will…   2027 172         8     18.2    2.51     20.7 FALSE    
+#>  4 5247524   Mous Diop    2027 2079       11     22.1   -1.91     20.2 FALSE    
+#>  5 5351302   Ajak Nyuon   2027 9           9     24.4   -4.86     19.6 FALSE    
+#>  6 5144478   Jermel Th…   2027 139         6     18.7    0.724    19.4 FALSE    
+#>  7 5459995   Kellum Br…   2027 350         5     19.7   -0.678    19.0 FALSE    
+#>  8 5196935   Amari Reed   2027 2617       22     22.5   -4.14     18.4 FALSE    
+#>  9 5462473   Stefan Hi…   2027 2710        7     18.3   -0.286    18.0 FALSE    
+#> 10 5242812   Jerquariu…   2027 68         41     24.6   -6.87     17.7 FALSE    
+#> # ℹ 7,053 more rows
 # }
 # \donttest{
   try(load_mbb_ratings(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 490 × 11
+#> # A tibble: 527 × 11
 #>    season team_id adj_o adj_d adj_em adj_tempo raw_o raw_d games  rank adj_em_z
 #>     <int> <chr>   <dbl> <dbl>  <dbl>     <dbl> <dbl> <dbl> <int> <int>    <dbl>
-#>  1   2027 164      163.  62.1  101.       66.8  125.  83.4     1     1     2.72
-#>  2   2027 150      149.  58.9   90.5      69.4  132.  68.9     2     2     2.45
-#>  3   2027 183      155.  69.9   85.0      65.5  135.  82.6     2     3     2.30
-#>  4   2027 2617     141.  62.6   78.5      73.9  141.  62.6     2     4     2.14
-#>  5   2027 167      128.  52.3   76.0      72.6  138.  89.4     2     5     2.08
-#>  6   2027 252      154.  79.5   74.5      72.7  147. 110.      2     6     2.04
-#>  7   2027 356      136.  66.8   69.0      82.7  145.  70.6     2     7     1.89
-#>  8   2027 245      135.  69.2   65.9      75.8  124.  81.9     2     8     1.81
-#>  9   2027 2350     141.  75.4   65.5      60.9  118.  81.1     2     9     1.81
-#> 10   2027 99       124.  59.6   64.3      81.2  124.  69.7     2    10     1.78
-#> # ℹ 480 more rows
+#>  1   2027 127      138.  72.0   66.2      73.2  123.  89.5     3     1     2.03
+#>  2   2027 245      140.  76.1   64.0      71.9  126.  81.6     3     2     1.97
+#>  3   2027 139      151.  87.7   63.8      73.9  135.  95.2     3     3     1.97
+#>  4   2027 238      125.  62.2   62.4      73.0  132.  86.4     3     4     1.93
+#>  5   2027 142      135.  72.6   62.2      71.0  142.  95.1     3     5     1.93
+#>  6   2027 344      142.  81.8   60.4      64.8  135.  87.9     3     6     1.88
+#>  7   2027 251      139.  80.4   58.9      73.7  141.  80.5     3     7     1.84
+#>  8   2027 150      137.  78.3   58.6      71.5  122.  82.6     3     8     1.83
+#>  9   2027 145      132.  73.9   58.1      72.1  131.  78.2     3     9     1.82
+#> 10   2027 97       137.  78.6   57.9      71.7  137.  90.6     2    10     1.81
+#> # ℹ 517 more rows
 # }
 ```

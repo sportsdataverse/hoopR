@@ -51,12 +51,12 @@ lists every function in this family.
 # \donttest{
   try(nbl_rosetta_player_stats(org = "nbl", player_id = "7619d3ea-410d-11f0-9235-2902fc2f936f"))
 #> ── NBL Rosetta player_stats from prod.rosetta.nbl.com.au ──────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 02:04:25 UTC
+#> ℹ Data updated: 2026-11-13 12:54:02 UTC
 #> # A tibble: 3 × 91
 #>   org   assists_average blocks_average field_goals_attempted field_goals_made
 #>   <chr>           <dbl>          <dbl>                 <int>            <int>
 #> 1 nbl              1.57         0.243                    338              134
-#> 2 nbl              2.36         0                        174               78
+#> 2 nbl              2.17         0                        179               78
 #> 3 nbl              1.23         0.0645                   184               77
 #> # ℹ 86 more variables: field_goals_attempted_average <dbl>,
 #> #   field_goals_made_average <dbl>, field_goals_percentage <dbl>,

@@ -52,8 +52,8 @@ lists every function in this family.
 # \donttest{
   try(scb_season_players(season = 2026))
 #> ── BBL/DBBL Season Players from the SCB API ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 02:05:00 UTC
-#> # A tibble: 376 × 8
+#> ℹ Data updated: 2026-11-13 12:54:37 UTC
+#> # A tibble: 375 × 8
 #>    league season season_id season_player_id real_player_id season_team_id
 #>    <chr>   <int>     <int> <chr>                     <int> <chr>         
 #>  1 bbl      2026      2025 5595                  140178151 483           
@@ -66,7 +66,7 @@ lists every function in this family.
 #>  8 bbl      2026      2025 6736                      44893 414           
 #>  9 bbl      2026      2025 6749                  140180109 414           
 #> 10 bbl      2026      2025 56377                     42293 413           
-#> # ℹ 366 more rows
+#> # ℹ 365 more rows
 #> # ℹ 2 more variables: first_name <chr>, last_name <chr>
 # }
 ```

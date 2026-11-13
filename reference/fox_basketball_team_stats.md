@@ -46,25 +46,25 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_stats("1"))
 #> ── Fox Sports NBA team_stats ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 02:01:59 UTC
+#> ℹ Data updated: 2026-11-13 12:51:30 UTC
 #> # A tibble: 16 × 6
 #>    team_id category     stat       stat_abbreviation player        value
 #>    <chr>   <chr>        <chr>      <chr>             <chr>         <chr>
-#>  1 1       PLAYER STATS SCORING    PPG               Jayson Tatum  27.1 
-#>  2 1       PLAYER STATS REBOUNDING RPG               Neemias Queta 6.2  
-#>  3 1       PLAYER STATS SHOOTING   FG%               Paul George   46.5 
-#>  4 1       PLAYER STATS ASSISTS    APG               Jayson Tatum  7.8  
+#>  1 1       PLAYER STATS SCORING    PPG               Jayson Tatum  26.3 
+#>  2 1       PLAYER STATS REBOUNDING RPG               Neemias Queta 6.7  
+#>  3 1       PLAYER STATS SHOOTING   FG%               Paul George   48.8 
+#>  4 1       PLAYER STATS ASSISTS    APG               Jayson Tatum  7.5  
 #>  5 1       PLAYER STATS DEFENSE    STL               Paul George   21   
-#>  6 1       PLAYER STATS DEFENSE    BLK               Neemias Queta 13   
+#>  6 1       PLAYER STATS DEFENSE    BLK               Neemias Queta 16   
 #>  7 1       PLAYER STATS MISC       DBL DBL           Jayson Tatum  1    
-#>  8 1       PLAYER STATS ADVANCED   MPG               Jayson Tatum  33.8 
-#>  9 1       TEAM STATS   SCORING    PPG               NA            115.0
-#> 10 1       TEAM STATS   REBOUNDING RPG               NA            45.0 
-#> 11 1       TEAM STATS   SHOOTING   FG%               NA            45.4 
-#> 12 1       TEAM STATS   ASSISTS    APG               NA            27.2 
-#> 13 1       TEAM STATS   DEFENSE    STL               NA            85   
-#> 14 1       TEAM STATS   DEFENSE    BLK               NA            45   
-#> 15 1       TEAM STATS   MISC       DBL DBL           NA            1    
+#>  8 1       PLAYER STATS ADVANCED   MPG               Jayson Tatum  34.0 
+#>  9 1       TEAM STATS   SCORING    PPG               NA            114.3
+#> 10 1       TEAM STATS   REBOUNDING RPG               NA            44.8 
+#> 11 1       TEAM STATS   SHOOTING   FG%               NA            45.6 
+#> 12 1       TEAM STATS   ASSISTS    APG               NA            26.8 
+#> 13 1       TEAM STATS   DEFENSE    STL               NA            98   
+#> 14 1       TEAM STATS   DEFENSE    BLK               NA            59   
+#> 15 1       TEAM STATS   MISC       DBL DBL           NA            2    
 #> 16 1       TEAM STATS   ADVANCED   NET RTG           NA            -    
 # }
 ```

@@ -47,20 +47,20 @@ Other Fox Basketball Functions:
   # A 3-call sample; the defaults walk every conference.
   try(fox_mbb_teams_all(max_calls = 3))
 #> ── Fox Sports MBB full team directory ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 02:02:00 UTC
+#> ℹ Data updated: 2026-11-13 12:51:31 UTC
 #> # A tibble: 33 × 3
 #>    fox_team_id fox_team_name              fox_section   
 #>    <chr>       <chr>                      <chr>         
 #>  1 1           Boston University Terriers Patriot League
 #>  2 236         Navy Midshipmen            Patriot League
-#>  3 230         Army Black Knights         Patriot League
-#>  4 234         Lafayette Leopards         Patriot League
-#>  5 235         Lehigh Mountain Hawks      Patriot League
-#>  6 104         American Eagles            Patriot League
-#>  7 231         Bucknell Bison             Patriot League
-#>  8 232         Colgate Raiders            Patriot League
-#>  9 233         Holy Cross Crusaders       Patriot League
-#> 10 150         Loyola Maryland Greyhounds Patriot League
+#>  3 234         Lafayette Leopards         Patriot League
+#>  4 104         American Eagles            Patriot League
+#>  5 230         Army Black Knights         Patriot League
+#>  6 235         Lehigh Mountain Hawks      Patriot League
+#>  7 150         Loyola Maryland Greyhounds Patriot League
+#>  8 231         Bucknell Bison             Patriot League
+#>  9 232         Colgate Raiders            Patriot League
+#> 10 233         Holy Cross Crusaders       Patriot League
 #> # ℹ 23 more rows
 # }
 ```

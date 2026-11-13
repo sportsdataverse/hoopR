@@ -139,35 +139,35 @@ article.
 ``` r
 # \donttest{
   try(cbbd_games(season = 2024, team = "Duke"))
-#> ✖ 2026-11-10 01:59:08.825706: Invalid arguments or no games data available!
+#> ✖ 2026-11-13 12:49:06.8357: Invalid arguments or no games data available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL, status = NULL, tournament = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_games_media(season = 2024, team = "Duke"))
-#> ✖ 2026-11-10 01:59:08.836936: Invalid arguments or no game media available!
+#> ✖ 2026-11-13 12:49:06.846995: Invalid arguments or no game media available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL, tournament = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_games_teams(season = 2024, team = "Duke"))
-#> ✖ 2026-11-10 01:59:08.847281: Invalid arguments or no team box score data available!
+#> ✖ 2026-11-13 12:49:06.863955: Invalid arguments or no team box score data available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL, tournament = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_games_players(season = 2024, team = "Duke"))
-#> ✖ 2026-11-10 01:59:08.857609: Invalid arguments or no player box score data available!
+#> ✖ 2026-11-13 12:49:06.877805: Invalid arguments or no player box score data available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL, tournament = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_scoreboard(conference = "ACC"))
-#> ✖ 2026-11-10 01:59:08.867816: Invalid arguments or no scoreboard data available!
+#> ✖ 2026-11-13 12:49:06.888287: Invalid arguments or no scoreboard data available!
 #> ✖ Args: conference = "ACC"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

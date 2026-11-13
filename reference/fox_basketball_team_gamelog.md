@@ -46,20 +46,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_gamelog("1"))
 #> ── Fox Sports NBA gamelog ─────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 02:01:59 UTC
+#> ℹ Data updated: 2026-11-13 12:51:30 UTC
 #> # A tibble: 165 × 8
 #>    team_id season_type    category game_id game_date opponent stat         value
 #>    <chr>   <chr>          <chr>    <chr>   <chr>     <chr>    <chr>        <chr>
-#>  1 1       REGULAR SEASON scoring  106675  11/8      @MIL     fgm          45   
-#>  2 1       REGULAR SEASON scoring  106675  11/8      @MIL     fga          95   
-#>  3 1       REGULAR SEASON scoring  106675  11/8      @MIL     fg_percent   47.4 
-#>  4 1       REGULAR SEASON scoring  106675  11/8      @MIL     ftm          9    
-#>  5 1       REGULAR SEASON scoring  106675  11/8      @MIL     fta          14   
-#>  6 1       REGULAR SEASON scoring  106675  11/8      @MIL     ft_percent   64.3 
-#>  7 1       REGULAR SEASON scoring  106675  11/8      @MIL     x3fgm        18   
-#>  8 1       REGULAR SEASON scoring  106675  11/8      @MIL     x3fga        48   
-#>  9 1       REGULAR SEASON scoring  106675  11/8      @MIL     x3fg_percent 37.5 
-#> 10 1       REGULAR SEASON scoring  106675  11/8      @MIL     pts          117  
+#>  1 1       REGULAR SEASON scoring  106693  11/11     @TOR     fgm          30   
+#>  2 1       REGULAR SEASON scoring  106693  11/11     @TOR     fga          73   
+#>  3 1       REGULAR SEASON scoring  106693  11/11     @TOR     fg_percent   41.1 
+#>  4 1       REGULAR SEASON scoring  106693  11/11     @TOR     ftm          24   
+#>  5 1       REGULAR SEASON scoring  106693  11/11     @TOR     fta          28   
+#>  6 1       REGULAR SEASON scoring  106693  11/11     @TOR     ft_percent   85.7 
+#>  7 1       REGULAR SEASON scoring  106693  11/11     @TOR     x3fgm        14   
+#>  8 1       REGULAR SEASON scoring  106693  11/11     @TOR     x3fga        40   
+#>  9 1       REGULAR SEASON scoring  106693  11/11     @TOR     x3fg_percent 35.0 
+#> 10 1       REGULAR SEASON scoring  106693  11/11     @TOR     pts          98   
 #> # ℹ 155 more rows
 # }
 ```

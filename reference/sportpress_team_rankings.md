@@ -59,7 +59,7 @@ lists every function in this family.
 # \donttest{
   try(sportpress_team_rankings(competition_id = 24))
 #> ── BNXT League Team Rankings from Sportpress ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 02:05:39 UTC
+#> ℹ Data updated: 2026-11-13 12:55:17 UTC
 #> # A tibble: 162 × 7
 #>    competition_id category  rank competition_team_id team  team_short_name value
 #>             <int> <chr>    <int>               <int> <chr> <chr>           <dbl>
@@ -67,7 +67,7 @@ lists every function in this family.
 #>  2             24 efficie…     2                 528 Part… AAL              128.
 #>  3             24 efficie…     3                 510 Hubo… LIM              126.
 #>  4             24 efficie…     4                 504 Filo… OOS              120.
-#>  5             24 efficie…     5                 526 Hero… DBO              115.
+#>  5             24 efficie…     5                 526 Hero… DBO              116.
 #>  6             24 efficie…     6                 536 Hous… KOR              113.
 #>  7             24 efficie…     7                 522 Zorg… LEI              111.
 #>  8             24 efficie…     8                 512 Dona… GRO              110.

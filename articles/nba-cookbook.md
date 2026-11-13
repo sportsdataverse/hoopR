@@ -278,15 +278,15 @@ espn_nba_team_roster(team_id = team_id, season = season)
 #>    athlete_id full_name jersey position_abbrev position_name height weight age  
 #>    <chr>      <chr>     <chr>  <chr>           <chr>         <chr>  <chr>  <chr>
 #>  1 5113969    Cameron … 43     G               Guard         "6' 5… 184 l… 21   
-#>  2 3945274    Luka Don… 77     G               Guard         "6' 8… 230 l… 27   
-#>  3 4397014    Quentin … 5      G               Guard         "6' 4… 210 l… 26   
-#>  4 4868423    Jaden Ha… 7      G               Guard         "6' 3… 198 l… 24   
-#>  5 4683774    Bronny J… 9      G               Guard         "6' 2… 210 l… 22   
-#>  6 4433599    Arthur K… 47     F               Forward       "6' 6… 223 l… 24   
-#>  7 4433136    Walker K… 14     C               Center        "7' 2… 245 l… 25   
-#>  8 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 25   
-#>  9 3155535    Kevon Lo… 55     F               Forward       "6' 9… 222 l… 30   
-#> 10 4596528    Lawson L… NA     C               Center        "7' 1… 233 l… 23   
+#>  2 5105817    Carson C… NA     C               Center        "6' 1… 245 l… 22   
+#>  3 3945274    Luka Don… 77     G               Guard         "6' 8… 230 l… 27   
+#>  4 4397014    Quentin … 5      G               Guard         "6' 4… 210 l… 26   
+#>  5 4868423    Jaden Ha… 7      G               Guard         "6' 3… 198 l… 24   
+#>  6 4683774    Bronny J… 9      G               Guard         "6' 2… 210 l… 22   
+#>  7 4433599    Arthur K… 47     F               Forward       "6' 6… 223 l… 24   
+#>  8 4433136    Walker K… 14     C               Center        "7' 2… 245 l… 25   
+#>  9 4592691    Jake LaR… 12     F               Forward       "6' 7… 235 l… 25   
+#> 10 3155535    Kevon Lo… 55     F               Forward       "6' 9… 222 l… 30   
 #> 11 4278580    Sandro M… 54     F               Forward       "6' 9… 240 l… 27   
 #> 12 4702972    Chris Ma… 30     G               Guard         "6' 4… 209 l… 24   
 #> 13 5114350    AK Okere… 31     F               Forward       "6' 7… 244 l… 23   
@@ -375,14 +375,14 @@ espn_nba_leaders(season = most_recent_nba_season())
 #>     <int>       <int> <chr>         <chr>        <chr>      <chr>        <chr>  
 #>  1   2027           2 pointsPerGame PTS          3945274    NA           13     
 #>  2   2027           2 pointsPerGame PTS          4594268    NA           16     
-#>  3   2027           2 pointsPerGame PTS          3975       NA           9      
+#>  3   2027           2 pointsPerGame PTS          5104157    NA           24     
 #>  4   2027           2 pointsPerGame PTS          4278073    NA           25     
-#>  5   2027           2 pointsPerGame PTS          5104157    NA           24     
+#>  5   2027           2 pointsPerGame PTS          3975       NA           9      
 #>  6   2027           2 pointsPerGame PTS          3032977    NA           14     
-#>  7   2027           2 pointsPerGame PTS          4065648    NA           2      
-#>  8   2027           2 pointsPerGame PTS          4431678    NA           20     
-#>  9   2027           2 pointsPerGame PTS          4065733    NA           29     
-#> 10   2027           2 pointsPerGame PTS          3934672    NA           18     
+#>  7   2027           2 pointsPerGame PTS          4431678    NA           20     
+#>  8   2027           2 pointsPerGame PTS          4065648    NA           2      
+#>  9   2027           2 pointsPerGame PTS          3936299    NA           7      
+#> 10   2027           2 pointsPerGame PTS          4065733    NA           29     
 #> # ℹ 390 more rows
 #> # ℹ 4 more variables: team_abbrev <chr>, value <dbl>, rank <int>,
 #> #   display_value <chr>

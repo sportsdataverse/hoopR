@@ -91,7 +91,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_team_roster(season = 2027, team_process_id = 265995))
 #> ── TBF Team Roster ────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 02:05:55 UTC
+#> ℹ Data updated: 2026-11-13 12:55:33 UTC
 #> # A tibble: 18 × 13
 #>    season competition team_process_id person_id first_name last_name nationality
 #>     <int> <chr>                 <int>     <int> <chr>      <chr>     <chr>      
@@ -104,7 +104,7 @@ lists every function in this family.
 #>  7   2027 bsl                  265995    381976 Karahan    Efeoğlu   TÜRKİYE    
 #>  8   2027 bsl                  265995    452216 Kerem      Çorumlul… TÜRKİYE    
 #>  9   2027 bsl                  265995    197570 Leon       Apaydın   TÜRKİYE    
-#> 10   2027 bsl                  265995    732657 MANTAS     RUBSTAVI… LİTVANYA   
+#> 10   2027 bsl                  265995    732657 Mantas     Rubstavi… LİTVANYA   
 #> 11   2027 bsl                  265995    450092 Poyraz     Paşaoğlu  TÜRKİYE    
 #> 12   2027 bsl                  265995    227173 Sadık      Kabaca    TÜRKİYE    
 #> 13   2027 bsl                  265995    778399 Shavar     Reynolds… ABD        

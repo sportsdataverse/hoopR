@@ -47,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(lba_box_score(game_id = 25602))
 #> ── LBA Box Score from legabasket.it ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 02:02:52 UTC
+#> ℹ Data updated: 2026-11-13 12:52:23 UTC
 #> # A tibble: 24 × 39
 #>    game_id season side  team_id player_id player_num player_surname player_name
 #>      <int>  <int> <chr>   <int>     <int>      <int> <chr>          <chr>      

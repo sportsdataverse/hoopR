@@ -57,7 +57,7 @@ lists every function in this family.
 # \donttest{
   try(ibba_leaders(season = 2026, stat_type = "pts"))
 #> ── IBBA leaders ───────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 02:02:11 UTC
+#> ℹ Data updated: 2026-11-13 12:51:42 UTC
 #> # A tibble: 5 × 8
 #>   value games season team_id jersey player_id player_name_he     photo_path     
 #>   <dbl> <int>  <int>   <int> <chr>      <int> <chr>              <chr>          

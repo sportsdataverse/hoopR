@@ -178,11 +178,13 @@ load_mbb_shots(
 
   - `load_mbb_officials()`: 2003 onward, except 2010.
 
-  - `load_mbb_rosters()`, `load_mbb_player_stats()`: 2025 onward.
+  - `load_mbb_player_stats()`: 2003 onward (ESPN's single-season player
+    rows are sparse before about 2010).
 
-  `load_mbb_game_rosters()` 2003-2024 and `load_mbb_officials()`
-  2003-2024 are published as `.parquet` only and need the arrow package.
-  The upper bound is
+  - `load_mbb_rosters()`: 2025 onward.
+
+  Every season in those ranges is published as `.rds` (checked
+  2026-11-13). The upper bound is
   [`most_recent_mbb_season()`](https://hoopR.sportsdataverse.org/reference/most_recent_mbb_season.md).
   When `seasons` is left at its default and that season's file is not
   published yet, the loader reads the newest published season instead,
@@ -522,7 +524,7 @@ Other hoopR Loader Functions:
 # One season is a ~80 MB download.
 load_mbb_pbp(seasons = most_recent_mbb_season())
 #> ── ESPN MBB pbp from hoopR data repository ────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 237,034 × 63
+#> # A tibble: 340,939 × 63
 #>    game_play_number id        sequence_number type_id type_text text  away_score
 #>               <int> <chr>               <int>   <int> <chr>     <chr>      <int>
 #>  1                1 40190227…       120473789     615 Jumpball  "Sta…          0
@@ -535,7 +537,7 @@ load_mbb_pbp(seasons = most_recent_mbb_season())
 #>  8                8 40190227…       120474195     587 Defensiv… "Jas…          0
 #>  9                9 40190227…       120474436     598 Lost Bal… "Coo…          0
 #> 10               10 40190227…       120474439     607 Steal     "Jal…          0
-#> # ℹ 237,024 more rows
+#> # ℹ 340,929 more rows
 #> # ℹ 56 more variables: home_score <int>, period_number <int>,
 #> #   period_display_value <chr>, clock_display_value <chr>, scoring_play <lgl>,
 #> #   score_value <int>, wallclock <chr>, shooting_play <lgl>,
@@ -546,21 +548,21 @@ load_mbb_pbp(seasons = most_recent_mbb_season())
 # \donttest{
 load_mbb_team_box(seasons = most_recent_mbb_season())
 #> ── ESPN MBB team_box from hoopR data repository ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:25:29 UTC
-#> # A tibble: 944 × 59
+#> ℹ Data updated: 2026-11-13 11:43:35 UTC
+#> # A tibble: 1,376 × 59
 #>      game_id season season_type game_date  game_date_time      team_id team_uid 
 #>        <int>  <int>       <int> <date>     <dttm>                <int> <chr>    
-#>  1 401920424   2027           2 2026-11-08 2026-11-08 13:00:00       8 s:40~l:4…
-#>  2 401920424   2027           2 2026-11-08 2026-11-08 13:00:00     258 s:40~l:4…
-#>  3 401918053   2027           2 2026-11-08 2026-11-08 20:30:00      25 s:40~l:4…
-#>  4 401918053   2027           2 2026-11-08 2026-11-08 20:30:00     248 s:40~l:4…
-#>  5 401924646   2027           2 2026-11-08 2026-11-08 12:00:00     314 s:40~l:4…
-#>  6 401924646   2027           2 2026-11-08 2026-11-08 12:00:00    2599 s:40~l:4…
-#>  7 401919029   2027           2 2026-11-08 2026-11-08 23:00:00    2724 s:40~l:4…
-#>  8 401919029   2027           2 2026-11-08 2026-11-08 23:00:00      30 s:40~l:4…
-#>  9 401926867   2027           2 2026-11-08 2026-11-08 13:00:00    2891 s:40~l:4…
-#> 10 401926867   2027           2 2026-11-08 2026-11-08 13:00:00     270 s:40~l:4…
-#> # ℹ 934 more rows
+#>  1 401921741   2027           2 2026-11-12 2026-11-12 21:00:00     147 s:40~l:4…
+#>  2 401921741   2027           2 2026-11-12 2026-11-12 21:00:00     252 s:40~l:4…
+#>  3 401920073   2027           2 2026-11-12 2026-11-12 15:00:00     140 s:40~l:4…
+#>  4 401920073   2027           2 2026-11-12 2026-11-12 15:00:00    2244 s:40~l:4…
+#>  5 401925631   2027           2 2026-11-12 2026-11-12 18:00:00      71 s:40~l:4…
+#>  6 401925631   2027           2 2026-11-12 2026-11-12 18:00:00    2154 s:40~l:4…
+#>  7 401923400   2027           2 2026-11-12 2026-11-12 18:00:00     353 s:40~l:4…
+#>  8 401923400   2027           2 2026-11-12 2026-11-12 18:00:00     104 s:40~l:4…
+#>  9 401921086   2027           2 2026-11-12 2026-11-12 18:00:00    2415 s:40~l:4…
+#> 10 401921086   2027           2 2026-11-12 2026-11-12 18:00:00    2378 s:40~l:4…
+#> # ℹ 1,366 more rows
 #> # ℹ 52 more variables: team_slug <chr>, team_location <chr>, team_name <chr>,
 #> #   team_abbreviation <chr>, team_display_name <chr>,
 #> #   team_short_display_name <chr>, team_color <chr>,
@@ -572,21 +574,21 @@ load_mbb_team_box(seasons = most_recent_mbb_season())
 # One season is a ~7 MB download.
 load_mbb_player_box(seasons = most_recent_mbb_season())
 #> ── ESPN MBB player_box from hoopR data repository ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:25:55 UTC
-#> # A tibble: 15,104 × 55
+#> ℹ Data updated: 2026-11-13 11:44:06 UTC
+#> # A tibble: 21,921 × 55
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>
-#>  1 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5185443
-#>  2 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5176136
-#>  3 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5165276
-#>  4 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5142729
-#>  5 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5060732
-#>  6 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5383766
-#>  7 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5222135
-#>  8 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5210978
-#>  9 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5142711
-#> 10 401920424   2027           2 2026-11-08 2026-11-08 13:00:00    5041952
-#> # ℹ 15,094 more rows
+#>  1 401921741   2027           2 2026-11-12 2026-11-12 21:00:00    5313225
+#>  2 401921741   2027           2 2026-11-12 2026-11-12 21:00:00    5061605
+#>  3 401921741   2027           2 2026-11-12 2026-11-12 21:00:00    5313224
+#>  4 401921741   2027           2 2026-11-12 2026-11-12 21:00:00    5241290
+#>  5 401921741   2027           2 2026-11-12 2026-11-12 21:00:00    5107844
+#>  6 401921741   2027           2 2026-11-12 2026-11-12 21:00:00    5456906
+#>  7 401921741   2027           2 2026-11-12 2026-11-12 21:00:00    5314228
+#>  8 401921741   2027           2 2026-11-12 2026-11-12 21:00:00    5313226
+#>  9 401921741   2027           2 2026-11-12 2026-11-12 21:00:00    5313222
+#> 10 401921741   2027           2 2026-11-12 2026-11-12 21:00:00    5241231
+#> # ℹ 21,911 more rows
 #> # ℹ 49 more variables: athlete_display_name <chr>, team_id <int>,
 #> #   team_name <chr>, team_location <chr>, team_short_display_name <chr>,
 #> #   minutes <dbl>, field_goals_made <int>, field_goals_attempted <int>,
@@ -597,8 +599,8 @@ load_mbb_player_box(seasons = most_recent_mbb_season())
 # \donttest{
 load_mbb_schedule(seasons = most_recent_mbb_season())
 #> ── ESPN MBB schedules from hoopR data repository ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:39:05 UTC
-#> # A tibble: 6,071 × 88
+#> ℹ Data updated: 2026-11-13 11:57:19 UTC
+#> # A tibble: 6,072 × 88
 #>         id uid   date  attendance time_valid neutral_site play_by_play_available
 #>      <int> <chr> <chr>      <dbl> <lgl>      <lgl>        <lgl>                 
 #>  1  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
@@ -611,7 +613,7 @@ load_mbb_schedule(seasons = most_recent_mbb_season())
 #>  8  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
 #>  9  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
 #> 10  4.02e8 s:40… 2027…          0 TRUE       FALSE        FALSE                 
-#> # ℹ 6,061 more rows
+#> # ℹ 6,062 more rows
 #> # ℹ 81 more variables: recent <lgl>, start_date <chr>, broadcast <chr>,
 #> #   notes_type <chr>, notes_headline <chr>, broadcast_market <chr>,
 #> #   broadcast_name <chr>, type_id <int>, type_abbreviation <chr>,
@@ -623,21 +625,21 @@ load_mbb_schedule(seasons = most_recent_mbb_season())
 # One season is a ~14 MB download.
 load_mbb_shots(seasons = most_recent_mbb_season())
 #> ── ESPN MBB shots from hoopR data repository ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-09 12:39:24 UTC
-#> # A tibble: 77,755 × 20
+#> ℹ Data updated: 2026-11-13 11:57:36 UTC
+#> # A tibble: 112,185 × 20
 #>      game_id season period_number clock_display_value team_id athlete_id_1
 #>        <int>  <int>         <int> <chr>                 <int>        <int>
-#>  1 401920424   2027             1 19:48                   258      5176232
-#>  2 401920424   2027             1 19:28                     8      5176136
-#>  3 401920424   2027             1 19:09                   258      5176232
-#>  4 401920424   2027             1 18:58                     8      5185443
-#>  5 401920424   2027             1 18:58                     8      5185443
-#>  6 401920424   2027             1 18:58                     8      5185443
-#>  7 401920424   2027             1 18:32                   258      5311846
-#>  8 401920424   2027             1 18:17                     8      5185443
-#>  9 401920424   2027             1 18:17                     8      5185443
-#> 10 401920424   2027             1 17:55                   258      5150404
-#> # ℹ 77,745 more rows
+#>  1 401921741   2027             1 19:46                   252      5210917
+#>  2 401921741   2027             1 19:43                   252      5210917
+#>  3 401921741   2027             1 19:07                   252      5060709
+#>  4 401921741   2027             1 18:46                   147      5241290
+#>  5 401921741   2027             1 18:28                   147      5241290
+#>  6 401921741   2027             1 17:51                   147      5061605
+#>  7 401921741   2027             1 17:41                   252      4873141
+#>  8 401921741   2027             1 17:30                   147      5313225
+#>  9 401921741   2027             1 17:21                   252      5238207
+#> 10 401921741   2027             1 16:49                   147      5313224
+#> # ℹ 112,175 more rows
 #> # ℹ 14 more variables: athlete_id_2 <int>, type_id <int>, type_text <chr>,
 #> #   scoring_play <lgl>, score_value <int>, coordinate_x <dbl>,
 #> #   coordinate_y <dbl>, coordinate_x_raw <dbl>, coordinate_y_raw <dbl>,

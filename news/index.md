@@ -78,9 +78,18 @@
 - [`load_mbb_officials()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
   accepts 2003-2024 (except 2010) and
   [`load_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
-  2003-2024: those seasons are published, as `.parquet` only, and were
-  refused by the loader floors. They need the `arrow` package. The NBA
-  crosswalk floors were already 2002, as published
+  2003-2024: those seasons are published and were refused by the loader
+  floors. After the 2026-11-13 backfill every one of them is also
+  published as `.rds`, so they no longer need arrow. The same backfill
+  published
+  [`load_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  2003-2024 (ESPN’s single-season player rows are sparse before
+  about 2010) and
+  [`load_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
+  /
+  [`load_nba_officials()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
+  1994-2001, and the loaders now accept them. The NBA crosswalk floors
+  were already 2002, as published
   ([\#261](https://github.com/sportsdataverse/hoopR/issues/261),
   mirroring sportsdataverse-py#1091).
 
@@ -553,12 +562,14 @@ vocabulary.
   [`load_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
   rejects the unpublished 2004-2005.
   [`load_mbb_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
-  [`load_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
-  [`load_mbb_officials()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
   [`load_nba_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
   and
   [`load_mbb_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_crosswalk.md)
   start at 2025,
+  [`load_mbb_player_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  and
+  [`load_mbb_officials()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  at 2003,
   [`load_mbb_team_stats()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
   and
   [`load_mbb_standings()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
@@ -566,8 +577,8 @@ vocabulary.
   [`load_mbb_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_crosswalk.md)
   at 2008, and
   [`load_mbb_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
-  takes 2002 and 2025 onward; before, `seasons = TRUE` asked for every
-  missing season and warned once per season.
+  takes 2002 onward; before, `seasons = TRUE` asked for every missing
+  season and warned once per season.
   [`load_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
   [`load_nba_player_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
   [`load_nba_schedule()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),

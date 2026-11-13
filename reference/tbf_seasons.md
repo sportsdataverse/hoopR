@@ -66,7 +66,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_seasons())
 #> ── TBF Seasons ────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 02:05:51 UTC
+#> ℹ Data updated: 2026-11-13 12:55:29 UTC
 #> # A tibble: 20 × 6
 #>    season_id season_label season start_date end_date   international
 #>        <int> <chr>         <int> <date>     <date>     <lgl>        

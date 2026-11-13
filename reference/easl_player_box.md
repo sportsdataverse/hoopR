@@ -48,7 +48,7 @@ lists every function in this family.
 # \donttest{
   try(easl_player_box(fixture_id = "10af8fd4-106e-11f1-960b-5798087c7aa3"))
 #> ── EASL Player Box Score from easl.joshricha.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 01:59:33 UTC
+#> ℹ Data updated: 2026-11-13 12:49:32 UTC
 #> # A tibble: 24 × 94
 #>    fixture_id           team_id team_name team_name_native player_id player_name
 #>    <chr>                <chr>   <chr>     <chr>            <chr>     <chr>      

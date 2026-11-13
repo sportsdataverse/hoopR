@@ -43,21 +43,21 @@ lists every function in this family.
 # \donttest{
   try(kzs_teams(competition_id = 579))
 #> ── KZS Teams from api.kzs.si ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-10 02:02:51 UTC
+#> ℹ Data updated: 2026-11-13 12:52:22 UTC
 #> # A tibble: 11 × 19
 #>    competition_id team_id team_application_id club_id club_member
 #>             <int>   <int>               <int>   <int> <lgl>      
-#>  1            579   17548               45427     254 FALSE      
+#>  1            579   17550               45131      46 FALSE      
 #>  2            579   17549               45359      55 FALSE      
-#>  3            579   17550               45131      46 FALSE      
-#>  4            579   17551               45242      16 FALSE      
-#>  5            579   17552               45065      26 FALSE      
-#>  6            579   17553               45218      49 FALSE      
-#>  7            579   17554               45208      56 FALSE      
-#>  8            579   17555               45018      45 FALSE      
-#>  9            579   17556               45647      44 FALSE      
-#> 10            579   17557               45625      59 FALSE      
-#> 11            579   17558               45576       9 FALSE      
+#>  3            579   17558               45576       9 FALSE      
+#>  4            579   17553               45218      49 FALSE      
+#>  5            579   17556               45647      44 FALSE      
+#>  6            579   17554               45208      56 FALSE      
+#>  7            579   17551               45242      16 FALSE      
+#>  8            579   17552               45065      26 FALSE      
+#>  9            579   17548               45427     254 FALSE      
+#> 10            579   17555               45018      45 FALSE      
+#> 11            579   17557               45625      59 FALSE      
 #> # ℹ 14 more variables: team_internal_ranking <chr>, category <chr>, rank <chr>,
 #> #   gender <chr>, sport_hall_id <int>, sport_hall_name <chr>, name <chr>,
 #> #   code <chr>, home_jersey_color <chr>, guest_jersey_color <chr>,
