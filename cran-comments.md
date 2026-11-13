@@ -17,6 +17,10 @@ full list of changes is in NEWS.md. The main additions:
   officials and team season stats from 1994), each published as `.rds`, so no loader needs arrow
   for an older season. New loaders read the static stats.ncaa.org to ESPN
   team crosswalk tables (`load_mbb_ncaa_espn_*()`).
+* Sixteen new NBA release loaders (Synergy play types, hustle, player
+  matchups, injury reports, draft combine, metric curves, rolling windows,
+  ESPN depth charts, current impact), one for each data release that had no
+  hoopR loader.
 * Fixes for ESPN play-by-play, game rosters and prop bets, ESPN wrappers
   that a harmless parse warning emptied, Fox odds, the NBA CDN and G League
   feeds, Torvik, KenPom, `nba_gamerotation()` and `nba_pbp()` on-court players.
@@ -30,7 +34,7 @@ full list of changes is in NEWS.md. The main additions:
   stringdist moved to Suggests; withr and xml2 are now imported.
 * The package now ships its `inst/CITATION` file, and three datasets:
   `parameter_descriptions` (10 KB), `mbb_team_names` (6 KB) and
-  `return_columns` (238 KB, xz): the returned columns of 963 functions.
+  `return_columns` (245 KB, xz): the returned columns of 979 functions.
   The NBA and men's college basketball help pages keep their column
   tables; the other 647 pages point to `return_columns` instead.
 * `ByteCompile: false`: the package is no longer byte-compiled at install
@@ -136,10 +140,11 @@ These examples run only in interactive sessions (`@examplesIf interactive()`):
   roster), `nba_team_crosswalk()`, `nba_schedule_crosswalk()` and
   `nba_player_crosswalk()` (it also calls stats.nba.com for each team's
   roster).
-* Large downloads: the release loaders whose one-season file is 7 to 80 MB
+* Large downloads: the release loaders whose one-season file is 5.6 to 80 MB
   (`load_mbb_pbp()`, `load_mbb_player_box()`, `load_mbb_shots()`,
-  `load_nba_stats_pbp()`, and the NCAA MBB pbp, shots, lineups,
-  matchup-stints, possessions and player-box loaders).
+  `load_nba_stats_pbp()`, `load_nba_stats_game_matchups()`, and the NCAA
+  MBB pbp, shots, lineups, matchup-stints, possessions and player-box
+  loaders).
 * Shared pages: `?load_nba_stats_coaches` documents 17 one-season
   `load_nba_stats_*()` loaders; `load_nba_stats_coaches()` and
   `load_nba_stats_draft()` still run (0.5 s each), the other 15 are

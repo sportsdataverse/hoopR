@@ -574,6 +574,7 @@ load_nba_shots(seasons = most_recent_nba_season())
 }
 \seealso{
 Other hoopR Loader Functions:
-\code{\link[=load_mbb_pbp]{load_mbb_pbp()}}
+\code{\link[=load_mbb_pbp]{load_mbb_pbp()}},
+\code{\link[=load_nba_depthcharts]{load_nba_depthcharts()}}
 }
 \concept{hoopR Loader Functions}

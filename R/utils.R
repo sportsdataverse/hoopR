@@ -388,9 +388,14 @@ rds_or_parquet_from_url <- function(url) {
   force(default)
   last <- as.integer(last)
   avail <- setdiff(first:last, gaps)
+  # `url_for(s)` may name several files (a multi-file loader's requested
+  # assets): the season counts as published when any one of them is, probed
+  # in order and stopping at the first hit.
   published <- function(s) {
-    .release_asset_exists(url_for(s)) ||
-      (parquet && .release_asset_exists(sub("\\.rds$", ".parquet", url_for(s))))
+    u <- url_for(s)
+    if (parquet) u <- c(u, sub("\\.rds$", ".parquet", u))
+    for (x in u) if (.release_asset_exists(x)) return(TRUE)
+    FALSE
   }
   newest_missing <- local({
     ans <- NULL

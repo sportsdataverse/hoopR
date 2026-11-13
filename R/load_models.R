@@ -63,6 +63,52 @@ load_nba_player_impact <- function(seasons = most_recent_nba_season(),
 }
 
 
+#' **Load NBA current-impact ratings**
+#' @name load_nba_current_impact
+NULL
+#' @title
+#' **Load NBA current-impact ratings (weekly as-of ratings) from the data repo**
+#' @rdname load_nba_current_impact
+#' @author Saiem Gilani
+#' @param seasons A vector of 4-digit season-ending years (`2026` = 2025-26),
+#'   like [load_nba_player_impact()]. Published coverage runs 2007 through
+#'   2026, with no gaps; the default [most_recent_nba_season()] falls back to
+#'   the newest published season with a message. Pass `seasons = TRUE` for
+#'   every published season. (Min: 2007)
+#' @param ... Additional arguments passed to an underlying function that writes
+#'   the season data into a database.
+#' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
+#' @param tablename The name of the data table within the database
+#' @family Model Dataset loader functions
+#' @description Loads the `nba_current_impact` release: each NBA player's
+#'   current offensive/defensive impact (points per 100 possessions) as of
+#'   opening night and every 7 days after, from every game before that date
+#'   -- a box-score prior plus a Kalman-filtered deviation carried across
+#'   seasons. Where [load_nba_player_impact()] says what a player did in a
+#'   season, this says what to expect from him on a date. Produced by the
+#'   sportsdataverse-py `nba_current_impact()` model (published by
+#'   `hoopR-nba-stats-data`'s `nba_model_publish current-impact`); `player_id`
+#'   is the NBA Stats `person_id`. Coverage is 2007 (2006-07) to 2026.
+#' @eval .returns_rd("load_nba_current_impact", unit = "player per as-of date")
+#' @source The `nba_current_impact` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_current_impact>, published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+#' @export
+#' @examples
+#' \donttest{
+#'   try(load_nba_current_impact(seasons = 2026))
+#' }
+load_nba_current_impact <- function(seasons = most_recent_nba_season(),
+                                    ...,
+                                    dbConnection = NULL, tablename = NULL) {
+  # END-year seasons, like load_nba_player_impact(): the asset suffix and the
+  # `season` column are both the END year.
+  .load_release_assets("load_nba_current_impact", "nba_current_impact",
+                       list(list(stem = "nba_current_impact", stamps = list())), seasons,
+                       first = 2007, last = most_recent_nba_season(),
+                       default = missing(seasons), offset = 0L, ext = "rds",
+                       dbConnection = dbConnection, tablename = tablename, ...)
+}
+
+
 #' **Load NCAA men's college basketball player-value ratings (box BPM) from the data repo**
 #' @name load_mbb_player_value
 NULL

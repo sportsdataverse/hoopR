@@ -151,6 +151,10 @@ published to the \code{mbb_ratings} release tag.
   try(load_mbb_ratings(seasons = most_recent_mbb_season()))
 }
 }
+\seealso{
+Other Model Dataset loader functions:
+\code{\link[=load_nba_current_impact]{load_nba_current_impact()}}
+}
 \author{
 Saiem Gilani
 }

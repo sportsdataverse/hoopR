@@ -764,3 +764,38 @@ load_nba_shots <- function(seasons = most_recent_nba_season(), ...,
   }
   out
 }
+
+#' **Load hoopR NBA depth charts**
+#' @name load_nba_depthcharts
+NULL
+#' @title
+#' **Load ESPN NBA depth charts from the data repo**
+#' @rdname load_nba_depthcharts
+#' @description Loads the `espn_nba_depthcharts` release: daily snapshots of
+#'   every NBA team's ESPN depth chart, one row per athlete per depth-chart
+#'   slot per snapshot date (`as_of_date`), with the slot's position and the
+#'   athlete's `depth_rank` in it. The tag holds the current season only
+#'   (2027 = 2026-27, the first season captured), as parquet.
+#' @param seasons A vector of 4-digit season-ending years (`2027` = 2026-27),
+#'   like the other ESPN `load_nba_*()` loaders. Published coverage starts at
+#'   2027. Pass `seasons = TRUE` for every published season.
+#' @param ... Additional arguments passed to an underlying function that writes
+#'   the season data into a database.
+#' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
+#' @param tablename The name of the data table within the database
+#' @eval .returns_rd("load_nba_depthcharts", unit = "athlete per depth-chart slot per snapshot date")
+#' @source The `espn_nba_depthcharts` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_depthcharts>.
+#' @export
+#' @family hoopR Loader Functions
+#' @examples
+#' \donttest{
+#'   try(load_nba_depthcharts(seasons = most_recent_nba_season()))
+#' }
+load_nba_depthcharts <- function(seasons = most_recent_nba_season(), ...,
+                                 dbConnection = NULL, tablename = NULL) {
+  .load_release_assets("load_nba_depthcharts", "espn_nba_depthcharts",
+                       list(list(stem = "depthcharts", stamps = list())), seasons,
+                       first = 2027, last = most_recent_nba_season(),
+                       default = missing(seasons), offset = 0L,
+                       dbConnection = dbConnection, tablename = tablename, ...)
+}
