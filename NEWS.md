@@ -81,6 +81,10 @@
 
 ### **Behavior changes**
 
+* `load_nba_stats_player_game_logs()` now returns one row per player-game, with
+  `player_id`, `player_name` and `fantasy_pts`. Until 2026-11-13 the
+  `nba_stats_player_game_logs` release held team rows; those moved to
+  `load_nba_stats_team_game_logs()`.
 * The ESPN release loaders, the NBA and MBB crosswalk loaders and
   `load_ncaa_mbb_rapm()` / `load_ncaa_mbb_rapm_within_team()` no longer return an
   empty table when called with their default season before that season is
@@ -158,6 +162,8 @@
 
 ### **New data loaders**
 
+* `load_nba_stats_team_game_logs()` reads the new `nba_stats_team_game_logs`
+  release: one row per team-game from stats.nba.com `leaguegamelog`, 1996-97 onward.
 * Eight new loaders read the `mbb_groups` and `nba_groups` releases on
   sportsdataverse-data, which record conference and division membership as
   it was each season rather than back-applying today's alignment:

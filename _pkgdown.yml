@@ -272,6 +272,7 @@ reference:
       - '`load_nba_stats_shots`'
       - '`load_nba_stats_standings`'
       - '`load_nba_stats_team_boxscores`'
+      - '`load_nba_stats_team_game_logs`'
       - '`load_nba_stats_team_season_stats`'
       - '`update_nba_stats_db`'
   - subtitle: Men's College Basketball Data Functions
@@ -872,6 +873,7 @@ redirects:
 - ["reference/load_nba_stats_shots.html", "reference/load_nba_stats_coaches.html"]
 - ["reference/load_nba_stats_standings.html", "reference/load_nba_stats_coaches.html"]
 - ["reference/load_nba_stats_team_boxscores.html", "reference/load_nba_stats_coaches.html"]
+- ["reference/load_nba_stats_team_game_logs.html", "reference/load_nba_stats_coaches.html"]
 - ["reference/load_nba_stats_team_season_stats.html", "reference/load_nba_stats_coaches.html"]
 - ["reference/load_nba_schedule_crosswalk.html", "reference/load_nba_team_crosswalk.html"]
 - ["reference/load_nba_player_crosswalk.html", "reference/load_nba_team_crosswalk.html"]
