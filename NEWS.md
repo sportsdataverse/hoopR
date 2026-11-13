@@ -96,8 +96,8 @@
   them is also published as `.rds`, so they no longer need arrow. The same
   backfill published `load_mbb_player_stats()` 2003-2024 (ESPN's
   single-season player rows are sparse before about 2010) and
-  `load_nba_game_rosters()` / `load_nba_officials()` 1994-2001, and the
-  loaders now accept them. The NBA crosswalk floors were already 2002, as
+  `load_nba_game_rosters()` / `load_nba_officials()` 1994-2001, and a new ESPN
+  scrape published `load_nba_team_stats()` 1994-2001; the loaders now accept them. The NBA crosswalk floors were already 2002, as
   published (#261, mirroring sportsdataverse-py#1091).
 * `update_mbb_db()`, `update_nba_db()` and `update_nba_stats_db()` no longer write to the
   working directory by default. `dbdir` now defaults to the per-user data directory

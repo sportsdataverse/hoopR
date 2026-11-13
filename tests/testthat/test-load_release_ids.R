@@ -67,6 +67,7 @@ test_that("loader floors match the first season each release publishes", {
   expect_no_error(load_nba_game_rosters(seasons = 1994))
   expect_no_error(load_nba_officials(seasons = 1994))
   expect_error(load_nba_officials(seasons = 1993), "Published seasons: 1994-")
+  expect_no_error(load_nba_team_stats(seasons = 1994))
   expect_match(env$urls, "_1994[.]rds$")
   expect_error(load_nba_team_box(seasons = 1993), "Published seasons: 1994-")
 
