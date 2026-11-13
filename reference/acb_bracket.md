@@ -56,7 +56,7 @@ lists every function in this family.
 # \donttest{
   try(acb_bracket(season = 2026))
 #> ── ACB Bracket from api2.acb.com ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 17:32:44 UTC
+#> ℹ Data updated: 2026-11-13 18:12:16 UTC
 #> # A tibble: 7 × 18
 #>   stage  phase_id subphase_id home_team_id home_club_id home_team home_team_abbr
 #>   <chr>     <int>       <int>        <int>        <int> <chr>     <chr>         

@@ -47,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(lba_pbp(game_id = 25602))
 #> ── LBA Play-by-Play from legabasket.it ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 17:37:12 UTC
+#> ℹ Data updated: 2026-11-13 18:17:05 UTC
 #> # A tibble: 605 × 36
 #>    game_id season home_team_id visitor_team_id team_side home_score
 #>      <int>  <int>        <int>           <int> <chr>          <int>

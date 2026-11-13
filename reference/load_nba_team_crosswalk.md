@@ -124,6 +124,7 @@ Other NBA Crosswalk Functions:
 [`nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_team_crosswalk.md)
 
 Other MBB Crosswalk Functions:
+[`load_mbb_ncaa_espn_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_mbb_ncaa_espn_team_crosswalk.md),
 [`mbb_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_player_crosswalk.md),
 [`mbb_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_schedule_crosswalk.md),
 [`mbb_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_team_crosswalk.md)
@@ -182,7 +183,7 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 16:31:16 UTC
+#> ℹ Data updated: 2026-11-13 18:02:23 UTC
 #> # A tibble: 490 × 21
 #>    season espn_team_id team_abbreviation player_name         espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                         <int>
@@ -254,7 +255,7 @@ load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 # \donttest{
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #> ── MBB player crosswalk (ESPN / Fox) ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:16:43 UTC
+#> ℹ Data updated: 2026-11-13 17:59:15 UTC
 #> # A tibble: 5,568 × 18
 #>    season espn_team_id team_abbreviation player_name        espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                        <int>

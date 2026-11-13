@@ -107,7 +107,7 @@ Other Genius Functions:
 # \donttest{
   try(genius_player_box(match_id = 2902690))
 #> ── Genius LiveStats player box score ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 17:36:19 UTC
+#> ℹ Data updated: 2026-11-13 18:16:08 UTC
 #> # A tibble: 24 × 51
 #>    match_id   tno   pno name       first_name family_name international_first_…¹
 #>       <int> <int> <int> <chr>      <chr>      <chr>       <chr>                 

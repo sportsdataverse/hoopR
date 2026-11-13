@@ -54,7 +54,7 @@ lists every function in this family.
 # \donttest{
   try(sportpress_standings(competition_id = 24, phase_id = 169))
 #> ── BNXT League Standings from Sportpress ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 17:39:45 UTC
+#> ℹ Data updated: 2026-11-13 18:19:54 UTC
 #> # A tibble: 18 × 27
 #>    competition_id phase_id competition_team_id team      team_short_name club_id
 #>             <int>    <int>               <int> <chr>     <chr>             <int>

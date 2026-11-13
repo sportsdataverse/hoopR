@@ -37,7 +37,7 @@ lists every function in this family.
 # \donttest{
   try(sportpress_club_seasons())
 #> ── BNXT League Club Seasons from Sportpress ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 17:39:32 UTC
+#> ℹ Data updated: 2026-11-13 18:19:40 UTC
 #> # A tibble: 6 × 1
 #>   season
 #>    <int>

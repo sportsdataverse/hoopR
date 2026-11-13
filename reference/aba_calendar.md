@@ -98,7 +98,7 @@ Other ABA Functions:
   # Interactive only: the season calendar page can take 20+ s to answer.
   try(aba_calendar(season = 2026))
 #> ── ABA League Calendar ────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 17:32:40 UTC
+#> ℹ Data updated: 2026-11-13 18:12:10 UTC
 #> # A tibble: 248 × 20
 #>    game_no season league_id league season_label  round group home_team away_team
 #>      <int>  <int>     <int> <chr>  <chr>         <chr> <chr> <chr>     <chr>    

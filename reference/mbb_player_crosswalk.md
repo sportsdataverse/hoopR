@@ -52,6 +52,7 @@ A `hoopR_data` tibble with one row per player per team.
 ## See also
 
 Other MBB Crosswalk Functions:
+[`load_mbb_ncaa_espn_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_mbb_ncaa_espn_team_crosswalk.md),
 [`load_nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_crosswalk.md),
 [`mbb_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_schedule_crosswalk.md),
 [`mbb_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/mbb_team_crosswalk.md)
@@ -61,7 +62,7 @@ Other MBB Crosswalk Functions:
 ``` r
 # \donttest{
   try(mbb_player_crosswalk(season = 2025))
-#> ✖ 2026-11-13 17:38:18.813899: Could not build MBB player crosswalk for 2025!
+#> ✖ 2026-11-13 18:18:13.606603: Could not build MBB player crosswalk for 2025!
 #> ✖ Args: season = 2025, min_confidence = 0.92
 #> ✖ Error: Torvik 2025: no team rows (19 rows, columns doctype_html_public_w3c_dtd_html_4_01_transitional_en_http_www_w3_org_tr_html4_loose_dtd, year); a blocked or empty response must not ship as NA bart_* columns
 #> data frame with 0 columns and 0 rows

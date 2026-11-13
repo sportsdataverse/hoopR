@@ -59,7 +59,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_play(event_id = 401256760, play_id = "401256760101805901")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Play Detail ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 17:34:42 UTC
+#> ℹ Data updated: 2026-11-13 18:14:27 UTC
 #> # A tibble: 1 × 19
 #>   league     event_id play_id sequence_number type_id type_text text  short_text
 #>   <chr>      <chr>    <chr>   <chr>           <chr>   <chr>     <chr> <chr>     
@@ -71,7 +71,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_play(event_id = 401283399, play_id = 4012833994)
 #> ── ESPN NBA Event Play Detail ─────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 17:34:42 UTC
+#> ℹ Data updated: 2026-11-13 18:14:27 UTC
 #> # A tibble: 1 × 19
 #>   league event_id  play_id    sequence_number type_id type_text text  short_text
 #>   <chr>  <chr>     <chr>      <chr>           <chr>   <chr>     <chr> <chr>     

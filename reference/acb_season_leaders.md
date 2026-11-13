@@ -51,7 +51,7 @@ lists every function in this family.
 # \donttest{
   try(acb_season_leaders(match_id = 105401))
 #> ── ACB Season Leaders from api2.acb.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 17:33:00 UTC
+#> ℹ Data updated: 2026-11-13 18:12:32 UTC
 #> # A tibble: 40 × 17
 #>    match_id edition_id season team_side team_id club_id team  team_abbr metric
 #>       <int>      <int>  <int> <chr>       <int>   <int> <chr> <chr>     <chr> 

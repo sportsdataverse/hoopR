@@ -54,7 +54,7 @@ lists every function in this family.
   # First quarter only; omit quarter_num for the whole game.
   try(cba_pbp(schedule_id = 100105799, quarter_num = 1))
 #> ── CBA Play-by-Play from data-server.cbaleague.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 17:33:41 UTC
+#> ℹ Data updated: 2026-11-13 18:13:14 UTC
 #> # A tibble: 74 × 19
 #>    schedule_id bt_textual_format    color distance home_color home_score minutes
 #>          <int> <chr>                <chr> <chr>    <chr>           <int>   <int>

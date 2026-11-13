@@ -82,7 +82,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_players(competition = "bsl", season = 2027))
 #> ── TBF Players ────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 17:39:57 UTC
+#> ℹ Data updated: 2026-11-13 18:20:06 UTC
 #> # A tibble: 266 × 11
 #>    season competition person_id player_name nationality nationality_code club_id
 #>     <int> <chr>           <int> <chr>       <chr>       <chr>              <int>

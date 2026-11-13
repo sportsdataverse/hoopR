@@ -436,6 +436,21 @@
 
 #### **College basketball (CBD, NCAA, Torvik, crosswalks)**
 
+- New
+  [`load_mbb_ncaa_espn_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_mbb_ncaa_espn_team_crosswalk.md),
+  [`load_mbb_ncaa_espn_schools()`](https://hoopR.sportsdataverse.org/reference/load_mbb_ncaa_espn_team_crosswalk.md)
+  and
+  [`load_mbb_ncaa_espn_school_seasons()`](https://hoopR.sportsdataverse.org/reference/load_mbb_ncaa_espn_team_crosswalk.md)
+  read the static (all-seasons) stats.ncaa.org to ESPN tables on the
+  `mbb_crosswalk` release: one row per season and stats.ncaa.org team id
+  (2009-10 on, the table sportsdataverse-py’s
+  `ncaa_espn_team_crosswalk(league = "mbb")` returns), one per NCAA
+  school, and one per school, sport and season. stats.ncaa.org mints a
+  new team id every season, so this is the join from the
+  `load_ncaa_mbb_*()` tables to the ESPN-based `load_mbb_*()` tables.
+  ESPN ids come back integer; the NCAA ids stay integer as published.
+  wehoop ships the WBB twins (`load_wbb_ncaa_espn_*()`).
+
 - `mbb_schedule_crosswalk(include_kenpom = TRUE)` no longer aborts on
   KenPom’s numeric `game_date` (`20201128`): the date now parses as
   `YYYYMMDD`, and each team’s KenPom schedule is fetched inside its own
@@ -741,7 +756,7 @@ vocabulary.
   values, default and the functions that take it
   ([\#248](https://github.com/sportsdataverse/hoopR/issues/248)).
 - New dataset `return_columns` and article “Return Columns”: one row per
-  column of every data frame 959 hoopR functions return (function, list
+  column of every data frame 963 hoopR functions return (function, list
   element, column name, type and description), searchable on the site;
   `subset(return_columns, fn == "nba_pbp")` gives one function’s columns
   in R. The NBA and men’s college basketball functions (`load_nba_*`,
