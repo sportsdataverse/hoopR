@@ -57,6 +57,13 @@ personal fouls, plus/minus). Backed by the `hoopR-nba-stats-data`
 pipeline that publishes csv/parquet/rds artifacts to the
 `nba_stats_player_game_logs` release tag.
 
+Loads per-team per-game logs scraped from
+`stats.nba.com/leaguegamelog?PlayerOrTeam=T` (one row per team-game: the
+team's box line, matchup and result). Backed by the
+`hoopR-nba-stats-data` pipeline that publishes csv/parquet/rds artifacts
+to the `nba_stats_team_game_logs` release tag. These rows were published
+as `nba_stats_player_game_logs` until 2026-11-13.
+
 Loads season-level NBA player statistics (`leaguedashplayerstats`-style
 outputs, `Base` measure). Backed by the `hoopR-nba-stats-data` pipeline
 that publishes csv/parquet/rds artifacts to the
@@ -175,6 +182,13 @@ load_nba_stats_player_game_logs(
   tablename = NULL
 )
 
+load_nba_stats_team_game_logs(
+  seasons = most_recent_nba_stats_season(),
+  ...,
+  dbConnection = NULL,
+  tablename = NULL
+)
+
 load_nba_stats_player_season_stats(
   seasons = most_recent_nba_stats_season(),
   ...,
@@ -231,6 +245,76 @@ load_nba_stats_team_season_stats(
   tablename = NULL
 )
 ```
+
+## Source
+
+The `nba_stats_coaches` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_coaches>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_draft` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_draft>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_game_lineups` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_game_lineups>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_game_rosters` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_game_rosters>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_lineups` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_lineups>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_officials` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_officials>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_pbp` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_pbp>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_player_boxscores` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_player_boxscores>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_player_game_logs` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_player_game_logs>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_player_season_stats` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_player_season_stats>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_possessions` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_possessions>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_rosters` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_rosters>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_schedules` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_schedules>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_shots` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_shots>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_standings` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_standings>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_team_boxscores` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_team_boxscores>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
+
+The `nba_stats_team_season_stats` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_stats_team_season_stats>,
+published by <https://github.com/sportsdataverse/hoopR-nba-stats-data>.
 
 ## Arguments
 
@@ -454,6 +538,8 @@ A `hoopR_data` tibble with one row per athlete-game pair.
 |----|----|----|
 | col_name | types | description |
 | season_id | character | Unique season identifier string. |
+| player_id | integer | Unique NBA Stats player identifier. |
+| player_name | character | Player display name, e.g. 'LeBron James'. |
 | team_id | integer | Unique NBA Stats team identifier. |
 | team_abbreviation | character | Three-letter team abbreviation. |
 | team_name | character | Full team display name. |
@@ -481,6 +567,44 @@ A `hoopR_data` tibble with one row per athlete-game pair.
 | pf | integer | Personal fouls. |
 | pts | integer | Points scored. |
 | plus_minus | integer | Plus/minus point differential while on court. |
+| fantasy_pts | numeric | NBA Stats fantasy points for the game. |
+| video_available | integer | Whether NBA Stats video is available for the game. |
+| season | integer | Season identifier (4-digit year, END year of the season). |
+| season_type | character | Portion of the season (e.g. 'Regular Season', 'Playoffs'). |
+
+A `hoopR_data` tibble with one row per team-game pair.
+
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| season_id | character | Unique season identifier string. |
+| team_id | integer | Unique NBA Stats team identifier. |
+| team_abbreviation | character | Three-letter team abbreviation. |
+| team_name | character | Full team display name. |
+| game_id | character | Unique game identifier. |
+| game_date | character | Date the game was played, as an ISO 'YYYY-MM-DD' string. |
+| matchup | character | Matchup string, e.g. 'BOS vs. NYK' or 'BOS @ NYK'. |
+| wl | character | Game result, 'W' or 'L'. |
+| min | integer | Minutes played. |
+| fgm | integer | Field goals made. |
+| fga | integer | Field goal attempts. |
+| fg_pct | numeric | Field goal percentage (0-1). |
+| fg3m | integer | Three-point field goals made. |
+| fg3a | integer | Three-point field goal attempts. |
+| fg3_pct | numeric | Three-point field goal percentage (0-1). |
+| ftm | integer | Free throws made. |
+| fta | integer | Free throw attempts. |
+| ft_pct | numeric | Free throw percentage (0-1). |
+| oreb | integer | Offensive rebounds. |
+| dreb | integer | Defensive rebounds. |
+| reb | integer | Total rebounds. |
+| ast | integer | Assists. |
+| stl | integer | Steals. |
+| blk | integer | Blocks. |
+| tov | integer | Turnovers. |
+| pf | integer | Personal fouls. |
+| pts | integer | Points scored. |
+| plus_minus | integer | Team point differential for the game. |
 | video_available | integer | Whether NBA Stats video is available for the game. |
 | season | integer | Season identifier (4-digit year, END year of the season). |
 | season_type | character | Portion of the season (e.g. 'Regular Season', 'Playoffs'). |
@@ -699,7 +823,7 @@ Other NBA Stats loader functions:
 #> #   player_profile_flag <int>
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_game_lineups(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 88,727 × 14
@@ -721,7 +845,7 @@ Other NBA Stats loader functions:
 #> #   away_player_4 <int>, away_player_5 <int>, season <int>
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_game_rosters(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 1,117 × 11
@@ -742,7 +866,7 @@ Other NBA Stats loader functions:
 #> #   season_type_id <chr>
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_lineups(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 32,000 × 192
@@ -767,7 +891,7 @@ Other NBA Stats loader functions:
 #> #   poss <int>, pie <dbl>, gp_rank <int>, w_rank <int>, l_rank <int>, …
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_officials(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 511 × 7
@@ -811,7 +935,7 @@ Other NBA Stats loader functions:
 #> #   game_id <chr>, seconds_remaining <dbl>, event_type <chr>, …
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_player_boxscores(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 4,928 × 37
@@ -836,10 +960,35 @@ Other NBA Stats loader functions:
 #> #   free_throws_made <int>, free_throws_attempted <int>, …
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_player_game_logs(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 340 × 31
+#> # A tibble: 3,933 × 34
+#>    season_id player_id player_name   team_id team_abbreviation team_name game_id
+#>    <chr>         <int> <chr>           <int> <chr>             <chr>     <chr>  
+#>  1 22026       1642845 VJ Edgecombe   1.61e9 PHI               Philadel… 002260…
+#>  2 22026       1631119 Jaylin Willi…  1.61e9 OKC               Oklahoma… 002260…
+#>  3 22026        203083 Andre Drummo…  1.61e9 NYK               New York… 002260…
+#>  4 22026       1629026 Kenrich Will…  1.61e9 OKC               Oklahoma… 002260…
+#>  5 22026       1628384 OG Anunoby     1.61e9 NYK               New York… 002260…
+#>  6 22026       1641705 Victor Wemba…  1.61e9 SAS               San Anto… 002260…
+#>  7 22026       1628969 Mikal Bridges  1.61e9 NYK               New York… 002260…
+#>  8 22026       1627936 Alex Caruso    1.61e9 OKC               Oklahoma… 002260…
+#>  9 22026       1628973 Jalen Brunson  1.61e9 NYK               New York… 002260…
+#> 10 22026       1628983 Shai Gilgeou…  1.61e9 OKC               Oklahoma… 002260…
+#> # ℹ 3,923 more rows
+#> # ℹ 27 more variables: game_date <chr>, matchup <chr>, wl <chr>, min <int>,
+#> #   fgm <int>, fga <int>, fg_pct <dbl>, fg3m <int>, fg3a <int>, fg3_pct <dbl>,
+#> #   ftm <int>, fta <int>, ft_pct <dbl>, oreb <int>, dreb <int>, reb <int>,
+#> #   ast <int>, stl <int>, blk <int>, tov <int>, pf <int>, pts <int>,
+#> #   plus_minus <int>, fantasy_pts <dbl>, video_available <int>, season <int>,
+#> #   season_type <chr>
+# }
+# \donttest{
+  # Interactive only: this help page holds 18 loaders, each a download.
+  try(load_nba_stats_team_game_logs(seasons = most_recent_nba_stats_season()))
+#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
+#> # A tibble: 348 × 31
 #>    season_id team_id team_abbreviation team_name game_id game_date matchup wl   
 #>    <chr>       <int> <chr>             <chr>     <chr>   <chr>     <chr>   <chr>
 #>  1 22026      1.61e9 DET               Detroit … 002260… 2026-10-… DET vs… W    
@@ -852,7 +1001,7 @@ Other NBA Stats loader functions:
 #>  8 22026      1.61e9 ORL               Orlando … 002260… 2026-10-… ORL vs… L    
 #>  9 22026      1.61e9 ATL               Atlanta … 002260… 2026-10-… ATL @ … W    
 #> 10 22026      1.61e9 BKN               Brooklyn… 002260… 2026-10-… BKN vs… L    
-#> # ℹ 330 more rows
+#> # ℹ 338 more rows
 #> # ℹ 23 more variables: min <int>, fgm <int>, fga <int>, fg_pct <dbl>,
 #> #   fg3m <int>, fg3a <int>, fg3_pct <dbl>, ftm <int>, fta <int>, ft_pct <dbl>,
 #> #   oreb <int>, dreb <int>, reb <int>, ast <int>, stl <int>, blk <int>,
@@ -860,7 +1009,7 @@ Other NBA Stats loader functions:
 #> #   season <int>, season_type <chr>
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_player_season_stats(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 5,568 × 212
@@ -885,7 +1034,7 @@ Other NBA Stats loader functions:
 #> #   tm_tov_pct <dbl>, e_tov_pct <dbl>, efg_pct <dbl>, ts_pct <dbl>, …
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_possessions(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 33,864 × 38
@@ -910,7 +1059,7 @@ Other NBA Stats loader functions:
 #> #   dreb <int>, tov <int>, off_player_1 <int>, off_player_2 <int>, …
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_rosters(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 524 × 18
@@ -932,7 +1081,7 @@ Other NBA Stats loader functions:
 #> #   supplemental_status <int>, season_type <chr>
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_schedule(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 1,274 × 15
@@ -955,7 +1104,7 @@ Other NBA Stats loader functions:
 #> #   away_wl <chr>
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_shots(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 29,857 × 19
@@ -977,7 +1126,7 @@ Other NBA Stats loader functions:
 #> #   y_legacy <int>, description <chr>, score_home <chr>, score_away <chr>
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_standings(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 30 × 94
@@ -1002,7 +1151,7 @@ Other NBA Stats loader functions:
 #> #   ten_pts_or_more <chr>, long_home_streak <int>, …
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_team_boxscores(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 342 × 29
@@ -1027,7 +1176,7 @@ Other NBA Stats loader functions:
 #> #   rebounds_defensive <int>, rebounds_total <int>, assists <int>, …
 # }
 # \donttest{
-  # Interactive only: this help page holds 17 loaders, each a download.
+  # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_team_season_stats(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
 #> # A tibble: 420 × 188

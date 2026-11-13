@@ -82,7 +82,7 @@ library(ggplot2)
 
 ### How is hoopR organized? Function prefixes and data sources
 
-`hoopR` version 3.2.0 exports 1320 functions. That sounds like a lot,
+`hoopR` version 3.2.0 exports 1321 functions. That sounds like a lot,
 but the **prefix** of a function name tells you where its data comes
 from, so you only need to learn a dozen patterns.
 

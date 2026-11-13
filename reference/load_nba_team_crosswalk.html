@@ -206,6 +206,15 @@ sportsdataverse-data repository.</p>
     </div>
 
     <div class="section level2">
+    <h2 id="source">Source<a class="anchor" aria-label="anchor" href="#source"></a></h2>
+    <p>The <code>nba_crosswalk</code> release: <a href="https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk" class="external-link">https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk</a>.</p>
+<p>The <code>nba_crosswalk</code> release: <a href="https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk" class="external-link">https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk</a>.</p>
+<p>The <code>nba_crosswalk</code> release: <a href="https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk" class="external-link">https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk</a>.</p>
+<p>The <code>mbb_crosswalk</code> release: <a href="https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk" class="external-link">https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk</a>.</p>
+<p>The <code>mbb_crosswalk</code> release: <a href="https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk" class="external-link">https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk</a>.</p>
+<p>The <code>mbb_crosswalk</code> release: <a href="https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk" class="external-link">https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk</a>.</p>
+    </div>
+    <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
 
 
@@ -221,7 +230,12 @@ for that not-yet-published season is kept as asked: the read warns and
 returns an empty frame. A season outside the published range, or in a
 known gap, is an error.
 ESPN ids (<code>espn_game_id</code>, <code>espn_athlete_id</code>, <code>espn_team_id</code>) are returned as
-integer, matching the ESPN box score, schedule and roster loaders.</p></dd>
+integer, matching the ESPN box score, schedule and roster loaders. So
+are the NBA Stats ids of the NBA crosswalks (<code>nba_team_id</code>,
+<code>nba_home_team_id</code>, <code>nba_away_team_id</code>, <code>nba_player_id</code>), matching the
+<code>load_nba_stats_*()</code> loaders; <code>nba_game_id</code> keeps its leading zeros as
+character (<code>"0022300001"</code>). The live builders (<code><a href="nba_team_crosswalk.html">nba_team_crosswalk()</a></code>
+and friends) still return the NBA Stats ids as character.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -278,7 +292,7 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>027           10 HOU               Houston Rockets       Rockets        </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 20 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 16 more variables: espn_location &lt;chr&gt;, espn_mascot &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   nba_team_id &lt;chr&gt;, nba_team_abbreviation &lt;chr&gt;, nba_team_name &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   nba_team_id &lt;int&gt;, nba_team_abbreviation &lt;chr&gt;, nba_team_name &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   nba_team_city &lt;chr&gt;, nba_team_slug &lt;chr&gt;, nba_conference &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   nba_division &lt;chr&gt;, fox_team_id &lt;chr&gt;, fox_team_name &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   yahoo_team_id &lt;chr&gt;, yahoo_team_abbreviation &lt;chr&gt;, yahoo_team_name &lt;chr&gt;,</span></span>
@@ -287,7 +301,7 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_schedule_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-12 16:31:16 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-13 16:30:47 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1,207 × 16</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season season_type game_date  home_espn_team_id away_espn_team_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
@@ -303,14 +317,14 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>027 <span style="color: #BB0000;">NA</span>          2027-04-11                 5                 1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1,197 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 11 more variables: espn_game_id &lt;int&gt;, nba_game_id &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   nba_game_code &lt;chr&gt;, nba_home_team_id &lt;chr&gt;, nba_away_team_id &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   nba_game_code &lt;chr&gt;, nba_home_team_id &lt;int&gt;, nba_away_team_id &lt;int&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fox_game_id &lt;chr&gt;, fox_home_team_id &lt;chr&gt;, fox_away_team_id &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   yahoo_game_id &lt;chr&gt;, match_method &lt;chr&gt;, match_confidence &lt;dbl&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="fu">load_nba_player_crosswalk</span><span class="op">(</span>seasons <span class="op">=</span> <span class="fu"><a href="most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-12 16:31:34 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-13 16:31:16 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 490 × 21</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    season espn_team_id team_abbreviation player_name         espn_athlete_id</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
@@ -326,7 +340,7 @@ MBB player per season. Columns include at minimum <code>season</code> and
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">2</span>027            1 ATL               kingston flemings           5<span style="text-decoration: underline;">149</span>077</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 480 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 16 more variables: espn_full_name &lt;chr&gt;, espn_jersey &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   espn_position &lt;chr&gt;, nba_player_id &lt;chr&gt;, nba_player_name &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   espn_position &lt;chr&gt;, nba_player_id &lt;int&gt;, nba_player_name &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   nba_jersey_num &lt;chr&gt;, nba_position &lt;chr&gt;, fox_athlete_id &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   fox_player &lt;chr&gt;, fox_jersey &lt;chr&gt;, fox_position_group &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   yahoo_player_id &lt;chr&gt;, yahoo_player_name &lt;chr&gt;, match_method &lt;chr&gt;,</span></span>

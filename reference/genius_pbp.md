@@ -109,7 +109,7 @@ Other Genius Functions:
 # \donttest{
   try(genius_pbp(match_id = 2902690))
 #> ── Genius LiveStats play-by-play ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 13:59:07 UTC
+#> ℹ Data updated: 2026-11-13 17:36:18 UTC
 #> # A tibble: 663 × 25
 #>    match_id row_index action_number previous_action period period_type gt   
 #>       <int>     <int>         <int>           <int>  <int> <chr>       <chr>

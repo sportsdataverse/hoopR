@@ -182,7 +182,13 @@ default to preserve, so <code>datasets</code> is required.</p>
 <code>"coaches"</code>, <code>"draft"</code>, <code>"game_lineups"</code>, <code>"game_rosters"</code>, <code>"lineups"</code>,
 <code>"officials"</code>, <code>"pbp"</code>, <code>"player_boxscores"</code>, <code>"player_game_logs"</code>,
 <code>"player_season_stats"</code>, <code>"possessions"</code>, <code>"rosters"</code>, <code>"schedule"</code>,
-<code>"shots"</code>, <code>"standings"</code>, <code>"team_boxscores"</code>, <code>"team_season_stats"</code>.</p>
+<code>"shots"</code>, <code>"standings"</code>, <code>"team_boxscores"</code>, <code>"team_game_logs"</code>,
+<code>"team_season_stats"</code>.</p>
+<p>A <code>nba_stats_player_game_logs</code> table written before hoopR 3.2.0 holds team
+rows (the release held team rows until 2026-11-13). Drop it and rebuild it,
+and add <code>"team_game_logs"</code> for those rows:
+<code>DBI::dbRemoveTable(con, "nba_stats_player_game_logs")</code>, then
+<code>update_nba_stats_db(datasets = c("player_game_logs", "team_game_logs"))</code>.</p>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

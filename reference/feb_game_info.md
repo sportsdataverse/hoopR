@@ -95,7 +95,7 @@ Other FEB Functions:
 # \donttest{
   try(feb_game_info(game_id = 2535725))
 #> ── FEB game info from intrafeb.feb.es ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 13:58:35 UTC
+#> ℹ Data updated: 2026-11-13 17:35:42 UTC
 #> # A tibble: 1 × 24
 #>   game_id comp_id competition group_label period clock start_time          venue
 #>     <int>   <int> <chr>       <chr>        <int> <chr> <dttm>              <chr>

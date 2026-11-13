@@ -61,6 +61,18 @@
 
 #### **Behavior changes**
 
+- [`load_nba_stats_player_game_logs()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  now returns one row per player-game, with `player_id`, `player_name`
+  and `fantasy_pts`. Until 2026-11-13 the `nba_stats_player_game_logs`
+  release held team rows; those moved to
+  [`load_nba_stats_team_game_logs()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md).
+  A database table written by
+  `update_nba_stats_db(datasets = "player_game_logs")` before this
+  release holds team rows: drop `nba_stats_player_game_logs` and rebuild
+  it, adding `"team_game_logs"` (now a valid
+  [`update_nba_stats_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_stats_db.md)
+  dataset).
+
 - The ESPN release loaders, the NBA and MBB crosswalk loaders and
   [`load_ncaa_mbb_rapm()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md)
   /
@@ -178,6 +190,9 @@
 
 #### **New data loaders**
 
+- [`load_nba_stats_team_game_logs()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  reads the new `nba_stats_team_game_logs` release: one row per
+  team-game from stats.nba.com `leaguegamelog`, 1996-97 onward.
 - Eight new loaders read the `mbb_groups` and `nba_groups` releases on
   sportsdataverse-data, which record conference and division membership
   as it was each season rather than back-applying today’s alignment:
@@ -612,6 +627,21 @@ vocabulary.
   the crosswalk loaders and the `*espn_game_id` / `*espn_team_id`
   columns of `load_ncaa_mbb_*()` were character, so joins to the box
   scores and schedules failed.
+- The NBA Stats ids of
+  [`load_nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_crosswalk.md)
+  (`nba_team_id`),
+  [`load_nba_schedule_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_crosswalk.md)
+  (`nba_home_team_id` / `nba_away_team_id`) and
+  [`load_nba_player_crosswalk()`](https://hoopR.sportsdataverse.org/reference/load_nba_team_crosswalk.md)
+  (`nba_player_id`) are integer, as in the `load_nba_stats_*()` loaders;
+  they were character, so a join to those loaders needed a cast.
+  `nba_game_id` keeps its leading zeros (`"0022300001"`) as character.
+  The live builders
+  ([`nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_team_crosswalk.md)
+  and friends) still return character NBA Stats ids.
+- Every `load_*()` release loader’s help page names its release tag on
+  sportsdataverse-data in a Source section, with the repository that
+  publishes it.
 - [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
   /
   [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)

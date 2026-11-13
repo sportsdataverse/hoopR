@@ -47,6 +47,26 @@ load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 ```
 
+## Source
+
+The `nba_crosswalk` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk>.
+
+The `nba_crosswalk` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk>.
+
+The `nba_crosswalk` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_crosswalk>.
+
+The `mbb_crosswalk` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk>.
+
+The `mbb_crosswalk` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk>.
+
+The `mbb_crosswalk` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk>.
+
 ## Arguments
 
 - seasons:
@@ -65,7 +85,13 @@ load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
   is kept as asked: the read warns and returns an empty frame. A season
   outside the published range, or in a known gap, is an error. ESPN ids
   (`espn_game_id`, `espn_athlete_id`, `espn_team_id`) are returned as
-  integer, matching the ESPN box score, schedule and roster loaders.
+  integer, matching the ESPN box score, schedule and roster loaders. So
+  are the NBA Stats ids of the NBA crosswalks (`nba_team_id`,
+  `nba_home_team_id`, `nba_away_team_id`, `nba_player_id`), matching the
+  `load_nba_stats_*()` loaders; `nba_game_id` keeps its leading zeros as
+  character (`"0022300001"`). The live builders
+  ([`nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_team_crosswalk.md)
+  and friends) still return the NBA Stats ids as character.
 
 ## Value
 
@@ -124,7 +150,7 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 #> 10   2027           10 HOU               Houston Rockets       Rockets        
 #> # ℹ 20 more rows
 #> # ℹ 16 more variables: espn_location <chr>, espn_mascot <chr>,
-#> #   nba_team_id <chr>, nba_team_abbreviation <chr>, nba_team_name <chr>,
+#> #   nba_team_id <int>, nba_team_abbreviation <chr>, nba_team_name <chr>,
 #> #   nba_team_city <chr>, nba_team_slug <chr>, nba_conference <chr>,
 #> #   nba_division <chr>, fox_team_id <chr>, fox_team_name <chr>,
 #> #   yahoo_team_id <chr>, yahoo_team_abbreviation <chr>, yahoo_team_name <chr>,
@@ -133,7 +159,7 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-12 16:31:16 UTC
+#> ℹ Data updated: 2026-11-13 16:30:47 UTC
 #> # A tibble: 1,207 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
 #>     <int> <chr>       <date>                 <int>             <int>
@@ -149,14 +175,14 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #> 10   2027 NA          2027-04-11                 5                 1
 #> # ℹ 1,197 more rows
 #> # ℹ 11 more variables: espn_game_id <int>, nba_game_id <chr>,
-#> #   nba_game_code <chr>, nba_home_team_id <chr>, nba_away_team_id <chr>,
+#> #   nba_game_code <chr>, nba_home_team_id <int>, nba_away_team_id <int>,
 #> #   fox_game_id <chr>, fox_home_team_id <chr>, fox_away_team_id <chr>,
 #> #   yahoo_game_id <chr>, match_method <chr>, match_confidence <dbl>
 # }
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-12 16:31:34 UTC
+#> ℹ Data updated: 2026-11-13 16:31:16 UTC
 #> # A tibble: 490 × 21
 #>    season espn_team_id team_abbreviation player_name         espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                         <int>
@@ -172,7 +198,7 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> 10   2027            1 ATL               kingston flemings           5149077
 #> # ℹ 480 more rows
 #> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
-#> #   espn_position <chr>, nba_player_id <chr>, nba_player_name <chr>,
+#> #   espn_position <chr>, nba_player_id <int>, nba_player_name <chr>,
 #> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,
 #> #   fox_player <chr>, fox_jersey <chr>, fox_position_group <chr>,
 #> #   yahoo_player_id <chr>, yahoo_player_name <chr>, match_method <chr>,

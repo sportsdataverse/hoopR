@@ -25,6 +25,14 @@ load_nba_team_group_seasons(
 )
 ```
 
+## Source
+
+The `mbb_groups` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_groups>.
+
+The `nba_groups` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_groups>.
+
 ## Arguments
 
 - seasons:

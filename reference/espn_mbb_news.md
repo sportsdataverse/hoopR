@@ -83,27 +83,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 13:57:51 UTC
+#> ℹ Data updated: 2026-11-13 17:34:47 UTC
 #> # A tibble: 5 × 8
-#>         id type    headline     description published premium link_web league_id
-#>      <int> <chr>   <chr>        <chr>       <chr>     <lgl>   <chr>    <chr>    
-#> 1 50470214 Preview Randolph le… Portland S… 2026-11-… FALSE   http://… 41       
-#> 2 50470213 Preview Lewis leads… Tulane Gre… 2026-11-… FALSE   http://… 41       
-#> 3 50470212 Preview Jordan lead… UNC Ashevi… 2026-11-… FALSE   http://… 41       
-#> 4 50470211 Preview Manhattan f… Manhattan … 2026-11-… FALSE   http://… 41       
-#> 5 50470210 Preview Duckett lea… UC Riversi… 2026-11-… FALSE   http://… 41       
+#>         id type        headline description published premium link_web league_id
+#>      <int> <chr>       <chr>    <chr>       <chr>     <lgl>   <chr>    <chr>    
+#> 1 50472155 HeadlineNe… TCU off… TCU has of… 2026-11-… FALSE   https:/… 41       
+#> 2 50470214 Preview     Randolp… Portland S… 2026-11-… FALSE   http://… 41       
+#> 3 50470213 Preview     Lewis l… Tulane Gre… 2026-11-… FALSE   http://… 41       
+#> 4 50470212 Preview     Jordan … UNC Ashevi… 2026-11-… FALSE   http://… 41       
+#> 5 50470211 Preview     Manhatt… Manhattan … 2026-11-… FALSE   http://… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 13:57:51 UTC
+#> ℹ Data updated: 2026-11-13 17:34:47 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.05e7 Story Michael… Three deca… 2026-11-… FALSE   David… https:/… 46       
-#> 2  5.05e7 Story Donovan… Mitchell m… 2026-11-… FALSE   Jamal… https:/… 46       
-#> 3  5.05e7 Media Cade dr… Cade Cunni… 2026-11-… FALSE   NA     https:/… 46       
-#> 4  5.05e7 Media Charlot… Charlotte … 2026-11-… FALSE   NA     https:/… 46       
-#> 5  5.05e7 Media Cunning… Cunningham… 2026-11-… FALSE   NA     https:/… 46       
+#> 1  5.05e7 Media Stephen… Stephen A.… 2026-11-… FALSE   NA     https:/… 46       
+#> 2  5.00e7 Story NBA buz… The NBA is… 2026-11-… FALSE   ESPN … https:/… 46       
+#> 3  5.05e7 Story Michael… Three deca… 2026-11-… FALSE   David… https:/… 46       
+#> 4  5.05e7 Story Donovan… Mitchell m… 2026-11-… FALSE   Jamal… https:/… 46       
+#> 5  5.05e7 Media Cade dr… Cade Cunni… 2026-11-… FALSE   NA     https:/… 46       
 # }
 ```

@@ -54,7 +54,7 @@ lists every function in this family.
 # \donttest{
   try(scb_game_teams(game_id = "2006920"))
 #> ── BBL/DBBL Game Team Box Score from the SCB API ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 14:01:53 UTC
+#> ℹ Data updated: 2026-11-13 17:39:05 UTC
 #> # A tibble: 2 × 63
 #>   league game_id season side  team_id head_coach_name status   scheduled_time   
 #>   <chr>  <chr>    <int> <chr> <chr>   <chr>           <chr>    <chr>            

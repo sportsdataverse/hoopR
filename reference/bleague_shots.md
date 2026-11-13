@@ -65,7 +65,7 @@ lists every function in this family.
 # \donttest{
   try(bleague_shots(schedule_key = 504734))
 #> ── B.LEAGUE shots from b-league.s3.amazonaws.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 13:56:40 UTC
+#> ℹ Data updated: 2026-11-13 17:33:34 UTC
 #> # A tibble: 134 × 23
 #>    schedule_key season feed  period event_no team_side team_id player_id 
 #>           <int>  <int> <chr>  <int>    <int> <chr>     <chr>   <chr>     

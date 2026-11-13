@@ -46,7 +46,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_pbp(match_id = 101839))
 #> ── KZS Play-by-Play from api.kzs.si ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 13:59:45 UTC
+#> ℹ Data updated: 2026-11-13 17:36:56 UTC
 #> # A tibble: 816 × 27
 #>    match_id action_number team_side source clock action_type sub_type qualifiers
 #>       <int>         <int> <chr>     <chr>  <chr> <chr>       <chr>    <chr>     

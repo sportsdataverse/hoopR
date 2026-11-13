@@ -200,6 +200,60 @@ load_ncaa_mbb_team_ids(
 )
 ```
 
+## Source
+
+The `ncaa_mbb_pbp` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_pbp>,
+published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
+
+The `ncaa_mbb_shots` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_shots>,
+published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
+
+The `ncaa_mbb_lineups` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_lineups>,
+published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
+
+The `ncaa_mbb_matchup_stints` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_matchup_stints>,
+published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
+
+The `ncaa_mbb_possessions` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_possessions>,
+published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
+
+The `ncaa_mbb_rapm_within_team` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_rapm_within_team>,
+published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
+
+The `ncaa_mbb_rapm` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_rapm>,
+published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
+
+The `ncaa_mbb_player_box` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_player_box>,
+published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
+
+The `ncaa_mbb_team_box` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_team_box>,
+published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
+
+The `ncaa_mbb_rosters` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_rosters>,
+published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
+
+The `ncaa_mbb_team_rosters` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_team_rosters>,
+published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
+
+The `ncaa_mbb_schedule` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_schedule>,
+published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
+
+The `ncaa_mbb_team_ids` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/ncaa_mbb_team_ids>,
+published by <https://github.com/sportsdataverse/ncaa-mbb-hoops-data>.
+
 ## Arguments
 
 - seasons:

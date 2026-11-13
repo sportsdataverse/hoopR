@@ -90,7 +90,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_leaders(season = 2025, season_type = 2)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Leaders from ESPN.com ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 13:57:50 UTC
+#> ℹ Data updated: 2026-11-13 17:34:46 UTC
 #> # A tibble: 350 × 11
 #>    season season_type category      abbreviation athlete_id athlete_name team_id
 #>     <int>       <int> <chr>         <chr>        <chr>      <chr>        <chr>  
@@ -111,7 +111,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_leaders(season = 2024, season_type = 2)
 #> ── ESPN NBA Leaders from ESPN.com ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 13:57:50 UTC
+#> ℹ Data updated: 2026-11-13 17:34:46 UTC
 #> # A tibble: 400 × 11
 #>    season season_type category      abbreviation athlete_id athlete_name team_id
 #>     <int>       <int> <chr>         <chr>        <chr>      <chr>        <chr>  

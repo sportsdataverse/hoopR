@@ -48,6 +48,17 @@ load_mbb_ratings(
 )
 ```
 
+## Source
+
+The `nba_player_impact` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/nba_player_impact>.
+
+The `mbb_player_value` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_player_value>.
+
+The `mbb_ratings` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_ratings>.
+
 ## Arguments
 
 - seasons:

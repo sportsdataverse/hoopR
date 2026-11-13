@@ -156,6 +156,56 @@ load_mbb_shots(
 )
 ```
 
+## Source
+
+The `espn_mens_college_basketball_pbp` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_pbp>,
+published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
+
+The `espn_mens_college_basketball_team_boxscores` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_team_boxscores>,
+published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
+
+The `espn_mens_college_basketball_player_boxscores` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_player_boxscores>,
+published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
+
+The `espn_mens_college_basketball_schedules` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_schedules>,
+published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
+
+The `espn_mens_college_basketball_rosters` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_rosters>,
+published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
+
+The `espn_mens_college_basketball_player_season_stats` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_player_season_stats>,
+published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
+
+The `espn_mens_college_basketball_team_season_stats` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_team_season_stats>,
+published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
+
+The `espn_mens_college_basketball_standings` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_standings>,
+published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
+
+The `espn_mens_college_basketball_game_rosters` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_game_rosters>,
+published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
+
+The `espn_mens_college_basketball_officials` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_officials>,
+published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
+
+The `espn_mens_college_basketball_player_core` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_player_core>,
+published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
+
+The `espn_mens_college_basketball_shots` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_mens_college_basketball_shots>,
+published by <https://github.com/sportsdataverse/hoopR-mbb-data>.
+
 ## Arguments
 
 - seasons:

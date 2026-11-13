@@ -363,6 +363,7 @@ artifacts
   [`load_nba_stats_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
   [`load_nba_stats_player_boxscores()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
   [`load_nba_stats_player_game_logs()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  [`load_nba_stats_team_game_logs()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
   [`load_nba_stats_player_season_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
   [`load_nba_stats_possessions()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
   [`load_nba_stats_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)

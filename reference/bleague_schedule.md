@@ -70,7 +70,7 @@ lists every function in this family.
 # \donttest{
   try(bleague_schedule(season = 2026, tab = 1, month = 10, day = 4))
 #> ── B.LEAGUE schedule from www.bleague.jp ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 13:56:37 UTC
+#> ℹ Data updated: 2026-11-13 17:33:32 UTC
 #> # A tibble: 12 × 17
 #>    season   tab event schedule_key date       round_label round home_team_id
 #>     <int> <int> <int>        <int> <date>     <chr>       <int> <chr>       

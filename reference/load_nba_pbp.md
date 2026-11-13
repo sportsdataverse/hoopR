@@ -168,6 +168,60 @@ load_nba_shots(
 )
 ```
 
+## Source
+
+The `espn_nba_pbp` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_pbp>,
+published by <https://github.com/sportsdataverse/hoopR-nba-data>.
+
+The `espn_nba_team_boxscores` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_team_boxscores>,
+published by <https://github.com/sportsdataverse/hoopR-nba-data>.
+
+The `espn_nba_player_boxscores` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_player_boxscores>,
+published by <https://github.com/sportsdataverse/hoopR-nba-data>.
+
+The `espn_nba_schedules` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_schedules>,
+published by <https://github.com/sportsdataverse/hoopR-nba-data>.
+
+The `espn_nba_standings` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_standings>,
+published by <https://github.com/sportsdataverse/hoopR-nba-data>.
+
+The `espn_nba_game_rosters` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_game_rosters>,
+published by <https://github.com/sportsdataverse/hoopR-nba-data>.
+
+The `espn_nba_officials` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_officials>,
+published by <https://github.com/sportsdataverse/hoopR-nba-data>.
+
+The `espn_nba_draft` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_draft>,
+published by <https://github.com/sportsdataverse/hoopR-nba-data>.
+
+The `espn_nba_player_season_stats` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_player_season_stats>,
+published by <https://github.com/sportsdataverse/hoopR-nba-data>.
+
+The `espn_nba_team_season_stats` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_team_season_stats>,
+published by <https://github.com/sportsdataverse/hoopR-nba-data>.
+
+The `espn_nba_rosters` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_rosters>,
+published by <https://github.com/sportsdataverse/hoopR-nba-data>.
+
+The `espn_nba_player_core` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_player_core>,
+published by <https://github.com/sportsdataverse/hoopR-nba-data>.
+
+The `espn_nba_shots` release:
+<https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/espn_nba_shots>,
+published by <https://github.com/sportsdataverse/hoopR-nba-data>.
+
 ## Arguments
 
 - seasons:

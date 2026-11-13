@@ -90,7 +90,7 @@ lists every function in this family.
 # \donttest{
   try(pleague_preciser_shots(uuid = "e6f98675-3e5b-11ed-949e-5d17350689cf"))
 #> ── P. LEAGUE+ Shots from api.preciser.io ──────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 14:01:41 UTC
+#> ℹ Data updated: 2026-11-13 17:38:52 UTC
 #> # A tibble: 168 × 20
 #>    game_uuid      shot_no period period_label clock seconds_left side  team_uuid
 #>    <chr>            <int>  <int> <chr>        <chr>        <int> <chr> <chr>    
