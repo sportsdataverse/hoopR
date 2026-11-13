@@ -15,10 +15,11 @@ NULL
 #'   * `load_mbb_schedule()`: 2002 onward.
 #'   * `load_mbb_game_rosters()`: 2002 onward.
 #'   * `load_mbb_officials()`: 2003 onward, except 2010.
-#'   * `load_mbb_rosters()`, `load_mbb_player_stats()`: 2025 onward.
+#'   * `load_mbb_player_stats()`: 2003 onward (ESPN's single-season player rows are
+#'     sparse before about 2010).
+#'   * `load_mbb_rosters()`: 2025 onward.
 #'
-#'   `load_mbb_game_rosters()` 2003-2024 and `load_mbb_officials()` 2003-2024
-#'   are published as `.parquet` only and need the \pkg{arrow} package.
+#'   Every season in those ranges is published as `.rds` (checked 2026-11-13).
 #'   The upper bound is [most_recent_mbb_season()]. When `seasons` is left at
 #'   its default and that season's file is not published yet, the loader reads
 #'   the newest published season instead, with a message. An explicit request
@@ -553,7 +554,7 @@ load_mbb_player_stats <- function(seasons = most_recent_mbb_season(), ...,
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_mens_college_basketball_player_season_stats/player_season_stats_", seasons, ".rds")
-  seasons <- .loader_seasons(seasons, 2025, most_recent_mbb_season(), fn = "load_mbb_player_stats", url_for = url_for, default = missing(seasons))
+  seasons <- .loader_seasons(seasons, 2003, most_recent_mbb_season(), fn = "load_mbb_player_stats", url_for = url_for, default = missing(seasons))
 
   urls <- url_for(seasons)
 

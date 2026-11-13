@@ -110,11 +110,12 @@ only the seasons its release tag publishes (any other season is an error):
 \item \code{load_mbb_schedule()}: 2002 onward.
 \item \code{load_mbb_game_rosters()}: 2002 onward.
 \item \code{load_mbb_officials()}: 2003 onward, except 2010.
-\item \code{load_mbb_rosters()}, \code{load_mbb_player_stats()}: 2025 onward.
+\item \code{load_mbb_player_stats()}: 2003 onward (ESPN's single-season player rows are
+sparse before about 2010).
+\item \code{load_mbb_rosters()}: 2025 onward.
 }
 
-\code{load_mbb_game_rosters()} 2003-2024 and \code{load_mbb_officials()} 2003-2024
-are published as \code{.parquet} only and need the \pkg{arrow} package.
+Every season in those ranges is published as \code{.rds} (checked 2026-11-13).
 The upper bound is \code{\link[=most_recent_mbb_season]{most_recent_mbb_season()}}. When \code{seasons} is left at
 its default and that season's file is not published yet, the loader reads
 the newest published season instead, with a message. An explicit request

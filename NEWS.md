@@ -91,9 +91,13 @@
   fastRhockey do. An explicit request for an unpublished season is kept as
   asked (#261).
 * `load_mbb_officials()` accepts 2003-2024 (except 2010) and
-  `load_mbb_game_rosters()` 2003-2024: those seasons are published, as
-  `.parquet` only, and were refused by the loader floors. They need the
-  `arrow` package. The NBA crosswalk floors were already 2002, as
+  `load_mbb_game_rosters()` 2003-2024: those seasons are published and were
+  refused by the loader floors. After the 2026-11-13 backfill every one of
+  them is also published as `.rds`, so they no longer need arrow. The same
+  backfill published `load_mbb_player_stats()` 2003-2024 (ESPN's
+  single-season player rows are sparse before about 2010) and
+  `load_nba_game_rosters()` / `load_nba_officials()` 1994-2001, and the
+  loaders now accept them. The NBA crosswalk floors were already 2002, as
   published (#261, mirroring sportsdataverse-py#1091).
 * `update_mbb_db()`, `update_nba_db()` and `update_nba_stats_db()` no longer write to the
   working directory by default. `dbdir` now defaults to the per-user data directory
@@ -404,10 +408,10 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   the seasons its sportsdataverse-data release tag publishes, and its error lists them.
   `load_mbb_pbp()` accepts the published 2003 season (it stopped at 2006) and, like
   `load_mbb_shots()`, rejects the unpublished 2004-2005. `load_mbb_rosters()`,
-  `load_mbb_player_stats()`, `load_mbb_officials()`, `load_nba_rosters()` and
-  `load_mbb_player_crosswalk()` start at 2025, `load_mbb_team_stats()` and
+  `load_nba_rosters()` and `load_mbb_player_crosswalk()` start at 2025,
+  `load_mbb_player_stats()` and `load_mbb_officials()` at 2003, `load_mbb_team_stats()` and
   `load_mbb_standings()` at 2003, `load_mbb_schedule_crosswalk()` at 2008, and
-  `load_mbb_game_rosters()` takes 2002 and 2025 onward; before, `seasons = TRUE` asked
+  `load_mbb_game_rosters()` takes 2002 onward; before, `seasons = TRUE` asked
   for every missing season and warned once per season. `load_nba_team_box()`,
   `load_nba_player_box()`, `load_nba_schedule()`, `load_nba_player_stats()` and
   `load_nba_player_core()` now reach back to the published 1994 season. The MBB

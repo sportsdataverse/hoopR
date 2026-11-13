@@ -113,9 +113,10 @@ load_nba_shots(
 release tag publishes (any other season is an error):
 \itemize{
 \item \code{load_nba_team_box()}, \code{load_nba_player_box()}, \code{load_nba_schedule()},
-\code{load_nba_player_stats()}, \code{load_nba_player_core()}: 1994 onward.
+\code{load_nba_player_stats()}, \code{load_nba_player_core()}, \code{load_nba_game_rosters()},
+\code{load_nba_officials()}: 1994 onward.
 \item \code{load_nba_pbp()}, \code{load_nba_shots()}, \code{load_nba_team_stats()},
-\code{load_nba_standings()}, \code{load_nba_game_rosters()}, \code{load_nba_officials()}: 2002 onward.
+\code{load_nba_standings()}: 2002 onward.
 \item \code{load_nba_draft()}: 2003 onward.
 \item \code{load_nba_rosters()}: 2025 onward.
 }

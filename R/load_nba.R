@@ -10,9 +10,10 @@ NULL
 #'   `TRUE` for every published season. Each loader accepts only the seasons its
 #'   release tag publishes (any other season is an error):
 #'   * `load_nba_team_box()`, `load_nba_player_box()`, `load_nba_schedule()`,
-#'     `load_nba_player_stats()`, `load_nba_player_core()`: 1994 onward.
+#'     `load_nba_player_stats()`, `load_nba_player_core()`, `load_nba_game_rosters()`,
+#'     `load_nba_officials()`: 1994 onward.
 #'   * `load_nba_pbp()`, `load_nba_shots()`, `load_nba_team_stats()`,
-#'     `load_nba_standings()`, `load_nba_game_rosters()`, `load_nba_officials()`: 2002 onward.
+#'     `load_nba_standings()`: 2002 onward.
 #'   * `load_nba_draft()`: 2003 onward.
 #'   * `load_nba_rosters()`: 2025 onward.
 #'
@@ -446,7 +447,7 @@ load_nba_game_rosters <- function(seasons = most_recent_nba_season(), ...,
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_game_rosters/game_rosters_", seasons, ".rds")
-  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_game_rosters", url_for = url_for, default = missing(seasons))
+  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_game_rosters", url_for = url_for, default = missing(seasons))
 
   urls <- url_for(seasons)
 
@@ -484,7 +485,7 @@ load_nba_officials <- function(seasons = most_recent_nba_season(), ...,
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   url_for <- function(seasons) paste0("https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_nba_officials/officials_", seasons, ".rds")
-  seasons <- .loader_seasons(seasons, 2002, most_recent_nba_season(), fn = "load_nba_officials", url_for = url_for, default = missing(seasons))
+  seasons <- .loader_seasons(seasons, 1994, most_recent_nba_season(), fn = "load_nba_officials", url_for = url_for, default = missing(seasons))
 
   urls <- url_for(seasons)
 
