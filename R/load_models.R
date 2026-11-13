@@ -63,10 +63,23 @@ load_nba_player_impact <- function(seasons = most_recent_nba_season(),
 }
 
 
+#' **Load NBA current-impact ratings**
+#' @name load_nba_current_impact
+NULL
 #' @title
 #' **Load NBA current-impact ratings (weekly as-of ratings) from the data repo**
-#' @rdname load_mbb_player_value
+#' @rdname load_nba_current_impact
 #' @author Saiem Gilani
+#' @param seasons A vector of 4-digit season-ending years (`2026` = 2025-26),
+#'   like [load_nba_player_impact()]. Published coverage runs 2007 through
+#'   2026, with no gaps; the default [most_recent_nba_season()] falls back to
+#'   the newest published season with a message. Pass `seasons = TRUE` for
+#'   every published season. (Min: 2007)
+#' @param ... Additional arguments passed to an underlying function that writes
+#'   the season data into a database.
+#' @param dbConnection A `DBIConnection` object, as returned by [DBI::dbConnect()]
+#' @param tablename The name of the data table within the database
+#' @family Model Dataset loader functions
 #' @description Loads the `nba_current_impact` release: each NBA player's
 #'   current offensive/defensive impact (points per 100 possessions) as of
 #'   opening night and every 7 days after, from every game before that date

@@ -167,3 +167,37 @@ test_that("the new loaders return published rows", {
   if (nrow(df) == 0) skip("No rows returned at test time")
   expect_in(c("player_id", "play_type", "type_grouping", "ppp", "poss"), colnames(df))
 })
+
+test_that("the newest season counts as published when any requested file is", {
+  last <- most_recent_nba_stats_season()
+  newest <- paste0("_", last + 1, "[.]parquet$")
+  # newest season: regular-season files only, no playoffs file yet
+  probed <- character()
+  local_mocked_bindings(.release_asset_exists = function(url) {
+    probed <<- c(probed, url)
+    !(grepl("playoffs", url) && grepl(newest, url))
+  })
+  env <- new.env()
+  reader <- .mock_reader(env, absent = paste0("playoffs.*", newest))
+  local_mocked_bindings(parquet_from_url = reader, rds_from_url = reader)
+
+  out <- load_nba_stats_hustle_player(seasons = TRUE, season_type = c("playoffs", "regular-season"))
+  expect_true(as.integer(last + 1) %in% out$season)
+  # the probe stopped at the first published file of the newest season
+  expect_true(any(grepl(paste0("regular-season.*", newest), probed)))
+
+  expect_no_message(out <- load_nba_stats_hustle_player(season_type = c("playoffs", "regular-season")))
+  expect_identical(unique(out$season), as.integer(last + 1))
+  expect_identical(unique(out$season_type), "regular-season")
+
+  # with no requested file published, the default still falls back a season
+  expect_message(load_nba_stats_hustle_player(season_type = "playoffs"), "not published yet")
+})
+
+test_that(".loader_seasons accepts several urls per season", {
+  local_mocked_bindings(.release_asset_exists = function(url) grepl("b_2027", url))
+  url_for <- function(s) paste0("https://example.invalid/tag/", c("a", "b"), "_", s, ".parquet")
+  expect_no_message(out <- .loader_seasons(2027, 2004, 2027, fn = "load_x", url_for = url_for, default = TRUE))
+  expect_equal(out, 2027)
+  expect_equal(.loader_seasons(TRUE, 2025, 2027, fn = "load_x", url_for = url_for), 2025:2027)
+})

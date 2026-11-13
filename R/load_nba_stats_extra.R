@@ -32,8 +32,12 @@
   in_db <- !is.null(dbConnection) && !is.null(tablename)
 
   url_of <- function(s, stem) paste0(.sdv_release_base, tag, "/", stem, "_", s + offset, ".", ext)
+  # A season counts as published when any requested file is (the newest
+  # season can have its regular-season files before its playoffs files).
   seasons <- .loader_seasons(seasons, first, last, fn = fn,
-                             url_for = function(s) url_of(s, assets[[1]]$stem),
+                             url_for = function(s) {
+                               vapply(assets, function(a) url_of(s, a$stem), "")
+                             },
                              default = default)
 
   reader <- if (ext == "rds") rds_from_url else parquet_from_url
