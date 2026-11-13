@@ -256,7 +256,7 @@ NULL
 #'   `"YYYY-YY"` string the release uses. The files are parquet, so these
 #'   loaders need the arrow package.
 #' @eval .returns_rd("load_mbb_ncaa_espn_team_crosswalk", unit = "season and stats.ncaa.org team (`load_mbb_ncaa_espn_team_crosswalk()`)")
-#' @source <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk>
+#' @source The `mbb_crosswalk` release: <https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk>.
 #' @seealso The WBB twins in wehoop, `load_wbb_ncaa_espn_team_crosswalk()` and friends.
 #' @export
 #' @family MBB Crosswalk Functions

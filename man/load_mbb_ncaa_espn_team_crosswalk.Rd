@@ -6,7 +6,7 @@
 \alias{load_mbb_ncaa_espn_school_seasons}
 \title{\strong{Load the stats.ncaa.org to ESPN MBB crosswalks}}
 \source{
-\url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk}
+The \code{mbb_crosswalk} release: \url{https://github.com/sportsdataverse/sportsdataverse-data/releases/tag/mbb_crosswalk}.
 }
 \usage{
 load_mbb_ncaa_espn_team_crosswalk()
