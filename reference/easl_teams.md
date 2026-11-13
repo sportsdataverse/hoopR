@@ -37,7 +37,7 @@ lists every function in this family.
 # \donttest{
   try(easl_teams())
 #> ── EASL Teams from easl.joshricha.com ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:49:39 UTC
+#> ℹ Data updated: 2026-11-13 13:57:29 UTC
 #> # A tibble: 12 × 22
 #>    team_row_id team_id          name  name_native code_latin code_local standard
 #>          <int> <chr>            <chr> <chr>       <chr>      <chr>      <chr>   

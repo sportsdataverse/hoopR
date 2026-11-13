@@ -53,7 +53,7 @@ lists every function in this family.
 # \donttest{
   try(easl_players(season = 2026, team_id = "865489e8-b0f5-11ed-8b3f-c199a9dea184"))
 #> ── EASL Players from easl.joshricha.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:49:33 UTC
+#> ℹ Data updated: 2026-11-13 13:57:23 UTC
 #> # A tibble: 17 × 20
 #>    season season_id    player_row_id player_id name  name_latin name_abbreviated
 #>     <int> <chr>                <int> <chr>     <chr> <chr>      <chr>           

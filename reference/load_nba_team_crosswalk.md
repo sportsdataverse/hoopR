@@ -205,17 +205,25 @@ load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 # }
 # \donttest{
 load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
-#> Warning: Failed to read
-#> <https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_schedule_crosswalk_2027.rds>
-#> after 1 attempt.
-#> ! The result is incomplete: it is missing this file.
-#> ✖ cannot open the connection to
-#>   'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_schedule_crosswalk_2027.rds';
-#>   cannot open URL
-#>   'https://github.com/sportsdataverse/sportsdataverse-data/releases/download/mbb_crosswalk/mbb_schedule_crosswalk_2027.rds':
-#>   HTTP status was '404 Not Found'
-#> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 0 × 0
+#> ── MBB schedule crosswalk (ESPN / Torvik) ─────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-13 13:04:19 UTC
+#> # A tibble: 6,121 × 14
+#>    season game_date  home_espn_team_id away_espn_team_id espn_game_id bart_muid 
+#>     <int> <date>                 <int>             <int>        <int> <chr>     
+#>  1   2027 2026-11-01               222                87    401920982 Notre Dam…
+#>  2   2027 2026-11-01              2272              2335    401920409 NA        
+#>  3   2027 2026-11-02                57              2390    401906769 FloridaMi…
+#>  4   2027 2026-11-02               150               349    401909562 ArmyDuke1…
+#>  5   2027 2026-11-02               356               161    401913525 Fairleigh…
+#>  6   2027 2026-11-02                41              2241    401911390 Gardner W…
+#>  7   2027 2026-11-02                26                12    401909738 ArizonaUC…
+#>  8   2027 2026-11-02               127              2514    401924856 Quinnipia…
+#>  9   2027 2026-11-02               251              2130    401906863 Chicago S…
+#> 10   2027 2026-11-02               248              2325    401925811 La SalleH…
+#> # ℹ 6,111 more rows
+#> # ℹ 8 more variables: bart_team1 <chr>, bart_team2 <chr>, bart_winner <chr>,
+#> #   kp_game_id <chr>, fox_game_id <chr>, yahoo_game_id <chr>,
+#> #   match_method <chr>, match_confidence <dbl>
 # }
 # \donttest{
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())

@@ -66,7 +66,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_propbets(event_id = 401256760, provider_id = 58)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Prop Bets ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:50:03 UTC
+#> ℹ Data updated: 2026-11-13 13:57:48 UTC
 #> # A tibble: 0 × 13
 #> # ℹ 13 variables: league <chr>, event_id <chr>, provider_id <chr>,
 #> #   athlete_id <chr>, prop_type_id <chr>, prop_type_name <chr>, american <chr>,
@@ -76,7 +76,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_propbets(event_id = 401283399, provider_id = 58)
 #> ── ESPN NBA Event Prop Bets ───────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:50:03 UTC
+#> ℹ Data updated: 2026-11-13 13:57:48 UTC
 #> # A tibble: 0 × 13
 #> # ℹ 13 variables: league <chr>, event_id <chr>, provider_id <chr>,
 #> #   athlete_id <chr>, prop_type_id <chr>, prop_type_name <chr>, american <chr>,

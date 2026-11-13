@@ -124,7 +124,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_week_ranking(ranking_id = 1, week = 5, season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Week Ranking Detail ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:50:43 UTC
+#> ℹ Data updated: 2026-11-13 13:58:22 UTC
 #> # A tibble: 25 × 19
 #>    league    season season_type  week ranking_id name  short_name type  headline
 #>    <chr>      <int>       <int> <int> <chr>      <chr> <chr>      <chr> <chr>   
@@ -145,11 +145,11 @@ Saiem Gilani
 # }
 # \donttest{
   espn_nba_week_ranking(ranking_id = 1, week = 5, season = 2025)
-#> ✖ 2026-11-13 12:50:43.273115: Failed to retrieve ESPN nba week-5 ranking 1 for season=2025
+#> ✖ 2026-11-13 13:58:22.452995: Failed to retrieve ESPN nba week-5 ranking 1 for season=2025
 #> ✖ Args: league = "nba", season = 2025, season_type = 2L, week = 5, ranking_id = 1
 #> ✖ Error: The API returned an error
 #> ── ESPN NBA Week Ranking Detail ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:50:43 UTC
+#> ℹ Data updated: 2026-11-13 13:58:22 UTC
 #> # A tibble: 0 × 0
 # }
 ```

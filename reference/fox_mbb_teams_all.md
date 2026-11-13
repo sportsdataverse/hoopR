@@ -47,7 +47,7 @@ Other Fox Basketball Functions:
   # A 3-call sample; the defaults walk every conference.
   try(fox_mbb_teams_all(max_calls = 3))
 #> ── Fox Sports MBB full team directory ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:51:31 UTC
+#> ℹ Data updated: 2026-11-13 13:59:05 UTC
 #> # A tibble: 33 × 3
 #>    fox_team_id fox_team_name              fox_section   
 #>    <chr>       <chr>                      <chr>         

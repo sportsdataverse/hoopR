@@ -76,7 +76,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_shots(match_id = 346279))
 #> ── TBF Shots ──────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:55:30 UTC
+#> ℹ Data updated: 2026-11-13 14:02:45 UTC
 #> # A tibble: 123 × 10
 #>    match_id period period_type side  shot_player_id player_name    jersey_number
 #>       <int>  <int>       <int> <chr>          <int> <chr>          <chr>        

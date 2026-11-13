@@ -141,7 +141,7 @@ lists every function in this family.
 # \donttest{
 try(espn_mbb_standings(2021))
 #> ── ESPN MBB Standings Information from ESPN.com ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:50:28 UTC
+#> ℹ Data updated: 2026-11-13 13:58:08 UTC
 #> # A tibble: 302 × 87
 #>    team_id team             conference avgpointsagainst avgpointsfor gamesbehind
 #>      <int> <chr>            <chr>                 <dbl>        <dbl>       <dbl>
@@ -166,7 +166,7 @@ try(espn_mbb_standings(2021))
 # \donttest{
 try(espn_nba_standings(year = 2021))
 #> ── ESPN NBA Standings Information from ESPN.com ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:50:28 UTC
+#> ℹ Data updated: 2026-11-13 13:58:09 UTC
 #> # A tibble: 30 × 25
 #>    team_id team              avgpointsagainst avgpointsfor clincher differential
 #>  *   <int> <chr>                        <dbl>        <dbl>    <dbl>        <dbl>

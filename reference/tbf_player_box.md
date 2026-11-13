@@ -76,7 +76,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_player_box(match_id = 346279))
 #> ── TBF Player Box Score ───────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:55:26 UTC
+#> ℹ Data updated: 2026-11-13 14:02:41 UTC
 #> # A tibble: 24 × 33
 #>    match_id side  team_process_id player_id player_name jersey_number is_starter
 #>       <int> <chr>           <int>     <int> <chr>       <chr>         <lgl>     

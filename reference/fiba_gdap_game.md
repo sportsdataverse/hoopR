@@ -49,7 +49,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gdap_game(game_id = 100720))
 #> ── FIBA gdap_game from fiba.basketball ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:51:15 UTC
+#> ℹ Data updated: 2026-11-13 13:58:51 UTC
 #> # A tibble: 1 × 50
 #>   game_id round_name technical_name round_type    group_pairing_code game_number
 #>     <int> <chr>      <chr>          <chr>         <chr>              <chr>      

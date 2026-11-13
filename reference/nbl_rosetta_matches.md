@@ -78,7 +78,7 @@ lists every function in this family.
 # \donttest{
   try(nbl_rosetta_matches(org = "nbl", season = 2026, season_type = "regular"))
 #> ── NBL Rosetta matches from prod.rosetta.nbl.com.au ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:54:00 UTC
+#> ℹ Data updated: 2026-11-13 14:01:28 UTC
 #> # A tibble: 179 × 59
 #>    org   match_id  external_media_id date_updated start_time start_time_datetime
 #>    <chr> <chr>     <chr>             <chr>        <chr>      <chr>              

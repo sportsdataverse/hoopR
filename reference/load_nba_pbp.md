@@ -179,10 +179,10 @@ load_nba_shots(
   - `load_nba_team_box()`, `load_nba_player_box()`,
     `load_nba_schedule()`, `load_nba_player_stats()`,
     `load_nba_player_core()`, `load_nba_game_rosters()`,
-    `load_nba_officials()`: 1994 onward.
+    `load_nba_officials()`, `load_nba_team_stats()`: 1994 onward.
 
-  - `load_nba_pbp()`, `load_nba_shots()`, `load_nba_team_stats()`,
-    `load_nba_standings()`: 2002 onward.
+  - `load_nba_pbp()`, `load_nba_shots()`, `load_nba_standings()`: 2002
+    onward.
 
   - `load_nba_draft()`: 2003 onward.
 

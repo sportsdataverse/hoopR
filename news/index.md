@@ -88,8 +88,10 @@
   [`load_nba_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
   /
   [`load_nba_officials()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
-  1994-2001, and the loaders now accept them. The NBA crosswalk floors
-  were already 2002, as published
+  1994-2001, and a new ESPN scrape published
+  [`load_nba_team_stats()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
+  1994-2001; the loaders now accept them. The NBA crosswalk floors were
+  already 2002, as published
   ([\#261](https://github.com/sportsdataverse/hoopR/issues/261),
   mirroring sportsdataverse-py#1091).
 

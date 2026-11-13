@@ -47,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_standings(comp_id = 50720))
 #> ── VTB Infobasket Standings from org.infobasket.su ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:56:02 UTC
+#> ℹ Data updated: 2026-11-13 14:03:23 UTC
 #> # A tibble: 11 × 28
 #>    comp_id comp_team_id team_id place start_place games   won  lost
 #>      <int>        <int>   <int> <int>       <int> <int> <int> <int>

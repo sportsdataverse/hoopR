@@ -76,7 +76,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_rankings(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Rankings Index ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:50:24 UTC
+#> ℹ Data updated: 2026-11-13 13:58:06 UTC
 #> # A tibble: 2 × 4
 #>   league                  season ranking_id ref                                 
 #>   <chr>                    <int> <chr>      <chr>                               
@@ -86,7 +86,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_rankings(season = 2025)
 #> ── ESPN NBA Season Rankings Index ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:50:24 UTC
+#> ℹ Data updated: 2026-11-13 13:58:06 UTC
 #> # A tibble: 0 × 4
 #> # ℹ 4 variables: league <chr>, season <int>, ranking_id <chr>, ref <chr>
 # }

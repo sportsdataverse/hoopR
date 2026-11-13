@@ -61,9 +61,26 @@ Other MBB Crosswalk Functions:
 ``` r
 # \donttest{
   try(mbb_player_crosswalk(season = 2025))
-#> ✖ 2026-11-13 12:53:33.202617: Could not build MBB player crosswalk for 2025!
-#> ✖ Args: season = 2025, min_confidence = 0.92
-#> ✖ Error: Torvik 2025: no team rows (19 rows, columns doctype_html_public_w3c_dtd_html_4_01_transitional_en_http_www_w3_org_tr_html4_loose_dtd, year); a blocked or empty response must not ship as NA bart_* columns
-#> data frame with 0 columns and 0 rows
+#> ── MBB player crosswalk (ESPN / Fox) ──────────────────────────── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-13 14:01:10 UTC
+#> # A tibble: 5,857 × 17
+#>    season espn_team_id team_abbreviation player_name        espn_athlete_id
+#>     <int>        <int> <chr>             <chr>              <chr>          
+#>  1   2025         2000 ACU               hunter jack madden 4701572        
+#>  2   2025         2000 ACU               leonardo bettiol   4896505        
+#>  3   2025         2000 ACU               joseph venzant     4897572        
+#>  4   2025         2000 ACU               quion williams     5106274        
+#>  5   2025         2000 ACU               colby tanner       5106345        
+#>  6   2025         2000 ACU               cade hornecker     5107885        
+#>  7   2025         2000 ACU               yaniel rivera      5177702        
+#>  8   2025         2000 ACU               nasir degruy       5177704        
+#>  9   2025         2000 ACU               mashy hill         5177705        
+#> 10   2025         2000 ACU               rich smith         5241310        
+#> # ℹ 5,847 more rows
+#> # ℹ 12 more variables: espn_full_name <chr>, espn_jersey <chr>,
+#> #   espn_position <chr>, fox_athlete_id <chr>, fox_player <chr>,
+#> #   fox_jersey <chr>, fox_position_group <chr>, yahoo_player_id <chr>,
+#> #   yahoo_player_name <chr>, match_method <chr>, match_confidence <dbl>,
+#> #   match_keys <chr>
 # }
 ```

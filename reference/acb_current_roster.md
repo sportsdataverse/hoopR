@@ -65,7 +65,7 @@ lists every function in this family.
 # \donttest{
   try(acb_current_roster(club_id = 2, season = 2027))
 #> ── ACB Current Roster from api2.acb.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 12:48:03 UTC
+#> ℹ Data updated: 2026-11-13 13:56:00 UTC
 #> # A tibble: 19 × 17
 #>    club_id role   person_id person_name        first_name last_name shirt_number
 #>      <int> <chr>      <int> <chr>              <chr>      <chr>     <chr>       
