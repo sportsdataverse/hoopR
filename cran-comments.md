@@ -16,7 +16,8 @@ full list of changes is in NEWS.md. The main additions:
   seasons (MBB player season stats from 2003, NBA game rosters and
   officials and team season stats from 1994), each published as `.rds`, so no loader needs arrow
   for an older season. New loaders read the static stats.ncaa.org to ESPN
-  team crosswalk tables (`load_mbb_ncaa_espn_*()`).
+  team crosswalk tables (`load_mbb_ncaa_espn_*()`), and the MBB schedule and
+  player crosswalks carry stats.ncaa.org ids (player crosswalk from 2004).
 * Sixteen new NBA release loaders (Synergy play types, hustle, player
   matchups, injury reports, draft combine, metric curves, rolling windows,
   ESPN depth charts, current impact), one for each data release that had no
@@ -34,7 +35,7 @@ full list of changes is in NEWS.md. The main additions:
   stringdist moved to Suggests; withr and xml2 are now imported.
 * The package now ships its `inst/CITATION` file, and three datasets:
   `parameter_descriptions` (10 KB), `mbb_team_names` (6 KB) and
-  `return_columns` (245 KB, xz): the returned columns of 979 functions.
+  `return_columns` (245 KB, xz): the returned columns of 981 functions.
   The NBA and men's college basketball help pages keep their column
   tables; the other 647 pages point to `return_columns` instead.
 * `ByteCompile: false`: the package is no longer byte-compiled at install

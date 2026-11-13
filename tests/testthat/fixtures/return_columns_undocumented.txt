@@ -180,8 +180,6 @@ lnbp_shots
 lnbp_standings
 lnbp_team_box
 lnbp_teams
-load_mbb_player_crosswalk
-load_mbb_schedule_crosswalk
 load_mbb_team_crosswalk
 load_nba_player_crosswalk
 load_nba_schedule_crosswalk
