@@ -86,7 +86,7 @@ Every exported function needs:
 - `@title` with bold markdown description
 - `@author` tag
 - `@param` for every parameter (including `...`) with descriptive text (e.g., `@param game_id Game ID - 10-digit zero-padded ID (e.g., '0022200021')`)
-- `@return` as `#' @eval .returns_rd("fn")`: the column tables are built from `data-raw/return_columns.csv` (one row per returned column), never hand-written. A new data-returning function needs its CSV rows, then `Rscript data-raw/return_columns.R` and `devtools::document()`.
+- `@return` as `#' @eval .returns_rd("fn")` for a data-returning function: the column tables are built from `data-raw/return_columns.csv` (one row per returned column), never hand-written. A new data-returning function needs its CSV rows, then `Rscript data-raw/return_columns.R` and `devtools::document()`. A function that returns something else (for example `login()`) keeps a hand-written `@return`.
 - `@importFrom` for specific function imports
 - `@export`
 - `@family` for grouping in pkgdown (e.g., "NBA PBP Functions", "NBA Boxscore V3 Functions"), except in the 22 large families indexed in `R/families.R` (ESPN MBB/NBA and most international families), which use `@concept <Family>` plus a `@seealso` line pointing to the family index page.
