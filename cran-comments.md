@@ -27,9 +27,10 @@ full list of changes is in NEWS.md. The main additions:
   feeds, Torvik, KenPom, `nba_gamerotation()` and `nba_pbp()` on-court players.
   `build_mbb_db()` and `build_nba_db()` now stop, leaving the existing table
   as it was, when the games index cannot be read.
-* The NBA crosswalk loaders return the NBA Stats team and player ids as
-  integer, like the `load_nba_stats_*()` loaders, and every release
-  loader's help page links the release tag it reads.
+* The NBA crosswalk loaders, and the new `load_nba_stats_metric_curves()`
+  and `load_nba_stats_rolling_windows()`, return the NBA Stats team and
+  player ids as integer, like the other `load_nba_stats_*()` loaders, and
+  every release loader's help page links the release tag it reads.
 * Changes that alter what 3.1.0 code gets back (listed under "Breaking
   changes" in NEWS.md): `load_nba_stats_player_game_logs()` returns player
   rows (team rows moved to `load_nba_stats_team_game_logs()`); the NBA
@@ -56,20 +57,21 @@ full list of changes is in NEWS.md. The main additions:
 
 * Local Windows 10 x64 (build 19045), R 4.6.1 (ucrt),
   `R CMD check --as-cran --timings --run-donttest` with the PDF manual, on
-  the tarball built from `git archive` of ee3cf303 (2026-11-24), with
+  the tarball built from `git archive` of d83f8e30 (2026-11-24), with
   `_R_CHECK_CRAN_INCOMING_REMOTE_=true` and an empty user `.Renviron` (no
   API keys; NOT_CRAN and every live-test variable unset). The commits after
-  ee3cf303 change only this file, which is not in the tarball.
+  d83f8e30 change only this file, which is not in the tarball.
 * The same tarball with R 4.6.0 (ucrt) on the same machine and settings:
-  Status: OK (0 errors, 0 warnings, 0 notes), with the same test counts,
-  no example over 5 s (the slowest, `load_nba_pbp`, took 4.3 s elapsed),
-  and no `'NULL'` directory.
+  0 errors, 0 warnings, 1 NOTE, and no `'NULL'` directory. The NOTE is one
+  example over 5 s elapsed: `espn_mbb_coaches` (0.07 s CPU, 8.88 s
+  elapsed), a network wait in a `donttest{}` example; run again on its
+  own it took 0.54 s. Same test counts.
 * GitHub Actions: R release on Ubuntu, macOS and Windows, R-devel and
-  R oldrel-1 on Ubuntu, `--as-cran`: all five passed on ee3cf303 (run 45455342453).
+  R oldrel-1 on Ubuntu, `--as-cran`: all five passed on d83f8e30 (run 45468935425).
 * R-hub v2 (linux, macos, macos-arm64 and windows, all R-devel), on
-  ee3cf303 (run 45455413980): linux, macos and windows passed. macos-arm64
-  stopped before the check, in the dependency install step; in the earlier
-  run 45438561596 that step failed because the Suggested package arrow did
+  d83f8e30 (run 45468934877): linux, macos and windows passed. macos-arm64
+  stopped before the check, in the dependency install step; in run
+  45438561596 that step failed because the Suggested package arrow did
   not compile from source on that R-devel image (`arrow/api.h` not found).
   hoopR itself was not checked there.
 * win-builder (devel and release): not yet run (win-builder unreachable
@@ -77,13 +79,13 @@ full list of changes is in NEWS.md. The main additions:
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note (the R 4.6.1 run; the R 4.6.0 run has none)
+0 errors | 0 warnings | 1 note (the R 4.6.1 run)
 
-Tests: 0 failures (214 s in the check: 16,352 passes, 1,330 skips; the
+Tests: 0 failures (230 s in the check: 16,367 passes, 1,330 skips; the
 skipped tests need the network, credentials, or files that are not in the
 tarball). The PDF and HTML manuals build, and the CRAN incoming
 feasibility check (with the remote URL checks) is OK. No example took 5 s
-(the slowest, `load_nba_pbp`, took 4.75 s elapsed and 1.2 s of CPU); the
+(the slowest, `load_nba_pbp`, took 4.68 s elapsed and 1.2 s of CPU); the
 examples are networked, so their elapsed times vary from run to run.
 
 * checking for non-standard things in the check directory ... NOTE
@@ -110,7 +112,7 @@ examples are networked, so their elapsed times vary from run to run.
 
   hoopR now documents 1,340 exported functions (621 in 3.1.0), most of the
   new ones the international league families. A plain `R CMD INSTALL` of
-  the tarballs built from the v3.1.0 tag and from ee3cf303 is 4.4 MB for
+  the tarballs built from the v3.1.0 tag and from d83f8e30 is 4.4 MB for
   3.1.0 (help 2.4 MB) and 6.5 MB for 3.2.0 (help 3.9 MB). To keep the
   growth down:
   - The 22 largest families link to one family index page instead of
@@ -128,7 +130,7 @@ examples are networked, so their elapsed times vary from run to run.
   An install that keeps source references (`R_KEEP_PKG_SOURCE=yes`, as on
   GitHub Actions) is 8.4 MB, because `R/` then holds them as well (3.6 MB).
 
-  The tarball is 3.81 MB (3,812,033 bytes; 3.1.0 was 0.88 MB), most of the
+  The tarball is 3.81 MB (3,812,859 bytes; 3.1.0 was 0.88 MB), most of the
   growth being test fixtures. Five test-fixture folders whose tests skip
   when the folder is absent are left out of it.
 
