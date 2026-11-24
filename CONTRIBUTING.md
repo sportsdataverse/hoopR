@@ -105,6 +105,7 @@ Every exported function needs:
 - Internal helpers start with `.` (e.g., `.players_on_court_v3()`)
 - Game IDs must be passed through `pad_id()` before API calls
 - Use `%||%` (rlang) for null-safe defaults when parsing API responses
+- Never give `tryCatch()` a `warning =` handler: it stops the body at the first warning and the wrapper returns an empty or half-built result. Run the body through `.hoopR_with_warnings("<fn>", {...})`, which re-raises each warning as a `hoopR_warning` naming the function and lets the body finish, and make every block `error =` handler report its cause (`conditionMessage(e)`, `.report_api_error(e, ...)`, or `parent = e`). `tests/testthat/test-handler_causes.R` enforces both.
 
 ## Documentation Maintenance
 

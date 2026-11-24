@@ -134,18 +134,17 @@ nba_functionname <- function(game_id = "0022200021", ...) {
 
   df_list <- list()  # Always initialize before tryCatch
 
-  .try_catch(  # not tryCatch(): see "Warning handlers" below
-    expr = {
+  tryCatch(  # no `warning =` handler: see "Warning handlers" below
+    expr = .hoopR_with_warnings("nba_functionname", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
       # Parse response...
       # Apply janitor::clean_names()
       # Apply make_hoopR_data()
       # Assign to df_list
-    },
+    }),
     error = function(e) {
-      message(glue::glue("{Sys.time()}: Invalid arguments or no data for {pad_id(game_id)} available!"))
+      message(glue::glue("{Sys.time()}: Invalid arguments or no data for {pad_id(game_id)} available! {conditionMessage(e)}"))
     },
-    warning = function(w) {},
     finally = {}
   )
   return(df_list)
@@ -198,17 +197,14 @@ nba_func <- function(...) {
 
   df_list <- list()   # <-- MANDATORY. Not inside tryCatch.
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("nba_func", {
       resp    <- request_with_proxy(url = endpoint, params = params, ...)
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) {
       cli::cli_alert_danger("{Sys.time()}: Invalid arguments or no data available!")
-      cli::cli_alert_danger("Error:\n{e}")
-    },
-    warning = function(w) {
-      cli::cli_alert_warning("{Sys.time()}: Warning:\n{w}")
+      cli::cli_alert_danger("Error: {conditionMessage(e)}")
     },
     finally = {}
   )
@@ -220,7 +216,7 @@ This rule applies to **every return variable name**, not just `df_list`: `plays_
 
 ### Warning handlers
 
-Use `.try_catch()` (in `R/utils.R`), not `tryCatch()`, when the block has a `warning =` handler. In `tryCatch()` a warning handler unwinds the call: one harmless parse warning abandons the block and the wrapper returns its empty default, silently when the handler is `function(w) {}`. `.try_catch()` takes the same arguments but runs `warning` as a calling handler, so the warning is reported (or dropped) and the parse carries on. The ESPN wrappers were moved to it in 3.2.0; many NBA Stats, CBBD, KenPom and other wrappers still use `tryCatch(warning =)` and are a follow-up.
+Never give `tryCatch()` a `warning =` handler. It unwinds the call: one harmless parse warning abandons the block and the wrapper returns its empty or half-built default, silently when the handler is `function(w) {}`. Instead run the body through `.hoopR_with_warnings("<fn>", {...})` (in `R/utils.R`), as in the templates above: each warning is re-raised as a classed `hoopR_warning` reading `<fn>(): <message>` (the original warning's classes are kept) and the body carries on. Every block `error =` handler names its cause: `conditionMessage(e)` in the message, `.report_api_error(e, ...)`, or `parent = e` when it re-raises a classed error. `tests/testthat/test-handler_causes.R` enforces both: it fails on any `tryCatch(warning =)` in a hoopR function, and it makes every request fail offline and requires each wrapper to report the cause. A `withCallingHandlers()` collector that calls `invokeRestart("muffleWarning")` is fine.
 
 ### Officiating errors are classed conditions (sanctioned exception)
 
