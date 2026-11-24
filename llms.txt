@@ -1,6 +1,6 @@
 # **hoopR**
 
-- [hoopR](#hoopr-) [![hoopR
+- [**hoopR**](#hoopr-) [![hoopR
   logo](https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png)](https://hoopR.sportsdataverse.org/)
   - [**Data status**](#data-status)
   - [**Installation**](#installation)
@@ -182,6 +182,32 @@ set covering every SportsDataverse
 package](https://sportsdataverse.org/cheatsheets).
 
 ## **Breaking Changes**
+
+hoopR 3.2.0 changes what some 3.1.0 code gets back:
+
+- [`load_nba_stats_player_game_logs()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  returns player rows; the team rows are in
+  [`load_nba_stats_team_game_logs()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md).
+- The NBA Stats wrappers default `season` to the previous season; pass
+  `season` for the current one.
+- [`nba_rapm()`](https://hoopR.sportsdataverse.org/reference/nba_rapm.md)
+  fits a different model (an intercept, `standardize = FALSE`), so
+  earlier output is not comparable.
+- [`update_mbb_db()`](https://hoopR.sportsdataverse.org/reference/update_mbb_db.md),
+  [`update_nba_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_db.md)
+  and
+  [`update_nba_stats_db()`](https://hoopR.sportsdataverse.org/reference/update_nba_stats_db.md)
+  default `dbdir` to `tools::R_user_dir("hoopR", "data")`; pass
+  `dbdir = "."` for the old location.
+- [`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  /
+  [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md)
+  return the play `id` as exact character.
+- ESPN `game_id` / `athlete_id` in the roster and crosswalk loaders, and
+  the NBA Stats ids in `load_nba_*_crosswalk()`, are integer.
+- [`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
+  reads each league’s own CDN (`league_id` `"00"`, `"10"` or `"20"`);
+  any other `league_id` is an argument error.
 
 [**Full News on
 Releases**](https://hoopR.sportsdataverse.org/news/index.html)

@@ -128,7 +128,7 @@ Other NBA Stats loader functions:
   # Interactive only: a 5.6 MB file of about 260,000 rows per season.
   try(load_nba_stats_game_matchups(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 32,470 × 50
+#> # A tibble: 50,003 × 50
 #>    off_team_id off_team_city off_team_name off_team_tricode off_team_slug
 #>          <int> <chr>         <chr>         <chr>            <chr>        
 #>  1  1610612765 Detroit       Pistons       DET              pistons      
@@ -141,7 +141,7 @@ Other NBA Stats loader functions:
 #>  8  1610612765 Detroit       Pistons       DET              pistons      
 #>  9  1610612765 Detroit       Pistons       DET              pistons      
 #> 10  1610612765 Detroit       Pistons       DET              pistons      
-#> # ℹ 32,460 more rows
+#> # ℹ 49,993 more rows
 #> # ℹ 45 more variables: def_team_id <int>, side <chr>, off_person_id <int>,
 #> #   off_first_name <chr>, off_family_name <chr>, off_name_i <chr>,
 #> #   off_player_slug <chr>, off_position <chr>, off_comment <chr>,

@@ -54,20 +54,20 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_team_games(season = 2026, team_id = 2650))
 #> ── VTB Infobasket Team Games from org.infobasket.su ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 21:19:02 UTC
+#> ℹ Data updated: 2026-11-24 20:47:44 UTC
 #> # A tibble: 53 × 47
 #>    team_id season comp_id game_id game_number game_date  has_time game_time
 #>      <int>  <int>   <int>   <int> <chr>       <chr>      <lgl>    <chr>    
-#>  1    2650   2026   50714  921391 RS-002      2025-09-28 TRUE     14:00    
-#>  2    2650   2026   50714  921395 RS-006      2025-10-02 TRUE     20:00    
-#>  3    2650   2026   50714  921399 RS-010      2025-10-05 TRUE     14:00    
-#>  4    2650   2026   50714  921407 RS-018      2025-10-12 TRUE     14:00    
-#>  5    2650   2026   50714  921415 RS-026      2025-10-19 TRUE     14:30    
-#>  6    2650   2026   50714  921420 RS-032      2025-10-25 TRUE     16:00    
-#>  7    2650   2026   50714  921428 RS-039      2025-10-29 TRUE     19:00    
-#>  8    2650   2026   50714  921429 RS-040      2025-11-01 TRUE     19:30    
-#>  9    2650   2026   50714  921437 RS-049      2025-11-09 TRUE     14:00    
-#> 10    2650   2026   50714  921443 RS-053      2025-11-12 TRUE     20:00    
+#>  1    2650   2026       0  921391 RS-002      2025-09-28 TRUE     14:00    
+#>  2    2650   2026       0  921395 RS-006      2025-10-02 TRUE     20:00    
+#>  3    2650   2026       0  921399 RS-010      2025-10-05 TRUE     14:00    
+#>  4    2650   2026       0  921407 RS-018      2025-10-12 TRUE     14:00    
+#>  5    2650   2026       0  921415 RS-026      2025-10-19 TRUE     14:30    
+#>  6    2650   2026       0  921420 RS-032      2025-10-25 TRUE     16:00    
+#>  7    2650   2026       0  921428 RS-039      2025-10-29 TRUE     19:00    
+#>  8    2650   2026       0  921429 RS-040      2025-11-01 TRUE     19:30    
+#>  9    2650   2026       0  921437 RS-049      2025-11-09 TRUE     14:00    
+#> 10    2650   2026       0  921443 RS-053      2025-11-12 TRUE     20:00    
 #> # ℹ 43 more rows
 #> # ℹ 39 more variables: game_time_msk <chr>, game_date_time <chr>,
 #> #   game_date_time_moscow <chr>, game_status <int>, team_a_id <int>,

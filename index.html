@@ -155,7 +155,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><ul>
 <li>
-<a href="#hoopr-">hoopR </a><a href="https://hoopR.sportsdataverse.org/"><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right" width="20%" min-width="100px" alt="hoopR logo"></a>
+<a href="#hoopr-"><strong>hoopR</strong> </a><a href="https://hoopR.sportsdataverse.org/"><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right" width="20%" min-width="100px" alt="hoopR logo"></a>
 <ul>
 <li><a href="#data-status"><strong>Data status</strong></a></li>
 <li><a href="#installation"><strong>Installation</strong></a></li>
@@ -164,7 +164,7 @@
 <li><a href="#breaking-changes"><strong>Breaking Changes</strong></a></li>
 <li><a href="#companion-packages"><strong>Companion packages</strong></a></li>
 <li><a href="#the-sportsdataverse"><strong>The SportsDataverse</strong></a></li>
-<li><a href="#follow-the-sportsdataverse-on-x-and-star-this-repo"><strong>Follow the SportsDataverse on X and star this repo</strong></a></li>
+<li><a href="#follow-the-sportsdataverse-on-x-and-star-this-repo"><strong>Follow the <span>SportsDataverse</span> on X and star this repo</strong></a></li>
 <li><a href="#our-authors"><strong>Our Authors</strong></a></li>
 <li><a href="#our-contributors-theyre-awesome"><strong>Our Contributors (they’re awesome)</strong></a></li>
 <li><a href="#cheat-sheet"><strong>Cheat sheet</strong></a></li>
@@ -337,6 +337,21 @@
 <h2 id="breaking-changes">
 <strong>Breaking Changes</strong><a class="anchor" aria-label="anchor" href="#breaking-changes"></a>
 </h2>
+<p>hoopR 3.2.0 changes what some 3.1.0 code gets back:</p>
+<ul>
+<li>
+<code><a href="reference/load_nba_stats_coaches.html">load_nba_stats_player_game_logs()</a></code> returns player rows; the team rows are in <code><a href="reference/load_nba_stats_coaches.html">load_nba_stats_team_game_logs()</a></code>.</li>
+<li>The NBA Stats wrappers default <code>season</code> to the previous season; pass <code>season</code> for the current one.</li>
+<li>
+<code><a href="reference/nba_rapm.html">nba_rapm()</a></code> fits a different model (an intercept, <code>standardize = FALSE</code>), so earlier output is not comparable.</li>
+<li>
+<code><a href="reference/update_mbb_db.html">update_mbb_db()</a></code>, <code><a href="reference/update_nba_db.html">update_nba_db()</a></code> and <code><a href="reference/update_nba_stats_db.html">update_nba_stats_db()</a></code> default <code>dbdir</code> to <code>tools::R_user_dir("hoopR", "data")</code>; pass <code>dbdir = "."</code> for the old location.</li>
+<li>
+<code><a href="reference/load_mbb_pbp.html">load_mbb_pbp()</a></code> / <code><a href="reference/load_nba_pbp.html">load_nba_pbp()</a></code> return the play <code>id</code> as exact character.</li>
+<li>ESPN <code>game_id</code> / <code>athlete_id</code> in the roster and crosswalk loaders, and the NBA Stats ids in <code>load_nba_*_crosswalk()</code>, are integer.</li>
+<li>
+<code><a href="reference/nba_schedule.html">nba_schedule()</a></code> reads each league’s own CDN (<code>league_id</code> <code>"00"</code>, <code>"10"</code> or <code>"20"</code>); any other <code>league_id</code> is an argument error.</li>
+</ul>
 <p><a href="https://hoopR.sportsdataverse.org/news/index.html"><strong>Full News on Releases</strong></a></p>
 </div>
 <div class="section level2">
@@ -361,8 +376,8 @@
 <p><a href="https://hoopR.sportsdataverse.org/"><strong><code>hoopR</code></strong></a> is part of the <a href="https://sportsdataverse.org/" class="external-link">SportsDataverse</a>, a set of open-source packages for sports data.</p>
 <table class="table">
 <colgroup>
-<col width="50%">
-<col width="50%">
+<col width="77%">
+<col width="22%">
 </colgroup>
 <thead><tr>
 <th>Package</th>

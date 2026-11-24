@@ -102,13 +102,11 @@ Other Genius Functions:
 # \donttest{
   try(genius_competition_games(comp_id = 49915))
 #> ── Genius LiveStats competition games ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 21:13:44 UTC
-#> # A tibble: 3 × 20
+#> ℹ Data updated: 2026-11-24 20:43:08 UTC
+#> # A tibble: 1 × 20
 #>   league_id competition_id match_id match_status match_time match_time_utc  live
 #>       <int>          <int>    <int> <chr>        <chr>      <chr>          <int>
-#> 1       115          49915  2902719 SCHEDULED    2026-11-1… 2026-11-14 15…     0
-#> 2       115          49915  2902721 SCHEDULED    2026-11-1… 2026-11-14 15…     0
-#> 3       115          49915  2902724 SCHEDULED    2026-11-1… 2026-11-14 15…     0
+#> 1       115          49915  2902736 COMPLETE     2026-11-2… 2026-11-22 13…     0
 #> # ℹ 13 more variables: period <int>, period_type <chr>, clock <chr>,
 #> #   home_team_id <int>, home_name <chr>, home_name_international <chr>,
 #> #   home_code <chr>, home_score <int>, away_team_id <int>, away_name <chr>,

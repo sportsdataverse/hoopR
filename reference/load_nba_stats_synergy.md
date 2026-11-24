@@ -134,20 +134,20 @@ Other NBA Stats loader functions:
   try(load_nba_stats_synergy(seasons = most_recent_nba_stats_season(),
                              play_type = "isolation", per_mode = "totals"))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 159 × 27
+#> # A tibble: 263 × 27
 #>    season_id player_id player_name team_id team_abbreviation team_name play_type
 #>    <chr>         <int> <chr>         <int> <chr>             <chr>     <chr>    
-#>  1 22026       1629029 Luka Dončić  1.61e9 LAL               Los Ange… Isolation
-#>  2 22026       1628983 Shai Gilge…  1.61e9 OKC               Oklahoma… Isolation
-#>  3 22026       1630559 Austin Rea…  1.61e9 LAL               Los Ange… Isolation
-#>  4 22026        201935 James Hard…  1.61e9 CLE               Clevelan… Isolation
-#>  5 22026       1628369 Jayson Tat…  1.61e9 BOS               Boston C… Isolation
-#>  6 22026       1626164 Devin Book…  1.61e9 PHX               Phoenix … Isolation
-#>  7 22026       1628973 Jalen Brun…  1.61e9 NYK               New York… Isolation
-#>  8 22026       1630163 LaMelo Ball  1.61e9 MIN               Minnesot… Isolation
-#>  9 22026       1643411 Darius Acu…  1.61e9 SAC               Sacramen… Isolation
-#> 10 22026        203507 Giannis An…  1.61e9 MIA               Miami He… Isolation
-#> # ℹ 149 more rows
+#>  1 22026       1628983 Shai Gilge…  1.61e9 OKC               Oklahoma… Isolation
+#>  2 22026       1629029 Luka Dončić  1.61e9 LAL               Los Ange… Isolation
+#>  3 22026        201935 James Hard…  1.61e9 CLE               Clevelan… Isolation
+#>  4 22026       1628369 Jayson Tat…  1.61e9 BOS               Boston C… Isolation
+#>  5 22026       1626164 Devin Book…  1.61e9 PHX               Phoenix … Isolation
+#>  6 22026       1630559 Austin Rea…  1.61e9 LAL               Los Ange… Isolation
+#>  7 22026       1630578 Alperen Se…  1.61e9 HOU               Houston … Isolation
+#>  8 22026       1627759 Jaylen Bro…  1.61e9 PHI               Philadel… Isolation
+#>  9 22026        203507 Giannis An…  1.61e9 MIA               Miami He… Isolation
+#> 10 22026       1628973 Jalen Brun…  1.61e9 NYK               New York… Isolation
+#> # ℹ 253 more rows
 #> # ℹ 20 more variables: type_grouping <chr>, percentile <dbl>, gp <int>,
 #> #   poss_pct <dbl>, ppp <dbl>, fg_pct <dbl>, ft_poss_pct <dbl>,
 #> #   tov_poss_pct <dbl>, sf_poss_pct <dbl>, plusone_poss_pct <dbl>,

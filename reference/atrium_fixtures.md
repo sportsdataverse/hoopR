@@ -163,20 +163,8 @@ Other Atrium Functions:
 ``` r
 # \donttest{
   try(atrium_fixtures(website_id = 14))
-#> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 21:10:29 UTC
-#> # A tibble: 3 × 40
-#>   website_id season_id           competition_id competition_name season_end_year
-#>        <int> <chr>               <chr>          <chr>                      <int>
-#> 1         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            2026
-#> 2         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            2026
-#> 3         14 cc7d79f3-43ee-11f1… 16be8396-24fb… LIGA CALIENTE.M…            2026
-#> # ℹ 35 more variables: fixture_id <chr>, fixture_type <chr>, name <chr>,
-#> #   round <chr>, round_code <chr>, pool <chr>, series <chr>, stage_code <chr>,
-#> #   status <chr>, status_label <chr>, start_time_utc <dttm>,
-#> #   start_time_local <chr>, timezone <chr>, times_unconfirmed <lgl>,
-#> #   venue <chr>, venue_id <chr>, attendance <int>, home_entity_id <chr>,
-#> #   home_code <chr>, home_name <chr>, home_score <int>,
-#> #   home_result_place <int>, home_result_status <chr>, home_draw <lgl>, …
+#> Error in atrium_fixtures(website_id = 14) : 
+#>   embed-api.eui.connect.sportradar.com/v1/embed/14/fixtures: the site has
+#> no rows for this request.
 # }
 ```

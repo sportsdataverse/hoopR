@@ -180,7 +180,7 @@ Other MBB Crosswalk Functions:
 # \donttest{
 load_nba_team_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA team crosswalk (ESPN / NBA Stats / Fox) ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-06 16:30:16 UTC
+#> ℹ Data updated: 2026-11-23 16:30:18 UTC
 #> # A tibble: 30 × 21
 #>    season espn_team_id espn_abbreviation espn_display_name     espn_short_name
 #>     <int>        <int> <chr>             <chr>                 <chr>          
@@ -205,7 +205,7 @@ load_nba_team_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA schedule crosswalk (ESPN / NBA Stats) ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 16:30:47 UTC
+#> ℹ Data updated: 2026-11-24 16:31:43 UTC
 #> # A tibble: 1,207 × 16
 #>    season season_type game_date  home_espn_team_id away_espn_team_id
 #>     <int> <chr>       <date>                 <int>             <int>
@@ -228,8 +228,8 @@ load_nba_schedule_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #> ── NBA player crosswalk (ESPN / NBA Stats / Fox) ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 18:02:23 UTC
-#> # A tibble: 490 × 21
+#> ℹ Data updated: 2026-11-24 18:14:17 UTC
+#> # A tibble: 507 × 21
 #>    season espn_team_id team_abbreviation player_name         espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                         <int>
 #>  1   2027            1 ATL               aaron wiggins               4397183
@@ -242,7 +242,7 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 #>  8   2027            1 ATL               jalen wilson                4431714
 #>  9   2027            1 ATL               jock landale                3146557
 #> 10   2027            1 ATL               kingston flemings           5149077
-#> # ℹ 480 more rows
+#> # ℹ 497 more rows
 #> # ℹ 16 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, nba_player_id <int>, nba_player_name <chr>,
 #> #   nba_jersey_num <chr>, nba_position <chr>, fox_athlete_id <chr>,
@@ -253,7 +253,7 @@ load_nba_player_crosswalk(seasons = most_recent_nba_season())
 # \donttest{
 load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 #> ── MBB team crosswalk (ESPN / Fox / Torvik / KenPom) ──────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-08 11:44:47 UTC
+#> ℹ Data updated: 2026-11-24 09:18:15 UTC
 #> # A tibble: 365 × 27
 #>    season espn_team_id espn_abbreviation espn_display_name       espn_short_name
 #>     <int>        <int> <chr>             <chr>                   <chr>          
@@ -278,8 +278,8 @@ load_mbb_team_crosswalk(seasons = most_recent_mbb_season())
 # \donttest{
 load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 #> ── MBB schedule crosswalk (ESPN / Torvik) ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 20:13:05 UTC
-#> # A tibble: 6,121 × 15
+#> ℹ Data updated: 2026-11-24 19:34:54 UTC
+#> # A tibble: 6,124 × 15
 #>    season game_date  home_espn_team_id away_espn_team_id espn_game_id bart_muid 
 #>     <int> <date>                 <int>             <int>        <int> <chr>     
 #>  1   2027 2026-11-01               222                87    401920982 Notre Dam…
@@ -292,7 +292,7 @@ load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 #>  8   2027 2026-11-02               127              2514    401924856 Quinnipia…
 #>  9   2027 2026-11-02               251              2130    401906863 Chicago S…
 #> 10   2027 2026-11-02               248              2325    401925811 La SalleH…
-#> # ℹ 6,111 more rows
+#> # ℹ 6,114 more rows
 #> # ℹ 9 more variables: bart_team1 <chr>, bart_team2 <chr>, bart_winner <chr>,
 #> #   kp_game_id <chr>, fox_game_id <chr>, yahoo_game_id <chr>,
 #> #   ncaa_contest_id <chr>, match_method <chr>, match_confidence <dbl>
@@ -300,8 +300,8 @@ load_mbb_schedule_crosswalk(seasons = most_recent_mbb_season())
 # \donttest{
 load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #> ── MBB player crosswalk (ESPN / Fox) ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 20:46:14 UTC
-#> # A tibble: 5,569 × 19
+#> ℹ Data updated: 2026-11-24 19:36:53 UTC
+#> # A tibble: 5,555 × 19
 #>    season espn_team_id team_abbreviation player_name        espn_athlete_id
 #>     <int>        <int> <chr>             <chr>                        <int>
 #>  1   2027         2000 ACU               evan boisdur               5313910
@@ -314,7 +314,7 @@ load_mbb_player_crosswalk(seasons = most_recent_mbb_season())
 #>  8   2027         2000 ACU               isaiah neyhart             5314819
 #>  9   2027         2000 ACU               timeo pons                 5315586
 #> 10   2027         2000 ACU               yaniel rivera              5177702
-#> # ℹ 5,559 more rows
+#> # ℹ 5,545 more rows
 #> # ℹ 14 more variables: espn_full_name <chr>, espn_jersey <chr>,
 #> #   espn_position <chr>, fox_athlete_id <chr>, fox_player <chr>,
 #> #   fox_jersey <chr>, fox_position_group <chr>, yahoo_player_id <chr>,

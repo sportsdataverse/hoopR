@@ -108,13 +108,13 @@ rs_2026 |>
 #>                      rapm adj_rapm  spm  bpm boban_filtered_skill  war
 #> rapm                 1.00     0.91 0.43 0.42                 1.00 0.84
 #> adj_rapm             0.91     1.00 0.52 0.46                 0.90 0.80
-#> spm                  0.43     0.52 1.00 0.85                 0.42 0.45
+#> spm                  0.43     0.52 1.00 0.85                 0.43 0.46
 #> bpm                  0.42     0.46 0.85 1.00                 0.41 0.45
-#> boban_filtered_skill 1.00     0.90 0.42 0.41                 1.00 0.83
-#> war                  0.84     0.80 0.45 0.45                 0.83 1.00
+#> boban_filtered_skill 1.00     0.90 0.43 0.41                 1.00 0.83
+#> war                  0.84     0.80 0.46 0.45                 0.83 1.00
 ```
 
-In the 2025-26 regular season, RAPM and adj-RAPM correlate at r = 0.908
+In the 2025-26 regular season, RAPM and adj-RAPM correlate at r = 0.909
 across 582 players (the model card reports 0.913 for the same
 comparison).
 
@@ -174,21 +174,21 @@ if (!is.null(spm)) {
       rec$ridge_alpha[i], ", train r(SPM, RAPM) =", round(rec$train_r_spm_vs_rapm[i], 3), "\n")
   coefs |> mutate(across(where(is.numeric), \(x) round(x, 3)))
 }
-#> 2026 fit: 582 regular-season players, ridge alpha = 100 , train r(SPM, RAPM) = 0.431
+#> 2026 fit: 582 regular-season players, ridge alpha = 100 , train r(SPM, RAPM) = 0.435
 #> # A tibble: 11 × 6
 #>    feature o_coef d_coef feature_sd o_importance d_importance
 #>    <chr>    <dbl>  <dbl>      <dbl>        <dbl>        <dbl>
-#>  1 pts      0.112  0.007      7.30         0.815        0.048
-#>  2 fga     -0.047 -0.02       4.97         0.236        0.1  
-#>  3 ast      0.079  0.023      2.71         0.214        0.062
-#>  4 dreb     0.032  0.064      2.75         0.089        0.176
-#>  5 tov     -0.148 -0.056      1.29         0.19         0.073
-#>  6 blk     -0.067  0.194      0.951        0.064        0.184
-#>  7 stl      0.022  0.208      0.878        0.02         0.183
-#>  8 oreb     0.046  0.045      1.90         0.088        0.085
-#>  9 fg3m     0.008  0.072      1.57         0.013        0.112
-#> 10 pf      -0.016 -0.045      1.64         0.026        0.074
-#> 11 fta     -0.002 -0.015      2.89         0.007        0.044
+#>  1 pts      0.11   0.006      7.30         0.803        0.04 
+#>  2 fga     -0.048 -0.019      4.97         0.241        0.095
+#>  3 ast      0.082  0.026      2.71         0.222        0.071
+#>  4 dreb     0.033  0.067      2.75         0.09         0.184
+#>  5 tov     -0.152 -0.057      1.29         0.195        0.074
+#>  6 blk     -0.064  0.196      0.951        0.061        0.186
+#>  7 stl      0.021  0.207      0.878        0.019        0.181
+#>  8 oreb     0.046  0.048      1.90         0.086        0.092
+#>  9 fg3m     0.011  0.076      1.57         0.018        0.119
+#> 10 pf      -0.014 -0.042      1.64         0.022        0.069
+#> 11 fta      0.003 -0.013      2.89         0.008        0.038
 ```
 
 Scoring volume drives the offensive side and steals, blocks and
@@ -230,8 +230,8 @@ pairs |>
 #> # A tibble: 2 × 7
 #>   season     n rapm_yoy bpm_yoy boban_forward_r boban_forward_mae
 #>    <dbl> <int>    <dbl>   <dbl>           <dbl>             <dbl>
-#> 1   2024   447    0.361   0.346           0.356              1.55
-#> 2   2025   464    0.347   0.37            0.334              1.68
+#> 1   2024   447    0.359   0.346           0.354              1.55
+#> 2   2025   464    0.354   0.37            0.34               1.67
 #> # ℹ 1 more variable: carry_forward_mae <dbl>
 ```
 
@@ -281,21 +281,21 @@ rs_2026 |>
 #> # A tibble: 15 × 8
 #>    player_name          team_abbreviation    gp   min  rapm adj_rapm   bpm   war
 #>    <chr>                <chr>             <int> <dbl> <dbl>    <dbl> <dbl> <dbl>
-#>  1 Shai Gilgeous-Alexa… OKC                  68  2261  7.06     8.11 11.1   22.6
-#>  2 Dyson Daniels        ATL                  76  2523  5.58     5.01  1.5   21.5
-#>  3 Derrick White        BOS                  77  2623  4.99     4.99  3.39  19.4
-#>  4 Chet Holmgren        OKC                  69  1997  6.56     6.31  3.7   19.1
-#>  5 Victor Wembanyama    SAS                  64  1867  6.96     7.62  7.88  18.5
-#>  6 Kawhi Leonard        LAC                  65  2087  6.27     6.08  5.84  18.4
-#>  7 Amen Thompson        HOU                  79  2954  3.71     3.68  3.05  18.0
-#>  8 Bam Adebayo          MIA                  73  2363  4.61     4.88  0.8   17.7
-#>  9 Nikola Jokić         DEN                  65  2265  5.12     7.35 14.0   17.4
-#> 10 Donovan Mitchell     CLE                  70  2341  4.08     4.44  4.55  16.0
-#> 11 Julian Champagnie    SAS                  82  2267  4.28     3.54  0.73  15.8
-#> 12 Nickeil Alexander-W… ATL                  78  2603  3.23     2.26  0.67  15.5
-#> 13 Donte DiVincenzo     MIN                  82  2497  3.55     3.14  1.31  15.4
-#> 14 Cade Cunningham      DET                  64  2172  4.47     4.54  6.61  15.4
-#> 15 OG Anunoby           NYK                  67  2226  3.86     3.36  1.34  14.1
+#>  1 Shai Gilgeous-Alexa… OKC                  68  2261  7.1      8.14 11.1   22.6
+#>  2 Dyson Daniels        ATL                  76  2523  5.23     4.73  1.5   20.4
+#>  3 Derrick White        BOS                  77  2623  5.12     5.1   3.39  19.6
+#>  4 Kawhi Leonard        LAC                  65  2087  6.49     6.26  5.84  18.9
+#>  5 Chet Holmgren        OKC                  69  1997  6.54     6.32  3.7   18.8
+#>  6 Victor Wembanyama    SAS                  64  1867  6.99     7.69  7.88  18.6
+#>  7 Nikola Jokić         DEN                  65  2265  5.28     7.52 14.0   18.3
+#>  8 Amen Thompson        HOU                  79  2954  3.72     3.69  3.05  18.0
+#>  9 Bam Adebayo          MIA                  73  2363  4.51     4.83  0.8   17.3
+#> 10 Donovan Mitchell     CLE                  70  2341  4.15     4.51  4.55  16.0
+#> 11 Julian Champagnie    SAS                  82  2267  4.3      3.54  0.73  15.9
+#> 12 Cade Cunningham      DET                  64  2172  4.49     4.58  6.61  15.4
+#> 13 Donte DiVincenzo     MIN                  82  2497  3.53     3.13  1.31  15.4
+#> 14 Nickeil Alexander-W… ATL                  78  2603  2.82     1.93  0.67  14.1
+#> 15 Devin Booker         PHX                  64  2148  4.03     4.18  2.22  14.1
 ```
 
 Read the leaderboard as tiers, not a strict ranking (see the uncertainty

@@ -65,28 +65,28 @@ Other FEB Functions:
 # \donttest{
   try(feb_results(group = 1, season = 2027))
 #> ── FEB results from baloncestoenvivo.feb.es ───────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 21:13:11 UTC
+#> ℹ Data updated: 2026-11-24 20:42:38 UTC
 #> # A tibble: 18 × 17
 #>    group season competition comp_id section    round_title  game_id home_team_id
 #>    <int>  <int> <chr>         <int> <chr>      <chr>          <int>        <int>
-#>  1     1   2027 PRIMERA FEB     115 results    Resultados … 2535784      1010207
-#>  2     1   2027 PRIMERA FEB     115 results    Resultados … 2535782      1010494
-#>  3     1   2027 PRIMERA FEB     115 results    Resultados … 2535779      1009716
-#>  4     1   2027 PRIMERA FEB     115 results    Resultados … 2535780      1008687
-#>  5     1   2027 PRIMERA FEB     115 results    Resultados … 2535786      1009584
-#>  6     1   2027 PRIMERA FEB     115 results    Resultados … 2535785      1008797
-#>  7     1   2027 PRIMERA FEB     115 results    Resultados … 2535783      1009837
-#>  8     1   2027 PRIMERA FEB     115 results    Resultados … 2535787      1010324
-#>  9     1   2027 PRIMERA FEB     115 results    Resultados … 2535781      1009072
-#> 10     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535791      1008400
-#> 11     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535793      1009109
-#> 12     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535792      1009110
-#> 13     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535788      1008687
-#> 14     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535794      1008378
-#> 15     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535795      1009095
-#> 16     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535796      1008900
-#> 17     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535789      1009929
-#> 18     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535790      1009713
+#>  1     1   2027 PRIMERA FEB     115 results    Resultados … 2535800      1010494
+#>  2     1   2027 PRIMERA FEB     115 results    Resultados … 2535802      1010207
+#>  3     1   2027 PRIMERA FEB     115 results    Resultados … 2535797      1009716
+#>  4     1   2027 PRIMERA FEB     115 results    Resultados … 2535799      1010493
+#>  5     1   2027 PRIMERA FEB     115 results    Resultados … 2535801      1009837
+#>  6     1   2027 PRIMERA FEB     115 results    Resultados … 2535804      1009584
+#>  7     1   2027 PRIMERA FEB     115 results    Resultados … 2535805      1010324
+#>  8     1   2027 PRIMERA FEB     115 results    Resultados … 2535803      1008797
+#>  9     1   2027 PRIMERA FEB     115 results    Resultados … 2535798      1009072
+#> 10     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535809      1008400
+#> 11     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535814      1008900
+#> 12     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535813      1009095
+#> 13     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535808      1009929
+#> 14     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535806      1008687
+#> 15     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535810      1009109
+#> 16     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535811      1008378
+#> 17     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535807      1009072
+#> 18     1   2027 PRIMERA FEB     115 next_round Próxima Jor… 2535812      1010493
 #> # ℹ 9 more variables: home_team <chr>, away_team_id <int>, away_team <chr>,
 #> #   result_text <chr>, home_score <int>, away_score <int>, status <chr>,
 #> #   date <date>, time <chr>

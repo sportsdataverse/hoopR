@@ -88,27 +88,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-11-13 21:12:42 UTC
+#> ℹ Data updated: 2026-11-24 20:42:11 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.05e7 Story Men's c… After two … 2026-11-… FALSE   Jeff … https:/… 41       
-#> 2  5.05e7 Prev… SIU-Edw… SIU-Edward… 2026-11-… FALSE   NA     http://… 41       
-#> 3  5.05e7 Media Kicks F… Kicks For … 2026-11-… FALSE   NA     https:/… 23       
-#> 4  5.04e7 Story Men's b… From poten… 2026-11-… FALSE   Jeff … https:/… 41       
-#> 5  5.02e7 Story Early t… Entering t… 2026-11-… FALSE   Paul … https:/… 41       
+#> 1  5.00e7 Story How top… How these … 2026-11-… FALSE   Jeff … https:/… 41       
+#> 2  3.03e7 Etic… NCAA Br… Kelvin Sam… 2026-11-… FALSE   Joe L… https:/… 41       
+#> 3  5.02e7 Story UNC ent… The Tar He… 2026-11-… FALSE   Paul … https:/… 41       
+#> 4  5.06e7 Story Breakin… Stats, rec… 2026-11-… FALSE   ESPN   https:/… 41       
+#> 5  5.06e7 Story What to… With so ma… 2026-11-… FALSE   Myron… https:/… 41       
 # }
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 21:12:42 UTC
+#> ℹ Data updated: 2026-11-24 20:42:11 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.04e7 Story NBA tra… With the N… 2026-11-… FALSE   NBA i… https:/… 46       
-#> 2  5.05e7 Story How Kob… The Comman… 2026-11-… FALSE   John … https:/… 28       
-#> 3  4.16e7 Story Which N… In 2024, B… 2026-11-… FALSE   Keith… https:/… NA       
-#> 4  5.05e7 Head… Austin … Lakers gua… 2026-11-… FALSE   Dave … https:/… 46       
-#> 5  5.05e7 Media Los Ang… Los Angele… 2026-11-… FALSE   NA     https:/… 46       
+#> 1  4.16e7 Story Which N… In 2024, B… 2026-11-… FALSE   Keith… https:/… NA       
+#> 2  5.06e7 Media Utah Ja… Utah Jazz … 2026-11-… FALSE   NA     https:/… 46       
+#> 3  5.06e7 Recap Luka Do… — Luka Don… 2026-11-… FALSE   NA     http://… 46       
+#> 4  4.96e7 Story 2026 NB… Here's eve… 2026-11-… FALSE   ESPN   https:/… 46       
+#> 5  5.06e7 Story Too-ear… So what if… 2026-11-… FALSE   Ben G… https:/… 46       
 # }
 ```

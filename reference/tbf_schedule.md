@@ -88,7 +88,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_schedule(competition = "bsl", season = 2027, week = 1))
 #> ── TBF Schedule ───────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 21:17:56 UTC
+#> ℹ Data updated: 2026-11-24 20:47:08 UTC
 #> # A tibble: 8 × 25
 #>   match_id match_code genius_id activity_id activity_name competition season_id
 #>      <int> <chr>          <int>       <int> <chr>         <chr>           <int>

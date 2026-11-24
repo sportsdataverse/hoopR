@@ -166,7 +166,8 @@
 <li>Use <code>%||%</code> (rlang) for null safety on every extracted field</li>
 </ul></li>
 <li>
-<strong>Add roxygen docs</strong> with <code>@export</code>, <code>@family</code>, <code>@return</code> (including column markdown tables), and <code>@details</code> example</li>
+<strong>Add roxygen docs</strong> with <code>@export</code>, <code>@family</code>, <code>@eval .returns_rd("fn")</code> and a <code>@details</code> example. Add one row per returned column to <code>data-raw/return_columns.csv</code>, then run <code>Rscript data-raw/return_columns.R</code>
+</li>
 <li>
 <strong>Create a test</strong> in <code>tests/testthat/</code> with <code>skip_on_cran()</code>, <code>skip_on_ci()</code>, <code>skip_nba_stats_test()</code> guards</li>
 <li>
@@ -259,12 +260,13 @@
 <li>
 <code>@param</code> for every parameter (including <code>...</code>)</li>
 <li>
-<code>@return</code> with markdown tables documenting column names and types</li>
+<code>@return</code> as <code>#' @eval .returns_rd("fn")</code> for a data-returning function: the column tables are built from <code>data-raw/return_columns.csv</code> (one row per returned column), never hand-written. A new data-returning function needs its CSV rows, then <code>Rscript data-raw/return_columns.R</code> and <code><a href="https://devtools.r-lib.org/reference/document.html" class="external-link">devtools::document()</a></code>. A function that returns something else (for example <code><a href="reference/kp_user_pw.html">login()</a></code>) keeps a hand-written <code>@return</code>
+</li>
 <li>
 <code>@importFrom</code> for specific function imports</li>
 <li><code>@export</code></li>
 <li>
-<code>@family</code> for grouping in pkgdown (e.g., <code>"NBA PBP Functions"</code>, <code>"NBA Boxscore V3 Functions"</code>)</li>
+<code>@family</code> for grouping in pkgdown (e.g., <code>"NBA PBP Functions"</code>, <code>"NBA Boxscore V3 Functions"</code>), except in the 22 large families indexed in <code>R/families.R</code> (ESPN MBB/NBA and most international families), which use <code>@concept &lt;Family&gt;</code> plus a <code>@seealso</code> line pointing to the family index page</li>
 <li>
 <code>@details</code> with a runnable example code block</li>
 </ul></div>

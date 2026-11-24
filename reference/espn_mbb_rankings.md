@@ -69,21 +69,21 @@ Saiem Gilani
 # \donttest{
 try(espn_mbb_rankings())
 #> ── ESPN MBB Rankings Information from ESPN.com ────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 21:12:25 UTC
-#> # A tibble: 84 × 38
+#> ℹ Data updated: 2026-11-24 20:41:55 UTC
+#> # A tibble: 77 × 38
 #>       id name   short_name type  headline short_headline current previous points
 #>    <int> <chr>  <chr>      <chr> <chr>    <chr>            <int>    <int>  <dbl>
-#>  1     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 2        1        1   1490
-#>  2     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 2        2        2   1432
-#>  3     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 2        3        3   1366
-#>  4     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 2        4        4   1339
-#>  5     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 2        5        6   1222
-#>  6     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 2        6        9   1161
-#>  7     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 2        7        7   1092
-#>  8     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 2        8       10    947
-#>  9     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 2        9       22    925
-#> 10     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 2       10       11    901
-#> # ℹ 74 more rows
+#>  1     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 4        1        8   1466
+#>  2     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 4        2        4   1316
+#>  3     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 4        3        1   1262
+#>  4     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 4        4       10   1200
+#>  5     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 4        5        9   1185
+#>  6     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 4        6        7   1183
+#>  7     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 4        7        6   1114
+#>  8     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 4        8       12   1073
+#>  9     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 4        9       14   1047
+#> 10     1 AP To… AP Poll    ap    2027 NC… 2027 : Week 4       10        3    976
+#> # ℹ 67 more rows
 #> # ℹ 29 more variables: first_place_votes <int>, trend <chr>, date <chr>,
 #> #   last_updated <chr>, record_summary <chr>, team_id <int>, team_uid <chr>,
 #> #   team_location <chr>, team_name <chr>, team_nickname <chr>,

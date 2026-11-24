@@ -58,8 +58,8 @@ lists every function in this family.
 # \donttest{
   try(acb_player_matches(player_id = 20209407, season = 2027))
 #> ── ACB Player Matches from api2.acb.com ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 21:10:17 UTC
-#> # A tibble: 7 × 42
+#> ℹ Data updated: 2026-11-24 20:39:58 UTC
+#> # A tibble: 9 × 42
 #>   player_id match_id round_type round_number date                home_team_id
 #>       <int>    <int> <chr>             <int> <dttm>                     <int>
 #> 1  20209407   105383 LR                    1 2026-09-27 17:00:00         4476
@@ -69,6 +69,8 @@ lists every function in this family.
 #> 5  20209407   105419 LR                    5 2026-10-25 18:00:00         4465
 #> 6  20209407   105425 LR                    6 2026-11-01 11:30:00         4476
 #> 7  20209407   105437 LR                    7 2026-11-08 18:00:00         4476
+#> 8  20209407   105446 LR                    8 2026-11-15 18:00:00         4463
+#> 9  20209407   105455 LR                    9 2026-11-22 18:00:00         4476
 #> # ℹ 36 more variables: home_club_id <int>, home_team <chr>,
 #> #   home_team_abbr <chr>, away_team_id <int>, away_club_id <int>,
 #> #   away_team <chr>, away_team_abbr <chr>, edition_id <int>, season <int>,

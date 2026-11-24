@@ -61,9 +61,9 @@ A `hoopR_data` tibble with one row per entity per metric per window.
 | col_name | types | description |
 | season | integer | END year of the NBA season (2025 = 2024-25), the asset's own stamp: one more than the `seasons` argument. |
 | entity_type | character | Which aggregate the row is: "league" (every counted attempt that season), "team" or "player" on metric_curves; always "player" on rolling_windows. |
-| entity_id | character | stats.nba.com id of the entity as TEXT – the team_id on a team row, the person_id on a player row, NA on the league row. |
+| entity_id | integer | stats.nba.com id of the entity – the team_id on a team row, the person_id on a player row, NA on the league row. |
 | entity_name | character | Label for the entity: the team tricode ("GSW") on a team row, the shooter's name as the pbp ships it on a player row; NA on the league row. |
-| team_id | character | stats.nba.com team id (e.g. 1610612737 = Atlanta Hawks). |
+| team_id | integer | stats.nba.com team id (e.g. 1610612737 = Atlanta Hawks). |
 | metric | character | What the row measures: "fg_pct_by_shot_distance" on metric_curves (field-goal percentage by shot distance in feet); "fg_pct" (window_unit "fga") or "fg3_pct" (window_unit "fg3a") on rolling_windows. |
 | window_unit | character | What the window counts: "fga" (every field-goal attempt) or "fg3a" (three-point attempts). Regular-season and playoff attempts only. |
 | window_n | integer | Window size in attempts (50 or 200), not games. |
@@ -103,20 +103,20 @@ Other NBA Stats loader functions:
 # \donttest{
   try(load_nba_stats_rolling_windows(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 1,728 × 21
-#>    season entity_type entity_id entity_name team_id  metric window_unit window_n
-#>     <int> <chr>       <chr>     <chr>       <chr>    <chr>  <chr>          <int>
-#>  1   2027 player      1626145   Jones       1610612… fg3_p… fg3a              50
-#>  2   2027 player      1626157   Towns       1610612… fg3_p… fg3a              50
-#>  3   2027 player      1626162   Oubre Jr.   1610612… fg3_p… fg3a              50
-#>  4   2027 player      1626164   Booker      1610612… fg3_p… fg3a              50
-#>  5   2027 player      1626167   Turner      1610612… fg3_p… fg3a              50
-#>  6   2027 player      1626168   Lyles       1610612… fg3_p… fg3a              50
-#>  7   2027 player      1626171   Portis Jr.  1610612… fg3_p… fg3a              50
-#>  8   2027 player      1626181   Powell      1610612… fg3_p… fg3a              50
-#>  9   2027 player      1626204   Nance Jr.   1610612… fg3_p… fg3a              50
-#> 10   2027 player      1626209   Hezonja     1610612… fg3_p… fg3a              50
-#> # ℹ 1,718 more rows
+#> # A tibble: 1,798 × 21
+#>    season entity_type entity_id entity_name  team_id metric window_unit window_n
+#>     <int> <chr>           <int> <chr>          <int> <chr>  <chr>          <int>
+#>  1   2027 player        1626145 Jones         1.61e9 fg3_p… fg3a              50
+#>  2   2027 player        1626157 Towns         1.61e9 fg3_p… fg3a              50
+#>  3   2027 player        1626162 Oubre Jr.     1.61e9 fg3_p… fg3a              50
+#>  4   2027 player        1626164 Booker        1.61e9 fg3_p… fg3a              50
+#>  5   2027 player        1626167 Turner        1.61e9 fg3_p… fg3a              50
+#>  6   2027 player        1626168 Lyles         1.61e9 fg3_p… fg3a              50
+#>  7   2027 player        1626171 Portis Jr.    1.61e9 fg3_p… fg3a              50
+#>  8   2027 player        1626181 Powell        1.61e9 fg3_p… fg3a              50
+#>  9   2027 player        1626204 Nance Jr.     1.61e9 fg3_p… fg3a              50
+#> 10   2027 player        1626209 Hezonja       1.61e9 fg3_p… fg3a              50
+#> # ℹ 1,788 more rows
 #> # ℹ 13 more variables: cur <dbl>, prev <dbl>, season_start <dbl>,
 #> #   career_baseline <dbl>, delta_prev <dbl>, delta_season <dbl>,
 #> #   delta_career <dbl>, delta_prev_rank <int>, n <int>, qualified <lgl>,

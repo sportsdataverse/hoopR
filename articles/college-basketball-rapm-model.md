@@ -301,7 +301,7 @@ c(possessions = nrow(nba_poss), games = n_distinct(nba_poss$game_id))
 
 fit_time <- system.time(my_rapm <- nba_rapm(nba_poss))
 round(fit_time[["elapsed"]], 1)
-#> [1] 12.9
+#> [1] 8.9
 
 my_rapm |>
   summarise(players = n(),
@@ -311,7 +311,7 @@ my_rapm |>
 #> # A tibble: 1 × 3
 #>   players wmean_o_rapm wmean_d_rapm
 #>     <int>        <dbl>        <dbl>
-#> 1     582         0.28         0.07
+#> 1     582          0.3         0.07
 ```
 
 Two properties of this design show up immediately:
@@ -352,8 +352,8 @@ compare |>
 #> # A tibble: 2 × 3
 #>   floor              players r_with_published
 #>   <chr>                <int>            <dbl>
-#> 1 1,000+ possessions     383            0.995
-#> 2 under 1,000            199            0.991
+#> 1 1,000+ possessions     384            0.997
+#> 2 under 1,000            198            0.998
 ```
 
 ``` r
@@ -379,8 +379,8 @@ offensive possessions in
 
 The two agree closely for regulars. To control the penalty yourself,
 build the design and call
-[`glmnet::glmnet()`](https://glmnet.stanford.edu/reference/glmnet.html)
-with your own `lambda`.
+[`glmnet::glmnet()`](https://rdrr.io/pkg/glmnet/man/glmnet.html) with
+your own `lambda`.
 
 For a single game you can build the possession frame from live NBA Stats
 play-by-play with

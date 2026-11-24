@@ -82,14 +82,14 @@ lists every function in this family.
 # \donttest{
   try(tbf_teams(competition = "bsl", season = 2027))
 #> ── TBF Teams ──────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 21:18:02 UTC
+#> ℹ Data updated: 2026-11-24 20:47:14 UTC
 #> # A tibble: 16 × 9
 #>    season competition team_process_id club_id team_name    city  code  season_id
 #>     <int> <chr>                 <int>   <int> <chr>        <chr> <chr>     <int>
 #>  1   2027 bsl                  266048    2195 ALİAĞA PETK… İZMİR PTK         174
 #>  2   2027 bsl                  265990       2 ANADOLU EFES İSTA… EFS         174
 #>  3   2027 bsl                  265991   55636 BAHÇEŞEHİR … İSTA… BSK         174
-#>  4   2027 bsl                  265992       1 BEŞİKTAŞ     İSTA… BJK         174
+#>  4   2027 bsl                  265992       1 BEŞİKTAŞ FU… İSTA… BJK         174
 #>  5   2027 bsl                  268222  246463 BİOTEKNO KÖ… KOCA… KÖR         174
 #>  6   2027 bsl                  266176  246239 BURSASPOR B… BURSA BUR         174
 #>  7   2027 bsl                  266024  184811 ESENLER ERO… İSTA… ERK         174

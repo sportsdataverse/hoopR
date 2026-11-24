@@ -41,7 +41,7 @@ Other Salary & Draft Functions:
 # \donttest{
   try(nbadraft_mock_draft())
 #> ── Mock draft from nbadraft.net ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-13 21:16:23 UTC
+#> ℹ Data updated: 2026-11-24 20:45:40 UTC
 #> # A tibble: 60 × 9
 #>     pick team        player            height weight position school class round
 #>    <int> <chr>       <chr>             <chr>   <int> <chr>    <chr>  <chr> <int>
@@ -53,7 +53,7 @@ Other Salary & Draft Functions:
 #>  6     6 Brooklyn    Obinna Ekezie Jr. 7-0       220 C        Louis… Fr.       1
 #>  7     7 Washington  Amari Allen       6-6       205 SG/SF    Alaba… So.       1
 #>  8     8 New Orleans Caleb Holt        6-5       215 PG/SG    Arizo… Fr.       1
-#>  9     9 Indiana     Thomas Haugh      6-9       210 SF/PF    Flori… Sr.       1
+#>  9     9 Indiana     Kanon Catchings   6-9       210 SF       Georg… Jr.       1
 #> 10    10 Charlotte   Stefan Joksimovic 6-4       190 SG       Slove… Intl.     1
 #> # ℹ 50 more rows
 # }

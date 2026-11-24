@@ -162,20 +162,20 @@ Other NBA Stats loader functions:
   try(load_nba_stats_hustle_player(seasons = most_recent_nba_stats_season(),
                                    season_type = "regular-season", per_mode = "totals"))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 455 × 31
+#> # A tibble: 473 × 31
 #>    player_id player_name      team_id team_abbreviation   age     g   min
 #>        <int> <chr>              <int> <chr>             <dbl> <int> <dbl>
-#>  1   1643407 AJ Dybantsa   1610612764 WAS                  19     9   305
-#>  2   1631260 AJ Green      1610612749 MIL                  27    12   217
-#>  3   1642358 AJ Johnson    1610612740 NOP                  21     2    15
-#>  4    203932 Aaron Gordon  1610612743 DEN                  31    10   291
-#>  5   1630174 Aaron Nesmith 1610612754 IND                  27    10   252
-#>  6   1630598 Aaron Wiggins 1610612737 ATL                  27    12   310
-#>  7   1642846 Ace Bailey    1610612762 UTA                  20    12   372
-#>  8   1643530 Aday Mara     1610612760 OKC                  21    12   255
-#>  9   1641737 Adem Bona     1610612755 PHI                  23     9   128
-#> 10   1642876 Adou Thiero   1610612747 LAL                  22     4    37
-#> # ℹ 445 more rows
+#>  1   1643407 AJ Dybantsa   1610612764 WAS                  19    14   476
+#>  2   1631260 AJ Green      1610612749 MIL                  27    16   257
+#>  3   1642358 AJ Johnson    1610612740 NOP                  21     4    25
+#>  4    203932 Aaron Gordon  1610612743 DEN                  31    15   442
+#>  5   1630174 Aaron Nesmith 1610612754 IND                  27    15   410
+#>  6   1630598 Aaron Wiggins 1610612737 ATL                  27    17   438
+#>  7   1642846 Ace Bailey    1610612762 UTA                  20    19   577
+#>  8   1643530 Aday Mara     1610612760 OKC                  21    16   358
+#>  9   1641737 Adem Bona     1610612755 PHI                  23    10   134
+#> 10   1642876 Adou Thiero   1610612747 LAL                  22     6    49
+#> # ℹ 463 more rows
 #> # ℹ 24 more variables: contested_shots <int>, contested_shots_2_pt <int>,
 #> #   contested_shots_3_pt <int>, deflections <int>, charges_drawn <int>,
 #> #   screen_assists <int>, screen_ast_pts <int>,

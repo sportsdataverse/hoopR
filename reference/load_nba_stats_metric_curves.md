@@ -8,8 +8,9 @@ One row per entity per distance bucket (1-ft bins from 0 to 35 ft, then
 35-50 and 50-95 ft; `x_lo` inclusive, `x_hi` exclusive) with its
 `attempts`, `successes` (makes) and `rate`; an empty bucket has no row.
 Regular-season and playoff shots only. `entity_id` / `team_id` are
-stats.nba.com ids as text; `down` and `epa_per_att` are always `NA` (the
-football columns of the cross-league contract).
+integer stats.nba.com ids, as in the other NBA Stats loaders; `down` and
+`epa_per_att` are always `NA` (the football columns of the cross-league
+contract).
 
 ## Usage
 
@@ -59,9 +60,9 @@ A `hoopR_data` tibble with one row per entity per metric per bin.
 | col_name | types | description |
 | season | integer | END year of the NBA season (2025 = 2024-25), the asset's own stamp: one more than the `seasons` argument. |
 | entity_type | character | Which aggregate the row is: "league" (every counted attempt that season), "team" or "player" on metric_curves; always "player" on rolling_windows. |
-| entity_id | character | stats.nba.com id of the entity as TEXT – the team_id on a team row, the person_id on a player row, NA on the league row. |
+| entity_id | integer | stats.nba.com id of the entity – the team_id on a team row, the person_id on a player row, NA on the league row. |
 | entity_name | character | Label for the entity: the team tricode ("GSW") on a team row, the shooter's name as the pbp ships it on a player row; NA on the league row. |
-| team_id | character | stats.nba.com team id (e.g. 1610612737 = Atlanta Hawks). |
+| team_id | integer | stats.nba.com team id (e.g. 1610612737 = Atlanta Hawks). |
 | id_source | character | Namespace of `entity_id` / `team_id` on this row – "nba_stats" here; the cross-league contract carries "espn", "gsis" and "wnba_stats" elsewhere. |
 | metric | character | What the row measures: "fg_pct_by_shot_distance" on metric_curves (field-goal percentage by shot distance in feet); "fg_pct" (window_unit "fga") or "fg3_pct" (window_unit "fg3a") on rolling_windows. |
 | down | integer | Null on every row: the second axis of the football-only success_by_down_distance curve, carried for the cross-league contract. |
@@ -94,20 +95,20 @@ Other NBA Stats loader functions:
 # \donttest{
   try(load_nba_stats_metric_curves(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 8,123 × 14
+#> # A tibble: 9,279 × 14
 #>    season entity_type entity_id entity_name team_id id_source metric  down  x_lo
-#>     <int> <chr>       <chr>     <chr>       <chr>   <chr>     <chr>  <int> <dbl>
-#>  1   2027 league      NA        NA          NA      nba_stats fg_pc…    NA     0
-#>  2   2027 league      NA        NA          NA      nba_stats fg_pc…    NA     1
-#>  3   2027 league      NA        NA          NA      nba_stats fg_pc…    NA     2
-#>  4   2027 league      NA        NA          NA      nba_stats fg_pc…    NA     3
-#>  5   2027 league      NA        NA          NA      nba_stats fg_pc…    NA     4
-#>  6   2027 league      NA        NA          NA      nba_stats fg_pc…    NA     5
-#>  7   2027 league      NA        NA          NA      nba_stats fg_pc…    NA     6
-#>  8   2027 league      NA        NA          NA      nba_stats fg_pc…    NA     7
-#>  9   2027 league      NA        NA          NA      nba_stats fg_pc…    NA     8
-#> 10   2027 league      NA        NA          NA      nba_stats fg_pc…    NA     9
-#> # ℹ 8,113 more rows
+#>     <int> <chr>           <int> <chr>         <int> <chr>     <chr>  <int> <dbl>
+#>  1   2027 league             NA NA               NA nba_stats fg_pc…    NA     0
+#>  2   2027 league             NA NA               NA nba_stats fg_pc…    NA     1
+#>  3   2027 league             NA NA               NA nba_stats fg_pc…    NA     2
+#>  4   2027 league             NA NA               NA nba_stats fg_pc…    NA     3
+#>  5   2027 league             NA NA               NA nba_stats fg_pc…    NA     4
+#>  6   2027 league             NA NA               NA nba_stats fg_pc…    NA     5
+#>  7   2027 league             NA NA               NA nba_stats fg_pc…    NA     6
+#>  8   2027 league             NA NA               NA nba_stats fg_pc…    NA     7
+#>  9   2027 league             NA NA               NA nba_stats fg_pc…    NA     8
+#> 10   2027 league             NA NA               NA nba_stats fg_pc…    NA     9
+#> # ℹ 9,269 more rows
 #> # ℹ 5 more variables: x_hi <dbl>, attempts <int>, successes <int>, rate <dbl>,
 #> #   epa_per_att <dbl>
 # }

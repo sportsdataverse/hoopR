@@ -94,7 +94,7 @@ Other NBA Stats loader functions:
 # \donttest{
   try(load_nba_stats_injury_report(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 44,572 × 17
+#> # A tibble: 69,644 × 17
 #>    season report_datetime     game_date  game_time report_matchup away_team_abbr
 #>     <int> <dttm>              <date>     <chr>     <chr>          <chr>         
 #>  1   2027 2026-10-19 00:00:00 2026-10-20 03:00 (E… BOS@DET        BOS           
@@ -107,7 +107,7 @@ Other NBA Stats loader functions:
 #>  8   2027 2026-10-19 15:45:00 2026-10-20 03:00 (E… BOS@DET        BOS           
 #>  9   2027 2026-10-19 15:45:00 2026-10-20 09:30 (E… OKC@SAS        OKC           
 #> 10   2027 2026-10-19 15:45:00 2026-10-20 09:30 (E… OKC@SAS        OKC           
-#> # ℹ 44,562 more rows
+#> # ℹ 69,634 more rows
 #> # ℹ 11 more variables: home_team_abbr <chr>, team <chr>,
 #> #   report_player_name <chr>, current_status <chr>, reason <chr>,
 #> #   category <chr>, previous_status <chr>, game_id <chr>, team_id <int>,

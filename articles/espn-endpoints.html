@@ -650,12 +650,12 @@ feed and the calendar.</p>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 2</span></span></span>
 <span><span class="co">#&gt;   headline                                                             published</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> UTSA moves on from head coach Claunch; Bowman takes helm rest of se… 2026-11-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> TCU officially adds prized transfer Robbie Avila: 'We got him'       2026-11-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Randolph leads Portland State against San Francisco after 23-point … 2026-11-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Lewis leads Tulane against Akron after 35-point performance          2026-11-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Jordan leads Georgia Tech against UNC Asheville after 27-point show… 2026-11-…</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Manhattan faces Le Moyne for non-conference matchup                  2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Beamer’s 31 lead Florida International past Southern Utah 81-66      2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Rolison scores 26 as SE Louisiana takes down Northern Colorado 70-60 2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> Southern Utah Thunderbirds vs. Florida International Panthers: Game… 2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Belmont Bruins vs. Akron Zips: Game Highlights                       2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Paveletzke’s 18 lead Ohio past New Mexico State 69-68                2026-11-…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Taj Au-Duke hits winning shot in OT as St. Bonaventure beats Wright… 2026-11-…</span></span>
 <span></span>
 <span><span class="co"># 2025 MBB season calendar</span></span>
 <span><span class="va">mbb_cal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/espn_mbb_calendar.html">espn_mbb_calendar</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span>
@@ -950,7 +950,7 @@ but for exploratory pulls you’ll usually want a small
 <span>  season <span class="op">=</span> <span class="fl">2025</span>, active <span class="op">=</span> <span class="cn">TRUE</span>, limit <span class="op">=</span> <span class="fl">5000</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 757</span></span>
+<span><span class="co">#&gt; [1] 767</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">nba_athletes</span><span class="op">[</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"display_name"</span>, <span class="st">"position_name"</span>, <span class="st">"team_name"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `nba_athletes[, c("display_name", "position_name", "team_name")]`:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> Can't subset columns that don't exist.</span></span>
