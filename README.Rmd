@@ -132,6 +132,7 @@ hoopR 3.2.0 changes what some 3.1.0 code gets back:
 - `update_mbb_db()`, `update_nba_db()` and `update_nba_stats_db()` default `dbdir` to `tools::R_user_dir("hoopR", "data")`; pass `dbdir = "."` for the old location.
 - `load_mbb_pbp()` / `load_nba_pbp()` return the play `id` as exact character.
 - ESPN `game_id` / `athlete_id` in the roster and crosswalk loaders, and the NBA Stats ids in `load_nba_*_crosswalk()`, are integer.
+- `nba_schedule()` reads each league's own CDN (`league_id` `"00"`, `"10"` or `"20"`); any other `league_id` is an argument error.
 
 [**Full News on Releases**](https://hoopR.sportsdataverse.org/news/index.html)
 

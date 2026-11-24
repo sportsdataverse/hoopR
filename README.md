@@ -213,6 +213,8 @@ hoopR 3.2.0 changes what some 3.1.0 code gets back:
     character.
   - ESPN `game_id` / `athlete_id` in the roster and crosswalk loaders,
     and the NBA Stats ids in `load_nba_*_crosswalk()`, are integer.
+  - `nba_schedule()` reads each league's own CDN (`league_id` `"00"`,
+    `"10"` or `"20"`); any other `league_id` is an argument error.
 
 [**Full News on
 Releases**](https://hoopR.sportsdataverse.org/news/index.html)
