@@ -19,7 +19,7 @@
 
     json <- resp %>%
       .resp_text() %>%
-      jsonlite::fromJSON(simplifyVector = T)
+      jsonlite::fromJSON(simplifyVector = TRUE)
 
     return(json)
   }
@@ -314,7 +314,7 @@ nba_stats_map_result_sets <- function(resp) {
   if ("resultSets" %in% names(resp)) {
     df_list <- purrr::map(1:length(resp$resultSets$name), function(x) {
       data <- resp$resultSets$rowSet[[x]] %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         dplyr::as_tibble()
 
       json_names <- resp$resultSets$headers[[x]]
@@ -326,7 +326,7 @@ nba_stats_map_result_sets <- function(resp) {
   } else {
     df_list <- purrr::map(1:length(resp$resultSet$name), function(x) {
       data <- resp$resultSet$rowSet[[x]] %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         dplyr::as_tibble()
 
       json_names <- resp$resultSet$headers[[x]]

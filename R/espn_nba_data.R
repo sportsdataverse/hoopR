@@ -1333,7 +1333,7 @@ espn_nba_standings <- function(year) {
       standings_data <- data.table::rbindlist(
         standings_df,
         fill = TRUE,
-        idcol = T
+        idcol = TRUE
       )
 
       # Use the following code to replace NA's in the dataframe with the correct corresponding values and removing all unnecessary columns

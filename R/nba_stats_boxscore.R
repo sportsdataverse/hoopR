@@ -815,7 +815,7 @@ nba_boxscoresimilarityscore <- function(
 
       df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
         data <- resp$resultSet$rowSet %>%
-          data.frame(stringsAsFactors = F) %>%
+          data.frame(stringsAsFactors = FALSE) %>%
           dplyr::as_tibble()
 
         json_names <- resp$resultSet$headers
