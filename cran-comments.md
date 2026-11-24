@@ -69,8 +69,10 @@ full list of changes is in NEWS.md. The main additions:
   and 0 notes on c5dfb1aa, the commit before this release's documentation
   and DESCRIPTION Suggests changes.
 * R-hub v2 (linux, macos, macos-arm64 and windows, all R-devel): dispatched
-  2026-11-24 on the final commit, results pending.
-* win-builder (devel and release): submitted 2026-11-24, results pending.
+  2026-11-24 on 16264a71 (the same package files as a50d3bc7), results
+  pending.
+* win-builder (devel and release): not yet run (win-builder unreachable
+  2026-11-24); to be run before submission.
 
 ## R CMD check results
 
