@@ -659,6 +659,9 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   `load_nba_stats_matchups()`, `load_nba_stats_matchups_rollup()`,
   `load_nba_stats_hustle_player()`, `load_nba_stats_hustle_team()` and
   `load_nba_stats_synergy()` (numeric, not integer).
+* `spotrac_team_cap()`'s return columns follow the table Spotrac now serves
+  (`total_cap`, `cap_space`, `cap_status`, `active_cap`, `dead_cap`, `cap_holds`,
+  `top_3`, `players`, `age`); `total_cap_allocations` and `cap_space_all` are gone.
 * The DESCRIPTION explains NBA, ESPN, NCAA, FIBA, ACB, VTB, NBL, KBL and CBA on first use,
   and the help pages use ASCII punctuation (`-`, `x`) in place of em dashes, en dashes and
   multiplication signs.
