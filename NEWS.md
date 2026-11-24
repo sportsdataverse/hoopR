@@ -619,6 +619,18 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   families) link to one family index page (`?family_espn_mbb`, `?family_acb`, ...) in
   "See also" instead of listing every other member. The lists repeated each family on every
   page and were 1.2 MB of the installed help.
+* The column tables of 21 release loaders now match the files the releases publish
+  (checked against the 2026 season, and 2025 to rule out one-season quirks):
+  `load_nba_pbp()`, `load_mbb_pbp()`, `load_nba_schedule()`, `load_mbb_schedule()`,
+  `load_nba_team_box()`, `load_mbb_team_box()`, `load_mbb_player_box()`,
+  `load_nba_player_impact()` (the `boban_*` columns and the `_n` / `_rank` / `_pct`
+  and REML columns), `load_mbb_ratings()`, `load_mbb_player_value()`,
+  `load_nba_stats_possessions()`, `load_nba_stats_player_boxscores()`,
+  `load_nba_stats_team_boxscores()`, `load_nba_stats_game_rosters()`,
+  `load_nba_stats_officials()`, `load_nba_stats_shots()` (`season_type_id`), and the
+  types of the counts in `load_nba_stats_matchups()`, `load_nba_stats_matchups_rollup()`,
+  `load_nba_stats_hustle_player()`, `load_nba_stats_hustle_team()` and
+  `load_nba_stats_synergy()` (numeric, not integer).
 * The DESCRIPTION explains NBA, ESPN, NCAA, FIBA, ACB, VTB, NBL, KBL and CBA on first use,
   and the help pages use ASCII punctuation (`-`, `x`) in place of em dashes, en dashes and
   multiplication signs.
