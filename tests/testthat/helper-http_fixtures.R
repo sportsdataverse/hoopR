@@ -46,9 +46,22 @@ local_http_fixtures <- function(env = parent.frame(), dir = "http") {
     .feb_token_from_page = function(html, now, call = rlang::caller_env()) feb_token(html, now = 0, call = call),
     .package = "hoopR", .env = env
   )
+  # The NBA Stats wrappers turn a failed request into an empty result, so a 404
+  # alone would let a test of an empty payload pass on a URL that drifted. For
+  # that set an unrecorded URL also fails the test when it ends (a failure raised
+  # inside the mock would be caught by the wrapper's own error handler).
+  strict <- !identical(basename(dir), "http")
+  missed <- character()
+  if (strict) {
+    withr::defer(
+      if (length(missed)) stop("No recorded response for: ", paste(missed, collapse = ", "), call. = FALSE),
+      envir = env
+    )
+  }
   httr2::local_mocked_responses(function(req) {
     hit <- index[[req$url]]
     if (is.null(hit)) {
+      missed <<- c(missed, req$url)
       return(httr2::response(status_code = 404L, url = req$url))
     }
     path <- file.path(dir, hit$file)

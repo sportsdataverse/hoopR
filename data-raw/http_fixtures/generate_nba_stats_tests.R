@@ -62,7 +62,8 @@ for (call in calls) {
   )
   body <- if (inherits(out, "defunctError")) {
     head[[1]] <- sprintf("test_that(%s, {", dq(paste(gsub('"', "'", call), "is defunct")))
-    c(head[1:2], sprintf("  expect_error(%s, class = \"defunctError\")", call))
+    # the replay stays on, so a wrapper brought back to life cannot reach the network
+    c(head, sprintf("  expect_error(%s, class = \"defunctError\")", call))
   } else if (inherits(out, "error")) {
     message("SKIPPED (errors on its fixture): ", call, ": ", conditionMessage(out))
     next

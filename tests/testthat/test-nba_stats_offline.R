@@ -232,6 +232,7 @@ test_that("nba_boxscorematchupsv3(game_id = '0022200021') parses a recorded stat
 
 test_that("nba_boxscorehustlev2(game_id = '0022200021') is defunct", {
   skip_on_cran()
+  local_http_fixtures(dir = "nba_stats")
   expect_error(nba_boxscorehustlev2(game_id = "0022200021"), class = "defunctError")
 })
 
@@ -364,21 +365,25 @@ test_that("nba_boxscoreadvancedv2(game_id = '0022200021') parses a recorded stat
 
 test_that("nba_boxscorefourfactorsv2(game_id = '0022200021') is defunct", {
   skip_on_cran()
+  local_http_fixtures(dir = "nba_stats")
   expect_error(nba_boxscorefourfactorsv2(game_id = "0022200021"), class = "defunctError")
 })
 
 test_that("nba_boxscoremiscv2(game_id = '0022200021') is defunct", {
   skip_on_cran()
+  local_http_fixtures(dir = "nba_stats")
   expect_error(nba_boxscoremiscv2(game_id = "0022200021"), class = "defunctError")
 })
 
 test_that("nba_boxscorescoringv2(game_id = '0022200021') is defunct", {
   skip_on_cran()
+  local_http_fixtures(dir = "nba_stats")
   expect_error(nba_boxscorescoringv2(game_id = "0022200021"), class = "defunctError")
 })
 
 test_that("nba_boxscoreusagev2(game_id = '0022200021') is defunct", {
   skip_on_cran()
+  local_http_fixtures(dir = "nba_stats")
   expect_error(nba_boxscoreusagev2(game_id = "0022200021"), class = "defunctError")
 })
 
@@ -436,6 +441,7 @@ test_that("nba_boxscoresummaryv2(game_id = '0022200021') parses a recorded stats
 
 test_that("nba_boxscoreplayertrackv2(game_id = '0022200021') is defunct", {
   skip_on_cran()
+  local_http_fixtures(dir = "nba_stats")
   expect_error(nba_boxscoreplayertrackv2(game_id = "0022200021"), class = "defunctError")
 })
 
@@ -745,16 +751,19 @@ test_that("nba_assisttracker(league_id = '00', season = '2024-25') parses a reco
 
 test_that("nba_homepageleaders(league_id = '00', season = '2024-25', player_or_team = 'Player') is defunct", {
   skip_on_cran()
+  local_http_fixtures(dir = "nba_stats")
   expect_error(nba_homepageleaders(league_id = "00", season = "2024-25", player_or_team = "Player"), class = "defunctError")
 })
 
 test_that("nba_homepagev2(league_id = '00', season = '2024-25', player_or_team = 'Player') is defunct", {
   skip_on_cran()
+  local_http_fixtures(dir = "nba_stats")
   expect_error(nba_homepagev2(league_id = "00", season = "2024-25", player_or_team = "Player"), class = "defunctError")
 })
 
 test_that("nba_leaderstiles(league_id = '00', season = '2024-25', player_or_team = 'Player') is defunct", {
   skip_on_cran()
+  local_http_fixtures(dir = "nba_stats")
   expect_error(nba_leaderstiles(league_id = "00", season = "2024-25", player_or_team = "Player"), class = "defunctError")
 })
 

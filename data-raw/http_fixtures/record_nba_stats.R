@@ -4,7 +4,7 @@
 # general recorder (record_fixtures.R) never requests it. This one does, slowly,
 # from a residential connection, one request at a time. Run from the package root:
 #
-#   PYTHONUNBUFFERED=1 Rscript data-raw/http_fixtures/record_nba_stats.R [calls.txt] \
+#   Rscript data-raw/http_fixtures/record_nba_stats.R [calls.txt] \
 #     >> data-raw/http_fixtures/record_nba_stats.log 2>&1; echo EXIT=$?
 #
 # * Calls come from data-raw/http_fixtures/nba_stats_calls.txt (or the file given),
