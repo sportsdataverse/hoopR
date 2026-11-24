@@ -644,6 +644,14 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   no network. The fixtures are `.Rbuildignore`d; the tests skip without them.
   The recorder never requests stats.nba.com, stats.ncaa.org, Sports Reference
   or KenPom. Also new: mocked tests of the play-by-play database builders.
+* Offline replay tests for the stats.nba.com wrappers in the box-score (V2 and V3),
+  league-dashboard, leaders and play-by-play families: 47 tests, one call per wrapper,
+  that assert each parsed data frame's rows, column names and classes. The responses
+  were recorded once from a residential connection by
+  `data-raw/http_fixtures/record_nba_stats.R`, which paces itself (env-tunable
+  `STATS_RATE_HITS` / `STATS_RATE_WINDOW` / `STATS_RATE_MAX`), stops at the first 403 or
+  429 and resumes where it stopped; CI and CRAN never contact stats.nba.com. The fixtures
+  (`tests/testthat/fixtures/nba_stats/`, about 50 KB) are `.Rbuildignore`d like the others.
 * The internal `clean_team_names_NCAA_merge()` errored on every call (it used
   `.data$` inside a data.table `[`); it now maps the names.
 

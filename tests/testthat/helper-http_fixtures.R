@@ -10,26 +10,28 @@
 # test-coverage job runs from the source tree).
 
 http_fixture_index <- local({
-  index <- NULL
-  function() {
-    if (is.null(index)) {
-      index <<- jsonlite::read_json(testthat::test_path("fixtures", "http", "index.json"))
+  index <- list()
+  function(dir = "http") {
+    if (is.null(index[[dir]])) {
+      index[[dir]] <<- jsonlite::read_json(testthat::test_path("fixtures", dir, "index.json"))
     }
-    index
+    index[[dir]]
   }
 })
 
-local_http_fixtures <- function(env = parent.frame()) {
+# `dir` picks the fixture set: "http" (record_fixtures.R) or "nba_stats"
+# (record_nba_stats.R: the stats.nba.com responses).
+local_http_fixtures <- function(env = parent.frame(), dir = "http") {
   testthat::skip_if_not(
-    file.exists(testthat::test_path("fixtures", "http", "index.json")),
-    "tests/testthat/fixtures/http is not in the built tarball (.Rbuildignore)"
+    file.exists(testthat::test_path("fixtures", dir, "index.json")),
+    paste0("tests/testthat/fixtures/", dir, " is not in the built tarball (.Rbuildignore)")
   )
   testthat::skip_if_not(
     exists("local_mocked_responses", envir = asNamespace("httr2")),
     "httr2 >= 1.1.0 is needed to replay recorded responses"
   )
-  index <- http_fixture_index()
-  dir <- testthat::test_path("fixtures", "http")
+  index <- http_fixture_index(dir)
+  dir <- testthat::test_path("fixtures", dir)
   # The international runtime spaces requests to one host >= 1 s apart; a replay
   # has nothing to be polite to, so its sleep is a no-op (and the clock is reset).
   local_intl_clock(env)
