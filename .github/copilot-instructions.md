@@ -18,14 +18,14 @@
 
 ## Project Context
 
-hoopR is an R package (v3.1.0) that wraps the NBA Stats API, ESPN API, KenPom, CollegeBasketballData, Basketball-Reference, Bart Torvik, RealGM, and Fox Sports. It exports 600+ functions and uses roxygen2 for documentation, testthat for testing, and pkgdown for the documentation site.
+hoopR is an R package (v3.2.0) that wraps the NBA Stats API, ESPN API, KenPom, CollegeBasketballData, Basketball-Reference, Bart Torvik, RealGM, Fox Sports, the NBA G League, the NCAA, official.nba.com (officiating reports), the EuroLeague/EuroCup API, and 23 international league families (FIBA, ACB, VTB, B.LEAGUE, NBL, KBL, CBA and others, plus per-competition aliases). It exports 1,300+ functions and uses roxygen2 for documentation, testthat for testing, and pkgdown for the documentation site.
 
 When there is any conflict between this file and repository contributor docs, follow `CONTRIBUTING.md` and the current helper/test implementations under `tests/testthat/` as the source of truth.
 
 ## Repository Workflow
 
 - Use feature branches for changes.
-- `main` is the default branch and release branch. `devel` may be used for active development staging; confirm PR target branch in GitHub before opening a PR.
+- `main` is the default branch and release branch: branch from it and open PRs against it. The old `devel` branch is stale and unused.
 - For any change to exported functions, update tests and documentation in the same PR.
 
 ## Code Style
@@ -86,10 +86,10 @@ Every exported function needs:
 - `@title` with bold markdown description
 - `@author` tag
 - `@param` for every parameter (including `...`) with descriptive text (e.g., `@param game_id Game ID - 10-digit zero-padded ID (e.g., '0022200021')`)
-- `@return` with markdown tables documenting column names and types for each data frame returned
+- `@return` as `#' @eval .returns_rd("fn")`: the column tables are built from `data-raw/return_columns.csv` (one row per returned column), never hand-written. A new data-returning function needs its CSV rows, then `Rscript data-raw/return_columns.R` and `devtools::document()`.
 - `@importFrom` for specific function imports
 - `@export`
-- `@family` for grouping in pkgdown (e.g., "NBA PBP Functions", "NBA Boxscore V3 Functions")
+- `@family` for grouping in pkgdown (e.g., "NBA PBP Functions", "NBA Boxscore V3 Functions"), except in the 22 large families indexed in `R/families.R` (ESPN MBB/NBA and most international families), which use `@concept <Family>` plus a `@seealso` line pointing to the family index page.
 - `@details` with runnable example code block
 - For deprecated endpoints, document with `@description` lifecycle badge and provide replacement guidance.
 

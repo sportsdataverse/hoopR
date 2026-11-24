@@ -22,7 +22,7 @@
 
 ## Package Overview
 
-hoopR is an R package providing clean, tidy men's basketball (NBA + Men's College Basketball) play-by-play and box score data. It wraps the NBA Stats API (`stats.nba.com`), the ESPN API, and KenPom, exporting 1,300+ functions. Primary source families: `nba_*()` (NBA Stats API), `espn_nba_*()` / `espn_mbb_*()` (ESPN), `kp_*()` (KenPom), `cbbd_*()` (CollegeBasketballData), `bref_*()` (Basketball Reference), `torvik_*()` (Bart Torvik), `realgm_*()` (RealGM), `fox_*()` (Fox Sports), `nbagl_*()` (NBA G-League), `ncaa_mbb_*()` (NCAA), plus `load_nba_*()` / `load_mbb_*()` / `load_ncaa_mbb_*()` / `load_nba_stats_*()` bulk loaders that pull pre-built data from the sibling `hoopR-data` / `sportsdataverse-data` release repos.
+hoopR is an R package providing clean, tidy men's basketball (NBA + Men's College Basketball) play-by-play and box score data. It wraps the NBA Stats API (`stats.nba.com`), the ESPN API, and KenPom, exporting 1,300+ functions. Primary source families: `nba_*()` (NBA Stats API), `espn_nba_*()` / `espn_mbb_*()` (ESPN), `kp_*()` (KenPom), `cbbd_*()` (CollegeBasketballData), `bref_*()` (Basketball Reference), `torvik_*()` (Bart Torvik), `realgm_*()` (RealGM), `fox_*()` (Fox Sports), `nbagl_*()` (NBA G-League), `ncaa_mbb_*()` (NCAA), `euroleague_*()` (EuroLeague/EuroCup), `nba_l2m*()` / `nba_referee_assignments()` (official.nba.com), the 23 international league families (`fiba_*()`, `acb_*()`, `vtb_*()`, `nbl_*()`, `kbl_*()`, ... and their per-competition aliases; see `R/families.R` and the international-basketball-leagues article), plus `load_nba_*()` / `load_mbb_*()` / `load_ncaa_mbb_*()` / `load_nba_stats_*()` bulk loaders that pull pre-built data from the sibling `hoopR-data` / `sportsdataverse-data` release repos.
 
 Sibling repos in the family: `hoopR-data` (NBA + MBB build/aggregate/publish), `hoopR-mbb-raw` / `hoopR-mbb-data`, `hoopR-nba-raw` / `hoopR-nba-data`, and `hoopR-nba-stats-raw` / `hoopR-nba-stats-data`.
 
@@ -78,7 +78,7 @@ R/                    # All package source code
   espn_*.R            # ESPN API wrappers
   kp_*.R              # KenPom scrapers
   nbagl_*.R           # NBA G-League API wrappers
-tests/testthat/       # Test files (150+)
+tests/testthat/       # Test files (480+)
   helper-skip.R       # skip_nba_stats_test(), skip_espn_test(), skip_ncaa_mbb_test(), etc.
 man/                  # Auto-generated roxygen docs (DO NOT EDIT)
 data/                 # Package datasets
@@ -296,7 +296,7 @@ KenPom functions use separate `httr2`-based helpers:
 - `.kp_get_page(jar, url)` -- fetches a page as parsed HTML
 - `.kp_request(url, jar)` -- builds an `httr2` request with KenPom headers
 
-`nba_endpoint()` builds URLs via `glue::glue('https://stats.nba.com/stats/{endpoint}')` -- it does NOT validate against its internal endpoint list.
+`nba_endpoint()` builds URLs via `paste0("https://stats.nba.com/stats/", endpoint)` -- it does NOT validate against its internal endpoint list.
 
 ### Messaging Layer
 
