@@ -39,7 +39,7 @@ torvik_ncaa_results <- function(min_year, max_year, type = "team") {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("torvik_ncaa_results", {
       url <- paste0(.torvik_base_url, "/cgi-bin/ncaat.cgi?yrlow=", min_year,
                     "&yrhigh=", max_year, "&type=", type)
       resp <- .retry_request(url, headers = c("User-Agent" = .torvik_user_agent))
@@ -53,12 +53,9 @@ torvik_ncaa_results <- function(min_year, max_year, type = "team") {
       df[["max_year"]] <- as.integer(max_year)
       df[["type"]] <- type
       df <- make_hoopR_data(df, "Bart Torvik NCAA tournament results from barttorvik.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no NCAA tournament results available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching NCAA tournament results", args = .args)
     },
     finally = {
     }

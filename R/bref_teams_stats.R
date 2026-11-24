@@ -46,7 +46,7 @@ bref_teams_stats <- function(season = most_recent_nba_season(), table = "per_gam
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("bref_teams_stats", {
       html <- .bref_text(paste0("/leagues/NBA_", season, ".html"))
       df <- .bref_table(html, table_id)
       df <- df[rowSums(!is.na(df) & df != "") > 0, , drop = FALSE]
@@ -55,12 +55,9 @@ bref_teams_stats <- function(season = most_recent_nba_season(), table = "per_gam
       df <- dplyr::rename(df, dplyr::any_of(c("team" = "team_name", "g" = "games")))
       df[["season"]] <- as.integer(season)
       df <- make_hoopR_data(df, "Team season stats from basketball-reference.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no team stats available for {season}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching BREF team stats for {season}", args = .args)
     },
     finally = {
     }

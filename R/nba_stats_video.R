@@ -121,7 +121,7 @@ nba_videodetailsasset <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_videodetailsasset", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
       videoUrls <- resp$resultSets$Meta$videoUrls %>%
@@ -133,14 +133,12 @@ nba_videodetailsasset <- function(
       df_list <- c(list(videoUrls), list(playlist))
       names(df_list) <- c("videoUrls", "playlist")
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no video detail assets data available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -283,7 +281,7 @@ nba_videodetails <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_videodetails", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
       videoUrls <- resp$resultSets$Meta$videoUrls %>%
@@ -295,14 +293,12 @@ nba_videodetails <- function(
       df_list <- c(list(videoUrls), list(playlist))
       names(df_list) <- c("videoUrls", "playlist")
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no video details data available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -348,7 +344,7 @@ nba_videoevents <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_videoevents", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
@@ -362,14 +358,12 @@ nba_videoevents <- function(
       df_list <- c(list(videoUrls), list(playlist))
       names(df_list) <- c("videoUrls", "playlist")
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no video events data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -416,20 +410,18 @@ nba_videostatus <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_videostatus", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no video status data for {game_date} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -476,7 +468,7 @@ nba_videoeventsasset <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_videoeventsasset", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
@@ -491,14 +483,12 @@ nba_videoeventsasset <- function(
       df_list <- c(list(videoUrls), list(playlist))
       names(df_list) <- c("videoUrls", "playlist")
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no video events asset data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

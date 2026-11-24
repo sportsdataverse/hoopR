@@ -27,17 +27,14 @@ realgm_salary_cap <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_salary_cap", {
       cand <- .realgm_pick(.realgm_tables(.realgm_doc("/nba/info/salary_cap")),
                            must_have = c("season", "salary_cap"))
       if (is.null(cand)) stop("RealGM salary-cap table not found", call. = FALSE)
       df <- .realgm_finish(cand, "NBA salary cap history from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM salary-cap data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM salary cap", args = .args)
     },
     finally = {
     }
@@ -76,17 +73,14 @@ realgm_rookie_scale <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_rookie_scale", {
       cand <- .realgm_pick(.realgm_tables(.realgm_doc("/nba/info/rookie_scale")),
                            must_have = "pick")
       if (is.null(cand)) stop("RealGM rookie-scale table not found", call. = FALSE)
       df <- .realgm_finish(cand, "NBA rookie scale from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM rookie-scale data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM rookie scale", args = .args)
     },
     finally = {
     }

@@ -564,7 +564,7 @@ mbb_schedule_crosswalk <- function(season = most_recent_mbb_season(),
   .args <- .capture_args()
   out <- data.frame()
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("mbb_schedule_crosswalk", {
       team_xwalk <- mbb_team_crosswalk(season = season)
 
       # --- Torvik side -------------------------------------------------------
@@ -731,12 +731,9 @@ mbb_schedule_crosswalk <- function(season = most_recent_mbb_season(),
         "MBB schedule crosswalk (ESPN / Torvik)",
         Sys.time()
       )
-    },
+    }),
     error   = function(e) .report_api_error(
       e, hint = "Could not build MBB schedule crosswalk for {season}!", args = .args
-    ),
-    warning = function(w) .report_api_warning(
-      w, hint = "Warning building MBB schedule crosswalk for {season}", args = .args
     ),
     finally = {}
   )
@@ -879,7 +876,7 @@ mbb_player_crosswalk <- function(season = most_recent_mbb_season(),
   .args <- .capture_args()
   out <- data.frame()
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("mbb_player_crosswalk", {
       team_xwalk <- mbb_team_crosswalk(season = season)
 
       fetch_team <- function(i) {
@@ -931,12 +928,9 @@ mbb_player_crosswalk <- function(season = most_recent_mbb_season(),
       out <- purrr::map(seq_len(nrow(team_xwalk)), fetch_team) |>
         purrr::list_rbind() |>
         make_hoopR_data("MBB player crosswalk (ESPN / Fox)", Sys.time())
-    },
+    }),
     error   = function(e) .report_api_error(
       e, hint = "Could not build MBB player crosswalk for {season}!", args = .args
-    ),
-    warning = function(w) .report_api_warning(
-      w, hint = "Warning building MBB player crosswalk for {season}", args = .args
     ),
     finally = {}
   )

@@ -39,7 +39,7 @@ hoopshype_salaries <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("hoopshype_salaries", {
       # locate the contracts array within a page's __NEXT_DATA__ React Query cache
       contracts_of <- function(nd) {
         queries <- nd$props$pageProps$dehydratedState$queries
@@ -84,12 +84,9 @@ hoopshype_salaries <- function() {
       df <- dplyr::as_tibble(df)
       if ("team" %in% colnames(df)) df[["team"]][df[["team"]] %in% c("NA NA", "NA", "")] <- NA_character_
       df <- make_hoopR_data(df, "Player salaries from hoopshype.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No HoopsHype salary data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching HoopsHype salaries", args = .args)
     },
     finally = {
     }

@@ -21,16 +21,13 @@ cbbd_substitutions_game <- function(game_id) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_substitutions_game", {
       data <- .cbbd_get(paste0("/substitutions/game/", game_id))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Substitutions by Game from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no substitution data available for {game_id}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD substitutions for game {game_id}", args = .args)
     },
     finally = {
     }
@@ -64,16 +61,13 @@ cbbd_substitutions_player <- function(player_id, season = most_recent_mbb_season
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_substitutions_player", {
       data <- .cbbd_get(paste0("/substitutions/player/", player_id), query = list(season = season))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Substitutions by Player from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no substitution data available for player {player_id}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD substitutions for player {player_id}", args = .args)
     },
     finally = {
     }
@@ -107,16 +101,13 @@ cbbd_substitutions_team <- function(season = most_recent_mbb_season(), team) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_substitutions_team", {
       data <- .cbbd_get("/substitutions/team", query = list(season = season, team = team))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Substitutions by Team from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no substitution data available for {team}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD substitutions for team {team}", args = .args)
     },
     finally = {
     }

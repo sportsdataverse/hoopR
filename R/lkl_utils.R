@@ -573,7 +573,7 @@
   # one handler: a second, outer one would catch the not-parsed condition re-raised by the first
   tryCatch(build(...), error = function(e) {
     if (inherits(e, "hoopR_lkl_not_parsed")) stop(e)
-    .lkl_not_parsed(sprintf("parser error: %s", class(e)[1]))
+    .lkl_not_parsed(sprintf("parser error: %s: %s", class(e)[1], conditionMessage(e)))
   })
 }
 

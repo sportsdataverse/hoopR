@@ -30,16 +30,13 @@ realgm_players <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_players", {
       cand <- .realgm_pick(.realgm_tables(.realgm_doc("/nba/players")), must_have = "player")
       if (is.null(cand)) stop("RealGM player table not found", call. = FALSE)
       df <- .realgm_finish(cand, "NBA player index from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no RealGM player data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM players", args = .args)
     },
     finally = {
     }
@@ -75,17 +72,14 @@ realgm_players_abroad <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_players_abroad", {
       cand <- .realgm_pick(.realgm_tables(.realgm_doc("/nba/players-abroad")),
                            must_have = c("player", "nba_status"))
       if (is.null(cand)) stop("RealGM players-abroad table not found", call. = FALSE)
       df <- .realgm_finish(cand, "NBA players abroad from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM players-abroad data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM players abroad", args = .args)
     },
     finally = {
     }
@@ -122,17 +116,14 @@ realgm_future_free_agents <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_future_free_agents", {
       cand <- .realgm_pick(.realgm_tables(.realgm_doc("/nba/future_free_agents")),
                            must_have = c("player", "agent"))
       if (is.null(cand)) stop("RealGM future-free-agents table not found", call. = FALSE)
       df <- .realgm_finish(cand, "Future NBA free agents from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM future-free-agent data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM future free agents", args = .args)
     },
     finally = {
     }

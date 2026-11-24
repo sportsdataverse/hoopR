@@ -25,7 +25,7 @@ torvik_ratings <- function(year = most_recent_mbb_season()) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("torvik_ratings", {
       txt <- .torvik_text(paste0("/", year, "_team_results.csv"))
       # Older files quote one header ("Fun Rk, adjt"). fread resolves it but
       # warns, and the warning handler below would discard the whole season.
@@ -38,12 +38,9 @@ torvik_ratings <- function(year = most_recent_mbb_season()) {
       df <- dplyr::as_tibble(janitor::clean_names(as.data.frame(df)))
       df[["year"]] <- as.integer(year)
       df <- make_hoopR_data(df, "Bart Torvik T-Rank ratings from barttorvik.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no T-Rank ratings available for {year}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching T-Rank ratings for {year}", args = .args)
     },
     finally = {
     }

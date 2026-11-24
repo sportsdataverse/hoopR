@@ -19,8 +19,8 @@
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/types?lang=en&region=us"
   )
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_season_types", {
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%
         jsonlite::fromJSON(simplifyVector = FALSE)
@@ -41,12 +41,9 @@
           paste0("ESPN ", toupper(league), " Season Types Index"),
           Sys.time()
         )
-    },
+    }),
     error   = function(e) .report_api_error(e,
       hint = "Failed to retrieve ESPN {league} season types for season={season}",
-      args = .args),
-    warning = function(w) .report_api_warning(w,
-      hint = "Warning retrieving ESPN {league} season types",
       args = .args),
     finally = {}
   )
@@ -68,8 +65,8 @@
     league, "/seasons/", season, "/types/", season_type,
     "?lang=en&region=us"
   )
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_season_type", {
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%
         jsonlite::fromJSON(simplifyVector = FALSE)
@@ -97,12 +94,9 @@
           paste0("ESPN ", toupper(league), " Season Type Detail"),
           Sys.time()
         )
-    },
+    }),
     error   = function(e) .report_api_error(e,
       hint = "Failed to retrieve ESPN {league} season type {season_type} for season={season}",
-      args = .args),
-    warning = function(w) .report_api_warning(w,
-      hint = "Warning retrieving ESPN {league} season type {season_type}",
       args = .args),
     finally = {}
   )
@@ -174,8 +168,8 @@
   }
 
   result <- NULL
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_season_leaders", {
       all_rows <- list()
       for (st in season_type) {
         rs <- fetch_one(as.integer(st))
@@ -207,12 +201,9 @@
             Sys.time()
           )
       }
-    },
+    }),
     error   = function(e) .report_api_error(e,
       hint = "Failed to retrieve ESPN {league} season leaders for season={season}, season_type={season_type}",
-      args = .args),
-    warning = function(w) .report_api_warning(w,
-      hint = "Warning retrieving ESPN {league} season leaders",
       args = .args),
     finally = {}
   )
@@ -233,8 +224,8 @@
     "https://sports.core.api.espn.com/v2/sports/basketball/leagues/",
     league, "/seasons/", season, "/rankings?lang=en&region=us"
   )
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_season_rankings", {
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%
         jsonlite::fromJSON(simplifyVector = FALSE)
@@ -255,12 +246,9 @@
           paste0("ESPN ", toupper(league), " Season Rankings Index"),
           Sys.time()
         )
-    },
+    }),
     error   = function(e) .report_api_error(e,
       hint = "Failed to retrieve ESPN {league} season rankings for season={season}",
-      args = .args),
-    warning = function(w) .report_api_warning(w,
-      hint = "Warning retrieving ESPN {league} season rankings",
       args = .args),
     finally = {}
   )
@@ -287,8 +275,8 @@
     league, "/seasons/", season, "/rankings/", ranking_id,
     "?lang=en&region=us"
   )
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_season_ranking", {
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%
         jsonlite::fromJSON(simplifyVector = FALSE)
@@ -322,12 +310,9 @@
                  " Season Ranking Snapshots Index"),
           Sys.time()
         )
-    },
+    }),
     error   = function(e) .report_api_error(e,
       hint = "Failed to retrieve ESPN {league} ranking {ranking_id} for season={season}",
-      args = .args),
-    warning = function(w) .report_api_warning(w,
-      hint = "Warning retrieving ESPN {league} ranking {ranking_id}",
       args = .args),
     finally = {}
   )

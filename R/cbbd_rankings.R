@@ -28,18 +28,15 @@ cbbd_rankings <- function(season = most_recent_mbb_season(), season_type = NULL,
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_rankings", {
       data <- .cbbd_get("/rankings", query = list(
         season = season, seasonType = season_type, week = week,
         pollType = poll_type, team = team, conference = conference))
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Rankings from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no rankings data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD rankings", args = .args)
     },
     finally = {
     }

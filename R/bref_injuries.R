@@ -28,7 +28,7 @@ bref_injuries <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("bref_injuries", {
       html <- .bref_text("/friv/injuries.fcgi")
       d <- .bref_table(html, "injuries")
       if (nrow(d) == 0) stop("Basketball-Reference injuries table not found", call. = FALSE)
@@ -36,12 +36,9 @@ bref_injuries <- function() {
       d <- .bref_type_convert(d)
       d <- janitor::clean_names(dplyr::as_tibble(d))
       df <- make_hoopR_data(d, "NBA injury report from basketball-reference.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No Basketball-Reference injury data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching BREF injuries", args = .args)
     },
     finally = {
     }

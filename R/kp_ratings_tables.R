@@ -21,7 +21,7 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()) {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_pomeroy_ratings", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2001)) {
@@ -86,14 +86,12 @@ kp_pomeroy_ratings <- function(min_year, max_year = most_recent_mbb_season()) {
       kenpom <- kenpom %>%
         dplyr::arrange(-.data$Year, .data$Rk) %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no pomeroy ratings data for {min_year} - {max_year} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -125,7 +123,7 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()) {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_efficiency", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2001)) {
@@ -251,14 +249,12 @@ kp_efficiency <- function(min_year, max_year = most_recent_mbb_season()) {
       kenpom <- kenpom %>%
         dplyr::arrange(-.data$Year, .data$AdjT.Rk) %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no efficiency data for {min_year} - {max_year} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -289,7 +285,7 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()) {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_fourfactors", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2001)) {
@@ -362,14 +358,12 @@ kp_fourfactors <- function(min_year, max_year = most_recent_mbb_season()) {
       kenpom <- kenpom %>%
         dplyr::arrange(-.data$Year, .data$AdjO.Rk) %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no four factors data for {min_year} - {max_year} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -400,7 +394,7 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()) {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_pointdist", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2001)) {
@@ -474,14 +468,12 @@ kp_pointdist <- function(min_year, max_year = most_recent_mbb_season()) {
       }
       kenpom <- kenpom %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no point distribution data for {min_year} - {max_year} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -512,7 +504,7 @@ kp_height <- function(min_year, max_year = most_recent_mbb_season()) {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_height", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2007)) {
@@ -642,14 +634,12 @@ kp_height <- function(min_year, max_year = most_recent_mbb_season()) {
       }
       kenpom <- kenpom %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no height data for {min_year} - {max_year} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -680,7 +670,7 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()) {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_foul_trouble", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2010)) {
@@ -747,14 +737,12 @@ kp_foul_trouble <- function(min_year, max_year = most_recent_mbb_season()) {
       }
       kenpom <- kenpom %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no foul trouble data for {min_year} - {max_year} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -786,7 +774,7 @@ kp_teamstats <- function(min_year, max_year = most_recent_mbb_season()) {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_teamstats", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       if (!(is.numeric(min_year) && nchar(min_year) == 4 && min_year >= 2001)) {
@@ -924,14 +912,12 @@ kp_teamstats <- function(min_year, max_year = most_recent_mbb_season()) {
       }
       kenpom <- kenpom %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team stats data for {min_year} - {max_year} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -976,7 +962,7 @@ kp_playerstats <- function(metric = "eFG", conf = NULL, conf_only = FALSE, year 
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_playerstats", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
@@ -1094,14 +1080,12 @@ kp_playerstats <- function(metric = "eFG", conf = NULL, conf_only = FALSE, year 
         kenpom <- x %>%
           janitor::clean_names()
       }
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player stats data for {year} {metric} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1132,7 +1116,7 @@ kp_kpoy <- function(year = most_recent_mbb_season()) {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_kpoy", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
@@ -1222,14 +1206,12 @@ kp_kpoy <- function(year = most_recent_mbb_season()) {
 
       kenpom <- y
       names(kenpom) <- c("KPoYRatings", "GameMVPs")
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no KenPom player of the year data for {year} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

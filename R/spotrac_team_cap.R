@@ -24,7 +24,7 @@ spotrac_team_cap <- function(season = most_recent_nba_season()) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("spotrac_team_cap", {
       doc <- .ext_html(paste0("https://www.spotrac.com/nba/cap/_/year/", season, "/"))
       tb <- rvest::html_table(rvest::html_element(doc, "table"))
       df <- janitor::clean_names(dplyr::as_tibble(tb))
@@ -37,12 +37,9 @@ spotrac_team_cap <- function(season = most_recent_nba_season()) {
       for (j in which(dollar)) df[[j]] <- .parse_currency(df[[j]])
       df[["season"]] <- as.integer(season)
       df <- make_hoopR_data(df, "Team salary cap from spotrac.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no Spotrac cap data available for {season}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching Spotrac cap data for {season}", args = .args)
     },
     finally = {
     }

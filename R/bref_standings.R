@@ -24,7 +24,7 @@ bref_standings <- function(season = most_recent_nba_season()) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("bref_standings", {
       html <- .bref_text(paste0("/leagues/NBA_", season, "_standings.html"))
       one <- function(id, conf) {
         d <- .bref_table(html, id)
@@ -44,12 +44,9 @@ bref_standings <- function(season = most_recent_nba_season()) {
       }
       df[["season"]] <- as.integer(season)
       df <- make_hoopR_data(df, "Standings from basketball-reference.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no standings available for {season}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching BREF standings for {season}", args = .args)
     },
     finally = {
     }

@@ -31,7 +31,7 @@ nba_tidy_franchise_history <- function(...) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_tidy_franchise_history", {
       res <- nba_franchisehistory(...)
       sets <- res[intersect(c("FranchiseHistory", "DefunctTeams"), names(res))]
       sets <- Filter(function(d) is.data.frame(d) && nrow(d) > 0, sets)
@@ -43,12 +43,9 @@ nba_tidy_franchise_history <- function(...) {
       df <- make_hoopR_data(dplyr::as_tibble(out),
                             "NBA franchise history (active + defunct) from stats.nba.com",
                             Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No NBA franchise history available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning building NBA franchise history", args = .args)
     },
     finally = {
     }
@@ -81,7 +78,7 @@ nba_tidy_boxscore <- function(game_id, ...) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_tidy_boxscore", {
       res <- nba_boxscoretraditionalv2(game_id = game_id, ...)
       players <- res[["PlayerStats"]]
       teams <- res[["TeamStats"]]
@@ -98,12 +95,9 @@ nba_tidy_boxscore <- function(game_id, ...) {
       df <- make_hoopR_data(dplyr::as_tibble(out),
                             "NBA player box score with team context from stats.nba.com",
                             Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No NBA box score for {game_id}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning building NBA box score", args = .args)
     },
     finally = {
     }
@@ -135,7 +129,7 @@ nba_tidy_player_profile <- function(player_id, ...) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_tidy_player_profile", {
       res <- nba_playerprofilev2(player_id = player_id, ...)
       sets <- Filter(
         function(d) is.data.frame(d) && nrow(d) > 0 && "PLAYER_ID" %in% names(d),
@@ -146,12 +140,9 @@ nba_tidy_player_profile <- function(player_id, ...) {
       df <- make_hoopR_data(out,
                             "NBA player profile (nested by table) from stats.nba.com",
                             Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No NBA player profile for {player_id}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning building NBA player profile", args = .args)
     },
     finally = {
     }

@@ -799,7 +799,7 @@
                standings = .aba_standings_record, player = .aba_player_record)
   tryCatch(fn(html, want), error = function(e) {
     if (inherits(e, "hoopR_aba_not_parsed")) stop(e)
-    .aba_refuse(paste0("parser error: ", class(e)[1]))
+    .aba_refuse(paste0("parser error: ", class(e)[1], ": ", conditionMessage(e)))
   })
 }
 
@@ -986,7 +986,7 @@
       .abort_no_data("{where}: the helper answered a blank body (no data before 2017-18).", call = call)
     }
     body <- tryCatch(jsonlite::parse_json(text, simplifyVector = FALSE), error = function(e) {
-      .abort_asset_fetch("{where} answered a body that is not JSON.", call = call)
+      .abort_asset_fetch("{where} answered a body that is not JSON.", parent = e, call = call)
     })
     if (is.list(body) && !length(body) && is.null(names(body))) {
       .abort_no_data("{where}: the helper answered [] (no data before 2017-18).", call = call)

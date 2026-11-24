@@ -28,17 +28,14 @@ cbbd_plays_game <- function(game_id, shooting_plays_only = FALSE) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_plays_game", {
       data <- .cbbd_get(paste0("/plays/game/", game_id),
                         query = list(shootingPlaysOnly = tolower(as.character(shooting_plays_only))))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Plays by Game from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no play data available for {game_id}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD plays for game {game_id}", args = .args)
     },
     finally = {
     }
@@ -74,17 +71,14 @@ cbbd_plays_player <- function(player_id, season = most_recent_mbb_season(), shoo
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_plays_player", {
       data <- .cbbd_get(paste0("/plays/player/", player_id),
                         query = list(season = season, shootingPlaysOnly = tolower(as.character(shooting_plays_only))))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Plays by Player from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no play data available for player {player_id}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD plays for player {player_id}", args = .args)
     },
     finally = {
     }
@@ -120,17 +114,14 @@ cbbd_plays_team <- function(season = most_recent_mbb_season(), team, shooting_pl
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_plays_team", {
       data <- .cbbd_get("/plays/team",
                         query = list(season = season, team = team, shootingPlaysOnly = tolower(as.character(shooting_plays_only))))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Plays by Team from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no play data available for {team}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD plays for team {team}", args = .args)
     },
     finally = {
     }
@@ -166,17 +157,14 @@ cbbd_plays_date <- function(date, shooting_plays_only = FALSE, utc_offset = NULL
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_plays_date", {
       data <- .cbbd_get("/plays/date",
                         query = list(date = date, shootingPlaysOnly = tolower(as.character(shooting_plays_only)), utcOffset = utc_offset))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Plays by Date from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no play data available for {date}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD plays for date {date}", args = .args)
     },
     finally = {
     }
@@ -212,17 +200,14 @@ cbbd_plays_tournament <- function(tournament, season = most_recent_mbb_season(),
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_plays_tournament", {
       data <- .cbbd_get("/plays/tournament",
                         query = list(tournament = tournament, season = season, shootingPlaysOnly = tolower(as.character(shooting_plays_only))))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Plays by Tournament from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no play data available for {tournament}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD plays for tournament {tournament}", args = .args)
     },
     finally = {
     }
@@ -251,16 +236,13 @@ cbbd_play_types <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_play_types", {
       data <- .cbbd_get("/plays/types")
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Play Types from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no play types available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD play types", args = .args)
     },
     finally = {
     }

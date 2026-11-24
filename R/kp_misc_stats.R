@@ -19,7 +19,7 @@ kp_trends <- function() {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_trends", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
@@ -54,14 +54,12 @@ kp_trends <- function() {
           "Continuity", "HomeWin.Pct", "PPG"
         ), as.numeric) %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no trends data available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -90,7 +88,7 @@ kp_officials <- function(year = most_recent_mbb_season()) {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_officials", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
@@ -132,14 +130,12 @@ kp_officials <- function(year = most_recent_mbb_season()) {
       ### Store Data
       kenpom <- x %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no officials data for {year} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -168,7 +164,7 @@ kp_referee <- function(referee, year) {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_referee", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
@@ -212,14 +208,12 @@ kp_referee <- function(referee, year) {
       ### Store Data
       kenpom <- x %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no referee data for {referee} in {year} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -247,7 +241,7 @@ kp_hca <- function() {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_hca", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
@@ -280,14 +274,12 @@ kp_hca <- function() {
           as.numeric
         ) %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no home court advantage data available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -316,7 +308,7 @@ kp_arenas <- function(year = most_recent_mbb_season()) {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_arenas", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
@@ -348,14 +340,12 @@ kp_arenas <- function(year = most_recent_mbb_season()) {
       ### Store Data
       kenpom <- x %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no arenas data available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -391,7 +381,7 @@ kp_game_attrs <- function(
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_game_attrs", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
@@ -427,14 +417,12 @@ kp_game_attrs <- function(
       kenpom <- x %>%
         dplyr::select(-"col") %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no game attributes data for {attr} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -467,7 +455,7 @@ kp_fanmatch <- function(date) {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_fanmatch", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination, set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
@@ -590,14 +578,12 @@ kp_fanmatch <- function(date) {
           ), as.numeric) %>%
           janitor::clean_names()
       )
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no Fan Match data for {date} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

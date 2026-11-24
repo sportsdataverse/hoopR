@@ -38,7 +38,7 @@ nbagl_schedule <- function(
   )
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nbagl_schedule", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       league_sched <- resp %>%
@@ -81,14 +81,12 @@ nbagl_schedule <- function(
           ),
           game_date = .parse_mdy(substring(.data$game_date, 1, 10))
         )
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no league schedule data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

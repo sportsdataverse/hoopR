@@ -2,17 +2,14 @@
 .realgm_staff <- function(path, description, args) {
   df <- data.frame()
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings(".realgm_staff", {
       cand <- .realgm_pick(.realgm_tables(.realgm_doc(path)),
                            must_have = c("staff", "team"))
       if (is.null(cand)) stop("RealGM staff table not found", call. = FALSE)
       df <- .realgm_finish(cand, description)
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM staff data available!", args = args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM staff", args = args)
     },
     finally = {
     }

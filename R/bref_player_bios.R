@@ -30,7 +30,7 @@ bref_player_bios <- function(letter = "a") {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("bref_player_bios", {
       letter <- tolower(substr(letter, 1, 1))
       if (!grepl("^[a-z]$", letter)) stop("`letter` must be a single letter a-z", call. = FALSE)
       html <- .bref_text(paste0("/players/", letter, "/"))
@@ -52,12 +52,9 @@ bref_player_bios <- function(letter = "a") {
       d <- janitor::clean_names(dplyr::as_tibble(d))
       d[["letter"]] <- letter
       df <- make_hoopR_data(d, "Player bios from basketball-reference.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No Basketball-Reference player bios for letter {letter}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching BREF player bios for {letter}", args = .args)
     },
     finally = {
     }

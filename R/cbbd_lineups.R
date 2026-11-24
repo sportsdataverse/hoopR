@@ -26,17 +26,14 @@ cbbd_lineups_team <- function(season = most_recent_mbb_season(), team,
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_lineups_team", {
       data <- .cbbd_get("/lineups/team", query = list(
         season = season, team = team, startDateRange = start_date_range, endDateRange = end_date_range))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Team Lineups from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no lineup data available for {team}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD team lineups for {team}", args = .args)
     },
     finally = {
     }
@@ -68,16 +65,13 @@ cbbd_lineups_game <- function(game_id) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_lineups_game", {
       data <- .cbbd_get(paste0("/lineups/game/", game_id))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Game Lineups from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no lineup data available for {game_id}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD game lineups for {game_id}", args = .args)
     },
     finally = {
     }

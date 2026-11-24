@@ -28,18 +28,15 @@ cbbd_stats_team_season <- function(season = most_recent_mbb_season(), season_typ
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_stats_team_season", {
       data <- .cbbd_get("/stats/team/season", query = list(
         season = season, seasonType = season_type, team = team, conference = conference,
         startDateRange = start_date_range, endDateRange = end_date_range))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Team Season Stats from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no team season stats available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD team season stats", args = .args)
     },
     finally = {
     }
@@ -71,16 +68,13 @@ cbbd_stats_team_leaderboard <- function(season = most_recent_mbb_season(), team 
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_stats_team_leaderboard", {
       data <- .cbbd_get("/stats/team/leaderboard", query = list(season = season, team = team, conference = conference))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Team Stats Leaderboard from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no team stats leaderboard available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD team stats leaderboard", args = .args)
     },
     finally = {
     }
@@ -117,18 +111,15 @@ cbbd_stats_team_shooting_season <- function(season = most_recent_mbb_season(), s
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_stats_team_shooting_season", {
       data <- .cbbd_get("/stats/team/shooting/season", query = list(
         season = season, seasonType = season_type, team = team, conference = conference,
         startDateRange = start_date_range, endDateRange = end_date_range))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Team Shooting Stats from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no team shooting stats available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD team shooting stats", args = .args)
     },
     finally = {
     }
@@ -165,18 +156,15 @@ cbbd_stats_player_season <- function(season = most_recent_mbb_season(), season_t
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_stats_player_season", {
       data <- .cbbd_get("/stats/player/season", query = list(
         season = season, seasonType = season_type, team = team, conference = conference,
         startDateRange = start_date_range, endDateRange = end_date_range))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Player Season Stats from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no player season stats available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD player season stats", args = .args)
     },
     finally = {
     }
@@ -207,18 +195,15 @@ cbbd_stats_player_shooting_season <- function(season = most_recent_mbb_season(),
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_stats_player_shooting_season", {
       data <- .cbbd_get("/stats/player/shooting/season", query = list(
         season = season, seasonType = season_type, team = team, conference = conference,
         startDateRange = start_date_range, endDateRange = end_date_range))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Player Shooting Stats from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no player shooting stats available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD player shooting stats", args = .args)
     },
     finally = {
     }
