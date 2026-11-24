@@ -412,6 +412,15 @@ the sections below.
   full-season team overview, as a named list of `team`, `record`, `ratings`,
   `efficiency`, `shooting`, `players`, `schedule` and `sources` tibbles.
 
+* Added `cbbd_ratings_history()` (CBD `/ratings/history`, upstream v1.32.0):
+  daily snapshots of each team's adjusted efficiency and SRS ratings, with the
+  day's national ranks and the 1-, 7- and 30-day change in net rating. Give a
+  `date`, a `team` or both. The endpoint needs a Patreon Tier 2 key.
+
+* Added `cbbd_api_key_info()` (CBD `/info`, upstream v1.32.0): one row with
+  your key's tier, monthly allowance (shared with CollegeFootballData),
+  calls used and left, and next reset. The request costs no calls.
+
 * `ncaa_mbb_NET_rankings()` failed on every call with "invalid first
   argument" and returned an empty tibble: it recorded its arguments with
   `mget(setdiff(names(formals()), "..."))`, and for a function with no

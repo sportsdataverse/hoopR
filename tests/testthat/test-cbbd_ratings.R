@@ -57,3 +57,30 @@ test_that("CBD - Rankings", {
 
   Sys.sleep(1)
 })
+
+test_that("CBD - Rating History", {
+  skip_on_cran()
+  skip_on_ci()
+  skip_cbbd_test()
+
+  x <- cbbd_ratings_history(season = 2025, team = "Duke")
+  if (!is.data.frame(x) || nrow(x) == 0) skip("No rating history returned at test time")
+
+  cols <- c("season", "date", "team_id", "team", "series", "net_rating", "srs", "rankings_net")
+  expect_in(sort(cols), sort(colnames(x)))
+  expect_s3_class(x, "data.frame")
+
+  Sys.sleep(1)
+})
+
+test_that("cbbd_ratings_history() parses the recorded response into its documented columns", {
+  skip_on_cran()
+  local_http_fixtures()
+
+  x <- cbbd_ratings_history(season = 2025, team = "Duke")
+  expect_s3_class(x, "hoopR_data")
+  expect_identical(colnames(x), return_columns$col_name[return_columns$fn == "cbbd_ratings_history"])
+  expect_true(all(x$team == "Duke"))
+  expect_type(x$net_rating, "double")
+  expect_type(x$rankings_net, "integer")
+})

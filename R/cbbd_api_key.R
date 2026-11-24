@@ -62,6 +62,44 @@ check_cbbd_key <- function() {
   }
 }
 
+#' @title
+#' **CBD API Key Info**
+#' @description
+#' **Get the tier, monthly call allowance and remaining calls of your CollegeBasketballData API key.**
+#'
+#' CollegeBasketballData and CollegeFootballData draw on one shared monthly
+#' allowance. This request consumes no calls.
+#' @eval .returns_rd("cbbd_api_key_info", inline = FALSE, unit = "API key")
+#' @keywords CBD API Key
+#' @importFrom janitor clean_names
+#' @importFrom dplyr as_tibble
+#' @seealso [register_cbbd] for saving the key.
+#' @export
+#' @examples
+#' \donttest{
+#'   try(cbbd_api_key_info())
+#' }
+cbbd_api_key_info <- function() {
+  .args <- .capture_args()
+
+  df <- data.frame()
+
+  tryCatch(
+    expr = .hoopR_with_warnings("cbbd_api_key_info", {
+      data <- .cbbd_get("/info")
+      # One object, not an array: one row, with `products` collapsed by "; "
+      df <- .cbbd_record_tbl(data)
+      df <- make_hoopR_data(df, "CBD API Key Info from collegebasketballdata.com", Sys.time())
+    }),
+    error = function(e) {
+      .report_api_error(e, hint = "Invalid API key or no API key info available!", args = .args)
+    },
+    finally = {
+    }
+  )
+  return(df)
+}
+
 # ---------------------------------------------------------------------------
 # Internal: shared HTTP layer for the CollegeBasketballData API
 # ---------------------------------------------------------------------------

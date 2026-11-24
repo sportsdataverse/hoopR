@@ -2,6 +2,13 @@
 # Each call replays responses recorded by data-raw/http_fixtures/record_fixtures.R
 # (see helper-http_fixtures.R), so these run offline and on CI.
 
+test_that("cbbd_api_key_info() parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cbbd_api_key_info())
+  expect_recorded_data(x)
+})
+
 test_that("cbbd_conferences() parses a recorded response", {
   skip_on_cran()
   local_http_fixtures()
@@ -146,6 +153,13 @@ test_that("cbbd_ratings_elo(season = 2024) parses a recorded response", {
   skip_on_cran()
   local_http_fixtures()
   x <- suppressMessages(cbbd_ratings_elo(season = 2024))
+  expect_recorded_data(x)
+})
+
+test_that("cbbd_ratings_history(season = 2025, team = 'Duke') parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(cbbd_ratings_history(season = 2025, team = "Duke"))
   expect_recorded_data(x)
 })
 
