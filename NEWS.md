@@ -540,6 +540,8 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
 
 ### **Dependencies**
 
+* ggplot2 is no longer in Suggests: no function, example or test uses it. It moved to
+  `Config/Needs/website`, for the articles that plot.
 * `update_mbb_db()` / `update_nba_db()` read the stored game ids with a plain
   DBI query: on an existing table they called `dplyr::tbl()`, which needs
   dbplyr, a package hoopR does not declare.
