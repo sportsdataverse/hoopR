@@ -64,7 +64,7 @@ full list of changes is in NEWS.md. The main additions:
 * The same tarball with R 4.6.0 (ucrt) on the same machine and settings:
   0 errors, 0 warnings, 1 NOTE, and no `'NULL'` directory. The NOTE is one
   example over 5 s elapsed: `espn_mbb_coaches` (0.07 s CPU, 8.88 s
-  elapsed), a network wait in a `donttest{}` example; run again on its
+  elapsed), a network wait in a `\donttest{}` example; run again on its
   own it took 0.54 s. Same test counts.
 * GitHub Actions: R release on Ubuntu, macOS and Windows, R-devel and
   R oldrel-1 on Ubuntu, `--as-cran`: all five passed on d83f8e30 (run 45468935425).
