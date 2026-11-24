@@ -231,6 +231,8 @@ directory via conference-seed walking.
 
 ## Common Pitfalls
 
+- **No `tryCatch(warning =)`**: a `warning =` handler on `tryCatch()` unwinds at the first warning, so the wrapper returns its empty or half-built default (silently, when the handler is `function(w) {}`). Write `tryCatch(expr = .hoopR_with_warnings("<fn>", {...}), error = function(e) {...})`: each warning is re-raised as a classed `hoopR_warning` reading `<fn>(): <message>` and the body finishes. Every block `error =` handler names its cause (`conditionMessage(e)`, `.report_api_error(e, ...)`, or `parent = e` on a classed re-raise). `withCallingHandlers()` collectors that call `invokeRestart("muffleWarning")` are fine.
+
 - **Return-value initialization is mandatory**: every wrapper that `return(X)` where `X` is assigned only inside `tryCatch(expr = {...})` must initialize `X` *before* the `tryCatch`. Otherwise, when the API errors, `return(X)` throws `object 'X' not found` instead of the intended empty fallback. Applies to `df_list`, `plays_df`, `pbp`, `standings`, `teams`, `team_box_score`, `athlete_roster_df`, `games`, `conferences`, `resp`, `data`, etc. — any return variable. Initialize to `list()` for named-list returns, `NULL` for single-object returns, `data.frame()` for tibble returns.
 - When dropping a known-transient column inside a function, use `dplyr::select(-dplyr::any_of("colname"))` instead of `dplyr::select(-"colname")`. The bare form errors the moment upstream drops the column.
 - When renaming columns after `janitor::clean_names()`, use `dplyr::rename(dplyr::any_of(c(new = "old")))` so the function survives upstream rename/drops without breaking. See `espn_mbb_conferences()` and `ncaa_mbb_NET_rankings()` for examples.

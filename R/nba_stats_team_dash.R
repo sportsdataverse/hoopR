@@ -112,20 +112,18 @@ nba_teamdashboardbyclutch <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamdashboardbyclutch", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team dashboard by clutch data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -242,20 +240,18 @@ nba_teamdashboardbygamesplits <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamdashboardbygamesplits", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team dashboard by game splits data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -373,20 +369,18 @@ nba_teamdashboardbygeneralsplits <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamdashboardbygeneralsplits", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team dashboard by general splits data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -504,20 +498,18 @@ nba_teamdashboardbylastngames <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamdashboardbylastngames", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no teamdashboard by last n games data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -634,20 +626,18 @@ nba_teamdashboardbyopponent <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamdashboardbyopponent", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team dashboard by opponent data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -765,20 +755,18 @@ nba_teamdashboardbyshootingsplits <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamdashboardbyshootingsplits", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team dashboard by shooting splits data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -894,20 +882,18 @@ nba_teamdashboardbyteamperformance <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamdashboardbyteamperformance", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team dashboard by team performance data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1022,20 +1008,18 @@ nba_teamdashboardbyyearoveryear <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamdashboardbyyearoveryear", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team dashboard by year-over-year data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1160,20 +1144,18 @@ nba_teamdashlineups <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamdashlineups", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team dashboard by lineups data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1269,20 +1251,18 @@ nba_teamdashptpass  <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamdashptpass", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team dashboard player-tracking passing data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1384,20 +1364,18 @@ nba_teamdashptreb  <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamdashptreb", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team dashboard player-tracking rebounding data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1499,20 +1477,18 @@ nba_teamdashptshots  <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamdashptshots", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team dashboard player-tracking shooting data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

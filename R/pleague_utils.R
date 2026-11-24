@@ -1239,7 +1239,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
   text <- .pleague_site_get(url, query = query, call = call)$text
   tryCatch(jsonlite::parse_json(text, simplifyVector = FALSE), error = function(e) {
     where <- .intl_where(url)
-    .abort_asset_fetch("{where} answered a body that is not JSON", call = call)
+    .abort_asset_fetch("{where} answered a body that is not JSON", parent = e, call = call)
   })
 }
 
@@ -1397,7 +1397,7 @@ names(.PLEAGUE_OBSERVED)[names(.PLEAGUE_OBSERVED) == " "] <- ""
     .abort_asset_fetch("{where} answered a body that is not JSON", call = call)
   }
   body <- tryCatch(jsonlite::parse_json(.intl_body_text(resp), simplifyVector = FALSE), error = function(e) {
-    .abort_asset_fetch("{where} answered a body that is not JSON", call = call)
+    .abort_asset_fetch("{where} answered a body that is not JSON", parent = e, call = call)
   })
   if (.pleague_is_arr(body) && !length(body)) {
     .abort_no_data("{where}: the vendor answered [] (an unknown uuid, or a game with no data)", call = call)

@@ -30,7 +30,7 @@ nbadraft_mock_draft <- function(year = NULL) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nbadraft_mock_draft", {
       doc <- .ext_html(url)
       tbs <- rvest::html_elements(doc, "table")
       grab <- function(node, round) {
@@ -49,12 +49,9 @@ nbadraft_mock_draft <- function(year = NULL) {
       if ("team" %in% colnames(df)) df[["team"]] <- trimws(gsub("\\*", "", df[["team"]]))
       df <- dplyr::as_tibble(df)
       df <- make_hoopR_data(df, "Mock draft from nbadraft.net", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no mock draft available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching NBADraft.net mock draft", args = .args)
     },
     finally = {
     }

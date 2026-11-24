@@ -31,8 +31,8 @@ espn_mbb_wp <- function(game_id) {
 
   espn_wp <- data.frame()
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_wp", {
       espn_wp <-
         .retry_request(sprintf("http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?event=%s", espn_game_id)) %>%
         .resp_text() %>%
@@ -87,14 +87,12 @@ espn_mbb_wp <- function(game_id) {
           "tie_percentage"
         ) %>%
         make_hoopR_data("ESPN MBB Win Probability Information from ESPN.com", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "game_id '{espn_game_id}' invalid or no ESPN win probability data available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

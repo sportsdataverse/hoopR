@@ -26,18 +26,15 @@ torvik_team_factors <- function(year = most_recent_mbb_season()) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("torvik_team_factors", {
       txt <- .torvik_text(paste0("/", year, "_fffinal.csv"))
       df <- data.table::fread(text = txt, fill = TRUE, showProgress = FALSE)
       df <- dplyr::as_tibble(janitor::clean_names(as.data.frame(df)))
       df[["year"]] <- as.integer(year)
       df <- make_hoopR_data(df, "Bart Torvik team four factors from barttorvik.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no team four factors available for {year}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching team four factors for {year}", args = .args)
     },
     finally = {
     }

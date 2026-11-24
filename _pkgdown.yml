@@ -748,7 +748,6 @@ redirects:
 - ["reference/.realgm_pick.html", "reference/dot-realgm_pick.html"]
 - ["reference/.realgm_tables.html", "reference/dot-realgm_tables.html"]
 - ["reference/.report_api_error.html", "reference/dot-report_api_error.html"]
-- ["reference/.report_api_warning.html", "reference/dot-report_api_warning.html"]
 - ["reference/.resp_text.html", "reference/dot-resp_text.html"]
 - ["reference/.retry_request.html", "reference/dot-retry_request.html"]
 - ["reference/.torvik_text.html", "reference/dot-torvik_text.html"]

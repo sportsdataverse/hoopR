@@ -102,6 +102,28 @@ the sections below.
   zero-row tibble with the documented columns. Wrap-only: payloads are not
   redistributed as release assets.
 
+### **Warnings and errors from wrappers**
+
+* 277 `tryCatch()` blocks had a `warning =` handler (195 of them empty), so
+  any warning raised while parsing (a coercion NA, a short-variable row-name
+  notice) stopped the parse and the wrapper returned an empty or half-built
+  result, silently when the handler was empty. Their bodies now run inside
+  `.hoopR_with_warnings()`, which re-raises each warning as a classed
+  `hoopR_warning` reading `<function>(): <message>` and lets the body finish.
+  The original warning's classes are kept, so `suppressWarnings(classes = ...)`
+  filters still match. A warning raised in an internal helper names the
+  exported function you called.
+* The 126 `.try_catch()` blocks (the ESPN wrappers moved to it earlier in this
+  release) use the same helper: 34 of them dropped warnings and 92 printed them
+  as messages through `.report_api_warning()`. `.try_catch()` and
+  `.report_api_warning()` are removed.
+* What you see changes: 229 call sites that were silent and 174 that printed a
+  `cli` message now raise a real R warning. Code that hid them with
+  `suppressMessages()` needs `suppressWarnings(classes = "hoopR_warning")`.
+* Eight error handlers in the international families that re-raised a parse
+  failure without its cause now keep it (`parent = e`, or the parser's
+  message appended).
+
 ### **Behavior changes**
 
 * `load_nba_stats_player_game_logs()` now returns one row per player-game, with
@@ -236,7 +258,8 @@ the sections below.
   warning. Their `tryCatch(warning =)` handlers unwound the whole parse, so a
   `data.frame()` "row names were found from a short variable" warning made
   `espn_nba_team_current_roster()` return a 0 x 0 tibble; the warning is now
-  reported (or dropped) and parsing carries on, across all 126 ESPN call sites.
+  re-raised naming the function and parsing carries on, across all 126 ESPN
+  call sites (see "Warnings and errors from wrappers" above).
 * `espn_nba_game_team_roster()` / `espn_mbb_game_team_roster()` (and the
   `athlete_id`s they feed) read the roster ESPN now serves inline as `entries`;
   they read only the old paginated `items` and always returned 0 rows.

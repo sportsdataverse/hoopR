@@ -21,7 +21,7 @@ kp_box <- function(game_id, year) {
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_box", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
@@ -170,14 +170,12 @@ kp_box <- function(game_id, year) {
       ### Store Data
       kenpom <- c(y, list(linescore), list(ref_table))
       names(kenpom) <- c("away_team", "home_team", "linescore", "officials")
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no box data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -209,7 +207,7 @@ kp_winprob <- function(game_id, year) {
   kenpom <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_winprob", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       if (!(is.numeric(year) && nchar(year) == 4 && year >= 2010)) {
@@ -348,14 +346,12 @@ kp_winprob <- function(game_id, year) {
         )
       kenpom <- list(wp_dataset, game_data, runs)
       names(kenpom) <- c("winprob_dataset", "game_data", "runs")
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no win probability data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

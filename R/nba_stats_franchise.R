@@ -38,20 +38,18 @@ nba_franchiseleaders <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_franchiseleaders", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no franchise leaders data available for {team_id}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -106,20 +104,18 @@ nba_franchiseleaderswrank <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_franchiseleaderswrank", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no franchise players data available for {team_id}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -174,20 +170,18 @@ nba_franchiseplayers <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_franchiseplayers", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no franchise players data available for {team_id}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -234,20 +228,18 @@ nba_franchisehistory <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_franchisehistory", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no franchise history data available for {team_id}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

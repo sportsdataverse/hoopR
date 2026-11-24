@@ -29,7 +29,7 @@ realgm_draft <- function(year = most_recent_nba_season() - 1L) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_draft", {
       tables <- .realgm_tables(.realgm_doc(sprintf("/nba/draft/past-drafts/%s", year)),
                                min_rows = 3)
       draft_tbls <- Filter(
@@ -49,12 +49,9 @@ realgm_draft <- function(year = most_recent_nba_season() - 1L) {
       out <- dplyr::bind_rows(parts)
       out$draft_year <- as.numeric(year)
       df <- .realgm_finish(out, "NBA past draft from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM draft data for {year}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM draft", args = .args)
     },
     finally = {
     }
@@ -92,19 +89,16 @@ realgm_early_entry <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_early_entry", {
       tables <- .realgm_tables(.realgm_doc("/nba/draft/early_entry/by_year"),
                                min_rows = 3)
       ee <- Filter(function(t) all(c("player", "pos") %in% colnames(t)), tables)
       if (!length(ee)) stop("RealGM early-entry tables not found", call. = FALSE)
       df <- .realgm_finish(dplyr::bind_rows(ee),
                            "NBA draft early entrants from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM early-entry data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM early entry", args = .args)
     },
     finally = {
     }

@@ -11,9 +11,8 @@ Named list. Empty list if the caller has no non-... formals.
 }
 \description{
 Returns a named list of the bound formal arguments (excluding \code{...}) of the
-calling function, suitable for passing to \code{.report_api_error()} /
-\code{.report_api_warning()}. Tolerates functions with empty or \code{...}-only
-formals (where \code{names(formals())} is \code{NULL}), unlike the inline
+calling function, suitable for passing to \code{.report_api_error()}. Tolerates
+functions with empty or \code{...}-only formals (where \code{names(formals())} is \code{NULL}), unlike the inline
 \code{mget(setdiff(names(formals()), "..."))} pattern that errors with
 \verb{mget: invalid first argument} for arg-less wrappers.
 }

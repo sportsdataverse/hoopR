@@ -26,18 +26,15 @@ cbbd_lines <- function(season = most_recent_mbb_season(), team = NULL, conferenc
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_lines", {
       data <- .cbbd_get("/lines", query = list(
         season = season, team = team, conference = conference,
         startDateRange = start_date_range, endDateRange = end_date_range))
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Betting Lines from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no betting lines available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD betting lines", args = .args)
     },
     finally = {
     }
@@ -67,16 +64,13 @@ cbbd_lines_providers <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_lines_providers", {
       data <- .cbbd_get("/lines/providers")
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Line Providers from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no line providers available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD line providers", args = .args)
     },
     finally = {
     }

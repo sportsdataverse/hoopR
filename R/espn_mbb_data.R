@@ -37,21 +37,18 @@ espn_mbb_game_all <- function(game_id) {
   player_box_score <- NULL
 
   #---- Fetch the summary endpoint (single outer tryCatch) -------------------
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_game_all", {
       res <- .retry_request(full_url)
       check_status(res)
       resp <- res %>%
         .resp_text()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Could not fetch game summary for game_id = {game_id}",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
@@ -62,64 +59,55 @@ espn_mbb_game_all <- function(game_id) {
   }
 
   #---- Play-by-Play ------
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_game_all", {
       plays_df <- helper_espn_mbb_pbp(resp)
 
       if (is.null(plays_df)) {
         message(sprintf("%s: No play-by-play data for %s available!", Sys.time(), game_id))
       }
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no play-by-play data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
   )
   #---- Team Box ------
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_game_all", {
       team_box_score <- helper_espn_mbb_team_box(resp)
 
       if (is.null(team_box_score)) {
         message(sprintf("%s: No team box score data for %s available!", Sys.time(), game_id))
       }
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team box score data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
   )
   #---- Player Box ------
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_game_all", {
       player_box_score <- helper_espn_mbb_player_box(resp)
 
       if (is.null(player_box_score)) {
         message(sprintf("%s: No player box score data for %s available!", Sys.time(), game_id))
       }
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player box score data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
@@ -167,8 +155,8 @@ espn_mbb_pbp <- function(game_id) {
 
   plays_df <- NULL
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_pbp", {
       res <- .retry_request(full_url)
 
       # Check the result
@@ -182,15 +170,12 @@ espn_mbb_pbp <- function(game_id) {
       if (is.null(plays_df)) {
         return(message(sprintf("%s: No play-by-play data for %s available!", Sys.time(), game_id)))
       }
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no play-by-play data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
@@ -233,8 +218,8 @@ espn_mbb_team_box <- function(game_id) {
 
   team_box_score <- NULL
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_team_box", {
       res <- .retry_request(full_url)
 
       # Check the result
@@ -248,15 +233,12 @@ espn_mbb_team_box <- function(game_id) {
       if (is.null(team_box_score)) {
         return(message(sprintf("%s: No team box score data for %s available!", Sys.time(), game_id)))
       }
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team box score data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
@@ -298,8 +280,8 @@ espn_mbb_player_box <- function(game_id) {
 
   player_box_score <- NULL
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_player_box", {
       res <- .retry_request(full_url)
 
       # Check the result
@@ -313,15 +295,12 @@ espn_mbb_player_box <- function(game_id) {
       if (is.null(player_box_score)) {
         return(message(sprintf("%s: No player box score data for %s available!", Sys.time(), game_id)))
       }
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player box score data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
@@ -356,8 +335,8 @@ espn_mbb_game_rosters <- function(game_id) {
   on.exit(options(old))
   athlete_roster_df <- .empty_hoopR_data("ESPN MBB Game Roster Information from ESPN.com")
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_game_rosters", {
       play_base_url <- paste0(
         "https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/",
         game_id, "/competitions/",
@@ -564,15 +543,12 @@ espn_mbb_game_rosters <- function(game_id) {
           "team_sdr"
         ), as.integer) %>%
         make_hoopR_data("ESPN MBB Game Roster Information from ESPN.com", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no game roster data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
@@ -612,8 +588,8 @@ espn_mbb_conferences <- function() {
     )
   )
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_conferences", {
       play_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard/conferences?seasontype=2"
 
       res <- .retry_request(play_base_url)
@@ -640,15 +616,12 @@ espn_mbb_conferences <- function() {
           "conference_logo" = "logo"
         ))) %>%
         make_hoopR_data("ESPN MBB Conferences Information from ESPN.com", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no conferences info available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
@@ -681,8 +654,8 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
 
   teams <- .empty_hoopR_data("ESPN MBB Teams Information from ESPN.com")
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_teams", {
       teams_base_url <- "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams?limit=1000"
 
       res <- .retry_request(teams_base_url)
@@ -857,15 +830,12 @@ espn_mbb_teams <- function(year = most_recent_mbb_season()) {
           parent_group_id = as.integer(.data$parent_group_id)
         ) %>%
         make_hoopR_data("ESPN MBB Teams Information from ESPN.com", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no teams data available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
@@ -899,8 +869,8 @@ espn_mbb_team_current_roster <- function(team_id) {
 
   team_roster_full <- .empty_hoopR_data("ESPN MBB Team Current Roster Information from ESPN.com")
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_team_current_roster", {
       teams_base_url <- sprintf(
         "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/teams/%s?enable=roster",
         team_id
@@ -1001,15 +971,12 @@ espn_mbb_team_current_roster <- function(team_id) {
         dplyr::bind_cols(conference_info) %>%
         dplyr::left_join(players, by = c("team_id" = "team_id")) %>%
         make_hoopR_data("ESPN MBB Team Current Roster Information from ESPN.com", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team current roster data available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
@@ -1041,8 +1008,8 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
   )
 
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("parse_espn_mbb_scoreboard", {
       res <- .retry_request(schedule_api)
 
       # Check the result
@@ -1234,15 +1201,12 @@ parse_espn_mbb_scoreboard <- function(group, season_dates) {
             make_hoopR_data("ESPN MBB Scoreboard Information from ESPN.com", Sys.time())
         }
       }
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no scoreboard data for {season_dates} available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
@@ -1377,8 +1341,8 @@ espn_mbb_rankings <- function() {
 
   ranks <- .empty_hoopR_data("ESPN MBB Rankings Information from ESPN.com")
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_rankings", {
       res <- .retry_request(ranks_url)
 
       # Check the result
@@ -1431,15 +1395,12 @@ espn_mbb_rankings <- function() {
           "team_id"
         ), as.integer) %>%
         make_hoopR_data("ESPN MBB Rankings Information from ESPN.com", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no rankings data available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
@@ -1479,8 +1440,8 @@ espn_mbb_standings <- function(year = most_recent_mbb_season()) {
 
   standings <- .empty_hoopR_data("ESPN MBB Standings Information from ESPN.com")
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_standings", {
       res <- .retry_request(full_url)
 
       # Check the result
@@ -1642,15 +1603,12 @@ espn_mbb_standings <- function(year = most_recent_mbb_season()) {
           "vsconf_wins"
         ), as.numeric) %>%
         make_hoopR_data("ESPN MBB Standings Information from ESPN.com", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no standings data available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
@@ -1694,8 +1652,8 @@ espn_mbb_betting <- function(game_id) {
   predictor_df <- data.frame()
   betting <- NULL
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_betting", {
       res <- .retry_request(full_url)
 
       # Check the result
@@ -1750,15 +1708,12 @@ espn_mbb_betting <- function(game_id) {
         predictor_df <- predictor_df %>%
           make_hoopR_data("ESPN MBB Predictor Information from ESPN.com", Sys.time())
       }
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no betting data available!",
       args = .args
     ),
-    warning = function(w) {
-
-    },
     finally = {
 
     }
@@ -1818,8 +1773,8 @@ espn_mbb_team_stats <- function(team_id, year, season_type = "regular", total = 
   )
 
   df <- data.frame()
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_team_stats", {
       # Create the GET request and set response as res
       res <- .retry_request(full_url)
 
@@ -1939,14 +1894,12 @@ espn_mbb_team_stats <- function(team_id, year, season_type = "regular", total = 
           "team_sdr"
         ), as.integer) %>%
         make_hoopR_data("ESPN MBB Team Season Stats from ESPN.com", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team season stats data available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1994,8 +1947,8 @@ espn_mbb_player_stats <- function(athlete_id, year, season_type = "regular", tot
     "/athletes/", athlete_id
   )
   df <- data.frame()
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings("espn_mbb_player_stats", {
       # Create the GET request and set response as res
       res <- .retry_request(full_url)
 
@@ -2151,14 +2104,12 @@ espn_mbb_player_stats <- function(athlete_id, year, season_type = "regular", tot
           "team_sdr"
         ), as.integer) %>%
         make_hoopR_data("ESPN MBB Player Season Stats from ESPN.com", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player season stats data available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

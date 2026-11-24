@@ -52,8 +52,8 @@
   }
 
   result <- NULL
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_team_record", {
       all_rows <- list()
       for (st in season_type) {
         rs <- fetch_one(as.integer(st))
@@ -84,15 +84,10 @@
             Sys.time()
           )
       }
-    },
+    }),
     error   = function(e) .report_api_error(
       e,
       hint = "Failed to retrieve ESPN {league} team record for team_id={team_id}, season={season}",
-      args = .args
-    ),
-    warning = function(w) .report_api_warning(
-      w,
-      hint = "Warning retrieving ESPN {league} team record for team_id={team_id}",
       args = .args
     ),
     finally = {}
@@ -126,8 +121,8 @@
     "/teams/", team_id,
     "/records/", record_id, "?lang=en&region=us"
   )
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_team_record_detail", {
       res <- .retry_request(url); check_status(res)
       raw <- res %>% .resp_text() %>%
         jsonlite::fromJSON(simplifyVector = FALSE)
@@ -184,12 +179,9 @@
             Sys.time()
           )
       }
-    },
+    }),
     error   = function(e) .report_api_error(e,
       hint = "Failed to retrieve ESPN {league} team record detail for team_id={team_id}, season={season}, record_id={record_id}",
-      args = .args),
-    warning = function(w) .report_api_warning(w,
-      hint = "Warning retrieving ESPN {league} team record detail",
       args = .args),
     finally = {}
   )

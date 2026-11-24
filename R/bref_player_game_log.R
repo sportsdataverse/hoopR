@@ -27,7 +27,7 @@ bref_player_game_log <- function(player_id, season = most_recent_nba_season()) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("bref_player_game_log", {
       letter <- substr(tolower(player_id), 1, 1)
       html <- .bref_text(paste0("/players/", letter, "/", tolower(player_id),
                                 "/gamelog/", season, "/"))
@@ -42,12 +42,9 @@ bref_player_game_log <- function(player_id, season = most_recent_nba_season()) {
       df[["player_id"]] <- tolower(player_id)
       df[["season"]] <- as.integer(season)
       df <- make_hoopR_data(df, "Player game log from basketball-reference.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no game log available for {player_id} {season}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching BREF game log for {player_id} {season}", args = .args)
     },
     finally = {
     }

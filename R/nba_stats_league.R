@@ -66,20 +66,18 @@ nba_leaguegamelog <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_leaguegamelog", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no league game log data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -133,20 +131,18 @@ nba_leaguestandings <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_leaguestandings", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no league standings data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -200,20 +196,18 @@ nba_leaguestandingsv3 <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_leaguestandingsv3", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no league standings v3 data available for {season}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -259,20 +253,18 @@ nba_playoffpicture <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playoffpicture", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no playoff picture data available for {season_id}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -577,20 +569,18 @@ nba_leaguegamefinder <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_leaguegamefinder", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no league game finder data available for the given parameters!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -638,7 +628,7 @@ nba_iststandings <- function(
 
   df_list <- list()
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_iststandings", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
@@ -686,14 +676,12 @@ nba_iststandings <- function(
       df_list <- c(list(data))
       names(df_list) <- c("Standings")
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no IST standings data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

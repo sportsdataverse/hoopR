@@ -95,20 +95,18 @@ nba_shotchartdetail <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_shotchartdetail", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no shot chart detail data for {player_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -155,20 +153,18 @@ nba_shotchartleaguewide <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_shotchartleaguewide", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no league-wide shot chart data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -378,20 +374,18 @@ nba_shotchartlineupdetail <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_shotchartlineupdetail", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no shot chart lineup data available for {season}! (group_id: {group_id})",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

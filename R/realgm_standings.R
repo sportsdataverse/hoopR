@@ -27,7 +27,7 @@ realgm_standings <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_standings", {
       tables <- .realgm_tables(.realgm_doc("/nba/standings"))
       conf <- Filter(
         function(t) all(c("team", "w", "l", "pct") %in% colnames(t)) && nrow(t) >= 10,
@@ -42,12 +42,9 @@ realgm_standings <- function() {
       })
       df <- .realgm_finish(dplyr::bind_rows(parts),
                            "NBA standings from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM standings data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM standings", args = .args)
     },
     finally = {
     }
@@ -80,7 +77,7 @@ realgm_teams <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_teams", {
       tables <- .realgm_tables(.realgm_doc("/nba/teams"), min_rows = 3)
       div_conf <- c(atlantic = "Eastern", central = "Eastern", southeast = "Eastern",
                     northwest = "Western", pacific = "Western", southwest = "Western")
@@ -103,12 +100,9 @@ realgm_teams <- function() {
       if (!length(parts)) stop("RealGM teams tables not found", call. = FALSE)
       df <- .realgm_finish(dplyr::bind_rows(parts),
                            "NBA teams index from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM teams data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM teams", args = .args)
     },
     finally = {
     }

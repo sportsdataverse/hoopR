@@ -25,7 +25,7 @@ kp_team_history <- function(team){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_team_history", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
@@ -226,14 +226,12 @@ kp_team_history <- function(team){
       kenpom <- x %>%
         janitor::clean_names()
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team history data for {team} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -266,7 +264,7 @@ kp_coach_history <- function(coach){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_coach_history", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
@@ -453,14 +451,12 @@ kp_coach_history <- function(coach){
         janitor::clean_names()
 
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no coach history data for {coach} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -489,7 +485,7 @@ kp_program_ratings <- function(){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_program_ratings", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
@@ -524,14 +520,12 @@ kp_program_ratings <- function(){
       kenpom <- x %>%
         janitor::clean_names()
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no program ratings available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -560,7 +554,7 @@ kp_pomeroy_archive_ratings <- function(date){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_pomeroy_archive_ratings", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       header_cols <- c('AdjEM.Rk', 'Team', 'Conf', 'AdjEM',
@@ -601,14 +595,12 @@ kp_pomeroy_archive_ratings <- function(date){
       kenpom <- x %>%
         janitor::clean_names()
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no kp_pomeroy_archive_ratings data for {date} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -645,7 +637,7 @@ kp_conf <- function(year, conf){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_conf", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       header_cols <- c('Team',	'Overall',	'Conf','AdjEM','AdjEM.Rk',
@@ -765,14 +757,12 @@ kp_conf <- function(year, conf){
         "ConferenceComparison"
       )
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no conference data for {year} {conf} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -804,7 +794,7 @@ kp_confstats <- function(year = most_recent_mbb_season()){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_confstats", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       header_cols <- c('Conf', 'Eff','Eff.Rk','Tempo','Tempo.Rk','eFG.Pct','eFG.Pct.Rk','TO.Pct','TO.Pct.Rk',
@@ -846,14 +836,12 @@ kp_confstats <- function(year = most_recent_mbb_season()){
       kenpom <- x %>%
         janitor::clean_names()
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no conference stats data for {year} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -896,7 +884,7 @@ kp_confhistory <- function(conf){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_confhistory", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       header_cols <- c('Year',	'Rank',	'Tempo',	'Efficiency',
@@ -941,14 +929,12 @@ kp_confhistory <- function(conf){
       )
       kenpom <- x %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no conference history data for {conf} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

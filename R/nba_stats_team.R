@@ -20,7 +20,7 @@ NULL
 nba_teams <- function(...) {
   .args <- mget(setdiff(names(formals()), "..."))
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teams", {
       standings <- nba_leaguestandingsv3(season = year_to_season(most_recent_nba_season() - 1), ...) %>%
         purrr::pluck("Standings")
 
@@ -78,14 +78,12 @@ nba_teams <- function(...) {
           nba_logo_svg = paste0("https://cdn.nba.com/logos/nba/", .data$TeamID, "/primary/L/logo.svg")
         ) %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team details data available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -127,18 +125,16 @@ nba_teamdetails <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamdetails", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team details data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -187,7 +183,7 @@ nba_teamestimatedmetrics <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamestimatedmetrics", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- purrr::map(1:length(resp$resultSet$name), function(x) {
@@ -200,14 +196,12 @@ nba_teamestimatedmetrics <- function(
         return(data)
       })
       names(df_list) <- resp$resultSet$name
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team estimated metrics data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -264,18 +258,16 @@ nba_teamgamelog <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamgamelog", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team game log data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -360,18 +352,16 @@ nba_teamgamelogs <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamgamelogs", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team game logs for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -432,18 +422,16 @@ nba_teamhistoricalleaders <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamhistoricalleaders", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team historical leaders data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -493,18 +481,16 @@ nba_teaminfocommon <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teaminfocommon", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team common info data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -615,18 +601,16 @@ nba_teamplayeronoffdetails <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamplayeronoffdetails", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team player on off details data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -711,18 +695,16 @@ nba_teamplayeronoffsummary <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamplayeronoffsummary", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team player on off summary data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -808,18 +790,16 @@ nba_teamplayerdashboard <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamplayerdashboard", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team player dashboard data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -871,18 +851,16 @@ nba_teamyearbyyearstats <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamyearbyyearstats", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team year-by-year stats data for {team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -978,18 +956,16 @@ nba_teamvsplayer <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamvsplayer", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team vs player data for {team_id} and {player_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1123,18 +1099,16 @@ nba_teamandplayersvsplayers <- function(
 
   df_list <- list()
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamandplayersvsplayers", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team and players vs players data for {team_id} vs {vs_team_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1741,18 +1715,16 @@ nba_teamgamestreakfinder <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_teamgamestreakfinder", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no team streak finder data for the given parameters available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

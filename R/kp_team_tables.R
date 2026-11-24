@@ -22,7 +22,7 @@ kp_team_schedule <- function(team, year = 2022){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_team_schedule", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       if (!(is.numeric(year) && nchar(year) == 4 && year >= 2001)) {
@@ -349,14 +349,12 @@ kp_team_schedule <- function(team, year = 2022){
         dplyr::mutate(Postseason = ifelse(is.na(.data$Postseason), "Regular", .data$Postseason)) %>%
         janitor::clean_names()
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "{Sys.Date()} - No team schedule tables available for {team} - {year}",
       args = .args
     ),
-    warning = function(w){
-    },
     finally = {
     }
   )
@@ -389,7 +387,7 @@ kp_gameplan <- function(team, year=2021){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_gameplan", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       if (!(is.numeric(year) && nchar(year) == 4 && year >= 2001)) {
@@ -568,14 +566,12 @@ kp_gameplan <- function(team, year=2021){
       kenpom <- c(list(gp),list(cor),list(z))
       names(kenpom) <- c("gameplan", "correlations", "position_distributions")
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "{Sys.Date()} - No Game Plan Points distribution tables available for {team} - {year}",
       args = .args
     ),
-    warning = function(w){
-    },
     finally = {
     }
   )
@@ -607,7 +603,7 @@ kp_opptracker <- function(team, year = 2021){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_opptracker", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
       if (!(is.numeric(year) && nchar(year) == 4 && year >= 2001)) {
@@ -742,15 +738,12 @@ kp_opptracker <- function(team, year = 2021){
           "OpponentScore",
           tidyr::everything()) %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "{Sys.time()} - {team} - {year} Team opponent tracker data is missing",
       args = .args
     ),
-    warning = function(w){
-
-    },
     finally = {
 
     }
@@ -786,7 +779,7 @@ kp_team_players <- function(team, year = 2021){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_team_players", {
       browser <- login()
       if (!(is.numeric(year) && nchar(year) == 4 && year >= 2002)) {
         # Check if year is numeric, if not NULL
@@ -983,15 +976,12 @@ kp_team_players <- function(team, year = 2021){
       ### Store Data
       kenpom <- players %>%
         janitor::clean_names()
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "{Sys.time()} - No Player Data available for {team} in {year}",
       args = .args
     ),
-    warning = function(w){
-
-    },
     finally = {
 
     }
@@ -1027,7 +1017,7 @@ kp_player_career <- function(player_id){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_player_career", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
 
       browser <- login()
@@ -1229,15 +1219,12 @@ kp_player_career <- function(player_id){
       ### Store Data
       kenpom <- c(list(players),list(schedule_games))
       names(kenpom) <- c("player_stats", "gamelog")
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "{Sys.time()} - No Player Career Data available for {player_id}",
       args = .args
     ),
-    warning = function(w){
-
-    },
     finally = {
 
     }
@@ -1271,7 +1258,7 @@ kp_minutes_matrix <- function(team, year = 2021){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_minutes_matrix", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
@@ -1319,15 +1306,12 @@ kp_minutes_matrix <- function(team, year = 2021){
       kenpom <- x %>%
         janitor::clean_names()
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "{Sys.time()} - {team} - {year} minutes matrix is missing",
       args = .args
     ),
-    warning = function(w){
-
-    },
     finally = {
 
     }
@@ -1361,7 +1345,7 @@ kp_team_player_stats <- function(team, year = 2021){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_team_player_stats", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
@@ -1545,15 +1529,12 @@ kp_team_player_stats <- function(team, year = 2021){
       ### Store Data
       kenpom <- y
       names(kenpom) <- c("all_games", "conference_games")
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "{Sys.time()} - {team} - {year} team player stats are missing",
       args = .args
     ),
-    warning = function(w){
-
-    },
     finally = {
 
     }
@@ -1590,7 +1571,7 @@ kp_team_depth_chart <- function(team, year= 2021){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_team_depth_chart", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
@@ -1666,14 +1647,12 @@ kp_team_depth_chart <- function(team, year= 2021){
 
       ### Store Data
       kenpom <- depth1
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "{Sys.time()} - {team} - {year} Team Depth Chart is missing",
       args = .args
     ),
-    warning = function(w){
-    },
     finally = {
     }
   )
@@ -1707,7 +1686,7 @@ kp_team_lineups <- function(team, year=2021){
   kenpom <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("kp_team_lineups", {
       if (!has_kp_user_and_pw()) stop("This function requires a KenPom subscription e-mail and password combination,\n      set as the system environment variables KP_USER and KP_PW.", "\n       See ?kp_user_pw for details.", call. = FALSE)
       browser <- login()
 
@@ -1845,14 +1824,12 @@ kp_team_lineups <- function(team, year=2021){
       kenpom <- depth2 %>%
         janitor::clean_names()
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "{Sys.time()} - {team} - {year} Team Lineups are missing",
       args = .args
     ),
-    warning = function(w){
-    },
     finally = {
     }
   )

@@ -38,7 +38,7 @@ torvik_game_stats <- function(year = most_recent_mbb_season()) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("torvik_game_stats", {
       txt <- .torvik_text(paste0("/getgamestats.php?year=", year, "&json=1"))
       raw <- jsonlite::fromJSON(txt, simplifyVector = FALSE)
 
@@ -54,12 +54,9 @@ torvik_game_stats <- function(year = most_recent_mbb_season()) {
       df <- utils::type.convert(df, as.is = TRUE)
       df <- dplyr::as_tibble(janitor::clean_names(df))
       df <- make_hoopR_data(df, "Bart Torvik game stats from barttorvik.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no game stats available for {year}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching Torvik game stats for {year}", args = .args)
     },
     finally = {
     }

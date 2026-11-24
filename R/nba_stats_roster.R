@@ -40,20 +40,18 @@ nba_commonallplayers <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_commonallplayers", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or common all players data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -100,20 +98,18 @@ nba_commonplayerinfo <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_commonplayerinfo", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or common player info data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -160,20 +156,18 @@ nba_commonplayoffseries <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_commonplayoffseries", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or common playoff series data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -222,20 +216,18 @@ nba_commonteamroster <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_commonteamroster", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or common team roster data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -278,20 +270,18 @@ nba_commonteamyears <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_commonteamyears", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no common team years data available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

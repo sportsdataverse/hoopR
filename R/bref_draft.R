@@ -26,7 +26,7 @@ bref_draft <- function(season = most_recent_nba_season()) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("bref_draft", {
       html <- .bref_text(paste0("/draft/NBA_", season, ".html"))
       df <- .bref_table(html, "stats")
       df <- df[rowSums(!is.na(df) & df != "") > 0, , drop = FALSE]
@@ -36,12 +36,9 @@ bref_draft <- function(season = most_recent_nba_season()) {
         "player" = "name_display", "team" = "team_id")))
       df[["season"]] <- as.integer(season)
       df <- make_hoopR_data(df, "Draft results from basketball-reference.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no draft data available for {season}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching BREF draft for {season}", args = .args)
     },
     finally = {
     }

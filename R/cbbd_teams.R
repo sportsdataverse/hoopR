@@ -24,16 +24,13 @@ cbbd_teams <- function(conference = NULL, season = most_recent_mbb_season()) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_teams", {
       data <- .cbbd_get("/teams", query = list(conference = conference, season = season))
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Teams from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no teams data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD teams", args = .args)
     },
     finally = {
     }
@@ -64,16 +61,13 @@ cbbd_teams_roster <- function(season = most_recent_mbb_season(), team = NULL) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_teams_roster", {
       data <- .cbbd_get("/teams/roster", query = list(season = season, team = team))
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Team Roster from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no roster data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD team roster", args = .args)
     },
     finally = {
     }
@@ -105,7 +99,7 @@ cbbd_teams_directory <- function(season = most_recent_mbb_season()) {
   df <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_teams_directory", {
       data <- .cbbd_get("/teams/directory", query = list(season = season))
       df <- list(
         teams = .cbbd_rows_tbl(data$teams),
@@ -117,12 +111,9 @@ cbbd_teams_directory <- function(season = most_recent_mbb_season()) {
         attr(x, "season_label") <- data$seasonLabel
         x
       })
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no team directory data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD team directory", args = .args)
     },
     finally = {
     }
@@ -156,7 +147,7 @@ cbbd_teams_season_overview <- function(team_id, season = most_recent_mbb_season(
   df <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_teams_season_overview", {
       data <- .cbbd_get(paste0("/teams/", team_id, "/season/", season, "/overview"))
       df <- list(
         # intersect(): a field upstream drops would otherwise come back as an
@@ -174,12 +165,9 @@ cbbd_teams_season_overview <- function(team_id, season = most_recent_mbb_season(
       attr(df$shooting, "tracked_attempts") <- data$shooting$trackedAttempts
       attr(df$shooting, "coverage") <- data$shooting$coverage
       attr(df$players, "coverage") <- data$players$coverage
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no team season overview data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD team season overview", args = .args)
     },
     finally = {
     }

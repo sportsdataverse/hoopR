@@ -77,18 +77,16 @@ nbagl_players <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nbagl_players", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player index data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
