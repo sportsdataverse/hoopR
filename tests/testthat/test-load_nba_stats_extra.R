@@ -201,3 +201,35 @@ test_that(".loader_seasons accepts several urls per season", {
   expect_equal(out, 2027)
   expect_equal(.loader_seasons(TRUE, 2025, 2027, fn = "load_x", url_for = url_for), 2025:2027)
 })
+
+test_that("metric curves and rolling windows return integer NBA Stats ids", {
+  # The release files publish entity_id / team_id as character. The 2024-25
+  # stand-in has no team_id, so rbindlist() fills it with integer NA.
+  env <- new.env()
+  .local_release(env, rows = function(url) {
+    if (grepl("_2025[.]rds$", url)) {
+      return(data.table::data.table(season = 2025L, entity_id = "203999"))
+    }
+    data.table::data.table(season = 2026L, entity_id = c(NA, "1610612744", "201939"),
+                           team_id = c(NA, "1610612744", "1610612744"))
+  })
+  for (f in list(load_nba_stats_metric_curves, load_nba_stats_rolling_windows)) {
+    out <- f(seasons = 2024:2025)
+    expect_type(out$entity_id, "integer")
+    expect_type(out$team_id, "integer")
+    expect_identical(out$entity_id, c(203999L, NA, 1610612744L, 201939L))
+    expect_identical(out$team_id, c(NA, NA, 1610612744L, 1610612744L))
+  }
+})
+
+test_that(".ids_as_integer turns non-whole ids into NA with a warning", {
+  df <- data.table::data.table(a = c("1", "1.5", NA, "", "x"), b = c(2, 2.5, 3, NA, 4), c = 1:5)
+  w <- testthat::capture_warnings(out <- .ids_as_integer(df, c("a", "b", "c", "missing")))
+  expect_length(w, 2)
+  expect_match(w[1], "2 values could not be read")
+  expect_match(w[2], "1 value could not be read")
+  expect_identical(out$a, c(1L, NA, NA, NA, NA))
+  expect_identical(out$b, c(2L, NA, 3L, NA, 4L))
+  expect_identical(out$c, 1:5)
+  expect_no_warning(.ids_as_integer(data.table::data.table(a = c("7", NA)), "a"))
+})

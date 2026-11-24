@@ -338,11 +338,26 @@ pbp_from_url <- function(url, type) {
 
 # ESPN ids are integer in every release dataset, but a few assets publish
 # some as character (game_rosters game_id, rosters athlete_id, the crosswalk
-# espn_game_id / espn_athlete_id, the ncaa_mbb_* espn_* bridge columns). Cast
-# them back so joins across datasets line up.
+# espn_game_id / espn_athlete_id, the ncaa_mbb_* espn_* bridge columns; the
+# NBA Stats metric_curves / rolling_windows entity_id and team_id). Cast them
+# back so joins across datasets line up. A value that is not a whole number
+# ("1.5", "abc") becomes NA, with one warning per column, instead of being
+# truncated.
 .ids_as_integer <- function(df, cols) {
   for (k in intersect(cols, names(df))) {
-    if (!is.integer(df[[k]])) data.table::set(df, j = k, value = as.integer(df[[k]]))
+    x <- df[[k]]
+    if (is.integer(x)) next
+    out <- suppressWarnings(as.integer(x))
+    # as.integer() truncates "1.5" / 2.5 without a warning; treat those as lost too.
+    out[!is.na(out) & suppressWarnings(as.numeric(x)) != out] <- NA_integer_
+    lost <- is.na(out) & !is.na(x) & !(as.character(x) %in% "")
+    if (any(lost)) {
+      cli::cli_warn(c(
+        "Column {.field {k}}: {sum(lost)} value{?s} could not be read as an integer id and became {.val NA}.",
+        "i" = "First: {.val {utils::head(unique(as.character(x[lost])), 3)}}."
+      ))
+    }
+    data.table::set(df, j = k, value = out)
   }
   df
 }

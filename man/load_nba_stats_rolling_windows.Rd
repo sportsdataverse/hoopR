@@ -33,9 +33,9 @@ A \code{hoopR_data} tibble with one row per entity per metric per window.
   col_name \tab types \tab description \cr
   season \tab integer \tab END year of the NBA season (2025 = 2024-25), the asset's own stamp: one more than the \code{seasons} argument. \cr
   entity_type \tab character \tab Which aggregate the row is: "league" (every counted attempt that season), "team" or "player" on metric_curves; always "player" on rolling_windows. \cr
-  entity_id \tab character \tab stats.nba.com id of the entity as TEXT -- the team_id on a team row, the person_id on a player row, NA on the league row. \cr
+  entity_id \tab integer \tab stats.nba.com id of the entity -- the team_id on a team row, the person_id on a player row, NA on the league row. \cr
   entity_name \tab character \tab Label for the entity: the team tricode ("GSW") on a team row, the shooter's name as the pbp ships it on a player row; NA on the league row. \cr
-  team_id \tab character \tab stats.nba.com team id (e.g. 1610612737 = Atlanta Hawks). \cr
+  team_id \tab integer \tab stats.nba.com team id (e.g. 1610612737 = Atlanta Hawks). \cr
   metric \tab character \tab What the row measures: "fg_pct_by_shot_distance" on metric_curves (field-goal percentage by shot distance in feet); "fg_pct" (window_unit "fga") or "fg3_pct" (window_unit "fg3a") on rolling_windows. \cr
   window_unit \tab character \tab What the window counts: "fga" (every field-goal attempt) or "fg3a" (three-point attempts). Regular-season and playoff attempts only. \cr
   window_n \tab integer \tab Window size in attempts (50 or 200), not games. \cr

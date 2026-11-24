@@ -33,9 +33,9 @@ A \code{hoopR_data} tibble with one row per entity per metric per bin.
   col_name \tab types \tab description \cr
   season \tab integer \tab END year of the NBA season (2025 = 2024-25), the asset's own stamp: one more than the \code{seasons} argument. \cr
   entity_type \tab character \tab Which aggregate the row is: "league" (every counted attempt that season), "team" or "player" on metric_curves; always "player" on rolling_windows. \cr
-  entity_id \tab character \tab stats.nba.com id of the entity as TEXT -- the team_id on a team row, the person_id on a player row, NA on the league row. \cr
+  entity_id \tab integer \tab stats.nba.com id of the entity -- the team_id on a team row, the person_id on a player row, NA on the league row. \cr
   entity_name \tab character \tab Label for the entity: the team tricode ("GSW") on a team row, the shooter's name as the pbp ships it on a player row; NA on the league row. \cr
-  team_id \tab character \tab stats.nba.com team id (e.g. 1610612737 = Atlanta Hawks). \cr
+  team_id \tab integer \tab stats.nba.com team id (e.g. 1610612737 = Atlanta Hawks). \cr
   id_source \tab character \tab Namespace of \code{entity_id} / \code{team_id} on this row -- "nba_stats" here; the cross-league contract carries "espn", "gsis" and "wnba_stats" elsewhere. \cr
   metric \tab character \tab What the row measures: "fg_pct_by_shot_distance" on metric_curves (field-goal percentage by shot distance in feet); "fg_pct" (window_unit "fga") or "fg3_pct" (window_unit "fg3a") on rolling_windows. \cr
   down \tab integer \tab Null on every row: the second axis of the football-only success_by_down_distance curve, carried for the cross-league contract. \cr
@@ -55,8 +55,8 @@ of a season, computed from \code{\link[=load_nba_stats_shots]{load_nba_stats_sho
 per distance bucket (1-ft bins from 0 to 35 ft, then 35-50 and 50-95 ft;
 \code{x_lo} inclusive, \code{x_hi} exclusive) with its \code{attempts}, \code{successes}
 (makes) and \code{rate}; an empty bucket has no row. Regular-season and
-playoff shots only. \code{entity_id} / \code{team_id} are stats.nba.com ids as
-text; \code{down} and \code{epa_per_att} are always \code{NA} (the football columns of
+playoff shots only. \code{entity_id} / \code{team_id} are integer stats.nba.com ids,
+as in the other NBA Stats loaders; \code{down} and \code{epa_per_att} are always \code{NA} (the football columns of
 the cross-league contract).
 }
 \examples{

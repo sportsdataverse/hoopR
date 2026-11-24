@@ -507,6 +507,12 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   needed a cast. `nba_game_id` keeps its leading zeros (`"0022300001"`) as
   character. The live builders (`nba_team_crosswalk()` and friends) still
   return character NBA Stats ids.
+* `load_nba_stats_metric_curves()` and `load_nba_stats_rolling_windows()` return
+  `entity_id` and `team_id` as integer stats.nba.com ids, as sportsdataverse-py
+  does; the release files publish them as character, so they did not join the
+  other NBA Stats loaders without a cast. Both loaders are new in 3.2.0. The
+  shared id cast now turns a value that is not a whole number (`"1.5"`) into
+  `NA` with a warning instead of truncating it.
 * Every `load_*()` release loader's help page names its release tag on
   sportsdataverse-data in a Source section, with the repository that publishes
   it.
