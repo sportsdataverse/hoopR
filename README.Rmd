@@ -3,6 +3,7 @@ output:
   github_document:
     toc: true
     toc_depth: 2
+    md_extensions: "-smart"
 ---
 
 # **hoopR** <a href='https://hoopR.sportsdataverse.org/'><img src="https://raw.githubusercontent.com/sportsdataverse/hoopR/main/logo.png" align="right"  width="20%" min-width="100px" alt="hoopR logo"/></a>
@@ -122,6 +123,15 @@ There is also a printable [**`hoopR` cheat sheet (PDF)**](https://sportsdatavers
 
 
 ## **Breaking Changes**
+
+hoopR 3.2.0 changes what some 3.1.0 code gets back:
+
+- `load_nba_stats_player_game_logs()` returns player rows; the team rows are in `load_nba_stats_team_game_logs()`.
+- The NBA Stats wrappers default `season` to the previous season; pass `season` for the current one.
+- `nba_rapm()` fits a different model (an intercept, `standardize = FALSE`), so earlier output is not comparable.
+- `update_mbb_db()`, `update_nba_db()` and `update_nba_stats_db()` default `dbdir` to `tools::R_user_dir("hoopR", "data")`; pass `dbdir = "."` for the old location.
+- `load_mbb_pbp()` / `load_nba_pbp()` return the play `id` as exact character.
+- ESPN `game_id` / `athlete_id` in the roster and crosswalk loaders, and the NBA Stats ids in `load_nba_*_crosswalk()`, are integer.
 
 [**Full News on Releases**](https://hoopR.sportsdataverse.org/news/index.html)
 
