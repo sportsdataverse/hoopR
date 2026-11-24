@@ -230,7 +230,7 @@ A \code{hoopR_data} tibble with one row per play-by-play event.
   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
   score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). Absent from seasons published before the repair. \cr
-  athlete_name_1 \tab character \tab Display name of the primary athlete (the shooter). \cr
+  athlete_name_1 \tab character \tab Display name of the primary athlete (e.g. the shooter). \cr
   athlete_name_2 \tab character \tab Display name of the secondary athlete, when present. \cr
   athlete_name_3 \tab character \tab Name of the tertiary athlete involved in the play. \cr
   type_abbreviation \tab character \tab Type abbreviation. \cr

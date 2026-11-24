@@ -149,7 +149,7 @@ A \code{hoopR_data} tibble with one row per player-team-season.
   box_obpm \tab numeric \tab Box-score offensive box plus-minus. \cr
   box_dbpm \tab numeric \tab Box-score defensive box plus-minus. \cr
   box_bpm \tab numeric \tab Box-score net box plus-minus (box_obpm + box_dbpm). \cr
-  qualified \tab logical \tab TRUE when n == window_n (a full window, not a short career). Filter on it before ranking or comparing players. \cr
+  qualified \tab logical \tab TRUE when the player logged at least 300 minutes for the team that season; filter on it before ranking or comparing box_bpm values. \cr
 }}
 \if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_mbb_player_value")} for the column table.}
 

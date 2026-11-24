@@ -218,10 +218,10 @@ A \code{hoopR_data} tibble with one row per play-by-play event.
   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
   score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). Absent from seasons published before the repair. \cr
-  athlete_name_1 \tab character \tab Display name of the primary athlete (the shooter). \cr
+  athlete_name_1 \tab character \tab Display name of the primary athlete (e.g. the shooter). \cr
   athlete_name_2 \tab character \tab Display name of the secondary athlete, when present. \cr
   athlete_name_3 \tab character \tab Display name of the third athlete in the ESPN play participants, when present. \cr
-  pregame_home_prob \tab numeric \tab Model's pre-game win probability for the home team (0-1), constant within a game. Present only on assets published with the WP model (2003, 2006-07 to 2019-20 and the 2021+ republishes); absent on other seasons. \cr
+  pregame_home_prob \tab numeric \tab Model's pre-game win probability for the home team (0-1), constant within a game. Present only on the seasons published with the win-probability model; absent on the others. \cr
   home_win_prob \tab numeric \tab Model's in-game win probability for the home team (0-1) after the play. \cr
 }}
 \if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_mbb_pbp")} for the column table.}
@@ -246,7 +246,7 @@ A \code{hoopR_data} tibble with one row per team-game.
   team_color \tab character \tab Team primary color (hex without leading '#'). \cr
   team_alternate_color \tab character \tab Team alternate color (hex without leading '#'). \cr
   team_logo \tab character \tab Team logo image URL. \cr
-  team_home_away \tab character \tab Team home away. \cr
+  team_home_away \tab character \tab Whether the team is the home or the away side ('home' or 'away'). \cr
   team_score \tab integer \tab Team's score / final score. \cr
   team_winner \tab logical \tab TRUE if the team won this game. \cr
   assists \tab integer \tab Total assists. \cr
@@ -276,7 +276,7 @@ A \code{hoopR_data} tibble with one row per team-game.
   turnover_points \tab character \tab Turnover points. \cr
   turnovers \tab integer \tab Total turnovers. \cr
   opponent_team_id \tab integer \tab Unique identifier for the opponent team. \cr
-  opponent_team_uid \tab character \tab Opponent team uid. \cr
+  opponent_team_uid \tab character \tab ESPN universal identifier of the opponent team. \cr
   opponent_team_slug \tab character \tab Opponent team slug. \cr
   opponent_team_location \tab character \tab Opponent team city / location. \cr
   opponent_team_name \tab character \tab Opponent team display name. \cr
@@ -407,7 +407,7 @@ A \code{hoopR_data} tibble with one row per game.
   home_conference_id \tab integer \tab Unique identifier for home conference. \cr
   home_score \tab integer \tab Home team score at the time of the play. \cr
   home_winner \tab logical \tab Home team's winner. \cr
-  home_current_rank \tab numeric \tab Poll ranking ESPN listed for the home team at game time (unranked teams carry a sentinel value). \cr
+  home_current_rank \tab numeric \tab Poll ranking ESPN listed for the home team at game time; unranked teams carry 99. \cr
   home_linescores \tab character \tab Period-by-period scores for the home team as a delimited string from ESPN's schedule feed. \cr
   home_records \tab character \tab Record strings (overall and split records) for the home team from ESPN's schedule feed. \cr
   away_id \tab integer \tab Unique identifier for away. \cr
@@ -425,7 +425,7 @@ A \code{hoopR_data} tibble with one row per game.
   away_conference_id \tab integer \tab Unique identifier for away conference. \cr
   away_score \tab integer \tab Away team score at the time of the play. \cr
   away_winner \tab logical \tab Away team's winner. \cr
-  away_current_rank \tab numeric \tab Poll ranking ESPN listed for the away team at game time (unranked teams carry a sentinel value). \cr
+  away_current_rank \tab numeric \tab Poll ranking ESPN listed for the away team at game time; unranked teams carry 99. \cr
   away_linescores \tab character \tab Period-by-period scores for the away team as a delimited string from ESPN's schedule feed. \cr
   away_records \tab character \tab Record strings (overall and split records) for the away team from ESPN's schedule feed. \cr
   game_id \tab integer \tab Unique game identifier. \cr
