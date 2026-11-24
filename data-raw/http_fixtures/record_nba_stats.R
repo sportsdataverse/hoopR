@@ -36,6 +36,11 @@ rate_hits   <- env_num("STATS_RATE_HITS", 1)
 rate_window <- env_num("STATS_RATE_WINDOW", 3)
 rate_max    <- env_num("STATS_RATE_MAX", 150)
 timeout_s   <- env_num("STATS_TIMEOUT", 20)
+for (v in c("STATS_RATE_HITS", "STATS_RATE_WINDOW", "STATS_RATE_MAX", "STATS_TIMEOUT")) {
+  val <- c(STATS_RATE_HITS = rate_hits, STATS_RATE_WINDOW = rate_window,
+           STATS_RATE_MAX = rate_max, STATS_TIMEOUT = timeout_s)[[v]]
+  if (!is.finite(val) || val <= 0) stop(v, " must be a positive number, not ", val, call. = FALSE)
+}
 
 fix_dir   <- file.path("tests", "testthat", "fixtures", "nba_stats")
 args      <- commandArgs(trailingOnly = TRUE)

@@ -16,9 +16,16 @@ out_file <- file.path("tests", "testthat", "test-nba_stats_offline.R")
 max_cols <- 12L
 index <- jsonlite::read_json(file.path(fix_dir, "index.json"))
 
+# URLs a call asked for that are not recorded. The wrappers swallow request
+# errors, so a miss is tracked here and generation stops before the test file is
+# rewritten (an incomplete recording would otherwise look like an empty result).
+missed <- character()
 replay <- function(req) {
   hit <- index[[req$url]]
-  if (is.null(hit)) return(httr2::response(status_code = 404L, url = req$url))
+  if (is.null(hit)) {
+    missed <<- c(missed, req$url)
+    return(httr2::response(status_code = 404L, url = req$url))
+  }
   path <- file.path(fix_dir, hit$file)
   httr2::response(
     status_code = hit$status, url = req$url, headers = list(`Content-Type` = hit$type),
@@ -55,6 +62,10 @@ for (call in calls) {
     suppressMessages(suppressWarnings(eval(parse(text = call)))),
     error = function(e) e
   ))
+  if (length(missed)) {
+    stop("Not recorded (re-run record_nba_stats.R): ", call, " asked for ",
+         paste(unique(missed), collapse = ", "), call. = FALSE)
+  }
   head <- c(
     sprintf("test_that(%s, {", dq(paste(gsub('"', "'", call), "parses a recorded stats.nba.com response"))),
     "  skip_on_cran()",
