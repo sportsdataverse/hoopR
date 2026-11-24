@@ -134,7 +134,7 @@ nba_functionname <- function(game_id = "0022200021", ...) {
 
   df_list <- list()  # Always initialize before tryCatch
 
-  tryCatch(
+  .try_catch(  # not tryCatch(): see "Warning handlers" below
     expr = {
       resp <- request_with_proxy(url = full_url, params = params, ...)
       # Parse response...
@@ -198,7 +198,7 @@ nba_func <- function(...) {
 
   df_list <- list()   # <-- MANDATORY. Not inside tryCatch.
 
-  tryCatch(
+  .try_catch(
     expr = {
       resp    <- request_with_proxy(url = endpoint, params = params, ...)
       df_list <- nba_stats_map_result_sets(resp)
@@ -217,6 +217,10 @@ nba_func <- function(...) {
 ```
 
 This rule applies to **every return variable name**, not just `df_list`: `plays_df`, `pbp`, `standings`, `teams`, `team_box_score`, `athlete_roster_df`, `games`, `conferences`, `resp`, `data`, etc. Initialize to the appropriate empty value — `list()` for named-list returns, `NULL` for single-object returns, `data.frame()` for tibble returns.
+
+### Warning handlers
+
+Use `.try_catch()` (in `R/utils.R`), not `tryCatch()`, when the block has a `warning =` handler. In `tryCatch()` a warning handler unwinds the call: one harmless parse warning abandons the block and the wrapper returns its empty default, silently when the handler is `function(w) {}`. `.try_catch()` takes the same arguments but runs `warning` as a calling handler, so the warning is reported (or dropped) and the parse carries on. The ESPN wrappers were moved to it in 3.2.0; many NBA Stats, CBBD, KenPom and other wrappers still use `tryCatch(warning =)` and are a follow-up.
 
 ### Officiating errors are classed conditions (sanctioned exception)
 
