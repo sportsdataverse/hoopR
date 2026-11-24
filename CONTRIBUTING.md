@@ -41,7 +41,7 @@ Thank you for your interest in contributing to hoopR! This guide will help you g
    - Use `nba_endpoint()` + `request_with_proxy()` for HTTP
    - Parse response with `purrr::pluck()` -> `data.frame()` -> `janitor::clean_names()` -> `make_hoopR_data()`
    - Use `%||%` (rlang) for null safety on every extracted field
-2. **Add roxygen docs** with `@export`, `@family`, `@return` (including column markdown tables), and `@details` example
+2. **Add roxygen docs** with `@export`, `@family`, `@eval .returns_rd("fn")` and a `@details` example. Add one row per returned column to `data-raw/return_columns.csv`, then run `Rscript data-raw/return_columns.R`
 3. **Create a test** in `tests/testthat/` with `skip_on_cran()`, `skip_on_ci()`, `skip_nba_stats_test()` guards
 4. **Update NEWS.md** with a description of the new function
 5. Run `devtools::document()` to update NAMESPACE
@@ -93,10 +93,10 @@ Every exported function needs:
 - `@title` with bold markdown description
 - `@author` tag
 - `@param` for every parameter (including `...`)
-- `@return` with markdown tables documenting column names and types
+- `@return` as `#' @eval .returns_rd("fn")` for a data-returning function: the column tables are built from `data-raw/return_columns.csv` (one row per returned column), never hand-written. A new data-returning function needs its CSV rows, then `Rscript data-raw/return_columns.R` and `devtools::document()`. A function that returns something else (for example `login()`) keeps a hand-written `@return`
 - `@importFrom` for specific function imports
 - `@export`
-- `@family` for grouping in pkgdown (e.g., `"NBA PBP Functions"`, `"NBA Boxscore V3 Functions"`)
+- `@family` for grouping in pkgdown (e.g., `"NBA PBP Functions"`, `"NBA Boxscore V3 Functions"`), except in the 22 large families indexed in `R/families.R` (ESPN MBB/NBA and most international families), which use `@concept <Family>` plus a `@seealso` line pointing to the family index page
 - `@details` with a runnable example code block
 
 ### Code Style

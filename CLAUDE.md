@@ -22,7 +22,7 @@
 
 ## Package Overview
 
-hoopR is an R package providing clean, tidy men's basketball (NBA + Men's College Basketball) play-by-play and box score data. It wraps the NBA Stats API (`stats.nba.com`), the ESPN API, and KenPom, exporting 1,300+ functions. Primary source families: `nba_*()` (NBA Stats API), `espn_nba_*()` / `espn_mbb_*()` (ESPN), `kp_*()` (KenPom), `cbbd_*()` (CollegeBasketballData), `bref_*()` (Basketball Reference), `torvik_*()` (Bart Torvik), `realgm_*()` (RealGM), `fox_*()` (Fox Sports), `nbagl_*()` (NBA G-League), `ncaa_mbb_*()` (NCAA), plus `load_nba_*()` / `load_mbb_*()` / `load_ncaa_mbb_*()` / `load_nba_stats_*()` bulk loaders that pull pre-built data from the sibling `hoopR-data` / `sportsdataverse-data` release repos.
+hoopR is an R package providing clean, tidy men's basketball (NBA + Men's College Basketball) play-by-play and box score data. It wraps the NBA Stats API (`stats.nba.com`), the ESPN API, and KenPom, exporting 1,300+ functions. Primary source families: `nba_*()` (NBA Stats API), `espn_nba_*()` / `espn_mbb_*()` (ESPN), `kp_*()` (KenPom), `cbbd_*()` (CollegeBasketballData), `bref_*()` (Basketball Reference), `torvik_*()` (Bart Torvik), `realgm_*()` (RealGM), `fox_*()` (Fox Sports), `nbagl_*()` (NBA G-League), `ncaa_mbb_*()` (NCAA), `euroleague_*()` (EuroLeague/EuroCup), `nba_l2m*()` / `nba_referee_assignments()` (official.nba.com), the 23 international league families (`fiba_*()`, `acb_*()`, `vtb_*()`, `nbl_*()`, `kbl_*()`, ... and their per-competition aliases; see `R/families.R` and the international-basketball-leagues article), plus `load_nba_*()` / `load_mbb_*()` / `load_ncaa_mbb_*()` / `load_nba_stats_*()` bulk loaders that pull pre-built data from the sibling `hoopR-data` / `sportsdataverse-data` release repos.
 
 Sibling repos in the family: `hoopR-data` (NBA + MBB build/aggregate/publish), `hoopR-mbb-raw` / `hoopR-mbb-data`, `hoopR-nba-raw` / `hoopR-nba-data`, and `hoopR-nba-stats-raw` / `hoopR-nba-stats-data`.
 
@@ -78,7 +78,7 @@ R/                    # All package source code
   espn_*.R            # ESPN API wrappers
   kp_*.R              # KenPom scrapers
   nbagl_*.R           # NBA G-League API wrappers
-tests/testthat/       # Test files (150+)
+tests/testthat/       # Test files (480+)
   helper-skip.R       # skip_nba_stats_test(), skip_espn_test(), skip_ncaa_mbb_test(), etc.
 man/                  # Auto-generated roxygen docs (DO NOT EDIT)
 data/                 # Package datasets
@@ -134,7 +134,7 @@ nba_functionname <- function(game_id = "0022200021", ...) {
 
   df_list <- list()  # Always initialize before tryCatch
 
-  tryCatch(
+  .try_catch(  # not tryCatch(): see "Warning handlers" below
     expr = {
       resp <- request_with_proxy(url = full_url, params = params, ...)
       # Parse response...
@@ -198,7 +198,7 @@ nba_func <- function(...) {
 
   df_list <- list()   # <-- MANDATORY. Not inside tryCatch.
 
-  tryCatch(
+  .try_catch(
     expr = {
       resp    <- request_with_proxy(url = endpoint, params = params, ...)
       df_list <- nba_stats_map_result_sets(resp)
@@ -217,6 +217,10 @@ nba_func <- function(...) {
 ```
 
 This rule applies to **every return variable name**, not just `df_list`: `plays_df`, `pbp`, `standings`, `teams`, `team_box_score`, `athlete_roster_df`, `games`, `conferences`, `resp`, `data`, etc. Initialize to the appropriate empty value — `list()` for named-list returns, `NULL` for single-object returns, `data.frame()` for tibble returns.
+
+### Warning handlers
+
+Use `.try_catch()` (in `R/utils.R`), not `tryCatch()`, when the block has a `warning =` handler. In `tryCatch()` a warning handler unwinds the call: one harmless parse warning abandons the block and the wrapper returns its empty default, silently when the handler is `function(w) {}`. `.try_catch()` takes the same arguments but runs `warning` as a calling handler, so the warning is reported (or dropped) and the parse carries on. The ESPN wrappers were moved to it in 3.2.0; many NBA Stats, CBBD, KenPom and other wrappers still use `tryCatch(warning =)` and are a follow-up.
 
 ### Officiating errors are classed conditions (sanctioned exception)
 
@@ -296,7 +300,7 @@ KenPom functions use separate `httr2`-based helpers:
 - `.kp_get_page(jar, url)` -- fetches a page as parsed HTML
 - `.kp_request(url, jar)` -- builds an `httr2` request with KenPom headers
 
-`nba_endpoint()` builds URLs via `glue::glue('https://stats.nba.com/stats/{endpoint}')` -- it does NOT validate against its internal endpoint list.
+`nba_endpoint()` builds URLs via `paste0("https://stats.nba.com/stats/", endpoint)` -- it does NOT validate against its internal endpoint list.
 
 ### Messaging Layer
 
@@ -535,8 +539,8 @@ shared internal engine in `R/crosswalk_basketball.R`.
 - V3 endpoints return different structures per endpoint -- always verify with the nba_api Python parsers in the companion repo.
 - `data.frame(list_of_items)` can produce unexpected column types when the API returns mixed `NULL`/value fields -- use `%||%` defaults.
 - The `@family` tag adds a "See also" list of every family member to every member, so it grows as n^2. The 22 large families in `R/families.R` (ESPN MBB/NBA and most international families) use `#' @concept <Family>` plus `#' @seealso [family_<slug>] lists every function in this family.` instead; their index page is built from the `@concept` tags by `.family_index()` at `devtools::document()` time. A new function in one of those families takes those two lines, not `@family`. Small families keep `@family`.
-- **Return columns live in `data-raw/return_columns.csv`, not in roxygen.** That CSV (one row per returned column: `fn`, `component`, `col_name`, `type`, `description`) is the source of the `return_columns` dataset (`Rscript data-raw/return_columns.R` rebuilds `data/return_columns.rda`) and of every `@return` column table. A function's `@return` is `#' @eval .returns_rd("fn")` (helper in `R/families.R`): the NBA/MBB families render their tables inline from the CSV at `devtools::document()` time; the others use `.returns_rd("fn", inline = FALSE, unit = "...")`, a pointer to the dataset and the return-columns article. Never hand-write a column table. A new function needs its CSV rows (then the rda rebuild and `document()`); `test-return_columns.R` fails for an exported data-returning function with neither a table nor rows. Notes a table cannot carry go in a second hand-written `@return` paragraph after the `@eval` line.
-- `DESCRIPTION` sets `ByteCompile: false` (the byte code was 4.3 MB of the installed size; the JIT compiles on first call) and `LazyDataCompression: xz`. Keep both while the size budget is tight.
+- **Return columns live in `data-raw/return_columns.csv`, not in roxygen.** That CSV (one row per returned column: `fn`, `component`, `col_name`, `type`, `description`) is the source of the `return_columns` dataset (`Rscript data-raw/return_columns.R` rebuilds `data/return_columns.rda`) and of every `@return` column table. A function's `@return` is `#' @eval .returns_rd("fn")` (helper in `R/families.R`): the NBA/MBB families render their tables inline from the CSV at `devtools::document()` time; the others use `.returns_rd("fn", inline = FALSE, unit = "...")`, a pointer to the dataset and the return-columns article. Never hand-write a column table. A new function needs its CSV rows (then the rda rebuild and `document()`); `test-return_columns.R` fails for an exported data-returning function with neither a table nor rows. Notes a table cannot carry go in a second hand-written `@return` paragraph after the `@eval` line. A function that returns something other than data (for example `login()`) has no CSV rows (`.returns_rd()` stops without them) and keeps a hand-written `@return`.
+- `DESCRIPTION` sets `ByteCompile: false` (the byte code was 2.5 MB of the installed size: `R/` is 4.2 MB byte-compiled, 1.7 MB without; the JIT compiles on first call) and `LazyDataCompression: xz`. Keep both while the size budget is tight.
 - V3-style leader endpoints (dunkscoreleaders, gravityleaders) return all values as mixed types -- coerce everything to `as.character()` with `%||% NA_character_` before building data frames.
 - IST Standings has dynamic game columns (gameId1, gameId2, etc.) -- tests should use `expect_true(all(core_cols %in% colnames()))` instead of exact match.
 - ESPN API columns change over time -- use `expect_in()` for subset validation in tests.

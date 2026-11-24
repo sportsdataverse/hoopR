@@ -66,7 +66,7 @@ Example format:
 
 - [ ] Code follows tidyverse style (`snake_case`, 2-space indent)
 - [ ] `devtools::document()` has been run (NAMESPACE updated)
-- [ ] New/changed functions have roxygen docs with `@export`, `@family`, `@return` tables
+- [ ] New/changed functions have roxygen docs with `@export` and `@family` (or `@concept` in the `R/families.R` families). Data-returning functions use `@eval .returns_rd()` backed by `data-raw/return_columns.csv` rows; functions that return something else (for example `login()`) keep a hand-written `@return`
 - [ ] Tests added/updated in `tests/testthat/`
 - [ ] `devtools::check()` passes with no errors or warnings
 - [ ] NEWS.md updated (if user-facing change)

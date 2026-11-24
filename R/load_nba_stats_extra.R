@@ -23,9 +23,10 @@
 #
 # A single absent asset inside a published season (no playoffs file yet) is
 # skipped silently; a season with no asset at all is warned about. A failed
-# read that is not a 404 still warns, as in rds_from_url().
+# read that is not a 404 still warns, as in rds_from_url(). `id_cols` are cast
+# to integer with .ids_as_integer() in each file before the bind.
 .load_release_assets <- function(fn, tag, assets, seasons, first, last, default = FALSE,
-                                 offset = 1L, ext = "parquet",
+                                 offset = 1L, ext = "parquet", id_cols = NULL,
                                  dbConnection = NULL, tablename = NULL, ...) {
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
@@ -59,7 +60,7 @@
     }
     for (k in setdiff(names(a$stamps), names(df))) data.table::set(df, j = k, value = a$stamps[[k]])
     if (!"season" %in% names(df)) data.table::set(df, j = "season", value = as.integer(s + offset))
-    df
+    .ids_as_integer(df, id_cols)
   }
 
   p <- NULL
@@ -555,8 +556,8 @@ NULL
 #'   per distance bucket (1-ft bins from 0 to 35 ft, then 35-50 and 50-95 ft;
 #'   `x_lo` inclusive, `x_hi` exclusive) with its `attempts`, `successes`
 #'   (makes) and `rate`; an empty bucket has no row. Regular-season and
-#'   playoff shots only. `entity_id` / `team_id` are stats.nba.com ids as
-#'   text; `down` and `epa_per_att` are always `NA` (the football columns of
+#'   playoff shots only. `entity_id` / `team_id` are integer stats.nba.com ids,
+#'   as in the other NBA Stats loaders; `down` and `epa_per_att` are always `NA` (the football columns of
 #'   the cross-league contract).
 #' @param seasons A vector of 4-digit years -- the season's **START** year
 #'   (e.g. `2024` for the 2024-25 season). Published coverage starts at 1996
@@ -582,6 +583,7 @@ load_nba_stats_metric_curves <- function(seasons = most_recent_nba_stats_season(
                        list(list(stem = "metric_curves", stamps = list())), seasons,
                        first = 1996, last = most_recent_nba_stats_season(),
                        default = missing(seasons), ext = "rds",
+                       id_cols = c("entity_id", "team_id"),
                        dbConnection = dbConnection, tablename = tablename, ...)
 }
 
@@ -627,5 +629,6 @@ load_nba_stats_rolling_windows <- function(seasons = most_recent_nba_stats_seaso
                        list(list(stem = "rolling_windows", stamps = list())), seasons,
                        first = 1996, last = most_recent_nba_stats_season(),
                        default = missing(seasons), ext = "rds",
+                       id_cols = c("entity_id", "team_id"),
                        dbConnection = dbConnection, tablename = tablename, ...)
 }

@@ -1536,7 +1536,7 @@ espn_mbb_standings <- function(year = most_recent_mbb_season()) {
       standings_df <- raw_standings[["entries"]][["stats"]]
 
       standings_data <-
-        data.table::rbindlist(standings_df, fill = TRUE, idcol = T)
+        data.table::rbindlist(standings_df, fill = TRUE, idcol = TRUE)
 
       # Use the following code to replace NA's in the dataframe with the correct corresponding values and removing all unnecessary columns
 

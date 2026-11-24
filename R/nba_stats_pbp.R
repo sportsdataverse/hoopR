@@ -1191,7 +1191,7 @@ nba_pbp <- function(
             "time_quarter",
             into = c("minute_remaining_quarter", "seconds_remaining_quarter"),
             sep = "\\:",
-            remove = F
+            remove = FALSE
           ) %>%
           dplyr::mutate(
             minute_remaining_quarter = as.numeric(.data$minute_remaining_quarter),

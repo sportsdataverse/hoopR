@@ -40,6 +40,29 @@
 
 # **hoopR 3.2.0**
 
+### **Breaking changes**
+
+These change what existing code gets back from 3.1.0; each is described in full in
+the sections below.
+
+* `load_nba_stats_player_game_logs()` returns player rows; the team rows it used to
+  return are in `load_nba_stats_team_game_logs()`. Drop and rebuild an
+  `update_nba_stats_db()` table built before this release.
+* The NBA Stats wrappers default `season` to the previous season (97 arguments), not
+  the current one. Pass `season` to get the current season.
+* `nba_rapm()` fits a different model (an intercept, `standardize = FALSE`); its values
+  and player order are not comparable with earlier output.
+* `update_mbb_db()`, `update_nba_db()` and `update_nba_stats_db()` default `dbdir` to
+  `tools::R_user_dir("hoopR", "data")`, not the working directory. Pass `dbdir = "."`
+  to keep the old location.
+* `load_mbb_pbp()` and `load_nba_pbp()` return the play `id` as exact character.
+  Database tables built before hold rounded numeric ids; rebuild them.
+* Join ids are integer: ESPN `game_id` / `athlete_id` in the roster and crosswalk
+  loaders, and the NBA Stats ids in `load_nba_*_crosswalk()`. The live crosswalk
+  builders (`nba_team_crosswalk()` and friends) still return character NBA Stats ids.
+* `nba_schedule()` reads each league's own CDN: `league_id` `"00"` (NBA, the default),
+  `"10"` (WNBA) and `"20"` (G League). Any other `league_id` is an argument error.
+
 ### **International basketball**
 
 * New wrappers mirroring sportsdataverse-py's international basketball families (same
@@ -484,6 +507,12 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   needed a cast. `nba_game_id` keeps its leading zeros (`"0022300001"`) as
   character. The live builders (`nba_team_crosswalk()` and friends) still
   return character NBA Stats ids.
+* `load_nba_stats_metric_curves()` and `load_nba_stats_rolling_windows()` return
+  `entity_id` and `team_id` as integer stats.nba.com ids, as sportsdataverse-py
+  does; the release files publish them as character, so they did not join the
+  other NBA Stats loaders without a cast. Both loaders are new in 3.2.0. The
+  shared id cast now turns a value that is not a whole number (`"1.5"`) into
+  `NA` with a warning instead of truncating it.
 * Every `load_*()` release loader's help page names its release tag on
   sportsdataverse-data in a Source section, with the repository that publishes
   it.
@@ -517,6 +546,8 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
 
 ### **Dependencies**
 
+* ggplot2 is no longer in Suggests: no function, example or test uses it. It moved to
+  `Config/Needs/website`, for the articles that plot.
 * `update_mbb_db()` / `update_nba_db()` read the stored game ids with a plain
   DBI query: on an existing table they called `dplyr::tbl()`, which needs
   dbplyr, a package hoopR does not declare.
@@ -560,7 +591,9 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   page; the other 647 functions (the international families, `cbbd_*`, `fox_*`, `kp_*`,
   `torvik_*`, `realgm_*`, `ncaa_mbb_*`, `nbagl_*`, `bref_*`, `euroleague_*`) now say what
   one row is and point to the dataset and the article. Together with `ByteCompile: false`
-  this takes the installed size from 10.4 MB to 6.3 MB.
+  this brings the installed size to about 6.5 MB (R 1.7 MB, help 3.9 MB). An install
+  that keeps the source references (`R_KEEP_PKG_SOURCE=yes`, as on GitHub Actions) is
+  about 8.4 MB, because `R/` then holds them too (3.6 MB).
 * The `mbb_schedule_crosswalk()` and `mbb_player_crosswalk()` examples run only in
   interactive sessions: each builds a whole season from several sources (the player
   crosswalk fetches every team's roster) and took 1.5 to 2.5 minutes. The

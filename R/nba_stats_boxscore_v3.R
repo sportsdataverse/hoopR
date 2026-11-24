@@ -72,7 +72,7 @@ nba_boxscoretraditionalv3 <- function(
 
       home_team_totals <- home_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       home_team_starters <- home_team_data %>%
         purrr::pluck("starters") %>%
@@ -84,7 +84,7 @@ nba_boxscoretraditionalv3 <- function(
 
       home_team_players <- home_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       home_team_totals <- ids_df %>%
@@ -125,7 +125,7 @@ nba_boxscoretraditionalv3 <- function(
 
       away_team_totals <- away_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       away_team_starters <- away_team_data %>%
         purrr::pluck("starters") %>%
@@ -137,7 +137,7 @@ nba_boxscoretraditionalv3 <- function(
 
       away_team_players <- away_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       away_team_totals <- ids_df %>%
@@ -268,11 +268,11 @@ nba_boxscoreadvancedv3 <- function(
 
       home_team_totals <- home_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       home_team_players <- home_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       home_team_totals <- ids_df %>%
@@ -301,11 +301,11 @@ nba_boxscoreadvancedv3 <- function(
 
       away_team_totals <- away_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       away_team_players <- away_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       away_team_totals <- ids_df %>%
@@ -417,11 +417,11 @@ nba_boxscoremiscv3 <- function(
 
       home_team_totals <- home_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       home_team_players <- home_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       home_team_totals <- ids_df %>%
@@ -450,11 +450,11 @@ nba_boxscoremiscv3 <- function(
 
       away_team_totals <- away_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       away_team_players <- away_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       away_team_totals <- ids_df %>%
@@ -565,11 +565,11 @@ nba_boxscorescoringv3 <- function(
 
       home_team_totals <- home_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       home_team_players <- home_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       home_team_totals <- ids_df %>%
@@ -598,11 +598,11 @@ nba_boxscorescoringv3 <- function(
 
       away_team_totals <- away_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       away_team_players <- away_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       away_team_totals <- ids_df %>%
@@ -713,11 +713,11 @@ nba_boxscoreusagev3 <- function(
 
       home_team_totals <- home_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       home_team_players <- home_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       home_team_totals <- ids_df %>%
@@ -746,11 +746,11 @@ nba_boxscoreusagev3 <- function(
 
       away_team_totals <- away_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       away_team_players <- away_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       away_team_totals <- ids_df %>%
@@ -861,11 +861,11 @@ nba_boxscorefourfactorsv3 <- function(
 
       home_team_totals <- home_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       home_team_players <- home_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       home_team_totals <- ids_df %>%
@@ -894,11 +894,11 @@ nba_boxscorefourfactorsv3 <- function(
 
       away_team_totals <- away_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       away_team_players <- away_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       away_team_totals <- ids_df %>%
@@ -1009,11 +1009,11 @@ nba_boxscoreplayertrackv3 <- function(
 
       home_team_totals <- home_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       home_team_players <- home_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       home_team_totals <- ids_df %>%
@@ -1042,11 +1042,11 @@ nba_boxscoreplayertrackv3 <- function(
 
       away_team_totals <- away_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       away_team_players <- away_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       away_team_totals <- ids_df %>%
@@ -1157,7 +1157,7 @@ nba_boxscorematchupsv3 <- function(
 
       home_team_players <- home_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("matchups", names_sep = "_") %>%
         tidyr::unnest("matchups_statistics")
 
@@ -1181,7 +1181,7 @@ nba_boxscorematchupsv3 <- function(
 
       away_team_players <- away_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("matchups", names_sep = "_") %>%
         tidyr::unnest("matchups_statistics")
 
@@ -1283,11 +1283,11 @@ nba_boxscorehustlev2 <- function(
 
       home_team_totals <- home_team_hustle %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       home_team_players <- home_team_hustle %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       home_team_totals <- ids_df %>%
@@ -1315,11 +1315,11 @@ nba_boxscorehustlev2 <- function(
 
       away_team_totals <- away_team_hustle %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       away_team_players <- away_team_hustle %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       away_team_totals <- ids_df %>%
@@ -1430,11 +1430,11 @@ nba_boxscoredefensivev2 <- function(
 
       home_team_totals <- home_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       home_team_players <- home_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       home_team_totals <- ids_df %>%
@@ -1463,11 +1463,11 @@ nba_boxscoredefensivev2 <- function(
 
       away_team_totals <- away_team_data %>%
         purrr::pluck("statistics") %>%
-        data.frame(stringsAsFactors = F)
+        data.frame(stringsAsFactors = FALSE)
 
       away_team_players <- away_team_data %>%
         purrr::pluck("players") %>%
-        data.frame(stringsAsFactors = F) %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         tidyr::unnest("statistics")
 
       away_team_totals <- ids_df %>%
@@ -1557,7 +1557,7 @@ nba_gamerotation <- function(
 
       df_list <- purrr::map(seq_along(resp$resultSets$name), function(x) {
         data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
+          data.frame(stringsAsFactors = FALSE) %>%
           as_tibble()
 
         json_names <- resp$resultSets$headers[[x]]

@@ -637,7 +637,7 @@ nba_leaguedashplayerptshot <- function(
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = F) %>%
+          data.frame(stringsAsFactors = FALSE) %>%
           as_tibble()
 
         json_names <- resp$resultSets$headers[[x]]
@@ -981,7 +981,7 @@ nba_leaguedashplayershotlocations <- function(
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet %>%
-          data.frame(stringsAsFactors = F) %>%
+          data.frame(stringsAsFactors = FALSE) %>%
           dplyr::as_tibble()
         columnsToSkip <- resp$resultSets$headers$columnsToSkip[[1]]
         columnSpan <- resp$resultSets$headers$columnSpan[[1]]
@@ -2000,7 +2000,7 @@ nba_leaguedashteamshotlocations <- function(
 
       df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet %>%
-          data.frame(stringsAsFactors = F) %>%
+          data.frame(stringsAsFactors = FALSE) %>%
           dplyr::as_tibble()
         columnsToSkip <- resp$resultSets$headers$columnsToSkip[[1]]
         columnSpan <- resp$resultSets$headers$columnSpan[[1]]

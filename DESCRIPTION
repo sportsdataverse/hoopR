@@ -61,7 +61,6 @@ Suggests:
     curl,
     DBI,
     digest (>= 0.6.0),
-    ggplot2,
     glmnet,
     Matrix,
     RSQLite,
@@ -70,7 +69,7 @@ Suggests:
     testthat (>= 3.1.9),
     usethis (>= 1.6.0)
 ByteCompile: false
-Config/Needs/website: DT
+Config/Needs/website: DT, ggplot2
 Config/roxygen2/version: 8.1.0
 Encoding: UTF-8
 LazyData: true

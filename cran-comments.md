@@ -27,12 +27,23 @@ full list of changes is in NEWS.md. The main additions:
   feeds, Torvik, KenPom, `nba_gamerotation()` and `nba_pbp()` on-court players.
   `build_mbb_db()` and `build_nba_db()` now stop, leaving the existing table
   as it was, when the games index cannot be read.
-* The NBA crosswalk loaders return the NBA Stats team and player ids as
-  integer, like the `load_nba_stats_*()` loaders, and every release
-  loader's help page links the release tag it reads.
+* The NBA crosswalk loaders, and the new `load_nba_stats_metric_curves()`
+  and `load_nba_stats_rolling_windows()`, return the NBA Stats team and
+  player ids as integer, like the other `load_nba_stats_*()` loaders, and
+  every release loader's help page links the release tag it reads.
+* Changes that alter what 3.1.0 code gets back (listed under "Breaking
+  changes" in NEWS.md): `load_nba_stats_player_game_logs()` returns player
+  rows (team rows moved to `load_nba_stats_team_game_logs()`); the NBA
+  Stats wrappers default `season` to the previous season; `nba_rapm()`
+  fits a different model; `update_*_db()` default `dbdir` is
+  `tools::R_user_dir("hoopR", "data")`, not the working directory; the
+  pbp loaders return the play `id` as exact character; the roster and
+  crosswalk loaders return integer join ids; `nba_schedule()` accepts only
+  `league_id` `"00"`, `"10"` and `"20"`, each read from its own CDN.
 * Dependencies: Rcpp and RcppParallel (unused; the package has no compiled
   code), magrittr and lubridate are no longer imported; glmnet, Matrix and
-  stringdist moved to Suggests; withr and xml2 are now imported.
+  stringdist moved to Suggests; withr and xml2 are now imported; ggplot2
+  (used by no function, example or test) left Suggests.
 * The package now ships its `inst/CITATION` file, and three datasets:
   `parameter_descriptions` (10 KB), `mbb_team_names` (6 KB) and
   `return_columns` (245 KB, xz): the returned columns of 981 functions.
@@ -44,84 +55,84 @@ full list of changes is in NEWS.md. The main additions:
 
 ## Test environments
 
-* Local Windows 10 x64 (build 19045), R 4.6.0 (ucrt),
+* Local Windows 10 x64 (build 19045), R 4.6.1 (ucrt),
   `R CMD check --as-cran --timings --run-donttest` with the PDF manual, on
-  the tarball built from `git archive` of 0ca5dbda, 2026-11-09, with
+  the tarball built from `git archive` of d83f8e30 (2026-11-24), with
   `_R_CHECK_CRAN_INCOMING_REMOTE_=true` and an empty user `.Renviron` (no
   API keys; NOT_CRAN and every live-test variable unset). The commits after
-  it change only NEWS.md, CLAUDE.md and this file.
-* The same package code (f59b9a52, before the last three example-only
-  commits), `R CMD check --run-donttest --no-tests --no-manual`
-  with every request sent to a dead proxy (no network): every example ran
-  and none errored.
+  d83f8e30 change only this file, which is not in the tarball.
+* The same tarball with R 4.6.0 (ucrt) on the same machine and settings:
+  0 errors, 0 warnings, 1 NOTE, and no `'NULL'` directory. The NOTE is one
+  example over 5 s elapsed: `espn_mbb_coaches` (0.07 s CPU, 8.88 s
+  elapsed), a network wait in a `\donttest{}` example; run again on its
+  own it took 0.54 s. Same test counts.
 * GitHub Actions: R release on Ubuntu, macOS and Windows, R-devel and
-  R oldrel-1 on Ubuntu. All passed on f02a9e62, an earlier commit (before
-  the return-columns and `ByteCompile` changes).
-* R-hub v2, 2026-11-06 (linux, macos, macos-arm64 and windows, all R-devel):
-  all passed. That run was on an earlier commit, 414571b2, not on 0ca5dbda.
-* win-builder (devel and release): to be run before submission.
+  R oldrel-1 on Ubuntu, `--as-cran`: all five passed on d83f8e30 (run 45468935425).
+* R-hub v2 (linux, macos, macos-arm64 and windows, all R-devel), on
+  d83f8e30 (run 45468934877): linux, macos and windows passed. macos-arm64
+  stopped before the check, in the dependency install step; in run
+  45438561596 that step failed because the Suggested package arrow did
+  not compile from source on that R-devel image (`arrow/api.h` not found).
+  hoopR itself was not checked there.
+* win-builder (devel and release): not yet run (win-builder unreachable
+  2026-11-24); to be run before submission.
 
 ## R CMD check results
 
-0 errors | 0 warnings | 2 notes
+0 errors | 0 warnings | 1 note (the R 4.6.1 run)
 
-Tests: 0 failures (184 s in the check; `devtools::test()` with the same
-empty `.Renviron`: 0 failures, 503 skips, 27,528 passes). The PDF and HTML
-manuals build.
+Tests: 0 failures (230 s in the check: 16,367 passes, 1,330 skips; the
+skipped tests need the network, credentials, or files that are not in the
+tarball). The PDF and HTML manuals build, and the CRAN incoming
+feasibility check (with the remote URL checks) is OK. No example took 5 s
+(the slowest, `load_nba_pbp`, took 4.68 s elapsed and 1.2 s of CPU); the
+examples are networked, so their elapsed times vary from run to run.
 
-* checking CRAN incoming feasibility ... NOTE
-
-  ```
-  Found the following (possibly) invalid URLs:
-    URL: https://hoopR.sportsdataverse.org/articles/return-columns.html
-      Status: 404
-  ```
-
-  The new "Return Columns" article; the package website is rebuilt from
-  `main` and the page exists once that deploy runs. Re-check before
-  submission: the NOTE should be gone.
-
-* checking examples ... NOTE
+* checking for non-standard things in the check directory ... NOTE
 
   ```
-  Examples with CPU (user + system) or elapsed time > 5s
-                   user system elapsed
-  atrium_box_score 0.12      0   12.39
+  Found the following files/directories:
+    ''NULL''
   ```
 
-  Network wait only (0.12 s CPU). `atrium_box_score` is the first
-  Sportradar Atrium example the check runs, and the host was slow to
-  answer that first request; run on its own, twice, with
-  `example(..., run.donttest = TRUE)` from the installed build it takes
-  0.1 / 0.2 s CPU and 0.9 / 0.6 s elapsed. Every example whose CPU time
-  came near 5 s in earlier runs on this (loaded) machine now runs only
-  interactively; see Examples below. CRAN does not run `\donttest{}`
-  examples by default.
+  Not from hoopR: R 4.6.1's `--as-cran` example run leaves an empty
+  directory named `'NULL'` on this machine for any package. A one-function
+  package with no file access gets the same NOTE under R 4.6.1
+  `--as-cran`, and none under R 4.6.1 without `--as-cran` or under R 4.6.0
+  `--as-cran`.
 
 * checking installed package size ... INFO
 
   ```
-  installed size is  6.3Mb
+  installed size is  6.6Mb
   sub-directories of 1Mb or more:
     R      1.7Mb
-    help   3.8Mb
+    help   4.0Mb
   ```
 
-  The package documents more than 1,300 exported functions. For this
-  release the installed size went from 11.5 MB to 6.3 MB:
+  hoopR now documents 1,340 exported functions (621 in 3.1.0), most of the
+  new ones the international league families. A plain `R CMD INSTALL` of
+  the tarballs built from the v3.1.0 tag and from d83f8e30 is 4.4 MB for
+  3.1.0 (help 2.4 MB) and 6.5 MB for 3.2.0 (help 3.9 MB). To keep the
+  growth down:
   - The 22 largest families link to one family index page instead of
     listing every other member in each page's "See also" (n^2 links per
-    family): 11.5 MB to 10.4 MB.
+    family).
   - The return-column tables of 647 functions outside the NBA and men's
     college basketball families moved from their help pages to the
-    `return_columns` dataset: help 5.6 MB to 3.8 MB.
-  - `ByteCompile: false` in DESCRIPTION: the byte code roughly doubled the
-    `R/` directory (4.2 MB to 1.7 MB). The functions are mostly HTTP
-    wrappers and parsers whose time goes to the network; R's JIT compiler
-    still compiles each function the first time it is called.
+    `return_columns` dataset.
+  - `ByteCompile: false` in DESCRIPTION: the byte code more than doubled
+    the `R/` directory (1.7 MB without it, 4.2 MB with it). The functions
+    are mostly HTTP wrappers and parsers whose time goes to the network;
+    R's JIT compiler still compiles each function the first time it is
+    called.
 
-  The tarball is 3.75 MB. Five test-fixture folders whose tests skip when
-  the folder is absent are left out of it.
+  An install that keeps source references (`R_KEEP_PKG_SOURCE=yes`, as on
+  GitHub Actions) is 8.4 MB, because `R/` then holds them as well (3.6 MB).
+
+  The tarball is 3.81 MB (3,812,859 bytes; 3.1.0 was 0.88 MB), most of the
+  growth being test fixtures. Five test-fixture folders whose tests skip
+  when the folder is absent are left out of it.
 
 ## Examples
 
@@ -146,10 +157,11 @@ These examples run only in interactive sessions (`@examplesIf interactive()`):
   `load_nba_stats_pbp()`, `load_nba_stats_game_matchups()`, and the NCAA
   MBB pbp, shots, lineups, matchup-stints, possessions and player-box
   loaders).
-* Shared pages: `?load_nba_stats_coaches` documents 17 one-season
+* Shared pages: `?load_nba_stats_coaches` documents 18 one-season
   `load_nba_stats_*()` loaders; `load_nba_stats_coaches()` and
-  `load_nba_stats_draft()` still run (0.5 s each), the other 15 are
-  interactive-only (together they took 9.6 s elapsed).
+  `load_nba_stats_draft()` still run (1.2 s elapsed together), the other
+  16 are interactive-only. On `?load_ncaa_mbb_lineups`, the six large NCAA
+  loaders listed above are interactive-only and the other seven run.
 * Slow parsing (2-5 s of CPU): `torvik_game_schedule()` and
   `torvik_game_stats()` (a whole season each), `espn_mbb_powerindex()`,
   `atrium_player_stats()`, `espn_mbb_game_all()`, `aba_box_players()`,
@@ -170,8 +182,9 @@ Chrome (`chromote`, in Suggests), which CRAN machines do not have.
 All other networked examples are in `\donttest{}`. Without network access
 the ESPN, `load_*()`, CollegeBasketballData, Torvik, G League and Fox
 functions return an empty data frame with a warning. The international
-families raise classed conditions (`hoopR_fetch_error`, `hoopR_asset_fetch`)
-that name the URL; their examples are wrapped in `try()`. Without an API
+families raise `hoopR_asset_fetch`, and EuroLeague and the officiating
+functions `hoopR_fetch_error`, classed conditions that name the URL; their
+examples are wrapped in `try()`. Without an API
 key, as on CRAN, the CollegeBasketballData examples stop at once with a
 message inside `try()`.
 
@@ -201,4 +214,4 @@ site answers automated requests (such as the incoming URL check) with HTTP
 
 There are no reverse dependencies on CRAN
 (`tools::package_dependencies("hoopR", reverse = TRUE, which = "all")`,
-2026-11-09).
+2026-11-24).
