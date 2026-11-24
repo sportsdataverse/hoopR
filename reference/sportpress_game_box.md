@@ -53,7 +53,7 @@ lists every function in this family.
 # \donttest{
   try(sportpress_game_box(competition_id = 25, game_id = 11295))
 #> ── BNXT League Game Box Score from Sportpress ─────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 20:46:44 UTC
+#> ℹ Data updated: 2026-11-24 23:49:54 UTC
 #> # A tibble: 21 × 45
 #>    game_id competition_id team_side competition_team_id team     team_short_name
 #>      <int>          <int> <chr>                   <int> <chr>    <chr>          

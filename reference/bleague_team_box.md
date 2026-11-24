@@ -63,7 +63,7 @@ lists every function in this family.
 # \donttest{
   try(bleague_team_box(schedule_key = 504734))
 #> ── B.LEAGUE team box from b-league.s3.amazonaws.com ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 20:40:34 UTC
+#> ℹ Data updated: 2026-11-24 23:43:30 UTC
 #> # A tibble: 28 × 50
 #>    schedule_key season feed  team_side team_id category period_category
 #>           <int>  <int> <chr> <chr>     <chr>      <int>           <int>

@@ -80,7 +80,7 @@ lists every function in this family.
 # \donttest{
   try(scb_seasons())
 #> ── BBL/DBBL Seasons from the SCB API ──────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 20:46:21 UTC
+#> ℹ Data updated: 2026-11-24 23:49:31 UTC
 #> # A tibble: 61 × 4
 #>    league season season_id is_active
 #>    <chr>   <int>     <int> <lgl>    

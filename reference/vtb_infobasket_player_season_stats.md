@@ -49,7 +49,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_player_season_stats(person_id = 423011))
 #> ── VTB Infobasket Player Season Stats from org.infobasket.su ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 20:47:36 UTC
+#> ℹ Data updated: 2026-11-24 23:50:44 UTC
 #> # A tibble: 4 × 48
 #>   person_id season season_name_ru  season_name_en   team_short_name_ru
 #>       <int>  <int> <chr>           <chr>            <chr>             

@@ -50,7 +50,7 @@ lists every function in this family.
 # \donttest{
   try(ibba_box_score(game_id = 26392, season = 2026))
 #> ── IBBA box score ─────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 20:43:15 UTC
+#> ℹ Data updated: 2026-11-24 23:46:20 UTC
 #> # A tibble: 27 × 33
 #>    player_id jersey team_id game_id board_id season round starter minutes   pts
 #>        <int> <chr>    <int>   <int>    <int>  <int> <int> <lgl>     <int> <int>

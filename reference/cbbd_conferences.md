@@ -44,13 +44,13 @@ article.
 ``` r
 # \donttest{
   try(cbbd_conferences())
-#> ✖ 2026-11-24 20:40:50.793386: Invalid arguments or no conferences data available!
+#> ✖ 2026-11-24 23:43:50.696356: Invalid arguments or no conferences data available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_conferences_history(conference = "B1G"))
-#> ✖ 2026-11-24 20:40:50.820667: Invalid arguments or no conference history available!
+#> ✖ 2026-11-24 23:43:50.717846: Invalid arguments or no conference history available!
 #> ✖ Args: conference = "B1G"
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

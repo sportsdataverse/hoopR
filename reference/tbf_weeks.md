@@ -81,7 +81,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_weeks(competition = "bsl", season = 2027))
 #> ── TBF Weeks ──────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 20:47:15 UTC
+#> ℹ Data updated: 2026-11-24 23:50:24 UTC
 #> # A tibble: 30 × 8
 #>    activity_id season competition week  phase phase_name label    is_current
 #>          <int>  <int> <chr>       <chr> <int> <chr>      <chr>    <lgl>     

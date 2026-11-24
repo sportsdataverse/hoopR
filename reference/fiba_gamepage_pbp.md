@@ -59,7 +59,7 @@ lists every function in this family.
 # \donttest{
   try(fiba_gamepage_pbp(game_id = 100720, comp = 208182))
 #> ── FIBA gamepage_pbp from fiba.basketball ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 20:42:47 UTC
+#> ℹ Data updated: 2026-11-24 23:45:49 UTC
 #> # A tibble: 497 × 26
 #>    game_id competition_id statistic_system period period_number action_id order
 #>      <int>          <int> <chr>            <chr>          <int> <chr>     <int>

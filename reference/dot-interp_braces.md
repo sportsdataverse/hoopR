@@ -3,8 +3,6 @@
 Replaces `{expr}` tokens in `template` by evaluating `expr` in `envir`.
 Used in
 [`.report_api_error()`](https://hoopR.sportsdataverse.org/reference/dot-report_api_error.md)
-/
-[`.report_api_warning()`](https://hoopR.sportsdataverse.org/reference/dot-report_api_warning.md)
 so callers can write hints like `"No data for {game_id}"` and have
 `{game_id}` resolve against the function's frame at the call-site.
 

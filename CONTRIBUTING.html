@@ -276,6 +276,7 @@
 <li>Internal helpers start with <code>.</code> (e.g., <code><a href="reference/dot-players_on_court_v3.html">.players_on_court_v3()</a></code>)</li>
 <li>Game IDs must be passed through <code>pad_id()</code> before API calls</li>
 <li>Use <code>%||%</code> (rlang) for null-safe defaults when parsing API responses</li>
+<li>Never give <code><a href="https://rdrr.io/r/base/conditions.html" class="external-link">tryCatch()</a></code> a <code>warning =</code> handler: it stops the body at the first warning and the wrapper returns an empty or half-built result. Run the body through <code>.hoopR_with_warnings("&lt;fn&gt;", {...})</code>, which re-raises each warning as a <code>hoopR_warning</code> naming the function and lets the body finish, and make every block <code>error =</code> handler report its cause (<code>conditionMessage(e)</code>, <code>.report_api_error(e, ...)</code>, or <code>parent = e</code>). <code>tests/testthat/test-handler_causes.R</code> enforces both.</li>
 </ul></div>
 </div>
 <div class="section level2">

@@ -47,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(nbl_rosetta_match_player_box(match_id = "b217a699-4bef-11f0-bc08-933162362355"))
 #> ── NBL Rosetta match_player_box from prod.rosetta.nbl.com.au ──── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 20:45:44 UTC
+#> ℹ Data updated: 2026-11-24 23:48:53 UTC
 #> # A tibble: 24 × 49
 #>    match_id        match_status stat_line_id rosetta_stat_line_id assists blocks
 #>    <chr>           <chr>        <chr>        <chr>                  <int>  <int>

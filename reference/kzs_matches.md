@@ -57,7 +57,7 @@ lists every function in this family.
     date_to = "2025-10-31T23:59:59.000Z"
   ))
 #> ── KZS Matches from api.kzs.si ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 20:43:45 UTC
+#> ℹ Data updated: 2026-11-24 23:46:49 UTC
 #> # A tibble: 21 × 69
 #>    match_id competition_id competition_name competition_type
 #>       <int>          <int> <chr>            <chr>           
