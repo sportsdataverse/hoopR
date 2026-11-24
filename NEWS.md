@@ -60,8 +60,8 @@ the sections below.
 * Join ids are integer: ESPN `game_id` / `athlete_id` in the roster and crosswalk
   loaders, and the NBA Stats ids in `load_nba_*_crosswalk()`. The live crosswalk
   builders (`nba_team_crosswalk()` and friends) still return character NBA Stats ids.
-* `nba_schedule()` reads each league's own CDN for `league_id` `"10"` and `"20"`, and
-  any other `league_id` is an argument error.
+* `nba_schedule()` reads each league's own CDN: `league_id` `"00"` (NBA, the default),
+  `"10"` (WNBA) and `"20"` (G League). Any other `league_id` is an argument error.
 
 ### **International basketball**
 
