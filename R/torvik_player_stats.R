@@ -50,7 +50,7 @@ torvik_player_stats <- function(year = most_recent_mbb_season()) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("torvik_player_stats", {
       txt <- .torvik_text(paste0("/getadvstats.php?year=", year, "&csv=1"))
       df <- data.table::fread(text = txt, header = FALSE, fill = TRUE, showProgress = FALSE)
       # A shorter file (2008-2009 drop the play-by-play fields) keeps V1, V2, ...
@@ -59,12 +59,9 @@ torvik_player_stats <- function(year = most_recent_mbb_season()) {
       }
       df <- dplyr::as_tibble(janitor::clean_names(as.data.frame(df)))
       df <- make_hoopR_data(df, "Bart Torvik player season stats from barttorvik.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no player stats available for {year}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching Torvik player stats for {year}", args = .args)
     },
     finally = {
     }

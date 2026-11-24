@@ -68,6 +68,7 @@ Example format:
 - [ ] `devtools::document()` has been run (NAMESPACE updated)
 - [ ] New/changed functions have roxygen docs with `@export` and `@family` (or `@concept` in the `R/families.R` families). Data-returning functions use `@eval .returns_rd()` backed by `data-raw/return_columns.csv` rows; functions that return something else (for example `login()`) keep a hand-written `@return`
 - [ ] Tests added/updated in `tests/testthat/`
+- [ ] No `tryCatch(warning =)` handlers: wrapper bodies run in `.hoopR_with_warnings()`, and every `error =` handler reports `conditionMessage(e)`
 - [ ] `devtools::check()` passes with no errors or warnings
 - [ ] NEWS.md updated (if user-facing change)
 - [ ] Commit messages use conventional commit format (`type: description`)

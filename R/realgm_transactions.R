@@ -27,7 +27,7 @@ realgm_transactions <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_transactions", {
       doc <- .realgm_doc("/nba/transactions/league")
       blocks <- rvest::html_elements(doc, "div.transByMonth div.portal.widget.fullpage")
       if (!length(blocks)) {
@@ -49,12 +49,9 @@ realgm_transactions <- function() {
       if (!length(rows)) stop("RealGM transactions not found", call. = FALSE)
       out <- dplyr::as_tibble(dplyr::bind_rows(rows))
       df <- make_hoopR_data(out, "NBA transactions log from basketball.realgm.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM transactions data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM transactions", args = .args)
     },
     finally = {
     }

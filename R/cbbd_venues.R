@@ -19,16 +19,13 @@ cbbd_venues <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_venues", {
       data <- .cbbd_get("/venues")
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Venues from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no venues data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD venues", args = .args)
     },
     finally = {
     }

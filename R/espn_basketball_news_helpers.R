@@ -32,8 +32,8 @@
 
   news <- .empty_hoopR_data(paste0("ESPN ", toupper(league), " News from ESPN.com"))
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_news", {
       res <- .retry_request(url)
       check_status(res)
 
@@ -97,15 +97,10 @@
           paste0("ESPN ", toupper(league), " News from ESPN.com"),
           Sys.time()
         )
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = paste0("Failed to retrieve ESPN ", league, " news"),
-      args = .args
-    ),
-    warning = function(w) .report_api_warning(
-      w,
-      hint = paste0("Warning retrieving ESPN ", league, " news"),
       args = .args
     ),
     finally = {}
@@ -150,8 +145,8 @@
 
   news <- .empty_hoopR_data(paste0( "ESPN ", toupper(league), " Team News (team_id=", team_id, ") from ESPN.com" ))
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_team_news", {
       res <- .retry_request(url)
       check_status(res)
 
@@ -217,18 +212,11 @@
           ),
           Sys.time()
         )
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = paste0(
         "Failed to retrieve ESPN ", league, " team news for team_id=", team_id
-      ),
-      args = .args
-    ),
-    warning = function(w) .report_api_warning(
-      w,
-      hint = paste0(
-        "Warning retrieving ESPN ", league, " team news for team_id=", team_id
       ),
       args = .args
     ),

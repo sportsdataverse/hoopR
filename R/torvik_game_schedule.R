@@ -41,7 +41,7 @@ torvik_game_schedule <- function(year = most_recent_mbb_season()) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("torvik_game_schedule", {
       txt <- .torvik_text(paste0("/", year, "_super_sked.json"))
       raw <- jsonlite::fromJSON(txt, simplifyVector = FALSE)
 
@@ -60,12 +60,9 @@ torvik_game_schedule <- function(year = most_recent_mbb_season()) {
       df <- janitor::clean_names(dplyr::as_tibble(df))
       df[["year"]] <- as.integer(year)
       df <- make_hoopR_data(df, "Bart Torvik season schedule from barttorvik.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no schedule available for {year}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching Torvik schedule for {year}", args = .args)
     },
     finally = {
     }

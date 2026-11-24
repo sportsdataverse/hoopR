@@ -19,7 +19,7 @@ ncaa_mbb_NET_rankings <- function() {
   x <- .empty_hoopR_data("NCAA MBB NET Rankings Information from NCAA.com")
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("ncaa_mbb_NET_rankings", {
       x <- (NET_url %>%
         xml2::read_html() %>%
         rvest::html_elements("table"))[[1]] %>%
@@ -37,14 +37,12 @@ ncaa_mbb_NET_rankings <- function() {
           "previous" = "prev"
         ))) %>%
         make_hoopR_data("NCAA MBB NET Rankings Information from NCAA.com", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no NET rankings available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

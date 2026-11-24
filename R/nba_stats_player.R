@@ -69,18 +69,16 @@ nba_playerindex <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playerindex", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player index data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -119,16 +117,14 @@ nba_playerheadshot <- function(
   resp <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playerheadshot", {
       resp <- full_url
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player headshot for {player_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -170,18 +166,16 @@ nba_playerawards <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playerawards", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player awards data for {player_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -241,18 +235,16 @@ nba_playercareerbycollege <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playercareerbycollege", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or player careers by college data for {college} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -302,18 +294,16 @@ nba_playercareerbycollegerollup <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playercareerbycollegerollup", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or player careers by college rollup data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -360,18 +350,16 @@ nba_playercareerstats <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playercareerstats", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or player career stats data for {player_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -413,18 +401,16 @@ nba_infographicfanduelplayer <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_infographicfanduelplayer", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no FanDuel player infographic data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -488,18 +474,16 @@ nba_playerfantasyprofile <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playerfantasyprofile", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player fantasy profile data for {player_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -551,18 +535,16 @@ nba_playerfantasyprofilebargraph <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playerfantasyprofilebargraph", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player fantasy profile bar graph data for {player_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -611,7 +593,7 @@ nba_playerestimatedmetrics <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playerestimatedmetrics", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
 
@@ -625,14 +607,12 @@ nba_playerestimatedmetrics <- function(
         return(data)
       })
       names(df_list) <- resp$resultSet$name
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player estimated metrics data for {player_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -689,18 +669,16 @@ nba_playergamelog <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playergamelog", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player game log data for {player_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -797,18 +775,16 @@ nba_playergamelogs <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playergamelogs", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player game logs data for {player_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1112,18 +1088,16 @@ nba_playergamestreakfinder <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playergamestreakfinder", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player streak finder data available for the parameters selected!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1183,18 +1157,16 @@ nba_playernextngames <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playernextngames", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player next n games data available for {player_id}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1243,18 +1215,16 @@ nba_playerprofilev2 <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playerprofilev2", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no player profile v2 data available for {player_id}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1354,18 +1324,16 @@ nba_playervsplayer <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playervsplayer", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or player vs player data unavailable for the parameters selected!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1472,18 +1440,16 @@ nba_playercompare <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playercompare", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or player comparison data unavailable for the parameters selected!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

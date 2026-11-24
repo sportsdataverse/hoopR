@@ -508,7 +508,7 @@
     build(rvest::read_html(html), g, t),
     error = function(e) {
       if (inherits(e, "feb_not_parsed")) stop(e)
-      .feb_not_parsed(paste0("parser error: ", class(e)[[1]]))
+      .feb_not_parsed(paste0("parser error: ", class(e)[[1]], ": ", conditionMessage(e)))
     }
   )
 }

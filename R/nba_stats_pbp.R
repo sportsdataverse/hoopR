@@ -1019,7 +1019,7 @@ nba_playbyplayv3 <- function(
   data <- list() # Initialize before tryCatch
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_playbyplayv3", {
       resp <- request_with_proxy(url = full_url, params = params)
 
       game_data <- resp %>%
@@ -1046,14 +1046,12 @@ nba_playbyplayv3 <- function(
         make_hoopR_data("NBA Game Video Available from NBA.com", Sys.time())
 
       data <- c(list(PlayByPlay = actions), list(AvailableVideo = video_available))
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no V3 play-by-play data for {pad_id(game_id)} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -1100,7 +1098,7 @@ nba_pbp <- function(
   if (version == "v3") {
     data <- data.frame() # Initialize before tryCatch
     tryCatch(
-      expr = {
+      expr = .hoopR_with_warnings("nba_pbp", {
         v3_result <- nba_playbyplayv3(game_id = game_id)
         data <- v3_result$PlayByPlay
 
@@ -1112,14 +1110,12 @@ nba_pbp <- function(
         if (on_court) {
           data <- .players_on_court_v3(data)
         }
-      },
+      }),
       error = function(e) .report_api_error(
         e,
         hint = "Invalid arguments or no V3 play-by-play data for {pad_id(game_id)} available!",
         args = .args
       ),
-      warning = function(w) {
-      },
       finally = {
       }
     )
@@ -1143,7 +1139,7 @@ nba_pbp <- function(
   )
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_pbp", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       data <- resp$resultSets$rowSet[[1]] %>%
@@ -1218,14 +1214,12 @@ nba_pbp <- function(
           data <- .players_on_court(data)
         }
       }
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no play-by-play data for {pad_id(game_id)} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

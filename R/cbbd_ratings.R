@@ -23,16 +23,13 @@ cbbd_ratings_srs <- function(season = most_recent_mbb_season(), team = NULL, con
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_ratings_srs", {
       data <- .cbbd_get("/ratings/srs", query = list(season = season, team = team, conference = conference))
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD SRS Ratings from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no SRS ratings available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD SRS ratings", args = .args)
     },
     finally = {
     }
@@ -65,16 +62,13 @@ cbbd_ratings_adjusted <- function(season = most_recent_mbb_season(), team = NULL
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_ratings_adjusted", {
       data <- .cbbd_get("/ratings/adjusted", query = list(season = season, team = team, conference = conference))
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Adjusted Efficiency Ratings from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no adjusted ratings available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD adjusted ratings", args = .args)
     },
     finally = {
     }
@@ -107,16 +101,13 @@ cbbd_ratings_elo <- function(season = most_recent_mbb_season(), team = NULL, con
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_ratings_elo", {
       data <- .cbbd_get("/ratings/elo", query = list(season = season, team = team, conference = conference))
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Elo Ratings from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no Elo ratings available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD Elo ratings", args = .args)
     },
     finally = {
     }

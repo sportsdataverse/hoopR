@@ -41,7 +41,7 @@ bref_players_stats <- function(season = most_recent_nba_season(), table = "per_g
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("bref_players_stats", {
       html <- .bref_text(paste0("/leagues/NBA_", season, "_", table, ".html"))
       df <- .bref_table(html)
       # drop fully-empty separator rows
@@ -53,12 +53,9 @@ bref_players_stats <- function(season = most_recent_nba_season(), table = "per_g
         "g" = "games", "gs" = "games_started")))
       df[["season"]] <- as.integer(season)
       df <- make_hoopR_data(df, "Player season stats from basketball-reference.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no player stats available for {season}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching BREF player stats for {season}", args = .args)
     },
     finally = {
     }

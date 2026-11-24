@@ -33,19 +33,16 @@ cbbd_games <- function(season = most_recent_mbb_season(), season_type = NULL, te
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_games", {
       data <- .cbbd_get("/games", query = list(
         season = season, seasonType = season_type, team = team, conference = conference,
         startDateRange = start_date_range, endDateRange = end_date_range,
         status = status, tournament = tournament))
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Games from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no games data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD games", args = .args)
     },
     finally = {
     }
@@ -76,18 +73,15 @@ cbbd_games_media <- function(season = most_recent_mbb_season(), season_type = NU
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_games_media", {
       data <- .cbbd_get("/games/media", query = list(
         season = season, seasonType = season_type, team = team, conference = conference,
         startDateRange = start_date_range, endDateRange = end_date_range, tournament = tournament))
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Game Media from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no game media available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD game media", args = .args)
     },
     finally = {
     }
@@ -119,18 +113,15 @@ cbbd_games_teams <- function(season = most_recent_mbb_season(), season_type = NU
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_games_teams", {
       data <- .cbbd_get("/games/teams", query = list(
         season = season, seasonType = season_type, team = team, conference = conference,
         startDateRange = start_date_range, endDateRange = end_date_range, tournament = tournament))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Team Box Scores from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no team box score data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD team box scores", args = .args)
     },
     finally = {
     }
@@ -162,18 +153,15 @@ cbbd_games_players <- function(season = most_recent_mbb_season(), season_type = 
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_games_players", {
       data <- .cbbd_get("/games/players", query = list(
         season = season, seasonType = season_type, team = team, conference = conference,
         startDateRange = start_date_range, endDateRange = end_date_range, tournament = tournament))
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Player Box Scores from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no player box score data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD player box scores", args = .args)
     },
     finally = {
     }
@@ -204,16 +192,13 @@ cbbd_scoreboard <- function(conference = NULL) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_scoreboard", {
       data <- .cbbd_get("/scoreboard", query = list(conference = conference))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Scoreboard from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no scoreboard data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD scoreboard", args = .args)
     },
     finally = {
     }

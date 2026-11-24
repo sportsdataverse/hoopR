@@ -28,7 +28,7 @@ nbagl_pbp <- function(
   plays_df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nbagl_pbp", {
       plays_df <- nba_pbp(game_id = {{ game_id }}, on_court = on_court)
 
       if (on_court) {
@@ -44,14 +44,12 @@ nbagl_pbp <- function(
 
       plays_df <- plays_df |>
         make_hoopR_data("NBA G-League Play-by-Play Information from NBA.com", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no play-by-play data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

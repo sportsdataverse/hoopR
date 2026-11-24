@@ -52,20 +52,18 @@ nba_cumestatsplayer <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_cumestatsplayer", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no cumulative player stats data available for {player_id}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -135,20 +133,18 @@ nba_cumestatsplayergames <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_cumestatsplayergames", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no cumulative player game stats data available for {player_id}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -206,20 +202,18 @@ nba_cumestatsteam <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_cumestatsteam", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no cumulative team stats data available for {team_id}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -291,20 +285,18 @@ nba_cumestatsteamgames <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_cumestatsteamgames", {
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
 
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no cumulative team game stats data available for {team_id}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

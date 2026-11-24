@@ -71,7 +71,7 @@ nba_player_dict <- function(season = year_to_season(most_recent_nba_season() - 2
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_player_dict", {
       res <- nba_playerindex(season = season, ...)
       pi <- res[["PlayerIndex"]]
       if (is.null(pi) || nrow(pi) == 0) stop("No player index returned", call. = FALSE)
@@ -96,12 +96,9 @@ nba_player_dict <- function(season = year_to_season(most_recent_nba_season() - 2
       )
       out[["season"]] <- season
       df <- make_hoopR_data(out, "NBA player dictionary from stats.nba.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No NBA player dictionary for {season} available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning building NBA player dictionary", args = .args)
     },
     finally = {
     }
@@ -133,7 +130,7 @@ nba_team_dict <- function(season = year_to_season(most_recent_nba_season() - 2),
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_team_dict", {
       # historical = 0 -> current franchises only (30 teams), not all-time
       res <- nba_playerindex(season = season, historical = 0, ...)
       pi <- res[["PlayerIndex"]]
@@ -150,12 +147,9 @@ nba_team_dict <- function(season = year_to_season(most_recent_nba_season() - 2),
                          "team_full", "conference", "division", "logo_url"), drop = FALSE]
       teams <- teams[order(teams$conference, teams$division, teams$team_city), , drop = FALSE]
       df <- make_hoopR_data(dplyr::as_tibble(teams), "NBA team dictionary from stats.nba.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No NBA team dictionary available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning building NBA team dictionary", args = .args)
     },
     finally = {
     }

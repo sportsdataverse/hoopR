@@ -23,17 +23,14 @@ cbbd_recruiting_players <- function(year = NULL, team = NULL, conference = NULL,
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_recruiting_players", {
       data <- .cbbd_get("/recruiting/players", query = list(
         year = year, team = team, conference = conference, position = position))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Recruiting Players from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no recruiting players available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD recruiting players", args = .args)
     },
     finally = {
     }
@@ -64,16 +61,13 @@ cbbd_recruiting_teams <- function(year = NULL, team = NULL, conference = NULL) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_recruiting_teams", {
       data <- .cbbd_get("/recruiting/teams", query = list(year = year, team = team, conference = conference))
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Recruiting Team Rankings from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no team recruiting rankings available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD team recruiting rankings", args = .args)
     },
     finally = {
     }
@@ -109,19 +103,16 @@ cbbd_recruiting_portal <- function(year = NULL, source_team = NULL, destination_
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_recruiting_portal", {
       data <- .cbbd_get("/recruiting/portal", query = list(
         year = year, sourceTeam = source_team, destinationTeam = destination_team,
         sourceConference = source_conference, destinationConference = destination_conference,
         position = position))
       df <- janitor::clean_names(dplyr::as_tibble(jsonlite::flatten(data)))
       df <- make_hoopR_data(df, "CBD Transfer Portal from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no transfer portal data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD transfer portal", args = .args)
     },
     finally = {
     }

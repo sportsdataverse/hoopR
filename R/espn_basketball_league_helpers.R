@@ -50,8 +50,8 @@
     "/leaders"
   )
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_leaders", {
       res <- .retry_request(url)
       check_status(res)
       raw <- res %>% .resp_text() %>% jsonlite::fromJSON(simplifyDataFrame = TRUE)
@@ -184,15 +184,10 @@
             Sys.time()
           )
       }
-    },
+    }),
     error   = function(e) .report_api_error(
       e,
       hint = "Failed to retrieve ESPN {league} leaders for season={season}",
-      args = .args
-    ),
-    warning = function(w) .report_api_warning(
-      w,
-      hint = "Warning retrieving ESPN {league} leaders for season={season}",
       args = .args
     ),
     finally = {}
@@ -225,8 +220,8 @@
     "/venues?limit=100"
   )
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_venues", {
       all_rows <- list()
       page_idx <- 1L
       page_cnt <- 1L
@@ -302,15 +297,10 @@
             Sys.time()
           )
       }
-    },
+    }),
     error   = function(e) .report_api_error(
       e,
       hint = "Failed to retrieve ESPN {league} venues",
-      args = .args
-    ),
-    warning = function(w) .report_api_warning(
-      w,
-      hint = "Warning retrieving ESPN {league} venues",
       args = .args
     ),
     finally = {}
@@ -346,8 +336,8 @@
     "/coaches?limit=100"
   )
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_coaches", {
       all_rows <- list()
       page_idx <- 1L
       page_cnt <- 1L
@@ -405,15 +395,10 @@
             Sys.time()
           )
       }
-    },
+    }),
     error   = function(e) .report_api_error(
       e,
       hint = "Failed to retrieve ESPN {league} coaches for season={season}",
-      args = .args
-    ),
-    warning = function(w) .report_api_warning(
-      w,
-      hint = "Warning retrieving ESPN {league} coaches for season={season}",
       args = .args
     ),
     finally = {}
@@ -458,8 +443,8 @@
     "/athletes?limit=100"
   )
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_athletes_index", {
       all_rows <- list()
       page_idx <- 1L
       page_cnt <- 1L
@@ -590,15 +575,10 @@
             Sys.time()
           )
       }
-    },
+    }),
     error   = function(e) .report_api_error(
       e,
       hint = "Failed to retrieve ESPN {league} athletes for season={season}",
-      args = .args
-    ),
-    warning = function(w) .report_api_warning(
-      w,
-      hint = "Warning retrieving ESPN {league} athletes for season={season}",
       args = .args
     ),
     finally = {}
@@ -631,8 +611,8 @@
     "/seasons?limit=200"
   )
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_seasons", {
       res <- .retry_request(url)
       check_status(res)
       raw <- res %>% .resp_text() %>% jsonlite::fromJSON(simplifyDataFrame = TRUE)
@@ -673,15 +653,10 @@
           paste0("ESPN ", toupper(league), " Seasons from ESPN.com"),
           Sys.time()
         )
-    },
+    }),
     error   = function(e) .report_api_error(
       e,
       hint = "Failed to retrieve ESPN {league} seasons",
-      args = .args
-    ),
-    warning = function(w) .report_api_warning(
-      w,
-      hint = "Warning retrieving ESPN {league} seasons",
       args = .args
     ),
     finally = {}
@@ -718,8 +693,8 @@
     season
   )
 
-  .try_catch(
-    expr = {
+  tryCatch(
+    expr = .hoopR_with_warnings(".espn_basketball_season_info", {
       res <- .retry_request(url)
       check_status(res)
       raw <- res %>% .resp_text() %>% jsonlite::fromJSON(simplifyDataFrame = TRUE)
@@ -784,15 +759,10 @@
 
       # ---------- Awards ----------
       result[["Awards"]] <- .parse_ref_block(raw[["awards"]], "Awards")
-    },
+    }),
     error   = function(e) .report_api_error(
       e,
       hint = "Failed to retrieve ESPN {league} season info for season={season}",
-      args = .args
-    ),
-    warning = function(w) .report_api_warning(
-      w,
-      hint = "Warning retrieving ESPN {league} season info for season={season}",
       args = .args
     ),
     finally = {}

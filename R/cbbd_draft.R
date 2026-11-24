@@ -20,16 +20,13 @@ cbbd_draft_teams <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_draft_teams", {
       data <- .cbbd_get("/draft/teams")
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Draft Teams from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no draft teams available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD draft teams", args = .args)
     },
     finally = {
     }
@@ -59,16 +56,13 @@ cbbd_draft_positions <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_draft_positions", {
       data <- .cbbd_get("/draft/positions")
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Draft Positions from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no draft positions available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD draft positions", args = .args)
     },
     finally = {
     }
@@ -101,17 +95,14 @@ cbbd_draft_picks <- function(year = NULL, draft_team = NULL, source_team = NULL,
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("cbbd_draft_picks", {
       data <- .cbbd_get("/draft/picks", query = list(
         year = year, draftTeam = draft_team, sourceTeam = source_team, position = position))
       df <- janitor::clean_names(dplyr::as_tibble(data))
       df <- make_hoopR_data(df, "CBD Draft Picks from collegebasketballdata.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no draft picks available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching CBD draft picks", args = .args)
     },
     finally = {
     }

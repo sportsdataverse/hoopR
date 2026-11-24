@@ -46,7 +46,7 @@ realgm_player_stats <- function(season = most_recent_nba_season(),
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_player_stats", {
       path <- sprintf("/nba/stats/%s/%s/Qualified/points/All/desc/1/%s",
                       season, stat_type, season_type)
       cand <- .realgm_pick(.realgm_tables(.realgm_doc(path)), must_have = "player")
@@ -55,12 +55,9 @@ realgm_player_stats <- function(season = most_recent_nba_season(),
       cand$stat_type <- stat_type
       cand$season_type <- season_type
       df <- .realgm_finish(cand, "NBA player stats from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM player-stats data for {season}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM player stats", args = .args)
     },
     finally = {
     }
@@ -102,7 +99,7 @@ realgm_team_stats <- function(season = most_recent_nba_season(),
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_team_stats", {
       path <- sprintf("/nba/team-stats/%s/%s/Team_Totals/%s/%s/desc",
                       season, stat_type, season_type, .realgm_team_sort(stat_type))
       cand <- .realgm_pick(.realgm_tables(.realgm_doc(path)), must_have = "team")
@@ -111,12 +108,9 @@ realgm_team_stats <- function(season = most_recent_nba_season(),
       cand$stat_type <- stat_type
       cand$season_type <- season_type
       df <- .realgm_finish(cand, "NBA team stats from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM team-stats data for {season}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM team stats", args = .args)
     },
     finally = {
     }
@@ -150,17 +144,14 @@ realgm_individual_seasons <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_individual_seasons", {
       cand <- .realgm_pick(.realgm_tables(.realgm_doc("/nba/individual-seasons")),
                            must_have = c("player", "season"))
       if (is.null(cand)) stop("RealGM individual-seasons table not found", call. = FALSE)
       df <- .realgm_finish(cand, "NBA best individual seasons from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM individual-seasons data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM individual seasons", args = .args)
     },
     finally = {
     }
@@ -194,17 +185,14 @@ realgm_individual_games <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_individual_games", {
       cand <- .realgm_pick(.realgm_tables(.realgm_doc("/nba/individual-games")),
                            must_have = c("player", "date"))
       if (is.null(cand)) stop("RealGM individual-games table not found", call. = FALSE)
       df <- .realgm_finish(cand, "NBA best individual games from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM individual-games data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM individual games", args = .args)
     },
     finally = {
     }
@@ -239,17 +227,14 @@ realgm_draft_prospects <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("realgm_draft_prospects", {
       cand <- .realgm_pick(.realgm_tables(.realgm_doc("/nba/draft/prospects/stats")),
                            must_have = c("player", "ppg"))
       if (is.null(cand)) stop("RealGM draft-prospects table not found", call. = FALSE)
       df <- .realgm_finish(cand, "NBA draft prospect stats from basketball.realgm.com")
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RealGM draft-prospect data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RealGM draft prospects", args = .args)
     },
     finally = {
     }

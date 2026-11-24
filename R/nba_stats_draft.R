@@ -31,7 +31,7 @@ nba_draftboard <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_draftboard", {
       res <- .retry_request(full_url, params = params)
       resp <- res %>%
         .resp_text() %>%
@@ -80,14 +80,12 @@ nba_draftboard <- function(
 
       df_list <- c(list(picks), list(teams_without_picks), list(live_details))
       names(df_list) <- c("Picks", "TeamsWithoutPicks", "LiveDetails")
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no draft board data available for {season}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -132,18 +130,16 @@ nba_draftcombinestats <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_draftcombinestats", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no draft combine stats data available for {season_year}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -186,18 +182,16 @@ nba_draftcombinedrillresults <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_draftcombinedrillresults", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no draft combine drill results data available for {season_year}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -240,18 +234,16 @@ nba_draftcombinenonstationaryshooting <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_draftcombinenonstationaryshooting", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no draft combine stationary shooting data available for {season_year}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -294,18 +286,16 @@ nba_draftcombineplayeranthro <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_draftcombineplayeranthro", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no draft combine player anthropological data available for {season_year}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -347,18 +337,16 @@ nba_draftcombinespotshooting <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_draftcombinespotshooting", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no draft combine spot shooting data available for {season_year}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -418,18 +406,16 @@ nba_drafthistory <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_drafthistory", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no draft history data available for {season}!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

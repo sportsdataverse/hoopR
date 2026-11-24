@@ -41,7 +41,7 @@ rotowire_injuries <- function() {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("rotowire_injuries", {
       resp <- .retry_request(
         "https://www.rotowire.com/basketball/tables/injury-report.php?team=ALL&pos=ALL",
         headers = c(
@@ -74,12 +74,9 @@ rotowire_injuries <- function() {
                              paste0("https://www.rotowire.com", get("URL")))
       )
       df <- make_hoopR_data(out, "NBA injury report from rotowire.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "No RotoWire injury data available!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching RotoWire injuries", args = .args)
     },
     finally = {
     }

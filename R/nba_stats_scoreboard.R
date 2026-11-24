@@ -192,18 +192,16 @@ nba_scoreboard <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_scoreboard", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no scoreboard data for {game_date} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -256,18 +254,16 @@ nba_scoreboardv2 <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_scoreboardv2", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no scoreboardv2 data for {game_date} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -311,7 +307,7 @@ nba_scoreboardv3 <- function(
   games <- .empty_hoopR_data("NBA Scoreboard V3 Information from NBA.com")
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_scoreboardv3", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       scoreboard <- resp %>%
@@ -362,14 +358,12 @@ nba_scoreboardv3 <- function(
         ) %>%
         dplyr::relocate("broadcasters", .after = dplyr::last_col()) %>%
         make_hoopR_data("NBA Scoreboard V3 Information from NBA.com", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no scoreboard v3 data for {game_date} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -510,18 +504,16 @@ nba_winprobabilitypbp <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_winprobabilitypbp", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- nba_stats_map_result_sets(resp)
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no win probability pbp data for {game_id} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )
@@ -568,7 +560,7 @@ nba_scheduleleaguev2int <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_scheduleleaguev2int", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       league_sched <- resp %>%
@@ -636,14 +628,12 @@ nba_scheduleleaguev2int <- function(
 
       df_list <- c(list(games), list(weeks_df), list(broadcast_df))
       names(df_list) <- c("SeasonGames", "SeasonWeeks", "BroadcasterList")
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no international schedule data for {season} available!",
       args = .args
     ),
-    warning = function(w) {
-    },
     finally = {
     }
   )

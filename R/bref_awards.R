@@ -31,7 +31,7 @@ bref_awards <- function(season = most_recent_nba_season()) {
   df <- data.frame()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("bref_awards", {
       html <- .bref_text(paste0("/awards/awards_", season, ".html"))
       parse_one <- function(id) {
         d <- .bref_table(html, id)
@@ -47,12 +47,9 @@ bref_awards <- function(season = most_recent_nba_season()) {
       df <- dplyr::rename(df, dplyr::any_of(c("player" = "name_display", "team" = "team_id")))
       df[["season"]] <- as.integer(season)
       df <- make_hoopR_data(df, "Award voting from basketball-reference.com", Sys.time())
-    },
+    }),
     error = function(e) {
       .report_api_error(e, hint = "Invalid arguments or no award voting available for {season}!", args = .args)
-    },
-    warning = function(w) {
-      .report_api_warning(w, hint = "Warning fetching BREF award voting for {season}", args = .args)
     },
     finally = {
     }

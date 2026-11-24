@@ -352,7 +352,7 @@
     jsonlite::parse_json(text, simplifyVector = simplifyVector, ...),
     error = function(e) {
       excerpt <- substr(gsub("\\s+", " ", text), 1, 200)
-      .abort_asset_fetch("{where} answered a non-JSON body: {excerpt}", call = call)
+      .abort_asset_fetch("{where} answered a non-JSON body: {excerpt}", parent = e, call = call)
     }
   )
 }

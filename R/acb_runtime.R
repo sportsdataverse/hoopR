@@ -448,7 +448,7 @@
   text <- .intl_body_text(resp)
   if (!nzchar(trimws(text))) .abort_asset_fetch("{where} answered HTTP 200 with an empty body.", call = call)
   body <- tryCatch(jsonlite::parse_json(text, simplifyVector = FALSE), error = function(e) {
-    .abort_asset_fetch("{where} answered a body that is not JSON.", call = call)
+    .abort_asset_fetch("{where} answered a body that is not JSON.", parent = e, call = call)
   })
   .acb_validate(path, body, q, where, call = call)
   body[["_request"]] <- .acb_stamp(q)
