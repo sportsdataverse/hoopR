@@ -785,11 +785,20 @@ espn_nba_team_current_roster <- function(team_id) {
           parent_group_id = as.integer(.data$parent_group_id)
         )
 
-      team_roster_full <- team_roster %>%
+      team_fields <- team_roster %>%
         purrr::discard_at(c("groups", "athletes")) %>%
         jsonlite::toJSON() %>%
-        jsonlite::fromJSON(flatten = TRUE) %>%
-        data.frame() %>%
+        jsonlite::fromJSON(flatten = TRUE)
+      # A nested field carries row names shorter than the frame; data.frame()
+      # drops them and says so. Expected for this payload, so not re-raised.
+      team_roster_full <- withCallingHandlers(
+        data.frame(team_fields),
+        warning = function(w) {
+          if (grepl("row names were found from a short variable", conditionMessage(w), fixed = TRUE)) {
+            invokeRestart("muffleWarning")
+          }
+        }
+      ) %>%
         dplyr::slice(1:2) %>%
         dplyr::mutate(
           logo = .data$logos.href[1],
