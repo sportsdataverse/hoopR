@@ -522,7 +522,7 @@ A \code{hoopR_data} tibble with one row per possession.
   def_player_5 \tab integer \tab Defensive lineup slot 5 player identifier. \cr
   lineup_source \tab character \tab Provenance of the lineup join (e.g. 'game_lineups', 'derived'). \cr
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
-  seconds_to_first_shot \tab numeric \tab Seconds from the change of possession (the clock at the previous possession's last event) to the possession's first field-goal attempt; NA when it has no field-goal attempt. \cr
+  seconds_to_first_shot \tab numeric \tab Seconds from the change of possession (the clock at the previous possession's last event) to the possession's first field-goal attempt; a period's first possession is measured from its own first event. NA when the possession has no field-goal attempt. \cr
   is_transition \tab logical \tab TRUE when the possession starts off a made shot, a missed shot or a live-ball turnover, is not its period's first possession, and its first field-goal attempt comes within 8 seconds (seconds_to_first_shot). Never NA. \cr
   is_garbage_time \tab logical \tab TRUE from the first possession that meets the garbage-time rule to the end of the game: a margin of 25+ with 10:00 or less left in regulation, 20+ with 5:00 or less, 15+ with 2:00 or less, or 15+ in overtime, with at most 3 of the game's 10 starters on the floor. Never NA. \cr
 }}

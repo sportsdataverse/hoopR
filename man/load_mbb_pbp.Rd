@@ -199,7 +199,7 @@ A \code{hoopR_data} tibble with one row per play-by-play event.
   home_favorite \tab logical \tab TRUE if the home team is the betting favorite. \cr
   game_spread_available \tab logical \tab TRUE if a point spread was available. \cr
   home_team_spread \tab numeric \tab Home team's point spread. \cr
-  half \tab integer \tab Half of the game (1 or 2). \cr
+  half \tab integer \tab Half of the game: 1 or 2 in regulation; overtime periods continue the count (3, 4, ...). \cr
   time \tab character \tab Time / clock value. \cr
   clock_minutes \tab integer \tab Clock minutes split out for convenience. \cr
   clock_seconds \tab integer \tab Clock seconds split out for convenience. \cr
