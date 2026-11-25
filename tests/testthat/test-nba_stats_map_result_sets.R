@@ -27,12 +27,12 @@ test_that("a wrapper given `{}` returns an empty list without an error", {
                     headers = list(`Content-Type` = "application/json"), body = charToRaw("{}"))
   })
   msgs <- character()
-  x <- withCallingHandlers(nba_defensehub(season = "2024-25"), message = function(m) {
+  x <- withCallingHandlers(nba_leagueleaders(season = "2024-25"), message = function(m) {
     msgs <<- c(msgs, conditionMessage(m))
     invokeRestart("muffleMessage")
   })
   expect_length(requested, 1)
-  expect_match(requested, "https://stats.nba.com/stats/defensehub?", fixed = TRUE)
+  expect_match(requested, "https://stats.nba.com/stats/leagueleaders?", fixed = TRUE)
   expect_identical(x, list())
   expect_length(msgs, 0)
   expect_identical(nba_bind_sets(x), dplyr::tibble())
@@ -73,7 +73,6 @@ test_that("wrappers keep the columns of a headers-only result set", {
   expect_identical(nba_leagueleaders(season = "2024-25"), want)
   expect_identical(nba_teamestimatedmetrics(season = "2024-25"), want)
   expect_identical(nba_playerestimatedmetrics(season = "2024-25"), want)
-  expect_identical(nba_boxscoresimilarityscore(), want)
   body <- '{"resultSets":[{"name":"A","headers":["X","Y"],"rowSet":[]}]}'
   expect_identical(nba_gamerotation(game_id = "0022200021"), want)
   expect_identical(nba_leaguedashplayerptshot(season = "2024-25"), want)

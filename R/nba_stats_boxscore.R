@@ -724,6 +724,13 @@ NULL
 #' **Get NBA Stats API Boxscore Similarity Score**
 #' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
+#' @description
+#' `nba_boxscoresimilarityscore()`: `r lifecycle::badge("deprecated")`
+#'
+#' stats.nba.com answers `boxscoresimilarityscore` with HTTP 400 for every parameter set tried: it rejects
+#' every `Person1Season` / `Person2Season` value, a year or a season string
+#' (2026-11-24 and 2026-11-25, residential IP; nba_api dropped it in v1.6.0), so
+#' `nba_boxscoresimilarityscore()` now errors when called. There is no replacement.
 #' @param person_1_id person_1_id
 #' @param person_1_league_id person_1_league_id
 #' @param person_1_season person_1_season
@@ -740,7 +747,6 @@ NULL
 #' @export
 #' @family NBA Boxscore Similarity Functions
 #' @details
-#' (Possibly Deprecated)
 #' ```r
 #' z <- nba_commonallplayers()$CommonAllPlayers
 #' klay <- z %>% dplyr::filter(DISPLAY_FIRST_LAST == 'Klay Thompson')
@@ -766,6 +772,12 @@ nba_boxscoresimilarityscore <- function(
     person_2_season_type = 'Regular Season',
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
+
+  lifecycle::deprecate_stop(
+    when = "3.2.0",
+    what = "nba_boxscoresimilarityscore()",
+    details = "Live re-probes (2026-11-24 and 2026-11-25, residential IP) returned HTTP 400 for every parameter set tried (it rejects every Person1Season and Person2Season value, a year or a season string); nba_api dropped the endpoint in v1.6.0 for the same reason."
+  )
 
   version <- "boxscoresimilarityscore"
   endpoint <- nba_endpoint(version)
@@ -811,6 +823,12 @@ NULL
 #' **Get NBA Stats API G-League Alum Boxscore Similarity Score**
 #' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
+#' @description
+#' `nba_glalumboxscoresimilarityscore()`: `r lifecycle::badge("deprecated")`
+#'
+#' stats.nba.com answers `glalumboxscoresimilarityscore` with HTTP 500 for every parameter set tried
+#' (2026-11-24 and 2026-11-25, residential IP; nba_api lists it as not working), so
+#' `nba_glalumboxscoresimilarityscore()` now errors when called. There is no replacement.
 #' @param person_1_id person_1_id
 #' @param person_1_league_id person_1_league_id
 #' @param person_1_season person_1_season
@@ -826,8 +844,6 @@ NULL
 #' @import rvest
 #' @export
 #' @family NBA Boxscore Similarity Functions
-#' @details
-#' (Possibly Deprecated)
 nba_glalumboxscoresimilarityscore <- function(
     person_1_id,
     person_1_league_id,
@@ -839,6 +855,12 @@ nba_glalumboxscoresimilarityscore <- function(
     person_2_season_type,
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
+
+  lifecycle::deprecate_stop(
+    when = "3.2.0",
+    what = "nba_glalumboxscoresimilarityscore()",
+    details = "Live re-probes (2026-11-24 and 2026-11-25, residential IP) returned HTTP 500 for every parameter set tried; nba_api also lists the endpoint as not working."
+  )
 
   version <- "glalumboxscoresimilarityscore"
   endpoint <- nba_endpoint(version)

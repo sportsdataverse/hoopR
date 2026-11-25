@@ -905,6 +905,19 @@ Use \code{nba_boxscoreusagev3()} instead.
 NBA Stats no longer returns stable data for this V2 endpoint.
 This function is deprecated and now errors when called.
 Use \code{nba_boxscoreplayertrackv3()} instead.
+
+\code{nba_boxscoresimilarityscore()}: \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+stats.nba.com answers \code{boxscoresimilarityscore} with HTTP 400 for every parameter set tried: it rejects
+every \code{Person1Season} / \code{Person2Season} value, a year or a season string
+(2026-11-24 and 2026-11-25, residential IP; nba_api dropped it in v1.6.0), so
+\code{nba_boxscoresimilarityscore()} now errors when called. There is no replacement.
+
+\code{nba_glalumboxscoresimilarityscore()}: \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+stats.nba.com answers \code{glalumboxscoresimilarityscore} with HTTP 500 for every parameter set tried
+(2026-11-24 and 2026-11-25, residential IP; nba_api lists it as not working), so
+\code{nba_glalumboxscoresimilarityscore()} now errors when called. There is no replacement.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_boxscoretraditionalv2(game_id = "0022200021")
@@ -950,8 +963,6 @@ the wrapper stays exported/active rather than deprecated.
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_hustlestatsboxscore(game_id = "0022200021")
 }\if{html}{\out{</div>}}
 
-(Possibly Deprecated)
-
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{z <- nba_commonallplayers()$CommonAllPlayers
 klay <- z \%>\% dplyr::filter(DISPLAY_FIRST_LAST == 'Klay Thompson')
 book <- z \%>\% dplyr::filter(DISPLAY_FIRST_LAST == 'Devin Booker')
@@ -965,8 +976,6 @@ nba_boxscoresimilarityscore(person_1_id = klay$PERSON_ID,
   person_2_season_type = 'Regular Season'
 )
 }\if{html}{\out{</div>}}
-
-(Possibly Deprecated)
 }
 \seealso{
 Other NBA Boxscore Functions:

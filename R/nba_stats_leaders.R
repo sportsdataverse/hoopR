@@ -452,6 +452,13 @@ NULL
 #' **Get NBA Stats API Defense Hub**
 #' @rdname nba_alltimeleadersgrids
 #' @author Saiem Gilani
+#' @description
+#' `nba_defensehub()`: `r lifecycle::badge("deprecated")`
+#'
+#' stats.nba.com answers `defensehub` with HTTP 500 for every parameter set tried
+#' (2026-11-24 and 2026-11-25, residential IP; nba_api lists it as not working), so
+#' `nba_defensehub()` now errors when called. Use `nba_leagueleaders()` for the
+#' league leaders by stat.
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
 #' @param player_or_team Player or Team
 #' @param player_scope Player Scope - All Players, Rookies
@@ -465,12 +472,10 @@ NULL
 #' @export
 #' @family NBA Leaders Functions
 #' @details
-#' (Possibly Deprecated)
 #' ```r
 #'  nba_defensehub(league_id = '00', player_or_team = "Player")
 #'  nba_defensehub(league_id = '00', player_or_team = "Team")
 #' ```
-
 nba_defensehub <- function(
     league_id = '00',
     game_scope = 'Season',
@@ -480,6 +485,13 @@ nba_defensehub <- function(
     season_type = 'Regular Season',
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
+
+  lifecycle::deprecate_stop(
+    when = "3.2.0",
+    what = "nba_defensehub()",
+    with = "nba_leagueleaders()",
+    details = "Live re-probes (2026-11-24 and 2026-11-25, residential IP) returned HTTP 500 for every parameter set tried; nba_api also lists the endpoint as not working."
+  )
 
   version <- "defensehub"
   endpoint <- nba_endpoint(version)

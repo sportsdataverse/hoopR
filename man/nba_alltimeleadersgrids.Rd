@@ -720,6 +720,13 @@ Use \code{nba_leagueleaders()} instead.
 NBA Stats no longer returns stable data for this endpoint.
 This function is deprecated and now errors when called.
 Use \code{nba_leagueleaders()} instead.
+
+\code{nba_defensehub()}: \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
+stats.nba.com answers \code{defensehub} with HTTP 500 for every parameter set tried
+(2026-11-24 and 2026-11-25, residential IP; nba_api lists it as not working), so
+\code{nba_defensehub()} now errors when called. Use \code{nba_leagueleaders()} for the
+league leaders by stat.
 }
 \details{
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_alltimeleadersgrids(league_id = '00')
@@ -743,8 +750,6 @@ Use \code{nba_leagueleaders()} instead.
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_leaderstiles(league_id = '00', player_or_team = "Player")
  nba_leaderstiles(league_id = '00', player_or_team = "Team")
 }\if{html}{\out{</div>}}
-
-(Possibly Deprecated)
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{ nba_defensehub(league_id = '00', player_or_team = "Player")
  nba_defensehub(league_id = '00', player_or_team = "Team")
