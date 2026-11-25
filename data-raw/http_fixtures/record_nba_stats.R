@@ -53,8 +53,15 @@ max_items <- 5L
 dir.create(fix_dir, recursive = TRUE, showWarnings = FALSE)
 index_json <- file.path(fix_dir, "index.json")
 index <- if (file.exists(index_json)) jsonlite::read_json(index_json) else list()
+# Written to a temporary file and moved into place, so an interrupted write keeps
+# the previous index (and the run stays resumable).
 write_index <- function() {
-  jsonlite::write_json(index[order(names(index))], index_json, auto_unbox = TRUE, pretty = TRUE)
+  tmp <- paste0(index_json, ".tmp")
+  jsonlite::write_json(index[order(names(index))], tmp, auto_unbox = TRUE, pretty = TRUE)
+  if (!file.rename(tmp, index_json)) {
+    unlink(tmp)
+    stop("Could not replace ", index_json, "; the previous index is kept", call. = FALSE)
+  }
 }
 
 keep_whole <- c("resultSets", "resultSet", "headers")
@@ -128,11 +135,14 @@ recorder <- function(req) {
   type <- httr2::resp_header(resp, "content-type") %||% "application/json"
   body <- httr2::resp_body_raw(resp)
   j <- tryCatch(jsonlite::fromJSON(rawToChar(body), simplifyVector = FALSE), error = function(e) NULL)
-  if (!is.null(j)) {
-    body <- charToRaw(enc2utf8(as.character(jsonlite::toJSON(
-      trim_json(j), auto_unbox = TRUE, null = "null", na = "null", digits = NA
-    ))))
+  if (is.null(j)) {
+    # An HTML error page with a 200 would replay as an "empty" result; never save it.
+    log_line("  request ", n_requests, " answered 200 without JSON; not recorded")
+    return(resp)
   }
+  body <- charToRaw(enc2utf8(as.character(jsonlite::toJSON(
+    trim_json(j), auto_unbox = TRUE, null = "null", na = "null", digits = NA
+  ))))
   file <- index[[url]]$file %||% paste0(substr(rlang::hash(url), 1, 16), ".gz")
   writeBin(memCompress(body, "gzip"), file.path(fix_dir, file))
   index[[url]] <<- list(file = file, status = status, type = type, trimmed = trim)
