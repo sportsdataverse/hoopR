@@ -65,22 +65,22 @@ Saiem Gilani
   espn_mbb_game_team_roster_entry(event_id = 401256760,
                                             team_id = 150,
                                             athlete_id = 4593919)
-#> ✖ 2026-11-25 05:13:34.577063: Failed to retrieve ESPN mens-college-basketball event roster entry for event_id=401256760, team_id=150, athlete_id=4593919
+#> ✖ 2026-11-25 06:55:12.738978: Failed to retrieve ESPN mens-college-basketball event roster entry for event_id=401256760, team_id=150, athlete_id=4593919
 #> ✖ Args: league = "mens-college-basketball", event_id = 401256760, team_id = 150, athlete_id = 4593919
 #> ✖ Error: HTTP 404 Not Found from https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/events/401256760/competitions/401256760/competitors/150/roster/4593919
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Competitor Roster Entry ─── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 05:13:34 UTC
+#> ℹ Data updated: 2026-11-25 06:55:12 UTC
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   espn_nba_game_team_roster_entry(event_id = 401283399,
                                             team_id = 13,
                                             athlete_id = 1966)
-#> ✖ 2026-11-25 05:13:34.673313: Failed to retrieve ESPN nba event roster entry for event_id=401283399, team_id=13, athlete_id=1966
+#> ✖ 2026-11-25 06:55:12.824377: Failed to retrieve ESPN nba event roster entry for event_id=401283399, team_id=13, athlete_id=1966
 #> ✖ Args: league = "nba", event_id = 401283399, team_id = 13, athlete_id = 1966
 #> ✖ Error: HTTP 404 Not Found from https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/events/401283399/competitions/401283399/competitors/13/roster/1966
 #> ── ESPN NBA Event Competitor Roster Entry ─────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 05:13:34 UTC
+#> ℹ Data updated: 2026-11-25 06:55:12 UTC
 #> # A tibble: 0 × 0
 # }
 ```

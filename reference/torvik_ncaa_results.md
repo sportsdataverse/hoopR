@@ -53,7 +53,7 @@ Other Torvik Functions:
 ``` r
 # \donttest{
   try(torvik_ncaa_results(min_year = 2010, max_year = 2024, type = "conf"))
-#> ✖ 2026-11-25 05:19:49.682996: Invalid arguments or no NCAA tournament results available!
+#> ✖ 2026-11-25 07:00:58.832048: Invalid arguments or no NCAA tournament results available!
 #> ✖ Args: min_year = 2010, max_year = 2024, type = "conf"
 #> ✖ Error: HTTP 403 Forbidden from https://barttorvik.com/cgi-bin/ncaat.cgi
 #> data frame with 0 columns and 0 rows

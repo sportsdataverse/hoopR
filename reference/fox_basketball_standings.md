@@ -46,15 +46,15 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_standings("1"))
 #> ── Fox Sports NBA standings ───────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 05:15:10 UTC
+#> ℹ Data updated: 2026-11-25 06:56:38 UTC
 #> # A tibble: 90 × 23
 #>    team_id section  eastern_conference v2    w_l   pct   gb    pf    pa    home 
 #>    <chr>   <chr>    <chr>              <chr> <chr> <chr> <chr> <chr> <chr> <chr>
 #>  1 1       CONFERE… 1                  76ers 14-4  .778  -     115.3 113.4 7-3  
-#>  2 1       CONFERE… 2                  Hawks 11-6  .647  2.5   116.7 113.6 5-3  
-#>  3 1       CONFERE… 3                  Celt… 12-6  .667  2.0   112.3 102.9 6-1  
-#>  4 1       CONFERE… 4                  Knic… 11-6  .647  2.5   108.9 103.2 6-3  
-#>  5 1       CONFERE… 5                  Pist… 11-6  .647  2.5   112.8 107.2 3-3  
+#>  2 1       CONFERE… 2                  Celt… 12-6  .667  2.0   112.3 102.9 6-1  
+#>  3 1       CONFERE… 3                  Hawks 11-6  .647  2.5   116.7 113.6 5-3  
+#>  4 1       CONFERE… 4                  Pist… 11-6  .647  2.5   112.8 107.2 3-3  
+#>  5 1       CONFERE… 5                  Knic… 11-6  .647  2.5   108.9 103.2 6-3  
 #>  6 1       CONFERE… 6                  Heat  10-6  .625  3.0   120.7 119.4 6-3  
 #>  7 1       CONFERE… 7                  Cava… 9-9   .500  5.0   118.2 116.8 7-3  
 #>  8 1       CONFERE… 8                  Magic 7-10  .412  6.5   107.4 112.3 1-6  

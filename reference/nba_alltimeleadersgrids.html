@@ -11,7 +11,12 @@ Use nba_leagueleaders() instead.
 
 NBA Stats no longer returns stable data for this endpoint.
 This function is deprecated and now errors when called.
-Use nba_leagueleaders() instead."><meta property="og:description" content="
+Use nba_leagueleaders() instead.
+nba_defensehub():
+stats.nba.com answers defensehub with HTTP 500 for every parameter set tried
+(2026-11-24 and 2026-11-25, residential IP; nba_api lists it as not working), so
+nba_defensehub() now errors when called. Use nba_leagueleaders() for the
+league leaders by stat."><meta property="og:description" content="
 NBA Stats no longer returns stable data for this endpoint.
 This function is deprecated and now errors when called.
 Use nba_leagueleaders() instead. Note: stat_category = &quot;Defense&quot; was
@@ -23,7 +28,12 @@ Use nba_leagueleaders() instead.
 
 NBA Stats no longer returns stable data for this endpoint.
 This function is deprecated and now errors when called.
-Use nba_leagueleaders() instead."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
+Use nba_leagueleaders() instead.
+nba_defensehub():
+stats.nba.com answers defensehub with HTTP 500 for every parameter set tried
+(2026-11-24 and 2026-11-25, residential IP; nba_api lists it as not working), so
+nba_defensehub() now errors when called. Use nba_leagueleaders() for the
+league leaders by stat."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
   window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
   plausible.init()
 </script></head><body>
@@ -155,6 +165,11 @@ Use <code>nba_leagueleaders()</code> instead.</p>
 <p>NBA Stats no longer returns stable data for this endpoint.
 This function is deprecated and now errors when called.
 Use <code>nba_leagueleaders()</code> instead.</p>
+<p><code>nba_defensehub()</code>: <a href="https://lifecycle.r-lib.org/articles/stages.html#deprecated" class="external-link"><img src="figures/lifecycle-deprecated.svg" alt="[Deprecated]"></a></p>
+<p>stats.nba.com answers <code>defensehub</code> with HTTP 500 for every parameter set tried
+(2026-11-24 and 2026-11-25, residential IP; nba_api lists it as not working), so
+<code>nba_defensehub()</code> now errors when called. Use <code>nba_leagueleaders()</code> for the
+league leaders by stat.</p>
     </div>
 
     <div class="section level2">
@@ -395,7 +410,6 @@ DefenseHubStat7, DefenseHubStat8, DefenseHubStat9</p>
 <span> <span class="fu"><a href="../reference/nba_alltimeleadersgrids.html">nba_homepagev2</a></span><span class="op">(</span>league_id <span class="op">=</span> <span class="st">'00'</span>, player_or_team <span class="op">=</span> <span class="st">"Team"</span><span class="op">)</span></span></code></pre><p></p></div>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/nba_alltimeleadersgrids.html">nba_leaderstiles</a></span><span class="op">(</span>league_id <span class="op">=</span> <span class="st">'00'</span>, player_or_team <span class="op">=</span> <span class="st">"Player"</span><span class="op">)</span></span>
 <span> <span class="fu"><a href="../reference/nba_alltimeleadersgrids.html">nba_leaderstiles</a></span><span class="op">(</span>league_id <span class="op">=</span> <span class="st">'00'</span>, player_or_team <span class="op">=</span> <span class="st">"Team"</span><span class="op">)</span></span></code></pre><p></p></div>
-<p>(Possibly Deprecated)</p>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/nba_alltimeleadersgrids.html">nba_defensehub</a></span><span class="op">(</span>league_id <span class="op">=</span> <span class="st">'00'</span>, player_or_team <span class="op">=</span> <span class="st">"Player"</span><span class="op">)</span></span>
 <span> <span class="fu"><a href="../reference/nba_alltimeleadersgrids.html">nba_defensehub</a></span><span class="op">(</span>league_id <span class="op">=</span> <span class="st">'00'</span>, player_or_team <span class="op">=</span> <span class="st">"Team"</span><span class="op">)</span></span></code></pre><p></p></div>
 <p><a href="https://www.nba.com/stats/leaders" class="external-link">League Leaders</a></p>

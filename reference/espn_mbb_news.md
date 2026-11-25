@@ -83,27 +83,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 05:13:36 UTC
-#> # A tibble: 5 × 8
-#>         id type  headline       description published premium link_web league_id
-#>      <int> <chr> <chr>          <chr>       <chr>     <lgl>   <chr>    <chr>    
-#> 1 50589785 Media Auburn's Geor… "Kimble II… 2026-11-… FALSE   https:/… 41       
-#> 2 50589738 Media Evansville Pu… "Evansvill… 2026-11-… FALSE   https:/… 41       
-#> 3 50589735 Media Rueben Chinye… "After hit… 2026-11-… FALSE   https:/… 41       
-#> 4 50589726 Recap Holiman’s 17 … "— Adante’… 2026-11-… FALSE   http://… 41       
-#> 5 50589724 Media UNC Asheville… "UNC Ashev… 2026-11-… FALSE   https:/… 41       
+#> ℹ Data updated: 2026-11-25 06:55:14 UTC
+#> # A tibble: 5 × 9
+#>        id type  headline description published premium byline link_web league_id
+#>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
+#> 1  4.25e7 Story Who are… UConn's Ge… 2026-11-… FALSE   Keith… https:/… 54       
+#> 2  5.06e7 Story Men's F… TCU and Lo… 2026-11-… FALSE   Jeff … https:/… 41       
+#> 3  5.06e7 Recap Baylor … — Kayden M… 2026-11-… FALSE   NA     http://… 41       
+#> 4  5.06e7 Media VCU Ram… VCU Rams v… 2026-11-… FALSE   NA     https:/… 41       
+#> 5  5.06e7 Media Baylor … Baylor kno… 2026-11-… FALSE   NA     https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 05:13:36 UTC
-#> # A tibble: 5 × 9
-#>        id type  headline description published premium byline link_web league_id
-#>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.06e7 Recap Tatum s… — Jayson T… 2026-11-… FALSE   NA     http://… 46       
-#> 2  5.06e7 Media Celtics… Celtics sn… 2026-11-… FALSE   NA     https:/… 46       
-#> 3  5.06e7 Recap Without… — Isaiah J… 2026-11-… FALSE   NA     http://… 46       
-#> 4  5.06e7 Media Detroit… Detroit Pi… 2026-11-… FALSE   NA     https:/… 46       
-#> 5  5.06e7 Head… Kawhi L… The Raptor… 2026-11-… FALSE   Antho… https:/… 46       
+#> ℹ Data updated: 2026-11-25 06:55:14 UTC
+#> # A tibble: 5 × 8
+#>         id type  headline       description published premium link_web league_id
+#>      <int> <chr> <chr>          <chr>       <chr>     <lgl>   <chr>    <chr>    
+#> 1 50590300 Recap Cooper Flagg … — Cooper F… 2026-11-… FALSE   http://… 46       
+#> 2 50590138 Media Dallas Maveri… Dallas Mav… 2026-11-… FALSE   https:/… 46       
+#> 3 50589432 Recap Tatum scores … — Jayson T… 2026-11-… FALSE   http://… 46       
+#> 4 50589424 Media Celtics snap … Celtics sn… 2026-11-… FALSE   https:/… 46       
+#> 5 50588896 Recap Without Cade … — Isaiah J… 2026-11-… FALSE   http://… 46       
 # }
 ```

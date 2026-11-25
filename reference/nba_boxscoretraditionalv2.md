@@ -35,6 +35,22 @@ function is deprecated and now errors when called. Use
 [`nba_boxscoreplayertrackv3()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md)
 instead.
 
+`nba_boxscoresimilarityscore()`: **\[deprecated\]**
+
+stats.nba.com answers `boxscoresimilarityscore` with HTTP 400 for every
+parameter set tried: it rejects every `Person1Season` / `Person2Season`
+value, a year or a season string (2026-11-24 and 2026-11-25, residential
+IP; nba_api dropped it in v1.6.0), so `nba_boxscoresimilarityscore()`
+now errors when called. There is no replacement.
+
+`nba_glalumboxscoresimilarityscore()`: **\[deprecated\]**
+
+stats.nba.com answers `glalumboxscoresimilarityscore` with HTTP 500 for
+every parameter set tried (2026-11-24 and 2026-11-25, residential IP;
+nba_api lists it as not working), so
+`nba_glalumboxscoresimilarityscore()` now errors when called. There is
+no replacement.
+
 ## Usage
 
 ``` r
@@ -943,8 +959,6 @@ rather than deprecated.
 
      nba_hustlestatsboxscore(game_id = "0022200021")
 
-(Possibly Deprecated)
-
     z <- nba_commonallplayers()$CommonAllPlayers
     klay <- z %>% dplyr::filter(DISPLAY_FIRST_LAST == 'Klay Thompson')
     book <- z %>% dplyr::filter(DISPLAY_FIRST_LAST == 'Devin Booker')
@@ -957,8 +971,6 @@ rather than deprecated.
       person_2_season = year_to_season(most_recent_nba_season() - 2),
       person_2_season_type = 'Regular Season'
     )
-
-(Possibly Deprecated)
 
 ## See also
 

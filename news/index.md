@@ -35,6 +35,12 @@ in full in the sections below.
   The live crosswalk builders
   ([`nba_team_crosswalk()`](https://hoopR.sportsdataverse.org/reference/nba_team_crosswalk.md)
   and friends) still return character NBA Stats ids.
+- [`nba_defensehub()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md),
+  [`nba_boxscoresimilarityscore()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md)
+  and
+  [`nba_glalumboxscoresimilarityscore()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md)
+  are defunct and error when called; the stats.nba.com endpoints answer
+  HTTP 500 or 400 for every parameter set tried.
 - [`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md)
   reads each league’s own CDN: `league_id` `"00"` (NBA, the default),
   `"10"` (WNBA) and `"20"` (G League). Any other `league_id` is an
@@ -574,9 +580,46 @@ in full in the sections below.
   given (`All%20Players`), like the other wrappers;
   [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md)
   drops the same substitution. With the queries fixed, stats.nba.com
-  answered `defensehub` and `glalumboxscoresimilarityscore` with HTTP
-  500 and `boxscoresimilarityscore` with HTTP 400 on 2026-11-24, so
-  those endpoints still return nothing.
+  still answered `defensehub` and `glalumboxscoresimilarityscore` with
+  HTTP 500 and `boxscoresimilarityscore` with HTTP 400, so the three
+  wrappers are now defunct (below).
+
+- [`nba_defensehub()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md),
+  [`nba_boxscoresimilarityscore()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md)
+  and
+  [`nba_glalumboxscoresimilarityscore()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md)
+  are defunct: they stop in
+  [`lifecycle::deprecate_stop()`](https://lifecycle.r-lib.org/reference/deprecate_soft.html)
+  before any request. Live calls on 2026-11-24 and 2026-11-25
+  (residential IP) with hoopR’s defaults and with nba_api’s documented
+  parameters got HTTP 500 from `defensehub` and
+  `glalumboxscoresimilarityscore` (also with two G League alumni), and
+  HTTP 400 from `boxscoresimilarityscore`, which rejects every
+  `Person1Season` / `Person2Season` value, a year or a season string.
+  nba_api lists the first two as not working and dropped the third in
+  v1.6.0. Use
+  [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md)
+  for the league leaders by stat.
+
+- A stats.nba.com result set with headers and no rows now keeps its
+  columns: a 0-row tibble with the header names instead of a 0x0 tibble.
+  `nba_stats_map_result_sets()` also maps a `resultSet` object (one set)
+  instead of reading one cell of it, so
+  [`nba_gamerotation()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv3.md),
+  [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md),
+  [`nba_leaguedashplayerptshot()`](https://hoopR.sportsdataverse.org/reference/nba_leaguedashoppptshot.md),
+  [`nba_playerestimatedmetrics()`](https://hoopR.sportsdataverse.org/reference/nba_infographicfanduelplayer.md)
+  and
+  [`nba_teamestimatedmetrics()`](https://hoopR.sportsdataverse.org/reference/nba_teamplayeronoffdetails.md)
+  now call it in place of their own copies, and the two shot-location
+  wrappers build their sets the same way.
+  [`nba_bind_sets()`](https://hoopR.sportsdataverse.org/reference/nba_bind_sets.md),
+  [`nba_join_sets()`](https://hoopR.sportsdataverse.org/reference/nba_bind_sets.md)
+  and
+  [`nba_nest_sets()`](https://hoopR.sportsdataverse.org/reference/nba_bind_sets.md)
+  give a headers-only set’s columns the type a populated set has for
+  them, so a character column of no rows does not stop the bind or join
+  (CodeRabbit review).
 
 - A stats.nba.com [`{}`](https://rdrr.io/r/base/Paren.html) answer (some
   retired V2 endpoints) now gives an empty list.
@@ -912,9 +955,12 @@ vocabulary.
   ([`load_ncaa_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md))
   and `player_count_error`
   ([`load_ncaa_mbb_lineups()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md))
-  as `vctrs_unspecified`; they are `logical`, as documented. Every
-  loader built on the multi-file release reader (the
-  `load_nba_stats_*()` release tags,
+  as `vctrs_unspecified`. The 2027 shots release fills `period` and
+  `sec_left`, so they are documented and returned as `integer` and
+  `numeric` (all `NA` for 2019-2026); `player_count_error` is still
+  empty in every lineups release and stays `logical`. Every loader built
+  on the multi-file release reader (the `load_nba_stats_*()` release
+  tags,
   [`load_nba_depthcharts()`](https://hoopR.sportsdataverse.org/reference/load_nba_depthcharts.md),
   [`load_nba_current_impact()`](https://hoopR.sportsdataverse.org/reference/load_nba_current_impact.md))
   and every `load_ncaa_mbb_*()` loader applies the same cast, to
@@ -968,6 +1014,9 @@ vocabulary.
 
 #### **Documentation**
 
+- [`check_status()`](https://hoopR.sportsdataverse.org/reference/check_status.md)
+  carries the `internal` keyword; it was `Internal`, which R and pkgdown
+  do not read as internal.
 - The package now ships its `CITATION` file, so `citation("hoopR")`
   gives the curated entry with the CRAN DOI.
 - Examples that call stats.nba.com, Basketball-Reference or KenPom run

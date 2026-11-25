@@ -19,6 +19,13 @@ NBA Stats no longer returns stable data for this endpoint. This function
 is deprecated and now errors when called. Use `nba_leagueleaders()`
 instead.
 
+`nba_defensehub()`: **\[deprecated\]**
+
+stats.nba.com answers `defensehub` with HTTP 500 for every parameter set
+tried (2026-11-24 and 2026-11-25, residential IP; nba_api lists it as
+not working), so `nba_defensehub()` now errors when called. Use
+`nba_leagueleaders()` for the league leaders by stat.
+
 ## Usage
 
 ``` r
@@ -740,8 +747,6 @@ A named list of `hoopR_data` tibbles: `GravityLeaders`.
 
      nba_leaderstiles(league_id = '00', player_or_team = "Player")
      nba_leaderstiles(league_id = '00', player_or_team = "Team")
-
-(Possibly Deprecated)
 
      nba_defensehub(league_id = '00', player_or_team = "Player")
      nba_defensehub(league_id = '00', player_or_team = "Team")

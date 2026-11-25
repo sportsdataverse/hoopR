@@ -47,7 +47,7 @@ lists every function in this family.
 # \donttest{
   try(tpbl_teams(season = 2026))
 #> ── TPBL Teams from api.tpbl.basketball ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 05:19:59 UTC
+#> ℹ Data updated: 2026-11-25 07:01:09 UTC
 #> # A tibble: 9 × 7
 #>   season season_id team_id gohoops_team_id name             is_real_team status
 #>    <int>     <int>   <int>           <int> <chr>            <lgl>        <chr> 

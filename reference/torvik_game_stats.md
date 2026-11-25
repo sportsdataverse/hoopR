@@ -49,7 +49,7 @@ Other Torvik Functions:
 # \donttest{
   # Interactive only: every team-game of a season, 4-5 s of parsing.
   try(torvik_game_stats(year = 2024))
-#> ✖ 2026-11-25 05:19:49.491133: Invalid arguments or no game stats available for 2024!
+#> ✖ 2026-11-25 07:00:58.640101: Invalid arguments or no game stats available for 2024!
 #> ✖ Args: year = 2024
 #> ✖ Error: HTTP 403 Forbidden from https://barttorvik.com/getgamestats.php
 #> data frame with 0 columns and 0 rows

@@ -18,7 +18,16 @@ Use nba_boxscoreusagev3() instead.
 
 NBA Stats no longer returns stable data for this V2 endpoint.
 This function is deprecated and now errors when called.
-Use nba_boxscoreplayertrackv3() instead."><meta property="og:description" content="
+Use nba_boxscoreplayertrackv3() instead.
+nba_boxscoresimilarityscore():
+stats.nba.com answers boxscoresimilarityscore with HTTP 400 for every parameter set tried: it rejects
+every Person1Season / Person2Season value, a year or a season string
+(2026-11-24 and 2026-11-25, residential IP; nba_api dropped it in v1.6.0), so
+nba_boxscoresimilarityscore() now errors when called. There is no replacement.
+nba_glalumboxscoresimilarityscore():
+stats.nba.com answers glalumboxscoresimilarityscore with HTTP 500 for every parameter set tried
+(2026-11-24 and 2026-11-25, residential IP; nba_api lists it as not working), so
+nba_glalumboxscoresimilarityscore() now errors when called. There is no replacement."><meta property="og:description" content="
 NBA Stats no longer returns stable data for this V2 endpoint.
 This function is deprecated and now errors when called.
 Use nba_boxscorefourfactorsv3() instead.
@@ -37,7 +46,16 @@ Use nba_boxscoreusagev3() instead.
 
 NBA Stats no longer returns stable data for this V2 endpoint.
 This function is deprecated and now errors when called.
-Use nba_boxscoreplayertrackv3() instead."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
+Use nba_boxscoreplayertrackv3() instead.
+nba_boxscoresimilarityscore():
+stats.nba.com answers boxscoresimilarityscore with HTTP 400 for every parameter set tried: it rejects
+every Person1Season / Person2Season value, a year or a season string
+(2026-11-24 and 2026-11-25, residential IP; nba_api dropped it in v1.6.0), so
+nba_boxscoresimilarityscore() now errors when called. There is no replacement.
+nba_glalumboxscoresimilarityscore():
+stats.nba.com answers glalumboxscoresimilarityscore with HTTP 500 for every parameter set tried
+(2026-11-24 and 2026-11-25, residential IP; nba_api lists it as not working), so
+nba_glalumboxscoresimilarityscore() now errors when called. There is no replacement."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
   window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
   plausible.init()
 </script></head><body>
@@ -176,6 +194,15 @@ Use <code><a href="nba_boxscoretraditionalv3.html">nba_boxscoreusagev3()</a></co
 <p>NBA Stats no longer returns stable data for this V2 endpoint.
 This function is deprecated and now errors when called.
 Use <code><a href="nba_boxscoretraditionalv3.html">nba_boxscoreplayertrackv3()</a></code> instead.</p>
+<p><code>nba_boxscoresimilarityscore()</code>: <a href="https://lifecycle.r-lib.org/articles/stages.html#deprecated" class="external-link"><img src="figures/lifecycle-deprecated.svg" alt="[Deprecated]"></a></p>
+<p>stats.nba.com answers <code>boxscoresimilarityscore</code> with HTTP 400 for every parameter set tried: it rejects
+every <code>Person1Season</code> / <code>Person2Season</code> value, a year or a season string
+(2026-11-24 and 2026-11-25, residential IP; nba_api dropped it in v1.6.0), so
+<code>nba_boxscoresimilarityscore()</code> now errors when called. There is no replacement.</p>
+<p><code>nba_glalumboxscoresimilarityscore()</code>: <a href="https://lifecycle.r-lib.org/articles/stages.html#deprecated" class="external-link"><img src="figures/lifecycle-deprecated.svg" alt="[Deprecated]"></a></p>
+<p>stats.nba.com answers <code>glalumboxscoresimilarityscore</code> with HTTP 500 for every parameter set tried
+(2026-11-24 and 2026-11-25, residential IP; nba_api lists it as not working), so
+<code>nba_glalumboxscoresimilarityscore()</code> now errors when called. There is no replacement.</p>
     </div>
 
     <div class="section level2">
@@ -402,7 +429,6 @@ the wrapper stays exported/active rather than deprecated.</p>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/nba_boxscoretraditionalv2.html">nba_boxscorematchups</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="st">"0022200021"</span><span class="op">)</span></span></code></pre><p></p></div>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/nba_boxscoretraditionalv2.html">nba_boxscoreplayertrackv2</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="st">"0022200021"</span><span class="op">)</span></span></code></pre><p></p></div>
 <p></p><div class="sourceCode r"><pre><code><span> <span class="fu"><a href="../reference/nba_boxscoretraditionalv2.html">nba_hustlestatsboxscore</a></span><span class="op">(</span>game_id <span class="op">=</span> <span class="st">"0022200021"</span><span class="op">)</span></span></code></pre><p></p></div>
-<p>(Possibly Deprecated)</p>
 <p></p><div class="sourceCode r"><pre><code><span><span class="va">z</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/nba_commonallplayers.html">nba_commonallplayers</a></span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="va">CommonAllPlayers</span></span>
 <span><span class="va">klay</span> <span class="op">&lt;-</span> <span class="va">z</span> <span class="op">%&gt;%</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">DISPLAY_FIRST_LAST</span> <span class="op">==</span> <span class="st">'Klay Thompson'</span><span class="op">)</span></span>
 <span><span class="va">book</span> <span class="op">&lt;-</span> <span class="va">z</span> <span class="op">%&gt;%</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">DISPLAY_FIRST_LAST</span> <span class="op">==</span> <span class="st">'Devin Booker'</span><span class="op">)</span></span>
@@ -415,7 +441,6 @@ the wrapper stays exported/active rather than deprecated.</p>
 <span>  person_2_season <span class="op">=</span> <span class="fu"><a href="../reference/year_to_season.html">year_to_season</a></span><span class="op">(</span><span class="fu"><a href="../reference/most_recent_nba_season.html">most_recent_nba_season</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-</span> <span class="fl">2</span><span class="op">)</span>,</span>
 <span>  person_2_season_type <span class="op">=</span> <span class="st">'Regular Season'</span></span>
 <span><span class="op">)</span></span></code></pre><p></p></div>
-<p>(Possibly Deprecated)</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

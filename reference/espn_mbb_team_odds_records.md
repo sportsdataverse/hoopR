@@ -108,20 +108,20 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_mbb_team_odds_records(team_id = 150, season = 2026)
-#> ✖ 2026-11-25 05:14:09.899668: Failed to retrieve ESPN mens-college-basketball team odds-records for team_id=150, season=2026
+#> ✖ 2026-11-25 06:55:43.500823: Failed to retrieve ESPN mens-college-basketball team odds-records for team_id=150, season=2026
 #> ✖ Args: league = "mens-college-basketball", team_id = 150, season = 2026, season_type = 0L
 #> ✖ Error: HTTP 404 Not Found from https://sports.core.api.espn.com/v2/sports/basketball/leagues/mens-college-basketball/seasons/2026/types/0/teams/150/odds-records
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team Odds-Records ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 05:14:09 UTC
+#> ℹ Data updated: 2026-11-25 06:55:43 UTC
 #> # A tibble: 0 × 0
 # }
 # \donttest{
   espn_nba_team_odds_records(team_id = 13, season = 2026)
-#> ✖ 2026-11-25 05:14:09.994306: Failed to retrieve ESPN nba team odds-records for team_id=13, season=2026
+#> ✖ 2026-11-25 06:55:43.597565: Failed to retrieve ESPN nba team odds-records for team_id=13, season=2026
 #> ✖ Args: league = "nba", team_id = 13, season = 2026, season_type = 0L
 #> ✖ Error: HTTP 404 Not Found from https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2026/types/0/teams/13/odds-records
 #> ── ESPN NBA Team Odds-Records ─────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 05:14:09 UTC
+#> ℹ Data updated: 2026-11-25 06:55:43 UTC
 #> # A tibble: 0 × 0
 # }
 ```

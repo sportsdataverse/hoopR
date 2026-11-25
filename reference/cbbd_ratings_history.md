@@ -60,7 +60,7 @@ Other CBD Ratings Functions:
 ``` r
 # \donttest{
   try(cbbd_ratings_history(season = 2025, team = "Duke"))
-#> ✖ 2026-11-25 05:12:30.503235: Invalid arguments or no rating history available!
+#> ✖ 2026-11-25 06:54:14.864479: Invalid arguments or no rating history available!
 #> ✖ Args: season = 2025, date = NULL, team = "Duke", conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
