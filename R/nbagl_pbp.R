@@ -96,7 +96,7 @@ nbagl_live_pbp <- function(
   )
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nbagl_live_pbp", {
       res <- .retry_request(full_url, headers = .nba_cdn_headers())
       .stop_for_http_status(res)
 
@@ -143,7 +143,7 @@ nbagl_live_pbp <- function(
           )
         ) %>%
         make_hoopR_data("NBA G-League Game Play-by-Play Information from NBA.com", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no play-by-play data for {game_id} available!",
@@ -195,7 +195,7 @@ nbagl_live_boxscore <- function(
   df_list <- list()
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nbagl_live_boxscore", {
       res <- .retry_request(full_url, headers = .nba_cdn_headers())
       .stop_for_http_status(res)
 
@@ -340,7 +340,7 @@ nbagl_live_boxscore <- function(
         "home_team_linescores",
         "away_team_linescores"
       )
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no boxscore data for {game_id} available!",

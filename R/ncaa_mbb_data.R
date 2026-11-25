@@ -80,7 +80,7 @@ ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
 
   ncaa_headers <- .ncaa_headers()
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("ncaa_mbb_teams", {
       url <- paste0(
         "http://stats.ncaa.org/team/inst_team_list?academic_year=",
         year,
@@ -191,7 +191,7 @@ ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
           "season_team_id"
         ) %>%
         make_hoopR_data("NCAA Basketball Teams data from stats.ncaa.org", Sys.time())
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments provided",
