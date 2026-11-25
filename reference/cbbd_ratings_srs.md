@@ -71,26 +71,31 @@ searchable [return
 columns](https://hoopR.sportsdataverse.org/articles/return-columns.html)
 article.
 
+## See also
+
+Other CBD Ratings Functions:
+[`cbbd_ratings_history()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_history.md)
+
 ## Examples
 
 ``` r
 # \donttest{
   try(cbbd_ratings_srs(season = 2024))
-#> ✖ 2026-11-25 01:50:45.073133: Invalid arguments or no SRS ratings available!
+#> ✖ 2026-11-25 03:01:29.660017: Invalid arguments or no SRS ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_ratings_adjusted(season = 2024))
-#> ✖ 2026-11-25 01:50:45.086233: Invalid arguments or no adjusted ratings available!
+#> ✖ 2026-11-25 03:01:29.670732: Invalid arguments or no adjusted ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_ratings_elo(season = 2024))
-#> ✖ 2026-11-25 01:50:45.097767: Invalid arguments or no Elo ratings available!
+#> ✖ 2026-11-25 03:01:29.6811: Invalid arguments or no Elo ratings available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

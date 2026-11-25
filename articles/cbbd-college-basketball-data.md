@@ -43,6 +43,9 @@ has_cbbd_key()
 #> [1] TRUE
 
 ?register_cbbd
+
+# Your key's tier and monthly calls left (this request costs no calls)
+cbbd_api_key_info()
 ```
 
 ### Reference data: conferences, teams, venues
@@ -153,6 +156,10 @@ cbbd_lineups_game(game_id = game_id)
 cbbd_ratings_srs(season = 2024)        # Simple Rating System
 cbbd_ratings_adjusted(season = 2024)   # adjusted offensive/defensive efficiency
 cbbd_ratings_elo(season = 2024)        # Elo
+
+# Daily adjusted-efficiency and SRS snapshots. Needs a Patreon Tier 2 key
+# for the current season, Tier 3 for earlier ones such as 2025.
+cbbd_ratings_history(season = 2025, team = "Duke")
 
 cbbd_rankings(season = 2024, poll_type = "ap")
 ```

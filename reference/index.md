@@ -2118,6 +2118,11 @@ Registering your CollegeBasketballData API key
 
 Functions exported by hoopR to access the CollegeBasketballData API
 
+- [`cbbd_api_key_info()`](https://hoopR.sportsdataverse.org/reference/cbbd_api_key_info.md)
+  :
+
+  **CBD API Key Info**
+
 - [`cbbd_conferences()`](https://hoopR.sportsdataverse.org/reference/cbbd_conferences.md)
   [`cbbd_conferences_history()`](https://hoopR.sportsdataverse.org/reference/cbbd_conferences.md)
   :
@@ -2166,6 +2171,11 @@ Functions exported by hoopR to access the CollegeBasketballData API
   :
 
   **CBD Rankings**
+
+- [`cbbd_ratings_history()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_history.md)
+  :
+
+  **CBD Rating History**
 
 - [`cbbd_ratings_srs()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md)
   [`cbbd_ratings_adjusted()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_srs.md)

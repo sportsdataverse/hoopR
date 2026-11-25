@@ -574,6 +574,20 @@ in full in the sections below.
   `ratings`, `efficiency`, `shooting`, `players`, `schedule` and
   `sources` tibbles.
 
+- Added
+  [`cbbd_ratings_history()`](https://hoopR.sportsdataverse.org/reference/cbbd_ratings_history.md)
+  (CBD `/ratings/history`, upstream v1.32.0): daily snapshots of each
+  team’s adjusted efficiency and SRS ratings, with the day’s national
+  ranks and the 1-, 7- and 30-day change in net rating. Give a `date`, a
+  `team` or both. The endpoint needs a Patreon Tier 2 key for the
+  current season and Tier 3 for earlier ones.
+
+- Added
+  [`cbbd_api_key_info()`](https://hoopR.sportsdataverse.org/reference/cbbd_api_key_info.md)
+  (CBD `/info`, upstream v1.32.0): one row with your key’s tier, monthly
+  allowance (shared with CollegeFootballData), calls used and left, and
+  next reset. The request costs no calls.
+
 - [`ncaa_mbb_NET_rankings()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_NET_rankings.md)
   failed on every call with “invalid first argument” and returned an
   empty tibble: it recorded its arguments with

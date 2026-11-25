@@ -489,12 +489,12 @@ espn_mbb_standings(year = season)
 #>    team_id team             conference avgpointsagainst avgpointsfor gamesbehind
 #>      <int> <chr>            <chr>                 <dbl>        <dbl>       <dbl>
 #>  1    2349 UMass Lowell Ri… America E…             63.3         75.2         0  
-#>  2    2066 Binghamton Bear… America E…             66.1         67.1         0.5
-#>  3     160 New Hampshire W… America E…             61.9         72.4         0.5
+#>  2    2066 Binghamton Bear… America E…             68.2         70           0  
+#>  3     160 New Hampshire W… America E…             63.2         66.8         1  
 #>  4     399 UAlbany Great D… America E…             72.8         70.6         1  
-#>  5    2378 UMBC Retrievers  America E…             74           72.2         1  
-#>  6     261 Vermont Catamou… America E…             68           78.7         1  
-#>  7    2803 Bryant Bulldogs  America E…             71.3         65.6         1.5
+#>  5    2378 UMBC Retrievers  America E…             75.4         69.6         1.5
+#>  6     261 Vermont Catamou… America E…             72.3         80           1.5
+#>  7    2803 Bryant Bulldogs  America E…             69.6         64.5         2  
 #>  8     311 Maine Black Bea… America E…             71.9         62           2.5
 #>  9    2885 NJIT Highlanders America E…             77.6         57.4         4  
 #> 10    2724 Wichita State S… American …             69.7         87           0  

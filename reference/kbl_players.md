@@ -37,8 +37,8 @@ lists every function in this family.
 # \donttest{
   try(kbl_players())
 #> ── KBL Players from api.kbl.or.kr ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 01:53:47 UTC
-#> # A tibble: 1,558 × 10
+#> ℹ Data updated: 2026-11-25 03:04:41 UTC
+#> # A tibble: 1,562 × 10
 #>    pcode  player_name player_name_en   team_code team_name team_name_en back_num
 #>    <chr>  <chr>       <chr>            <chr>     <chr>     <chr>        <chr>   
 #>  1 290801 CJ 레슬리   CJ 레슬리        70        안양 KGC  JUNG KWAN J… "15"    
@@ -51,7 +51,7 @@ lists every function in this family.
 #>  8 245042 강대협      Kang Dae Hyup    65        인천전자랜드…… KBL          "10"    
 #>  9 250058 강동희      Kang Dong Hee    16        원주동부  DB           ""      
 #> 10 291192 강바일      KANG B I         35        서울 삼성 SAMSUNG      "19"    
-#> # ℹ 1,548 more rows
+#> # ℹ 1,552 more rows
 #> # ℹ 3 more variables: pos <chr>, player_flag <chr>, last_career <chr>
 # }
 ```

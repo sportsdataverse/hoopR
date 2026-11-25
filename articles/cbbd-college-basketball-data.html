@@ -199,7 +199,10 @@ easiest way is to add it to your <code>.Renviron</code> file:</p>
 <span><span class="fu"><a href="../reference/register_cbbd.html">has_cbbd_key</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] TRUE</span></span>
 <span></span>
-<span><span class="op">?</span><span class="va">register_cbbd</span></span></code></pre></div>
+<span><span class="op">?</span><span class="va">register_cbbd</span></span>
+<span></span>
+<span><span class="co"># Your key's tier and monthly calls left (this request costs no calls)</span></span>
+<span><span class="fu"><a href="../reference/cbbd_api_key_info.html">cbbd_api_key_info</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="reference-data-conferences-teams-venues">Reference data: conferences, teams, venues<a class="anchor" aria-label="anchor" href="#reference-data-conferences-teams-venues"></a>
@@ -295,6 +298,10 @@ into prefixed columns (e.g. <code>team_stats_*</code>,
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cbbd_ratings_srs.html">cbbd_ratings_srs</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span>        <span class="co"># Simple Rating System</span></span>
 <span><span class="fu"><a href="../reference/cbbd_ratings_srs.html">cbbd_ratings_adjusted</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span>   <span class="co"># adjusted offensive/defensive efficiency</span></span>
 <span><span class="fu"><a href="../reference/cbbd_ratings_srs.html">cbbd_ratings_elo</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span><span class="op">)</span>        <span class="co"># Elo</span></span>
+<span></span>
+<span><span class="co"># Daily adjusted-efficiency and SRS snapshots. Needs a Patreon Tier 2 key</span></span>
+<span><span class="co"># for the current season, Tier 3 for earlier ones such as 2025.</span></span>
+<span><span class="fu"><a href="../reference/cbbd_ratings_history.html">cbbd_ratings_history</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span>, team <span class="op">=</span> <span class="st">"Duke"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="../reference/cbbd_rankings.html">cbbd_rankings</a></span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2024</span>, poll_type <span class="op">=</span> <span class="st">"ap"</span><span class="op">)</span></span></code></pre></div>
 </div>
