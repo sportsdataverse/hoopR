@@ -43,6 +43,7 @@ torvik_ncaa_results <- function(min_year, max_year, type = "team") {
       url <- paste0(.torvik_base_url, "/cgi-bin/ncaat.cgi?yrlow=", min_year,
                     "&yrhigh=", max_year, "&type=", type)
       resp <- .retry_request(url, headers = c("User-Agent" = .torvik_user_agent))
+      .stop_for_http_status(resp)
       df <- .resp_text(resp) %>%
         rvest::read_html() %>%
         rvest::html_table() %>%

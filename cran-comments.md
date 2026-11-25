@@ -27,6 +27,11 @@ full list of changes is in NEWS.md. The main additions:
   feeds, Torvik, KenPom, `nba_gamerotation()` and `nba_pbp()` on-court players.
   `build_mbb_db()` and `build_nba_db()` now stop, leaving the existing table
   as it was, when the games index cannot be read.
+  The wrappers that make their own request (ESPN win probability, the NBA
+  and G League CDN feeds, `nba_schedule()`, `ncaa_mbb_teams()`, RotoWire,
+  Torvik tournament results) report an HTTP error status instead of parsing
+  the error body, and three stats.nba.com wrappers no longer send spaces as
+  `%2B`.
 * The NBA crosswalk loaders, and the new `load_nba_stats_metric_curves()`
   and `load_nba_stats_rolling_windows()`, return the NBA Stats team and
   player ids as integer, like the other `load_nba_stats_*()` loaders, and

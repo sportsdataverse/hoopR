@@ -19,7 +19,8 @@ test_that("nba_bind_sets row-binds and tags origin (tactic B)", {
   expect_true(all(c("PERSON_ID", "TEAM_ID") %in% names(out)))
   expect_true(any(is.na(out$TEAM_ID)))                 # missing cols -> NA
 
-  expect_error(nba_bind_sets(list()))
+  expect_identical(nba_bind_sets(list()), dplyr::tibble())
+  expect_error(nba_bind_sets("x"))
 })
 
 test_that("nba_join_sets widens on a shared key (tactic C)", {

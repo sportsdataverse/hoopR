@@ -35,6 +35,7 @@ espn_mbb_wp <- function(game_id) {
     expr = .hoopR_with_warnings("espn_mbb_wp", {
       espn_wp <-
         .retry_request(sprintf("http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?event=%s", espn_game_id)) %>%
+        .stop_for_http_status() %>%
         .resp_text() %>%
         jsonlite::fromJSON(flatten = TRUE) %>%
         purrr::pluck("winprobability") %>%
@@ -70,7 +71,7 @@ espn_mbb_wp <- function(game_id) {
         dplyr::mutate(
           away_win_percentage = 1 - .data$home_win_percentage - .data$tie_percentage
         )
-      espn_wp$time_left <- purrr::map_dfr(1:length(espn_wp$time_left), function(x) {
+      espn_wp$time_left <- purrr::map_dfr(seq_along(espn_wp$time_left), function(x) {
         data.frame(time_left = sub("(.{2})(.*)", "\\1:\\2", as.character(pad_time(espn_wp$time_left[[x]]))))
       })$time_left
 

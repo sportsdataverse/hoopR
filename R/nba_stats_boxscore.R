@@ -767,8 +767,6 @@ nba_boxscoresimilarityscore <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  person_1_season_type <- gsub(' ', '+', person_1_season_type)
-  person_2_season_type <- gsub(' ', '+', person_2_season_type)
   version <- "boxscoresimilarityscore"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -791,7 +789,7 @@ nba_boxscoresimilarityscore <- function(
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
+      df_list <- purrr::map(seq_along(resp$resultSet$name), function(x){
         data <- resp$resultSet$rowSet %>%
           data.frame(stringsAsFactors = FALSE) %>%
           dplyr::as_tibble()
@@ -851,8 +849,6 @@ nba_glalumboxscoresimilarityscore <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  person_1_season_type <- gsub(' ', '+', person_1_season_type)
-  person_2_season_type <- gsub(' ', '+', person_2_season_type)
   version <- "glalumboxscoresimilarityscore"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

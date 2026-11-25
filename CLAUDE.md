@@ -275,7 +275,9 @@ All HTTP requests use `httr2` as the sole backend. The `httr` package is no long
 Shared internal helpers in `utils.R`:
 - `.retry_request(url, params, headers, timeout, proxy)` -- performs a GET with retry logic via `httr2`
 - `.resp_text(resp)` -- extracts response body as UTF-8 text via `httr2::resp_body_string()`
-- `check_status(res)` -- checks HTTP status via `httr2::resp_status()`
+- `check_status(res)` -- raises the classed `hoopR_http_error` of `.stop_for_http_status()` for a non-2xx response
+- `.stop_for_http_status(resp)` -- the status check itself. `.retry_request()` turns off httr2's status errors, so every caller checks the status before parsing: through a shared helper (`request_with_proxy()`, `.torvik_text()`, `.bref_text()`, `.ext_html()`, the CBBD helper), or with `.stop_for_http_status(res)` / `check_status(res)` right after its own `.retry_request()`, or by branching on `httr2::resp_status()` itself. An error body must never reach the parser.
+- Pass query values to `req_url_query()` / `params` as they are. httr2 percent-encodes them, so a space swapped for `+` beforehand is sent as `%2B` (stats.nba.com answers HTTP 400).
 
 #### Proxy support
 

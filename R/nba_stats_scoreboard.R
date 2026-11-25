@@ -62,8 +62,9 @@ nba_schedule <- function(
   games <- NULL
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_schedule", {
       resp <- .retry_request(cdn_host, headers = .nba_cdn_headers()) %>%
+        .stop_for_http_status() %>%
         .resp_text() %>%
         jsonlite::fromJSON()
 
@@ -128,7 +129,7 @@ nba_schedule <- function(
           ),
           game_date = .parse_mdy(substring(.data$game_date, 1, 10))
         )
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no league schedule data for {season} available!",
@@ -400,9 +401,10 @@ nba_todays_scoreboard <- function(
   games <- .empty_hoopR_data("NBA Today's Scoreboard Information from NBA.com")
 
   tryCatch(
-    expr = {
+    expr = .hoopR_with_warnings("nba_todays_scoreboard", {
       full_url <- "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json"
       res <- .retry_request(full_url, headers = .nba_cdn_headers())
+      .stop_for_http_status(res)
 
       resp <- res %>%
         .resp_text() %>%
@@ -436,7 +438,7 @@ nba_todays_scoreboard <- function(
           janitor::clean_names() %>%
           make_hoopR_data("NBA Today's Scoreboard Information from NBA.com", Sys.time())
       }
-    },
+    }),
     error = function(e) .report_api_error(
       e,
       hint = "Invalid arguments or no today's scoreboard data available!",

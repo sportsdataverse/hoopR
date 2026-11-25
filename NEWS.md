@@ -135,6 +135,19 @@ the sections below.
   (`request_with_proxy()`), Bart Torvik, Basketball-Reference and
   HoopsHype / Spotrac / NBADraft.net helpers check it the same way. A 200
   response, including an empty `[]`, is parsed as before.
+* The wrappers that make their own request check the status the same way:
+  `espn_mbb_wp()`, `espn_nba_wp()`, `nba_draftboard()`, `nba_live_pbp()`,
+  `nba_live_boxscore()`, `nba_schedule()`, `nba_todays_scoreboard()`,
+  `nbagl_live_pbp()`, `nbagl_live_boxscore()`, `ncaa_mbb_teams()`,
+  `rotowire_injuries()` and `torvik_ncaa_results()`. An error answer used to
+  be parsed, so they reported a JSON or column error that hid the status (a
+  401 or 500). They now report `HTTP <status> from <url>`. The ESPN, Fox and
+  crosswalk helpers that check the status with `check_status()` raise the same
+  `hoopR_http_error` (as does `nba_data_pbp()`), so their report names the
+  status and URL instead of "The API returned an error"; a 2xx answer other
+  than 200 (204, 206) is no longer an error there.
+  The CDN wrappers among them and `ncaa_mbb_teams()` now also run their body
+  inside `.hoopR_with_warnings()`, so a parse warning names the function.
 
 ### **Behavior changes**
 
@@ -379,6 +392,20 @@ the sections below.
   `nba_leaguehustlestatsteam()`, `nba_leaguehustlestatsteamleaders()`) never sent
   `last_n_games` either, and those stats.nba.com endpoints have no `LastNGames`
   filter, so the argument is now deprecated and warns when supplied.
+* `nba_defensehub()`, `nba_boxscoresimilarityscore()` and
+  `nba_glalumboxscoresimilarityscore()` turned spaces in `player_scope` and the
+  season types into `+` before the request encoded them, so stats.nba.com got
+  `All%2BPlayers` and `Regular%2BSeason` and answered HTTP 400. They now send
+  the values as given (`All%20Players`), like the other wrappers;
+  `nba_leagueleaders()` drops the same substitution. With the queries fixed,
+  stats.nba.com answered `defensehub` and `glalumboxscoresimilarityscore` with
+  HTTP 500 and `boxscoresimilarityscore` with HTTP 400 on 2026-11-24, so those
+  endpoints still return nothing.
+* A stats.nba.com `{}` answer (some retired V2 endpoints) now gives an empty
+  list. `nba_stats_map_result_sets()` and six wrappers with their own copy of
+  it counted `1:length(NULL)` as two result sets and returned two unnamed
+  empty tibbles. `nba_bind_sets()` turns that empty list into an empty tibble
+  (it used to stop), so `nba_bind_sets(nba_*())` still gives no rows.
 
 * `nba_videoeventsasset()` is no longer deprecated: the endpoint serves clips for a real
   `game_event_id` (the default `0` matches no play), and the video envelope is now parsed

@@ -496,8 +496,6 @@ nba_defensehub <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  player_scope <- gsub(' ','+',player_scope)
-  # season_type <- gsub(' ','+',season_type)
   version <- "defensehub"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -570,9 +568,6 @@ nba_leagueleaders <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  scope <- gsub(' ','+',scope)
-  # season_type <- gsub(' ','+',season_type)
-  stat_category <- gsub(' ','+',stat_category)
   version <- "leagueleaders"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -594,7 +589,7 @@ nba_leagueleaders <- function(
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x){
+      df_list <- purrr::map(seq_along(resp$resultSet$name), function(x){
         data <- resp$resultSet$rowSet %>%
           data.frame(stringsAsFactors = FALSE) %>%
           dplyr::as_tibble()

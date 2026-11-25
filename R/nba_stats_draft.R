@@ -33,6 +33,7 @@ nba_draftboard <- function(
   tryCatch(
     expr = .hoopR_with_warnings("nba_draftboard", {
       res <- .retry_request(full_url, params = params)
+      .stop_for_http_status(res)
       resp <- res %>%
         .resp_text() %>%
         jsonlite::fromJSON() %>%

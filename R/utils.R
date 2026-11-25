@@ -746,15 +746,15 @@ clean_team_names_NCAA_merge <- function(df) {
 
 
 #' **Check Status function**
+#' @description Raises the classed `hoopR_http_error` of
+#'   `.stop_for_http_status()` (status, URL and the error body's message) for a
+#'   non-2xx response.
 #' @param res Response from API (httr2 response object)
+#' @return `res`, invisibly, when its status is 2xx.
 #' @keywords Internal
 #'
 check_status <- function(res) {
-  x <- httr2::resp_status(res)
-
-  if (x != 200) {
-    stop("The API returned an error", call. = FALSE)
-  }
+  .stop_for_http_status(res, call = rlang::caller_env())
 }
 
 #' Raise a classed error for a non-2xx response
