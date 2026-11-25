@@ -83,20 +83,20 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 03:02:39 UTC
+#> ℹ Data updated: 2026-11-25 03:28:50 UTC
 #> # A tibble: 5 × 8
 #>         id type  headline       description published premium link_web league_id
 #>      <int> <chr> <chr>          <chr>       <chr>     <lgl>   <chr>    <chr>    
-#> 1 50589004 Media Lipscomb Biso… Lipscomb B… 2026-11-… FALSE   https:/… 41       
-#> 2 50588996 Media Florida A&M R… Florida A&… 2026-11-… FALSE   https:/… 41       
-#> 3 50588944 Recap Bellarmine se… — Tyler Do… 2026-11-… FALSE   http://… 41       
-#> 4 50588942 Media West Georgia … West Georg… 2026-11-… FALSE   https:/… 41       
-#> 5 50588933 Recap Hampton has 1… — Matt Ham… 2026-11-… FALSE   http://… 41       
+#> 1 50589217 Recap Rickey Bradle… — Rickey B… 2026-11-… FALSE   http://… 41       
+#> 2 50589209 Media Alabama A&M B… Alabama A&… 2026-11-… FALSE   https:/… 41       
+#> 3 50589185 Recap Mosquera’s 25… — Trent Mo… 2026-11-… FALSE   http://… 41       
+#> 4 50589168 Media Central Michi… Central Mi… 2026-11-… FALSE   https:/… 41       
+#> 5 50589163 Media Drexel Dragon… Drexel Dra… 2026-11-… FALSE   https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 03:02:39 UTC
+#> ℹ Data updated: 2026-11-25 03:28:50 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    

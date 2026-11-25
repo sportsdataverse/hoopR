@@ -76,7 +76,7 @@ lists every function in this family.
 # \donttest{
   try(tbf_period_scores(match_id = 346279))
 #> ── TBF Period Scores ──────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 03:08:31 UTC
+#> ℹ Data updated: 2026-11-25 03:34:23 UTC
 #> # A tibble: 8 × 5
 #>   match_id side  period period_type points
 #>      <int> <chr>  <int>       <int>  <int>

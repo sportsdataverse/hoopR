@@ -88,7 +88,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-11-25 03:03:13 UTC
+#> ℹ Data updated: 2026-11-25 03:29:15 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -101,7 +101,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 03:03:13 UTC
+#> ℹ Data updated: 2026-11-25 03:29:15 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
@@ -109,6 +109,6 @@ Saiem Gilani
 #> 2  4.16e7 Story Which N… In 2024, B… 2026-11-… FALSE   Keith… https:/… NA       
 #> 3  5.06e7 Media Utah Ja… Utah Jazz … 2026-11-… FALSE   NA     https:/… 46       
 #> 4  5.06e7 Recap Luka Do… — Luka Don… 2026-11-… FALSE   NA     http://… 46       
-#> 5  4.96e7 Story 2026 NB… Here's eve… 2026-11-… FALSE   ESPN   https:/… 46       
+#> 5  5.06e7 Story Too-ear… So what if… 2026-11-… FALSE   Ben G… https:/… 46       
 # }
 ```

@@ -26,4 +26,6 @@ so optional parameters can be threaded through unconditionally.
 
 ## Value
 
-The parsed JSON body (a data.frame for list endpoints).
+The parsed JSON body (a data.frame for list endpoints). A non-2xx
+response raises a `hoopR_http_error` (see `.stop_for_http_status()`)
+instead of being parsed.

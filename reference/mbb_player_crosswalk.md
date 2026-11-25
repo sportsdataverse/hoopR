@@ -62,9 +62,12 @@ Other MBB Crosswalk Functions:
 ``` r
 # \donttest{
   try(mbb_player_crosswalk(season = 2025))
-#> ✖ 2026-11-25 03:06:39.528718: Could not build MBB player crosswalk for 2025!
+#> ✖ 2026-11-25 03:32:41.429382: Invalid arguments or no T-Rank ratings available for 2025!
+#> ✖ Args: year = 2025L
+#> ✖ Error: HTTP 403 Forbidden from https://barttorvik.com/2025_team_results.csv
+#> ✖ 2026-11-25 03:32:41.445863: Could not build MBB player crosswalk for 2025!
 #> ✖ Args: season = 2025, min_confidence = 0.92
-#> ✖ Error: Torvik 2025: no team rows (19 rows, columns doctype_html_public_w3c_dtd_html_4_01_transitional_en_http_www_w3_org_tr_html4_loose_dtd, year); a blocked or empty response must not ship as NA bart_* columns
+#> ✖ Error: Torvik 2025: no team rows (0 rows, columns ); a blocked or empty response must not ship as NA bart_* columns
 #> data frame with 0 columns and 0 rows
 # }
 ```

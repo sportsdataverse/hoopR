@@ -32,7 +32,7 @@ for saving the key.
 ``` r
 # \donttest{
   try(cbbd_api_key_info())
-#> ✖ 2026-11-25 03:01:27.583005: Invalid API key or no API key info available!
+#> ✖ 2026-11-25 03:27:52.610952: Invalid API key or no API key info available!
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
