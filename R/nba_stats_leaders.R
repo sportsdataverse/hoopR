@@ -484,47 +484,12 @@ nba_defensehub <- function(
     season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     ...){
-  .args <- mget(setdiff(names(formals()), "..."))
-
   lifecycle::deprecate_stop(
     when = "3.2.0",
     what = "nba_defensehub()",
     with = "nba_leagueleaders()",
     details = "Live re-probes (2026-11-24 and 2026-11-25, residential IP) returned HTTP 500 for every parameter set tried; nba_api also lists the endpoint as not working."
   )
-
-  version <- "defensehub"
-  endpoint <- nba_endpoint(version)
-  full_url <- endpoint
-
-  params <- list(
-    LeagueID = league_id,
-    GameScope = game_scope,
-    PlayerOrTeam = player_or_team,
-    PlayerScope = player_scope,
-    Season = season,
-    SeasonType = season_type
-  )
-
-  df_list <- list()
-
-  tryCatch(
-    expr = .hoopR_with_warnings("nba_defensehub", {
-
-      resp <- request_with_proxy(url = full_url, params = params, ...)
-
-      df_list <- nba_stats_map_result_sets(resp)
-
-    }),
-    error = function(e) .report_api_error(
-      e,
-      hint = "Invalid arguments or no defense hub data for {season} available!",
-      args = .args
-    ),
-    finally = {
-    }
-  )
-  return(df_list)
 }
 
 
