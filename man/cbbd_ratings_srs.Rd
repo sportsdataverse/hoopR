@@ -66,6 +66,10 @@ Its columns are listed in \link{return_columns}
   try(cbbd_ratings_elo(season = 2024))
 }
 }
+\seealso{
+Other CBD Ratings Functions:
+\code{\link[=cbbd_ratings_history]{cbbd_ratings_history()}}
+}
 \concept{CBD Ratings Functions}
 \keyword{CBD}
 \keyword{Ratings}

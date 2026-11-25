@@ -791,6 +791,12 @@
     "type": "application/json; charset=utf-8",
     "trimmed": true
   },
+  "https://api.collegebasketballdata.com/info": {
+    "file": "336566dbc9703686.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
   "https://api.collegebasketballdata.com/lines/providers": {
     "file": "c91e4677389462e7.gz",
     "status": 200,
@@ -865,6 +871,12 @@
   },
   "https://api.collegebasketballdata.com/ratings/elo?season=2024": {
     "file": "e8918daae414c1a4.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://api.collegebasketballdata.com/ratings/history?season=2025&team=Duke": {
+    "file": "6072535e8f948f4f.gz",
     "status": 200,
     "type": "application/json; charset=utf-8",
     "trimmed": true
