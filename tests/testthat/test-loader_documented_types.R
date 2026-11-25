@@ -19,7 +19,7 @@ test_that("the NCAA MBB shots and lineups loaders return empty columns as their 
   shots <- load_ncaa_mbb_shots(seasons = 2025)
   expect_identical(vapply(shots, function(v) class(v)[1], ""),
                    c(contest_id = "character", shot_x = "numeric", shot_zone = "character",
-                     period = "logical", sec_left = "logical", point_value = "integer",
+                     period = "integer", sec_left = "numeric", point_value = "integer",
                      espn_game_id = "integer"))
   lineups <- load_ncaa_mbb_lineups(seasons = 2025)
   expect_identical(vapply(lineups, function(v) class(v)[1], ""),
@@ -28,7 +28,7 @@ test_that("the NCAA MBB shots and lineups loaders return empty columns as their 
   # two seasons whose empty columns differ in class still bind
   both <- load_ncaa_mbb_shots(seasons = c(2024, 2025))
   expect_equal(nrow(both), 4L)
-  expect_type(both$period, "logical")
+  expect_type(both$period, "integer")
 })
 
 test_that("the draft-combine loaders give a retired measure the same type every season", {
