@@ -88,20 +88,20 @@ Saiem Gilani
 # \donttest{
   espn_mbb_team_news(team_id = "150", limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Team News (team_id=150) from ESPN.com ──────────
-#> ℹ Data updated: 2026-11-24 23:45:12 UTC
+#> ℹ Data updated: 2026-11-25 01:52:19 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.06e7 Story Men's c… The update… 2026-11-… FALSE   Doug … https:/… 41       
-#> 2  5.00e7 Story How top… How these … 2026-11-… FALSE   Jeff … https:/… 41       
-#> 3  3.03e7 Etic… NCAA Br… Kelvin Sam… 2026-11-… FALSE   Joe L… https:/… 41       
-#> 4  5.02e7 Story UNC ent… The Tar He… 2026-11-… FALSE   Paul … https:/… 41       
+#> 1  5.02e7 Story UNC in … The Tar He… 2026-11-… FALSE   Paul … https:/… 41       
+#> 2  5.06e7 Story Men's c… The update… 2026-11-… FALSE   Doug … https:/… 41       
+#> 3  5.00e7 Story How top… How these … 2026-11-… FALSE   Jeff … https:/… 41       
+#> 4  3.03e7 Etic… NCAA Br… Kelvin Sam… 2026-11-… FALSE   Joe L… https:/… 41       
 #> 5  5.06e7 Story Breakin… Stats, rec… 2026-11-… FALSE   ESPN   https:/… 41       
 # }
 # \donttest{
   espn_nba_team_news(team_id = "13", limit = 5)
 #> ── ESPN NBA Team News (team_id=13) from ESPN.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 23:45:12 UTC
+#> ℹ Data updated: 2026-11-25 01:52:19 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    

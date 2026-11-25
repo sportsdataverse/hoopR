@@ -263,9 +263,10 @@ A `hoopR_data` tibble with one row per play-by-play event.
 |  |  |  |
 |----|----|----|
 | col_name | types | description |
+| game_play_number | integer | Sequential play number within the game. |
 | id | character | ESPN play id, exact (see Details). |
-| sequence_number | character | Sequence number representing a shot-possession (V3 PBP). |
-| type_id | character | Type identifier (numeric). |
+| sequence_number | integer | Sequence number representing a shot-possession (V3 PBP). |
+| type_id | integer | Type identifier (numeric). |
 | type_text | character | Display text for the type field. |
 | text | character | Text description of the play / record. |
 | away_score | integer | Away team score after the play. Rebuilt from the scoring plays in feed order when that reaches the official final (score_source 'rebuilt'), otherwise ESPN's per-play value (score_source 'espn'). |
@@ -275,57 +276,68 @@ A `hoopR_data` tibble with one row per play-by-play event.
 | clock_display_value | character | Game clock display string (e.g. '8:32'). |
 | scoring_play | logical | TRUE if the play resulted in points scored. |
 | score_value | integer | Point value of the play (2 / 3 / 1). |
-| team_id | character | Unique team identifier. |
-| participants_0_athlete_id | character | V2 PBP participant 0 (primary) athlete ID. |
 | wallclock | character | Wallclock. |
 | shooting_play | logical | TRUE if the play was a shooting attempt. |
-| participants_1_athlete_id | character | V2 PBP participant 1 (secondary) athlete ID. |
+| coordinate_x_raw | numeric | X coordinate as returned by the API before any adjustment. |
+| coordinate_y_raw | numeric | Y coordinate as returned by the API before any adjustment. |
+| points_attempted | integer | Point value at stake on the shot attempt (3 for threes, 2 for other field goals, 1 for free throws), from the ESPN play type. |
+| short_description | character | Shortened version of ESPN's play description text, without score context. |
+| team_id | integer | Unique team identifier. |
+| athlete_id_1 | integer | Primary athlete identifier (e.g. shooter). |
+| athlete_id_2 | integer | Secondary athlete identifier (e.g. assister / fouler). |
+| game_id | integer | Unique game identifier. |
 | season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
 | season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
-| away_team_id | integer | Unique identifier for the away team. |
-| away_team_name | character | Away team name. |
-| away_team_mascot | character | Away team mascot. |
-| away_team_abbrev | character | Away team three-letter abbreviation. |
-| away_team_name_alt | character | Alternate away team name. |
 | home_team_id | integer | Unique identifier for the home team. |
 | home_team_name | character | Home team name. |
 | home_team_mascot | character | Home team mascot. |
 | home_team_abbrev | character | Home team three-letter abbreviation. |
 | home_team_name_alt | character | Alternate home team name. |
-| home_team_spread | numeric | Home team's point spread. |
+| away_team_id | integer | Unique identifier for the away team. |
+| away_team_name | character | Away team name. |
+| away_team_mascot | character | Away team mascot. |
+| away_team_abbrev | character | Away team three-letter abbreviation. |
+| away_team_name_alt | character | Alternate away team name. |
 | game_spread | numeric | Game spread (signed; positive = home favored). |
 | home_favorite | logical | TRUE if the home team is the betting favorite. |
 | game_spread_available | logical | TRUE if a point spread was available. |
-| game_id | integer | Unique game identifier. |
-| qtr | integer | Quarter (1-4) or OT period (5+). |
+| home_team_spread | numeric | Home team's point spread. |
+| half | integer | Half of the game: 1 or 2 in regulation; overtime periods continue the count (3, 4, ...). |
 | time | character | Time / clock value. |
-| clock_minutes | character | Clock minutes split out for convenience. |
-| clock_seconds | character | Clock seconds split out for convenience. |
-| half | character | Half of the game (1 or 2). |
-| game_half | character | Half of the game (1 or 2). |
-| lag_qtr | numeric | Quarter lag (the previous-play's quarter). |
-| lead_qtr | numeric | Quarter lead (the next-play's quarter). |
-| lag_game_half | character | Half lag (the previous-play's half). |
-| lead_game_half | character | Half lead (the next-play's half). |
-| start_quarter_seconds_remaining | integer | Seconds remaining in the period at the start of the play. |
-| start_half_seconds_remaining | integer | Seconds remaining in the half at the start of the play. |
+| clock_minutes | integer | Clock minutes split out for convenience. |
+| clock_seconds | integer | Clock seconds split out for convenience. |
+| home_timeout_called | logical | TRUE when the home team called a timeout on the play. |
+| away_timeout_called | logical | TRUE when the away team called a timeout on the play. |
+| lag_period | integer | Period number of the previous play in the same game (period_number shifted forward one row within game_id), and NA on each game's first play. |
+| lead_period | integer | Period number of the next play in the same game (period_number shifted back one row within game_id), and NA on each game's final play. |
+| lag_half | integer | Half of the previous play in the same game, NA on each game's first play. |
+| lead_half | integer | Half of the next play in the same game, NA on each game's final play. |
+| start_period_seconds_remaining | integer | Seconds left in the current period when the play started, computed as 60 times the game clock minutes plus the seconds, so 1200 at the tip of each 20-minute half and 300 at the start of an overtime. |
 | start_game_seconds_remaining | integer | Seconds remaining in the game at the start of the play. |
-| game_play_number | integer | Sequential play number within the game. |
-| end_quarter_seconds_remaining | numeric | Seconds remaining in the period at the end of the play. |
-| end_half_seconds_remaining | numeric | Seconds remaining in the half at the end of the play. |
-| end_game_seconds_remaining | numeric | Seconds remaining in the game at the end of the play. |
-| period | integer | Period of the game (1-4 quarters; 5+ for OT). |
-| coordinate_x | integer | X coordinate on the court (half-court layout). |
-| coordinate_y | integer | Y coordinate on the court (half-court layout). |
-| media_id | character | Media identifier (video / image). |
+| end_period_seconds_remaining | integer | Seconds left in the period when the play ended. |
+| end_game_seconds_remaining | integer | Seconds remaining in the game at the end of the play. |
+| coordinate_x | numeric | X coordinate on the court (half-court layout). |
+| coordinate_y | numeric | Y coordinate on the court (half-court layout). |
+| game_date | Date | Game date (YYYY-MM-DD). |
+| game_date_time | POSIXct | Game start date/time (ISO 8601). |
 | score_source | character | Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). Absent from seasons published before the repair. |
+| athlete_name_1 | character | Display name of the primary athlete (e.g. the shooter). |
+| athlete_name_2 | character | Display name of the secondary athlete, when present. |
+| athlete_name_3 | character | Display name of the third athlete in the ESPN play participants, when present. |
+| pregame_home_prob | numeric | Model's pre-game win probability for the home team (0-1), constant within a game. Present only on the seasons published with the win-probability model; absent on the others. |
+| home_win_prob | numeric | Model's in-game win probability for the home team (0-1) after the play. |
 
 A `hoopR_data` tibble with one row per team-game.
 
 |  |  |  |
 |----|----|----|
 | col_name | types | description |
-| team_id | character | Unique team identifier. |
+| game_id | integer | Unique game identifier. |
+| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
+| season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
+| game_date | Date | Game date (YYYY-MM-DD). |
+| game_date_time | POSIXct | Game start date/time (ISO 8601). |
+| team_id | integer | Unique team identifier. |
 | team_uid | character | ESPN universal team identifier (UID format 's:40~l:...~t:...'). |
 | team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
 | team_location | character | Team city or location string. |
@@ -336,35 +348,49 @@ A `hoopR_data` tibble with one row per team-game.
 | team_color | character | Team primary color (hex without leading '#'). |
 | team_alternate_color | character | Team alternate color (hex without leading '#'). |
 | team_logo | character | Team logo image URL. |
-| field_goals_made_field_goals_attempted | character | Field Goals Made-Attempted. |
-| field_goal_pct | character | Field goal percentage (0-1). |
-| three_point_field_goals_made_three_point_field_goals_attempted | character | 3-Point Field Goals Made-Attempted. |
-| three_point_field_goal_pct | character | Three-point field goal percentage (0-1). |
-| free_throws_made_free_throws_attempted | character | Free Throws Made-Attempted. |
-| free_throw_pct | character | Free throw percentage (0-1). |
-| total_rebounds | character | Total rebounds. |
-| offensive_rebounds | character | Offensive rebounds. |
-| defensive_rebounds | character | Defensive rebounds. |
-| assists | character | Total assists. |
-| steals | character | Total steals. |
-| blocks | character | Total blocks. |
-| turnovers | character | Total turnovers. |
-| team_turnovers | character | Team turnovers (turnovers credited to the team rather than a player). |
-| total_turnovers | character | Total turnovers (player + team). |
-| technical_fouls | character | Total technical fouls. |
-| total_technical_fouls | character | Total technical fouls (player + team). |
-| flagrant_fouls | character | Total flagrant fouls. |
-| fouls | character | Personal fouls. |
+| team_home_away | character | Whether the team is the home or the away side ('home' or 'away'). |
+| team_score | integer | Team's score / final score. |
+| team_winner | logical | TRUE if the team won this game. |
+| assists | integer | Total assists. |
+| blocks | integer | Total blocks. |
+| defensive_rebounds | integer | Defensive rebounds. |
+| fast_break_points | character | Fast-break points scored. |
+| field_goal_pct | numeric | Field goal percentage (0-1). |
+| field_goals_made | integer | Field goals made (2-pt + 3-pt). |
+| field_goals_attempted | integer | Field goal attempts (2-pt + 3-pt). |
+| flagrant_fouls | integer | Total flagrant fouls. |
+| fouls | integer | Personal fouls. |
+| free_throw_pct | numeric | Free throw percentage (0-1). |
+| free_throws_made | integer | Free throws made. |
+| free_throws_attempted | integer | Free throw attempts. |
 | largest_lead | character | Largest lead during the game. |
-| home_away | character | Game venue label ('home' or 'away'). |
-| opponent_id | integer | Unique identifier for opponent. |
-| opponent_name | character | Opponent name. |
-| opponent_mascot | character | Opponent mascot. |
-| opponent_abbrev | character | Abbreviation for opponent. |
-| game_id | integer | Unique game identifier. |
-| season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
-| season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
-| game_date | Date | Game date (YYYY-MM-DD). |
+| offensive_rebounds | integer | Offensive rebounds. |
+| points_in_paint | character | Points scored in the paint. |
+| steals | integer | Total steals. |
+| team_turnovers | integer | Team turnovers (turnovers credited to the team rather than a player). |
+| technical_fouls | integer | Total technical fouls. |
+| three_point_field_goal_pct | numeric | Three-point field goal percentage (0-1). |
+| three_point_field_goals_made | integer | Three-point field goals made. |
+| three_point_field_goals_attempted | integer | Three-point field goal attempts. |
+| total_rebounds | integer | Total rebounds. |
+| total_technical_fouls | integer | Total technical fouls (player + team). |
+| total_turnovers | integer | Total turnovers (player + team). |
+| turnover_points | character | Turnover points. |
+| turnovers | integer | Total turnovers. |
+| opponent_team_id | integer | Unique identifier for the opponent team. |
+| opponent_team_uid | character | ESPN universal identifier of the opponent team. |
+| opponent_team_slug | character | Opponent team slug. |
+| opponent_team_location | character | Opponent team city / location. |
+| opponent_team_name | character | Opponent team display name. |
+| opponent_team_abbreviation | character | Opponent team abbreviation. |
+| opponent_team_display_name | character | Opponent team full display name. |
+| opponent_team_short_display_name | character | Opponent team short display name. |
+| opponent_team_color | character | Opponent team primary color (hex). |
+| opponent_team_alternate_color | character | Opponent team alternate color (hex). |
+| opponent_team_logo | character | Opponent team logo URL. |
+| opponent_team_score | integer | Opponent team's score. |
+| lead_changes | character | Times the lead changed hands during the game, as ESPN's team box score reports it (the same on both team rows). |
+| lead_percentage | character | Share of game time the team held the lead, as reported in ESPN's team boxscore. |
 
 A `hoopR_data` tibble with one row per player-game.
 
@@ -401,7 +427,6 @@ A `hoopR_data` tibble with one row per player-game.
 | starter | logical | TRUE if the player was in the starting lineup; FALSE otherwise. |
 | ejected | logical | TRUE if the player was ejected from the game. |
 | did_not_play | logical | TRUE if the player did not appear in the game. |
-| active | logical | TRUE if the row represents an active record (player / team / season). |
 | athlete_jersey | character | Athlete jersey number. |
 | athlete_short_name | character | Athlete short display name. |
 | athlete_headshot_href | character | Athlete headshot image URL. |
@@ -426,6 +451,7 @@ A `hoopR_data` tibble with one row per player-game.
 | opponent_team_color | character | Opponent team primary color (hex). |
 | opponent_team_alternate_color | character | Opponent team alternate color (hex). |
 | opponent_team_score | integer | Opponent team's score. |
+| active | logical | TRUE if the row represents an active record (player / team / season). |
 
 A `hoopR_data` tibble with one row per game.
 
@@ -435,34 +461,38 @@ A `hoopR_data` tibble with one row per game.
 | id | integer | Id. |
 | uid | character | ESPN UID string (universal identifier). |
 | date | character | Date in YYYY-MM-DD format. |
-| attendance | integer | Reported attendance. |
+| attendance | numeric | Reported attendance. |
 | time_valid | logical | Time valid. |
 | neutral_site | logical | Neutral site. |
 | conference_competition | logical | Conference competition. |
+| play_by_play_available | logical | Whether ESPN lists play-by-play for the game. |
 | recent | logical | Recent. |
 | start_date | character | Start date (YYYY-MM-DD). |
+| broadcast | character | Broadcast networks ESPN lists for the game, as one string. |
+| highlights | character | ESPN highlight clips for the game, serialized as a single string; NA when none was published. |
 | notes_type | character | Notes type. |
 | notes_headline | character | Notes headline. |
-| type_id | character | Type identifier (numeric). |
+| broadcast_market | character | Market of the first listed broadcast: 'national', 'home' or 'away'. |
+| broadcast_name | character | Network name of the first listed broadcast (e.g. 'ESPN'). |
+| type_id | integer | Type identifier (numeric). |
 | type_abbreviation | character | Type abbreviation. |
-| venue_id | character | Unique venue identifier. |
+| venue_id | integer | Unique venue identifier. |
 | venue_full_name | character | Venue full name. |
 | venue_address_city | character | Venue address city. |
 | venue_address_state | character | Venue address state / region. |
-| venue_capacity | integer | Venue seating capacity. |
 | venue_indoor | logical | TRUE if the venue is indoors. |
 | status_clock | numeric | Status clock. |
 | status_display_clock | character | Status display clock. |
-| status_period | integer | Status period. |
-| status_type_id | character | Unique identifier for status type. |
+| status_period | numeric | Status period. |
+| status_type_id | integer | Unique identifier for status type. |
 | status_type_name | character | Status type name. |
 | status_type_state | character | Status type state. |
 | status_type_completed | logical | Status type completed. |
 | status_type_description | character | Status type description. |
 | status_type_detail | character | Status type detail. |
 | status_type_short_detail | character | Status type short detail. |
-| format_regulation_periods | integer | Format regulation periods. |
-| home_id | character | Unique identifier for home. |
+| format_regulation_periods | numeric | Format regulation periods. |
+| home_id | integer | Unique identifier for home. |
 | home_uid | character | Home team's uid. |
 | home_location | character | Home team's location. |
 | home_name | character | Home name. |
@@ -472,12 +502,15 @@ A `hoopR_data` tibble with one row per game.
 | home_color | character | Color code (hex) for home. |
 | home_alternate_color | character | Color code (hex) for home alternate. |
 | home_is_active | logical | Home team's is active. |
-| home_venue_id | character | Unique identifier for home venue. |
+| home_venue_id | integer | Unique identifier for home venue. |
 | home_logo | character | Home team logo URL. |
-| home_conference_id | character | Unique identifier for home conference. |
-| home_score | character | Home team score at the time of the play. |
+| home_conference_id | integer | Unique identifier for home conference. |
+| home_score | integer | Home team score at the time of the play. |
 | home_winner | logical | Home team's winner. |
-| away_id | character | Unique identifier for away. |
+| home_current_rank | numeric | Poll ranking ESPN listed for the home team at game time; unranked teams carry 99. |
+| home_linescores | character | Period-by-period scores for the home team as a delimited string from ESPN's schedule feed. |
+| home_records | character | Record strings (overall and split records) for the home team from ESPN's schedule feed. |
+| away_id | integer | Unique identifier for away. |
 | away_uid | character | Away team's uid. |
 | away_location | character | Away team's location. |
 | away_name | character | Away name. |
@@ -487,23 +520,28 @@ A `hoopR_data` tibble with one row per game.
 | away_color | character | Color code (hex) for away. |
 | away_alternate_color | character | Color code (hex) for away alternate. |
 | away_is_active | logical | Away team's is active. |
-| away_venue_id | character | Unique identifier for away venue. |
+| away_venue_id | integer | Unique identifier for away venue. |
 | away_logo | character | Away team logo URL. |
-| away_conference_id | character | Unique identifier for away conference. |
-| away_score | character | Away team score at the time of the play. |
+| away_conference_id | integer | Unique identifier for away conference. |
+| away_score | integer | Away team score at the time of the play. |
 | away_winner | logical | Away team's winner. |
+| away_current_rank | numeric | Poll ranking ESPN listed for the away team at game time; unranked teams carry 99. |
+| away_linescores | character | Period-by-period scores for the away team as a delimited string from ESPN's schedule feed. |
+| away_records | character | Record strings (overall and split records) for the away team from ESPN's schedule feed. |
 | game_id | integer | Unique game identifier. |
 | season | integer | Season identifier (4-digit year or 'YYYY-YY' string). |
 | season_type | integer | Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). |
 | status_type_alt_detail | character | Status type alt detail. |
-| groups_id | character | Unique identifier for groups. |
+| tournament_id | integer | Unique identifier for tournament. |
+| groups_id | integer | Unique identifier for groups. |
 | groups_name | character | Groups name. |
 | groups_short_name | character | Groups short name. |
 | groups_is_conference | logical | Groups is conference. |
-| tournament_id | numeric | Unique identifier for tournament. |
+| game_json | logical | Whether the data repository holds a processed game JSON for this game. |
+| game_json_url | character | URL of the processed game JSON in the raw data repository. |
 | game_date_time | POSIXct | Game start date/time (ISO 8601). |
 | game_date | Date | Game date (YYYY-MM-DD). |
-| PBP | logical |  |
+| PBP | logical | Whether the game's play-by-play is in the published play-by-play release. |
 | team_box | logical | Team box. |
 | player_box | logical | Player box. |
 

@@ -417,6 +417,7 @@ A `hoopR_data` tibble with one row per inactive athlete-game pair.
 | team_abbreviation | character | Three-letter team abbreviation. |
 | season | integer | Season identifier (4-digit year, END year of the season). |
 | game_id | character | Unique game identifier. |
+| season_type_id | character | Season-type digit: the 3rd character of game_id (and the leading digit of season_id). 1 = preseason, 2 = regular season, 3 = All-Star, 4 = playoffs, 5 = play-in, 6 = NBA Cup final, 9 = international. |
 
 Returns a `hoopR_data` tibble of 5-man lineup season stats (182 columns:
 standard box-score rate/counting stats plus the 5 player-id slots and
@@ -436,6 +437,7 @@ A `hoopR_data` tibble with one row per official-game pair.
 | jersey_num | character | Jersey number worn by the official. |
 | season | integer | Season identifier (4-digit year, END year of the season). |
 | game_id | character | Unique game identifier. |
+| season_type_id | character | Season-type digit: the 3rd character of game_id (and the leading digit of season_id). 1 = preseason, 2 = regular season, 3 = All-Star, 4 = playoffs, 5 = play-in, 6 = NBA Cup final, 9 = international. |
 
 A `hoopR_data` tibble with one row per play-by-play action.
 
@@ -498,8 +500,10 @@ A `hoopR_data` tibble with one row per athlete-game pair.
 |----|----|----|
 | col_name | types | description |
 | team_id | integer | Unique NBA Stats team identifier. |
+| team_city | character | Team city or region. |
 | team_name | character | Full team display name. |
 | team_tricode | character | Three-letter team code. |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
 | side | character | Whether the team was 'home' or 'away'. |
 | person_id | integer | Unique player identifier. |
 | first_name | character | Player's first name. |
@@ -531,6 +535,7 @@ A `hoopR_data` tibble with one row per athlete-game pair.
 | plus_minus_points | numeric | Plus/minus point differential while on court. |
 | game_id | character | Unique game identifier. |
 | season | integer | Season identifier (4-digit year, END year of the season). |
+| season_type_id | character | Season-type digit: the 3rd character of game_id (and the leading digit of season_id). 1 = preseason, 2 = regular season, 3 = All-Star, 4 = playoffs, 5 = play-in, 6 = NBA Cup final, 9 = international. |
 
 A `hoopR_data` tibble with one row per athlete-game pair.
 
@@ -656,6 +661,9 @@ A `hoopR_data` tibble with one row per possession.
 | def_player_5 | integer | Defensive lineup slot 5 player identifier. |
 | lineup_source | character | Provenance of the lineup join (e.g. 'game_lineups', 'derived'). |
 | season | integer | Season identifier (4-digit year, END year of the season). |
+| seconds_to_first_shot | numeric | Seconds from the change of possession (the clock at the previous possession's last event) to the possession's first field-goal attempt; a period's first possession is measured from its own first event. NA when the possession has no field-goal attempt. |
+| is_transition | logical | TRUE when the possession starts off a made shot, a missed shot or a live-ball turnover, is not its period's first possession, and its first field-goal attempt comes within 8 seconds (seconds_to_first_shot). Never NA. |
+| is_garbage_time | logical | TRUE from the first possession that meets the garbage-time rule to the end of the game: a margin of 25+ with 10:00 or less left in regulation, 20+ with 5:00 or less, 15+ with 2:00 or less, or 15+ in overtime, with at most 3 of the game's 10 starters on the floor. Never NA. |
 
 A `hoopR_data` tibble with one row per athlete-team-season.
 
@@ -709,6 +717,7 @@ A `hoopR_data` tibble with one row per shot attempt.
 | col_name | types | description |
 | game_id | character | Unique game identifier. |
 | season | integer | Season identifier (4-digit year, END year of the season). |
+| season_type_id | character | Season-type digit: the 3rd character of game_id (and the leading digit of season_id). 1 = preseason, 2 = regular season, 3 = All-Star, 4 = playoffs, 5 = play-in, 6 = NBA Cup final, 9 = international. |
 | period | integer | Period of the game (1-4 quarters; 5+ for OT). |
 | clock | character | Game clock remaining in the period. |
 | team_id | integer | Unique NBA Stats team identifier for the shooting team. |
@@ -740,8 +749,10 @@ A `hoopR_data` tibble with one row per team-game pair.
 |----|----|----|
 | col_name | types | description |
 | team_id | integer | Unique NBA Stats team identifier. |
+| team_city | character | Team city or region. |
 | team_name | character | Full team display name. |
 | team_tricode | character | Three-letter team code. |
+| team_slug | character | URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). |
 | side | character | Whether the team was 'home' or 'away'. |
 | minutes | character | Total minutes played, as an `MM:SS` string. |
 | field_goals_made | integer | Field goals made. |
@@ -765,6 +776,7 @@ A `hoopR_data` tibble with one row per team-game pair.
 | plus_minus_points | numeric | Plus/minus point differential. |
 | game_id | character | Unique game identifier. |
 | season | integer | Season identifier (4-digit year, END year of the season). |
+| season_type_id | character | Season-type digit: the 3rd character of game_id (and the leading digit of season_id). 1 = preseason, 2 = regular season, 3 = All-Star, 4 = playoffs, 5 = play-in, 6 = NBA Cup final, 9 = international. |
 
 Returns a `hoopR_data` tibble of team season stats (178 columns: rank
 fields plus standard/rank box-score rate/counting stats for the season).

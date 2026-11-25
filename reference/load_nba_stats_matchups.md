@@ -88,28 +88,28 @@ A `hoopR_data` tibble with one row per matchup pair per per mode
 | gp | integer | Games played in the split. |
 | matchup_min | character | Time matched up: 'MM:SS' text in 'totals' files, decimal minutes in 'pergame' files (character when both are loaded together). |
 | partial_poss | numeric | Possessions the pair was matched up for, apportioned by time (fractional). |
-| player_pts | integer | Points the offensive player scored while guarded by the defender. |
-| team_pts | integer | Points the offensive player's team scored while the pair was matched up. |
-| matchup_ast | integer | Assists by the offensive player while guarded by the defender. |
-| matchup_tov | integer | Turnovers by the offensive player while guarded by the defender. |
-| matchup_blk | integer | Blocks by the defender on the offensive player's shots. |
-| matchup_fgm | integer | Field goals made by the offensive player against the defender. |
-| matchup_fga | integer | Field goals attempted by the offensive player against the defender. |
+| player_pts | numeric | Points the offensive player scored while guarded by the defender. |
+| team_pts | numeric | Points the offensive player's team scored while the pair was matched up. |
+| matchup_ast | numeric | Assists by the offensive player while guarded by the defender. |
+| matchup_tov | numeric | Turnovers by the offensive player while guarded by the defender. |
+| matchup_blk | numeric | Blocks by the defender on the offensive player's shots. |
+| matchup_fgm | numeric | Field goals made by the offensive player against the defender. |
+| matchup_fga | numeric | Field goals attempted by the offensive player against the defender. |
 | matchup_fg_pct | numeric | Field-goal percentage (0-1) of the offensive player against the defender. |
-| matchup_fg3_m | integer | Three-pointers made by the offensive player against the defender. |
-| matchup_fg3_a | integer | Three-pointers attempted by the offensive player against the defender. |
+| matchup_fg3_m | numeric | Three-pointers made by the offensive player against the defender. |
+| matchup_fg3_a | numeric | Three-pointers attempted by the offensive player against the defender. |
 | matchup_fg3_pct | numeric | Three-point percentage (0-1) of the offensive player against the defender. |
 | help_blk | integer | Help-defense blocks credited to the matchup; stats.nba.com ships 0 in every row checked. |
 | help_fgm | integer | Field goals made against help defense; stats.nba.com ships 0 in every row checked. |
 | help_fga | integer | Field goals attempted against help defense; stats.nba.com ships 0 in every row checked. |
 | help_fg_perc | integer | Field-goal percentage against help defense; stats.nba.com ships 0 in every row checked. |
-| matchup_ftm | integer | Free throws made by the offensive player on fouls by the defender. |
-| matchup_fta | integer | Free throws attempted by the offensive player on fouls by the defender. |
-| sfl | integer | Shooting fouls committed by the defender on the offensive player. |
-| matchup_time_sec | numeric | Time matched up in seconds; present only in early 'totals' files (e.g. 2017-18). |
+| matchup_ftm | numeric | Free throws made by the offensive player on fouls by the defender. |
+| matchup_fta | numeric | Free throws attempted by the offensive player on fouls by the defender. |
+| sfl | numeric | Shooting fouls committed by the defender on the offensive player. |
 | season | integer | END year of the NBA season (2025 = 2024-25) – the published asset's own stamp, one more than the `seasons` argument. |
 | season_type | character | Season type of the source file: 'regular-season' or 'playoffs' (the release file-name token). |
 | per_mode | character | Aggregation of the source file: 'pergame' (per-game averages) or 'totals' (season totals); stamped from the file name when the rows lack it. |
+| matchup_time_sec | numeric | Time matched up in seconds; present only in early 'totals' files (e.g. 2017-18). |
 
 A `hoopR_data` tibble with one row per defender per position per season
 type per per mode (`load_nba_stats_matchups_rollup()`).
@@ -125,20 +125,20 @@ type per per mode (`load_nba_stats_matchups_rollup()`).
 | gp | integer | Games played in the split. |
 | matchup_min | character | Time the defender spent guarding this position: 'MM:SS' text in 'totals' files, decimal minutes in 'pergame' files (character when both are loaded together). |
 | partial_poss | numeric | Possessions the defender spent on this position, apportioned by time (fractional). |
-| player_pts | integer | Points scored by the offensive players of this position while guarded by the defender. |
-| team_pts | integer | Points scored by the opposing team while the defender guarded this position. |
-| matchup_ast | integer | Assists by the guarded players of this position. |
-| matchup_tov | integer | Turnovers by the guarded players of this position. |
-| matchup_blk | integer | Blocks by the defender against this position. |
-| matchup_fgm | integer | Field goals made against the defender by this position. |
-| matchup_fga | integer | Field goals attempted against the defender by this position. |
+| player_pts | numeric | Points scored by the offensive players of this position while guarded by the defender. |
+| team_pts | numeric | Points scored by the opposing team while the defender guarded this position. |
+| matchup_ast | numeric | Assists by the guarded players of this position. |
+| matchup_tov | numeric | Turnovers by the guarded players of this position. |
+| matchup_blk | numeric | Blocks by the defender against this position. |
+| matchup_fgm | numeric | Field goals made against the defender by this position. |
+| matchup_fga | numeric | Field goals attempted against the defender by this position. |
 | matchup_fg_pct | numeric | Field-goal percentage (0-1) allowed to this position. |
-| matchup_fg3_m | integer | Three-pointers made against the defender by this position. |
-| matchup_fg3_a | integer | Three-pointers attempted against the defender by this position. |
+| matchup_fg3_m | numeric | Three-pointers made against the defender by this position. |
+| matchup_fg3_a | numeric | Three-pointers attempted against the defender by this position. |
 | matchup_fg3_pct | numeric | Three-point percentage (0-1) allowed to this position. |
-| matchup_ftm | integer | Free throws made by this position on the defender's fouls. |
-| matchup_fta | integer | Free throws attempted by this position on the defender's fouls. |
-| sfl | integer | Shooting fouls the defender committed against this position. |
+| matchup_ftm | numeric | Free throws made by this position on the defender's fouls. |
+| matchup_fta | numeric | Free throws attempted by this position on the defender's fouls. |
+| sfl | numeric | Shooting fouls the defender committed against this position. |
 | season | integer | END year of the NBA season (2025 = 2024-25) – the published asset's own stamp, one more than the `seasons` argument. |
 | season_type | character | Season type of the source file: 'regular-season' or 'playoffs' (the release file-name token). |
 | per_mode | character | Aggregation of the source file: 'pergame' (per-game averages) or 'totals' (season totals); stamped from the file name when the rows lack it. |

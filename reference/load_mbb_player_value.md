@@ -114,23 +114,78 @@ A `hoopR_data` tibble with one row per player-team-season.
 | dbpm | numeric | Defensive box plus-minus. |
 | bpm | numeric | Net box plus-minus. |
 | war | numeric | Wins above replacement. |
-| darko_filtered_skill | numeric | DARKO-style filtered skill rating. |
-| darko_projected_rating | numeric | DARKO-style forward-looking projected rating. |
-| darko_projected_sd | numeric | Standard deviation of the DARKO-style projected rating. |
+| boban_filtered_skill | numeric | BOBAN Kalman-filtered skill estimate at the end of the player's observed multi-season RAPM panel, i.e. his current-form rating after aging drift and possession-weighted observation noise. |
+| boban_projected_rating | numeric | One-season-ahead BOBAN forecast, the filtered skill plus the empirical aging-curve drift at the player's last observed age; both season_type rows of a player-season carry the same value because the projection is not playoff-specific. |
+| boban_projected_sd | numeric | Standard deviation of the one-season-ahead BOBAN forecast, the square root of the filtered state variance plus the Kalman process variance; it sits at roughly 10.19 for a player with only one season in the panel, whose diffuse prior variance was never updated. |
+| o_rapm_n | integer | Possessions o_rapm is measured over: off_poss, his offensive possessions. o_rapm_rank and o_rapm_pct are set only when it reaches 1,700, the NBA sample at which a player's on-court rating of the same side is half signal; a regularized or box rating is less noisy, so the gate is conservative. |
+| d_rapm_n | integer | Possessions d_rapm is measured over: def_poss, his defensive possessions. d_rapm_rank and d_rapm_pct are set only when it reaches 1,600, the NBA sample at which a player's on-court rating of the same side is half signal; a regularized or box rating is less noisy, so the gate is conservative. |
+| rapm_n | integer | Possessions rapm is measured over: off_poss + def_poss, his possessions at both ends. rapm_rank and rapm_pct are set only when it reaches 3,200, the NBA sample at which a player's on-court rating of the same side is half signal; a regularized or box rating is less noisy, so the gate is conservative. |
+| o_adj_rapm_n | integer | Possessions o_adj_rapm is measured over: off_poss, his offensive possessions. o_adj_rapm_rank and o_adj_rapm_pct are set only when it reaches 1,700, the NBA sample at which a player's on-court rating of the same side is half signal; a regularized or box rating is less noisy, so the gate is conservative. |
+| d_adj_rapm_n | integer | Possessions d_adj_rapm is measured over: def_poss, his defensive possessions. d_adj_rapm_rank and d_adj_rapm_pct are set only when it reaches 1,600, the NBA sample at which a player's on-court rating of the same side is half signal; a regularized or box rating is less noisy, so the gate is conservative. |
+| adj_rapm_n | integer | Possessions adj_rapm is measured over: off_poss + def_poss, his possessions at both ends. adj_rapm_rank and adj_rapm_pct are set only when it reaches 3,200, the NBA sample at which a player's on-court rating of the same side is half signal; a regularized or box rating is less noisy, so the gate is conservative. |
+| ospm_n | integer | Possessions ospm is measured over: off_poss, his offensive possessions. ospm_rank and ospm_pct are set only when it reaches 1,700, the NBA sample at which a player's on-court rating of the same side is half signal; a regularized or box rating is less noisy, so the gate is conservative. |
+| dspm_n | integer | Possessions dspm is measured over: def_poss, his defensive possessions. dspm_rank and dspm_pct are set only when it reaches 1,600, the NBA sample at which a player's on-court rating of the same side is half signal; a regularized or box rating is less noisy, so the gate is conservative. |
+| spm_n | integer | Possessions spm is measured over: off_poss + def_poss, his possessions at both ends. spm_rank and spm_pct are set only when it reaches 3,200, the NBA sample at which a player's on-court rating of the same side is half signal; a regularized or box rating is less noisy, so the gate is conservative. |
+| obpm_n | integer | Possessions obpm is measured over: off_poss, his offensive possessions. obpm_rank and obpm_pct are set only when it reaches 1,700, the NBA sample at which a player's on-court rating of the same side is half signal; a regularized or box rating is less noisy, so the gate is conservative. |
+| dbpm_n | integer | Possessions dbpm is measured over: def_poss, his defensive possessions. dbpm_rank and dbpm_pct are set only when it reaches 1,600, the NBA sample at which a player's on-court rating of the same side is half signal; a regularized or box rating is less noisy, so the gate is conservative. |
+| bpm_n | integer | Possessions bpm is measured over: off_poss + def_poss, his possessions at both ends. bpm_rank and bpm_pct are set only when it reaches 3,200, the NBA sample at which a player's on-court rating of the same side is half signal; a regularized or box rating is less noisy, so the gate is conservative. |
+| war_n | integer | Possessions behind war: off_poss + def_poss. war is a count, not a rate, so its rank has no sample gate. |
+| boban_filtered_skill_n | integer | Possessions behind boban_filtered_skill: off_poss + def_poss, this season's possessions at both ends. The boban filtered skill is a multi-season Kalman estimate with no single-side sample, so it takes the net on-court gate, the closest existing one: boban_filtered_skill_rank and boban_filtered_skill_pct are set only when this reaches 3,200. Conservative, since the filter also carries earlier seasons. |
+| boban_projected_rating_n | integer | Possessions behind boban_projected_rating: off_poss + def_poss, this season's possessions at both ends. The boban next-season projection is a multi-season Kalman estimate with no single-side sample, so it takes the net on-court gate, the closest existing one: boban_projected_rating_rank and boban_projected_rating_pct are set only when this reaches 3,200. Conservative, since the filter also carries earlier seasons. |
+| boban_projected_sd_n | integer | Possessions behind boban_projected_sd: off_poss + def_poss, this season's possessions at both ends. The boban projection's standard deviation is a multi-season Kalman estimate with no single-side sample, so it takes the net on-court gate, the closest existing one: boban_projected_sd_rank and boban_projected_sd_pct are set only when this reaches 3,200. Conservative, since the filter also carries earlier seasons. |
+| o_rapm_rank | numeric | Rank of o_rapm among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when o_rapm_n is under 1,700, and NA when its season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value in the group is equal. Regular-season gates: a playoff run rarely reaches one. |
+| d_rapm_rank | numeric | Rank of d_rapm among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when d_rapm_n is under 1,600, and NA when its season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value in the group is equal. Regular-season gates: a playoff run rarely reaches one. |
+| rapm_rank | numeric | Rank of rapm among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when rapm_n is under 3,200, and NA when its season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value in the group is equal. Regular-season gates: a playoff run rarely reaches one. |
+| o_adj_rapm_rank | numeric | Rank of o_adj_rapm among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when o_adj_rapm_n is under 1,700, and NA when its season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value in the group is equal. Regular-season gates: a playoff run rarely reaches one. |
+| d_adj_rapm_rank | numeric | Rank of d_adj_rapm among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when d_adj_rapm_n is under 1,600, and NA when its season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value in the group is equal. Regular-season gates: a playoff run rarely reaches one. |
+| adj_rapm_rank | numeric | Rank of adj_rapm among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when adj_rapm_n is under 3,200, and NA when its season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value in the group is equal. Regular-season gates: a playoff run rarely reaches one. |
+| ospm_rank | numeric | Rank of ospm among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when ospm_n is under 1,700, and NA when its season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value in the group is equal. Regular-season gates: a playoff run rarely reaches one. |
+| dspm_rank | numeric | Rank of dspm among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when dspm_n is under 1,600, and NA when its season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value in the group is equal. Regular-season gates: a playoff run rarely reaches one. |
+| spm_rank | numeric | Rank of spm among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when spm_n is under 3,200, and NA when its season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value in the group is equal. Regular-season gates: a playoff run rarely reaches one. |
+| obpm_rank | numeric | Rank of obpm among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when obpm_n is under 1,700, and NA when its season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value in the group is equal. Regular-season gates: a playoff run rarely reaches one. |
+| dbpm_rank | numeric | Rank of dbpm among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when dbpm_n is under 1,600, and NA when its season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value in the group is equal. Regular-season gates: a playoff run rarely reaches one. |
+| bpm_rank | numeric | Rank of bpm among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when bpm_n is under 3,200, and NA when its season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value in the group is equal. Regular-season gates: a playoff run rarely reaches one. |
+| war_rank | numeric | Rank of war among the season and season type's ranked players, 1 = best (higher is better), ties averaged; ungated (every player with a finite war qualifies), NA when its season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value in the group is equal. |
+| boban_filtered_skill_rank | numeric | Rank of boban_filtered_skill among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when boban_filtered_skill_n is under 3,200, when season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value is equal. |
+| boban_projected_rating_rank | numeric | Rank of boban_projected_rating among the season and season type's ranked players, 1 = best (higher is better), ties averaged; NA when boban_projected_rating_n is under 3,200, when season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value is equal. |
+| boban_projected_sd_rank | numeric | Rank of boban_projected_sd among the season and season type's ranked players, ASCENDING: 1 = the smallest sd, the most certain projection; ties averaged; NA when boban_projected_sd_n is under 3,200, when season or season_type is NA, in a group of fewer than 10 ranked players, or when every ranked value is equal. |
+| o_rapm_pct | numeric | Percentile of o_rapm_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| d_rapm_pct | numeric | Percentile of d_rapm_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| rapm_pct | numeric | Percentile of rapm_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| o_adj_rapm_pct | numeric | Percentile of o_adj_rapm_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| d_adj_rapm_pct | numeric | Percentile of d_adj_rapm_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| adj_rapm_pct | numeric | Percentile of adj_rapm_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| ospm_pct | numeric | Percentile of ospm_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| dspm_pct | numeric | Percentile of dspm_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| spm_pct | numeric | Percentile of spm_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| obpm_pct | numeric | Percentile of obpm_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| dbpm_pct | numeric | Percentile of dbpm_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| bpm_pct | numeric | Percentile of bpm_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| war_pct | numeric | Percentile of war_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| boban_filtered_skill_pct | numeric | Percentile of boban_filtered_skill_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| boban_projected_rating_pct | numeric | Percentile of boban_projected_rating_rank, 100 \* (n + 1 - rank) / (n + 1) over the n ranked players of the season and season type; NA where the rank is. |
+| boban_projected_sd_pct | numeric | Percentile of boban_projected_sd_rank, 100 \* (n + 1 - rank) / (n + 1): high means a more certain projection (a smaller sd), not a larger one; NA where the rank is. |
+| o_box_prior | numeric | The offensive prior the rating shrank toward (per 100). |
+| d_box_prior | numeric | The defensive prior the rating shrank toward (per 100, positive = good defense). |
+| box_prior | numeric | o_box_prior + d_box_prior. |
+| o_reml_rapm | numeric | Offensive season impact per 100: the posterior mean of RAPM shrunk toward the prior. |
+| d_reml_rapm | numeric | Defensive season impact per 100 (positive = good defense). |
+| reml_rapm | numeric | o_reml_rapm + d_reml_rapm. |
 
 A `hoopR_data` tibble with one row per player-team-season.
 
-|           |           |                                                     |
-|-----------|-----------|-----------------------------------------------------|
-| col_name  | types     | description                                         |
-| player_id | character | stats.ncaa.org player identifier.                   |
-| player    | character | Player display name (title-cased).                  |
-| season    | integer   | Season identifier (4-digit season-ending year).     |
-| team_id   | character | Unique team identifier.                             |
-| min       | numeric   | Minutes played.                                     |
-| box_obpm  | numeric   | Box-score offensive box plus-minus.                 |
-| box_dbpm  | numeric   | Box-score defensive box plus-minus.                 |
-| box_bpm   | numeric   | Box-score net box plus-minus (box_obpm + box_dbpm). |
+|  |  |  |
+|----|----|----|
+| col_name | types | description |
+| player_id | character | stats.ncaa.org player identifier. |
+| player | character | Player display name (title-cased). |
+| season | integer | Season identifier (4-digit season-ending year). |
+| team_id | character | Unique team identifier. |
+| min | numeric | Minutes played. |
+| box_obpm | numeric | Box-score offensive box plus-minus. |
+| box_dbpm | numeric | Box-score defensive box plus-minus. |
+| box_bpm | numeric | Box-score net box plus-minus (box_obpm + box_dbpm). |
+| qualified | logical | TRUE when the player logged at least 300 minutes for the team that season; filter on it before ranking or comparing box_bpm values. |
 
 A `hoopR_data` tibble with one row per team-season.
 
@@ -148,6 +203,11 @@ A `hoopR_data` tibble with one row per team-season.
 | games | integer | Games played (season total). |
 | rank | integer | National rank by adj_em. |
 | adj_em_z | numeric | Z-score of adj_em relative to the season's team distribution. |
+| adj_o_blend | numeric | adj_o blended with the team's prior-season rating over the first prior_games games. |
+| adj_d_blend | numeric | adj_d blended with the team's prior-season rating over the first prior_games games. |
+| adj_em_blend | numeric | adj_o_blend - adj_d_blend. |
+| rank_blend | integer | Rank of adj_em_blend within the season (1 = best). |
+| prior_games | numeric | Games' worth of weight the prior-season rating carries in the blend. |
 
 ## See also
 

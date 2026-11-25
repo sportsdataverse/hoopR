@@ -82,23 +82,23 @@ mode (`load_nba_stats_hustle_player()`).
 | age | numeric | Player age in years at the season's reference date, as stats.nba.com reports it. |
 | g | integer | Games played in the split. |
 | min | numeric | Minutes played (per game in 'pergame' files, season total in 'totals' files). |
-| contested_shots | integer | Shots the player (or team) contested. |
-| contested_shots_2_pt | integer | Two-point shots contested. |
-| contested_shots_3_pt | integer | Three-point shots contested. |
-| deflections | integer | Deflections of opponent passes or dribbles. |
-| charges_drawn | integer | Offensive fouls (charges) drawn. |
-| screen_assists | integer | Screens set that led directly to a teammate's made field goal. |
-| screen_ast_pts | integer | Points scored on field goals created by the screen assists. |
-| off_loose_balls_recovered | integer | Loose balls recovered on offense. |
-| def_loose_balls_recovered | integer | Loose balls recovered on defense. |
-| loose_balls_recovered | integer | Loose balls recovered (offense plus defense). |
+| contested_shots | numeric | Shots the player (or team) contested. |
+| contested_shots_2_pt | numeric | Two-point shots contested. |
+| contested_shots_3_pt | numeric | Three-point shots contested. |
+| deflections | numeric | Deflections of opponent passes or dribbles. |
+| charges_drawn | numeric | Offensive fouls (charges) drawn. |
+| screen_assists | numeric | Screens set that led directly to a teammate's made field goal. |
+| screen_ast_pts | numeric | Points scored on field goals created by the screen assists. |
+| off_loose_balls_recovered | numeric | Loose balls recovered on offense. |
+| def_loose_balls_recovered | numeric | Loose balls recovered on defense. |
+| loose_balls_recovered | numeric | Loose balls recovered (offense plus defense). |
 | pct_loose_balls_recovered_off | numeric | Share (0-1) of loose-ball recoveries made on offense. |
 | pct_loose_balls_recovered_def | numeric | Share (0-1) of loose-ball recoveries made on defense. |
-| off_boxouts | integer | Box-outs on offense. |
-| def_boxouts | integer | Box-outs on defense. |
-| box_out_player_team_rebs | integer | Rebounds secured by the player's team on the player's box-outs. |
-| box_out_player_rebs | integer | Rebounds secured by the player himself on his own box-outs. |
-| box_outs | integer | Box-outs executed (offense plus defense). |
+| off_boxouts | numeric | Box-outs on offense. |
+| def_boxouts | numeric | Box-outs on defense. |
+| box_outs | numeric | Box-outs executed (offense plus defense). |
+| box_out_player_team_rebs | numeric | Rebounds secured by the player's team on the player's box-outs. |
+| box_out_player_rebs | numeric | Rebounds secured by the player himself on his own box-outs. |
 | pct_box_outs_off | numeric | Share (0-1) of box-outs made on offense. |
 | pct_box_outs_def | numeric | Share (0-1) of box-outs made on defense. |
 | pct_box_outs_team_reb | numeric | Share (0-1) of the player's box-outs that ended in a team rebound. |
@@ -116,21 +116,21 @@ A `hoopR_data` tibble with one row per team per season type per per mode
 | team_id | integer | stats.nba.com team identifier. |
 | team_name | character | Team nickname (e.g. 'Celtics'). |
 | min | numeric | Minutes played (per game in 'pergame' files, season total in 'totals' files). |
-| contested_shots | integer | Shots the team contested. |
-| contested_shots_2_pt | integer | Two-point shots contested. |
-| contested_shots_3_pt | integer | Three-point shots contested. |
-| deflections | integer | Deflections of opponent passes or dribbles. |
-| charges_drawn | integer | Offensive fouls (charges) drawn. |
-| screen_assists | integer | Screens set that led directly to a teammate's made field goal. |
-| screen_ast_pts | integer | Points scored on field goals created by the screen assists. |
-| off_loose_balls_recovered | integer | Loose balls recovered on offense. |
-| def_loose_balls_recovered | integer | Loose balls recovered on defense. |
-| loose_balls_recovered | integer | Loose balls recovered (offense plus defense). |
+| contested_shots | numeric | Shots the team contested. |
+| contested_shots_2_pt | numeric | Two-point shots contested. |
+| contested_shots_3_pt | numeric | Three-point shots contested. |
+| deflections | numeric | Deflections of opponent passes or dribbles. |
+| charges_drawn | numeric | Offensive fouls (charges) drawn. |
+| screen_assists | numeric | Screens set that led directly to a teammate's made field goal. |
+| screen_ast_pts | numeric | Points scored on field goals created by the screen assists. |
+| off_loose_balls_recovered | numeric | Loose balls recovered on offense. |
+| def_loose_balls_recovered | numeric | Loose balls recovered on defense. |
+| loose_balls_recovered | numeric | Loose balls recovered (offense plus defense). |
 | pct_loose_balls_recovered_off | numeric | Share (0-1) of loose-ball recoveries made on offense. |
 | pct_loose_balls_recovered_def | numeric | Share (0-1) of loose-ball recoveries made on defense. |
-| off_boxouts | integer | Box-outs on offense. |
-| def_boxouts | integer | Box-outs on defense. |
-| box_outs | integer | Box-outs executed (offense plus defense). |
+| off_boxouts | numeric | Box-outs on offense. |
+| def_boxouts | numeric | Box-outs on defense. |
+| box_outs | numeric | Box-outs executed (offense plus defense). |
 | pct_box_outs_off | numeric | Share (0-1) of box-outs made on offense. |
 | pct_box_outs_def | numeric | Share (0-1) of box-outs made on defense. |
 | season | integer | END year of the NBA season (2025 = 2024-25) – the published asset's own stamp, one more than the `seasons` argument. |

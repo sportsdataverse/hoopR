@@ -945,6 +945,45 @@ vocabulary.
   …) in “See also” instead of listing every other member. The lists
   repeated each family on every page and were 1.2 MB of the installed
   help.
+- The column tables of 20 release loaders now match the files the
+  releases publish (checked against the 2026 season, and 2025 to rule
+  out one-season quirks), with the missing columns added, the ones no
+  longer published removed and the types corrected:
+  [`load_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  (`half` and the `lag_` / `lead_` period and half columns in place of
+  `qtr`, `game_half` and their lags, no `period` besides
+  `period_number`, and `athlete_id_1` / `athlete_id_2` in place of
+  `participants_*_athlete_id`),
+  [`load_nba_schedule()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_mbb_schedule()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md),
+  [`load_nba_team_box()`](https://hoopR.sportsdataverse.org/reference/load_nba_pbp.md),
+  [`load_mbb_team_box()`](https://hoopR.sportsdataverse.org/reference/load_mbb_pbp.md)
+  (separate made / attempted counts and `opponent_team_*` columns),
+  [`load_nba_player_impact()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_value.md)
+  (the `boban_*` columns in place of `darko_*`, plus the `_n` / `_rank`
+  / `_pct` and REML columns),
+  [`load_mbb_ratings()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_value.md),
+  [`load_mbb_player_value()`](https://hoopR.sportsdataverse.org/reference/load_mbb_player_value.md),
+  [`load_nba_stats_possessions()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md),
+  [`load_nba_stats_player_boxscores()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md),
+  [`load_nba_stats_team_boxscores()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md),
+  [`load_nba_stats_game_rosters()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md),
+  [`load_nba_stats_officials()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md),
+  [`load_nba_stats_shots()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_coaches.md)
+  (`season_type_id`), and the types of the counts in
+  [`load_nba_stats_matchups()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_matchups.md),
+  [`load_nba_stats_matchups_rollup()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_matchups.md),
+  [`load_nba_stats_hustle_player()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_hustle.md),
+  [`load_nba_stats_hustle_team()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_hustle.md)
+  and
+  [`load_nba_stats_synergy()`](https://hoopR.sportsdataverse.org/reference/load_nba_stats_synergy.md)
+  (numeric, not integer).
+- [`spotrac_team_cap()`](https://hoopR.sportsdataverse.org/reference/spotrac_team_cap.md)’s
+  return columns follow the table Spotrac now serves (`total_cap`,
+  `cap_space`, `cap_status`, `active_cap`, `dead_cap`, `cap_holds`,
+  `top_3`, `players`, `age`); `total_cap_allocations` and
+  `cap_space_all` are gone.
 - The DESCRIPTION explains NBA, ESPN, NCAA, FIBA, ACB, VTB, NBL, KBL and
   CBA on first use, and the help pages use ASCII punctuation (`-`, `x`)
   in place of em dashes, en dashes and multiplication signs.
@@ -960,6 +999,19 @@ vocabulary.
   without them. The recorder never requests stats.nba.com,
   stats.ncaa.org, Sports Reference or KenPom. Also new: mocked tests of
   the play-by-play database builders.
+- Offline replay tests for the stats.nba.com wrappers in the box-score
+  (V2 and V3), league-dashboard, leaders and play-by-play families, one
+  call per wrapper: 36 assert each parsed data frame’s rows, column
+  names and classes, 2 assert the empty result of a retired endpoint
+  that now answers [`{}`](https://rdrr.io/r/base/Paren.html), and 9
+  assert that a defunct wrapper still signals its error. The responses
+  were recorded once from a residential connection by
+  `data-raw/http_fixtures/record_nba_stats.R`, which paces itself
+  (env-tunable `STATS_RATE_HITS` / `STATS_RATE_WINDOW` /
+  `STATS_RATE_MAX`), stops at the first 403 or 429 and resumes where it
+  stopped; CI and CRAN never contact stats.nba.com. The fixtures
+  (`tests/testthat/fixtures/nba_stats/`, 55 KB) are `.Rbuildignore`d
+  like the others.
 - The internal
   [`clean_team_names_NCAA_merge()`](https://hoopR.sportsdataverse.org/reference/clean_team_names_NCAA_merge.md)
   errored on every call (it used `.data$` inside a data.table `[`); it

@@ -407,7 +407,7 @@ ci: update GitHub Actions workflow versions</code></pre>
 </tr></thead><tbody><tr><td><code>R-CMD-check.yaml</code></td>
 <td>push / PR to <code>main</code>, weekly cron, manual</td>
 <td>
-<code>R CMD check</code> on macOS, Windows and Ubuntu (release), Ubuntu r-devel (fails on NOTEs) and Ubuntu oldrel-1</td>
+<code>R CMD check</code> on macOS and Ubuntu (release); the weekly cron and manual runs add Windows (release) and Ubuntu r-devel (fails on NOTEs)</td>
 </tr><tr><td><code>test-coverage.yaml</code></td>
 <td>push / PR to <code>main</code>, manual</td>
 <td>covr coverage of the offline suite (no live-test toggles or source API credentials), uploaded to Codecov; upload failures don’t fail the job</td>

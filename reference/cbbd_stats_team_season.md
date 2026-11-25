@@ -133,35 +133,35 @@ article.
 ``` r
 # \donttest{
   try(cbbd_stats_team_season(season = 2024, team = "Duke"))
-#> ✖ 2026-11-24 23:43:52.189926: Invalid arguments or no team season stats available!
+#> ✖ 2026-11-25 01:50:45.586254: Invalid arguments or no team season stats available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_stats_team_leaderboard(season = 2024))
-#> ✖ 2026-11-24 23:43:52.196307: Invalid arguments or no team stats leaderboard available!
+#> ✖ 2026-11-25 01:50:45.597223: Invalid arguments or no team stats leaderboard available!
 #> ✖ Args: season = 2024, team = NULL, conference = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_stats_team_shooting_season(season = 2024, team = "Duke"))
-#> ✖ 2026-11-24 23:43:52.202528: Invalid arguments or no team shooting stats available!
+#> ✖ 2026-11-25 01:50:45.607628: Invalid arguments or no team shooting stats available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_stats_player_season(season = 2024, team = "Duke"))
-#> ✖ 2026-11-24 23:43:52.208987: Invalid arguments or no player season stats available!
+#> ✖ 2026-11-25 01:50:45.618004: Invalid arguments or no player season stats available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows
 # }
 # \donttest{
   try(cbbd_stats_player_shooting_season(season = 2024, team = "Duke"))
-#> ✖ 2026-11-24 23:43:52.215425: Invalid arguments or no player shooting stats available!
+#> ✖ 2026-11-25 01:50:45.628467: Invalid arguments or no player shooting stats available!
 #> ✖ Args: season = 2024, season_type = NULL, team = "Duke", conference = NULL, start_date_range = NULL, end_date_range = NULL
 #> ✖ Error: api.collegebasketballdata.com requires an API key.        See ?register_cbbd for details.
 #> data frame with 0 columns and 0 rows

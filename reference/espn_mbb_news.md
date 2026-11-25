@@ -83,27 +83,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 23:44:45 UTC
+#> ℹ Data updated: 2026-11-25 01:51:47 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.06e7 Recap Arkansa… — Layne Ta… 2026-11-… FALSE   NA     http://… 41       
-#> 2  5.06e7 Media Penn St… Penn State… 2026-11-… FALSE   NA     https:/… 41       
-#> 3  5.02e7 Story UNC in … The Tar He… 2026-11-… FALSE   Paul … https:/… 41       
-#> 4  5.06e7 Media Arkansa… Arkansas S… 2026-11-… FALSE   NA     https:/… 41       
-#> 5  5.06e7 Head… Jalen D… Top-30 sen… 2026-11-… FALSE   Jeff … https:/… 41       
+#> 1  5.06e7 Media San Die… San Diego … 2026-11-… FALSE   NA     https:/… 41       
+#> 2  5.06e7 Media Creight… Creighton … 2026-11-… FALSE   NA     https:/… 41       
+#> 3  5.06e7 Head… LSU ask… LSU is ask… 2026-11-… FALSE   Mark … https:/… 23       
+#> 4  5.06e7 Media Sacred … Sacred Hea… 2026-11-… FALSE   NA     https:/… 41       
+#> 5  5.06e7 Media Queens … Queens NC … 2026-11-… FALSE   NA     https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 23:44:45 UTC
+#> ℹ Data updated: 2026-11-25 01:51:48 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.06e7 Story Tyrese,… "The coupl… 2026-11-… FALSE   ESPN … https:/… 46       
-#> 2  5.06e7 Head… Jalen D… "Pistons c… 2026-11-… FALSE   NA     https:/… 46       
-#> 3  5.06e7 Story Tracy M… "Morgan al… 2026-11-… FALSE   J.J. … https:/… 46       
-#> 4  5.06e7 Head… Lakers … "The Laker… 2026-11-… FALSE   Dave … https:/… 46       
-#> 5  5.06e7 Story Fantasy… "Eric Kara… 2026-11-… FALSE   Eric … https:/… 3090     
+#> 1  5.06e7 Head… Kawhi L… "The Rapto… 2026-11-… FALSE   Antho… https:/… 46       
+#> 2  5.06e7 Story Tyrese,… "The coupl… 2026-11-… FALSE   ESPN … https:/… 46       
+#> 3  5.06e7 Head… Jalen D… "Pistons c… 2026-11-… FALSE   NA     https:/… 46       
+#> 4  5.06e7 Story Tracy M… "Morgan al… 2026-11-… FALSE   J.J. … https:/… 46       
+#> 5  5.06e7 Head… Lakers … "The Laker… 2026-11-… FALSE   Dave … https:/… 46       
 # }
 ```

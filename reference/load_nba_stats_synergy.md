@@ -101,11 +101,11 @@ A `hoopR_data` tibble with one row per player per play type per split.
 | plusone_poss_pct | numeric | Share (0-1) of this play type's possessions that ended in an and-one. |
 | score_poss_pct | numeric | Share (0-1) of this play type's possessions that scored at least one point. |
 | efg_pct | numeric | Effective field-goal percentage (0-1), weighting made threes by 1.5. |
-| poss | integer | Possessions of this play type (integer in 'totals' files, double per game). |
-| pts | integer | Points scored on this play type. |
-| fgm | integer | Field goals made on this play type. |
-| fga | integer | Field goals attempted on this play type. |
-| fgmx | integer | Field goals missed on this play type. |
+| poss | numeric | Possessions of this play type (integer in 'totals' files, double per game). |
+| pts | numeric | Points scored on this play type. |
+| fgm | numeric | Field goals made on this play type. |
+| fga | numeric | Field goals attempted on this play type. |
+| fgmx | numeric | Field goals missed on this play type. |
 | season | integer | END year of the NBA season (2025 = 2024-25) – the published asset's own stamp, one more than the `seasons` argument. |
 | season_type | character | Season type of the source file: 'regular-season' or 'playoffs' (the release file-name token). |
 | per_mode | character | Aggregation of the source file: 'pergame' (per-game averages) or 'totals' (season totals); stamped from the file name when the rows lack it. |
