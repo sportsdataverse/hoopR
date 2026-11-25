@@ -601,9 +601,10 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   `character` for 2019, so seasons loaded one at a time had different schemas. The
   NCAA MBB loaders returned `period` and `sec_left` (`load_ncaa_mbb_shots()`) and
   `player_count_error` (`load_ncaa_mbb_lineups()`) as `vctrs_unspecified`; they are
-  `logical`, as documented. Every `load_nba_stats_*()` loader built on the
-  multi-file release reader and every `load_ncaa_mbb_*()` loader applies the same
-  cast, to all-`NA` columns only.
+  `logical`, as documented. Every loader built on the multi-file release reader
+  (the `load_nba_stats_*()` release tags, `load_nba_depthcharts()`,
+  `load_nba_current_impact()`) and every `load_ncaa_mbb_*()` loader applies the
+  same cast, to all-`NA` columns only.
 
 ### **Dependencies**
 
