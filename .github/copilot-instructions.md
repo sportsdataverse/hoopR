@@ -43,7 +43,8 @@ When there is any conflict between this file and repository contributor docs, fo
 All HTTP requests use `httr2` as the sole backend. The `httr` package is no longer a dependency.
 
 - `request_with_proxy()` in `utils_nba_stats.R` uses `.retry_request()` (an `httr2` wrapper) with required NBA headers (`x-nba-stats-origin`, `x-nba-stats-token`, `Referer`).
-- Shared internal helpers in `utils.R`: `.retry_request()`, `.resp_text()`, `check_status()`.
+- Shared internal helpers in `utils.R`: `.retry_request()`, `.resp_text()`, `check_status()`, `.stop_for_http_status()`. `.retry_request()` never errors on a status, so a caller checks it (`.stop_for_http_status(res)` or `check_status(res)`) before parsing, unless a shared helper already does.
+- Pass query values as they are: httr2 encodes them, so swapping spaces for `+` sends `%2B`.
 - KenPom functions use `httr2`-based helpers: `login()` (cookie jar auth), `.kp_get_page()`, `.kp_request()`.
 - `nba_endpoint()` builds URLs via `paste0("https://stats.nba.com/stats/", endpoint)` -- does NOT validate against its internal endpoint list.
 
