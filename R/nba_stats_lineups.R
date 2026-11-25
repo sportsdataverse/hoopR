@@ -58,8 +58,6 @@ nba_fantasywidget <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "fantasywidget"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -182,8 +180,6 @@ nba_leaguedashlineups <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashlineups"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -315,8 +311,6 @@ nba_leaguelineupviz <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguelineupviz"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -438,8 +432,6 @@ nba_leagueplayerondetails <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leagueplayerondetails"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -532,8 +524,6 @@ nba_leagueseasonmatchups <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leagueseasonmatchups"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -612,8 +602,6 @@ nba_matchupsrollup <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "matchupsrollup"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

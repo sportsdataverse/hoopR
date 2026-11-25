@@ -50,8 +50,6 @@ nbagl_players <- function(
     all_star = "",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "playerindex"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

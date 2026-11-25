@@ -80,8 +80,6 @@ nba_videodetailsasset <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "videodetailsasset"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -241,7 +239,6 @@ nba_videodetails <- function(
     details = "Live re-probe (2026-08-24, residential IP) returned an empty response body; confirmed defunct upstream. nba_videodetailsasset() serves the equivalent live data."
   )
 
-  # season_type <- gsub(' ', '+', season_type)
   version <- "videodetails"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

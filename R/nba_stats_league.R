@@ -38,8 +38,6 @@ nba_leaguegamelog <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguegamelog"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -115,8 +113,6 @@ nba_leaguestandings <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ','+',season_type)
   version <- "leaguestandings"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -180,8 +176,6 @@ nba_leaguestandingsv3 <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ','+',season_type)
   version <- "leaguestandingsv3"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -470,7 +464,6 @@ nba_leaguegamefinder <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # season_type <- gsub(' ','+',season_type)
   version <- "leaguegamefinder"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

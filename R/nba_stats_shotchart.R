@@ -62,8 +62,6 @@ nba_shotchartdetail <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "shotchartdetail"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -306,8 +304,6 @@ nba_shotchartlineupdetail <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "shotchartlineupdetail"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

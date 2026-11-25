@@ -77,8 +77,6 @@ nba_teamdashboardbyclutch <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamdashboardbyclutch"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -205,8 +203,6 @@ nba_teamdashboardbygamesplits <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamdashboardbygamesplits"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -334,8 +330,6 @@ nba_teamdashboardbygeneralsplits <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamdashboardbygeneralsplits"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -463,8 +457,6 @@ nba_teamdashboardbylastngames <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamdashboardbylastngames"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -591,8 +583,6 @@ nba_teamdashboardbyopponent <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamdashboardbyopponent"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -720,8 +710,6 @@ nba_teamdashboardbyshootingsplits <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamdashboardbyshootingsplits"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -847,8 +835,6 @@ nba_teamdashboardbyteamperformance <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamdashboardbyteamperformance"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -973,8 +959,6 @@ nba_teamdashboardbyyearoveryear <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamdashboardbyyearoveryear"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1107,8 +1091,6 @@ nba_teamdashlineups <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamdashlineups"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1224,8 +1206,6 @@ nba_teamdashptpass  <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamdashptpass"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1335,8 +1315,6 @@ nba_teamdashptreb  <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamdashptreb"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1448,8 +1426,6 @@ nba_teamdashptshots  <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamdashptshots"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

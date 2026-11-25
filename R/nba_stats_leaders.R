@@ -30,7 +30,6 @@ nba_alltimeleadersgrids <- function(
   .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "alltimeleadersgrids"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -96,8 +95,6 @@ nba_assistleaders <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ','+',season_type)
   version <- "assistleaders"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -158,7 +155,6 @@ nba_assisttracker <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # season_type <- gsub(' ','+',season_type)
   version <- "assisttracker"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -240,10 +236,6 @@ nba_homepageleaders <- function(
     details = "Live re-probe (2026-08-24, residential IP) across multiple league/season/player_or_team combinations returned HTTP 200 with consistently empty result sets; not restored."
   )
 
-  player_scope <- gsub(' ','+',player_scope)
-  # Intentional
-  # season_type <- gsub(' ','+',season_type)
-  stat_category <- gsub(' ','+',stat_category)
   version <- "homepageleaders"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -330,10 +322,6 @@ nba_homepagev2 <- function(
     details = "Live re-probe (2026-08-24, residential IP) returned HTTP 200 with consistently empty result sets; not restored."
   )
 
-  player_scope <- gsub(' ','+',player_scope)
-  # Intentional
-  # season_type <- gsub(' ','+',season_type)
-  stat_type <- gsub(' ','+',stat_type)
   version <- "homepagev2"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -420,9 +408,6 @@ nba_leaderstiles <- function(
     details = "Live re-probe (2026-08-24, residential IP) returned HTTP 200 with consistently empty result sets; not restored."
   )
 
-  player_scope <- gsub(' ','+',player_scope)
-  # season_type <- gsub(' ','+',season_type)
-  stat <- gsub(' ','+',stat)
   version <- "leaderstiles"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

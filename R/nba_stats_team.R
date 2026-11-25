@@ -168,8 +168,6 @@ nba_teamestimatedmetrics <- function(
     season_type = "Regular Season",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamestimatedmetrics"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -240,8 +238,6 @@ nba_teamgamelog <- function(
     team_id = "1610612749",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamgamelog"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -320,8 +316,6 @@ nba_teamgamelogs <- function(
     vs_division = "",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamgamelogs"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -465,8 +459,6 @@ nba_teaminfocommon <- function(
     team_id = "1610612749",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teaminfocommon"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -566,8 +558,6 @@ nba_teamplayeronoffdetails <- function(
     vs_division = "",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamplayeronoffdetails"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -660,8 +650,6 @@ nba_teamplayeronoffsummary <- function(
     vs_division = "",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamplayeronoffsummary"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -755,8 +743,6 @@ nba_teamplayerdashboard <- function(
     vs_division = "",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamplayerdashboard"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -835,8 +821,6 @@ nba_teamyearbyyearstats <- function(
     team_id = "1610612749",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamyearbyyearstats"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -919,8 +903,6 @@ nba_teamvsplayer <- function(
     vs_player_id = "2544",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamvsplayer"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1515,8 +1497,6 @@ nba_teamgamestreakfinder <- function(
     with = "nba_teamgamelogs()"
   )
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "teamgamestreakfinder"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
