@@ -314,7 +314,7 @@ nba_endpoint <- function(endpoint) {
 
 nba_stats_map_result_sets <- function(resp) {
   if ("resultSets" %in% names(resp)) {
-    df_list <- purrr::map(1:length(resp$resultSets$name), function(x) {
+    df_list <- purrr::map(seq_along(resp$resultSets$name), function(x) {
       data <- resp$resultSets$rowSet[[x]] %>%
         data.frame(stringsAsFactors = FALSE) %>%
         dplyr::as_tibble()
@@ -326,7 +326,7 @@ nba_stats_map_result_sets <- function(resp) {
     names(df_list) <- resp$resultSets$name
     return(df_list)
   } else {
-    df_list <- purrr::map(1:length(resp$resultSet$name), function(x) {
+    df_list <- purrr::map(seq_along(resp$resultSet$name), function(x) {
       data <- resp$resultSet$rowSet[[x]] %>%
         data.frame(stringsAsFactors = FALSE) %>%
         dplyr::as_tibble()

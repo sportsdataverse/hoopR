@@ -186,7 +186,7 @@ nba_teamestimatedmetrics <- function(
     expr = .hoopR_with_warnings("nba_teamestimatedmetrics", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSet$name), function(x) {
+      df_list <- purrr::map(seq_along(resp$resultSet$name), function(x) {
         data <- resp$resultSet$rowSet %>%
           data.frame(stringsAsFactors = FALSE) %>%
           dplyr::as_tibble()

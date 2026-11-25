@@ -629,7 +629,7 @@ nba_leaguedashplayerptshot <- function(
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+      df_list <- purrr::map(seq_along(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet[[x]] %>%
           data.frame(stringsAsFactors = FALSE) %>%
           as_tibble()
@@ -969,7 +969,7 @@ nba_leaguedashplayershotlocations <- function(
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+      df_list <- purrr::map(seq_along(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet %>%
           data.frame(stringsAsFactors = FALSE) %>%
           dplyr::as_tibble()
@@ -1974,7 +1974,7 @@ nba_leaguedashteamshotlocations <- function(
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(1:length(resp$resultSets$name), function(x){
+      df_list <- purrr::map(seq_along(resp$resultSets$name), function(x){
         data <- resp$resultSets$rowSet %>%
           data.frame(stringsAsFactors = FALSE) %>%
           dplyr::as_tibble()
