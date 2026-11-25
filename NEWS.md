@@ -425,6 +425,9 @@ the sections below.
   `nba_leaguedashplayerptshot()`, `nba_playerestimatedmetrics()` and
   `nba_teamestimatedmetrics()` now call it in place of their own copies, and the
   two shot-location wrappers build their sets the same way.
+  `nba_bind_sets()`, `nba_join_sets()` and `nba_nest_sets()` give a headers-only
+  set's columns the type a populated set has for them, so a character column of
+  no rows does not stop the bind or join (CodeRabbit review).
 * A stats.nba.com `{}` answer (some retired V2 endpoints) now gives an empty
   list. `nba_stats_map_result_sets()` and six wrappers with their own copy of
   it counted `1:length(NULL)` as two result sets and returned two unnamed

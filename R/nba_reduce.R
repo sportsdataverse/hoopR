@@ -57,7 +57,7 @@ nba_bind_sets <- function(result_sets, tag_column = "set_name") {
   }
   # a stats.nba.com `{}` answer maps to no result sets: no rows, not an error
   if (length(result_sets) == 0) return(dplyr::tibble())
-  dplyr::as_tibble(dplyr::bind_rows(result_sets, .id = tag_column))
+  dplyr::as_tibble(dplyr::bind_rows(.nba_align_empty_sets(result_sets), .id = tag_column))
 }
 
 #' @export
@@ -73,7 +73,7 @@ nba_join_sets <- function(result_sets, join_key) {
   if (!all(has_key)) {
     cli::cli_abort("{.arg join_key} {.val {join_key}} is missing in sets: {names(has_key)[!has_key]}")
   }
-  dplyr::as_tibble(purrr::reduce(result_sets, dplyr::left_join, by = join_key))
+  dplyr::as_tibble(purrr::reduce(.nba_align_empty_sets(result_sets), dplyr::left_join, by = join_key))
 }
 
 #' @export
@@ -86,7 +86,7 @@ nba_nest_sets <- function(result_sets, keep_cols, nest_col = ".data") {
     cli::cli_abort("{.arg keep_cols} must be a character vector of at least one column name.")
   }
 
-  bound <- dplyr::bind_rows(result_sets, .id = "set_name")
+  bound <- dplyr::bind_rows(.nba_align_empty_sets(result_sets), .id = "set_name")
   missing_keep <- setdiff(keep_cols, names(bound))
   if (length(missing_keep)) {
     cli::cli_abort("{.arg keep_cols} not found in the result sets: {missing_keep}")
@@ -98,4 +98,21 @@ nba_nest_sets <- function(result_sets, keep_cols, nest_col = ".data") {
   nested <- tidyr::nest(bound, placeholder___ = dplyr::all_of(nest_cols))
   names(nested)[names(nested) == "placeholder___"] <- nest_col
   dplyr::as_tibble(nested)
+}
+
+# A result set with headers and no rows maps to character columns. Give each of
+# its columns the type a populated set has for it, so bind_rows() / left_join()
+# do not stop on character vs numeric; a column no populated set has stays
+# character.
+.nba_align_empty_sets <- function(result_sets) {
+  ptype <- list()
+  for (s in result_sets) {
+    if (!is.data.frame(s) || nrow(s) == 0) next
+    for (k in setdiff(names(s), names(ptype))) ptype[[k]] <- s[[k]][0]
+  }
+  lapply(result_sets, function(s) {
+    if (!is.data.frame(s) || nrow(s) > 0) return(s)
+    for (k in intersect(names(s), names(ptype))) s[[k]] <- ptype[[k]]
+    s
+  })
 }
