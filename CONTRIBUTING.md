@@ -242,7 +242,7 @@ Workflows in `.github/workflows/`:
 
 | Workflow | Triggers | Purpose |
 |---|---|---|
-| `R-CMD-check.yaml` | push / PR to `main`, weekly cron, manual | `R CMD check` on macOS, Windows and Ubuntu (release), Ubuntu r-devel (fails on NOTEs) and Ubuntu oldrel-1 |
+| `R-CMD-check.yaml` | push / PR to `main`, weekly cron, manual | `R CMD check` on macOS and Ubuntu (release); the weekly cron and manual runs add Windows (release) and Ubuntu r-devel (fails on NOTEs) |
 | `test-coverage.yaml` | push / PR to `main`, manual | covr coverage of the offline suite (no live-test toggles or source API credentials), uploaded to Codecov; upload failures don't fail the job |
 | `url-check.yaml` | push / PR to `main`, weekly cron, manual | `urlchecker` over DESCRIPTION, man/, README and NEWS; fails on 404/410, permanent redirects and non-canonical CRAN URLs. Hosts in `tools/.urlignore` (NBA/WNBA/NCAA stats, Sports Reference) are never requested |
 | `intl-parity.yaml` | push / PR to `main`, manual | intl parity tests from the git checkout |

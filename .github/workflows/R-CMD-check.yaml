@@ -25,14 +25,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        config:
-          - { os: macos-latest, r: "release" }
-          - { os: windows-latest, r: "release" }
-          - { os: ubuntu-latest, r: "release" }
-          # r-devel fails on NOTEs: under the default error-on "warning" a NOTE that
-          # only CRAN's r-devel flavours raise would still pass green here.
-          - { os: ubuntu-latest, r: "devel", http-user-agent: "release", error-on: '"note"' }
-          - { os: ubuntu-latest, r: "oldrel-1" }
+        # push / pull_request: ubuntu + macOS release. Weekly cron and manual
+        # dispatch add ubuntu R-devel and windows release (CRAN-relevant).
+        # r-devel fails on NOTEs: under the default error-on "warning" a NOTE that
+        # only CRAN's r-devel flavours raise would still pass green here.
+        config: ${{ fromJSON((github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && '[{"os":"macos-latest","r":"release"},{"os":"windows-latest","r":"release"},{"os":"ubuntu-latest","r":"release"},{"os":"ubuntu-latest","r":"devel","http-user-agent":"release","error-on":"\"note\""}]' || '[{"os":"macos-latest","r":"release"},{"os":"ubuntu-latest","r":"release"}]') }}
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       KP_USER: ${{ secrets.KP_USER }}
