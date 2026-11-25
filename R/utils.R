@@ -362,6 +362,24 @@ pbp_from_url <- function(url, type) {
   df
 }
 
+# A release file stores a column no row fills as all-NA logical, or as arrow's
+# vctrs_unspecified, so the column's class changes from season to season (the
+# draft combine's retired measures: integer in 2019, logical from 2023). Give
+# each all-NA column the type `return_columns` documents for loader `fn`; a
+# column with values, or one without a documented type, is left alone.
+.na_cols_as_documented <- function(df, fn) {
+  doc <- hoopR::return_columns
+  doc <- doc[doc$fn == fn, c("col_name", "type")]
+  empty <- list(character = NA_character_, integer = NA_integer_, numeric = NA_real_, logical = NA)
+  for (k in intersect(names(df), doc$col_name)) {
+    type <- doc$type[match(k, doc$col_name)]
+    x <- df[[k]]
+    if (!type %in% names(empty) || !all(is.na(x)) || identical(class(x), class(empty[[type]]))) next
+    data.table::set(df, j = k, value = rep(empty[[type]], length(x)))
+  }
+  df
+}
+
 # Read a release `.rds` asset, or its `.parquet` sibling when the season was
 # published as parquet only (MBB officials and game rosters 2003-2024; needs
 # arrow, whose absence parquet_from_url() reports).
