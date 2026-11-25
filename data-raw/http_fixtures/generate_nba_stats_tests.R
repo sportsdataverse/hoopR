@@ -76,8 +76,8 @@ for (call in calls) {
     # the replay stays on, so a wrapper brought back to life cannot reach the network
     c(head, sprintf("  expect_error(%s, class = \"defunctError\")", call))
   } else if (inherits(out, "error")) {
-    message("SKIPPED (errors on its fixture): ", call, ": ", conditionMessage(out))
-    next
+    # stop rather than silently drop the call's test from the rewritten file
+    stop("Errors on its recorded response: ", call, ": ", conditionMessage(out), call. = FALSE)
   } else if (is.data.frame(out)) {
     c(head, sprintf("  x <- suppressMessages(%s)", call),
       if (nrow(out) == 0) "  expect_equal(nrow(x), 0L)" else frame_asserts(out, "x"))
