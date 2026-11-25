@@ -30,7 +30,6 @@ nba_alltimeleadersgrids <- function(
   .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "alltimeleadersgrids"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -96,8 +95,6 @@ nba_assistleaders <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ','+',season_type)
   version <- "assistleaders"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -158,7 +155,6 @@ nba_assisttracker <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # season_type <- gsub(' ','+',season_type)
   version <- "assisttracker"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -240,10 +236,6 @@ nba_homepageleaders <- function(
     details = "Live re-probe (2026-08-24, residential IP) across multiple league/season/player_or_team combinations returned HTTP 200 with consistently empty result sets; not restored."
   )
 
-  player_scope <- gsub(' ','+',player_scope)
-  # Intentional
-  # season_type <- gsub(' ','+',season_type)
-  stat_category <- gsub(' ','+',stat_category)
   version <- "homepageleaders"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -330,10 +322,6 @@ nba_homepagev2 <- function(
     details = "Live re-probe (2026-08-24, residential IP) returned HTTP 200 with consistently empty result sets; not restored."
   )
 
-  player_scope <- gsub(' ','+',player_scope)
-  # Intentional
-  # season_type <- gsub(' ','+',season_type)
-  stat_type <- gsub(' ','+',stat_type)
   version <- "homepagev2"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -420,9 +408,6 @@ nba_leaderstiles <- function(
     details = "Live re-probe (2026-08-24, residential IP) returned HTTP 200 with consistently empty result sets; not restored."
   )
 
-  player_scope <- gsub(' ','+',player_scope)
-  # season_type <- gsub(' ','+',season_type)
-  stat <- gsub(' ','+',stat)
   version <- "leaderstiles"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -467,6 +452,13 @@ NULL
 #' **Get NBA Stats API Defense Hub**
 #' @rdname nba_alltimeleadersgrids
 #' @author Saiem Gilani
+#' @description
+#' `nba_defensehub()`: `r lifecycle::badge("deprecated")`
+#'
+#' stats.nba.com answers `defensehub` with HTTP 500 for every parameter set tried
+#' (2026-11-24 and 2026-11-25, residential IP; nba_api lists it as not working), so
+#' `nba_defensehub()` now errors when called. Use `nba_leagueleaders()` for the
+#' league leaders by stat.
 #' @param game_scope Game Scope - Season, Last 10, ,Yesterday, Finals
 #' @param player_or_team Player or Team
 #' @param player_scope Player Scope - All Players, Rookies
@@ -480,12 +472,10 @@ NULL
 #' @export
 #' @family NBA Leaders Functions
 #' @details
-#' (Possibly Deprecated)
 #' ```r
 #'  nba_defensehub(league_id = '00', player_or_team = "Player")
 #'  nba_defensehub(league_id = '00', player_or_team = "Team")
 #' ```
-
 nba_defensehub <- function(
     league_id = '00',
     game_scope = 'Season',
@@ -494,40 +484,12 @@ nba_defensehub <- function(
     season = year_to_season(most_recent_nba_season() - 2),
     season_type = 'Regular Season',
     ...){
-  .args <- mget(setdiff(names(formals()), "..."))
-
-  version <- "defensehub"
-  endpoint <- nba_endpoint(version)
-  full_url <- endpoint
-
-  params <- list(
-    LeagueID = league_id,
-    GameScope = game_scope,
-    PlayerOrTeam = player_or_team,
-    PlayerScope = player_scope,
-    Season = season,
-    SeasonType = season_type
+  lifecycle::deprecate_stop(
+    when = "3.2.0",
+    what = "nba_defensehub()",
+    with = "nba_leagueleaders()",
+    details = "Live re-probes (2026-11-24 and 2026-11-25, residential IP) returned HTTP 500 for every parameter set tried; nba_api also lists the endpoint as not working."
   )
-
-  df_list <- list()
-
-  tryCatch(
-    expr = .hoopR_with_warnings("nba_defensehub", {
-
-      resp <- request_with_proxy(url = full_url, params = params, ...)
-
-      df_list <- nba_stats_map_result_sets(resp)
-
-    }),
-    error = function(e) .report_api_error(
-      e,
-      hint = "Invalid arguments or no defense hub data for {season} available!",
-      args = .args
-    ),
-    finally = {
-    }
-  )
-  return(df_list)
 }
 
 
@@ -589,16 +551,7 @@ nba_leagueleaders <- function(
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(seq_along(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet %>%
-          data.frame(stringsAsFactors = FALSE) %>%
-          dplyr::as_tibble()
-
-        json_names <- resp$resultSet$headers
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
+      df_list <- nba_stats_map_result_sets(resp)
 
     }),
     error = function(e) .report_api_error(

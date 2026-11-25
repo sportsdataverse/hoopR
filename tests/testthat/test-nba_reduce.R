@@ -53,3 +53,19 @@ test_that("nba_nest_sets nests non-key columns, preserving origin (tactic D)", {
 
   expect_error(nba_nest_sets(make_sets(), keep_cols = "NOPE"))  # bad keep_cols
 })
+
+# A headers-only set maps to character columns; beside a populated numeric set
+# the shared columns take the populated type instead of stopping the bind/join.
+test_that("the reducers accept a headers-only set beside a populated numeric set", {
+  resp <- jsonlite::fromJSON(paste0(
+    '{"resultSets":[{"name":"A","headers":["GAME_ID","PTS"],"rowSet":[[1,10],[2,20]]},',
+    '{"name":"B","headers":["GAME_ID","PTS","ONLY_B"],"rowSet":[]}]}'
+  ))
+  sets <- nba_stats_map_result_sets(resp)
+  bound <- nba_bind_sets(sets)
+  expect_equal(nrow(bound), 2L)
+  expect_type(bound$PTS, "integer")
+  expect_type(bound$ONLY_B, "character")
+  expect_equal(nrow(nba_nest_sets(sets, keep_cols = "GAME_ID")), 2L)
+  expect_equal(nrow(nba_join_sets(sets, join_key = "GAME_ID")), 2L)
+})

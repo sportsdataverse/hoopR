@@ -1089,7 +1089,7 @@ load_nba_stats_team_season_stats <- function(seasons = most_recent_nba_stats_sea
 NULL
 
 #' Valid `table` values for [load_nba_stats_leaguedash()].
-#' @keywords Internal
+#' @keywords internal
 #' @noRd
 nba_stats_leaguedash_tables <- c(
   "player_bio", "player_master",

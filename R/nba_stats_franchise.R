@@ -89,7 +89,6 @@ nba_franchiseleaderswrank <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # season_type <- gsub(' ','+',season_type)
   version <- "franchiseleaderswrank"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -155,7 +154,6 @@ nba_franchiseplayers <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # season_type <- gsub(' ','+',season_type)
   version <- "franchiseplayers"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

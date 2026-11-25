@@ -45,8 +45,6 @@ nba_playerindex <- function(
     weight = "",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "playerindex"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -217,9 +215,6 @@ nba_playercareerbycollege <- function(
     details = "No direct replacement is available in hoopR for this unstable endpoint. Consider using  `nba_playercareerbycollegerollup()` or `nba_leaguedashplayerbiostats()` for aggregated career stats by college instead."
   )
 
-  college <- gsub(" ", "+", college)
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "playercareerbycollege"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -278,8 +273,6 @@ nba_playercareerbycollegerollup <- function(
     season_type = "Regular Season",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "playercareerbycollegerollup"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -453,8 +446,6 @@ nba_playerfantasyprofile <- function(
     season_type = "Regular Season",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "playerfantasyprofile"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -519,8 +510,6 @@ nba_playerfantasyprofilebargraph <- function(
     season_type = "Regular Season",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "playerfantasyprofilebargraph"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -578,8 +567,6 @@ nba_playerestimatedmetrics <- function(
     season_type = "Regular Season",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "playerestimatedmetrics"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -597,16 +584,7 @@ nba_playerestimatedmetrics <- function(
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
 
-      df_list <- purrr::map(seq_along(resp$resultSet$name), function(x) {
-        data <- resp$resultSet$rowSet %>%
-          data.frame(stringsAsFactors = FALSE) %>%
-          dplyr::as_tibble()
-
-        json_names <- resp$resultSet$headers
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
+      df_list <- nba_stats_map_result_sets(resp)
     }),
     error = function(e) .report_api_error(
       e,
@@ -651,8 +629,6 @@ nba_playergamelog <- function(
     season_type = "Regular Season",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "playergamelog"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -742,8 +718,6 @@ nba_playergamelogs <- function(
     vs_division = "",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "playergamelogs"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -987,8 +961,6 @@ nba_playergamestreakfinder <- function(
     years_experience = "",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "playergamestreakfinder"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1140,8 +1112,6 @@ nba_playernextngames <- function(
     with = "nba_playerprofilev2()"
   )
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "playernextngames"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1290,8 +1260,6 @@ nba_playervsplayer <- function(
     vs_player_id = "203076",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "playervsplayer"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1404,8 +1372,6 @@ nba_playercompare <- function(
     vs_player_id_list = "201566,201939,201935,201142,203076",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "playercompare"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

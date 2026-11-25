@@ -772,7 +772,7 @@ clean_team_names_NCAA_merge <- function(df) {
 #'   non-2xx response.
 #' @param res Response from API (httr2 response object)
 #' @return `res`, invisibly, when its status is 2xx.
-#' @keywords Internal
+#' @keywords internal
 #'
 check_status <- function(res) {
   .stop_for_http_status(res, call = rlang::caller_env())

@@ -35,7 +35,6 @@ nba_cumestatsplayer <- function(
   .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "cumestatsplayer"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -113,7 +112,6 @@ nba_cumestatsplayergames <- function(
   .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "cumestatsplayergames"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -186,7 +184,6 @@ nba_cumestatsteam <- function(
   .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "cumestatsteam"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -264,7 +261,6 @@ nba_cumestatsteamgames <- function(
   .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "cumestatsteamgames"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

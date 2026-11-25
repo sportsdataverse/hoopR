@@ -84,8 +84,6 @@ nba_leaguedashoppptshot <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashoppptshot"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -234,8 +232,6 @@ nba_leaguedashplayerbiostats <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashplayerbiostats"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -399,10 +395,6 @@ nba_leaguedashplayerclutch <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # ahead_behind <- gsub(' ', '+', ahead_behind)
-  # clutch_time <- gsub(' ', '+', clutch_time)
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashplayerclutch"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -574,8 +566,6 @@ nba_leaguedashplayerptshot <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashplayerptshot"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -629,16 +619,7 @@ nba_leaguedashplayerptshot <- function(
 
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(seq_along(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = FALSE) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
     }),
     error = function(e) .report_api_error(
       e,
@@ -749,8 +730,6 @@ nba_leaguedashplayerstats <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashplayerstats"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -915,9 +894,6 @@ nba_leaguedashplayershotlocations <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # distance_range <- gsub(' ', '+', distance_range)
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashplayershotlocations"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -970,17 +946,15 @@ nba_leaguedashplayershotlocations <- function(
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- purrr::map(seq_along(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet %>%
-          data.frame(stringsAsFactors = FALSE) %>%
-          dplyr::as_tibble()
         columnsToSkip <- resp$resultSets$headers$columnsToSkip[[1]]
         columnSpan <- resp$resultSets$headers$columnSpan[[1]]
         json_names1 <- resp$resultSets$headers$columnNames[[1]]
         json_names_rep <- rep(json_names1, times = 1, each = columnSpan)
         json_names2 <- resp$resultSets$headers$columnNames[[2]]
         json_names <- c(json_names2[1:columnsToSkip], paste(json_names_rep, json_names2[(columnsToSkip + 1):30]))
-        colnames(data) <- gsub('\\(|\\)|','', gsub(' |-','_',json_names))
-        return(data)
+        .nba_result_set_tibble(
+          resp$resultSets$rowSet, gsub('\\(|\\)|','', gsub(' |-','_',json_names))
+        )
       })
       names(df_list) <- resp$resultSets$name
     }),
@@ -1083,8 +1057,6 @@ nba_leaguedashptdefend <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashptdefend"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1232,8 +1204,6 @@ nba_leaguedashptstats <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashptstats"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1361,8 +1331,6 @@ nba_leaguedashptteamdefend <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashptteamdefend"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1502,10 +1470,6 @@ nba_leaguedashteamclutch <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # ahead_behind <- gsub(' ', '+', ahead_behind)
-  # clutch_time <- gsub(' ', '+', clutch_time)
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashteamclutch"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1645,8 +1609,6 @@ nba_leaguedashteamptshot <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashteamptshot"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1783,8 +1745,6 @@ nba_leaguedashteamstats <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashteamstats"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1927,9 +1887,6 @@ nba_leaguedashteamshotlocations <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # distance_range <- gsub(' ', '+', distance_range)
-  # Intentional
-  # season_type <- gsub(' ', '+', season_type)
   version <- "leaguedashteamshotlocations"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -1975,17 +1932,15 @@ nba_leaguedashteamshotlocations <- function(
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
       df_list <- purrr::map(seq_along(resp$resultSets$name), function(x){
-        data <- resp$resultSets$rowSet %>%
-          data.frame(stringsAsFactors = FALSE) %>%
-          dplyr::as_tibble()
         columnsToSkip <- resp$resultSets$headers$columnsToSkip[[1]]
         columnSpan <- resp$resultSets$headers$columnSpan[[1]]
         json_names1 <- resp$resultSets$headers$columnNames[[1]]
         json_names_rep <- rep(json_names1,times = 1, each = columnSpan)
         json_names2 <- resp$resultSets$headers$columnNames[[2]]
         json_names <- c(json_names2[1:columnsToSkip], paste(json_names_rep, json_names2[(columnsToSkip + 1):30]))
-        colnames(data) <- gsub('\\(|\\)|','', gsub(' |-','_',json_names))
-        return(data)
+        .nba_result_set_tibble(
+          resp$resultSets$rowSet, gsub('\\(|\\)|','', gsub(' |-','_',json_names))
+        )
       })
       names(df_list) <- resp$resultSets$name
     }),

@@ -494,7 +494,6 @@ nba_winprobabilitypbp <- function(
   old <- options(list(stringsAsFactors = FALSE, scipen = 999))
   on.exit(options(old))
 
-  # run_type <- gsub(' ', '+', run_type)
   version <- "winprobabilitypbp"
   full_url <- nba_endpoint(version)
 

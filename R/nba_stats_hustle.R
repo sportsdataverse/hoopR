@@ -77,7 +77,6 @@ nba_leaguehustlestatsplayer <- function(
   .args <- mget(setdiff(names(formals()), "..."))
 
   #intentional
-  # season_type <- gsub(' ','+',season_type)
   if (!missing(last_n_games)) {
     lifecycle::deprecate_warn(
       "3.2.0", "nba_leaguehustlestatsplayer(last_n_games)",
@@ -210,7 +209,6 @@ nba_leaguehustlestatsplayerleaders <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  # season_type <- gsub(' ','+',season_type)
   if (!missing(last_n_games)) {
     lifecycle::deprecate_warn(
       "3.2.0", "nba_leaguehustlestatsplayerleaders(last_n_games)",
@@ -344,7 +342,6 @@ nba_leaguehustlestatsteam <- function(
   .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
-  # season_type <- gsub(' ','+',season_type)
   if (!missing(last_n_games)) {
     lifecycle::deprecate_warn(
       "3.2.0", "nba_leaguehustlestatsteam(last_n_games)",
@@ -477,7 +474,6 @@ nba_leaguehustlestatsteamleaders <- function(
   .args <- mget(setdiff(names(formals()), "..."))
 
   # intentional
-  # season_type <- gsub(' ','+',season_type)
   if (!missing(last_n_games)) {
     lifecycle::deprecate_warn(
       "3.2.0", "nba_leaguehustlestatsteamleaders(last_n_games)",

@@ -10,8 +10,9 @@
 # Left out, recorded 2026-11-24 from a residential IP (re-try when re-recording):
 #   nba_boxscoredefensive(), nba_boxscorematchups(), nba_gravityleaders(): HTTP 500.
 #   nba_defensehub(), nba_glalumboxscoresimilarityscore(): HTTP 500, and
-#     nba_boxscoresimilarityscore(): HTTP 400, with the season type and player scope
-#     sent as "Regular%20Season" / "All%20Players" (they used to be sent as %2B).
+#     nba_boxscoresimilarityscore(): HTTP 400 (it rejects every Person1Season, a
+#     year or "2022-23"), again on 2026-11-25 with nba_api's parameters. All three are
+#     defunct since 3.2.0; test-nba_stats_query_encoding.R asserts their defunctError.
 #   nba_live_pbp(), nba_live_boxscore(): cdn.nba.com, covered by test-nba_live_cdn.R.
 
 # Box scores, V3 and V2

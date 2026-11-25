@@ -28,8 +28,6 @@ nbagl_standings <- function(
     season_year = "",
     ...) {
   .args <- mget(setdiff(names(formals()), "..."))
-  # Intentional
-  # season_type <- gsub(' ','+',season_type)
   version <- "leaguestandingsv3"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

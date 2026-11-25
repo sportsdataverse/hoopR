@@ -724,6 +724,13 @@ NULL
 #' **Get NBA Stats API Boxscore Similarity Score**
 #' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
+#' @description
+#' `nba_boxscoresimilarityscore()`: `r lifecycle::badge("deprecated")`
+#'
+#' stats.nba.com answers `boxscoresimilarityscore` with HTTP 400 for every parameter set tried: it rejects
+#' every `Person1Season` / `Person2Season` value, a year or a season string
+#' (2026-11-24 and 2026-11-25, residential IP; nba_api dropped it in v1.6.0), so
+#' `nba_boxscoresimilarityscore()` now errors when called. There is no replacement.
 #' @param person_1_id person_1_id
 #' @param person_1_league_id person_1_league_id
 #' @param person_1_season person_1_season
@@ -740,7 +747,6 @@ NULL
 #' @export
 #' @family NBA Boxscore Similarity Functions
 #' @details
-#' (Possibly Deprecated)
 #' ```r
 #' z <- nba_commonallplayers()$CommonAllPlayers
 #' klay <- z %>% dplyr::filter(DISPLAY_FIRST_LAST == 'Klay Thompson')
@@ -765,51 +771,11 @@ nba_boxscoresimilarityscore <- function(
     person_2_season = most_recent_nba_season() - 3,
     person_2_season_type = 'Regular Season',
     ...){
-  .args <- mget(setdiff(names(formals()), "..."))
-
-  version <- "boxscoresimilarityscore"
-  endpoint <- nba_endpoint(version)
-  full_url <- endpoint
-
-  params <- list(
-    Person1Id = person_1_id,
-    Person1LeagueId = person_1_league_id,
-    Person1Season = person_1_season,
-    Person1SeasonType = person_1_season_type,
-    Person2Id = person_2_id,
-    Person2LeagueId = person_2_league_id,
-    Person2Season = person_2_season,
-    Person2SeasonType = person_2_season_type
+  lifecycle::deprecate_stop(
+    when = "3.2.0",
+    what = "nba_boxscoresimilarityscore()",
+    details = "Live re-probes (2026-11-24 and 2026-11-25, residential IP) returned HTTP 400 for every parameter set tried (it rejects every Person1Season and Person2Season value, a year or a season string); nba_api dropped the endpoint in v1.6.0 for the same reason."
   )
-
-  df_list <- list()
-
-  tryCatch(
-    expr = .hoopR_with_warnings("nba_boxscoresimilarityscore", {
-
-      resp <- request_with_proxy(url = full_url, params = params, ...)
-
-      df_list <- purrr::map(seq_along(resp$resultSet$name), function(x){
-        data <- resp$resultSet$rowSet %>%
-          data.frame(stringsAsFactors = FALSE) %>%
-          dplyr::as_tibble()
-
-        json_names <- resp$resultSet$headers
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
-
-    }),
-    error = function(e) .report_api_error(
-      e,
-      hint = "Invalid arguments or no boxscore similarity data for given parameters available!",
-      args = .args
-    ),
-    finally = {
-    }
-  )
-  return(df_list)
 }
 
 #' **Get NBA Stats API G-League Alum Boxscore Similarity Score**
@@ -820,6 +786,12 @@ NULL
 #' **Get NBA Stats API G-League Alum Boxscore Similarity Score**
 #' @rdname nba_boxscoretraditionalv2
 #' @author Saiem Gilani
+#' @description
+#' `nba_glalumboxscoresimilarityscore()`: `r lifecycle::badge("deprecated")`
+#'
+#' stats.nba.com answers `glalumboxscoresimilarityscore` with HTTP 500 for every parameter set tried
+#' (2026-11-24 and 2026-11-25, residential IP; nba_api lists it as not working), so
+#' `nba_glalumboxscoresimilarityscore()` now errors when called. There is no replacement.
 #' @param person_1_id person_1_id
 #' @param person_1_league_id person_1_league_id
 #' @param person_1_season person_1_season
@@ -835,8 +807,6 @@ NULL
 #' @import rvest
 #' @export
 #' @family NBA Boxscore Similarity Functions
-#' @details
-#' (Possibly Deprecated)
 nba_glalumboxscoresimilarityscore <- function(
     person_1_id,
     person_1_league_id,
@@ -847,42 +817,11 @@ nba_glalumboxscoresimilarityscore <- function(
     person_2_season,
     person_2_season_type,
     ...){
-  .args <- mget(setdiff(names(formals()), "..."))
-
-  version <- "glalumboxscoresimilarityscore"
-  endpoint <- nba_endpoint(version)
-  full_url <- endpoint
-
-  params <- list(
-    Person1Id = person_1_id,
-    Person1LeagueId = person_1_league_id,
-    Person1Season = person_1_season,
-    Person1SeasonType = person_1_season_type,
-    Person2Id = person_2_id,
-    Person2LeagueId = person_2_league_id,
-    Person2Season = person_2_season,
-    Person2SeasonType = person_2_season_type
+  lifecycle::deprecate_stop(
+    when = "3.2.0",
+    what = "nba_glalumboxscoresimilarityscore()",
+    details = "Live re-probes (2026-11-24 and 2026-11-25, residential IP) returned HTTP 500 for every parameter set tried; nba_api also lists the endpoint as not working."
   )
-
-  df_list <- list()
-
-  tryCatch(
-    expr = .hoopR_with_warnings("nba_glalumboxscoresimilarityscore", {
-
-      resp <- request_with_proxy(url = full_url, params = params, ...)
-
-      df_list <- nba_stats_map_result_sets(resp)
-
-    }),
-    error = function(e) .report_api_error(
-      e,
-      hint = "Invalid arguments or no G-League alum boxscore similarity data for given parameters available!",
-      args = .args
-    ),
-    finally = {
-    }
-  )
-  return(df_list)
 }
 
 

@@ -60,6 +60,9 @@ the sections below.
 * Join ids are integer: ESPN `game_id` / `athlete_id` in the roster and crosswalk
   loaders, and the NBA Stats ids in `load_nba_*_crosswalk()`. The live crosswalk
   builders (`nba_team_crosswalk()` and friends) still return character NBA Stats ids.
+* `nba_defensehub()`, `nba_boxscoresimilarityscore()` and
+  `nba_glalumboxscoresimilarityscore()` are defunct and error when called; the
+  stats.nba.com endpoints answer HTTP 500 or 400 for every parameter set tried.
 * `nba_schedule()` reads each league's own CDN: `league_id` `"00"` (NBA, the default),
   `"10"` (WNBA) and `"20"` (G League). Any other `league_id` is an argument error.
 
@@ -403,9 +406,28 @@ the sections below.
   `All%2BPlayers` and `Regular%2BSeason` and answered HTTP 400. They now send
   the values as given (`All%20Players`), like the other wrappers;
   `nba_leagueleaders()` drops the same substitution. With the queries fixed,
-  stats.nba.com answered `defensehub` and `glalumboxscoresimilarityscore` with
-  HTTP 500 and `boxscoresimilarityscore` with HTTP 400 on 2026-11-24, so those
-  endpoints still return nothing.
+  stats.nba.com still answered `defensehub` and `glalumboxscoresimilarityscore`
+  with HTTP 500 and `boxscoresimilarityscore` with HTTP 400, so the three
+  wrappers are now defunct (below).
+* `nba_defensehub()`, `nba_boxscoresimilarityscore()` and
+  `nba_glalumboxscoresimilarityscore()` are defunct: they stop in
+  `lifecycle::deprecate_stop()` before any request. Live calls on 2026-11-24 and
+  2026-11-25 (residential IP) with hoopR's defaults and with nba_api's documented
+  parameters got HTTP 500 from `defensehub` and `glalumboxscoresimilarityscore`
+  (also with two G League alumni), and HTTP 400 from `boxscoresimilarityscore`,
+  which rejects every `Person1Season` / `Person2Season` value, a year or a season
+  string. nba_api lists the first two as not working and dropped the third in
+  v1.6.0. Use `nba_leagueleaders()` for the league leaders by stat.
+* A stats.nba.com result set with headers and no rows now keeps its columns: a
+  0-row tibble with the header names instead of a 0x0 tibble.
+  `nba_stats_map_result_sets()` also maps a `resultSet` object (one set) instead
+  of reading one cell of it, so `nba_gamerotation()`, `nba_leagueleaders()`,
+  `nba_leaguedashplayerptshot()`, `nba_playerestimatedmetrics()` and
+  `nba_teamestimatedmetrics()` now call it in place of their own copies, and the
+  two shot-location wrappers build their sets the same way.
+  `nba_bind_sets()`, `nba_join_sets()` and `nba_nest_sets()` give a headers-only
+  set's columns the type a populated set has for them, so a character column of
+  no rows does not stop the bind or join (CodeRabbit review).
 * A stats.nba.com `{}` answer (some retired V2 endpoints) now gives an empty
   list. `nba_stats_map_result_sets()` and six wrappers with their own copy of
   it counted `1:length(NULL)` as two result sets and returned two unnamed
@@ -627,11 +649,13 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   shooting splits) as `logical` for 2023 onward and as `integer` / `numeric` /
   `character` for 2019, so seasons loaded one at a time had different schemas. The
   NCAA MBB loaders returned `period` and `sec_left` (`load_ncaa_mbb_shots()`) and
-  `player_count_error` (`load_ncaa_mbb_lineups()`) as `vctrs_unspecified`; they are
-  `logical`, as documented. Every loader built on the multi-file release reader
-  (the `load_nba_stats_*()` release tags, `load_nba_depthcharts()`,
-  `load_nba_current_impact()`) and every `load_ncaa_mbb_*()` loader applies the
-  same cast, to all-`NA` columns only.
+  `player_count_error` (`load_ncaa_mbb_lineups()`) as `vctrs_unspecified`. The 2027
+  shots release fills `period` and `sec_left`, so they are documented and returned
+  as `integer` and `numeric` (all `NA` for 2019-2026); `player_count_error` is still
+  empty in every lineups release and stays `logical`. Every loader built on the
+  multi-file release reader (the `load_nba_stats_*()` release tags,
+  `load_nba_depthcharts()`, `load_nba_current_impact()`) and every
+  `load_ncaa_mbb_*()` loader applies the same cast, to all-`NA` columns only.
 
 ### **Dependencies**
 
@@ -665,6 +689,8 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
 
 ### **Documentation**
 
+* `check_status()` carries the `internal` keyword; it was `Internal`, which R and
+  pkgdown do not read as internal.
 * The package now ships its `CITATION` file, so `citation("hoopR")` gives the curated
   entry with the CRAN DOI.
 * Examples that call stats.nba.com, Basketball-Reference or KenPom run only in
