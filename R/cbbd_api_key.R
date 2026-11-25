@@ -71,8 +71,6 @@ check_cbbd_key <- function() {
 #' allowance. This request consumes no calls.
 #' @eval .returns_rd("cbbd_api_key_info", inline = FALSE, unit = "API key")
 #' @keywords CBD API Key
-#' @importFrom janitor clean_names
-#' @importFrom dplyr as_tibble
 #' @seealso [register_cbbd] for saving the key.
 #' @export
 #' @examples

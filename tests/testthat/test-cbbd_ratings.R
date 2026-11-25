@@ -84,3 +84,16 @@ test_that("cbbd_ratings_history() parses the recorded response into its document
   expect_type(x$net_rating, "double")
   expect_type(x$rankings_net, "integer")
 })
+
+test_that("cbbd_ratings_history() returns an empty frame for a date with no snapshots", {
+  skip_on_cran()
+  # an off-season date answers HTTP 200 with []
+  withr::local_envvar(CBBD_API_KEY = "offline")
+  httr2::local_mocked_responses(function(req) {
+    httr2::response(status_code = 200L, url = req$url,
+                    headers = list(`Content-Type` = "application/json"), body = charToRaw("[]"))
+  })
+  x <- cbbd_ratings_history(season = 2026, date = "2025-07-01")
+  expect_s3_class(x, "hoopR_data")
+  expect_equal(nrow(x), 0L)
+})

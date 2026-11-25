@@ -415,7 +415,8 @@ the sections below.
 * Added `cbbd_ratings_history()` (CBD `/ratings/history`, upstream v1.32.0):
   daily snapshots of each team's adjusted efficiency and SRS ratings, with the
   day's national ranks and the 1-, 7- and 30-day change in net rating. Give a
-  `date`, a `team` or both. The endpoint needs a Patreon Tier 2 key.
+  `date`, a `team` or both. The endpoint needs a Patreon Tier 2 key for the
+  current season and Tier 3 for earlier ones.
 
 * Added `cbbd_api_key_info()` (CBD `/info`, upstream v1.32.0): one row with
   your key's tier, monthly allowance (shared with CollegeFootballData),
