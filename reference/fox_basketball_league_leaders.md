@@ -53,20 +53,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_league_leaders("scoring"))
 #> ── Fox Sports NBA league_leaders ──────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 03:30:13 UTC
+#> ℹ Data updated: 2026-11-25 05:15:09 UTC
 #> # A tibble: 75 × 6
-#>    players v2               gp    entity_id min   mpg  
-#>    <chr>   <chr>            <chr> <chr>     <chr> <chr>
-#>  1 1       S. Mykhailiuk    19    2528      NA    NA   
-#>  2 2       S. Bey           19    3418      NA    NA   
-#>  3 3       H. Jones         19    3553      NA    NA   
-#>  4 4       B. Sensabaugh    19    3852      NA    NA   
-#>  5 5       J. Fears         19    4153      NA    NA   
-#>  6 6       D. Queen         19    4154      NA    NA   
-#>  7 7       A. Bailey        19    4161      NA    NA   
-#>  8 8       D. Peterson      19    6335      NA    NA   
-#>  9 9       K. Durant        18    1467      NA    NA   
-#> 10 10      K. Caldwell-Pope 18    1838      NA    NA   
+#>    players v2            gp    entity_id min   mpg  
+#>    <chr>   <chr>         <chr> <chr>     <chr> <chr>
+#>  1 1       T. Young      19    2490      NA    NA   
+#>  2 2       D. Ayton      19    2492      NA    NA   
+#>  3 3       S. Mykhailiuk 19    2528      NA    NA   
+#>  4 4       S. Bey        19    3418      NA    NA   
+#>  5 5       H. Jones      19    3553      NA    NA   
+#>  6 6       B. Sensabaugh 19    3852      NA    NA   
+#>  7 7       K. George     19    3985      NA    NA   
+#>  8 8       J. Fears      19    4153      NA    NA   
+#>  9 9       D. Queen      19    4154      NA    NA   
+#> 10 10      A. Bailey     19    4161      NA    NA   
 #> # ℹ 65 more rows
 # }
 ```

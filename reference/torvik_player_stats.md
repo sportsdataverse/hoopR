@@ -53,7 +53,7 @@ Other Torvik Functions:
 ``` r
 # \donttest{
   try(torvik_player_stats(year = 2024))
-#> ✖ 2026-11-25 03:34:34.311306: Invalid arguments or no player stats available for 2024!
+#> ✖ 2026-11-25 05:19:49.910163: Invalid arguments or no player stats available for 2024!
 #> ✖ Args: year = 2024
 #> ✖ Error: HTTP 403 Forbidden from https://barttorvik.com/getadvstats.php
 #> data frame with 0 columns and 0 rows

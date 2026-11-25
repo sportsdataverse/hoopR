@@ -325,10 +325,10 @@ Other NBA Stats loader functions:
 #>  9   2027   1643612 John       Blackwell John Blackwell SG                  75.2
 #> 10   2027   1643409 Cameron    Boozer    Cameron Boozer PF                  80.2
 #> # ℹ 68 more rows
-#> # ℹ 40 more variables: height_wo_shoes_ft_in <chr>, height_w_shoes <lgl>,
-#> #   height_w_shoes_ft_in <lgl>, weight <chr>, wingspan <dbl>,
+#> # ℹ 40 more variables: height_wo_shoes_ft_in <chr>, height_w_shoes <dbl>,
+#> #   height_w_shoes_ft_in <chr>, weight <chr>, wingspan <dbl>,
 #> #   wingspan_ft_in <chr>, standing_reach <dbl>, standing_reach_ft_in <chr>,
-#> #   body_fat_pct <lgl>, hand_length <dbl>, hand_width <dbl>,
+#> #   body_fat_pct <dbl>, hand_length <dbl>, hand_width <dbl>,
 #> #   standing_vertical_leap <dbl>, max_vertical_leap <dbl>,
 #> #   lane_agility_time <dbl>, modified_lane_agility_time <dbl>, …
 # }

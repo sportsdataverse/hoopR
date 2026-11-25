@@ -163,8 +163,29 @@ Other Atrium Functions:
 ``` r
 # \donttest{
   try(atrium_fixtures(website_id = 14))
-#> Error in atrium_fixtures(website_id = 14) : 
-#>   embed-api.eui.connect.sportradar.com/v1/embed/14/fixtures: the site has
-#> no rows for this request.
+#> ── Atrium fixtures from embed-api.eui.connect.sportradar.com ──── hoopR 3.2.0 ──
+#> ℹ Data updated: 2026-11-25 05:11:34 UTC
+#> # A tibble: 12 × 40
+#>    website_id season_id          competition_id competition_name season_end_year
+#>         <int> <chr>              <chr>          <chr>                      <int>
+#>  1         14 c79b6dc4-e6bf-11f… aff58a73-e6b7… CLASIFICATORIAS…            2026
+#>  2         14 c79b6dc4-e6bf-11f… aff58a73-e6b7… CLASIFICATORIAS…            2026
+#>  3         14 c79b6dc4-e6bf-11f… aff58a73-e6b7… CLASIFICATORIAS…            2026
+#>  4         14 c79b6dc4-e6bf-11f… aff58a73-e6b7… CLASIFICATORIAS…            2026
+#>  5         14 c79b6dc4-e6bf-11f… aff58a73-e6b7… CLASIFICATORIAS…            2026
+#>  6         14 c79b6dc4-e6bf-11f… aff58a73-e6b7… CLASIFICATORIAS…            2026
+#>  7         14 c79b6dc4-e6bf-11f… aff58a73-e6b7… CLASIFICATORIAS…            2026
+#>  8         14 c79b6dc4-e6bf-11f… aff58a73-e6b7… CLASIFICATORIAS…            2026
+#>  9         14 c79b6dc4-e6bf-11f… aff58a73-e6b7… CLASIFICATORIAS…            2026
+#> 10         14 c79b6dc4-e6bf-11f… aff58a73-e6b7… CLASIFICATORIAS…            2026
+#> 11         14 c79b6dc4-e6bf-11f… aff58a73-e6b7… CLASIFICATORIAS…            2026
+#> 12         14 c79b6dc4-e6bf-11f… aff58a73-e6b7… CLASIFICATORIAS…            2026
+#> # ℹ 35 more variables: fixture_id <chr>, fixture_type <chr>, name <chr>,
+#> #   round <chr>, round_code <chr>, pool <chr>, series <chr>, stage_code <chr>,
+#> #   status <chr>, status_label <chr>, start_time_utc <dttm>,
+#> #   start_time_local <chr>, timezone <chr>, times_unconfirmed <lgl>,
+#> #   venue <chr>, venue_id <chr>, attendance <int>, home_entity_id <chr>,
+#> #   home_code <chr>, home_name <chr>, home_score <int>,
+#> #   home_result_place <int>, home_result_status <chr>, home_draw <lgl>, …
 # }
 ```

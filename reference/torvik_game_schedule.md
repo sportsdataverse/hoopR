@@ -47,7 +47,7 @@ Other Torvik Functions:
 # \donttest{
   # Interactive only: a whole season's schedule, 3-5 s of parsing.
   try(torvik_game_schedule(year = 2024))
-#> ✖ 2026-11-25 03:34:33.820941: Invalid arguments or no schedule available for 2024!
+#> ✖ 2026-11-25 05:19:49.262179: Invalid arguments or no schedule available for 2024!
 #> ✖ Args: year = 2024
 #> ✖ Error: HTTP 403 Forbidden from https://barttorvik.com/2024_super_sked.json
 #> data frame with 0 columns and 0 rows

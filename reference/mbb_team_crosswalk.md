@@ -122,7 +122,7 @@ Other MBB Crosswalk Functions:
 # \donttest{
   # Builds from ESPN, Torvik and one Fox request per conference (about 30).
   try(mbb_team_crosswalk(season = 2025))
-#> ✖ 2026-11-25 03:32:43.040142: Invalid arguments or no T-Rank ratings available for 2025!
+#> ✖ 2026-11-25 05:17:49.427511: Invalid arguments or no T-Rank ratings available for 2025!
 #> ✖ Args: year = 2025L
 #> ✖ Error: HTTP 403 Forbidden from https://barttorvik.com/2025_team_results.csv
 #> Error in .bb_source_error(sprintf("Torvik %d: no team rows (%d rows, columns %s); a blocked or empty response must not ship as NA bart_* columns",  : 

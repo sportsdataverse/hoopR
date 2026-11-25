@@ -83,27 +83,27 @@ Saiem Gilani
 # \donttest{
   espn_mbb_news(limit = 5)
 #> ── ESPN MENS-COLLEGE-BASKETBALL News from ESPN.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 03:28:50 UTC
+#> ℹ Data updated: 2026-11-25 05:13:36 UTC
 #> # A tibble: 5 × 8
 #>         id type  headline       description published premium link_web league_id
 #>      <int> <chr> <chr>          <chr>       <chr>     <lgl>   <chr>    <chr>    
-#> 1 50589217 Recap Rickey Bradle… — Rickey B… 2026-11-… FALSE   http://… 41       
-#> 2 50589209 Media Alabama A&M B… Alabama A&… 2026-11-… FALSE   https:/… 41       
-#> 3 50589185 Recap Mosquera’s 25… — Trent Mo… 2026-11-… FALSE   http://… 41       
-#> 4 50589168 Media Central Michi… Central Mi… 2026-11-… FALSE   https:/… 41       
-#> 5 50589163 Media Drexel Dragon… Drexel Dra… 2026-11-… FALSE   https:/… 41       
+#> 1 50589785 Media Auburn's Geor… "Kimble II… 2026-11-… FALSE   https:/… 41       
+#> 2 50589738 Media Evansville Pu… "Evansvill… 2026-11-… FALSE   https:/… 41       
+#> 3 50589735 Media Rueben Chinye… "After hit… 2026-11-… FALSE   https:/… 41       
+#> 4 50589726 Recap Holiman’s 17 … "— Adante’… 2026-11-… FALSE   http://… 41       
+#> 5 50589724 Media UNC Asheville… "UNC Ashev… 2026-11-… FALSE   https:/… 41       
 # }
 # \donttest{
   espn_nba_news(limit = 5)
 #> ── ESPN NBA News from ESPN.com ────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 03:28:50 UTC
+#> ℹ Data updated: 2026-11-25 05:13:36 UTC
 #> # A tibble: 5 × 9
 #>        id type  headline description published premium byline link_web league_id
 #>     <int> <chr> <chr>    <chr>       <chr>     <lgl>   <chr>  <chr>    <chr>    
-#> 1  5.06e7 Recap Without… — Isaiah J… 2026-11-… FALSE   NA     http://… 46       
-#> 2  5.06e7 Media Detroit… Detroit Pi… 2026-11-… FALSE   NA     https:/… 46       
-#> 3  5.06e7 Head… Kawhi L… The Raptor… 2026-11-… FALSE   Antho… https:/… 46       
-#> 4  5.06e7 Story Tyrese,… The couple… 2026-11-… FALSE   ESPN … https:/… 46       
-#> 5  5.06e7 Head… Jalen D… Pistons ce… 2026-11-… FALSE   NA     https:/… 46       
+#> 1  5.06e7 Recap Tatum s… — Jayson T… 2026-11-… FALSE   NA     http://… 46       
+#> 2  5.06e7 Media Celtics… Celtics sn… 2026-11-… FALSE   NA     https:/… 46       
+#> 3  5.06e7 Recap Without… — Isaiah J… 2026-11-… FALSE   NA     http://… 46       
+#> 4  5.06e7 Media Detroit… Detroit Pi… 2026-11-… FALSE   NA     https:/… 46       
+#> 5  5.06e7 Head… Kawhi L… The Raptor… 2026-11-… FALSE   Antho… https:/… 46       
 # }
 ```

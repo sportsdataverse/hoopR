@@ -45,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(cba_schedule_day(day = "2025-12-12"))
 #> ── CBA Schedule Day from data-server.cbaleague.com ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 03:27:47 UTC
+#> ℹ Data updated: 2026-11-25 05:12:23 UTC
 #> # A tibble: 1 × 27
 #>   home_team_id home_team_logo      home_team_lose home_team_name home_team_score
 #>          <int> <chr>                        <int> <chr>                    <int>

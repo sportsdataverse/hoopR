@@ -45,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(vtb_infobasket_box_score(game_id = 921391))
 #> ── VTB Infobasket Box Score from org.infobasket.su ────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 03:34:47 UTC
+#> ℹ Data updated: 2026-11-25 05:20:03 UTC
 #> # A tibble: 24 × 47
 #>    game_id team_id is_home person_id team_number player_number display_number
 #>      <int>   <int> <lgl>       <int>       <int>         <int> <chr>         

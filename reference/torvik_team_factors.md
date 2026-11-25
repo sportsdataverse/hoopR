@@ -46,7 +46,7 @@ Other Torvik Functions:
 ``` r
 # \donttest{
   try(torvik_team_factors(year = 2024))
-#> ✖ 2026-11-25 03:34:34.649728: Invalid arguments or no team four factors available for 2024!
+#> ✖ 2026-11-25 05:19:50.338197: Invalid arguments or no team four factors available for 2024!
 #> ✖ Args: year = 2024
 #> ✖ Error: HTTP 403 Forbidden from https://barttorvik.com/2024_fffinal.csv
 #> data frame with 0 columns and 0 rows

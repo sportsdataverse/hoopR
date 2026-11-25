@@ -44,7 +44,7 @@ Other Torvik Functions:
 ``` r
 # \donttest{
   try(torvik_ratings(year = 2024))
-#> ✖ 2026-11-25 03:34:34.490109: Invalid arguments or no T-Rank ratings available for 2024!
+#> ✖ 2026-11-25 05:19:50.11658: Invalid arguments or no T-Rank ratings available for 2024!
 #> ✖ Args: year = 2024
 #> ✖ Error: HTTP 403 Forbidden from https://barttorvik.com/2024_team_results.csv
 #> data frame with 0 columns and 0 rows

@@ -46,20 +46,20 @@ Saiem Gilani
 # \donttest{
   try(fox_nba_team_gamelog("1"))
 #> ── Fox Sports NBA gamelog ─────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 03:30:16 UTC
+#> ℹ Data updated: 2026-11-25 05:15:11 UTC
 #> # A tibble: 165 × 8
 #>    team_id season_type    category game_id game_date opponent stat         value
 #>    <chr>   <chr>          <chr>    <chr>   <chr>     <chr>    <chr>        <chr>
-#>  1 1       REGULAR SEASON scoring  106779  11/22     @GSW     fgm          32   
-#>  2 1       REGULAR SEASON scoring  106779  11/22     @GSW     fga          83   
-#>  3 1       REGULAR SEASON scoring  106779  11/22     @GSW     fg_percent   38.6 
-#>  4 1       REGULAR SEASON scoring  106779  11/22     @GSW     ftm          9    
-#>  5 1       REGULAR SEASON scoring  106779  11/22     @GSW     fta          12   
-#>  6 1       REGULAR SEASON scoring  106779  11/22     @GSW     ft_percent   75.0 
-#>  7 1       REGULAR SEASON scoring  106779  11/22     @GSW     x3fgm        14   
-#>  8 1       REGULAR SEASON scoring  106779  11/22     @GSW     x3fga        47   
-#>  9 1       REGULAR SEASON scoring  106779  11/22     @GSW     x3fg_percent 29.8 
-#> 10 1       REGULAR SEASON scoring  106779  11/22     @GSW     pts          87   
+#>  1 1       REGULAR SEASON scoring  106791  11/24     @WAS     fgm          46   
+#>  2 1       REGULAR SEASON scoring  106791  11/24     @WAS     fga          100  
+#>  3 1       REGULAR SEASON scoring  106791  11/24     @WAS     fg_percent   46.0 
+#>  4 1       REGULAR SEASON scoring  106791  11/24     @WAS     ftm          17   
+#>  5 1       REGULAR SEASON scoring  106791  11/24     @WAS     fta          25   
+#>  6 1       REGULAR SEASON scoring  106791  11/24     @WAS     ft_percent   68.0 
+#>  7 1       REGULAR SEASON scoring  106791  11/24     @WAS     x3fgm        22   
+#>  8 1       REGULAR SEASON scoring  106791  11/24     @WAS     x3fga        51   
+#>  9 1       REGULAR SEASON scoring  106791  11/24     @WAS     x3fg_percent 43.1 
+#> 10 1       REGULAR SEASON scoring  106791  11/24     @WAS     pts          131  
 #> # ℹ 155 more rows
 # }
 ```

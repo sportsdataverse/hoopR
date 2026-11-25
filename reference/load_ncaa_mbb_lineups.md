@@ -466,7 +466,7 @@ Saiem Gilani
 #> #   player_2 <chr>, player_3 <chr>, player_4 <chr>, player_5 <chr>,
 #> #   players_in <chr>, players_out <chr>, start_scored <int>,
 #> #   start_allowed <int>, end_scored <int>, end_allowed <int>, start_diff <int>,
-#> #   end_diff <int>, player_count_error <???>, poss <int>, pts <int>,
+#> #   end_diff <int>, player_count_error <lgl>, poss <int>, pts <int>,
 #> #   plus_minus <int>, fga <int>, fgm <int>, rima <int>, rimm <int>, …
 # }
 # \donttest{

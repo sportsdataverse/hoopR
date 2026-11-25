@@ -135,6 +135,34 @@ in full in the sections below.
        Bart Torvik, Basketball-Reference and HoopsHype / Spotrac /
        NBADraft.net helpers check it the same way. A 200 response,
        including an empty `[]`, is parsed as before.
+- The wrappers that make their own request check the status the same
+  way:
+  [`espn_mbb_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md),
+  [`espn_nba_wp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_wp.md),
+  [`nba_draftboard()`](https://hoopR.sportsdataverse.org/reference/nba_draftcombinestats.md),
+  [`nba_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md),
+  [`nba_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nba_live_boxscore.md),
+  [`nba_schedule()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md),
+  [`nba_todays_scoreboard()`](https://hoopR.sportsdataverse.org/reference/nba_schedule.md),
+  [`nbagl_live_pbp()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_pbp.md),
+  [`nbagl_live_boxscore()`](https://hoopR.sportsdataverse.org/reference/nbagl_live_boxscore.md),
+  [`ncaa_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_teams.md),
+  [`rotowire_injuries()`](https://hoopR.sportsdataverse.org/reference/rotowire_injuries.md)
+  and
+  [`torvik_ncaa_results()`](https://hoopR.sportsdataverse.org/reference/torvik_ncaa_results.md).
+  An error answer used to be parsed, so they reported a JSON or column
+  error that hid the status (a 401 or 500). They now report
+  `HTTP <status> from <url>`. The ESPN, Fox and crosswalk helpers that
+  check the status with
+  [`check_status()`](https://hoopR.sportsdataverse.org/reference/check_status.md)
+  raise the same `hoopR_http_error` (as does
+  [`nba_data_pbp()`](https://hoopR.sportsdataverse.org/reference/nba_data_pbp.md)),
+  so their report names the status and URL instead of “The API returned
+  an error”; a 2xx answer other than 200 (204, 206) is no longer an
+  error there. The CDN wrappers among them and
+  [`ncaa_mbb_teams()`](https://hoopR.sportsdataverse.org/reference/ncaa_mbb_teams.md)
+  now also run their body inside `.hoopR_with_warnings()`, so a parse
+  warning names the function.
 
 #### **Behavior changes**
 
@@ -264,6 +292,14 @@ in full in the sections below.
   inputs fall back to a fixed `lambda` instead of erroring: silently
   with fewer than 3 possessions (too few for cross-validation), and with
   a warning when cross-validation fails on 3 or more.
+
+- [`spotrac_team_cap()`](https://hoopR.sportsdataverse.org/reference/spotrac_team_cap.md)
+  returns 30 team rows and the league average, and reads each allocation
+  as one amount. Spotrac’s table now carries two advertisement rows
+  (they came back as empty rows, 33 in all) and appends each
+  allocation’s share of the cap (`$108,246,871 (68.5%)`), which
+  `active_cap`, `dead_cap`, `cap_holds` and `top_3` read as one
+  run-together number (`10824687168.5`).
 
 #### **New data loaders**
 
@@ -527,6 +563,29 @@ in full in the sections below.
   never sent `last_n_games` either, and those stats.nba.com endpoints
   have no `LastNGames` filter, so the argument is now deprecated and
   warns when supplied.
+
+- [`nba_defensehub()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md),
+  [`nba_boxscoresimilarityscore()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md)
+  and
+  [`nba_glalumboxscoresimilarityscore()`](https://hoopR.sportsdataverse.org/reference/nba_boxscoretraditionalv2.md)
+  turned spaces in `player_scope` and the season types into `+` before
+  the request encoded them, so stats.nba.com got `All%2BPlayers` and
+  `Regular%2BSeason` and answered HTTP 400. They now send the values as
+  given (`All%20Players`), like the other wrappers;
+  [`nba_leagueleaders()`](https://hoopR.sportsdataverse.org/reference/nba_alltimeleadersgrids.md)
+  drops the same substitution. With the queries fixed, stats.nba.com
+  answered `defensehub` and `glalumboxscoresimilarityscore` with HTTP
+  500 and `boxscoresimilarityscore` with HTTP 400 on 2026-11-24, so
+  those endpoints still return nothing.
+
+- A stats.nba.com [`{}`](https://rdrr.io/r/base/Paren.html) answer (some
+  retired V2 endpoints) now gives an empty list.
+  `nba_stats_map_result_sets()` and six wrappers with their own copy of
+  it counted `1:length(NULL)` as two result sets and returned two
+  unnamed empty tibbles.
+  [`nba_bind_sets()`](https://hoopR.sportsdataverse.org/reference/nba_bind_sets.md)
+  turns that empty list into an empty tibble (it used to stop), so
+  `nba_bind_sets(nba_*())` still gives no rows.
 
 - [`nba_videoeventsasset()`](https://hoopR.sportsdataverse.org/reference/nba_videodetails.md)
   is no longer deprecated: the endpoint serves clips for a real
@@ -842,6 +901,24 @@ vocabulary.
   on it is an error (not retried: the file is the same on every try),
   and the rebuild stops with an error naming the index url before
   anything is dropped, leaving the table unchanged.
+- A column no row of a season’s release file fills now has its
+  documented type instead of the class the file stored it as. The
+  draft-combine loaders (`load_nba_stats_draft_combine_*()`) returned
+  the measures the combine retired (`bench_press`, `body_fat_pct`,
+  `height_w_shoes`, the spot and off-the-dribble shooting splits) as
+  `logical` for 2023 onward and as `integer` / `numeric` / `character`
+  for 2019, so seasons loaded one at a time had different schemas. The
+  NCAA MBB loaders returned `period` and `sec_left`
+  ([`load_ncaa_mbb_shots()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md))
+  and `player_count_error`
+  ([`load_ncaa_mbb_lineups()`](https://hoopR.sportsdataverse.org/reference/load_ncaa_mbb_lineups.md))
+  as `vctrs_unspecified`; they are `logical`, as documented. Every
+  loader built on the multi-file release reader (the
+  `load_nba_stats_*()` release tags,
+  [`load_nba_depthcharts()`](https://hoopR.sportsdataverse.org/reference/load_nba_depthcharts.md),
+  [`load_nba_current_impact()`](https://hoopR.sportsdataverse.org/reference/load_nba_current_impact.md))
+  and every `load_ncaa_mbb_*()` loader applies the same cast, to
+  all-`NA` columns only.
 
 #### **Dependencies**
 

@@ -40,21 +40,21 @@ Other Salary & Draft Functions:
 # \donttest{
   try(spotrac_team_cap(season = 2024))
 #> ── Team salary cap from spotrac.com ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 03:34:17 UTC
-#> # A tibble: 33 × 13
-#>    rank  team      record cap_space cap_status total_cap    active_cap  dead_cap
-#>    <chr> <chr>     <chr>      <dbl> <chr>          <dbl>         <dbl>     <dbl>
-#>  1 1     Pistons   44-38   -1220220 Over Cap   141808220  13398967894.    7.82e7
-#>  2 2     Magic     41-41  -12371238 Over Cap   152959238 152959238100    NA     
-#>  3 3     Jazz      17-65  -13526022 Over Cap   154114022  14264801393.    1.15e8
-#>  4 4     Spurs     34-48  -22221380 Over Cap   162809380  15523192795.    7.58e7
-#>  5 5     Thunder   68-14  -25413694 Over Cap   166001694  16220924298.    3.79e7
-#>  6 6     Hornets   19-63  -26835486 Over Cap   167423486  15243686291     1.50e8
-#>  7 7     Grizzlies 48-34  -27226933 Over Cap   167814933  15585029693.    8.01e7
-#>  8 8     Bulls     39-43  -27418873 Over Cap   168006873  15718024494.    8.74e7
-#>  9 9     76ers     24-58  -29752647 Over Cap   170340647  16954887700.    7.92e6
-#> 10 10    Pacers    50-32  -30644577 Over Cap   171232577  16683977497.    2.53e7
-#> # ℹ 23 more rows
+#> ℹ Data updated: 2026-11-25 05:19:31 UTC
+#> # A tibble: 31 × 13
+#>    rank  team      record cap_space cap_status total_cap active_cap dead_cap
+#>    <chr> <chr>     <chr>      <dbl> <chr>          <dbl>      <dbl>    <dbl>
+#>  1 1     Pistons   44-38   -1220220 Over Cap   141808220  133989678  7818542
+#>  2 2     Magic     41-41  -12371238 Over Cap   152959238  152959238       NA
+#>  3 3     Jazz      17-65  -13526022 Over Cap   154114022  142648013 11466009
+#>  4 4     Spurs     34-48  -22221380 Over Cap   162809380  155231927  7577453
+#>  5 5     Thunder   68-14  -25413694 Over Cap   166001694  162209242  3792452
+#>  6 6     Hornets   19-63  -26835486 Over Cap   167423486  152436862 14986624
+#>  7 7     Grizzlies 48-34  -27226933 Over Cap   167814933  155850296  8014853
+#>  8 8     Bulls     39-43  -27418873 Over Cap   168006873  157180244  8739110
+#>  9 9     76ers     24-58  -29752647 Over Cap   170340647  169548876   791771
+#> 10 10    Pacers    50-32  -30644577 Over Cap   171232577  166839774  2530538
+#> # ℹ 21 more rows
 #> # ℹ 5 more variables: cap_holds <dbl>, top_3 <dbl>, players <dbl>, age <dbl>,
 #> #   season <int>
 # }

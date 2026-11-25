@@ -47,7 +47,7 @@ Other CEBL Functions:
 # \donttest{
   try(cebl_teams())
 #> ── CEBL Teams from the CEBL Stats API ─────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 03:28:01 UTC
+#> ℹ Data updated: 2026-11-25 05:12:39 UTC
 #> # A tibble: 15 × 8
 #>    team_id name_en        short_name_en name_fr short_name_fr is_active logo_url
 #>      <int> <chr>          <chr>         <chr>   <chr>         <lgl>     <chr>   
