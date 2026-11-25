@@ -143,8 +143,11 @@ the sections below.
   be parsed, so they reported a JSON or column error that hid the status (a
   401 or 500). They now report `HTTP <status> from <url>`. The ESPN, Fox and
   crosswalk helpers that check the status with `check_status()` raise the same
-  `hoopR_http_error`, so their report names the status and URL instead of
-  "The API returned an error".
+  `hoopR_http_error` (as does `nba_data_pbp()`), so their report names the
+  status and URL instead of "The API returned an error"; a 2xx answer other
+  than 200 (204, 206) is no longer an error there.
+  The CDN wrappers among them and `ncaa_mbb_teams()` now also run their body
+  inside `.hoopR_with_warnings()`, so a parse warning names the function.
 
 ### **Behavior changes**
 
