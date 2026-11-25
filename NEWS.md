@@ -123,6 +123,18 @@ the sections below.
 * Eight error handlers in the international families that re-raised a parse
   failure without its cause now keep it (`parent = e`, or the parser's
   message appended).
+* An HTTP error answer from CollegeBasketballData no longer comes back as
+  data. A key below the endpoint's tier (401) or a used-up monthly allowance
+  (429) used to be parsed like a normal response, so every `cbbd_*()`
+  function returned a one-row `hoopR_data` tibble holding the error
+  `message` and reported nothing; a server error's HTML page failed with a
+  JSON parse error that hid the status. The shared request helpers now
+  check the status before parsing and raise a classed `hoopR_http_error`
+  (also a `hoopR_fetch_error`) naming the status, the endpoint and CBBD's
+  `message`, which the function's error handler reports. The NBA Stats
+  (`request_with_proxy()`), Bart Torvik, Basketball-Reference and
+  HoopsHype / Spotrac / NBADraft.net helpers check it the same way. A 200
+  response, including an empty `[]`, is parsed as before.
 
 ### **Behavior changes**
 

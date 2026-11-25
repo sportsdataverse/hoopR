@@ -115,7 +115,9 @@ cbbd_api_key_info <- function() {
 #'
 #' @param path Endpoint path beginning with `/` (e.g. `"/teams"`).
 #' @param query Named list of query parameters. `NULL` elements are omitted.
-#' @return The parsed JSON body (a data.frame for list endpoints).
+#' @return The parsed JSON body (a data.frame for list endpoints). A non-2xx
+#'   response raises a `hoopR_http_error` (see `.stop_for_http_status()`)
+#'   instead of being parsed.
 #' @keywords internal
 .cbbd_get <- function(path, query = list()) {
   check_cbbd_key()
@@ -124,5 +126,6 @@ cbbd_api_key_info <- function() {
     params  = query,
     headers = c(Authorization = paste("Bearer", cbbd_key()))
   )
+  .stop_for_http_status(resp)
   jsonlite::fromJSON(.resp_text(resp), flatten = TRUE)
 }

@@ -16,6 +16,7 @@
     )
 
     resp <- .retry_request(url, params = params, headers = headers)
+    .stop_for_http_status(resp)
 
     json <- resp %>%
       .resp_text() %>%
@@ -61,6 +62,7 @@ request_with_proxy <- function(url,
   )
 
   resp <- .retry_request(url, params = params, headers = headers, proxy = proxy)
+  .stop_for_http_status(resp)
 
   json <- resp %>%
     .resp_text() %>%

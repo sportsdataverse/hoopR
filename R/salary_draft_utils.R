@@ -15,6 +15,7 @@
 #' @importFrom rvest read_html
 .ext_html <- function(url) {
   resp <- .retry_request(url, headers = c("User-Agent" = .ext_user_agent))
+  .stop_for_http_status(resp)
   rvest::read_html(.resp_text(resp))
 }
 

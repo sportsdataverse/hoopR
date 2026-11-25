@@ -32,6 +32,7 @@
     paste0(.bref_base_url, path),
     headers = c("User-Agent" = .bref_user_agent)
   )
+  .stop_for_http_status(resp)
   .resp_text(resp)
 }
 
