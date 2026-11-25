@@ -4864,5 +4864,11 @@
     "status": 200,
     "type": "text/html; charset=UTF-8",
     "trimmed": true
+  },
+  "https://www.spotrac.com/nba/cap/_/year/2027/": {
+    "file": "0187a340780960ac.gz",
+    "status": 200,
+    "type": "text/html; charset=UTF-8",
+    "trimmed": true
   }
 }

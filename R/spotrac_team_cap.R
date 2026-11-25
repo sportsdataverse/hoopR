@@ -26,15 +26,19 @@ spotrac_team_cap <- function(season = most_recent_nba_season()) {
   tryCatch(
     expr = .hoopR_with_warnings("spotrac_team_cap", {
       doc <- .ext_html(paste0("https://www.spotrac.com/nba/cap/_/year/", season, "/"))
-      tb <- rvest::html_table(rvest::html_element(doc, "table"))
+      table <- rvest::html_element(doc, "table")
+      # the body carries advertisement rows (<tr class="ad ...">) between the teams
+      xml2::xml_remove(rvest::html_elements(table, "tbody tr.ad"))
+      tb <- rvest::html_table(table)
       df <- janitor::clean_names(dplyr::as_tibble(tb))
       # team cell duplicates the abbreviation (logo alt + text) -> keep first token
       if ("team" %in% colnames(df)) {
         df[["team"]] <- sub("\\s.*$", "", trimws(df[["team"]]))
       }
-      # parse any currency-looking character columns to numeric
+      # parse any currency-looking character columns to numeric, dropping the
+      # share of the cap the page appends ("$108,246,871 (68.5%)")
       dollar <- vapply(df, function(col) is.character(col) && any(grepl("\\$", col)), logical(1))
-      for (j in which(dollar)) df[[j]] <- .parse_currency(df[[j]])
+      for (j in which(dollar)) df[[j]] <- .parse_currency(sub("\\(.*\\)", "", df[[j]]))
       df[["season"]] <- as.integer(season)
       df <- make_hoopR_data(df, "Team salary cap from spotrac.com", Sys.time())
     }),
