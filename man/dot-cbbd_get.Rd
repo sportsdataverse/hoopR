@@ -12,7 +12,9 @@
 \item{query}{Named list of query parameters. \code{NULL} elements are omitted.}
 }
 \value{
-The parsed JSON body (a data.frame for list endpoints).
+The parsed JSON body (a data.frame for list endpoints). A non-2xx
+response raises a \code{hoopR_http_error} (see \code{.stop_for_http_status()})
+instead of being parsed.
 }
 \description{
 Attaches the \verb{Authorization: Bearer <CBBD_API_KEY>} header, routes through

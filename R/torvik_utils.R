@@ -32,5 +32,6 @@
     paste0(.torvik_base_url, path),
     headers = c("User-Agent" = .torvik_user_agent)
   )
+  .stop_for_http_status(resp)
   .resp_text(resp)
 }

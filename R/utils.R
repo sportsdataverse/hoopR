@@ -757,6 +757,40 @@ check_status <- function(res) {
   }
 }
 
+#' Raise a classed error for a non-2xx response
+#'
+#' [.retry_request()] turns off httr2's status errors, so a helper that parses
+#' the body straight away would read a 401, 429 or 500 error body as data.
+#' Shared request helpers call this between the request and the parse: a 2xx
+#' response is returned unchanged; anything else raises a
+#' `hoopR_http_error` (also a `hoopR_fetch_error` and `hoopR_error`) whose
+#' message names the status, the host and path, and the `message` (or `error`)
+#' field of a JSON error body, and which carries `status` and `url` fields.
+#' A wrapper's `error =` handler then reports it with its cause.
+#' @param resp An httr2 response.
+#' @return `resp`, invisibly, when its status is 2xx.
+#' @keywords internal
+#' @noRd
+.stop_for_http_status <- function(resp, call = rlang::caller_env()) {
+  status <- httr2::resp_status(resp)
+  if (status >= 200L && status < 300L) return(invisible(resp))
+  detail <- tryCatch({
+    body <- jsonlite::fromJSON(httr2::resp_body_string(resp), simplifyVector = TRUE)
+    if (is.list(body)) body$message %||% body$error else NULL
+  }, error = function(e) NULL)
+  detail <- if (is.character(detail) && length(detail) == 1L && nzchar(detail)) detail else NULL
+  desc <- httr2::resp_status_desc(resp)
+  url <- sub("\\?.*$", "", resp$url)  # the query is not part of the cause
+  rlang::abort(
+    paste0(
+      "HTTP ", status, if (!is.na(desc)) paste0(" ", desc), " from ", url,
+      if (!is.null(detail)) paste0(": ", detail)
+    ),
+    class = c("hoopR_http_error", "hoopR_fetch_error", "hoopR_error"),
+    status = status, url = resp$url, call = call
+  )
+}
+
 #' Perform an HTTP GET request with retry logic
 #'
 #' Thin wrapper around httr2 that replaces httr::RETRY("GET", ...).
