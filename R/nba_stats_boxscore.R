@@ -767,8 +767,6 @@ nba_boxscoresimilarityscore <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  person_1_season_type <- gsub(' ', '+', person_1_season_type)
-  person_2_season_type <- gsub(' ', '+', person_2_season_type)
   version <- "boxscoresimilarityscore"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint
@@ -851,8 +849,6 @@ nba_glalumboxscoresimilarityscore <- function(
     ...){
   .args <- mget(setdiff(names(formals()), "..."))
 
-  person_1_season_type <- gsub(' ', '+', person_1_season_type)
-  person_2_season_type <- gsub(' ', '+', person_2_season_type)
   version <- "glalumboxscoresimilarityscore"
   endpoint <- nba_endpoint(version)
   full_url <- endpoint

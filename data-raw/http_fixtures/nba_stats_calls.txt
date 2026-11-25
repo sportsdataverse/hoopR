@@ -9,10 +9,9 @@
 #
 # Left out, recorded 2026-11-24 from a residential IP (re-try when re-recording):
 #   nba_boxscoredefensive(), nba_boxscorematchups(), nba_gravityleaders(): HTTP 500.
-#   nba_boxscoresimilarityscore(), nba_glalumboxscoresimilarityscore(): HTTP 400 (the
-#     wrappers turn spaces in the season type into "+", which is sent as %2B; the 400
-#     stays with "Playoffs", so the endpoint itself refuses too).
-#   nba_defensehub(): HTTP 400 (player_scope "All Players" is sent as All%2BPlayers).
+#   nba_defensehub(), nba_glalumboxscoresimilarityscore(): HTTP 500, and
+#     nba_boxscoresimilarityscore(): HTTP 400, with the season type and player scope
+#     sent as "Regular%20Season" / "All%20Players" (they used to be sent as %2B).
 #   nba_live_pbp(), nba_live_boxscore(): cdn.nba.com, covered by test-nba_live_cdn.R.
 
 # Box scores, V3 and V2
