@@ -52,9 +52,11 @@
 #' @importFrom cli cli_abort
 #' @export
 nba_bind_sets <- function(result_sets, tag_column = "set_name") {
-  if (!is.list(result_sets) || length(result_sets) == 0) {
-    cli::cli_abort("{.arg result_sets} must be a named list of at least one tibble.")
+  if (!is.list(result_sets)) {
+    cli::cli_abort("{.arg result_sets} must be a named list of tibbles.")
   }
+  # a stats.nba.com `{}` answer maps to no result sets: no rows, not an error
+  if (length(result_sets) == 0) return(dplyr::tibble())
   dplyr::as_tibble(dplyr::bind_rows(result_sets, .id = tag_column))
 }
 

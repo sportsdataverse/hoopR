@@ -404,7 +404,8 @@ the sections below.
 * A stats.nba.com `{}` answer (some retired V2 endpoints) now gives an empty
   list. `nba_stats_map_result_sets()` and six wrappers with their own copy of
   it counted `1:length(NULL)` as two result sets and returned two unnamed
-  empty tibbles.
+  empty tibbles. `nba_bind_sets()` turns that empty list into an empty tibble
+  (it used to stop), so `nba_bind_sets(nba_*())` still gives no rows.
 
 * `nba_videoeventsasset()` is no longer deprecated: the endpoint serves clips for a real
   `game_event_id` (the default `0` matches no play), and the video envelope is now parsed

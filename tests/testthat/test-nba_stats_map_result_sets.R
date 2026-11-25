@@ -20,7 +20,9 @@ test_that("nba_stats_map_result_sets() still names and fills each result set", {
 
 test_that("a wrapper given `{}` returns an empty list without an error", {
   skip_on_cran()
+  requested <- character()
   httr2::local_mocked_responses(function(req) {
+    requested <<- c(requested, req$url)
     httr2::response(status_code = 200L, url = req$url,
                     headers = list(`Content-Type` = "application/json"), body = charToRaw("{}"))
   })
@@ -29,6 +31,9 @@ test_that("a wrapper given `{}` returns an empty list without an error", {
     msgs <<- c(msgs, conditionMessage(m))
     invokeRestart("muffleMessage")
   })
+  expect_length(requested, 1)
+  expect_match(requested, "https://stats.nba.com/stats/defensehub?", fixed = TRUE)
   expect_identical(x, list())
   expect_length(msgs, 0)
+  expect_identical(nba_bind_sets(x), dplyr::tibble())
 })
