@@ -38,7 +38,7 @@ spotrac_team_cap <- function(season = most_recent_nba_season()) {
       # parse any currency-looking character columns to numeric, dropping the
       # share of the cap the page appends ("$108,246,871 (68.5%)")
       dollar <- vapply(df, function(col) is.character(col) && any(grepl("\\$", col)), logical(1))
-      for (j in which(dollar)) df[[j]] <- .parse_currency(sub("\\s*\\([^)]*%\\)", "", df[[j]]))
+      for (j in which(dollar)) df[[j]] <- .parse_currency(sub("\\s*\\([^)]*%\\)\\s*$", "", df[[j]]))
       df[["season"]] <- as.integer(season)
       df <- make_hoopR_data(df, "Team salary cap from spotrac.com", Sys.time())
     }),

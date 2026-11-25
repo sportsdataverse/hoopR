@@ -58,3 +58,18 @@ test_that("the draft-combine loaders give a retired measure the same type every 
   }
   expect_identical(load_nba_stats_draft_combine_drills(seasons = 2019)$bench_press, c(10L, 12L))
 })
+
+test_that(".na_cols_as_documented() covers dates and leaves filled columns alone", {
+  rc <- hoopR::return_columns
+  date_col <- rc[rc$fn == "load_nba_stats_injury_report" & rc$type == "Date" & is.na(rc$component), ]
+  skip_if(nrow(date_col) == 0, "no documented Date column to test with")
+  k <- date_col$col_name[[1]]
+  df <- data.table::data.table(a = c(NA, NA))
+  names(df) <- k
+  out <- .na_cols_as_documented(df, "load_nba_stats_injury_report")
+  expect_s3_class(out[[k]], "Date")
+  filled <- data.table::data.table(x = c("2025-01-01", NA))
+  names(filled) <- k
+  expect_identical(.na_cols_as_documented(filled, "load_nba_stats_injury_report")[[k]], c("2025-01-01", NA))
+  expect_identical(.na_cols_as_documented(df, "no_such_function"), df)
+})
