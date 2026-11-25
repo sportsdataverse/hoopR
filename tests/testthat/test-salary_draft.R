@@ -5,7 +5,7 @@ test_that("Spotrac - Team Cap", {
   x <- spotrac_team_cap(season = 2024)
   if (!is.data.frame(x) || nrow(x) == 0) skip("No Spotrac cap data returned at test time")
 
-  cols <- c("rank", "team", "total_cap_allocations", "season")
+  cols <- c("rank", "team", "total_cap", "cap_space", "season")
   expect_in(sort(cols), sort(colnames(x)))
   expect_s3_class(x, "data.frame")
 

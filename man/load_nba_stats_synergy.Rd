@@ -68,11 +68,11 @@ A \code{hoopR_data} tibble with one row per player per play type per split.
   plusone_poss_pct \tab numeric \tab Share (0-1) of this play type's possessions that ended in an and-one. \cr
   score_poss_pct \tab numeric \tab Share (0-1) of this play type's possessions that scored at least one point. \cr
   efg_pct \tab numeric \tab Effective field-goal percentage (0-1), weighting made threes by 1.5. \cr
-  poss \tab integer \tab Possessions of this play type (integer in 'totals' files, double per game). \cr
-  pts \tab integer \tab Points scored on this play type. \cr
-  fgm \tab integer \tab Field goals made on this play type. \cr
-  fga \tab integer \tab Field goals attempted on this play type. \cr
-  fgmx \tab integer \tab Field goals missed on this play type. \cr
+  poss \tab numeric \tab Possessions of this play type (integer in 'totals' files, double per game). \cr
+  pts \tab numeric \tab Points scored on this play type. \cr
+  fgm \tab numeric \tab Field goals made on this play type. \cr
+  fga \tab numeric \tab Field goals attempted on this play type. \cr
+  fgmx \tab numeric \tab Field goals missed on this play type. \cr
   season \tab integer \tab END year of the NBA season (2025 = 2024-25) -- the published asset's own stamp, one more than the \code{seasons} argument. \cr
   season_type \tab character \tab Season type of the source file: 'regular-season' or 'playoffs' (the release file-name token). \cr
   per_mode \tab character \tab Aggregation of the source file: 'pergame' (per-game averages) or 'totals' (season totals); stamped from the file name when the rows lack it. \cr

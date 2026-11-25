@@ -166,8 +166,9 @@ A \code{hoopR_data} tibble with one row per play-by-play event.
 
 \if{html}{\tabular{lll}{
   col_name \tab types \tab description \cr
+  game_play_number \tab integer \tab Sequential play number within the game. \cr
   id \tab character \tab ESPN play id (see Details). \cr
-  sequence_number \tab character \tab Sequence number representing a shot-possession (V3 PBP). \cr
+  sequence_number \tab integer \tab Sequence number representing a shot-possession (V3 PBP). \cr
   type_id \tab integer \tab Type identifier (numeric). \cr
   type_text \tab character \tab Display text for the type field. \cr
   text \tab character \tab Text description of the play / record. \cr
@@ -186,47 +187,53 @@ A \code{hoopR_data} tibble with one row per play-by-play event.
   shooting_play \tab logical \tab TRUE if the play was a shooting attempt. \cr
   coordinate_x_raw \tab numeric \tab X coordinate as returned by the API before any adjustment. \cr
   coordinate_y_raw \tab numeric \tab Y coordinate as returned by the API before any adjustment. \cr
+  points_attempted \tab integer \tab Point value attempted on the shot (2 or 3; 1 for a free throw). \cr
+  short_description \tab character \tab Short text description of the play from ESPN. \cr
+  game_id \tab integer \tab Unique game identifier. \cr
   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
   season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
-  away_team_id \tab integer \tab Unique identifier for the away team. \cr
-  away_team_name \tab character \tab Away team name. \cr
-  away_team_mascot \tab character \tab Away team mascot. \cr
-  away_team_abbrev \tab character \tab Away team three-letter abbreviation. \cr
-  away_team_name_alt \tab character \tab Alternate away team name. \cr
   home_team_id \tab integer \tab Unique identifier for the home team. \cr
   home_team_name \tab character \tab Home team name. \cr
   home_team_mascot \tab character \tab Home team mascot. \cr
   home_team_abbrev \tab character \tab Home team three-letter abbreviation. \cr
   home_team_name_alt \tab character \tab Alternate home team name. \cr
-  home_team_spread \tab numeric \tab Home team's point spread. \cr
+  away_team_id \tab integer \tab Unique identifier for the away team. \cr
+  away_team_name \tab character \tab Away team name. \cr
+  away_team_mascot \tab character \tab Away team mascot. \cr
+  away_team_abbrev \tab character \tab Away team three-letter abbreviation. \cr
+  away_team_name_alt \tab character \tab Alternate away team name. \cr
   game_spread \tab numeric \tab Game spread (signed; positive = home favored). \cr
   home_favorite \tab logical \tab TRUE if the home team is the betting favorite. \cr
   game_spread_available \tab logical \tab TRUE if a point spread was available. \cr
-  game_id \tab integer \tab Unique game identifier. \cr
+  home_team_spread \tab numeric \tab Home team's point spread. \cr
   qtr \tab integer \tab Quarter (1-4) or OT period (5+). \cr
   time \tab character \tab Time / clock value. \cr
   clock_minutes \tab integer \tab Clock minutes split out for convenience. \cr
   clock_seconds \tab numeric \tab Clock seconds split out for convenience. \cr
-  half \tab character \tab Half of the game (1 or 2). \cr
-  game_half \tab character \tab Half of the game (1 or 2). \cr
-  lead_qtr \tab integer \tab Quarter lead (the next-play's quarter). \cr
-  lead_game_half \tab character \tab Half lead (the next-play's half). \cr
-  start_quarter_seconds_remaining \tab integer \tab Seconds remaining in the period at the start of the play. \cr
-  start_half_seconds_remaining \tab integer \tab Seconds remaining in the half at the start of the play. \cr
-  start_game_seconds_remaining \tab integer \tab Seconds remaining in the game at the start of the play. \cr
-  game_play_number \tab integer \tab Sequential play number within the game. \cr
-  end_quarter_seconds_remaining \tab integer \tab Seconds remaining in the period at the end of the play. \cr
-  end_half_seconds_remaining \tab integer \tab Seconds remaining in the half at the end of the play. \cr
-  end_game_seconds_remaining \tab integer \tab Seconds remaining in the game at the end of the play. \cr
-  period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
+  home_timeout_called \tab logical \tab Whether the play is a timeout called by the home team. \cr
+  away_timeout_called \tab logical \tab Whether the play is a timeout called by the away team. \cr
+  half \tab integer \tab Half of the game (1 or 2). \cr
+  game_half \tab integer \tab Half of the game (1 or 2). \cr
   lag_qtr \tab integer \tab Quarter lag (the previous-play's quarter). \cr
-  lag_game_half \tab character \tab Half lag (the previous-play's half). \cr
+  lead_qtr \tab integer \tab Quarter lead (the next-play's quarter). \cr
+  lag_half \tab integer \tab Half of the previous play in the same game, NA on each game's first play. \cr
+  lead_half \tab integer \tab Half of the next play in the same game, NA on each game's final play. \cr
+  start_quarter_seconds_remaining \tab numeric \tab Seconds remaining in the period at the start of the play. \cr
+  start_half_seconds_remaining \tab numeric \tab Seconds remaining in the half at the start of the play. \cr
+  start_game_seconds_remaining \tab numeric \tab Seconds remaining in the game at the start of the play. \cr
+  end_quarter_seconds_remaining \tab numeric \tab Seconds remaining in the period at the end of the play. \cr
+  end_half_seconds_remaining \tab numeric \tab Seconds remaining in the half at the end of the play. \cr
+  end_game_seconds_remaining \tab numeric \tab Seconds remaining in the game at the end of the play. \cr
+  period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
   coordinate_x \tab numeric \tab X coordinate on the court (half-court layout). \cr
   coordinate_y \tab numeric \tab Y coordinate on the court (half-court layout). \cr
   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
-  type_abbreviation \tab character \tab Type abbreviation. \cr
   score_source \tab character \tab Where this game's home_score/away_score come from: 'rebuilt' (summed from the scoring plays and equal to the official final on the last play) or 'espn' (ESPN's per-play values, kept when the rebuild misses the final or the game has no final). Absent from seasons published before the repair. \cr
+  athlete_name_1 \tab character \tab Display name of the primary athlete (e.g. the shooter). \cr
+  athlete_name_2 \tab character \tab Display name of the secondary athlete, when present. \cr
+  athlete_name_3 \tab character \tab Name of the tertiary athlete involved in the play. \cr
+  type_abbreviation \tab character \tab Type abbreviation. \cr
 }}
 \if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_pbp")} for the column table.}
 
@@ -291,6 +298,8 @@ A \code{hoopR_data} tibble with one row per team-game.
   opponent_team_alternate_color \tab character \tab Opponent team alternate color (hex). \cr
   opponent_team_logo \tab character \tab Opponent team logo URL. \cr
   opponent_team_score \tab integer \tab Opponent team's score. \cr
+  lead_changes \tab character \tab Times the lead changed hands during the game, as ESPN's team box score reports it (the same on both team rows). \cr
+  lead_percentage \tab character \tab Percentage of the game the team held the lead, from ESPN's team box score stats. \cr
 }}
 \if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_team_box")} for the column table.}
 
@@ -365,24 +374,28 @@ A \code{hoopR_data} tibble with one row per game.
   id \tab integer \tab Id. \cr
   uid \tab character \tab ESPN UID string (universal identifier). \cr
   date \tab character \tab Date in YYYY-MM-DD format. \cr
-  attendance \tab integer \tab Reported attendance. \cr
+  attendance \tab numeric \tab Reported attendance. \cr
   time_valid \tab logical \tab Time valid. \cr
   neutral_site \tab logical \tab Neutral site. \cr
   conference_competition \tab logical \tab Conference competition. \cr
+  play_by_play_available \tab logical \tab Whether ESPN lists play-by-play for the game. \cr
   recent \tab logical \tab Recent. \cr
   start_date \tab character \tab Start date (YYYY-MM-DD). \cr
+  broadcast \tab character \tab Broadcast networks ESPN lists for the game, as one string. \cr
+  highlights \tab character \tab ESPN highlight clips for the game, serialized as a single string; NA when none was published. \cr
   notes_type \tab character \tab Notes type. \cr
   notes_headline \tab character \tab Notes headline. \cr
+  broadcast_market \tab character \tab Market of the first listed broadcast: 'national', 'home' or 'away'. \cr
+  broadcast_name \tab character \tab Network name of the first listed broadcast (e.g. 'ESPN'). \cr
   type_id \tab integer \tab Type identifier (numeric). \cr
   type_abbreviation \tab character \tab Type abbreviation. \cr
   venue_id \tab integer \tab Unique venue identifier. \cr
   venue_full_name \tab character \tab Venue full name. \cr
   venue_address_city \tab character \tab Venue address city. \cr
-  venue_capacity \tab integer \tab Venue seating capacity. \cr
   venue_indoor \tab logical \tab TRUE if the venue is indoors. \cr
-  status_clock \tab integer \tab Status clock. \cr
+  status_clock \tab numeric \tab Status clock. \cr
   status_display_clock \tab character \tab Status display clock. \cr
-  status_period \tab integer \tab Status period. \cr
+  status_period \tab numeric \tab Status period. \cr
   status_type_id \tab integer \tab Unique identifier for status type. \cr
   status_type_name \tab character \tab Status type name. \cr
   status_type_state \tab character \tab Status type state. \cr
@@ -390,7 +403,7 @@ A \code{hoopR_data} tibble with one row per game.
   status_type_description \tab character \tab Status type description. \cr
   status_type_detail \tab character \tab Status type detail. \cr
   status_type_short_detail \tab character \tab Status type short detail. \cr
-  format_regulation_periods \tab integer \tab Format regulation periods. \cr
+  format_regulation_periods \tab numeric \tab Format regulation periods. \cr
   home_id \tab integer \tab Unique identifier for home. \cr
   home_uid \tab character \tab Home team's uid. \cr
   home_location \tab character \tab Home team's location. \cr
@@ -405,6 +418,8 @@ A \code{hoopR_data} tibble with one row per game.
   home_logo \tab character \tab Home team logo URL. \cr
   home_score \tab integer \tab Home team score at the time of the play. \cr
   home_winner \tab logical \tab Home team's winner. \cr
+  home_linescores \tab character \tab Period-by-period points for the home team, stringified from ESPN's linescores array. \cr
+  home_records \tab character \tab Home team's records at game time (overall, home, away), stringified from ESPN. \cr
   away_id \tab integer \tab Unique identifier for away. \cr
   away_uid \tab character \tab Away team's uid. \cr
   away_location \tab character \tab Away team's location. \cr
@@ -419,16 +434,20 @@ A \code{hoopR_data} tibble with one row per game.
   away_logo \tab character \tab Away team logo URL. \cr
   away_score \tab integer \tab Away team score at the time of the play. \cr
   away_winner \tab logical \tab Away team's winner. \cr
+  away_linescores \tab character \tab Period-by-period points for the away team, stringified from ESPN's linescores array. \cr
+  away_records \tab character \tab Away team's records at game time (overall, home, away), stringified from ESPN. \cr
   game_id \tab integer \tab Unique game identifier. \cr
   season \tab integer \tab Season identifier (4-digit year or 'YYYY-YY' string). \cr
   season_type \tab integer \tab Season type (1=pre-season, 2=regular season, 3=postseason, 4=off-season for ESPN; or string label for WNBA Stats). \cr
   venue_address_state \tab character \tab Venue address state / region. \cr
   status_type_alt_detail \tab character \tab Status type alt detail. \cr
-  PBP \tab logical \tab  \cr
-  team_box \tab logical \tab Team box. \cr
-  player_box \tab logical \tab Player box. \cr
+  game_json \tab logical \tab Whether the data repository holds a processed game JSON for this game. \cr
+  game_json_url \tab character \tab URL of the processed game JSON in the raw data repository. \cr
   game_date_time \tab POSIXct \tab Game start date/time (ISO 8601). \cr
   game_date \tab Date \tab Game date (YYYY-MM-DD). \cr
+  PBP \tab logical \tab Whether the game's play-by-play is in the published play-by-play release. \cr
+  team_box \tab logical \tab Team box. \cr
+  player_box \tab logical \tab Player box. \cr
 }}
 \if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_schedule")} for the column table.}
 

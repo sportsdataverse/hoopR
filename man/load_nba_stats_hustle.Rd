@@ -56,23 +56,23 @@ A \code{hoopR_data} tibble with one row per player per season type per per mode 
   age \tab numeric \tab Player age in years at the season's reference date, as stats.nba.com reports it. \cr
   g \tab integer \tab Games played in the split. \cr
   min \tab numeric \tab Minutes played (per game in 'pergame' files, season total in 'totals' files). \cr
-  contested_shots \tab integer \tab Shots the player (or team) contested. \cr
-  contested_shots_2_pt \tab integer \tab Two-point shots contested. \cr
-  contested_shots_3_pt \tab integer \tab Three-point shots contested. \cr
-  deflections \tab integer \tab Deflections of opponent passes or dribbles. \cr
-  charges_drawn \tab integer \tab Offensive fouls (charges) drawn. \cr
-  screen_assists \tab integer \tab Screens set that led directly to a teammate's made field goal. \cr
-  screen_ast_pts \tab integer \tab Points scored on field goals created by the screen assists. \cr
-  off_loose_balls_recovered \tab integer \tab Loose balls recovered on offense. \cr
-  def_loose_balls_recovered \tab integer \tab Loose balls recovered on defense. \cr
-  loose_balls_recovered \tab integer \tab Loose balls recovered (offense plus defense). \cr
+  contested_shots \tab numeric \tab Shots the player (or team) contested. \cr
+  contested_shots_2_pt \tab numeric \tab Two-point shots contested. \cr
+  contested_shots_3_pt \tab numeric \tab Three-point shots contested. \cr
+  deflections \tab numeric \tab Deflections of opponent passes or dribbles. \cr
+  charges_drawn \tab numeric \tab Offensive fouls (charges) drawn. \cr
+  screen_assists \tab numeric \tab Screens set that led directly to a teammate's made field goal. \cr
+  screen_ast_pts \tab numeric \tab Points scored on field goals created by the screen assists. \cr
+  off_loose_balls_recovered \tab numeric \tab Loose balls recovered on offense. \cr
+  def_loose_balls_recovered \tab numeric \tab Loose balls recovered on defense. \cr
+  loose_balls_recovered \tab numeric \tab Loose balls recovered (offense plus defense). \cr
   pct_loose_balls_recovered_off \tab numeric \tab Share (0-1) of loose-ball recoveries made on offense. \cr
   pct_loose_balls_recovered_def \tab numeric \tab Share (0-1) of loose-ball recoveries made on defense. \cr
-  off_boxouts \tab integer \tab Box-outs on offense. \cr
-  def_boxouts \tab integer \tab Box-outs on defense. \cr
-  box_out_player_team_rebs \tab integer \tab Rebounds secured by the player's team on the player's box-outs. \cr
-  box_out_player_rebs \tab integer \tab Rebounds secured by the player himself on his own box-outs. \cr
-  box_outs \tab integer \tab Box-outs executed (offense plus defense). \cr
+  off_boxouts \tab numeric \tab Box-outs on offense. \cr
+  def_boxouts \tab numeric \tab Box-outs on defense. \cr
+  box_outs \tab numeric \tab Box-outs executed (offense plus defense). \cr
+  box_out_player_team_rebs \tab numeric \tab Rebounds secured by the player's team on the player's box-outs. \cr
+  box_out_player_rebs \tab numeric \tab Rebounds secured by the player himself on his own box-outs. \cr
   pct_box_outs_off \tab numeric \tab Share (0-1) of box-outs made on offense. \cr
   pct_box_outs_def \tab numeric \tab Share (0-1) of box-outs made on defense. \cr
   pct_box_outs_team_reb \tab numeric \tab Share (0-1) of the player's box-outs that ended in a team rebound. \cr
@@ -90,21 +90,21 @@ A \code{hoopR_data} tibble with one row per team per season type per per mode (\
   team_id \tab integer \tab stats.nba.com team identifier. \cr
   team_name \tab character \tab Team nickname (e.g. 'Celtics'). \cr
   min \tab numeric \tab Minutes played (per game in 'pergame' files, season total in 'totals' files). \cr
-  contested_shots \tab integer \tab Shots the team contested. \cr
-  contested_shots_2_pt \tab integer \tab Two-point shots contested. \cr
-  contested_shots_3_pt \tab integer \tab Three-point shots contested. \cr
-  deflections \tab integer \tab Deflections of opponent passes or dribbles. \cr
-  charges_drawn \tab integer \tab Offensive fouls (charges) drawn. \cr
-  screen_assists \tab integer \tab Screens set that led directly to a teammate's made field goal. \cr
-  screen_ast_pts \tab integer \tab Points scored on field goals created by the screen assists. \cr
-  off_loose_balls_recovered \tab integer \tab Loose balls recovered on offense. \cr
-  def_loose_balls_recovered \tab integer \tab Loose balls recovered on defense. \cr
-  loose_balls_recovered \tab integer \tab Loose balls recovered (offense plus defense). \cr
+  contested_shots \tab numeric \tab Shots the team contested. \cr
+  contested_shots_2_pt \tab numeric \tab Two-point shots contested. \cr
+  contested_shots_3_pt \tab numeric \tab Three-point shots contested. \cr
+  deflections \tab numeric \tab Deflections of opponent passes or dribbles. \cr
+  charges_drawn \tab numeric \tab Offensive fouls (charges) drawn. \cr
+  screen_assists \tab numeric \tab Screens set that led directly to a teammate's made field goal. \cr
+  screen_ast_pts \tab numeric \tab Points scored on field goals created by the screen assists. \cr
+  off_loose_balls_recovered \tab numeric \tab Loose balls recovered on offense. \cr
+  def_loose_balls_recovered \tab numeric \tab Loose balls recovered on defense. \cr
+  loose_balls_recovered \tab numeric \tab Loose balls recovered (offense plus defense). \cr
   pct_loose_balls_recovered_off \tab numeric \tab Share (0-1) of loose-ball recoveries made on offense. \cr
   pct_loose_balls_recovered_def \tab numeric \tab Share (0-1) of loose-ball recoveries made on defense. \cr
-  off_boxouts \tab integer \tab Box-outs on offense. \cr
-  def_boxouts \tab integer \tab Box-outs on defense. \cr
-  box_outs \tab integer \tab Box-outs executed (offense plus defense). \cr
+  off_boxouts \tab numeric \tab Box-outs on offense. \cr
+  def_boxouts \tab numeric \tab Box-outs on defense. \cr
+  box_outs \tab numeric \tab Box-outs executed (offense plus defense). \cr
   pct_box_outs_off \tab numeric \tab Share (0-1) of box-outs made on offense. \cr
   pct_box_outs_def \tab numeric \tab Share (0-1) of box-outs made on defense. \cr
   season \tab integer \tab END year of the NBA season (2025 = 2024-25) -- the published asset's own stamp, one more than the \code{seasons} argument. \cr
