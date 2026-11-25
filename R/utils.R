@@ -366,11 +366,13 @@ pbp_from_url <- function(url, type) {
 # vctrs_unspecified, so the column's class changes from season to season (the
 # draft combine's retired measures: integer in 2019, logical from 2023). Give
 # each all-NA column the type `return_columns` documents for loader `fn`; a
-# column with values, or one without a documented type, is left alone.
+# column with values, or one documented as another type (Date, POSIXct, ...), is
+# left alone. Only the function-level rows count, not a list component's.
 .na_cols_as_documented <- function(df, fn) {
   doc <- hoopR::return_columns
-  doc <- doc[doc$fn == fn, c("col_name", "type")]
-  empty <- list(character = NA_character_, integer = NA_integer_, numeric = NA_real_, logical = NA)
+  doc <- doc[doc$fn == fn & is.na(doc$component), c("col_name", "type")]
+  empty <- list(character = NA_character_, integer = NA_integer_, numeric = NA_real_,
+                double = NA_real_, logical = NA)
   for (k in intersect(names(df), doc$col_name)) {
     type <- doc$type[match(k, doc$col_name)]
     x <- df[[k]]
