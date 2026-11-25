@@ -41,6 +41,10 @@ for (v in c("STATS_RATE_HITS", "STATS_RATE_WINDOW", "STATS_RATE_MAX", "STATS_TIM
            STATS_RATE_MAX = rate_max, STATS_TIMEOUT = timeout_s)[[v]]
   if (!is.finite(val) || val <= 0) stop(v, " must be a positive number, not ", val, call. = FALSE)
 }
+for (v in c("STATS_RATE_HITS", "STATS_RATE_MAX")) {
+  val <- c(STATS_RATE_HITS = rate_hits, STATS_RATE_MAX = rate_max)[[v]]
+  if (val != round(val)) stop(v, " must be a whole number of requests, not ", val, call. = FALSE)
+}
 
 fix_dir   <- file.path("tests", "testthat", "fixtures", "nba_stats")
 args      <- commandArgs(trailingOnly = TRUE)
