@@ -273,6 +273,7 @@ A \code{hoopR_data} tibble with one row per inactive athlete-game pair.
   team_abbreviation \tab character \tab Three-letter team abbreviation. \cr
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
   game_id \tab character \tab Unique game identifier. \cr
+  season_type_id \tab character \tab Season-type digit: the 3rd character of game_id (and the leading digit of season_id). 1 = preseason, 2 = regular season, 3 = All-Star, 4 = playoffs, 5 = play-in, 6 = NBA Cup final, 9 = international. \cr
 }}
 \if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_game_rosters")} for the column table.}
 
@@ -292,6 +293,7 @@ A \code{hoopR_data} tibble with one row per official-game pair.
   jersey_num \tab character \tab Jersey number worn by the official. \cr
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
   game_id \tab character \tab Unique game identifier. \cr
+  season_type_id \tab character \tab Season-type digit: the 3rd character of game_id (and the leading digit of season_id). 1 = preseason, 2 = regular season, 3 = All-Star, 4 = playoffs, 5 = play-in, 6 = NBA Cup final, 9 = international. \cr
 }}
 \if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_officials")} for the column table.}
 
@@ -356,8 +358,10 @@ A \code{hoopR_data} tibble with one row per athlete-game pair.
 \if{html}{\tabular{lll}{
   col_name \tab types \tab description \cr
   team_id \tab integer \tab Unique NBA Stats team identifier. \cr
+  team_city \tab character \tab Team city or region. \cr
   team_name \tab character \tab Full team display name. \cr
   team_tricode \tab character \tab Three-letter team code. \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
   side \tab character \tab Whether the team was 'home' or 'away'. \cr
   person_id \tab integer \tab Unique player identifier. \cr
   first_name \tab character \tab Player's first name. \cr
@@ -389,6 +393,7 @@ A \code{hoopR_data} tibble with one row per athlete-game pair.
   plus_minus_points \tab numeric \tab Plus/minus point differential while on court. \cr
   game_id \tab character \tab Unique game identifier. \cr
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+  season_type_id \tab character \tab Season-type digit: the 3rd character of game_id (and the leading digit of season_id). 1 = preseason, 2 = regular season, 3 = All-Star, 4 = playoffs, 5 = play-in, 6 = NBA Cup final, 9 = international. \cr
 }}
 \if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_player_boxscores")} for the column table.}
 
@@ -517,6 +522,9 @@ A \code{hoopR_data} tibble with one row per possession.
   def_player_5 \tab integer \tab Defensive lineup slot 5 player identifier. \cr
   lineup_source \tab character \tab Provenance of the lineup join (e.g. 'game_lineups', 'derived'). \cr
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+  seconds_to_first_shot \tab numeric \tab Seconds from the change of possession (the clock at the previous possession's last event) to the possession's first field-goal attempt; a period's first possession is measured from its own first event. NA when the possession has no field-goal attempt. \cr
+  is_transition \tab logical \tab TRUE when the possession starts off a made shot, a missed shot or a live-ball turnover, is not its period's first possession, and its first field-goal attempt comes within 8 seconds (seconds_to_first_shot). Never NA. \cr
+  is_garbage_time \tab logical \tab TRUE from the first possession that meets the garbage-time rule to the end of the game: a margin of 25+ with 10:00 or less left in regulation, 20+ with 5:00 or less, 15+ with 2:00 or less, or 15+ in overtime, with at most 3 of the game's 10 starters on the floor. Never NA. \cr
 }}
 \if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_possessions")} for the column table.}
 
@@ -573,6 +581,7 @@ A \code{hoopR_data} tibble with one row per shot attempt.
   col_name \tab types \tab description \cr
   game_id \tab character \tab Unique game identifier. \cr
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+  season_type_id \tab character \tab Season-type digit: the 3rd character of game_id (and the leading digit of season_id). 1 = preseason, 2 = regular season, 3 = All-Star, 4 = playoffs, 5 = play-in, 6 = NBA Cup final, 9 = international. \cr
   period \tab integer \tab Period of the game (1-4 quarters; 5+ for OT). \cr
   clock \tab character \tab Game clock remaining in the period. \cr
   team_id \tab integer \tab Unique NBA Stats team identifier for the shooting team. \cr
@@ -604,8 +613,10 @@ A \code{hoopR_data} tibble with one row per team-game pair.
 \if{html}{\tabular{lll}{
   col_name \tab types \tab description \cr
   team_id \tab integer \tab Unique NBA Stats team identifier. \cr
+  team_city \tab character \tab Team city or region. \cr
   team_name \tab character \tab Full team display name. \cr
   team_tricode \tab character \tab Three-letter team code. \cr
+  team_slug \tab character \tab URL-safe team identifier (e.g. 'lasvegas-aces' / 'aces'). \cr
   side \tab character \tab Whether the team was 'home' or 'away'. \cr
   minutes \tab character \tab Total minutes played, as an \code{MM:SS} string. \cr
   field_goals_made \tab integer \tab Field goals made. \cr
@@ -629,6 +640,7 @@ A \code{hoopR_data} tibble with one row per team-game pair.
   plus_minus_points \tab numeric \tab Plus/minus point differential. \cr
   game_id \tab character \tab Unique game identifier. \cr
   season \tab integer \tab Season identifier (4-digit year, END year of the season). \cr
+  season_type_id \tab character \tab Season-type digit: the 3rd character of game_id (and the leading digit of season_id). 1 = preseason, 2 = regular season, 3 = All-Star, 4 = playoffs, 5 = play-in, 6 = NBA Cup final, 9 = international. \cr
 }}
 \if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_team_boxscores")} for the column table.}
 

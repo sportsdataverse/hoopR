@@ -1,0 +1,73 @@
+# stats.nba.com calls recorded by record_nba_stats.R and replayed by
+# tests/testthat/test-nba_stats_offline.R: one representative call per wrapper in
+# R/nba_stats_boxscore_v3.R, R/nba_stats_boxscore.R, R/nba_stats_league_dash.R,
+# R/nba_stats_leaders.R, R/nba_stats_pbp.R and R/utils_nba_stats.R.
+# Explicit game ids and seasons only, so the URLs never drift.
+#
+# Defunct wrappers (lifecycle::deprecate_stop) make no request; they are listed so
+# the generated test asserts their defunctError.
+#
+# Left out, recorded 2026-11-24 from a residential IP (re-try when re-recording):
+#   nba_boxscoredefensive(), nba_boxscorematchups(), nba_gravityleaders(): HTTP 500.
+#   nba_boxscoresimilarityscore(), nba_glalumboxscoresimilarityscore(): HTTP 400 (the
+#     wrappers turn spaces in the season type into "+", which is sent as %2B; the 400
+#     stays with "Playoffs", so the endpoint itself refuses too).
+#   nba_defensehub(): HTTP 400 (player_scope "All Players" is sent as All%2BPlayers).
+#   nba_live_pbp(), nba_live_boxscore(): cdn.nba.com, covered by test-nba_live_cdn.R.
+
+# Box scores, V3 and V2
+nba_boxscoretraditionalv3(game_id = "0022200021")
+nba_boxscoreadvancedv3(game_id = "0022200021")
+nba_boxscoremiscv3(game_id = "0022200021")
+nba_boxscorescoringv3(game_id = "0022200021")
+nba_boxscoreusagev3(game_id = "0022200021")
+nba_boxscorefourfactorsv3(game_id = "0022200021")
+nba_boxscoreplayertrackv3(game_id = "0022200021")
+nba_boxscorematchupsv3(game_id = "0022200021")
+nba_boxscorehustlev2(game_id = "0022200021")
+nba_boxscoredefensivev2(game_id = "0022200021")
+nba_boxscoresummaryv3(game_id = "0022200021")
+nba_gamerotation(game_id = "0022200021")
+nba_boxscoretraditionalv2(game_id = "0022200021")
+nba_boxscoreadvancedv2(game_id = "0022200021")
+nba_boxscorefourfactorsv2(game_id = "0022200021")
+nba_boxscoremiscv2(game_id = "0022200021")
+nba_boxscorescoringv2(game_id = "0022200021")
+nba_boxscoreusagev2(game_id = "0022200021")
+nba_boxscoresummaryv2(game_id = "0022200021")
+nba_boxscoreplayertrackv2(game_id = "0022200021")
+nba_hustlestatsboxscore(game_id = "0022200021")
+
+# League dashboards
+nba_leaguedashoppptshot(league_id = "00", season = "2024-25")
+nba_leaguedashplayerbiostats(league_id = "00", season = "2024-25")
+nba_leaguedashplayerclutch(league_id = "00", season = "2024-25")
+nba_leaguedashplayerptshot(league_id = "00", season = "2024-25")
+nba_leaguedashplayerstats(league_id = "00", season = "2024-25")
+nba_leaguedashplayershotlocations(league_id = "00", season = "2024-25")
+nba_leaguedashptdefend(league_id = "00", season = "2024-25")
+nba_leaguedashptstats(league_id = "00", season = "2024-25")
+nba_leaguedashptteamdefend(league_id = "00", season = "2024-25")
+nba_leaguedashteamclutch(league_id = "00", season = "2024-25")
+nba_leaguedashteamptshot(league_id = "00", season = "2024-25")
+nba_leaguedashteamstats(league_id = "00", season = "2024-25")
+nba_leaguedashteamshotlocations(league_id = "00", season = "2024-25")
+
+# Leaders
+nba_alltimeleadersgrids(league_id = "00")
+nba_assistleaders(league_id = "00", season = "2024-25", player_or_team = "Player")
+nba_assisttracker(league_id = "00", season = "2024-25")
+nba_homepageleaders(league_id = "00", season = "2024-25", player_or_team = "Player")
+nba_homepagev2(league_id = "00", season = "2024-25", player_or_team = "Player")
+nba_leaderstiles(league_id = "00", season = "2024-25", player_or_team = "Player")
+nba_leagueleaders(league_id = "00", season = "2024-25")
+nba_dunkscoreleaders(season = "2024-25")
+
+# Play-by-play
+nba_playbyplayv3(game_id = "0022201086")
+nba_pbp(game_id = "0022201086")
+nba_pbp(game_id = "0022201086", version = "v2")
+nba_pbps(game_ids = "0022201086")
+
+# utils_nba_stats.R: the legacy header helper, on its default URL
+hoopR:::.nba_headers()

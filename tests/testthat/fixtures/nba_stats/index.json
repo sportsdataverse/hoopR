@@ -1,0 +1,230 @@
+{
+  "https://stats.nba.com/stats/alltimeleadersgrids?LeagueID=00&PerMode=PerGame&SeasonType=Regular%20Season&TopX=10": {
+    "file": "06518465961e59c4.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/assistleaders?LeagueID=00&PerMode=PerGame&PlayerOrTeam=Player&Season=2024-25&SeasonType=Regular%20Season": {
+    "file": "133d7f4106aaae22.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/assisttracker?LeagueID=00&PerMode=PerGame&Season=2024-25&SeasonType=Regular%20Season": {
+    "file": "060b00e705d54ea0.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscoreadvancedv2?EndPeriod=14&EndRange=0&GameID=0022200021&RangeType=0&StartPeriod=0&StartRange=0": {
+    "file": "1d941ec0dac09dc0.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscoreadvancedv3?EndPeriod=14&EndRange=0&GameID=0022200021&RangeType=0&StartPeriod=0&StartRange=0": {
+    "file": "5feb9d3786cadd08.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscoredefensivev2?EndPeriod=14&EndRange=0&GameID=0022200021&RangeType=0&StartPeriod=0&StartRange=0": {
+    "file": "9f3b0f6915d69859.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscorefourfactorsv3?EndPeriod=14&EndRange=0&GameID=0022200021&RangeType=0&StartPeriod=0&StartRange=0": {
+    "file": "d45f6431fd34b635.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscorematchupsv3?EndPeriod=14&EndRange=0&GameID=0022200021&RangeType=0&StartPeriod=0&StartRange=0": {
+    "file": "5a4eb5117433344d.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscoremiscv3?EndPeriod=14&EndRange=0&GameID=0022200021&RangeType=0&StartPeriod=0&StartRange=0": {
+    "file": "0f011f8d71ff5155.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscoreplayertrackv3?EndPeriod=14&EndRange=0&GameID=0022200021&RangeType=0&StartPeriod=0&StartRange=0": {
+    "file": "50a6f9d40168099c.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscorescoringv3?EndPeriod=14&EndRange=0&GameID=0022200021&RangeType=0&StartPeriod=0&StartRange=0": {
+    "file": "a8b8da2345418ca2.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscoresummaryv2?GameID=0022200021": {
+    "file": "332b1fb9a6cedfea.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscoresummaryv3?GameID=0022200021": {
+    "file": "d62fb00b4bcc8d88.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscoretraditionalv2?EndPeriod=14&EndRange=0&GameID=0022200021&RangeType=0&StartPeriod=0&StartRange=0": {
+    "file": "e88732332e971b0e.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscoretraditionalv3?EndPeriod=14&EndRange=0&GameID=0022200021&RangeType=0&StartPeriod=0&StartRange=0": {
+    "file": "701c53bc50a653d6.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscoretraditionalv3?EndPeriod=14&EndRange=0&GameID=0022201086&RangeType=0&StartPeriod=0&StartRange=0": {
+    "file": "9b0dd67c165bd877.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/boxscoreusagev3?EndPeriod=14&EndRange=0&GameID=0022200021&RangeType=0&StartPeriod=0&StartRange=0": {
+    "file": "7ae24e6be207fd03.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/dunkscoreleaders?LeagueID=00&Season=2024-25&SeasonType=Regular%20Season": {
+    "file": "322480532dd20432.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/gamerotation?GameID=0022200021&LeagueID=00&RotationStat=PLAYER_PTS": {
+    "file": "51453e91069e9a0a.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/gamerotation?GameID=0022201086&LeagueID=00&RotationStat=PLAYER_PTS": {
+    "file": "4369b7a50d07f1fd.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/hustlestatsboxscore?GameID=0022200021": {
+    "file": "4c70cb7c36f918ee.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguedashoppptshot?LeagueID=00&CloseDefDistRange=&Conference=&DateFrom=&DateTo=&Division=&DribbleRange=&GameSegment=&GeneralRange=&LastNGames=0&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=&PaceAdjust=N&PerMode=Totals&Period=0&PlusMinus=N&Rank=Y&Season=2024-25&SeasonSegment=&SeasonType=Regular%20Season&ShotClockRange=&ShotDistRange=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=": {
+    "file": "260ade1fe852e31e.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguedashplayerbiostats?LeagueID=00&College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&GameSegment=&Height=&LastNGames=0&Location=&Month=0&OpponentTeamID=0&Outcome=&PORound=&PerMode=Totals&Period=&PlayerExperience=&PlayerPosition=&Season=2024-25&SeasonSegment=&SeasonType=Regular%20Season&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=": {
+    "file": "ca0df410f5476b12.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguedashplayerclutch?LeagueID=00&AheadBehind=Ahead%20or%20Behind&ClutchTime=Last%205%20Minutes&College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&GameSegment=&Height=&LastNGames=0&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PaceAdjust=N&PORound=&PerMode=Totals&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&PointDiff=5&Rank=N&Season=2024-25&SeasonSegment=&SeasonType=Regular%20Season&ShotClockRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=": {
+    "file": "ff8be24332edac9f.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguedashplayerptshot?LeagueID=00&CloseDefDistRange=&College=&Conference=&Country=&DateFrom=&DateTo=&DistanceRange=&Division=&DraftPick=&DraftYear=&DribbleRange=&GameScope=&GameSegment=&GeneralRange=&Height=&LastNGames=0&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=&PaceAdjust=N&PerMode=Totals&Period=0&PlayerExperience=&PlayerPosition=&Season=2024-25&SeasonSegment=&SeasonType=Regular%20Season&ShotClockRange=&ShotDistRange=&StarterBench=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=&Weight=": {
+    "file": "56ef3156d3ede6be.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguedashplayershotlocations?LeagueID=00&College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DistanceRange=By%20Zone&DraftPick=&DraftYear=&DribbleRange=&GameScope=&GameSegment=&Height=&LastNGames=0&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=&PaceAdjust=N&PerMode=Totals&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2024-25&SeasonSegment=&SeasonType=Regular%20Season&ShotClockRange=&StarterBench=&TeamID=&VsConference=&VsDivision=&Weight=": {
+    "file": "37e192d025d9293e.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguedashplayerstats?LeagueID=00&College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&GameSegment=&Height=&LastNGames=0&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=&PaceAdjust=N&PerMode=Totals&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2024-25&SeasonSegment=&SeasonType=Regular%20Season&ShotClockRange=&StarterBench=&TeamID=&TwoWay=&VsConference=&VsDivision=&Weight=": {
+    "file": "a13e209556366d52.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguedashptdefend?LeagueID=00&College=&Conference=&Country=&DateFrom=&DateTo=&DefenseCategory=Overall&Division=&DraftPick=&DraftYear=&GameSegment=&Height=&LastNGames=0&Location=&Month=0&OpponentTeamID=0&Outcome=&PORound=&PerMode=Totals&Period=&PlayerExperience=&PlayerID=&PlayerPosition=&Season=2024-25&SeasonSegment=&SeasonType=Regular%20Season&StarterBench=&TeamID=&VsConference=&VsDivision=&Weight=": {
+    "file": "aef0fa2007cc7a19.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguedashptstats?LeagueID=00&College=&Conference=&Country=&DateFrom=&DateTo=&Division=&DraftPick=&DraftYear=&GameScope=&Height=&LastNGames=0&Location=&Month=0&OpponentTeamID=0&Outcome=&PORound=&PerMode=PerGame&Period=&PlayerExperience=&PlayerOrTeam=Player&PlayerPosition=&PtMeasureType=Drives&Season=2024-25&SeasonSegment=&SeasonType=Regular%20Season&StarterBench=&TeamID=&VsConference=&VsDivision=&Weight=": {
+    "file": "02d54f58fdb87e9b.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguedashptteamdefend?LeagueID=00&Conference=&DateFrom=&DateTo=&DefenseCategory=Overall&Division=&GameSegment=&LastNGames=0&Location=&Month=0&OpponentTeamID=0&Outcome=&PORound=&PerMode=PerGame&Period=&Season=2024-25&SeasonSegment=&SeasonType=Regular%20Season&TeamID=&VsConference=&VsDivision=": {
+    "file": "64a3b23bb2badba6.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguedashteamclutch?LeagueID=00&AheadBehind=Ahead%20or%20Behind&ClutchTime=Last%205%20Minutes&Conference=&DateFrom=&DateTo=&Division=&GameScope=&GameSegment=&LastNGames=0&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PaceAdjust=N&PORound=&PerMode=Totals&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&PointDiff=5&Rank=N&Season=2024-25&SeasonSegment=&SeasonType=Regular%20Season&ShotClockRange=&StarterBench=&TeamID=&VsConference=&VsDivision=": {
+    "file": "c8f7eb97c18a4345.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguedashteamptshot?LeagueID=00&CloseDefDistRange=&Conference=&DateFrom=&DateTo=&Division=&DribbleRange=&GameSegment=&GeneralRange=&LastNGames=0&Location=&Month=0&OpponentTeamID=0&Outcome=&PORound=&PerMode=Totals&Period=0&Season=2024-25&SeasonSegment=&SeasonType=Regular%20Season&ShotClockRange=&ShotDistRange=&TeamID=&TouchTimeRange=&VsConference=&VsDivision=": {
+    "file": "1d6a46b3ce74c6e6.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguedashteamshotlocations?LeagueID=00&Conference=&DateFrom=&DateTo=&Division=&DistanceRange=By%20Zone&GameScope=&GameSegment=&LastNGames=0&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=&PaceAdjust=N&PerMode=Totals&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2024-25&SeasonSegment=&SeasonType=Regular%20Season&ShotClockRange=&StarterBench=&TeamID=&VsConference=&VsDivision=": {
+    "file": "52025f902b1394d9.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguedashteamstats?LeagueID=00&Conference=&DateFrom=&DateTo=&Division=&GameScope=&GameSegment=&LastNGames=0&Location=&MeasureType=Base&Month=0&OpponentTeamID=0&Outcome=&PORound=&PaceAdjust=N&PerMode=Totals&Period=0&PlusMinus=N&Rank=N&Season=2024-25&SeasonSegment=&SeasonType=Regular%20Season&ShotClockRange=&StarterBench=&TeamID=&TwoWay=&VsConference=&VsDivision=": {
+    "file": "07c2961d445f91f2.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leaguegamelog?Counter=1000&Season=2019-20&Direction=DESC&LeagueID=00&PlayerOrTeam=P&SeasonType=Regular%20Season&Sorter=DATE": {
+    "file": "fadf8e22f130fee6.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/leagueleaders?LeagueID=00&ActiveFlag=&PerMode=Totals&Scope=S&Season=2024-25&SeasonType=Regular%20Season&StatCategory=PTS": {
+    "file": "89544ed0ac7acf2f.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/playbyplayv2?EndPeriod=0&GameID=0022201086&StartPeriod=0": {
+    "file": "59efa6d652ea0137.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  },
+  "https://stats.nba.com/stats/playbyplayv3?EndPeriod=0&GameID=0022201086&StartPeriod=0": {
+    "file": "80192b44f4a486d2.gz",
+    "status": 200,
+    "type": "application/json; charset=utf-8",
+    "trimmed": true
+  }
+}

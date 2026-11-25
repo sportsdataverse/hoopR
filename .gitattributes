@@ -24,3 +24,6 @@ LICENSE     text eol=lf
 *.rda  binary
 *.RData binary
 *.qs   binary
+
+# Recorded HTTP fixtures (gzipped bodies)
+*.gz   binary

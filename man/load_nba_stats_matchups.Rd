@@ -55,28 +55,28 @@ A \code{hoopR_data} tibble with one row per matchup pair per per mode (\code{loa
   gp \tab integer \tab Games played in the split. \cr
   matchup_min \tab character \tab Time matched up: 'MM:SS' text in 'totals' files, decimal minutes in 'pergame' files (character when both are loaded together). \cr
   partial_poss \tab numeric \tab Possessions the pair was matched up for, apportioned by time (fractional). \cr
-  player_pts \tab integer \tab Points the offensive player scored while guarded by the defender. \cr
-  team_pts \tab integer \tab Points the offensive player's team scored while the pair was matched up. \cr
-  matchup_ast \tab integer \tab Assists by the offensive player while guarded by the defender. \cr
-  matchup_tov \tab integer \tab Turnovers by the offensive player while guarded by the defender. \cr
-  matchup_blk \tab integer \tab Blocks by the defender on the offensive player's shots. \cr
-  matchup_fgm \tab integer \tab Field goals made by the offensive player against the defender. \cr
-  matchup_fga \tab integer \tab Field goals attempted by the offensive player against the defender. \cr
+  player_pts \tab numeric \tab Points the offensive player scored while guarded by the defender. \cr
+  team_pts \tab numeric \tab Points the offensive player's team scored while the pair was matched up. \cr
+  matchup_ast \tab numeric \tab Assists by the offensive player while guarded by the defender. \cr
+  matchup_tov \tab numeric \tab Turnovers by the offensive player while guarded by the defender. \cr
+  matchup_blk \tab numeric \tab Blocks by the defender on the offensive player's shots. \cr
+  matchup_fgm \tab numeric \tab Field goals made by the offensive player against the defender. \cr
+  matchup_fga \tab numeric \tab Field goals attempted by the offensive player against the defender. \cr
   matchup_fg_pct \tab numeric \tab Field-goal percentage (0-1) of the offensive player against the defender. \cr
-  matchup_fg3_m \tab integer \tab Three-pointers made by the offensive player against the defender. \cr
-  matchup_fg3_a \tab integer \tab Three-pointers attempted by the offensive player against the defender. \cr
+  matchup_fg3_m \tab numeric \tab Three-pointers made by the offensive player against the defender. \cr
+  matchup_fg3_a \tab numeric \tab Three-pointers attempted by the offensive player against the defender. \cr
   matchup_fg3_pct \tab numeric \tab Three-point percentage (0-1) of the offensive player against the defender. \cr
   help_blk \tab integer \tab Help-defense blocks credited to the matchup; stats.nba.com ships 0 in every row checked. \cr
   help_fgm \tab integer \tab Field goals made against help defense; stats.nba.com ships 0 in every row checked. \cr
   help_fga \tab integer \tab Field goals attempted against help defense; stats.nba.com ships 0 in every row checked. \cr
   help_fg_perc \tab integer \tab Field-goal percentage against help defense; stats.nba.com ships 0 in every row checked. \cr
-  matchup_ftm \tab integer \tab Free throws made by the offensive player on fouls by the defender. \cr
-  matchup_fta \tab integer \tab Free throws attempted by the offensive player on fouls by the defender. \cr
-  sfl \tab integer \tab Shooting fouls committed by the defender on the offensive player. \cr
-  matchup_time_sec \tab numeric \tab Time matched up in seconds; present only in early 'totals' files (e.g. 2017-18). \cr
+  matchup_ftm \tab numeric \tab Free throws made by the offensive player on fouls by the defender. \cr
+  matchup_fta \tab numeric \tab Free throws attempted by the offensive player on fouls by the defender. \cr
+  sfl \tab numeric \tab Shooting fouls committed by the defender on the offensive player. \cr
   season \tab integer \tab END year of the NBA season (2025 = 2024-25) -- the published asset's own stamp, one more than the \code{seasons} argument. \cr
   season_type \tab character \tab Season type of the source file: 'regular-season' or 'playoffs' (the release file-name token). \cr
   per_mode \tab character \tab Aggregation of the source file: 'pergame' (per-game averages) or 'totals' (season totals); stamped from the file name when the rows lack it. \cr
+  matchup_time_sec \tab numeric \tab Time matched up in seconds; present only in early 'totals' files (e.g. 2017-18). \cr
 }}
 \if{text,latex}{See the HTML help, the pkgdown reference or \code{subset(return_columns, fn == "load_nba_stats_matchups")} for the column table.}
 
@@ -92,20 +92,20 @@ A \code{hoopR_data} tibble with one row per defender per position per season typ
   gp \tab integer \tab Games played in the split. \cr
   matchup_min \tab character \tab Time the defender spent guarding this position: 'MM:SS' text in 'totals' files, decimal minutes in 'pergame' files (character when both are loaded together). \cr
   partial_poss \tab numeric \tab Possessions the defender spent on this position, apportioned by time (fractional). \cr
-  player_pts \tab integer \tab Points scored by the offensive players of this position while guarded by the defender. \cr
-  team_pts \tab integer \tab Points scored by the opposing team while the defender guarded this position. \cr
-  matchup_ast \tab integer \tab Assists by the guarded players of this position. \cr
-  matchup_tov \tab integer \tab Turnovers by the guarded players of this position. \cr
-  matchup_blk \tab integer \tab Blocks by the defender against this position. \cr
-  matchup_fgm \tab integer \tab Field goals made against the defender by this position. \cr
-  matchup_fga \tab integer \tab Field goals attempted against the defender by this position. \cr
+  player_pts \tab numeric \tab Points scored by the offensive players of this position while guarded by the defender. \cr
+  team_pts \tab numeric \tab Points scored by the opposing team while the defender guarded this position. \cr
+  matchup_ast \tab numeric \tab Assists by the guarded players of this position. \cr
+  matchup_tov \tab numeric \tab Turnovers by the guarded players of this position. \cr
+  matchup_blk \tab numeric \tab Blocks by the defender against this position. \cr
+  matchup_fgm \tab numeric \tab Field goals made against the defender by this position. \cr
+  matchup_fga \tab numeric \tab Field goals attempted against the defender by this position. \cr
   matchup_fg_pct \tab numeric \tab Field-goal percentage (0-1) allowed to this position. \cr
-  matchup_fg3_m \tab integer \tab Three-pointers made against the defender by this position. \cr
-  matchup_fg3_a \tab integer \tab Three-pointers attempted against the defender by this position. \cr
+  matchup_fg3_m \tab numeric \tab Three-pointers made against the defender by this position. \cr
+  matchup_fg3_a \tab numeric \tab Three-pointers attempted against the defender by this position. \cr
   matchup_fg3_pct \tab numeric \tab Three-point percentage (0-1) allowed to this position. \cr
-  matchup_ftm \tab integer \tab Free throws made by this position on the defender's fouls. \cr
-  matchup_fta \tab integer \tab Free throws attempted by this position on the defender's fouls. \cr
-  sfl \tab integer \tab Shooting fouls the defender committed against this position. \cr
+  matchup_ftm \tab numeric \tab Free throws made by this position on the defender's fouls. \cr
+  matchup_fta \tab numeric \tab Free throws attempted by this position on the defender's fouls. \cr
+  sfl \tab numeric \tab Shooting fouls the defender committed against this position. \cr
   season \tab integer \tab END year of the NBA season (2025 = 2024-25) -- the published asset's own stamp, one more than the \code{seasons} argument. \cr
   season_type \tab character \tab Season type of the source file: 'regular-season' or 'playoffs' (the release file-name token). \cr
   per_mode \tab character \tab Aggregation of the source file: 'pergame' (per-game averages) or 'totals' (season totals); stamped from the file name when the rows lack it. \cr
