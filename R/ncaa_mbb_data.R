@@ -90,6 +90,7 @@ ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
       )
 
       resp <- .retry_request(url, headers = ncaa_headers, timeout = 15)
+      .stop_for_http_status(resp)
 
       data_read <- resp %>%
         .resp_text() %>%
@@ -130,6 +131,7 @@ ncaa_mbb_teams <- function(year = most_recent_mbb_season(), division = 1, ...) {
         )
 
         resp <- .retry_request(conf_team_urls, headers = ncaa_headers, timeout = 15)
+        .stop_for_http_status(resp)
 
         resp_text <- .resp_text(resp)
 

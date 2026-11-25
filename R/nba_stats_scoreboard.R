@@ -64,6 +64,7 @@ nba_schedule <- function(
   tryCatch(
     expr = {
       resp <- .retry_request(cdn_host, headers = .nba_cdn_headers()) %>%
+        .stop_for_http_status() %>%
         .resp_text() %>%
         jsonlite::fromJSON()
 
@@ -403,6 +404,7 @@ nba_todays_scoreboard <- function(
     expr = {
       full_url <- "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json"
       res <- .retry_request(full_url, headers = .nba_cdn_headers())
+      .stop_for_http_status(res)
 
       resp <- res %>%
         .resp_text() %>%

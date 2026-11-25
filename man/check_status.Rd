@@ -9,7 +9,12 @@ check_status(res)
 \arguments{
 \item{res}{Response from API (httr2 response object)}
 }
+\value{
+\code{res}, invisibly, when its status is 2xx.
+}
 \description{
-\strong{Check Status function}
+Raises the classed \code{hoopR_http_error} of
+\code{.stop_for_http_status()} (status, URL and the error body's message) for a
+non-2xx response.
 }
 \keyword{Internal}

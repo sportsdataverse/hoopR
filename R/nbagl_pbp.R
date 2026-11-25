@@ -98,6 +98,7 @@ nbagl_live_pbp <- function(
   tryCatch(
     expr = {
       res <- .retry_request(full_url, headers = .nba_cdn_headers())
+      .stop_for_http_status(res)
 
       resp <- res %>%
         .resp_text() %>%
@@ -196,6 +197,7 @@ nbagl_live_boxscore <- function(
   tryCatch(
     expr = {
       res <- .retry_request(full_url, headers = .nba_cdn_headers())
+      .stop_for_http_status(res)
 
       resp <- res %>%
         .resp_text() %>%

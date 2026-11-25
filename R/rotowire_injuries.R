@@ -50,6 +50,7 @@ rotowire_injuries <- function() {
           "Referer"    = "https://www.rotowire.com/basketball/news.php?view=injuries"
         )
       )
+      .stop_for_http_status(resp)
       raw <- jsonlite::fromJSON(.resp_text(resp))
       if (!is.data.frame(raw) || nrow(raw) == 0) stop("No RotoWire injury data returned", call. = FALSE)
 

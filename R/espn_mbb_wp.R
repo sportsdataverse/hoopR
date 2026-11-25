@@ -35,6 +35,7 @@ espn_mbb_wp <- function(game_id) {
     expr = .hoopR_with_warnings("espn_mbb_wp", {
       espn_wp <-
         .retry_request(sprintf("http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/summary?event=%s", espn_game_id)) %>%
+        .stop_for_http_status() %>%
         .resp_text() %>%
         jsonlite::fromJSON(flatten = TRUE) %>%
         purrr::pluck("winprobability") %>%
