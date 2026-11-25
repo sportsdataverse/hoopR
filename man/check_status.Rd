@@ -17,4 +17,4 @@ Raises the classed \code{hoopR_http_error} of
 \code{.stop_for_http_status()} (status, URL and the error body's message) for a
 non-2xx response.
 }
-\keyword{Internal}
+\keyword{internal}

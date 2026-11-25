@@ -30,8 +30,9 @@ full list of changes is in NEWS.md. The main additions:
   The wrappers that make their own request (ESPN win probability, the NBA
   and G League CDN feeds, `nba_schedule()`, `ncaa_mbb_teams()`, RotoWire,
   Torvik tournament results) report an HTTP error status instead of parsing
-  the error body, and three stats.nba.com wrappers no longer send spaces as
-  `%2B`.
+  the error body. A stats.nba.com result set with headers and no rows keeps
+  its columns. `nba_defensehub()` and the two box score similarity wrappers
+  are defunct: their endpoints answer HTTP 500 or 400 for every parameter set.
 * The NBA crosswalk loaders, and the new `load_nba_stats_metric_curves()`
   and `load_nba_stats_rolling_windows()`, return the NBA Stats team and
   player ids as integer, like the other `load_nba_stats_*()` loaders, and
@@ -48,7 +49,8 @@ full list of changes is in NEWS.md. The main additions:
   `tools::R_user_dir("hoopR", "data")`, not the working directory; the
   pbp loaders return the play `id` as exact character; the roster and
   crosswalk loaders return integer join ids; `nba_schedule()` accepts only
-  `league_id` `"00"`, `"10"` and `"20"`, each read from its own CDN.
+  `league_id` `"00"`, `"10"` and `"20"`, each read from its own CDN;
+  `nba_defensehub()` and the two box score similarity wrappers are defunct.
 * Dependencies: Rcpp and RcppParallel (unused; the package has no compiled
   code), magrittr and lubridate are no longer imported; glmnet, Matrix and
   stringdist moved to Suggests; withr and xml2 are now imported; ggplot2
