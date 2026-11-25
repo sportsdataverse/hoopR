@@ -9,3 +9,10 @@ test_that("spotrac_team_cap(season = 2024) parses a recorded response", {
   expect_recorded_data(x)
 })
 
+test_that("spotrac_team_cap(season = 2027) parses a recorded response", {
+  skip_on_cran()
+  local_http_fixtures()
+  x <- suppressMessages(spotrac_team_cap(season = 2027))
+  expect_recorded_data(x)
+})
+

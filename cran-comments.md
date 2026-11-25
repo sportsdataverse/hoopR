@@ -35,7 +35,11 @@ full list of changes is in NEWS.md. The main additions:
 * The NBA crosswalk loaders, and the new `load_nba_stats_metric_curves()`
   and `load_nba_stats_rolling_windows()`, return the NBA Stats team and
   player ids as integer, like the other `load_nba_stats_*()` loaders, and
-  every release loader's help page links the release tag it reads.
+  every release loader's help page links the release tag it reads. A column
+  that no row of a release file fills now takes its documented type (the
+  draft-combine and NCAA MBB loaders returned such columns as logical or
+  `vctrs_unspecified`), and `spotrac_team_cap()` again parses Spotrac's
+  cap table (it read two ad rows and each amount's share of the cap).
 * Changes that alter what 3.1.0 code gets back (listed under "Breaking
   changes" in NEWS.md): `load_nba_stats_player_game_logs()` returns player
   rows (team rows moved to `load_nba_stats_team_game_logs()`); the NBA

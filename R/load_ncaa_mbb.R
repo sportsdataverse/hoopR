@@ -6,8 +6,8 @@
 # The NCAA <-> ESPN bridge columns are character in the assets; cast them to
 # integer so they join to ESPN game_id / team_id. NCAA ids (contest_id,
 # *_ncaa_team_id, player_id) are opaque and stay character.
-.ncaa_mbb_rds <- function(url) {
-  df <- rds_from_url(url)
+.ncaa_mbb_rds <- function(url, fn) {
+  df <- .na_cols_as_documented(rds_from_url(url), fn)
   .ids_as_integer(df, grep("(^|_)espn_(game|team)_id$", names(df), value = TRUE))
 }
 
@@ -42,7 +42,7 @@ load_ncaa_mbb_pbp <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- .ncaa_mbb_rds
+  loader <- function(url) .ncaa_mbb_rds(url, "load_ncaa_mbb_pbp")
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -103,7 +103,7 @@ load_ncaa_mbb_shots <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- .ncaa_mbb_rds
+  loader <- function(url) .ncaa_mbb_rds(url, "load_ncaa_mbb_shots")
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2019:most_recent_mbb_season()
@@ -170,7 +170,7 @@ load_ncaa_mbb_lineups <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- .ncaa_mbb_rds
+  loader <- function(url) .ncaa_mbb_rds(url, "load_ncaa_mbb_lineups")
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -230,7 +230,7 @@ load_ncaa_mbb_matchup_stints <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- .ncaa_mbb_rds
+  loader <- function(url) .ncaa_mbb_rds(url, "load_ncaa_mbb_matchup_stints")
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -290,7 +290,7 @@ load_ncaa_mbb_possessions <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- .ncaa_mbb_rds
+  loader <- function(url) .ncaa_mbb_rds(url, "load_ncaa_mbb_possessions")
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -351,7 +351,7 @@ load_ncaa_mbb_rapm_within_team <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- .ncaa_mbb_rds
+  loader <- function(url) .ncaa_mbb_rds(url, "load_ncaa_mbb_rapm_within_team")
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   url_for <- function(seasons) paste0(
@@ -414,7 +414,7 @@ load_ncaa_mbb_rapm <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- .ncaa_mbb_rds
+  loader <- function(url) .ncaa_mbb_rds(url, "load_ncaa_mbb_rapm")
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   url_for <- function(seasons) paste0(
@@ -474,7 +474,7 @@ load_ncaa_mbb_player_box <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- .ncaa_mbb_rds
+  loader <- function(url) .ncaa_mbb_rds(url, "load_ncaa_mbb_player_box")
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -533,7 +533,7 @@ load_ncaa_mbb_team_box <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- .ncaa_mbb_rds
+  loader <- function(url) .ncaa_mbb_rds(url, "load_ncaa_mbb_team_box")
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -591,7 +591,7 @@ load_ncaa_mbb_rosters <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- .ncaa_mbb_rds
+  loader <- function(url) .ncaa_mbb_rds(url, "load_ncaa_mbb_rosters")
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -649,7 +649,7 @@ load_ncaa_mbb_team_rosters <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- .ncaa_mbb_rds
+  loader <- function(url) .ncaa_mbb_rds(url, "load_ncaa_mbb_team_rosters")
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -706,7 +706,7 @@ load_ncaa_mbb_schedule <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- .ncaa_mbb_rds
+  loader <- function(url) .ncaa_mbb_rds(url, "load_ncaa_mbb_schedule")
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()
@@ -764,7 +764,7 @@ load_ncaa_mbb_team_ids <- function(seasons = most_recent_mbb_season(),
   on.exit(options(old))
   dots <- rlang::dots_list(...)
 
-  loader <- .ncaa_mbb_rds
+  loader <- function(url) .ncaa_mbb_rds(url, "load_ncaa_mbb_team_ids")
   if (!is.null(dbConnection) && !is.null(tablename)) in_db <- TRUE else in_db <- FALSE
 
   if (isTRUE(seasons)) seasons <- 2010:most_recent_mbb_season()

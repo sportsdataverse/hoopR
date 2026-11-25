@@ -58,6 +58,7 @@
     for (k in names(df)[vapply(df, inherits, NA, "vctrs_unspecified")]) {
       data.table::set(df, j = k, value = rep(NA, nrow(df)))
     }
+    df <- .na_cols_as_documented(df, fn)
     for (k in setdiff(names(a$stamps), names(df))) data.table::set(df, j = k, value = a$stamps[[k]])
     if (!"season" %in% names(df)) data.table::set(df, j = "season", value = as.integer(s + offset))
     .ids_as_integer(df, id_cols)

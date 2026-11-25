@@ -111,7 +111,7 @@ test_that("the in-season default of each lagging loader reads the newest publish
       urls <<- c(urls, url)
       data.table::data.table(x = 1)
     },
-    .ncaa_mbb_rds = function(url) {
+    .ncaa_mbb_rds = function(url, fn) {
       urls <<- c(urls, url)
       data.table::data.table(x = 1)
     }

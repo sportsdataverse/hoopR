@@ -232,6 +232,11 @@ the sections below.
   fall back to a fixed `lambda` instead of erroring: silently with fewer than
   3 possessions (too few for cross-validation), and with a warning when
   cross-validation fails on 3 or more.
+* `spotrac_team_cap()` returns 30 team rows and the league average, and reads
+  each allocation as one amount. Spotrac's table now carries two advertisement rows
+  (they came back as empty rows, 33 in all) and appends each allocation's share of the
+  cap (`$108,246,871 (68.5%)`), which `active_cap`, `dead_cap`, `cap_holds` and `top_3`
+  read as one run-together number (`10824687168.5`).
 
 ### **New data loaders**
 
@@ -615,6 +620,18 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
   on it is an error (not retried: the file is the same on every try), and the rebuild
   stops with an error naming the index url before anything is dropped, leaving the
   table unchanged.
+* A column no row of a season's release file fills now has its documented type
+  instead of the class the file stored it as. The draft-combine loaders
+  (`load_nba_stats_draft_combine_*()`) returned the measures the combine retired
+  (`bench_press`, `body_fat_pct`, `height_w_shoes`, the spot and off-the-dribble
+  shooting splits) as `logical` for 2023 onward and as `integer` / `numeric` /
+  `character` for 2019, so seasons loaded one at a time had different schemas. The
+  NCAA MBB loaders returned `period` and `sec_left` (`load_ncaa_mbb_shots()`) and
+  `player_count_error` (`load_ncaa_mbb_lineups()`) as `vctrs_unspecified`; they are
+  `logical`, as documented. Every loader built on the multi-file release reader
+  (the `load_nba_stats_*()` release tags, `load_nba_depthcharts()`,
+  `load_nba_current_impact()`) and every `load_ncaa_mbb_*()` loader applies the
+  same cast, to all-`NA` columns only.
 
 ### **Dependencies**
 
