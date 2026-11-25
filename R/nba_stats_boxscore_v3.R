@@ -1535,16 +1535,7 @@ nba_gamerotation <- function(
     expr = .hoopR_with_warnings("nba_gamerotation", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(seq_along(resp$resultSets$name), function(x) {
-        data <- resp$resultSets$rowSet[[x]] %>%
-          data.frame(stringsAsFactors = FALSE) %>%
-          as_tibble()
-
-        json_names <- resp$resultSets$headers[[x]]
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSets$name
+      df_list <- nba_stats_map_result_sets(resp)
     }),
     error = function(e) .report_api_error(
       e,

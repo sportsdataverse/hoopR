@@ -184,16 +184,7 @@ nba_teamestimatedmetrics <- function(
     expr = .hoopR_with_warnings("nba_teamestimatedmetrics", {
       resp <- request_with_proxy(url = full_url, params = params, ...)
 
-      df_list <- purrr::map(seq_along(resp$resultSet$name), function(x) {
-        data <- resp$resultSet$rowSet %>%
-          data.frame(stringsAsFactors = FALSE) %>%
-          dplyr::as_tibble()
-
-        json_names <- resp$resultSet$headers
-        colnames(data) <- json_names
-        return(data)
-      })
-      names(df_list) <- resp$resultSet$name
+      df_list <- nba_stats_map_result_sets(resp)
     }),
     error = function(e) .report_api_error(
       e,

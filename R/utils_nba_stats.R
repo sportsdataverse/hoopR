@@ -312,32 +312,45 @@ nba_endpoint <- function(endpoint) {
 }
 
 
+#' Map stats.nba.com result sets to a named list of tibbles
+#'
+#' Handles `resultSets` (an array of sets) and `resultSet` (one set object,
+#' whose `headers` is a vector and `rowSet` a matrix). `{}` gives `list()`.
+#' @param resp A response parsed by `jsonlite::fromJSON()`.
+#' @keywords internal
+#' @noRd
 nba_stats_map_result_sets <- function(resp) {
-  if ("resultSets" %in% names(resp)) {
-    df_list <- purrr::map(seq_along(resp$resultSets$name), function(x) {
-      data <- resp$resultSets$rowSet[[x]] %>%
-        data.frame(stringsAsFactors = FALSE) %>%
-        dplyr::as_tibble()
-
-      json_names <- resp$resultSets$headers[[x]]
-      colnames(data) <- json_names
-      return(data)
-    })
-    names(df_list) <- resp$resultSets$name
-    return(df_list)
-  } else {
-    df_list <- purrr::map(seq_along(resp$resultSet$name), function(x) {
-      data <- resp$resultSet$rowSet[[x]] %>%
-        data.frame(stringsAsFactors = FALSE) %>%
-        dplyr::as_tibble()
-
-      json_names <- resp$resultSet$headers[[x]]
-      colnames(data) <- json_names
-      return(data)
-    })
-    names(df_list) <- resp$resultSet$name
-    return(df_list)
+  sets <- if ("resultSets" %in% names(resp)) resp$resultSets else resp$resultSet
+  if (!is.data.frame(sets) && length(sets$name) == 1L) {
+    sets <- list(name = sets$name, headers = list(sets$headers), rowSet = list(sets$rowSet))
   }
+  df_list <- purrr::map(seq_along(sets$name), function(x) {
+    .nba_result_set_tibble(sets$rowSet[[x]], sets$headers[[x]])
+  })
+  names(df_list) <- sets$name
+  df_list
+}
+
+#' One result set as a tibble
+#'
+#' A set with headers but no rows keeps its columns: a 0-row tibble of
+#' character columns (the type a filled set parses to) named by `headers`.
+#' @param rows The set's `rowSet`.
+#' @param headers The set's column names.
+#' @keywords internal
+#' @noRd
+.nba_result_set_tibble <- function(rows, headers) {
+  headers <- as.character(unlist(headers))
+  if (length(rows) == 0L) {
+    data <- rep(list(character()), length(headers))
+    names(data) <- headers
+    return(dplyr::as_tibble(data, .name_repair = "minimal"))
+  }
+  data <- rows %>%
+    data.frame(stringsAsFactors = FALSE) %>%
+    dplyr::as_tibble()
+  colnames(data) <- headers
+  data
 }
 
 pad_id <- function(id = 21601112) {
