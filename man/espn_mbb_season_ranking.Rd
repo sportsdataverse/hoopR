@@ -53,8 +53,8 @@ A \code{hoopR_data} tibble with one row per weekly snapshot.
 \description{
 Returns the per-week snapshot index for one ranking source (e.g. AP
 Top 25). Each row is one weekly snapshot; the \code{ref} URL resolves to
-the actual ranked teams for that (season-type x week) and will be
-wrapped by a forthcoming \code{espn_LOWERMBB_week_ranking()}.
+the actual ranked teams for that (season-type x week); fetch them with
+\code{\link[=espn_mbb_week_ranking]{espn_mbb_week_ranking()}}.
 
 Returns the per-week snapshot index for one ranking source (e.g. AP
 Top 25). Each row is one weekly snapshot; the \code{ref} URL resolves to

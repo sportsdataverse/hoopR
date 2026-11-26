@@ -117,7 +117,7 @@ espn_nba_season_leaders <- function(season = most_recent_nba_season(),
 #' NBA + WNBA typically return zero rankings (ranking polls are a
 #' college concept); the wrapper is provided for symmetry across leagues.
 #' For MBB / WBB use the matching `espn_mbb_season_rankings()` /
-#' `espn_wbb_season_rankings()`.
+#' `wehoop::espn_wbb_season_rankings()`.
 #'
 #' @param ... Additional arguments; currently unused.
 #' @eval .returns_rd("espn_nba_season_rankings", unit = "ranking source")

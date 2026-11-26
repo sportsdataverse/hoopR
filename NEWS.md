@@ -757,6 +757,9 @@ empty result, mirroring sportsdataverse-py's `NoDataError`/`AssetFetchError` voc
 * The DESCRIPTION explains NBA, ESPN, NCAA, FIBA, ACB, VTB, NBL, KBL and CBA on first use,
   and the help pages use ASCII punctuation (`-`, `x`) in place of em dashes, en dashes and
   multiplication signs.
+* `?espn_mbb_season_ranking` links `espn_mbb_week_ranking()` for the ranked teams instead of
+  an unfilled template name, and `?espn_nba_season_rankings` qualifies the women's college
+  pointer as `wehoop::espn_wbb_season_rankings()`.
 
 ### **Tests**
 

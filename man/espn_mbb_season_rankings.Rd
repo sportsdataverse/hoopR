@@ -47,7 +47,7 @@ Returns the index of season-level rankings recorded for one NBA season.
 NBA + WNBA typically return zero rankings (ranking polls are a
 college concept); the wrapper is provided for symmetry across leagues.
 For MBB / WBB use the matching \code{espn_mbb_season_rankings()} /
-\code{espn_wbb_season_rankings()}.
+\code{wehoop::espn_wbb_season_rankings()}.
 }
 \details{
 \strong{Get ESPN MBB Season Rankings Index}
