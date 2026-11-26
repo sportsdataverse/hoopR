@@ -75,22 +75,15 @@ lists every function in this family.
 ``` r
 # \donttest{
   try(tbf_shots(match_id = 346279))
-#> ── TBF Shots ──────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 07:00:52 UTC
-#> # A tibble: 123 × 10
-#>    match_id period period_type side  shot_player_id player_name    jersey_number
-#>       <int>  <int>       <int> <chr>          <int> <chr>          <chr>        
-#>  1   346279      1           1 away         2814324 Quentin Peter… 77           
-#>  2   346279      1           1 home         2814314 Terrell Carte… 5            
-#>  3   346279      1           1 away         2814324 Quentin Peter… 77           
-#>  4   346279      1           1 away         2814322 Damien Jeffer… 23           
-#>  5   346279      1           1 away         2814320 Boubacar Toure 21           
-#>  6   346279      1           1 away         2814320 Boubacar Toure 21           
-#>  7   346279      1           1 home         2511112 Yiğitcan Sayb… 3            
-#>  8   346279      1           1 home         2511112 Yiğitcan Sayb… 3            
-#>  9   346279      1           1 home         2814319 Gabe Brown     44           
-#> 10   346279      1           1 home         2814317 Bryce Jones    32           
-#> # ℹ 113 more rows
-#> # ℹ 3 more variables: x <int>, y <int>, made <lgl>
+#> Error in tbf_shots(match_id = 346279) : 
+#>   miniappapi.tbf.org.tr/webapi-service/api/Match/mac-header: fetch failed
+#> after 3 attempts: Failed to perform HTTP request. Caused by error in
+#> `curl::curl_fetch_memory()`: ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60001 milliseconds
+#> Caused by error in `httr2::req_perform()`:
+#> ! Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60001 milliseconds
 # }
 ```

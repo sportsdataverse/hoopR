@@ -44,7 +44,7 @@ lists every function in this family.
 # \donttest{
   try(ibba_boards(season = 2026))
 #> ── IBBA boards ────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 06:56:48 UTC
+#> ℹ Data updated: 2026-11-26 22:39:29 UTC
 #> # A tibble: 7 × 5
 #>   board_id season board_name_he        board_title_he                category_he
 #>      <int>  <int> <chr>                <chr>                         <chr>      

@@ -41,20 +41,20 @@ Other Salary & Draft Functions:
 # \donttest{
   try(nbadraft_mock_draft())
 #> ── Mock draft from nbadraft.net ───────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 06:59:18 UTC
+#> ℹ Data updated: 2026-11-26 22:42:36 UTC
 #> # A tibble: 60 × 9
 #>     pick team        player            height weight position school class round
 #>    <int> <chr>       <chr>             <chr>   <int> <chr>    <chr>  <chr> <int>
-#>  1     1 Utah        Bruce Branch      6-7       195 SF       BYU    Fr.       1
-#>  2     2 Milwaukee   Alijah Arenas     6-6       195 SG       USC    So.       1
-#>  3     3 Sacramento  Tyran Stokes      6-8       230 SF/PF    Kansas Fr.       1
-#>  4     4 Chicago     Jason Crowe       6-4       190 PG       Misso… Fr.       1
-#>  5     5 LA Clippers Quentin Coleman   6-4       180 PG/SG    Illin… Fr.       1
-#>  6     6 Brooklyn    Obinna Ekezie Jr. 7-0       220 C        Louis… Fr.       1
-#>  7     7 Washington  Amari Allen       6-6       205 SG/SF    Alaba… So.       1
-#>  8     8 New Orleans Caleb Holt        6-5       215 PG/SG    Arizo… Fr.       1
-#>  9     9 Indiana     Kanon Catchings   6-9       210 SF       Georg… Jr.       1
-#> 10    10 Charlotte   Stefan Joksimovic 6-4       190 SG       Slove… Intl.     1
+#>  1     1 Milwaukee   Quentin Coleman   6-4       180 PG/SG    Illin… Fr.       1
+#>  2     2 Sacramento  Alijah Arenas     6-6       195 SG       USC    So.       1
+#>  3     3 Utah        Bruce Branch      6-7       195 SF       BYU    Fr.       1
+#>  4     4 Brooklyn    Tyran Stokes      6-8       230 SF/PF    Kansas Fr.       1
+#>  5     5 Charlotte   Jason Crowe       6-4       190 PG       Misso… Fr.       1
+#>  6     6 LA Clippers Amari Allen       6-6       205 SG/SF    Alaba… So.       1
+#>  7     7 New Orleans Stefan Joksimovic 6-4       190 SG       Slove… Intl.     1
+#>  8     8 Indiana     Adonis Ratliff    6-11      215 PF       USC    Fr.       1
+#>  9     9 Chicago     Braylon Mullins   6-5       180 SG       UConn  So.       1
+#> 10    10 Toronto     Kanon Catchings   6-9       210 SF       Georg… Jr.       1
 #> # ℹ 50 more rows
 # }
 ```

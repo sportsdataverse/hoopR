@@ -176,23 +176,16 @@ Timestamps are Turkey local time (<code>Europe/Istanbul</code>).</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">tbf_shots</span><span class="op">(</span>match_id <span class="op">=</span> <span class="fl">346279</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── TBF Shots ──────────────────────────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-25 07:00:52 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 123 × 10</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    match_id period period_type side  shot_player_id player_name    jersey_number</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>   <span style="text-decoration: underline;">346</span>279      1           1 away         2<span style="text-decoration: underline;">814</span>324 Quentin Peter… 77           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>   <span style="text-decoration: underline;">346</span>279      1           1 home         2<span style="text-decoration: underline;">814</span>314 Terrell Carte… 5            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>   <span style="text-decoration: underline;">346</span>279      1           1 away         2<span style="text-decoration: underline;">814</span>324 Quentin Peter… 77           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>   <span style="text-decoration: underline;">346</span>279      1           1 away         2<span style="text-decoration: underline;">814</span>322 Damien Jeffer… 23           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>   <span style="text-decoration: underline;">346</span>279      1           1 away         2<span style="text-decoration: underline;">814</span>320 Boubacar Toure 21           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>   <span style="text-decoration: underline;">346</span>279      1           1 away         2<span style="text-decoration: underline;">814</span>320 Boubacar Toure 21           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>   <span style="text-decoration: underline;">346</span>279      1           1 home         2<span style="text-decoration: underline;">511</span>112 Yiğitcan Sayb… 3            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   <span style="text-decoration: underline;">346</span>279      1           1 home         2<span style="text-decoration: underline;">511</span>112 Yiğitcan Sayb… 3            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   <span style="text-decoration: underline;">346</span>279      1           1 home         2<span style="text-decoration: underline;">814</span>319 Gabe Brown     44           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>   <span style="text-decoration: underline;">346</span>279      1           1 home         2<span style="text-decoration: underline;">814</span>317 Bryce Jones    32           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 113 more rows</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 3 more variables: x &lt;int&gt;, y &lt;int&gt;, made &lt;lgl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error in tbf_shots(match_id = 346279) : </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   miniappapi.tbf.org.tr/webapi-service/api/Match/mac-header: fetch failed</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> after 3 attempts: Failed to perform HTTP request. <span style="font-weight: bold;">Caused by error in</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">`curl::curl_fetch_memory()`:</span> <span style="color: #BBBB00;">!</span> Timeout was reached [miniappapi.tbf.org.tr]:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Connection timed out after 60001 milliseconds</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `httr2::req_perform()`:</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> Failed to perform HTTP request.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> Timeout was reached [miniappapi.tbf.org.tr]:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Connection timed out after 60001 milliseconds</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

@@ -73,20 +73,20 @@ Saiem Gilani
 # \donttest{
   try(load_mbb_group_aliases())
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 467 × 8
+#> # A tibble: 469 × 8
 #>    league group_id         source source_id name_kind  value valid_from valid_to
 #>    <chr>  <chr>            <chr>  <chr>     <chr>      <chr>      <int>    <int>
 #>  1 mbb    mbb:acc          espn   2         abbreviat… acc         2002     2027
 #>  2 mbb    mbb:acc          espn   2         name       Atla…       2002     2027
 #>  3 mbb    mbb:acc          espn   2         short_name ACC         2002     2027
 #>  4 mbb    mbb:acc          espn   2         slug       atla…       2002     2027
-#>  5 mbb    mbb:acc          kenpom NA        code       ACC         2002     2026
+#>  5 mbb    mbb:acc          kenpom NA        code       ACC         2002     2027
 #>  6 mbb    mbb:acc          ncaa   821       short_name ACC         2018     2026
 #>  7 mbb    mbb:acc          sdv    NA        abbreviat… ACC           NA       NA
 #>  8 mbb    mbb:acc          sdv    NA        name       Atla…         NA       NA
 #>  9 mbb    mbb:acc          sdv    NA        short_name ACC           NA       NA
 #> 10 mbb    mbb:america-east espn   1         abbreviat… aeast       2002     2027
-#> # ℹ 457 more rows
+#> # ℹ 459 more rows
 # }
 # \donttest{
   try(load_nba_group_aliases())

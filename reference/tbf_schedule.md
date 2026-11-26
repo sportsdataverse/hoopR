@@ -87,23 +87,16 @@ lists every function in this family.
 ``` r
 # \donttest{
   try(tbf_schedule(competition = "bsl", season = 2027, week = 1))
-#> ── TBF Schedule ───────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 07:00:50 UTC
-#> # A tibble: 8 × 25
-#>   match_id match_code genius_id activity_id activity_name competition season_id
-#>      <int> <chr>          <int>       <int> <chr>         <chr>           <int>
-#> 1   346279 1EA4917      2913588       22214 BSL 2026-2027 bsl               174
-#> 2   346276 1EA4914      2913589       22214 BSL 2026-2027 bsl               174
-#> 3   346280 1EA4918      2913590       22214 BSL 2026-2027 bsl               174
-#> 4   346275 1EA4913      2913591       22214 BSL 2026-2027 bsl               174
-#> 5   346277 1EA4915      2913592       22214 BSL 2026-2027 bsl               174
-#> 6   346274 1EA4912      2913593       22214 BSL 2026-2027 bsl               174
-#> 7   346278 1EA4916      2913594       22214 BSL 2026-2027 bsl               174
-#> 8   346281 1EA4919      2913595       22214 BSL 2026-2027 bsl               174
-#> # ℹ 18 more variables: season_label <chr>, season <int>, tipoff <dttm>,
-#> #   match_date <date>, week <chr>, phase <int>, status_id <int>,
-#> #   home_team_process_id <int>, home_team <chr>, home_score <int>,
-#> #   away_team_process_id <int>, away_team <chr>, away_score <int>, venue <chr>,
-#> #   province <chr>, gender <chr>, broadcast_channel <chr>, has_overtime <lgl>
+#> Error in tbf_schedule(competition = "bsl", season = 2027, week = 1) : 
+#>   
+#> miniappapi.tbf.org.tr/webapi-service/api/League/get-leagues-and-seasons-by-prefix:
+#> fetch failed after 3 attempts: Failed to perform HTTP request. Caused by error
+#> in `curl::curl_fetch_memory()`: ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
+#> Caused by error in `httr2::req_perform()`:
+#> ! Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
 # }
 ```

@@ -45,7 +45,7 @@ lists every function in this family.
 # \donttest{
   try(sportpress_game_find(game_id = 11295))
 #> ── BNXT League Game from Sportpress ───────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 07:00:25 UTC
+#> ℹ Data updated: 2026-11-26 22:43:40 UTC
 #> # A tibble: 1 × 21
 #>   game_id game_time           status   competition_id season phase_id phase_name
 #>     <int> <dttm>              <chr>             <int>  <int>    <int> <chr>     

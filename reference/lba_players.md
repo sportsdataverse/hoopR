@@ -48,7 +48,7 @@ lists every function in this family.
 # \donttest{
   try(lba_players(season = 2027))
 #> ── LBA Players from legabasket.it ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 06:57:37 UTC
+#> ℹ Data updated: 2026-11-26 22:40:19 UTC
 #> # A tibble: 50 × 8
 #>    season player_id name        surname code  team_name  year player_picture_key
 #>     <int>     <int> <chr>       <chr>   <chr> <chr>     <int> <chr>             

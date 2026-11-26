@@ -1142,6 +1142,24 @@ vocabulary.
 - The DESCRIPTION explains NBA, ESPN, NCAA, FIBA, ACB, VTB, NBL, KBL and
   CBA on first use, and the help pages use ASCII punctuation (`-`, `x`)
   in place of em dashes, en dashes and multiplication signs.
+- [`?espn_mbb_season_ranking`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_ranking.md)
+  links
+  [`espn_mbb_week_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_ranking.md)
+  and
+  [`espn_nba_week_ranking()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_week_ranking.md)
+  for the ranked teams instead of an unfilled template name and a
+  “forthcoming” wrapper;
+  [`espn_mbb_game_play()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_play.md)
+  and
+  [`espn_nba_game_play()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_play.md)
+  point at
+  [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+  /
+  [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+  for play ids instead of `pbp()`; and
+  [`?espn_nba_season_rankings`](https://hoopR.sportsdataverse.org/reference/espn_mbb_season_rankings.md)
+  qualifies the women’s college pointer as
+  [`wehoop::espn_wbb_season_rankings()`](https://wehoop.sportsdataverse.org/reference/espn_wbb_season_rankings.html).
 
 #### **Tests**
 

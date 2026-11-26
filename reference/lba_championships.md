@@ -80,7 +80,7 @@ lists every function in this family.
 # \donttest{
   try(lba_championships(season = 2027))
 #> ── LBA Championships from legabasket.it ───────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 06:57:31 UTC
+#> ℹ Data updated: 2026-11-26 22:40:12 UTC
 #> # A tibble: 1 × 14
 #>   season championship_id  year name                  status championship_type_id
 #>    <int>           <int> <int> <chr>                  <int>                <int>

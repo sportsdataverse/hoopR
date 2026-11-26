@@ -88,7 +88,7 @@ Saiem Gilani
 # \donttest{
   try(load_mbb_team_aliases())
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 3,300 × 12
+#> # A tibble: 3,631 × 12
 #>    league team_id team_id_source source    source_id  id_kind name_kind value   
 #>    <chr>  <chr>   <chr>          <chr>     <chr>      <chr>   <chr>     <chr>   
 #>  1 mbb    103     espn           fox       53         team    name      Boston …
@@ -100,8 +100,8 @@ Saiem Gilani
 #>  7 mbb    103     espn           torvik    NA         team    name      Boston …
 #>  8 mbb    103     espn           yahoo     ncaab.t.58 team    name      Boston …
 #>  9 mbb    103     espn           yahoo     ncaab.t.58 team    name      Boston …
-#> 10 mbb    104     espn           fox       1          team    name      Boston …
-#> # ℹ 3,290 more rows
+#> 10 mbb    103     espn           yahoo     ncaab.t.58 team    name      Boston …
+#> # ℹ 3,621 more rows
 #> # ℹ 4 more variables: valid_from <int>, valid_to <int>, match_method <chr>,
 #> #   evidence <chr>
 # }

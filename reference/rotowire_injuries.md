@@ -36,15 +36,15 @@ article.
 # \donttest{
   try(rotowire_injuries())
 #> ── NBA injury report from rotowire.com ────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 06:59:47 UTC
+#> ℹ Data updated: 2026-11-26 22:43:05 UTC
 #> # A tibble: 5 × 10
 #>   player_id player first_name last_name team  position injury status return_date
 #>   <chr>     <chr>  <chr>      <chr>     <chr> <chr>    <chr>  <chr>  <chr>      
 #> 1 4454      Grays… Grayson    Allen     CHA   G        Concu… Quest… NA         
-#> 2 3456      Giann… Giannis    Antetoko… MIA   F        Groin  Quest… NA         
-#> 3 4121      OG An… OG         Anunoby   NYK   F        Calf   Out    NA         
-#> 4 5700      Paolo… Paolo      Banchero  ORL   F        Ankle  Out    NA         
-#> 5 4767      RJ Ba… RJ         Barrett   TOR   F        Hamst… Out    NA         
+#> 2 3456      Giann… Giannis    Antetoko… MIA   F        Groin  Proba… NA         
+#> 3 4121      OG An… OG         Anunoby   NYK   F        Calf   Doubt… NA         
+#> 4 5151      LaMel… LaMelo     Ball      MIN   G        Ankle  Quest… NA         
+#> 5 5700      Paolo… Paolo      Banchero  ORL   F        Ankle  Out    NA         
 #> # ℹ 1 more variable: url <chr>
 # }
 ```

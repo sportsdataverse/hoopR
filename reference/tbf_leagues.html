@@ -177,20 +177,16 @@ Timestamps are Turkey local time (<code>Europe/Istanbul</code>).</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">tbf_leagues</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2027</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── TBF Leagues ────────────────────────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-25 07:00:45 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 8 × 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   activity_id name        display_name competition gender season_id season_label</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>       <span style="text-decoration: underline;">22</span>214 BSL 2026-2… BSL          BSL         Erkek        174 2026-2027   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>       <span style="text-decoration: underline;">22</span>209 KBSL 2026-… KBSL         KBSL        Kadın        174 2026-2027   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>       <span style="text-decoration: underline;">22</span>215 TBL 2026-2… TBL          TBL         Erkek        174 2026-2027   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>       <span style="text-decoration: underline;">22</span>210 TKBL 2026-… TKBL         TKBL        Kadın        174 2026-2027   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>       <span style="text-decoration: underline;">22</span>223 TB2L 2026-… TB2L         TB2L        Erkek        174 2026-2027   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span>       <span style="text-decoration: underline;">23</span>540 BGL 2026-2… BGL          BGL         Erkek        174 2026-2027   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span>       <span style="text-decoration: underline;">23</span>541 BGLK 2026-… BGLK         BGLK        Kadın        174 2026-2027   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span>       <span style="text-decoration: underline;">23</span>539 KBBL 2026-… KBBL         KBBL        Kadın        174 2026-2027   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: season &lt;int&gt;, sort &lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error in tbf_leagues(season = 2027) : </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> miniappapi.tbf.org.tr/webapi-service/api/League/get-leagues-and-seasons-by-prefix:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> fetch failed after 3 attempts: Failed to perform HTTP request. <span style="font-weight: bold;">Caused by error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">in `curl::curl_fetch_memory()`:</span> <span style="color: #BBBB00;">!</span> Timeout was reached [miniappapi.tbf.org.tr]:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Connection timed out after 60002 milliseconds</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `httr2::req_perform()`:</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> Failed to perform HTTP request.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> Timeout was reached [miniappapi.tbf.org.tr]:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Connection timed out after 60002 milliseconds</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

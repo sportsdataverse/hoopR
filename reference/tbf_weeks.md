@@ -80,21 +80,15 @@ lists every function in this family.
 ``` r
 # \donttest{
   try(tbf_weeks(competition = "bsl", season = 2027))
-#> ── TBF Weeks ──────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 07:00:57 UTC
-#> # A tibble: 30 × 8
-#>    activity_id season competition week  phase phase_name label    is_current
-#>          <int>  <int> <chr>       <chr> <int> <chr>      <chr>    <lgl>     
-#>  1       22214   2027 bsl         1         1 NA         Hafta 1  FALSE     
-#>  2       22214   2027 bsl         2         1 NA         Hafta 2  FALSE     
-#>  3       22214   2027 bsl         3         1 NA         Hafta 3  FALSE     
-#>  4       22214   2027 bsl         4         1 NA         Hafta 4  FALSE     
-#>  5       22214   2027 bsl         5         1 NA         Hafta 5  FALSE     
-#>  6       22214   2027 bsl         6         1 NA         Hafta 6  FALSE     
-#>  7       22214   2027 bsl         7         1 NA         Hafta 7  FALSE     
-#>  8       22214   2027 bsl         8         1 NA         Hafta 8  FALSE     
-#>  9       22214   2027 bsl         9         1 NA         Hafta 9  TRUE      
-#> 10       22214   2027 bsl         10        1 NA         Hafta 10 FALSE     
-#> # ℹ 20 more rows
+#> Error in tbf_weeks(competition = "bsl", season = 2027) : 
+#> miniappapi.tbf.org.tr/webapi-service/api/League/get-leagues-and-seasons-by-prefix:
+#> fetch failed after 3 attempts: Failed to perform HTTP request. Caused by error
+#> in `curl::curl_fetch_memory()`: ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
+#> Caused by error in `httr2::req_perform()`:
+#> ! Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
 # }
 ```

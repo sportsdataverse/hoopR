@@ -158,7 +158,7 @@ clock, text, scoring/shooting flags, current home/away score, team
 
 
 <dt id="arg-play-id">play_id<a class="anchor" aria-label="anchor" href="#arg-play-id"></a></dt>
-<dd><p>ESPN play identifier (visible in <code>pbp()</code> output as
+<dd><p>ESPN play identifier (visible in <code><a href="espn_mbb_game_all.html">espn_mbb_pbp()</a></code> (MBB) or <code><a href="espn_mbb_game_all.html">espn_nba_pbp()</a></code> (NBA) output as
 <code>play_id</code> or extractable from <code>plays[].$ref</code>).</p></dd>
 
 
@@ -186,7 +186,7 @@ clock, text, scoring/shooting flags, current home/away score, team
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_game_play</span><span class="op">(</span>event_id <span class="op">=</span> <span class="fl">401256760</span>, play_id <span class="op">=</span> <span class="st">"401256760101805901"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Event Play Detail ─────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-25 06:55:09 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-26 22:37:56 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 19</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   league     event_id play_id sequence_number type_id type_text text  short_text</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
@@ -198,7 +198,7 @@ clock, text, scoring/shooting flags, current home/away score, team
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_game_play</span><span class="op">(</span>event_id <span class="op">=</span> <span class="fl">401283399</span>, play_id <span class="op">=</span> <span class="fl">4012833994</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Event Play Detail ─────────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-25 06:55:09 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-26 22:37:56 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 19</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   league event_id  play_id    sequence_number type_id type_text text  short_text</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>

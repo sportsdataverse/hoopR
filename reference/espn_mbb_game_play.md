@@ -28,8 +28,11 @@ espn_nba_game_play(event_id, play_id, ...)
 
 - play_id:
 
-  ESPN play identifier (visible in `pbp()` output as `play_id` or
-  extractable from `plays[].$ref`).
+  ESPN play identifier (visible in
+  [`espn_mbb_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+  (MBB) or
+  [`espn_nba_pbp()`](https://hoopR.sportsdataverse.org/reference/espn_mbb_game_all.md)
+  (NBA) output as `play_id` or extractable from `plays[].$ref`).
 
 - ...:
 
@@ -59,7 +62,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_game_play(event_id = 401256760, play_id = "401256760101805901")
 #> ── ESPN MENS-COLLEGE-BASKETBALL Event Play Detail ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 06:55:09 UTC
+#> ℹ Data updated: 2026-11-26 22:37:56 UTC
 #> # A tibble: 1 × 19
 #>   league     event_id play_id sequence_number type_id type_text text  short_text
 #>   <chr>      <chr>    <chr>   <chr>           <chr>   <chr>     <chr> <chr>     
@@ -71,7 +74,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_game_play(event_id = 401283399, play_id = 4012833994)
 #> ── ESPN NBA Event Play Detail ─────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 06:55:09 UTC
+#> ℹ Data updated: 2026-11-26 22:37:56 UTC
 #> # A tibble: 1 × 19
 #>   league event_id  play_id    sequence_number type_id type_text text  short_text
 #>   <chr>  <chr>     <chr>      <chr>           <chr>   <chr>     <chr> <chr>     

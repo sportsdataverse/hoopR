@@ -75,18 +75,15 @@ lists every function in this family.
 ``` r
 # \donttest{
   try(tbf_period_scores(match_id = 346279))
-#> ── TBF Period Scores ──────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 07:00:47 UTC
-#> # A tibble: 8 × 5
-#>   match_id side  period period_type points
-#>      <int> <chr>  <int>       <int>  <int>
-#> 1   346279 home       1           1     27
-#> 2   346279 home       2           1     21
-#> 3   346279 home       3           1     27
-#> 4   346279 home       4           1     15
-#> 5   346279 away       1           1     16
-#> 6   346279 away       2           1     31
-#> 7   346279 away       3           1     21
-#> 8   346279 away       4           1     21
+#> Error in tbf_period_scores(match_id = 346279) : 
+#>   miniappapi.tbf.org.tr/webapi-service/api/Match/mac-header: fetch failed
+#> after 3 attempts: Failed to perform HTTP request. Caused by error in
+#> `curl::curl_fetch_memory()`: ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
+#> Caused by error in `httr2::req_perform()`:
+#> ! Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
 # }
 ```

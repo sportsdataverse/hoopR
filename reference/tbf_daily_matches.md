@@ -88,27 +88,15 @@ lists every function in this family.
 ``` r
 # \donttest{
   try(tbf_daily_matches(match_date = "2026-10-11"))
-#> ── TBF Daily Matches ──────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 07:00:42 UTC
-#> # A tibble: 11 × 27
-#>    group_name  match_id match_code genius_id activity_id activity_name 
-#>    <chr>          <int> <chr>          <int>       <int> <chr>         
-#>  1 Lig Maçları   346293 1EA4931      2934620       22214 BSL 2026-2027 
-#>  2 Lig Maçları   345705 1BA3543      2934717       22209 KBSL 2026-2027
-#>  3 Lig Maçları   345955 2EA5768      2934688       22215 TBL 2026-2027 
-#>  4 Lig Maçları   346294 1EA4932      2934621       22214 BSL 2026-2027 
-#>  5 Lig Maçları   345804 2BA5083      2935642       22210 TKBL 2026-2027
-#>  6 Lig Maçları   345954 2EA5767      2934698       22215 TBL 2026-2027 
-#>  7 Lig Maçları   346639 3EA3359      2935638       22223 TB2L 2026-2027
-#>  8 Lig Maçları   346640 3EA3360      2935639       22223 TB2L 2026-2027
-#>  9 Lig Maçları   345953 2EA5766      2934702       22215 TBL 2026-2027 
-#> 10 Lig Maçları   345958 2EA5771      2934705       22215 TBL 2026-2027 
-#> 11 Lig Maçları   346292 1EA4930      2934625       22214 BSL 2026-2027 
-#> # ℹ 21 more variables: competition <chr>, season_id <int>, season_label <chr>,
-#> #   season <int>, tipoff <dttm>, match_date <date>, week <chr>, phase <int>,
-#> #   status_id <int>, home_team_process_id <int>, home_team <chr>,
-#> #   home_score <int>, away_team_process_id <int>, away_team <chr>,
-#> #   away_score <int>, venue <chr>, province <chr>, gender <chr>,
-#> #   broadcast_channel <chr>, has_overtime <lgl>, status <chr>
+#> Error in tbf_daily_matches(match_date = "2026-10-11") : 
+#>   miniappapi.tbf.org.tr/webapi-service/api/Match/get-daily-matches: fetch
+#> failed after 3 attempts: Failed to perform HTTP request. Caused by error in
+#> `curl::curl_fetch_memory()`: ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
+#> Caused by error in `httr2::req_perform()`:
+#> ! Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
 # }
 ```

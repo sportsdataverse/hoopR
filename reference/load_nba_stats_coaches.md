@@ -846,7 +846,7 @@ Other NBA Stats loader functions:
   # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_game_lineups(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 133,571 × 14
+#> # A tibble: 139,611 × 14
 #>    game_id    action_number period home_player_1 home_player_2 home_player_3
 #>    <chr>              <int>  <int>         <int>         <int>         <int>
 #>  1 0022600001             2      1       1628381       1629130       1630595
@@ -859,7 +859,7 @@ Other NBA Stats loader functions:
 #>  8 0022600001            13      1       1628381       1629130       1630595
 #>  9 0022600001            14      1       1628381       1629130       1630595
 #> 10 0022600001            15      1       1628381       1629130       1630595
-#> # ℹ 133,561 more rows
+#> # ℹ 139,601 more rows
 #> # ℹ 8 more variables: home_player_4 <int>, home_player_5 <int>,
 #> #   away_player_1 <int>, away_player_2 <int>, away_player_3 <int>,
 #> #   away_player_4 <int>, away_player_5 <int>, season <int>
@@ -868,7 +868,7 @@ Other NBA Stats loader functions:
   # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_game_rosters(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 2,129 × 11
+#> # A tibble: 2,245 × 11
 #>    player_id first_name last_name jersey_num    team_id team_city    team_name
 #>        <int> <chr>      <chr>     <chr>           <int> <chr>        <chr>    
 #>  1   1641759 Dillon     Mitchell  "20  "     1610612738 Boston       Celtics  
@@ -881,7 +881,7 @@ Other NBA Stats loader functions:
 #>  8   1629605 Tacko      Fall      "99  "     1610612755 Philadelphia 76ers    
 #>  9   1629731 Dean       Wade      "45  "     1610612755 Philadelphia 76ers    
 #> 10   1630574 Ariel      Hukporti  "55  "     1610612755 Philadelphia 76ers    
-#> # ℹ 2,119 more rows
+#> # ℹ 2,235 more rows
 #> # ℹ 4 more variables: team_abbreviation <chr>, season <int>, game_id <chr>,
 #> #   season_type_id <chr>
 # }
@@ -892,16 +892,16 @@ Other NBA Stats loader functions:
 #> # A tibble: 32,000 × 192
 #>    group_set group_id     group_name team_id team_abbreviation    gp     w     l
 #>    <chr>     <chr>        <chr>        <int> <chr>             <int> <int> <int>
-#>  1 Lineups   -203932-203… A. Gordon…  1.61e9 DEN                  12     8     4
-#>  2 Lineups   -203497-163… R. Gobert…  1.61e9 MIN                  15    11     4
-#>  3 Lineups   -201142-162… K. Durant…  1.61e9 HOU                  12     9     3
-#>  4 Lineups   -203076-162… A. Davis …  1.61e9 WAS                  11     4     7
+#>  1 Lineups   -203932-203… A. Gordon…  1.61e9 DEN                  13     8     5
+#>  2 Lineups   -203497-163… R. Gobert…  1.61e9 MIN                  16    12     4
+#>  3 Lineups   -201142-162… K. Durant…  1.61e9 HOU                  13    10     3
+#>  4 Lineups   -203076-162… A. Davis …  1.61e9 WAS                  12     4     8
 #>  5 Lineups   -203468-162… C. McColl…  1.61e9 ATL                  11     5     6
 #>  6 Lineups   -1626157-16… K. Towns …  1.61e9 NYK                  12     6     6
-#>  7 Lineups   -203897-162… Z. LaVine…  1.61e9 SAC                   8     1     7
-#>  8 Lineups   -1626164-16… D. Booker…  1.61e9 PHX                  12     8     4
-#>  9 Lineups   -1628368-16… D. Fox - …  1.61e9 SAS                  12     9     3
-#> 10 Lineups   -1626167-16… M. Turner…  1.61e9 MIL                  11     2     9
+#>  7 Lineups   -1626164-16… D. Booker…  1.61e9 PHX                  13     8     5
+#>  8 Lineups   -1626167-16… M. Turner…  1.61e9 MIL                  12     2    10
+#>  9 Lineups   -203897-162… Z. LaVine…  1.61e9 SAC                   8     1     7
+#> 10 Lineups   -1628368-16… D. Fox - …  1.61e9 SAS                  12     9     3
 #> # ℹ 31,990 more rows
 #> # ℹ 184 more variables: w_pct <dbl>, min <dbl>, e_off_rating <dbl>,
 #> #   off_rating <dbl>, e_def_rating <dbl>, def_rating <dbl>, e_net_rating <dbl>,
@@ -914,7 +914,7 @@ Other NBA Stats loader functions:
   # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_officials(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 775 × 7
+#> # A tibble: 811 × 7
 #>    official_id first_name last_name jersey_num season game_id    season_type_id
 #>          <int> <chr>      <chr>     <chr>       <int> <chr>      <chr>         
 #>  1        2530 Ed         Malloy    "7   "       2027 0022600001 2             
@@ -927,13 +927,13 @@ Other NBA Stats loader functions:
 #>  8      202037 J.T.       Orr       "72  "       2027 0022600003 2             
 #>  9      202049 Ben        Taylor    "46  "       2027 0022600003 2             
 #> 10      202007 Nick       Buchert   "3   "       2027 0022600004 2             
-#> # ℹ 765 more rows
+#> # ℹ 801 more rows
 # }
 # \donttest{
   # One season is a ~19 MB download.
   try(load_nba_stats_pbp(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 133,571 × 49
+#> # A tibble: 139,611 × 49
 #>    order_index action_number clock       period   team_id team_tricode person_id
 #>          <int>         <int> <chr>        <int>     <int> <chr>            <int>
 #>  1           0             2 PT12M00.00S      1    0      ""                   0
@@ -946,7 +946,7 @@ Other NBA Stats loader functions:
 #>  8           7            13 PT11M12.00S      1    1.61e9 "DET"          1629130
 #>  9           8            14 PT11M12.00S      1    1.61e9 "DET"          1628381
 #> 10           9            15 PT11M09.00S      1    1.61e9 "DET"          1628381
-#> # ℹ 133,561 more rows
+#> # ℹ 139,601 more rows
 #> # ℹ 42 more variables: player_name <chr>, player_name_i <chr>, x_legacy <int>,
 #> #   y_legacy <int>, shot_distance <int>, shot_result <chr>,
 #> #   is_field_goal <int>, score_home <chr>, score_away <chr>,
@@ -958,7 +958,7 @@ Other NBA Stats loader functions:
   # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_player_boxscores(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 7,206 × 37
+#> # A tibble: 7,518 × 37
 #>    team_id team_city team_name team_tricode team_slug side  person_id first_name
 #>      <int> <chr>     <chr>     <chr>        <chr>     <chr>     <int> <chr>     
 #>  1  1.61e9 Detroit   Pistons   DET          pistons   home    1641709 Ausar     
@@ -971,7 +971,7 @@ Other NBA Stats loader functions:
 #>  8  1.61e9 Detroit   Pistons   DET          pistons   home    1641842 Ronald    
 #>  9  1.61e9 Detroit   Pistons   DET          pistons   home    1642450 Daniss    
 #> 10  1.61e9 Detroit   Pistons   DET          pistons   home    1628989 Kevin     
-#> # ℹ 7,196 more rows
+#> # ℹ 7,508 more rows
 #> # ℹ 29 more variables: family_name <chr>, name_i <chr>, player_slug <chr>,
 #> #   position <chr>, comment <chr>, jersey_num <chr>, minutes <chr>,
 #> #   field_goals_made <int>, field_goals_attempted <int>,
@@ -983,20 +983,20 @@ Other NBA Stats loader functions:
   # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_player_game_logs(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 5,772 × 34
+#> # A tibble: 6,033 × 34
 #>    season_id player_id player_name   team_id team_abbreviation team_name game_id
 #>    <chr>         <int> <chr>           <int> <chr>             <chr>     <chr>  
-#>  1 22026       1631119 Jaylin Willi…  1.61e9 OKC               Oklahoma… 002260…
-#>  2 22026       1628983 Shai Gilgeou…  1.61e9 OKC               Oklahoma… 002260…
-#>  3 22026       1629026 Kenrich Will…  1.61e9 OKC               Oklahoma… 002260…
-#>  4 22026       1629640 Keldon Johns…  1.61e9 SAS               San Anto… 002260…
-#>  5 22026       1630170 Devin Vassell  1.61e9 SAS               San Anto… 002260…
-#>  6 22026       1642264 Stephon Cast…  1.61e9 SAS               San Anto… 002260…
-#>  7 22026       1642844 Dylan Harper   1.61e9 SAS               San Anto… 002260…
-#>  8 22026       1627936 Alex Caruso    1.61e9 OKC               Oklahoma… 002260…
-#>  9 22026       1642272 Jared McCain   1.61e9 OKC               Oklahoma… 002260…
-#> 10 22026       1642349 Ajay Mitchell  1.61e9 OKC               Oklahoma… 002260…
-#> # ℹ 5,762 more rows
+#>  1 22026       1642845 VJ Edgecombe   1.61e9 PHI               Philadel… 002260…
+#>  2 22026       1631119 Jaylin Willi…  1.61e9 OKC               Oklahoma… 002260…
+#>  3 22026       1628973 Jalen Brunson  1.61e9 NYK               New York… 002260…
+#>  4 22026       1628983 Shai Gilgeou…  1.61e9 OKC               Oklahoma… 002260…
+#>  5 22026        203484 Kentavious C…  1.61e9 PHI               Philadel… 002260…
+#>  6 22026       1629026 Kenrich Will…  1.61e9 OKC               Oklahoma… 002260…
+#>  7 22026       1627759 Jaylen Brown   1.61e9 PHI               Philadel… 002260…
+#>  8 22026       1629640 Keldon Johns…  1.61e9 SAS               San Anto… 002260…
+#>  9 22026       1630178 Tyrese Maxey   1.61e9 PHI               Philadel… 002260…
+#> 10 22026       1630170 Devin Vassell  1.61e9 SAS               San Anto… 002260…
+#> # ℹ 6,023 more rows
 #> # ℹ 27 more variables: game_date <chr>, matchup <chr>, wl <chr>, min <int>,
 #> #   fgm <int>, fga <int>, fg_pct <dbl>, fg3m <int>, fg3a <int>, fg3_pct <dbl>,
 #> #   ftm <int>, fta <int>, ft_pct <dbl>, oreb <int>, dreb <int>, reb <int>,
@@ -1008,7 +1008,7 @@ Other NBA Stats loader functions:
   # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_team_game_logs(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 516 × 31
+#> # A tibble: 540 × 31
 #>    season_id team_id team_abbreviation team_name game_id game_date matchup wl   
 #>    <chr>       <int> <chr>             <chr>     <chr>   <chr>     <chr>   <chr>
 #>  1 22026      1.61e9 BOS               Boston C… 002260… 2026-10-… BOS @ … L    
@@ -1017,11 +1017,11 @@ Other NBA Stats loader functions:
 #>  4 22026      1.61e9 NYK               New York… 002260… 2026-10-… NYK vs… L    
 #>  5 22026      1.61e9 SAS               San Anto… 002260… 2026-10-… SAS vs… L    
 #>  6 22026      1.61e9 OKC               Oklahoma… 002260… 2026-10-… OKC @ … W    
-#>  7 22026      1.61e9 SAC               Sacramen… 002260… 2026-10-… SAC @ … L    
-#>  8 22026      1.61e9 LAC               LA Clipp… 002260… 2026-10-… LAC vs… W    
-#>  9 22026      1.61e9 UTA               Utah Jazz 002260… 2026-10-… UTA @ … L    
-#> 10 22026      1.61e9 CHI               Chicago … 002260… 2026-10-… CHI @ … L    
-#> # ℹ 506 more rows
+#>  7 22026      1.61e9 UTA               Utah Jazz 002260… 2026-10-… UTA @ … L    
+#>  8 22026      1.61e9 CHI               Chicago … 002260… 2026-10-… CHI @ … L    
+#>  9 22026      1.61e9 PHX               Phoenix … 002260… 2026-10-… PHX @ … L    
+#> 10 22026      1.61e9 NOP               New Orle… 002260… 2026-10-… NOP vs… L    
+#> # ℹ 530 more rows
 #> # ℹ 23 more variables: min <int>, fgm <int>, fga <int>, fg_pct <dbl>,
 #> #   fg3m <int>, fg3a <int>, fg3_pct <dbl>, ftm <int>, fta <int>, ft_pct <dbl>,
 #> #   oreb <int>, dreb <int>, reb <int>, ast <int>, stl <int>, blk <int>,
@@ -1032,20 +1032,20 @@ Other NBA Stats loader functions:
   # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_player_season_stats(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 5,772 × 212
+#> # A tibble: 5,784 × 212
 #>    player_id player_name   nickname  team_id team_abbreviation   age    gp     w
 #>        <int> <chr>         <chr>       <int> <chr>             <dbl> <int> <int>
-#>  1   1643407 AJ Dybantsa   AJ         1.61e9 WAS                  19    14     5
-#>  2   1631260 AJ Green      AJ         1.61e9 MIL                  27    17     2
+#>  1   1643407 AJ Dybantsa   AJ         1.61e9 WAS                  19    15     5
+#>  2   1631260 AJ Green      AJ         1.61e9 MIL                  27    18     2
 #>  3   1642358 AJ Johnson    AJ         1.61e9 NOP                  21     7     2
-#>  4    203932 Aaron Gordon  Aaron      1.61e9 DEN                  31    15    10
+#>  4    203932 Aaron Gordon  Aaron      1.61e9 DEN                  31    16    10
 #>  5   1630174 Aaron Nesmith Aaron      1.61e9 IND                  27    15     4
 #>  6   1630598 Aaron Wiggins Aaron      1.61e9 ATL                  27    17    11
 #>  7   1642846 Ace Bailey    Ace        1.61e9 UTA                  20    19     3
 #>  8   1643530 Aday Mara     Aday       1.61e9 OKC                  21    16    10
-#>  9   1641737 Adem Bona     Adem       1.61e9 PHI                  23    10     8
+#>  9   1641737 Adem Bona     Adem       1.61e9 PHI                  23    11     9
 #> 10   1642876 Adou Thiero   Adou       1.61e9 LAL                  22     6     5
-#> # ℹ 5,762 more rows
+#> # ℹ 5,774 more rows
 #> # ℹ 204 more variables: l <int>, w_pct <dbl>, min <dbl>, e_off_rating <dbl>,
 #> #   off_rating <dbl>, sp_work_off_rating <dbl>, e_def_rating <dbl>,
 #> #   def_rating <dbl>, sp_work_def_rating <dbl>, e_net_rating <dbl>,
@@ -1057,7 +1057,7 @@ Other NBA Stats loader functions:
   # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_possessions(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 51,170 × 38
+#> # A tibble: 53,486 × 38
 #>    game_id    period possession_number offense_team_id defense_team_id
 #>    <chr>       <int>             <int>           <int>           <int>
 #>  1 0022600001      1                 1      1610612738      1610612765
@@ -1070,7 +1070,7 @@ Other NBA Stats loader functions:
 #>  8 0022600001      1                 8      1610612765      1610612738
 #>  9 0022600001      1                 9      1610612738      1610612765
 #> 10 0022600001      1                10      1610612765      1610612738
-#> # ℹ 51,160 more rows
+#> # ℹ 53,476 more rows
 #> # ℹ 33 more variables: start_order_index <int>, end_order_index <int>,
 #> #   start_seconds_remaining <dbl>, end_seconds_remaining <dbl>, points <int>,
 #> #   is_second_chance <lgl>, number_in_period <int>,
@@ -1082,7 +1082,7 @@ Other NBA Stats loader functions:
   # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_rosters(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 528 × 18
+#> # A tibble: 527 × 18
 #>       team_id season league_id player nickname player_slug num   position height
 #>         <int>  <int> <chr>     <chr>  <chr>    <chr>       <chr> <chr>    <chr> 
 #>  1 1610612737   2027 00        Rafae… Rafael   rafael-cas… NA    C        6-11  
@@ -1095,7 +1095,7 @@ Other NBA Stats loader functions:
 #>  8 1610612737   2027 00        Dyson… Dyson    dyson-dani… 5     G        6-7   
 #>  9 1610612737   2027 00        Nicke… Nickeil  nickeil-al… 7     G        6-5   
 #> 10 1610612737   2027 00        Doria… Dorian   dorian-fin… 8     F        6-7   
-#> # ℹ 518 more rows
+#> # ℹ 517 more rows
 #> # ℹ 9 more variables: weight <chr>, birth_date <chr>, age <dbl>, exp <chr>,
 #> #   school <chr>, player_id <int>, how_acquired <chr>,
 #> #   supplemental_status <int>, season_type <chr>
@@ -1127,7 +1127,7 @@ Other NBA Stats loader functions:
   # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_shots(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 45,385 × 19
+#> # A tibble: 47,520 × 19
 #>    game_id    season season_type_id period clock  team_id team_tricode person_id
 #>    <chr>       <int> <chr>           <int> <chr>    <int> <chr>            <int>
 #>  1 0022600001   2027 2                   1 PT11M…  1.61e9 DET            1628381
@@ -1140,7 +1140,7 @@ Other NBA Stats loader functions:
 #>  8 0022600001   2027 2                   1 PT09M…  1.61e9 BOS             202331
 #>  9 0022600001   2027 2                   1 PT09M…  1.61e9 DET            1629130
 #> 10 0022600001   2027 2                   1 PT08M…  1.61e9 DET            1631105
-#> # ℹ 45,375 more rows
+#> # ℹ 47,510 more rows
 #> # ℹ 11 more variables: player_name <chr>, action_type <chr>, sub_type <chr>,
 #> #   shot_result <chr>, shot_value <int>, shot_distance <int>, x_legacy <int>,
 #> #   y_legacy <int>, description <chr>, score_home <chr>, score_away <chr>
@@ -1152,13 +1152,13 @@ Other NBA Stats loader functions:
 #> # A tibble: 30 × 94
 #>    league_id season_id    team_id team_city    team_name    team_slug conference
 #>    <chr>     <chr>          <int> <chr>        <chr>        <chr>     <chr>     
-#>  1 00        22026     1610612755 Philadelphia 76ers        sixers    East      
-#>  2 00        22026     1610612759 San Antonio  Spurs        spurs     West      
-#>  3 00        22026     1610612747 Los Angeles  Lakers       lakers    West      
-#>  4 00        22026     1610612737 Atlanta      Hawks        hawks     East      
-#>  5 00        22026     1610612738 Boston       Celtics      celtics   East      
+#>  1 00        22026     1610612747 Los Angeles  Lakers       lakers    West      
+#>  2 00        22026     1610612755 Philadelphia 76ers        sixers    East      
+#>  3 00        22026     1610612738 Boston       Celtics      celtics   East      
+#>  4 00        22026     1610612759 San Antonio  Spurs        spurs     West      
+#>  5 00        22026     1610612752 New York     Knicks       knicks    East      
 #>  6 00        22026     1610612750 Minnesota    Timberwolves timberwo… West      
-#>  7 00        22026     1610612752 New York     Knicks       knicks    East      
+#>  7 00        22026     1610612737 Atlanta      Hawks        hawks     East      
 #>  8 00        22026     1610612745 Houston      Rockets      rockets   West      
 #>  9 00        22026     1610612763 Memphis      Grizzlies    grizzlies West      
 #> 10 00        22026     1610612765 Detroit      Pistons      pistons   East      
@@ -1174,7 +1174,7 @@ Other NBA Stats loader functions:
   # Interactive only: this help page holds 18 loaders, each a download.
   try(load_nba_stats_team_boxscores(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 518 × 29
+#> # A tibble: 542 × 29
 #>       team_id team_city     team_name    team_tricode team_slug    side  minutes
 #>         <int> <chr>         <chr>        <chr>        <chr>        <chr> <chr>  
 #>  1 1610612765 Detroit       Pistons      DET          pistons      home  240:00 
@@ -1187,7 +1187,7 @@ Other NBA Stats loader functions:
 #>  8 1610612750 Minnesota     Timberwolves MIN          timberwolves away  240:00 
 #>  9 1610612747 Los Angeles   Lakers       LAL          lakers       home  240:00 
 #> 10 1610612744 Golden State  Warriors     GSW          warriors     away  240:00 
-#> # ℹ 508 more rows
+#> # ℹ 532 more rows
 #> # ℹ 22 more variables: field_goals_made <int>, field_goals_attempted <int>,
 #> #   field_goals_percentage <dbl>, three_pointers_made <int>,
 #> #   three_pointers_attempted <int>, three_pointers_percentage <dbl>,
@@ -1203,15 +1203,15 @@ Other NBA Stats loader functions:
 #>       team_id team_name       gp     w     l w_pct   min e_off_rating off_rating
 #>         <int> <chr>        <int> <int> <int> <dbl> <dbl>        <dbl>      <dbl>
 #>  1 1610612737 Atlanta Haw…    17    11     6 0.647   821         110        113.
-#>  2 1610612738 Boston Celt…    17    11     6 0.647   821         112.       115.
-#>  3 1610612751 Brooklyn Ne…    16     3    13 0.188   773         109.       111 
-#>  4 1610612766 Charlotte H…    16     4    12 0.25    773         101        104 
-#>  5 1610612741 Chicago Bul…    17     5    12 0.294   826         110.       112.
-#>  6 1610612739 Cleveland C…    18     9     9 0.5     869         115.       117.
-#>  7 1610612742 Dallas Mave…    17    10     7 0.588   816         111.       113.
-#>  8 1610612743 Denver Nugg…    15    10     5 0.667   730         116.       117 
-#>  9 1610612765 Detroit Pis…    16    10     6 0.625   778         113.       114.
-#> 10 1610612744 Golden Stat…    17     9     8 0.529   821         111.       112.
+#>  2 1610612738 Boston Celt…    18    12     6 0.667   869         113        116.
+#>  3 1610612751 Brooklyn Ne…    17     4    13 0.235   821         108.       111.
+#>  4 1610612766 Charlotte H…    17     4    13 0.235   821         102.       105.
+#>  5 1610612741 Chicago Bul…    18     6    12 0.333   874         110.       113.
+#>  6 1610612739 Cleveland C…    19     9    10 0.474   917         114.       117.
+#>  7 1610612742 Dallas Mave…    18    11     7 0.611   864         111.       113 
+#>  8 1610612743 Denver Nugg…    16    10     6 0.625   778         115.       116.
+#>  9 1610612765 Detroit Pis…    17    11     6 0.647   826         113.       114.
+#> 10 1610612744 Golden Stat…    18    10     8 0.556   869         112.       113.
 #> # ℹ 410 more rows
 #> # ℹ 179 more variables: e_def_rating <dbl>, def_rating <dbl>,
 #> #   e_net_rating <dbl>, net_rating <dbl>, ast_pct <dbl>, ast_to <dbl>,

@@ -90,30 +90,16 @@ lists every function in this family.
 ``` r
 # \donttest{
   try(tbf_team_roster(season = 2027, team_process_id = 265995))
-#> ── TBF Team Roster ────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 07:00:55 UTC
-#> # A tibble: 18 × 13
-#>    season competition team_process_id person_id first_name last_name nationality
-#>     <int> <chr>                 <int>     <int> <chr>      <chr>     <chr>      
-#>  1   2027 bsl                  265995    395705 Berkay     Gönül     TÜRKİYE    
-#>  2   2027 bsl                  265995    778401 Bryce      Jones     ABD        
-#>  3   2027 bsl                  265995    389934 Efe        Postel    TÜRKİYE    
-#>  4   2027 bsl                  265995    434482 Emirhan    Serbest   TÜRKİYE    
-#>  5   2027 bsl                  265995    778398 Gabe       Brown     ABD        
-#>  6   2027 bsl                  265995    508900 Jamuni     McNeace   ABD        
-#>  7   2027 bsl                  265995    381976 Karahan    Efeoğlu   TÜRKİYE    
-#>  8   2027 bsl                  265995    452216 Kerem      Çorumlul… TÜRKİYE    
-#>  9   2027 bsl                  265995    197570 Leon       Apaydın   TÜRKİYE    
-#> 10   2027 bsl                  265995    732657 Mantas     Rubstavi… LİTVANYA   
-#> 11   2027 bsl                  265995    450092 Poyraz     Paşaoğlu  TÜRKİYE    
-#> 12   2027 bsl                  265995    227173 Sadık      Kabaca    TÜRKİYE    
-#> 13   2027 bsl                  265995    778399 Shavar     Reynolds… ABD        
-#> 14   2027 bsl                  265995    450651 Soykan     Bağadır   TÜRKİYE    
-#> 15   2027 bsl                  265995    485299 Terrell    Carter II ABD        
-#> 16   2027 bsl                  265995    736069 Tre'shawn  Thurman   ABD        
-#> 17   2027 bsl                  265995    196413 Yiğitcan   Saybir    TÜRKİYE    
-#> 18   2027 bsl                  265995    778402 Zach       Nutall    ABD        
-#> # ℹ 6 more variables: height_cm <int>, jersey_number <chr>, games <int>,
-#> #   seconds_played <int>, points_per_game <dbl>, efficiency_per_game <dbl>
+#> Error in tbf_team_roster(season = 2027, team_process_id = 265995) : 
+#>   
+#> miniappapi.tbf.org.tr/webapi-service/api/League/get-leagues-and-seasons-by-prefix:
+#> fetch failed after 3 attempts: Failed to perform HTTP request. Caused by error
+#> in `curl::curl_fetch_memory()`: ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60001 milliseconds
+#> Caused by error in `httr2::req_perform()`:
+#> ! Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60001 milliseconds
 # }
 ```

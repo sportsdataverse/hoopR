@@ -81,27 +81,15 @@ lists every function in this family.
 ``` r
 # \donttest{
   try(tbf_teams(competition = "bsl", season = 2027))
-#> ── TBF Teams ──────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 07:00:56 UTC
-#> # A tibble: 16 × 9
-#>    season competition team_process_id club_id team_name    city  code  season_id
-#>     <int> <chr>                 <int>   <int> <chr>        <chr> <chr>     <int>
-#>  1   2027 bsl                  266048    2195 ALİAĞA PETK… İZMİR PTK         174
-#>  2   2027 bsl                  265990       2 ANADOLU EFES İSTA… EFS         174
-#>  3   2027 bsl                  265991   55636 BAHÇEŞEHİR … İSTA… BSK         174
-#>  4   2027 bsl                  265992       1 BEŞİKTAŞ FU… İSTA… BJK         174
-#>  5   2027 bsl                  268222  246463 BİOTEKNO KÖ… KOCA… KÖR         174
-#>  6   2027 bsl                  266176  246239 BURSASPOR B… BURSA BUR         174
-#>  7   2027 bsl                  266024  184811 ESENLER ERO… İSTA… ERK         174
-#>  8   2027 bsl                  266025       3 FENERBAHÇE … İSTA… FBT         174
-#>  9   2027 bsl                  266026       4 GALATASARAY… İSTA… GSM         174
-#> 10   2027 bsl                  265994  180700 GLİNT ÇAYIR… KOCA… ÇBK         174
-#> 11   2027 bsl                  266027       6 KARŞIYAKA    İZMİR KSK         174
-#> 12   2027 bsl                  265993  234077 PİZZABULLS … BALI… PBB         174
-#> 13   2027 bsl                  265995      13 TOFAŞ        BURSA TOF         174
-#> 14   2027 bsl                  266029   47153 TRABZONSPOR  TRAB… TS          174
-#> 15   2027 bsl                  266030      12 TÜRK TELEKOM ANKA… TTK         174
-#> 16   2027 bsl                  266028  171967 YUKATEL DEN… DENİ… YDB         174
-#> # ℹ 1 more variable: season_label <chr>
+#> Error in tbf_teams(competition = "bsl", season = 2027) : 
+#> miniappapi.tbf.org.tr/webapi-service/api/League/get-leagues-and-seasons-by-prefix:
+#> fetch failed after 3 attempts: Failed to perform HTTP request. Caused by error
+#> in `curl::curl_fetch_memory()`: ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
+#> Caused by error in `httr2::req_perform()`:
+#> ! Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
 # }
 ```

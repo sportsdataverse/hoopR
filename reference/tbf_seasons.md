@@ -65,30 +65,15 @@ lists every function in this family.
 ``` r
 # \donttest{
   try(tbf_seasons())
-#> ── TBF Seasons ────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 07:00:51 UTC
-#> # A tibble: 20 × 6
-#>    season_id season_label season start_date end_date   international
-#>        <int> <chr>         <int> <date>     <date>     <lgl>        
-#>  1       175 UA-2026-2027   2027 2026-10-01 2027-09-30 TRUE         
-#>  2       174 2026-2027      2027 2026-07-01 2027-06-30 FALSE        
-#>  3       173 UA-2025-2026   2026 2025-10-01 2026-09-30 TRUE         
-#>  4       172 2025-2026      2026 2025-07-01 2026-06-30 FALSE        
-#>  5       171 UA-2024-2025   2025 2024-10-01 2025-09-30 TRUE         
-#>  6       170 2024-2025      2025 2024-07-01 2025-06-30 FALSE        
-#>  7       169 UA-2023-2024   2024 2023-10-01 2024-09-30 TRUE         
-#>  8       168 2023-2024      2024 2023-07-01 2024-06-30 FALSE        
-#>  9       167 UA-2022-2023   2023 2022-10-01 2023-09-30 TRUE         
-#> 10       166 2022-2023      2023 2022-07-01 2023-06-30 FALSE        
-#> 11       165 UA-2021-2022   2022 2021-10-01 2022-09-30 TRUE         
-#> 12       164 2021-2022      2022 2021-07-01 2022-06-30 FALSE        
-#> 13       163 UA-2020-2021   2021 2020-10-01 2021-09-30 TRUE         
-#> 14       162 2020-2021      2021 2020-07-01 2021-06-30 FALSE        
-#> 15       161 UA-2019-2020   2020 2019-10-01 2020-09-30 TRUE         
-#> 16       160 2019-2020      2020 2019-07-01 2020-06-30 FALSE        
-#> 17       159 UA-2018-2019   2019 2018-10-01 2019-09-30 TRUE         
-#> 18       158 2018-2019      2019 2018-07-01 2019-06-30 FALSE        
-#> 19       157 UA-2017-2018   2018 2017-10-01 2018-09-30 TRUE         
-#> 20       156 2017-2018      2018 2017-07-01 2018-06-30 FALSE        
+#> Error in tbf_seasons() : 
+#>   miniappapi.tbf.org.tr/webapi-service/api/Season/get-seasons: fetch
+#> failed after 3 attempts: Failed to perform HTTP request. Caused by error in
+#> `curl::curl_fetch_memory()`: ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
+#> Caused by error in `httr2::req_perform()`:
+#> ! Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
 # }
 ```

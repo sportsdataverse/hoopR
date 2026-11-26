@@ -65,7 +65,7 @@ Saiem Gilani
 ``` r
 # \donttest{
   espn_nba_freeagents(season = 2025)
-#> ✖ 2026-11-25 06:55:56.043042: Failed to retrieve ESPN NBA free agents for season 2025
+#> ✖ 2026-11-26 22:38:37.194246: Failed to retrieve ESPN NBA free agents for season 2025
 #> ✖ Args: season = 2025
 #> ✖ Error: HTTP 400 Bad Request from https://sports.core.api.espn.com/v2/sports/basketball/leagues/nba/seasons/2025/freeagents
 #> data frame with 0 columns and 0 rows

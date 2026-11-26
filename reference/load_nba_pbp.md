@@ -618,20 +618,20 @@ Other hoopR Loader Functions:
 # \donttest{
 load_nba_pbp(seasons = most_recent_nba_season())
 #> ── ESPN NBA pbp from hoopR data repository ────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 128,495 × 68
+#> # A tibble: 134,320 × 68
 #>    game_play_number id        sequence_number type_id type_text text  away_score
 #>               <int> <chr>               <int>   <int> <chr>     <chr>      <int>
-#>  1                1 40191003…               4     615 Jumpball  Zach…          0
-#>  2                2 40191003…               7     131 Pullup J… Kris…          0
-#>  3                3 40191003…               8     155 Defensiv… Griz…          0
-#>  4                4 40191003…              10     144 Driving … Ty J…          0
-#>  5                5 40191003…              11     155 Defensiv… Sion…          0
-#>  6                6 40191003…              12     144 Driving … Naz …          0
-#>  7                7 40191003…              13     156 Offensiv… Horn…          0
-#>  8                8 40191003…              15     131 Pullup J… Coby…          0
-#>  9                9 40191003…              17     144 Driving … Cedr…          2
-#> 10               10 40191003…              18      92 Jump Shot Sion…          2
-#> # ℹ 128,485 more rows
+#>  1                1 40190931…               4     615 "Jumpbal… "Bam…          0
+#>  2                2 40190931…               7     145 "Driving… "Bam…          0
+#>  3                3 40190931…               8     155 "Defensi… "Tyr…          0
+#>  4                4 40190931…               9     110 "Driving… "LeB…          0
+#>  5                5 40190931…              10     155 "Defensi… "Gia…          0
+#>  6                6 40190931…              11     110 "Driving… "Gia…          2
+#>  7                7 40190931…              13     128 "Driving… "Jay…          2
+#>  8                8 40190931…              14     155 "Defensi… "Gia…          2
+#>  9                9 40190931…              15     116 "Running… "Pel…          4
+#> 10               10 40190931…              17      62 "Bad Pas… "Tyr…          4
+#> # ℹ 134,310 more rows
 #> # ℹ 61 more variables: home_score <int>, period_number <int>,
 #> #   period_display_value <chr>, clock_display_value <chr>, scoring_play <lgl>,
 #> #   score_value <int>, team_id <int>, athlete_id_1 <int>, athlete_id_2 <int>,
@@ -642,21 +642,21 @@ load_nba_pbp(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_team_box(seasons = most_recent_nba_season())
 #> ── ESPN NBA team_box from hoopR data repository ───────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 12:39:10 UTC
-#> # A tibble: 516 × 59
+#> ℹ Data updated: 2026-11-26 12:39:43 UTC
+#> # A tibble: 540 × 59
 #>      game_id season season_type game_date  game_date_time      team_id team_uid 
 #>        <int>  <int>       <int> <date>     <dttm>                <int> <chr>    
-#>  1 401910036   2027           2 2026-11-23 2026-11-23 19:00:00      29 s:40~l:4…
-#>  2 401910036   2027           2 2026-11-23 2026-11-23 19:00:00      30 s:40~l:4…
-#>  3 401910037   2027           2 2026-11-23 2026-11-23 19:00:00      22 s:40~l:4…
-#>  4 401910037   2027           2 2026-11-23 2026-11-23 19:00:00      20 s:40~l:4…
-#>  5 401910038   2027           2 2026-11-23 2026-11-23 19:30:00      25 s:40~l:4…
-#>  6 401910038   2027           2 2026-11-23 2026-11-23 19:30:00      11 s:40~l:4…
-#>  7 401910039   2027           2 2026-11-23 2026-11-23 19:30:00      15 s:40~l:4…
-#>  8 401910039   2027           2 2026-11-23 2026-11-23 19:30:00      28 s:40~l:4…
-#>  9 401910040   2027           2 2026-11-23 2026-11-23 19:30:00      17 s:40~l:4…
-#> 10 401910040   2027           2 2026-11-23 2026-11-23 19:30:00      16 s:40~l:4…
-#> # ℹ 506 more rows
+#>  1 401909317   2027           2 2026-11-25 2026-11-25 17:00:00      14 s:40~l:4…
+#>  2 401909317   2027           2 2026-11-25 2026-11-25 17:00:00      20 s:40~l:4…
+#>  3 401909318   2027           2 2026-11-25 2026-11-25 19:00:00       4 s:40~l:4…
+#>  4 401909318   2027           2 2026-11-25 2026-11-25 19:00:00      30 s:40~l:4…
+#>  5 401909319   2027           2 2026-11-25 2026-11-25 19:30:00       5 s:40~l:4…
+#>  6 401909319   2027           2 2026-11-25 2026-11-25 19:30:00      18 s:40~l:4…
+#>  7 401909320   2027           2 2026-11-25 2026-11-25 19:30:00      16 s:40~l:4…
+#>  8 401909320   2027           2 2026-11-25 2026-11-25 19:30:00      25 s:40~l:4…
+#>  9 401909321   2027           2 2026-11-25 2026-11-25 20:00:00      12 s:40~l:4…
+#> 10 401909321   2027           2 2026-11-25 2026-11-25 20:00:00      29 s:40~l:4…
+#> # ℹ 530 more rows
 #> # ℹ 52 more variables: team_slug <chr>, team_location <chr>, team_name <chr>,
 #> #   team_abbreviation <chr>, team_display_name <chr>,
 #> #   team_short_display_name <chr>, team_color <chr>,
@@ -667,21 +667,21 @@ load_nba_team_box(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_player_box(seasons = most_recent_nba_season())
 #> ── ESPN NBA player_box from hoopR data repository ─────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 12:39:30 UTC
-#> # A tibble: 6,844 × 57
+#> ℹ Data updated: 2026-11-26 12:39:59 UTC
+#> # A tibble: 7,157 × 57
 #>      game_id season season_type game_date  game_date_time      athlete_id
 #>        <int>  <int>       <int> <date>     <dttm>                   <int>
-#>  1 401910036   2027           2 2026-11-23 2026-11-23 19:00:00    4594326
-#>  2 401910036   2027           2 2026-11-23 2026-11-23 19:00:00    4903027
-#>  3 401910036   2027           2 2026-11-23 2026-11-23 19:00:00    5112087
-#>  4 401910036   2027           2 2026-11-23 2026-11-23 19:00:00    4600663
-#>  5 401910036   2027           2 2026-11-23 2026-11-23 19:00:00    4065733
-#>  6 401910036   2027           2 2026-11-23 2026-11-23 19:00:00    4595400
-#>  7 401910036   2027           2 2026-11-23 2026-11-23 19:00:00    4684806
-#>  8 401910036   2027           2 2026-11-23 2026-11-23 19:00:00    4432810
-#>  9 401910036   2027           2 2026-11-23 2026-11-23 19:00:00    4593016
-#> 10 401910036   2027           2 2026-11-23 2026-11-23 19:00:00    4433083
-#> # ℹ 6,834 more rows
+#>  1 401909317   2027           2 2026-11-25 2026-11-25 17:00:00    3032977
+#>  2 401909317   2027           2 2026-11-25 2026-11-25 17:00:00    4066261
+#>  3 401909317   2027           2 2026-11-25 2026-11-25 17:00:00       6475
+#>  4 401909317   2027           2 2026-11-25 2026-11-25 17:00:00    4278053
+#>  5 401909317   2027           2 2026-11-25 2026-11-25 17:00:00    4601025
+#>  6 401909317   2027           2 2026-11-25 2026-11-25 17:00:00    3059319
+#>  7 401909317   2027           2 2026-11-25 2026-11-25 17:00:00    3064482
+#>  8 401909317   2027           2 2026-11-25 2026-11-25 17:00:00    3899664
+#>  9 401909317   2027           2 2026-11-25 2026-11-25 17:00:00    4431772
+#> 10 401909317   2027           2 2026-11-25 2026-11-25 17:00:00    5107157
+#> # ℹ 7,147 more rows
 #> # ℹ 51 more variables: athlete_display_name <chr>, team_id <int>,
 #> #   team_name <chr>, team_location <chr>, team_short_display_name <chr>,
 #> #   minutes <dbl>, field_goals_made <int>, field_goals_attempted <int>,
@@ -692,7 +692,7 @@ load_nba_player_box(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_schedule(seasons = most_recent_nba_season())
 #> ── ESPN NBA schedules from hoopR data repository ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 12:40:10 UTC
+#> ℹ Data updated: 2026-11-26 12:40:32 UTC
 #> # A tibble: 1,206 × 79
 #>         id uid   date  attendance time_valid neutral_site play_by_play_available
 #>      <int> <chr> <chr>      <dbl> <lgl>      <lgl>        <lgl>                 
@@ -717,21 +717,21 @@ load_nba_schedule(seasons = most_recent_nba_season())
 # \donttest{
 load_nba_shots(seasons = most_recent_nba_season())
 #> ── ESPN NBA shots from hoopR data repository ──────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-24 12:40:52 UTC
-#> # A tibble: 58,188 × 20
+#> ℹ Data updated: 2026-11-26 12:41:05 UTC
+#> # A tibble: 60,860 × 20
 #>      game_id season period_number clock_display_value team_id athlete_id_1
 #>        <int>  <int>         <int> <chr>                 <int>        <int>
-#>  1 401910036   2027             1 11:45                    30      4433287
-#>  2 401910036   2027             1 11:28                    29      4065733
-#>  3 401910036   2027             1 11:19                    30      4396971
-#>  4 401910036   2027             1 11:14                    30      4395651
-#>  5 401910036   2027             1 10:50                    29      4903027
-#>  6 401910036   2027             1 10:39                    30      4602025
-#>  7 401910036   2027             1 10:31                    29      4594326
-#>  8 401910036   2027             1 10:12                    30      4602025
-#>  9 401910036   2027             1 10:00                    29      4903027
-#> 10 401910036   2027             1 9:56                     29      4065733
-#> # ℹ 58,178 more rows
+#>  1 401909317   2027             1 11:41                    14      4066261
+#>  2 401909317   2027             1 11:24                    20         1966
+#>  3 401909317   2027             1 11:14                    14      3032977
+#>  4 401909317   2027             1 10:53                    20      3917376
+#>  5 401909317   2027             1 10:46                    14      4601025
+#>  6 401909317   2027             1 10:27                    14      3032977
+#>  7 401909317   2027             1 10:12                    20      5124612
+#>  8 401909317   2027             1 10:04                    14         6475
+#>  9 401909317   2027             1 9:56                     20      4431678
+#> 10 401909317   2027             1 9:41                     14      4601025
+#> # ℹ 60,850 more rows
 #> # ℹ 14 more variables: athlete_id_2 <int>, type_id <int>, type_text <chr>,
 #> #   scoring_play <lgl>, score_value <int>, coordinate_x <dbl>,
 #> #   coordinate_y <dbl>, coordinate_x_raw <dbl>, coordinate_y_raw <dbl>,

@@ -167,31 +167,16 @@ Timestamps are Turkey local time (<code>Europe/Istanbul</code>).</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">tbf_seasons</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> ── TBF Seasons ────────────────────────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-25 07:00:51 UTC</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 20 × 6</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    season_id season_label season start_date end_date   international</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>       175 UA-2026-2027   <span style="text-decoration: underline;">2</span>027 2026-10-01 2027-09-30 TRUE         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>       174 2026-2027      <span style="text-decoration: underline;">2</span>027 2026-07-01 2027-06-30 FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>       173 UA-2025-2026   <span style="text-decoration: underline;">2</span>026 2025-10-01 2026-09-30 TRUE         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>       172 2025-2026      <span style="text-decoration: underline;">2</span>026 2025-07-01 2026-06-30 FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>       171 UA-2024-2025   <span style="text-decoration: underline;">2</span>025 2024-10-01 2025-09-30 TRUE         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>       170 2024-2025      <span style="text-decoration: underline;">2</span>025 2024-07-01 2025-06-30 FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>       169 UA-2023-2024   <span style="text-decoration: underline;">2</span>024 2023-10-01 2024-09-30 TRUE         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>       168 2023-2024      <span style="text-decoration: underline;">2</span>024 2023-07-01 2024-06-30 FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>       167 UA-2022-2023   <span style="text-decoration: underline;">2</span>023 2022-10-01 2023-09-30 TRUE         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>       166 2022-2023      <span style="text-decoration: underline;">2</span>023 2022-07-01 2023-06-30 FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span>       165 UA-2021-2022   <span style="text-decoration: underline;">2</span>022 2021-10-01 2022-09-30 TRUE         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span>       164 2021-2022      <span style="text-decoration: underline;">2</span>022 2021-07-01 2022-06-30 FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span>       163 UA-2020-2021   <span style="text-decoration: underline;">2</span>021 2020-10-01 2021-09-30 TRUE         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>       162 2020-2021      <span style="text-decoration: underline;">2</span>021 2020-07-01 2021-06-30 FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>       161 UA-2019-2020   <span style="text-decoration: underline;">2</span>020 2019-10-01 2020-09-30 TRUE         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>       160 2019-2020      <span style="text-decoration: underline;">2</span>020 2019-07-01 2020-06-30 FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span>       159 UA-2018-2019   <span style="text-decoration: underline;">2</span>019 2018-10-01 2019-09-30 TRUE         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span>       158 2018-2019      <span style="text-decoration: underline;">2</span>019 2018-07-01 2019-06-30 FALSE        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span>       157 UA-2017-2018   <span style="text-decoration: underline;">2</span>018 2017-10-01 2018-09-30 TRUE         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">20</span>       156 2017-2018      <span style="text-decoration: underline;">2</span>018 2017-07-01 2018-06-30 FALSE        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Error in tbf_seasons() : </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   miniappapi.tbf.org.tr/webapi-service/api/Season/get-seasons: fetch</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> failed after 3 attempts: Failed to perform HTTP request. <span style="font-weight: bold;">Caused by error in</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">`curl::curl_fetch_memory()`:</span> <span style="color: #BBBB00;">!</span> Timeout was reached [miniappapi.tbf.org.tr]:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Connection timed out after 60002 milliseconds</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `httr2::req_perform()`:</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> Failed to perform HTTP request.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> Timeout was reached [miniappapi.tbf.org.tr]:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Connection timed out after 60002 milliseconds</span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>
     </div>

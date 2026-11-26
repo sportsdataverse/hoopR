@@ -74,21 +74,15 @@ lists every function in this family.
 ``` r
 # \donttest{
   try(tbf_league_seasons(competition = "bsl"))
-#> ── TBF League Seasons ─────────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 07:00:44 UTC
-#> # A tibble: 61 × 7
-#>    activity_id activity_name     url   season_id season_label season competition
-#>          <int> <chr>             <chr>     <int> <chr>         <int> <chr>      
-#>  1       22214 BSL 2026-2027     bsl-…       174 2026-2027      2027 bsl        
-#>  2       20728 BSL 2025-2026     bsl-…       172 2025-2026      2026 bsl        
-#>  3       19284 BSL 2024-2025     bsl-…       170 2024-2025      2025 bsl        
-#>  4       17820 Türkiye Sigorta … bsl-…       168 2023-2024      2024 bsl        
-#>  5       16354 BSL 2022-2023     bsl-…       166 2022-2023      2023 bsl        
-#>  6       14919 ING BSL 2021-2022 bsl-…       164 2021-2022      2022 bsl        
-#>  7       13559 ING BSL 2020-2021 bsl-…       162 2020-2021      2021 bsl        
-#>  8       13310 ING BSL 2019-2020 bsl-…       160 2019-2020      2020 bsl        
-#>  9       10986 TAHİNCİOĞLU BSL … bsl-…       158 2018-2019      2019 bsl        
-#> 10        8791 TAHİNCİOĞLU BSL … bsl-…       156 2017-2018      2018 bsl        
-#> # ℹ 51 more rows
+#> Error in tbf_league_seasons(competition = "bsl") : 
+#> miniappapi.tbf.org.tr/webapi-service/api/League/get-leagues-and-seasons-by-prefix:
+#> fetch failed after 3 attempts: Failed to perform HTTP request. Caused by error
+#> in `curl::curl_fetch_memory()`: ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
+#> Caused by error in `httr2::req_perform()`:
+#> ! Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
 # }
 ```

@@ -43,7 +43,7 @@ lists every function in this family.
 # \donttest{
   try(kzs_teams(competition_id = 579))
 #> ── KZS Teams from api.kzs.si ──────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 06:57:27 UTC
+#> ℹ Data updated: 2026-11-26 22:40:08 UTC
 #> # A tibble: 11 × 19
 #>    competition_id team_id team_application_id club_id club_member
 #>             <int>   <int>               <int>   <int> <lgl>      

@@ -48,7 +48,7 @@ lists every function in this family.
 # \donttest{
   try(cba_period_scores(schedule_id = 100105799))
 #> ── CBA Period Scores from data-server.cbaleague.com ───────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 06:54:04 UTC
+#> ℹ Data updated: 2026-11-26 22:36:59 UTC
 #> # A tibble: 8 × 4
 #>   schedule_id side  period points
 #>         <int> <chr>  <int>  <int>

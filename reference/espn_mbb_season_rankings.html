@@ -6,14 +6,14 @@ Returns the index of season-level rankings recorded for one NBA season.
 NBA + WNBA typically return zero rankings (ranking polls are a
 college concept); the wrapper is provided for symmetry across leagues.
 For MBB / WBB use the matching espn_mbb_season_rankings() /
-espn_wbb_season_rankings()."><meta property="og:description" content="Returns the index of season-level rankings recorded for one MBB season.
+wehoop::espn_wbb_season_rankings()."><meta property="og:description" content="Returns the index of season-level rankings recorded for one MBB season.
 Typical sources: AP Top 25 (id 1), Coaches Poll (id 2). Pass an
 ranking_id to espn_mbb_season_ranking() for the ranked teams.
 Returns the index of season-level rankings recorded for one NBA season.
 NBA + WNBA typically return zero rankings (ranking polls are a
 college concept); the wrapper is provided for symmetry across leagues.
 For MBB / WBB use the matching espn_mbb_season_rankings() /
-espn_wbb_season_rankings()."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
+wehoop::espn_wbb_season_rankings()."><meta property="og:image" content="https://raw.githubusercontent.com/sportsdataverse/hoopR-data/main/themes/hoopR_gh.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@saiemgilani"><meta name="twitter:site" content="@sportsdataverse"><!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-rWaW68xCPlDZZOQfwjPGF.js"></script><script>
   window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
   plausible.init()
 </script></head><body>
@@ -139,7 +139,7 @@ Typical sources: AP Top 25 (id 1), Coaches Poll (id 2). Pass an
 NBA + WNBA typically return zero rankings (ranking polls are a
 college concept); the wrapper is provided for symmetry across leagues.
 For MBB / WBB use the matching <code>espn_mbb_season_rankings()</code> /
-<code>espn_wbb_season_rankings()</code>.</p>
+<code><a href="https://wehoop.sportsdataverse.org/reference/espn_wbb_season_rankings.html" class="external-link">wehoop::espn_wbb_season_rankings()</a></code>.</p>
     </div>
 
     <div class="section level2">
@@ -186,7 +186,7 @@ For MBB / WBB use the matching <code>espn_mbb_season_rankings()</code> /
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_mbb_season_rankings</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN MENS-COLLEGE-BASKETBALL Season Rankings Index ─────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-25 06:55:32 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-26 22:38:16 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   league                  season ranking_id ref                                 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                               </span>
@@ -196,7 +196,7 @@ For MBB / WBB use the matching <code>espn_mbb_season_rankings()</code> /
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span>  <span class="fu">espn_nba_season_rankings</span><span class="op">(</span>season <span class="op">=</span> <span class="fl">2025</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> ── ESPN NBA Season Rankings Index ─────────────────────────────── <span style="font-style: italic;">hoopR 3.2.0</span> ──</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-25 06:55:33 UTC</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Data updated: <span style="color: #00BB00;">2026-11-26 22:38:16 UTC</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 4</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 4 variables: league &lt;chr&gt;, season &lt;int&gt;, ranking_id &lt;chr&gt;, ref &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="co"># }</span></span></span>

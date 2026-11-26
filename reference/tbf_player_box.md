@@ -75,27 +75,15 @@ lists every function in this family.
 ``` r
 # \donttest{
   try(tbf_player_box(match_id = 346279))
-#> ── TBF Player Box Score ───────────────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 07:00:48 UTC
-#> # A tibble: 24 × 33
-#>    match_id side  team_process_id player_id player_name jersey_number is_starter
-#>       <int> <chr>           <int>     <int> <chr>       <chr>         <lgl>     
-#>  1   346279 home           265995    196413 Yiğitcan S… 3             TRUE      
-#>  2   346279 home           265995    485299 Terrell Ca… 5             TRUE      
-#>  3   346279 home           265995    389934 Efe Postel  22            TRUE      
-#>  4   346279 home           265995    778401 Bryce Jones 32            TRUE      
-#>  5   346279 home           265995    778398 Gabe Brown  44            TRUE      
-#>  6   346279 home           265995    227173 Sadık Kaba… 6             FALSE     
-#>  7   346279 home           265995    508900 Jamuni McN… 8             FALSE     
-#>  8   346279 home           265995    778402 Zach Nutall 10            FALSE     
-#>  9   346279 home           265995    736069 Tre'shawn … 15            FALSE     
-#> 10   346279 home           265995    434482 Emirhan Se… 24            FALSE     
-#> # ℹ 14 more rows
-#> # ℹ 26 more variables: seconds_played <int>, points <int>, fg_made <int>,
-#> #   fg_attempted <int>, fg_pct <int>, fg2_made <int>, fg2_attempted <int>,
-#> #   fg2_pct <int>, fg3_made <int>, fg3_attempted <int>, fg3_pct <int>,
-#> #   ft_made <int>, ft_attempted <int>, ft_pct <int>, off_rebounds <int>,
-#> #   def_rebounds <int>, rebounds <int>, assists <int>, steals <int>,
-#> #   blocks <int>, turnovers <int>, fouls <int>, fouls_drawn <int>, …
+#> Error in tbf_player_box(match_id = 346279) : 
+#>   miniappapi.tbf.org.tr/webapi-service/api/Match/mac-header: fetch failed
+#> after 3 attempts: Failed to perform HTTP request. Caused by error in
+#> `curl::curl_fetch_memory()`: ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
+#> Caused by error in `httr2::req_perform()`:
+#> ! Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [miniappapi.tbf.org.tr]:
+#> Connection timed out after 60002 milliseconds
 # }
 ```

@@ -103,7 +103,7 @@ Other NBA Stats loader functions:
 # \donttest{
   try(load_nba_stats_rolling_windows(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 1,798 × 21
+#> # A tibble: 1,804 × 21
 #>    season entity_type entity_id entity_name  team_id metric window_unit window_n
 #>     <int> <chr>           <int> <chr>          <int> <chr>  <chr>          <int>
 #>  1   2027 player        1626145 Jones         1.61e9 fg3_p… fg3a              50
@@ -116,7 +116,7 @@ Other NBA Stats loader functions:
 #>  8   2027 player        1626181 Powell        1.61e9 fg3_p… fg3a              50
 #>  9   2027 player        1626204 Nance Jr.     1.61e9 fg3_p… fg3a              50
 #> 10   2027 player        1626209 Hezonja       1.61e9 fg3_p… fg3a              50
-#> # ℹ 1,788 more rows
+#> # ℹ 1,794 more rows
 #> # ℹ 13 more variables: cur <dbl>, prev <dbl>, season_start <dbl>,
 #> #   career_baseline <dbl>, delta_prev <dbl>, delta_season <dbl>,
 #> #   delta_career <dbl>, delta_prev_rank <int>, n <int>, qualified <lgl>,

@@ -10,7 +10,7 @@ Returns the index of season-level rankings recorded for one NBA season.
 NBA + WNBA typically return zero rankings (ranking polls are a college
 concept); the wrapper is provided for symmetry across leagues. For MBB /
 WBB use the matching `espn_mbb_season_rankings()` /
-`espn_wbb_season_rankings()`.
+[`wehoop::espn_wbb_season_rankings()`](https://wehoop.sportsdataverse.org/reference/espn_wbb_season_rankings.html).
 
 ## Usage
 
@@ -76,7 +76,7 @@ Saiem Gilani
 # \donttest{
   espn_mbb_season_rankings(season = 2025)
 #> ── ESPN MENS-COLLEGE-BASKETBALL Season Rankings Index ─────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 06:55:32 UTC
+#> ℹ Data updated: 2026-11-26 22:38:16 UTC
 #> # A tibble: 2 × 4
 #>   league                  season ranking_id ref                                 
 #>   <chr>                    <int> <chr>      <chr>                               
@@ -86,7 +86,7 @@ Saiem Gilani
 # \donttest{
   espn_nba_season_rankings(season = 2025)
 #> ── ESPN NBA Season Rankings Index ─────────────────────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 06:55:33 UTC
+#> ℹ Data updated: 2026-11-26 22:38:16 UTC
 #> # A tibble: 0 × 4
 #> # ℹ 4 variables: league <chr>, season <int>, ranking_id <chr>, ref <chr>
 # }

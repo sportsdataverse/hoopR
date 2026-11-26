@@ -401,7 +401,7 @@ Saiem Gilani
   # One season is a ~80 MB download.
   try(load_ncaa_mbb_pbp(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 551,093 × 87
+#> # A tibble: 717,860 × 87
 #>    game_date  home       away     period clock game_time game_seconds home_score
 #>    <chr>      <chr>      <chr>     <int> <chr> <chr>            <int>      <int>
 #>  1 11/07/2026 Lindenwood East-We…      1 19:58 00:02                2          0
@@ -414,7 +414,7 @@ Saiem Gilani
 #>  8 11/07/2026 Lindenwood East-We…      1 19:31 00:29               29          1
 #>  9 11/07/2026 Lindenwood East-We…      1 19:31 00:29               29          1
 #> 10 11/07/2026 Lindenwood East-We…      1 19:31 00:29               29          1
-#> # ℹ 551,083 more rows
+#> # ℹ 717,850 more rows
 #> # ℹ 79 more variables: away_score <int>, event_team <chr>,
 #> #   event_description <chr>, player_1 <chr>, player_2 <chr>, event_type <chr>,
 #> #   event_result <chr>, shot_value <int>, event_length <int>, poss_num <int>,
@@ -426,7 +426,7 @@ Saiem Gilani
   # One season is a ~10 MB download.
   try(load_ncaa_mbb_shots(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 128,037 × 19
+#> # A tibble: 166,844 × 19
 #>    season team_id     shooter_id shot_x shot_y dist_ft shot_zone shot_type made 
 #>     <int> <chr>       <chr>       <dbl>  <dbl>   <dbl> <chr>     <chr>     <lgl>
 #>  1   2027 East-West … ChHammonds   -4   20.4     20.8  mid       unknown   TRUE 
@@ -439,7 +439,7 @@ Saiem Gilani
 #>  8   2027 East-West … ChHammonds  -19.5 17.6     26.2  abovebre… unknown   TRUE 
 #>  9   2027 Lindenwood  MaDiouf       2.5  4.4      5.06 paint     unknown   TRUE 
 #> 10   2027 East-West … ChHammonds   22.5 -0.300   22.5  corner3   unknown   FALSE
-#> # ℹ 128,027 more rows
+#> # ℹ 166,834 more rows
 #> # ℹ 10 more variables: point_value <int>, period <int>, sec_left <dbl>,
 #> #   source <chr>, contest_id <chr>, ncaa_team_id <chr>, espn_team_id <int>,
 #> #   shooter_player_id <chr>, shooter_clean_name <chr>, espn_game_id <int>
@@ -448,7 +448,7 @@ Saiem Gilani
   # One season is a ~20 MB download.
   try(load_ncaa_mbb_lineups(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 51,061 × 77
+#> # A tibble: 66,807 × 77
 #>    lineup_key   date  location_type team  team_year opponent lineup_id start_min
 #>    <chr>        <chr> <chr>         <chr>     <int> <chr>    <chr>         <dbl>
 #>  1 c9c6073aef5… 2026… Home          Lind…      2026 East-We… DoClay_M…     0    
@@ -461,7 +461,7 @@ Saiem Gilani
 #>  8 b1e6192a27c… 2026… Home          Lind…      2026 East-We… DeRollin…    14.4  
 #>  9 56c1bbf0645… 2026… Home          Lind…      2026 East-We… DoClay_K…    14.9  
 #> 10 e2b4c3cb2ef… 2026… Home          Lind…      2026 East-We… DoClay_M…    17.4  
-#> # ℹ 51,051 more rows
+#> # ℹ 66,797 more rows
 #> # ℹ 69 more variables: end_min <dbl>, duration_mins <dbl>, player_1 <chr>,
 #> #   player_2 <chr>, player_3 <chr>, player_4 <chr>, player_5 <chr>,
 #> #   players_in <chr>, players_out <chr>, start_scored <int>,
@@ -473,20 +473,20 @@ Saiem Gilani
   # One season is a ~12 MB download.
   try(load_ncaa_mbb_matchup_stints(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 37,628 × 33
+#> # A tibble: 57,277 × 33
 #>    contest_id season game_date  home   away  game_stint_num period start_seconds
 #>    <chr>       <int> <chr>      <chr>  <chr>          <int>  <int>         <int>
 #>  1 6607173      2027 11/07/2026 Linde… East…              1      1             2
-#>  2 6607173      2027 11/07/2026 Linde… East…              2      1            34
-#>  3 6607173      2027 11/07/2026 Linde… East…              3      1           325
-#>  4 6607173      2027 11/07/2026 Linde… East…              4      1           507
-#>  5 6607173      2027 11/07/2026 Linde… East…              5      1           563
-#>  6 6607173      2027 11/07/2026 Linde… East…              6      1           696
-#>  7 6607173      2027 11/07/2026 Linde… East…              7      1           744
-#>  8 6607173      2027 11/07/2026 Linde… East…              8      1           777
-#>  9 6607173      2027 11/07/2026 Linde… East…              9      1           878
-#> 10 6607173      2027 11/07/2026 Linde… East…             10      1           908
-#> # ℹ 37,618 more rows
+#>  2 6607173      2027 11/07/2026 Linde… East…              2      1            29
+#>  3 6607173      2027 11/07/2026 Linde… East…              3      1           308
+#>  4 6607173      2027 11/07/2026 Linde… East…              4      1           308
+#>  5 6607173      2027 11/07/2026 Linde… East…              5      1           308
+#>  6 6607173      2027 11/07/2026 Linde… East…              6      1           308
+#>  7 6607173      2027 11/07/2026 Linde… East…              7      1           308
+#>  8 6607173      2027 11/07/2026 Linde… East…              8      1           497
+#>  9 6607173      2027 11/07/2026 Linde… East…              9      1           552
+#> 10 6607173      2027 11/07/2026 Linde… East…             10      1           679
+#> # ℹ 57,267 more rows
 #> # ℹ 25 more variables: end_seconds <int>, duration_seconds <int>,
 #> #   matchup_key <chr>, home_lineup_key <chr>, away_lineup_key <chr>,
 #> #   home_lineup <chr>, away_lineup <chr>, end_home_score <int>,
@@ -498,7 +498,7 @@ Saiem Gilani
   # One season is a ~17 MB download.
   try(load_ncaa_mbb_possessions(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 153,560 × 56
+#> # A tibble: 199,767 × 56
 #>    game_date  home   away  period poss_num poss_team home_1 home_2 home_3 home_4
 #>    <chr>      <chr>  <chr>  <int>    <int> <chr>     <chr>  <chr>  <chr>  <chr> 
 #>  1 11/07/2026 Linde… East…      1        1 Lindenwo… MAKHA… MALEK… MATAR… SHAMI…
@@ -511,7 +511,7 @@ Saiem Gilani
 #>  8 11/07/2026 Linde… East…      1        8 East-Wes… DOM.C… MAKHA… MALEK… MATAR…
 #>  9 11/07/2026 Linde… East…      1        9 Lindenwo… DOM.C… MAKHA… MALEK… MATAR…
 #> 10 11/07/2026 Linde… East…      1       10 East-Wes… DOM.C… MAKHA… MALEK… MATAR…
-#> # ℹ 153,550 more rows
+#> # ℹ 199,757 more rows
 #> # ℹ 46 more variables: home_5 <chr>, away_1 <chr>, away_2 <chr>, away_3 <chr>,
 #> #   away_4 <chr>, away_5 <chr>, home_score <int>, away_score <int>, pts <int>,
 #> #   is_assisted <int>, is_transition <int>, is_garbage_time <int>,
@@ -551,20 +551,20 @@ Saiem Gilani
   # One season is a ~10 MB download.
   try(load_ncaa_mbb_player_box(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 24,519 × 125
+#> # A tibble: 31,711 × 125
 #>    game_date home  away  team  player  mins o_poss   pts   orb   drb   ast   stl
 #>    <chr>     <chr> <chr> <chr> <chr>  <dbl>  <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
 #>  1 11/07/20… Lind… East… East… ALLEN…  6.5      12     2     0     0     1     2
 #>  2 11/07/20… Lind… East… East… AMARE…  5.43     11     0     0     0     0     0
-#>  3 11/07/20… Lind… East… East… ANDRE… 12.6      21     0     1     0     1     0
+#>  3 11/07/20… Lind… East… East… ANDRE… 12.5      23     0     1     0     1     0
 #>  4 11/07/20… Lind… East… East… CALEB… 25.0      45     6     0     0     3     0
-#>  5 11/07/20… Lind… East… East… CAMER… 11.0      21     0     1     2     0     0
+#>  5 11/07/20… Lind… East… East… CAMER… 11.2      22     0     1     2     0     0
 #>  6 11/07/20… Lind… East… East… CHRIS… 39.8      73    25     0     3     0     2
-#>  7 11/07/20… Lind… East… East… DAYSH… 15.5      29     3     2     0     0     0
+#>  7 11/07/20… Lind… East… East… DAYSH… 15.5      30     3     2     0     0     0
 #>  8 11/07/20… Lind… East… East… DIANT…  8.48     16     0     0     0     0     0
 #>  9 11/07/20… Lind… East… East… GEORG… 29.7      55     6     1     1     1     0
-#> 10 11/07/20… Lind… East… East… GODWI…  9.87     18     0     0     2     0     0
-#> # ℹ 24,509 more rows
+#> 10 11/07/20… Lind… East… East… GODWI…  9.87     20     0     0     2     0     0
+#> # ℹ 31,701 more rows
 #> # ℹ 113 more variables: blk <dbl>, tov <dbl>, pf <dbl>, ts_pct <dbl>,
 #> #   efg_pct <dbl>, fgm <dbl>, fga <dbl>, fg_pct <dbl>, tpm <dbl>, tpa <dbl>,
 #> #   tp_pct <dbl>, ftm <dbl>, fta <dbl>, ft_pct <dbl>, rimm <dbl>, rima <dbl>,
@@ -575,7 +575,7 @@ Saiem Gilani
 # \donttest{
   try(load_ncaa_mbb_team_box(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 2,126 × 81
+#> # A tibble: 2,784 × 81
 #>    home   away  team   mins o_mins d_mins o_poss d_poss  ortg  drtg netrtg   pts
 #>    <chr>  <chr> <chr> <dbl>  <dbl>  <dbl>  <dbl>  <dbl> <dbl> <dbl>  <dbl> <dbl>
 #>  1 Linde… East… East…  39.4   25.4   13.9     73     72  60.3 160.   -99.4    44
@@ -588,7 +588,7 @@ Saiem Gilani
 #>  8 Omaha  Lind… Omaha  38.8   21.0   17.7     69     69  97.1  81.2   15.9    67
 #>  9 UNI    Lind… Lind…  39.0   19.5   19.6     73     72 101.  112.   -11.1    74
 #> 10 UNI    Lind… UNI    39.0   19.6   19.5     72     73 112.  101.    11.1    81
-#> # ℹ 2,116 more rows
+#> # ℹ 2,774 more rows
 #> # ℹ 69 more variables: d_pts <dbl>, fga <dbl>, d_fga <dbl>, fgm <dbl>,
 #> #   d_fgm <dbl>, tpa <dbl>, d_tpa <dbl>, tpm <dbl>, d_tpm <dbl>, fta <dbl>,
 #> #   d_fta <dbl>, ftm <dbl>, d_ftm <dbl>, rima <dbl>, d_rima <dbl>, rimm <dbl>,
@@ -599,20 +599,20 @@ Saiem Gilani
 # \donttest{
   try(load_ncaa_mbb_rosters(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 7,905 × 4
+#> # A tibble: 8,513 × 4
 #>    season team               player                  games
 #>     <int> <chr>              <chr>                   <int>
-#>  1   2027 A&M-Corpus Christi BEAU.BILLINGSLEY            6
-#>  2   2027 A&M-Corpus Christi BINAEL.BASIL                6
-#>  3   2027 A&M-Corpus Christi BRYSON.WHEATFALL            5
+#>  1   2027 A&M-Corpus Christi BEAU.BILLINGSLEY            7
+#>  2   2027 A&M-Corpus Christi BINAEL.BASIL                7
+#>  3   2027 A&M-Corpus Christi BRYSON.WHEATFALL            6
 #>  4   2027 A&M-Corpus Christi CEDRIC.HORTON               1
-#>  5   2027 A&M-Corpus Christi CJ.WORSHAM                  5
+#>  5   2027 A&M-Corpus Christi CJ.WORSHAM                  6
 #>  6   2027 A&M-Corpus Christi DAMARION.WINSTON            6
-#>  7   2027 A&M-Corpus Christi DAN.MUKUNA                  6
-#>  8   2027 A&M-Corpus Christi DANIEL.MICHELINIJACKSON     6
-#>  9   2027 A&M-Corpus Christi DESMOND.KENT                6
-#> 10   2027 A&M-Corpus Christi ISAIAH.LEWIS                6
-#> # ℹ 7,895 more rows
+#>  7   2027 A&M-Corpus Christi DAN.MUKUNA                  7
+#>  8   2027 A&M-Corpus Christi DANIEL.MICHELINIJACKSON     7
+#>  9   2027 A&M-Corpus Christi DESMOND.KENT                7
+#> 10   2027 A&M-Corpus Christi ISAIAH.LEWIS                7
+#> # ℹ 8,503 more rows
 # }
 # \donttest{
   try(load_ncaa_mbb_team_rosters(seasons = most_recent_mbb_season()))
@@ -637,7 +637,7 @@ Saiem Gilani
 # \donttest{
   try(load_ncaa_mbb_schedule(seasons = most_recent_mbb_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 1,063 × 7
+#> # A tibble: 1,392 × 7
 #>    contest_id game_date  home               away    home_score away_score season
 #>    <chr>      <chr>      <chr>              <chr>        <int>      <int>  <int>
 #>  1 6607173    11/07/2026 Lindenwood         East-W…        115         44   2027
@@ -645,12 +645,12 @@ Saiem Gilani
 #>  3 6607593    11/11/2026 Nebraska           Linden…         94         60   2027
 #>  4 6607594    11/13/2026 Omaha              Linden…         67         56   2027
 #>  5 6607597    11/17/2026 UNI                Linden…         81         74   2027
-#>  6 6607633    11/05/2026 Lindenwood         Centra…        120         46   2027
-#>  7 6608198    11/03/2026 California Baptist North …         63         71   2027
-#>  8 6608199    11/06/2026 Oregon St.         Califo…         96         68   2027
-#>  9 6608200    11/11/2026 California Baptist Chicag…         62         81   2027
-#> 10 6608201    11/13/2026 California Baptist Ark.-P…         74         60   2027
-#> # ℹ 1,053 more rows
+#>  6 6607601    11/24/2026 Lindenwood         New Ha…         60         63   2027
+#>  7 6607603    11/25/2026 Stony Brook        Linden…         69         63   2027
+#>  8 6607633    11/05/2026 Lindenwood         Centra…        120         46   2027
+#>  9 6608198    11/03/2026 California Baptist North …         63         71   2027
+#> 10 6608199    11/06/2026 Oregon St.         Califo…         96         68   2027
+#> # ℹ 1,382 more rows
 # }
 # \donttest{
   try(load_ncaa_mbb_team_ids(seasons = most_recent_mbb_season()))

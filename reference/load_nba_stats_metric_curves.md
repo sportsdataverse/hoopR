@@ -95,7 +95,7 @@ Other NBA Stats loader functions:
 # \donttest{
   try(load_nba_stats_metric_curves(seasons = most_recent_nba_stats_season()))
 #> ───────────────────────────────────────────────────────────────── hoopR 3.2.0 ──
-#> # A tibble: 9,279 × 14
+#> # A tibble: 9,416 × 14
 #>    season entity_type entity_id entity_name team_id id_source metric  down  x_lo
 #>     <int> <chr>           <int> <chr>         <int> <chr>     <chr>  <int> <dbl>
 #>  1   2027 league             NA NA               NA nba_stats fg_pc…    NA     0
@@ -108,7 +108,7 @@ Other NBA Stats loader functions:
 #>  8   2027 league             NA NA               NA nba_stats fg_pc…    NA     7
 #>  9   2027 league             NA NA               NA nba_stats fg_pc…    NA     8
 #> 10   2027 league             NA NA               NA nba_stats fg_pc…    NA     9
-#> # ℹ 9,269 more rows
+#> # ℹ 9,406 more rows
 #> # ℹ 5 more variables: x_hi <dbl>, attempts <int>, successes <int>, rate <dbl>,
 #> #   epa_per_att <dbl>
 # }

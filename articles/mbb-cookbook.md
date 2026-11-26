@@ -67,7 +67,7 @@ espn_mbb_team(team_id = team_id)                              # identity + recor
 #> # A tibble: 1 × 4
 #>   description    stats         summary type 
 #>   <chr>          <list>        <chr>   <chr>
-#> 1 Overall Record <df [30 × 2]> 4-2     total
+#> 1 Overall Record <df [30 × 2]> 5-2     total
 #> 
 #> $NextEvent
 #> # A tibble: 1 × 4
@@ -93,7 +93,7 @@ espn_mbb_team_schedule(team_id = team_id, season = season)    # the slate
 #>  4 401909565   2027          NA     2 2026-11-14T0… SIU … SIUE @ DU… NA         
 #>  5 401909566   2027          NA     3 2026-11-18T0… Illi… ILL @ DUKE NA         
 #>  6 401909567   2027          NA     3 2026-11-22T0… Wash… WSU VS DU… NA         
-#>  7 401909568   2027          NA     4 2026-11-26T0… UCon… CONN VS D… NA         
+#>  7 401909568   2027          NA     4 2026-11-26T0… Duke… DUKE VS C… NA         
 #>  8 401906775   2027          NA     5 2026-12-02T0… Duke… DUKE @ FLA NA         
 #>  9 401909569   2027          NA     5 2026-12-05T0… Harv… HARV @ DU… NA         
 #> 10 401906786   2027          NA     6 2026-12-09T0… Geor… UGA VS DU… NA         
@@ -489,14 +489,14 @@ espn_mbb_standings(year = season)
 #>    team_id team             conference avgpointsagainst avgpointsfor gamesbehind
 #>      <int> <chr>            <chr>                 <dbl>        <dbl>       <dbl>
 #>  1    2349 UMass Lowell Ri… America E…             63.3         75.2         0  
-#>  2    2066 Binghamton Bear… America E…             66.1         67.1         0.5
+#>  2    2066 Binghamton Bear… America E…             68.2         70           0  
 #>  3     160 New Hampshire W… America E…             63.2         66.8         1  
-#>  4     399 UAlbany Great D… America E…             72.8         70.6         1  
+#>  4     399 UAlbany Great D… America E…             72.9         68.7         1.5
 #>  5    2378 UMBC Retrievers  America E…             75.4         69.6         1.5
 #>  6     261 Vermont Catamou… America E…             72.3         80           1.5
 #>  7    2803 Bryant Bulldogs  America E…             69.6         64.5         2  
 #>  8     311 Maine Black Bea… America E…             71.9         62           2.5
-#>  9    2885 NJIT Highlanders America E…             77.6         57.4         4  
+#>  9    2885 NJIT Highlanders America E…             78           58.8         4.5
 #> 10    2724 Wichita State S… American …             69.7         87           0  
 #> # ℹ 355 more rows
 #> # ℹ 81 more variables: leaguewinpercent <dbl>, losses <dbl>, playoffseed <dbl>,

@@ -48,7 +48,7 @@ lists every function in this family.
 # \donttest{
   try(cba_player_box(schedule_id = 100105799))
 #> ── CBA Player Box from data-server.cbaleague.com ──────────────── hoopR 3.2.0 ──
-#> ℹ Data updated: 2026-11-25 06:54:06 UTC
+#> ℹ Data updated: 2026-11-26 22:37:01 UTC
 #> # A tibble: 26 × 26
 #>    schedule_id side  assists blocked cn_alias field_goals field_goals_attempted
 #>          <int> <chr>   <int>   <int> <chr>          <int>                 <int>
