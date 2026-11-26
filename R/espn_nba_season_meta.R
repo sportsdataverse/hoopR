@@ -117,7 +117,7 @@ espn_nba_season_leaders <- function(season = most_recent_nba_season(),
 #' NBA + WNBA typically return zero rankings (ranking polls are a
 #' college concept); the wrapper is provided for symmetry across leagues.
 #' For MBB / WBB use the matching `espn_mbb_season_rankings()` /
-#' `espn_wbb_season_rankings()`.
+#' `wehoop::espn_wbb_season_rankings()`.
 #'
 #' @param ... Additional arguments; currently unused.
 #' @eval .returns_rd("espn_nba_season_rankings", unit = "ranking source")
@@ -147,8 +147,8 @@ espn_nba_season_rankings <- function(season = most_recent_nba_season(), ...) {
 #' @description
 #' Returns the per-week snapshot index for one ranking source (e.g. AP
 #' Top 25). Each row is one weekly snapshot; the `ref` URL resolves to
-#' the actual ranked teams for that (season-type x week) and will be
-#' wrapped by a forthcoming `espn_nba_week_ranking()`.
+#' the actual ranked teams for that (season-type x week); fetch them with
+#' [espn_nba_week_ranking()].
 #'
 #' @param ranking_id ESPN ranking identifier (character or numeric).
 #' @param ... Additional arguments; currently unused.
