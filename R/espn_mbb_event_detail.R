@@ -492,7 +492,7 @@ NULL
 #' [espn_mbb_pbp()] output by exposing the canonical core-v2 play record.
 #'
 #' @param event_id ESPN event identifier.
-#' @param play_id ESPN play identifier (visible in [espn_mbb_pbp()] output as
+#' @param play_id ESPN play identifier (visible in [espn_mbb_pbp()] (MBB) or [espn_nba_pbp()] (NBA) output as
 #'   `play_id` or extractable from `plays[].$ref`).
 #' @param ... Additional arguments; currently unused.
 #' @return A single-row tibble.

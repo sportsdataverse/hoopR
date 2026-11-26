@@ -13,7 +13,7 @@ espn_nba_game_play(event_id, play_id, ...)
 \arguments{
 \item{event_id}{ESPN event identifier.}
 
-\item{play_id}{ESPN play identifier (visible in \code{\link[=espn_nba_pbp]{espn_nba_pbp()}} output as
+\item{play_id}{ESPN play identifier (visible in \code{\link[=espn_mbb_pbp]{espn_mbb_pbp()}} (MBB) or \code{\link[=espn_nba_pbp]{espn_nba_pbp()}} (NBA) output as
 \code{play_id} or extractable from \verb{plays[].$ref}).}
 
 \item{...}{Additional arguments; currently unused.}
